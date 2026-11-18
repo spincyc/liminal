@@ -1,0 +1,2207 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "donne-poems-1912",
+  "readings": [
+    {
+      "id": "reading-12-donne-poems-1912-01",
+      "title": "Song: “Goe, and catche a falling starre”",
+      "sourceId": "donne-poems-1912",
+      "workTitle": "Song",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a list of impossible tasks to the claim it has been building toward.",
+      "focus": "Witty cynicism and the question of how seriously to take it.",
+      "context": "The speaker sets a series of impossible errands. A mandrake root, forked like a human body, was thought to have magical properties; the devil was pictured with a cloven hoof. Grierson prints Donne’s seventeenth-century spelling.",
+      "contentNote": "The poem’s punchline is a sweeping claim that no woman is both faithful and beautiful; treat it as the speaker’s pose, open to criticism.",
+      "excerpt": {
+        "locator": "Song (“Goe, and catche a falling starre”), Songs and Sonets; complete individual work; opens “GOE, and catche a falling starre, Get with child a mandrake roote, Tell me, where all…”; closes “…last, till you write your letter, Yet shee Will bee False, ere I come, to two, or three.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          40,
+          42
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "86d22e774dd12b8cb70ae6443c0fafe33e5d7d7fd40dc2e7fede5d9dc7eac7b8"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-01-q1",
+          "prompt": "What do the tasks in the first stanza have in common, and which one does not fit the pattern?",
+          "facilitatorNotes": [
+            "Catching a falling star, impregnating a root and finding where past years are all are impossible or absurd. The last, finding a wind that advances an honest mind, sounds like social satire: the list slips from fantasy to a complaint about the world."
+          ],
+          "evidence": [
+            "Get with child a mandrake roote",
+            "What winde Serves to advance an honest minde."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-01-q2",
+          "prompt": "How does the second stanza turn the impossible list into a test of women’s faithfulness?",
+          "facilitatorNotes": [
+            "A traveller who sees every strange wonder for ten thousand days will still swear that no woman is “true, and faire.” Faithful beauty is placed among the impossibilities, so the earlier list was a setup for this claim."
+          ],
+          "evidence": [
+            "And sweare No where Lives a woman true, and faire."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-01-q3",
+          "prompt": "Is the last stanza’s cynicism a serious belief, a joke or a performance? Use the final lines.",
+          "facilitatorNotes": [
+            "The speaker refuses even to visit a faithful woman next door, sure she will be false to “two, or three” before he arrives. The comic exaggeration and tidy short lines suggest a witty pose. Readers may still find the generalization ugly, or may read the cynicism as self-protection after disappointment."
+          ],
+          "evidence": [
+            "Yet doe not, I would not goe, Though at next doore wee might meet",
+            "False, ere I come, to two, or three."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-02",
+      "title": "Womans constancy",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort a list of predicted excuses by the kind of argument each makes, then reread the poem from its last line.",
+      "focus": "Inconstancy argued with legal and logical wit, and a speaker caught by his own argument.",
+      "context": "The speaker imagines what his lover will say tomorrow when she leaves him after one day. To antedate is to give something an earlier date than its true one; scapes are evasions or tricks; lunatique means as changeable as the moon. Grierson prints Donne’s seventeenth-century spelling.",
+      "contentNote": "The title’s jibe at women is turned back on the speaker by the last line.",
+      "excerpt": {
+        "locator": "Womans constancy (Songs and Sonets); complete individual work; opens “NOW thou hast lov'd me one whole day, To morrow when thou leav'st, what wilt thou say?…”; closes “…and conquer, if I would, Which I abstaine to doe, For by to morrow, I may thinke so too.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          44,
+          44
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5da2bcd784f476977cc683d9f8a1e39f1d5b15f6d33788c685b63dcc67f45ae4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-02-q1",
+          "prompt": "The speaker predicts the excuses his lover will make. Name two and say what kind of argument each one is.",
+          "facilitatorNotes": [
+            "She may produce a new vow dated earlier; claim they are no longer the same persons; say oaths sworn in fear of Love can be broken; argue that lovers’ contracts, like marriages ended by death, end with sleep; or say that having resolved to be false she can only be true by being false. Each borrows from law, philosophy or theology to excuse a change of heart."
+          ],
+          "evidence": [
+            "Wilt thou then Antedate some new made vow?",
+            "We are not just those persons, which we were?"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-02-q2",
+          "prompt": "Look closely at the comparison of death and sleep. How sound is the reasoning?",
+          "facilitatorNotes": [
+            "Death unties marriage; lovers’ contracts are images of marriage, and sleep is the image of death, so sleep unties them. The argument treats a resemblance as if it were the thing itself, twice over. Its slipperiness is the point: the speaker shows how easily desire can dress itself as logic."
+          ],
+          "evidence": [
+            "Or, as true deaths, true maryages untie, So lovers contracts, images of those, Binde but till sleep, deaths image, them unloose?"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-02-q3",
+          "prompt": "How does the last line change your view of the speaker? Who turns out to be inconstant?",
+          "facilitatorNotes": [
+            "He could refute her “scapes,” but declines, “For by to morrow, I may thinke so too.” The accuser shares the fault, so the title becomes ironic about both lovers. Some read the line as a shrug that deflates the whole complaint; others as an admission that he was accusing her of his own intentions."
+          ],
+          "evidence": [
+            "Vaine lunatique, against these scapes I could Dispute, and conquer, if I would,",
+            "For by to morrow, I may thinke so too."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-03",
+      "title": "The Indifferent",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Hear a libertine speaker’s argument, and decide where Donne laughs with him and where at him.",
+      "focus": "Constancy turned upside down: faithfulness treated as the one fault love cannot allow.",
+      "context": "Faire and browne means fair-haired and dark; to try is to learn by experience; spungie means spongy, soaked with tears. Venus is the goddess of love. Heretiques are people who hold beliefs their church condemns.",
+      "contentNote": "A libertine speaker treats women as interchangeable.",
+      "excerpt": {
+        "locator": "The Indifferent (Songs and Sonets); complete individual work; opens “I CAN love both faire and browne, Her whom abundance melts, and her whom want betraies,…”; closes “…have told them, since you will be true, You shall be true to them, who'are false to you.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          58,
+          60
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ec4d5a3a761357f75003268e8fda18c753b230bc5aa1928de39e64bd32060674"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-03-q1",
+          "prompt": "In the first stanza the speaker can love any woman at all. What is his one condition, and why is it surprising?",
+          "facilitatorNotes": [
+            "The pairs of opposites cover every kind of woman, rich and poor, solitary and sociable, believing and testing. The only exclusion is “so she be not true”: faithfulness, which one expects to be the requirement, is the one thing that disqualifies."
+          ],
+          "evidence": [
+            "I can love her, and her, and you and you, I can love any, so she be not true."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-03-q2",
+          "prompt": "In the second stanza he addresses women directly. What does he ask of them, and what does his travel image show about how he sees love?",
+          "facilitatorNotes": [
+            "“Rob mee, but binde me not, and let me goe”: take what you like, but do not hold me. He came “to travaile thorow” women as through countries; a faithful woman would make him her “fixt subject,” like a subject bound to a ruler. Love, for him, is passage, not settlement."
+          ],
+          "evidence": [
+            "Rob mee, but binde me not, and let me goe.",
+            "Must I, who came to travaile thorow you, Grow your fixt subject, because you are true?"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-03-q3",
+          "prompt": "Venus calls the believers in constancy “Poore Heretiques.” Whose view does the poem mock: the speaker’s or the faithful lovers’?",
+          "facilitatorNotes": [
+            "Venus swears by “Variety” as by something holy and condemns “dangerous constancie,” turning religious language upside down. Read straight, the poem is a libertine’s triumph; read as satire, its exaggeration exposes him, and his own word “sigh” hints he is not as indifferent as the title claims. The last line sentences the faithful to be true to the false, a joke that can cut either way."
+          ],
+          "evidence": [
+            "And by Loves sweetest Part, Variety, she swore,",
+            "Which thinke to stablish dangerous constancie.",
+            "You shall be true to them, who'are false to you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-04",
+      "title": "Lovers infinitenesse",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an argument that changes its premises in each stanza.",
+      "focus": "Love imagined as a purchase, then a property, then an exchange the lovers go beyond.",
+      "context": "The speaker reasons about whether he has all of the beloved’s love, using the language of buying, owning land and making gifts. Stocks are the funds a buyer can spend; a gift that is generall is given whole, without exceptions.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Lovers infinitenesse (Songs and Sonets); complete individual work; opens “IF yet I have not all thy love, Deare, I shall never have it all, I cannot breath one…”; closes “…liberall, Then changing hearts, to joyne them, so wee shall Be one, and one anothers All.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          75,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8317043f04e5cf00c2d9c5c9abefe298ee4bce28c6d9df9983b15cc4295a21eb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-04-q1",
+          "prompt": "In the first stanza, how has the speaker tried to win “all” of her love, and what does he fear?",
+          "facilitatorNotes": [
+            "He has spent his whole “treasure” of sighs, tears, oaths and letters, as if buying her. He fears she gave only part of her love, with some falling to others. The commercial language makes love a purchase with a fixed price."
+          ],
+          "evidence": [
+            "And all my treasure, which should purchase thee, Sighs, teares, and oathes, and letters I have spent.",
+            "If then thy gift of love were partiall"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-04-q2",
+          "prompt": "The second stanza moves from buying to owning land. How does “The ground, thy heart is mine” answer his fear of new rivals?",
+          "facilitatorNotes": [
+            "If her heart was given whole, it is his ground, and whatever grows on it later, even love for other men, belongs to him, as crops belong to the owner of a field. The argument is ingenious and possessive at once; readers may find it comic or troubling."
+          ],
+          "evidence": [
+            "But if in thy heart, since, there be or shall, New love created bee, by other men",
+            "The ground, thy heart is mine, what ever shall Grow there, deare, I should have it all."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-04-q3",
+          "prompt": "Why does the third stanza say “Yet I would not have all yet”? What solution does it reach?",
+          "facilitatorNotes": [
+            "Whoever has all can have no more, and his love grows daily and needs new rewards. Then comes a riddle: if she can give her heart she never gave it, and by losing it she keeps it. Instead of trading hearts they should join them and be “one anothers All.” Some readers find this resolves the anxiety of the first two stanzas; others see the same appetite in a grander form."
+          ],
+          "evidence": [
+            "Hee that hath all can have no more,",
+            "But wee will have a way more liberall, Then changing hearts, to joyne them, so wee shall Be one, and one anothers All."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-05",
+      "title": "Song: “Sweetest love, I do not goe”",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how a song meant to comfort keeps returning to death.",
+      "focus": "Parting as a rehearsal for death, and the lovers’ power to harm or keep each other.",
+      "context": "The speaker comforts the woman he loves before he leaves on a journey. Fain’d means feigned, pretended; unkindly kinde means kind in a way that does harm; a divining heart is one that foresees the future.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Song beginning “Sweetest love, I do not goe” (Songs and Sonets); complete individual work; opens “SWEETEST love, I do not goe, For wearinesse of thee, Nor in hope the world can show A…”; closes “…wee Are but turn'd aside to sleepe; They who one another keepe Alive, ne'r parted bee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          79,
+          83
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7a10673a6915c59bfd9e2ad3b06a78fdc01d82ba8fdd83b9d70bc26e2bee93ef"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-05-q1",
+          "prompt": "Why does the speaker say he is going away? What reason does the first stanza give?",
+          "facilitatorNotes": [
+            "Not from weariness of her or hope of a better love. Since he must die at last, it is best to practise dying “in jest” through pretended deaths: each parting is a small rehearsal. It is an odd comfort, joking and morbid at once."
+          ],
+          "evidence": [
+            "But since that I Must dye at last, 'tis best, To use my selfe in jest Thus by fain'd deaths to dye;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-05-q2",
+          "prompt": "How does the comparison with the sun try to reassure her?",
+          "facilitatorNotes": [
+            "The sun went away last night and is back today, though it has no desire and a far longer road. The speaker, with “more wings and spurres,” driven by love, will travel faster still."
+          ],
+          "evidence": [
+            "Yesternight the Sunne went hence, And yet is here to day,",
+            "Speedier journeyes, since I take More wings and spurres then hee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-05-q3",
+          "prompt": "In the fourth and fifth stanzas, what does he say her sighs and tears do to him? Is this comfort or a request?",
+          "facilitatorNotes": [
+            "Her sighs sigh his soul away; her tears drain his life’s blood; if she loves him she will not waste his life in hers. He asks her not to imagine harm, in case destiny makes her fears come true. Comfort turns into a gentle demand that she manage her grief for his sake: some readers find this tender, others self-centred. The last lines claim that lovers who keep each other alive are never parted."
+          ],
+          "evidence": [
+            "When thou sigh'st, thou sigh'st not winde, But sigh'st my soule away,",
+            "They who one another keepe Alive, ne'r parted bee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-06",
+      "title": "A Feaver",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Track a speaker who tries one extravagant compliment after another at a sickbed.",
+      "focus": "Hyperbole as a way of handling fear.",
+      "context": "The beloved is ill with a fever. The schools are the universities, where scholars disputed what fire would burn up the world at the end of time. Meteors were thought to be vapours burning briefly in the air; the firmament was the unchanging heaven of the fixed stars.",
+      "contentNote": "A beloved woman’s possible death; the opening jokes about hating all women.",
+      "excerpt": {
+        "locator": "A Feaver (Songs and Sonets); complete individual work; opens “OH doe not die, for I shall hate All women so, when thou art gone, That thee I shall not…”; closes “…thee cannot persever. For I had rather owner bee Of thee one houre, then all else ever.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          89,
+          95
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a3fe093a1d0bdfd6898219139df9742ba3736103ee495f7794da46f79758279f"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-06-q1",
+          "prompt": "The first stanza begs her not to die. What is odd about the reason he gives?",
+          "facilitatorNotes": [
+            "If she dies he will hate all women so much that he cannot praise her, because she was one. The compliment is wrapped in an insult. The joke may be a way of not saying plainly that he is afraid."
+          ],
+          "evidence": [
+            "OH doe not die, for I shall hate All women so, when thou art gone,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-06-q2",
+          "prompt": "How do the next three stanzas make her death the end of the world?",
+          "facilitatorNotes": [
+            "She is the world’s soul: if she leaves, the world vanishes like her breath, or stays behind as her carcass, with the best men mere worms. The scholars arguing about what fire will burn the world missed the answer: her fever."
+          ],
+          "evidence": [
+            "The whole world vapors with thy breath.",
+            "O wrangling schooles, that search what fire Shall burne this world, had none the wit Unto this knowledge to aspire"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-06-q3",
+          "prompt": "Then he decides she cannot die after all. What changes his mind, and what does the last stanza admit?",
+          "facilitatorNotes": [
+            "A fever needs corruption to feed on, and she has little; its fits are meteors that burn out, while her beauty is the fixed firmament. The last stanza confesses that the fever, in seizing her, did what he wished to do, and that he would rather own her for an hour than anything else forever. Desire breaks into the compliment. Some readers find the ending moving, others possessive."
+          ],
+          "evidence": [
+            "For much corruption needfull is To fuell such a feaver long.",
+            "Yet t'was of my minde, seising thee,",
+            "For I had rather owner bee Of thee one houre, then all else ever."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-07",
+      "title": "Breake of day",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Work out who is speaking, and from which words you know.",
+      "focus": "Daylight, honour and business set against love.",
+      "context": "An aubade is a song of lovers parting at dawn. Hether means hither, to this place.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Breake of day (Songs and Sonets); complete individual work; opens “'TIS true, 'tis day; what though it be? O wilt thou therefore rise from me? Why should we…”; closes “…hath businesse, and makes love, doth doe Such wrong, as when a maryed man doth wooe.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          102
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8887fba373cfd62bd1ac89cca008210577281b597655efb158702b710d9644d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-07-q1",
+          "prompt": "Who is speaking, and which line makes it clear?",
+          "facilitatorNotes": [
+            "A woman, to the man leaving her bed: in the second stanza she would not go “from him, that had them,” her heart and honour. Many readers assume a male speaker until this line. Ask what changes when the poem is reread with her voice in mind."
+          ],
+          "evidence": [
+            "And that I lov'd my heart and honor so, That I would not from him, that had them, goe."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-07-q2",
+          "prompt": "How does the first stanza argue against getting up? Is the argument fair?",
+          "facilitatorNotes": [
+            "They did not lie down because it was night, so they need not rise because it is light; love that brought them together in spite of darkness should keep them together in spite of light. The neat symmetry sounds logical but ignores the real reason he is leaving, which the last stanza reveals."
+          ],
+          "evidence": [
+            "Why should we rise, because 'tis light? Did we lie downe, because 'twas night?"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-07-q3",
+          "prompt": "What does she call “the worst disease of love,” and why compare a busy lover to a married man who woos?",
+          "facilitatorNotes": [
+            "Business. Love can admit the poor, the foul and the false, but not “the busied man.” A man who has business and makes love divides himself, as a married man courting another woman does: both are unfaithful to someone. Readers can weigh whether the comparison is fair or is her hurt turned into wit."
+          ],
+          "evidence": [
+            "Oh, that's the worst disease of love,",
+            "He which hath businesse, and makes love, doth doe Such wrong, as when a maryed man doth wooe."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-08",
+      "title": "The Anniversarie",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Track the argument across three stanzas: love outside time, love ended by death, love in the present.",
+      "focus": "A love that claims royal and eternal status, then settles for counting years.",
+      "context": "The speaker marks the first anniversary of meeting the beloved. A “coarse” is a corpse; “throughly” means thoroughly; inmates are temporary lodgers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Anniversarie, Songs and Sonets; complete individual work; opens “ALL Kings, and all their favorites, All glory of honors, beauties, wits, The Sun it…”; closes “…unto yeares, till we attaine To write threescore: this is the second of our raigne.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          104,
+          106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e523a5fd27b8a95fbbc0082f843a3a486b08c1e7a5cd3151d9f839265113909a"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-08-q1",
+          "prompt": "How does the first stanza set their love apart from everything else, including kings and the sun?",
+          "facilitatorNotes": [
+            "Everything else is a year older and draws toward destruction; only their love keeps “his first, last, everlasting day.” The claim lifts love outside time on the very occasion of a date in time."
+          ],
+          "evidence": [
+            "Only our love hath no decay;",
+            "But truly keepes his first, last, everlasting day."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-08-q2",
+          "prompt": "What worry does the second stanza admit, and how does it answer it?",
+          "facilitatorNotes": [
+            "Death will separate their bodies into two graves, and the eyes and ears that heard oaths and tears must be left behind. The answer is that souls, where love alone dwells, will prove the same love, or a greater one, in heaven."
+          ],
+          "evidence": [
+            "Two graves must hide thine and my coarse, If one might, death were no divorce."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-08-q3",
+          "prompt": "Why does the last stanza prefer being kings “here upon earth” to being blest in heaven?",
+          "facilitatorNotes": [
+            "In heaven they will be blest, but “no more then all the rest”; on earth they are uniquely kings of each other. The only possible treason is from one of the two. The closing count, “the second of our raigne,” turns eternity back into ordinary years, which can read as tender realism or as a quiet admission of risk."
+          ],
+          "evidence": [
+            "But wee no more, then all the rest;",
+            "Treason to us, except one of us two."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-09",
+      "title": "Twicknam garden",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a lover who carries his misery into a garden and blames himself for spoiling it.",
+      "focus": "Self-pity, self-mockery and a bitter final compliment.",
+      "context": "Twickenham Park, near London, was the home of Lucy, Countess of Bedford, one of Donne’s patrons. Transubstantiate means to change one substance into another; manna is the food God sent the Israelites; gall is bitterness. A mandrake root was said to groan when pulled up.",
+      "contentNote": "The ending generalizes about women’s honesty; the speaker’s bitterness is part of the poem’s performance.",
+      "excerpt": {
+        "locator": "Twicknam garden, Songs and Sonets; complete individual work; opens “BLASTED with sighs, and surrounded with teares, Hither I come to seeke the spring, And at…”; closes “…sexe, where none is true but shee, Who's therefore true, because her truth kills mee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          131,
+          133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2b20a3d8ac0d27772c45815b8c1fce3e35725ce76619b50095cbd7ac96d86ed5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-09-q1",
+          "prompt": "What does the speaker bring into the garden, and why does he call himself “selfe traytor”?",
+          "facilitatorNotes": [
+            "He comes seeking healing but brings “the spider love,” which turns sweetness to poison. He spoils his own cure, and he becomes the serpent in a paradise: the garden is true Eden only because he has brought the snake."
+          ],
+          "evidence": [
+            "But O, selfe traytor, I do bring The spider love, which transubstantiates all",
+            "I have the serpent brought."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-09-q2",
+          "prompt": "Why does he wish he could become a mandrake or a stone fountain?",
+          "facilitatorNotes": [
+            "He cannot bear the trees’ mockery nor stop loving, so he asks to become a senseless part of the place that can only groan or weep. The wish shows a desire to keep his grief without having to feel it as a person."
+          ],
+          "evidence": [
+            "Love let mee Some senslesse peece of this place bee;",
+            "Or a stone fountaine weeping out my yeare."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-09-q3",
+          "prompt": "How does the final couplet turn an insult to women into praise of one woman, and does the twist redeem the insult?",
+          "facilitatorNotes": [
+            "He claims tears and looks cannot reveal women’s thoughts and calls the sex “perverse,” except for her, who is true. But her truth to another, or to her own honour, is what kills him. Some readers find the compliment witty; others notice that it still depends on the generalization."
+          ],
+          "evidence": [
+            "O perverse sexe, where none is true but shee, Who's therefore true, because her truth kills mee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-10",
+      "title": "Loves growth",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a speaker who corrects his own earlier claim, and judge whether the correction holds.",
+      "focus": "Love that grows in spring, and whether growth means it was imperfect before.",
+      "context": "The speaker writes in spring. Quintessence is the pure fifth element alchemists sought; elemented means made of the four earthly elements; eminent means standing out, visible; concentrique means having the same centre.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Loves growth (Songs and Sonets); complete individual work; opens “I SCARCE beleeve my love to be so pure As I had thought it was, Because it doth endure…”; closes “…get New taxes, and remit them not in peace, No winter shall abate the springs encrease.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          148,
+          150
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9dfa0445e2f2c73bf6250944ddf61e406708c55b0ec482dd763ca7d8a0944274"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-10-q1",
+          "prompt": "Why does the speaker begin by doubting that his love is “pure”?",
+          "facilitatorNotes": [
+            "It changes with the seasons, like grass, so it must be mixed with earthly stuff; and if spring makes it greater, he lied all winter when he swore it was infinite."
+          ],
+          "evidence": [
+            "Because it doth endure Vicissitude, and season, as the grasse;",
+            "Me thinkes I lyed all winter, when I swore, My love was infinite, if spring make'it more."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-10-q2",
+          "prompt": "What does he conclude in the second stanza about love being “mixt of all stuffes”? Whom is he mocking?",
+          "facilitatorNotes": [
+            "Love is not pure abstraction, as those claim who have “no Mistresse but their Muse”: poets who write about love without a lover. Being made of elements, it involves body as well as soul and “sometimes would contemplate, sometimes do.”"
+          ],
+          "evidence": [
+            "Love's not so pure, and abstract, as they use To say, which have no Mistresse but their Muse,",
+            "Love sometimes would contemplate, sometimes do."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-10-q3",
+          "prompt": "In the last stanza, how do the stars, the ripples and the princes’ taxes explain love’s growth? Which comparison fits his claim best?",
+          "facilitatorNotes": [
+            "Stars are not enlarged by the sun, only shown: love is more visible, not greater. Ripples spread around one centre: every addition circles her. Princes raise taxes in war and never lower them in peace: love’s increase stays. The tax image is the wittiest and the most worldly; readers may think it undercuts the delicacy of the stars, or that it is the poem’s honest last word."
+          ],
+          "evidence": [
+            "Starres by the Sunne are not inlarg'd, but showne.",
+            "For, they are all concentrique unto thee.",
+            "As princes doe in times of action get New taxes, and remit them not in peace,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-11",
+      "title": "The Dreame",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow how the speaker blurs dream and waking, then notice the doubt that enters when she rises.",
+      "focus": "Imagination and truth, and the fear that love is mixed with other motives.",
+      "context": "The speaker was dreaming of the woman he loves when she came in and woke him. Phantasie is the imagination; a taper is a candle; prophane means irreverent. The last stanza compares her to a torch that is lit and then put out so that it will catch more readily next time.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Dreame (Songs and Sonets); complete individual work; opens “DEARE love, for nothing lesse then thee Would I have broke this happy dreame, It was a…”; closes “…cam'st to kindle, goest to come; Then I Will dreame that hope againe, but else would die.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          163,
+          165
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a2471a6dad0412ef21cc808c0ed92f1c881c0dd9322abfc8e6c513dc2bb5c70"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-11-q1",
+          "prompt": "Why does the speaker say she did not break his dream but “continued” it?",
+          "facilitatorNotes": [
+            "She is so much truth that thinking of her turns dreams into truths. Her arrival lets them “act the rest” of the dream: waking life improves on fantasy rather than ending it."
+          ],
+          "evidence": [
+            "My Dreame thou brok'st not, but continued'st it,",
+            "Not to dreame all my dreame, let's act the rest."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-11-q2",
+          "prompt": "At first he takes her for an angel. Why does he decide that was wrong?",
+          "facilitatorNotes": [
+            "She saw his heart and knew his thoughts “beyond an Angels art,” and knew the moment joy would wake him. So it would be profane to think her anything but herself. The highest compliment is that she surpasses an angel simply by being herself."
+          ],
+          "evidence": [
+            "But when I saw thou sawest my heart, And knew'st my thoughts, beyond an Angels art,",
+            "it could not chuse but bee Prophane, to thinke thee any thing but thee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-11-q3",
+          "prompt": "In the last stanza she gets up to go. What does he fear, and how does the torch image try to answer it?",
+          "facilitatorNotes": [
+            "Her rising makes him doubt she is herself: love mixed with fear, shame or honour is weak. He reads her as a torch lit and put out to be ready later: “Thou cam'st to kindle, goest to come.” He will dream that hope again, “but else would die.” Some readers hear hope; others hear a man talking himself out of the evidence."
+          ],
+          "evidence": [
+            "That love is weake, where feare's as strong as hee;",
+            "Thou cam'st to kindle, goest to come; Then I Will dreame that hope againe, but else would die."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-12",
+      "title": "Loves Alchymie",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a disillusioned speaker’s comparison, then decide how far the poem endorses his conclusion.",
+      "focus": "Love as fraud, and a cynical voice that may reveal more about itself than about love.",
+      "context": "Alchemists (chymiques) tried to make the elixir, a substance that would turn base metal to gold and cure all disease; they never found it, though they sometimes stumbled on useful things. Centrique means central. “My man” is the speaker’s servant. The heavenly spheres were believed to make music too pure for human ears. Mummy was a medicine made from embalmed bodies.",
+      "contentNote": "The speaker’s disillusion ends in a contemptuous claim that women have no minds.",
+      "excerpt": {
+        "locator": "Loves Alchymie (Songs and Sonets); complete individual work; opens “SOME that have deeper digg'd loves Myne then I, Say, where his centrique happinesse doth…”; closes “…not for minde in women; at their best Sweetnesse and wit, they'are but Mummy, possest.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          171,
+          172
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f0b8fd4aca8f2dde3df70a6c45b27b70378afc657d9e85dfa1a2ffe7e94fca72"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-12-q1",
+          "prompt": "What does the alchemy comparison say about lovers’ hopes?",
+          "facilitatorNotes": [
+            "The alchemist never gets the elixir but praises his pot if some fragrant or medicinal thing turns up by the way. Lovers dream of rich and lasting delight and get “a winter-seeming summers night”: short and cold."
+          ],
+          "evidence": [
+            "And as no chymique yet th'Elixar got, But glorifies his pregnant pot,",
+            "So, lovers dreame a rich and long delight, But get a winter-seeming summers night."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-12-q2",
+          "prompt": "Why does the speaker bring in his servant and the wedding-day music?",
+          "facilitatorNotes": [
+            "If love ends in bodily pleasure, his servant can be as happy as he. The lover who swears he loves a woman’s mind would swear as justly that he hears the music of the spheres in the rough wedding band. The speaker mocks idealism by bringing it down to the coarsest comparison he can find."
+          ],
+          "evidence": [
+            "Ends love in this, that my man, Can be as happy'as I can;",
+            "Would sweare as justly, that he heares, In that dayes rude hoarse minstralsey, the spheares."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-12-q3",
+          "prompt": "The last couplet says “Hope not for minde in women.” Is that the poem’s conclusion or only the speaker’s? Argue from the text.",
+          "facilitatorNotes": [
+            "The couplet is contemptuous: at best women have sweetness and wit, but are “Mummy, possest,” dead flesh, whether owned or haunted. Some read the poem as endorsing the cynicism. Others notice that he boasts of having “lov'd, and got, and told,” treating love as getting and telling, which may explain why he found nothing in it. The poem gives readers grounds to judge the speaker as well as to hear him."
+          ],
+          "evidence": [
+            "I have lov'd, and got, and told,",
+            "Hope not for minde in women; at their best Sweetnesse and wit, they'are but Mummy, possest."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-13",
+      "title": "The Flea",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Reconstruct an argument from three stanzas, noticing the action that happens between them.",
+      "focus": "Ingenious persuasion and its weak points.",
+      "context": "A speaker tries to talk a woman into sleeping with him. Maidenhead means virginity; jet is a black stone. Something happens between the stanzas that you must infer from the words.",
+      "contentNote": "A seduction argument that turns on a woman’s refusal; its ingenuity is open to criticism.",
+      "excerpt": {
+        "locator": "The Flea, Songs and Sonets; complete individual work; opens “MARKE but this flea, and marke in this, How little that which thou deny'st me is; It…”; closes “…honor, when thou yeeld'st to mee, Will wast, as this flea's death tooke life from thee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          174,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "26e9413dd6db3d826c12cc84780b4d4072f0de402a82f4732600cdf6c3db6f05"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-13-q1",
+          "prompt": "What is the speaker’s first argument, and what does the flea stand for?",
+          "facilitatorNotes": [
+            "The flea has mingled their blood, which no one calls a sin or shame; so what she denies him is “little.” The flea becomes a model of union without guilt, and even “enjoyes before it wooe.”"
+          ],
+          "evidence": [
+            "How little that which thou deny'st me is;",
+            "And in this flea, our two bloods mingled bee;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-13-q2",
+          "prompt": "What does the woman do between the stanzas, and how does the speaker try to stop or reinterpret it?",
+          "facilitatorNotes": [
+            "In stanza two she is about to kill the flea; he calls it their marriage bed and temple, so killing it would be murder, suicide and sacrilege. By stanza three she has done it, and he accuses her of shedding “blood of innocence.”"
+          ],
+          "evidence": [
+            "Oh stay, three lives in one flea spare,",
+            "Purpled thy naile, in blood of innocence?"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-13-q3",
+          "prompt": "How does the speaker turn her victory into a new argument, and does it hold?",
+          "facilitatorNotes": [
+            "She says neither of them is weaker for the flea’s death. He agrees, and claims her honour will lose no more if she yields than she lost when the flea died. The turn is clever but contradicts his own second stanza, where the flea’s death was a grave sin; readers can judge whether wit has replaced reasoning."
+          ],
+          "evidence": [
+            "Yet thou triumph'st, and saist that thou Find'st not thy selfe, nor mee the weaker now;",
+            "Just so much honor, when thou yeeld'st to mee, Will wast, as this flea's death tooke life from thee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-14",
+      "title": "A nocturnall upon S. Lucies day, Being the shortest day",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a speaker who argues that he is less than nothing, and reconstruct the steps.",
+      "focus": "Grief imagined as the alchemy of absence.",
+      "context": "St Lucy’s day, 13 December, fell near the winter solstice in the calendar of Donne’s time. A nocturnal is a night office of prayer. Alchemists sought a quintessence or elixir; a limbeck is a still; hydroptic means insatiably thirsty. The sun runs to the Goat, the sign of Capricorn, at midwinter.",
+      "contentNote": "Grief after a beloved woman’s death, expressed as total desolation.",
+      "excerpt": {
+        "locator": "A nocturnall upon S. Lucies day, Being the shortest day, Songs and Sonets; complete individual work; opens “Being the shortest day.”; closes “…her Vigill, and her Eve, since this Both the yeares, and the dayes deep midnight is.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          187,
+          192
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "54d43bd8c5840c719e48a7be4008fd03f2535f4ba9e6a693f602582e5fafe076"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-14-q1",
+          "prompt": "How does the first stanza make midwinter midnight an image of the speaker?",
+          "facilitatorNotes": [
+            "The sun is spent, the world’s sap sunk, life shrunk as to a deathbed; yet all these seem to laugh compared with him, who is “their Epitaph.” He is not just dark like the season but the inscription over its death."
+          ],
+          "evidence": [
+            "TIS the yeares midnight, and it is the dayes",
+            "Compar'd with mee, who am their Epitaph."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-14-q2",
+          "prompt": "What kind of alchemy has love worked on him?",
+          "facilitatorNotes": [
+            "Alchemy normally extracts a precious essence from base matter; love has extracted a quintessence from nothingness and remade him out of “absence, darknesse, death.” He is the product of negatives, not of substances."
+          ],
+          "evidence": [
+            "He ruin'd mee, and I am re-begot Of absence, darknesse, death; things which are not."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-14-q3",
+          "prompt": "Why does he insist he is not even an “ordinary nothing,” and what does he decide to do at the end?",
+          "facilitatorNotes": [
+            "Men, beasts, plants and stones all choose or detest something; even a shadow needs a light and a body. Her death makes him “the first nothing,” prior to all creation. He leaves summer to other lovers and keeps this hour as her vigil. Readers may hear devotion, despair, or both."
+          ],
+          "evidence": [
+            "If I an ordinary nothing were, As shadow, a light, and body must be here.",
+            "But I am None; nor will my Sunne renew."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-15",
+      "title": "The Baite",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the poem as a reply to a famous earlier one, and notice where the compliment turns into something sharper.",
+      "focus": "Pastoral invitation rewritten as fishing, and love as entrapment.",
+      "context": "Donne answers Christopher Marlowe’s “The Passionate Shepherd to His Love,” which begins “Come live with me and be my love” and offers a shepherd’s pleasures. Angling reeds are fishing rods; a windowie net is full of holes like windows; sleavesilke flies are fishing flies made of unspun silk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Baite (Songs and Sonets); complete individual work; opens “COME live with mee, and bee my love, And wee will some new pleasures prove Of golden…”; closes “…art thine owne bait; That fish, that is not catch'd thereby, Alas, is wiser farre then I.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          197,
+          203
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1ea792b002fa29e48347cc31e1cb9a2d4aad4c50b7c02e42085ea87c93dbc65e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-15-q1",
+          "prompt": "How does Donne change Marlowe’s invitation? What setting and pastime replace the shepherd’s?",
+          "facilitatorNotes": [
+            "The fields and flocks become a river and fishing, with “silken lines, and silver hookes.” The first line is borrowed exactly, so readers hear the old song and then the new turn."
+          ],
+          "evidence": [
+            "COME live with mee, and bee my love,",
+            "With silken lines, and silver hookes."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-15-q2",
+          "prompt": "How do the fish behave toward the woman, and what is the compliment?",
+          "facilitatorNotes": [
+            "They are in love with her, beg to betray themselves, and are gladder to catch her than she them; her eyes warm the river more than the sun. The hyperbole reverses angler and prey."
+          ],
+          "evidence": [
+            "And there the'inamor'd fish will stay, Begging themselves they may betray.",
+            "Gladder to catch thee, then thou him."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-15-q3",
+          "prompt": "Why list the cruel and deceitful ways of fishing, and what does the last stanza admit?",
+          "facilitatorNotes": [
+            "Others use snares, nets and “curious traitors” of flies; she needs no trick, because she is her own bait. Then he confesses that the fish that is not caught is wiser than he is. The ending is gallant, and it also hints that love is a trap he has walked into."
+          ],
+          "evidence": [
+            "Or treacherously poore fish beset, With strangling snare, or windowie net:",
+            "For thou thy selfe art thine owne bait;",
+            "That fish, that is not catch'd thereby, Alas, is wiser farre then I."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-16",
+      "title": "The Apparition",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a curse built like a ghost story, and notice what the speaker keeps back at the end.",
+      "focus": "Revenge fantasy, and the power of a threat left unsaid.",
+      "context": "A rejected lover threatens the woman who scorned him. A vestal was a Roman priestess sworn to chastity, so a “fain’d vestall” is a pretended innocent. A candle burning low and flickering was said to mean a ghost was near. Aspen leaves tremble in the faintest wind; quicksilver is mercury.",
+      "contentNote": "A vindictive speaker imagines a woman’s fear and humiliation.",
+      "excerpt": {
+        "locator": "The Apparition (Songs and Sonets); complete individual work; opens “WHEN by thy scorne, O murdresse, I am dead, And that thou thinkst thee free From all…”; closes “…I'had rather thou shouldst painfully repent, Then by my threatnings rest still innocent.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          205,
+          205
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "669a564d9fa384eb5a5e9f2af7ae671b7451c24007b7f5d7aeee2e21864a89b0"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-16-q1",
+          "prompt": "What scene does the speaker imagine after his death? Which details make it humiliating for her?",
+          "facilitatorNotes": [
+            "His ghost comes to her bed and finds her in “worse armes.” The candle winks; when she tries to wake her tired lover he thinks she wants more and shrinks away. She is exposed as a pretended vestal and left neglected."
+          ],
+          "evidence": [
+            "Then shall my ghost come to thy bed, And thee, fain'd vestall, in worse armes shall see;",
+            "Will, if thou stirre, or pinch to wake him, thinke Thou call'st for more,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-16-q2",
+          "prompt": "“A veryer ghost then I”: how does the speaker reverse their positions?",
+          "facilitatorNotes": [
+            "Trembling in a cold sweat, she becomes more ghostlike than the dead man. His defeat (her scorn killed him) becomes a victory in which he holds the power."
+          ],
+          "evidence": [
+            "Bath'd in a cold quicksilver sweat wilt lye A veryer ghost then I;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-16-q3",
+          "prompt": "Why will he not say what he will say? What does the last sentence reveal about his “love”?",
+          "facilitatorNotes": [
+            "Telling her now might “preserve” her, frightening her into virtue, and he would rather she repent painfully than stay innocent. His love is “spent”; what remains is a wish to see her suffer. Some readers admire the poem’s control of suspense; others note that his revenge undercuts his claim to be the wronged one."
+          ],
+          "evidence": [
+            "What I will say, I will not tell thee now, Lest that preserve thee'; and since my love is spent,",
+            "I'had rather thou shouldst painfully repent, Then by my threatnings rest still innocent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-17",
+      "title": "Loves Deitie",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Track the political words (office, prerogative, tyranny, rebel) and the twist in the last stanza.",
+      "focus": "Unreturned love blamed on a tyrant god, then accepted for a surprising reason.",
+      "context": "The speaker loves a woman who does not love him, and imagines a time before Love (Cupid) was made a god. Vice-nature means a substitute for nature; correspondencie is mutual response; the purlewe is a domain; Jove is king of the gods.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Loves Deitie (Songs and Sonets); complete individual work; opens “I LONG to talke with some old lovers ghost, Who dyed before the god of Love was borne: I…”; closes “…Falshood is worse then hate; and that must bee, If shee whom I love, should love mee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          224,
+          227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "32a3e395b5ddcff6aab8f4752acd18af2b21ce9a04dc314402fa89be548277c3"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-17-q1",
+          "prompt": "What does the speaker complain about in the first stanza, and whom does he blame?",
+          "facilitatorNotes": [
+            "He must love a woman who scorns him. No lover before Love became a god would have sunk so low; the god and custom, a “vice-nature,” have made it his destiny."
+          ],
+          "evidence": [
+            "I cannot thinke that hee, who then lov'd most, Sunke so low, as to love one which did scorne.",
+            "I must love her, that loves not mee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-17-q2",
+          "prompt": "What was Love’s original “office,” and how has the god changed?",
+          "facilitatorNotes": [
+            "To join two hearts already touched by an even flame: mutual response was his only subject. Now, like a modern tyrant, he stretches his prerogative over rage, lust, letters and praise. The poem treats desire as a matter of political power."
+          ],
+          "evidence": [
+            "His office was indulgently to fit Actives to passives.",
+            "Correspondencie Only his subject was;",
+            "But every moderne god will now extend His vast prerogative, as far as Jove."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-17-q3",
+          "prompt": "Why does he call himself “Rebell and Atheist,” and what is the twist at the end?",
+          "facilitatorNotes": [
+            "He has been rebelling against the god. Then he sees a worse plague: if she loved him too, since she already loves another, she would be false, and falsehood is worse than hate. He ends accepting her coldness as a kind of constancy. Readers may find this consolation sincere or bitterly ironic."
+          ],
+          "evidence": [
+            "Rebell and Atheist too, why murmure I,",
+            "Falshood is worse then hate; and that must bee, If shee whom I love, should love mee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-18",
+      "title": "The Funerall",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow the meanings the speaker gives to one small object, from soul to manacle to relic.",
+      "focus": "A lover’s token interpreted, doubted and finally turned into reproach.",
+      "context": "The speaker imagines his own body prepared for burial, wearing a bracelet of the beloved’s hair. A viceroy rules in a king’s name; the “sinewie thread” is the nervous system, thought to run from the brain through the body; reliques are relics, remains of saints that may be venerated.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Funerall (Songs and Sonets); complete individual work; opens “WHO ever comes to shroud me, do not harme Nor question much That subtile wreath of haire,…”; closes “…can doe, So,'tis some bravery, That since you would save none of mee, I bury some of you.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          242,
+          244
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e380544f544835d526c03073915d216f7b594b82310abae4c21eacb6a34d4e28"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-18-q1",
+          "prompt": "What does the speaker ask of those who prepare his body, and what does he claim the bracelet is?",
+          "facilitatorNotes": [
+            "Not to harm or question “that subtile wreath of haire”: it is his “outward Soule,” a viceroy that will keep his limbs from decay after his soul has gone. The claim is extravagant and devout at once."
+          ],
+          "evidence": [
+            "That subtile wreath of haire, which crowns my arme;",
+            "For'tis my outward Soule,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-18-q2",
+          "prompt": "In the second stanza, what other meaning does he consider for her gift?",
+          "facilitatorNotes": [
+            "Perhaps she meant it as a sign of his pain, like the manacles put on prisoners condemned to die. The doubt undercuts the first stanza’s idealism and hints at how she has treated him."
+          ],
+          "evidence": [
+            "Except she meant that I By this should know my pain, As prisoners then are manacled, when they'are condemn'd to die."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-18-q3",
+          "prompt": "How does the last stanza turn devotion into reproach?",
+          "facilitatorNotes": [
+            "Bury it with him, he says, or it might be worshipped as a martyr’s relic. As it was humble to give it a soul, it is “some bravery” to bury it: since she would save none of him, he takes some of her to the grave. The last line is a witty revenge."
+          ],
+          "evidence": [
+            "Loves martyr, it might breed idolatrie,",
+            "That since you would save none of mee, I bury some of you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-19",
+      "title": "The Blossome",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a dialogue between the speaker and his own heart, and decide who wins it.",
+      "focus": "Leaving a woman who will not love him, and the heart that will not leave.",
+      "context": "The speaker is about to leave for London, away from a woman who refuses him. He speaks first to a blossom, then to his heart. A “forbidden or forbidding tree” recalls the tree of Eden.",
+      "contentNote": "The speaker’s dismissive claims about women, with sexual innuendo.",
+      "excerpt": {
+        "locator": "The Blossome (Songs and Sonets); complete individual work; opens “LITTLE think'st thou, poore flower, Whom I have watch'd sixe or seaven dayes, And seene…”; closes “…you There, to another friend, whom wee shall finde As glad to have my body, as my minde.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          246,
+          250
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fbdb0d7e7fa94db65d291c51004e104ea131d1409d2f5eeab350d3c0512d1910"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-19-q1",
+          "prompt": "What does the speaker tell the blossom, and how does that prepare for the second stanza?",
+          "facilitatorNotes": [
+            "The flower does not know that frost will take it tomorrow; his heart, still hoping, does not know it must leave with him tomorrow. The repeated “Little think’st thou” sets up the parallel."
+          ],
+          "evidence": [
+            "Little think'st thou That it will freeze anon,",
+            "That thou to morrow, ere that Sunne doth wake, Must with this Sunne, and mee a journey take."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-19-q2",
+          "prompt": "In the third and fourth stanzas the heart answers and the speaker replies. What is their argument?",
+          "facilitatorNotes": [
+            "The heart says: you go to friends who satisfy the senses, so why take a heart? The speaker answers: stay then, but a “naked thinking heart” without a body is a ghost to a woman, who knows other parts but not a heart. The cynicism about women is the rejected speaker’s; readers can hear bitterness in it."
+          ],
+          "evidence": [
+            "If then your body goe, what need you a heart?",
+            "A naked thinking heart, that makes no show, Is to a woman, but a kinde of Ghost;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-19-q3",
+          "prompt": "How does the last stanza settle the quarrel? Is the speaker cured?",
+          "facilitatorNotes": [
+            "He invites the heart to meet him in London in twenty days, when he will be “fresher, and more fat” among men, and will give it to a friend glad of body and mind together. The tone is buoyant, but “For Gods sake, if you can” suggests the cure is hoped for, not certain."
+          ],
+          "evidence": [
+            "Mee fresher, and more fat, by being with men,",
+            "For Gods sake, if you can, be you so too:",
+            "As glad to have my body, as my minde."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-20",
+      "title": "The Primrose, being at Montgomery Castle",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Work through the number game, and decide whether it is a compliment, a complaint or a joke.",
+      "focus": "The search for a true love, reasoned through petals and numbers.",
+      "context": "Montgomery Castle in Wales was the home of Magdalen Herbert, Donne’s friend and patron. A primrose normally has five petals; finding one with four or six was said to promise a true love. Manna is the food that fell from heaven in Exodus. Five was thought of as the first number made of an even (two) and an odd (three).",
+      "contentNote": "Jokes about women’s nature and their claims on men.",
+      "excerpt": {
+        "locator": "The Primrose, being at Montgomery Castle, upon the hill, on which it is situate (Songs and Sonets); complete individual work; opens “VPON this Primrose hill, Where, if Heav'n would distill A shoure of raine, each severall…”; closes “…Numbers are odde, or even, and they fall First into this, five, women may take us all.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          252,
+          254
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d1f7a9f0e3f384469ee4c4363b4a1e2cc079701a680cbe750d220042893c0d30"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-20-q1",
+          "prompt": "What does the speaker hope to find on the hill, and what does he discover about the “true Love” he seeks?",
+          "facilitatorNotes": [
+            "A primrose with more or fewer petals than five, the sign of true love. He sees that his true love cannot be “a mere woman”: she must be more or less than one."
+          ],
+          "evidence": [
+            "I walke to finde a true Love; and I see That'tis not a mere woman, that is shee,",
+            "But must, or more, or lesse then woman bee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-20-q2",
+          "prompt": "Why does he reject both a love that is “lesse then woman” and one that is “more”?",
+          "facilitatorNotes": [
+            "Less would be scarcely anything; more would rise above sex and make him study her rather than love her. “Both these were monsters.” He then prefers a woman falsified by art to one falsified by nature, a cynical twist that assumes women are false either way."
+          ],
+          "evidence": [
+            "She were scarce any thing;",
+            "My heart to study her, and not to love;",
+            "Both these were monsters;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-20-q3",
+          "prompt": "How does the last stanza use the number five, and what is its tone?",
+          "facilitatorNotes": [
+            "Let the primrose keep five petals, and women be content with five, half of ten, taking half of men; or, since every number grows out of five, women may take all men. The mock-learned reasoning can be read as a sly compliment to women’s power or as a grumble about it."
+          ],
+          "evidence": [
+            "Live Primrose then, and thrive With thy true number five;",
+            "First into this, five, women may take us all."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-21",
+      "title": "The Relique",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a love poem that imagines its own future misreading.",
+      "focus": "Bodies, relics and a love the speaker says was chaste.",
+      "context": "Graves were sometimes reopened and reused. A relic is a saint’s bodily remain or belonging venerated by believers; Donne’s England had broken with Rome and often mocked relic worship. The “last busie day” is the Last Judgment; “seales” are the bonds of intimacy.",
+      "contentNote": "The poem satirizes Catholic veneration of relics and plays on religious and sexual language.",
+      "excerpt": {
+        "locator": "The Relique, Songs and Sonets; complete individual work; opens “WHEN my grave is broke up againe Some second ghest to entertaine, (For graves have…”; closes “…All measure, and all language, I would passe, Should I tell what a miracle shee was.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          256,
+          258
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fc4f72adbaa4d758e6d3b6df7ada8be8dfc6fc6e3bba342ee28bb60c6c791455"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-21-q1",
+          "prompt": "What does the gravedigger find, and what does the speaker hope he will conclude?",
+          "facilitatorNotes": [
+            "A bracelet of bright hair around a bone. The speaker hopes he will leave them alone, guessing that a loving couple meant the hair as a way to make their souls meet at the grave at the Last Judgment."
+          ],
+          "evidence": [
+            "A bracelet of bright haire about the bone",
+            "Who thought that this device might be some way"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-21-q2",
+          "prompt": "What would happen in an age of “mis-devotion,” and how is the speaker’s tone toward it?",
+          "facilitatorNotes": [
+            "The bones would be brought to bishop and king and made relics: she a Mary Magdalen, he “a something else.” The tone is satiric, mocking credulous worship, while it also flatters the lovers by imagining their sanctity."
+          ],
+          "evidence": [
+            "Where mis-devotion doth command",
+            "Thou shalt be a Mary Magdalen, and I A something else thereby;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-21-q3",
+          "prompt": "What “miracles” does the last stanza claim, and why does the speaker stop short?",
+          "facilitatorNotes": [
+            "They loved faithfully without knowing why, ignored difference of sex like angels, and perhaps kissed but never broke the “seales” that nature would free. The final lines say all language fails to describe her. Readers may treat the claimed chastity as sincere or as another witty paradox."
+          ],
+          "evidence": [
+            "Difference of sex no more wee knew, Then our Guardian Angells doe;",
+            "Should I tell what a miracle shee was."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-22",
+      "title": "Satyre III: “Kinde pitty chokes my spleene”",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Hold a long argument together, from courage, to the choice of a church, to obedience to rulers.",
+      "focus": "Seeking truth as true courage, and the limits of human power over conscience.",
+      "context": "Donne wrote his satires in the 1590s, when the English state church fined and executed Catholics; Donne was born into a Catholic family. Here a speaker urges a listener, and himself, to seek true religion. The spleen was thought the seat of anger; the “first blinded age” is the pagan world. The middle lists dangers men risk for gain or a mistress: aiding the Dutch rebels, voyages to the frozen north, the heat of Spain and the equator (“the line”), duels. Mirreus, Crantz, Graius, Phrygius and Graccus are type-names: Rome stands for the Catholic Church, Geneva for Calvinism. Philip, Gregory, Harry and Martin are Philip II of Spain, a pope, Henry VIII and Martin Luther.",
+      "contentNote": "The satire compares churches to women in coarse sexual terms (strumpet, wenches, whores) and alludes to religious persecution.",
+      "excerpt": {
+        "locator": "Satyre III, the third of Donne’s Satyres, the whole poem; opens “Kinde pitty chokes my spleene; brave scorn forbids Those teares to issue which swell my…”; closes “…Soules, which more chuse mens unjust Power from God claym'd, then God himselfe to trust.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          482,
+          482
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "de021ae72a5cb71a5cbd98d68311d01f53c67d449dfc149e5a9dd65e9ac4fc72"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-22-q1",
+          "prompt": "What kind of courage does the speaker mock in the first part, and what does he call true courage?",
+          "facilitatorNotes": [
+            "Men dare wars, voyages, heat and duels for gain or a mistress, yet fear nothing for their souls. The right fear, of damnation, is “great courage, and high valour.” The bold adventurer is a “desperate coward” who leaves the post God gave him for forbidden wars."
+          ],
+          "evidence": [
+            "O if thou dar'st, feare this; This feare great courage, and high valour is.",
+            "O desperate coward, wilt thou seeme bold"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-22-q2",
+          "prompt": "Choose two of the men who look for religion. What mistake does each make?",
+          "facilitatorNotes": [
+            "Mirreus loves Rome’s rags because religion lived there a thousand years ago; Crantz loves Geneva’s plain, sullen style; Graius takes whatever his country’s preachers and laws offer, as a ward takes the wife his guardian picks; Phrygius rejects all; Graccus thinks all the same. Each chooses by habit, taste, authority or indifference rather than by searching. The comparison of churches to women is the satire’s coarse comedy; notice what it assumes about women."
+          ],
+          "evidence": [
+            "He loves her ragges so, as wee here obey The statecloth where the Prince sate yesterday.",
+            "Carelesse Phrygius doth abhorre All, because all cannot be good",
+            "Graccus loves all as one"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-22-q3",
+          "prompt": "“On a huge hill, Cragged, and steep, Truth stands.” What does the image say about how truth is reached?",
+          "facilitatorNotes": [
+            "The climber must go “about and about,” winning by a winding path what the steepness resists. To doubt wisely and stand inquiring is not to stray; sleeping or running the wrong way is. But the search must be finished before age, “deaths twilight.” Some readers find this the poem’s answer; others notice that it never says which church is true."
+          ],
+          "evidence": [
+            "doubt wisely; in strange way To stand inquiring right, is not to stray; To sleepe, or runne wrong, is.",
+            "On a huge hill, Cragged, and steep, Truth stands, and hee that will Reach her, about must, and about must goe;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-22-q4",
+          "prompt": "How does the closing image of the stream limit the power of kings over religion?",
+          "facilitatorNotes": [
+            "Power is like a stream: flowers that stay at its calm head thrive; those that give themselves to its rage are driven through mills and rocks and lost at sea. To obey power beyond its proper bounds is idolatry, and souls that trust men’s power over God perish. In an age of religious persecution this is a bold claim; readers can debate whether it permits resistance or only private conscience."
+          ],
+          "evidence": [
+            "That thou mayest rightly obey power, her bounds know; Those past, her nature, and name is chang'd; to be Then humble to her is idolatrie.",
+            "So perish Soules, which more chuse mens unjust Power from God claym'd, then God himselfe to trust."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-23",
+      "title": "Holy Sonnet VII: “At the round earths imagin'd corners”",
+      "sourceId": "donne-poems-1912",
+      "workTitle": "Holy Sonnets, VII",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Feel the turn between octave and sestet, from a vast public scene to one man’s fear.",
+      "focus": "The Last Judgement imagined, then postponed for repentance.",
+      "context": "The octave imagines the Last Judgement, when, Christians believe, the dead will rise. Revelation 7 places angels at the four corners of the earth; Donne knows the earth is round, so the corners are “imagin’d.” The flood is Noah’s; fire will end the world. Those “whose eyes Shall behold God, and never tast deaths woe” are the people still living at the end of time.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Holy Sonnets, VII (“AT the round earths imagin'd corners”), Divine Poems; complete individual work; opens “AT the round earths imagin'd corners, blow Your trumpets, Angells, and arise, arise From…”; closes “…mee how to repent; for that's as good As if thou'hadst seal'd my pardon, with thy blood.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          927,
+          927
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28a486ed9636bf3c2c8363823a49ac916a54d3041a4a509c85cca3d8e436dc64"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-23-q1",
+          "prompt": "How does the octave make the Last Judgement feel immediate?",
+          "facilitatorNotes": [
+            "Commands (“blow,” “arise, arise,” “goe”) and a long list of ways to die, from flood and war to despair, law and chance, rush “numberlesse infinities” of souls back to their bodies. The scale and speed are overwhelming."
+          ],
+          "evidence": [
+            "blow Your trumpets, Angells, and arise, arise From death, you numberlesse infinities Of soules,",
+            "All whom warre, dearth, age, agues, tyrannies, Despaire, law, chance, hath slaine,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-23-q2",
+          "prompt": "What does he ask in the sestet, and why does he change his mind about the Judgement?",
+          "facilitatorNotes": [
+            "“But let them sleepe, Lord”: he wants time to mourn his sins. If they are greater than all the others’, it will be too late to ask for grace at the Judgement; he must learn to repent now, on “this lowly ground.” The great vision shrinks to a private fear."
+          ],
+          "evidence": [
+            "But let them sleepe, Lord, and mee mourne a space,",
+            "'Tis late to aske abundance of thy grace, When wee are there;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-23-q3",
+          "prompt": "The last lines say repentance is “as good As if thou'hadst seal'd my pardon, with thy blood.” Has Christ not already done that? How do you read the ending?",
+          "facilitatorNotes": [
+            "In Christian belief Christ’s death has already sealed pardon; the speaker’s “as if” suggests he cannot feel it as his own until he repents. One reading finds anxious doubt; another finds that repentance is how he takes hold of a pardon already given. The tension between gift and response is the sonnet’s ending."
+          ],
+          "evidence": [
+            "Teach mee how to repent; for that's as good As if thou'hadst seal'd my pardon, with thy blood."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-24",
+      "title": "Holy Sonnet X: “Death be not proud”",
+      "sourceId": "donne-poems-1912",
+      "workTitle": "Holy Sonnets, X",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Test each step of an argument addressed directly to Death.",
+      "focus": "Mockery of death as a claim of faith.",
+      "context": "The speaker talks to Death as a person. Poppy refers to opium, used to make people sleep; “soules deliverie” means the release of souls.",
+      "contentNote": "A confident meditation on death and resurrection.",
+      "excerpt": {
+        "locator": "Holy Sonnets, X (“DEATH be not proud”), Divine Poems; complete individual work; opens “DEATH be not proud, though some have called thee Mighty and dreadfull, for, thou art not…”; closes “…short sleepe past, wee wake eternally, And death shall be no more; death, thou shalt die.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          933,
+          933
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f384385c2af4b44b3fe855b18d9bce02ca8d92af0b642185809d566feda3cfab"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-24-q1",
+          "prompt": "What does the speaker claim about the people Death “overthrows”?",
+          "facilitatorNotes": [
+            "They do not die; nor can Death kill him. The opening flatly denies Death’s power and calls him “poore death,” reversing who should pity whom."
+          ],
+          "evidence": [
+            "Die not, poore death, nor yet canst thou kill mee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-24-q2",
+          "prompt": "How do sleep and rest support the argument in the second quatrain?",
+          "facilitatorNotes": [
+            "Rest and sleep are only pictures of death and give pleasure, so death itself should give more. The best men go soonest with death, which delivers their souls. The argument assumes the Christian view that death leads to waking."
+          ],
+          "evidence": [
+            "From rest and sleepe, which but thy pictures bee, Much pleasure, then from thee, much more must flow"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-24-q3",
+          "prompt": "Is the final line a logical conclusion or a declaration of faith? Use the sonnet’s steps.",
+          "facilitatorNotes": [
+            "Death is called a slave to fate, chance, kings and desperate men, and poppy can do its work better. Those points mock death’s dignity; the last two lines depend on a belief in eternal waking. “Death, thou shalt die” is a paradox that the argument prepares rhetorically but does not prove."
+          ],
+          "evidence": [
+            "Thou art slave to Fate, Chance, kings, and desperate men,",
+            "One short sleepe past, wee wake eternally, And death shall be no more; death, thou shalt die."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-25",
+      "title": "Holy Sonnet XIV: “Batter my heart”",
+      "sourceId": "donne-poems-1912",
+      "workTitle": "Holy Sonnets, XIV",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Track three metaphors for the self and the paradoxes they produce.",
+      "focus": "A prayer for violent rescue.",
+      "context": "The “three person’d God” is the Christian Trinity. A viceroy governs on a ruler’s behalf; “faine” means gladly. Apostrophes join words that are to be run together in speech.",
+      "contentNote": "The poem uses images of siege, captivity and sexual violence to describe a relationship with God; discuss them as the speaker’s deliberate paradoxes.",
+      "excerpt": {
+        "locator": "Holy Sonnets, XIV (“BATTER my heart, three person'd God”), Divine Poems; complete individual work; opens “BATTER my heart, three person'd God; for, you As yet but knocke, breathe, shine, and…”; closes “…I Except you'enthrall mee, never shall be free, Nor ever chast, except you ravish mee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          941,
+          941
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ee389dcdb74ea32f087e17303489d0ed22858afd04338eb0832eb3fe507ac956"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-25-q1",
+          "prompt": "Why does the speaker ask for “breake, blowe, burn” instead of “knocke, breathe, shine”?",
+          "facilitatorNotes": [
+            "Gentle actions only try to mend him; he wants to be overthrown and made new. The stronger verbs echo the weaker ones sound for sound, so the request intensifies God’s action without changing its source."
+          ],
+          "evidence": [
+            "As yet but knocke, breathe, shine, and seeke to mend;",
+            "Your force, to breake, blowe, burn and make me new."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-25-q2",
+          "prompt": "What does the besieged-town image say about reason?",
+          "facilitatorNotes": [
+            "He is a town usurped by another, trying to admit its rightful lord. Reason, God’s viceroy, should defend him but is captured and proves weak or untrue. The image admits that his own judgment cannot free him."
+          ],
+          "evidence": [
+            "Reason your viceroy in mee, mee should defend, But is captiv'd, and proves weake or untrue."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-25-q3",
+          "prompt": "How do the final paradoxes work, and why might readers find them powerful or troubling?",
+          "facilitatorNotes": [
+            "He will be free only if enthralled and chaste only if ravished: freedom and purity come through total surrender to God. The violent sexual image makes the need for rescue extreme. Some readers find it powerful; others find the metaphor disturbing. Both should explain what the paradox claims."
+          ],
+          "evidence": [
+            "Except you'enthrall mee, never shall be free, Nor ever chast, except you ravish mee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-26",
+      "title": "Goodfriday, 1613. Riding Westward",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a long verse paragraph from astronomy to meditation to a final request.",
+      "focus": "Turning one’s back as a form of penitence.",
+      "context": "On Good Friday Christians remember the Crucifixion. Donne rides west, while Jerusalem and the rising sun are east. In old astronomy, each heavenly sphere had an intelligence that moved it and also suffered pulls from other spheres. A footstool and a lieutenant here mean the earth and nature.",
+      "contentNote": "A meditation on the Crucifixion, including its wounds.",
+      "excerpt": {
+        "locator": "Goodfriday, 1613. Riding Westward, Divine Poems; complete individual work; opens “LET mans Soule be a Spheare, and then, in this, The intelligence that moves, devotion is,…”; closes “…thine Image, so much, by thy grace, That thou may'st know mee, and I'll turne my face.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          959,
+          959
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c8166bb8f554843ae34d949aacbb7ebfe07cbaf946439da3a6610f8e94929bb5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-26-q1",
+          "prompt": "How does the sphere comparison explain why he is riding the wrong way?",
+          "facilitatorNotes": [
+            "The soul should be moved by devotion, but like spheres pulled by foreign motions it is driven by pleasure or business. So he travels west on the day his soul’s form “bends toward the East.”"
+          ],
+          "evidence": [
+            "Pleasure or businesse, so, our Soules admit For their first mover, and are whirld by it.",
+            "Hence is't, that I am carryed towards the West"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-26-q2",
+          "prompt": "Why is he “almost” glad not to see the Crucifixion?",
+          "facilitatorNotes": [
+            "Seeing God’s face means death; seeing God die would be too much. He lists paradoxes: hands that span the poles pierced, endless height humbled below us. “Almost” keeps the gladness uneasy: he is relieved and ashamed of relief."
+          ],
+          "evidence": [
+            "Yet dare I'almost be glad, I do not see That spectacle of too much weight for mee.",
+            "Could I behold those hands which span the Poles"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-26-q3",
+          "prompt": "How does the ending turn riding away into a kind of prayer?",
+          "facilitatorNotes": [
+            "Memory still looks east, and Christ looks toward his back. He asks for correction and punishment to burn off his rust, and only then will he turn his face. Turning his back becomes a posture for receiving discipline rather than a refusal."
+          ],
+          "evidence": [
+            "I turne my backe to thee, but to receive Corrections, till thy mercies bid thee leave.",
+            "That thou may'st know mee, and I'll turne my face."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-27",
+      "title": "Hymne to God my God, in my sicknesse",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a mapping conceit stanza by stanza and test where it becomes a confession of faith.",
+      "focus": "Preparing for death by turning one’s sickbed into a map.",
+      "context": "The speaker lies seriously ill. “Per fretum febris” is Latin for “through the strait of fever.” Anyan was the supposed strait between Asia and America; Japhet, Cham (Ham) and Sem (Shem) are the sons of Noah, said to have peopled the continents. An old belief placed Adam’s tree and Christ’s cross on one spot.",
+      "contentNote": "A meditation on approaching death.",
+      "excerpt": {
+        "locator": "Hymne to God my God, in my sicknesse, Divine Poems; complete individual work; opens “SINCE I am comming to that Holy roome, Where, with thy Quire of Saints for evermore, I…”; closes “…Be this my Text, my Sermon to mine owne, Therfore that he may raise the Lord throws down.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1150,
+          1155
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "075c5e361eaf72bec29324e2cd6fbf669105114729442ab5676c8153c273ea7c"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-27-q1",
+          "prompt": "What is the speaker doing “at the dore” of the holy room?",
+          "facilitatorNotes": [
+            "He is tuning the instrument before he becomes God’s music among the saints: preparing now for what he must do after death. The poem itself is that tuning."
+          ],
+          "evidence": [
+            "I tune the Instrument here at the dore, And what I must doe then, thinke here before."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-27-q2",
+          "prompt": "How do the physicians become cosmographers, and why does he “joy” in the straits he sees?",
+          "facilitatorNotes": [
+            "Bent over him, they read his body as a map showing a south-west passage through fever to death. On a flat map, west and east touch; so death, his west, touches resurrection. The geography lets him find joy in what should terrify."
+          ],
+          "evidence": [
+            "Whilst my Physitians by their love are growne Cosmographers, and I their Mapp",
+            "As West and East In all flatt Maps (and I am one) are one, So death doth touch the Resurrection."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-27-q3",
+          "prompt": "How does the last line serve as the speaker’s “sermon” to his own soul?",
+          "facilitatorNotes": [
+            "He preached God’s word to others; now he preaches to himself the text that God throws down in order to raise. Suffering becomes a sign of coming resurrection. Readers can discuss whether the confidence is achieved by the conceits or rests on prior faith."
+          ],
+          "evidence": [
+            "Be this my Text, my Sermon to mine owne, Therfore that he may raise the Lord throws down."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-28",
+      "title": "The undertaking",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Work out what the “braver thing” is, and why keeping it hid is braver still.",
+      "focus": "A love that forgets “the Hee and Shee,” and the pride of saying nothing about it.",
+      "context": "The Worthies are the Nine Worthies, heroes of history and legend admired for their deeds. Specular stone is a transparent stone once used, it was said, for windows; the poem assumes the art of cutting it is lost and the stone is gone. Grierson prints Donne’s seventeenth-century spelling (“Then” for than).",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The undertaking, Songs and Sonets; complete individual work; opens “I HAVE done one braver thing Then all the Worthies did, And yet a braver thence doth…”; closes “…Then all the Worthies did; And a braver thence will spring, Which is, to keepe that hid.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          46,
+          52
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e7a50a8a737d51e01205c75ae3a0632fa5c5b7d4419f55e1667895e238a8175e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-28-q1",
+          "prompt": "What is the “braver thing” the speaker has done? Find the stanza where he finally says it.",
+          "facilitatorNotes": [
+            "He has loved the virtue in a woman rather than her body: he has found “lovelinesse within” and can “forget the Hee and Shee.” The poem holds this back for four stanzas, keeping it hid from the reader too, so the structure acts out the secrecy it praises."
+          ],
+          "evidence": [
+            "But he who lovelinesse within Hath found, all outward loathes,",
+            "Vertue'attir'd in woman see, And dare love that, and say so too, And forget the Hee and Shee;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-28-q2",
+          "prompt": "Explain the comparison with specular stone. Why would telling others be “madnes”?",
+          "facilitatorNotes": [
+            "Teaching a lost art is pointless when the material no longer exists. Likewise, if he told others how to love this way, they would have “no more Such stuffe to worke upon” and would “love but as before.” The comparison is proud, and also a compliment: the woman is as rare as the vanished stone."
+          ],
+          "evidence": [
+            "It were but madnes now t'impart The skill of specular stone,",
+            "Others (because no more Such stuffe to worke upon, there is,) Would love but as before."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-28-q3",
+          "prompt": "“For he who colour loves, and skinne, Loves but their oldest clothes.” What does this say about the body? Do you find it persuasive?",
+          "facilitatorNotes": [
+            "The body is a garment over the soul, and “oldest” because it was put on first or because it wears out. Some readers find the idea noble; others find it dismissive of physical love, and notice how differently Donne treats the body in poems such as The Flea or The Extasie."
+          ],
+          "evidence": [
+            "For he who colour loves, and skinne, Loves but their oldest clothes."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-28-q4",
+          "prompt": "The last stanza repeats the first with small changes. What has changed, and what is odd about a poem that praises keeping a secret?",
+          "facilitatorNotes": [
+            "“I have done” becomes “Then you have done”: the reader is invited to love the same way and to keep the same silence. Yet the poem itself publishes the deed it says should stay hidden, though it never names the woman. Readers may call that a contradiction or a joke at the poem’s own expense."
+          ],
+          "evidence": [
+            "I HAVE done one braver thing Then all the Worthies did,",
+            "Then you have done a braver thing Then all the Worthies did;",
+            "Which is, to keepe that hid."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-29",
+      "title": "The Will",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "For each gift, ask why the person who receives it is exactly the wrong one to get it.",
+      "focus": "A rejected lover’s revenge by joke: a will that leaves everything to people who cannot use it.",
+      "context": "A will divides a dead person’s goods; this speaker bequeaths his qualities instead. Argus was a giant with a hundred eyes; Capuchins are friars vowed to poverty; the Schismaticks of Amsterdam are English Protestant separatists in exile there, who denied that good works earn salvation; Schoolemen are the medieval philosophers, famous for disputing; Bedlam is the London hospital for the insane; brazen medals are ancient bronze coins, prized by collectors but useless for buying bread; a passing bell is rung for someone dying.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Will, Songs and Sonets; complete individual work; opens “BEFORE I sigh my last gaspe, let me breath, Great love, some Legacies; Here I bequeath…”; closes “…neglect both mee and thee, To'invent, and practise this one way, to'annihilate all three.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          235,
+          240
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6710c1aab0ffade0d9de763c59f73a74c53359a95ca83c6780eab3f40a341056"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-29-q1",
+          "prompt": "Pick three bequests from the first two stanzas and explain the joke in each. What do they have in common?",
+          "facilitatorNotes": [
+            "Eyes to Argus, who has a hundred; tears to women or the sea, who have plenty; constancy to the planets, whose name means wanderers; money to a friar vowed to poverty. Each goes to someone who has too much already or cannot use it. The refrain says Love taught him this: to give only to “such, as had too much before.”"
+          ],
+          "evidence": [
+            "Mine eyes to Argus, if mine eyes can see,",
+            "My mony to a Capuchin.",
+            "That I should give to none, but such, as had too much before."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-29-q2",
+          "prompt": "Each stanza ends with three lines addressed to Love. How does this refrain change from stanza to stanza, and what story does it tell?",
+          "facilitatorNotes": [
+            "Each refrain names a different rejection: she had twenty other lovers; she cannot return love; she thinks his gifts beneath her; she offers him friendship fit for younger men; she neglects both him and Love. The wit of the lists is a cover for complaint, which comes out in the refrains."
+          ],
+          "evidence": [
+            "By making mee serve her who'had twenty more,",
+            "Love her that holds my love disparity,",
+            "Who thinkes her friendship a fit portion For yonger lovers,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-29-q3",
+          "prompt": "The third and fifth stanzas hand gifts to churches, the sick, the mad and the hungry. Who is the satire aimed at?",
+          "facilitatorNotes": [
+            "Faith goes to Catholics and good works to separatists who deny that works matter; medical books to a man already dying; moral advice to the insane; useless coins to the starving. The groups are teased, but the main target may be the giver himself, whose generosity is always misplaced, as his love has been. Readers can argue for either target, or for Love."
+          ],
+          "evidence": [
+            "My faith I give to Roman Catholiques; All my good works unto the Schismaticks Of Amsterdam;",
+            "my writen rowles Of Morall counsels, I to Bedlam give;",
+            "My brazen medals, unto them which live In want of bread;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-29-q4",
+          "prompt": "In the last stanza he stops giving and will “undoe The world by dying.” What is the final threat, and how seriously should we take it?",
+          "facilitatorNotes": [
+            "If he dies, love dies, and her beauty becomes worthless, like gold left in a mine or “a Sun dyall in a grave.” He will “annihilate all three”: himself, her and Love. It is the comic exaggeration of a jilted lover, and also a real claim that beauty has value only when someone loves it."
+          ],
+          "evidence": [
+            "Therefore I'll give no more; But I'll undoe The world by dying; because love dies too.",
+            "Then a Sun dyall in a grave.",
+            "To'invent, and practise this one way, to'annihilate all three."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-30",
+      "title": "The Storme",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Mark each comparison and ask what world it comes from: court, prison, sickroom, Bible or painting.",
+      "focus": "A storm told through comparisons, and a friend remembered in the middle of it.",
+      "context": "A verse letter to Donne’s close friend Christopher Brooke, written at sea on the English naval expedition of 1597 against Spain, when a storm drove the fleet back. Hilliard was the finest English painter of miniatures; leese means lose; prisoners “which lye but for fees” are kept in jail until they pay the jailer; Sara, Abraham’s wife, rejoiced to be pregnant in old age; Jonah (Ionas) slept in the hold during a storm until the sailors woke him; ague is fever, and dropsie an illness of swelling fluid; Ordinance is cannon; Fiat (Latin, let there be) is God’s word of creation.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Storme, a verse letter to Christopher Brooke, Letters to Severall Personages; complete individual work; opens “To Mr. Christopher Brooke.”; closes “…violent, yet long these furies bee, That though thine absence sterve me,'I wish not thee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          495,
+          496
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e162a232485b067d314b6fed4da562e8761df775d356b19412825119a8989fd7"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-30-q1",
+          "prompt": "The first lines are about Brooke and about painting, not the storm. What does Donne say about his own lines, and why begin this way?",
+          "facilitatorNotes": [
+            "Brooke is his other self (“Thou which art I”). A hand or eye by Hilliard is worth more than a whole history painted badly, and these lines are worth reading only because a friend’s judgment “dignifies” them. The opening is modest and complimentary, and it promises vivid parts rather than a full account."
+          ],
+          "evidence": [
+            "Thou which art I, ('tis nothing to be soe)",
+            "a hand, or eye By Hilliard drawne, is worth an history, By a worse painter made;",
+            "'Tis the preheminence Of friendship onely to'impute excellence."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-30-q2",
+          "prompt": "How does the wind change as it arrives? Follow the comparisons from “Mildly it kist our sailes” to “a tempests name.”",
+          "facilitatorNotes": [
+            "At first it is kind, like food to a starving stomach, like Sara’s joy; then it proves kind only as countrymen who walk a friend one day’s way and leave him; then the South and West winds join like two kings against a third, and the gale strikes “Like shot.” Even the name grows: gust, storm, tempest. Nature behaves like people and states."
+          ],
+          "evidence": [
+            "Mildly it kist our sailes, and, fresh and sweet,",
+            "But 'twas but so kinde, as our countrimen, Which bring friends one dayes way, and leave them then.",
+            "And what at first was call'd a gust, the same Hath now a stormes, anon a tempests name."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-30-q3",
+          "prompt": "What do the men on board do during the storm? Which details are most vivid, and are any of them funny?",
+          "facilitatorNotes": [
+            "Some lie in their cabins as in coffins, sorry not to be dead yet sure to die; some peep out like souls rising at the Last Judgment and ask for news “Like jealous husbands”; some stare to frighten fear away. The ship is a sick body with fever and dropsy, and the pumps throw sea into sea. Readers may find the jokes a way of mastering fear, or a sign that the danger is past by the time of writing."
+          ],
+          "evidence": [
+            "Some coffin'd in their cabbins lye,'equally Griev'd that they are not dead, and yet must dye;",
+            "Like jealous husbands, what they would not know.",
+            "Seas into seas throwne, we suck in againe;"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-30-q4",
+          "prompt": "The storm ends in “uniforme deformity.” What is Donne imagining in the last lines, and how does the closing couplet return to Brooke?",
+          "facilitatorNotes": [
+            "Creation running backwards: darkness, “lights elder brother,” reclaims its birthright; every shape dissolves into one shapelessness; only another Fiat could make day. Then the scale drops to friendship: Brooke’s absence starves him, but he would not wish him here. The tenderness is all the stronger after the hyperbole."
+          ],
+          "evidence": [
+            "Darknesse, lights elder brother, his birth-right Claims o'r this world,",
+            "Since all formes, uniforme deformity Doth cover,",
+            "That though thine absence sterve me,'I wish not thee."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-31",
+      "title": "The Calme",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Make a list of what a calm does to the men that a storm did not.",
+      "focus": "Stillness as a worse trial than violence, and a speaker who turns from the weather to himself.",
+      "context": "The companion to The Storme, from the same voyage of 1597, when the fleet lay becalmed in the heat. In Aesop’s fable the frogs asked Jupiter for a king and got a log (a blocke), then a stork that ate them. Swage means assuage; pitch is the tar that seals the ship; a frippery is an old-clothes shop; the Calenture is a sailors’ fever in which the sea looks like green fields and men leap into it; walkers in hot Ovens recalls the three young men who survived the furnace in the Book of Daniel; Bajazet was a sultan kept in a cage by his conqueror; Sampson lost his strength when his hair was cut; Pinnaces are small ships; pray is prey.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Calme, Letters to Severall Personages; complete individual work; opens “OUR storme is past, and that storms tyrannous rage, A stupid calme, but nothing it, doth…”; closes “…Wee have no power, no will, no sense; I lye, I should not then thus feele this miserie.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          498,
+          498
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "becf0786e74d82965571876b8cb9571c77b00c3fc19b034eb1e201cd0dc8b172"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-31-q1",
+          "prompt": "Why is the calm worse than the storm, by this poem’s account? Use the inverted fable to explain.",
+          "facilitatorNotes": [
+            "Storms “weare out themselves, or us”; a calm only makes men languish while “Heaven laughs.” In the fable the stork was the worse king; here the log, stillness itself, afflicts more. The inversion is the poem’s thesis: inaction can be harder to bear than danger."
+          ],
+          "evidence": [
+            "The fable is inverted, and farre more A blocke afflicts, now, then a storke before.",
+            "Stormes chafe, and soone weare out themselves, or us; In calmes, Heaven laughs to see us languish thus."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-31-q2",
+          "prompt": "Find the images of things decaying or left on display after their use is over. What do they say about the fleet?",
+          "facilitatorNotes": [
+            "The ships’ beauty decays “Like courts removing, or like ended playes”; sailors’ rags hang where men should fight; the rigging is an old-clothes shop; feathers and dust lie where they fell yesterday. The expedition looks like an abandoned stage: martial glory turned shabby and absurd."
+          ],
+          "evidence": [
+            "Like courts removing, or like ended playes.",
+            "And all the tackling is a frippery.",
+            "and in one place lay Feathers and dust, to day and yesterday."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-31-q3",
+          "prompt": "Midway, Donne asks why he joined the voyage. What motives does he list, and why does the answer no longer matter?",
+          "facilitatorNotes": [
+            "Ruined fortunes and hope of gain, a wish to escape the pain of loving, the thirst for honour, or a “faire death.” “I lose my end”: in a calm no motive can be fulfilled, since the desperate man may live and the coward die. The adventurer finds his reasons as becalmed as his ship."
+          ],
+          "evidence": [
+            "Whether a rotten state, and hope of gaine,",
+            "Of being belov'd, and loving, or the thirst Of honour, or faire death, out pusht mee first,",
+            "A desperate may live, and a coward die."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-31-q4",
+          "prompt": "The poem ends, “Wee have no power, no will, no sense; I lye, I should not then thus feele this miserie.” How does the last line correct the one before? What does it say about being human?",
+          "facilitatorNotes": [
+            "He claims total helplessness, then catches himself: if he had no sense he could not feel this misery, so suffering proves he is still something. The close is bleak and witty at once, after the question of whether man is now any more than the “Nothing” he was before creation."
+          ],
+          "evidence": [
+            "What are wee then? How little more alas Is man now, then before he was?",
+            "Wee have no power, no will, no sense; I lye, I should not then thus feele this miserie."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-32",
+      "title": "La Corona",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the last line of each sonnet and the first of the next aloud, and notice what changes when a line is repeated in a new place.",
+      "focus": "A crown of seven sonnets that turns the life of Christ into one circle of prayer.",
+      "context": "La Corona (Italian, the crown) is a sequence of seven sonnets in which the last line of each becomes the first line of the next, and the last line of the seventh returns to the first: a woven crown, or a circle of prayer. The headings follow the life of Christ; their V for U is the edition’s. Bayes are laurel leaves, the poet’s crown of fame; Antient of dayes is a biblical name for God; Herods jealous generall doome is King Herod’s order to kill the infants of Bethlehem; the Doctors are the teachers in the Temple whom the boy Jesus questioned; dole is gifts given out at a funeral; the Ramme and the Lambe are biblical images of Christ.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "La Corona, seven sonnets, Holy Sonnets; complete individual work; opens “1. DEIGNE at my hands this crown of prayer and praise, Weav'd in my low devout…”; closes “…thy holy Spirit, my Muse did raise, Deigne at my hands this crowne of prayer and praise.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          900,
+          912
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "833257b9de95267b2d6f08b908cfbe3d7d9c32f9fab8113b1cc6d373bb2bf481"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-32-q1",
+          "prompt": "The first sonnet sets two crowns against each other. What are they, and which one does the poet ask for?",
+          "facilitatorNotes": [
+            "Not the “vile crowne of fraile bayes,” the laurel of literary fame, but what Christ’s “thorny crowne” won: “A crowne of Glory, which doth flower alwayes.” The sequence itself is a crown he offers. “The ends crowne our workes, but thou crown’st our ends” plays on ends as aims and as deaths."
+          ],
+          "evidence": [
+            "But doe not, with a vile crowne of fraile bayes, Reward my muses white sincerity,",
+            "But what thy thorny crowne gain'd, that give mee,",
+            "The ends crowne our workes, but thou crown'st our ends,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-32-q2",
+          "prompt": "“Annunciation” is built on paradoxes. Choose two and explain them.",
+          "facilitatorNotes": [
+            "God who cannot sin bears all sins and, unable to die, must die; Mary is “Thy Makers maker, and thy Fathers mother,” because the God who made her is born from her. “Immensity cloysterd in thy deare wombe” compresses the incarnation into one line: the infinite enclosed in the small. The paradoxes are Donne’s way of saying something that ordinary logic cannot."
+          ],
+          "evidence": [
+            "Which cannot sinne, and yet all sinnes must beare, Which cannot die, yet cannot chuse but die,",
+            "Thy Makers maker, and thy Fathers mother;",
+            "Immensity cloysterd in thy deare wombe."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-32-q3",
+          "prompt": "In “Nativitie” and “Temple” the speaker speaks to his own soul and to Joseph. Why enter the scenes himself instead of describing them?",
+          "facilitatorNotes": [
+            "He asks his soul to look “with thy faiths eyes,” to kiss the child and go with him into Egypt, and he tells Joseph to turn back and find the boy among the Doctors. This is meditation as imagined presence: the reader too is placed in the scene. The paradox that God “would have need to be pittied by thee” makes pity the soul’s response."
+          ],
+          "evidence": [
+            "Seest thou, my Soule, with thy faiths eyes, how he Which fils all place, yet none holds him, doth lye?",
+            "Was not his pity towards thee wondrous high, That would have need to be pittied by thee?",
+            "Ioseph turne backe; see where your child doth sit,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-32-q4",
+          "prompt": "Where does the sequence turn from Christ’s story to the speaker’s need, and how does the last sonnet close the circle?",
+          "facilitatorNotes": [
+            "At the crucifixion: “Now thou art lifted up, draw mee to thee,” and the linking line asks one drop of blood to moisten his “dry soule,” which the next sonnet turns into a promise of rising. The last sonnet names Christ Ramme, Lambe and Torch and ends on the first line again, so the crown closes as the prayer is offered. Readers may find the linking satisfying or mechanical; either can be argued from the joins."
+          ],
+          "evidence": [
+            "Now thou art lifted up, draw mee to thee,",
+            "Moyst, with one drop of thy blood, my dry soule.",
+            "Deigne at my hands this crowne of prayer and praise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-donne-poems-1912-33",
+      "title": "A Hymne to Christ, at the Authors last going into Germany",
+      "sourceId": "donne-poems-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice everything the speaker gives up, and the images of sea, storm and darkness he chooses.",
+      "focus": "A farewell to everyone he loves, turned into a marriage to God.",
+      "context": "Donne, by then a priest, wrote this before sailing to Germany in 1619 with an English embassy, unsure that he would return. An embleme is a picture with a moral meaning; the Arke is Noah’s ark, which carried its passengers safely through the Flood; a bill of Divorce is a written decree ending a marriage.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Hymne to Christ, at the Authors last going into Germany, Divine Poems; complete individual work; opens “IN what torne ship soever I embarke, That ship shall be my embleme of thy Arke; What sea…”; closes “…God only, I goe out of sight: And to scape stormy dayes, I chuse An Everlasting night.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1041,
+          1044
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73618ee3bb99b37053d12cd4b0df8caec09a7d1325b3e4f6907bab902bd5b646"
+      },
+      "questions": [
+        {
+          "id": "reading-12-donne-poems-1912-33-q1",
+          "prompt": "How does the first stanza turn a dangerous voyage into a sign of faith?",
+          "facilitatorNotes": [
+            "Whatever torn ship carries him becomes an emblem of the Ark, and whatever sea drowns him an emblem of Christ’s blood. God’s anger is a mask, and behind it are eyes that “never will despise.” The danger is not denied; it is reread."
+          ],
+          "evidence": [
+            "That ship shall be my embleme of thy Arke;",
+            "What sea soever swallow mee, that flood Shall be to mee an embleme of thy blood;",
+            "Thy face; yet through that maske I know those eyes,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-33-q2",
+          "prompt": "What does he “sacrifice” in the second stanza, and how does the image of sap in winter explain his going?",
+          "facilitatorNotes": [
+            "England and everyone he loves. As he puts seas between himself and them, he asks God to put a sea between his sins and God. Sap draws down to the root in winter; in his own winter he goes where only God, “th’Eternall root Of true Love,” can be known. The voyage becomes a withdrawal inward."
+          ],
+          "evidence": [
+            "I sacrifice this Iland unto thee, And all whom I lov'd there, and who lov'd mee;",
+            "Put thou thy sea betwixt my sinnes and thee.",
+            "As the trees sap doth seeke the root below In winter,"
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-33-q3",
+          "prompt": "The third stanza wants God to be jealous. Why? Explain “O, if thou car’st not whom I love Alas, thou lov’st not mee.”",
+          "facilitatorNotes": [
+            "Religion does not forbid a loving nature, “The amorousnesse of an harmonious Soule,” but God wants that love for himself. A God indifferent to whom he loves would not be loving him at all, so jealousy is proof of love. The language is a lover’s, which suits the poet of the Songs and Sonets."
+          ],
+          "evidence": [
+            "Nor thou nor thy religion dost controule, The amorousnesse of an harmonious Soule,",
+            "As thou Art jealous, Lord, so I am jealous now,",
+            "O, if thou car'st not whom I love Alas, thou lov'st not mee."
+          ]
+        },
+        {
+          "id": "reading-12-donne-poems-1912-33-q4",
+          "prompt": "The poem ends, “I chuse An Everlasting night.” Is that an image of death, of devotion, or both? Look at the line about churches.",
+          "facilitatorNotes": [
+            "He divorces himself from Fame, Wit and Hopes, “false mistresses,” and is married to God. Churches are best for prayer when darkest, and he goes “out of sight” to see God only: darkness as concentration. But the everlasting night is also death, which he half expects on this voyage. Readers can hear the ending as serene or as bleak."
+          ],
+          "evidence": [
+            "Seale then this bill of my Divorce to All,",
+            "Churches are best for Prayer, that have least light:",
+            "And to scape stormy dayes, I chuse An Everlasting night."
+          ]
+        }
+      ]
+    }
+  ]
+}

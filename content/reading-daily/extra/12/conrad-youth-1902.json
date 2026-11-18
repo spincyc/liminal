@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "conrad-youth-1902",
+  "readings": [
+    {
+      "id": "reading-12-conrad-youth-1902-01",
+      "title": "Youth — part 1: the Judea and her motto",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Keep two time frames in view: Marlow at twenty and Marlow telling the story twenty-two years later.",
+      "focus": "A voyage offered as a symbol of existence, and an older man’s view of his younger self.",
+      "context": "“Youth” (1898, collected 1902) is the first story Conrad gave to Marlow, the narrator who later tells Heart of Darkness. Conrad drew it from his own voyage as second mate of a coal-laden barque that burned in the Indian Ocean in 1883. An unnamed narrator introduces four former merchant seamen listening to Marlow. A Conway boy trained on a school ship; a billet is a post; a barque is a sailing ship; ballast is weight carried to steady an empty ship. Sartor Resartus is a philosophical book by Carlyle, and Burnaby’s Ride to Khiva a soldier’s travel narrative.",
+      "contentNote": "The steward is introduced with the period term “mulatto.”",
+      "excerpt": {
+        "locator": "Youth, from the opening frame through Mrs Beard’s visit at the Tyne; opens “This could have occurred nowhere but in England, where men and sea interpenetrate, so to…”; closes “…youth, strength, genius, thoughts, achievements, simple hearts—all dies. . . . No matter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-conrad-youth-1902-02",
+        "blocks": [
+          1,
+          12
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b0f1e919baf7ec5c51e2ca343ba7647b4140f376d578773b17bde4f6c7b94ce"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-01-q1",
+          "prompt": "What does Marlow say some voyages are “ordered for,” and how does his example deflate the claim?",
+          "facilitatorNotes": [
+            "They seem arranged to illustrate life: you fight and sweat to accomplish something and cannot. The list ends with marrying an old maid or delivering 600 tons of coal, so a grand statement about existence lands on a comic, ordinary failure."
+          ],
+          "evidence": [
+            "You fight, work, sweat, nearly kill yourself, sometimes do kill yourself, trying to accomplish something—and you can't.",
+            "or get a wretched 600-ton cargo of coal to its port of destination"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-01-q2",
+          "prompt": "Why does the motto “Do or Die” take the young Marlow’s fancy?",
+          "facilitatorNotes": [
+            "The ship is old and filthy, but the motto under the faded gilt gives it a “touch of romance” that appeals to his youth. The older narrator presents the response fondly but makes clear that the romance is supplied by the young man, not by the ship."
+          ],
+          "evidence": [
+            "She was all rust, dust, grime—soot aloft, dirt on deck.",
+            "There was a touch of romance in it, something that made me love the old thing—something that appealed to my youth!"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-01-q3",
+          "prompt": "How does Marlow characterize Captain Beard and Mahon?",
+          "facilitatorNotes": [
+            "Both are old, good seamen who have not got on. Beard has a boy’s candid eyes and “simplicity of heart and rectitude of soul”; Mahon is well connected but unlucky. Marlow feels like a small boy between two grandfathers, which frames the voyage as one of youth among age."
+          ],
+          "evidence": [
+            "by a rare internal gift of simplicity of heart and rectitude of soul",
+            "between those two old chaps I felt like a small boy between two grandfathers"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-01-q4",
+          "prompt": "What does the list ending “all dies. . . . No matter.” do to the warm scene with Mrs Beard?",
+          "facilitatorNotes": [
+            "After the kindness of the old woman mending his shirts, Marlow turns to everyone now dead and to the death of youth and genius alike. “No matter” brushes the thought aside, but the reader has heard the older narrator’s melancholy beneath the comedy."
+          ],
+          "evidence": [
+            "youth, strength, genius, thoughts, achievements, simple hearts—all dies. . . . No matter."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-02",
+      "title": "Youth — part 2: collision, gale and the pumps",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how the narration stretches time during an ordeal, and where the narrator steps in to comment.",
+      "focus": "Exhaustion and exultation in the same young man.",
+      "context": "Recap: Marlow, now in his forties, is telling four old seafaring friends about his first voyage as second mate, at twenty, in the old barque Judea, bound for Bangkok with coal under the elderly Captain Beard and his mate Mahon. After a gale and long delays at the Tyne the ship has been loaded. A painter is the rope that ties a boat; a thwart is its seat; bulwarks and stanchions are the ship’s raised sides and posts.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Youth, from the collision in the Tyne dock through the gale and the pumping; opens “\"They loaded us at last. We shipped a crew. Eight able seamen and two boys. We hauled off…”; closes “…think of some one dead you have loved. I shall never forget her. . . . Pass the bottle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-01",
+        "continuesTo": "reading-12-conrad-youth-1902-03",
+        "blocks": [
+          13,
+          24
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "22007c62cd3c8d036233cdbc132065d4f6ebed743c1cf77385770d11f11c46db"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-02-q1",
+          "prompt": "How does the captain’s rescue of his wife combine heroism and comedy?",
+          "facilitatorNotes": [
+            "At Marlow’s shout he snatches up his wife and carries her into the boat, a brave act at sixty; then the boat drifts off without oars and he is “out of the ship.” His gruff line that a sailor has no business with a wife covers his embarrassment and affection."
+          ],
+          "evidence": [
+            "Just imagine that old fellow saving heroically in his arms that old woman—the woman of his life.",
+            "A sailor has no business with a wife—I say."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-02-q2",
+          "prompt": "How does the account of pumping make time lose its shape?",
+          "facilitatorNotes": [
+            "Repetition (“We pumped all the four hours. We pumped all night, all day, all the week”) and the men’s forgetting of day, month and year turn days into an apparent eternity, “a hell for sailors.” The prose imitates the monotony it describes."
+          ],
+          "evidence": [
+            "it seemed to last for months, for years, for all eternity, as though we had been dead and gone to a hell for sailors",
+            "We forgot the day of the week, the name of the month, what year it was"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-02-q3",
+          "prompt": "Why does the young Marlow feel exultation in the middle of exhaustion, and how does the older Marlow comment on it?",
+          "facilitatorNotes": [
+            "He sees himself living an adventure “you read about” and lasting it out at twenty. The older Marlow exclaims “O youth!” and insists the ship was “the trial of life” to him, though he also calls her an old rattle-trap. The tone mixes admiration and gentle irony; readers can weigh which dominates."
+          ],
+          "evidence": [
+            "By Jove! this is the deuce of an adventure—something you read about",
+            "O youth! The strength of it, the faith of it, the imagination of it!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-03",
+      "title": "Youth — part 3: Falmouth and the rats",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a long stretch of delay and decide what the narrator thinks it meant.",
+      "focus": "Failure, ridicule and the stubborn endurance of an old ship.",
+      "context": "Recap: a gale strains the Judea until she leaks badly, and the crew pump for days, Marlow exulting in the adventure. A deck-house is a cabin built on deck; the forecastle holds the crew; to caulk is to seal seams; a hulk is a stripped old ship used for storage. Falmouth is a Cornish port.",
+      "contentNote": "The steward is driven mad by fear; the narration calls him a “mulatto” and compares him to a mule.",
+      "excerpt": {
+        "locator": "Youth, from the loss of the deck-house through the months at Falmouth to the voyage out at last; opens “\"One night when tied to the mast, as I explained, we were pumping on, deafened with the…”; closes “…out over the darkening sea the words painted on her stern, 'Judea, London. Do or Die.'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-02",
+        "continuesTo": "reading-12-conrad-youth-1902-04",
+        "blocks": [
+          25,
+          40
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2087afaf58bd0a9fea564e9f7ee14aac83ad16d0f18cc33f4f3cac772d2eec4a"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-03-q1",
+          "prompt": "What happens to Abraham, the steward, and what does the haste of the rescue show?",
+          "facilitatorNotes": [
+            "He clings to his bunk in the wrecked deck-house and is found “completely and for ever mad.” The men pitch him head-first down the companion because the pumps cannot wait. The urgency explains the roughness; it also shows how the ship’s needs override a man’s."
+          ],
+          "evidence": [
+            "He was out of his mind; completely and for ever mad",
+            "A bad leak is an inhuman thing."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-03-q2",
+          "prompt": "Why does Marlow call the months at Falmouth “Morally ... worse than pumping for life”?",
+          "facilitatorNotes": [
+            "Pumping was a fight; waiting makes them a joke, “a derision and a byword,” forgotten by the world and going nowhere. His trip to London with three months’ pay leaves only Byron and a rug, a comic picture of youthful waste."
+          ],
+          "evidence": [
+            "Morally it was worse than pumping for life.",
+            "a derision and a byword to generations of long-shore loafers and dishonest boatmen"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-03-q3",
+          "prompt": "What does the episode of the rats add to the story?",
+          "facilitatorNotes": [
+            "Sailors believed rats leave a doomed ship. These rats leave once the ship is seaworthy, so Mahon mocks the superstition and the men conclude rats are no wiser than men. Since the ship will in fact be lost, the joke works as ironic foreshadowing."
+          ],
+          "evidence": [
+            "the wisdom of rats had been grossly overrated, being in fact no greater than that of men"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-03-q4",
+          "prompt": "How does Marlow draw his listeners into the comparison between the ship’s age and their own?",
+          "facilitatorNotes": [
+            "He says her youth is where his is, and where theirs is, and asks what friend would throw their years in their face. The old ship becomes an image of the listeners themselves, and patience with her becomes patience with age."
+          ],
+          "evidence": [
+            "Her youth was where mine is—where yours is—you fellows who listen to this yarn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-04",
+      "title": "Youth — part 4: fire in the cargo",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate what Marlow perceived at each moment from what he understood only later.",
+      "focus": "A slow danger, a false relief, and a sudden catastrophe.",
+      "context": "Recap: after months of repairs and ridicule at Falmouth, the Judea has finally sailed for Bangkok with a crew from Liverpool, Marlow patient with the slow old ship and full of thoughts of the East. Spontaneous combustion is fire that starts by itself in heated material; a scuttle is a small hatch; Java Head is the western point of Java. Chips is a nickname for a ship’s carpenter.",
+      "contentNote": "An explosion; the narrator’s burns and cuts are described.",
+      "excerpt": {
+        "locator": "Youth, from the Indian Ocean passage through the fire in the coal to the explosion; opens “\"Then we entered the Indian Ocean and steered northerly for Java Head. The winds were…”; closes “…I suppose I expected to see them convulsed with horror. . . . Pass the bottle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-03",
+        "continuesTo": null,
+        "blocks": [
+          41,
+          58
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8fced99766dec854892fb16c941cc327519ed11311cbec352efb9d3f4f617e73"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-04-q1",
+          "prompt": "How does the narration build toward “The cargo was on fire”?",
+          "facilitatorNotes": [
+            "A frightful smell, a sailor’s “Funny smell, sir,” Marlow’s offhand reply, then a visible breath of hot, sooty air from the ventilator. The flat final sentence lands after a series of small clues, mirroring his growing recognition."
+          ],
+          "evidence": [
+            "It's good for the health they say",
+            "The cargo was on fire."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-04-q2",
+          "prompt": "What irony does Marlow see in the crew’s fight against the fire?",
+          "facilitatorNotes": [
+            "Having pumped water out of the ship to avoid drowning, they now pour water into her to avoid burning. The reversal makes the voyage seem fated to absurd labour."
+          ],
+          "evidence": [
+            "after keeping water out of her to save ourselves from being drowned, we frantically poured water into her to save ourselves from being burnt"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-04-q3",
+          "prompt": "How does the description of the calm sea set off the smoking ship?",
+          "facilitatorNotes": [
+            "The sea is a single sapphire and the sky a miracle of purity, while the Judea trails “a pestiferous cloud defiling the splendour.” The beauty of nature is indifferent to, and stained by, the ship’s slow disaster."
+          ],
+          "evidence": [
+            "as if the whole terrestrial globe had been one jewel, one colossal sapphire",
+            "a pestiferous cloud defiling the splendour of sea and sky"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-04-q4",
+          "prompt": "How does Marlow narrate the explosion so that we share his confusion and then see more than he did?",
+          "facilitatorNotes": [
+            "He reports his thoughts “in the following order” as he flies through the air, then lists injuries he “did not know” he had: hair, eyebrows and moustache burnt off, face cut. The calm sky surprises him. The double view of the moment and of hindsight is the story’s method in miniature."
+          ],
+          "evidence": [
+            "I had the time to think several thoughts in, as far as I can remember, the following order",
+            "I did not know that I had no hair, no eyebrows, no eyelashes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-05",
+      "title": "Youth — part 5: trimming the yards of a wreck",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 10,
+        "totalMinutes": 29
+      },
+      "challenge": "Test Marlow’s explanations of other men’s conduct against what he actually shows.",
+      "focus": "Single-minded duty, and a narrator’s claims about why men endure.",
+      "context": "“Youth” (1898, collected 1902) is the first story Conrad gave to Marlow, the narrator who later tells Heart of Darkness. Conrad drew it from his own voyage as second mate of a coal-laden barque that burned in the Indian Ocean in 1883. Recap: Marlow, telling the story twenty-two years later, sailed at twenty as second mate of the old barque Judea, carrying coal to Bangkok under the elderly Captain Beard and the mate Mahon. After a gale, months of delay and a slow passage, the coal smouldered for weeks and has just exploded, wrecking the deck. To trim or square the yards is to set the spars that carry the sails; a furl is a rolled sail; the bunt is its middle.",
+      "contentNote": "Marlow attributes the crew’s conduct to an inborn “racial difference”; Malay seamen are described from outside. These are the narrator’s period assumptions, open to scrutiny.",
+      "excerpt": {
+        "locator": "Youth, from the moments after the explosion until the steamer leaves the burning Judea; opens “\"There was a voice hailing the ship from somewhere—in the air, in the sky—I couldn't…”; closes “…the sea—and like the flames of the burning ship surrounded by an impenetrable night.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-conrad-youth-1902-06",
+        "blocks": [
+          59,
+          78
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5f00b1235862dc438677a8977c6db5b24442bf383a5215e18f0429a5339947f8"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-05-q1",
+          "prompt": "Is Captain Beard mad or admirable when he asks for the cabin-table and orders the yards trimmed?",
+          "facilitatorNotes": [
+            "Marlow first says “he was mad”; later he explains that the captain’s only thought was to get the ship pointing toward Bangkok and calls him “immense in the singleness of his idea.” The story lets both views stand: absurd placidity and heroic fixity of purpose."
+          ],
+          "evidence": [
+            "Presently I saw the captain—and he was mad.",
+            "this quiet, bowed, bandy-legged, almost deformed little man was immense in the singleness of his idea"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-05-q2",
+          "prompt": "What explanations does Marlow reject for the crew’s work aloft, and what does he finally claim? How strong is his evidence?",
+          "facilitatorNotes": [
+            "He rules out reputation, praise, duty and pay, then attributes their conduct to something inborn that “makes racial difference.” He admits he cannot say positively that a French or German crew would not do it. One crew’s behaviour cannot support a claim about nations; readers should separate his observation from his theory."
+          ],
+          "evidence": [
+            "Was it the two pounds ten a-month that sent them there?",
+            "that gift of good or evil that makes racial difference, that shapes the fate of nations"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-05-q3",
+          "prompt": "Why does the captain refuse the steamer’s offer, and how does the closing paragraph judge “the glamour of youth”?",
+          "facilitatorNotes": [
+            "He insists they must “see the last of the ship”; Marlow thinks this fidelity fine and is thrilled to see the East as commander of a small boat. The final sentence makes youth a fire brighter than the burning ship, then says it will be quenched by time and surrounded by night. Admiration and elegy arrive together."
+          ],
+          "evidence": [
+            "We must see the last of the ship.",
+            "Oh the glamour of youth! Oh the fire of it, more dazzling than the flames of the burning ship",
+            "presently to be quenched by time"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-06",
+      "title": "Youth — part 6: the last meal on board",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch how an emergency slows into ritual and comedy.",
+      "focus": "Loyalty to a doomed ship and a young man’s first command.",
+      "context": "Recap: the Judea is now openly on fire. Marlow and Mahon cut the tow-rope of the steamer that was pulling her, and Captain Beard refuses a passage to Singapore so that the crew can see the last of the ship. Underwriters insured the ship; a kedge is a small anchor; a salamander was believed to live in fire; Erebus is the darkness of the underworld.",
+      "contentNote": "The crew drink heavily on the burning ship.",
+      "excerpt": {
+        "locator": "Youth, from the row of asterisks through the abandoning of the ship; opens “* * * * * * * *”; closes “…on the swell. The men dozed, waked, sighed, groaned. I looked at the burning ship.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-05",
+        "continuesTo": "reading-12-conrad-youth-1902-07",
+        "blocks": [
+          79,
+          93
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bbe87fae69a69554db373942b67e1789d4f579ebcba85e3909ec0e30fbd37723"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-06-q1",
+          "prompt": "What does the captain’s insistence on saving gear “for the underwriters” suggest about him?",
+          "facilitatorNotes": [
+            "It is formally a duty, but Marlow guesses he wants to take as much of his first command with him as he can. The men quietly let absurd items slip overboard: respect for the old man and practical sense coexist."
+          ],
+          "evidence": [
+            "One would have thought the old man wanted to take as much as he could of his first command with him."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-06-q2",
+          "prompt": "How does Marlow rework a biblical saying as he watches the flames?",
+          "facilitatorNotes": [
+            "The Book of Job says man is born to trouble as the sparks fly upward. Marlow extends it to “leaky ships, and to ships that burn,” turning a solemn proverb into a wry summary of the voyage."
+          ],
+          "evidence": [
+            "the sparks flew upwards, as man is born to trouble, to leaky ships, and to ships that burn"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-06-q3",
+          "prompt": "What does Marlow find when he climbs aboard, and how does it change his sense of the crisis?",
+          "facilitatorNotes": [
+            "Instead of urgent work he finds the crew eating bread and cheese and drinking stout, “at home like salamanders,” and the exhausted captain asleep. Mahon explains the last meal and the captain’s sleeplessness. Marlow’s indignation meets their calm, and the scene becomes both comic and tender."
+          ],
+          "evidence": [
+            "they seemed at home like salamanders, and looked like a band of desperate pirates",
+            "The last meal on board"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-06-q4",
+          "prompt": "Why is Marlow pleased with the smallest boat, and how does the older narrator view his plan?",
+          "facilitatorNotes": [
+            "It is his first command, and he means to part company and make land alone. The older Marlow calls this “the silly, charming, beautiful youth,” affectionate and critical at once."
+          ],
+          "evidence": [
+            "I wanted to have my first command all to myself.",
+            "Youth! All youth! The silly, charming, beautiful youth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-07",
+      "title": "Youth — part 7: the ship’s funeral and the open boat",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a passage that turns an event into a ceremony and a memory into an argument about youth.",
+      "focus": "A magnificent death for the ship and a deceitful feeling of strength.",
+      "context": "Recap: the crew have abandoned the burning Judea in three boats. Marlow, aged twenty, commands the smallest, with two men, and they wait to see the end of the ship before steering north for Java. A funeral pile is a pyre; a jury-rig is a makeshift mast and sail.",
+      "contentNote": "Marlow’s picture of the East as mysterious, silent and deathlike reflects period imaginings of Asia.",
+      "excerpt": {
+        "locator": "Youth, from the burning of the Judea through the open-boat passage to the arrival in a Javanese bay; opens “\"Between the darkness of earth and heaven she was burning fiercely upon a disc of purple…”; closes “…wake up the land. Guns, thunder, earthquakes would not have awakened the men just then.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-06",
+        "continuesTo": "reading-12-conrad-youth-1902-08",
+        "blocks": [
+          94,
+          104
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2e7f6ee853b242a8635ae8f13f70b3f8fbbd85de2bd57cc531e721c8e1b3f487"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-07-q1",
+          "prompt": "How does Marlow turn the burning ship into a funeral and a triumph?",
+          "facilitatorNotes": [
+            "The flame is a funeral pile watched by stars, and her death comes “like a grace, like a gift, like a reward” after laborious days. He gives the ship a soul and a dignified end, though she was a worn-out collier."
+          ],
+          "evidence": [
+            "A magnificent death had come like a grace, like a gift, like a reward to that old ship at the end of her laborious days."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-07-q2",
+          "prompt": "What is missing when the stern sinks, and why does it matter?",
+          "facilitatorNotes": [
+            "The paint has peeled and the words “Judea, London. Do or Die” are gone; there is no device to flash her creed and her name. The motto that first stirred his romance burns away before the ship goes down."
+          ],
+          "evidence": [
+            "there were no letters, there was no word, no stubborn device that was like her soul"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-07-q3",
+          "prompt": "What does Marlow call “the deceitful feeling,” and how does the sentence enact its fading?",
+          "facilitatorNotes": [
+            "The feeling that he could outlast the sea, the earth and all men lures people on to joys, perils, love and death. The clauses shrink (“grows dim, grows cold, grows small, and expires”) and the repetitions of “expires” and “too soon” stress how early it ends."
+          ],
+          "evidence": [
+            "the feeling that I could last for ever, outlast the sea, the earth, and all men; the deceitful feeling that lures us on",
+            "grows dim, grows cold, grows small, and expires—and expires, too soon, too soon—before life itself"
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-07-q4",
+          "prompt": "How does the first night in the bay appeal to the senses, and what do the last comparisons add?",
+          "facilitatorNotes": [
+            "A warm puff of wind smells of blossoms and aromatic wood, “the first sigh of the East.” But the shore is also “silent like death, dark like a grave,” and Marlow sits “exulting like a conqueror.” Delight, menace and conquest are mixed in one impression."
+          ],
+          "evidence": [
+            "the first sigh of the East on my face",
+            "The mysterious East faced me, perfumed like a flower, silent like death, dark like a grave."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-conrad-youth-1902-08",
+      "title": "Youth — part 8: the East looks back",
+      "sourceId": "conrad-youth-1902",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice reversals: of expectation, of who watches whom, and of the listeners’ silence.",
+      "focus": "A remembered moment, an anticlimax and the frame’s final judgment.",
+      "context": "Recap: after days in an open boat Marlow has reached a silent bay in Java at night, ahead of the captain’s long-boat; the older Marlow calls that moment his whole vision of the East. A Resident was a colonial official; Nemesis is retribution.",
+      "contentNote": "Marlow describes an Asian crowd as a spectacle of “brown, bronze, yellow faces” and speaks of “the conquering race”; these express the imperial assumptions of the period.",
+      "excerpt": {
+        "locator": "Youth, from the arrival of the steamer Celestial to the end of the story; opens “\"Looking round as we talked, I saw away at sea a bright light travelling in the night.…”; closes “…in a flash—together with the youth, with the strength, with the romance of illusions.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-conrad-youth-1902-07",
+        "continuesTo": null,
+        "blocks": [
+          105,
+          126
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3174aca3975039663d0cf87188a64059e6f4ad2ca6759c0899dd47b5e0430338"
+      },
+      "questions": [
+        {
+          "id": "reading-12-conrad-youth-1902-08-q1",
+          "prompt": "Why does Marlow say “the East spoke to me, but it was in a Western voice”?",
+          "facilitatorNotes": [
+            "He expects a mysterious first word and gets a European skipper cursing a sleeping caretaker in two languages because the harbour light is out. The romantic expectation collapses into comedy and complaint."
+          ],
+          "evidence": [
+            "the East spoke to me, but it was in a Western voice",
+            "I take you to witness the light's out."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-08-q2",
+          "prompt": "In the morning scene, who is looking at whom, and how does that complicate Marlow’s vision?",
+          "facilitatorNotes": [
+            "The crowd on the jetty watches the sleeping Western sailors, who lie in “the careless attitudes of death” while “the East looked at them without a sound.” The visitors become the observed. Marlow still describes the crowd as an exotic spectacle, so readers can discuss both the reversal and its limits."
+          ],
+          "evidence": [
+            "The East looked at them without a sound.",
+            "I saw brown, bronze, yellow faces, the black eyes, the glitter, the colour of an Eastern crowd."
+          ]
+        },
+        {
+          "id": "reading-12-conrad-youth-1902-08-q3",
+          "prompt": "How do the frame narrator’s final sentences answer Marlow’s question about “the best time”?",
+          "facilitatorNotes": [
+            "The listeners nod, and the polished table, “like a still sheet of brown water,” reflects their worn faces. They are still looking for something that is gone “while it is expected.” The ending shares Marlow’s nostalgia but quietly turns it into a description of disappointed middle age; Marlow himself asks whether it is the sea or “youth alone.”"
+          ],
+          "evidence": [
+            "or is it youth alone? Who can tell?",
+            "looking anxiously for something out of life, that while it is expected is already gone"
+          ]
+        }
+      ]
+    }
+  ]
+}

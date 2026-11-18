@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "plato-republic-1901",
+  "readings": [
+    {
+      "id": "reading-12-plato-republic-1901-01",
+      "title": "The Republic, Book II: three kinds of good and a bargain called justice",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort goods into Glaucon’s three classes, then reconstruct the argument he says ordinary people make.",
+      "focus": "Whether justice is valued for itself or only as a compromise among the weak.",
+      "context": "Plato’s Republic is narrated by Socrates. In Book I he argued against Thrasymachus, who claimed that justice is merely the interest of the stronger. Glaucon and Adeimantus, Plato’s older brothers, are not satisfied. Gymnastic means physical training; a covenant is an agreement.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from the opening through Glaucon’s account of the origin of justice; opens “With these words I was thinking that I had made an end of the discussion; but the end, in…”; closes “…if he did. Such is the received account, Socrates, of the nature and origin of justice.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-plato-republic-1901-02",
+        "blocks": [
+          509,
+          524
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "53be7013b994883742e3daed13612ec972a257fa3cd167e3fcd8f70a11c668d8"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-01-q1",
+          "prompt": "What are Glaucon’s three classes of goods, and where does Socrates place justice?",
+          "facilitatorNotes": [
+            "Goods wanted for themselves (harmless pleasures), for themselves and for their results (knowledge, sight, health), and only for their results (exercise, medical treatment, money-making). Socrates puts justice in the second, highest class; the many put it in the third, “troublesome” class."
+          ],
+          "evidence": [
+            "In the highest class, I replied—among those goods which he who would be happy desires both for their own sake and for the sake of their results.",
+            "they think that justice is to be reckoned in the troublesome class"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-01-q2",
+          "prompt": "Glaucon says he will praise injustice although he does not hold that view. Why does he choose this method?",
+          "facilitatorNotes": [
+            "He has never heard justice praised for itself in a satisfactory way. By stating the case for injustice as strongly as he can, he shows Socrates the kind of praise he wants in return. Reviving an argument is not endorsing it, a distinction worth keeping in any debate."
+          ],
+          "evidence": [
+            "since I myself am not of their opinion",
+            "I want to hear justice praised in respect of itself"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-01-q3",
+          "prompt": "Reconstruct the “received account”: why is justice a compromise, and what follows for anyone strong enough to refuse it?",
+          "facilitatorNotes": [
+            "People find that suffering injustice hurts more than doing it helps, so they agree to laws forbidding both. Justice is the middle point between the best (wronging without punishment) and the worst (being wronged without recourse), accepted as the lesser evil. A person able to resist would be mad to agree. Students can ask whether the account explains why anyone keeps the agreement when unobserved, the question the next passage presses."
+          ],
+          "evidence": [
+            "tolerated not as a good, but as the lesser evil",
+            "For no man who is worthy to be called a man would ever submit to such an agreement if he were able to resist; he would be mad if he did."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-02",
+      "title": "The Republic, Book II: the ring of Gyges and the two lives",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Identify the assumption a thought experiment depends on, and test whether its conclusion follows.",
+      "focus": "Separating being just from seeming just.",
+      "context": "Recap: Glaucon has asked Socrates to show that justice is good in itself, and has restated the common view that justice is only a bargain among people too weak to do wrong safely. Gyges’ descendant Croesus was a famously rich king of Lydia, in Asia Minor; the collet is the setting of a ring. Aeschylus was an Athenian tragic poet. Bracketed numbers mark Jowett’s notes, which the library prints after the end of Book II; they identify quotations and textual readings. ",
+      "contentNote": "The story includes seduction and murder, and the imagined just man is tortured and impaled.",
+      "excerpt": {
+        "locator": "Book II, Glaucon’s story of the ring of Gyges and his portraits of the perfectly unjust and the perfectly just man; opens “Now that those who practise justice do so involuntarily and because they have not the…”; closes “…men are said to unite in making the life of the unjust better than the life of the just.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-01",
+        "continuesTo": "reading-12-plato-republic-1901-03",
+        "blocks": [
+          525,
+          530
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "da62e5fb9682aa00a1a9d69bbfe926586fe57107f60d21ba4adb84dd0c143bf4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-02-q1",
+          "prompt": "What is the ring story meant to prove, and what assumption about human nature does the proof need?",
+          "facilitatorNotes": [
+            "If anyone could act unseen, just and unjust would follow the same road of self-interest; so people are just only “of necessity.” The proof assumes that no one has an “iron nature” that would stand fast, and that everyone privately believes injustice pays. Readers can test that assumption against their own experience or against counter-examples."
+          ],
+          "evidence": [
+            "wherever anyone thinks that he can safely be unjust, there he is unjust",
+            "no man can be imagined to be of such an iron nature that he would stand fast in justice"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-02-q2",
+          "prompt": "Why must the unjust man seem perfectly just and the just man seem perfectly unjust?",
+          "facilitatorNotes": [
+            "Otherwise the just man might be just for the rewards of reputation, and we could not tell what justice itself is worth. The unjust man’s highest skill is “to be deemed just when you are not.” Stripping away appearances isolates the two lives for judgment."
+          ],
+          "evidence": [
+            "for the highest reach of injustice is, to be deemed just when you are not",
+            "Let him be the best of men, and let him be thought the worst"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-02-q3",
+          "prompt": "How does Glaucon distance himself from the harshest part of the speech, and what does his last claim about the gods imply?",
+          "facilitatorNotes": [
+            "He asks Socrates to imagine that the brutal words are not his but those of injustice’s praisers. They conclude that the unjust man’s wealth lets him sacrifice lavishly, so the gods should favour him more. If religion follows wealth, it offers no independent support for justice, a point Adeimantus will develop."
+          ],
+          "evidence": [
+            "I ask you to suppose, Socrates, that the words which follow are not mine.",
+            "therefore he is likely to be dearer than they are to the gods"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-03",
+      "title": "The Republic, Book II: what parents and poets praise",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an argument that criticizes the defenders of justice rather than its enemies.",
+      "focus": "How praise for the rewards of justice teaches the young to value appearances.",
+      "context": "Recap: Glaucon has argued, through the story of a ring that makes its wearer invisible, that people are just only because they fear being caught, and has asked Socrates to compare a perfectly unjust man who seems just with a perfectly just man who seems unjust. Now his brother Adeimantus adds a further point. Hesiod and Homer were the great early Greek poets; Musaeus and Orpheus were legendary singers to whom religious writings were credited; Pindar was a lyric poet. A meed is a reward. Bracketed numbers mark Jowett’s notes, which the library prints after the end of Book II; they identify quotations and textual readings. ",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from Adeimantus’s interruption through his account of how the poets and priests speak of justice; opens “I was going to say something in answer to Glaucon, when Adeimantus, his brother,…”; closes “…crooked ways of deceit ascend a loftier tower which may be a fortress to me all my days?””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-02",
+        "continuesTo": "reading-12-plato-republic-1901-04",
+        "blocks": [
+          531,
+          546
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28b3fb6f1f0adc40068ee3cdc3d04aa825b2eeeca402e85e46b9890939edbd75"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-03-q1",
+          "prompt": "What is the “strongest point” Adeimantus adds, and how does it differ from Glaucon’s?",
+          "facilitatorNotes": [
+            "Glaucon voiced the critics of justice. Adeimantus shows that its own defenders, parents, tutors and poets, praise justice only for reputation and rewards. If even the praise is about consequences, nobody is teaching that justice is good in itself."
+          ],
+          "evidence": [
+            "not for the sake of justice, but for the sake of character and reputation"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q2",
+          "prompt": "How does Adeimantus make the poets’ promised rewards look absurd?",
+          "facilitatorNotes": [
+            "He reports that the just are rewarded below with an endless feast, “everlastingly drunk,” and concludes that for these poets an immortality of drunkenness is virtue’s highest prize. The satire exposes how material the supposed spiritual rewards are."
+          ],
+          "evidence": [
+            "their idea seems to be that an immortality of drunkenness is the highest meed of virtue"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q3",
+          "prompt": "What does the trade in sacrifices and atonements imply about the gods, according to the views he reports?",
+          "facilitatorNotes": [
+            "If priests can make atonement for a fee and the gods can be turned by sacrifices, then a wrongdoer can buy off punishment. Justice then has no divine support that injustice cannot purchase."
+          ],
+          "evidence": [
+            "The gods, too, may be turned from their purpose",
+            "persuade not only individuals, but whole cities, that expiations and atonements for sin may be made by sacrifices"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q4",
+          "prompt": "Why does Adeimantus worry especially about quick-witted young people?",
+          "facilitatorNotes": [
+            "Like bees lighting on every flower, they gather what they hear and draw conclusions about how to live. The danger is not ignorance but intelligence applied to bad teaching. Pindar’s question about justice or deceit is the one they will ask."
+          ],
+          "evidence": [
+            "like bees on the wing, light on every flower, and from all that they hear are prone to draw conclusions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-04",
+      "title": "The Republic, Book II: the demand to praise justice itself",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Reconstruct a chain of reasoning, then state exactly what the brothers ask Socrates to prove.",
+      "focus": "Appearance, belief about the gods, and justice as a good of the soul.",
+      "context": "Recap: Glaucon and his brother Adeimantus have argued that people praise justice only for its rewards and reputation, and that poets and priests teach that the gods can be bought off with sacrifices. Adeimantus now imagines how a clever young man would reason from what he hears. Archilochus was an early Greek poet; a vestibule is an entrance hall; a panegyrist is one who praises; Ariston was the brothers’ father.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from the young man’s reasoning about appearances through Socrates’ answer to the brothers; opens “For what men say is that, if I am really just and am not also thought just, profit there…”; closes “…not lifting up a hand in her defence. And therefore I had best give such help as I can.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-03",
+        "continuesTo": null,
+        "blocks": [
+          547,
+          552
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b25134f48645219ffadc751eff55ee6d6e54a8234ae1f75773edc09d8783c611"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-04-q1",
+          "prompt": "How does the imagined young man reason from the claim that “appearance tyrannizes over truth”?",
+          "facilitatorNotes": [
+            "If reputation brings happiness, he should build a façade of virtue with a crafty fox behind it, and use secret clubs and rhetoric to escape punishment. Each step follows from treating appearance as what matters."
+          ],
+          "evidence": [
+            "I will describe around me a picture and shadow of virtue to be the vestibule and exterior of my house"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q2",
+          "prompt": "How does he turn the poets’ account of the gods against justice?",
+          "facilitatorNotes": [
+            "Either there are no gods, or they do not care, or, if the poets are right, they can be bribed. Since our knowledge of the gods comes from the same poets, he argues, “believe both or neither”: in every case concealment and sacrifice beat honesty."
+          ],
+          "evidence": [
+            "Let us be consistent, then, and believe both or neither."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q3",
+          "prompt": "What exactly does Adeimantus ask Socrates to prove, and why must reputations be removed?",
+          "facilitatorNotes": [
+            "Show what justice and injustice do to the soul of the one who has them, “whether seen or unseen.” If reputations remain, Socrates would only be praising the appearance of justice. Had this been taught, each person would be “his own watchman.”"
+          ],
+          "evidence": [
+            "everyone would have been his own watchman",
+            "show what they either of them do to the possessor of them, which makes the one to be a good and the other an evil"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q4",
+          "prompt": "Why does Socrates trust the brothers despite their speeches, and why does he agree to answer?",
+          "facilitatorNotes": [
+            "He judges from their character that they are not convinced by their own arguments, which he calls something “truly divine.” He doubts his ability, but says it would be impious to stand by while justice is slandered. Readers might discuss whether arguing well for a view one rejects is a virtue."
+          ],
+          "evidence": [
+            "there is something truly divine in being able to argue as you have done for the superiority of injustice, and remaining unconvinced by your own arguments",
+            "I am afraid that there would be an impiety in being present when justice is evil spoken of"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-05",
+      "title": "The Republic, Book I: the interest of the stronger",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Track how Thrasymachus’ definition changes each time Socrates presses it.",
+      "focus": "Whether justice is anything more than the rules the powerful make for their own advantage.",
+      "context": "Plato’s Republic is narrated by Socrates, who is at a gathering in the house of Cephalus at the Piraeus, the port of Athens. He and Polemarchus, Cephalus’ son, have just rejected the saying that justice means helping friends and harming enemies. Thrasymachus, a sophist or paid teacher of speaking, has burst in on them, accused Socrates of hiding behind irony, and forbidden the usual answers about justice. Glaucon is Plato’s brother; Cleitophon is on Thrasymachus’ side. A pancratiast fought in an ancient sport combining boxing and wrestling; an informer here is someone who brings malicious charges on technicalities.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, from Socrates’ claim to know nothing through Thrasymachus’ claim that a ruler, as ruler, never errs; opens “Why, my good friend, I said, how can anyone answer who knows, and says that he knows,…”; closes “…therefore, as I said at first and now repeat, justice is the interest of the stronger.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          210,
+          251
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd3615acfa357d2c904cff17dc1fb0907314a0cb1b3fa72c936383382b2a007e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-05-q1",
+          "prompt": "Socrates says he knows “just nothing,” and Thrasymachus says he refuses to teach and never says thank you. Who has the better of this exchange? What does each think a teacher owes the listeners?",
+          "facilitatorNotes": [
+            "Socrates says the one who claims knowledge should speak; Thrasymachus hears irony and ingratitude, and expects to be paid, as sophists were. Socrates offers praise instead of money. Thrasymachus is plainly eager to show off his answer, which weakens his complaint; but many readers think his charge that Socrates never commits himself has force."
+          ],
+          "evidence": [
+            "how can anyone answer who knows, and says that he knows, just nothing;",
+            "Thrasymachus, as anyone might see, was in reality eager to speak;",
+            "he refuses to teach himself, and goes about learning of others, to whom he never even says, Thank you.",
+            "Money I have none, and therefore I pay in praise,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q2",
+          "prompt": "State Thrasymachus’ definition and the argument he gives for it. Is he saying what justice is, or only what people in power call justice?",
+          "facilitatorNotes": [
+            "Every government makes laws in its own interest, calls obedience to them justice, and punishes those who break them; since governments have power, justice everywhere is the interest of the stronger. Read as description, it says laws serve rulers; read as definition, it says there is nothing more to justice than that. The ambiguity is worth pressing: the rest of the Republic answers the second claim."
+          ],
+          "evidence": [
+            "I proclaim that justice is nothing else than the interest of the stronger.",
+            "these laws, which are made by them for their own interests, are the justice which they deliver to their subjects,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q3",
+          "prompt": "How does Socrates use the admission that rulers make mistakes? Why does Thrasymachus refuse Cleitophon’s rescue, that justice is what the stronger thinks is his interest?",
+          "facilitatorNotes": [
+            "If rulers can err, they may command what harms them, and obeying is still justice, so justice serves the injury of the stronger as much as his interest. Cleitophon’s version would avoid this, but Thrasymachus rejects it: he cares about real advantage, not opinion, and will not call a man who is mistaken the stronger. He is a realist about power, not a relativist."
+          ],
+          "evidence": [
+            "Have we not admitted that the rulers may be mistaken about their own interest in what they command,",
+            "he meant by the interest of the stronger what the stronger thought to be his interest",
+            "Do you suppose that I call him who is mistaken the stronger at the time when he is mistaken?"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q4",
+          "prompt": "Thrasymachus answers that a ruler “in so far as he is a ruler” never errs, as a physician never errs as a physician. Is this a clever escape or a trap he sets for himself?",
+          "facilitatorNotes": [
+            "It saves the definition by talking about an ideal ruler who exists only “in the strict sense.” But it also makes ruling a skill like medicine, and a physician’s skill is defined by what it does for the patient. Socrates goes on to argue that every skill serves its subject, so that ruling, as a skill, serves the ruled. Students can see the move coming before reading on."
+          ],
+          "evidence": [
+            "they none of them err unless their skill fails them, and then they cease to be skilled artists.",
+            "we should say that the ruler, in so far as he is a ruler, is unerring,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-06",
+      "title": "The Republic, Book III: the royal lie",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 16,
+        "totalMinutes": 29
+      },
+      "challenge": "Separate what the tale says from what it is meant to do, and ask who is supposed to believe it.",
+      "focus": "Whether a city can be held together by a story its founders know to be false.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. They are designing an imagined city in order to see justice on a large scale. Its guardians, after a long education and trials of character, are now divided into rulers and auxiliaries, the soldiers who support them. Earlier Socrates allowed that rulers, like doctors, might use falsehood for the good of the city. Husbandmen are farmers; dross is worthless metal. The bracketed [41] marks one of Jowett’s notes, which the library prints after the end of Book III.",
+      "contentNote": "Socrates proposes a deliberate falsehood to hold a ranked society together and speaks of guarding “the purity of the race”; here “race” means the citizens’ stock, sorted by their metals. Students can judge the proposal openly.",
+      "excerpt": {
+        "locator": "Book III, from the “needful falsehoods” to the end of the book; opens “How then may we devise one of those needful falsehoods of which we lately spoke—just one…”; closes “Yes, said Glaucon.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1344,
+          1371
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bf6e0ac97b14c1d9cc0de5c1b5dd6b0a4183117336481d9ab8669f2ab806db18"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-06-q1",
+          "prompt": "Why does Socrates hesitate before telling the tale? Who is meant to believe it, and in what order, and what does Glaucon think its chances are?",
+          "facilitatorNotes": [
+            "He calls it an “audacious fiction,” and Glaucon agrees he should be ashamed. It goes first to the rulers, then the soldiers, then the people, and is meant to deceive the rulers too “if that be possible,” so it is not simply a trick played by rulers on the ruled. Glaucon says no one now living would believe it, only later generations: founding stories work by being inherited."
+          ],
+          "evidence": [
+            "just one royal lie which may deceive the rulers, if that be possible, and at any rate the rest of the city?",
+            "first to the rulers, then to the soldiers, and lastly to the people.",
+            "but their sons may be made to believe in the tale, and their sons’ sons, and posterity after them."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q2",
+          "prompt": "The tale has two parts. What does each part teach the citizens, and how do the two work together?",
+          "facilitatorNotes": [
+            "The first makes the earth their mother and every citizen a brother, so they owe the land defence and each other loyalty. The second says God mixed different metals into them, so they are born to different ranks. Together they say: brothers, but unequal. Socrates claims the belief will make them care more for the city and for one another."
+          ],
+          "evidence": [
+            "her citizens they are to regard as children of the earth and their own brothers.",
+            "you are brothers, yet God has framed you differently.",
+            "the fostering of such a belief will make them care more for the city and for one another."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q3",
+          "prompt": "The tale lets children move up or down from their parents’ class. Does that make the order fairer, or only easier to accept?",
+          "facilitatorNotes": [
+            "Rank follows a person’s nature, not birth: a golden child of iron parents rises, and rulers must not spare their own children. That is fairer than inherited caste. But the rulers judge the metals, and the lie asks everyone to accept the judgment without being told why. Some students will see an early version of merit; others will see control."
+          ],
+          "evidence": [
+            "a golden parent will sometimes have a silver son, or a silver parent a golden son.",
+            "the eye of the ruler must not be pitiful toward the child",
+            "when a man of brass or iron guards the State, it will be destroyed."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q4",
+          "prompt": "Why may the guardians own no property and never touch gold or silver? What danger is Socrates guarding against, and how does the myth help?",
+          "facilitatorNotes": [
+            "The soldiers are stronger than the citizens; like watch-dogs, they could turn into wolves. With homes and money of their own they would become householders and then tyrants, at war with the people they guard. The myth gives them a reason to accept poverty: they already have divine gold within. Students may ask whether any real rulers could live this way."
+          ],
+          "evidence": [
+            "would be a foul and monstrous thing in a shepherd?",
+            "the diviner metal is within them, and they have therefore no need of the dross which is current among men,",
+            "enemies and tyrants instead of allies of the other citizens;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-07",
+      "title": "The Republic, Book VIII: the strong wine of freedom",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Mark each sign of excessive liberty Socrates lists, and decide which are satire and which are serious argument.",
+      "focus": "The claim that democracy, pursuing its own good without limit, prepares the way for tyranny.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. In Book VIII he describes how the ideal city would decline through four worse kinds of government, each matched by a kind of person: rule by the ambitious, rule by the rich (oligarchy), democracy, and tyranny. He has just described the democratic man, who treats all his desires as equal and calls that freedom. A metic was a resident foreigner in a Greek city, free but not a citizen; Aeschylus was an Athenian tragic poet.",
+      "contentNote": "Socrates counts the freedom of slaves and the equality of women and men among democracy’s excesses. The passage assumes the slavery and the subordination of women usual in Greek cities, although in Book V he argued that women could be guardians.",
+      "excerpt": {
+        "locator": "Book VIII, from “Last of all comes the most beautiful of all” through tyranny’s origin in democracy; opens “Last of all comes the most beautiful of all, man and State alike, tyranny and the tyrant;…”; closes “As we might expect.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3554,
+          3593
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "328729f6ae2c62a29a9bef1b80fffa028214bb4b2f4b802a30c70decf3b47f62"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-07-q1",
+          "prompt": "Socrates says each kind of state is ruined by an insatiable desire for its own good. What was oligarchy’s good, what is democracy’s, and how does the parallel shape his argument?",
+          "facilitatorNotes": [
+            "Oligarchy pursued wealth and was ruined by money-getting; democracy pursues freedom and neglects everything else for it. The parallel turns a description into something like a law: each regime is destroyed by its own principle pushed to excess. Students can ask whether freedom is really a good of the same kind as wealth."
+          ],
+          "evidence": [
+            "The good which oligarchy proposed to itself and the means by which it was maintained was excess of wealth",
+            "Freedom, I replied; which, as they tell you in a democracy, is the glory of the State",
+            "the insatiable desire of this and the neglect of other things introduce the change in democracy, which occasions a demand for tyranny."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q2",
+          "prompt": "What does the image of evil cup-bearers and the strong wine of freedom say about the leaders such a democracy rewards?",
+          "facilitatorNotes": [
+            "Leaders who pour freedom freely are praised; those who limit it are punished as “cursed oligarchs,” and citizens who obey are mocked as slaves who hug their chains. The people come to want leaders who flatter them, which is how the tyrant will rise."
+          ],
+          "evidence": [
+            "has evil cup-bearers presiding over the feast, and has drunk too deeply of the strong wine of freedom,",
+            "she calls them to account and punishes them, and says that they are cursed oligarchs.",
+            "she would have subjects who are like rulers, and rulers who are like subjects:"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q3",
+          "prompt": "The list of excesses runs from fathers and sons through teachers, slaves and women to horses and dogs. Which examples are satire, and which make a serious point? What does the list show about Socrates’ idea of authority?",
+          "facilitatorNotes": [
+            "The animals are comic exaggeration, and Glaucon jokes about his country walks. Teachers who flatter pupils and old men who copy the young are recognizable. The slaves and women show that Socrates takes hierarchy to be natural, which modern readers reject. The serious charge comes at the end: citizens resent every touch of authority and stop caring for the laws."
+          ],
+          "evidence": [
+            "the master fears and flatters his scholars, and the scholars despise their masters and tutors;",
+            "the she-dogs, as the proverb says, are as good as their she-mistresses,",
+            "they chafe impatiently at the least touch of authority,",
+            "they will have no one over them."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q4",
+          "prompt": "“The excess of liberty, whether in States or individuals, seems only to pass into excess of slavery.” Why does Socrates think so? Is his principle that excess breeds reaction a law or a metaphor? Test it against a case you know.",
+          "facilitatorNotes": [
+            "Too much of anything produces its opposite, in seasons, plants, bodies and governments; a people that will accept no authority invites a strongman who promises order. The support is analogy, not proof. Students may name democracies that became dictatorships, or long-lived ones that did not, and ask what made the difference."
+          ],
+          "evidence": [
+            "the excessive increase of anything often causes a reaction in the opposite direction;",
+            "The excess of liberty, whether in States or individuals, seems only to pass into excess of slavery.",
+            "And so tyranny naturally arises out of democracy,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-08",
+      "title": "The Republic, Book X: the choice of lives",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice who chooses well and who chooses badly, and what the difference has to do with philosophy rather than luck.",
+      "focus": "Responsibility for the life one chooses, and why Plato ends a work on justice with a myth.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. Having argued that justice is better than injustice for its own sake, he ends with a tale: Er, a soldier killed in battle, came back to life on his funeral pyre and told what he had seen among the dead. Souls returning from a thousand years of reward or punishment come before the three Fates, daughters of Necessity: Lachesis, Clotho and Atropos. A genius here is a guardian spirit. Orpheus, Thamyras, Ajax, Agamemnon, Atalanta, Epeus, Thersites and Odysseus are figures from Greek myth and Homer. The bracketed [9] marks one of Jowett’s notes, which the library prints after the end of Book X.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book X, the Myth of Er from the souls’ arrival before Lachesis to the end of the dialogue; opens “When Er and the spirits arrived, their duty was to go at once to Lachesis; but first of…”; closes “…in this life and in the pilgrimage of a thousand years which we have been describing.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4455,
+          4458
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c18165af1336ccb0ab5d3eaa44c3e91414525d6a0ac13b99950b2e769316b09e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-08-q1",
+          "prompt": "“The responsibility is with the chooser—God is justified.” What does the prophet mean, and how does the lottery fit with it? Is the order of choosing unfair?",
+          "facilitatorNotes": [
+            "The lots fix only the order of choosing; there are more lives than souls, and even the last comer can choose a good life. So the blame for a bad life belongs to the soul, not the gods. Chance still narrows the options, which some students will call unfair; Odysseus, choosing last, shows it need not decide the outcome."
+          ],
+          "evidence": [
+            "Your genius will not be allotted to you, but you will choose your genius;",
+            "the responsibility is with the chooser—God is justified.",
+            "Even for the last comer, if he chooses wisely and will live diligently, there is appointed a happy and not undesirable existence."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q2",
+          "prompt": "Why does the first soul, which came from heaven, choose the greatest tyranny? What is the difference between virtue “of habit only” and philosophy?",
+          "facilitatorNotes": [
+            "He chooses in a moment, darkened by folly, and then blames chance and the gods. His goodness came from living in a well-ordered state and was never tested, while souls who had suffered on earth chose slowly. Philosophy is understanding why the just life is better, which survives a change of circumstances; habit does not."
+          ],
+          "evidence": [
+            "his virtue was a matter of habit only, and he had no philosophy.",
+            "instead of throwing the blame of his misfortune on himself, he accused chance and the gods,",
+            "having themselves suffered and seen others suffer, were not in a hurry to choose."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q3",
+          "prompt": "Most souls choose by “their experience of a previous life.” Pick two of the figures and explain what their choices show. Why is the spectacle “sad and laughable and strange”?",
+          "facilitatorNotes": [
+            "Orpheus, killed by women, refuses to be born of a woman; Ajax and Agamemnon flee human nature because of their sufferings; Atalanta cannot resist fame; Thersites the jester becomes a monkey. Most choices react to old wounds or appetites instead of asking what will make the soul just. Odysseus is the exception: cured of ambition, he gladly takes the quiet private life everyone else ignored."
+          ],
+          "evidence": [
+            "for the choice of the souls was in most cases based on their experience of a previous life.",
+            "Now the recollection of former toils had disenchanted him of ambition,",
+            "he would have done the same had his lot been first instead of last,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q4",
+          "prompt": "By what test, Socrates says, should we judge a life? Why do you think Plato ends the Republic with a myth rather than an argument?",
+          "facilitatorNotes": [
+            "A life is better if it makes the soul more just and worse if it makes it more unjust; all else is to be disregarded, and the mean preferred to extremes. A myth makes the stakes vivid and memorable and reaches readers whom argument does not. Some readers think the rewards after death weaken the claim that justice is worth choosing for itself; others see the tale as a picture of the choices made in every life."
+          ],
+          "evidence": [
+            "giving the name of evil to the life which will make his soul more unjust, and good to the life which will make his soul more just;",
+            "let him know how to choose the mean and avoid the extremes on either side,",
+            "the tale has been saved and has not perished, and will save us if we are obedient to the word spoken;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-09",
+      "title": "The Republic, Book I: Cephalus on old age and wealth",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 13,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice how the talk drifts from a festival to old age to money, and where Socrates turns it toward justice.",
+      "focus": "What a good, contented old man thinks justice is, and why Socrates is not satisfied.",
+      "context": "Plato’s Republic is a dialogue narrated by Socrates, the Athenian philosopher, who tells of a long conversation about justice held the day before. These are its first pages. The Piræus is the port of Athens, some miles from the city; Glaucon and Adeimantus are Plato’s brothers; Cephalus is a rich old man, and Polemarchus and Lysias are his sons. The bracketed [1] marks a note of Jowett’s, printed at the end of Book I, naming the goddess: Bendis, the Thracian Artemis. Sophocles was the Athenian tragic poet; Themistocles, the Athenian general who led the city against Persia; Seriphus, a small and obscure island. Pindar and Simonides were Greek poets.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, from the opening to Cephalus’ departure for the sacrifices; opens “I went down yesterday to the Piræus with Glaucon, the son of Ariston, that I might offer…”; closes “To be sure, he answered, and went away laughing to the sacrifices.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          12,
+          50
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4aa254a5d48a0ae5686ca95abb9f7c9685b2427e78aee9b672084694c0deb590"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-09-q1",
+          "prompt": "The book opens with a joke: Polemarchus asks whether Socrates is “stronger than all these,” and whether he can persuade people who refuse to listen. Why might Plato begin a dialogue about justice with this scene?",
+          "facilitatorNotes": [
+            "It sets force against persuasion. Persuasion needs a listener willing to hear, and a crowd can simply refuse; then numbers decide. The banter is friendly, and Socrates stays willingly, but it anticipates the question the whole book will press: whether argument has any power against strength. Thrasymachus will soon claim that justice is “the interest of the stronger.”"
+          ],
+          "evidence": [
+            "And are you stronger than all these? for if not, you will have to remain where you are.",
+            "May there not be the alternative, I said, that we may persuade you to let us go?",
+            "But can you persuade us, if we refuse to listen to you? he said."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-09-q2",
+          "prompt": "According to Cephalus, what do old men blame for their unhappiness, and what is the real cause? How does the story of Sophocles support him?",
+          "facilitatorNotes": [
+            "They blame old age; he blames “men’s characters and tempers,” since he and others are old without such complaints. Sophocles was glad to have escaped desire, as from “a mad and furious master”: age brings calm and freedom. Cephalus speaks from his own happy experience, which Socrates is about to question."
+          ],
+          "evidence": [
+            "which is not old age, but men’s characters and tempers;",
+            "I feel as if I had escaped from a mad and furious master.",
+            "For certainly old age has a great sense of calm and freedom;"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-09-q3",
+          "prompt": "Socrates suggests that people think Cephalus bears old age lightly because he is rich. How does Cephalus answer with the story of Themistocles? Is it a full answer?",
+          "facilitatorNotes": [
+            "He concedes part of the point: “there is something in what they say.” As Themistocles needed both his merits and his city, a contented old age needs both a good character and some means; a good poor man will still find age heavy, and a bad rich man never has peace. Wealth helps but cannot suffice. Readers may notice that Cephalus never imagines being poor himself."
+          ],
+          "evidence": [
+            "and there is something in what they say; not, however, so much as they imagine.",
+            "If you had been a native of my country or I of yours, neither of us would have been famous.",
+            "for to the good poor man old age cannot be a light burden, nor can a bad rich man ever have peace with himself."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-09-q4",
+          "prompt": "What does Cephalus value most about his wealth, and why does the fear of death make it valuable? How does Socrates turn his answer into a definition of justice, and then test it?",
+          "facilitatorNotes": [
+            "Wealth has spared him any need to cheat or deceive, so he can die owing nothing to gods or men; near death, the tales of punishment below begin to seem true. Socrates extracts a definition, telling the truth and paying debts, and refutes it with a case: arms returned to a friend gone mad. Cephalus agrees, hands the argument to his son, and leaves laughing for the sacrifices. Some readers see a man of habit with no time for inquiry; others find him the most likable figure in the book."
+          ],
+          "evidence": [
+            "he has had no occasion to deceive or to defraud others,",
+            "to speak the truth and to pay your debts—no more than this?",
+            "ought I to give them back to him?",
+            "and went away laughing to the sacrifices."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-10",
+      "title": "The Republic, Book IV: justice in the soul",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "Match each virtue of the city to its counterpart in the soul, then test the account against Socrates’ everyday examples.",
+      "focus": "Justice as the right order of reason, spirit and desire within one person.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon, Plato’s brother. Glaucon and his brother Adeimantus have challenged him to show that justice is good in itself, not only for its rewards. To see justice on a large scale he has imagined a city of three classes, rulers who deliberate, auxiliaries who defend it and producers, and found its justice in each class doing its own work. He has just argued that the soul has three parts too: reason, which calculates; spirit or passion, the seat of anger and courage; and desire, the appetites, here called “the concupiscent.” Music and gymnastics are the two branches of education in his city. The bracketed [5] marks a note of Jowett’s, printed after the end of Book IV, about a reading of the Greek.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book IV, from “after much tossing, we have reached land” to “let us not faint by the way”; opens “And so, after much tossing, we have reached land, and are fairly agreed that the same…”; closes “…may see the truth in the clearest manner with our own eyes, let us not faint by the way.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1782,
+          1858
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "907358cc8fe087aaee274e41eb4b7145dcbe9da822cf97a072818ad8b2696f75"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-10-q1",
+          "prompt": "Set out the parallel. Which part of the soul matches which class of the city, and how does Socrates define wisdom, courage and temperance in a single person?",
+          "facilitatorNotes": [
+            "Reason matches the rulers and makes a person wise when that “little part which rules” knows what is good for the whole. Spirit matches the auxiliaries and makes a person courageous when it holds to reason’s commands in pleasure and pain. Temperance is the agreement of all three that reason should rule. Desire, like the producers, is “the largest part of the soul” and needs to be watched."
+          ],
+          "evidence": [
+            "And him we call wise who has in him that little part which rules,",
+            "whose spirit retains in pleasure and in pain the commands of reason about what he ought or ought not to fear?",
+            "are equally agreed that reason ought to rule, and do not rebel?"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-10-q2",
+          "prompt": "Socrates tests his account with “a few commonplace instances”: the just man will not embezzle, steal or break oaths. Why does he need this test? Does it succeed?",
+          "facilitatorNotes": [
+            "His justice is an inner order, and a critic could say it has nothing to do with justice as people know it. The examples tie the two together: such a man keeps faith “because each part of him is doing its own business.” Many readers find the link asserted rather than proved: why should a well-ordered soul not steal cleverly? Others answer that theft springs from desire ruling reason, which is just what the order prevents."
+          ],
+          "evidence": [
+            "a few commonplace instances will satisfy us of the truth of what I am saying.",
+            "will be less likely than the unjust to make away with a deposit of gold or silver?",
+            "And the reason is that each part of him is doing its own business, whether in ruling or being ruled?"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-10-q3",
+          "prompt": "The division of labour in the city was only “a shadow of justice.” What is justice in reality, according to the long speech that follows? What does the comparison with musical notes add?",
+          "facilitatorNotes": [
+            "Justice concerns “not the outward man, but the inward”: the just man lets no part of himself do another’s work, is his own master and at peace, and binds his three parts together like the notes of a scale until he is “no longer many, but has become one.” Only then does he act, and actions are just when they keep this harmony. Some readers see a deep idea; others notice that justice, once a matter of how we treat others, has become chiefly a matter of how we govern ourselves."
+          ],
+          "evidence": [
+            "was a shadow of justice, and for that reason it was of use?",
+            "not with the outward man, but with the inward,",
+            "which may be compared to the higher, lower, and middle notes of the scale,",
+            "and is no longer many, but has become one entirely temperate and perfectly adjusted nature,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-10-q4",
+          "prompt": "Socrates compares justice and injustice to health and disease. Why does Glaucon now call the old question “ridiculous”? Is the comparison strong enough to settle it?",
+          "facilitatorNotes": [
+            "If injustice is the soul’s disease, asking whether it profits a man is like asking whether life is worth living when the body is ruined, however rich and powerful he is. Socrates agrees but wants to go further and look at the forms of vice. The analogy can be challenged: a sick body feels ill, while many unjust people seem to flourish, and the comparison assumes what Thrasymachus denied."
+          ],
+          "evidence": [
+            "they are like disease and health; being in the soul just what disease and health are in the body.",
+            "Then virtue is the health, and beauty, and well-being of the soul,",
+            "In my judgment, Socrates, the question has now become ridiculous.",
+            "let us not faint by the way."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-11",
+      "title": "The Republic, Book V: until philosophers are kings",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "Follow how Socrates meets the ridicule he expects: first by defining the philosopher, then by separating two kinds of lovers.",
+      "focus": "The greatest of the “waves”: rule by philosophers, and what makes someone a philosopher.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. In Book V he has made two startling proposals for the guardians of his imagined city: that women share their education and offices, and that they hold wives and children in common. He calls each a “wave” of objection that may drown him. Glaucon has now pressed him to say whether such a city could ever exist. A file is a short line of soldiers; “honey-pale” is a lover’s word for a pale complexion; the Dionysiac festivals were the Athenian festivals of the god Dionysus, with choruses and plays.",
+      "contentNote": "Socrates teases Glaucon about his admiration for handsome youths, a convention of upper-class Athenian life.",
+      "excerpt": {
+        "locator": "Book V, from “Let me next endeavor” to the man who is “wide awake”; opens “Let me next endeavor to show what is that fault in States which is the cause of their…”; closes “He is wide awake.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2301,
+          2352
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0962555b20e8e7e7b088eb24142a292ecd1dc9e0ab9df95400ea8050ad465cdb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-11-q1",
+          "prompt": "What is the “one change” Socrates proposes? Why does he compare it to “the greatest of the waves,” and why does he expect laughter rather than argument?",
+          "facilitatorNotes": [
+            "Political power and philosophy must meet in the same people: philosophers must rule, or rulers become philosophers, and everyone else stand aside. He expects ridicule because philosophers seem useless dreamers, and Glaucon pictures respectable citizens stripping off their coats to attack him. Socrates still calls the change difficult but “possible.”"
+          ],
+          "evidence": [
+            "I go to meet that which I liken to the greatest of the waves;",
+            "Until philosophers are kings, or the kings and princes of this world have the spirit and power of philosophy,",
+            "which is not a slight or easy though still a possible one."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-11-q2",
+          "prompt": "To define the philosopher, Socrates describes lovers of youth, lovers of wine and lovers of honour. What do the three have in common, and what does the comparison say about the lover of wisdom?",
+          "facilitatorNotes": [
+            "Each loves the whole class of what he loves and finds an excuse for every instance: every face is charming, any wine will do, any honour is welcome. So the philosopher loves all wisdom and every kind of learning, and is never satisfied. The argument is playful, and Glaucon at once sees its weakness."
+          ],
+          "evidence": [
+            "ought to show his love, not to some one part of that which he loves, but to the whole.",
+            "They are glad of any pretext of drinking any wine.",
+            "And may we not say of the philosopher that he is a lover, not of a part of wisdom only, but of the whole?"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-11-q3",
+          "prompt": "Glaucon objects that curiosity would make philosophers of the festival-goers who “let out their ears to hear every chorus.” How does Socrates answer the objection?",
+          "facilitatorNotes": [
+            "They are only an imitation. True philosophers love “the vision of truth.” Beauty itself is one, though it appears as many when mixed with actions and things; the lovers of sights and sounds enjoy beautiful tones and colours but cannot see or love beauty itself. Curiosity about many things is not yet love of what makes them what they are."
+          ],
+          "evidence": [
+            "as if they had let out their ears to hear every chorus;",
+            "Those, I said, who are lovers of the vision of truth.",
+            "they are seen in all sorts of lights and appear many?",
+            "but their minds are incapable of seeing or loving absolute beauty."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-11-q4",
+          "prompt": "What does it mean, on Socrates’ account, to be “in a dream”? Can someone be dreaming while awake? Test the distinction on an example of your own.",
+          "facilitatorNotes": [
+            "The dreamer “puts the copy in the place of the real object,” taking beautiful things for beauty itself; the waking man tells the idea from the things that share in it. A student might think of someone who loves many songs but never asks what makes any of them good. The account assumes there is such a thing as beauty itself; readers who doubt it may think the lovers of sights are simply wide awake to the world."
+          ],
+          "evidence": [
+            "is not the dreamer, sleeping or waking, one who likens dissimilar things, who puts the copy in the place of the real object?",
+            "neither putting the objects in the place of the idea nor the idea in the place of the objects",
+            "He is wide awake."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-12",
+      "title": "The Republic, Book IX: the many-headed beast",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "Draw the image Socrates asks Glaucon to model, then use it to explain each vice he names.",
+      "focus": "Why injustice cannot profit anyone, and the city that exists as a pattern.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. At its start Thrasymachus, and then Glaucon for argument’s sake, claimed that the perfectly unjust man who seems just and is never caught lives best. Socrates has argued that the soul has three parts, reason, spirit and desire, that justice is their right order, and, earlier in Book IX, that the just man’s life is far happier than the tyrant’s. The Chimera, Scylla and Cerberus were monsters of Greek myth made of several creatures. Eriphyle, in legend, took a necklace as a bribe and sent her husband to his death. A husbandman is a farmer; a caitiff, a wretch; “By the dog of Egypt” is an oath of Socrates. The bracketed [4] marks a note of Jowett’s, printed after the end of Book IX, giving another rendering: “take up his abode there.”",
+      "contentNote": "Plato compares selling one’s soul with selling a child into slavery, and treats manual work as degrading.",
+      "excerpt": {
+        "locator": "Book IX, from the image of the soul to the end of the book; opens “Let us make an image of the soul, that he may have his own words presented before his…”; closes “I think so, he said.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4080,
+          4133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "df7406a6ad2882bee7065a0f8f71fe613337eafb0de160ce138b21902bb376ba"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-12-q1",
+          "prompt": "Describe the three creatures inside the human shape. Which part of the soul does each stand for? Why does the image need an outer hull?",
+          "facilitatorNotes": [
+            "The many-headed monster, with heads tame and wild that it grows at will, is desire; the lion is spirit; the smallest, the man, is reason. Seen from outside the whole looks like one human being, so whoever cannot look within will not see the beast. The unjust man can look like anyone else."
+          ],
+          "evidence": [
+            "a multitudinous, many-headed monster, having a ring of heads of all manner of beasts, tame and wild,",
+            "Suppose now that you make a second form as of a lion, and a third of a man,",
+            "so that he who is not able to look within, and sees only the outer hull, may believe the beast to be a single human creature."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-12-q2",
+          "prompt": "How does the image answer the man who says injustice pays? What would the just man do as a “good husbandman”?",
+          "facilitatorNotes": [
+            "Injustice means feeding the monster and strengthening the lion while the man inside starves and is dragged about. The just man gives the man mastery, tends the gentle heads, stops the wild ones growing and makes the lion his ally. Taking a bribe to enslave the best part of oneself to the worst is worse than selling a child into slavery."
+          ],
+          "evidence": [
+            "it is profitable for this creature to feast the multitudinous monster and strengthen the lion",
+            "He should watch over the many-headed monster like a good husbandman,",
+            "a man who sold his son or daughter into slavery for money,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-12-q3",
+          "prompt": "Use the image to explain one of the vices Socrates lists: intemperance, bad temper, softness, flattery, or the “mean employments.” Which explanation convinces you most, and which least?",
+          "facilitatorNotes": [
+            "Intemperance lets the monster run loose; pride lets the lion grow; luxury weakens it; flattery makes the lion serve the monster, so that it turns “from being a lion to become a monkey.” The claim about manual work reflects the contempt of a leisured class and is the easiest to dispute; so is the conclusion that those who cannot rule themselves should be ruled by “an external authority.”"
+          ],
+          "evidence": [
+            "and from being a lion to become a monkey?",
+            "And why are mean employments and manual arts a reproach?",
+            "or, if this be impossible, then by an external authority,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-12-q4",
+          "prompt": "Glaucon doubts that the city they have founded exists anywhere on earth. What does Socrates answer, and what does it mean to “set his own house in order” by a pattern in heaven?",
+          "facilitatorNotes": [
+            "Whether the city exists “is no matter”: it is a pattern a person can look at and live by, as a citizen of “the city which is within him.” The political design becomes a model for a soul. Some readers take this as Plato admitting the ideal state is impossible; others think the Republic was about the soul from the start."
+          ],
+          "evidence": [
+            "He will look at the city which is within him,",
+            "In heaven, I replied, there is laid up a pattern of it, methinks, which he who desires may behold, and beholding, may set his own house in order.",
+            "But whether such a one exists, or ever will exist in fact, is no matter;"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "russell-problems-1912",
+  "readings": [
+    {
+      "id": "reading-12-russell-problems-1912-01",
+      "title": "The Problems of Philosophy, XIV: Hegel and the hooks of reality",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Restate a philosopher’s system fairly before following the objection that undoes it.",
+      "focus": "Whether pure reasoning can prove what the universe as a whole must be.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier chapters distinguished knowledge by acquaintance, direct awareness of things such as one’s own sense-data, from knowledge of truths about things. A priori reasoning proceeds without appeal to experience; metaphysics asks what reality as a whole is like. G. W. F. Hegel was an influential German philosopher.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “The Limits of Philosophical Knowledge,” from the opening through the conclusion about Hegel’s system; opens “In all that we have said hitherto concerning philosophy, we have scarcely touched on many…”; closes “…out by the whole examination of human knowledge which has occupied our previous chapters.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          280,
+          285
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73a748b564d2e8a00607f573fcf092c758e8485b81f4495b382682bc06fc896d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-01-q1",
+          "prompt": "What hope does Russell call “vain,” and why does he admit it has inspired so many philosophers?",
+          "facilitatorNotes": [
+            "The hope of proving by a priori reasoning religious dogmas, the rationality of the universe, the unreality of matter or of evil. He grants it has been the “chief inspiration” of lifelong study, which makes his denial a serious claim about the limits of the subject, not a dismissal of its motives."
+          ],
+          "evidence": [
+            "the hope of finding reason to believe such theses as these has been the chief inspiration of many life-long students of philosophy",
+            "This hope, I believe, is vain."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q2",
+          "prompt": "How do the anatomist and the hooks illustrate Hegel’s method as Russell presents it?",
+          "facilitatorNotes": [
+            "As an anatomist infers a whole animal from one bone, the metaphysician claims to infer the whole of reality from any piece, because each piece is incomplete and “grapples” to the next. The images make the method vivid; ask whether Russell’s summary seems fair, since he admits he cannot do Hegel justice."
+          ],
+          "evidence": [
+            "Just as a comparative anatomist, from a single bone, sees what kind of animal the whole must have been",
+            "Every apparently separate piece of reality has, as it were, hooks which grapple it to the next piece"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q3",
+          "prompt": "Where exactly does Russell find the confusion, and what does the toothache example show?",
+          "facilitatorNotes": [
+            "The system assumes that a thing’s “nature” includes all truths about its relations, so knowing a thing requires knowing everything. Russell separates acquaintance with a thing from knowledge of truths about it: one can be fully acquainted with a toothache without knowing what the dentist knows of its cause. So having relations does not make those relations logically necessary."
+          ],
+          "evidence": [
+            "I may be acquainted, for example, with my toothache",
+            "Thus the fact that a thing has relations does not prove that its relations are logically necessary."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q4",
+          "prompt": "Russell calls Hegel’s conception “sublime” and his own conclusion “disappointing.” Why include both words?",
+          "facilitatorNotes": [
+            "He concedes the emotional appeal of a harmonious universe while insisting the argument fails, leaving “piecemeal investigation.” Calling the result disappointing to some but in harmony with science shows he is weighing appeal against warrant, the distinction the chapter teaches. Readers may judge whether piecemeal knowledge is a loss or a strength."
+          ],
+          "evidence": [
+            "In this conception, there is undeniably something sublime",
+            "Thus we are left to the piecemeal investigation of the world"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-02",
+      "title": "The Problems of Philosophy, XV: the practical man and the uncertain residue",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how Russell answers an objection by redefining what kind of value is at stake.",
+      "focus": "Why a subject without settled answers may still be worth studying.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. This last chapter asks why philosophy should be studied at all after so many problems have been left unsolved. Newton’s main work was titled Mathematical Principles of Natural Philosophy; a fortuitous concourse of atoms is a chance collection of particles.",
+      "contentNote": "Russell argues that religious beliefs cannot be proved by philosophy. This is a claim about proof to be examined, not a judgment of any reader’s faith.",
+      "excerpt": {
+        "locator": "Chapter XV, “The Value of Philosophy,” from the opening through the renunciation of philosophical proofs of religious belief; opens “Having now come to the end of our brief and very incomplete review of the problems of…”; closes “…supposed body of definitely ascertainable knowledge to be acquired by those who study it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          297,
+          302
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "16c26688b17708bda0d610a6f62aecd00eafd6a46e86827b62f196587013ceb2"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-02-q1",
+          "prompt": "How does Russell distinguish the usefulness of physical science from whatever value philosophy has?",
+          "facilitatorNotes": [
+            "Science benefits countless people who know nothing of it, through inventions; philosophy can benefit others only indirectly, through its effect on those who study it. So its value must be sought in the lives of its students, not in products."
+          ],
+          "evidence": [
+            "Physical science, through the medium of inventions, is useful to innumerable people who are wholly ignorant of it",
+            "it must be only indirectly, through its effects upon the lives of those who study it"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q2",
+          "prompt": "Who is the “practical” man, and why does Russell put the word in quotation marks?",
+          "facilitatorNotes": [
+            "He recognizes only material needs and forgets the mind’s need for food. The quotation marks signal that Russell thinks the label is misapplied: a society with no poverty or disease would still need the goods of the mind."
+          ],
+          "evidence": [
+            "who recognises only material needs, who realises that men must have food for the body, but is oblivious of the necessity of providing food for the mind"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q3",
+          "prompt": "Russell gives two explanations of philosophy’s lack of definite results. How do they differ?",
+          "facilitatorNotes": [
+            "First, subjects leave philosophy once they can be answered, as astronomy and psychology did, so its uncertainty is partly “more apparent than real.” Second, some of the deepest questions may be insoluble to human intellect. The second admits a real limit that the first does not explain away."
+          ],
+          "evidence": [
+            "the uncertainty of philosophy is more apparent than real",
+            "This is, however, only a part of the truth concerning the uncertainty of philosophy."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q4",
+          "prompt": "If philosophy cannot prove answers to its great questions, what does Russell say it still does?",
+          "facilitatorNotes": [
+            "It continues to consider them, makes us aware of their importance, examines approaches, and keeps alive speculative interest that narrow, definite knowledge tends to kill. Readers can debate whether this is enough to justify study, especially in light of his refusal to count proofs of religious beliefs among its results."
+          ],
+          "evidence": [
+            "to keep alive that speculative interest in the universe which is apt to be killed by confining ourselves to definitely ascertainable knowledge",
+            "we shall be compelled to renounce the hope of finding philosophical proofs of religious beliefs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-03",
+      "title": "The Problems of Philosophy, I: Berkeley’s table",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Keep Russell’s two questions apart: is there a real table at all, and what sort of thing is it?",
+      "focus": "Idealism, and why a philosopher thinks it worth asking whether a table exists.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier in this chapter he looked at an ordinary table and found that its colour, shape and texture change with the light, the angle and the observer. He calls what we immediately see or feel sense-data: colours, sounds, hardnesses. Hylas and Philonous are the two speakers in Berkeley’s dialogue; their names come from Greek words for matter and for a lover of mind.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Appearance and Reality,” from Berkeley’s denial of matter to the end of the chapter; opens “The philosopher who first brought prominently forward the reasons for regarding the…”; closes “…and wonder lying just below the surface even in the commonest things of daily life.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          17,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bbafe7b67ab66bbddcdf63d95dbce5d6b8709f3b4875c1302285ed1a1252de5e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-03-q1",
+          "prompt": "Russell says there are “two different questions” when we ask whether matter exists. What are they, and which one do Berkeley and Leibniz answer differently from ordinary people?",
+          "facilitatorNotes": [
+            "Is there a real table at all, and if so, what sort of object is it? Both philosophers say yes to the first and give strange answers to the second: ideas in the mind of God, or a colony of souls. Separating the questions shows that idealists do not deny that something persists when no one is looking; they deny only that it is non-mental matter."
+          ],
+          "evidence": [
+            "(1) Is there a real table at all? (2) If so, what sort of object can it be?",
+            "Berkeley says it is certain ideas in the mind of God, and Leibniz says it is a colony of souls."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-03-q2",
+          "prompt": "Restate in your own words the idealist argument Russell quotes. He calls it fallacious but does not yet say why. Can you find the weak step?",
+          "facilitatorNotes": [
+            "The argument runs: whatever can be thought of is an idea in a mind; so nothing but ideas can be thought of; so anything else is inconceivable and cannot exist. A strong answer is that it confuses the thought of a thing with the thing thought of: my idea of the table is in my mind, but that does not make the table an idea. Others will attack the last step, that what is inconceivable cannot exist."
+          ],
+          "evidence": [
+            "Whatever can be thought of is an idea in the mind of the person thinking of it;",
+            "therefore anything else is inconceivable, and what is inconceivable cannot exist.",
+            "Such an argument, in my opinion, is fallacious;"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-03-q3",
+          "prompt": "What does Russell credit Berkeley with, even though some of his arguments are “confused or quibbling”?",
+          "facilitatorNotes": [
+            "With showing that the existence of matter can be denied “without absurdity,” and that whatever exists independently of us cannot be what we immediately sense. Russell separates the worth of a conclusion from the quality of the arguments for it, a habit worth copying."
+          ],
+          "evidence": [
+            "some are important and sound, others are confused or quibbling.",
+            "the existence of matter is capable of being denied without absurdity,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-03-q4",
+          "prompt": "The chapter ends with doubt suggesting “that perhaps there is no table at all.” What does Russell think philosophy is good for if it cannot settle such questions? Do you agree?",
+          "facilitatorNotes": [
+            "It can ask questions that “increase the interest of the world” and show “the strangeness and wonder” in common things. The table has become “a problem full of surprising possibilities,” and even science’s answer, electric charges in violent motion, is “scarcely less wonderful.” Some readers find this a modest consolation; others think it is philosophy’s real value."
+          ],
+          "evidence": [
+            "The one thing we know about it is that it is not what it seems.",
+            "sober science, scarcely less wonderful, tells us it is a vast collection of electric charges in violent motion.",
+            "has at least the power of asking questions which increase the interest of the world,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-04",
+      "title": "The Problems of Philosophy, II: Descartes and the fixed point",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find the one thing Russell says cannot be doubted, and notice how he trims Descartes’ famous claim down to it.",
+      "focus": "Systematic doubt, and how much certainty is left when it is done.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. In Chapter I he showed that what we immediately see and feel of a table, its sense-data (colours, shapes, hardnesses), varies with the observer, and asked whether there is any real table behind them. Cogito, ergo sum is Latin for “I think, therefore I am”; a phantasmagoria is a shifting show of illusions.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “The Existence of Matter,” from the opening to the solid basis in our own experiences; opens “In this chapter we have to ask ourselves whether, in any sense at all, there is such a…”; closes “…have, for what it is worth, a solid basis from which to begin our pursuit of knowledge.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          28,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6bd2b5ed0ba3c7b991ca60791e1820075d8b9ab3f263bfcccefa48f3ba9eaf31"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-04-q1",
+          "prompt": "Why does Russell call the question whether matter exists “of the greatest importance”? Follow his chain of reasoning to “alone in a desert.”",
+          "facilitatorNotes": [
+            "If we cannot be sure that objects exist independently, we cannot be sure of other people’s bodies, and so even less of their minds, which we know only through their bodies. We might be alone in a long dream. He grants that this cannot be strictly disproved but says there is “not the slightest reason” to think it true: the chapter will try to show why."
+          ],
+          "evidence": [
+            "we have no grounds for believing in their minds except such as are derived from observing their bodies.",
+            "we shall be left alone in a desert—it may be that the whole outer world is nothing but a dream, and that we alone exist.",
+            "although it cannot be strictly proved to be false, there is not the slightest reason to suppose that it is true."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-04-q2",
+          "prompt": "Describe Descartes’ method of systematic doubt. Why does the deceitful demon not need to exist to do its work?",
+          "facilitatorNotes": [
+            "Descartes would believe nothing he did not see “clearly and distinctly” to be true. The demon is only a possibility, but a possibility is enough: if it could be deceiving him, his senses can be doubted. The thought experiment works by showing what is not certain, not by claiming what is real."
+          ],
+          "evidence": [
+            "the method of systematic doubt.",
+            "He imagined a deceitful demon, who presented unreal things to his senses in a perpetual phantasmagoria;",
+            "it might be very improbable that such a demon existed, but still it was possible,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-04-q3",
+          "prompt": "Russell says that “I think, therefore I am” claims more than is strictly certain. What does he put in its place, and why?",
+          "facilitatorNotes": [
+            "What is certain is “a brown colour is being seen,” not “I am seeing a brown colour.” A lasting self is as hard to reach as the real table; the something that sees might be momentary. Some readers find this a startling loss, a certainty without a self; others call it hair-splitting. Either way, it shows how carefully Russell measures certainty."
+          ],
+          "evidence": [
+            "says rather more than is strictly certain.",
+            "But the real Self is as hard to arrive at as the real table,",
+            "a brown colour is being seen."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-04-q4",
+          "prompt": "Why do dreams and hallucinations not weaken the certainty Russell has found? What exactly is “the solid basis” he ends on?",
+          "facilitatorNotes": [
+            "When we dream or see a ghost we really do have the sensations; what is doubtful is whether any physical object corresponds to them. Certainty belongs to particular experiences, not to their causes. The basis is narrow but firm: our own present thoughts and feelings."
+          ],
+          "evidence": [
+            "Thus it is our particular thoughts and feelings that have primitive certainty.",
+            "when we dream or see a ghost, we certainly do have the sensations we think we have,",
+            "a solid basis from which to begin our pursuit of knowledge."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-05",
+      "title": "The Problems of Philosophy, VI: the principle of induction",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Try to prove the principle of induction without using it, and notice where every attempt goes in a circle.",
+      "focus": "Why our expectations about the future rest on a principle experience can neither prove nor disprove.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier in this chapter Russell asked why we expect the sun to rise tomorrow, and warned that expectations formed by repetition can mislead, like the chicken fed every day by the man who at last wrings its neck. Induction is reasoning from observed cases to unobserved ones. Begging the question means assuming what you set out to prove; to confute is to disprove.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “On Induction,” from the concession about things found together to the end of the chapter; opens “It must be conceded, to begin with, that the fact that two things have been found often…”; closes “…be said to account for such knowledge, and what is its scope and its degree of certainty.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          123,
+          134
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8da4fe88c36effa381c8ac0fb712297bcb9d73f7cd88c5c847d88291d8905ac2"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-05-q1",
+          "prompt": "Why can repetition never give certainty, only probability? What does the chicken show?",
+          "facilitatorNotes": [
+            "Finding two things together often does not prove they will be found together next time; there can be “a failure at the last,” as the chicken learns. So “probability is all we ought to seek.” The concession sets the terms for everything that follows."
+          ],
+          "evidence": [
+            "does not, by itself, suffice to prove demonstratively that they will be found together in the next case we examine.",
+            "as in the case of the chicken whose neck is wrung.",
+            "Thus probability is all we ought to seek."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-05-q2",
+          "prompt": "Russell states the principle twice, first for a fresh case and then for the general law. Why is the general law always less probable than the single case?",
+          "facilitatorNotes": [
+            "If the law is true the case must be true, but the case can be true while the law fails. Both become more probable with repetition. Test it on an example: the next swan you see may be white even if not all swans are."
+          ],
+          "evidence": [
+            "The probability of the general law is obviously less than the probability of the particular case,",
+            "the particular case may be true without the general law being true."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-05-q3",
+          "prompt": "How does the black swan fail to disprove the inductive principle? Do you find the reasoning convincing?",
+          "facilitatorNotes": [
+            "Probability is relative to data. On the data of white swans alone, “all swans are white” was probable; black swans are fresh data, not proof that the first estimate was wrong. So experience cannot refute the principle. Some readers find this sound; others think it protects the principle by making it impossible to test."
+          ],
+          "evidence": [
+            "It should be noted that probability is always relative to certain data.",
+            "The argument is not disproved by the fact that some swans are black,",
+            "Thus our inductive principle is at any rate not capable of being disproved by an appeal to experience."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-05-q4",
+          "prompt": "Why can experience not prove the principle either? What are we left with, and what would follow if it were unsound?",
+          "facilitatorNotes": [
+            "Any argument from past success to future reliance already assumes induction, so it begs the question. We must accept the principle on its own evidence or give up every reason for expecting anything. Without it there is no reason to expect the sunrise, nourishing bread, or the fall from a roof, or that a friend’s body holds the friend’s mind. Russell leaves the principle standing as something we cannot prove and cannot do without."
+          ],
+          "evidence": [
+            "hence we can never use experience to prove the inductive principle without begging the question.",
+            "Thus we must either accept the inductive principle on the ground of its intrinsic evidence, or forgo all justification of our expectations about the future.",
+            "to expect bread to be more nourishing than a stone,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-06",
+      "title": "The Problems of Philosophy, VII: principles of inference",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Take an ordinary argument and find the general principle it silently depends on.",
+      "focus": "Principles too obvious to notice, and knowledge that does not come from the senses.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. In Chapter VI he argued that the principle of induction, by which we expect the future to resemble the past, can be neither proved nor disproved by experience, yet everyone relies on it. A premiss is a statement an argument starts from; indubitable means beyond doubt.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “On Our Knowledge of General Principles,” from the opening to the inductive principle as a principle of probability; opens “We saw in the preceding chapter that the principle of induction, while necessary to the…”; closes “…example—is the inductive principle, which we considered in the preceding chapter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          137,
+          148
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "97352f7c8165abe9150d53b5e4bd1e52109189c3a2c4d5e19444dfe1257211db"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-06-q1",
+          "prompt": "Why are principles of inference “apt to be overlooked,” and why does Russell think they matter?",
+          "facilitatorNotes": [
+            "They are so obvious that we assume them without noticing. Yet a conclusion is only as good as the principle that draws it: the principles must be true just as the data must be. Noticing them opens hard questions about how we know anything at all."
+          ],
+          "evidence": [
+            "The principles of inference are apt to be overlooked because of their very obviousness",
+            "it is just as necessary that our principles of inference should be true as it is that our data should be true."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-06-q2",
+          "prompt": "Walk through the conversation about the 15th and the 16th. What general principle does it depend on, and how, according to Russell, do we come to know such a principle?",
+          "facilitatorNotes": [
+            "If this implies that, and this is true, then that is true. We learn it as children learn that two and two are four: first in particular cases, then by seeing that “the particularity is irrelevant.” The dinner with Jones is beside the point; the form of the argument carries it."
+          ],
+          "evidence": [
+            "if yesterday was the 15th to-day must be the 16th.",
+            "if this implies that, and this is true, then that is true.",
+            "first of all we realise some particular application of the principle, and then we realise that the particularity is irrelevant,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-06-q3",
+          "prompt": "If someone asks why we should accept the results of valid arguments from true premisses, what can be said? Why does Russell find this not trivial?",
+          "facilitatorNotes": [
+            "We can only appeal to the principle itself: the justification goes in a circle, and the principle is beyond doubt anyway. That is the point: we have “indubitable knowledge” that does not come from the senses. Readers can weigh this against the view that all knowledge comes from experience."
+          ],
+          "evidence": [
+            "we can only answer by appealing to our principle.",
+            "they show that we may have indubitable knowledge which is in no way derived from objects of sense."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-06-q4",
+          "prompt": "Russell says the name “laws of thought” is misleading. Why? What difference does it make whether these laws describe how we think or how things are?",
+          "facilitatorNotes": [
+            "What matters is that things behave according to them, so that thinking by them is thinking truly. If they were only habits of the mind, logic would tell us about ourselves, not the world. Russell postpones the question; students can try it out: could anything both be and not be?"
+          ],
+          "evidence": [
+            "for what is important is not the fact that we think in accordance with these laws, but the fact that things behave in accordance with them;",
+            "Nothing can both be and not be."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-07",
+      "title": "The Problems of Philosophy, VIII: Kant’s question",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Sort Russell’s examples into analytic and synthetic before he does, then test 7 + 5 = 12 yourself.",
+      "focus": "How we can know in advance something true of things we have never met.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. A priori knowledge is knowledge independent of experience, as in logic and arithmetic; empirical knowledge comes from experience. In Chapter VII he argued that we know some general principles, such as those of logic, with certainty and not from the senses, and described the old quarrel between rationalists, who held that much can be known by reason alone, and empiricists, who held that knowledge comes from experience. Immanuel Kant was a German philosopher and David Hume a Scottish one.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “How A Priori Knowledge is Possible,” from the opening to the outline of Kant’s problem; opens “Immanuel Kant is generally regarded as the greatest of the modern philosophers. Though he…”; closes “…of it, and even that will be thought misleading by many exponents of Kant's system.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          164,
+          168
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "89707f671484f510f34f414a94f7903566bab61d05e005abb928aa58aa318091"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-07-q1",
+          "prompt": "What is an analytic judgment? Make up two examples of your own, and say why Russell calls such propositions trivial.",
+          "facilitatorNotes": [
+            "One whose predicate is got “by merely analysing the subject,” like “A bald man is a man.” To deny it is to contradict oneself. Such statements tell us nothing new, which is why only an orator preparing “a piece of sophistry” would bother to say them."
+          ],
+          "evidence": [
+            "They are called \"analytic\" because the predicate is obtained by merely analysing the subject.",
+            "would never be enunciated in real life except by an orator preparing the way for a piece of sophistry."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-07-q2",
+          "prompt": "What did Hume discover about cause and effect, and what “far more doubtful” conclusion did he draw from it?",
+          "facilitatorNotes": [
+            "That the connection is synthetic: an effect cannot be deduced logically from its cause. Russell accepts this. Hume went on to conclude that nothing at all can be known a priori about cause and effect, which Russell doubts, and which “much perturbed” Kant."
+          ],
+          "evidence": [
+            "the connection was really synthetic.",
+            "Hence he inferred the far more doubtful proposition that nothing could be known a priori about the connection of cause and effect."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-07-q3",
+          "prompt": "Why does Kant say 7 + 5 = 12 is synthetic? Test the claim: is the idea of 12 contained in the idea of 7 + 5?",
+          "facilitatorNotes": [
+            "Seven and five have to be put together to give twelve; the idea of twelve is not in either number or in the idea of adding them. Russell agrees, “quite truly.” Some students will object that twelve is simply defined by such sums, which would make the proposition analytic; later philosophers argued exactly this."
+          ],
+          "evidence": [
+            "His stock instance was the proposition 7 + 5 = 12.",
+            "the idea of 12 is not contained in them, nor even in the idea of adding them together."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-07-q4",
+          "prompt": "Why can our knowledge of mathematics not come from induction, according to Russell? Why are the inhabitants of London a hundred years hence a good example?",
+          "facilitatorNotes": [
+            "Induction cannot prove itself, and mathematical truths are known with certainty from a single case, gaining nothing from more, unlike “all men are mortal.” We do not know who those Londoners will be, yet we know that two of them and two more make four: knowledge in advance about things we have never met. Russell calls this power “certainly surprising,” and the rest of the chapter takes up Kant’s attempt to explain it."
+          ],
+          "evidence": [
+            "can obviously be known with certainty by consideration of a single instance,",
+            "but we know that any two of them and any other two of them will make four of them.",
+            "This apparent power of anticipating facts about things of which we have no experience is certainly surprising."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-08",
+      "title": "The Problems of Philosophy, V: acquaintance and description",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort ten things you know into those you are acquainted with and those you know only by description.",
+      "focus": "Two ways of knowing a thing, and what we are directly acquainted with.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Sense-data are what is immediately known in sensation: colours, sounds, smells, hardnesses. In earlier chapters Russell argued that what we directly see and touch is sense-data, not physical objects, so that the existence of a physical object such as his table is inferred, not given; at the end of Chapter IV he distinguished knowledge of things from knowledge of truths.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “Knowledge by Acquaintance and Knowledge by Description,” from the opening through acquaintance by introspection; opens “In the preceding chapter we saw that there are two sorts of knowledge: knowledge of…”; closes “…therefore of the fact that they, the subjects of their sensations and feelings, exist.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          83,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cd04d4490c2b3d448d607a60d2dff2b1142fa292c9f761b02c3ba972bf53797d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-08-q1",
+          "prompt": "Define acquaintance in your own words. Why does Russell say that true statements about a colour do not make him know the colour itself “any better”?",
+          "facilitatorNotes": [
+            "Acquaintance is direct awareness, with no inference and no knowledge of truths in between. Seeing the shade of brown is complete knowledge of it; saying it is brown or dark gives truths about it, not more of it. Some readers object that naming and comparing do change what we notice; Russell would say that is knowledge of truths."
+          ],
+          "evidence": [
+            "We shall say that we have acquaintance with anything of which we are directly aware, without the intermediary of any process of inference or any knowledge of truths.",
+            "I know the colour perfectly and completely when I see it,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q2",
+          "prompt": "Why is the table known only “by description”? What does Russell conclude about the table itself, and does the conclusion trouble you?",
+          "facilitatorNotes": [
+            "The table is known as the physical object that causes certain sense-data, so all knowledge of it is knowledge of truths connecting it with things we are acquainted with. Strictly, the table itself is not known at all, only that one object fits the description. Many find this startling; it follows from the earlier argument that we can doubt the table but not the sense-data."
+          ],
+          "evidence": [
+            "the physical object which causes such-and-such sense-data.",
+            "the actual thing which is the table is not, strictly speaking, known to us at all.",
+            "We know a description, and we know that there is just one object to which this description applies,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q3",
+          "prompt": "If we were acquainted only with present sense-data, what could we not know? Why does Russell add memory, and what does memory make possible?",
+          "facilitatorNotes": [
+            "We could know nothing of the past, not even that there was one, and no truths about our sense-data, which require acquaintance with universals. Memory gives immediate awareness of what is past and is the source of all knowledge of the past; without it no inference about the past could start."
+          ],
+          "evidence": [
+            "We should only know what is now present to our senses:",
+            "This immediate knowledge by memory is the source of all our knowledge concerning the past:",
+            "since we should never know that there was anything past to be inferred."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q4",
+          "prompt": "How, according to Russell, do we come to know that other people have minds? Do you accept his supposition that animals “never know of their own existence”?",
+          "facilitatorNotes": [
+            "Through sense-data connected with their bodies, interpreted by what we know of our own minds; without acquaintance with our own minds we could not even imagine theirs. The claim about animals is put cautiously (“It seems natural to suppose”), and many today would question it; the reasoning also shows how the knowledge of other minds depends on description."
+          ],
+          "evidence": [
+            "What goes on in the minds of others is known to us through our perception of their bodies,",
+            "But for our acquaintance with the contents of our own minds, we should be unable to imagine the minds of others,",
+            "never become aware of this acquaintance, and thus never know of their own existence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-09",
+      "title": "The Problems of Philosophy, IX: Plato’s ideas and the world of universals",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Take one sentence of your own and mark which words name particulars and which universals.",
+      "focus": "What universals are, how Plato came to them, and why verbs and prepositions matter.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. At the end of Chapter VIII he argued that relations between things seem to belong to a world that is neither mental nor physical, and promised to explore it. Charles I of England was beheaded in 1649. Spinoza and Leibniz were seventeenth-century philosophers; F. H. Bradley was an English philosopher of Russell’s own time.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The World of Universals,” from the opening to “verbs and prepositions”; opens “At the end of the preceding chapter we saw that such entities as relations appear to have…”; closes “…sort represented by adjectives and substantives rather than by verbs and prepositions.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          180,
+          189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8991f34c7f7c22018818fdbdce17f55e27e292eb75d899891ee58b37bddc6adb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-09-q1",
+          "prompt": "How does the problem of universals arise from a question like “What is justice?” Summarise Plato’s answer as Russell gives it.",
+          "facilitatorNotes": [
+            "We look at many just acts for what they have in common; that common nature is justice itself, which Plato calls an idea or form. It is not in minds, though minds grasp it; it is not a particular thing, so it is not in the world of sense; and it is eternal and unchanging. Particular things “partake of” it."
+          ],
+          "evidence": [
+            "it is natural to proceed by considering this, that, and the other just act, with a view to discovering what they have in common.",
+            "The word will be applicable to a number of particular things because they all participate in a common nature or essence.",
+            "it is eternally itself, immutable and indestructible."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q2",
+          "prompt": "Russell accepts the logic of Plato’s theory but sets aside its “mystical developments.” What is the difference? Why does he prefer the word “universal” to “idea”?",
+          "facilitatorNotes": [
+            "The logic is the claim that there are common natures shared by many things. The mysticism is the further belief that they form a more real world we might see in illumination, existing “in heaven.” “Idea” now suggests something in a mind, which Plato did not mean, so Russell uses “universal”: anything that can be shared by many particulars."
+          ],
+          "evidence": [
+            "These mystical developments are very natural, but the basis of the theory is in logic,",
+            "has acquired, in the course of time, many associations which are quite misleading",
+            "a universal will be anything which may be shared by many particulars,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q3",
+          "prompt": "Why, according to Russell, can no sentence be made without a universal? Test the claim on his examples and on one of your own. Why do we fail to notice universals?",
+          "facilitatorNotes": [
+            "Even “I like this” uses “like,” which many people can bear to many things. In the sentence about Charles I we think of the king, his head and the cutting, all particulars, and pass over “head” and “cut,” which are universals. Such words seem incomplete without context, so we look past them to particulars."
+          ],
+          "evidence": [
+            "It will be seen that no sentence can be made up without at least one word which denotes a universal.",
+            "We feel such words to be incomplete and insubstantial;"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q4",
+          "prompt": "What went wrong, according to Russell, when philosophers attended only to universals named by adjectives and nouns? Trace his chain of reasoning to monism and monadism.",
+          "facilitatorNotes": [
+            "Adjectives and nouns express qualities of single things; verbs and prepositions express relations. Neglecting the second led philosophers to treat every proposition as giving a property to one thing, so relations seemed impossible: either there is only one thing (monism) or many that cannot interact (monadism). It is a bold claim about the history of philosophy; students can weigh whether a grammatical habit could shape so much."
+          ],
+          "evidence": [
+            "those named by verbs and prepositions have been usually overlooked.",
+            "Thus the neglect of prepositions and verbs led to the belief that every proposition can be regarded as attributing a property to a single thing,",
+            "Hence either there can be only one thing in the universe, or, if there are many things, they cannot possibly interact in any way,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-10",
+      "title": "The Problems of Philosophy, XII: Othello’s false belief",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Draw Russell’s theory as a diagram: the mind, the objects, the relation that binds them, and the fact that would make the belief true.",
+      "focus": "How a belief can be false, and what makes a true belief true.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier in this chapter Russell set three requirements for a theory of truth: it must allow for falsehood; truth and falsehood must be properties of beliefs; yet they must depend on something outside the belief. He rejected the view that truth is coherence among beliefs and turned to correspondence with fact, which he now explains. In Shakespeare’s Othello, Iago leads Othello to believe, falsely, that his wife Desdemona loves his lieutenant Cassio.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, “Truth and Falsehood,” from “The necessity of allowing for falsehood” to the end of the chapter; opens “The necessity of allowing for falsehood makes it impossible to regard belief as a…”; closes “…this or that belief is true or false. This consideration will occupy the next chapter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          247,
+          257
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe197c2ba4d9380236e23c7e2767e701c5c6c4150295b5ab6bf3ad1b7e43d443"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-10-q1",
+          "prompt": "Why can belief not be a relation between a mind and a single object, such as Desdemona’s love for Cassio?",
+          "facilitatorNotes": [
+            "If belief were like acquaintance, a relation to one object, it would always be true, because there must be an object to relate to. When the belief is false there is no such object; and to call the object “that Desdemona loves Cassio” would require falsehoods existing independently of minds, which Russell wants to avoid."
+          ],
+          "evidence": [
+            "it would not admit of the opposition of truth and falsehood, but would have to be always true.",
+            "There is in fact no such object, and therefore Othello cannot have any relation to such an object.",
+            "for that would require that there should be objective falsehoods, which subsist independently of any minds;"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q2",
+          "prompt": "What is a relation of three or four terms? How do Russell’s examples, “between” and jealousy, prepare for his account of Othello’s belief?",
+          "facilitatorNotes": [
+            "Some relations need more than two terms: “between” needs three places, jealousy three people, and wishing that someone promote a marriage four. Belief is such a relation: one act of believing knits together Othello, Desdemona, loving and Cassio. Choosing jealousy in a chapter built on Othello is apt."
+          ],
+          "evidence": [
+            "York is between London and Edinburgh;",
+            "Similarly jealousy requires three people:",
+            "knitting together into one complex whole the four terms Othello, Desdemona, loving, and Cassio."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q3",
+          "prompt": "Why does the order of the terms matter? Compare Othello’s judgment that Desdemona loves Cassio with his judgment that Cassio loves Desdemona.",
+          "facilitatorNotes": [
+            "The constituents are the same, but judging has a “sense” or direction that puts them in order, shown by word order in English. The two judgments differ, and could differ in truth. Without order the theory could not tell them apart."
+          ],
+          "evidence": [
+            "Othello's judgment that Cassio loves Desdemona differs from his judgment that Desdemona loves Cassio,",
+            "because the relation of judging places the constituents in a different order in the two cases."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q4",
+          "prompt": "“It is a brick in the structure, not the cement.” Explain the image. What makes a belief true, and in what sense do minds not “create” truth? What is the exception?",
+          "facilitatorNotes": [
+            "In the belief, loving is one of the objects; believing is the cement. If the belief is true there is another whole, a fact, in which loving is the cement binding Desdemona and Cassio in the same order. Beliefs depend on minds for their existence but not for their truth; the exception is beliefs about future things within the believer’s power, “such as catching trains.” Students may think of others: confidence that can make itself come true."
+          ],
+          "evidence": [
+            "it is a brick in the structure, not the cement.",
+            "Thus a belief is true when there is a corresponding fact, and is false when there is no corresponding fact.",
+            "except in the special case where they concern future things which are within the power of the person believing, such as catching trains."
+          ]
+        }
+      ]
+    }
+  ]
+}
