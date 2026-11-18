@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "nesbit-dragons-1900",
+  "readings": [
+    {
+      "id": "reading-3-nesbit-dragons-1900-01",
+      "title": "Kind Little Edmund, part 1: An inquiring mind",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 6,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice when the narrator says one thing and means another.",
+      "focus": "A boy who wants to find things out, not learn them, goes looking for the source of the noises in the mountain.",
+      "context": "E. Nesbit (Edith Nesbit, 1858–1924) was an English writer of funny, magical stories for children. The Book of Dragons (1900) collects eight dragon tales. In this one the narrator talks straight to the reader and often says the opposite of what she means: listen for the jokes. To play truant is to skip school; ciphering is arithmetic; Mr. Smiles’s “Self-Help” was a serious Victorian book about improving yourself; stalactites and stalagmites are stony spikes that hang from cave roofs and rise from cave floors.",
+      "contentNote": "Edmund is caned (hit with a stick) by his schoolmaster, a common school punishment in Nesbit’s time.",
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund, or The Caves and the Cockatrice,” from the beginning to the three noises in the cave; opens “Edmund was a boy. The people who did not like him said that he was the most tiresome boy…”; closes “…clucking sound, such as a chicken might make if it happened to be as big as a haystack.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-nesbit-dragons-1900-02",
+        "blocks": [
+          871,
+          883
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dcdae4f59a9a595bd67363e598e6d1fc624982302c94c35dca8358191b706c59"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-01-q1",
+          "prompt": "What is the difference, for Edmund, between learning things and finding things out? Give an example of each.",
+          "facilitatorNotes": [
+            "Learning is what school teaches, “what everybody knows.” Finding out is taking clocks and locks apart, cutting open a rubber ball, or burning Granny’s comb to see if it is real tortoiseshell: discovering for himself."
+          ],
+          "evidence": [
+            "Edmund did not want to learn things: He wanted to find things out, which is quite different.",
+            "It was Edmund who cut open the India rubber ball to see what made it bounce,"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-01-q2",
+          "prompt": "The narrator says Edmund skipped school because he was “a kindhearted boy” who did not want to waste the master’s time. Is that the real reason? How can you tell she is joking?",
+          "facilitatorNotes": [
+            "No: he simply did not want to go. She pretends to praise him with a long, solemn excuse that no one would believe; the grand words make the joke."
+          ],
+          "evidence": [
+            "He played truant whenever he could, for he was a kindhearted boy,"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-01-q3",
+          "prompt": "Where do other truants go, and where does Edmund go? Why?",
+          "facilitatorNotes": [
+            "They go gathering nuts and berries in the green woods; Edmund goes up the mountain, where people are afraid of the strange noises from the caves, because he wants to find out what makes them."
+          ],
+          "evidence": [
+            "He always went up the mountain where the great rocks were,",
+            "He wanted to find out what made them."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-01-q4",
+          "prompt": "Edmund hears three noises in the cave. Describe each one. What might be making them?",
+          "facilitatorNotes": [
+            "A heavy rumble like a large old gentleman asleep after dinner, a smaller rumble, and a clucking like a chicken as big as a haystack. Predictions will vary; the comparisons hint at something huge and sleepy and something like an enormous bird."
+          ],
+          "evidence": [
+            "like a very large old gentleman asleep after dinner;",
+            "such as a chicken might make if it happened to be as big as a haystack."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-nesbit-dragons-1900-02",
+      "title": "Kind Little Edmund, part 2: The cockatrice’s fire",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 6,
+        "totalMinutes": 17
+      },
+      "challenge": "Picture a creature built from many animals, and catch the narrator’s jokes about school.",
+      "focus": "Edmund rescues a dying cockatrice and is rewarded with stories nobody at school will believe.",
+      "context": "Recap: Edmund, a boy who would rather find things out than learn them at school, is exploring the caves in the mountain to discover what makes the frightening noises people hear there. He has heard three: a big rumble, a smaller rumble and a giant clucking. A griffin is a creature part eagle, part lion; a cock’s comb is the red crest on a rooster’s head; a snapdragon was a Christmas game of snatching raisins from burning brandy; geological formations are the shapes and layers of rock.",
+      "contentNote": "Edmund is caned (hit with a stick) by his schoolmaster, a common school punishment in Nesbit’s time. A splash of the cockatrice’s burning fire burns Edmund’s hand.",
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund,” from the hole in the cave wall to the master’s second caning; opens “\"It seems to me,\" said Edmund to himself, \"that the clucking is nearer than the others.\"…”; closes “…was ignorant and unbelieving: but I am told that some schoolmasters are not like that.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-nesbit-dragons-1900-01",
+        "continuesTo": "reading-3-nesbit-dragons-1900-03",
+        "blocks": [
+          884,
+          904
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5fab01b048d1ebcd95ad7dfe3643237dd3ab65db48746f94c7534bd721756823"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-02-q1",
+          "prompt": "What does the cockatrice look like? Why is it dying?",
+          "facilitatorNotes": [
+            "A man’s face, a griffin’s body, feathery wings, a snake’s tail and a rooster’s comb. Its fire has gone out: it must stir it with its tail once every hundred years, and it overslept."
+          ],
+          "evidence": [
+            "This person had a man's face and a griffin's body,",
+            "My fire's gone out!"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-02-q2",
+          "prompt": "What does Edmund use to light the fire? What is the joke about the lesson books?",
+          "facilitatorNotes": [
+            "Pine sticks and “a lesson book or two that he had forgotten to lose before.” The joke is that he usually loses his schoolbooks on purpose; for once that habit helps."
+          ],
+          "evidence": [
+            "a lesson book or two that he had forgotten to lose before,"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-02-q3",
+          "prompt": "What does Edmund ask for as his reward, and what does the cockatrice tell him?",
+          "facilitatorNotes": [
+            "Stories about “true things that they don’t know at school”: mines, treasure and rocks, but also gnomes, dragons, the unicorn and Magic. The list mixes real science with magic, and Edmund believes all of it."
+          ],
+          "evidence": [
+            "About true things that they don't know at school,",
+            "and about the unicorn and the phoenix, and about Magic, black and white."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-02-q4",
+          "prompt": "Why does the master cane Edmund even after he shows his burnt hand? What does the narrator think of the master?",
+          "facilitatorNotes": [
+            "The master decides the story is a lie and the burn is just mischief with fire. The narrator calls him “ignorant and unbelieving.” Readers may notice that the master has a point, which is part of the joke."
+          ],
+          "evidence": [
+            "I see you've been playing with fire—into mischief as usual,",
+            "The master was ignorant and unbelieving:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-nesbit-dragons-1900-03",
+      "title": "Kind Little Edmund, part 3: Mrs. D. and the town",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a warning that no one will believe, and notice what the narrator admits about Edmund.",
+      "focus": "Edmund wakes a dragon, tries to warn the town, and watches the worst happen.",
+      "context": "Recap: exploring the mountain caves, Edmund found a dying cockatrice, a creature part rooster, part griffin, part snake, and relit its fire. Since then it has told him wonderful stories, but when Edmund tells the schoolmaster, he is caned for lying. Obstinate means stubborn; a centipede is a creature with very many legs; archers shot arrows from holes in town walls; amiable means friendly.",
+      "contentNote": "Edmund is caned (hit with a stick) by his schoolmaster, a common school punishment in Nesbit’s time. A dragon swallows the whole town, with Edmund’s granny in it.",
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund,” from the brass passage and the green door to the swallowing of the town; opens “Now, one day Edmund made a new lantern out of something chemical that he sneaked from the…”; closes “…a mouse. Edmund gasped once or twice, and then ran into the cave to tell the cockatrice.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-nesbit-dragons-1900-02",
+        "continuesTo": "reading-3-nesbit-dragons-1900-04",
+        "blocks": [
+          905,
+          918
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3f6684d30c5ce939534a2f32314d79bf635178d3b58fafd469588f2ba4e5f1c6"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-03-q1",
+          "prompt": "What do the signs on the green door say? Why does Edmund wait before knocking?",
+          "facilitatorNotes": [
+            "“Mrs. D. knock and ring” and “call me at three.” His watch says a quarter to three, so he waits; it still works only because he has not had time to take it apart. The narrator calls the waiting kindhearted."
+          ],
+          "evidence": [
+            "call me at three.",
+            "he had not yet had time to take it to pieces and see what made it go, so it was still going."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-03-q2",
+          "prompt": "What does Edmund do when he sees the dragon, and how does the master respond?",
+          "facilitatorNotes": [
+            "He races to school to warn everyone. The master canes him, and when Edmund points to the yellow cloud over the mountain, the master calls it “only a thunder shower.”"
+          ],
+          "evidence": [
+            "There's a great dragon coming! Somebody ought to do something, or we shall all be destroyed.",
+            "It's only a thunder shower,"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-03-q3",
+          "prompt": "What does it mean that the master “would not believe his own eyes”? Why is the sentence he writes on the board funny?",
+          "facilitatorNotes": [
+            "He will not change his mind even when he sees evidence. His sentence, “Lying is very wrong, and liars must be caned,” is aimed at Edmund, who is telling the truth; the one denying the truth is the master."
+          ],
+          "evidence": [
+            "would not believe his own eyes if they told him anything different from what he had been saying before his eyes spoke.",
+            "Lying is very wrong, and liars must be caned."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-03-q4",
+          "prompt": "As the dragon comes near, what does Edmund feel about his granny, and about his master? What does the narrator admit?",
+          "facilitatorNotes": [
+            "He grieves for his granny. About the master, the narrator admits Edmund was “not as sorry as he ought to have been” that the master would learn the truth this way. Readers may find that funny, shocking, or very human."
+          ],
+          "evidence": [
+            "Oh, my poor, dear granny,",
+            "I am afraid he was not as sorry as he ought to have been"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-nesbit-dragons-1900-04",
+      "title": "Kind Little Edmund, part 4: Exactly as he was told",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 6,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow Edmund’s reasoning about the three noises, and notice how someone finally manages him.",
+      "focus": "The cockatrice refuses to explain, and for once Edmund does as he is told.",
+      "context": "Recap: Edmund woke a huge yellow dragon, Mrs. D., and tried to warn his town, but the schoolmaster caned him for lying. From the mountain Edmund watched the dragon swallow the whole town, with his granny in it. Now he has run to his friend the cockatrice, who lives in a basin of fire. A drakling is a baby dragon; Draco centipedis is a made-up Latin name meaning “hundred-footed dragon”; a Baptist chapel is a church building.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund,” from the cockatrice’s “What then?” to Edmund leading the drakling away; opens “\"Well,\" said the cockatrice thoughtfully, when the tale had been told. \"What then?\"”; closes “…forgotten to be frightened, said, \"Come on then,\" and they went back to the cockatrice.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-nesbit-dragons-1900-03",
+        "continuesTo": "reading-3-nesbit-dragons-1900-05",
+        "blocks": [
+          919,
+          941
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe74a703031c62c51e48ead6bd59dc6819723e8f02a5df17e0541a60a30a8a17"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-04-q1",
+          "prompt": "How does the cockatrice first answer Edmund’s terrible news? Why doesn’t it understand?",
+          "facilitatorNotes": [
+            "“What then?” and “Does it matter?” and “You can live here with me.” It does not know what a granny is. Edmund explains patiently until he loses patience."
+          ],
+          "evidence": [
+            "Does it matter?",
+            "I don't know what a granny may be,"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-04-q2",
+          "prompt": "When Edmund asks “But why?”, what does the cockatrice do? Why does the narrator call it “exactly the right way to manage Edmund”?",
+          "facilitatorNotes": [
+            "It refuses to explain (“take it or leave it”) and goes to sleep snoring. Edmund, who argues with everyone, respects it at once and obeys, perhaps for the first time. Readers can discuss whether refusing to explain is ever good teaching."
+          ],
+          "evidence": [
+            "I give you advice; take it or leave it—",
+            "Now this was exactly the right way to manage Edmund, only no one had ever thought of trying to do it before."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-04-q3",
+          "prompt": "How does Edmund work out where to find the drakling?",
+          "facilitatorNotes": [
+            "From the three noises: the clucking was the cockatrice, the big rumble the dragon, so the smaller rumble must be the drakling. His habit of finding things out is useful after all."
+          ],
+          "evidence": [
+            "Of course, the clucking had been the cockatrice,",
+            "So the smaller rumbling must have been the drakling."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-04-q4",
+          "prompt": "What gives Edmund courage at the drakling’s door? What is the drakling like when it wakes?",
+          "facilitatorNotes": [
+            "Remembering the cockatrice’s grim eye and determined snore. The drakling is sleepy and obedient like a small child, insists on its shoes because “Mother said” so, and is “only about the size of a Baptist chapel.”"
+          ],
+          "evidence": [
+            "he remembered the grim expression of the cockatrice's eye,",
+            "Mother said I was never to go out without my shoes,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-nesbit-dragons-1900-05",
+      "title": "Kind Little Edmund, part 5: The way down",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 6,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a two-part trick, and decide whether Edmund is changing.",
+      "focus": "Edmund and the cockatrice trap the drakling and trick the dragon into giving back the town.",
+      "context": "Recap: a great dragon has swallowed Edmund’s town, granny and all. His friend the cockatrice, a fiery creature who will not explain its advice, told him to fetch the dragon’s baby, the drakling, which has a hundred feet and wears fifty pairs of copper shoes. Edmund woke it and brought it to the cockatrice’s cave. A shaft is a deep, narrow passage; “done to a turn” means cooked just right; “Facilis descensus” is Latin for “the way down is easy.”",
+      "contentNote": "Edmund hooks the drakling by its tail to hold it in a shaft.",
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund,” from the drakling in the cockatrice’s cave to the dragon coughing up the town; opens “The cave was rather narrow for the drakling, but it made itself thin, as you may see a…”; closes “…carefully.\" And with that he coughed—and choked—and there was the town, on the hillside.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-nesbit-dragons-1900-04",
+        "continuesTo": "reading-3-nesbit-dragons-1900-06",
+        "blocks": [
+          942,
+          964
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e39104f17119c45af2f1ffba5437f4cf00f6f87b6cc625a538f6908b589f48b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-05-q1",
+          "prompt": "What rule does the cockatrice teach the drakling? Why is it funny coming from the cockatrice?",
+          "facilitatorNotes": [
+            "“We must not ask for all we see,” a nursery rule about manners. A fire-dwelling monster scolding a dragon-baby like a nanny is the joke."
+          ],
+          "evidence": [
+            "Did they never teach you that 'we must not ask for all we see'?"
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-05-q2",
+          "prompt": "How does Edmund trap the drakling? Why can’t it turn back?",
+          "facilitatorNotes": [
+            "He shows it the way down to the fire in the middle of the earth, and as it goes down he hooks its tail. The way down is easy, but no one can come back up."
+          ],
+          "evidence": [
+            "caught the end of the drakling's tail and ran the iron hook through it",
+            "the way to the fires below is very easy to go down, but quite impossible to come back on."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-05-q3",
+          "prompt": "Why does the cockatrice tell Edmund to laugh at the dragon? What does it shout, and what happens?",
+          "facilitatorNotes": [
+            "To bring her to the cave and make her believe she swallowed her own baby with the town. She coughs the town up to search it, and it lands on the hillside."
+          ],
+          "evidence": [
+            "You've eaten your own drakling—swallowed it with the town.",
+            "And with that he coughed—and choked—and there was the town, on the hillside."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-05-q4",
+          "prompt": "Edmund obeys “for a wonder” this time. Do you think he is changing? Find evidence.",
+          "facilitatorNotes": [
+            "He almost asks “Why?” and stops himself, does exactly as he is told, and feels “very busy and important.” Some readers will say he is learning; others that he only obeys the cockatrice because he admires it."
+          ],
+          "evidence": [
+            "Edmund very nearly said \"Why?\" but he stopped in time,",
+            "doing exactly as he had been told, for a wonder,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-nesbit-dragons-1900-06",
+      "title": "Kind Little Edmund, part 6: Nobody believes him",
+      "sourceId": "nesbit-dragons-1900",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 6,
+        "totalMinutes": 18
+      },
+      "challenge": "Judge whether the narrator’s praise of Edmund is meant seriously, and notice how the story ends.",
+      "focus": "Edmund saves the town, and still no one but his granny believes him.",
+      "context": "Recap: a great dragon swallowed Edmund’s town. On his friend the cockatrice’s advice, Edmund sent her baby, the drakling, down a shaft toward the fire in the middle of the earth, hooking its tail to hold it there, and the cockatrice tricked the dragon into coughing the town back up. A goods train is a freight train; vexatious means annoying; a wild-goose chase is a hopeless search; to be apprenticed is to work for a craftsman while learning a trade.",
+      "contentNote": "Edmund is caned (hit with a stick) by his schoolmaster, a common school punishment in Nesbit’s time. The dragon and her baby are shut away under the earth for good.",
+      "excerpt": {
+        "locator": "VIII. “Kind Little Edmund,” from the trapping of the dragon to the end of the story; opens “Edmund had run back to the cockatrice, and it had told him what to do. So before the…”; closes “But he is quite an old man now, and he hasn't gotten that door open yet!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-nesbit-dragons-1900-05",
+        "continuesTo": null,
+        "blocks": [
+          965,
+          979
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d46504c7bae70c0686beb4bd54d798bc3d8dd2dcfcd87c223309210de7cbd756"
+      },
+      "questions": [
+        {
+          "id": "reading-3-nesbit-dragons-1900-06-q1",
+          "prompt": "How does Edmund get the dragon down the hole for good? What does the narrator say about her as a mother?",
+          "facilitatorNotes": [
+            "He pinches the drakling’s tail so it howls; the dragon squeezes into the mountain to find it; he lets the tail go, the baby slides down, and she plunges after it. Then he slams the iron door. The narrator says “she was an excellent mother”: that is exactly what traps her."
+          ],
+          "evidence": [
+            "Whatever may have been the poor dragon's other faults, she was an excellent mother.",
+            "When the last joint of her tail had gone Edmund slammed down the iron door."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-06-q2",
+          "prompt": "Edmund is “glad” that the dragons will have plenty to eat forever. Is that kind? What do you think the narrator means?",
+          "facilitatorNotes": [
+            "The narrator calls it kindhearted, but he has shut them under the earth for ever. Many readers hear the narrator joking; others think it really is better than the dragon eating towns. Both can be argued."
+          ],
+          "evidence": [
+            "he was glad to think that dragon and drakling would now have plenty to eat of their favorite food, forever and ever."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-06-q3",
+          "prompt": "How does the master explain away the dragon? What proof does Edmund offer, and why doesn’t it work?",
+          "facilitatorNotes": [
+            "The master calls it a thunderstorm and an earthquake. Edmund points out that the town now stands on the hillside, but the master, the class and even the maps say it always did. Edmund believes the shock changed the maps; no one else does."
+          ],
+          "evidence": [
+            "There was a thunderstorm and an earthquake, that's all.",
+            "the shock of being swallowed by the dragon had upset all the maps and put them wrong."
+          ]
+        },
+        {
+          "id": "reading-3-nesbit-dragons-1900-06-q4",
+          "prompt": "“Only one good thing came of all this long story.” What changed in Edmund? Has he stopped wanting to find things out?",
+          "facilitatorNotes": [
+            "He argues less and becomes a locksmith’s apprentice, but only so he can one day pick the cockatrice’s lock and find out more. He is still curious, even as an old man, and the door is still shut."
+          ],
+          "evidence": [
+            "He does not argue quite so much,",
+            "so that he might one day be able to pick the lock of the cockatrice's front door"
+          ]
+        }
+      ]
+    }
+  ]
+}
