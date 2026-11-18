@@ -393,6 +393,83 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-keller-story-my-life-1905-06",
+      "title": "Helen’s first Christmas: Anne Sullivan’s letters of December 1887 and January 1888",
+      "sourceId": "keller-story-my-life-1905",
+      "author": "Anne Mansfield Sullivan",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a teacher’s private letters for two things at once: the story of a child’s first Christmas, and the teacher’s ideas about how language is learned.",
+      "focus": "Ten months after she arrived in Alabama, Anne Sullivan writes to an old friend about Christmas with seven-year-old Helen Keller, who has only lately learned that everything has a name.",
+      "context": "Anne Mansfield Sullivan (1866–1936), herself partly blind, came to Tuscumbia, Alabama, in March 1887 to teach six-year-old Helen Keller. She wrote these letters to Mrs. Sophia Hopkins, her house-mother at the Perkins Institution for the Blind in Boston, and John Macy printed them in the 1905 edition of The Story of My Life. Helen spells words into people’s hands and reads them from their fingers; Nancy is her doll; a braille slate is a frame for writing raised dots by hand; Captain and Mrs. Keller are her parents. Keller tells this same Christmas in her own words in Chapter VIII, which this level reads on a school night; Sullivan’s account is read on Christmas Day.",
+      "contentNote": "Sullivan uses the dated and now offensive phrase “a school for the feeble-minded.”",
+      "excerpt": {
+        "locator": "Part III, Chapter III (Education), Anne Mansfield Sullivan’s letters dated December 12, 1887 and January 1, 1888, both complete; opens “December 12, 1887.”; closes “…was more eloquent than words. My heart, too, was full of gratitude and solemn joy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1274,
+          1284
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "349200c1d9af780860ce92429af8a859a6e6d0ad0338e8ee74217a4bca5392bd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-keller-story-my-life-1905-06-q1",
+          "prompt": "In the December letter, Sullivan says she teaches Helen rhymes and stories but does not explain everything in them. What does she think stories do for a child, and why hold back explanations?",
+          "facilitatorNotes": [
+            "Rhymes “fix beautiful thoughts” in the memory and stimulate the imagination; explaining everything would leave “no opportunity for the play of fancy” and would turn the child’s attention to words and sentences instead of the whole thought. She trusts imagination and repetition more than definition."
+          ],
+          "evidence": [
+            "If I did, there would be no opportunity for the play of fancy.",
+            "Too much explanation directs the child's attention to words and sentences"
+          ]
+        },
+        {
+          "id": "reading-7-keller-story-my-life-1905-06-q2",
+          "prompt": "At the school-children’s Christmas tree, Helen first starts taking the gifts off the tree. What happens next, and what does Sullivan want her friend to notice about Helen?",
+          "facilitatorNotes": [
+            "Once Helen understands that there is a present for each child, she hands the gifts out, leaves her own unopened until every child has received theirs, and shares with the girl who had fewer. Sullivan shows how quickly Helen grasps a social custom once it is explained, and how generous she is; she also notes that Helen outlasted her teacher’s aching fingers."
+          ],
+          "evidence": [
+            "She placed them in a chair, resisting all temptation to look at them until every child had received his gifts.",
+            "One little girl had fewer presents than the rest, and Helen insisted on sharing gifts with her."
+          ]
+        },
+        {
+          "id": "reading-7-keller-story-my-life-1905-06-q3",
+          "prompt": "Sullivan objects to making a child write or spell “cut and dried sentences” about the cat or the dog. What kind of teaching does she reject, what does she do instead, and do you agree with her?",
+          "facilitatorNotes": [
+            "She rejects drill in sentences the child has no reason to say. She talks to Helen naturally, lets her tell what interests her, and supplies words when Helen is eager but stuck. Students may agree, or argue that practice has its uses; strong answers test her claim against the progress the letters themselves report, such as the new words the Christmas season brought."
+          ],
+          "evidence": [
+            "Talk should be natural and have for its object an exchange of ideas.",
+            "When I see that she is eager to tell me something, but is hampered because she does not know the words, I supply them"
+          ]
+        },
+        {
+          "id": "reading-7-keller-story-my-life-1905-06-q4",
+          "prompt": "The letter ends with the Kellers’ thanks and Sullivan’s “gratitude and solemn joy.” Why was this Christmas so different for the family, and why might Sullivan end with Captain Keller’s silence?",
+          "facilitatorNotes": [
+            "The Christmas before, Helen had no conscious part in the festivities; now she understands, speaks with her fingers, worries that Santa Claus has made a mistake and plans to write letters. In a letter about the power of words, Captain Keller’s wordless handshake shows a feeling beyond words, which Sullivan calls “more eloquent.” Some readers connect the ending to the January letter’s first line, about the gladness of being needed."
+          ],
+          "evidence": [
+            "the difference between this bright Christmas and the last, when their little girl had no conscious part in the Christmas festivities",
+            "But his silence was more eloquent than words."
+          ]
+        }
+      ],
+      "holiday": "christmas"
     }
   ]
 }

@@ -278,7 +278,7 @@
       },
       "challenge": "Connect an elegy’s images to the history behind it.",
       "focus": "A lament for a Black officer denied his command, ending in a prophecy.",
-      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Charles Young (1864–1922), born into slavery in Kentucky, was the third Black graduate of the U.S. Military Academy at West Point and the first Black colonel in the U.S. Army. In 1917, as America entered the First World War, the Army retired him on medical grounds, keeping him from a command in France; he rode on horseback from Ohio to Washington, D.C., to prove his fitness. He died in 1922 in Lagos, Nigeria, while serving as a military attaché in West Africa, and was first buried there. An elegy is a poem of mourning.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Charles Young (1864–1922), born into slavery in Kentucky, was the third Black graduate of the U.S. Military Academy at West Point and the first Black colonel in the U.S. Army. In 1917, as America entered the First World War, the Army retired him on medical grounds, keeping him from a command in France; he rode on horseback from Ohio to Washington, D.C., to prove his fitness. He died in 1922 in Lagos, Nigeria, while serving as a military attaché in West Africa, and was first buried there. An elegy is a poem of mourning. It is read on Veterans Day, which honours everyone who has served in the armed forces.",
       "contentNote": "The poem mourns a soldier held back by racial discrimination.",
       "excerpt": {
         "locator": "“In Memory of Col. Charles Young,” the whole poem; opens “ALONG the shore the tall, thin grass That fringes that dark river, While sinuously soft…”; closes “…that work below; From your rich dust and slaughtered will A tree with tongues will grow.”.",
@@ -325,7 +325,8 @@
             "A tree with tongues will grow."
           ]
         }
-      ]
+      ],
+      "holiday": "veterans-day"
     },
     {
       "id": "reading-7-cullen-color-1925-06",
@@ -1425,70 +1426,6 @@
           ],
           "evidence": [
             "Bread’s not so dry when dipped in wine."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-7-cullen-color-1925-23",
-      "title": "She of the Dancing Feet Sings",
-      "sourceId": "cullen-color-1925",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 13,
-        "totalMinutes": 21
-      },
-      "challenge": "Hear a speaker’s voice and decide how serious she is.",
-      "focus": "A dancer explains why heaven would not suit her.",
-      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. The whole poem is the dancer’s own song. Seraphs and cherubim are kinds of angels; “faery” means fairy. In Christian tradition some angels fell from heaven for their pride.",
-      "contentNote": "A dancer playfully says that heaven would not suit her and that the fallen angels in hell would understand her.",
-      "excerpt": {
-        "locator": "“She of the Dancing Feet Sings,” the whole poem with its dedication; opens “(_To Ottie Graham_)”; closes “…smile to see my face, And understand, because they fell From that all-perfect place.””.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          245,
-          250
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "0f81e4c238aa8844f4ba3f37dce64eac6b7d8de5f4134b34daf5e316858cb399"
-      },
-      "questions": [
-        {
-          "id": "reading-7-cullen-color-1925-23-q1",
-          "prompt": "Why does the dancer think she would not “thrive” in heaven?",
-          "facilitatorNotes": [
-            "Dancing would be a sin there, no man would love her face or hold her, and the proud angels would not stoop to sing her tunes. She values dance, love and music above perfection."
-          ],
-          "evidence": [
-            "Where dancing would be sin,",
-            "With not a man to love my face,"
-          ]
-        },
-        {
-          "id": "reading-7-cullen-color-1925-23-q2",
-          "prompt": "How does she describe herself in the first stanza? What does the comparison suggest?",
-          "facilitatorNotes": [
-            "Her limbs are like apple boughs swaying in gusty rain-wind: dancing is as natural to her as a tree moving in weather. It is part of what she is, not a hobby."
-          ],
-          "evidence": [
-            "And limbs like apple boughs that sway",
-            "When the gusty rain winds beat?"
-          ]
-        },
-        {
-          "id": "reading-7-cullen-color-1925-23-q3",
-          "prompt": "Why would the “wistful angels down in hell” understand her? Is the poem rebellious, sad or playful?",
-          "facilitatorNotes": [
-            "They fell from “that all-perfect place” and know that perfection does not suit everyone; “wistful” makes them gently sad, not wicked. Her song is a playful, daring challenge to a heaven without joy; some readers will also hear sadness. Ask for words that support each view."
-          ],
-          "evidence": [
-            "The wistful angels down in hell",
-            "And understand, because they fell"
           ]
         }
       ]

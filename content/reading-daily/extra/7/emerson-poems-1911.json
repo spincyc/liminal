@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "emerson-poems-1911",
+  "readings": [
+    {
+      "id": "reading-7-emerson-poems-1911-01",
+      "title": "Ode Sung in the Town Hall, Concord, July 4, 1857",
+      "sourceId": "emerson-poems-1911",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a Fourth of July ode as it turns from celebration to a demand, and decide exactly what it asks the United States to do.",
+      "focus": "Four years before the Civil War, Emerson’s holiday poem celebrates freedom and tells the nation it cannot praise liberty abroad while denying it at home.",
+      "context": "Ralph Waldo Emerson (1803–1882) wrote this ode for the Fourth of July in his town of Concord, Massachusetts, in 1857. That March the Supreme Court’s Dred Scott decision had declared that Black Americans could not be citizens, and the fight over spreading slavery into the western territories was growing violent; that summer ships were preparing to lay the first telegraph cable across the Atlantic. The urn is the sky as a vessel filled with the sun’s fire; the broad blue fold is the flag’s blue field of stars; a statute is a law; a scroll of honor is a written record of glory; the main is the open sea; to accord is to agree. It is read on Independence Day.",
+      "contentNote": "The phrase “men … of Saxon kind” reflects a nineteenth-century belief that people of Anglo-Saxon descent were especially fit to govern themselves.",
+      "excerpt": {
+        "locator": "“Ode, Sung in the Town Hall, Concord, July 4, 1857,” the whole poem; opens “SUNG IN THE TOWN HALL, CONCORD, JULY 4, 1857”; closes “…wise, Nor pauses in his plan, Will take the sun out of the skies Ere freedom out of man.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          423,
+          434
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7a3a186162084ab7a62df94f87bc5f1a3064cbebe55a43edf3d12aa563fb06a7"
+      },
+      "questions": [
+        {
+          "id": "reading-7-emerson-poems-1911-01-q1",
+          "prompt": "Which sights and sounds of a Fourth of July fill the first two stanzas? What does “One morn is in the mighty heaven, / And one in our desire” mean?",
+          "facilitatorNotes": [
+            "The sun filling the sky’s “blue urn with fire,” cannon booming from town to town, joy-bells and children’s voices. There are two mornings: the real sunrise, and the morning the people long for, the dawn of a freer nation. The holiday’s light stands for a hope not yet fulfilled."
+          ],
+          "evidence": [
+            "One morn is in the mighty heaven,",
+            "The cannon booms from town to town,"
+          ]
+        },
+        {
+          "id": "reading-7-emerson-poems-1911-01-q2",
+          "prompt": "Where does the poem turn from celebrating to commanding? What is the “double tongue” the nation must not speak with?",
+          "facilitatorNotes": [
+            "At “United States! the ages plead,” where the poem speaks to the country directly: “Go put your creed into your deed.” A double tongue says one thing and does another; the next stanza names it, rights fought for with one hand and “cloven down” by the other, which in 1857 points to a nation founded on liberty that permits slavery."
+          ],
+          "evidence": [
+            "Go put your creed into your deed,",
+            "See rights for which the one hand fights",
+            "By the other cloven down."
+          ]
+        },
+        {
+          "id": "reading-7-emerson-poems-1911-01-q3",
+          "prompt": "“Be just at home; then write your scroll / Of honor o’er the sea.” Why must justice at home come first, and how does the Atlantic cable fit the argument?",
+          "facilitatorNotes": [
+            "A nation can claim honor abroad only once it practices justice at home. The cable will carry “Sweet songs of liberty” under the sea, and the poem wants it to be the only chain left in America: “there shall be no chain, / Save underneath the sea.” A new invention becomes a test of national honesty."
+          ],
+          "evidence": [
+            "Be just at home; then write your scroll",
+            "And henceforth there shall be no chain,",
+            "Save underneath the sea"
+          ]
+        },
+        {
+          "id": "reading-7-emerson-poems-1911-01-q4",
+          "prompt": "The ode ends: He “Will take the sun out of the skies / Ere freedom out of man.” Is this a promise, a warning, or both? To whom might each be addressed in 1857?",
+          "facilitatorNotes": [
+            "A promise to the enslaved and to lovers of liberty that freedom belongs to human nature and cannot be destroyed; a warning to slavery’s defenders that they are working against the order of the universe. The sun image returns to the poem’s opening sunrise. Accept either emphasis when it is argued from the comparison."
+          ],
+          "evidence": [
+            "Will take the sun out of the skies",
+            "Ere freedom out of man."
+          ]
+        }
+      ],
+      "holiday": "independence-day"
+    }
+  ]
+}

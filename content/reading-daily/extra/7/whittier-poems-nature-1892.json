@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "whittier-poems-nature-1892",
+  "readings": [
+    {
+      "id": "reading-7-whittier-poems-nature-1892-01",
+      "title": "The Pumpkin",
+      "sourceId": "whittier-poems-nature-1892",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a comic thank-you poem from faraway lands to a New England Thanksgiving table, and notice where the joking turns tender.",
+      "focus": "Whittier praises the pumpkin, and a pumpkin pie a friend has sent him, as the taste of home, childhood and family reunion.",
+      "context": "John Greenleaf Whittier (1807–1892) grew up on a farm near Haverhill, Massachusetts, and wrote this poem in 1844, as its closing date shows. In the 1840s Thanksgiving was chiefly a New England holiday, a late-autumn day of family reunion and feasting; it became a national holiday in 1863. Nineveh’s prophet is Jonah, who sat in the shade of a gourd vine waiting to see whether God would destroy Nineveh; the Xenil is a river in southern Spain; crook-necks are curved squashes; a board is a dinner table; the fairy’s pumpkin coach is Cinderella’s; “may thy shadow never be less” is an old wish for health and good fortune. It is read on Thanksgiving Day.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Pumpkin,” the whole poem; opens “Oh, greenly and fair in the lands of the sun, The vines of the gourd and the rich melon…”; closes “1844.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          589,
+          594
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b177c62181737eb645cfee509fc887cd045e392c63a4300d23f4406f412734d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-whittier-poems-nature-1892-01-q1",
+          "prompt": "The first two stanzas travel to Nineveh, Spain and Cuba before reaching New England. Why might Whittier begin so far from home?",
+          "facilitatorNotes": [
+            "He places the gourd family in grand, biblical and exotic settings, then claims the Yankee looks on his own fields with “dearer delight.” The tour makes the plain New England pumpkin seem more precious by comparison, and it is partly mock-heroic: a humble vegetable given an epic introduction."
+          ],
+          "evidence": [
+            "Like that which o'er Nineveh's prophet once grew,",
+            "Yet with dearer delight from his home in the North,"
+          ]
+        },
+        {
+          "id": "reading-7-whittier-poems-nature-1892-01-q2",
+          "prompt": "In the Thanksgiving stanza, who comes home, and what is restored? Why does the stanza end with a question about pumpkin pie?",
+          "facilitatorNotes": [
+            "Pilgrims and guests from every direction; the gray-haired New Englander sees “the old broken links of affection restored,” a care-worn man returns to his mother, a worn matron smiles as she did as a girl. The pie is a taste that “calls back the past,” joining the present to childhood. Ending a moving question with a pie is gently comic, so the stanza is sentimental and funny at once."
+          ],
+          "evidence": [
+            "The old broken links of affection restored,",
+            "What calls back the past, like the rich Pumpkin pie?"
+          ]
+        },
+        {
+          "id": "reading-7-whittier-poems-nature-1892-01-q3",
+          "prompt": "Which boyhood memories does the pumpkin bring back in the fourth stanza? Which one belongs to a different autumn holiday?",
+          "facilitatorNotes": [
+            "Wood-grapes and falling nuts, faces carved in pumpkins with a candle inside (jack-o’-lanterns, now a Halloween custom), laughing round the corn-heap at a husking, sitting on a pumpkin by moonlight, telling of Cinderella’s coach. The memories mix farm work with play and stories."
+          ],
+          "evidence": [
+            "When wild, ugly faces we carved in its skin,",
+            "Glaring out through the dark with a candle within!"
+          ]
+        },
+        {
+          "id": "reading-7-whittier-poems-nature-1892-01-q4",
+          "prompt": "The poem closes by wishing the pie-maker a life “Golden-tinted and fair as thy own Pumpkin pie!” Is the ending serious, comic, or both? Why is the speaker’s mouth “too full to express” his prayer?",
+          "facilitatorNotes": [
+            "Both. The wishes are sincere (long life, fame, a beautiful old age), but the joke about a full mouth and the comparison of a life to a pie keep the thanks light, as suits a note between friends. Accept either emphasis when it is supported by the lines."
+          ],
+          "evidence": [
+            "And the prayer, which my mouth is too full to express,",
+            "Golden-tinted and fair as thy own Pumpkin pie!"
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
+    }
+  ]
+}
