@@ -492,6 +492,88 @@
     },
     {
       "id": "reading-9-matthews-oxford-american-essays-1914-08",
+      "title": "The Tyranny of Things",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edward Sandford Martin",
+      "workTitle": "The Tyranny of Things",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "The essay jokes nearly all the way through. Find the serious claim under each joke, and notice where the examples come from.",
+      "focus": "A comic essay of the 1890s on how possessions, big houses and rich friends take over the lives of people who cannot afford them.",
+      "context": "Edward Sandford Martin (1856–1939) was an American essayist and magazine editor; the anthology reprints this essay from his book Windfalls of Observation (1893). The “Patagonians” he mentions are the Native people of Tierra del Fuego at the tip of South America, as a passing traveller described them. Thetis dipped her baby Achilles in a river to make him invulnerable; Tarpeia, in Roman legend, was crushed under the shields of the Sabines she let into Rome; Sindbad, in the Arabian Nights, was ridden by the Old Man of the Sea, who would not get off his shoulders. Res angustae domi is Latin for “narrow means at home”; a cormorant is a greedy sea bird; jimcracks are knick-knacks; usufruct is the right to use another’s property. Hawthorne and Emerson lived in modest houses at Lenox and Concord, Massachusetts.",
+      "contentNote": "The opening uses a traveller’s anecdote about Indigenous people as a curiosity, from the outside.",
+      "excerpt": {
+        "locator": "The Tyranny of Things, by Edward Sandford Martin in The Oxford Book of American Essays (1914), complete; opens “A traveler newly returned from the Pacific Ocean tells pleasant stories of the…”; closes “…it inevitably contracts the circle of those who will find it profitable to share them.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1126,
+          1142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c227eac574910a5be994a1b365bf58355c65ea7271dc79735a4dfa8251bde8a8"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q1",
+          "prompt": "How does Martin use the traveller’s story of the Patagonians? What does it let him say about “civilization,” and what is missing from the way he tells it?",
+          "facilitatorNotes": [
+            "The people who need no clothes or houses make modern comforts look like burdens; he concludes that “civilization is the mere cultivation of our wants” and jokes that they should “send missionaries to us.”",
+            "The joke reverses the usual direction of missions. But the Patagonians are seen only through a passing steamer’s view, as a picture of simplicity; readers can ask what their own lives were like, which the essay never considers."
+          ],
+          "evidence": [
+            "civilization is the mere cultivation of our wants",
+            "it seems a pity that those simple Patagonians could not send missionaries to us to show us how to do without"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q2",
+          "prompt": "Why does Martin tell the story of the hospital? What makes it different from a story about waste?",
+          "facilitatorNotes": [
+            "Its managers were not extravagant; they did “only … what the enlightened experience of the day has considered to be necessary,” yet expenses doubled. The point is that standards rise faster than means: “the enlightened experience of the day invents more necessaries than we can get the money to pay for.”",
+            "The dry last sentence about the receiver finding “a well-appointed institution” is the joke. Ask readers for a modern example of a rising standard that costs more than people can pay."
+          ],
+          "evidence": [
+            "the enlightened experience of the day invents more necessaries than we can get the money to pay for",
+            "the receiver will find a well-appointed institution of which the managers have no reason to be ashamed"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q3",
+          "prompt": "Pick two exaggerations from the paragraph about the big house. What truth does each one carry?",
+          "facilitatorNotes": [
+            "The grass must be cut “even though funerals in the family have to be put off for the mowing”; the owner learns to do everything in the house “except enjoy himself.” Both say the house sets the schedule, not its owners.",
+            "The paragraph assumes a husband who mends and a wife who is “a slave to carpets and curtains,” which shows the period’s division of work. Students may discuss whether the essay notices that."
+          ],
+          "evidence": [
+            "the grass about it must be cut even though funerals in the family have to be put off for the mowing",
+            "Presently he will know how to do everything that can be done in the house, except enjoy himself."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q4",
+          "prompt": "Why does Martin say the tyranny of things is harder to resist than the tyranny of a man? What does he mean by preferring the verb “to be” to “to have”?",
+          "facilitatorNotes": [
+            "A human oppressor is recognized and fought; things come “so masked with seeming benefits” that a person is “bound before he suspects his fetters,” until “it is the things that own him.” When having and being compete, being is what “best repays concentration.”",
+            "He limits his advice to “us poor” and excuses the rich. Some readers find his last section, on the time it costs to keep up with rich friends, the sharpest part; others think it shrinks a moral point into a practical one."
+          ],
+          "evidence": [
+            "the tyranny of _things_ is so subtle, so gradual in its approach, and comes so masked with seeming benefits, that it has him hopelessly bound before he suspects his fetters",
+            "Presently he begins to realize that it is the things that own him.",
+            "the verb _to be_ is the one that best repays concentration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-09",
       "title": "Free Trade vs. Protection in Literature",
       "sourceId": "matthews-oxford-american-essays-1914",
       "author": "Samuel McChord Crothers",
@@ -522,7 +604,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q1",
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q1",
           "prompt": "Crothers says lasting literature is “an accident.” What does the young man at the Social Justice meeting add to that claim?",
           "facilitatorNotes": [
             "The young man reasons that equal rights should mean an equal right to be a genius, and asks “Then why ain’t I?” Crothers cannot answer. Genius cannot be claimed as a right, planned by critics, or produced by effort alone; it “happens.”",
@@ -535,7 +617,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q2",
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q2",
           "prompt": "Explain the title’s comparison. Why, according to Crothers, can literature never be a “protected industry”?",
           "facilitatorNotes": [
             "Actors and singers sell their work only in the present, so the living hold a kind of monopoly. A reader, though, can choose any book from any century, and an old book is often cheaper: “The book which has just come from the press has no advantage over the book that is a century old.”",
@@ -548,7 +630,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q3",
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q3",
           "prompt": "Compare the visitor at the art exhibition with the reader alone in the library. Why does privacy matter so much to Crothers’s argument?",
           "facilitatorNotes": [
             "At the exhibition the visitor feels watched and tries “to look pleased”; in the library he is like a voter in a secret ballot, free to enjoy what he enjoys. Literary fashions fail because “Few people will follow a fashion except when other people are looking at them.”",
@@ -558,6 +640,169 @@
             "Conscious of this espionage, you endeavor to look pleased.",
             "He is making an exhibition of himself.",
             "Few people will follow a fashion except when other people are looking at them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-10",
+      "title": "Dante and the Bowery",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Theodore Roosevelt",
+      "workTitle": "Dante and the Bowery",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Roosevelt piles up names on purpose; you do not need to know them all. Follow the one argument they serve, and notice how each list is built.",
+      "focus": "A former president argues that Dante’s greatness lay partly in treating the people of his own day as freely as the heroes of the past, which modern writers are too self-conscious to do.",
+      "context": "Theodore Roosevelt (1858–1919), president of the United States from 1901 to 1909, was also a prolific writer; the anthology reprints this essay from History as Literature and Other Essays (1913). Dante Alighieri (1265–1321) of Florence wrote the Divine Comedy, whose first part, the Inferno, describes Hell and names many of his own contemporaries among the damned. Guelphs and Ghibellines were rival political factions in medieval Italy. The Bowery was a crowded, poor and lively street in Lower Manhattan; Fulton Market, the Brooklyn Navy Yard, Castle Garden (the old immigrant station) and Tammany (New York’s Democratic political machine) are New York places of Roosevelt’s time. Thomas Hart Benton of Missouri was a Union senator; Jefferson Davis was president of the Confederacy. Simony is buying and selling church offices; barratry here means corruption in public office.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Dante and the Bowery, by Theodore Roosevelt in The Oxford Book of American Essays (1914), complete; opens “It is the conventional thing to praise Dante because he of set purpose \"used the language…”; closes “…worshiped only for art's sake, without reference to the dread lessons it teaches mankind.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1174,
+          1184
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "365722e0ce0d7b5493202fc046d63783f49723d1a7dbf8f2f93163a6749b04c1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q1",
+          "prompt": "What does Roosevelt say Dante did that modern poets will not do? Why, according to him, do they hold back?",
+          "facilitatorNotes": [
+            "Dante illustrated qualities of the soul with examples “alike from human nature as he saw it around him and from human nature as he read of it,” putting local captains beside Cyrus and Attila. Modern writers fear that any illustration will be read as a comparison of greatness, and that “cultivated people would ridicule” them.",
+            "He blames self-consciousness and an over-developed “critical faculty.” Ask whether readers today would laugh at a poem that set a local figure beside a hero of the past."
+          ],
+          "evidence": [
+            "cultivated people would ridicule the poet who illustrated fundamental truths, as Dante did six hundred years ago",
+            "we are so self-conscious as always to read a comparison into any illustration"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q2",
+          "prompt": "Roosevelt says Whitman alone “dared use the Bowery,” yet “was not quite natural in doing so.” What is the difference between Whitman’s boldness and Dante’s?",
+          "facilitatorNotes": [
+            "Whitman wrote of “homely things and every-day men,” but knew he was “defying the conventions,” and the defiance shows. Dante was not defying anything; his age simply allowed it.",
+            "Roosevelt values naturalness over daring. Some readers will think defiance is exactly what made Whitman new; others accept the point that a writer at ease with his material writes better."
+          ],
+          "evidence": [
+            "his self-consciousness made him a little defiant",
+            "Dante was not defiant of conventions"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q3",
+          "prompt": "Look at the paragraph on Farinata, Benton and Jefferson Davis. What quality does Roosevelt admire in all three, and what does his pairing of Benton and Davis leave out?",
+          "facilitatorNotes": [
+            "The “frowning defiance, the high heart, and the stubborn will” of a man who “held hell in great scorn.” He sets Benton, “the champion of the Union,” beside Davis, who fought “for what he deemed right in trying to break up the Union,” as equally “colossal.”",
+            "The comparison is about courage, not causes, as his own argument says. But readers may fairly point out that it never names what the Confederacy fought to preserve, slavery, so admiring Davis’s will is not a neutral choice. Ask whether Roosevelt’s principle can be applied without that blind spot."
+          ],
+          "evidence": [
+            "fronted an adverse fate with the frowning defiance, the high heart, and the stubborn will",
+            "fought for what he deemed right in trying to break up the Union"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q4",
+          "prompt": "In his last paragraph Roosevelt says imitating Dante would make a writer “ridiculous.” What, then, does he want us to learn from Dante?",
+          "facilitatorNotes": [
+            "Not the form (“We do not express ourselves nowadays in epics at all”) but his “high simplicity of soul”: seeing in the people around us “the eternal qualities which we admire or condemn” in the great figures of history. He also wants the poem read for its “dread lessons,” not only “for art’s sake.”",
+            "Ask whether he is right that a great work’s lessons matter more than its art, and how he might answer someone who reads Dante mainly for beauty. Notice too his aside that Dante sometimes confused “his own hatreds” with heaven’s."
+          ],
+          "evidence": [
+            "it would be a good thing if we could, in some measure, achieve the mighty Florentine's high simplicity of soul",
+            "without reference to the dread lessons it teaches mankind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-11",
+      "title": "The Revolt of the Unfit",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Nicholas Murray Butler",
+      "workTitle": "The Revolt of the Unfit",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Butler writes with heavy irony. For each paragraph, decide whether he is stating his own view or mimicking someone else’s, and keep a note of the moment his own position comes clear.",
+      "focus": "An essay that seems to mock the “unfit” for revolting against evolution, then argues that cooperation and moral law rightly overrule the struggle for existence.",
+      "context": "Nicholas Murray Butler (1862–1947) was president of Columbia University; the anthology reprints this essay from his book Why Should We Change Our Form of Government? (1912). Charles Darwin’s theory of evolution by natural selection was published in 1859; “survival of the fittest” is the philosopher Herbert Spencer’s phrase. In Butler’s day some writers argued that poverty and failure among human beings were nature’s sorting of the “fit” from the “unfit,” and that laws helping the poor interfered with nature. T. H. Huxley was a leading defender of Darwin. Ipso facto is Latin for “by that very fact”; the Contrat social is Rousseau’s Social Contract; Linnaeus named the human species Homo sapiens, “wise man.” Robert Louis Stevenson wrote the closing fable.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Revolt of the Unfit, by Nicholas Murray Butler in The Oxford Book of American Essays (1914), complete; opens “THERE are wars and rumors of wars in a portion of the territory occupied by the doctrine…”; closes “'\"The first thing,' said the third, 'is to abolish mankind.'\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1188,
+          1215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "463b403ad0c57d82cf7c024f9e7bb92d1727e8a824bba8f92baa5564849ec6ae"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q1",
+          "prompt": "Butler says the theory treats “fit” and “unfit” as it did with earthworms and birds. What happens when the theory is applied to people, according to him?",
+          "facilitatorNotes": [
+            "The “consciously fit” look on with “complacent scorn,” while the unfit “rage and roar” and set out to repeal the law of nature by legislation. Unlike earthworms, people protest, vote and form reform societies.",
+            "The tone seems to side with the fit, but the joke about earthworms needing “a coroner’s inquest” cuts both ways. Ask readers to hold off deciding where Butler stands until later."
+          ],
+          "evidence": [
+            "The consciously unfit rage and roar loudly",
+            "the organized unfit can always lead a large majority to the polls"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q2",
+          "prompt": "What fallacy does Huxley point out about the phrase “survival of the fittest”? Why does it matter to Butler’s argument?",
+          "facilitatorNotes": [
+            "People assume “fittest means best,” but fitness means only adaptation to conditions; it contains “no element of beauty, no element of morality, no element of progress toward an ideal.”",
+            "Once fitness is not goodness, the “revolt” of the unfit is no longer a revolt against what is right. This is the turning point of the essay."
+          ],
+          "evidence": [
+            "One jumps to the conclusion that fittest means best; whereas, of course, it has in it no moral element whatever.",
+            "Into this conception of fitness there enters no element of beauty, no element of morality, no element of progress toward an ideal."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q3",
+          "prompt": "Where does Butler say the “real successes and permanences of life” are found? How does this change the meaning of the title?",
+          "facilitatorNotes": [
+            "Among species that build “something like what we call a social system”: individuals who “transcend” themselves through sympathy and cooperation escape the fate of the solitary competitor. The revolt of the unfit aims to “substitute interdependence on a higher plane for the struggle for existence on a lower one.”",
+            "So the “unfit” turn out to be acting on a moral principle: “moral considerations must outweigh the mere blind struggle for existence.” Some readers think Butler supports them; others find him still wary, since he calls the revolt “ominous.” Both words are in the text."
+          ],
+          "evidence": [
+            "the real successes and permanences of life are to be found among those species that have been able to institute something like what we call a social system",
+            "moral considerations must outweigh the mere blind struggle for existence in human affairs",
+            "Who dares attempt to picture what will happen if this revolt shall not succeed?"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q4",
+          "prompt": "Why does Butler end with Stevenson’s fable of the four reformers? What does it add to, or take back from, his argument?",
+          "facilitatorNotes": [
+            "The reformers each want to abolish something until the last proposes “to abolish mankind.” The fable mocks reformers who would remove property, marriage, religion and law, and suggests the only way to get rid of such problems is to get rid of people.",
+            "It may warn that moral reform can overreach, or simply admit that these problems “will persist as long as humanity itself.” Accept readings that connect it to his remark that “man is not ruled by thinking.”"
+          ],
+          "evidence": [
+            "There is only one way of getting rid of them",
+            "When man thinks he thinks, he usually merely feels"
           ]
         }
       ]
