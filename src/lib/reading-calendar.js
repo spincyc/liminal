@@ -22,7 +22,7 @@
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || ""));
     if (!match) return null;
     const year = Number(match[1]), month = Number(match[2]), day = Number(match[3]);
-    if (month < 1 || month > 12 || day < 1 || day > MONTH_DAYS[month - 1] || (month === 2 && day === 29 && !isLeap(year))) return null;
+    if (year < 1 || month < 1 || month > 12 || day < 1 || day > MONTH_DAYS[month - 1] || (month === 2 && day === 29 && !isLeap(year))) return null;
     return { year, month, day };
   }
   function formatDate({ year, month, day }) { return String(year).padStart(4, "0") + "-" + String(month).padStart(2, "0") + "-" + String(day).padStart(2, "0"); }
@@ -49,23 +49,27 @@
     if (!md || (slot === LEAP_SLOT && !isLeap(year))) return null;
     return formatDate({ year, ...md });
   }
+  // A Date at UTC midnight of a parsed date. setUTCFullYear, because
+  // Date.UTC reads years 0-99 as 1900-1999.
+  function utc({ year, month, day }) { const date = new Date(0); date.setUTCFullYear(year, month - 1, day); return date; }
+  // Dates run from 0001-01-01 to 9999-12-31; a step past either end is null.
   function addDays(value, delta) {
     const date = parseDate(value);
     if (!date) return null;
-    const time = Date.UTC(date.year, date.month - 1, date.day) + delta * 86400000, next = new Date(time);
-    return formatDate({ year: next.getUTCFullYear(), month: next.getUTCMonth() + 1, day: next.getUTCDate() });
+    const next = new Date(utc(date).getTime() + delta * 86400000), year = next.getUTCFullYear();
+    return year < 1 || year > 9999 ? null : formatDate({ year, month: next.getUTCMonth() + 1, day: next.getUTCDate() });
   }
   function today(now = new Date()) { return formatDate({ year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate() }); }
   function longDate(value) {
     const date = parseDate(value);
     if (!date) return "";
-    const weekday = new Date(Date.UTC(date.year, date.month - 1, date.day)).toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
+    const weekday = utc(date).toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
     return weekday + ", " + MONTHS[date.month - 1] + " " + date.day + ", " + date.year;
   }
   function shortDate(value) {
     const date = parseDate(value);
     if (!date) return "";
-    return new Date(Date.UTC(date.year, date.month - 1, date.day)).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+    return utc(date).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
   }
   // The reading id for a date in one level's calendar ({ years: [[366 ids] x3] }).
   function readingOn(calendar, value) {
@@ -168,7 +172,7 @@
       const from = !!(entry && entry.continuesFrom), to = !!(entry && entry.continuesTo);
       cells.push({ date, day: d, entry: entry || null, run: from && to ? "middle" : from ? "end" : to ? "start" : "single", spanStart: starts.has(slot) });
     }
-    const lead = new Date(Date.UTC(year, m - 1, 1)).getUTCDay(), padded = [...Array(lead).fill(null), ...cells];
+    const lead = utc({ year, month: m, day: 1 }).getUTCDay(), padded = [...Array(lead).fill(null), ...cells];
     while (padded.length % 7) padded.push(null);
     const weeks = [];
     for (let i = 0; i < padded.length; i += 7) weeks.push(padded.slice(i, i + 7));
@@ -178,6 +182,7 @@
     const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
     if (!match) return null;
     const index = Number(match[1]) * 12 + Number(match[2]) - 1 + delta;
+    if (index < 12 || index >= 10000 * 12) return null;
     return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
   }
   return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
