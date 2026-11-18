@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "olcott-good-stories-great-holidays-1914",
+  "readings": [
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-01",
+      "title": "The Fairy’s New Year Gift",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Emilie Poulsson; adapted by Frances Jenkins Olcott",
+      "workTitle": "The Fairy’s New Year Gift",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Work out what the Fairy’s books really are.",
+      "focus": "Two boys find that the white pages of the Fairy’s books have filled up, one day at a time, with what they did, and a new book begins.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. This story is by Emilie Poulsson, who wrote for young children. Father Time is a make-believe old man who stands for time passing. A leaf here is a page of a book; blots are spots of spilled ink; decorated means made beautiful; dated means marked with the year. It is read on New Year’s Day, when a new year begins like a clean page.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "New Year’s Day, “The Fairy’s New Year Gift,” the whole story without its byline; opens “Two little boys were at play one day when a Fairy suddenly appeared before them and said:…”; closes “And on the back of this book was written in letters of gold, “For the New Year.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          13,
+          31
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5e456583302a2a48daafad7dcf54b36984f79973d226bdb23fd7deeea5c96ce6"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-01-q1",
+          "prompt": "What do the boys find inside the Fairy’s packages, and what are the pages like at first?",
+          "facilitatorNotes": [
+            "Two beautiful books whose pages are as pure and white as new snow."
+          ],
+          "evidence": [
+            "two beautiful books, with pages as pure and white as the snow when it first falls"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-01-q2",
+          "prompt": "Carl says he could only ever see one page at a time. Why might each page stick fast once it turns over?",
+          "facilitatorNotes": [
+            "Each page is one day. You live a day only once, and when it is over you cannot go back and change it. Children may notice that Philip wants to paint on his last page at the last minute, and the Fairy will not let him."
+          ],
+          "evidence": [
+            "I can never open the book at more than one place each day",
+            "I must take it just as it is."
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-01-q3",
+          "prompt": "How did the roses, the singing bird and the ugly blots get onto Philip’s pages?",
+          "facilitatorNotes": [
+            "The roses came when he let the baby have his playthings, and the bird when he was kind instead of quarrelling. The blots came when he told an untruth and did not mind his mother."
+          ],
+          "evidence": [
+            "the spray of roses blossomed on this page when you let the baby have your playthings",
+            "that came when you told an untruth one day"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-01-q4",
+          "prompt": "Even the most beautiful pages have some blots. What does the Fairy’s new book give the boys? Is the ending happy or sad?",
+          "facilitatorNotes": [
+            "A fresh start: clean pages to fill better than the old ones. It is hopeful, though the old book cannot be changed. Some children will feel sorry the boys cannot keep their old books; others will be eager to start the new one. Both fit the story."
+          ],
+          "evidence": [
+            "Yet even on the most beautiful of the pages there were ugly blots and scratches.",
+            "Perhaps you can make these more beautiful than the others."
+          ]
+        }
+      ],
+      "holiday": "new-year"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-02",
+      "title": "A Lesson of Faith",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Margaret Gatty (Mrs. Alfred Gatty); adapted by Frances Jenkins Olcott",
+      "workTitle": "A Lesson of Faith",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Decide who is wiser, the caterpillar or the lark, and notice when the story changes your mind.",
+      "focus": "A caterpillar promises to care for a butterfly’s eggs, refuses to believe the lark’s strange news, and learns better when the eggs hatch.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. Margaret Gatty, who signed her books Mrs. Alfred Gatty, first told this story in her Parables from Nature. A caterpillar turns into a butterfly inside a hard case called a chrysalis, and butterflies lay their eggs on the plants their caterpillars will eat. A nurse here is someone who looks after children; to rear is to bring up; exultantly means with great joy; indignantly means crossly; saucy means rude; faith means trusting in something you cannot see yet. It is read at Easter, a Christian feast of new life, for which a caterpillar that becomes a butterfly is an old picture.",
+      "contentNote": "The butterfly dies at the start of the story, just after she asks the caterpillar to care for her eggs.",
+      "excerpt": {
+        "locator": "Resurrection Day (Easter), “A Lesson of Faith,” the whole story without its byline; opens ““Let me hire you as a nurse for my poor children,” said a butterfly to a quiet…”; closes “…wonders,--_I have faith_,--I can trust even now for the wonder that shall come next.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          388,
+          435
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2c123b4630731d3f417506855455ac19a44392edc08e1de8fd42c4989505fa3c"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-02-q1",
+          "prompt": "What does the dying butterfly ask the caterpillar to do, and what does she get wrong?",
+          "facilitatorNotes": [
+            "To look after her eggs and feed the babies on dew and honey. She is wrong about the food: what hatches will be caterpillars that eat cabbage-leaves, so laying the eggs on a cabbage was right after all."
+          ],
+          "evidence": [
+            "You must give them early dew, and honey from the flowers",
+            "you are to feed them with cabbage-leaves!"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-02-q2",
+          "prompt": "The caterpillar keeps saying, “I believe everything I am told.” Does she? What does she do each time the lark tells her something new?",
+          "facilitatorNotes": [
+            "No. She calls the lark foolish, saucy and cruel, and at last a fool. She believes only what seems sensible to her already, so her words and her actions do not match."
+          ],
+          "evidence": [
+            "I believe everything I am told",
+            "everything that it is _reasonable_ to believe"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-02-q3",
+          "prompt": "The lark says the caterpillar calls things impossible because she crawls and never leaves her cabbage-leaf. What does he mean?",
+          "facilitatorNotes": [
+            "She has seen only a small corner of the world, so she judges everything by it. The lark flies high and has seen so many wonders that he expects more. Children can think of something they once believed was impossible."
+          ],
+          "evidence": [
+            "it is because you _crawl_, and never get beyond your cabbage-leaf, that you call anything _impossible_"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-02-q4",
+          "prompt": "What changes the caterpillar’s mind? At the end nobody believes her, just as she once did not believe the lark. What do you make of that?",
+          "facilitatorNotes": [
+            "The eggs hatch into little green caterpillars, so the first “impossible” thing comes true and she decides the second may too. Now she is the one with strange news, and her relations say “Poor thing!” Some children will find that sad, some funny; some will point out that she believed only after she saw, which is a good thing to talk about."
+          ],
+          "evidence": [
+            "For as the first wonder was possible, the second might be so too.",
+            "Poor thing!"
+          ]
+        }
+      ],
+      "holiday": "easter"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-03",
+      "title": "Betsy Ross and the Flag",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Harry Pringle Ford; adapted by Frances Jenkins Olcott",
+      "workTitle": "Betsy Ross and the Flag",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Find the clever thing Betsy Ross shows the committee.",
+      "focus": "A young widow who sews for a living is asked to make the new country’s flag and shows how to cut a five-pointed star with one snip.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. In 1776 the thirteen American colonies declared themselves free of Britain on the Fourth of July, and the new country needed its own flag. The Continental Congress was the meeting of leaders from the thirteen states; a resolution is a decision they vote for; a committee is a small group sent to do a job; the Union is the blue corner of the flag; a constellation is a group of stars; upholstery is covering chairs with cloth; diffidence is shyness; symmetrical means the same on every side. Betsy Ross’s grandson first told this story nearly a hundred years later, and historians are not sure it happened.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Flag Day, “Betsy Ross and the Flag,” the whole story without its byline; opens “On the 14th day of June, 1777, the Continental Congress passed the following resolution:…”; closes “…the pleasure of informing Betsy Ross that her flag was accepted as the Nation's standard.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          754,
+          760
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2f6e15b7a190ea784933267d973750005d27504fbd714ed8438a4a243229820d"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-03-q1",
+          "prompt": "What did Congress decide the flag should look like?",
+          "facilitatorNotes": [
+            "Thirteen red and white stripes and thirteen white stars on a blue field, one stripe and one star for each state."
+          ],
+          "evidence": [
+            "thirteen stripes alternate red and white",
+            "the Union be thirteen stars, white in a blue field"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-03-q2",
+          "prompt": "Why did the committee want stars with six points, and how did Betsy Ross change their minds?",
+          "facilitatorNotes": [
+            "They thought six points would be easier to make. She folded a scrap of paper and, with one snip of her scissors, showed them a perfect five-pointed star."
+          ],
+          "evidence": [
+            "the more regular form with six points could be more easily made",
+            "with a single clip of her scissors she displayed a true, symmetrical, five-pointed star"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-03-q3",
+          "prompt": "When she was asked, Betsy said she did not know whether she could do it, but she would try. Then she showed them instead of arguing. What does that tell you about her?",
+          "facilitatorNotes": [
+            "She was modest but sure of her craft, and she proved her point with her hands. Some children will say she was brave to correct General Washington. The star is what “decided the committee in her favor.”"
+          ],
+          "evidence": [
+            "she did not know whether she could or not, but would try",
+            "This decided the committee in her favor."
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-03-q4",
+          "prompt": "The story says, “We are told” that the committee visited her. Why might the writer put it that way instead of simply saying it happened?",
+          "facilitatorNotes": [
+            "No one wrote it down at the time; the story was passed along. Words like these tell a careful reader how sure the writer is. Children can enjoy the story and still say it may be a legend."
+          ],
+          "evidence": [
+            "We are told that previous to this"
+          ]
+        }
+      ],
+      "holiday": "independence-day"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-04",
+      "title": "The Star-Spangled Banner",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Eva March Tappan; adapted by Frances Jenkins Olcott",
+      "workTitle": "The Star-Spangled Banner",
+      "genre": "historical narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Wait with Francis Scott Key for the morning, and find out what he sees.",
+      "focus": "Kept on a boat beside an enemy ship while the British fire on Fort McHenry all night, Key looks for the flag at dawn and writes the poem that became the national anthem.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. On Veterans Day Americans thank the men and women who have served in the armed forces, and the day’s ceremonies often begin with “The Star-Spangled Banner,” the song this story is about. The War of 1812 was fought between the United States and Britain. To bombard is to fire big guns again and again; a fleet is a group of warships, led by an admiral from his flagship; a flag of truce is a white flag that means “we come to talk, not fight”; ramparts are a fort’s walls; handbills are printed sheets handed out in the street; an air is a tune.",
+      "contentNote": "British ships fire cannon and bombs at the fort all through the night.",
+      "excerpt": {
+        "locator": "Flag Day, “The Star-Spangled Banner,” the whole story without its byline; opens “In 1814, while the War of 1812 was still going on, the people of Maryland were in great…”; closes “…Chesapeake Bay altogether,--perhaps with the new song ringing in their ears as they went.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          763,
+          771
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7030669dccd7f49a7de9b6a0995b3a74f59681219c4b0c7068698d5de045f3d6"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-04-q1",
+          "prompt": "Why are Francis Scott Key and his friend on a little boat beside the British flagship?",
+          "facilitatorNotes": [
+            "They came under a flag of truce to ask for a Maryland doctor to be set free. The British let the doctor go but kept the two men there until the attack was over, so they could not carry news back to the city."
+          ],
+          "evidence": [
+            "you and your boat must remain here"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-04-q2",
+          "prompt": "How could Key tell, all through the night, that the fort was still holding out? Why was he afraid when the firing stopped?",
+          "facilitatorNotes": [
+            "He caught glimpses of the flag through the smoke, and at night by the blaze of the cannon. When the firing stopped he could not see, and the quiet might mean the fort had given up."
+          ],
+          "evidence": [
+            "they could still see the banner now and then by the blaze of the cannon",
+            "Can the fort have surrendered?"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-04-q3",
+          "prompt": "Find words in the song that match what Key saw from the boat.",
+          "facilitatorNotes": [
+            "“the bombs bursting in air” is the night of firing, and “our flag was still there” is what he saw at dawn; even “by the dawn's early light” is the moment in the story. The song is made out of that one night."
+          ],
+          "evidence": [
+            "the bombs bursting in air",
+            "Gave proof through the night that our flag was still there."
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-04-q4",
+          "prompt": "The song ends with a question: does the flag still wave over “the land of the free and the home of the brave”? Why ask it instead of just saying so? Who are “the brave”?",
+          "facilitatorNotes": [
+            "Key had just spent a night not knowing, and the question keeps that worry and hope alive every time it is sung. The brave were first the soldiers defending the fort; on Veterans Day people think of everyone who has served. Some children will hear it simply as a proud answer: yes, it does."
+          ],
+          "evidence": [
+            "O say, does the star-spangled banner yet wave",
+            "the home of the brave?”"
+          ]
+        }
+      ],
+      "holiday": "veterans-day"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-05",
+      "title": "The Bravery of Richard Kirtland",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Ben La Bree; adapted by Frances Jenkins Olcott",
+      "workTitle": "Two Hero-Stories of the Civil War",
+      "genre": "historical narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Find what Richard Kirtland risks, and what both armies do when they see what he is doing.",
+      "focus": "In the middle of a battle a soldier climbs a wall to give water to wounded enemy soldiers, and both sides stop firing.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. Memorial Day remembers the Americans who died in the nation’s wars, among them the many thousands who died in the Civil War of 1861 to 1865. In that war the United States, whose soldiers were called Federal soldiers, fought the Confederate states of the South, which had broken away to keep slavery. Richard Kirtland, whose name is usually spelled Kirkland, was a Confederate sergeant at the Battle of Fredericksburg in Virginia in December 1862. A sergeant leads a small group of soldiers; a brigade, a regiment and a division are larger groups; a skirmish is a small fight; headquarters is where the general works; a knapsack is a soldier’s bag; his mission is the job he has set himself.",
+      "contentNote": "The ground between the armies is covered with dead and dying soldiers, and the general warns Kirtland that he will be shot.",
+      "excerpt": {
+        "locator": "Memorial Day, “Two Hero-Stories of the Civil War,” the whole of the second story, “The Bravery of Richard Kirtland”; opens “Richard Kirtland was a sergeant in the Second Regiment of South Carolina Volunteers. The…”; closes “Surely such a noble deed is worthy of the admiration of men and angels.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          835,
+          845
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "62f0afc38e5af00a0409decc91aae9066e757f6e326112ba0b80a1123d290005"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-05-q1",
+          "prompt": "What does Sergeant Kirtland hear all night and all day, and what does he ask the general?",
+          "facilitatorNotes": [
+            "The wounded Federal soldiers, his enemies, crying for water. He asks to go over the wall and give them some."
+          ],
+          "evidence": [
+            "All day long the wounded were calling",
+            "Let me go and give them some."
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-05-q2",
+          "prompt": "Why does the general at first not want to let him go, and why does he say yes?",
+          "facilitatorNotes": [
+            "He expects Kirtland to be shot the moment he climbs the wall. He agrees because the reason Kirtland wants to go is so good, “so noble.”"
+          ],
+          "evidence": [
+            "you would get a bullet through you the moment you stepped over the wall",
+            "the spirit that moves you is so noble I cannot refuse"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-05-q3",
+          "prompt": "List what Kirtland does for the first wounded soldier. Why does the writer tell us every small thing?",
+          "facilitatorNotes": [
+            "He lifts the man’s head, gives him water, lays him down on his knapsack, straightens his broken limbs, covers him with his coat and leaves a full canteen. The long list slows the story down and shows how gently he cares for an enemy in the middle of a battle."
+          ],
+          "evidence": [
+            "tenderly raised his drooping head",
+            "spread his coat over him, replaced the empty canteen with a full one"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-05-q4",
+          "prompt": "Why did both armies stop shooting? Why do you think people tell this story on a day for remembering soldiers who died?",
+          "facilitatorNotes": [
+            "Once they understood he was helping the wounded, no one wanted to shoot. The story remembers kindness that crossed between two armies, even in war. Some children will ask why the soldiers were fighting at all; answer honestly and briefly, using the context."
+          ],
+          "evidence": [
+            "By this time his conduct was understood by friend and foe alike and the firing ceased on both sides."
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-06",
+      "title": "Columbus and the Egg",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "James Baldwin; adapted by Frances Jenkins Olcott",
+      "workTitle": "Columbus and the Egg",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 2,
+        "discussionMinutes": 8,
+        "totalMinutes": 10
+      },
+      "challenge": "Try to solve the egg puzzle before Columbus does.",
+      "focus": "Jealous men say anyone could have crossed the ocean, so Columbus sets them a puzzle that is easy only after you have seen it done.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. In 1492 Christopher Columbus sailed west from Spain and reached islands in the Caribbean Sea where the Taíno people had long been living; Columbus Day remembers that voyage, and many places keep the same day as Indigenous Peoples’ Day. The great admiral is Columbus, who commanded the ships; jealous means wishing you had what someone else has; conceited means too proud of yourself; to coast is to sail along a shore; an experiment is a test. This is an old legend, told about other clever people too.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Columbus Day, “Columbus and the Egg,” the whole story without its byline and footnote; opens “One day Columbus was at a dinner which a Spanish gentleman had given in his honor, and…”; closes “…is the simplest thing in the world. Anybody can do it,--_after he has been shown how_!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1183,
+          1189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e9020d6d07633df746da8a0bbe46af16c5368176428976093c6a3c0279d9d51b"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-06-q1",
+          "prompt": "What do the proud men at the dinner say about Columbus’s voyage?",
+          "facilitatorNotes": [
+            "That anybody could have sailed across the ocean and along the islands, so there is no reason to make a fuss about it."
+          ],
+          "evidence": [
+            "Anybody can sail across the ocean",
+            "We do not see why there should be so much said about it."
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-06-q2",
+          "prompt": "How does Columbus make the egg stand on end?",
+          "facilitatorNotes": [
+            "He taps its small end gently on the table so that the shell breaks a little and the egg stands flat."
+          ],
+          "evidence": [
+            "struck its small end gently upon the table so as to break the shell a little"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-06-q3",
+          "prompt": "Columbus repeats the men’s own words, “the simplest thing in the world.” What is he showing them? Was it fair?",
+          "facilitatorNotes": [
+            "Doing something first is hard; once you have been shown, it looks easy, so they should not sneer. Some children will say cracking the shell is cheating, a fair objection the story laughs past. Others may remember that the lands Columbus reached were already home to other people."
+          ],
+          "evidence": [
+            "Anybody can do it,--_after he has been shown how_!"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    },
+    {
+      "id": "reading-1-olcott-good-stories-great-holidays-1914-07",
+      "title": "The Spirit of the Corn",
+      "sourceId": "olcott-good-stories-great-holidays-1914",
+      "author": "Harriet Maxwell Converse; adapted by Frances Jenkins Olcott",
+      "workTitle": "The Spirit of the Corn",
+      "genre": "myth retelling",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Find out why the corn needs care, and who helps the Spirit of the Corn.",
+      "focus": "When Onatah, the Spirit of the Corn, is carried off and set free again, her sisters have fled, so she must tend her fields alone, helped by the birds.",
+      "context": "Frances Jenkins Olcott gathered stories for every holiday in Good Stories for Great Holidays (1914), shortening or retelling many of them. This is a legend of the Haudenosaunee, or Iroquois, peoples of what is now New York State, written down by Harriet Maxwell Converse, a writer adopted by the Seneca nation. Corn, beans and squash, planted together, are called the Three Sisters. Maize is corn; tassels are the silky fringes at the top of a corn plant; to blight a crop is to spoil it; a captive is a prisoner; a vow is a promise. It is read on Thanksgiving, a day for giving thanks for the harvest.",
+      "contentNote": "The Evil One drags Onatah underground by her hair and keeps her prisoner, and his fire-monsters burn her corn.",
+      "excerpt": {
+        "locator": "Thanksgiving Day, “The Spirit of the Corn,” the whole story without its subtitle and byline; opens “There was a time, says the Iroquois grandmother, when it was not needful to plant the…”; closes “…and singing, joyfully partook of the feast spread for them on the meadow-ground.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1630,
+          1640
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b7399f65225fcb10242bab5bbc8ac86e309582f732f51b82d12a05666b63301d"
+      },
+      "questions": [
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-07-q1",
+          "prompt": "How did the corn grow when Onatah walked the earth?",
+          "facilitatorNotes": [
+            "By itself, with no planting or hoeing. It sprang up where she walked, and squash and beans grew among it where her sisters passed."
+          ],
+          "evidence": [
+            "it was not needful to plant the corn-seed nor to hoe the fields",
+            "squash-vines and bean-plants grew from the corn-hills"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-07-q2",
+          "prompt": "What happens when Onatah goes off alone to look for dew?",
+          "facilitatorNotes": [
+            "The Evil One drags her down to his cave, his fire-monsters spoil the corn, and her sisters fly away in fear."
+          ],
+          "evidence": [
+            "dragged her beneath the ground down to his gloomy cave",
+            "they flew far away in terror"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-07-q3",
+          "prompt": "Who helps Onatah get free, and how?",
+          "facilitatorNotes": [
+            "The little birds carry her promise up to the sun, and the sun sends beams down through the earth to guide her home."
+          ],
+          "evidence": [
+            "they carried her vow and gave it to the sun",
+            "guided her back again to her fields"
+          ]
+        },
+        {
+          "id": "reading-1-olcott-good-stories-great-holidays-1914-07-q4",
+          "prompt": "At harvest-time Onatah scatters the first corn for the birds. Why the birds first? What does the story say about why fields need care?",
+          "facilitatorNotes": [
+            "The birds helped her when no one else did: they carried her vow and fought the tiny creatures at the roots. Now that she cannot fetch dew or winds, the corn must be watched and tended. Children can think of whom they would thank for their food."
+          ],
+          "evidence": [
+            "the little birds of the air flocked to her service",
+            "the grateful Onatah scattered the first gathered corn over her broad lands"
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
+    }
+  ]
+}

@@ -1082,6 +1082,82 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-16",
+      "title": "The Story of Gretchen",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice who in this story is far from home, and who helps a stranger feel at home.",
+      "focus": "A homesick German girl in a new country decides nobody there keeps Christmas, until a kind stranger finds her empty shoes on Christmas Eve.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Gretchen and her parents have just come from Germany to live in the United States. In Germany children set out their shoes before Christmas for Saint Nicholas or his helper, here called Rupert, to fill. A boarding-house rents rooms to people who eat together; a stoop is the steps in front of a door; a mission church helps poor people; jostled means bumped and pushed; carols are Christmas songs.",
+      "contentNote": "In the toy store Lindsay calls the Japanese dolls “funny slant-eyed dolls,” an old and hurtful way to describe people’s eyes; if a child notices, say so plainly.",
+      "excerpt": {
+        "locator": "“The Story of Gretchen,” the whole story without the motto for the mother printed before it; opens “It was almost Christmas time when one of the white ships that sail across the sea brought…”; closes “…a gladsome Christmas To all our fellowmen, Carol, brothers, carol! Christmas Day again.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          643,
+          660
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c20c1943336f816609dcd43c80ebf042574290e9572be3ec77df5b97986a91e5"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-16-q1",
+          "prompt": "Why does Gretchen decide that people in America do not keep Christmas?",
+          "facilitatorNotes": [
+            "Her father is ill, there will be no tree, and when she sets her wooden shoes outside the door they are never filled; people stumble over them and scold."
+          ],
+          "evidence": [
+            "people stumbled over them and scolded",
+            "she decided that the people in America did not keep Christmas"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-16-q2",
+          "prompt": "In the toy store, which toy does Gretchen love, and why that one rather than the fine princess doll?",
+          "facilitatorNotes": [
+            "A plain baby doll that looks as if it wants to be loved. She is lonely herself, so the doll that needs love is the one that calls to her."
+          ],
+          "evidence": [
+            "a look on its face as if it wanted to be loved",
+            "little mothers are the same all the world over"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-16-q3",
+          "prompt": "How does Margaret know what the empty shoes on the stoop mean, and what does she give?",
+          "facilitatorNotes": [
+            "She and her papa have been to Germany and know about setting out shoes. She lays her own baby doll, one that looks as if it wants to be loved, across them."
+          ],
+          "evidence": [
+            "they had been in Germany, and they knew that the little owner was waiting",
+            "laid it tenderly across the wooden shoes"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-16-q4",
+          "prompt": "Margaret and her papa run away before Gretchen sees them. Why might they do that? What makes Gretchen “feel at home” at last?",
+          "facilitatorNotes": [
+            "They want the gift to come like Saint Nicholas’s, with no one to thank. The doll matters, but so does knowing that someone in this new land understood her. Children may also remember the poor woman who took Gretchen to the toy store: there are two kind strangers in the story."
+          ],
+          "evidence": [
+            "for they had run away",
+            "made her feel at home"
+          ]
+        }
+      ],
+      "holiday": "christmas"
     }
   ]
 }

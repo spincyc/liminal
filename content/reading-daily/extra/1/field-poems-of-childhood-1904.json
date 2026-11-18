@@ -1533,7 +1533,7 @@
       },
       "challenge": "Listen for the line that ends every stanza, and for the times the boy sees things most.",
       "focus": "A boy who says he is brave admits what frightens him at night, and why.",
-      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. A boy talks the way he would speak: “afeard” and “skeered” mean afraid, “uv” means of, “’at” means that, and “alluz” means always. To lick someone here means to beat him in a fight. The Tempter is a name for whoever tempts you to do wrong.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. A boy talks the way he would speak: “afeard” and “skeered” mean afraid, “uv” means of, “’at” means that, and “alluz” means always. To lick someone here means to beat him in a fight. The Tempter is a name for whoever tempts you to do wrong. It is read on Halloween, a night for enjoying a scare about things that are not really there.",
       "contentNote": "The boy has been in a fight, and is sent to bed without supper; he twice says girls are more easily frightened, an old idea worth questioning.",
       "excerpt": {
         "locator": "“Seein’ Things,” the whole poem; opens “I ain’t afeard uv snakes, or toads, or bugs, or worms, or mice, An’ things ’at girls are…”; closes “…wipe me slowly out o’ sight Than I should keep a-livin’ on an’ seein’ things at night!”.",
@@ -1589,80 +1589,8 @@
             "Bein’ I’m a boy, I duck my head an’ hold my breath;"
           ]
         }
-      ]
-    },
-    {
-      "id": "reading-1-field-poems-of-childhood-1904-23",
-      "title": "“Fiddle-Dee-Dee”",
-      "sourceId": "field-poems-of-childhood-1904",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 3,
-        "discussionMinutes": 8,
-        "totalMinutes": 11
-      },
-      "challenge": "Listen to how grand the little soldier sounds, and then to the last two lines.",
-      "focus": "A four-year-old “soldier” fires his toy gun at a whistling bird and is sure he has won.",
-      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Provoking means annoying. Hard by means close by. Iteration is saying something over and over, and “repented him sore” here means it bothered him badly. “I prithee” means “please.” St. Didy and “By my Bottle” are made-up baby oaths, like a knight’s. Truculent means fierce. The stock is the wooden end of a gun and the barrel its tube; to draw a bead is to aim. A quietus is something that makes a thing quiet for ever. “Right well have you wrought” means “you have done very well.”",
-      "contentNote": "A small boy fires a toy gun at a bird. The bird is not hurt and goes on whistling.",
-      "excerpt": {
-        "locator": "“Fiddle-Dee-Dee,” the whole poem; opens “There once was a bird that lived up in a tree, And all he could whistle was…”; closes “…kissed the dear boy. [The bird in the tree Continued to whistle his “Fiddle-dee-dee”!]”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          534,
-          539
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "32ee90bdac1f4455e3d0271147d72182c2a3bae2be5cb46922cabd8ab0c3951f"
-      },
-      "questions": [
-        {
-          "id": "reading-1-field-poems-of-childhood-1904-23-q1",
-          "prompt": "What is the bird’s song, and why does it bother the little soldier?",
-          "facilitatorNotes": [
-            "Only “Fiddle-dee-dee,” over and over all summer; he finds it annoying and unmusical."
-          ],
-          "evidence": [
-            "And all he could whistle was “Fiddle-dee-dee”—",
-            "A very provoking, unmusical song"
-          ]
-        },
-        {
-          "id": "reading-1-field-poems-of-childhood-1904-23-q2",
-          "prompt": "What is the soldier’s gun made of? Could it hurt anyone?",
-          "facilitatorNotes": [
-            "A pine stock and a tin barrel, and the bang comes out where a bullet would go in: it is a toy. The poet says it is just the weapon for this kind of battle."
-          ],
-          "evidence": [
-            "The stock was of pine and the barrel of tin,"
-          ]
-        },
-        {
-          "id": "reading-1-field-poems-of-childhood-1904-23-q3",
-          "prompt": "How do the boy and his mother talk about what he did?",
-          "facilitatorNotes": [
-            "Like a knight and a queen in an old story: “I prithee,” “the deed must be done,” “Right well have you wrought.” The grand words make a play-game sound like a great adventure, and the mother plays along."
-          ],
-          "evidence": [
-            "For, by our St. Didy! the deed must be done",
-            "Right well have you wrought with your little red gun!"
-          ]
-        },
-        {
-          "id": "reading-1-field-poems-of-childhood-1904-23-q4",
-          "prompt": "Look at the last two lines, in brackets. Who is right, the boy or the bird?",
-          "facilitatorNotes": [
-            "The bird: it keeps whistling, so the boy stopped nothing. The poet quietly tells the reader what the boy and his mother do not say. Some children will be glad the bird is safe; others will laugh at the boy."
-          ],
-          "evidence": [
-            "Continued to whistle his “Fiddle-dee-dee”!]"
-          ]
-        }
-      ]
+      ],
+      "holiday": "halloween"
     }
   ]
 }
