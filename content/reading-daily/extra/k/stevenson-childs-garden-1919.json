@@ -69,6 +69,68 @@
     },
     {
       "id": "reading-k-stevenson-childs-garden-1919-02",
+      "title": "Whole Duty of Children",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear three rules for children and the small joke that follows them.",
+      "focus": "A poem with a grand title gives a short list of good manners, then lets children off a little.",
+      "context": "Robert Louis Stevenson wrote these poems from memories of his own childhood. A duty is something you ought to do; to behave mannerly means to have good manners. Read the first three lines like a grown-up giving rules, and the last line more softly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "V, “Whole Duty of Children,” the complete poem; opens “A CHILD should always say what's true And speak when he is spoken to, And behave mannerly…”; closes “…speak when he is spoken to, And behave mannerly at table; At least as far as he is able.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          19
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1d26fd9e015748939a76e24f4173b2e87906757bdcda7854a704829607f7bfb7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q1",
+          "prompt": "What three things should a child always do, the poem says?",
+          "facilitatorNotes": [
+            "Tell the truth, speak when spoken to, and have good manners at the table. Children can count them on their fingers."
+          ],
+          "evidence": [
+            "A CHILD should always say what's true",
+            "And behave mannerly at table;"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q2",
+          "prompt": "“Speak when he is spoken to” is an old rule. What does it ask a child to do, and not to do?",
+          "facilitatorNotes": [
+            "To answer when a grown-up speaks to you, and, in the old meaning, not to start talking or interrupt before then. Children may say whether they think that is a fair rule today."
+          ],
+          "evidence": [
+            "And speak when he is spoken to,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q3",
+          "prompt": "The last line says, “At least as far as he is able.” Is the poet being strict there, or kind?",
+          "facilitatorNotes": [
+            "Kind, and a little funny: after a grand title, he admits a child can only do what a child is able to do. Some children may hear it as an excuse for not trying; the line allows both."
+          ],
+          "evidence": [
+            "At least as far as he is able."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-03",
       "title": "Pirate Story",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -97,7 +159,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-02-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-03-q1",
           "prompt": "What is the children’s “boat” really, and where is it?",
           "facilitatorNotes": [
             "A basket in the meadow by the swing. The poem says they are “aboard,” but the place words show it is a game."
@@ -107,7 +169,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-02-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-03-q2",
           "prompt": "What makes the meadow look like the sea?",
           "facilitatorNotes": [
             "The wind blows the long grass into waves. Children can show the moving grass with their hands."
@@ -117,7 +179,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-02-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-03-q3",
           "prompt": "What is the “squadron” that charges at the children, and where do they escape to?",
           "facilitatorNotes": [
             "The cattle in the meadow, which the children turn into an enemy fleet; the gate becomes their harbour and the garden their shore. Ask whether the children are truly frightened or enjoying the game; both readings can use “they're as mad as they can be.”"
@@ -130,7 +192,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-03",
+      "id": "reading-k-stevenson-childs-garden-1919-04",
       "title": "Travel",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -159,7 +221,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-03-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-04-q1",
           "prompt": "Which animals does the child hope to see on his travels?",
           "facilitatorNotes": [
             "Parrots, cockatoos and goats, apes, a crocodile, a red flamingo, tigers and camels. Children can choose one and act it out."
@@ -170,7 +232,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-03-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-04-q2",
           "prompt": "What is strange about the city in the desert?",
           "facilitatorNotes": [
             "Nobody lives there any more: its children grew up long ago, there is not a foot in the streets, and no light at night. It is empty and still."
@@ -181,7 +243,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-03-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-04-q3",
           "prompt": "When he gets there as a man, what will he find in a corner? Why might he look for that?",
           "facilitatorNotes": [
             "The toys of the old Egyptian boys. After all the grand places, he still thinks about children like himself who played long ago. Children may say he wants to play with them, or wonders who owned them; both fit."
@@ -194,7 +256,70 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-04",
+      "id": "reading-k-stevenson-childs-garden-1919-05",
+      "title": "Looking Forward",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice the gap between what a child plans to be and what he plans to do.",
+      "focus": "A child imagines being grown up, proud and great, and plans to use all that greatness to guard his toys.",
+      "context": "Robert Louis Stevenson wrote these poems as if a child were speaking. Man's estate means being a grown man; to meddle with something means to touch it or interfere with it when it is not yours.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XII, “Looking Forward,” the complete poem; opens “WHEN I am grown to man's estate I shall be very proud and great. And tell the other girls…”; closes “…be very proud and great. And tell the other girls and boys Not to meddle with my toys.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          40,
+          40
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "94a337bf47fa9194365528fb152a3e0a49a2ac633b30585e4add787f3d862460"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q1",
+          "prompt": "What will the child be like when he is grown up?",
+          "facilitatorNotes": [
+            "Very proud and great: important, and pleased with himself."
+          ],
+          "evidence": [
+            "I shall be very proud and great."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q2",
+          "prompt": "What is the first thing he plans to tell the other girls and boys?",
+          "facilitatorNotes": [
+            "Not to meddle with his toys."
+          ],
+          "evidence": [
+            "And tell the other girls and boys",
+            "Not to meddle with my toys."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q3",
+          "prompt": "Would a real grown-up worry most about toys? What makes this poem funny?",
+          "facilitatorNotes": [
+            "The child imagines being great but still cares most about what a child cares about. That is the joke: he plans to be grown up and still sounds just like a child. Some children may answer that grown-ups guard their things too, which is also true."
+          ],
+          "evidence": [
+            "WHEN I am grown to man's estate",
+            "Not to meddle with my toys."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-06",
       "title": "The Land of Nod",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -223,7 +348,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-04-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-06-q1",
           "prompt": "Where does the child stay all day, and where does he go every night?",
           "facilitatorNotes": [
             "At home with his friends by day; far away in the land of Nod at night. The first stanza is built on this contrast between day and night."
@@ -234,7 +359,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-04-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-06-q2",
           "prompt": "Who goes with him to the land of Nod?",
           "facilitatorNotes": [
             "No one: he goes all by himself, with nobody to tell him what to do. Some children will find that lonely and some exciting; let them choose and point to the line."
@@ -245,7 +370,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-04-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-06-q3",
           "prompt": "Why can’t he find the way back in the daytime? What is the land of Nod really?",
           "facilitatorNotes": [
             "It is the land of dreams, which vanish on waking; he cannot even remember the music clearly. Children may connect this with forgetting their own dreams."
@@ -258,7 +383,69 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-05",
+      "id": "reading-k-stevenson-childs-garden-1919-07",
+      "title": "System",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a child’s rule about who is good and who is naughty, and test whether it works.",
+      "focus": "A child decides that good children are clean, neat and rewarded, then finds he must explain a child who is not.",
+      "context": "Robert Louis Stevenson wrote these poems as if a child were speaking. A system is a fixed way of doing things. In Stevenson’s time an orange was a special treat for a child. Papa means father. Read the second stanza slowly; its last line changes what the child has been saying.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XIX, “System,” the complete poem; opens “EVERY night my prayers I say, And get my dinner every day; And every day that I've been…”; closes “…toys and things to eat, He is a naughty child, I'm sure-- Or else his dear papa is poor.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          68,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "816169b0c111e6c11e6d585efb1bd92c2560f16528d8989142af2d3323ce70fd"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q1",
+          "prompt": "What does the child get on every day that he has been good?",
+          "facilitatorNotes": [
+            "An orange after his meal."
+          ],
+          "evidence": [
+            "I get an orange after food."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q2",
+          "prompt": "The child says another child must be naughty. Which child does he mean?",
+          "facilitatorNotes": [
+            "A child who is not clean and neat and does not have lots of toys and things to eat. He is sure such a child is naughty."
+          ],
+          "evidence": [
+            "The child that is not clean and neat,",
+            "He is a naughty child, I'm sure--"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q3",
+          "prompt": "Then he adds, “Or else his dear papa is poor.” What has he started to notice? Is his system fair?",
+          "facilitatorNotes": [
+            "That a child may lack toys and food because the family is poor, not because the child is bad. Many children will say the system is unfair; others may say the speaker is beginning to understand. Both can use the last line."
+          ],
+          "evidence": [
+            "Or else his dear papa is poor."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-08",
       "title": "A Good Boy",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -287,7 +474,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-05-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-08-q1",
           "prompt": "What did the boy do all day to be good?",
           "facilitatorNotes": [
             "He never said an ugly word, smiled, and kept on playing. He was happy all day long."
@@ -297,7 +484,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-05-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-08-q2",
           "prompt": "How does his bed seem to him tonight?",
           "facilitatorNotes": [
             "Cool, fresh and smooth, as if it were waiting for him. Ask the child to describe their own bed with one of these words."
@@ -307,7 +494,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-05-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-08-q3",
           "prompt": "Why is the boy sure no ugly dream will frighten him? Do you think being good keeps bad dreams away?",
           "facilitatorNotes": [
             "He feels happy because he knows he has been good, so he expects to sleep tight until the thrushes sing. Some children will agree; others may say anyone can have a bad dream. The poem tells how the boy feels, not a rule."
@@ -320,7 +507,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-06",
+      "id": "reading-k-stevenson-childs-garden-1919-09",
       "title": "Escape at Bedtime",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -349,7 +536,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-06-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-09-q1",
           "prompt": "The stars are more than what? Find one thing the child compares them with.",
           "facilitatorNotes": [
             "More than the leaves on a tree, or the people in church or the park. Any one comparison is enough; the point is that there are too many stars to count."
@@ -360,7 +547,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-06-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-09-q2",
           "prompt": "Where else does the child see stars besides the sky?",
           "facilitatorNotes": [
             "In the pail by the wall, half full of water that reflects them. Ask how water can “hold” stars."
@@ -370,7 +557,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-06-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-09-q3",
           "prompt": "Who are “they” who chase him, and what can’t they take away from him?",
           "facilitatorNotes": [
             "Probably the grown-ups of the house, who pack him into bed. They can put him to bed, but the glory of the stars keeps shining in his eyes and head. Some children think he is in trouble, others that he is happy; the last lines support both."
@@ -383,7 +570,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-07",
+      "id": "reading-k-stevenson-childs-garden-1919-10",
       "title": "Marching Song",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -412,7 +599,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-07-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-10-q1",
           "prompt": "What does Johnnie do, and what does Mary Jane do?",
           "facilitatorNotes": [
             "Johnnie beats the drum and Mary Jane commands the party. Children can act out one of the jobs, or Willie’s or Peter’s."
@@ -423,7 +610,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-07-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-10-q2",
           "prompt": "What do the children use for a flag?",
           "facilitatorNotes": [
             "A napkin waving on a stick. The poem shows play turning household things into an army’s gear."
@@ -434,7 +621,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-07-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-10-q3",
           "prompt": "How far does the army march, and why do you think they go home?",
           "facilitatorNotes": [
             "Round the village. They may be tired, hungry, or simply finished with the game; the poem calls it “enough of fame,” as if the adventure were complete. Accept any reason tied to the last stanza."
@@ -447,7 +634,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-08",
+      "id": "reading-k-stevenson-childs-garden-1919-11",
       "title": "The Cow",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -476,7 +663,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-08-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-11-q1",
           "prompt": "What does the cow give the child, and what does he eat it with?",
           "facilitatorNotes": [
             "Cream, to eat with apple tart. The child’s love begins with a treat."
@@ -487,7 +674,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-08-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-11-q2",
           "prompt": "The cow wanders “here and there,” yet “cannot stray.” How can both be true?",
           "facilitatorNotes": [
             "She can roam about her field, but a hedge or fence keeps her from getting lost. Children may offer other answers, such as that she always comes home; accept them if they explain both lines."
@@ -498,7 +685,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-08-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-11-q3",
           "prompt": "What weather does the cow meet in the last stanza? Do you think she minds it?",
           "facilitatorNotes": [
             "Wind and showers. She simply walks and eats the meadow flowers, so she seems calm; a child who says being wet would bother them is making a fair comparison with themselves."
@@ -511,7 +698,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-09",
+      "id": "reading-k-stevenson-childs-garden-1919-12",
       "title": "Keepsake Mill",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -540,7 +727,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-09-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-12-q1",
           "prompt": "How do the children get out of the garden? Are they allowed to?",
           "facilitatorNotes": [
             "They break through the branches, crawl under, and go out through a gap in the wall. Calling it “a sin without pardon” shows they know it is not allowed, said with a grin."
@@ -551,7 +738,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-09-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-12-q2",
           "prompt": "What sounds and sights make the mill a marvellous place?",
           "facilitatorNotes": [
             "The mill hums like thunder, the weir foams, the water races under the sluice. Let the child make the mill’s sound."
@@ -562,7 +749,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-09-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-12-q3",
           "prompt": "When the two friends meet again as grown-ups, what will each bring? Why those things?",
           "facilitatorNotes": [
             "The bean and the marble they gave each other after a quarrel: keepsakes of their friendship. Like the wheel that keeps turning, their friendship will still be there. Children may also notice the quarrel did not end the friendship."
@@ -575,7 +762,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-10",
+      "id": "reading-k-stevenson-childs-garden-1919-13",
       "title": "Good and Bad Children",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -604,7 +791,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-10-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-13-q1",
           "prompt": "What does the poem tell little children to do if they want to grow up great?",
           "facilitatorNotes": [
             "Walk sedately, be bright and quiet, eat simple food, and stay innocent and honest. Children can show what walking sedately looks like."
@@ -615,7 +802,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-10-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-13-q2",
           "prompt": "How did children long ago grow into kings and wise people, the poem says?",
           "facilitatorNotes": [
             "With happy hearts and faces and happy play in grassy places. Notice that this advice is about being happy and playing, not only about being quiet."
@@ -626,7 +813,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-10-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-13-q3",
           "prompt": "What does the poem say happens to cruel children? Do you think the poem is serious, or teasing?",
           "facilitatorNotes": [
             "They grow up as geese and gabies, disliked by their own nephews and nieces. The silly rhymes and the strange punishment suggest Stevenson is laughing at grown-up warnings; a child who hears real advice about kindness is also right."
@@ -639,7 +826,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-11",
+      "id": "reading-k-stevenson-childs-garden-1919-14",
       "title": "Foreign Children",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -668,7 +855,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-11-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-14-q1",
           "prompt": "Which children does the speaker talk to?",
           "facilitatorNotes": [
             "A Native American child, an Arctic child, a Turkish child and a Japanese child, named in his old-fashioned words."
@@ -679,7 +866,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-11-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-14-q2",
           "prompt": "What exciting things does he say the other children have seen and done?",
           "facilitatorNotes": [
             "Seen scarlet trees and lions, eaten ostrich eggs, and turned turtles over. Ask whether those sound dull or exciting."
@@ -690,7 +877,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-11-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-14-q3",
           "prompt": "He asks, “don't you wish that you were me?” What might the other children answer? Is he right?",
           "facilitatorNotes": [
             "He thinks his own home and “proper meat” are best, but the other children would probably love their own homes and food just as much. The poem lets us smile at someone who thinks his way is the only right one; children may also say it is fine to love your own home."
@@ -703,7 +890,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-12",
+      "id": "reading-k-stevenson-childs-garden-1919-15",
       "title": "The Sun’s Travels",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -732,7 +919,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-12-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-15-q1",
           "prompt": "Where is the sun when the child lies in bed at night?",
           "facilitatorNotes": [
             "Not in bed: it is still travelling, making morning somewhere else. The first line answers a child’s question about where the sun goes."
@@ -743,7 +930,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-12-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-15-q2",
           "prompt": "What are children in India doing while this child plays in the sunny garden?",
           "facilitatorNotes": [
             "Being kissed and put to bed. The poem pairs each scene with its opposite."
@@ -753,7 +940,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-12-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-15-q3",
           "prompt": "Why are children in the West getting up just when this child rises from tea?",
           "facilitatorNotes": [
             "Because the day is only now dawning across the Atlantic. Two hands or a lamp and a ball can show that morning reaches different places at different times; children need not explain the whole earth."
@@ -766,7 +953,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-13",
+      "id": "reading-k-stevenson-childs-garden-1919-16",
       "title": "The Lamplighter",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -795,7 +982,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-13-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-16-q1",
           "prompt": "What does Leerie carry as he comes up the street?",
           "facilitatorNotes": [
             "A lantern and a ladder, so he can climb to each lamp and light it."
@@ -805,7 +992,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-13-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-16-q2",
           "prompt": "Tom wants to be a driver and Maria wants to go to sea. What does this child want to do?",
           "facilitatorNotes": [
             "Go round at night lighting the lamps with Leerie. Ask why that might seem better to him than being rich like Papa; children may mention the light, the ladder, or being out after dark."
@@ -815,7 +1002,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-13-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-16-q3",
           "prompt": "What does the child ask Leerie to do at the very end, and why might it matter so much?",
           "facilitatorNotes": [
             "To notice a little child and nod to him. He wants someone he admires to see him; some children will say he wants to be Leerie’s friend."
@@ -827,7 +1014,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-14",
+      "id": "reading-k-stevenson-childs-garden-1919-17",
       "title": "The Moon",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -856,7 +1043,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-14-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-17-q1",
           "prompt": "What does the moon’s face look like, according to the first line?",
           "facilitatorNotes": [
             "The clock in the hall. A round, pale face fits both."
@@ -866,7 +1053,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-14-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-17-q2",
           "prompt": "Which animals love to be out by the light of the moon?",
           "facilitatorNotes": [
             "The cat, the mouse, the dog and the bat. Children can make one of their sounds."
@@ -877,7 +1064,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-14-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-17-q3",
           "prompt": "Who hides from the moon, and when will they wake?",
           "facilitatorNotes": [
             "The things that belong to the day, flowers and children among them, cuddle to sleep until the sun rises. Ask whether the listener is a day thing or a night thing."
@@ -890,7 +1077,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-15",
+      "id": "reading-k-stevenson-childs-garden-1919-18",
       "title": "Time to Rise",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -919,7 +1106,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-15-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-18-q1",
           "prompt": "Where does the birdie hop?",
           "facilitatorNotes": [
             "Onto the window sill, where the child in bed can see him."
@@ -929,7 +1116,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-15-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-18-q2",
           "prompt": "What does the bird look like? Find two details.",
           "facilitatorNotes": [
             "A yellow bill and a shining eye, which he cocks, or tilts. Children can show the head tilt."
@@ -940,7 +1127,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-15-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-18-q3",
           "prompt": "Who is the sleepy-head, and why is it funny that a bird asks the question?",
           "facilitatorNotes": [
             "The child still in bed. Birds are up at dawn, so this one can tease; usually a grown-up would say it. Accept other ideas about the joke."
@@ -952,7 +1139,70 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-16",
+      "id": "reading-k-stevenson-childs-garden-1919-19",
+      "title": "North-West Passage",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a child’s trip from the fireside to his bed in three short parts.",
+      "focus": "Going up a dark staircase to bed becomes a brave voyage, with shadows for enemies and the bedroom for a safe harbour.",
+      "context": "The North-West Passage was a sea route through the icy north that explorers searched for, braving cold and danger; Stevenson gives that name to a child’s trip up a dark passage to bed. Embers are glowing bits of the fire; undaunted means not afraid; sire is an old word for father; the Bogie is a make-believe night monster; balusters are the posts of the stair rail; a port is a harbour where ships are safe; the Land of Nod is sleep. Read “Shadow March” with a steady “tramp, tramp, tramp.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XLI, “North-West Passage,” the complete poem in three parts: “Good Night,” “Shadow March” and “In Port”; opens “When the bright lamp is carried in, The sunless hours again begin; O'er all without, in…”; closes “…in with tip-toe tread, And see me lying warm and fast And in the Land of Nod at last.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          164,
+          175
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d1c52d9a2b395b5876d3abfa4fd140c95d9a5d6c6de342fd1bdba66ba3529d4c"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-19-q1",
+          "prompt": "In the first part, to whom does the child say goodnight?",
+          "facilitatorNotes": [
+            "His brother, his sister and his father, and the whole “pleasant party round the fire,” with its songs and tales."
+          ],
+          "evidence": [
+            "Farewell, O brother, sister, sire!"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-19-q2",
+          "prompt": "What are the “wicked shadows” on the stairs really the shadows of? Does knowing that make them less scary?",
+          "facilitatorNotes": [
+            "The stair posts, the lamp, and the child himself. Some children will say yes, they are only shadows; others will say they still feel scary in the dark, as his drumming heart shows."
+          ],
+          "evidence": [
+            "The shadow of the balusters, the shadow of the lamp,",
+            "The shadow of the child that goes to bed--"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-19-q3",
+          "prompt": "Why is the last part called “In Port”? What makes the bedroom safe?",
+          "facilitatorNotes": [
+            "A port is where a ship is safe after a voyage. His room is warm and cheerful, the door shuts the shadows out, and his mother looks in on him as he sleeps. Children may name any of these."
+          ],
+          "evidence": [
+            "Into my warm and cheerful room.",
+            "And close the happy door at last"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-20",
       "title": "The Unseen Playmate",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -981,7 +1231,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-16-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-20-q1",
           "prompt": "When does the Friend of the Children come?",
           "facilitatorNotes": [
             "When children are playing alone, happy and good. He never comes to a crowd."
@@ -992,7 +1242,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-16-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-20-q2",
           "prompt": "Has anyone ever seen the playmate? Where does he like to be?",
           "facilitatorNotes": [
             "Nobody has seen or heard him, and you could not draw him. He lies in the laurels, runs on the grass, and lives in the caves you dig."
@@ -1003,7 +1253,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-16-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-20-q3",
           "prompt": "Who do you think the unseen playmate really is?",
           "facilitatorNotes": [
             "Many readers think he is the child’s own imagination, since he does just what the child is doing: digging, singing, playing soldiers. Others may picture a real fairy friend. Either can use the clue that he takes care of the toys."
@@ -1016,7 +1266,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-17",
+      "id": "reading-k-stevenson-childs-garden-1919-21",
       "title": "My Ship and I",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1045,7 +1295,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-17-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-21-q1",
           "prompt": "Where does the captain’s ship sail now, and what does it keep doing?",
           "facilitatorNotes": [
             "On the pond, where it keeps turning round and round. He has not yet found out how to send it farther."
@@ -1056,7 +1306,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-17-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-21-q2",
           "prompt": "What is the boy’s plan for sailing far away?",
           "facilitatorNotes": [
             "To grow as little as the toy sailor and make the dolly come alive to help him sail. Ask whether that could really happen; it is a wish, said as if it were a plan."
@@ -1067,7 +1317,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-17-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-21-q3",
           "prompt": "What will he do when he reaches the island? Why does he want to be first?",
           "facilitatorNotes": [
             "Land where no dolly has ever been and fire his penny cannon. He wants to be an explorer who finds a new place. Children may pick another reason, such as adventure or being brave."
@@ -1080,7 +1330,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-18",
+      "id": "reading-k-stevenson-childs-garden-1919-22",
       "title": "Picture-Books in Winter",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1109,7 +1359,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-18-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-22-q1",
           "prompt": "What tells the child that winter has come?",
           "facilitatorNotes": [
             "Frosty mornings, tingling thumbs, robins at the window and rooks. Children can add a sign of winter of their own, kept separate from the poem’s."
@@ -1120,7 +1370,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-18-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-22-q2",
           "prompt": "What has happened to the water, and where can the child still find flowing brooks?",
           "facilitatorNotes": [
             "It has frozen hard as stone, so he and Nurse can walk on it; the flowing brooks are still in the picture books."
@@ -1131,7 +1381,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-18-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-22-q3",
           "prompt": "Every stanza ends with the picture story-books. Why do you think the poet keeps coming back to them?",
           "facilitatorNotes": [
             "The books are where every good thing in the poem is kept, so each stanza leads back to them, and the last asks how to praise them. Some children will simply enjoy the echo, which is part of the answer too."
@@ -1149,7 +1399,71 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-19",
+      "id": "reading-k-stevenson-childs-garden-1919-23",
+      "title": "My Treasures",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen to a list of treasures and the story that goes with each one.",
+      "focus": "Ordinary things become treasures because of where they were found, who made them, and what the child believes about them.",
+      "context": "Robert Louis Stevenson wrote these poems as if a child were speaking. Nursie is the nurse who looked after him. A plane is a kind of tree; a chisel is a carpenter’s tool with a sharp blade for shaping wood. Let the child count the treasures on fingers as you read.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Child Alone, V, “My Treasures,” the complete poem; opens “THESE nuts, that I keep in the back of the nest Where all my lead soldiers are lying at…”; closes “…And that is a chisel, both handle and blade, Which a man who was really a carpenter made.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          200,
+          203
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ae91b2bf31ab73dcdf4e6813db1ed4dcd196174e3eeb7de52b03599051ebe268"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-23-q1",
+          "prompt": "Name the child’s four treasures.",
+          "facilitatorNotes": [
+            "Nuts, a whistle, a coloured stone, and a chisel."
+          ],
+          "evidence": [
+            "THESE nuts, that I keep in the back of the nest",
+            "And that is a chisel, both handle and blade,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-23-q2",
+          "prompt": "The child is sure his stone is gold. What does his father say? Why might it still be a treasure?",
+          "facilitatorNotes": [
+            "His father says it is not gold. It is still precious because the child found it far away and carried it home though he was tired and cold. Some children may believe it really is gold; the poem only gives the child’s word against his father’s."
+          ],
+          "evidence": [
+            "For though father denies it, I'm sure it is gold.",
+            "And I carried it back although weary and cold,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-23-q3",
+          "prompt": "Why is the chisel “the king” of all his treasures? Which would you choose?",
+          "facilitatorNotes": [
+            "Few children own one, and a real carpenter made it, so it is a grown-up’s tool. A child may choose the whistle instead, because nursie made it; any choice with a reason from the poem works."
+          ],
+          "evidence": [
+            "But of all of my treasures the last is the king,",
+            "Which a man who was really a carpenter made."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-24",
       "title": "The Land of Story-Books",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1178,7 +1492,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-19-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-24-q1",
           "prompt": "What are the parents doing while the child plays?",
           "facilitatorNotes": [
             "Sitting by the fire, talking and singing. The child notices that they “do not play at anything.”"
@@ -1189,7 +1503,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-19-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-24-q2",
           "prompt": "What is the forest track really? What are the hills and the woods?",
           "facilitatorNotes": [
             "The dark space along the wall and behind the sofa. The room itself becomes hills, woods and a river in his game."
@@ -1200,7 +1514,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-19-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-24-q3",
           "prompt": "How does the boy feel when his nurse comes to take him to bed? How do you know?",
           "facilitatorNotes": [
             "Sorry to leave: he goes with “backward looks” at his dear land. He returns “across the sea” as if coming home from a long trip. Ask what game the child would be sad to leave."
@@ -1213,7 +1527,71 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-20",
+      "id": "reading-k-stevenson-childs-garden-1919-25",
+      "title": "Armies in the Fire",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture shapes that appear in a fire, fade, and come back.",
+      "focus": "At dusk a child stares into the glowing coals and sees burning cities and marching armies.",
+      "context": "Before electric heating, rooms were warmed by coal fires, and children liked to stare into the glowing coals and see pictures there. Even means evening; gloom means darkness; a spire is the pointed top of a church tower; lustre means shine; a phantom is something you seem to see that is not really there; embers are the glowing bits of the fire; a furnace is a very hot fire.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Child Alone, VIII, “Armies in the Fire,” the complete poem; opens “THE lamps now glitter down the street; Faintly sound the falling feet; And the blue even…”; closes “…those armies marching to, And what the burning city is That crumbles in your furnaces!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          219,
+          223
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "624cca51a5fb2c6b824e3bc6b23d160004910f07e57ac6c47da272d0189d9935"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-25-q1",
+          "prompt": "What time of day is it when the poem begins? What tells you?",
+          "facilitatorNotes": [
+            "Evening: the street lamps are lit and the blue evening is falling over the garden."
+          ],
+          "evidence": [
+            "THE lamps now glitter down the street;",
+            "And the blue even slowly falls"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-25-q2",
+          "prompt": "What does the child see in the fire, and what happens to it?",
+          "facilitatorNotes": [
+            "Armies marching past the towers of a burning city. They fade as the fire dies down, then come back when the glow returns."
+          ],
+          "evidence": [
+            "Armies march by tower and spire",
+            "The armies fade, the lustre dies."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-25-q3",
+          "prompt": "At the end the child asks the embers questions. Can they answer? Why does he ask anyway?",
+          "facilitatorNotes": [
+            "No, they are only coals. He wants to know the rest of the story his eyes have made up, so he asks as if the fire could tell him. Children may say he is half asleep or playing; both fit the dark, quiet room."
+          ],
+          "evidence": [
+            "Blinking embers, tell me true",
+            "Where are those armies marching to,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-26",
       "title": "Night and Day",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1242,7 +1620,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-20-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-26-q1",
           "prompt": "What vanishes when the golden day is done?",
           "facilitatorNotes": [
             "The child and the garden, the flowers and the sun: everything disappears into the dark."
@@ -1252,7 +1630,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-20-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-26-q2",
           "prompt": "Who is still awake in the dark while the child sleeps?",
           "facilitatorNotes": [
             "A glow-worm in the road, mice among old things, and the parents moving with candles."
@@ -1263,7 +1641,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-20-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-26-q3",
           "prompt": "In the morning, who calls the child, and what do they say? Why might the garden call him a playmate?",
           "facilitatorNotes": [
             "The paths, the roses and the forget-me-nots cry “Up!” and say they have beaten the morning drum. The garden is like a friend who has been waiting all night to play; children may hear soldiers calling a friend to join them."
@@ -1276,7 +1654,7 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-21",
+      "id": "reading-k-stevenson-childs-garden-1919-27",
       "title": "Nest Eggs",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1305,7 +1683,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-21-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-27-q1",
           "prompt": "How many eggs are in the nest, and what colour are they?",
           "facilitatorNotes": [
             "Four little blue eggs, which the mother keeps warm."
@@ -1316,7 +1694,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-21-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-27-q2",
           "prompt": "What will the baby birds do soon after they hatch?",
           "facilitatorNotes": [
             "Chip their way out and fill the April woods with singing, then fly into the blue air."
@@ -1327,7 +1705,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-21-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-27-q3",
           "prompt": "The children are older and stronger. Why will they no longer “look down” on the birds?",
           "facilitatorNotes": [
             "The birds will fly high in the beeches while the children must walk. Being bigger does not let them fly; some children hear the speaker as a little envious, others as happy for the birds."
@@ -1344,7 +1722,70 @@
       ]
     },
     {
-      "id": "reading-k-stevenson-childs-garden-1919-22",
+      "id": "reading-k-stevenson-childs-garden-1919-28",
+      "title": "The Flowers",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear real flower names and imagine the tiny world they suggest.",
+      "focus": "Old country names for flowers make a child picture a fairy forest at his feet.",
+      "context": "Gardener's garters, shepherd's purse, bachelor's buttons, lady's smock and hollyhock are real names of flowers and plants that grow in Britain. Dames are ladies; boughs are branches; thyme is a small sweet-smelling herb. Read the names slowly, as if each one were a treasure.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Garden Days, III, “The Flowers,” the complete poem; opens “ALL the names I know from nurse: Gardener's garters, Shepherd's purse, Bachelor's…”; closes “…fairest woods are these; Where, if I were not so tall, I should live for good and all.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          257,
+          260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "336126f0e1565eadcfaf21bbed0f9bed88305c5131e11c19325dcb71503ccb0a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-28-q1",
+          "prompt": "Who taught the child the flower names? Which name do you like best?",
+          "facilitatorNotes": [
+            "His nurse. Any name counts; ask what it makes the child picture."
+          ],
+          "evidence": [
+            "ALL the names I know from nurse:"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-28-q2",
+          "prompt": "Why does the child decide these must be “fairy names”?",
+          "facilitatorNotes": [
+            "They sound like things that belong to people, garters, a purse, buttons, a smock, yet the flowers are tiny, so he imagines tiny people own them."
+          ],
+          "evidence": [
+            "These must all be fairy names!",
+            "Tiny trees for tiny dames--"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-28-q3",
+          "prompt": "Why would the child like to live in these woods “for good and all,” and what stops him?",
+          "facilitatorNotes": [
+            "He thinks they are the fairest woods of all, but he is too tall to fit. Children may say they would like to be small too, or that it would be scary down there; either can come from the poem."
+          ],
+          "evidence": [
+            "But the fairest woods are these;",
+            "Where, if I were not so tall,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-29",
       "title": "The Dumb Soldier",
       "sourceId": "stevenson-childs-garden-1919",
       "genre": "poetry",
@@ -1373,7 +1814,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-stevenson-childs-garden-1919-22-q1",
+          "id": "reading-k-stevenson-childs-garden-1919-29-q1",
           "prompt": "Where does the child hide the toy soldier, and why can’t he find him for a while?",
           "facilitatorNotes": [
             "In a hole in the freshly mown lawn. Then the spring grass grows tall and covers the hiding place until the lawn is cut again."
@@ -1384,7 +1825,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-22-q2",
+          "id": "reading-k-stevenson-childs-garden-1919-29-q2",
           "prompt": "What might the soldier have seen and heard down in the grass?",
           "facilitatorNotes": [
             "The starry nights, the flowers coming up, fairy things passing, bees and ladybirds talking, and a butterfly flying over. Children can pick one and describe it."
@@ -1395,7 +1836,7 @@
           ]
         },
         {
-          "id": "reading-k-stevenson-childs-garden-1919-22-q3",
+          "id": "reading-k-stevenson-childs-garden-1919-29-q3",
           "prompt": "The soldier will not say a word. What will the child do instead?",
           "facilitatorNotes": [
             "Put him on the shelf and make up the story himself. The poem ends with the child’s imagination doing what the toy cannot. Ask what story the child would invent for the soldier."
@@ -1403,6 +1844,134 @@
           "evidence": [
             "Not a word will he disclose,",
             "And make up the tale myself."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-30",
+      "title": "The Gardener",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare how the gardener spends the summer with how the child wants him to spend it.",
+      "focus": "A child cannot understand a grown-up who works instead of playing, and warns him that summer will end.",
+      "context": "Robert Louis Stevenson wrote these poems as if a child were speaking. The gravel walk is a path of small stones; currants are small berries; plots are garden beds; a barrow is a wheelbarrow; to profit by something means to make the most of it.",
+      "contentNote": "The child wants to play “Indian wars,” a pretend fighting game of Stevenson’s time in which American Indians were the enemy.",
+      "excerpt": {
+        "locator": "Garden Days, VII, “The Gardener,” the complete poem; opens “THE gardener does not love to talk, He makes me keep the gravel walk; And when he puts…”; closes “…by these garden days, O how much wiser you would be To play at Indian wars with me!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          282,
+          286
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "082ff87367b70b6d157f796421d934ac570381ac2a66954d9243a7cea7f5038a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-30-q1",
+          "prompt": "What does the gardener do all day, and what does he not want to do?",
+          "facilitatorNotes": [
+            "He keeps the paths, locks up his tools, digs the flower beds and cuts the hay; he does not want to talk or play."
+          ],
+          "evidence": [
+            "THE gardener does not love to talk,",
+            "And never seems to want to play."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-30-q2",
+          "prompt": "The child calls him “Silly gardener!” What does he warn him about?",
+          "facilitatorNotes": [
+            "Summer will end and winter will come, so the gardener will have to put his barrow away; the child thinks he should play while summer lasts."
+          ],
+          "evidence": [
+            "And winter comes with pinching toes,",
+            "You must lay your barrow down."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-30-q3",
+          "prompt": "Who do you think is wiser, the child or the gardener? Use the poem.",
+          "facilitatorNotes": [
+            "The child says playing would be wiser. But the same fact, that summer is short, explains why the gardener is so busy: summer is when the garden needs him. Children may side with either; ask each to give a line."
+          ],
+          "evidence": [
+            "O how much wiser you would be",
+            "He digs the flowers and cuts the hay,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-31",
+      "title": "Historical Associations",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a child’s tour of a garden that is also a land of adventures.",
+      "focus": "A child shows his uncle that the ordinary garden is the scene of spells, escapes and a great ride, which ends back on the lawn in time for tea.",
+      "context": "Historical associations are the famous events that belong to a place. Uncle Jim sees only a garden where he smokes his pipe. Ali Baba is from an old story of a cave full of treasure; Robert Bruce was a king of Scotland and William Tell a Swiss hero; Siberia is a very cold part of Russia and Tartary an old name for lands in the middle of Asia; Babylon was a great ancient city. To loiter is to hang about; fetters are chains; gorse is a prickly bush; amain means at full speed; a ford is a shallow place to cross a river.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Garden Days, VIII, “Historical Associations,” the complete poem; opens “DEAR Uncle Jim, this garden ground That now you smoke your pipe around, Has seen immortal…”; closes “…the lawn, in time for tea, And from our steeds alighted down Before the gates of Babylon.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          288,
+          296
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef8a3e9e78782638f8abc3539bc0e3b0fab8428a6a96ba14d7f2b790677b8ef3"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-31-q1",
+          "prompt": "Name some of the places the child shows his uncle in the garden.",
+          "facilitatorNotes": [
+            "The sea and the sand, Shepherd's Land, the fairy hollyhocks, Ali Baba's rocks, and Frozen Siberia. Children can point to places in a room or garden and rename them the same way."
+          ],
+          "evidence": [
+            "Here is the sea, here is the sand,",
+            "And there are Ali Baba's rocks."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-31-q2",
+          "prompt": "What happened to the child in “Frozen Siberia,” and how did he get free?",
+          "facilitatorNotes": [
+            "An enchanter’s spell bound him in chains in a dungeon with Robert Bruce and William Tell, until they burst their iron chains and rode away with giants charging behind."
+          ],
+          "evidence": [
+            "Was bound by an enchanter's spell.",
+            "Our iron fetters burst in twain."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-31-q3",
+          "prompt": "Where does the great ride end? Why might the poet put “in time for tea” right beside “the gates of Babylon”?",
+          "facilitatorNotes": [
+            "On the lawn, in time for tea, which in the game is also Babylon. Both are true at once for the child: the adventure ends exactly where real life goes on. Some children may say the game simply had to stop for tea."
+          ],
+          "evidence": [
+            "Upon the lawn, in time for tea,",
+            "Before the gates of Babylon."
           ]
         }
       ]
