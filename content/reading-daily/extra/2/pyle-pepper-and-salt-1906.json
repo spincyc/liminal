@@ -517,6 +517,453 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-08",
+      "title": "Hans Hecklemann’s Luck, part 1: no luck at all",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow a tricky argument about luck, and decide whether it makes sense.",
+      "focus": "Hans Hecklemann has no luck at all, neither good nor bad, and his wife Catherine wants him to do something about it.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. Luck is what happens to someone by chance, good or bad; in this story luck is also a little creature you can carry about. A farthing was the smallest coin; “as poor as charity” means very poor; indifferent here means neither good nor bad; “he never laid one penny on top of the other” means he could never save. Lawyers earn their living by talking, so the storyteller jokes that they carry their luck under their tongues.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Hans Hecklemann’s Luck,” from the start to Hans deciding to visit the wise woman; opens “Hans Hecklemann had no luck at all. Now and then we hear folks say that they have no…”; closes “…shown her how poor her advice was, he took it. Many other men are like Hans Hecklemann.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-09",
+        "blocks": [
+          389,
+          403
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9919e6cb8a8ce8ce12b952b675d941f0b1ed4e314ccf1b541a3663baf52dc45b"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-08-q1",
+          "prompt": "Where does the storyteller say people carry their luck? Where is his own luck right now?",
+          "facilitatorNotes": [
+            "In pocket-books, in hats, on finger tips and, for lawyers, under their tongues. His own luck is sitting astride his pen as he writes, though he cannot see it."
+          ],
+          "evidence": [
+            "some carry it in their pocket-books",
+            "Mine is at this moment sitting astride of my pen"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-08-q2",
+          "prompt": "How can the storyteller be sure Hans has no luck at all, rather than bad luck? Follow his reasons.",
+          "facilitatorNotes": [
+            "Hans always has enough to eat, so his luck is not bad; he never saves a penny, so it is not good; he has food and clothes enough, so it is not indifferent. If it is none of these, it must be no luck at all. It is a playful argument that sounds very logical."
+          ],
+          "evidence": [
+            "so his luck was not indifferent",
+            "you see that it could have been no luck at all"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-08-q3",
+          "prompt": "Catherine says, “Doing nothing puts no cabbage into the pot.” What does Hans answer, and whom do you agree with?",
+          "facilitatorNotes": [
+            "“It takes none out.” Catherine means you must act to get more; Hans means doing nothing at least loses nothing. Both have a point, and the rest of the story will test it."
+          ],
+          "evidence": [
+            "Doing nothing puts no cabbage into the pot",
+            "It takes none out"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-08-q4",
+          "prompt": "Hans argues with Catherine and then does what she says. Why argue first? What does the storyteller think of that?",
+          "facilitatorNotes": [
+            "He wants to show that he knows more than she does, even as he takes her advice. The storyteller teases him, and adds that many other men are the same."
+          ],
+          "evidence": [
+            "After he had clearly shown her how poor her advice was, he took it.",
+            "Many other men are like Hans Hecklemann."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-09",
+      "title": "Hans Hecklemann’s Luck, part 2: the wise woman and the beetle",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice good advice, and notice when someone does not take it.",
+      "focus": "The old wise woman tells Hans he is well enough off, then shows him where to find his lost luck, which turns out to be an ugly little imp.",
+      "context": "Recap: Hans Hecklemann has no luck at all, neither good nor bad, though his family always has just enough. His wife Catherine told him to ask the old wise woman in the wood where he lost it; he argued, then went. Hedgerows are rows of bushes along a field; the cuckoo is a bird whose call says its name; thence means from there; Kneitlingen is a town in the story. A stone cross by the road was a sign of the Christian faith, the “good sign” in this story. A manikin or an imp is a tiny man, here a wicked little spirit; betwixt means between.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Hans Hecklemann’s Luck,” from Hans’s walk to the wise woman to catching his luck in the sack; opens “So, early the next morning, Hans jogged along to the old wise woman's cottage, while the…”; closes “That is what Hans Hecklemann's luck was like.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-08",
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-10",
+        "blocks": [
+          404,
+          429
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3255d74a79afddb799b6c08222ba8e00e203ceb4d275a7fb4a18cc02eced7322"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-09-q1",
+          "prompt": "What does the wise woman ask Hans, and what does she advise?",
+          "facilitatorNotes": [
+            "Whether he has enough to eat, to drink and to wear, and is warm in winter. He says yes to all, so she tells him to leave well enough alone, because luck can give him nothing more and might take away what he has."
+          ],
+          "evidence": [
+            "Then you had better leave well enough alone",
+            "And it might take away the good things that you already have"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-09-q2",
+          "prompt": "Why does Hans still want his luck back?",
+          "facilitatorNotes": [
+            "It might put money in his pocket, and he thinks he could make good out of it even if it is bad. The wise woman doubts it; she sees he is set in his own way."
+          ],
+          "evidence": [
+            "But it might put money into my pocket",
+            "he only talked stiffness into his stubbornness"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-09-q3",
+          "prompt": "Where did Hans lose his luck, and why has it stayed there for three years?",
+          "facilitatorNotes": [
+            "On the overturned stone cross where three roads meet, coming home from the fair; his luck was evil, so it stuck to the good sign like a fly to butter and could not get away."
+          ],
+          "evidence": [
+            "it stuck to the good sign, as all evil things of that kind must, like a fly to butter"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-09-q4",
+          "prompt": "“That is what Hans Hecklemann’s luck was like.” What was it like? What does that warn you about the rest of the story?",
+          "facilitatorNotes": [
+            "A little manikin as long as a thumb and as black as ink, kicking, screeching and rolling its red eyes: ugly and bad-tempered. Hans’s luck is bad luck, so getting it back may bring trouble, just as the wise woman warned."
+          ],
+          "evidence": [
+            "as black as ink",
+            "it kicked and screeched and rolled its red eyes in a very ugly way"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-10",
+      "title": "Hans Hecklemann’s Luck, part 3: gold in the furrows",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Decide who wins a bargain, and test the story’s lesson.",
+      "focus": "Hans makes his luck promise him a gold coin at the end of every furrow he ploughs, and finds out what that costs.",
+      "context": "Recap: Hans Hecklemann lost his luck years ago. The old wise woman told him he was well enough off without it, but he insisted, so she sent him to an old stone cross, where he caught his luck: an ugly little black imp. He tied it up in a sack of goat’s hair. To bargain is to argue over what you will give and get; thalers and golden nobles were coins; a furrow is the long groove a plough cuts in a field; to tarry is to delay; haggard means thin and worn out; “gone the way of all men” means died; heirs are the people who receive what someone leaves when he dies.",
+      "contentNote": "Hans works his horses until they drop, and he dies without any joy of his gold.",
+      "excerpt": {
+        "locator": "“Hans Hecklemann’s Luck,” from Hans bargaining with his luck to the end and its moral; opens “So Hans having his luck secure in the little sack began to bargain with it. \"What will…”; closes “…as one does cabbages--with money. That happiness is the only good luck after all!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-09",
+        "continuesTo": null,
+        "blocks": [
+          430,
+          455
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cf7087f3b3853e29214848e9f10ec7275f8dbee041db26cf9706e649d2b7bccd"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-10-q1",
+          "prompt": "How does Hans make his luck give in?",
+          "facilitatorNotes": [
+            "He drops the sack into the nasty pot of dish-scrapings that Catherine boils into soap, and every day asks what it will give him to be let out, until after a week or more it gives in."
+          ],
+          "evidence": [
+            "into a nasty pot where Catherine cast the scrapings of the dishes",
+            "At last Hans's luck gave in."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-10-q2",
+          "prompt": "Why does Hans turn down a thousand thalers, and what does he ask for instead?",
+          "facilitatorNotes": [
+            "Coins melt away like snow, as his father used to say. He asks for a golden noble at the end of every furrow he ploughs, a supply that will not run out."
+          ],
+          "evidence": [
+            "They melt away like snow",
+            "a golden noble at the end of every furrow"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-10-q3",
+          "prompt": "Hans grows rich. Why is he unhappy?",
+          "facilitatorNotes": [
+            "He does nothing but plough from dawn to dark, thinks only of getting gold faster, tells no one, and grows thin and worn. He ploughs up gold but not happiness."
+          ],
+          "evidence": [
+            "he did not turn up happiness in the furrows along with them",
+            "He told no one how rich he was growing"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-10-q4",
+          "prompt": "The luck laughed that Hans had made “an ill bargain.” Was it right? Which of the four lessons at the end matters most to you?",
+          "facilitatorNotes": [
+            "Yes: the bad luck stayed in his pocket all along, and the gold went to his heirs. Children can choose among the four lessons; many will pick “happiness is the only good luck,” and some will remember the wise woman’s advice to leave well enough alone."
+          ],
+          "evidence": [
+            "you have made an ill bargain, Hans",
+            "That happiness is the only good luck after all!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-11",
+      "title": "Farmer Griggs’s Boggart, part 1: a knock at the door",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Spot the moment a character makes a choice he will regret.",
+      "focus": "On a snowy night a tiny boggart knocks at Farmer Griggs’s door and promises to do all the work of the house if only he is let in.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. A boggart is a mischievous house-imp from old English tales. The Griggses speak an old country dialect: “’ee” and “thee” mean you, “un” means him, “na” means no or not, “sarvice” is service, “intull” is into, and “gert” is great; an oaf is a clumsy fool; “Zooks” is an exclamation. A wight is a little creature; hay-ricks are haystacks; a dunce-cap was a pointed hat once put on a pupil who had not learned his lessons; a latticed window has criss-cross frames; a groat was a small coin; a scullion and a serving wench were kitchen servants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Farmer Griggs’s Boggart,” from the start to the boggart getting into the house; opens “Did you ever hear of a boggart? No! Then I will tell you. A boggart is a small imp that…”; closes “…such easy matter getting rid of the likes of him when we once let him in, I can tell you.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-12",
+        "blocks": [
+          488,
+          509
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "43b41747b9aefbf4c41d76741d7d921156062989a86b8798c3be6d50683a9d58"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-11-q1",
+          "prompt": "What is a boggart, as the storyteller explains it, and what do we call such things now?",
+          "facilitatorNotes": [
+            "A small imp that lives unseen in a house, doing a little good and much harm. Now we call them ill-temper, meanness, uncharitableness and the like, so the story may be about bad habits as well as imps."
+          ],
+          "evidence": [
+            "doing a little good and much harm",
+            "ill-temper, meanness, uncharitableness, and the like"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-11-q2",
+          "prompt": "How does Pyle make the farm-house feel cosy while the cold wind blows?",
+          "facilitatorNotes": [
+            "Logs crackle in the wide chimney, Farmer Griggs warms his knees and his ale, the spinning-wheel hums like bees, the cat purrs and the dog basks. The cold outside makes the inside feel warmer."
+          ],
+          "evidence": [
+            "But inside the farm-house all was warm and pleasant",
+            "like a whole hiveful of bees"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-11-q3",
+          "prompt": "Farmer Griggs first says no. What changes his mind?",
+          "facilitatorNotes": [
+            "The long list of chores the boggart promises to do, so that he need not pay any servants. The farmer and the dame both keep listening."
+          ],
+          "evidence": [
+            "so that you will not have to give so much as a groat for wages",
+            "Then Farmer Griggs listened a little longer without shutting the door"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-11-q4",
+          "prompt": "Dame Griggs calls only, “Shut the door!” How does the boggart end up inside, and who is to blame?",
+          "facilitatorNotes": [
+            "The farmer shuts the door with the boggart already in. He hesitated, and she wanted the cold kept out. Children may blame the farmer, both of them, or the boggart’s clever promises; the storyteller warns that such a guest is hard to get rid of once you let him in."
+          ],
+          "evidence": [
+            "Then Farmer Griggs shut the door, but the boggart was on the inside."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-12",
+      "title": "Farmer Griggs’s Boggart, part 2: the boggart in the churn",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Explain why running away does not solve the problem in this story.",
+      "focus": "The boggart does all the work at first, then begins to play mean tricks, and when the family moves away to escape him, he comes too.",
+      "context": "Recap: on a snowy night a tiny boggart called Hardfist knocked at Farmer Georgie Griggs’s door and promised to do all the work of the house. The farmer hesitated, Dame Griggs called to him to shut the door against the cold, and the boggart ended up inside. In the Griggses’ dialect “’ee” and “thee” mean you, “un” means him, and “tull” or “intull” means to or into. Deftly means skilfully; pottage is porridge; rush-lights were cheap candles; to pilfer is to steal; magpies are birds said to steal; a coverlid is a bedcover; “Odds bodkins” and “Dang un!” are old exclamations; a wain is a big cart; bairns are children; fieldfares are birds that fly away each autumn; flittin’ means moving house; a churn is a tall tub for making butter.",
+      "contentNote": "The boggart starves the cat and dog, takes the children’s food and pulls off their covers at night; the farmer blames his wife for the trouble.",
+      "excerpt": {
+        "locator": "“Farmer Griggs’s Boggart,” from the boggart warming himself at the fire to the family’s return home; opens “The boggart came straightway over to the warm fire, and the dog…”; closes “…by going from here to there, for it is sure to be in the cart with the household things.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-11",
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-13",
+        "blocks": [
+          510,
+          524
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cdaab3534fffdeec36d6ae81c19b0b2f02ce059401a50630fff4b8d34e69b73b"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-12-q1",
+          "prompt": "Why can no one see the boggart once he is inside?",
+          "facilitatorNotes": [
+            "Imps like him can be seen only as frost is seen, when it is cold; as he warmed by the fire he grew thin like a jelly-fish until he was like thin air."
+          ],
+          "evidence": [
+            "can only be seen as the frost is seen--when it is cold"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-12-q2",
+          "prompt": "At first everything goes “as smooth as cream.” What changes, and who suffers?",
+          "facilitatorNotes": [
+            "Once he is comfortable he begins his pranks: scraping the butter so the farmer is jeered at market, skimming the children’s milk, starving the cat and the dog, blowing out the lights, chilling the fires and pulling the covers off the children."
+          ],
+          "evidence": [
+            "mischief began to play the pipes and he began to show his pranks",
+            "he skimmed the children's milk"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-12-q3",
+          "prompt": "Farmer Griggs blames his wife. What does the storyteller think of that? Is it fair?",
+          "facilitatorNotes": [
+            "The storyteller says some men lay their own bundle of faults on their wives’ shoulders; the farmer let the boggart in himself. Dame Griggs answers that she told him only to shut the door."
+          ],
+          "evidence": [
+            "lay their own bundle of faults on their wives' shoulders",
+            "I bade thee do naught but shut the door!"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-12-q4",
+          "prompt": "Why do the Griggses go back to their old house? What does the storyteller want you to understand?",
+          "facilitatorNotes": [
+            "The boggart was riding along in the churn, so moving would not help; better to bear trouble at home than in a new place. If the boggart stands for bad temper or meanness, you take it with you wherever you go."
+          ],
+          "evidence": [
+            "for sure it's better to bear trouble there than in a new place",
+            "it is sure to be in the cart with the household things"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-13",
+      "title": "Farmer Griggs’s Boggart, part 3: a suit of clothes",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Work out why a present can make an unwanted guest leave.",
+      "focus": "The wise man Father Grimes tells Farmer Griggs how to be rid of his boggart, and it is not what you might expect.",
+      "context": "Recap: Farmer Griggs let a boggart into his house; it did the work at first but then played mean tricks on everyone. The family packed up to move away, but the boggart rode along in the butter churn, so they went home again. Breeches and breeks are trousers that end at the knee; shoen is an old word for shoes; “fitted like wax” means fitted perfectly; alackaday means alas. In old English tales a house-spirit given a present of clothes would leave and never come back.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Farmer Griggs’s Boggart,” from the visit to Father Grimes to the end; opens “But how did Georgie Griggs get rid of his boggart? That I will tell you.”; closes “…left to us, like good Father Grimes, to tell one an easy way to get rid of one's boggart.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-12",
+        "continuesTo": null,
+        "blocks": [
+          525,
+          532
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b1570a55d35569ee71abe638a5707c649e03357d763699ffee9161d3a5aa7bdb"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-13-q1",
+          "prompt": "What does Farmer Griggs have made, and where does he put the things?",
+          "facilitatorNotes": [
+            "A red coat and blue breeches from Hugh the tailor, a velvet cap with a bell from William the hatter, and little shoes from Thomas the shoemaker. He lays them on the warm spot on the hearth where the boggart sleeps, and hides in the closet with his dame."
+          ],
+          "evidence": [
+            "make a pretty red coat and a neat pair of blue breeches",
+            "He laid them on a warm spot on the hearth"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-13-q2",
+          "prompt": "How does each piece of clothing fit the boggart?",
+          "facilitatorNotes": [
+            "The hat fits exactly, the coat like wax, the breeches as though they grew there, and the shoes better than any shoes ever fitted. Every fit is perfect."
+          ],
+          "evidence": [
+            "it fitted like wax",
+            "there never was such a fit"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-13-q3",
+          "prompt": "Read the boggart’s song. Why does he say a house where he is given clothes cannot be his?",
+          "facilitatorNotes": [
+            "Children may say he is too fine now to stay a servant, or that a gift means he has been paid off and must go; the song says the house of an honest man is not the place for him. Accept ideas the song supports."
+          ],
+          "evidence": [
+            "If these be mine, mine cannot be",
+            "The house of honest man, Georgie!"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-13-q4",
+          "prompt": "The storyteller says he has a boggart in his own house. What might he mean, and could he get rid of it so easily?",
+          "facilitatorNotes": [
+            "Remember that boggarts stand for ill-temper and meanness: he means a bad habit of his own. He would dress it in silk and hang a silver bell on its cap, but there are no wise men left to tell an easy way. Children can talk about how people really chase away a grumpy mood or a mean habit."
+          ],
+          "evidence": [
+            "for I have one in my own house",
+            "there are no more wise men left to us"
+          ]
+        }
+      ]
     }
   ]
 }
