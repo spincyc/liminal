@@ -355,6 +355,156 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-harper-atlanta-offering-1895-06",
+      "title": "Jamie’s Puzzle",
+      "sourceId": "harper-atlanta-offering-1895",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a child’s reasoning, and notice what the adults around him admit they do not know.",
+      "focus": "A small boy tries to make sense of two deaths in his family, and his answer leaves the grown-ups with a harder question.",
+      "context": "Frances Ellen Watkins Harper (1825–1911) was born free in Baltimore, Maryland, while slavery was still legal there. She became a famous speaker against slavery and for women’s rights, and one of the best-known African American poets of her century. Atlanta Offering: Poems appeared in 1895. The speaker is one of a grieving family. A vacant chair is an empty seat at the family table; the saints here are good people believed to be in heaven; enrobed means dressed; mystic means mysterious; to be enrolled is to have your name written on a list; the hereafter is life after death.",
+      "contentNote": "The poem is about the deaths of a grandmother and then a mother, and a child’s questions about heaven. It speaks from Christian belief; discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Atlanta Offering, “Jamie’s Puzzle,” the whole poem; opens “ There was grief within our household Because of a vacant chair. Our mother, so loved and…”; closes “…that still remain; But think in the great hereafter Their meaning will all be plain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          194,
+          205
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1c6d6895cd6dcd2e287a9ca8c700f7ef8273808db053c15445ed2023396828fa"
+      },
+      "questions": [
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-06-q1",
+          "prompt": "Who has died, and who is Jamie? Sort out the family.",
+          "facilitatorNotes": [
+            "First the speakers’ mother died; she was Jamie’s grandmother. Then the speakers’ sister died, and she was Jamie’s mother. Jamie is a small grandchild who has now lost both."
+          ],
+          "evidence": [
+            "Our mother, so loved and precious,",
+            "And our sister, Jamie's mother,"
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-06-q2",
+          "prompt": "What puzzles Jamie at first? After the second death, what answer does he find?",
+          "facilitatorNotes": [
+            "He cannot see why Grandmamma would go to live in a “stranger city” when her family loved her so. After his mother dies he decides that Grandma must have been lonesome, so Mamma went to keep her company: a loving answer that makes sense to a child."
+          ],
+          "evidence": [
+            "To dwell in a stranger city,",
+            "Grandma, he said, must be lonesome,"
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-06-q3",
+          "prompt": "Why does the mystery deepen for the adults just when it seems clearer to Jamie?",
+          "facilitatorNotes": [
+            "Jamie’s answer explains where his mother went, but not why she would leave her own children. The grown-ups can see the harder question hiding inside his answer, and now Jamie half sees it too."
+          ],
+          "evidence": [
+            "To us the mystery deepened,",
+            "And leave her children behind;"
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-06-q4",
+          "prompt": "In the last stanza the adults say, “Dear child, like you, we are puzzled.” Why might it matter that they admit this? What comfort do they offer?",
+          "facilitatorNotes": [
+            "They are honest: they do not pretend to understand death. Their comfort is a hope from their faith that the meaning will be plain in the hereafter. Readers can talk about how people comfort a grieving child truthfully."
+          ],
+          "evidence": [
+            "Dear child, like you, we are puzzled,",
+            "Their meaning will all be plain."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-harper-atlanta-offering-1895-07",
+      "title": "A Story of the Rebellion",
+      "sourceId": "harper-atlanta-offering-1895",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Find the moment a poem turns from danger to choice, and think about why a hero is left unnamed.",
+      "focus": "Trapped under enemy fire, a boat’s crew is saved by a man who gives his life to push them free.",
+      "context": "Frances Ellen Watkins Harper (1825–1911) was born free in Baltimore, Maryland, while slavery was still legal there. She became a famous speaker against slavery and for women’s rights, and one of the best-known African American poets of her century. Atlanta Offering: Poems appeared in 1895. The Rebellion was a common name in the North for the Civil War (1861–1865), when Southern states fought to leave the United States and keep slavery. The speaker is one of a Union crew whose boat has run aground on a sandbank under fire from the rebels, the Confederate soldiers. “His dusky face” tells us the hero is Black; many of the Black men who served the Union had been enslaved. Engirded means surrounded; bated breath is breath held in fear; thronged apace means crowded in fast; galling chains rub painfully; asunder rent means torn apart; the strand is the shore; nought means nothing.",
+      "contentNote": "A man is shot and killed while saving his comrades. “Dusky” is an old word for dark-skinned.",
+      "excerpt": {
+        "locator": "Atlanta Offering, “A Story of the Rebellion,” the whole poem; opens “ The treacherous sands had caught our boat, And held it with a strong embrace And death…”; closes “…safety on the tide; But he our comrade good and grand, In our defence had bravely died.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          328,
+          339
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b5e133b45e95c6b4a2120a021f7ea84b409d2f099db52111d583df6519fa5bfe"
+      },
+      "questions": [
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-07-q1",
+          "prompt": "How do the first three stanzas make you feel trapped? Find the words that do it.",
+          "facilitatorNotes": [
+            "The sands are “treacherous” and hold the boat in a “strong embrace,” as if with arms; the crew is “imprisoned”; their oars are useless; bullets fall like “fiery hail,” and they cannot fire back."
+          ],
+          "evidence": [
+            "And held it with a strong embrace",
+            "With bated breath and useless oar."
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-07-q2",
+          "prompt": "Two stanzas imagine what is in the hero’s mind. What does he hope for, and why does the speaker begin with “Perchance”?",
+          "facilitatorNotes": [
+            "He remembers the wrongs done to his people for ages and hopes for their freedom: chains broken, families that were sold apart reunited, freedom across the land. “Perchance” means perhaps; the speaker can only guess his thoughts, which is honest."
+          ],
+          "evidence": [
+            "The wrongs of ages thronged apace;",
+            "Of severed hearts again made one,"
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-07-q3",
+          "prompt": "“I have no offering but my life, / And if they kill me it is nought.” Why does he think the others’ lives count for more? Do you agree with him?",
+          "facilitatorNotes": [
+            "They are soldiers who can fight future battles; “But ye are soldiers” suggests he is not one, perhaps a worker or guide with the army. Many readers will say his life is not “nought” at all, and the poem itself honours him. The word “offering” echoes the book’s title, Atlanta Offering."
+          ],
+          "evidence": [
+            "I have no offering but my life,",
+            "And if they kill me it is nought."
+          ]
+        },
+        {
+          "id": "reading-4-harper-atlanta-offering-1895-07-q4",
+          "prompt": "The hero is never named. Why might Harper leave him nameless? What do the last stanzas say about him?",
+          "facilitatorNotes": [
+            "He can stand for the many Black men whose courage in the war went unrecorded. The speaker calls his life’s work done “grandly, nobly,” and him “our comrade good and grand”: the poem itself becomes his memorial."
+          ],
+          "evidence": [
+            "His life work grandly, nobly o'er.",
+            "But he our comrade good and grand,"
+          ]
+        }
+      ]
     }
   ]
 }
