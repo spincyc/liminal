@@ -4,7 +4,7 @@
   "author": "John Stuart Mill",
   "title": "On Liberty",
   "translator": null,
-  "edition": "Fourth edition (London: Longmans, Green, Reader, and Dyer, 1869). Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds the Humboldt epigraph, Mill's dedication and Chapters I to V with their printed titles, ending with THE END; the title page, contents and printer's colophon are omitted; Mill's nine footnotes (five in Chapter II, three in Chapter III, one in Chapter IV) are kept, each anchor as [n] in the transcription's numbering, which restarts in each chapter, and each note as a paragraph [Footnote n: text] after its chapter's text, where the Wikisource transcription lists them.",
+  "edition": "Fourth edition (London: Longmans, Green, Reader, and Dyer, 1869). Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds the Humboldt epigraph, Mill's dedication and Chapters I to V with their printed titles, ending with THE END; the title page, contents and printer's colophon are omitted; Mill's nine footnotes (five in Chapter II, three in Chapter III, one in Chapter IV) are kept, each anchor as [n] in the transcription's numbering, which restarts in each chapter, and each note as a paragraph [Footnote n: text] after its chapter's text, where the Wikisource transcription lists them. On 2026-11-18 seven further passages (Chapter I from “Like other tyrannies”; the opening of Chapter II; its examples of Socrates, Christ and Marcus Aurelius; its summary of four grounds with the paragraph on temperate discussion; the opening of Chapter III; Chapter IV from “But with regard to the merely contingent”; and the paragraph on contracts, marriage and education in Chapter V) were collated word by word against the OCR of Internet Archive onliberty06millgoog (this fourth edition) and compared with Project Gutenberg 34901, each difference decided on the page images: one reading changed, “not worse than men commonly are” (page 47), where the transcription adds “most”.",
   "publicationYear": 1869,
   "translationYear": null,
   "url": "https://en.wikisource.org/wiki/Index:On_Liberty_(4th_Edition).djvu",
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 147,
-    "sha256": "9284915782d085f3ff57830a0ee7c8326f9438e6952720b6e901acc7b1ee9659"
+    "sha256": "54fd008f9825418cd3bb3d4afd59dcfabd55ef09352738769caf79d12431813e"
   }
 }
