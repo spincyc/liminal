@@ -523,6 +523,198 @@
     },
     {
       "id": "reading-k-rossetti-sing-song-1893-09",
+      "title": "What is pink?",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear each colour matched with something in the world outside, and catch the joke at the end.",
+      "focus": "Questions and answers find every colour in flowers, sky, birds and fruit, until orange can only be an orange.",
+      "context": "Christina Rossetti wrote the rhymes in Sing-Song for very young children. A brink is an edge; poppies are red flowers that grow in fields of grain; thro’ is short for through; mellow means soft and sweet; violet is a purple colour; twilight is the dim light just after sunset. The fourth line reads “barlev,” a slip for barley, a grain crop. Pause after each question so the child can guess before you read the answer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “What is pink? a rose is pink”, complete (one stanza); opens “What is pink? a rose is pink By the fountain’s brink. What is red? a poppy’s red In its…”; closes “…clouds are violet In the summer twilight. What is orange? why, an orange, Just an orange!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          88,
+          88
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "376fce9e7af6a41c950eff9ff67be4c41a673942fca6baf7614d8a0913b70115"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-09-q1",
+          "prompt": "What answer does the poem give for blue, and for white?",
+          "facilitatorNotes": [
+            "Blue is the sky where the clouds float; white is a swan sailing in the light. Ask the child for another blue or white thing they know."
+          ],
+          "evidence": [
+            "What is blue? the sky is blue",
+            "What is white? a swan is white"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-09-q2",
+          "prompt": "Which colour does the poem find in the clouds, and when?",
+          "facilitatorNotes": [
+            "Violet, in the summer twilight, just after sunset. Clouds can be white, grey, pink or purple; the poem picks the evening ones."
+          ],
+          "evidence": [
+            "What is violet? clouds are violet",
+            "In the summer twilight."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-09-q3",
+          "prompt": "Why does the poem end “why, an orange, / Just an orange!” What is funny about it?",
+          "facilitatorNotes": [
+            "The colour is named after the fruit, so there is nothing else to say: the answer is the same word as the question. After so many pretty answers, the poem seems to shrug. Some children may say oranges are simply the best orange thing, which also fits."
+          ],
+          "evidence": [
+            "What is orange? why, an orange,",
+            "Just an orange!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-10",
+      "title": "Mother shake the cherry-tree",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Count cherries as they are shared round a family.",
+      "focus": "A family shares the cherries Susan catches, and tired father gets the most.",
+      "context": "Christina Rossetti wrote these rhymes for very young children. Merry means happy and full of fun. Count the cherries on your fingers as you read the last four lines.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “Mother shake the cherry-tree,”, complete (one stanza); opens “Mother shake the cherry-tree, Susan catch a cherry; Oh how funny that will be, Let’s be…”; closes “…one for sister, Two for mother more, Six for father, hot and tired, Knocking at the door.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          89,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "eb4aad91e3b14ce746a98ed1bfe71d0d6a83e80e21af1143b8993f27e00cdd71"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-10-q1",
+          "prompt": "Who shakes the tree, and who catches the cherries?",
+          "facilitatorNotes": [
+            "Mother shakes the tree and Susan catches."
+          ],
+          "evidence": [
+            "Mother shake the cherry-tree,",
+            "Susan catch a cherry;"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-10-q2",
+          "prompt": "How many cherries does each person get? How many is that altogether?",
+          "facilitatorNotes": [
+            "One for brother, one for sister, two for mother, six for father: ten in all. Let the child count on fingers."
+          ],
+          "evidence": [
+            "One for brother, one for sister,",
+            "Two for mother more,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-10-q3",
+          "prompt": "Why do you think father gets six? Is that fair?",
+          "facilitatorNotes": [
+            "He is coming home hot and tired, knocking at the door, so the family saves him the most. Some children will say it is unfair because Susan did the catching; both answers use the rhyme."
+          ],
+          "evidence": [
+            "Six for father, hot and tired,",
+            "Knocking at the door."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-11",
+      "title": "The city mouse",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare two mice: where they live, who their neighbours are and what they eat.",
+      "focus": "The garden mouse has less to eat but lives among flowers and friends, and the speaker gladly shares with him.",
+      "context": "Christina Rossetti wrote these rhymes for very young children. A bower is a shady place under leaves; to grudge means to mind giving something; timid means shy and easily frightened. The first line reads “Jives” in this text, a slip for lives.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “The city mouse Jives in a house;—”, complete (two stanzas); opens “The city mouse Jives in a house;— The garden mouse lives in a bower, He’s friendly with…”; closes “…eats what he can; We will not grudge him seeds and stalks, Poor little timid furry man.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          94,
+          95
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b03ea0f8980af433cf534428e197912905527e9657f0c1deafcd3d94e8b433f2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q1",
+          "prompt": "Where does the garden mouse live, and who are his friends?",
+          "facilitatorNotes": [
+            "In a bower in the garden, friendly with the frogs and toads, among plants in flower."
+          ],
+          "evidence": [
+            "The garden mouse lives in a bower,",
+            "He’s friendly with the frogs and toads,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q2",
+          "prompt": "What does each mouse eat?",
+          "facilitatorNotes": [
+            "The city mouse eats bread and cheese; the garden mouse eats whatever he can find."
+          ],
+          "evidence": [
+            "The city mouse eats bread and cheese;—",
+            "The garden mouse eats what he can;"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q3",
+          "prompt": "The speaker calls the garden mouse “Poor little timid furry man.” Why does the speaker feel kindly toward him? Which mouse would you rather be?",
+          "facilitatorNotes": [
+            "He has less food and is shy, so the speaker will gladly let him eat the garden’s seeds and stalks. Children may choose the city mouse for its bread and cheese, or the garden mouse for its friends and flowers; any choice with a reason fits."
+          ],
+          "evidence": [
+            "We will not grudge him seeds and stalks,",
+            "Poor little timid furry man."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-12",
       "title": "What does the donkey bray about?",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -551,7 +743,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-09-q1",
+          "id": "reading-k-rossetti-sing-song-1893-12-q1",
           "prompt": "What will the child give Nurse for an answer?",
           "facilitatorNotes": [
             "A kiss, if Nurse can explain what the donkey, the pig and the goose mean."
@@ -562,7 +754,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-09-q2",
+          "id": "reading-k-rossetti-sing-song-1893-12-q2",
           "prompt": "Which birds seem to say real words?",
           "facilitatorNotes": [
             "The magpie says “how d’ye do?” and the jackdaw “go away”; the cockatoo and the cuckoo say their own names. Any one is a good answer."
@@ -573,7 +765,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-09-q3",
+          "id": "reading-k-rossetti-sing-song-1893-12-q3",
           "prompt": "What do you think the donkey might be braying about?",
           "facilitatorNotes": [
             "The poem never answers, which is why the child asks. Accept any idea with a reason, such as hunger or calling a friend, and point out that it is our guess, not something the poem says."
@@ -586,7 +778,199 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-10",
+      "id": "reading-k-rossetti-sing-song-1893-13",
+      "title": "Three plum buns",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Share three buns between two people and decide where the last one goes.",
+      "focus": "Two walkers eat a bun each and give the spare one to the boy working in the field.",
+      "context": "Christina Rossetti wrote these rhymes for very young children. A plum bun is a sweet roll with raisins in it. A stile is a set of steps for climbing over a fence; clover is a low meadow plant that sheep love to eat, and farmers sometimes paid a boy to shout and keep sheep off a crop.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “Three plum buns”, complete (two stanzas); opens “Three plum buns To eat here at the stile In the clover meadow, For we have walked a mile.”; closes “…for me, And one left over: Give it to the boy who shouts To scare sheep from the clover.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          97,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b11a73e70970c92d335e9775eec61b3b655045e8fc673e5fc8395d144de17de1"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q1",
+          "prompt": "Where are the walkers eating their buns, and why are they hungry?",
+          "facilitatorNotes": [
+            "At the stile in the clover meadow, after walking a mile."
+          ],
+          "evidence": [
+            "To eat here at the stile",
+            "For we have walked a mile."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q2",
+          "prompt": "There are three buns and two people. How are they shared?",
+          "facilitatorNotes": [
+            "One each, and one left over."
+          ],
+          "evidence": [
+            "One for you, and one for me,",
+            "And one left over:"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q3",
+          "prompt": "Who gets the last bun? Why might the speaker choose him?",
+          "facilitatorNotes": [
+            "The boy who shouts to scare the sheep from the clover. He is working out in the field and may be hungry; children may also say he is alone, or that he is closest. Any reason from the poem fits."
+          ],
+          "evidence": [
+            "Give it to the boy who shouts",
+            "To scare sheep from the clover."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-14",
+      "title": "Dancing on the hill-tops",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Find the word that ends each verse and what Alice is doing in it.",
+      "focus": "Alice is merry, helpful and happy, and the last verse says riches would not make her any happier.",
+      "context": "Christina Rossetti wrote these rhymes for very young children. Echoes are sounds that bounce back from hills; lambkins are little lambs; posies are small bunches of flowers. A cottage is a small, plain house; a palace is a king’s grand home.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “Dancing on the hill-tops,”, complete (three stanzas); opens “Dancing on the hill-tops, Singing in the valleys, Laughing with the echoes, Merry little…”; closes “…the hill-tops And the flowering valleys, She’d be none the happier, Happy little Alice.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          102
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "328ebe4f04b12623b50b3c1f10bed355199a94ae41ba2ae549b1d80b5f5edf62"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-14-q1",
+          "prompt": "What does Alice do in the first two verses?",
+          "facilitatorNotes": [
+            "She dances on the hills, sings in the valleys, laughs with the echoes, plays with the lambs and picks flowers. Children can act one."
+          ],
+          "evidence": [
+            "Dancing on the hill-tops,",
+            "Gathering pretty posies,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-14-q2",
+          "prompt": "Each verse ends with a word for Alice. What are the three words?",
+          "facilitatorNotes": [
+            "Merry, helpful and happy."
+          ],
+          "evidence": [
+            "Merry little Alice.",
+            "Helpful little Alice.",
+            "Happy little Alice."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-14-q3",
+          "prompt": "If her father’s cottage turned into a palace, would Alice be any happier? What does that tell you about her?",
+          "facilitatorNotes": [
+            "No, she would be “none the happier.” She is already happy with the hills, the valleys and the lambs, so riches would add nothing. Some children may say a palace would still be fun; the poem says it would not change her."
+          ],
+          "evidence": [
+            "Turned into a palace,",
+            "She’d be none the happier,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-15",
+      "title": "If a mouse could fly",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a wish, then hear the poem think again about it.",
+      "focus": "The first verse wishes to be like an animal doing something impossible; the second asks what would really happen.",
+      "context": "Christina Rossetti wrote these rhymes for very young children. A sprat is a small sea fish. Read the first verse as a happy wish and the second more slowly, as if wondering.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “If a mouse could fly,”, complete (two stanzas); opens “If a mouse could fly, Or if a crow could swim, Or if a sprat could walk and talk, I’d…”; closes “…It might turn him grey; Or if a sprat could walk and talk, What would he find to say?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          115,
+          116
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c0d47ee1e67c7e08e2961da6eef2a908cc03cbd32d65755013bf1a3f6f83e0a6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-15-q1",
+          "prompt": "What three impossible things does the first verse imagine?",
+          "facilitatorNotes": [
+            "A mouse that flies, a crow that swims, and a sprat that walks and talks. The speaker would like to be like such a creature."
+          ],
+          "evidence": [
+            "Or if a sprat could walk and talk,",
+            "I’d like to be like him."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-15-q2",
+          "prompt": "In the second verse, what might happen to the mouse and to the crow?",
+          "facilitatorNotes": [
+            "The mouse might fly away, and the crow might turn grey. Ask why: perhaps the water would wash his black away, or he would grow grey from cold or fright; the poem does not say."
+          ],
+          "evidence": [
+            "He might fly away;",
+            "It might turn him grey;"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-15-q3",
+          "prompt": "The poem ends by asking what a talking sprat would find to say. What do you think? Would you still like to be like him?",
+          "facilitatorNotes": [
+            "Perhaps nothing much, since a fish knows only the sea; children can invent what he would say. The second verse makes the wish seem less wonderful, so some will change their minds and some will not."
+          ],
+          "evidence": [
+            "What would he find to say?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-16",
       "title": "The horses of the sea",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -615,7 +999,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-10-q1",
+          "id": "reading-k-rossetti-sing-song-1893-16-q1",
           "prompt": "What do the horses of the sea do? What are they really?",
           "facilitatorNotes": [
             "They rear up with foaming tops and toss and turn over: they are waves, whose white foam looks like a mane. Children can show a wave rising and falling with an arm."
@@ -626,7 +1010,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-10-q2",
+          "id": "reading-k-rossetti-sing-song-1893-16-q2",
           "prompt": "What do the horses of the land eat?",
           "facilitatorNotes": [
             "Corn and clover."
@@ -636,7 +1020,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-10-q3",
+          "id": "reading-k-rossetti-sing-song-1893-16-q3",
           "prompt": "Which horses does the poem say serve us best? Why might that be?",
           "facilitatorNotes": [
             "The horses of the land, which pull and carry for people; waves are splendid but do no work for us. A child who likes the sea-horses better for their wildness is giving a reason worth hearing."
@@ -649,7 +1033,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-11",
+      "id": "reading-k-rossetti-sing-song-1893-17",
       "title": "What does the bee do?",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -678,7 +1062,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-11-q1",
+          "id": "reading-k-rossetti-sing-song-1893-17-q1",
           "prompt": "What does the bee bring home, and what does Father bring home?",
           "facilitatorNotes": [
             "The bee brings honey and Father brings money. Notice how the two words rhyme."
@@ -689,7 +1073,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-11-q2",
+          "id": "reading-k-rossetti-sing-song-1893-17-q2",
           "prompt": "What does Mother do with the money?",
           "facilitatorNotes": [
             "She lays it out, which means she spends it on what the family needs."
@@ -699,7 +1083,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-11-q3",
+          "id": "reading-k-rossetti-sing-song-1893-17-q3",
           "prompt": "What does the baby do? Why is that a funny ending?",
           "facilitatorNotes": [
             "The baby eats up the honey. Everyone else works, and the baby just enjoys the end; the rhyme comes back round to the bee’s honey. Children may say the baby is lucky."
@@ -711,7 +1095,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-12",
+      "id": "reading-k-rossetti-sing-song-1893-18",
       "title": "Is the moon tired?",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -740,7 +1124,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-12-q1",
+          "id": "reading-k-rossetti-sing-song-1893-18-q1",
           "prompt": "Why does the speaker wonder whether the moon is tired?",
           "facilitatorNotes": [
             "Because she looks pale, as tired people sometimes do, and seems half hidden in mist."
@@ -751,7 +1135,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-12-q2",
+          "id": "reading-k-rossetti-sing-song-1893-18-q2",
           "prompt": "What does the moon do that might make her tired?",
           "facilitatorNotes": [
             "She climbs the sky from east to west and never rests."
@@ -762,7 +1146,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-12-q3",
+          "id": "reading-k-rossetti-sing-song-1893-18-q3",
           "prompt": "When does the moon look papery white, and when does she fade away?",
           "facilitatorNotes": [
             "Papery white before night comes; she fades before dawn. Ask whether the child has ever seen the moon in daytime; looking for it together is a good follow-up."
@@ -775,7 +1159,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-13",
+      "id": "reading-k-rossetti-sing-song-1893-19",
       "title": "What do the stars do",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -804,7 +1188,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-13-q1",
+          "id": "reading-k-rossetti-sing-song-1893-19-q1",
           "prompt": "How high are the stars, the poem says?",
           "facilitatorNotes": [
             "Higher than the wind can blow or the clouds can fly."
@@ -815,7 +1199,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-13-q2",
+          "id": "reading-k-rossetti-sing-song-1893-19-q2",
           "prompt": "What does each star do?",
           "facilitatorNotes": [
             "It shines in its own brightness and circles round and round, rising to shine and then setting."
@@ -826,7 +1210,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-13-q3",
+          "id": "reading-k-rossetti-sing-song-1893-19-q3",
           "prompt": "Who does the poet believe made the stars? What have you noticed about the stars at night?",
           "facilitatorNotes": [
             "God, “its Maker.” Children may also describe stars twinkling or seeming to move across the sky; families can share their own beliefs alongside the poem."
