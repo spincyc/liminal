@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "hardy-poems-past-present-1919",
+  "author": "Thomas Hardy",
+  "title": "Poems of the Past and the Present",
+  "translator": null,
+  "edition": "Poems of the Past and the Present, the second collection in the combined Macmillan pocket volume (London: Macmillan and Co., 1919, a reprint of the first pocket edition of June 1907), as transcribed by Project Gutenberg (eBook 3168); the collection was first published in 1901 (dated 1902). The volume’s first collection, Wessex Poems and Other Verses, is held separately as hardy-wessex-poems-1919. The library holds every poem in printed order under the five part titles, with Hardy’s three footnotes; the transcription’s underscore emphasis, curly quotation marks and display capitals stand. “The Darkling Thrush” was collated on 2026-11-18 against the OCR of Internet Archive wessexpoemsother00hardiala (the same pocket edition, 1907 setting, reprinted 1908) and against its page images for pp. 399–400 (p. 401 by OCR only): the transcription agrees with the print in every word and point.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/3168",
+  "textUrl": "https://www.gutenberg.org/ebooks/3168.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Poems of the Past and the Present was first published in 1901 (dated 1902), and this text in the Macmillan edition of 1919; both were published before 1931, and their US copyright terms have expired. Project Gutenberg identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/3168"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/3168/pg3168.txt",
+    "downloadSha256": "903eeff065b0a010a163a41e8d211dca549a61d8bdf09077753c180034241673",
+    "method": "Project Gutenberg 3168 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Took the text from “V.R. 1819–1901” after the contents up to PG’s FOOTNOTES list; the PG header and footer, the cover picture, title page, copyright leaf and contents were dropped, and a level-1 title heading supplied. The five part titles are level-1 headings; poem titles with their subtitle lines are level-2 headings (lines joined by line breaks), and roman section numbers level-3 headings; stanzas keep their lines with the common indentation removed and inner indentation kept; place and date lines, scene directions and lone parenthesised form labels such as (TRIOLET) are paragraphs, with lines joined by single spaces. PG’s page-numbered note anchors {253}, {290} and {457} became [1], [2] and [3], and each note a paragraph [Footnote n: …] after the poem that holds its anchor."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        547,
+        552
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 860,
+    "sha256": "e4f3f1269b472e9b24d48e7df34a7df986f597d190b30280bd7becee74f7f815"
+  }
+}

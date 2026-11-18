@@ -1113,6 +1113,84 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-12-james-two-magics-1898-15",
+      "title": "The Turn of the Screw — the prologue: “two turns” round the fire",
+      "sourceId": "james-two-magics-1898",
+      "workTitle": "The Turn of the Screw",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 10,
+        "totalMinutes": 29
+      },
+      "challenge": "Keep track of who is telling the story, who wrote it down and who is listening, and what each of them wants from a ghost story.",
+      "focus": "A house party trades ghost stories, and one guest promises a story worse than any, written by a woman who is now dead.",
+      "context": "Henry James (1843–1916), an American novelist who made his life in England, published The Turn of the Screw in 1898. Victorians told ghost stories at Christmas, and the novel opens at a Christmas Eve house party; on Halloween it reads as a ghost story about the pleasure of being frightened. Trinity is a college at Cambridge; the second post is the day’s second mail delivery; to hang fire is to hesitate; raison de plus is French for “all the more reason”; an auditory is an audience. The long dash ——— marks a sentence broken off.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Turn of the Screw, the untitled prologue, from the opening to the night the manuscript is first read; opens “The story had held us, round the fire, sufficiently breathless, but except the obvious…”; closes “…auditory more compact and select, kept it, round the hearth, subject to a common thrill.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          36
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bc74eb51b43d0969c494f2f6527a232708692004a7f6863280a63d3f2a094a2c"
+      },
+      "questions": [
+        {
+          "id": "reading-12-james-two-magics-1898-15-q1",
+          "prompt": "How many hands has this story passed through before it reaches you? Name each teller and say what we learn about when and how each one handled it.",
+          "facilitatorNotes": [
+            "The governess wrote it down; she has been dead twenty years and sent the pages to Douglas before she died. Douglas reads it aloud from her manuscript and has since died himself, leaving it to the narrator. The narrator gives us his own “exact transcript” made much later. Every layer is a remembered or copied account, and none of the tellers can now be asked."
+          ],
+          "evidence": [
+            "She has been dead these twenty years.",
+            "this narrative, from an exact transcript of my own made much later, is what I shall presently give"
+          ]
+        },
+        {
+          "id": "reading-12-james-two-magics-1898-15-q2",
+          "prompt": "What does Douglas mean by “another turn of the screw”? How do the listeners respond to the promise of horror, and what does their response say about why people want ghost stories?",
+          "facilitatorNotes": [
+            "A turn of the screw tightens pressure: a child makes a ghost story worse, two children worse again. The company treats horror as a delicacy. One woman cries “Oh, how delicious!” and the warning that it is “too horrible” only raises its price. Douglas alone seems to take it seriously; he looks “as if, instead of me, he saw what he spoke of.”"
+          ],
+          "evidence": [
+            "If the child gives the effect another turn of the screw, what do you say to two children",
+            "“Oh, how delicious!” cried one of the women.",
+            "For general uncanny ugliness and horror and pain."
+          ]
+        },
+        {
+          "id": "reading-12-james-two-magics-1898-15-q3",
+          "prompt": "The narrator guesses that the governess was in love, and Mrs. Griffin guesses something about Douglas. Why might James let the reader learn about these feelings before the story itself begins?",
+          "facilitatorNotes": [
+            "Douglas confirms she “had been” in love and that it came out because she could not tell her story without it. Mrs. Griffin suggests that Douglas was in love with her. A reader is warned that the account comes from someone with strong feelings, and is read by someone who loved her: both may shape what follows, and the reader is invited to weigh her testimony."
+          ],
+          "evidence": [
+            "Yes, she was in love. That is, she had been.",
+            "if I don’t know who she was in love with, I know who he was."
+          ]
+        },
+        {
+          "id": "reading-12-james-two-magics-1898-15-q4",
+          "prompt": "“The story won’t tell,” said Douglas, “not in any literal, vulgar way.” What kind of storytelling does he promise, and what kind of reader will it need?",
+          "facilitatorNotes": [
+            "It will not state outright what happened or name its meaning. The lady who answers that the literal way is “the only way I ever understand” stands for the reader who wants a plain answer. James warns readers that they will have to infer, notice gaps and live with uncertainty; good answers may connect this to how the frame itself leaves questions open."
+          ],
+          "evidence": [
+            "“The story won’t tell,” said Douglas; “not in any literal, vulgar way.”",
+            "That’s the only way I ever understand."
+          ]
+        }
+      ],
+      "holiday": "halloween"
     }
   ]
 }
