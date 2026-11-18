@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/2/0/2/0/20203/20203-h/20203-h.htm",
     "downloadSha256": "dcadba75ac042b86d5769daa2f65edb87fe58ca7832f4de6492193ee7d21ef32",
-    "method": "Project Gutenberg 20203 HTML from the PG mirror aleph.pglaf.org, converted with a scratch walker over the part from the AUTOBIOGRAPHY OF BENJAMIN FRANKLIN title to the APPENDIX heading: the PG header and footer, Pine's front matter and introduction, the appendix selections and bibliography are outside it. Removed footnotes, footnote anchors, illustrations, image-only tables (facsimiles) and captions; italic styling dropped and line-wrap whitespace joined. Decorative initial-letter images become their alt letter joined to the following word (a space is supplied after the pronoun in I BEGAN and I HAD). The title lines form one level-1 heading; each chapter numeral and Pine's chapter title (with XIII's dates) form one level-2 heading. Runs of centred lines (the parents' epitaph) and verse quotations are stanzas with lines trimmed; single centred lines are paragraphs; Franklin's virtue chart and daily schedule are paragraphs with one tab-separated line per table row (empty rows dropped, rowspans not repeated). The mail-file escape “>From” that the Project Gutenberg text carries inside one paragraph (where a line beginning From was escaped and then joined) was corrected to From on 2026-11-18."
+    "method": "Project Gutenberg 20203 HTML from the PG mirror aleph.pglaf.org, converted with a scratch walker over the part from the AUTOBIOGRAPHY OF BENJAMIN FRANKLIN title to the APPENDIX heading: the PG header and footer, Pine's front matter and introduction, the appendix selections and bibliography are outside it. Removed footnotes, footnote anchors, illustrations, image-only tables (facsimiles) and captions; italic styling dropped and line-wrap whitespace joined. Decorative initial-letter images become their alt letter joined to the following word (a space is supplied after the pronoun in I BEGAN and I HAD). The title lines form one level-1 heading; each chapter numeral and Pine's chapter title (with XIII's dates) form one level-2 heading. Runs of centred lines (the parents' epitaph) and verse quotations are stanzas with lines trimmed; single centred lines are paragraphs; Franklin's virtue chart and daily schedule are paragraphs with one tab-separated line per table row (empty rows dropped, rowspans not repeated). The mail-file escape “>From” that the Project Gutenberg text carries inside one paragraph (where a line beginning From was escaped and then joined) was corrected to From on 2026-11-18. A paragraph beginning “With his keen insight into human nature”, which continues the editor’s footnote 119 on the Granville conversation but which the Project Gutenberg text sets as body text after Franklin’s paragraph, was removed on 2026-11-18 as editor matter."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 468,
-    "sha256": "9c439861cbe7d71c616747e354618ab04f6e6ad78a85ff8d55ecf4356ed256d9"
+    "blocks": 467,
+    "sha256": "0f0bce9c1b376cb0a74f2d554b9dd38169d12ddee1af5de7a370e5422fee6954"
   }
 }
