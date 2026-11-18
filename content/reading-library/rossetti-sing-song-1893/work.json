@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/76703/pg76703.txt",
     "downloadSha256": "878c65ec43a4519f6b6053052ed9016f844ef6fbf8881b52b35b8180f6c73c9e",
-    "method": "Project Gutenberg plain text (pg76703.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page and the first-line contents omitted; every blank-line separated group from the first rhyme (“Angels at the foot,”) to the last became one stanza, line breaks kept and no leading indentation present. The rhymes are untitled in the book, so the work has no headings. Typographic quotes and dashes kept as transcribed. Every Kindergarten night from this book was located block for block. Thirteen corrections from the 2026-11-18 collation with the 1893 scan (Internet Archive singsongnurseryr00ros), each decided on the page image: “before the morn;” (block 5), “Spring blossoms and youth:” (block 52), “pass by you;” (block 60), “1 and 1 are 2—” (block 66), “no mouth there;” and “thumb or finger;” (block 90) and “neat and small:” (block 185) take the print’s punctuation where Gutenberg has none; “Bluff seafaring men” (block 70) drops Gutenberg’s full stop, which the print does not have; in “What is pink?” (block 88) “barley” replaces “barlev”, “What is yellow?” has the print’s question mark where Gutenberg has a colon, and “the grass is green,” its comma where Gutenberg has a full stop; “The city mouse lives” (block 94) replaces “Jives”; and “hold the cat,” (block 104) has the print’s comma where Gutenberg has a full stop."
+    "method": "Project Gutenberg plain text (pg76703.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page and the first-line contents omitted; every blank-line separated group from the first rhyme (“Angels at the foot,”) to the last became one stanza, line breaks kept and no leading indentation present. The rhymes are untitled in the book, so the work has no headings. Typographic quotes and dashes kept as transcribed. Every Kindergarten night from this book was located block for block. Thirteen corrections from the 2026-11-18 collation with the 1893 scan (Internet Archive singsongnurseryr00ros), each decided on the page image: “before the morn;” (block 5), “Spring blossoms and youth:” (block 52), “pass by you;” (block 60), “1 and 1 are 2—” (block 66), “no mouth there;” and “thumb or finger;” (block 90) and “neat and small:” (block 185) take the print’s punctuation where Gutenberg has none; “Bluff seafaring men” (block 70) drops Gutenberg’s full stop, which the print does not have; in “What is pink?” (block 88) “barley” replaces “barlev”, “What is yellow?” has the print’s question mark where Gutenberg has a colon, and “the grass is green,” its comma where Gutenberg has a full stop; “The city mouse lives” (block 94) replaces “Jives”; and “hold the cat,” (block 104) has the print’s comma where Gutenberg has a full stop. The printed stanza breaks in If a pig wore a wig and Mother shake the cherry-tree, which the transcription had run together, were restored on 2026-11-18 (each is now two stanza blocks)."
   },
   "scope": {
     "complete": true,
@@ -64,76 +64,76 @@
       ],
       [
         64,
-        64
+        65
       ],
       [
-        66,
-        85
+        67,
+        86
       ],
       [
-        87,
-        92
+        88,
+        94
       ],
       [
-        94,
-        98
+        96,
+        100
       ],
       [
-        100,
-        102
-      ],
-      [
-        104,
+        102,
         104
       ],
       [
-        115,
-        116
+        106,
+        106
       ],
       [
-        123,
-        123
+        117,
+        118
       ],
       [
-        130,
-        131
+        125,
+        125
       ],
       [
-        151,
-        154
+        132,
+        133
       ],
       [
-        159,
-        162
+        153,
+        156
       ],
       [
-        166,
-        166
+        161,
+        164
       ],
       [
-        182,
-        182
+        168,
+        168
       ],
       [
-        185,
-        186
+        184,
+        184
       ],
       [
-        189,
-        190
+        187,
+        188
       ],
       [
-        196,
-        197
+        191,
+        192
       ],
       [
-        205,
-        206
+        198,
+        199
+      ],
+      [
+        207,
+        208
       ]
     ]
   },
   "text": {
-    "blocks": 215,
-    "sha256": "b0f9aaaeee4f54f3fdba711f3f97195237c02bb926cfbb7d956f1d438ec03ea3"
+    "blocks": 217,
+    "sha256": "2a5d2fcdd64ed8cff24c55a29438fae7e68145de2ed751c8192530f948fcbf9b"
   }
 }
