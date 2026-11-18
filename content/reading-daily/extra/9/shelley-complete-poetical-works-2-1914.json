@@ -72,6 +72,85 @@
     },
     {
       "id": "reading-9-shelley-complete-poetical-works-2-1914-02",
+      "title": "On Death and A Summer Evening Churchyard",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Both poems are about death, and they reach different moods. Mark the stanza in each where the mood is decided, and the words that decide it.",
+      "focus": "Two early poems: one asks what death takes from us and who could say what lies beyond it; the other finds death “mild” in a country churchyard at nightfall.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. These are early poems, published in 1816. The epigraph to “On Death” comes from the Book of Ecclesiastes. Lechlade is a village on the upper Thames; the “aereal Pile” is its church, whose spire rises above the graves. A meteor here is any bright light in the sky; a sepulchre is a tomb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "On Death and A Summer Evening Churchyard, Lechlade, Gloucestershire; two complete poems; opens “THERE IS NO WORK, NOR DEVICE, NOR KNOWLEDGE, NOR WISDOM, IN THE GRAVE, WHITHER THOU…”; closes “…secrets, or beside its breathless sleep That loveliest dreams perpetual watch did keep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          31,
+          44
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5355175f9b598dfa709662d21759b377519c0253a5885b6b48c412c57e589085"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q1",
+          "prompt": "In the first stanza of “On Death,” what is “the flame of life” compared to? What does the comparison suggest about life?",
+          "facilitatorNotes": [
+            "To the cold, pale gleam a meteor casts on a lonely island before dawn: “fickle and wan,” it “flits round our steps till their strength is gone.” Life is a faint, unsteady light, not a steady fire.",
+            "The epigraph has already said there is no knowledge “in the grave.” Ask how the image prepares for the rest of the poem."
+          ],
+          "evidence": [
+            "Is the flame of life so fickle and wan That flits round our steps till their strength is gone."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q2",
+          "prompt": "The second stanza urges courage; the third says death is “a fearful blow.” Why is it fearful, according to the third stanza? What is unusual about the promise in the second?",
+          "facilitatorNotes": [
+            "Because “This world is the nurse of all we know”: everything we know and feel comes through the senses of this world, so losing it means all of it will “pass like an unreal mystery.”",
+            "The second stanza promises a “wondrous day” where “Hell and Heaven shall leave thee free,” which is not the usual Christian promise. Ask what Shelley might mean by being free of both."
+          ],
+          "evidence": [
+            "This world is the nurse of all we know, This world is the mother of all we feel,",
+            "Where Hell and Heaven shall leave thee free To the universe of destiny."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q3",
+          "prompt": "“A Summer Evening Churchyard” gives Evening, Silence and Twilight human form. What do they do to the place, and what do the dead seem to do?",
+          "facilitatorNotes": [
+            "Evening “twines its beaming hair” round Day’s eyes; Silence and Twilight “Creep hand in hand” and cast their “spells” over earth, sky and the church spire. From the graves comes a sound “Half sense, half thought,” felt rather than heard.",
+            "The scene makes the dead part of the evening’s hush rather than something to fear. Ask which image students find strangest."
+          ],
+          "evidence": [
+            "Silence and Twilight, unbeloved of men, Creep hand in hand from yon obscurest glen.",
+            "Half sense, half thought, among the darkness stirs,"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q4",
+          "prompt": "The second poem ends: “Thus solemnized and softened, death is mild.” Is death mild in itself, or only on this evening? Compare this ending with the questions that end “On Death.”",
+          "facilitatorNotes": [
+            "The word “Thus” ties the calm to the scene; the hope is put conditionally (“Here could I hope”), “like some inquiring child / Sporting on graves,” that death hides “Sweet secrets.”",
+            "“On Death” ends with questions no one can answer: “Who lifteth the veil of what is to come?” The churchyard poem does not answer them either; it changes the mood in which they are asked. Ask which poem students find more honest."
+          ],
+          "evidence": [
+            "Thus solemnized and softened, death is mild And terrorless as this serenest night:",
+            "Here could I hope, like some inquiring child Sporting on graves,",
+            "Who lifteth the veil of what is to come?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-03",
       "title": "Feelings of a Republican on the Fall of Bonaparte",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -100,7 +179,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q1",
           "prompt": "Napoleon was famous for ambition. Why does the speaker call him “a most unambitious slave”?",
           "facilitatorNotes": [
             "He might have built a lasting throne in the cause of liberty, but chose instead “A frail and bloody pomp,” so his ambition was too small. As a slave, he served passions: the poem calls him “minister” to Massacre, Treason, Slavery and Lust.",
@@ -112,7 +191,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q2",
           "prompt": "What did the speaker once pray for, and what does he learn “Too late”?",
           "facilitatorNotes": [
             "He prayed that the vices Napoleon served would smother him. Now that Napoleon and France “are in the dust,” he sees that Virtue has “a more eternal foe” than force or fraud: the old order that returned after Napoleon fell.",
@@ -124,7 +203,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q3",
           "prompt": "Why might “old Custom, legal Crime, / And bloody Faith” be harder to defeat than a single tyrant? Do you agree with the speaker?",
           "facilitatorNotes": [
             "A tyrant can be overthrown; custom feels natural, crime made legal looks like justice, and violence done in religion’s name claims sacred authority. Such enemies are everywhere and seldom recognized.",
@@ -138,7 +217,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-03",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-04",
       "title": "The Sunset",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -167,7 +246,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q1",
           "prompt": "“Is it not strange, Isabel,” the youth says, “I never saw the sun?” What might he mean, and how does the next morning change his words?",
           "facilitatorNotes": [
             "He may mean that he never truly saw a sunset until he saw it in love, or that illness (“Genius and death contended” in him) has kept him from ordinary life. His plan, “thou shalt look on it with me,” becomes cruelly ironic when he dies that night.",
@@ -179,7 +258,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q2",
           "prompt": "“Let none believe that God in mercy gave That stroke.” Why does the narrator say this, and what comfort is he refusing?",
           "facilitatorNotes": [
             "Mourners were often told that a sudden death was God’s mercy, sparing the dead from later suffering. The narrator rejects that consolation outright; Shelley was openly sceptical of religion.",
@@ -190,7 +269,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q3",
           "prompt": "The lady “died not, nor grew wild.” Why does the narrator call her patience “a kind of madness,” and how does he correct himself?",
           "facilitatorNotes": [
             "Her calm care for her aged father looks unnatural, but he adds “If madness ’tis to be unlike the world”: her steady grief is madness only by the world’s standards. Her wasted body, through which daylight shows, makes her “The tomb of thy dead self.”",
@@ -205,7 +284,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-04",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-05",
       "title": "Mont Blanc",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -234,7 +313,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q1",
           "prompt": "In the first section, the “universe of things” flows through the mind like a vast river, and the mind adds only a sound “but half its own.” What is the mind compared to, and what does the comparison claim?",
           "facilitatorNotes": [
             "The mind’s own contribution is like a “feeble brook” joining a great river: the world pours through us, and our thought is only a small stream within it. The section is one long sentence, as if the flow will not stop.",
@@ -246,7 +325,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q2",
           "prompt": "In the second section Shelley turns to the ravine of the Arve and then to his “own separate fantasy.” How is his mind like the ravine? What does it do with what it sees?",
           "facilitatorNotes": [
             "Both are channels: Power comes down through the ravine as the Arve, and the world flows through his mind, which “renders and receives” in “unremitting interchange.” His thoughts fly out and seek, in “the still cave of the witch Poesy,” some image of the ravine.",
@@ -259,7 +338,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q3",
           "prompt": "When Mont Blanc itself appears, what does Shelley say the wilderness teaches? What could it mean for a mountain “to repeal Large codes of fraud and woe”?",
           "facilitatorNotes": [
             "The wilderness teaches “awful doubt, or faith so mild” that man might be reconciled with nature. Its voice can undo “codes of fraud and woe,” perhaps the laws and creeds that Shelley the radical opposed, by showing a power older and greater than any human system.",
@@ -271,7 +350,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q4",
           "prompt": "The glaciers make “A city of death” that ruins the dwellings of insects, beasts and men, yet “Power dwells apart in its tranquillity.” How do the last lines answer this picture? What is the force of the final question?",
           "facilitatorNotes": [
             "The Power behind the mountain is remote and indifferent to the life it destroys. But the poem ends by asking what the mountain, earth and stars would be if the human mind saw only “vacancy” in their silence: the mind gives the scene its meaning.",
@@ -286,7 +365,86 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-05",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-06",
+      "title": "Marianne’s Dream",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Read it as a dream: things appear without explanation and feelings do not match events. List the dream’s images in order, and note the Lady’s feeling at each.",
+      "focus": "A dream of a black anchor in a clear sky, burning cities, a flood and marble statues that come alive.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. Shelley wrote this in 1817 at Marlow, on the Thames, from a dream told him by his friend Marianne Hunt. A boon is a favour; the “cope” of heaven is its vault; a fane is a temple; “sheen” means shining; “sate” is an old form of “sat.” The anchor was a traditional Christian symbol of hope.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Marianne’s Dream (1817); opens “A pale Dream came to a Lady fair, And said, A boon, a boon, I pray! I know the secrets of…”; closes “…as one who knew That sleep has sights as clear and true As any waking eyes can view.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          91,
+          113
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7cb74adaee5195718d0338d4eaa9f2c09c1bf1a169719a2f3652b35c3440f7fb"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q1",
+          "prompt": "What does the Dream offer the Lady at the start, and what does she conclude when she wakes? Does the poem bear out her conclusion?",
+          "facilitatorNotes": [
+            "The Dream claims to know “the secrets of the air” and things “lost in the glare of day”; she closes her eyes “half in hope, and half in fright.” Waking, she walks about knowing “That sleep has sights as clear and true / As any waking eyes can view.”",
+            "The poem never explains what the dream meant, so “true” cannot mean a message decoded. Ask what kind of truth a dream might have."
+          ],
+          "evidence": [
+            "And half in hope, and half in fright, The Lady closed her eyes so bright.",
+            "That sleep has sights as clear and true As any waking eyes can view."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q2",
+          "prompt": "Why is the black anchor in a calm, cloudless sky so frightening?",
+          "facilitatorNotes": [
+            "It is out of place: an anchor belongs under the sea, yet it hangs over the hill wherever she looks, while “There was no sight or sound of dread” otherwise. She grows “sick with a weight of fear.”",
+            "An anchor can symbolize hope; here it may be a warning of the flood to come. Accept readings that link it to the sea that later rises."
+          ],
+          "evidence": [
+            "But that black Anchor floating still Over the piny eastern hill.",
+            "The Lady grew sick with a weight of fear"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q3",
+          "prompt": "When the cities burn and the flood comes, the Lady “felt no fear.” Why not? What does she believe the flood is for?",
+          "facilitatorNotes": [
+            "She thinks the towers are “Nature’s own” and that Nature has “sent forth the sea” to save them from the fire. Even when she is swept onto a plank and whirled through chasms, wonder overcomes fear at the gate.",
+            "In dreams, feelings often do not fit events. Ask whether her calm makes the scene more or less frightening for the reader."
+          ],
+          "evidence": [
+            "These towers are Nature's own, and she To save them has sent forth the sea.",
+            "With wonder that extinguished fear."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q4",
+          "prompt": "What do the marble statues at the gate suggest about art and the artist? What happens when they come alive?",
+          "facilitatorNotes": [
+            "The sculptor’s “own mind” lives on in the forms after the touch that made them “was in some sad change faded”: the artist is gone, but his spirit remains. As she watches, they move “Like weeds unfolding in the ocean,” one seems about to speak, the mountains crack, and the statues give “a joyous scream.”",
+            "The statue’s speech is interrupted, so the Dream’s promised secret is never told. Ask whether that is a loss or the point."
+          ],
+          "evidence": [
+            "the sculptor sure Was a strong spirit, and the hue Of his own mind did there endure",
+            "The statues gave a joyous scream,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-07",
       "title": "To the Lord Chancellor",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -315,7 +473,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q1",
           "prompt": "The poem opens “Thy country’s curse is on thee” and turns in the fourth stanza to “a father’s curse.” How does the attack move from public to personal?",
           "facilitatorNotes": [
             "The first stanzas accuse Eldon of national wrongs: “Justice sold, Truth trampled,” and wealth gained by fraud. He is the head of a “many-headed worm,” church and state together (“Priestly Pest!”). Then the poet names his own grievance, and the rest of the poem is a father speaking.",
@@ -327,7 +485,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q2",
           "prompt": "What does the father fear his children will lose, and what will they be taught instead?",
           "facilitatorNotes": [
             "He lists their “infantine smiles” now spent at “a stranger’s hearth,” the “gentlest lore” he meant to teach, and their days “under an hireling’s care.” Instead they will learn “false cant” and “dark creeds,” religion he thinks poisonous. He even turns the court’s charge back on the judge: it is Eldon’s Hell that is “impious.”",
@@ -340,7 +498,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q3",
           "prompt": "“I curse thee--though I hate thee not.” Can a curse be given without hate? How does the last stanza change the poem’s anger?",
           "facilitatorNotes": [
             "He calls Eldon a “slave” and a “daemon” of the Hell he serves, a tool of a cruel system rather than a free man, which may explain why he does not hate him. If Eldon could “quench” that system, the curse would become “a blessing.”",
@@ -354,7 +512,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-06",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-08",
       "title": "Five short poems of 1818",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -383,7 +541,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q1",
           "prompt": "“To the Nile” follows the river from its sources to Egypt’s floods. How does the last couplet turn the river into a warning about knowledge?",
           "facilitatorNotes": [
             "The flood brings both “soul-sustaining airs” and “blasts of evil,” both “fruits and poisons.” Knowledge will always be to human beings what the flood is to Egypt: life-giving and dangerous at once, and impossible to escape.",
@@ -395,7 +553,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q2",
           "prompt": "In “The Past,” what were the happy hours buried under, and why can they not simply be forgotten?",
           "facilitatorNotes": [
             "They were buried under “Blossoms and leaves, instead of mould”: joys that fell and hopes that remain, so the burial is gentle and incomplete. In the second stanza the dead past has “ghosts that may take revenge,” memories and regrets that whisper “joy, once lost, is pain.”",
@@ -408,7 +566,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q3",
           "prompt": "“To Mary --” is full of gaps, and “Passage of the Apennines” breaks off. What effect do the missing words have? How does the echo at the end of “To Mary --” answer the speaker’s wish?",
           "facilitatorNotes": [
             "The gaps make the poems feel like private, unfinished speech, and readers must imagine what is missing. The speaker wishes “that you were here,” and only the castle echo whispers back “Here!”: an answer that mocks his loneliness.",
@@ -420,7 +578,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-06-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q4",
           "prompt": "In “On a Faded Violet,” the flower once carried the beloved’s colour and scent. What does the speaker envy in the dead flower by the last line?",
           "facilitatorNotes": [
             "The violet now lies “lifeless” on his “abandoned breast,” mocking a heart that is still warm. His tears and sighs cannot revive it, and he ends by wishing his own lot were as “mute and uncomplaining” as the flower’s, as if he would rather feel nothing.",
@@ -434,7 +592,170 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-07",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-09",
+      "title": "Lines Written among the Euganean Hills",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "The poem follows one day from dawn to evening. Mark each time of day as it comes, and note what Shelley sees and what he thinks about at each.",
+      "focus": "A day on a hill above Venice and Padua: despair at dawn, anger at tyranny, a moment of peace at noon and a dream of a healing refuge at evening.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. Shelley wrote this at Este, in the Euganean Hills near Padua, in a house lent by Lord Byron, weeks after the death of his baby daughter Clara. Venice and Padua were then ruled by Austria; Shelley calls the Austrian rulers and soldiers “Celts.” The “tempest-cleaving Swan / Of the songs of Albion” is Byron, who had left England and lived in Venice. Petrarch, the Italian poet, is buried in these hills; Ezzelin was a cruel medieval lord of Padua, whose university was once famous; Amphitrite is a sea goddess.",
+      "contentNote": "The opening imagines a drowning sailor and an unburied skeleton; Shelley speaks of the Austrian occupiers as “the brutal Celt.”",
+      "excerpt": {
+        "locator": "Complete poem: Lines Written among the Euganean Hills (October 1818); opens “OCTOBER, 1818.”; closes “…Every sprite beneath the moon Would repent its envy vain, And the earth grow young again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          217,
+          230
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "24f7e202a0a5e06504ad45dae5c2f3e201ecba1172d0e377e4aba68f38a18fb0"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q1",
+          "prompt": "The poem opens with life as a voyage on “the deep wide sea of Misery.” What are the “green isles,” and what happens to the mariner who finds none?",
+          "facilitatorNotes": [
+            "The isles are moments of rest or happiness that make the voyage bearable. Without them the mariner drifts to “the haven of the grave,” and the next stanza shows his bones on a northern beach, with no one to mourn.",
+            "This morning on the hill is one such isle: “To such a one this morn was led.” Ask students to track the metaphor to the last stanza."
+          ],
+          "evidence": [
+            "Many a green isle needs must be In the deep wide sea of Misery,",
+            "To the haven of the grave.",
+            "To such a one this morn was led,"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q2",
+          "prompt": "Venice appears twice: as a city of fire at sunrise and as a tomb. What future does Shelley foresee for it, and on what condition might it be saved?",
+          "facilitatorNotes": [
+            "Once “Ocean’s child, and then his queen,” it is now ruled by foreigners and will sink back into the sea, its palaces overgrown. Its towers look golden, but are “Sepulchres.” Only “if Freedom should awake” could it and its “sister band” of cities flourish again.",
+            "Otherwise, “perish thou and they!” Ask whether that is cruelty or hope for the “new nations” that may spring from their dust."
+          ],
+          "evidence": [
+            "Sun-girt City, thou hast been Ocean's child, and then his queen;",
+            "But if Freedom should awake",
+            "From your dust new nations spring With more kindly blossoming."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q3",
+          "prompt": "Looking at Padua’s harvest, Shelley writes, “Men must reap the things they sow, / Force from force must ever flow.” What is the “bitter woe” he names?",
+          "facilitatorNotes": [
+            "The peasants harvest for their foreign masters, and violence breeds more violence; the woe is “That love or reason cannot change / The despot’s rage, the slave’s revenge.”",
+            "Shelley condemns tyranny, but also fears the revenge it provokes. The image of the Norway woodman who stamps out a spark and starts a forest fire makes the same point. Ask whether he sees any way out."
+          ],
+          "evidence": [
+            "Men must reap the things they sow, Force from force must ever flow,",
+            "That love or reason cannot change The despot's rage, the slave's revenge."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q4",
+          "prompt": "At noon, everything lies “Interpenetrated” by the glory of the sky; by evening, “Pain, / Sits beside the helm again.” How does the poem end: in escape or in hope for the world?",
+          "facilitatorNotes": [
+            "He imagines a calm refuge “for me, and those I love,” far from “passion, pain, and guilt.” But the dream reaches outward: even the envious “polluting multitude” would be changed there, and “the earth grow young again.”",
+            "Some readers see a private escape; others see Shelley’s hope that love can remake the world. Ask how the noon passage, with its “mind which feeds this verse,” prepares for this ending."
+          ],
+          "evidence": [
+            "And its ancient pilot, Pain, Sits beside the helm again.",
+            "Or the mind which feeds this verse Peopling the lone universe.",
+            "And the earth grow young again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-10",
+      "title": "Tasso and Misery: fragments of 1818",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Two fragments of a play Shelley never wrote, then a complete poem. In each, find who is speaking and what he or she wants.",
+      "focus": "Courtiers bribing their way to a duke, a poet in prison remembering the woman he loved, and a poem that courts Misery as a bride.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In 1818 Shelley planned a tragedy about Torquato Tasso (1544–1595), an Italian poet at the court of the Duke of Ferrara; legend said he loved the Duke’s sister Leonora and was locked up as mad. Shelley wrote only these fragments; the dots mark gaps in the manuscript. A zechin (sequin) is a gold coin. In myth, Venus loved Adonis, who was killed by a wild boar. “Invocation to Misery” was published after Shelley’s death.",
+      "contentNote": "“Invocation to Misery” imagines a marriage bed in the grave.",
+      "excerpt": {
+        "locator": "Scene from ‘Tasso’, Song for ‘Tasso’ and Invocation to Misery, complete as printed; opens “MADDALO, A COURTIER. MALPIGLIO, A POET. PIGNA, A MINISTER. ALBANO, AN USHER.”; closes “…passing from a scene; What but mockery can they mean, Where I am--where thou hast been?”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          231,
+          259
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b278f557f1e3a1d5023845d55f697dbb9901cdea20f16e183c3ed6af44f392ab"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q1",
+          "prompt": "What does everyone in the “Scene from ‘Tasso’” want? What do we learn about this court?",
+          "facilitatorNotes": [
+            "Maddalo and Pigna want to see the Duke; Malpiglio has paid the usher to bring his sonnet to Leonora: “You should not take my gold and serve me not.” Albano insists her smiles were “worth the zechin.”",
+            "It is a court of favour-seekers where access is bought. Ask how this setting would have treated a real poet like Tasso."
+          ],
+          "evidence": [
+            "You should not take my gold and serve me not.",
+            "Those nods and smiles were favours worth the zechin."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q2",
+          "prompt": "Explain Leonora’s reply to Malpiglio’s sonnet. Why can he not understand it?",
+          "facilitatorNotes": [
+            "She casts herself as Venus and Poetry as Adonis, whom she loves; the boar that wounds Adonis is Malpiglio, the bad poet who harms poetry. He admits the words are “twisted in some double sense / That I reach not.”",
+            "Maddalo’s cruel answer points to the real favourite: the smiles “did not rain on thee.” Notice the detail of the Princess’s clasped, quivering hands, and that “young Tasso, too, was there.”"
+          ],
+          "evidence": [
+            "Art the Adonis whom I love, and he The Erymanthian boar that wounded him.",
+            "The words are twisted in some double sense That I reach not:",
+            "And quivering--young Tasso, too, was there."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q3",
+          "prompt": "In the “Song for ‘Tasso’,” what has changed in the speaker since he was free?",
+          "facilitatorNotes": [
+            "Once his thoughts were “Keen … and bright”; now he still loves and thinks, “But strangely”: he mixes present and past “And each seems uglier than the last.” He sees a spirit like Leonora fade “by the grated casement’s ledge,” at the bars of his cell.",
+            "The gaps in the text make the speaker seem broken off too. Ask what the dots add when the poem is read aloud."
+          ],
+          "evidence": [
+            "I mix the present with the past, And each seems uglier than the last.",
+            "Till by the grated casement's ledge"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q4",
+          "prompt": "“Invocation to Misery” begins “Come, be happy!” How does the poem move from teasing to something darker? Where does it end?",
+          "facilitatorNotes": [
+            "The speaker treats Misery as an old companion and a shy bride, inviting her to the grass and the willow; then the bridal bed turns out to be “Underneath the grave,” and the lovers will rest in “Oblivion.” It ends mocking the world as puppets.",
+            "The playful tone makes the death-wish more unsettling. Ask whether the speaker is defying misery or surrendering to it, and handle the discussion with care."
+          ],
+          "evidence": [
+            "Come, be happy!--sit near me, Shadow-vested Misery:",
+            "Hasten to the bridal bed-- Underneath the grave 'tis spread:",
+            "What but mockery can they mean, Where I am--where thou hast been?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-11",
       "title": "Stanzas Written in Dejection, near Naples",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -463,7 +784,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q1",
           "prompt": "The first two stanzas describe a bright noon by the sea. Where does the first sign of sadness appear?",
           "facilitatorNotes": [
             "Even in stanza one the city’s voice is soft “like Solitude’s.” In stanza two the speaker sits “upon the sands alone,” and the stanza ends on the wish that someone could share his feeling. The beauty is real; what is missing is company.",
@@ -475,7 +796,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q2",
           "prompt": "The third stanza is a list of things the speaker lacks. How does it compare him with “Others,” and do you hear honest grief or self-pity?",
           "facilitatorNotes": [
             "He has neither hope, health, peace, content, fame, power, love nor leisure; others “call life pleasure,” but his cup has been “dealt in another measure.” The piled “nor” answers the abundance of the first stanzas.",
@@ -487,7 +808,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-07-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q3",
           "prompt": "In the last two stanzas, why is despair now “mild”? How does the speaker think he will be remembered, compared with the day?",
           "facilitatorNotes": [
             "The calm air and water soften despair, so he imagines death coming “like sleep” as the sea breathes over him. He expects people to “regret” him only briefly, since he is one “Whom men love not,” while this lovely day will “linger” in memory as joy does.",
@@ -501,7 +822,85 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-08",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-12",
+      "title": "The Woodman and the Nightingale",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "The sentences are long and run across stanzas. Find the main verb of each sentence before you worry about the images, then read the last three lines as the poem’s point.",
+      "focus": "An unfinished fable: a nightingale’s song turns all of nature to love except one man, whose axe kills the trees and their spirits.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. The poem is written in terza rima, linked three-line stanzas that rhyme aba, bcb, and so on; the dots mark gaps where Shelley left it unfinished. Dryads are tree nymphs in Greek myth. “Interfluous” and “circumfluous” mean flowing between and flowing around; “treen” means trees; a zone is a belt; a fane is a temple; a tuberose is a strongly scented flower.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem as printed: The Woodman and the Nightingale (1818, unfinished); opens “A woodman whose rough heart was out of tune (I think such hearts yet never came to good)…”; closes “…Love's gentle Dryads from the haunts of life, And vex the nightingales in every dell.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          267,
+          291
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2672c8f736a9ad093422162b5f600c91efaeb47f6e499fe14525f53b07ab4bd4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q1",
+          "prompt": "How does the poem judge the woodman before we know anything else about him?",
+          "facilitatorNotes": [
+            "In the first line his “rough heart was out of tune,” and the narrator interrupts with an aside: “I think such hearts yet never came to good.” He hates hearing the nightingale.",
+            "The judgment comes first and the evidence later. Ask whether the poem treats the woodman as a person or as a type."
+          ],
+          "evidence": [
+            "A woodman whose rough heart was out of tune (I think such hearts yet never came to good)"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q2",
+          "prompt": "List everything that hears the nightingale. What is the effect of the long chain of “every … and every”?",
+          "facilitatorNotes": [
+            "Roses, violets, the planets, the earth, the waters, every flower, beam, cloud, wave, wind, beast, bird and moth: the song fills the universe until “harmony became love / In every soul but one.”",
+            "The piled-up list makes the woodman’s exception stand out. Look at the moth that loves a star “too fair, too far”: ask what kind of love it pictures."
+          ],
+          "evidence": [
+            "And every flower and beam and cloud and wave,",
+            "harmony became love In every soul but one.",
+            "Aspiring like one who loves too fair, too far,"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q3",
+          "prompt": "How does Shelley make the trees the woodman has cut down seem alive and holy?",
+          "facilitatorNotes": [
+            "Each tree’s soul is “a wood-nymph,” keeping the copse green, singing the winds to sleep, weeping rain as “Nature’s pure tears.” Where branches meet they make “a vast fane,” its traceries holding “religion.”",
+            "So cutting the trees is both killing and sacrilege. Ask what students think of a poem that gives trees souls."
+          ],
+          "evidence": [
+            "The soul of whom by Nature's gentle law Was each a wood-nymph,",
+            "In which there is religion"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q4",
+          "prompt": "The poem breaks off, then ends: “The world is full of Woodmen.” Who are the “Woodmen” of the moral? Is the allegory fair?",
+          "facilitatorNotes": [
+            "People who drive love and beauty (“Love’s gentle Dryads”) out of life and disturb those who sing. The woodman stands for anyone deaf to harmony.",
+            "We never learn what he did to the nightingale; the gap leaves it to us. Some readers object that the poem makes a working man the villain; others take him as purely symbolic. Ask for evidence either way."
+          ],
+          "evidence": [
+            "The world is full of Woodmen who expel Love's gentle Dryads from the haunts of life, And vex the nightingales in every dell."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-13",
       "title": "Song to the Men of England",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -530,7 +929,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q1",
           "prompt": "The workers are “Bees of England,” the lords “drones.” What does the metaphor argue about who works and who lives off work?",
           "facilitatorNotes": [
             "In a hive the workers gather and the drones consume, so the lords are idle, “ungrateful” dependents, not providers. Calling them “stingless” suggests they have no power of their own: the weapons, chains and whips that hold the workers down were forged by the workers.",
@@ -542,7 +941,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q2",
           "prompt": "Compare stanza five with stanza six. What changes when the same verbs return?",
           "facilitatorNotes": [
             "Stanza five states the injustice in four parallel lines: you sow, another reaps. Stanza six repeats the verbs as commands with a condition: sow, but let no tyrant reap. The last line, “Forge arms,--in your defence to bear,” is the most dangerous.",
@@ -554,7 +953,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-08-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q3",
           "prompt": "The song ends by telling the workers to “Shrink to your cellars” and dig their own graves. Why end with these commands instead of a call to rise up?",
           "facilitatorNotes": [
             "The commands are bitter irony: if you keep obeying, your plough and loom will make your grave, and England your tomb. The shock is meant to provoke the opposite of what it says.",
@@ -568,7 +967,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-09",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-14",
       "title": "Sonnet: England in 1819",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -597,7 +996,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q1",
           "prompt": "The whole sonnet is one sentence. Where is its main verb, and what is the effect of waiting so long for it?",
           "facilitatorNotes": [
             "The subject is a list of twelve lines: king, princes, rulers, people, army, laws, religion, Senate. The verb “Are” arrives only in line thirteen. The heaped nouns without action make England feel stalled and suffocating until the final lines.",
@@ -609,7 +1008,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q2",
           "prompt": "Choose two items from the list and explain the image Shelley uses for each. What is he accusing them of?",
           "facilitatorNotes": [
             "The princes are “mud from a muddy spring,” so corruption is inherited; rulers “leech-like” cling to a fainting country; laws are “Golden and sanguine,” bought with money and enforced with blood; religion is “Christless, Godless.” “A people starved and stabbed” points to Peterloo.",
@@ -621,7 +1020,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-09-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q3",
           "prompt": "Everything in the list is called a grave. What might the “glorious Phantom” be, and how certain is the hope?",
           "facilitatorNotes": [
             "The institutions are dead things from which something new might rise, like a resurrection: liberty, reform or revolution. The word “may” and the ghostly “Phantom” keep the hope uncertain, and the “tempestuous day” hints that the change could be violent.",
@@ -635,7 +1034,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-10",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-15",
       "title": "Ode to Heaven",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -664,7 +1063,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q1",
           "prompt": "What does the First Spirit praise about Heaven? How is Heaven different from the gods people worship?",
           "facilitatorNotes": [
             "Heaven is vast and eternal, the home of globes, suns and moons, and outlasts everything: “Thou remainest such--alway!” Generations worship it, but “Their unremaining gods and they” pass away like a river.",
@@ -676,7 +1075,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q2",
           "prompt": "How does the Second Spirit belittle Heaven? What does the image of insects in a cave suggest?",
           "facilitatorNotes": [
             "Heaven is only “the mind’s first chamber,” and human imaginings are “weak insects” clambering in a cave lit by stalactites, mistaking its glitter for true light. The real wonders lie beyond “the portal of the grave.”",
@@ -688,7 +1087,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-10-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q3",
           "prompt": "The Third Spirit asks, “What is Heaven? a globe of dew.” How does this change of scale answer the other two spirits? Which spirit does the poem seem to favour?",
           "facilitatorNotes": [
             "The whole starry universe may be a single dewdrop on a flower in some “unimagined world,” lasting a morning. The other spirits are “atom-born,” tiny drops in Nature’s veins, and their confidence is “presumption.” The poem’s last word, “disappear,” answers the first spirit’s “Thou remainest.”",
@@ -703,7 +1102,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-11",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-16",
       "title": "On the Medusa of Leonardo da Vinci in the Florentine Gallery",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -732,7 +1131,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q1",
           "prompt": "“Its horror and its beauty are divine.” How does the first stanza hold horror and beauty together?",
           "facilitatorNotes": [
             "Loveliness lies on Medusa’s lips and eyelids “like a shadow,” while underneath, “struggling,” are “The agonies of anguish and of death.” The beauty is a surface over pain.",
@@ -744,7 +1143,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q2",
           "prompt": "Shelley changes the myth: “it is less the horror than the grace Which turns the gazer’s spirit into stone.” What does he mean?",
           "facilitatorNotes": [
             "The viewer is fixed in place by the painting’s beauty, not its terror; the face is engraved on the mind until “thought no more can trace.” Beauty “humanize[s] and harmonize[s]” the pain, making it something we can bear to look at, even something we cannot stop looking at.",
@@ -756,7 +1155,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-11-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q3",
           "prompt": "What do the snakes, the eft and the bat add to the picture? How do the last two lines change it?",
           "facilitatorNotes": [
             "The snakes’ “mailed radiance” seems to “mock” the death within; the eft peeps “idly” into the deadly eyes; the bat flies madly toward the light “like a moth” to a candle. Small creatures drawn helplessly to dangerous brightness mirror the viewer.",
@@ -771,7 +1170,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-12",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-17",
       "title": "Love’s Philosophy",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -800,7 +1199,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q1",
           "prompt": "What evidence does the speaker present, and what conclusion does he draw from it?",
           "facilitatorNotes": [
             "Fountains mix with rivers, rivers with the ocean, winds with each other, mountains “kiss” the sky, waves clasp each other, sunlight and moonbeams touch earth and sea. Since “Nothing in the world is single,” the beloved alone is acting against a “law divine.” Each stanza ends with the conclusion as a short question.",
@@ -813,7 +1212,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q2",
           "prompt": "Is the argument sound? What does it leave out?",
           "facilitatorNotes": [
             "Rivers and winds do not choose; a person does. The argument treats love as a law of nature, which leaves no room for the beloved’s own will. Some readers find this charming exaggeration; others find it pushy.",
@@ -825,7 +1224,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-12-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q3",
           "prompt": "“No sister-flower would be forgiven If it disdained its brother.” Why add the idea of forgiveness? How does the final question change the scale of the poem?",
           "facilitatorNotes": [
             "The flower image hints that refusing is a fault, a gentle accusation slipped into the evidence. The last line shrinks the whole universe down to one kiss: “What is all this sweet work worth If thou kiss not me?”",
@@ -839,7 +1238,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-13",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-18",
       "title": "Arethusa",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -868,7 +1267,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q1",
           "prompt": "How do the short lines and close rhymes of the first stanza imitate a mountain stream?",
           "facilitatorNotes": [
             "Pairs of very short rhyming lines (“arose / snows,” “crag / jag”) leap quickly, then a longer line slows down, like water dropping over rocks and running on. Words like “leapt,” “gliding and springing” and “ever singing” make the nymph and the stream one.",
@@ -880,7 +1279,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q2",
           "prompt": "How does the poem make Alpheus frightening? Compare the images for him and for Arethusa.",
           "facilitatorNotes": [
             "He strikes the mountains with a trident and makes them shake; earthquake and thunder follow him. In the sea he is “a gloomy stain” and she “a sunny beam”; he is “an eagle pursuing A dove to its ruin.” Her cry for help is the only speech in the poem, and the Ocean answers it.",
@@ -893,7 +1292,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-13-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q3",
           "prompt": "In the last stanza the two rivers are “Like friends once parted Grown single-hearted.” Is this ending peaceful, or does it trouble you?",
           "facilitatorNotes": [
             "The chase becomes a shared life: they leap at sunrise, flow at noon and sleep at night together, and the last image is calm. Shelley turns a story of pursuit into one of union, as rivers naturally mingle.",
@@ -907,7 +1306,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-14",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-19",
       "title": "Hymn of Apollo",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -936,7 +1335,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q1",
           "prompt": "Trace the sun’s day through the poem. Which stanzas follow the clock, and which leave it behind?",
           "facilitatorNotes": [
             "The first stanza is night and waking at dawn; the second, the climb; the fifth, noon and the unwilling descent at evening. The third and fourth describe his powers, and the last leaves time behind to declare what he is.",
@@ -948,7 +1347,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q2",
           "prompt": "“The sunbeams are my shafts, with which I kill Deceit.” How does Apollo turn sunlight into a moral force?",
           "facilitatorNotes": [
             "Light exposes wrongdoing: deceit “loves the night and fears the day,” evildoers flee, and “Good minds and open actions take new might.” Light stands for truth, as in our phrase “bring to light.”",
@@ -960,7 +1359,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-14-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q3",
           "prompt": "“I am the eye with which the Universe Beholds itself and knows itself divine.” What is Apollo claiming? Does the ending persuade you or put you off?",
           "facilitatorNotes": [
             "Every other light is “portions of one power, which is mine,” and through his light the universe sees itself, so he claims to be the source of all seeing and knowing. He then claims all music, poetry, prophecy and medicine, and says victory belongs to his song “in its own right.”",
@@ -975,7 +1374,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-15",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-20",
       "title": "Hymn of Pan",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1004,7 +1403,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q1",
           "prompt": "Follow the refrain “my sweet pipings.” How does the line leading into it change, and what do the changes show?",
           "facilitatorNotes": [
             "Creatures are silent “Listening to” his pipes; the dusk is “Speeded by” them; Apollo and Tmolus are silent “With envy of” them; finally all weep “At the sorrow of” them. The song moves from enchantment to rivalry to grief.",
@@ -1017,7 +1416,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q2",
           "prompt": "What kind of world does Pan sing from? Look at the creatures and places he names.",
           "facilitatorNotes": [
             "His audience is small and earthly: bees on thyme, birds in myrtle, cicadas, lizards in the grass, woodland spirits at the edge of the river-lawns and caves. His music belongs to particular places, and everything in them falls silent to hear it.",
@@ -1030,7 +1429,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-15-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q3",
           "prompt": "In the last stanza Pan “changed my pipings.” What does he sing about, and why might it win sympathy, or lose it?",
           "facilitatorNotes": [
             "He moves from stars, Earth, war, Love, Death and Birth to a private grief: he chased a maiden and held only a reed. He makes it universal: “Gods and men, we are all deluded thus!” Desire grasps and finds only a substitute.",
@@ -1045,7 +1444,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-16",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-21",
       "title": "The Question",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1074,7 +1473,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-21-q1",
           "prompt": "The poem begins “I dreamed.” Which details make this landscape a dream rather than a real place?",
           "facilitatorNotes": [
             "Winter turns “suddenly” to Spring; flowers of different seasons bloom together; and some are “Fairer than any wakened eyes behold.” Even the bank is shy, hardly daring to embrace the stream.",
@@ -1086,7 +1485,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-21-q2",
           "prompt": "Choose one image that turns a flower into something else, such as a star, a child or a lamp. How does it work?",
           "facilitatorNotes": [
             "Daisies are “pearled Arcturi of the earth,” stars on the ground; a tall flower wets “Its mother’s face” with raindrops like a child; water-lilies light the oak “With moonlight beams of their own watery light.” Each image makes the flowers alive or heavenly.",
@@ -1098,7 +1497,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-16-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-21-q3",
           "prompt": "“Oh! to whom?” Why does the poem end with a question? What might the nosegay stand for?",
           "facilitatorNotes": [
             "The speaker arranges the flowers so that their colours keep the pattern they had in nature, then rushes back to give the bouquet away, and realises he does not know to whom. The happiness of making turns into loneliness.",
@@ -1112,7 +1511,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-17",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-22",
       "title": "The Two Spirits: An Allegory",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1141,7 +1540,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-22-q1",
           "prompt": "What does each spirit stand for? Use their refrains: what changes between “Night is coming!” and “that is day!”?",
           "facilitatorNotes": [
             "The First Spirit warns the high-flying “thou” of the shadow, the storm and the coming dark: caution, fear, perhaps reason or mortality. The Second answers that “the lamp of love” within makes “night day.”",
@@ -1153,7 +1552,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-22-q2",
           "prompt": "The First Spirit’s second warning is a storm. How does the Second Spirit answer it, and what does the last line of that stanza add?",
           "facilitatorNotes": [
             "The Second will “sail on the flood of the tempest dark” with calm within and light around. It also tells the First Spirit that it will be seen from “thy dull earth” as a moon-like shape, “far away”: the daring spirit leaves the cautious one behind on the ground.",
@@ -1166,7 +1565,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-22-q3",
           "prompt": "After the gap, two legends begin “Some say.” What do they tell, and do they show the Second Spirit winning or losing?",
           "facilitatorNotes": [
             "In the first, a winged shape flies forever round a frozen pine in the Alps, pursued by a storm that never ends. In the second, a traveller in a marsh at night hears whispers, sees a shape “like his early love,” and wakes to find “night day.”",
@@ -1181,7 +1580,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-18",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-23",
       "title": "Death, Liberty and the Tower of Famine: short poems of 1820",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1210,7 +1609,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-23-q1",
           "prompt": "“Liberty” spends three stanzas on volcanoes, typhoons, lightning and earthquakes before addressing “thy.” How does that order make its point? Why do both tyrants and slaves vanish at the end?",
           "facilitatorNotes": [
             "Every great natural force is outdone: Liberty’s gaze is keener than lightning and makes the sun look like a marsh light. Freedom is pictured as a natural force spreading “from nation to nation.”",
@@ -1223,7 +1622,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-23-q2",
           "prompt": "“Summer and Winter” pairs two scenes. Where does the poem turn, and what is the effect of saving the beggar for the last line?",
           "facilitatorNotes": [
             "Summer is all rejoicing; winter kills birds and freezes fish. Then comfortable men sit by great fires with their children “and yet feel cold,” and only after that come the homeless. If the comfortable feel cold, the beggar’s suffering is beyond imagining.",
@@ -1235,7 +1634,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-23-q3",
           "prompt": "In “The Tower of Famine,” how does the tower affect the city around it? Explain the comparison with a spectre among “ladies fair.”",
           "facilitatorNotes": [
             "The temples and palaces are “by its presence dimmed” and seem to withdraw. Like a ghost among beautiful women that takes in their beauty until they turn to marble, the tower drains the life from what surrounds it.",
@@ -1247,7 +1646,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-23-q4",
           "prompt": "“Death,” “An Allegory” and the sonnet all face the grave. What do the few who stop at the dark portal learn, and how does the sonnet treat the “curious mind” that wants to know where it goes?",
           "facilitatorNotes": [
             "Most pass the portal carelessly; the curious few learn only that shadows follow them everywhere. The sonnet asks the heart, mind and thoughts what they hope to gain by hurrying toward death, and calls the mind’s guessing about where it came from and where it goes “vainly curious.”",
@@ -1263,7 +1662,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-19",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-24",
       "title": "Time, flight and memory: short poems of 1821",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1292,7 +1691,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-24-q1",
           "prompt": "In “Time,” what is time compared to, and what details make the comparison frightening? How would you answer the closing question?",
           "facilitatorNotes": [
             "Time is a shoreless sea whose waves are years and whose salt is “human tears”; it is a beast “sick of prey, yet howling on for more” that throws its wrecks onto the shore of mortality. No one chooses to sail on it, yet everyone does.",
@@ -1304,7 +1703,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-24-q2",
           "prompt": "“Lines” addresses birds of memory and birds of the future. Why does the speaker send away the halcyons, and what do the vultures feed on?",
           "facilitatorNotes": [
             "The memories bring a “false spring” to a heart in winter, so their calm only hurts. The vultures nest in the future and will feed on “Dying joys”: the past mocks him and the future preys on him.",
@@ -1316,7 +1715,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-24-q3",
           "prompt": "“The Fugitives” tells a story in quick, galloping lines. Who is fleeing, from whom, and how does the rhythm fit the story? Compare the lovers’ question at sea with the question that ends “Time.”",
           "facilitatorNotes": [
             "Two lovers escape by boat through a storm, while on shore a shamed bridegroom and a “gray tyrant father” curse them. The short rhyming lines and repeated “Come away!” drive forward like the storm and the flight.",
@@ -1328,7 +1727,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-24-q4",
           "prompt": "“Music, when soft voices die” lists things that live on after they end. What are they, and how does the last couplet apply the pattern to the beloved?",
           "facilitatorNotes": [
             "Music lives in memory, scent in the sense it quickens and rose leaves are heaped for a bed. So, when the beloved is gone, love will “slumber on” the beloved’s thoughts. The grammar can also mean that love will sleep on, resting on the memory of those thoughts.",
@@ -1342,7 +1741,7 @@
       ]
     },
     {
-      "id": "reading-9-shelley-complete-poetical-works-2-1914-20",
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-25",
       "title": "Delight, change and Napoleon: more poems of 1821",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1371,7 +1770,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-25-q1",
           "prompt": "In “Song,” why does the Spirit of Delight stay away, and how does the speaker try to win it back? What is clever about the plan in the fourth stanza?",
           "facilitatorNotes": [
             "Delight avoids sorrow and comes only to “those who need thee not.” So the speaker sets his sad song “To a merry measure,” hoping to attract delight with pleasure, not pity.",
@@ -1384,7 +1783,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-25-q2",
           "prompt": "“Mutability” says that we “Survive” our joys. Why is surviving them presented as a misfortune? What is the advice of the last stanza?",
           "facilitatorNotes": [
             "Flowers, delight, virtue, friendship and love all pass, but we live on after them, left with nothing we can call ours. The last stanza says to enjoy the bright hours like a dream, knowing we will “wake to weep.”",
@@ -1396,7 +1795,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-25-q3",
           "prompt": "In the Napoleon poem, the speaker is shocked that Earth goes on. How does Earth answer, and what is her final judgment on Napoleon?",
           "facilitatorNotes": [
             "Earth laughs: she takes all her dead into herself, and they feed new life (“I feed on whom I fed”). She calls Napoleon’s life “A torrent of ruin” and tells the living millions to shape their own future, weaving the hopes his glory betrayed into his shame.",
@@ -1409,7 +1808,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-25-q4",
           "prompt": "“Political Greatness” asks, “What are numbers knit By force or custom?” What does the sonnet say true greatness is? How might it answer the career of Napoleon?",
           "facilitatorNotes": [
             "Peoples held together by force or habit have no real greatness; poetry and history do not even record their hearts. A man must “rule the empire of himself,” mastering his own will, hopes and fears.",
@@ -1419,6 +1818,86 @@
             "What are numbers knit By force or custom?",
             "Man who man would be, Must rule the empire of himself;",
             "being himself alone."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-26",
+      "title": "An owl, a lament and a letter to a friend: poems of 1821",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Start with the light-hearted first poem, then follow how the next three turn to grief. Mark each line where the speaker talks about himself as already half dead.",
+      "focus": "A comic moment with an owl, two lyrics of loss and a poem to a close friend that explains why the poet has been avoiding him.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In 1821 Shelley was living at Pisa with his wife Mary. Edward Williams and his wife Jane were close friends; Shelley wrote several poems to Jane, and drowned with Edward in a boating accident in 1822. Plucking petals and saying “She loves me—loves me not” is an old fortune-telling game. Pansies were traditionally the flower of thoughts. Words in capitals carry special stress.",
+      "contentNote": "These poems speak of despair and of death as rest; discuss them with care.",
+      "excerpt": {
+        "locator": "Poems Written in 1821: The Aziola, A Lament, Remembrance, and To Edward Williams, complete as printed; opens “'Do you not hear the Aziola cry? Methinks she must be nigh,' Said Mary, as we sate In…”; closes “…are too sad To send to you, but that I know, Happy yourself, you feel another's woe.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          860,
+          877
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ca4d76d56e155f9087522956ec0b6c0dffd7b89a84ed4a137c8c910e0e725e7e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-26-q1",
+          "prompt": "In “The Aziola,” what does the speaker think the Aziola is, and why is he so relieved to find out?",
+          "facilitatorNotes": [
+            "He supposes it is “some tedious woman” and is “elate” to learn it is “nothing human, / No mockery of myself to fear or hate”: only a little owl. From then on he loves its sad cry.",
+            "The poem is gently funny, and Mary “laughed” at him. But it also shows a man who wants to escape other people. Ask what this prepares for in the poems that follow."
+          ],
+          "evidence": [
+            "How elate I felt to know that it was nothing human, No mockery of myself to fear or hate:",
+            "'Tis nothing but a little downy owl."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-26-q2",
+          "prompt": "Compare “A Lament” and “Remembrance.” What has been lost in each, and which images return?",
+          "facilitatorNotes": [
+            "Both mourn a joy that has fled for good: “A Lament” repeats “No more—Oh, never more!”, and “Remembrance” leaves the speaker like “the heart when joy is fled.” Seasons return (“The swallow summer comes again”), but the speaker’s youth and joy do not.",
+            "In “Remembrance” he asks for pansies, flowers of thought, to be scattered on “the living grave” he bears. Ask what it means to call oneself a living grave."
+          ],
+          "evidence": [
+            "No more--Oh, never more!",
+            "Pansies let MY flowers be:",
+            "On the living grave I bear"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-26-q3",
+          "prompt": "In “To Edward Williams,” why does the speaker say he now sees his friends “seldomer”?",
+          "facilitatorNotes": [
+            "Their kindness stirs “Griefs that should sleep, and hopes that cannot die”; comfort itself is hard to bear. With them he cannot keep up “the idle mask / Of author” that he wears in the world.",
+            "The opening images (the shut-out serpent, the wounded deer, the widowed dove) set him outside a paradise. Ask students what the line “Dear friends, dear FRIEND!” suggests."
+          ],
+          "evidence": [
+            "know that I only fly Your looks, because they stir Griefs that should sleep, and hopes that cannot die:",
+            "Of acting a forced part in life's dull scene,"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-26-q4",
+          "prompt": "The poem ends by saying “there is a place of peace / Where MY weak heart and all its throbs will cease,” then that the verses are “too sad / To send.” Why send them anyway?",
+          "facilitatorNotes": [
+            "Because the friend, “Happy yourself,” can “feel another’s woe.” The poem is an act of trust: the speaker shares his despair with someone he believes will understand.",
+            "Handle this with care. The poems speak of death as rest, but the last lines turn toward a friend. Ask what the poem shows about the value of telling someone how we feel."
+          ],
+          "evidence": [
+            "Doubtless there is a place of peace Where MY weak heart and all its throbs will cease.",
+            "These verses are too sad To send to you, but that I know, Happy yourself, you feel another's woe."
           ]
         }
       ]
