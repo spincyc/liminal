@@ -130,6 +130,137 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-03",
+      "title": "The Nightingale",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear two different ideas about the same bird’s song.",
+      "focus": "Poets call the nightingale’s song sad, but this poem says she is merry, and sad only when she loses her nest.",
+      "context": "A nightingale is a small brown bird that comes to England in spring and sings at night. Poets called her Philomel, a name from an old sad story. To vow and to aver both mean to say firmly; her pipe is her song; keen regret is sharp sorrow. Storks and starlings are other birds.",
+      "contentNote": "The last verse speaks of boys robbing the bird’s nest.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Nightingale,” the complete poem; opens “IN April comes the Nightingale, That sings when day’s departed; The poets call her…”; closes “…Stork or Starling; What mother would not weep and cry _To lose_ her precious darling.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          95,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "efe89d0ed42a79fad797ab61391928ba00dfb1b4eb4e34b59295b8422778ad74"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q1",
+          "prompt": "When does the Nightingale sing?",
+          "facilitatorNotes": [
+            "When the day has gone, at night. She comes in April."
+          ],
+          "evidence": [
+            "That sings when day’s departed;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q2",
+          "prompt": "What do the poets say about her song, and what does this poem say instead?",
+          "facilitatorNotes": [
+            "The poets say she is broken-hearted and her song sounds like sorrow; this poem says she is merry, with a clear and thrilling song and no worries."
+          ],
+          "evidence": [
+            "And vow she’s broken-hearted.",
+            "No, ’tis the merry Nightingale,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q3",
+          "prompt": "When does the Nightingale really grieve? Do you think she is right to?",
+          "facilitatorNotes": [
+            "When boys have robbed her nest, as any mother bird would. Children may say anyone would be sad to lose her babies; the poem asks the listener to be kind to nests."
+          ],
+          "evidence": [
+            "She grieves when boys have robb’d her nest,",
+            "What mother would not weep and cry"
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-04",
+      "title": "Signs of Rain",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Collect the clues that rain is coming.",
+      "focus": "Birds and animals all seem to know the weather is changing, each showing it in its own way.",
+      "context": "Long ago country people watched animals to guess the weather. A thrush is a songbird; to devour is to eat up. A hillock is a small hill; trooping means going in a group. Rooks are big black birds, like crows, that live together and chatter. Next time clouds gather, watch the birds together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “Signs of Rain,” the complete poem; opens “THE Thrush has been silent for many a long day, But now he sings loudly, and what does he…”; closes “…are discussing the very same matter— While homeward returning how loudly they chatter!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          124,
+          126
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "eca723da49bc5d853ea3930d1a93ab4dc902b5f3d110fb0587f44266ba00d8b0"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q1",
+          "prompt": "Why is the Thrush singing loudly after being silent so long?",
+          "facilitatorNotes": [
+            "He thinks a shower is coming, and after rain there will be worms and slugs for him to eat."
+          ],
+          "evidence": [
+            "He says that he thinks there will soon be a shower,",
+            "And he shall have earth-worms and slugs to devour."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q2",
+          "prompt": "Which other animals seem to know the weather is changing?",
+          "facilitatorNotes": [
+            "The swan brushes the water with her wing, the woodpecker drums, the deer go up the little hill, the swallows dart about, and the rooks chatter."
+          ],
+          "evidence": [
+            "The Woodpecker drums, though she lately was drooping;",
+            "The Swallows are darting and wheeling about,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q3",
+          "prompt": "What are the Rooks talking about, the poem says? Could birds really know when rain is coming?",
+          "facilitatorNotes": [
+            "The same thing as everyone else: the change in the weather. The poem imagines them discussing it. Birds do often behave differently before a storm, which is why people watched them; children can say what they have noticed."
+          ],
+          "evidence": [
+            "The Rooks are discussing the very same matter—",
+            "While homeward returning how loudly they chatter!"
+          ]
+        }
+      ]
     }
   ]
 }
