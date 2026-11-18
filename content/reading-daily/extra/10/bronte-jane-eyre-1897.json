@@ -514,6 +514,262 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-09",
+      "title": "Jane Eyre excerpt: “do you think me handsome?” (Chapter XIV, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 10,
+        "totalMinutes": 27
+      },
+      "challenge": "Track who controls the conversation, line by line, and how Jane refuses to perform on demand.",
+      "focus": "A master who invites frankness, and a governess who answers frankly about beauty, rank and wages.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane, eighteen, has come from Lowood school to Thornfield Hall as governess to Adèle Varens, the French ward of its owner, Mr. Rochester. She first met him by chance in a lane, when his horse slipped on the ice and he sprained his ankle; at home he proved abrupt and moody, questioned her about Lowood and her paintings, and dismissed her curtly. Mrs. Fairfax, the housekeeper, hinted at family troubles but would not explain them. Adèle’s French: “Ma boite!” is “My box!”; “Oh ciel! Que c’est beau!” is “Heavens, how beautiful!”; Rochester’s “tiens-toi tranquille, enfant; comprends-tu?” is “keep still, child, understand?” A nonnette is a little nun, and “et j’y tiens” means “and I hold to it.” Quaker trim is very plain dress. Rochester’s talk of the “organs” on his forehead plays on phrenology, a popular pseudo-science that claimed to read character from the shape of the skull.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, from the days after Mr. Rochester’s return through Jane’s answer about informality and insolence; opens “For several subsequent days I saw little of Mr. Rochester. In the mornings he seemed much…”; closes “…one I rather like, the other nothing free-born would submit to, even for a salary.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-10",
+        "blocks": [
+          1108,
+          1163
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ea59ea785b616c8f285873ed529d0264b3d1c660082a337d616506bd1f726c84"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-09-q1",
+          "prompt": "Jane says her “No, sir” slipped out “before I was aware.” How does Rochester take it, and why does her attempt to apologise make things worse?",
+          "facilitatorNotes": [
+            "He calls her answer brusque and asks what she means by it. Her polite retreat, that “beauty is of little consequence,” implies he needs consoling, so he calls it “a sly penknife under my ear”; her next question, whether he is a philanthropist, is another. Each correction becomes a fresh cut, and he plainly enjoys it."
+          ],
+          "evidence": [
+            "the answer somehow slipped from my tongue before I was aware",
+            "you stick a sly penknife under my ear!"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-09-q2",
+          "prompt": "Rochester orders “Speak,” and Jane sits silent. Why does she refuse, and what does he have to do before she will talk?",
+          "facilitatorNotes": [
+            "She will not talk “for the mere sake of talking and showing off”: she is not there to perform, as Adèle performs. He must apologise and limit his claim of superiority to age and experience. Even then she answers that superiority “depends on the use you have made of your time and experience,” a claim for merit over age and rank that he cannot meet, by his own account."
+          ],
+          "evidence": [
+            "he will find he has addressed himself to the wrong person",
+            "your claim to superiority depends on the use you have made of your time and experience"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-09-q3",
+          "prompt": "Jane reminds Rochester that he pays her £30 a year, then agrees to his orders “on the ground that you did forget it.” What line is she drawing between informality and insolence, and why would it matter so much to a governess?",
+          "facilitatorNotes": [
+            "She will take directness from someone who treats her as a person, but not insolence bought with a salary: “nothing free-born would submit to” it. A governess was neither family nor servant, and her self-respect depended on that line between being paid and being owned. Readers may also notice how much Rochester enjoys being checked, which is part of the attraction between them."
+          ],
+          "evidence": [
+            "he seems to forget that he pays me £30 per annum for receiving his orders",
+            "one I rather like, the other nothing free-born would submit to, even for a salary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-10",
+      "title": "Jane Eyre excerpt: remorse, and a pink silk frock (Chapter XIV, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a conversation in which one speaker talks in riddles, and decide how much Jane understands and how much the reader can.",
+      "focus": "A confession of a wasted past, a dangerous private rule, and plain moral reasoning set against eloquence.",
+      "context": "Recap: one wet evening Mr. Rochester summoned Jane and Adèle after dinner. Jane told him bluntly that she did not think him handsome, refused to make conversation on command, and agreed to take his orders only because he cared whether a paid subordinate was comfortable: informality she liked, but insolence “nothing free-born would submit to, even for a salary.” “God wot” means God knows; a neophyte is a beginner; the laws “of the Medes and Persians,” in the Bible, could never be changed; the Sphinx (spelled Sphynx) is the riddling monster of Greek legend. Adèle’s French: “Il faut que je l’essaie!… et à l’instant même!” is “I must try it on, this very minute!”; “Est-ce que ma robe va bien?” is “Does my dress look right?”; “Monsieur, je vous remercie mille fois de votre bonté” is “Sir, thank you a thousand times for your kindness”; “C’est comme cela que maman faisait, n’est-ce pas?” is “That is how Mama used to do it, isn’t it?” Céline Varens was Adèle’s mother, and “the boards” are the stage.",
+      "contentNote": "Mr. Rochester hints at a dissipated past and speaks slightingly of Adèle, a child in his care.",
+      "excerpt": {
+        "locator": "Chapter XIV, from Mr. Rochester’s “Humbug!” to the end of the chapter; opens ““Humbug! Most things free-born will submit to anything for a salary; therefore, keep to…”; closes “…sins, great or small, by one good work. I’ll explain all this some day. Good-night.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-09",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-11",
+        "blocks": [
+          1164,
+          1215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6d1b09ffa3fc98caf7926a369ec190b5b28b287c01dd58e2dee6650830b70e7b"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-10-q1",
+          "prompt": "Rochester says he was “thrust on to a wrong tack at the age of one-and-twenty.” What does he admit about himself, and how does he share out the blame?",
+          "facilitatorNotes": [
+            "He calls himself “a trite commonplace sinner,” not a villain, and envies Jane her “unpolluted memory.” He blames “circumstances” and “ill fortune,” but admits in a parenthesis that this is what defaulters always do. The confession is self-aware and self-excusing at once; readers can weigh which is stronger."
+          ],
+          "evidence": [
+            "for like other defaulters, I like to lay half the blame on ill fortune and adverse circumstances",
+            "I am a trite commonplace sinner"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-10-q2",
+          "prompt": "Rochester says “unheard-of combinations of circumstances demand unheard-of rules”; Jane calls it “a dangerous maxim.” What is her argument, and why does the novel let her win the point even though she has no idea what he means?",
+          "facilitatorNotes": [
+            "She argues from principle: fallible people should not claim the right to declare an unsanctioned act right, and intentions that need “a new statute” to make them legal are suspect. He concedes it (“Sententious sage! so it is”). Like Jane, the reader does not yet know what the welcome “notion” or “bonny wanderer” is; the chapter plants a question that later chapters answer. Some readers suspect he is already thinking of Jane herself."
+          ],
+          "evidence": [
+            "unheard-of combinations of circumstances demand unheard-of rules",
+            "The human and fallible should not arrogate a power with which the divine and perfect alone can be safely intrusted."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-10-q3",
+          "prompt": "Rochester sees in Jane “a curious sort of bird” behind the bars of a cage, then calls Adèle in her new frock a miniature of her mother. What does each image show about how he reads people? Is either reading fair?",
+          "facilitatorNotes": [
+            "With Jane he claims to see a hidden self, “vivid, restless, resolute,” held in by Lowood’s training; it is flattering and may be true. With Adèle he sees only inheritance, “coquetry” in her blood and bones, a “French floweret” he would “fain be rid of.” He reads both with the same confidence, generously in one case and harshly in the other. A strong answer notices that the child is only doing what she was taught, and that his verdict says as much about his bitterness as about her."
+          ],
+          "evidence": [
+            "I see at intervals the glance of a curious sort of bird through the close-set bars of a cage",
+            "coquetry runs in her blood, blends with her brains, and seasons the marrow of her bones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-11",
+      "title": "Jane Eyre excerpt: Céline Varens (Chapter XV, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how Rochester’s story keeps breaking off, and what the interruptions show that the story itself does not.",
+      "focus": "A worldly man’s tale of betrayal told to an inexperienced listener, and her answer about the child it left behind.",
+      "context": "Recap: one evening Mr. Rochester talked to Jane of a misspent youth and of a new resolution he would not explain, and watched Adèle dance in a new frock “comme cela” (like that), as her mother used to; he promised to explain Adèle some day. A Paris opera-dancer was often a rich man’s mistress; an hotel here is a private town house; a spoony is a lovesick fool; a vicomte is a French nobleman; the Bois de Boulogne is a Paris park where duels were fought. The Apollo Belvedere (spelled Belvidere) is an ancient statue thought to show ideal male beauty. The witches meet Macbeth on a heath near Forres in Shakespeare’s play; Job’s leviathan, in the Bible, is a sea monster no weapon can wound; a habergeon is a coat of mail. “Filette” is Rochester’s word for little girl.",
+      "contentNote": "Mr. Rochester describes keeping a mistress, her infidelity and a duel, and calls Adèle “the illegitimate offspring of a French opera-girl”; Jane’s narration repeats a period English prejudice against the French character.",
+      "excerpt": {
+        "locator": "Chapter XV, from Mr. Rochester’s explanation in the beech avenue through Jane’s hour with Adèle; opens “Mr. Rochester did, on a future occasion, explain it. It was one afternoon, when he…”; closes “…if she could but have been proved to resemble him, he would have thought more of her.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-10",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-12",
+        "blocks": [
+          1217,
+          1238
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2baf7cd6a511210eaf7e7a82b3e1cc0913ac75d4bf556b5ce9859037ece4492"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-11-q1",
+          "prompt": "Rochester’s story breaks off twice: once when he stops to glare at Thornfield, once when Adèle runs up. What happens in the first break, and why might it matter more than the story of Céline?",
+          "facilitatorNotes": [
+            "He glares at the battlements with “Pain, shame, ire” and the rest, imagines a hag like Macbeth’s witches writing a dare across the house-front, and vows to like Thornfield and “break obstacles to happiness, to goodness.” The French affair, he says himself, is ordinary; this hatred of his own house is not, and Jane will later dwell on it rather than on Céline."
+          ],
+          "evidence": [
+            "Like it if you can! Like it if you dare!",
+            "Pain, shame, ire, impatience, disgust, detestation, seemed momentarily to hold a quivering conflict"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-11-q2",
+          "prompt": "Rochester says Jane’s mind is “not liable to take infection,” and that “while I cannot blight you, you may refresh me.” Why does he tell this story to her of all people? Do you find his reasons convincing?",
+          "facilitatorNotes": [
+            "He says her gravity and caution make her a natural keeper of secrets and her innocence protects her. But telling a young employee about his “opera-mistresses” is also a test of her and a kind of intimacy, as he half admits (“passing strange”). Readers may see trust, flattery or self-indulgence, and can argue which the text best supports."
+          ],
+          "evidence": [
+            "passing strange that you should listen to me quietly",
+            "for while I cannot blight you, you may refresh me"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-11-q3",
+          "prompt": "Rochester expects Jane to give notice now that she knows where Adèle came from. What does her answer show about her values, and how does her later comment about Adèle complicate it?",
+          "facilitatorNotes": [
+            "She says Adèle “is not answerable” for anyone’s faults and that she will cling closer to a child forsaken by her mother and disowned by him; an orphan herself, Jane knows that position. Yet afterwards she traces Adèle’s “superficiality” to her mother and calls it “hardly congenial to an English mind,” a national prejudice inside her kindness, and she searches the child’s face for Rochester’s likeness. Both are in the text; readers can decide how they sit together."
+          ],
+          "evidence": [
+            "Adèle is not answerable for either her mother’s faults or yours",
+            "hardly congenial to an English mind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-12",
+      "title": "Jane Eyre excerpt: fire in the night (Chapter XV, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 10,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate what Jane hears and sees in the dark from what Rochester tells her, and notice what he leaves unsaid.",
+      "focus": "A changed feeling for the master, a fire in the night, and a rescue that leaves him in her debt.",
+      "context": "Recap: walking in the grounds, Mr. Rochester told Jane that Adèle is the daughter of Céline Varens, a French dancer who betrayed him; he denies being the child’s father but brought her, abandoned, to England. Jane said she would care for Adèle all the more. During the story he stopped to glare at Thornfield as if he hated it. Grace Poole is the sewing-woman whom Mrs. Fairfax blamed for a strange laugh Jane heard on the third storey. A ewer is a water jug; genii are guardian spirits; Beulah is the land of rest in the Bible and in The Pilgrim’s Progress; a bourne is a destination.",
+      "contentNote": "Contains a fire set at night and an unexplained intruder.",
+      "excerpt": {
+        "locator": "Chapter XV, from Jane’s review of Mr. Rochester’s tale to the end of the chapter; opens “It was not till after I had withdrawn to my own chamber for the night, that I steadily…”; closes “…judgment would warn passion. Too feverish to rest, I rose as soon as day dawned.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-11",
+        "continuesTo": null,
+        "blocks": [
+          1239,
+          1293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "72402371e60bb1a7890b59356fdb149d57b13f3b1fdb1ec5aebc006a759fc7d6"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-12-q1",
+          "prompt": "Before the fire, Jane asks whether Rochester is “now ugly in my eyes,” and answers no. What has changed her view, and what does she still admit about him?",
+          "facilitatorNotes": [
+            "Gratitude, his frankness and their evening talks; she has even gained health and strength. She still sees him as proud, sardonic and “harsh to inferiority,” moody and unjust to others, but she explains his faults as the work of “some cruel cross of fate.” The older narrator lets us watch love beginning and making excuses."
+          ],
+          "evidence": [
+            "his presence in a room was more cheering than the brightest fire",
+            "in my secret soul I knew that his great kindness to me was balanced by unjust severity to many others"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-12-q2",
+          "prompt": "Rochester hears Jane’s account “very gravely,” forbids her to wake anyone, goes up alone, and returns saying “it is as I thought.” What is odd in his behaviour, and whose explanation does he settle on?",
+          "facilitatorNotes": [
+            "He shows “more concern than astonishment,” keeps the household asleep, and asks whether she saw anything. He gives no explanation of his own; when Jane names Grace Poole, he agrees at once (“you have guessed it”) and swears her to silence. A careful reader notices that he accepts the name she supplies and suspects he knows more."
+          ],
+          "evidence": [
+            "his face, as I went on, expressed more concern than astonishment",
+            "Grace Poole—you have guessed it."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-12-q3",
+          "prompt": "Rochester will not let go of Jane’s hand, and she frees herself with a small invention; then she spends the night on “a buoyant but unquiet sea.” What do the last paragraphs suggest each of them feels, and why does Jane insist there is “no debt”?",
+          "facilitatorNotes": [
+            "Words “trembled on his lips” but he checks them; he calls her “Jane” and “My cherished preserver.” Jane refuses the language of debt and obligation, which would turn what has happened into an account between master and servant. Her pretended footstep shows she can manage him. The sea image sets hope and joy against “sense” and “judgment.” Readers may disagree about whether Jane yet admits to herself that she loves him."
+          ],
+          "evidence": [
+            "There is no debt, benefit, burden, obligation, in the case.",
+            "Sense would resist delirium: judgment would warn passion."
+          ]
+        }
+      ]
     }
   ]
 }
