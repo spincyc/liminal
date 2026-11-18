@@ -534,6 +534,463 @@
         4,
         5
       ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-08",
+      "title": "The Eolian Harp",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a poem that drifts from a quiet evening into a daring idea, and then draws back from it.",
+      "focus": "The wind harp as an image of the mind and of nature, and a speaker who retreats from his own speculation.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). He wrote this in 1795 (the date is printed at the end) at Clevedon on the Somerset coast, soon after marrying Sara Fricker. An Eolian or Aeolian harp, named after Aeolus, the Greek god of the winds, is a wooden box strung with strings that sound when the wind blows across them; it was laid in an open window, or casement. A cot is a cottage; “desultory” means wandering at random; “sequacious” means following one after another; “plastic” here means shaping; “the main” is the sea; “unregenerate” means not yet spiritually renewed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Eolian Harp, composed at Clevedon, Somersetshire, the whole poem with its date; opens “My pensive Sara! thy soft cheek reclined Thus on mine arm, most soothing sweet it is To…”; closes “1795.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          589,
+          594
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1ee83e1bfd11ab54cdf8832ee58228ec792c764407dc824babefc8965e1cbef6"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-08-q1",
+          "prompt": "Which details make the opening evening feel hushed? What is odd about saying that the murmur of the sea “Tells us of silence”?",
+          "facilitatorNotes": [
+            "Sara’s cheek on his arm, clouds “Slow saddening,” the evening star, the scent from the bean-field. The sea’s faint sound makes the silence noticeable: we hear how quiet it is because one small sound sets it off. The paradox prepares a poem about sounds that reveal something larger."
+          ],
+          "evidence": [
+            "The stilly murmur of the distant Sea Tells us of silence.",
+            "Slow saddening round, and mark the star of eve"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-08-q2",
+          "prompt": "How does Coleridge describe the harp’s music? Find a comparison that makes the sound seem alive.",
+          "facilitatorNotes": [
+            "The breeze caresses the lute like a lover; its notes are a “soft floating witchery of sound” like elves voyaging from Fairy-Land, and melodies like birds of Paradise that never land. The images grow wilder and less solid as the music swells, so the verse drifts the way the sound does."
+          ],
+          "evidence": [
+            "Such a soft floating witchery of sound",
+            "Nor pause, nor perch, hovering on untam'd wing!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-08-q3",
+          "prompt": "“And what if all of animated nature / Be but organic Harps”? Put this idea in your own words. What plays the part of the breeze?",
+          "facilitatorNotes": [
+            "Every living thing might be an instrument, and thought the music made when one great spirit, “one intellectual breeze,” sweeps over them; that breeze is the soul of each and God of all. The third stanza prepared it: idle thoughts crossed his “passive brain” as gales cross the lute. Readers may find the idea beautiful, or unsettling because it makes minds passive."
+          ],
+          "evidence": [
+            "Be but organic Harps diversely fram'd,",
+            "At once the Soul of each, and God of all?",
+            "Traverse my indolent and passive brain,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-08-q4",
+          "prompt": "Why does the speaker take back his idea in the last stanza? Do you think he really gives it up?",
+          "facilitatorNotes": [
+            "Sara’s “more serious eye” reproves him, and he calls such thoughts “Bubbles that glitter as they rise and break,” returning to a humble faith and gratitude for peace, home and her. Some readers take the retreat as sincere; others notice that the bold idea got the poem’s most memorable lines, and that the reproof is a look, not an argument."
+          ],
+          "evidence": [
+            "But thy more serious eye a mild reproof",
+            "Bubbles that glitter as they rise and break"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-09",
+      "title": "France: An Ode",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 14,
+        "totalMinutes": 24
+      },
+      "challenge": "Track how a speaker’s judgment of a political cause changes from stanza to stanza, and what finally changes it.",
+      "focus": "Hope, self-deception and disillusion: where liberty can and cannot be found.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). He wrote this ode, a formal poem of address, in February 1798 (the date is printed at the end). In 1789 the French Revolution overthrew the old monarchy in the name of liberty. When the kings of Europe went to war against the new republic in 1792–1793, Britain joined them, and young English radicals such as Coleridge took France’s side. The Reign of Terror (1793–1794) followed, and early in 1798 French armies invaded Switzerland (“Helvetia”), a small republic famous for its free mountain people. “Gratulation” means joyful greeting; to “whelm” is to overwhelm; paeans are songs of triumph; “inexpiable” means unforgivable; “Priestcraft’s harpy minions” are greedy servants of scheming clergy; pinions are wings.",
+      "contentNote": "The poem describes revolutionary violence and war in images of blood and wounds, and condemns its opponents in harsh religious terms.",
+      "excerpt": {
+        "locator": "France: an Ode, the whole poem (stanzas I–V) with its date; opens “Ye Clouds! that far above me float and pause, Whose pathless march no mortal may…”; closes “_February_, 1798.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1197,
+          1207
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "797dadf67f32db52a77f2d7f12b7c607a01b934913337b4ca15d95d025360e2f"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-09-q1",
+          "prompt": "In stanza I the speaker calls on clouds, waves and woods to “Bear witness” for him. What does he want them to witness, and why choose them?",
+          "facilitatorNotes": [
+            "That he has always worshipped “divinest Liberty.” Clouds, ocean and woods obey only “eternal laws” and no human master, so they are free already and fit witnesses. The last stanza returns to them."
+          ],
+          "evidence": [
+            "Whose pathless march no mortal may controul!",
+            "The spirit of divinest Liberty."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-09-q2",
+          "prompt": "When Britain went to war with France, which side did the speaker take, and what did it cost him?",
+          "facilitatorNotes": [
+            "He sang “defeat” to the allied side, though Britain was dear to him through friendships and youthful loves; he “wept at Britain's name.” He claims his loyalty to liberty outranked loyalty to his country. Readers can debate whether that was principled or disloyal."
+          ],
+          "evidence": [
+            "Though dear her shores and circling ocean,",
+            "And hung my head and wept at Britain's name."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-09-q3",
+          "prompt": "In stanza III he keeps explaining away bad news from France. What excuses does he make for the Revolution’s violence?",
+          "facilitatorNotes": [
+            "He treats the blasphemy and “drunken passions” as storms hiding a sun that is still rising, scolds his own fears, and predicts that France, “conquering by her happiness alone,” will spread freedom. Note the contradiction in “compel the nations to be free”: forcing freedom on others is already a warning sign."
+          ],
+          "evidence": [
+            "The Sun was rising, though ye hid his light!",
+            "Shall France compel the nations to be free,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-09-q4",
+          "prompt": "What finally changes his mind, and where does he find liberty in stanza V? Is this a satisfying answer?",
+          "facilitatorNotes": [
+            "The invasion of peaceful Switzerland: “Forgive me, Freedom!” He concludes that liberty never lives “in forms of human power,” neither in kings nor in revolutions, but is felt in wild nature on a sea-cliff. Some readers find this a wise lesson about trusting political causes; others find it a retreat into private feeling, since liberty is no longer something people can build together."
+          ],
+          "evidence": [
+            "Forgive me, Freedom! O forgive those dreams!",
+            "Didst breathe thy soul in forms of human power.",
+            "O Liberty! my spirit felt thee there."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-10",
+      "title": "Fears in Solitude",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Hold together a long meditation that moves from a quiet valley to a nation’s faults and back.",
+      "focus": "Patriotism that criticises its own country, and the distance between the words of war and its reality.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). The subtitle says he wrote this in April 1798, during the alarm of an invasion: Britain was at war with Revolutionary France, and a French army was gathering across the Channel. He signs it from Nether Stowey, where he lived with his wife and baby son near his friend Thomas Poole (the “mansion of my friend”). Furze is gorse, a yellow-flowered shrub; a dell is a small valley; “vernal” means of spring; “perdition” is ruin; perjury is lying under oath, here the oaths that officials had to swear; fratricide is killing one’s brother; “translated” means taken up to heaven without dying; “belike” means perhaps; a beacon is a hilltop signal fire.",
+      "contentNote": "The poem imagines invasion and the deaths of soldiers and civilians, and accuses Britain of carrying slavery abroad. It calls the French “a light yet cruel race” and speaks of atheism with contempt; these are the speaker’s wartime judgments.",
+      "excerpt": {
+        "locator": "Fears in Solitude, written in April 1798, during the alarm of an invasion, the whole poem with its place and date; opens “A green and silent spot, amid the hills, A small and silent dell! O'er stiller place No…”; closes “NETHER STOWEY, _April_ 20, 1798.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1233,
+          1241
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e947a3f510e7804b56ddf31f9f7beb8fdcc35d7443e098fe639600d2f626842"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-10-q1",
+          "prompt": "What does the dell give the “humble man” in the first verse paragraph, and what breaks into his peace?",
+          "facilitatorNotes": [
+            "Quiet, the unseen lark, “meditative joy,” religious meanings in nature. Then the thought of invasion: such a man “must feel / For all his human brethren.” His peace cannot last because he cannot stop caring about others."
+          ],
+          "evidence": [
+            "Oh! 'tis a quiet spirit-healing nook!",
+            "For all his human brethren--O my God!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-10-q2",
+          "prompt": "Instead of blaming the enemy first, the speaker says “We have offended.” Name two wrongs he charges his own country with.",
+          "facilitatorNotes": [
+            "Carrying “slavery and pangs” to distant peoples (the slave trade and empire); oaths sworn everywhere and broken, “one scheme of perjury”; drinking “Pollutions from the brimming cup of wealth”; bored, careless religion. It took courage to say this during an invasion scare."
+          ],
+          "evidence": [
+            "And borne to distant tribes slavery and pangs,",
+            "All, all make up one scheme of perjury,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-10-q3",
+          "prompt": "Why does he say the British enjoy war “as a thing to talk of”? What is wrong with their “dainty terms”?",
+          "facilitatorNotes": [
+            "Safe behind fleets and seas, they read about battles at breakfast as entertainment, “Spectators and not combatants.” The smooth words for victories and defeats are “mere abstractions” that hide wounds, pain and widows. Readers may compare how war sounds in news today."
+          ],
+          "evidence": [
+            "Spectators and not combatants!",
+            "The best amusement for our morning meal!",
+            "As if the soldier died without a wound;"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-10-q4",
+          "prompt": "He also calls the French “an impious foe” and urges Britons to drive them back. Does this contradict his criticism of Britain, or fit with it?",
+          "facilitatorNotes": [
+            "It can fit: he wants Britain defended but returning “Not with a drunken triumph, but with fear,” repenting its own wrongs, because true courage dares to look “At their own vices.” Others may argue that “a light yet cruel race” slips into the very war talk he condemns. The return to the dell and to “my babe” suggests what he is really defending."
+          ],
+          "evidence": [
+            "Not with a drunken triumph, but with fear,",
+            "At their own vices. We have been too long",
+            "a light yet cruel race,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-11",
+      "title": "Love",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a story told inside a story, and notice how the inner tale works on its listener.",
+      "focus": "Courtship through art: a song that says what the singer cannot say directly.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). Love was first printed in a newspaper in 1799 (the date is printed at the end) and was one of his most popular poems in his lifetime. It is a ballad in four-line stanzas. A lay and a ditty are songs; a “burning brand” on a knight’s shield is a flaming torch used as his badge; to “expiate” is to make amends for; “virgin-shame” and “virgin pride” mean a young unmarried woman’s modesty and self-respect; “faultering” is an old spelling of faltering.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Love, the whole poem with its date; opens “All thoughts, all passions, all delights, Whatever stirs this mortal frame, All are but…”; closes “1799.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1662,
+          1686
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b572bd088e0fbd85e67e42e7d816aba79f63597dc5ff7e25e829194446da4386"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-11-q1",
+          "prompt": "Where are the speaker and Genevieve, and what is he doing? Why might he have chosen this place and this song?",
+          "facilitatorNotes": [
+            "On a hillside by a ruined tower, in moonlight, with Genevieve leaning against the statue of an armed knight. He sings an “old rude song” that suits the ruin, knowing she loves songs “that make her grieve.” Some readers will see a careful plan in his choice."
+          ],
+          "evidence": [
+            "She leant against the arméd man,",
+            "She loves me best, whene'er I sing The songs that make her grieve."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-11-q2",
+          "prompt": "Retell the Knight’s story in a few sentences. How is it like the speaker’s own situation, and how is it different?",
+          "facilitatorNotes": [
+            "The Knight woos the Lady for ten years, is driven mad by her scorn, wanders haunted by visions, saves her from a murderous band, and dies sane in her care. Like the speaker, he loves and pleads; unlike him, he wins her pity only when it is too late."
+          ],
+          "evidence": [
+            "And that for ten long years he wooed The Lady of the Land.",
+            "When on the yellow forest-leaves A dying man he lay;--"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-11-q3",
+          "prompt": "“With which I sang another's love, / Interpreted my own.” What does this mean? Where does the song stop, and why?",
+          "facilitatorNotes": [
+            "Singing the Knight’s love lets him express his own without saying it outright. The song breaks off at the Knight’s dying words, when his “faultering voice and pausing harp” move her more than words could. Readers can decide whether the pause is real emotion, a singer’s art, or both."
+          ],
+          "evidence": [
+            "With which I sang another's love, Interpreted my own.",
+            "My faultering voice and pausing harp Disturbed her soul with pity!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-11-q4",
+          "prompt": "The poem opens: “All thoughts, all passions, all delights … / All are but ministers of Love.” How does the story prove this? Is the speaker as innocent as he calls Genevieve?",
+          "facilitatorNotes": [
+            "Music, pity, the evening and the sad tale all end by serving love. He calls her “guileless,” yet he gazes, chooses a grieving song, and admits her embrace was “partly 'twas a bashful art”: both lovers use a little art. Some readers find the poem charming; others find the speaker a little calculating."
+          ],
+          "evidence": [
+            "All are but ministers of Love,",
+            "'Twas partly love, and partly fear, And partly 'twas a bashful art,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-12",
+      "title": "Hymn before Sun-rise, in the Vale of Chamouni",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 15,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a speaker whose gazing turns into prayer, and weigh what the poem claims to have seen.",
+      "focus": "A mountain made to speak: questions, commands and paradox in a hymn of praise.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). He wrote this in 1802 (the date is printed at the end). Chamouni, now Chamonix, is the valley below Mont Blanc, the highest mountain in the Alps; the Arve and Arveiron are its rivers. Coleridge never went there: he worked from a short German poem by Friederike Brun and from his own climbs in the English Lake District. The prose headnote is his; the bracket inside it was added by the 1912 editor to record that his journal The Friend (1809) printed “liveliest” where this text has “loveliest.” “Sovran” means sovereign; “ebon” means black as ebony; “amain” means at full speed; a hierarch is a high priest.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Hymn before Sun-rise, in the Vale of Chamouni, the whole poem with Coleridge’s prose headnote and date; opens “Besides the Rivers, Arve and Arveiron, which have their sources in the foot of Mont…”; closes “1802.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1849,
+          1858
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "297e04e6e8d2699a020cfd65398b477c608e5a0e4497db50ffa7e791a0f9f47b"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-12-q1",
+          "prompt": "In the first stanza the speaker gazes at the mountain until it vanishes from his thought. What happens to him, and what happens next?",
+          "facilitatorNotes": [
+            "The dark silent mass seems to pierce the sky; staring, he forgets the mountain and prays to “the Invisible alone.” Then the mountain steals back into his thought “like some sweet beguiling melody” until his soul swells “vast to Heaven.” Looking becomes worship."
+          ],
+          "evidence": [
+            "Didst vanish from my thought: entranced in prayer",
+            "Yet, like some sweet beguiling melody,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-12-q2",
+          "prompt": "Many sentences in the middle stanzas begin with “Who.” Why ask so many questions, and who answers them?",
+          "facilitatorNotes": [
+            "They are questions the speaker already knows the answer to, piling up wonder at each feature: the mountain’s base, its light, its torrents. The answer is shouted by the landscape itself: the torrents and ice-plains echo “GOD!” The poem makes nature speak its own hymn."
+          ],
+          "evidence": [
+            "Who sank thy sunless pillars deep in Earth?",
+            "Answer! and let the ice-plains echo, GOD!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-12-q3",
+          "prompt": "How can torrents be “Motionless” and cataracts “silent”? What is he describing, and why put it this way?",
+          "facilitatorNotes": [
+            "Glaciers look like waterfalls frozen in mid-plunge, as if stopped by “a mighty voice.” The paradox turns a natural feature into evidence of a commanding creator."
+          ],
+          "evidence": [
+            "Motionless torrents! silent cataracts!",
+            "And stopped at once amid their maddest plunge!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-12-q4",
+          "prompt": "Coleridge had never seen Mont Blanc. Does knowing this weaken the poem? Which parts could come from reading and imagination rather than eyewitness?",
+          "facilitatorNotes": [
+            "Some readers feel misled, since the hymn presents itself as a moment of experience (“I gazed upon thee”). Others argue that its real subject is the soul’s response, which he knew from his own mountains. The headnote’s facts about five torrents and the gentian read like a guidebook, and the bold images could come from imagination."
+          ],
+          "evidence": [
+            "O dread and silent Mount! I gazed upon thee,",
+            "five conspicuous torrents rush down its sides"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-13",
+      "title": "A Christmas Carol",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice when the speaker changes and how a Christmas story turns into an argument.",
+      "focus": "Peace seen from below: Mary’s answer to the glamour of war.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). This carol, dated 1799 at the end, was printed in a newspaper on Christmas Day that year, while Britain was at war with France. It retells the shepherds’ visit to the newborn Jesus in the stable, from the Gospel of Luke, and then gives Mary a speech. “Elate” means joyful and proud; “low estate” means humble position, an echo of Mary’s song in Luke; mail is armour; laurels are victors’ wreaths; a board is a table, so what is on it is the family’s food.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Christmas Carol, the whole poem (stanzas I–VIII) with its date; opens “The shepherds went their hasty way, And found the lowly stable-shed Where the…”; closes “1799.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1696,
+          1712
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6949204bbcafe574b2e6aaa0e02a16fd2d6b11d02dbe1d65a5640dba5b740767"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-13-q1",
+          "prompt": "What do the shepherds tell Mary, and how does she respond? Which detail makes her a real mother rather than a statue?",
+          "facilitatorNotes": [
+            "They tell of the light and the angels’ song, “Glory to God on high! and Peace on Earth.” She presses the baby closer, cries “the Babe is mine!” and feels her milk rush: a bodily joy, not a calm pose."
+          ],
+          "evidence": [
+            "And closer still the Babe she pressed;",
+            "Joy rose within her, like a summer's morn;"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-13-q2",
+          "prompt": "In stanzas IV and V someone asks Mary questions. What picture of war does this voice offer?",
+          "facilitatorNotes": [
+            "War as “a youthful king,” a hero in armour, hailed by monarchs and loved by maidens: glory and fame. The voice may be the poet testing her, or the common view of the age."
+          ],
+          "evidence": [
+            "Didst thou ne'er love to hear of fame and glory?",
+            "And is not War a youthful king,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-13-q3",
+          "prompt": "How does Mary answer? Why does being poor make her glad of peace?",
+          "facilitatorNotes": [
+            "She sends that picture back to the court: she is “a woman poor and mean,” and so she sees war as a ruffian that tears sons from fathers, kills husbands and steals a widow’s earnings. The poor pay for war; the powerful enjoy its glory."
+          ],
+          "evidence": [
+            "I am a woman poor and mean,",
+            "That from the agéd father tears his child!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-13-q4",
+          "prompt": "The last line repeats the end of stanza III. What has changed in the meaning of “Peace on Earth” by the end?",
+          "facilitatorNotes": [
+            "At first it is the angels’ message and Mary’s private joy; at the end it is her considered answer to war, “wisely” held. Printed in wartime, the carol also speaks to Britain in 1799. Readers may notice joy “rose” has become joy “rises,” in the present."
+          ],
+          "evidence": [
+            "Then wisely is my soul elate,",
+            "Joy rises in me, like a summer's morn:"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
     }
   ]
 }
