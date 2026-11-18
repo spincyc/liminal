@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "owen-poems-1920",
+  "author": "Wilfred Owen",
+  "title": "Poems",
+  "translator": null,
+  "edition": "Poems by Wilfred Owen, with an introduction by Siegfried Sassoon (London: Chatto & Windus, 1920; printed by Morrison and Gibb, Edinburgh), as transcribed by Project Gutenberg (eBook 1034). The library holds Sassoon’s introduction, Owen’s unfinished preface with its note, and the twenty-four poems in printed order, including the other version and alternative line printed after “Strange Meeting”; poem titles keep the transcription’s capitalisation. Project Gutenberg printed italics as capitals: the one such word, “aren’t” in “The Dead-Beat”, is given as _aren’t_, which the 1920 OCR shows as italic; “GAS!” in “Dulce et Decorum est” is in capitals in the print and stands. “Anthem for Doomed Youth”, “The Send-off” and “Disabled” were collated on 2026-11-18 against the OCR of Internet Archive poemsowenwil00owenrich, a copy of the 1920 Chatto & Windus edition, and against its page images (pp. 11–12 and 32–33): the transcription agrees with the print in every word and point; the OCR’s full stops for commas in “Disabled” are its own misreadings.",
+  "publicationYear": 1920,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1034",
+  "textUrl": "https://www.gutenberg.org/ebooks/1034.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Owen’s Poems, with Sassoon’s introduction, was first published in London in 1920 (a US edition followed in 1921); both were published before 1931, and their US copyright terms have expired. Owen died in 1918. Project Gutenberg identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1034"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/1/0/3/1034/1034-0.txt",
+    "downloadSha256": "84a1e5ab13f9d53fdb78a8812cbc26342d6903f28e97762e05d9c3591c2a1be8",
+    "method": "Project Gutenberg 1034 plain text (UTF-8) from the PG mirror aleph.pglaf.org (this old eBook has no cache/epub plain-text file there). Took the text from Sassoon’s “Introduction” to the end of “The End”; the PG header and footer, the title lines, the transcriber’s note on the text, the contents list, the “POEMS” divider, PG’s “[End of original text.]” and its appendix on later editions were dropped. Unindented one-line titles became level-2 headings (with “S. I. W.”), the roman section numbers of “Insensibility” and “Exposure” level-3 headings; indented line groups became stanzas, one line per verse line, indentation removed and runs of spaces closed up; prose paragraphs were joined with single spaces; the signature, dated lines, and the labels “Another Version” and “Alternative line--”, which PG marks as italic with *asterisks* (here _underscores_), are paragraphs. Double hyphens stand for dashes as transcribed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        58,
+        67
+      ],
+      [
+        148,
+        153
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 158,
+    "sha256": "1eea48228afea4b27441050e2c04f2e9a7cd773056293804c1b45c3d1c28ad59"
+  }
+}

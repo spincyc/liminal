@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "las-casas-destruction-indies-1689",
+  "readings": [
+    {
+      "id": "reading-11-las-casas-destruction-indies-1689-01",
+      "title": "The Destruction of the Indies: the opening (excerpt)",
+      "sourceId": "las-casas-destruction-indies-1689",
+      "genre": "history",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Read a defender of the islands’ peoples critically: notice what his praise gives them and what it takes away.",
+      "focus": "An eyewitness Spaniard’s account of what followed Columbus’s landing, and the limits of his view.",
+      "context": "Bartolomé de las Casas (about 1484–1566) sailed to Hispaniola in 1502 and, as a settler, held Taíno people in forced labour; in 1514 he gave them up and spent the rest of his life campaigning against the conquerors’ treatment of the native peoples, as a Dominican friar and later bishop of Chiapas. He wrote this short account in 1542 for the future King Philip II and printed it in Seville in 1552. Read on Columbus Day, which many places now keep as Indigenous Peoples’ Day, it tells what followed Columbus’s landing in 1492. This anonymous English version, made from earlier translations rather than the Spanish, was printed in London in 1689, the year after a Catholic king was driven from the English throne, as Popery Truly Display’d in its Bloody Colours: a title that turned a Catholic friar’s protest into a weapon against Catholics. It also turns his “more than fifteen million” dead into “Fifty Millions.” The Spanish Island is Hispaniola, today Haiti and the Dominican Republic; St. John is Puerto Rico; the Lucayan Islands are the Bahamas. An. Dom. is Anno Domini; an ell is about a yard; docible means teachable; Religioso’s are members of religious orders; subalternate means subordinate; facil means easy.",
+      "contentNote": "Describes mass killing, enslavement and depopulation in general terms. Las Casas’s praise of the native peoples rests on stereotypes of them as simple, docile and weak (“imbecile,” “effeminate,” “innocent Sheep”).",
+      "excerpt": {
+        "locator": "“The Cruelties of the Spaniards Committed in America,” from the opening to the account of Hispaniola; opens “America was discover'd and found out _An. Dom._ 1492. and the Year insuing inhabited by…”; closes “…Arms, provoked thereunto by repeated Injuries, violent Torments, and injust Butcheries.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          0,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "33cb824dc466dc11c57628f32a471cdfa9f31fa2ff67560ecca240d9b1d9b42b"
+      },
+      "questions": [
+        {
+          "id": "reading-11-las-casas-destruction-indies-1689-01-q1",
+          "prompt": "How does Las Casas describe the peoples of the islands in his second and third paragraphs? What is that portrait meant to do in his argument?",
+          "facilitatorNotes": [
+            "Innocent and simple, without craft or malice, obedient, patient, without thirst for revenge; physically tender, poor, frugal “as the Holy Fathers” in the desert; and “very apt” to receive Christianity. The portrait makes them blameless: nothing in them could justify what follows. The last paragraph says so outright: the Spaniards “never received any injury from the Indians.”"
+          ],
+          "evidence": [
+            "innocently simple, altogether void of and averse to all manner of Craft",
+            "very apt to receive the instill'd Principles of the Catholick Religion"
+          ]
+        },
+        {
+          "id": "reading-11-las-casas-destruction-indies-1689-01-q2",
+          "prompt": "Las Casas means his portrait as praise. What does it also take from the people he defends? Where does his own account contradict it?",
+          "facilitatorNotes": [
+            "It makes them weak (“incapable of hard labour”), childlike and passive, “innocent Sheep” with no history or politics of their own, and one “Nation” across a hemisphere. Yet he records that the “most Potent, Strenuous and Magnanimous Spirits” fought “to recover their pristin Freedom,” and that they took up arms when provoked. A defensible reading: the praise serves his case for protection and conversion, and the people’s own resistance shows through it. Some readers will judge him kindly for his time; others will see the conqueror’s view in a gentler form."
+          ],
+          "evidence": [
+            "This is a most tender and effeminate people",
+            "to recover their pristin Freedom"
+          ]
+        },
+        {
+          "id": "reading-11-las-casas-destruction-indies-1689-01-q3",
+          "prompt": "Las Casas gives enormous figures, and this English version inflates them. How should a reader weigh the numbers against the moments when he says “I saw”?",
+          "facilitatorNotes": [
+            "His totals are estimates, and modern historians put the numbers before 1492 far lower or leave them uncertain; the 1689 translator’s “Fifty Millions” is an error. But the collapse he describes, from war, enslavement, overwork and disease, is not in doubt, and his eyewitness details, such as the eleven people found on islands once full, carry a weight the totals cannot. A good answer separates what he saw from what he computed."
+          ],
+          "evidence": [
+            "there were only found Eleven Persons, which I saw with my own Eyes",
+            "above Twelve Millions (computing Men, Women, and Children) have undeservedly perished"
+          ]
+        },
+        {
+          "id": "reading-11-las-casas-destruction-indies-1689-01-q4",
+          "prompt": "What does Las Casas name as the conquerors’ motive, and what does he count among their worst crimes? What does his complaint about the Faith show about his own point of view?",
+          "facilitatorNotes": [
+            "Their end “was Gold only,” with ambition and avarice; they treated the people “as the most abject dung and filth of the Earth.” He also laments that so many “died without understanding the true Faith or Sacraments.” As a friar he judges the conquest by its betrayal of the Christian mission it claimed; some readers will note that conversion was itself part of the conquest, and that the English publisher of 1689 used his testimony for a different quarrel. On Columbus Day, readers can ask whose story this is, and whose voices are missing."
+          ],
+          "evidence": [
+            "was Gold only",
+            "died without understanding the true Faith or Sacraments"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    }
+  ]
+}

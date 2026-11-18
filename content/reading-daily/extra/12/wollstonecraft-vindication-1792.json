@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "wollstonecraft-vindication-1792",
+  "readings": [
+    {
+      "id": "reading-12-wollstonecraft-vindication-1792-01",
+      "title": "A Vindication: a letter to a legislator (the dedication)",
+      "sourceId": "wollstonecraft-vindication-1792",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow how Wollstonecraft turns a revolution’s own principles against the man she is writing to.",
+      "focus": "Wollstonecraft asks a French lawmaker how a constitution founded on the rights of man can shut women out.",
+      "context": "Mary Wollstonecraft (1759–1797) published A Vindication of the Rights of Woman in London in 1792; this Boston printing of the same year was its first American edition. She dedicated it to Talleyrand, a former bishop and a leader of the French Revolution, who had just proposed to France’s National Assembly a plan of national education that would have schooled girls mainly at home and for home. France’s new constitution of 1791 gave the vote only to men. Read on Independence Day, her letter asks what Americans could also ask of a Declaration that said “all men are created equal.” Pert witlings are would-be wits; chimerical means imaginary; factitious means artificial; prescription is a right claimed because it has long been exercised; to want reason is to lack it; a brazen front is a shameless face.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The dedication to M. Talleyrand-Périgord, from the address through the paragraph on the “new constitution”; opens “TO”; closes “…in whatever part of society it rears its brazen front, will ever undermine morality.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          0,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3c6f6794b0dcc898ab10e0ce1c1838bbec685f595c7075fc8ea57d1e76baf52f"
+      },
+      "questions": [
+        {
+          "id": "reading-12-wollstonecraft-vindication-1792-01-q1",
+          "prompt": "How does Wollstonecraft present herself in the first paragraph, and why might a woman writing to a powerful man in 1792 need to say these things?",
+          "facilitatorNotes": [
+            "She flatters his understanding, then criticises him frankly; she insists her motive is “disinterested,” for women and not herself, and that she needs nothing from him because she can live on little. A woman writing on politics could be dismissed as ambitious or personal; she claims the standing of an independent reasoner."
+          ],
+          "evidence": [
+            "I plead for my sex—not for myself.",
+            "Independence I have long considered as the grand blessing of life"
+          ]
+        },
+        {
+          "id": "reading-12-wollstonecraft-vindication-1792-01-q2",
+          "prompt": "State her “main argument” in your own words. Why does she ground it in women’s influence on men and children rather than in women’s own happiness? Is that a strength or a weakness?",
+          "facilitatorNotes": [
+            "Uneducated women will hold back the progress of knowledge, since truth must be shared to shape practice; mothers who do not understand patriotism cannot raise patriots. The argument meets her readers where they are, but it values women for what they do for others. A good answer may note that she argues for women’s own rights elsewhere in the letter, and weigh the strategy."
+          ],
+          "evidence": [
+            "truth must be common to all",
+            "If children are to be educated to understand the true principle of patriotism, their mother must be a patriot"
+          ]
+        },
+        {
+          "id": "reading-12-wollstonecraft-vindication-1792-01-q3",
+          "prompt": "In the later paragraphs, how does she use Talleyrand’s own principles against him? What does she say men must prove before they can exclude women?",
+          "facilitatorNotes": [
+            "She quotes his admission that excluding half the human race from government cannot be explained by abstract principles, then argues that if the rights of man can be reasoned out, the same reasoning covers women. Men who claim to judge their own happiness cannot judge women’s for them. To exclude women without a voice, they must first prove that women lack reason; otherwise the constitution has a flaw at its foundation."
+          ],
+          "evidence": [
+            "those of woman, by a parity of reasoning, will not shrink from the same test",
+            "Who made man the exclusive judge, if woman partake with him the gift of reason?",
+            "prove first, to ward off the charge of injustice and inconsistency, that they want reason"
+          ]
+        },
+        {
+          "id": "reading-12-wollstonecraft-vindication-1792-01-q4",
+          "prompt": "Wollstonecraft links the tyranny of kings to the rule of fathers and calls women “convenient slaves.” What does this comparison claim? What might an American reader of this Boston edition in 1792, in a country that still held people in slavery, have noticed about it?",
+          "facilitatorNotes": [
+            "She says the same excuse, “we rule you for your own good,” serves every tyrant from the king to the household, and that it degrades the ruler as well as the ruled. Revolutionaries who rejected a king’s rule might keep it at home. Using slavery as a figure for women’s condition was common; an American reader might see both the force of the comparison and that it passes over people who were enslaved in fact, women among them."
+          ],
+          "evidence": [
+            "In this style, argue tyrants of every denomination, from the weak king to the weak father of a family",
+            "They may be convenient slaves, but slavery will have its constant effect, degrading the master and the abject dependent."
+          ]
+        }
+      ],
+      "holiday": "independence-day"
+    }
+  ]
+}

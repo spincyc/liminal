@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "owen-poems-1920",
+  "readings": [
+    {
+      "id": "reading-12-owen-poems-1920-01",
+      "title": "Anthem for Doomed Youth and The Send-off",
+      "sourceId": "owen-poems-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Ask what each line puts in place of the ceremonies a country usually gives its dead.",
+      "focus": "Two poems about how soldiers are sent away and how the dead are mourned.",
+      "context": "Wilfred Owen (1893–1918) served as an infantry officer in France. In 1917, sent home with shell shock, he was treated at Craiglockhart, a war hospital near Edinburgh, where he met the poet Siegfried Sassoon and wrote many of these poems; he went back to the front in 1918 and was killed on 4 November, a week before the war ended. Few of his poems were printed in his lifetime; Sassoon edited this collection in 1920. Memorial Day honours Americans who died in military service; it began after the Civil War as Decoration Day, when families laid flowers on soldiers’ graves. A passing-bell was rung for a death; orisons are prayers; shires are English counties; a pall is the cloth over a coffin; drawing down the blinds was a sign of mourning in the house. A siding-shed stands beside the railway away from the main platforms, and the guard is the train’s conductor.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Poems (1920), “Anthem for Doomed Youth” and “The Send-off,” both whole poems; opens “What passing-bells for these who die as cattle? Only the monstrous anger of the guns.…”; closes “…for drums and yells, May creep back, silent, to still village wells Up half-known roads.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          58,
+          67
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5ed3638f83f1e04e0f8efdd5a63a4b5980aad066de79607fdf1b5894b7c05139"
+      },
+      "questions": [
+        {
+          "id": "reading-12-owen-poems-1920-01-q1",
+          "prompt": "“What passing-bells for these who die as cattle?” What does the first part of “Anthem for Doomed Youth” put in place of a funeral’s bells, prayers and choirs? What does “die as cattle” claim about these deaths?",
+          "facilitatorNotes": [
+            "Guns, rifle fire and shells stand in for bells, prayers and choirs, so the only ceremony is the noise of the killing itself; the rhyme and alliteration (“stuttering rifles’ rapid rattle”) make the sound. Cattle are slaughtered in numbers, without names or choice; the soldiers die as mass, not as persons. The bugles “from sad shires” turn the poem toward home."
+          ],
+          "evidence": [
+            "What passing-bells for these who die as cattle?",
+            "The shrill, demented choirs of wailing shells;"
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-01-q2",
+          "prompt": "In the last six lines the scene moves from the battlefield to home. Where are the dead mourned now, and by whom? How does the sound of the poem change?",
+          "facilitatorNotes": [
+            "The candles are in the boys’ eyes, the pall is the pallor of girls’ faces, the flowers are the patient tenderness of those who wait, and the blinds are drawn each evening. Mourning becomes private and lasting rather than public. The noise of the first part gives way to quiet, slow lines; “each slow dusk” suggests grief repeated every day."
+          ],
+          "evidence": [
+            "The pallor of girls' brows shall be their pall;",
+            "And each slow dusk a drawing-down of blinds."
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-01-q3",
+          "prompt": "In “The Send-off,” the soldiers wear flowers given to them by women. What do the flowers mean to those who gave them, and what does the poem make them mean?",
+          "facilitatorNotes": [
+            "To the givers they are a farewell and an honour; the poem says the men wear them “As men’s are, dead,” so the departing soldiers already look like corpses decked for burial. The later stanza wonders whether the men now mock “what women meant.” The gift that was meant to honour them foreshadows their deaths."
+          ],
+          "evidence": [
+            "Their breasts were stuck all white with wreath and spray",
+            "As men's are, dead."
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-01-q4",
+          "prompt": "“So secretly, like wrongs hushed-up, they went.” Compare the way the soldiers leave with the way the poem imagines them coming back. On Memorial Day, what kind of remembering do these two poems ask for, and what kind do they distrust?",
+          "facilitatorNotes": [
+            "They leave quietly, watched only by porters and a tramp, sent no one knows where; the few who return will “creep back, silent,” with no bells or cheering. Both poems distrust public ceremony that hides what happened (“mockeries,” “drums and yells”) and honour private, truthful grief. Students may argue about whether a public holiday can remember in the way Owen asks."
+          ],
+          "evidence": [
+            "So secretly, like wrongs hushed-up, they went.",
+            "A few, a few, too few for drums and yells,"
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    },
+    {
+      "id": "reading-12-owen-poems-1920-02",
+      "title": "Disabled",
+      "sourceId": "owen-poems-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow the poem’s movement between the young man’s present and his past, and notice who looks at him and how.",
+      "focus": "A young soldier who has lost both legs, and both arms below the elbow, sits in a wheelchair and remembers why he enlisted.",
+      "context": "Wilfred Owen (1893–1918) served as an infantry officer in France. In 1917, sent home with shell shock, he was treated at Craiglockhart, a war hospital near Edinburgh, where he met the poet Siegfried Sassoon and wrote many of these poems; he went back to the front in 1918 and was killed on 4 November, a week before the war ended. Few of his poems were printed in his lifetime; Sassoon edited this collection in 1920. Veterans Day began as Armistice Day, marking the end of the fighting on 11 November 1918; Owen’s parents received the news of his death that day. Since 1954 the United States has kept it to honour everyone who has served. Owen wrote “Disabled” at Craiglockhart in 1917. Glow-lamps are electric lights; a peg is a drink of spirits; kilts are the uniform of Scottish regiments; jilts are flirts; esprit de corps is pride in one’s unit; to dole is to hand out grudgingly; Institutes are institutions for disabled men. A soldier had to be nineteen to serve overseas.",
+      "contentNote": "Describes a soldier’s amputations and wounds.",
+      "excerpt": {
+        "locator": "Poems (1920), “Disabled,” the whole poem; opens “He sat in a wheeled chair, waiting for dark, And shivered in his ghastly suit of grey,…”; closes “…How cold and late it is! Why don't they come And put him into bed? Why don't they come?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          148,
+          153
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2ecdeecc5d1005913c3655962ee4464c8ab323e980c5d6a67e06493920c7a83"
+      },
+      "questions": [
+        {
+          "id": "reading-12-owen-poems-1920-02-q1",
+          "prompt": "The poem moves between the present and “the old times.” Mark where it shifts. What does each memory make you see in the present scene?",
+          "facilitatorNotes": [
+            "The present: a wheelchair in a park at dusk, boys’ voices, women passing him by. Memories: the town at night and girls’ hands, the artist who painted his face, football and the blood he was proud of, enlisting, the drums of departure. Each memory sets a lost power (touch, youth, sport, admiration) against what he has now: the bloodsmear he once liked becomes the blood he lost."
+          ],
+          "evidence": [
+            "He sat in a wheeled chair, waiting for dark,",
+            "before he threw away his knees.",
+            "One time he liked a bloodsmear down his leg,"
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-02-q2",
+          "prompt": "Why did he join? List the reasons the poem gives, and notice what is missing from the list.",
+          "facilitatorNotes": [
+            "He had been drinking after football; someone said he would look “a god in kilts”; he wanted to please Meg and “the giddy jilts”; he imagined jewelled daggers, salutes and pay. He scarcely thought of the enemy, of danger, or of any cause. He lied about his age and the recruiters smiled as they wrote it down."
+          ],
+          "evidence": [
+            "Someone had said he'd look a god in kilts.",
+            "Germans he scarcely thought of; and no fears",
+            "Smiling they wrote his lie; aged nineteen years."
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-02-q3",
+          "prompt": "Compare the way he was sent off with the way he was welcomed home. Who thanks him, and what does the thanks amount to?",
+          "facilitatorNotes": [
+            "He left “with drums and cheers”; he came home to some cheering, but less than a football goal gets. Only one “solemn man” thanks him, and turns at once to his soul. What waits is a few sick years in institutions and whatever pity is handed out: gratitude without care."
+          ],
+          "evidence": [
+            "And soon, he was drafted out with drums and cheers.",
+            "Some cheered him home, but not as crowds cheer Goal.",
+            "Thanked him; and then inquired about his soul."
+          ]
+        },
+        {
+          "id": "reading-12-owen-poems-1920-02-q4",
+          "prompt": "The poem ends with a question asked twice. Whose question is it, and what does it ask of a reader on Veterans Day?",
+          "facilitatorNotes": [
+            "It is his, in his own words, and it shows how completely he depends on others who are late or absent. Honouring veterans, the poem suggests, means more than cheering or thanking once: it means the daily care that the “rules” and “pity” fail to give. Students might connect this to how a country treats wounded veterans after the parades end."
+          ],
+          "evidence": [
+            "And take whatever pity they may dole.",
+            "And put him into bed? Why don't they come?"
+          ]
+        }
+      ],
+      "holiday": "veterans-day"
+    }
+  ]
+}

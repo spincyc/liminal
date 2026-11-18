@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "montaigne-essays-1877",
+  "author": "Michel de Montaigne",
+  "title": "Essays",
+  "translator": "Charles Cotton (1685–86), revised by William Carew Hazlitt",
+  "edition": "Essays of Michel de Montaigne, translated by Charles Cotton, edited by William Carew Hazlitt (London: Reeves and Turner, 1877), as transcribed by Project Gutenberg (eBook 3600). Hazlitt prints the translations of Montaigne’s Latin quotations and his own notes as footnotes; the transcription gives them in brackets, short notes inline as --[…]-- and translations as paragraphs after the verse, and it splits the paragraph that holds the Tempest note, which it also gives only in part (Hazlitt’s comparison with Florio’s version is not transcribed). Book I, Chapter XXX, “Of Cannibals,” from its opening through “never heard of.” (blocks 14–19), was collated on 2026-11-18 against the OCR of Internet Archive essaysofmontaign00mont, volume 1 of this 1877 edition, and against its page images for pp. 253–255. The transcription had re-pointed the text, and thirteen readings were changed to the print: commas restored (“reason, than”, “wild, whose”, “artifice, and”, “delicacy, excellent”, “Plato, that”) or removed (“whereas in truth”, “useful and natural”), “attempts.” for “attempts:”, “’tis” for “‘tis”, “hederæ” and “nulla” in the Propertius quotation, and in its translation “spontaneously;” and the closing quotation mark before the reference. The rest of the chapter stands as transcribed.",
+  "publicationYear": 1877,
+  "translationYear": 1686,
+  "url": "https://www.gutenberg.org/ebooks/3600",
+  "textUrl": "https://www.gutenberg.org/ebooks/3600.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Montaigne’s Essays were published in French from 1580 to 1595; Charles Cotton’s English translation was published in 1685–86, and W. C. Hazlitt’s revised edition of it in London in 1877; all were published before 1931, and their US copyright terms have expired. Project Gutenberg identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/3600"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/3600/pg3600.txt",
+    "downloadSha256": "1b4c87312f0890e04cecee48e3a5fa263de65743230b819e16cb1bd72f7aee59",
+    "method": "Project Gutenberg 3600 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Took Book I, Chapter XXX, from “CHAPTER XXX” up to “CHAPTER XXXI”. The chapter number and title make one level-2 heading (joined by a line break); unindented paragraphs were joined with single spaces; indented verse quotations became stanzas with the common indentation removed; Hazlitt’s bracketed translations and notes stay as the transcription gives them. Blocks 14, 15, 16 and 19 were then corrected to the 1877 print (see edition)."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only Book I, Chapter XXX, “Of Cannibals,” from the three volumes of essays that Project Gutenberg 3600 transcribes; the rest of the Essays, Hazlitt’s preface, the life and the letters are not held.",
+    "collated": [
+      [
+        14,
+        19
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 47,
+    "sha256": "8083737bd60dc80657db490aaa95a88f3538921312b4f235aa54e4a92d8a1b63"
+  }
+}

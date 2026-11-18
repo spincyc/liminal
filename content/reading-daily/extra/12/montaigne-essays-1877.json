@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "montaigne-essays-1877",
+  "readings": [
+    {
+      "id": "reading-12-montaigne-essays-1877-01",
+      "title": "Of Cannibals: who is the barbarian? (excerpt)",
+      "sourceId": "montaigne-essays-1877",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Test Montaigne’s argument against itself: notice where his praise of a people he never met tells you more about Europe than about them.",
+      "focus": "Montaigne asks whether the peoples of the New World are really barbarous, and turns the question back on Europe.",
+      "context": "Michel de Montaigne (1533–1592), a French nobleman, invented the essay as a form for testing his own opinions. He wrote “Of Cannibals” around 1580, two generations after Columbus’s first voyage, about the Tupinambá of the Brazilian coast, where a short-lived French colony had stood; he drew on a servant who had lived there for years and on meeting three Tupinambá men brought to France. Read on Columbus Day, which many places now keep as Indigenous Peoples’ Day, it is one of the first European attempts to look at the encounter from the other side. Charles Cotton’s English translation dates from 1686; the bracketed notes and the translation of the Latin verse (from the Roman poet Propertius) are the editor’s. Lycurgus was the legendary lawgiver of Sparta; Plato imagined a perfect city in his Republic; the golden age was the poets’ first, innocent age of mankind. Vitiated means spoiled; traffic means trade; successions are inheritances; dividends are shares of property.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Essays, Book I, Chapter XXX, “Of Cannibals,” from “Now, to return to my subject” through the description for Plato; opens “Now, to return to my subject, I find that there is nothing barbarous and savage in this…”; closes “…lying, treachery, dissimulation, avarice, envy, detraction, pardon, never heard of.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          14,
+          19
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "676cfc6076f226c86f9cfc319e728accc40ee17a4d6e9463f13e515f947c123a"
+      },
+      "questions": [
+        {
+          "id": "reading-12-montaigne-essays-1877-01-q1",
+          "prompt": "Montaigne says that “every one gives the title of barbarism to everything that is not in use in his own country.” What, according to him, is our usual measure of “truth and reason”? Does he conclude that no way of life is better than another?",
+          "facilitatorNotes": [
+            "We judge by the customs and opinions of the place where we live, so that home always seems to have the perfect religion and government. He does not stop at “all customs are equal”: he goes on to judge, ranking nature above art and finding these nations nearer to it. His relativism is a tool for questioning Europe’s self-image, not a refusal to judge."
+          ],
+          "evidence": [
+            "every one gives the title of barbarism to everything that is not in use in his own country",
+            "we have no other level of truth and reason, than the example and idea of the opinions and customs of the place wherein we live"
+          ]
+        },
+        {
+          "id": "reading-12-montaigne-essays-1877-01-q2",
+          "prompt": "Follow the comparison with fruit. How does Montaigne turn the meaning of “wild” and “savage” around?",
+          "facilitatorNotes": [
+            "“Savage” comes from the word for the woods: wild fruits are those nature grows by herself. He says the cultivated fruits, which human art has changed and “degenerated” to please a corrupted taste, deserve the name “wild” more. By the same logic, the Europeans who call others savage are the ones who have strayed from nature."
+          ],
+          "evidence": [
+            "They are savages at the same rate that we say fruits are wild",
+            "we ought rather to call those wild, whose natures we have changed by our artifice"
+          ]
+        },
+        {
+          "id": "reading-12-montaigne-essays-1877-01-q3",
+          "prompt": "Montaigne describes the nation to Plato by listing what it does not have. Choose three items from the list. What does each absence say about Europe?",
+          "facilitatorNotes": [
+            "No trade, no rich or poor, no service, no inheritance, no divided property: in Europe these produce greed, dependence and quarrels. No words for lying, treachery, avarice or envy: the vices Europe has words for are the ones it practises. The list is a mirror held up to his readers. Shakespeare later borrowed it for a speech in The Tempest."
+          ],
+          "evidence": [
+            "I should tell Plato, that it is a nation wherein there is no manner of traffic, no knowledge of letters",
+            "the very words that signify lying, treachery, dissimulation, avarice, envy, detraction, pardon, never heard of."
+          ]
+        },
+        {
+          "id": "reading-12-montaigne-essays-1877-01-q4",
+          "prompt": "Montaigne never went to Brazil, and some items on his list are mistaken: the Tupinambá farmed, for example. What are the strengths and the limits of praising a people as “not much remote from their original simplicity”?",
+          "facilitatorNotes": [
+            "Strength: he refuses the conquerors’ claim that these peoples were barbarians who needed ruling, and he uses them to expose European cruelty and greed. Limit: he defines them by absence, close to nature and without history, so that they serve as a lesson for Europeans rather than as people with their own laws, knowledge and arts. Students may compare this with other ways of telling the story on this holiday."
+          ],
+          "evidence": [
+            "consequently to be not much remote from their original simplicity",
+            "no clothing, no agriculture, no metal"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    }
+  ]
+}

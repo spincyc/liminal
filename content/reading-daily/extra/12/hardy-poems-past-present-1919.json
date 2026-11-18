@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "hardy-poems-past-present-1919",
+  "readings": [
+    {
+      "id": "reading-12-hardy-poems-past-present-1919-01",
+      "title": "The Darkling Thrush",
+      "sourceId": "hardy-poems-past-present-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Decide how much hope the last stanza really offers, and how sure the speaker is of it.",
+      "focus": "On a winter evening at the end of a century, a gloomy speaker hears an old thrush sing.",
+      "context": "Thomas Hardy (1840–1928) wrote Tess of the d’Urbervilles and other novels before he gave his later life to poetry. He dated this poem December 1900 and first printed it in a newspaper in the last days of that month: the nineteenth century ended on 31 December 1900, and the twentieth began the next day. Read on New Year’s Day, it stands at the turn of a year and of an age. A coppice is a thicket of small trees; bine-stems are the stems of climbing plants; outleant means laid out, as a body is; germ means seed; fervourless means without warmth or feeling; evensong is an evening service of prayer and song; illimited means unbounded. Darkling, an old poetic word, means in the dark.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Poems of the Past and the Present, “Miscellaneous Poems,” “The Darkling Thrush,” the whole poem with its date; opens “I LEANT upon a coppice gate When Frost was spectre-gray, And Winter’s dregs made desolate…”; closes “_December_ 1900.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          547,
+          552
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "87416621d1d62bfb00c356bba3a26be9b9abdb33e114a77b14d48ff93e935bda"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hardy-poems-past-present-1919-01-q1",
+          "prompt": "In the first two stanzas, what is dying, and how does Hardy turn the winter landscape into a deathbed scene? Find the words that make it one.",
+          "facilitatorNotes": [
+            "The century itself, and with it the day and the year: the land is the century’s corpse, the clouds its crypt, the wind its death-lament. Frost is a spectre, the day’s eye is weakening, the vine stems are like strings of broken lyres, and people have withdrawn to their fires. Even the life force (“germ and birth”) is shrunken."
+          ],
+          "evidence": [
+            "The Century’s corpse outleant,",
+            "The wind his death-lament.",
+            "The weakening eye of day."
+          ]
+        },
+        {
+          "id": "reading-12-hardy-poems-past-present-1919-01-q2",
+          "prompt": "“And every spirit upon earth / Seemed fervourless as I.” What does this admission tell you about the speaker? How might his mood shape what he sees?",
+          "facilitatorNotes": [
+            "He is himself without hope or warmth, and he projects his state onto everything; “Seemed” hints that the deadness is partly his. A reader can ask whether the landscape is truly dead or only seen through his despair, which prepares for the surprise of the next stanza."
+          ],
+          "evidence": [
+            "Seemed fervourless as I."
+          ]
+        },
+        {
+          "id": "reading-12-hardy-poems-past-present-1919-01-q3",
+          "prompt": "Why does Hardy make the bird “aged,” “frail, gaunt, and small”? What is surprising about its song?",
+          "facilitatorNotes": [
+            "The singer has every reason for gloom, like the speaker and the century: it is old, thin and storm-blown. Yet it sings a “full-hearted evensong / Of joy illimited” and chooses to fling its soul upon the gloom. The contrast makes the song an act of will or faith rather than a response to good conditions."
+          ],
+          "evidence": [
+            "An aged thrush, frail, gaunt, and small,",
+            "Had chosen thus to fling his soul"
+          ]
+        },
+        {
+          "id": "reading-12-hardy-poems-past-present-1919-01-q4",
+          "prompt": "Read the last stanza closely. How sure is the speaker that there is “Some blessed Hope”? What kind of hope does the poem allow for a new year?",
+          "facilitatorNotes": [
+            "He sees no cause for joy in “terrestrial things,” and says only that he “could think” some hope trembled through the song, a hope the bird knew and he did not. The hope is real for the bird and only possible for him. Some readers find the ending hopeful, others find it bleak or ironic; good answers weigh “could think,” “trembled” and “unaware.”"
+          ],
+          "evidence": [
+            "That I could think there trembled through",
+            "And I was unaware."
+          ]
+        }
+      ],
+      "holiday": "new-year"
+    }
+  ]
+}
