@@ -1,0 +1,1530 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "grahame-wind-willows-1913",
+  "readings": [
+    {
+      "id": "reading-5-grahame-wind-willows-1913-01",
+      "title": "The Wind in the Willows: Ducks’ Ditty and a call on Toad (Chapter II, first part)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Read a short song aloud for its bounce, then test what Rat says about Toad against what Toad says and does.",
+      "focus": "A song about ducks who want to be left alone, then a first meeting with Toad: rich, warm-hearted, boastful, and done with boating.",
+      "context": "The Wind in the Willows (1908) is by Kenneth Grahame, a Scottish-born writer who worked for most of his life at the Bank of England and first made up Toad’s adventures as bedtime stories and letters for his young son. Its animals live like English country gentlemen of the time, with houses, boats, money and servants, while keeping some animal habits. The edition here is an American one of 1913. In Chapter I, Mole left his underground home one spring day, met the Water Rat, and came to live with him on the river bank, where they glimpsed Toad rowing badly in a new racing boat. Now it is summer. A ditty is a short, simple song; to dabble is to dip and splash about; roach are small river fish; a larder is a store cupboard for food; drakes are male ducks; swifts are fast birds that feed in the air. Sculls are oars; a fad is a short-lived craze; candid means frank.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “The Open Road,” from the start, with the song “Ducks’ Ditty,” through Toad’s promise to show his friends something new; opens “\"Ratty,\" said the Mole suddenly, one bright summer morning, \"if you please, I want to ask…”; closes “…be so very good, just as far as the stable-yard, and you shall see what you shall see!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-grahame-wind-willows-1913-02",
+        "blocks": [
+          94,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7ecd74a49fd03525511725a483f7de10f3b6eb02f1b6be83c318af3ed68880f9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-01-q1",
+          "prompt": "Read “Ducks’ Ditty” aloud. What are the ducks doing, and which line returns at the end?",
+          "facilitatorNotes": [
+            "They dabble in the backwater, heads under water and tails in the air, among slushy weed where the roach swim. “Up tails all!” closes the first and the last verse, so the song ends where it began. The short lines and rhymes (tall/all, quiver/river) make it bounce. Ask which picture readers like best: yellow feet “a-quiver,” or the swifts high above while the ducks stay down below."
+          ],
+          "evidence": [
+            "Ducks are a-dabbling,",
+            "Heads down, tails up,",
+            "Up tails all!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-01-q2",
+          "prompt": "Rat reports what the ducks think of his song. Why is their complaint funny, and why does Rat cry “No, it isn't!” when Mole agrees?",
+          "facilitatorNotes": [
+            "The ducks object to fellows who sit on banks watching them and “making remarks and poetry” about them, which is exactly what Rat has just done, after tickling their necks until they begged him to go away. The song itself says “Everyone for what he likes!” Rat enjoys repeating the ducks’ joke against himself, but is hurt when Mole agrees with it; Mole then agrees with the opposite just as quickly. Readers may see Rat as a touchy poet, or as teasing."
+          ],
+          "evidence": [
+            "instead of other fellows sitting on banks and watching them all the time and making remarks and poetry and things about them?",
+            "cried the Rat indignantly",
+            "Everyone for what he likes!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-01-q3",
+          "prompt": "On the way, Rat calls Toad good-natured and affectionate, and also “boastful and conceited.” Which of these does Toad prove in his first few minutes?",
+          "facilitatorNotes": [
+            "Both. He greets them with delight, dances round them and offers food; then he boasts that Toad Hall is the finest house on the river “Or anywhere else.” When he sees Rat nudge Mole he turns red, but laughs at himself: “It's only my way.” A reader can decide whether laughing at his own boasting makes it easier to forgive."
+          ],
+          "evidence": [
+            "it may be that he is both boastful and conceited",
+            "he could not help adding",
+            "It's only my way, you know."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-01-q4",
+          "prompt": "Toad now calls boating a waste of time. What clue let Rat guess this before Toad said it, and what is Rat up to when he mentions Toad’s rowing?",
+          "facilitatorNotes": [
+            "The boat-house is full of handsome boats, none in the water, with “an unused and a deserted air,” so Rat says, “Boating is played out.” His remark about rowing comes “with an innocent air,” which suggests he is teasing; he already knows boating is finished. Toad’s talk of “the only genuine occupation for a lifetime” is funny because Rat has seen many such lifetimes. Ask readers to predict the new craze."
+          ],
+          "evidence": [
+            "Boating is played out.",
+            "with an innocent air",
+            "the only genuine occupation for a lifetime"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-02",
+      "title": "The Wind in the Willows: the canary-coloured cart (Chapter II, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Notice how Toad talks his friends into a trip, and which words actually do the persuading.",
+      "focus": "Toad wins Mole with his new caravan and Rat with Mole’s disappointment; on the first night each friend shows what the trip costs him.",
+      "context": "Recap: Rat and Mole have rowed up to Toad Hall, Toad’s grand old house on the river, and found that Toad has given up boating for something he calls “the real thing.” A caravan here is a horse-drawn house on wheels, built like the wagons that Romani travellers lived in; Toad’s is brand new and made for holidays. Downs are open grassy hills; a common is open land anyone may use; a paddock is a small field for a horse. Fitments are built-in fittings; baccy is tobacco; voluble means talking a great deal; told off here means given a job; a pathetic tone is a sad one.",
+      "contentNote": "The narrator calls the cart a “gipsy caravan,” the period name for the Romani people’s travelling wagons; many Romani people today find the word “gipsy” offensive.",
+      "excerpt": {
+        "locator": "Chapter II, “The Open Road,” from the caravan in the stable-yard through the first night on the common; opens “He led the way to the stable-yard accordingly, the Rat following with a most mistrustful…”; closes “The end was indeed nearer than even the Rat suspected.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-01",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-03",
+        "blocks": [
+          121,
+          138
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b67ef6bef3473e12824a7baaaaf61ff90b7294b962e543acbee5a5f2adc4b86c"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-02-q1",
+          "prompt": "Toad calls the caravan “real life.” What does his speech promise, and how do Mole and Rat each react?",
+          "facilitatorNotes": [
+            "He promises movement and change: the open road, heath, common, towns and cities, “Here to-day, up and off to somewhere else to-morrow!” His speech is a string of exclamations, like an advertisement, ending with a boast that he planned it all himself. Mole follows him eagerly inside; Rat only snorts and stays where he is, hands in his pockets."
+          ],
+          "evidence": [
+            "Here to-day, up and off to somewhere else to-morrow!",
+            "The Rat only snorted and thrust his hands deep into his pockets"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-02-q2",
+          "prompt": "Mole promises to stick to Rat, and then adds, “All the same…” What does that add, and why does it change Rat’s mind?",
+          "facilitatorNotes": [
+            "Mole is loyal, but wistful: it “might have been--well, rather fun.” The narrator says he had fallen in love with the cart at first sight. Rat sees what Mole feels and wavers, because he hates disappointing people. Rat is won over by kindness to Mole, not by Toad’s arguments."
+          ],
+          "evidence": [
+            "it sounds as if it might have been--well, rather fun, you know!",
+            "He hated disappointing people"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-02-q3",
+          "prompt": "Toad says his motto is “Live for others!” Test it against how he behaves at lunch and how he treats the old grey horse.",
+          "facilitatorNotes": [
+            "At lunch he ignores Rat and plays “upon the inexperienced Mole as on a harp,” saying whatever will excite him; earlier he told Rat “you know you've got to come.” The horse is given the dustiest job “without having been consulted.” The motto is a tool for getting his way. Some readers may think Toad also truly wants to share his joy; the text allows both, but his actions serve Toad first."
+          ],
+          "evidence": [
+            "'Live for others!' That's my motto in life.",
+            "he proceeded to play upon the inexperienced Mole as on a harp",
+            "without having been consulted, and to his own extreme annoyance"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-02-q4",
+          "prompt": "On the first night, what do Rat and Mole whisper about, and why does Rat refuse to run home? What does the chapter’s next short sentence warn?",
+          "facilitatorNotes": [
+            "Rat admits he thinks about his river “all the time,” and Mole offers to run away with him early in the morning. Rat says they must see it out, because Toad should not be left alone, and his fads never last. The narrator then says the end is nearer than Rat suspects, which promises trouble. Ask readers what kind of end they expect, and whether Rat is a good friend or too soft."
+          ],
+          "evidence": [
+            "I think about it--all the time!",
+            "It wouldn't be safe for him to be left to himself.",
+            "The end was indeed nearer than even the Rat suspected."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-03",
+      "title": "The Wind in the Willows: disaster on the high road (Chapter II, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Slow down for one very long sentence that describes a single second, and follow its sounds and pictures in order.",
+      "focus": "A motor-car wrecks the cart in an instant, and the three friends react in three very different ways.",
+      "context": "Recap: Toad talked Rat and Mole into a trip in his new canary-yellow caravan, pulled by an old grey horse; Rat, homesick for the river, stayed only because Toad should not be left alone. In 1908 motor-cars were new, fast, loud and owned only by the rich; country roads were dust, and a car raised a cloud of it, sounding a horn that went “poop-poop.” A high-road is a main road; by-lanes are small side roads; morocco is fine leather, used for car seats; plate-glass is thick polished glass; a shoal is a shallow place where a boat runs aground; steam-launches are small steamboats whose wash (waves) could flood a river-bank home. Road-hogs are drivers who behave as if they own the road.",
+      "contentNote": "A speeding car drives a horse-drawn cart into a ditch and wrecks it; the horse panics and a caged bird is left crying. No one is hurt.",
+      "excerpt": {
+        "locator": "Chapter II, “The Open Road,” from the next morning through the wreck of the cart; opens “After so much open air and excitement the Toad slept very soundly, and no amount of…”; closes “…wide world, and the bird in the bird-cage sobbing pitifully and calling to be let out.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-02",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-04",
+        "blocks": [
+          139,
+          145
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81c778c422de2b67baaf8492ad770e100f8f5983b3f2c621169b10a581002aca"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-03-q1",
+          "prompt": "How does Toad spend the first morning, and how does he describe the trip when he finally appears?",
+          "facilitatorNotes": [
+            "He sleeps through while Rat sees to the horse, fire and dishes and Mole walks miles for milk and eggs Toad forgot. Then Toad arrives “fresh and gay,” praising the easy life, which is easy only for him. Once the others make him share the work, he is no longer so “rapturous” and has to be hauled out of bed."
+          ],
+          "evidence": [
+            "remarking what a pleasant, easy life it was they were all leading now",
+            "whence he was hauled by force"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-03-q2",
+          "prompt": "Read the long paragraph about the motor-car aloud. Which words make the car seem like a wild creature rather than a machine?",
+          "facilitatorNotes": [
+            "Its horn “wailed like an uneasy animal in pain”; it is a cloud “with a dark centre of energy”; it is “immense, breath-snatching, passionate” and “possessed all earth and air.” It begins and ends as “a droning bee,” so for one second a small sound becomes a monster and shrinks again. The very long sentence races, as the car does."
+          ],
+          "evidence": [
+            "wailed like an uneasy animal in pain",
+            "immense, breath-snatching, passionate",
+            "changed back into a droning bee once more"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-03-q3",
+          "prompt": "Compare what Rat, Toad and Mole each do in the minutes after the crash.",
+          "facilitatorNotes": [
+            "Rat dances in the road, shaking his fists and threatening the law; the narrator says he feels like a ship’s captain wronged by reckless rivals, and forgets his homesickness. Toad sits in the dust with a calm, satisfied face, murmuring “Poop-poop!” Mole quiets the horse and inspects the wreck. Ask which reaction surprises readers most, and why Toad’s seems so strange."
+          ],
+          "evidence": [
+            "You villains!",
+            "His home-sickness had quite slipped away from him",
+            "his face wore a placid, satisfied expression",
+            "The Mole was busy trying to quiet the horse"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-03-q4",
+          "prompt": "Before the crash the narrator said this disaster would be “overwhelming in its effect on the after career of Toad.” Looking at Toad in the road, what do you predict, and why might the crash be a disaster for the cart but not, in Toad’s mind, for him?",
+          "facilitatorNotes": [
+            "The cart is “an irredeemable wreck,” yet Toad looks happy and keeps repeating the car’s sound. He seems to have fallen for the very thing that wrecked his last passion. A reader might predict a new craze for cars; another might guess he is simply in shock. The narrator’s warning suggests the change will last."
+          ],
+          "evidence": [
+            "simply overwhelming in its effect on the after career of Toad",
+            "at intervals he faintly murmured",
+            "an irredeemable wreck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-04",
+      "title": "The Wind in the Willows: Toad’s new craze (Chapter II, end)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Hear Toad’s speeches as a performance, and notice how his words about carts change.",
+      "focus": "Toad falls in love with motor-cars on the spot; Rat says he has done with him, yet sees him safely home.",
+      "context": "Recap: on the third day of their trip, a speeding motor-car drove Toad’s caravan into a ditch and wrecked it. Rat raged at the driver, Mole calmed the horse, and Toad sat in the road murmuring the car’s “Poop-poop!” Possessed here means taken over by a feeling, as if by a spirit; a craze is a sudden passion; vouchsafed means granted as a gift; to lodge a complaint is to report a wrong to the police; a wheelwright makes and mends wheels; a porter carries luggage at a station; twopence was a small sum; “Town” means London.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “The Open Road,” from the attempt to right the cart to the end of the chapter; opens “The Rat came to help him, but their united efforts were not sufficient to right the cart.…”; closes “…by an early train this morning. And he has ordered a large and very expensive motor-car.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-03",
+        "continuesTo": null,
+        "blocks": [
+          146,
+          163
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8b3b5f4cdb77c68184f178942063cb3c70476bffe3124d82fb5b53f0649eca0d"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-04-q1",
+          "prompt": "Toad once called his caravan “the very finest cart of its sort that was ever built.” What does he call carts now, and whose side is he on in his daydream?",
+          "facilitatorNotes": [
+            "“Horrid little carts--common carts--canary-coloured carts!” The last one is his own. He dreams of flinging carts into the ditch himself, so he now imagines being the driver who wrecked him, not the victim. His loyalty moves wherever his craze goes."
+          ],
+          "evidence": [
+            "Horrid little carts--common carts--canary-coloured carts!",
+            "What carts I shall fling carelessly into the ditch in the wake of my magnificent onset!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-04-q2",
+          "prompt": "Toad calls the motor-car “that swan, that sunbeam, that thunderbolt!” What does each of the three suggest, and what does piling them up show about Toad?",
+          "facilitatorNotes": [
+            "A swan is graceful, a sunbeam bright and quick, a thunderbolt sudden and destructive. No single word is big enough for him, so he stacks them, as he stacks exclamations (“O bliss! O poop-poop!”). The language is grand and religious (“heavenly vision,” “vouchsafed”), which is comic for a car that just wrecked his cart."
+          ],
+          "evidence": [
+            "that swan, that sunbeam, that thunderbolt!",
+            "that beautiful, that heavenly vision that has been vouchsafed me!",
+            "The poetry of motion!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-04-q3",
+          "prompt": "Rat says Toad is “possessed.” How does Rat know what will happen next, and is he right?",
+          "facilitatorNotes": [
+            "He has seen it before: “I know him from of old.” Each new craze takes Toad the same way in its first stage (Chapter I mentioned sailing, punting and house-boating). Rat predicts days of happy dreaming, and the last sentence shows the craze becoming action: Toad has gone to London and ordered an expensive car. Rat is right about the pattern, though perhaps not about how far Toad will go."
+          ],
+          "evidence": [
+            "You see, I know him from of old.",
+            "He has got a new craze, and it always takes him that way, in its first stage.",
+            "And he has ordered a large and very expensive motor-car."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-04-q4",
+          "prompt": "Rat says, “I've done with him,” yet he and Mole bring Toad all the way home. What do their actions show? Why does Toad’s thanks make Rat despair?",
+          "facilitatorNotes": [
+            "Mole worries that Toad is not safe alone in the road. Rat speaks “savagely,” but pays a porter to watch Toad, takes him by train to his door and has his housekeeper put him to bed. His words are angry; his actions are loyal. Toad thanks Rat for the trip that led to the car, so Rat’s reluctant kindness has fed the very craze he dreads. Some readers may say the friends are simply getting Toad off their hands."
+          ],
+          "evidence": [
+            "I've done with him.",
+            "giving a porter twopence to keep a strict eye on him",
+            "I owe it all to you, my best of friends!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-05",
+      "title": "The Wind in the Willows: a winter wish to meet Badger (Chapter III, first part)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow an extended comparison in which summer flowers arrive one by one like actors on a stage.",
+      "focus": "Rat keeps putting off Mole’s wish to meet Badger, while the long winter gives Mole time to make his own plan.",
+      "context": "The Wind in the Willows (1908) is by Kenneth Grahame, a Scottish-born writer who worked for most of his life at the Bank of England and first made up Toad’s adventures as bedtime stories and letters for his young son. Its animals live like English country gentlemen of the time, with houses, boats, money and servants, while keeping some animal habits. The edition here is an American one of 1913. In Chapter I, Mole came up from his underground home and went to live with the Water Rat on the river bank; at a picnic they glimpsed the Badger, who saw company, grunted and turned away. In Chapter II they travelled with rich, boastful Toad until a motor-car wrecked his caravan. Now summer is over. A personage is an important person; miry means muddy; loosestrife, willow-herb, comfrey, dog-rose and meadow-sweet are English waterside wildflowers; a gavotte is an old French dance; nymphs are spirits of nature in old stories; debonair means charming and stylish; a jerkin is a close-fitting jacket; languorous means lazy and dreamy; a siesta is an afternoon nap.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter III, “The Wild Wood,” from the start through Mole’s resolution to go out alone; opens “The Mole had long wanted to make the acquaintance of the Badger. He seemed, by all…”; closes “…himself and explore the Wild Wood, and perhaps strike up an acquaintance with Mr. Badger.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-grahame-wind-willows-1913-06",
+        "blocks": [
+          165,
+          175
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9ae6c06372908ae0223ea816e3d1e69a0b8e259172fd61d01e1bf7068db2887c"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-05-q1",
+          "prompt": "What reasons does Rat give for not visiting Badger? Do they fit together?",
+          "facilitatorNotes": [
+            "Badger hates invitations; he is shy and would be offended; Rat has never dared call on him; he lives in the middle of the Wild Wood; it is a long way; he would not be at home at this time of year. The reasons keep changing, and Rat answers “quite alarmed” and “evasively.” Mole reminds him he once said the Wild Wood was all right. Readers may suspect the real reason is fear of the wood."
+          ],
+          "evidence": [
+            "replied the Rat evasively",
+            "because he lives in the very middle of the Wild Wood",
+            "You told me the Wild Wood was all right, you know."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-05-q2",
+          "prompt": "In the paragraph beginning “Such a rich chapter it had been,” the summer flowers arrive like actors in a play. Which one is last, and why is it worth waiting for?",
+          "facilitatorNotes": [
+            "Meadow-sweet, “debonair and odorous in amber jerkin,” is like the shepherd-boy, the knight or the prince that the others wait for; when he takes his place “the play was ready to begin.” Each flower has a personality: loosestrife admires its face in the water, the dog-rose is shy and late. The comparison turns the order of summer flowers into a show."
+          ],
+          "evidence": [
+            "the diffident and delaying dog-rose stepped delicately on the stage",
+            "the prince that was to kiss the sleeping summer back to life and love",
+            "then the play was ready to begin"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-05-q3",
+          "prompt": "How is the animals’ winter different from the summer they remember? Find one detail of each.",
+          "facilitatorNotes": [
+            "Winter: a swollen river too fast for boating, cold and mud, Rat sleeping late and scribbling poems, friends telling stories by the fire. The remembered summer: mist on the water, an early plunge, the sun turning “grey” to “gold,” siestas, boating and rambles. Remembering in the dark season makes summer even brighter. Ask which season the narrator seems to enjoy describing more."
+          ],
+          "evidence": [
+            "the swollen river raced past outside their windows with a speed that mocked at boating of any sort or kind",
+            "grey was gold and colour was born"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-05-q4",
+          "prompt": "Mole decides to explore the Wild Wood alone. What leads him to it, and is it a wise plan?",
+          "facilitatorNotes": [
+            "The Badger never comes; Mole’s thoughts keep returning to him; he has “a good deal of spare time,” and Rat is dozing over rhymes. He does not tell Rat. Some readers will call it brave and natural curiosity, since Rat once said the wood was all right; others will notice Rat’s alarm as a warning Mole has ignored."
+          ],
+          "evidence": [
+            "he found his thoughts dwelling again with much persistence on the solitary grey Badger",
+            "the Mole had a good deal of spare time on his hands",
+            "he formed the resolution to go out by himself and explore the Wild Wood"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-06",
+      "title": "The Wind in the Willows: the Terror of the Wild Wood (Chapter III, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow how fear builds in stages, and notice the very short paragraphs that mark each new stage.",
+      "focus": "Mole’s cheerful walk turns into a nightmare; the narrator makes us feel the fear without ever showing who causes it.",
+      "context": "Recap: Mole, spending the winter with the Water Rat, has long wanted to meet the Badger, who lives in the middle of the Wild Wood, but Rat keeps putting him off. One afternoon, while Rat dozes by the fire, Mole sets out alone. Copses are small woods; dells are small hollows; quickset is a hedge; a masquerade is a costume party; a reef is a ridge of rock just under the sea; caricatures are drawings that exaggerate a face; malice is the wish to do harm.",
+      "contentNote": "Mole is alone and lost at nightfall while unseen creatures seem to hunt him; his terror is described closely, though nothing attacks him.",
+      "excerpt": {
+        "locator": "Chapter III, “The Wild Wood,” from Mole’s setting out through his hiding place in the hollow beech tree; opens “It was a cold, still afternoon with a hard, steely sky overhead, when he slipped out of…”; closes “…thing which the Rat had vainly tried to shield him from--the Terror of the Wild Wood!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-05",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-07",
+        "blocks": [
+          176,
+          187
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3b48b833fdd78d7561e8b6a457e08ce2dba5ec58a999e7d9099d5baf4a3a4c8b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-06-q1",
+          "prompt": "How does Mole feel as he sets out? Find the one picture of the wood that warns the reader before he reaches it.",
+          "facilitatorNotes": [
+            "He is cheerful, even “exhilarated”; he likes the bare winter country, “the bare bones of it.” Then the wood lies ahead “low and threatening, like a black reef” in a calm sea: something hidden that a boat could strike. The narrator lets us feel uneasy while Mole feels fine."
+          ],
+          "evidence": [
+            "even exhilarating",
+            "with great cheerfulness of spirit he pushed on towards the Wild Wood",
+            "like a black reef in some still southern sea"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-06-q2",
+          "prompt": "Three paragraphs are only four words long, each beginning “Then the…” What are the three things, and why might Grahame give each its own paragraph?",
+          "facilitatorNotes": [
+            "Faces, then whistling, then pattering: first glimpses, then sounds far off, then the sound of feet closing in, each worse than the last. A short paragraph works like a held breath before a new fear, and the repeated pattern makes readers dread the next one. Read them aloud with a pause before each."
+          ],
+          "evidence": [
+            "Then the faces began.",
+            "Then the whistling began.",
+            "Then the pattering began."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-06-q3",
+          "prompt": "We never learn who the faces belong to. Does that make the scene more frightening or less?",
+          "facilitatorNotes": [
+            "More, for many readers: the faces vanish when Mole turns, the whistlers are “whoever they were,” and the wood closes in on “something or--somebody?” Not knowing leaves room for our own fears. Some readers find a named enemy scarier. Either view should point to a detail."
+          ],
+          "evidence": [
+            "When he turned and confronted it, the thing had vanished.",
+            "They were up and alert and ready, evidently, whoever they were!",
+            "closing in round something or--somebody?"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-06-q4",
+          "prompt": "What does the running rabbit add? And what does Mole understand at the end that Rat had tried to protect him from?",
+          "facilitatorNotes": [
+            "The rabbit knows the wood and is fleeing too, so the danger is not just Mole “imagining things,” as he told himself. At the end Mole knows the “Terror of the Wild Wood,” a fear other small animals have met, and understands why Rat kept him away. His earlier cheerfulness now looks like innocence."
+          ],
+          "evidence": [
+            "telling himself cheerfully not to begin imagining things",
+            "Get out of this, you fool, get out!",
+            "that thing which the Rat had vainly tried to shield him from"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-07",
+      "title": "The Wind in the Willows: Rat goes looking (Chapter III, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow Rat’s clues in order, and compare how the same wood looks in fear, in company, and under snow.",
+      "focus": "Rat tracks Mole down and explains the wood’s rules; then the snow that hides every danger also hides the way home.",
+      "context": "Recap: Mole went into the Wild Wood alone to look for Badger. As night fell, faces in holes, whistling and running feet drove him to hide, panting, in a hollow beech tree. Back home, Rat has been dozing over his poems. Goloshes (galoshes) are rubber overshoes; a brace is a pair; a cudgel is a thick stick used as a weapon; valorous means brave; guineas were gold coins; boles are tree trunks; faery means fairyland; at sea here means completely lost.",
+      "contentNote": "Rat takes two pistols and a heavy stick into the wood for protection; he does not use them.",
+      "excerpt": {
+        "locator": "Chapter III, “The Wild Wood,” from Rat waking by the fire through the friends lost in the snow; opens “Meantime the Rat, warm and comfortable, dozed by his fireside. His paper of half-finished…”; closes “…to this wood, and no beginning, and no difference in it, and, worst of all, no way out.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-06",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-08",
+        "blocks": [
+          188,
+          213
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f791bced2f5b2afd0bc9a0384ab1510a6b45596eb38fe2d03e4a63ff3c9d30a1"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-07-q1",
+          "prompt": "How does Rat work out where Mole has gone? List his clues in order.",
+          "facilitatorNotes": [
+            "Mole is not in the room; the house is quiet; his cap is missing from its peg and his goloshes are gone; new goloshes leave sharp prints in the mud, “straight and purposeful,” heading for the Wild Wood. Each clue narrows the answer, like a detective’s. “Purposeful” tells Rat that Mole meant to go there."
+          ],
+          "evidence": [
+            "The Mole's cap was missing from its accustomed peg.",
+            "running along straight and purposeful, leading direct to the Wild Wood"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-07-q2",
+          "prompt": "Why do the faces vanish and the whistling stop when Rat comes into the wood?",
+          "facilitatorNotes": [
+            "They vanish “at sight of the valorous animal, his pistols, and the great ugly cudgel”; Rat walks in armed and confident, calling out cheerfully. The creatures seem to frighten only those who are small, alone and afraid. Rat also knows the wood’s rules, such as coming in pairs."
+          ],
+          "evidence": [
+            "vanished immediately at sight of the valorous animal, his pistols, and the great ugly cudgel in his grasp",
+            "If we have to come, we come in couples at least"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-07-q3",
+          "prompt": "Rat says river-bankers need “passwords, and signs, and sayings which have power and effect.” Are these magic, or something else?",
+          "facilitatorNotes": [
+            "He mentions plants in the pocket and verses to repeat, which sound like charms; he also mentions “dodges and tricks,” which sound like plain experience. Either way, it is knowledge passed on among those who live nearby, and “they've got to be known if you're small.” Even boastful Toad would not come alone. Readers can argue for either reading."
+          ],
+          "evidence": [
+            "passwords, and signs, and sayings which have power and effect",
+            "but they've got to be known if you're small",
+            "He wouldn't show his face here alone"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-07-q4",
+          "prompt": "When it snows, the wood that was “so dreadful” to Mole changes. How does the snow first seem to help, and how does it then make things worse?",
+          "facilitatorNotes": [
+            "It covers the holes and pitfalls, the “black menaces,” with a “gleaming carpet of faery,” so the wood looks lovely and safe. But it also hides every path: Rat cannot tell where they are, every tree looks alike, and the night ends with “no way out.” The same thing that hides danger hides the way home."
+          ],
+          "evidence": [
+            "a gleaming carpet of faery was springing up everywhere",
+            "this snow makes everything look so very different",
+            "and, worst of all, no way out."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-08",
+      "title": "The Wind in the Willows: the door in the snow bank (Chapter III, end)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow Rat’s reasoning from clue to clue before Mole does, and enjoy knowing more than a character.",
+      "focus": "A cut shin leads Rat to a door-scraper, a door-mat and at last Badger’s door, while Mole refuses to see what the clues mean.",
+      "context": "Recap: Rat found Mole hiding in a hollow tree in the Wild Wood, but snow fell while they rested, and now they are lost, soaked and worn out. A dell is a small hollow; hummocky means covered with small mounds; a shin is the front of the leg below the knee; a door-scraper is an iron blade by a door for scraping mud off boots; obtuseness is slowness to understand; pettishly means crossly; a rodent is a gnawing animal such as a rat; a bell-pull is a handle that rings a bell inside. Mole’s “whatever done it” is bad grammar on purpose: the narrator says he is “forgetting his grammar in his pain.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter III, “The Wild Wood,” from Rat’s plan to search the dell to the end of the chapter; opens “\"We can't sit here very long,\" said the Rat. \"We shall have to make another push for it,…”; closes “…ground, and from quite a long way off they could faintly hear a deep-toned bell respond.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-07",
+        "continuesTo": null,
+        "blocks": [
+          214,
+          242
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28bfd1a44db1281c419b38517d6a39561704d9044fa46c41e954925647bac21b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-08-q1",
+          "prompt": "How does Rat know Mole’s cut was not made by a branch, and what does he do about it?",
+          "facilitatorNotes": [
+            "It is “a very clean cut,” made by a sharp metal edge. Metal in the middle of a wood means something made by someone, so Rat ties up the leg and starts digging in the snow. One small fact starts the whole search."
+          ],
+          "evidence": [
+            "That was never done by a branch or a stump.",
+            "Looks as if it was made by a sharp edge of something in metal."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-08-q2",
+          "prompt": "Mole sees the door-scraper and the door-mat. What does he think they are, and why are his answers funny?",
+          "facilitatorNotes": [
+            "Litter left by a careless person; he even plans to complain “to--to somebody or other,” and asks whether they can eat a door-mat or sledge home on it. “Door-mats know their place” sounds like a rule of manners. It is funny because the reader has guessed what Rat is digging for, and Mole, tired and hurt, answers “with perfect truthfulness.”"
+          ],
+          "evidence": [
+            "you seem to have found another piece of domestic litter",
+            "Door-mats know their place."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-08-q3",
+          "prompt": "When the door appears, Mole retells Rat’s reasoning step by step. Is his summary right? Why does Rat cut him off “rather unkindly”?",
+          "facilitatorNotes": [
+            "Yes: cut shin, then door-scraper, then door-mat, then door, each step proving the next, like a detective in a book. Rat interrupts because they are freezing and must ring the bell at once; he may also be impatient after Mole’s arguing, or embarrassed by so much praise. Readers can choose a reason and support it."
+          ],
+          "evidence": [
+            "You argued it out, step by step, in that wise head of yours",
+            "I've read about that sort of thing in books",
+            "interrupted the Rat, rather unkindly"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-08-q4",
+          "prompt": "Rat and Mole call each other names in this scene, then Mole cries, “you're a wonder!” Are they still good friends? And why is it fitting that the chapter ends at this door?",
+          "facilitatorNotes": [
+            "Cold, pain and fear make them short-tempered, but the insults are comic and the quarrel ends at once. The brass plate says “MR. BADGER”: Mole set out to meet Badger, and he gets there after all, though not the way he planned. Chapter IV opens with the friends waiting at this door."
+          ],
+          "evidence": [
+            "you exasperating rodent?",
+            "you're a wonder!",
+            "MR. BADGER."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-09",
+      "title": "The Wind in the Willows: the hour of Toad (Chapter VI, first part)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Watch how a group of friends plans to rescue someone from himself, and notice what Toad’s clothes do to him.",
+      "focus": "Badger, Rat and Mole march on Toad Hall as a new motor-car arrives, strip Toad of his motoring clothes and set out to talk sense into him.",
+      "context": "The Wind in the Willows (1908) is by Kenneth Grahame, a Scottish-born writer who worked for most of his life at the Bank of England and first made up Toad’s adventures as bedtime stories and letters for his young son. Its animals live like English country gentlemen of the time, with houses, boats, money and servants, while keeping some animal habits. The edition here is an American one of 1913. In Chapter II, Toad of Toad Hall, rich and boastful, fell in love with motor-cars when one ran his horse-drawn caravan off the road. Since then he has smashed several cars, been in hospital and paid heavy fines, and in Chapter IV the Badger promised to take him in hand when winter was over. Now it is early summer. Wonted means usual; a car sent “on approval or return” may be sent back if not wanted; habiliments are clothes; ere means before; gaiters cover the lower legs; gauntleted gloves have long cuffs; a chauffeur is a paid driver; a panoply is a full suit of armour, here a grand outfit; to squander is to waste; a smoking-room was a private room for men to talk in. Words between underscores are printed in italics in the book.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “Mr. Toad,” from Badger’s morning call through Badger leading Toad into the smoking-room; opens “It was a bright morning in the early part of summer; the river had resumed its wonted…”; closes “…Toad firmly by the arm, led him into the smoking-room, and closed the door behind them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-grahame-wind-willows-1913-10",
+        "blocks": [
+          379,
+          401
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8a655e243f845326133f8bd909b3282a4da4c8807b13c76a16667e147663716b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-09-q1",
+          "prompt": "Why is the Badger’s visit such a surprise?",
+          "facilitatorNotes": [
+            "He never pays formal calls. Usually you have to catch him slipping along a hedgerow early or late, or hunt him out in his house in the Wild Wood, which is “a serious undertaking.” His coming at all tells Rat and Mole that something important is afoot."
+          ],
+          "evidence": [
+            "This was a wonderful thing, indeed, that the Badger should pay a formal call on them",
+            "He generally had to be caught, if you wanted him badly"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-09-q2",
+          "prompt": "What do Toad’s motoring clothes do to him? What happens when they come off?",
+          "facilitatorNotes": [
+            "Goggles, cap, gaiters and an enormous overcoat turn him into “the Terror of the Highway.” Once Rat sits on him and Mole peels them off, his bluster drains away, and he is “merely Toad,” giggling feebly. The clothes are half the swagger."
+          ],
+          "evidence": [
+            "A good deal of his blustering spirit seemed to have evaporated with the removal of his fine panoply.",
+            "Now that he was merely Toad, and no longer the Terror of the Highway"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-09-q3",
+          "prompt": "What does Badger accuse Toad of? Which charge do you think matters most to the animals?",
+          "facilitatorNotes": [
+            "Ignoring warnings, wasting the money his father left, and giving animals a bad name with his furious driving, crashes and rows with the police. Badger respects independence, but friends must stop a friend making a fool of himself “beyond a certain limit.” Readers may pick Toad’s safety, his money, or the animals’ good name, and should say why."
+          ],
+          "evidence": [
+            "you've gone on squandering the money your father left you",
+            "Independence is all very well, but we animals never allow our friends to make fools of themselves beyond a certain limit"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-09-q4",
+          "prompt": "Badger says they will see whether Toad comes out of the smoking-room “the same Toad that you went in.” What do you predict? Can a talk change someone?",
+          "facilitatorNotes": [
+            "Badger believes plain facts, firmly told, can change Toad. Readers who know Toad’s excitable nature may doubt it, and some will say a person changes only when he wants to. Keep the predictions for the next night."
+          ],
+          "evidence": [
+            "You will come with me into the smoking-room, and there you will hear some facts about yourself",
+            "we'll see whether you come out of that room the same Toad that you went in"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-10",
+      "title": "The Wind in the Willows: Toad is not sorry (Chapter VI, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Decide whether Toad is lying or telling the truth when he takes back his promise, and whether his friends are right to lock him up.",
+      "focus": "Toad weeps and promises under Badger’s talking-to, then refuses to repeat the promise before his friends, so they lock him in his bedroom for his own good.",
+      "context": "Recap: Badger, Rat and Mole marched to Toad Hall as a new motor-car arrived, sent its driver away, stripped Toad of his motoring clothes, and Badger took him into the smoking-room to hear some facts about himself. Oratory is grand speech-making; a discourse is a long speech; dubiously means doubtfully; folly is foolishness; a backsliding animal falls back into bad ways; scandalised means shocked; eloquent means good with words; repentant means sorry; “poop-poop!” is the sound of a motor horn; tedious means tiresome; paroxysms are sudden fits; uncouth means rough; prostrate means lying flat; languid means listless.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “Mr. Toad,” from Rat’s doubts outside the smoking-room through Toad’s first weeks under guard; opens “\"_That's_ no good!\" said the Rat contemptuously. \"_Talking_ to Toad'll never cure him.…”; closes “…in other matters did not seem to revive, and he grew apparently languid and depressed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-09",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-11",
+        "blocks": [
+          402,
+          424
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e970950dae17cb81d3f446f2bc4776acfdcbec9de5e64be761b396256abf3aa"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-10-q1",
+          "prompt": "What do Rat and Mole hear through the smoking-room door, and what does it tell them about Toad?",
+          "facilitatorNotes": [
+            "The long drone of Badger’s speech, rising and falling, and then Toad’s sobs. Toad is soft-hearted and “very easily converted”: but the narrator adds “for the time being.”"
+          ],
+          "evidence": [
+            "the long continuous drone of the Badger's voice, rising and falling in waves of oratory",
+            "very easily converted--for the time being--to any point of view"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-10-q2",
+          "prompt": "Why does Toad refuse to repeat his promise in front of his friends? Is he lying, or being honest?",
+          "facilitatorNotes": [
+            "He says he would have said anything “in there,” because Badger is so eloquent; but thinking it over, he is not sorry at all, and it was “simply glorious.” Oddly, refusing is the most honest thing he has said: he will not pretend. Some readers admire that; others see only stubbornness."
+          ],
+          "evidence": [
+            "I'd have said anything in _there_.",
+            "I find that I'm not a bit sorry or repentant really, so it's no earthly good saying I am"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-10-q3",
+          "prompt": "What do the friends do next, and how do they explain it to Toad? Is it right to lock up a friend for his own good?",
+          "facilitatorNotes": [
+            "Badger decides to “try what force can do,” and they lock Toad in his bedroom and take turns guarding him, promising to look after his money and keep him from the police and hospital. Readers can argue that real friends would do it, or that Toad’s home and choices are his own."
+          ],
+          "evidence": [
+            "Since you won't yield to persuasion, we'll try what force can do.",
+            "It's for your own good, Toady, you know"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-10-q4",
+          "prompt": "What does Toad do with the bedroom chairs? Why does Badger call his craze a “poison”?",
+          "facilitatorNotes": [
+            "He sets them up like a car, crouches on the front one making engine noises, then somersaults into the wreck, satisfied. Badger treats the craze like a sickness or a habit that must work its way out of his body. As the fits fade, Toad grows dull and low, which is not the same as cured."
+          ],
+          "evidence": [
+            "he would arrange bedroom chairs in rude resemblance of a motor-car",
+            "till the poison has worked itself out of his system"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-11",
+      "title": "The Wind in the Willows: Toad’s artfullest (Chapter VI, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow, step by step, how Toad tricks a friend who means well, and decide how much the Rat is to blame.",
+      "focus": "Pretending to be dying, Toad sends the Rat for a doctor and a lawyer, climbs out of the window on knotted sheets and escapes, and the Rat must face Badger and Mole.",
+      "context": "Recap: Toad refused to promise to give up motor-cars, so Badger, Rat and Mole locked him in his bedroom at Toad Hall and took turns guarding him. His fits of “motoring” on the bedroom chairs grew rarer, and he became listless and low. Artful means cunning; Sunday-school prizes were often goody-goody storybooks; a burden is a load, someone others must carry; a lawyer would be needed to make a will; a mullion is the upright stone bar in a window; Tudor windows are in the style of the 1500s; a duffer is a fool; crestfallen means downcast; caustic means biting; sentry-go is guard duty; turbid means muddy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “Mr. Toad,” from Badger’s warning to Rat through the gloomy luncheon after Toad’s escape; opens “One fine morning the Rat, whose turn it was to go on duty, went upstairs to relieve…”; closes “* * * * *”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-10",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-12",
+        "blocks": [
+          425,
+          446
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ed7281febc98f1901ab536cdc49c68c2bab4e5aa04084235b50c82ba3ab50866"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-11-q1",
+          "prompt": "What does Badger warn Rat about before he leaves?",
+          "facilitatorNotes": [
+            "That when Toad is quiet and obedient, acting like the good little hero of a Sunday-school book, he is at his most cunning: “There’s sure to be something up.” Badger knows Toad well, and the warning sets up everything that follows."
+          ],
+          "evidence": [
+            "When Toad's quiet and submissive, and playing at being the hero of a Sunday-school prize, then he's at his artfullest."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-11-q2",
+          "prompt": "How does Toad trick the Rat? Find the steps.",
+          "facilitatorNotes": [
+            "A feeble voice; polite questions about Rat and Mole; hints that he will not be a burden much longer; making Rat feel guilty for not noticing; asking for the doctor; then, as if by the way, the lawyer, which suggests he is making his will. Each step makes the next more believable."
+          ],
+          "evidence": [
+            "Noticing things is only a trouble.",
+            "would you mind at the same time asking the lawyer to step up?"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-11-q3",
+          "prompt": "Rat decides “It's best to be on the safe side.” Was he foolish, or did he do the sensible thing?",
+          "facilitatorNotes": [
+            "He thought it through, locked the door behind him, and reasoned that a doctor could do no harm; the lawyer convinced him. Mole calls him “a bit of a duffer,” and he admits Toad “did it awfully well.” Some readers will say kindness made him easy to fool; others that anyone might have gone, and that Rat was right to take illness seriously."
+          ],
+          "evidence": [
+            "It's best to be on the safe side",
+            "said the crestfallen Rat"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-11-q4",
+          "prompt": "What does Badger predict, and what does the narrator hint at the end?",
+          "facilitatorNotes": [
+            "That Toad, proud of his cleverness, will do something foolish, and may come back “on a stretcher, or between two policemen.” The narrator adds that much muddy water must run under bridges before Toad sits at home again: there is a long, troubled story ahead."
+          ],
+          "evidence": [
+            "on a stretcher, or between two policemen",
+            "how much water, and of how turbid a character, was to run under bridges"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-12",
+      "title": "The Wind in the Willows: twenty years for Toad (Chapter VI, end)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Watch Toad lose control one small step at a time, and enjoy how the story turns a trial and a prison into comedy.",
+      "focus": "Toad, delighted with himself, sees a motor-car at an inn, only means to look at it, drives off in it, and is sentenced to twenty years in the grimmest dungeon in England.",
+      "context": "Recap: Pretending to be dying, Toad sent the Rat to fetch a doctor and a lawyer, then climbed out of his bedroom window on knotted sheets, with his pockets full of money, and escaped from his friends. Conceit is thinking too well of yourself; an inn’s coffee-room is its dining room; voluble means talkative; to saunter is to stroll; a car was started by turning a handle at the front; sonorous means deep and loud; a traffic-queller is one who stops all traffic; magistrates are local judges who sit together on “the Bench”; incorrigible means unable to be corrected; the dock is where the accused stands; “cheek” and impertinence are rudeness; minions are servants; the populace is the crowd; a portcullis is a castle’s iron gate; a casquet and corselet are a helmet and breastplate; halberds are axe-spears; the rack and thumbscrew were instruments of torture; a scaffold is a platform for executions; a keep is a castle’s strongest tower; a gaoler is a jailer; “Oddsbodikins!” and “a murrain on” are old oaths. Merry England is an old fond name for the country.",
+      "contentNote": "On Toad’s way to the dungeon the story jokingly passes torture rooms and a scaffold, and a crowd pelts him with carrots and jeers.",
+      "excerpt": {
+        "locator": "Chapter VI, “Mr. Toad,” from Toad’s walk along the high road to the end of the chapter; opens “Meanwhile, Toad, gay and irresponsible, was walking briskly along the high road, some…”; closes “…best-guarded keep of the stoutest castle in all the length and breadth of Merry England.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-11",
+        "continuesTo": null,
+        "blocks": [
+          447,
+          462
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a29bdd70e39c1b693da58892358d282e1c0e8d730fa7a6052d3aa68413e816b4"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-12-q1",
+          "prompt": "What does Toad say to himself about his escape? What does it show about him?",
+          "facilitatorNotes": [
+            "He praises his own “Brain against brute force” and calls Ratty a worthy fellow with “very little intelligence and absolutely no education,” though Rat was only trying to help him. He is conceited and ungrateful, and he cannot see it."
+          ],
+          "evidence": [
+            "Brain against brute force--and brain came out on the top",
+            "A worthy fellow, Ratty, with many good qualities, but very little intelligence and absolutely no education."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-12-q2",
+          "prompt": "Trace the steps from “only just looking” to stealing the car. How does Grahame show Toad losing control?",
+          "facilitatorNotes": [
+            "He hears the horn and trembles, holds the table leg, slips out “only just” to look, walks round the car, wonders whether it “starts easily,” then finds himself turning the handle “hardly knowing how.” “As if in a dream” comes three times: right and wrong are switched off. Readers may debate whether that makes him less to blame."
+          ],
+          "evidence": [
+            "in my only just _looking_ at it!",
+            "as if in a dream, all sense of right and wrong, all fear of obvious consequences, seemed temporarily suspended"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-12-q3",
+          "prompt": "How does the Clerk arrive at twenty years? What is the joke?",
+          "facilitatorNotes": [
+            "Twelve months for stealing the car, “which is mild”; three years for dangerous driving; fifteen years for being rude to the police, the worst of all; nineteen in total, rounded up “to be on the safe side.” The joke is that the court cares most about its own dignity. Readers may ask what a fair sentence would be."
+          ],
+          "evidence": [
+            "But cheeking the police undoubtedly carries the severest penalty; and so it ought.",
+            "So you had better make it a round twenty years and be on the safe side"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-12-q4",
+          "prompt": "Toad is dragged past drawbridges, soldiers in armour and torture rooms. Is that meant to be real? Why tell it this way?",
+          "facilitatorNotes": [
+            "A modern motor-car case ends in an old storybook castle, with men-at-arms and “Oddsbodikins!”: the narrator piles it up to make Toad’s fall as grand and as funny as his boasting. The jeering crowd and “hooting school children” show the narrator’s irony too. Some readers will feel sorry for Toad; others will say he had it coming."
+          ],
+          "evidence": [
+            "past the rack-chamber and the thumbscrew-room, past the turning that led to the private scaffold",
+            "Toad was a helpless prisoner in the remotest dungeon of the best-guarded keep of the stoutest castle in all the length and breadth of Merry England."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-13",
+      "title": "The Wind in the Willows: the search by moonlight (Chapter VII, first part)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Notice how worry spreads from one friend to another, and how moonlight changes a familiar place.",
+      "focus": "Otter’s little son Portly has been missing for days, so Mole and Rat take the boat out on a midsummer night to search the river by moonlight.",
+      "context": "The Wind in the Willows (1908) is by Kenneth Grahame, a Scottish-born writer who worked for most of his life at the Bank of England and first made up Toad’s adventures as bedtime stories and letters for his young son. Its animals live like English country gentlemen of the time, with houses, boats, money and servants, while keeping some animal habits. The edition here is an American one of 1913. In this book’s earlier chapters Mole came to live with the Water Rat on the river bank, where their friends include Otter, a big, cheerful river animal with a young son, Portly. This chapter is a story of its own, set on the river while Toad is away. The selvedge is the edge; torrid means scorching; a weir is a low dam the river pours over, with dangerous rushing water below; a ford is a shallow place to cross a river; a spit is a narrow point of land; to “pump” someone is to get them to tell you things; sculls are oars; vocations are jobs; articulate means spoken in clear words; phosphorescence is a soft glow; raiment and apparel are clothes; runnels are little streams; culverts are drains running under a bank or road. Words between underscores are printed in italics in the book.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “The Piper at the Gates of Dawn,” from the midsummer night on the river bank through the search by moonlight; opens “The Willow-Wren was twittering his thin little song, hidden himself in the dark selvedge…”; closes “…sank earthwards reluctantly, and left them, and mystery once more held field and river.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-grahame-wind-willows-1913-14",
+        "blocks": [
+          464,
+          478
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "56bac43ecd4713fffb9a3c3953842f85f7a6b71c6f74f42f0a1c636b53c1e24b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-13-q1",
+          "prompt": "How do Mole and Rat each react to the news that Portly is missing? What makes it more serious this time?",
+          "facilitatorNotes": [
+            "Mole is light about it: Portly always strays and turns up again. Rat explains that he has been gone for days, nobody has seen him, he cannot swim well, and Otter, who never worries too soon, is worried now, thinking of the weir and of traps."
+          ],
+          "evidence": [
+            "said the Mole lightly",
+            "Otter's not the fellow to be nervous about any son of his before it's time. And now he _is_ nervous."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-13-q2",
+          "prompt": "Why does Otter watch at the old ford every night?",
+          "facilitatorNotes": [
+            "It is where he gave Portly his first swimming-lesson and taught him to fish, and the child loved it. If Portly wanders back, he might go there. Otter watches all night “just on the chance”: a father holding on to a small hope."
+          ],
+          "evidence": [
+            "it was there he gave Portly his first swimming-lesson",
+            "So Otter goes there every night and watches--on the chance, you know, just on the chance!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-13-q3",
+          "prompt": "Mole cannot “do nothing, even though there doesn't seem to be anything to be done.” Why go out at all?",
+          "facilitatorNotes": [
+            "Lying in bed while a friend keeps a lonely watch would be unbearable; searching, even with little hope, is better. Rat already feels the same: he talks of bed but “never offered to move.” Readers may know the feeling of needing to do something, anything, when someone is in trouble."
+          ],
+          "evidence": [
+            "But he never offered to move.",
+            "it will be better than going to bed and doing _nothing_"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-13-q4",
+          "prompt": "How does moonrise change the river? Find the comparison with clothes.",
+          "facilitatorNotes": [
+            "The dark is full of noises and shadows as solid as banks; when the moon rises, everything is seen again, “washed clean of mystery and terror,” yet different. The old places look as if they had changed into new clothes and come back shyly to see whether their friends would know them."
+          ],
+          "evidence": [
+            "all washed clean of mystery and terror",
+            "Their old haunts greeted them again in other raiment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-14",
+      "title": "The Wind in the Willows: the Piper at the Gates of Dawn (Chapter VII, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Read slowly, and notice how sound, light and silence prepare for what the friends find on the island.",
+      "focus": "At dawn, music draws Rat and Mole to an island below the weir, where they see the Friend and Helper of the animals with little Portly asleep at his feet.",
+      "context": "Recap: Otter’s small son Portly has been missing for days, and Otter watches every night at the ford where he taught him to swim. Mole and Rat rowed upstream through the midsummer night to search the banks by moonlight; now the moon has set and dawn is near. Rapt and transported mean carried away; to dandle is to bounce a baby; osiers are willows; a backwater is a quiet side branch of a river; imperious means commanding; “as they were wont” means as they usually do; eddies are swirls; sloe is blackthorn; awe is wonder mixed with fear; august means grand and holy; cowed means frightened into stillness; a sward is a lawn; pan-pipes are a row of reed pipes. The figure they meet is never named, but he is Pan, the old Greek god of wild nature and shepherds, half man and half goat, who plays the pipes; Grahame calls him the Friend and Helper, and a demi-god, a lesser god. Capricious means changeable; oblivion is forgetting.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “The Piper at the Gates of Dawn,” from the first sound of piping before dawn through the gift of forgetfulness; opens “Then a change began slowly to declare itself. The horizon became clearer, field and tree…”; closes “…out of difficulties, in order that they should be happy and light-hearted as before.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-13",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-15",
+        "blocks": [
+          479,
+          497
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5f68987b354fa6c8a85ca885c9630e1d7a8962eb17bc11ac41e0797c9e02b904"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-14-q1",
+          "prompt": "Rat hears the music before Mole. What does it do to him? What does Mole hear at first?",
+          "facilitatorNotes": [
+            "It fills him with a longing “that is pain,” and the call in it is “stronger even than the music is sweet”; he is held by it like a happy baby in strong arms. Mole hears only the wind in the reeds, until the music reaches him too."
+          ],
+          "evidence": [
+            "For it has roused a longing in me that is pain",
+            "but the wind playing in the reeds and rushes and osiers"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-14-q2",
+          "prompt": "As they near the island, what is strange about this dawn?",
+          "facilitatorNotes": [
+            "The light grows but no birds sing; everything is silent except the music and the weir. The grass is greener and the flowers brighter than they have ever seen, and the island seems to hide its secret “behind a veil” until the right moment."
+          ],
+          "evidence": [
+            "but no birds sang as they were wont to do at the approach of dawn",
+            "Never had they noticed the roses so vivid"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-14-q3",
+          "prompt": "What does Mole see when he looks up, and in what order? Why does the baby otter come last?",
+          "facilitatorNotes": [
+            "The eyes of the Friend and Helper, the curved horns, the hooked nose and kindly, amused eyes, the half-smile, the arm, the pipes, the shaggy limbs, and last of all Portly asleep between his hooves. Saving the lost child for last turns awe into relief: the frightening figure is the one who has kept him safe."
+          ],
+          "evidence": [
+            "he looked in the very eyes of the Friend and Helper",
+            "the little, round, podgy, childish form of the baby otter"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-14-q4",
+          "prompt": "“O, never, never! And yet--and yet--O, Mole, I am afraid!” Can you be afraid and not afraid at once? Why does the Helper make them forget?",
+          "facilitatorNotes": [
+            "Rat feels love and fear together, the feeling called awe: not terror, but trembling before something far greater than himself. The forgetting is a kindness, so that the memory does not overshadow the rest of their small, happy lives. Ask readers whether they would choose to remember or to forget."
+          ],
+          "evidence": [
+            "Afraid! Of _Him_? O, never, never! And yet--and yet--O, Mole, I am afraid!",
+            "the gift of forgetfulness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-15",
+      "title": "The Wind in the Willows: Portly comes home (Chapter VII, end)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Look for the traces of what the friends have forgotten, and listen to the words Rat hears in the reeds.",
+      "focus": "Mole and Rat wake as if from a dream, bring Portly back to his father, and drift home while Rat tries to catch the words of a song in the reeds.",
+      "context": "Recap: Searching all night for Otter’s lost son Portly, Mole and Rat were drawn by strange, beautiful piping to an island in the river at dawn, where they saw the god Pan, the Friend and Helper of animals, with Portly asleep between his hooves. As the sun rose the vision vanished, and a breeze brought his last gift: forgetfulness. A vigil is a night of watching; a tow-path runs along a river bank; to amble is to walk at an easy pace; frolic is merry play, fret is worry; waifs are lost little ones; rent means torn. The verses printed in italics (between underscores) are the words Rat hears in the reeds.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “The Piper at the Gates of Dawn,” from Mole waking from the vision to the end of the chapter; opens “Mole rubbed his eyes and stared at Rat, who was looking about him in a puzzled sort of…”; closes “…and something of a listening look still lingering there, the weary Rat was fast asleep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-14",
+        "continuesTo": null,
+        "blocks": [
+          498,
+          518
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8b01786ac99e1cb32a752266b512466c49b21018a37c3bb9e2fe04d0c8e3d69"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-15-q1",
+          "prompt": "What do Mole and Rat remember after the breeze? What traces of the vision are left?",
+          "facilitatorNotes": [
+            "Rat thinks he only said this was the right place; Mole struggles like someone waking from a lovely dream that slips away. But Rat stares at deep hoof-marks, and later the flowers seem less bright than something they saw “quite recently somewhere.”"
+          ],
+          "evidence": [
+            "As one wakened suddenly from a beautiful dream",
+            "Some--great--animal--has been here"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-15-q2",
+          "prompt": "Why does Portly cry after he wakes up happily?",
+          "facilitatorNotes": [
+            "He searches in circles for someone who is no longer there, like a child who fell asleep in a nurse’s arms and wakes alone. He has lost the one who looked after him through the night."
+          ],
+          "evidence": [
+            "he fell to hunting round in a circle with pleading whine",
+            "As a child that has fallen happily asleep in its nurse's arms"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-15-q3",
+          "prompt": "Why do Mole and Rat set Portly on the tow-path and row away, instead of handing him to Otter themselves?",
+          "facilitatorNotes": [
+            "They let the meeting belong to father and son, and watch from the river as Otter leaps up with an “amazed and joyous bark.” They want no thanks. Some readers think they were simply too tired; others that it was tact and kindness."
+          ],
+          "evidence": [
+            "gave him his marching orders and a friendly farewell pat on the back, and shoved out into mid-stream",
+            "could hear his amazed and joyous bark"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-15-q4",
+          "prompt": "What do the words in the reeds tell you about the Helper? Why does Rat fall asleep just as the last words come?",
+          "facilitatorNotes": [
+            "He springs traps, binds wounds and finds strays, then makes those he helps forget, so their fun is not spoiled by awe. Rat drifts off just as “the real, the unmistakable thing” arrives: perhaps some things cannot be passed on in words, or perhaps the forgetting is still at work. Readers can choose."
+          ],
+          "evidence": [
+            "Strays I find in it, wounds I bind in it",
+            "the weary Rat was fast asleep"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-16",
+      "title": "The Wind in the Willows: the gaoler’s daughter (Chapter VIII, first part)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice how much Toad really changes in prison, and how a kind girl uses smells to bring him back to life.",
+      "focus": "Toad weeps in his dungeon for weeks until the gaoler’s kind-hearted daughter tempts him with bubble-and-squeak, buttered toast and the chance to talk about himself.",
+      "context": "The Wind in the Willows (1908) is by Kenneth Grahame, a Scottish-born writer who worked for most of his life at the Bank of England and first made up Toad’s adventures as bedtime stories and letters for his young son. Its animals live like English country gentlemen of the time, with houses, boats, money and servants, while keeping some animal habits. The edition here is an American one of 1913. Recap of Chapter VI: Toad of Toad Hall, rich, boastful and mad about motor-cars, escaped from his friends Badger, Rat and Mole, who had locked him in to cure him, stole a motor-car from an inn yard, and was sentenced to twenty years in the dungeon of a grim old castle. Immured means walled in; noisome means foul-smelling; well-metalled roads have good hard surfaces; debonair means stylish; audacious means bold; lurid means shocking; to languish is to waste away; lamentations are wails; a wench is a girl (an old word); an antimacassar is a cloth cover for a chair back; piebald means patched black and white; bubble-and-squeak is fried leftover cabbage and potato; chivalry is the honour of knights; snap-dragons are garden flowers; a fender is a low metal frame in front of a fire.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Toad’s Adventures,” from Toad’s despair in the dungeon through tea and toast with the gaoler’s daughter; opens “When Toad found himself immured in a dank and noisome dungeon, and knew that all the grim…”; closes “…was doing him as much good as the tea, as indeed it was, and encouraged him to go on.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-grahame-wind-willows-1913-17",
+        "blocks": [
+          520,
+          526
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6c6cd8f5300c3de87183133461c00abb6e3a0ebda7456b155e77337cf8299ec1"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-16-q1",
+          "prompt": "In his despair, what does Toad say about himself and his friends? Has he really changed?",
+          "facilitatorNotes": [
+            "He calls himself a stupid animal and praises wise Badger, clever Rat and sensible Mole. But even his wailing boasts: he was imprisoned for stealing “so handsome a motor-car in such an audacious manner,” and he is still “the popular and handsome Toad.” Part of him is sorry; part of him is admiring himself."
+          ],
+          "evidence": [
+            "O wise old Badger!",
+            "for stealing so handsome a motor-car in such an audacious manner"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-16-q2",
+          "prompt": "Why does the gaoler’s daughter want to look after Toad? How does she think of him?",
+          "facilitatorNotes": [
+            "She loves animals and cannot bear to see him so unhappy and thin. She plans to make him “eat from my hand, and sit up”: she thinks of him rather as a pet, which Toad, who thinks himself a gentleman, would hate to know."
+          ],
+          "evidence": [
+            "She was particularly fond of animals",
+            "I'll make him eat from my hand, and sit up, and do all sorts of things."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-16-q3",
+          "prompt": "What do the smells of cabbage and buttered toast make Toad think of?",
+          "facilitatorNotes": [
+            "The cabbage brings thoughts of poetry and brave deeds, meadows and gardens, dinner at Toad Hall, his friends, lawyers, and finally his own cleverness; the toast “simply talked” of warm kitchens, frosty breakfasts, firesides and purring cats. Smell brings memory, and memory brings hope."
+          ],
+          "evidence": [
+            "The smell of that buttered toast simply talked to Toad",
+            "and lastly, he thought of his own great cleverness and resource"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-16-q4",
+          "prompt": "“The topic was doing him as much good as the tea.” What topic, and why does it help? Is the girl wise?",
+          "facilitatorNotes": [
+            "Talking about himself, his house and how important he is. It gives him back his pride, and pride is what keeps Toad going. The narrator calls her “the wise girl”: she understands him better than he understands himself. Some readers will think she is only being kind; others that she is cleverly managing him."
+          ],
+          "evidence": [
+            "soon began talking freely about himself, and the house he lived in",
+            "The gaoler's daughter saw that the topic was doing him as much good as the tea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-17",
+      "title": "The Wind in the Willows: the washerwoman’s disguise (Chapter VIII, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Watch Toad’s pride get in the way of his own escape, and weigh whether the plan is fair to everyone in it.",
+      "focus": "The gaoler’s daughter befriends Toad and plans his escape disguised as her aunt, the washerwoman, if only he can swallow his pride.",
+      "context": "Recap: Locked in the castle dungeon for twenty years, Toad wept for weeks until the gaoler’s kind-hearted daughter, who loves animals, coaxed him back to life with bubble-and-squeak, buttered toast and talk about himself. “Eligible, self-contained … replete with every modern convenience” is the language of an advertisement for selling a house; avidity is eagerness; linen-presses are cupboards for sheets; sanguine means hopeful; trivial means unimportant; a “social gulf” is a difference in rank; a comely lass is a pretty girl; to “square” someone is to bribe them; a coach-and-four is a grand carriage; sovereigns were gold coins worth a pound; a stipulation is a condition; an artifice is a trick; a gown is fastened with hooks and eyes; to chaff is to tease.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Toad’s Adventures,” from “Tell me about Toad Hall” through Toad dressed as the washerwoman; opens “\"Tell me about Toad Hall,\" said she. \"It sounds beautiful.\"”; closes “…but remember you're a widow woman, quite alone in the world, with a character to lose.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-16",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-18",
+        "blocks": [
+          527,
+          545
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e519786392a13637fc58f88bc75198186ce366ab9343e512a443c726ff2b60a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-17-q1",
+          "prompt": "“Tell me something real about it.” What is wrong with Toad’s first description of Toad Hall?",
+          "facilitatorNotes": [
+            "It sounds like an advertisement for selling the house, all “self-contained” and “five minutes from church, post-office, and golf-links.” The girl laughs that she does not want to buy it. His second description, the boat-house, the gardens and the fun in the banqueting-hall, tells what living there is like."
+          ],
+          "evidence": [
+            "is an eligible, self-contained gentleman's residence, very unique",
+            "I don't want to _take_ it. Tell me something _real_ about it."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-17-q2",
+          "prompt": "Why does the girl never say she is fond of animals “as pets”? What does Toad think her interest means?",
+          "facilitatorNotes": [
+            "She sees he would be deeply offended. Toad, in his vanity, imagines she is falling in love with him, and half regrets the “social gulf” between them. Each misunderstands the other, and the reader enjoys both."
+          ],
+          "evidence": [
+            "she had the sense to see that Toad would be extremely offended",
+            "Toad, of course, in his vanity, thought that her interest in him proceeded from a growing tenderness"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-17-q3",
+          "prompt": "How does Toad first react to the washerwoman plan, and what changes his mind?",
+          "facilitatorNotes": [
+            "He jokes rudely about her aunt, takes offence at being called the same figure, and protests that Mr. Toad of Toad Hall cannot go about as a washerwoman. When she tells him to stay in prison then, he admits he is “a proud and a stupid toad.” For once he says sorry quickly."
+          ],
+          "evidence": [
+            "I have a very elegant figure--for what I am.",
+            "Honest Toad was always ready to admit himself in the wrong."
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-17-q4",
+          "prompt": "Why does the aunt ask to be tied up and gagged? Is the plan fair to her, and to the gaoler?",
+          "facilitatorNotes": [
+            "So that she will look like Toad’s victim and keep her job. She is poor and needs his money. But the plan fools the gaoler, the girl’s own father, and lets a convicted thief go free. Toad likes it because it keeps his reputation as “a desperate and dangerous fellow.” Readers can weigh kindness against honesty."
+          ],
+          "evidence": [
+            "the only stipulation the old lady made being that she should be gagged and bound and dumped down in a corner",
+            "with his reputation for being a desperate and dangerous fellow untarnished"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-18",
+      "title": "The Wind in the Willows: no pocket (Chapter VIII, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice what Toad’s disguise teaches him about himself, and enjoy the comedy of a struggle with a gown.",
+      "focus": "Dressed as the washerwoman, Toad walks out of the castle with surprising ease, but at the railway station he finds he has no money and no pocket.",
+      "context": "Recap: Helped by the gaoler’s daughter, Toad bribed her aunt, the prison washerwoman, for her cotton gown, shawl and bonnet, left the old lady tied up as if he had overpowered her, and set off to walk out of the castle in disguise. Hare-brained means foolish; a passport here means a pass; a warder is a prison guard; chaff, sallies, retorts and repartees are teasing jokes and quick replies; simulated means pretended; a wicket-gate is a small door in a big gate; shunted trucks are railway wagons being moved about; a booking-office sells tickets; stringency is sharpness; a pocket-book is a wallet; a Squire is a country gentleman and a College Don a university teacher; obstructing means blocking.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Toad’s Adventures,” from Toad’s walk out of the castle through the booking-office at the station; opens “With a quaking heart, but as firm a footstep as he could command, Toad set forth…”; closes “…as his good woman, which angered Toad more than anything that had occurred that evening.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-17",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-19",
+        "blocks": [
+          546,
+          555
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63649438c19472c5d12a78e11fc362abbb2a11d3658320cd642a5d7db5f4210e"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-18-q1",
+          "prompt": "Why does the escape go so easily? What humbles Toad a little?",
+          "facilitatorNotes": [
+            "The washerwoman’s familiar figure works like a pass at every gate, and one warder even hurries him along so as not to be late for tea. Toad realises the guards’ friendliness belongs to her, not to him."
+          ],
+          "evidence": [
+            "The washerwoman's squat figure in its familiar cotton print seemed a passport for every barred door and grim gateway",
+            "a little humbled at the thought that both his popularity, and the sex that seemed to inspire it, were really another's"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-18-q2",
+          "prompt": "What was the chief danger on the way out, and why was it hard for Toad?",
+          "facilitatorNotes": [
+            "The teasing: guards joke with the washerwoman and he must answer in character. Toad has “a strong sense of his own dignity” and thinks their jokes poor, so keeping his temper is harder than walking past the gates."
+          ],
+          "evidence": [
+            "formed, indeed, his chief danger",
+            "for Toad was an animal with a strong sense of his own dignity"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-18-q3",
+          "prompt": "What goes wrong at the booking-office?",
+          "facilitatorNotes": [
+            "He reaches for his waistcoat pocket, fights the gown “in a sort of nightmare” while the queue grows impatient, and at last finds no money, no pocket and no waistcoat: he left them all in his cell. The long sentence makes the struggle as tangled as the gown."
+          ],
+          "evidence": [
+            "he recollected that he had left both coat and waistcoat behind him in his cell",
+            "found--not only no money, but no pocket to hold it, and no waistcoat to hold the pocket!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-18-q4",
+          "prompt": "The narrator calls humans “the many-pocketed animal, the lord of creation.” What is the joke? And what angers Toad most of all?",
+          "facilitatorNotes": [
+            "The narrator pretends that pockets are what make people superior to other creatures, as Toad seems to believe. What angers Toad most is an old gentleman calling him “his good woman”: being taken for a poor working woman wounds his pride more than anything. The story is laughing at Toad’s snobbery; readers may notice whom it expects them to laugh at, too."
+          ],
+          "evidence": [
+            "the many-pocketed animal, the lord of creation",
+            "addressed him as his good woman, which angered Toad more than anything that had occurred that evening"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-19",
+      "title": "The Wind in the Willows: a ride on the engine (Chapter VIII, continued)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Separate what Toad says from what is true, and notice how the story builds suspense.",
+      "focus": "A kind engine-driver offers the “washerwoman” a ride home in return for some washing, and Toad’s joy turns to fear when another engine comes after them.",
+      "context": "Recap: Disguised as the prison washerwoman, Toad walked out of the castle and reached the railway station, only to find he had left his money, with his coat and waistcoat, in his cell; the ticket clerk sent him away. Baulked means blocked; pettifogging means petty and fussy; reviled means insulted; cotton-waste is rags for wiping machinery; “mother” was a friendly way to speak to an older working woman; the Company is the railway company; rapture is great joy; frivolous antics are silly capering; the cab is the driver’s platform on the engine.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Toad’s Adventures,” from Toad’s despair on the platform through the sighting of the engine in pursuit; opens “Baffled and full of despair, he wandered blindly down the platform where the train was…”; closes “…in the coal-dust, tried hard to think of something to do, with dismal want of success.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-18",
+        "continuesTo": "reading-5-grahame-wind-willows-1913-20",
+        "blocks": [
+          556,
+          568
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4aed4813a1728083d0650766940e82219ce0be24e60820534c828b31689ece0"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-19-q1",
+          "prompt": "How does Toad get a ride on the engine? Which of his words are untrue?",
+          "facilitatorNotes": [
+            "He tells the driver he is a poor washerwoman who has lost her money; when the driver guesses she has children waiting, Toad invents “Any amount of 'em,” hungry and playing with matches. The kind driver offers a ride in return for washing his shirts."
+          ],
+          "evidence": [
+            "I am a poor unhappy washerwoman",
+            "Any amount of 'em"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-19-q2",
+          "prompt": "What does Toad plan to do about the shirts? Is it “the same thing, or better”?",
+          "facilitatorNotes": [
+            "He has never washed a shirt and does not mean to start; he will send money instead. Some readers think paying is fair; others that the driver offered a favour for a favour, and that Toad thinks money settles everything."
+          ],
+          "evidence": [
+            "Of course, he had never washed a shirt in his life",
+            "and that will be the same thing, or better"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-19-q3",
+          "prompt": "What does Toad imagine as the train speeds along? What does that show about him?",
+          "facilitatorNotes": [
+            "Home, friends, money, a soft bed, good food, and “praise and admiration” for his adventures and “surpassing cleverness.” He skips and sings. He has not learned much: he is already planning to boast."
+          ],
+          "evidence": [
+            "praise and admiration at the recital of his adventures and his surpassing cleverness",
+            "he began to skip up and down and shout and sing snatches of song"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-19-q4",
+          "prompt": "How does the story build suspense at the end of this part?",
+          "facilitatorNotes": [
+            "The driver listens, frowns, climbs on the coal to look back, says he could swear he hears another train, and then, in the moonlight, sees an engine on their rails, gaining. Toad stops capering and crouches in the coal-dust. Ask readers to predict what Toad will do."
+          ],
+          "evidence": [
+            "yet I could be sworn that I heard another following us!",
+            "It looks as if we were being pursued!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-grahame-wind-willows-1913-20",
+      "title": "The Wind in the Willows: the jump into the wood (Chapter VIII, end)",
+      "sourceId": "grahame-wind-willows-1913",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Judge the engine-driver’s reasons for helping, and notice how the wood looks to an escaped prisoner.",
+      "focus": "Toad confesses, the engine-driver helps him anyway, and Toad leaps from the train into a dark wood, free, alone and laughed at by the creatures of the night.",
+      "context": "Recap: Disguised as a washerwoman, Toad escaped from prison and talked a kind engine-driver into giving him a ride home on his engine; but in the moonlight the driver saw another engine racing after them on the same rails. Halberds are axe-spears; truncheons are police clubs; pot-hats are hard round hats; plain-clothes detectives are police not in uniform; supplication is begging; a landed proprietor owns an estate; an engine “running light” pulls no carriages; a motley crew is a mixed band; night-jars are birds with a rattling call.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Toad’s Adventures,” from the pursuing engine’s crew to the end of the chapter; opens “\"They are gaining on us fast!\" cried the engine-driver. \"And the engine is crowded with…”; closes “…he made himself as comfortable a bed as he could, and slept soundly till the morning.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-grahame-wind-willows-1913-19",
+        "continuesTo": null,
+        "blocks": [
+          569,
+          579
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2dfe369ad3e7e01a2e17f8dc9cb7b15f44874e269ef414446f7e21c455f0b84c"
+      },
+      "questions": [
+        {
+          "id": "reading-5-grahame-wind-willows-1913-20-q1",
+          "prompt": "What does Toad confess, and how does he describe his crime?",
+          "facilitatorNotes": [
+            "That he is Mr. Toad, escaped from prison. He calls the theft borrowing a car “while the owners were at lunch” and blames magistrates for taking “harsh views.” Even while begging for help, he excuses himself."
+          ],
+          "evidence": [
+            "I am not the simple washerwoman I seem to be!",
+            "I only borrowed a motor-car while the owners were at lunch"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-20-q2",
+          "prompt": "The driver calls Toad “a wicked toad” but helps him. What are his reasons? Are they good ones?",
+          "facilitatorNotes": [
+            "He does not like motor-cars; he does not like policemen ordering him about on his own engine; and tears make him soft-hearted. None of them is about whether Toad deserves to go free. Readers may enjoy his kindness, or say he is wrong to help a thief."
+          ],
+          "evidence": [
+            "I fear that you have been indeed a wicked toad",
+            "I don't hold with motor-cars, for one thing"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-20-q3",
+          "prompt": "Explain the driver’s plan. Why does it work?",
+          "facilitatorNotes": [
+            "He races through the tunnel while the pursuers slow down for safety, brakes beyond it so Toad can jump into the wood unseen, then speeds on so they chase the train. It uses the pursuers’ caution against them."
+          ],
+          "evidence": [
+            "the other fellows will slow down a bit, naturally, for fear of an accident",
+            "Now, jump!"
+          ]
+        },
+        {
+          "id": "reading-5-grahame-wind-willows-1913-20-q4",
+          "prompt": "How does the wood seem to Toad, and why? What does the fox’s joke show?",
+          "facilitatorNotes": [
+            "Strange, unfriendly and mocking: night-jars sound like warders, an owl’s wing feels like a hand, and the owl seems to laugh. After weeks in prison every sound is a guard. The fox teases him as a washerwoman who lost the washing, so even in freedom his disguise makes him a joke, and he cannot even find a stone to throw."
+          ],
+          "evidence": [
+            "he found the wood strange and unfriendly and inclined, he thought, to make fun of him",
+            "Hullo, washerwoman! Half a pair of socks and a pillow-case short this week!"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "lamb-tales-shakespeare-1908",
+  "readings": [
+    {
+      "id": "reading-5-lamb-tales-shakespeare-1908-01",
+      "title": "Lamb’s Tempest: a magician’s island and an old wrong (first part)",
+      "sourceId": "lamb-tales-shakespeare-1908",
+      "author": "Mary Lamb",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Keep the island’s past and present apart while one long conversation explains twelve years of history.",
+      "focus": "Prospero rules an enchanted island with spirits and a servant the narrator calls a monster, and tells Miranda how his brother stole his dukedom.",
+      "context": "Mary Lamb (1764–1847) and her brother Charles retold twenty of Shakespeare’s plays as stories for young readers in Tales from Shakespeare (1807). Charles wrote the six tragedies and Mary the rest, including this one; Shakespeare’s play The Tempest was first performed around 1611. Lamb keeps many of Shakespeare’s words and writes long sentences held together by semicolons and colons, so reading aloud together helps. A cell here is a small, plain dwelling; “much affected” means much admired; a sprite is a spirit; mire is mud; to make mouths is to pull faces; Milan and Naples were Italian states, and a duke ruled Milan; a league is about three miles; tackle is a ship’s ropes and gear; a cherub is a child angel.",
+      "contentNote": "The narrator calls Caliban “an ugly monster” and “a strange misshapen thing, far less human in form than an ape,” says he inherited a “bad nature” from his mother, and tells how he is made to work “like a slave” while Ariel pinches him and tumbles him in the mud. Prospero tells how his brother put him and his three-year-old daughter out to sea to die.",
+      "excerpt": {
+        "locator": "“The Tempest,” from the opening through Prospero’s reason for raising the storm; opens “There was a certain island in the sea, the only inhabitants of which were an old man,…”; closes “…my enemies, the king of Naples, and my cruel brother, are cast ashore upon this island.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-lamb-tales-shakespeare-1908-02",
+        "blocks": [
+          6,
+          23
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "646d9d7b7b179363ea397c59b890c1320e119ecc90dbbdaec433491444b639e9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-01-q1",
+          "prompt": "Who lives on the island, and how did each of them come to be there?",
+          "facilitatorNotes": [
+            "Prospero and Miranda arrived by “a strange chance” after being set adrift. The witch Sycorax had lived there and died just before. Ariel and the other good spirits had been shut inside trees by Sycorax, and Prospero’s magic freed them. Caliban, her son, was found by Prospero in the woods. Sorting the island’s people now will help with the rest of the tale."
+          ],
+          "evidence": [
+            "released many good spirits that Sycorax had imprisoned in the bodies of large trees",
+            "This Caliban, Prospero found in the woods"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-01-q2",
+          "prompt": "What does the narrator tell us about Caliban, and what do we actually see him do? Is the narrator fair to him?",
+          "facilitatorNotes": [
+            "The narrator decides for us that he is ugly and has a “bad nature” from his mother, and that is the reason given for making him work “like a slave”; Ariel’s pinches and tricks are told almost as fun. We never see Caliban do anything wrong except neglect his work. In Shakespeare’s play Caliban says the island was his mother’s and Prospero took it from him; Lamb leaves that out. Readers can ask whether anyone is born bad, and whether being taught to speak makes up for being made a slave."
+          ],
+          "evidence": [
+            "the bad nature which Caliban inherited from his mother Sycorax",
+            "therefore he was employed like a slave"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-01-q3",
+          "prompt": "How does Miranda react to the storm? What does Prospero’s answer show about him?",
+          "facilitatorNotes": [
+            "She feels for the people on the ship and would “sink the sea beneath the earth” to save them. He answers that “there is no harm done,” that he planned it all, and that he did it “in care of you.” She is full of pity; he is calm, in control, and keeping a secret. Some readers may wonder whether frightening the sailors is right even if no one is hurt."
+          ],
+          "evidence": [
+            "have pity on their sad distress",
+            "there is no harm done"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-01-q4",
+          "prompt": "Prospero blames his “false brother” for taking Milan. Does Prospero share any of the blame? Find his own words.",
+          "facilitatorNotes": [
+            "Antonio betrayed him and called in the king of Naples, but Prospero admits he left the government to his brother while he was “buried among my books,” and that the chance he gave Antonio to become popular woke his ambition. Readers may decide that Prospero neglected his duty, though that does not excuse treachery. This matters again at the end of the tale."
+          ],
+          "evidence": [
+            "I, neglecting all worldly ends, buried among my books",
+            "The opportunity I gave him of making himself popular"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-lamb-tales-shakespeare-1908-02",
+      "title": "Lamb’s Tempest: Ariel’s song and the prince made prisoner (second part)",
+      "sourceId": "lamb-tales-shakespeare-1908",
+      "author": "Mary Lamb",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow two scenes in a row, and notice when a character says something he does not mean.",
+      "focus": "Ariel asks for his freedom and is reminded of a debt; then his song leads Ferdinand to Miranda, and Prospero pretends to be the prince’s enemy.",
+      "context": "Recap: Prospero, once Duke of Milan, was overthrown by his brother Antonio with the help of the king of Naples and set adrift at sea with his little daughter Miranda. On this island he commands spirits, led by Ariel, and a servant, Caliban, the son of the dead witch Sycorax. His magic storm has now thrown his enemies ashore. To hold converse is to talk; mariners are sailors; Algiers is a city in North Africa; a fathom is six feet of water; a knell is a bell rung for a death; a surety is someone who promises on another’s behalf; to chide is to scold; an impostor is a fake; goodlier means finer-looking.",
+      "contentNote": "Prospero reminds Ariel of being shut howling in a tree by the witch Sycorax. He threatens to tie Ferdinand “neck and feet together” and feed him sea-water and husks, freezes him with magic, and calls Miranda “foolish girl.” Ariel’s song tells Ferdinand that his father lies drowned, which is not true. Caliban is used as the measure of an ugly man.",
+      "excerpt": {
+        "locator": "“The Tempest,” from Ariel’s report of the storm through Ferdinand’s capture; opens “Having so said, Prospero gently touched his daughter with his magic wand, and she fell…”; closes “…feel, would seem light to me if from my prison I might once a day behold this fair maid.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-lamb-tales-shakespeare-1908-01",
+        "continuesTo": "reading-5-lamb-tales-shakespeare-1908-03",
+        "blocks": [
+          24,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "df6d31b53f602c23bb6d02fd6d614253664e44014a7211a005966bb6123a6fcd"
+      },
+      "questions": [
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-02-q1",
+          "prompt": "What does Ariel ask for, and how does Prospero answer? Was it fair to remind him of Sycorax?",
+          "facilitatorNotes": [
+            "Ariel reminds his master of the liberty he was promised and of his faithful service “without grudge or grumbling.” Prospero answers by recalling the torment in the tree from which he freed him, and Ariel, “ashamed to seem ungrateful,” obeys; Prospero then promises freedom if he does this work. Some readers will think Prospero is right to expect gratitude; others that he uses it to keep a servant longer."
+          ],
+          "evidence": [
+            "you have promised me my liberty",
+            "This torment, remember, I did free you from."
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-02-q2",
+          "prompt": "In “Full fathom five,” what does Ariel say has happened to Ferdinand’s father? Why might the song be so strange and beautiful, and why does it stir Ferdinand?",
+          "facilitatorNotes": [
+            "It says his father lies drowned at the bottom of the sea, his bones turned to coral and his eyes to pearls, changed “into something rich and strange.” Death becomes a kind of treasure. It is not true, since the king is alive, but its news “roused the prince” from his sad stupor, and he follows the music. Ask readers to read the song aloud and listen for the bell at the end."
+          ],
+          "evidence": [
+            "Those are pearls that were his eyes",
+            "Into something rich and strange.",
+            "This strange news of his lost father soon roused the prince"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-02-q3",
+          "prompt": "Prospero is pleased that Miranda and Ferdinand love each other. Why, then, is he so harsh with them both?",
+          "facilitatorNotes": [
+            "Lamb tells us outright: he wants to test them. He threatens Ferdinand “to try Ferdinand's constancy,” meaning to see whether his love will last, and scolds Miranda “to prove his daughter's constancy.” Readers can debate whether it is fair to test someone by pretending, and whether love that is won too easily is valued less."
+          ],
+          "evidence": [
+            "to try Ferdinand's constancy, he resolved to throw some difficulties in their way",
+            "This he said to prove his daughter's constancy"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-02-q4",
+          "prompt": "How do Miranda and Ferdinand each answer Prospero’s threats? What do their answers show?",
+          "facilitatorNotes": [
+            "Miranda pleads, offers to be Ferdinand’s surety, and says she wants no finer man, though she has seen only two. Ferdinand first draws his sword; once he is frozen and made a prisoner, he says it would all seem light if he could see Miranda once a day. Each stands by love against a powerful man; Miranda does it with words, Ferdinand by accepting the prison."
+          ],
+          "evidence": [
+            "I will be his surety",
+            "if from my prison I might once a day behold this fair maid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-lamb-tales-shakespeare-1908-03",
+      "title": "Lamb’s Tempest: carrying logs, and a spirit’s pity (third part)",
+      "sourceId": "lamb-tales-shakespeare-1908",
+      "author": "Mary Lamb",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice who is watching whom, and what each person does not know.",
+      "focus": "Ferdinand passes Prospero’s secret test of love; then a spirit’s pity for Prospero’s enemies turns him toward forgiveness.",
+      "context": "Recap: Ariel’s song led Ferdinand, prince of Naples, to Prospero and Miranda, and the young people fell in love at first sight. Prospero, secretly pleased, pretended to think Ferdinand a spy and made him a prisoner by magic, to test whether their love would last. Enjoined means ordered; precepts are rules a parent teaches; amends means making up for a wrong; a harpy is a monster with a woman’s face and a bird’s wings and claws; voracious means greedy; penitence is sorrow for doing wrong.",
+      "contentNote": "Prospero is said to have made his daughter fall in love by magic, and he gives her to Ferdinand as his “gift,” an old idea of a father giving away a daughter in marriage. Ariel frightens hungry, exhausted men by snatching away a feast.",
+      "excerpt": {
+        "locator": "“The Tempest,” from Ferdinand’s task of carrying logs through Prospero’s decision to show compassion; opens “Prospero kept Ferdinand not long confined within the cell: he soon brought out his…”; closes “…being like themselves, have compassion on them? Bring them, quickly, my dainty Ariel.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-lamb-tales-shakespeare-1908-02",
+        "continuesTo": "reading-5-lamb-tales-shakespeare-1908-04",
+        "blocks": [
+          48,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46563c0e6d4734284723d532258d314acdfe35de6827b7ed0a48c958464df205"
+      },
+      "questions": [
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-03-q1",
+          "prompt": "During the log-carrying, who is watching whom? What does Miranda not know?",
+          "facilitatorNotes": [
+            "Miranda thinks her father is safe in his study “for these three hours,” but he is standing beside them, invisible, listening to everything. The reader knows more than Miranda does, which makes her worried kindness to Ferdinand a little funny and very touching."
+          ],
+          "evidence": [
+            "my father is at his studies, he is safe for these three hours",
+            "was standing by them invisible, to overhear what they said"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-03-q2",
+          "prompt": "Why does Prospero only smile at Miranda’s “first instance of disobedience”? What does Lamb say he had done, and does it change how you see the love story?",
+          "facilitatorNotes": [
+            "Lamb says that he had “by his magic art caused his daughter to fall in love so suddenly,” so he cannot be angry when she shows it. In Shakespeare’s play Prospero arranges the meeting; Lamb makes his power over Miranda’s feelings plainer. Some readers will find it uncomfortable that a father controls his daughter’s heart; others will take it as fairy-tale magic, since Miranda’s own words sound sincere."
+          ],
+          "evidence": [
+            "Prospero only smiled at this first instance of his daughter's disobedience",
+            "having by his magic art caused his daughter to fall in love so suddenly"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-03-q3",
+          "prompt": "Miranda promises to answer “in plain and holy innocence.” How is her way of speaking different from Ferdinand’s?",
+          "facilitatorNotes": [
+            "Lamb does not even print Ferdinand’s speeches; she sums them up as “fine long” speeches, joking that “young princes speak in courtly phrases.” Miranda, who has grown up away from any court, says simply, “I am your wife if you will marry me.” Her plainness shows honesty, and perhaps that she has never learned to hide her feelings."
+          ],
+          "evidence": [
+            "for young princes speak in courtly phrases",
+            "I am your wife if you will marry me."
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-03-q4",
+          "prompt": "What makes Prospero decide to show his enemies compassion? Why is it surprising that a spirit teaches him?",
+          "facilitatorNotes": [
+            "Ariel reports that the king and Antonio repent, and says that he, “though a spirit,” pities them. Prospero reasons that if a spirit can feel for them, a human being like them should feel more. He has his enemies in his power and could take revenge; instead he chooses mercy. It is surprising because the master learns kindness from the servant, and from a being who is not even human."
+          ],
+          "evidence": [
+            "he, though a spirit, could not but pity them",
+            "if you, who are but a spirit, feel for their distress"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-lamb-tales-shakespeare-1908-04",
+      "title": "Lamb’s Tempest: forgiveness, a brave world and Ariel set free (end)",
+      "sourceId": "lamb-tales-shakespeare-1908",
+      "author": "Mary Lamb",
+      "genre": "fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Decide what each character feels at the reunion, and notice who is left out of the happy ending.",
+      "focus": "Prospero forgives his enemies, the lovers are revealed, and he gives up his magic; Ariel goes free, while Caliban appears only as a servant shown to the guests.",
+      "context": "Recap: Prospero tested Ferdinand with hard labour and then gave him Miranda to marry. Ariel frightened the king of Naples and Antonio until they repented, and when he said that even a spirit pitied them, Prospero decided to have compassion and sent for them. Stupefied means dazed; to depose is to remove from power; Providence means God’s care guiding what happens; nuptials are a wedding; uncouth means rough and strange; a convoy is an escort for a journey; a cowslip is a small yellow wild flower.",
+      "contentNote": "Caliban is shown to the guests as an “ugly monster” with a “savage appearance” and set to prepare their food; the tale never says what becomes of him.",
+      "excerpt": {
+        "locator": "“The Tempest,” from the arrival of the king and Antonio to the end of the tale; opens “Ariel soon returned with the king, Antonio, and old Gonzalo in their train, who had…”; closes “…under the safe convoy of the spirit Ariel, they, after a pleasant voyage, soon arrived.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-lamb-tales-shakespeare-1908-03",
+        "continuesTo": null,
+        "blocks": [
+          64,
+          76
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b7751b1652d3b5a8e1a28fe3ac2ac565bc142fc7f91f90882a8778dfaa9c8ddd"
+      },
+      "questions": [
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-04-q1",
+          "prompt": "How do Antonio and the king show they are sorry? What does Prospero ask for when he forgives them?",
+          "facilitatorNotes": [
+            "Antonio weeps and begs forgiveness “with tears, and sad words of sorrow and true repentance”; the king expresses “sincere remorse.” Prospero forgives them, and they promise to give back his dukedom, so forgiveness comes with justice. Later his kind words make Antonio so ashamed that he cannot speak. Ask readers why kindness might shame someone more than anger would."
+          ],
+          "evidence": [
+            "upon their engaging to restore his dukedom",
+            "so filled Antonio with shame and remorse, that he wept and was unable to speak"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-04-q2",
+          "prompt": "“It must surely be a brave world that has such people in it.” What does Miranda mean? What do you know about these people that she does not?",
+          "facilitatorNotes": [
+            "“Brave” here means fine and splendid. She has seen almost no people, so a room of nobles seems wonderful. But among the “noble creatures” is Antonio, who once left her and her father to die. Her wonder is lovely and also a little ironic; readers may see her innocence as something to admire or as something that could get her hurt."
+          ],
+          "evidence": [
+            "what noble creatures these are!",
+            "It must surely be a brave world that has such people in it."
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-04-q3",
+          "prompt": "Ariel is set free; Caliban is not mentioned again after he serves the meal. Compare how the tale ends for each of them. Who is left out of the happy ending?",
+          "facilitatorNotes": [
+            "Ariel, a “faithful servant,” is freed with thanks (“I shall miss you”) and sings of living merrily. Caliban is called in to serve, the guests stare at “this ugly monster,” and the tale never says whether he is freed, taken away or left behind. The narrator’s words decide how we feel about each of them. Readers can discuss whether an ending is fully happy if one character is forgotten."
+          ],
+          "evidence": [
+            "I shall miss you; yet you shall have your freedom",
+            "the uncouth form and savage appearance of this ugly monster"
+          ]
+        },
+        {
+          "id": "reading-5-lamb-tales-shakespeare-1908-04-q4",
+          "prompt": "Why might Prospero bury his magic books and wand before he goes home to rule? Think back to how he lost Milan.",
+          "facilitatorNotes": [
+            "He lost his dukedom the first time while he was “buried among my books.” Now he buries the books instead, and gives up the power that let him control storms, spirits and other people’s feelings. Readers may see it as choosing to live as an ordinary ruler among people, or as no longer needing revenge. In Shakespeare’s play this is a famous speech; Lamb gives it a single sentence."
+          ],
+          "evidence": [
+            "buried deep in the earth his magical books and wand",
+            "he was resolved never more to make use of the magic art"
+          ]
+        }
+      ]
+    }
+  ]
+}
