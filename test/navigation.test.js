@@ -291,3 +291,21 @@ test("the Readings area uses one vocabulary and keeps grade and week across its 
   for (const page of ["library.html", "reading-level.html"]) assert.equal(href(navAt(page, ""), "daily"), "daily-reading.html", page);
   assert.equal(href(navAt("library.html", ""), "library"), "library.html");
 });
+
+test("Readings links follow the grade shown: none in the address means the remembered grade, a print route its first grade", () => {
+  const links = (hash, readingGrade, page = "daily-reading.html") => {
+    const model = navigation.model({ pathname: "/liminal/" + page, hash }, { lessonModules, readingGrade });
+    return { daily: href(model, "daily"), plans: href(model, "plans"), weeks: href(model, "weeks"), readings: href(model, "readings", true) };
+  };
+  assert.deepEqual(links("", "5"), { daily: "daily-reading.html", plans: "curriculum.html#common-core-reading/5", weeks: "weeks.html#common-core-reading/5/1", readings: "daily-reading.html" });
+  assert.deepEqual(links("", null), { daily: "daily-reading.html", plans: "curriculum.html#common-core-reading/k", weeks: "weeks.html#common-core-reading/k/1", readings: "daily-reading.html" });
+  assert.equal(links("#print/night/3/2/12,k", "5").plans, "curriculum.html#common-core-reading/12");
+  assert.equal(links("#print/night/3/2", "5").plans, "curriculum.html#common-core-reading/5", "a night's day number is not a grade");
+  assert.equal(links("#print/date/2026-11-17/a1", null).daily, "daily-reading.html#browse/a1");
+  assert.equal(links("#print", "7").weeks, "weeks.html#common-core-reading/7/1");
+  assert.equal(links("#browse/8", "5").plans, "curriculum.html#common-core-reading/8", "the address wins over the remembered grade");
+  assert.equal(links("", "5", "library.html").plans, "curriculum.html#common-core-reading/5");
+  assert.equal(navigation.rememberedReadingGrade(JSON.stringify({ version: 1, grade: 13 })), "a1");
+  assert.equal(navigation.rememberedReadingGrade(JSON.stringify({ version: 1, grade: 0 })), "k");
+  for (const raw of [null, "", "{", "[]", JSON.stringify({ version: 2, grade: 5 }), JSON.stringify({ version: 1, grade: "5" }), JSON.stringify({ version: 1, grade: 17 })]) assert.equal(navigation.rememberedReadingGrade(raw), null, String(raw));
+});

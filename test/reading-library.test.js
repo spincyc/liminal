@@ -39,6 +39,9 @@ test("text serialises one canonical block per line and refuses anything else", (
   assert.throws(() => L.parseText('{"type":"paragraph","text":"x","extra":1}\n'), /fields/);
   assert.throws(() => L.parseText('{"type":"heading","level":2,"text":"FOOTNOTES:"}\n'), /notes label/);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"[Illustration: A cab]"}\n'), /illustration/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"long words like EncyclopÃ¦dia"}\n'), /decoded as Latin-1/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"itâ€™s"}\n'), /decoded as Latin-1/);
+  assert.equal(L.parseText('{"type":"paragraph","text":"NIL PEJUS EST CAELIBE VITÂ"}\n').length, 1);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"Fare {footnote A shilling.}"}\n'), /illustration/);
   assert.deepEqual(L.parseText('{"type":"heading","level":1,"text":"NOTES"}\n{"type":"paragraph","text":"FOOTNOTES:"}\n{"type":"paragraph","text":"[Footnote 1: Tweed.]"}\n').length, 3);
 });
@@ -96,4 +99,22 @@ test("the browser library index lists works with the readings drawn from them", 
   assert.equal(meta.contents[0].text, "CHAPTER I"); assert.deepEqual(meta.uses.map(use => use.id), ["reading-5-w01-d1", "reading-6-w02-d1"]);
   const chunk = JSON.parse(fs.readFileSync(path.join(directory, meta.chunks[0].file)));
   assert.equal(chunk.blocks.length, 4);
+});
+test("a reading with its own text still covers the passage it reads", () => {
+  const work = [
+    { type: "heading", text: "CHAPTER I" },
+    { type: "paragraph", text: "The Mole had been working very hard all the morning, spring-cleaning.[1]" },
+    { type: "stanza", text: "Ducks' tails, drakes' tails,\nYellow feet a-quiver,\nYellow bills all out of sight" },
+    { type: "paragraph", text: "[Footnote 1: A note the night leaves out of its copy.]" },
+    { type: "stanza", text: "Ducks' tails, drakes' tails,\nYellow feet a-quiver,\nYellow bills all out of sight" },
+  ];
+  // The night drops the anchor and splits the refrain stanza into lines.
+  const night = { blocks: [{ type: "paragraph", text: "The Mole had been working very hard all the morning, spring-cleaning." },
+    { type: "stanza", text: "Ducks' tails, drakes' tails," }, { type: "stanza", text: "Yellow feet a-quiver," }] };
+  assert.deepEqual(B.coveredBlocks(night, "w", work, new Map()), [1]);
+  const exact = { blocks: [work[1], { type: "paragraph", text: "  " + work[3].text }] };
+  // Spacing aside, both blocks occur once in the work and are covered.
+  assert.deepEqual(B.coveredBlocks(exact, "w", work, new Map()), [1, 3]);
+  // A block repeated in the work (a refrain) never marks coverage.
+  assert.deepEqual(B.coveredBlocks({ blocks: [work[2]] }, "w", work, new Map()), []);
 });

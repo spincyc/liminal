@@ -64,6 +64,11 @@ label: natural width capped at 18rem, wrapping into a full row on small screens.
 At 400px and below, numeric labels sit above their controls so Grade/Week/Day
 remain on one row. Long choices retain their complete accessible option text.
 Changing a selector keeps focus on that selector and announces the new content.
+A select that only jumps somewhere ("Go to week", a work's "Go to") keeps the
+current place selected and opens the choice on a Go button or Enter, never on
+change, so arrow keys can move through it (WCAG 3.2.2). A typed date opens
+when complete and committed (Enter, or leaving the field); the picker's choice
+opens at once.
 
 For daily and weekly readers, put selectors, sequence navigation and document
 actions in one persistent `.reader-toolbar`, in that order. It uses inline labels,
