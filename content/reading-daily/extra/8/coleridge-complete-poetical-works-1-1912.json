@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "coleridge-complete-poetical-works-1-1912",
+  "readings": [
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-01",
+      "title": "This Lime-Tree Bower My Prison",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a speaker who describes a walk he is not on, and find the line where his complaint turns.",
+      "focus": "Imagination and sympathy as a way of sharing what one has lost.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). The lime here is the linden tree, not the citrus fruit; a bower is a shady garden shelter. Charles Lamb, later a famous essayist, was Coleridge’s school friend; he worked as a clerk in the East India Company’s London offices and had suffered a terrible family tragedy the year before. A dell is a small wooded valley; a bark is a ship; the “many-steepled tract” is country with many church towers; a rook is a large crow.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "This Lime-Tree Bower My Prison, the whole poem with its dedication, Coleridge’s headnote and date; opens “[ADDRESSED TO CHARLES LAMB, OF THE INDIA HOUSE, LONDON]”; closes “1797.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          820,
+          826
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "285dd2cffe4dfcbbc03c4cc165b4b8058cf0952d2e7f4044d6196edfabe0b02a"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-01-q1",
+          "prompt": "In the first stanza the speaker describes a place he cannot see. How does he manage it, and what does it show about him?",
+          "facilitatorNotes": [
+            "He remembers the dell and pictures his friends reaching it, down to the ash tree’s leaves and the dripping weeds. His imagination goes on the walk without him; “of which I told” suggests he planned the route for them, so even his complaint is generous."
+          ],
+          "evidence": [
+            "To that still roaring dell, of which I told;",
+            "Still nod and drip beneath the dripping edge"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-01-q2",
+          "prompt": "Why does he imagine Charles as the gladdest of the walkers?",
+          "facilitatorNotes": [
+            "Lamb has been shut up in London for years and has suffered; the countryside means most to someone deprived of it. The speaker then commands the sun, flowers and clouds to shine for his friend, as if staging the sunset for him."
+          ],
+          "evidence": [
+            "And hunger'd after Nature, many a year, In the great City pent,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-01-q3",
+          "prompt": "Where does the poem turn, and what does the speaker find in his “prison”?",
+          "facilitatorNotes": [
+            "At “A delight / Comes sudden on my heart”: sharing his friends’ joy in imagination makes him glad, and he notices his own small bower: leaf shadows, the walnut, ivy, the bat and the humble-bee. The prison becomes enough."
+          ],
+          "evidence": [
+            "A delight Comes sudden on my heart, and I am glad As I myself were there!",
+            "No plot so narrow, be but Nature there,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-01-q4",
+          "prompt": "“'Tis well to be bereft of promis'd good.” Do you agree? How does the rook at the end join the two friends?",
+          "facilitatorNotes": [
+            "He argues that losing a pleasure can teach us to enjoy others’ joys. The single rook flying home may cross both men’s sight, linking the bower and the hill. Some readers find the consolation earned; others think it a little too neat, a way of talking himself out of disappointment."
+          ],
+          "evidence": [
+            "'Tis well to be bereft of promis'd good,",
+            "Homewards, I blest it!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-02",
+      "title": "Christabel, Part I: the lady under the oak",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Listen for the questions the narrator asks, and notice which ones he answers.",
+      "focus": "A Gothic ballad builds suspense from small wrong notes.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). Coleridge began Christabel in 1797, wrote its second part in 1800, and published both in 1816; he never finished it. In his preface he explains that each line has four stressed beats, though the number of syllables changes. A mastiff is a large guard dog (a bitch is a female); weal is welfare; misletoe is mistletoe; a palfrey is a gentle riding horse; “I wis” means “I know” or “surely”; “amain” is at full speed; chivalry here means knights.",
+      "contentNote": "Geraldine says that armed men seized her and carried her off; the scene is meant to frighten.",
+      "excerpt": {
+        "locator": "Christabel, Part I, from the opening to the crossing of the castle court; opens “'Tis the middle of night by the castle clock, And the owls have awakened the crowing…”; closes “…So free from danger, free from fear, They crossed the court: right glad they were.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-coleridge-complete-poetical-works-1-1912-03",
+        "blocks": [
+          1095,
+          1109
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "93f77d048f842a5d5614992bf764ad62135b0d842ef52417c7a00806e18555e9"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-02-q1",
+          "prompt": "The poem opens with sounds at midnight. Which of them seem wrong or out of place, and how do they set the mood?",
+          "facilitatorNotes": [
+            "The owls wake the cock, which crows at midnight instead of dawn; the old dog howls sixteen times, as if counting the clock; and some say she sees the dead lady’s shroud. Nothing is openly supernatural yet, but the ordinary world is slightly off."
+          ],
+          "evidence": [
+            "And the owls have awakened the crowing cock;",
+            "Some say, she sees my lady's shroud."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-02-q2",
+          "prompt": "“Is the night chilly and dark? / The night is chilly, but not dark.” Who seems to ask and who answers? How does this way of telling build suspense?",
+          "facilitatorNotes": [
+            "The narrator questions himself like a ballad-singer talking to listeners, then answers, correcting the expected word. The questions slow the story at the key moment (“What sees she there?”) and draw us in as if we were present."
+          ],
+          "evidence": [
+            "Is the night chilly and dark?",
+            "What sees she there?"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-02-q3",
+          "prompt": "What is strange about Geraldine, beyond her beauty? Look at her story and at how she enters the castle.",
+          "facilitatorNotes": [
+            "She cannot say who the men were or how long she lay there; at the gate she sinks and must be lifted over the threshold, then walks “as she were not in pain.” In many old tales an evil spirit cannot enter a house unless it is carried or invited in. When Christabel praises the Virgin, Geraldine says she is too weary to speak."
+          ],
+          "evidence": [
+            "Lifted her up, a weary weight, Over the threshold of the gate:",
+            "Alas, alas! said Geraldine, I cannot speak for weariness."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-02-q4",
+          "prompt": "Christabel helps at every step. Is the poem simply praising her goodness, or also showing a danger in innocence?",
+          "facilitatorNotes": [
+            "Her charity is real: she comforts, promises her father’s protection and offers her own bed. But each kindness opens the castle further to someone she cannot read. Readers may admire her, pity her, or see both at once."
+          ],
+          "evidence": [
+            "Then Christabel stretched forth her hand, And comforted fair Geraldine:",
+            "This night, to share your couch with me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-03",
+      "title": "Christabel, Part I: the spell",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 14,
+        "totalMinutes": 24
+      },
+      "challenge": "Collect the signs that something is wrong, and notice what the narrator refuses to describe.",
+      "focus": "Suspense created by what is withheld.",
+      "context": "Recap: praying in the woods at midnight, Christabel found Geraldine, a richly dressed lady who said warriors had carried her off. Christabel brought her secretly into her father’s castle, lifting her over the threshold. Brands are burning logs; the boss is the raised centre of a shield; rushes were strewn on floors; a cordial is a strengthening drink; “peak and pine” means waste away; a cincture is a belt and a vest a garment; “wel-a-day” means alas.",
+      "contentNote": "Geraldine undresses and takes Christabel in her arms, casting a spell. The poem never says what Christabel sees, only that it is “a sight to dream of, not to tell.”",
+      "excerpt": {
+        "locator": "Christabel, Part I, from the sleeping mastiff to the end of Part I; opens “Outside her kennel, the mastiff old Lay fast asleep, in moonshine cold. The mastiff old…”; closes “…home with thee in love and in charity, To shield her and shelter her from the damp air.'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-coleridge-complete-poetical-works-1-1912-02",
+        "continuesTo": "reading-8-coleridge-complete-poetical-works-1-1912-04",
+        "blocks": [
+          1110,
+          1124
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "828641faa4d12433fd8ca33fa3aa1029ace5f489a19df9c3db265067a7ccb4f5"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-03-q1",
+          "prompt": "As Geraldine passes, the old mastiff moans and the dying fire flares. What do these signs suggest, and why does the narrator offer an ordinary explanation for the first?",
+          "facilitatorNotes": [
+            "Animals and fire react to something unnatural. The narrator’s “Perhaps it is the owlet’s scritch” seems to explain the moan away, but repeating “what can ail the mastiff” keeps us suspicious."
+          ],
+          "evidence": [
+            "Yet she an angry moan did make!",
+            "Perhaps it is the owlet's scritch:",
+            "A tongue of light, a fit of flame;"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-03-q2",
+          "prompt": "When Christabel wishes her dead mother were there, Geraldine speaks in an “altered voice.” Whom is she speaking to, and what does it reveal?",
+          "facilitatorNotes": [
+            "To the mother’s spirit, which she calls Christabel’s “guardian,” and which she claims the power to drive away. It is the clearest sign that she is a supernatural enemy. Christabel explains it away as the effect of the “ghastly ride.”"
+          ],
+          "evidence": [
+            "'Off, wandering mother! Peak and pine! I have power to bid thee flee.'",
+            "Though thou her guardian spirit be,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-03-q3",
+          "prompt": "“A sight to dream of, not to tell!” Why might the poem refuse to show what Christabel sees? Does the gap make the moment more or less frightening?",
+          "facilitatorNotes": [
+            "Leaving it unsaid lets readers imagine the worst and keeps Geraldine mysterious; Part II will add only that the bosom is “old” and “cold.” Some readers find the silence powerful, others frustrating; both are worth arguing from the text."
+          ],
+          "evidence": [
+            "Behold! her bosom and half her side--",
+            "A sight to dream of, not to tell!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-03-q4",
+          "prompt": "What exactly does Geraldine’s spell do, and why is it especially cruel?",
+          "facilitatorNotes": [
+            "It masters Christabel’s speech: she can tell only that she heard a moaning, found a lady and brought her home “in love and in charity.” Her own kindness becomes the only story she is allowed to tell, so her virtue is used to silence her."
+          ],
+          "evidence": [
+            "Which is lord of thy utterance, Christabel!",
+            "And didst bring her home with thee in love and in charity,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-04",
+      "title": "Christabel: morning in the Baron’s hall",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Watch how the narrator’s comforting words sit beside what he shows, and notice who knows what in the hall.",
+      "focus": "Dramatic irony: the reader sees the danger that Christabel cannot name and her father cannot see.",
+      "context": "Recap: Christabel brought a stranger, Geraldine, into her bedroom; Geraldine undressed, showing something terrible, and took her in her arms under a spell, so that Christabel can say only that she found a lady in the woods and brought her home. Bale is harm; a tairn (tarn) is a mountain lake, a rill a stream and a fell a hill; the matin bell rings for morning prayers and the sacristan rings it, counting prayers on beads between strokes; Bratha Head, Wyndermere, Langdale and Borodale are places in the Lake District, where Part II is set; to be wroth is to be angry; “kenned” means recognised; recreant means cowardly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Christabel, the Conclusion to Part I with its date and Part II to Christabel’s “All will yet be well!”; opens “It was a lovely sight to see The lady Christabel, when she Was praying at the old oak…”; closes “…will yet be well!' I ween, she had no power to tell Aught else: so mighty was the spell.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-coleridge-complete-poetical-works-1-1912-03",
+        "continuesTo": "reading-8-coleridge-complete-poetical-works-1-1912-05",
+        "blocks": [
+          1126,
+          1146
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e28ae85a97a60c2b3a7170fa7bb3c2eada91d8f2b98bbebb2c7158123663c4c5"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-04-q1",
+          "prompt": "The Conclusion to Part I says Geraldine holds Christabel “As a mother with her child.” Why is the comparison disturbing here?",
+          "facilitatorNotes": [
+            "Christabel’s mother is dead and her guardian spirit was just driven off; now “the worker of these harms” takes the mother’s place. The tender image hides a prison (“arms of thine / Have been the lovely lady’s prison”)."
+          ],
+          "evidence": [
+            "As a mother with her child.",
+            "And lo! the worker of these harms,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-04-q2",
+          "prompt": "The Conclusion ends, “For the blue sky bends over all!” Is the comfort convincing after what we have seen?",
+          "facilitatorNotes": [
+            "The narrator insists that saints help those who call and that Christabel may be dreaming of her mother. Some readers take it as real hope; others hear a narrator talking himself into it (“No doubt, she hath a vision sweet”), where “No doubt” raises doubt."
+          ],
+          "evidence": [
+            "No doubt, she hath a vision sweet.",
+            "For the blue sky bends over all!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-04-q3",
+          "prompt": "Why does Sir Leoline turn pale at Lord Roland’s name? What does the passage say about anger between friends?",
+          "facilitatorNotes": [
+            "Roland was his dearest friend until “whispering tongues” set them against each other. Anger at someone we love works “like madness,” and the break leaves scars like cliffs split by the sea. Welcoming Roland’s daughter lets him hope to mend it, which is exactly the feeling Geraldine uses."
+          ],
+          "evidence": [
+            "And to be wroth with one we love Doth work like madness in the brain.",
+            "Like cliffs which had been rent asunder;"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-04-q4",
+          "prompt": "When her father embraces Geraldine, Christabel hisses and then says only “All will yet be well!” How must she appear to him?",
+          "facilitatorNotes": [
+            "He turns and sees only his daughter praying, then hears a cheerful answer that explains nothing. The spell lets her say nothing true. The reader knows why she shudders; her father does not, and that gap is the source of the coming trouble."
+          ],
+          "evidence": [
+            "And drew in her breath with a hissing sound:",
+            "Made answer, 'All will yet be well!'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-05",
+      "title": "Christabel: Bracy’s dream",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Interpret a dream that the characters misread, and decide what the unfinished poem leaves open.",
+      "focus": "How a spell turns innocence into the look of guilt.",
+      "context": "Recap: Geraldine has bewitched Christabel so that she cannot tell what she saw, and has charmed Sir Leoline, who recognises her as the daughter of Lord Roland, the friend he quarrelled with long ago. The Irthing is a river near the border with Scotland; a bard is a poet and musician; a boon is a favour; “askance” means sideways, with suspicion; “inly” means inwardly. Coleridge never wrote the rest of the poem; the Conclusion to Part II was written separately and printed with it.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Christabel, Part II from Geraldine’s request to go home to its end, with the Conclusion to Part II and the dates; opens “Yet he, who saw this Geraldine, Had deemed her sure a thing divine: Such sorrow with such…”; closes “1801.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-coleridge-complete-poetical-works-1-1912-04",
+        "continuesTo": null,
+        "blocks": [
+          1147,
+          1161
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e0e82fc3b1d4293e65b1628ca0d5378514642fd343364ffb0f422c20bb30546"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-05-q1",
+          "prompt": "What does Bracy dream, and how does Sir Leoline apply the dream?",
+          "facilitatorNotes": [
+            "Bracy sees the dove named after Christabel trapped by a green snake coiled round its neck: plainly Geraldine and Christabel. Sir Leoline calls Geraldine “Lord Roland’s beauteous dove” and promises to crush the snake, reversing the meaning. The reader sees the irony at once."
+          ],
+          "evidence": [
+            "When lo! I saw a bright green snake Coiled around its wings and neck.",
+            "Thy sire and I will crush the snake!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-05-q2",
+          "prompt": "Christabel copies Geraldine’s serpent look “With forced unconscious sympathy.” What happens to her, and why does it matter that it happens “Full before her father’s view”?",
+          "facilitatorNotes": [
+            "Her innocent face takes on a look of “dull and treacherous hate,” and her father sees it. The spell makes the victim look like the villain at the worst moment."
+          ],
+          "evidence": [
+            "And passively did imitate That look of dull and treacherous hate!",
+            "Full before her father's view----"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-05-q3",
+          "prompt": "Why does Sir Leoline side with Geraldine against his daughter? Is he only deceived, or does his character play a part?",
+          "facilitatorNotes": [
+            "He is deceived, but pride and rage do the rest: he feels “Dishonoured” and blames “more than woman’s jealousy.” The narrator even pleads with him to remember the mother’s prayer. Readers may judge him harshly or pity a man trapped by his own feelings."
+          ],
+          "evidence": [
+            "Dishonoured thus in his old age;",
+            "By more than woman's jealousy"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-05-q4",
+          "prompt": "The Conclusion to Part II describes a father who speaks “words of unmeant bitterness” to a child he loves. How might it connect to the poem, and what does its ending suggest?",
+          "facilitatorNotes": [
+            "It may comment on Sir Leoline’s harsh words, or on any loving parent who speaks bitterly. Its last lines suggest that such words usually come “from rage and pain.” Because the poem is unfinished, readers must decide how the pieces fit."
+          ],
+          "evidence": [
+            "With words of unmeant bitterness.",
+            "Comes seldom save from rage and pain,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-06",
+      "title": "Frost at Midnight",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 16,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow the poem from the silent room to memory, to a hoped-for future, and back.",
+      "focus": "A father’s meditation turns a silent winter night into a blessing for his child.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). He wrote this in February 1798 beside his baby son, Hartley. The “film” on the grate is a flake of soot; in folklore it was called a “stranger” and foretold an unexpected visitor. As a boy Coleridge was sent to a London boarding school (the “preceptor” is a teacher) and missed his home in Devon. “Pent” means shut in; the “sister more beloved” and he were dressed alike as small children. “Intersperséd vacancies” are scattered pauses.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frost at Midnight, the whole poem with its date; opens “The Frost performs its secret ministry, Unhelped by any wind. The owlet's cry Came…”; closes “_February_, 1798.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1192,
+          1195
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "23b36c21706aa109a09ab00239f7292dc694b7b7e0ca05a9db0dee6ed874b21a"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-06-q1",
+          "prompt": "Why does the calm “disturb” the speaker? What is “the sole unquiet thing,” and what does his mind do with it?",
+          "facilitatorNotes": [
+            "The silence is so complete that it vexes him. The fluttering film becomes a companion, because the idle mind looks everywhere for an “echo or mirror” of itself. He admits that this makes “a toy of Thought.”"
+          ],
+          "evidence": [
+            "'Tis calm indeed! so calm that it disturbs",
+            "Still flutters there, the sole unquiet thing."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-06-q2",
+          "prompt": "How does the film on the grate lead him back to his schooldays? What did the boy hope for?",
+          "facilitatorNotes": [
+            "The same superstition made him watch the grate at school, dreaming of his birthplace and its bells, and then watch the classroom door all morning for a visitor from home. The memory shows a lonely child in a strict city school."
+          ],
+          "evidence": [
+            "Awed by the stern preceptor's face, mine eye Fixed with mock study on my swimming book:",
+            "My play-mate when we both were clothed alike!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-06-q3",
+          "prompt": "What different childhood does he promise his son, and what does he think nature will teach?",
+          "facilitatorNotes": [
+            "The baby will wander among lakes, shores and mountains instead of city cloisters, and learn from nature as from “that eternal language” in which God teaches. The poem treats landscape as a teacher that makes the spirit “ask.”"
+          ],
+          "evidence": [
+            "shalt wander like a breeze By lakes and sandy shores",
+            "Of that eternal language, which thy God Utters,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-06-q4",
+          "prompt": "The poem ends with “the secret ministry of frost,” as it began. What has changed by the time we return to it?",
+          "facilitatorNotes": [
+            "At the start the frost works unseen while the speaker feels uneasy; at the end it hangs icicles “Quietly shining to the quiet Moon,” part of a calm blessing. The circular shape lets the same night feel different after the journey through memory and hope."
+          ],
+          "evidence": [
+            "The Frost performs its secret ministry,",
+            "Quietly shining to the quiet Moon."
+          ]
+        }
+      ],
+      "months": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-07",
+      "title": "The Nightingale",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 15,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow an argument made in the relaxed voice of someone talking to friends on an evening walk.",
+      "focus": "Whether we hear nature as it is or fill it with our own feelings.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). The “Friend” and “Sister” are William Wordsworth and his sister Dorothy. “Most musical, most melancholy” is a line from Milton’s poem Il Penseroso; in Greek myth Philomela was turned into a nightingale after a terrible wrong, so poets long called the bird’s song sad. “Jug jug” imitates the song; king-cups are buttercups or marsh marigolds; a glow-worm is a beetle whose female gives off light; the babe is Coleridge’s son Hartley.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Nightingale: A Conversation Poem, April, 1798, the whole poem with its date; opens “No cloud, no relique of the sunken day Distinguishes the West, no long thin slip Of…”; closes “1798.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1244,
+          1249
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "975f8dd45d3729753b22ae1038b21eb2718894d715ad6860f032a72d533977bc"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-07-q1",
+          "prompt": "Why does the speaker reject calling the nightingale “melancholy”? Who, according to him, gave the bird that reputation?",
+          "facilitatorNotes": [
+            "A sorrowing man who “filled all things with himself” heard his own grief in the song, and poets copied him. The speaker’s point is that the sadness belonged to the listener, not the bird."
+          ],
+          "evidence": [
+            "In Nature there is nothing melancholy.",
+            "(And so, poor wretch! filled all things with himself,"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-07-q2",
+          "prompt": "What does he think a poet should do instead of “building up the rhyme”? Is there an irony in saying this in a poem?",
+          "facilitatorNotes": [
+            "Lie by a brook and surrender to the shapes and sounds around him, forgetting fame; then his song would be loved like nature. The irony is that this is a poem, though its loose, talking blank verse tries to sound like an evening conversation rather than a performance."
+          ],
+          "evidence": [
+            "Surrendering his whole spirit, of his song And of his fame forgetful!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-07-q3",
+          "prompt": "Which words in the passages about the grove and the gentle Maid make the birds’ singing sound joyful and lively?",
+          "facilitatorNotes": [
+            "They “answer and provoke each other,” skirmish, burst forth like “a hundred airy harps,” and one sings “Like tipsy Joy that reels with tossing head.” The language is quick, crowded and merry, the opposite of a lament."
+          ],
+          "evidence": [
+            "They answer and provoke each other's song,",
+            "Like tipsy Joy that reels with tossing head."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-07-q4",
+          "prompt": "Why does the poem end with the baby and the moon? How does the story support the argument about nightingales?",
+          "facilitatorNotes": [
+            "The crying child is soothed by the moon and laughs, so the father wants him to grow up linking night with joy. It is his own small proof, though he admits “It is a father’s tale.” Readers may find it moving or decide it proves only what the father hopes."
+          ],
+          "evidence": [
+            "And I deem it wise To make him Nature's play-mate.",
+            "He may associate joy."
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5
+      ]
+    }
+  ]
+}
