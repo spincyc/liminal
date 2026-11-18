@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "defoe-robinson-crusoe-1808",
+  "readings": [
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-01",
+      "title": "Robinson Crusoe: the father’s counsel",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Restate the father’s argument as a short list of claims. Then watch for every place where the old narrator judges or foreshadows the choices of his younger self.",
+      "focus": "A father’s case for a safe middle life, a son’s restlessness, and a narrator who already knows the cost.",
+      "context": "Daniel Defoe (about 1660–1731) published Robinson Crusoe in 1719, presenting it as the true memoir of a sailor; this is an 1808 edition. Crusoe tells his story as an old man. Bremen is a German port; Hull and York are in northern England. Gout is a painful disease of the joints; to expostulate is to argue earnestly; “the mechanic part of mankind” means manual workers; “viz.” means namely; a propension is an inclination. The “wise man” who prayed for “neither poverty nor riches” speaks in the Book of Proverbs. The Low Countries are modern Belgium and the Netherlands.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Robinson Crusoe, opening of the narrative, from Crusoe’s birth through his father’s private warning to his mother; opens “I was born in the year 1632, in the city of York, of a good family, though not of that…”; closes “…he will be the most miserable wretch that was ever born; I can give no consent to it.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          10
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c41eb0b909b642f230780b587b711886227eb696b0594f8539053ba0e4625aaa"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-01-q1",
+          "prompt": "What does the father claim for “the middle station” of life? What does it escape above and below?",
+          "facilitatorNotes": [
+            "It avoids the labour, hardship and want of manual workers and the pride, luxury, ambition and envy of the great; it is envied by all, even kings, and brings health, “peace and plenty,” and a quiet passage “through the world, and comfortably out of it.”",
+            "Some readers find this real wisdom about contentment; others hear a prosperous merchant praising his own class. Readers who go on will find that Crusoe later seeks wealth by sailing to buy enslaved Africans, which gives the father’s phrase “sold to the life of slavery for daily bread” a dark irony."
+          ],
+          "evidence": [
+            "that this was the state of life which all other people envied",
+            "that peace and plenty were the handmaids of a middle fortune"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-01-q2",
+          "prompt": "The narrator calls his longing for the sea “something fatal” and his father’s words “truly prophetic.” How does the older Crusoe shape the way we see his younger self?",
+          "facilitatorNotes": [
+            "He narrates with hindsight, already knowing the “life of misery” to come, so the opening reads as a warning ignored. He admits that the father’s tears moved him but “a few days wore it all off.”",
+            "The foreshadowing creates suspense and invites judgment. Some readers accept the moral frame of a disobedient son; others notice that Crusoe also blames fate, which softens his own responsibility."
+          ],
+          "evidence": [
+            "there seemed to be something fatal in that propension of nature tending directly to the life of misery which was to befal me",
+            "which was truly prophetic, though I suppose my father did not know it to be so himself"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-01-q3",
+          "prompt": "Crusoe asks his mother to win him one voyage. Whose case is stronger, the son’s or the parents’? Notice what both parents say about having a “hand” in his ruin.",
+          "facilitatorNotes": [
+            "Crusoe argues that at eighteen he is too old to be apprenticed and will run away anyway, so consent is better than force. The father refuses to “have so much hand in my misfortunes,” and the mother likewise will not “have so much hand in my destruction”: both refuse responsibility as well as consent.",
+            "The father’s private sigh, “That boy might be happy if he would stay at home,” shows love as well as authority. Students may side with the parents’ prudence or the son’s desire to choose his own life; the book’s later events will test both."
+          ],
+          "evidence": [
+            "that I was now eighteen years old, which was too late to go apprentice to a trade",
+            "That boy might be happy if he would stay at home"
+          ]
+        }
+      ]
+    }
+  ]
+}
