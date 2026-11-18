@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "shakespeare-works-viii-1866",
+  "readings": [
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-01",
+      "title": "King Lear — the love test (I.1)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Track what each character says love is, and what each wants in return for it.",
+      "focus": "Love measured in public speech, and the cost of telling the truth to power.",
+      "context": "This selection begins King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Corn. Cornwall, Bur. Burgundy, Osw. Oswald). Lear is king of ancient Britain and has three daughters. The Earl of Gloucester has two sons: Edgar, born in marriage, and Edmund, born outside it. Affected means favoured; moiety is share; brazed is hardened; champains are open plains; Hecate is the goddess of night and witchcraft; the Scythians were proverbial savages. “Make from the shaft” means get out of the arrow’s way; the blank is the white centre of a target.",
+      "contentNote": "Gloucester jokes coarsely about Edmund’s conception in front of him; Lear disowns his daughter in violent terms.",
+      "excerpt": {
+        "locator": "King Lear, Act I, scene I, from the opening to Kent’s banishment; opens “Enter Kent, Gloucester, and Edmund.”; closes “…Kent, O princes, bids you all adieu; He'll shape his old course in a country new. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-02",
+        "blocks": [
+          2165,
+          2218
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9185d649d4037333ba333b8a8927582f4a5dc685af4cbc9cc13c720fe5f323c5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-01-q1",
+          "prompt": "The play opens with Gloucester joking about Edmund’s birth while Edmund stands there. What does the exchange show about Gloucester, and how might Edmund hear it?",
+          "facilitatorNotes": [
+            "Gloucester says he has blushed so often to acknowledge Edmund that he is now “brazed” to it, and jokes about “good sport at his making.” He claims to love both sons equally, yet shames one in public and sends him away again. Edmund says almost nothing; a production can show his resentment in his silence, and the scene plants the grievance that drives his plot."
+          ],
+          "evidence": [
+            "I have so often blushed to acknowledge him that now I am brazed to it.",
+            "there was good sport at his making, and the whoreson must be acknowledged.",
+            "He hath been out nine years, and away he shall again."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-01-q2",
+          "prompt": "What reasons does Lear give for dividing the kingdom, and why does he stage a contest of love when the shares are already drawn on the map?",
+          "facilitatorNotes": [
+            "He wants to shake off cares, prevent future strife and “crawl toward death” unburdened. Yet he asks which daughter loves him most so that “our largest bounty” may follow. The map is already divided, so the contest is a ceremony: he wants love declared in public, and measured."
+          ],
+          "evidence": [
+            "To shake all cares and business from our age,",
+            "Which of you shall we say doth love us most?"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-01-q3",
+          "prompt": "Compare Goneril’s speech with Cordelia’s answer. Why does Cordelia say “Nothing”?",
+          "facilitatorNotes": [
+            "Goneril claims a love beyond words and then piles up words. Cordelia’s asides decide to “Love, and be silent”; she loves “According to my bond; nor more nor less” and points out that a husband will claim half her love. Many readers see integrity; others see a pride that matches her father’s. Lear’s “Nothing will come of nothing” turns her word into a sentence."
+          ],
+          "evidence": [
+            "A love that makes breath poor and speech unable;",
+            "Love, and be silent.",
+            "I love your majesty According to my bond; nor more nor less."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-01-q4",
+          "prompt": "What does Kent see that Lear does not, and why does Lear banish him rather than listen?",
+          "facilitatorNotes": [
+            "Kent calls the judgement “hideous rashness” and says plain speech is a duty when majesty “stoops to folly.” “See better, Lear” begins the play’s language of sight. Lear hears a challenge to his authority: Kent has come “between our sentence and our power.” A defensible answer is that Lear cannot separate being contradicted from being disobeyed."
+          ],
+          "evidence": [
+            "To plainness honour's bound, When majesty stoops to folly.",
+            "See better, Lear, and let me still remain The true blank of thine eye.",
+            "To come between our sentence and our power,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-02",
+      "title": "King Lear — the dowerless daughter (I.1)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 15,
+        "totalMinutes": 30
+      },
+      "challenge": "Listen for the language of buying and selling, and for who resists it.",
+      "focus": "A daughter priced and then refused, and two sisters who begin to plan.",
+      "context": "Recap: King Lear has divided Britain between his elder daughters, Goneril and Regan, after their extravagant declarations of love. His youngest, Cordelia, would not compete and has been disowned; the Earl of Kent, who defended her, has been banished. Now her two suitors, the King of France and the Duke of Burgundy, return. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Corn. Cornwall, Bur. Burgundy, Osw. Oswald). Pieced means joined; owes means owns; “election makes not up” means no choice can be made; benison is blessing; plaited means folded, hidden.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "King Lear, Act I, scene I, from the entry of France and Burgundy to the end of the scene; opens “Flourish. Re-enter Gloucester, with France, Burgundy, and Attendants.”; closes “Gon. We must do something, and i' the heat. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-01",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-03",
+        "blocks": [
+          2219,
+          2254
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1d4249bc48822d8b07d3aeae546d08a7faeff7645aced8cd850f0c101af40a1a"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-02-q1",
+          "prompt": "How does Lear describe Cordelia to Burgundy? What does his language reveal?",
+          "facilitatorNotes": [
+            "“Her price is fall’n”; she is a “little seeming substance” “dower’d with our curse.” He offers her as goods whose value has dropped. The marriage market makes plain the logic of the love test: love traded for land."
+          ],
+          "evidence": [
+            "When she was dear to us, we did hold her so; But now her price is fall'n.",
+            "Dower'd with our curse and stranger'd with our oath,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-02-q2",
+          "prompt": "How do Burgundy and France answer differently? Explain France’s paradoxes.",
+          "facilitatorNotes": [
+            "Burgundy will take her only with the promised portion. France says love mixed with such calculations is not love, and calls her “most rich being poor.” His paradoxes reverse Lear’s values. Some readers find him idealised; he also gains a queen."
+          ],
+          "evidence": [
+            "Love's not love When it is mingled with regards that stand Aloof from the entire point.",
+            "Fairest Cordelia, that art most rich being poor,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-02-q3",
+          "prompt": "What does Cordelia ask her father to make known, and what does it show about her?",
+          "facilitatorNotes": [
+            "That she has lost his favour for no crime or unchastity, only for lacking “that glib and oily art” of saying what she does not mean. She defends her honour publicly and is glad not to have a flatterer’s eye and tongue. The speech shows firmness and some pride; it does not soften her father."
+          ],
+          "evidence": [
+            "If for I want that glib and oily art, To speak and purpose not,",
+            "It is no vicious blot, murder, or foulness,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-02-q4",
+          "prompt": "Goneril and Regan end the scene speaking in prose. How does their talk differ from the verse before it, and is their judgement of their father fair?",
+          "facilitatorNotes": [
+            "The verse ceremony gives way to practical, private prose. Much of what they say is accurate: he always loved Cordelia most and “hath ever but slenderly known himself.” But the observation turns at once to planning: “let’s hit together,” “i’ the heat.” Readers may find them shrewd before they are cruel, which makes them more disturbing than simple villains."
+          ],
+          "evidence": [
+            "he always loved our sister most; and with what poor judgement he hath now cast her off appears too grossly.",
+            "yet he hath ever but slenderly known himself.",
+            "We must do something, and i' the heat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-03",
+      "title": "King Lear — Edmund’s letter (I.2)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Watch how Edmund manages each person by giving them what they expect.",
+      "focus": "Nature against custom, and a villain who argues well.",
+      "context": "Recap: King Lear has divided his kingdom between Goneril and Regan, disowned Cordelia and banished the Earl of Kent. In the first lines of the play the Earl of Gloucester joked about the birth of Edmund, his son born outside marriage; his legitimate elder son is Edgar. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Corn. Cornwall, Bur. Burgundy, Osw. Oswald). Moonshines are months; “lag of” means younger than; exhibition is an allowance; “upon the gad” means suddenly; character is handwriting; auricular means heard with one’s own ears; Ursa major is the Great Bear; Tom o’ Bedlam is a mad beggar.",
+      "contentNote": "Edmund speaks frankly about sex and illegitimacy.",
+      "excerpt": {
+        "locator": "King Lear, Act I, scene II, the whole scene; opens “Enter Edmund, with a letter.”; closes “…me, if not by birth, have lands by wit: All with me's meet that I can fashion fit. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-02",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-04",
+        "blocks": [
+          2256,
+          2309
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9648f7f1c737f9853dfe132d41c1712f48e9514b83ccdf350d11d0908a99007b"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-03-q1",
+          "prompt": "In his opening soliloquy, what is Edmund arguing against? Notice what he does with the words “base” and “legitimate.”",
+          "facilitatorNotes": [
+            "He rejects “the plague of custom,” the law that gives land to the elder legitimate son and brands a bastard. He repeats “base” until it sounds empty, and mocks “legitimate” as a “fine word.” Nature, for him, is energy against convention. Many readers find his grievance partly just, which makes him compelling."
+          ],
+          "evidence": [
+            "Thou, nature, art my goddess;",
+            "Why bastard? wherefore base?",
+            "fine word, 'legitimate!'"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-03-q2",
+          "prompt": "How does Edmund handle the letter so that Gloucester insists on reading it?",
+          "facilitatorNotes": [
+            "He hides it too quickly, answers “Nothing, my lord” (Cordelia’s word, now a lie), and protests that it is unfit to show. Reluctance does the persuading. Gloucester, like Lear, is quick to judge from a display."
+          ],
+          "evidence": [
+            "Nothing, my lord.",
+            "if it be nothing, I shall not need spectacles.",
+            "I shall offend, either to detain or give it."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-03-q3",
+          "prompt": "Gloucester blames the eclipses; Edmund mocks him. Who is right about why people act as they do?",
+          "facilitatorNotes": [
+            "Gloucester’s list (son against father, king against child) describes what is happening, but he credits the stars. Edmund calls this “excellent foppery” and insists he would be what he is under any star. He is right that people make their choices; he says so while choosing to deceive. Readers can weigh credulity against a clear-eyed cynicism."
+          ],
+          "evidence": [
+            "These late eclipses in the sun and moon portend no good to us",
+            "This is the excellent foppery of the world",
+            "I should have been that I am, had the maidenliest star in the firmament twinkled on my bastardizing."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-03-q4",
+          "prompt": "What does Edmund’s closing speech say about how he sees his father and brother?",
+          "facilitatorNotes": [
+            "Their virtues are his opportunity: a father who believes too easily, a brother too honest to suspect. “Lands by wit” states his program as a self-made man; the rhyming couplet gives it a confident finish."
+          ],
+          "evidence": [
+            "A credulous father, and a brother noble,",
+            "on whose foolish honesty My practices ride easy.",
+            "Let me, if not by birth, have lands by wit:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-04",
+      "title": "King Lear — a servant and a fool (I.3–4)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Notice who still treats Lear as a king, and who has stopped.",
+      "focus": "Authority after it has been given away, and truth told by a fool.",
+      "context": "Recap: Lear has given his kingdom to Goneril and Regan, planning to live with each in turn with a hundred knights; he disowned Cordelia, who has left as Queen of France, and banished the Earl of Kent. Meanwhile Edmund has turned his father Gloucester against his brother Edgar with a forged letter. Lear is now staying with Goneril. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Corn. Cornwall, Bur. Burgundy, Osw. Oswald). A clotpoll is a blockhead; a coxcomb is a fool’s cap; nuncle (uncle) is the Fool’s name for Lear; a brach is a bitch hound; “to eat no fish” probably means to be no Catholic, or no weakling.",
+      "contentNote": "Lear strikes a servant, and the Fool’s rhymes are bawdy.",
+      "excerpt": {
+        "locator": "King Lear, Act I, scene III, and scene IV to Goneril’s entrance; opens “Enter Goneril and Oswald, her steward.”; closes “…thy wit o' both sides and left nothing i' the middle. Here comes one o' the parings.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-03",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-05",
+        "blocks": [
+          2311,
+          2405
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a5b27b2a988469e93436fd1fa6af5379585578165794b9b02bcf55e93fa5585b"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-04-q1",
+          "prompt": "What instructions does Goneril give Oswald, and what does she want to happen?",
+          "facilitatorNotes": [
+            "Neglect the king, let the servants be slack, and give his knights colder looks. She means to “breed from hence occasions”: to provoke a quarrel that will justify her. Her complaint about riotous knights may have some truth; her method is calculated."
+          ],
+          "evidence": [
+            "I would breed from hence occasions, and I shall, That I may speak:",
+            "Old fools are babes again, and must be used With checks as flatteries,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-04-q2",
+          "prompt": "Kent, in disguise, says he sees “Authority” in Lear’s face. Why does that word matter here?",
+          "facilitatorNotes": [
+            "Lear has handed his power away, but to Kent he still looks like a master. Oswald answers the question “who am I?” with “My lady’s father”: the household now serves Goneril. The loyal servant in disguise is set against the steward who has changed masters."
+          ],
+          "evidence": [
+            "you have that in your countenance which I would fain call master.",
+            "Authority.",
+            "My lady's father."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-04-q3",
+          "prompt": "The Fool offers Kent his coxcomb. What is he saying about anyone who follows Lear now?",
+          "facilitatorNotes": [
+            "Anyone who takes the side of the man out of favour is a fool. He adds that Lear “banished two on’s daughters, and done the third a blessing against his will”: the daughters he rewarded are lost to him, and the one he exiled is better off. The Fool’s licence lets him say what Kent was banished for."
+          ],
+          "evidence": [
+            "Why, for taking one's part that's out of favour",
+            "this fellow hath banished two on's daughters, and done the third a blessing against his will"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-04-q4",
+          "prompt": "“Can you make no use of nothing, nuncle?” How does the Fool turn “nothing” back on Lear, and why does Lear let him go on?",
+          "facilitatorNotes": [
+            "Lear answers with his own line to Cordelia, “nothing can be made out of nothing,” and the Fool shows that Lear has made himself nothing: he has given away every title but the fool’s. Lear threatens the whip but keeps listening, perhaps because part of him knows the Fool is right."
+          ],
+          "evidence": [
+            "Can you make no use of nothing, nuncle?",
+            "All thy other titles thou hast given away; that thou wast born with.",
+            "thou hadst little wit in thy bald crown when thou gavest thy golden one away."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-05",
+      "title": "King Lear — a thankless child (I.4–5)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow Lear’s moods from disbelief to rage to fear, and notice what each one shows about him.",
+      "focus": "A father’s curse, the first recognition of a wrong, and the fear of madness.",
+      "context": "Recap: Lear is living with Goneril and his hundred knights. Her servants neglect him and her steward Oswald has insulted him; the banished Kent, in disguise, has joined his service, and the Fool keeps telling him that he gave his kingdom away. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Corn. Cornwall, Bur. Burgundy, Osw. Oswald). A frontlet is a forehead band, here a frown; a shealed peascod is an empty pea-pod; darkling means in the dark; disquantity means reduce; a kite is a bird of prey; cadent means falling; untented means too deep to be dressed; kibes are chilblains; a crab is a crab-apple.",
+      "contentNote": "A father curses his daughter with sterility; Goneril compares the court to a brothel.",
+      "excerpt": {
+        "locator": "King Lear, Act I, scene IV from Goneril’s entrance, and scene V, to the end of the act; opens “Enter Goneril.”; closes “[Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-04",
+        "continuesTo": null,
+        "blocks": [
+          2406,
+          2484
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "348574558db4d6c1c3814668608f09df915f2f230c627571c9e472e2c3baceb6"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-05-q1",
+          "prompt": "What does Goneril accuse the knights of, and how does she ask Lear to reduce them? Is her case reasonable?",
+          "facilitatorNotes": [
+            "The knights are “insolent,” riotous, turning the court into an inn, tavern or brothel; she asks him to “disquantity” his train, politely but with a threat: she will take what she begs. Lear calls them “men of choice and rarest parts.” The play gives no neutral witness, so productions differ; her case may be partly fair and her purpose, from scene III, is still a provocation."
+          ],
+          "evidence": [
+            "Shows like a riotous inn:",
+            "By her that else will take the thing she begs A little to disquantity your train,",
+            "My train are men of choice and rarest parts,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-05-q2",
+          "prompt": "“Who is it that can tell me who I am?” How does the Fool answer, and what has happened to Lear?",
+          "facilitatorNotes": [
+            "“Lear’s shadow.” His name and title no longer command obedience, so he asks whether this can be Lear at all. Identity, for him, has depended on being obeyed."
+          ],
+          "evidence": [
+            "Doth any here know me? This is not Lear:",
+            "Who is it that can tell me who I am?",
+            "Lear's shadow."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-05-q3",
+          "prompt": "What does Lear now say about Cordelia’s fault, and what does he ask nature to do to Goneril?",
+          "facilitatorNotes": [
+            "He calls Cordelia’s fault “most small” and strikes his head at the gate that let his folly in: a first recognition. Then he curses Goneril with sterility, or a child who will torment her, so that she may feel what a thankless child is. The curse is horrifying, and it shows how completely he thinks of children as owing a debt."
+          ],
+          "evidence": [
+            "O most small fault, How ugly didst thou in Cordelia show!",
+            "Into her womb convey sterility:",
+            "How sharper than a serpent's tooth it is To have a thankless child!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-05-q4",
+          "prompt": "In scene V the Fool keeps joking. What lines break through from Lear, and what do they show is on his mind?",
+          "facilitatorNotes": [
+            "“I did her wrong” (Cordelia), “So kind a father!”, a thought of taking his power back by force, and finally the prayer not to go mad. The Fool’s riddles run on around these broken lines, which show guilt, self-pity, anger and fear in quick succession."
+          ],
+          "evidence": [
+            "I did her wrong—",
+            "To take 't again perforce! Monster ingratitude!",
+            "O, let me not be mad, not mad, sweet heaven!"
+          ]
+        }
+      ]
+    }
+  ]
+}
