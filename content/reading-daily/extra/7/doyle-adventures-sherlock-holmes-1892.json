@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "doyle-adventures-sherlock-holmes-1892",
+  "readings": [
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01",
+      "title": "“The woman” and a note on Bohemian paper: part 1 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what Holmes actually sees from what he concludes, and test each conclusion against its evidence.",
+      "focus": "Holmes defines his method (“You see, but you do not observe”) before the first client arrives.",
+      "context": "Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892) collects twelve stories first printed in the Strand Magazine; “A Scandal in Bohemia” is the first. Dr. John Watson narrates. He once shared rooms with Holmes at Baker Street in London and has since married. Bohemia was a kingdom in central Europe, now part of the Czech Republic. A gasogene made soda water; a “slavey” was a maid-of-all-work; iodoform and nitrate of silver were medical chemicals. Watson calls himself Holmes’s Boswell: James Boswell wrote a famous life of his friend Samuel Johnson.",
+      "contentNote": "Watson mentions Holmes’s use of cocaine, a legal drug in 1888 whose dangers were not yet widely understood.",
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part I, from the opening through Holmes’s reading of the unsigned note; opens “To Sherlock Holmes she is always _the_ woman. I have seldom heard him mention her under…”; closes “…to showing his face. And here he comes, if I am not mistaken, to resolve all our doubts.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+        "blocks": [
+          4,
+          36
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d6cd4d5cbab2ad544ad79a655b7226ba1fd15cda293446eeb362749e930de713"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q1",
+          "prompt": "Watson calls Holmes “the most perfect reasoning and observing machine,” then says there was “but one woman to him.” What puzzle does the first paragraph set up?",
+          "facilitatorNotes": [
+            "Holmes despises emotion as “grit in a sensitive instrument,” yet one woman stands above all others in his mind. The paragraph tells us she is “the late” Irene Adler, so the story will explain how she earned that place. Readers may notice Watson insists it was not love, which raises the question of what it was."
+          ],
+          "evidence": [
+            "Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his.",
+            "And yet there was but one woman to him"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q2",
+          "prompt": "How does Holmes know that Watson has been out in bad weather and has a careless servant? What is the difference between seeing and observing?",
+          "facilitatorNotes": [
+            "Six parallel cuts on the inside of Watson’s left shoe show that someone scraped off crusted mud clumsily. Watson has seen the stairs hundreds of times but cannot say how many there are; Holmes has observed and knows there are seventeen. Seeing is taking in; observing is noticing and keeping what matters."
+          ],
+          "evidence": [
+            "the leather is scored by six almost parallel cuts",
+            "You see, but you do not observe. The distinction is clear."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q3",
+          "prompt": "Holmes draws two conclusions from the note: where the paper was made and who wrote it. Which conclusion rests on firmer evidence, and why?",
+          "facilitatorNotes": [
+            "The paper’s origin is checked: the woven letters, the German abbreviations and the gazetteer all point to Egria in Bohemia. The writer’s nationality rests on one awkward sentence and a joke about Germans’ verbs; it is a reasonable guess, but someone else could write that way. Holmes himself warns against theorising before having data, so readers can hold him to his own rule."
+          ],
+          "evidence": [
+            "It is a capital mistake to theorize before one has data.",
+            "This account of you we have from all quarters received."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+      "title": "A masked king and a photograph: part 2 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how a client’s disguise and his account of another person can both be partly untrustworthy.",
+      "focus": "The King of Bohemia hires Holmes to recover a photograph, and we meet Irene Adler only through his description.",
+      "context": "Watson has called on Holmes after months apart. Holmes has just shown him an unsigned note on paper made in Bohemia, announcing that a masked visitor will come at a quarter to eight. A brougham is a closed carriage; Astrakhan is curly lambskin; a vizard is a mask. “Incognito” means under a false name; an adventuress was an insulting word for a woman who used charm to gain money or rank; a contralto is a low female singing voice. A cabinet photograph was about the size of a postcard; “carte blanche” means freedom to spend as much as needed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part I, from the arrival of the brougham to the end of part I; opens “As he spoke there was the sharp sound of horses’ hoofs and grating wheels against the…”; closes “…afternoon, at three o’clock, I should like to chat this little matter over with you.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-01",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+        "blocks": [
+          37,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a5943ae4ce8f243d5b0925ce69367688c8a3a60df88bbe90a0575e1a2b12c8fd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q1",
+          "prompt": "How does Watson describe the visitor’s clothes and face? What does “barbaric opulence” tell us about Watson’s own point of view?",
+          "facilitatorNotes": [
+            "The coat, cloak, beryl and fur-trimmed boots are rich “with a richness which would, in England, be looked upon as akin to bad taste”; the lip and chin suggest stubbornness. Watson judges by English standards and finds foreign display slightly ridiculous, so we see the King through an Englishman’s raised eyebrow. Readers may find the chin detail a fair clue to the King’s character later."
+          ],
+          "evidence": [
+            "His dress was rich with a richness which would, in England, be looked upon as akin to bad taste.",
+            "resolution pushed to the length of obstinacy"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q2",
+          "prompt": "Why does Holmes keep murmuring that he was “aware” of things and close his eyes? What does he gain by it?",
+          "facilitatorNotes": [
+            "He shows the King that the disguise is useless and that he is not impressed by rank, until the King tears off the mask. By refusing to play along he gets the plain truth faster. Readers might also see vanity in it: Holmes enjoys knowing first."
+          ],
+          "evidence": [
+            "“I was also aware of that,” murmured Holmes, settling himself down in his arm-chair and closing his eyes.",
+            "If your Majesty would condescend to state your case"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q3",
+          "prompt": "In the quick exchange about letters, paper, seal and photograph, why does only the photograph worry Holmes? And how far should we trust the King’s picture of Irene Adler?",
+          "facilitatorNotes": [
+            "Writing can be called forgery, paper stolen, a seal imitated, a photograph of one person bought; a photograph of both together cannot be explained away. The King describes Irene as beautiful, ruthless and determined to ruin him, but he is the only witness and has tried five times to rob her. Readers should keep his account as one side of the story."
+          ],
+          "evidence": [
+            "We were both in the photograph.",
+            "She has the face of the most beautiful of women, and the mind of the most resolute of men."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+      "title": "A groom at a wedding: part 3 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a story told by Holmes himself and keep track of the questions he is trying to answer as he goes.",
+      "focus": "In disguise, Holmes gathers gossip, follows a hurried couple and ends up as the witness at their wedding.",
+      "context": "The King of Bohemia has hired Holmes to recover a photograph of himself with the singer Irene Adler before his engagement is announced on Monday, and has paid him a thousand pounds for expenses. A groom looks after horses; a mews is a lane of stables; ostlers are stablemen; half-and-half is beer and shag is cheap tobacco. Godfrey Norton is a lawyer from the Inner Temple. A hansom and a landau are carriages; a sovereign is a gold coin. English weddings then had to take place before noon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part II, from Watson’s return to Baker Street through Holmes’s account of the wedding; opens “At three o’clock precisely I was at Baker Street, but Holmes had not yet returned. The…”; closes “…They drove away in different directions, and I went off to make my own arrangements.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+        "blocks": [
+          125,
+          148
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a2a88f5f6ea60f10077653bf35d6a0ea15a0a278615021496b29054523e62ed4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q1",
+          "prompt": "Why does Holmes go to Briony Lodge disguised as an out-of-work groom? What does the disguise let him learn?",
+          "facilitatorNotes": [
+            "Grooms and cabmen talk freely to one another, so for twopence and some help with the horses he learns Irene’s daily routine and all about her one visitor. A gentleman asking questions would have learned nothing and been noticed. He also hears much he did not want, a comic touch that shows the cost of gossip as a source."
+          ],
+          "evidence": [
+            "There is a wonderful sympathy and freemasonry among horsey men.",
+            "See the advantages of a cabman as a confidant."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q2",
+          "prompt": "Holmes asks whether Norton is Irene’s client, friend or something more. Why does the answer matter to the case?",
+          "facilitatorNotes": [
+            "If Norton is her lawyer, she may have given him the photograph to keep, and Holmes must search his rooms instead of her house. Holmes is reasoning about where the evidence is, not about her private life for its own sake. The wedding answers the question in a way he did not foresee."
+          ],
+          "evidence": [
+            "On the issue of this question depended whether I should continue my work at Briony Lodge, or turn my attention to the gentleman’s chambers in the Temple."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q3",
+          "prompt": "Why does Holmes laugh until he is “limp and helpless”? What is funny, and what has changed for the case?",
+          "facilitatorNotes": [
+            "The detective, disguised as an idler, is dragged to the altar and made to witness the marriage he was spying on, and is even tipped a sovereign by the bride. Underneath the joke the case has changed: a married Irene might leave at once, and her feelings toward the King may be different. Readers can predict whether the marriage helps or hinders Holmes."
+          ],
+          "evidence": [
+            "It was the most preposterous position in which I ever found myself in my life",
+            "The bride gave me a sovereign, and I mean to wear it on my watch-chain in memory of the occasion."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+      "title": "A clergyman, a street fight and a cry of fire: part 4 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a plan before it happens and then check what actually happens against it.",
+      "focus": "Holmes stages an accident outside Briony Lodge, and Watson begins to feel ashamed of his part.",
+      "context": "Disguised as a groom, Holmes has learned Irene Adler’s habits and has been made the witness at her sudden wedding to the lawyer Godfrey Norton. She will return from her drive at seven. A Nonconformist clergyman is a minister of a Protestant church outside the Church of England; John Hare was a well-known actor. A smoke-rocket was a plumber’s device for finding leaks in pipes; an ulster is a long overcoat; guardsmen are soldiers.",
+      "contentNote": "Holmes stages a street fight with fake blood. His reasoning includes a generalisation about women typical of his time.",
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part II, from Holmes’s plan through the false alarm of fire; opens ““Which are?””; closes “…until we had turned down one of the quiet streets which lead towards the Edgware Road.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-05",
+        "blocks": [
+          149,
+          198
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd419c8b402bf3c05cb36b5f64c320dfda95c87b952e9cbe5a8bf49a5376a14f"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q1",
+          "prompt": "Watson agrees to break the law before he knows what Holmes wants. What does this short exchange show about their friendship?",
+          "facilitatorNotes": [
+            "Watson trusts Holmes completely and promises without asking questions, as long as the cause is good. Holmes repeats the instructions until Watson can recite them. The rhythm of short lines shows how practised their partnership is; readers may also wonder whether such trust is always wise."
+          ],
+          "evidence": [
+            "“You don’t mind breaking the law?”",
+            "Then I am your man."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q2",
+          "prompt": "Follow Holmes’s reasoning about where the photograph is. Which step is based on evidence, and which on a general belief?",
+          "facilitatorNotes": [
+            "The photograph is too big to carry, she has been searched twice, she means to use it within days, so it is in her house: these steps use facts from the case. “Women are naturally secretive” is a generalisation, the kind of assumption the story will soon test. Readers can notice that the argument would stand without that sentence."
+          ],
+          "evidence": [
+            "It is most unlikely that she carries it about with her. It is cabinet size.",
+            "Women are naturally secretive, and they like to do their own secreting."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q3",
+          "prompt": "Watson says he “never felt more heartily ashamed.” What makes him ashamed, and how does he talk himself into continuing? Is his reason convincing?",
+          "facilitatorNotes": [
+            "He watches Irene kindly caring for the man she thinks was hurt defending her, and knows he is deceiving her. He tells himself they are not injuring her, only preventing her injuring another. Some readers accept that; others notice they are tricking a woman in her own home for a king who has had her robbed and waylaid."
+          ],
+          "evidence": [
+            "I never felt more heartily ashamed of myself in my life",
+            "We are but preventing her from injuring another."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05",
+      "title": "“The woman”: part 5 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Return to clues you passed over and see how the ending changes their meaning.",
+      "focus": "Holmes explains his trick, the visit to Briony Lodge brings a surprise, and the story returns to its first words.",
+      "context": "Watson threw the smoke-rocket and cried fire; in the confusion Holmes, disguised as a clergyman and carried in as an injured man, watched Irene Adler’s sitting-room. Now he walks home with Watson. Charing Cross is a London railway station with trains for the Continent (mainland Europe); “née” means “born,” used before a married woman’s former surname; “inviolate” means never broken.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, the end of part II and the whole of part III; opens ““You did it very nicely, doctor,” he remarked. “Nothing could have been better. It is all…”; closes “…when he refers to her photograph, it is always under the honorable title of _the_ woman.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+        "continuesTo": null,
+        "blocks": [
+          199,
+          263
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "222eb25ee443895d0f8ad0097a4fc29336a459a74808907188f1cd281312fbf0"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q1",
+          "prompt": "Holmes says a woman whose house is on fire rushes to what she values most. How does Irene’s letter show both that the trick worked and that she learned from it?",
+          "facilitatorNotes": [
+            "She did reveal the hiding place, and admits he “took me in completely.” But the moment after the alarm she understood what she had betrayed and began to think, followed him home in disguise and fled. The trick succeeded once; Holmes’s mistake was assuming she would not see through it."
+          ],
+          "evidence": [
+            "When a woman thinks that her house is on fire, her instinct is at once to rush to the thing which she values most.",
+            "But then, when I found how I had betrayed myself, I began to think."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q2",
+          "prompt": "Who said “Good-night, Mister Sherlock Holmes”? Which clues could an alert reader have used before the letter explains it?",
+          "facilitatorNotes": [
+            "Irene, dressed as a young man. Holmes says he has heard the voice before; the speaker is a “slim youth in an ulster” who knows his name. The letter confirms that she is an actress used to “male costume.” Holmes, who always notices, did not observe this time."
+          ],
+          "evidence": [
+            "a slim youth in an ulster who had hurried by",
+            "Male costume is nothing new to me."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q3",
+          "prompt": "The King wishes Irene were “on my level”; Holmes replies that she is “on a very different level.” What does each mean, and why does Holmes ignore the King’s hand?",
+          "facilitatorNotes": [
+            "The King means rank: a singer cannot be a queen. Holmes means character: she kept her word, married for love and outwitted them both, while the King “cruelly wronged” her. Ignoring the outstretched hand is a quiet insult. Readers might also argue Holmes is stung by his own defeat."
+          ],
+          "evidence": [
+            "Is it not a pity that she was not on my level?",
+            "From what I have seen of the lady she seems indeed to be on a very different level to your Majesty"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q4",
+          "prompt": "The story ends where it began, with “the woman.” How has the meaning of that phrase changed since the first paragraph?",
+          "facilitatorNotes": [
+            "At the start it sounded mysterious, even suspicious: a woman of “dubious and questionable memory.” Now it is an “honorable title” for the one person who beat Holmes’s plans with her wit. Holmes has stopped mocking “the cleverness of women.” Readers can discuss whether the story fully overturns his earlier generalisations or only makes an exception for Irene."
+          ],
+          "evidence": [
+            "how the best plans of Mr. Sherlock Holmes were beaten by a woman’s wit",
+            "it is always under the honorable title of _the_ woman"
+          ]
+        }
+      ]
+    }
+  ]
+}
