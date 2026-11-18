@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "munro-beasts-super-beasts-1914",
+  "readings": [
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-01",
+      "title": "The She-Wolf",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Separate what the reader is told in advance from what the dinner guests see, and follow a trick that is set up before it is sprung.",
+      "focus": "A hoax that exposes a boaster by giving him exactly what he claimed he could do.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Clovis Sangrail, a young man who appears in many of his stories, enjoys deflating people he finds pompous. Perm is a city near the Ural Mountains; “esoteric” means known only to a few insiders; bridge is a card game; a conservatory is a glass room for plants; a game larder is a cold room where shot birds and animals are hung.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The She-Wolf,” the whole story; opens “Leonard Bilsiter was one of those people who have failed to find this world attractive or…”; closes “…a cockroach and then have stepped on him he would gladly have performed both operations.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4b2de831777150c039b8da66242c6d22309f6f6708bc7b3d4a664f5ea8d9403"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-01-q1",
+          "prompt": "What does the first paragraph tell us about Leonard before he does anything? Find the phrase where the narrator’s politeness turns into mockery.",
+          "facilitatorNotes": [
+            "Leonard has found the real world dull and invented an “unseen world” to make himself interesting. The narrator seems to grant that his beliefs are for an elite, then deflates it: “the few” turns out to mean anyone who would listen. Students may also point to the list “experience or imagination—or invention,” where the last word quietly calls him a fraud."
+          ],
+          "evidence": [
+            "Leonard Bilsiter’s beliefs were for “the few,” that is to say, anyone who would listen to him."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-01-q2",
+          "prompt": "The reader overhears Clovis borrowing Louisa and learns that “Mary is pledged to see me through with it.” Which later details show the plan working, and how does knowing the plan change the way you read Mary’s last speeches?",
+          "facilitatorNotes": [
+            "Mary dares Leonard and then walks into the conservatory and out of sight; Clovis “deftly” locks the door while pretending to test it; Lord Pabham lures the wolf away with sugar. Because we know Mary is a conspirator, her complaint about being “mesmerised” is acting, and her excited question to Leonard is a final test. Some readers see that question as kindness, a last chance; most will see it as the trap closing."
+          ],
+          "evidence": [
+            "Mary is pledged to see me through with it",
+            "who had deftly turned the key as he affected to test it"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-01-q3",
+          "prompt": "Why can Leonard not claim the credit at the end, and what does Clovis’s own claim show about him?",
+          "facilitatorNotes": [
+            "Leonard has already insisted that he did not turn Mrs. Hampton into a wolf and that he does not know how to turn her back, and he was more frightened than anyone. Clovis then claims the very powers he has mocked, down to asking for brandy because “the effort” has left him faint. Readers can debate whether Clovis is exposing nonsense or simply outdoing Leonard as a performer; the last sentence shows how completely Leonard has been beaten."
+          ],
+          "evidence": [
+            "But Leonard had burned the boat in which he might now have embarked on a sea of glory.",
+            "the effort has left me rather faint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-02",
+      "title": "Laura",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Work out what the story never states outright, using the clues and the characters’ reactions.",
+      "focus": "A comic story about death and reincarnation that lets the reader draw its conclusion.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Laura is staying with her friend Amanda and Amanda’s husband, Egbert. Reincarnation is the belief that after death a soul is reborn in a new body. Speckled Sussex are prize hens; otter hounds were dogs used to hunt otters; to “tail” an otter is to grab it by the tail. Goodwood week is a fashionable horse-racing week.",
+      "contentNote": "The story treats a young woman’s death comically and includes the killing of an otter in a hunt. Laura imagines being reborn as a “little brown, unclothed Nubian boy” as the next step up from an animal, an Edwardian racial ranking that the story’s final joke depends on.",
+      "excerpt": {
+        "locator": "“Laura,” the whole story; opens ““You are not really dying, are you?” asked Amanda.”; closes “And now Amanda is seriously ill.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          130
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "efe4e5dec264a06d34cac2bc762921838092ee6b37734ee6a6e4b1ae82ca1aaf"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-02-q1",
+          "prompt": "How do Laura’s first answers show the difference between her and Amanda?",
+          "facilitatorNotes": [
+            "Laura treats her death like an appointment (“the doctor’s permission to live till Tuesday”) and corrects Amanda’s words with dry precision. Amanda keeps insisting on seriousness. The contrast sets up the ending, where the friend who demanded seriousness is the one undone."
+          ],
+          "evidence": [
+            "I have the doctor’s permission to live till Tuesday",
+            "Death is always serious"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-02-q2",
+          "prompt": "What evidence makes Amanda believe the otter is Laura? Is the story telling us that it is?",
+          "facilitatorNotes": [
+            "The otter destroys exactly the speckled Sussex and the flower beds Laura had already attacked, as if it had “special knowledge,” and the narrator tells us Amanda shapes her opinions by the people around her. She looks “furtively” at Sir Lulworth, tries to stop the hunt and makes hound noises by the stream. The narrator never confirms anything: even Egypt seems to restore “proper light” until the shirts land in the bath. Some readers will take the story as a ghost story; others as a joke about how a suggestion grows into belief. Both can point to the text."
+          ],
+          "evidence": [
+            "it almost seems as if the brute that did the deed had special knowledge how to be as devastating as possible",
+            "She was one of those who shape their opinions rather readily from the standpoint of those around them."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-02-q3",
+          "prompt": "Laura ranks what she might become: an otter first, then “something rather primitive.” What does her ranking assume, and how does the ending depend on it?",
+          "facilitatorNotes": [
+            "She assumes a ladder of beings in which an African child stands just above an animal, an idea of racial rank common among wealthy Britons of Saki’s time. The last joke works only if the reader remembers that ladder. Students should name the prejudice plainly; they can also discuss whether the story invites us to laugh at Laura’s arrogance or simply shares it. The text does not settle that."
+          ],
+          "evidence": [
+            "probably something rather primitive—a little brown, unclothed Nubian boy, I should think."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-02-q4",
+          "prompt": "Why does the story end with “And now Amanda is seriously ill”?",
+          "facilitatorNotes": [
+            "The last line echoes Amanda’s first worry (“this is serious!”) and Laura’s refusal to be serious. Laura’s joke outlives her, and the calm friend who wanted seriousness is overcome by it. The short, flat sentence leaves the reader to put the evidence together."
+          ],
+          "evidence": [
+            "And now Amanda is seriously ill."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-03",
+      "title": "The Brogue",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Hear the gap between what characters say politely and what they actually want.",
+      "focus": "A family schemes to undo a sale it worked for years to make, and a husband’s gift ends the story with two possible meanings.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Clovis Sangrail, a young man who appears in many of his stories, is a friend of the Mullet family. A hunter is a horse ridden in fox-hunting and a hack one ridden on roads; “15.1” is the horse’s height. Suffragettes were campaigners for women’s votes, some of whom damaged property; “the links” and the numbered holes are a golf course; Corsica is a Mediterranean island.",
+      "contentNote": "Clovis twice jokes about Mrs. Mullet belonging to “an emotional race,” a period habit of assigning feelings to whole nations.",
+      "excerpt": {
+        "locator": "“The Brogue,” the whole story; opens “The hunting season had come to an end, and the Mullets had not succeeded in selling the…”; closes ““Or else,” said Clovis, “that he has a very pleasing wit.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          179,
+          212
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "83b237c15e76fe25074ee69a8674bdc3c79abfcd80bc0ed4cf824c15ee72e1f3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-03-q1",
+          "prompt": "The horse’s name was changed from Berserker to the Brogue. Explain the two jokes the first paragraph makes about the name.",
+          "facilitatorNotes": [
+            "A brogue is a regional accent, especially an Irish one, that a speaker keeps for life; the horse is “extremely difficult to get rid of” in the same way. The “unkinder wits” drop the first letter and get “rogue.” The list of what he shies at continues the joke: the Mullets insist he is not road-shy, then describe him swerving like “forked lightning.”"
+          ],
+          "evidence": [
+            "in recognition of the fact that, once acquired, it was extremely difficult to get rid of",
+            "the first letter of its name was superfluous"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-03-q2",
+          "prompt": "Why is Mrs. Mullet horrified by the sale she has wanted for years? What does her explanation reveal that she does not mean to reveal?",
+          "facilitatorNotes": [
+            "Mr. Penricarde, who has bought the dangerous horse, is courting her daughter Jessie, and a rich son-in-law matters more than the price. She corrects herself (“not to get them off my hands, of course”) in the middle of admitting exactly that. She also admits the family “praised it up” and called it “quiet as a lamb,” so they cannot honestly ask for it back. Clovis’s reply that he has never counted the daughters mocks her fuss."
+          ],
+          "evidence": [
+            "well, not to get them off my hands, of course, but a husband or two wouldn’t be amiss",
+            "we praised it up like anything when we thought there was a chance of his buying it"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-03-q3",
+          "prompt": "Penricarde gives the Brogue to Jessie as a wedding present. Toby and Clovis explain it differently. Which explanation does the story support better?",
+          "facilitatorNotes": [
+            "Toby thinks Penricarde “knew nothing” about the horse; Clovis suggests the gift is a joke on a family that sold him a horse they knew was dangerous. Penricarde’s good-natured blaming of his own inexperience could support either reading: he is kind and unsuspecting, or he understood more than he said. The narrator’s mock-solemn “It was nobody’s fault” has already shown how much this story leaves unsaid."
+          ],
+          "evidence": [
+            "Which shows,” said Toby Mullet, “that he knew nothing.",
+            "Or else,” said Clovis, “that he has a very pleasing wit."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-04",
+      "title": "The Hen",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a lie built one step at a time and notice how the listener is made to supply part of it.",
+      "focus": "Clovis invents a mad butler to rid his mother’s house of a guest who never leaves.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Clovis Sangrail, a young man who appears in many of his stories, lives here with his mother. A fortnight is two weeks; a butler is the senior manservant who serves at table and keeps the silver. Ella Wheeler Wilcox was a popular American poet, so naming a cocktail after her is a joke. “Queen Anne’s dead” was an old saying for stale news; the “sword of What’s-his-name” is the sword of Damocles, hung by a thread over a man’s head.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Hen,” the whole story; opens ““Dora Bittholz is coming on Thursday,” said Mrs. Sangrail.”; closes “…only human being who ever hustled Jane Martlet out of the time-table of her migrations.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          214,
+          279
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "83bed149f499082f74dbf9a3a58c3f24f7d2705e71a45bdabae7dfb44c9a1aed"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-04-q1",
+          "prompt": "How does Clovis make a quarrel over a hen sound enormous? Choose one of his comparisons and explain how it works.",
+          "facilitatorNotes": [
+            "He piles up grand comparisons for a small cause: a viper nursed in the bosom turns into a bosom used as a “snake sanatorium”; the friends’ letters are limited only by how many ounces of “plain speaking” a penny stamp will carry. The exaggeration mocks both women while telling his mother what she needs to know: they will meet on Thursday."
+          ],
+          "evidence": [
+            "Nothing fans the flame of human resentment so much as the discovery that one’s bosom has been utilised as a snake sanatorium.",
+            "only four ounces of plain speaking can be sent through the post for a penny"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-04-q2",
+          "prompt": "Trace the steps by which Clovis gets Jane to believe in Sturridge’s delusion. Why does he start by talking about servants in general?",
+          "facilitatorNotes": [
+            "He complains about long-serving servants, gets Jane to agree that such a life would drive her mad, offers an earlier case (Matilda Sheringham as Elijah), and only then names her as Queen Anne, leaving her to supply the word “dead” from the old saying. Each step wins agreement before the next. When even a threatening quotation fails, he stages evidence: the butler carrying a bare sabre into the room where she sits."
+          ],
+          "evidence": [
+            "“I should go mad,” said Jane with conviction.",
+            "Take it without the sheath, it will be less trouble."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-04-q3",
+          "prompt": "Was the “miracle” worth it? Consider Sturridge, Jane and the last paragraph.",
+          "facilitatorNotes": [
+            "Clovis succeeds, but Dora postpones her visit the same day, so the scheme was unnecessary. Sturridge, an innocent servant who “doubted whether she had seen him come in,” may now be gossiped about as a madman. Some readers will admire the speed and wit; others will note who pays for the joke. The narrator’s last sentence praises a record, not a good deed."
+          ],
+          "evidence": [
+            "The miracle lost some of its usefulness from the fact that Dora wrote the same day postponing the date of her visit",
+            "the butler doubted whether she had seen him come in"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-05",
+      "title": "The Treasure Ship",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Work out what the nephew has really found from what he chooses not to say.",
+      "focus": "A treasure hunt that turns into blackmail, told almost entirely through polite conversation.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. A galleon is a large sailing ship of the 1500s; Medina Sidonia commanded the Spanish Armada of 1588, several of whose ships were wrecked off Ireland and Scotland. The prince of Monaco was famous for ocean research. A salvage apparatus lifts objects from the sea bed. “Sub rosa” is Latin for “secretly”; Raeburns are valuable portraits by the Scottish painter Henry Raeburn.",
+      "contentNote": "A past death at sea is said to have been suicide, and the plot turns on blackmail. Two jokes mock Ireland, its “agrarian outrage” (violent land protests of the time) and an Irish cook.",
+      "excerpt": {
+        "locator": "“The Treasure Ship,” the whole story; opens “The great galleon lay in semi-retirement under the sand and weed and water of the…”; closes “…when she wrote recommending some further invention in the realm of marine research.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          311,
+          337
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19f321c264d062b676fabc8a820adc9fc4a7426878627c1130b6c884d60edede"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-05-q1",
+          "prompt": "What do the narrator’s descriptions of the Duchess and of Vasco tell you to expect from each of them?",
+          "facilitatorNotes": [
+            "The Duchess, already rich, hopes to be rich “at her own computation” and claims the treasure because of a distant ancestor. Vasco “lived impartially and precariously” on his small income and his relatives and is an adventurer only in the “home industry” sense. The narrator has told us he is a sponger whose “conscience was liable to fits of obstinate silence” where money is concerned, so the reader is ready for him to profit."
+          ],
+          "evidence": [
+            "she nursed the hope, of being one day rich at her own computation",
+            "Where money was in question Vasco’s conscience was liable to fits of obstinate silence."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-05-q2",
+          "prompt": "Why does the Duchess move “appreciably nearer the fireplace,” and why does Vasco say he put her name at the head of the list?",
+          "facilitatorNotes": [
+            "She means to burn the papers the moment she has them, which shows she already fears they concern her. Vasco has kept the papers and brought only a list; putting her first tells her she is his first customer. Her request that he destroy them is made “with an entire lack of conviction,” perhaps because she knows he will not."
+          ],
+          "evidence": [
+            "moved appreciably nearer the fireplace",
+            "I’ve put you at the head of it, otherwise it follows alphabetical order."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-05-q3",
+          "prompt": "What is the real “treasure” of the title? How does Vasco tell his aunt his plan without stating it?",
+          "facilitatorNotes": [
+            "The treasure is the compromising papers, which he will turn into money by blackmail. He never says the word: he has chosen only people whose wealth is “above question,” he will do nothing “for the remainder of my life,” and he will name a villa after the boat. Readers can discuss whether the story invites admiration for his cool cleverness or disgust; the narrator’s light tone does not judge him."
+          ],
+          "evidence": [
+            "I haven’t troubled to include anyone whose financial standing isn’t above question.",
+            "Nothing—for the remainder of my life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-06",
+      "title": "The Cobweb",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow long descriptive paragraphs and notice which details the ending turns back on.",
+      "focus": "A young wife quietly wishes an old servant dead, and death comes to the farm in a way she did not expect.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. This story is set on a farm in Devon, in south-west England. Emma Ladbruk’s husband has just inherited the farm, along with Martha, an old woman who has worked in its kitchen for nearly eighty years. A combe is a small valley; a dresser is a set of kitchen shelves; “Libruls and Toories, Yellows and Blues” are Martha’s names for the Liberal and Conservative parties and their colours. Martha speaks Devon dialect: “’twere” (it was), “un” (him).",
+      "contentNote": "A man is killed suddenly in an accident, reported without warning.",
+      "excerpt": {
+        "locator": "“The Cobweb,” the whole story; opens “The farmhouse kitchen probably stood where it did as a matter of accident or haphazard…”; closes “…pair of chickens for the market stall as she had trussed them for nearly fourscore years.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          339,
+          357
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0d9c2282635eb08e642389aa673bb3ab63643e3f415074e9ada25fd52eff1e58"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-06-q1",
+          "prompt": "What does Emma want, and why is the narrator careful to call it a wish “unconfessed as well as unspoken”?",
+          "facilitatorNotes": [
+            "She wants the window corner of the kitchen and the right to run it, and so she half-wishes the old woman would die. The narrator lets us see a wish that Emma will not admit even to herself, and calls it “an unworthy meanness.” The care in naming it prepares for the ending, which punishes the wish in an unexpected way."
+          ],
+          "evidence": [
+            "There was an unspoken wish in those words, a wish which was unconfessed as well as unspoken.",
+            "Decidedly Martha was in the way."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-06-q2",
+          "prompt": "When Martha says “’tis death a-coming,” Emma assumes she means her own death. What signs has Martha seen, and why does the reader share Emma’s mistake?",
+          "facilitatorNotes": [
+            "Martha has heard Shep howling and the screech-owl’s “death-cry” and seen something white cross the yard. Because the story has described her as ancient and like “a dead autumn leaf,” Emma and the reader expect her death. Martha never said whose; Jim’s grin and her steady feeding of the fowls hint that she is not the one dying."
+          ],
+          "evidence": [
+            "’Tis death, ’tis death a-coming",
+            "Old Martha stood in the middle of a mob of poultry scattering handfuls of grain around her."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-06-q3",
+          "prompt": "The last scene repeats two images from earlier in the story. What has changed, and what has not?",
+          "facilitatorNotes": [
+            "Emma leaves “as a bee that had wandered in at an open window,” the image Martha’s indifference first gave her; Martha is still trussing chickens “as she had trussed them for nearly fourscore years.” The newcomer with plans is gone and the old routine continues. Readers may see Martha as a cobweb that catches and outlasts everything, or as simple endurance; the title supports both."
+          ],
+          "evidence": [
+            "Emma Ladbruk drifted out of its history as a bee that had wandered in at an open window might flit its way out again.",
+            "trussing a pair of chickens for the market stall as she had trussed them for nearly fourscore years"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-07",
+      "title": "The Lull",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice the moment when a story inside the story should start to seem unbelievable, and why the listener does not notice it.",
+      "focus": "A teenager keeps a tired politician’s mind off politics by inventing a flood.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Vera, the sixteen-year-old niece here, is a cousin in spirit to the Vera of “The Open Window.” An election poll is the day of voting; party colours were worn by supporters; “Home Rule” was self-government for Ireland, a fierce issue in 1914. A reservoir is a lake made to store water; a chow is a breed of dog; Tuke painted seascapes. Saint Martin, in legend, cut his cloak in two to share it with a beggar; “malgré lui” is French for “against his will.” The Hague Tribunal was a court for settling quarrels between nations.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Lull,” the whole story; opens ““I’ve asked Latimer Springfield to spend Sunday with us and stop the night,” announced…”; closes “Which was, of course, perfectly true.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          359,
+          394
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "421ae784ab0319c2469ae27d6ba68732512f8e0f88d80672bc3d03bdfbf446f3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-07-q1",
+          "prompt": "How does the narrator describe Latimer Springfield, and what does the description tell us about the kind of man Vera is dealing with?",
+          "facilitatorNotes": [
+            "He is “cheerless” and “oldish” though young, went into politics like going into “half-mourning,” and plods rather than shines. Even while resting he works up “useful facts and discreet fictions,” a phrase that suggests a politician bends the truth too. A dull, anxious, self-interested man is the perfect audience for Vera’s performance."
+          ],
+          "evidence": [
+            "went into politics somewhat in the spirit in which other people might go into half-mourning",
+            "the due marshalling of useful facts and discreet fictions"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-07-q2",
+          "prompt": "Vera’s flood story grows more and more ridiculous. Which detail should have told Latimer she was inventing it, and why does he believe her anyway?",
+          "facilitatorNotes": [
+            "Candidates: the housemaid identifying “three bodies” as her fiancé, the same body “coming round again and again,” thirty Boy Scouts rescued by the people they came to rescue, his overcoat on two of them. Each detail is absurd but delivered with practical calm, and each makes a new demand on him (take the gamecock, take the pig). He is half asleep, tired and polite, and the comic details distract him from the impossible main claim."
+          ],
+          "evidence": [
+            "Either she’s engaged to a large assortment of the population round here or else she’s very careless at identification.",
+            "thirty of them came to rescue us while the water was only waist-high; then it rose another three feet or so and we had to rescue them"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-07-q3",
+          "prompt": "Look at the last three lines. Is Vera’s defence a fair answer to Latimer’s accusation?",
+          "facilitatorNotes": [
+            "Latimer avoids calling her a liar directly, then does; Vera answers that she did exactly what her aunt wanted, keeping his mind off politics. The narrator agrees: “perfectly true.” Readers may find her answer a clever technicality that ignores a sleepless night and a ruined overcoat, or a fair point against a man who invents “discreet fictions” himself. The narrator’s agreement does not settle whether the prank was kind."
+          ],
+          "evidence": [
+            "At any rate I kept your mind from dwelling on politics all the night",
+            "Which was, of course, perfectly true."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-08",
+      "title": "The Unkindest Blow",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a satire that treats a private quarrel as if it were a national industry.",
+      "focus": "A duke and duchess threaten to cancel their famous divorce case unless they share in the money it makes for others.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Britain in the years before 1914 saw many large strikes, when workers stopped work to win better terms. A divorce suit is a court case to end a marriage; a by-election fills a single empty seat in Parliament; Bluejackets are sailors of the Royal Navy. The Durbar was a vast ceremony in India in 1911. “The unkindest cut of all” is a line from Shakespeare’s Julius Caesar, about the stab by Caesar’s friend Brutus.",
+      "contentNote": "A divorce case with charges of cruelty and desertion is the subject of public curiosity, and the story ends with a sudden death told as a joke.",
+      "excerpt": {
+        "locator": "“The Unkindest Blow,” the whole story; opens “The season of strikes seemed to have run itself to a standstill. Almost every trade and…”; closes “…precocity, died of premature decay a fortnight before the date fixed for the new trial.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          396,
+          415
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "550fd4d27eda1e7d5ad30aad0646e4983d8ab20a791d513f79997f2315763d65"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-08-q1",
+          "prompt": "How does the zoo strike in the opening prepare the reader for the story’s main joke?",
+          "facilitatorNotes": [
+            "The zoo keepers’ strike is absurd (the animals would “come out” too), and the government is mocked as always behind events. It establishes a world where every group strikes for a share; the duke’s threat is the same move by the last people anyone expected. The story calls its own ending “the unkindest blow” because the public cannot bear to lose its entertainment."
+          ],
+          "evidence": [
+            "the threat of the Zoological Gardens authorities that if the men “came out” the animals should come out also"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-08-q2",
+          "prompt": "List some of the people preparing to profit from the divorce. What is Saki mocking?",
+          "facilitatorNotes": [
+            "Writers who specialise in describing witnesses turning pale, photographers, dress reporters, a Paris firm supplying gowns, film makers who have already staged fake scenes, hotels and music-halls. He mocks newspapers and the public for turning a private unhappiness into a show; the films of imaginary consultations with “fictitious lawyers” show that the news is manufactured before it happens. Students may connect this with modern celebrity coverage."
+          ],
+          "evidence": [
+            "one word-painter, who specialised in descriptions of how witnesses turn pale under cross-examination",
+            "other films depicted the Duchess holding imaginary consultations with fictitious lawyers"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-08-q3",
+          "prompt": "The Duke says, “We don’t wish to be reconciled.” What is he really striking for, and is his complaint fair?",
+          "facilitatorNotes": [
+            "He is not trying to save his marriage; he wants payment from the “vast stream of wealth” the case creates, since the couple get only notoriety and legal bills. His complaint has a point: everyone profits except the people whose lives are exposed. Yet he uses the language of workers’ strikes for a duke’s fee, which is part of the satire. The last sentence denies everyone the show: he dies before the new trial."
+          ],
+          "evidence": [
+            "it is we who provide the material out of which this great far-reaching industry has been built up",
+            "We don’t wish to be reconciled"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-09",
+      "title": "The Romancers",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Watch two tellers of invented stories compete, and decide which of them is the narrator’s target.",
+      "focus": "A man in Hyde Park answers a beggar’s practised hard-luck story with an invented life of his own.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Hyde Park is a large park in London. A cadger is someone who lives by begging or borrowing; a farthing was the smallest coin. Mussulman is an old word for Muslim; Afghanistan and Persia (now Iran) were distant, little-known countries to most Londoners of 1914, and Britain had fought wars in Afghanistan. “Two of a trade never agree” is a proverb: rivals in the same business dislike each other.",
+      "contentNote": "The narrator treats the beggar with contempt, and Crosby’s invented “Afghan” customs play on British clichés about a mysterious East.",
+      "excerpt": {
+        "locator": "“The Romancers,” the whole story; opens “It was autumn in London, that blessed season between the harshness of winter and the…”; closes “…an hour went far to support the truth of the old saying that two of a trade never agree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          417,
+          458
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46345d91d23a4a80f961d7cd6463b5be9e9a035fb9c876253577dfb8723b6559"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-09-q1",
+          "prompt": "How does the opening paragraph describe autumn, and what does it suggest about the narrator’s view of people?",
+          "facilitatorNotes": [
+            "Autumn is “blessed” and “trustful,” between winter’s harshness and summer’s “insincerities”: people plant bulbs and vote, “believing perpetually in spring and a change of Government.” The narrator smiles at human hopes that never quite come true, a tone that suits a story about people telling each other hopeful lies."
+          ],
+          "evidence": [
+            "believing perpetually in spring and a change of Government"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-09-q2",
+          "prompt": "How does Crosby block each of the beggar’s openings before they reach a request?",
+          "facilitatorNotes": [
+            "The beggar tries a “strange world,” marvellous true stories, religion and poverty; Crosby answers that fiction is better than true stories, claims to be a Muslim from Persia, then the son of an Afghan, and turns “poverty” into a remark about clever beggars. When the beggar finally asks, Crosby invents a custom forbidding loans in November. His inventions match the beggar’s: both are “romancers,” people who make up stories."
+          ],
+          "evidence": [
+            "“I am a prominent and I think I may say an influential member of the Mussulman community of Eastern Persia,” said Crosby, making an excursion himself into the realms of fiction.",
+            "The Afghan November began yesterday"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-09-q3",
+          "prompt": "The beggar complains that Crosby’s story was “a pack of nasty lies.” What makes his anger funny, and does the story treat the two men fairly?",
+          "facilitatorNotes": [
+            "He is a professional liar furious at being out-lied; the proverb at the end calls them two men of the same trade. The narrator, though, describes the beggar with open contempt as someone who avoids “half a day’s decent work” and lets the comfortable man win. Readers can enjoy the reversal and still ask whether a man with no money and a man with a park bench are really equals, and what Crosby’s “Afghan” act borrows from clichés about the East."
+          ],
+          "evidence": [
+            "pack of nasty lies from beginning to end",
+            "the old saying that two of a trade never agree"
+          ]
+        }
+      ],
+      "months": [
+        10
+      ]
+    }
+  ]
+}
