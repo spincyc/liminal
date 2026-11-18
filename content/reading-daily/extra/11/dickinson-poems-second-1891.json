@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "dickinson-poems-second-1891",
+  "readings": [
+    {
+      "id": "reading-11-dickinson-poems-second-1891-01",
+      "title": "Ghosts (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort every image in the poem into the outside world or the inside of the mind, and notice which side the poem calls dangerous.",
+      "focus": "The haunted house, the midnight ghost and the assassin, set against a haunting within the self.",
+      "context": "Emily Dickinson (1830–1886) wrote nearly eighteen hundred poems in her family’s house in Amherst, Massachusetts, and published almost none; this text is from Poems: Second Series (1891), whose editors, Thomas Wentworth Higginson and Mabel Loomis Todd, gave the poem its title and changed some of her punctuation and words. Read on Halloween, it summons the season’s haunted houses and midnight ghosts only to set them aside for something nearer. An abbey here is the ruined monastery of Gothic novels; “achase” means in chase; a host can be an army, a crowd, or one who receives a guest.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book IV, “Time and Eternity,” XXIX, “Ghosts,” complete poem; opens “ONE need not be a chamber to be haunted, One need not be a house; The brain has corridors…”; closes “…prudent carries a revolver, He bolts the door, O'erlooking a superior spectre More near.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          623,
+          627
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "39b49bac54a3057ddd2755d86899d48aafc8c8f2069d5b96ce9e776f1284dbdd"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dickinson-poems-second-1891-01-q1",
+          "prompt": "Each stanza sets an outer danger beside an inner one. List the pairs. Which side does the poem call “safer”?",
+          "facilitatorNotes": [
+            "Chamber and house against the brain’s “corridors”; a midnight ghost against an “interior confronting”; a gallop through an abbey with the stones in chase against meeting “one’s own self” in a lonely place; an assassin in the apartment against “Ourself, behind ourself concealed”; the revolver and bolted door against the “superior spectre.” Every outer terror is “far safer” or “horror’s least.”"
+          ],
+          "evidence": [
+            "The brain has corridors surpassing",
+            "Far safer, of a midnight meeting"
+          ]
+        },
+        {
+          "id": "reading-11-dickinson-poems-second-1891-01-q2",
+          "prompt": "“Ourself, behind ourself concealed, / Should startle most.” What might the self hidden behind the self be?",
+          "facilitatorNotes": [
+            "The poem does not name it, which is part of its fear. Defensible readings: buried memory or guilt, desires one does not admit, the capacity for madness, or simply the stranger the mind becomes when met alone. Some readers find a forerunner of later ideas of the unconscious; others a religious sense of the soul examined. The grammar helps: “Ourself” is plural and singular at once, a self split in two."
+          ],
+          "evidence": [
+            "Ourself, behind ourself concealed,",
+            "Should startle most;"
+          ]
+        },
+        {
+          "id": "reading-11-dickinson-poems-second-1891-01-q3",
+          "prompt": "What is the tone of the last stanza? How does its short final line work?",
+          "facilitatorNotes": [
+            "The “prudent” man with his revolver and bolted door is gently mocked: his precautions face the wrong way. The line “More near.” is the shortest in the poem and stops abruptly, as if the spectre were already in the room with the reader. Some readers hear dry comedy; others feel the stanza as the poem’s coldest moment."
+          ],
+          "evidence": [
+            "The prudent carries a revolver,",
+            "O'erlooking a superior spectre"
+          ]
+        },
+        {
+          "id": "reading-11-dickinson-poems-second-1891-01-q4",
+          "prompt": "The poem borrows the props of a Gothic tale: the abbey, midnight, the moonless place, the assassin. Does it make Halloween’s ghosts more frightening or less?",
+          "facilitatorNotes": [
+            "Less frightening in themselves, since they are “far safer,” but the poem keeps their atmosphere to describe the mind: corridors, a “whiter host,” a lonesome place. One defensible answer: Dickinson treats ghost stories as a way of speaking about inner fear, so the holiday’s ghosts become figures for something everyone carries. Others may answer that she makes them more frightening by taking away the door one could bolt against them."
+          ],
+          "evidence": [
+            "Far safer through an Abbey gallop,",
+            "Than, moonless, one's own self encounter"
+          ]
+        }
+      ],
+      "holiday": "halloween"
+    }
+  ]
+}

@@ -825,6 +825,158 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-12",
+      "title": "Walden: The coming in of spring (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 21,
+        "discussionMinutes": 9,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow how Thoreau moves from a naturalist’s report to claims about forgiveness and death, and decide where observation ends and faith begins.",
+      "focus": "Spring’s return as rebirth: the pond, the birds, the forgiven neighbour and the dead.",
+      "context": "Henry David Thoreau (1817–1862) lived beside Walden Pond, near Concord, Massachusetts, from 1845 to 1847; Walden (1854) folds his two years into one, which ends with the spring. Read on Easter, these pages take the season’s return as Thoreau’s own figure of rebirth. Turdus migratorius is the American robin; a rod is about five yards. The Latin verse and the lines after it are Ovid on the creation of the world, the two paragraphs in quotation marks after the forgiveness paragraph are from the Chinese philosopher Mencius, and the next verse is Ovid’s Golden Age. “O Death, where is thy sting? O grave, where is thy victory?” is from Paul’s first letter to the Corinthians, read at Easter and at funerals.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live.",
+      "excerpt": {
+        "locator": "Spring, from the change of weather to the morning meadows of the first spring days; opens “The change from storm and winter to serene and mild weather, from dark and sluggish hours…”; closes “…live in such a light. O Death, where was thy sting? O Grave, where was thy victory, then?”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          508,
+          519
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d6a34e8360556dc229f37695abd5c7cfa8cecf25d20dfb7aa2e8627b159ebe6c"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-12-q1",
+          "prompt": "Thoreau calls the change from winter to spring “a memorable crisis.” Which signs of it does he record on that one evening, and why does he call it a crisis rather than a change?",
+          "facilitatorNotes": [
+            "An “influx of light” though evening was coming, the pond “calm and full of hope” where yesterday there was gray ice, the robin, the pitch-pines “more erect and alive,” and the geese wheeling down to the pond. A crisis is a turning point, as in an illness: spring is not a slope but an event, “seemingly instantaneous at last,” and he marks it by passing his “first spring night in the woods.”"
+          ],
+          "evidence": [
+            "is a memorable crisis which all things proclaim",
+            "It is seemingly instantaneous at last."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-12-q2",
+          "prompt": "Spring, Thoreau says, is “like the creation of Cosmos out of Chaos and the realization of the Golden Age.” How do the two passages from Ovid frame what lies between them?",
+          "facilitatorNotes": [
+            "The first verse tells of creation and ends with “Man was born”; the second describes a Golden Age with no avenger, where “Punishment and fear were not” and no one feared “The words of their judge.” Between them come the forgiven neighbour and the jailer and judge who do not take the hint, and Mencius on how virtue’s sprouts revive each morning but can be destroyed by the evil of each day. A defensible reading: each spring morning offers the Golden Age again, but only as a hint people must accept; Mencius’s warning keeps that from being a promise."
+          ],
+          "evidence": [
+            "the coming in of spring is like the creation of Cosmos out of Chaos and the realization of the Golden Age",
+            "Punishment and fear were not"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-12-q3",
+          "prompt": "“In a pleasant spring morning all men's sins are forgiven.” Whose sins, forgiven by whom? What changes in the observer as well as in the neighbour?",
+          "facilitatorNotes": [
+            "The neighbour known yesterday as “a thief, a drunkard, or a sensualist” is seen at serene work, and “all his faults are forgotten.” The pardon is God’s, “which he freely offers to all,” but the seeing is ours: “Through our own recovered innocence we discern the innocence of our neighbors.” Some readers find this generous; others find it naive about real wrongs, which the jailer and judge exist to answer."
+          ],
+          "evidence": [
+            "In a pleasant spring morning all men's sins are forgiven.",
+            "Through our own recovered innocence we discern the innocence of our neighbors."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-12-q4",
+          "prompt": "The reading ends with light that “would have waked the dead” and Paul’s words about death. Is the ending a statement of faith, a figure of speech, or both?",
+          "facilitatorNotes": [
+            "Thoreau hedges (“if they had been slumbering in their graves, as some suppose”) and then claims “There needs no stronger proof of immortality.” He puts Paul’s questions in the past tense (“where was thy sting? … then?”), placing the victory over death in a remembered morning. A defensible reading: a faith drawn from nature rather than doctrine. Others will read an exultant figure that proves nothing; the hawk with no visible parent or nest, just before, shows him already reaching past what he can see."
+          ],
+          "evidence": [
+            "would have waked the dead, if they had been slumbering in their graves, as some suppose",
+            "O Death, where was thy sting? O Grave, where was thy victory, then?"
+          ]
+        }
+      ],
+      "holiday": "easter"
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-13",
+      "title": "Walden: The true husbandman (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a practical lesson as it turns into a sermon, and test what Thoreau says a harvest is for.",
+      "focus": "Harvest, thanks and the sacredness of farming: what the farmer owes and what he can claim.",
+      "context": "Henry David Thoreau (1817–1862) planted two and a half acres of beans beside his cabin at Walden Pond in 1845 and sold the crop; earlier in the chapter he gave his accounts to the half-cent. Read on Thanksgiving, the end of the chapter asks what a harvest festival ought to give thanks for. Manurance is cultivation; the two lines of verse describe an angel; Ceres was the Roman goddess of grain, Plutus the god of riches, and Saturn the king of the Golden Age; Cato and Varro were Roman writers on farming, and Cato’s Latin means “the most pious gain.” Thoreau’s derivations of the Latin words spica and granum are his own play on words. First fruits were the first of a harvest, offered to God.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. “Indians” is the period’s word for Native Americans.",
+      "excerpt": {
+        "locator": "The Bean-Field, from the lesson of raising beans to the end of the chapter; opens “This is the result of my experience in raising beans. Plant the common small white bush…”; closes “…of his fields, and sacrificing in his mind not only his first but his last fruits also.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          300,
+          305
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e2a2875f64abaacf03bedb06d7c5828a7ac31d7d0e8442ce199e6bc44b183f17"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-13-q1",
+          "prompt": "What did Thoreau resolve to plant instead of beans, and what happened to that crop? What does the confession add to the sermon that follows?",
+          "facilitatorNotes": [
+            "“Sincerity, truth, simplicity, faith, innocence, and the like”; years later he admits the seeds “were wormeaten or had lost their vitality.” By confessing his own failure first, he speaks as one of the people he criticises, who plant corn and beans each year “as if there were a fate in it.”"
+          ],
+          "evidence": [
+            "such seeds, if the seed is not lost, as sincerity, truth, simplicity, faith, innocence",
+            "were wormeaten or had lost their vitality, and so did not come up"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-13-q2",
+          "prompt": "What should a harvest festival do, according to Thoreau, and why does he say Concord’s fail?",
+          "facilitatorNotes": [
+            "It should express the farmer’s “sense of the sacredness of his calling” and remind him of its “sacred origin.” Instead “the premium and the feast” tempt him, and treating the soil as property degrades farming. On Thanksgiving a reader can ask whether the charge fits our own feasts, or whether gratitude and a good dinner can go together."
+          ],
+          "evidence": [
+            "We have no festival, nor procession, nor ceremony, not excepting our Cattle-shows and so called Thanksgivings",
+            "It is the premium and the feast which tempt him."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-13-q3",
+          "prompt": "The reading opens with advice to “look out for woodchucks.” How has Thoreau’s view of the woodchuck changed by the last paragraph?",
+          "facilitatorNotes": [
+            "At first woodchucks are pests that shear off tendrils and pods. At the end the beans grow “for woodchucks partly,” the weeds’ seeds are “the granary of the birds,” and he asks, “How, then, can our harvest fail?” The harvest is redefined as everything the field bears. Some readers will say this is easy for a man who did not live by his crop; his own accounts showed a profit of under nine dollars."
+          ],
+          "evidence": [
+            "Then look out for woodchucks",
+            "Do they not grow for woodchucks partly?"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-13-q4",
+          "prompt": "The last sentence asks the “true husbandman” to sacrifice “not only his first but his last fruits also.” Is this gratitude, indifference to results, or something else?",
+          "facilitatorNotes": [
+            "Offering first fruits was an old act of thanks; Thoreau would give up all claim to the produce and “finish his labor with every day,” like the squirrels who show no concern about chestnuts. A defensible reading: thanks taken to its limit, so that the work is done for itself and the harvest received as a gift. Others will call it impractical beside the chapter’s opening advice to harvest early for “a fair and salable crop.”"
+          ],
+          "evidence": [
+            "The true husbandman will cease from anxiety",
+            "sacrificing in his mind not only his first but his last fruits also"
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
     }
   ]
 }

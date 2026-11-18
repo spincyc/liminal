@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "whitman-specimen-days-1892",
+  "author": "Walt Whitman",
+  "title": "Specimen Days",
+  "translator": null,
+  "edition": "Specimen Days, the first part of Walt Whitman’s Complete Prose Works (Philadelphia: David McKay, 1892), as transcribed by Project Gutenberg (eBook 8813, Complete Prose Works: Specimen Days and Collect, November Boughs and Good Bye My Fancy); the transcription does not name its print exemplar. Original wording, spelling (including Whitman’s elisions such as “watch'd”), punctuation and paragraph boundaries retained, in the transcription’s conventions: straight quotation marks and apostrophes, double hyphens for dashes, paired underscores for italics, and capitals for the section titles, which the transcription gives without the full stop printed after each. Whitman’s numbered notes (numbered [1] to [19] by the transcription, which has no note 12) are kept in Project Gutenberg’s note form, “[Footnote n: …]”, where the transcription places them, after the paragraph that cites them; a note of several paragraphs, stanzas or lists is opened in its first block and closed at the end of its last, and the transcription’s “Note:” labels are omitted. Verse quotations and Whitman’s two-column lists (trees; birds and insects; rejected titles) keep their lines and spacing as stanzas. The passages read by the Grade 11 holiday readings (blocks 270–289, from “Hospitals Closing” to the end of “The Real War Will Never Get in the Books”) were compared word by word, punctuation included, with the OCR text of two copies of the McKay edition (Internet Archive completeprosewo02whitgoog, whose title page is dated 1892 with the publisher at 23 South Ninth Street, and completeprosewor0000walt_y0k2, a later impression from the same plates with the publisher at 604-8 South Washington Square), and every difference was decided on the page images of the 1892 copy, pp. 76–81. Ten readings changed to the printed text: the full stop after three italic dates (“Sundays.”, block 272; “Sunday.”, block 273; “The roads.”, block 274); single quotation marks in “(little 'Mitch;')” (block 276); “Convulsiveness” as one paragraph, which the transcription had divided after “Well, be it so.” (block 278); “road-side” (block 282, where the transcription had “roadside”); the italic “_all_” (block 284); “(See, in” (block 287, comma restored); the misprint “citzens” (block 287, which the transcription had silently corrected to “citizens”); and “minutiæ” (block 288, given by the transcription as “minutia;”). The transcription’s capitals “UNKNOWN” (block 283) stand for the printing’s bold “Unknown” and are left as transcribed; in “15,000 inhumed” (block 282) the comma failed to print in the 1892 copy but is clear in the later impression. scope.collated records the collated blocks.",
+  "publicationYear": 1892,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/8813",
+  "textUrl": "https://www.gutenberg.org/ebooks/8813.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Specimen Days was first published in the United States in 1882–83, and this text in Walt Whitman’s Complete Prose Works (Philadelphia: David McKay, 1892); both were published before 1931, and their US copyright terms have expired. Whitman died in 1892. Project Gutenberg identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/8813"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/8813/pg8813.txt",
+    "downloadSha256": "a79e5b85d854a1560a08792217ee40ae30a7279c827e568aef19944b93d66b37",
+    "method": "Project Gutenberg 8813 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Took Specimen Days from its title after the contents up to the “COLLECT” title; the PG header and footer, credits, the volume’s title and contents, and everything from Collect on are not held. Line wrapping within each paragraph (paragraphs separated by blank lines) was joined with single spaces; single-line all-capital paragraphs became level-2 headings, except the signature “W. W.”, which stays a paragraph; paragraphs indented throughout became stanzas with their common indentation removed and inner spacing kept, except two indented prose quotations (the Tribune writer on the moon, and the recollection of Elias Hicks’s preaching), which are paragraphs; each note paragraph opening “[n]” became “[Footnote n: …]”, continuing through the following blocks up to the next heading or note, and the transcription’s “Note:” labels were dropped. The paragraph beginning “They are but parts of the actual distraction” was joined to the one before it, as printed. Nine further readings in blocks 272–288 were then corrected to the 1892 printing after collation (see edition)."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds the whole of Specimen Days, with its notes, as Project Gutenberg 8813 transcribes it from Complete Prose Works (1892); the volume’s later parts (Collect, Notes Left Over, November Boughs, Notes to Late English Books and Good-Bye My Fancy) are separate works and are not held.",
+    "collated": [
+      [
+        270,
+        289
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 823,
+    "sha256": "ec23a3af2683ac2a02ffbbb63c4a5b609aa5a062454a48422fe74f6a749e271c"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "las-casas-destruction-indies-1689",
+  "author": "Bartolomé de las Casas",
+  "title": "A Brief Account of the Destruction of the Indies",
+  "translator": "Anonymous English translator (1689)",
+  "edition": "English version of Bartolomé de las Casas’s Brevísima relación de la destrucción de las Indias (Seville, 1552), published anonymously as Popery Truly Display'd in its Bloody Colours: Or, a Faithful Narrative of the Horrid and Unexampled Massacres, Butcheries, and all manner of Cruelties … committed by the Popish Spanish Party on the inhabitants of West-India (London: printed for R. Hewson, 1689); its title page says the work passed from Spanish into Latin and then “by other hands” into Dutch and French before English, and the English follows those intermediaries rather than Las Casas’s Spanish. Project Gutenberg 20321 transcription, whose preparer states that the original spelling and punctuation are retained. The library text holds the narrative from its title, “The Cruelties of the Spaniards Committed in America,” to “FINIS.”; the title page and the anonymous preface (“The Argument of this Narrative by way of Preface to the Reader”), which are not Las Casas’s, and the preparer’s note are omitted. Paired underscores mark the transcription’s italics; the transcription gives the printing’s long s as s and æ as “ae”, and the display capitals of the opening word as “America”; the rules between sections are omitted. The passage read by the Grade 11 holiday reading (blocks 0–8, from the opening to the heading “Of the Island Hispaniola”) was compared word by word, capitals and punctuation included, with the page images of the 1689 printing (Internet Archive bim_early-english-books-1641-1700_popery-truly-displayd_casas-bartholome-de-las_1689, pp. 1–5; the scan’s OCR is unusable for collation). Forty-nine readings changed to the printed text: words the transcription had altered, modernised or dropped (among them “discover'd”, “greatest Reputation”, “had Assembled”, “of so imbecile”, “fare deliciously”, “effeminate”, “as parsimonious”, “Principles of the Catholick Religion”, “Fervor”, “these innocent Sheep”, “incultivated”, “above Five Hundred Thousand”, “Pitty”, “ruinated”, “Debt due to Nature”, “by raising”, “all them”, “endeavour the Extirpation”, “these Regions”, “praecedent”, “submissively”, “toward”, “Soveraigns”, “Sea-shoar” and “Eye-Witness”), “An. Dom. 1492.” for “Ann. Dom. 1492,”, the printing’s capitals or lower case in twelve more words, three marks of punctuation (“Nay, it”, “Idiom term”, “Country-Air;”), and two doubled words removed (“the the”, “with with”). A mark before “by their” in block 5 that may be an opening parenthesis, never closed, is not reproduced. Because the transcription departs from the printing so often, the rest of it is not trusted: scope.collated records the collated blocks.",
+  "publicationYear": 1689,
+  "translationYear": 1689,
+  "url": "https://www.gutenberg.org/ebooks/20321",
+  "textUrl": "https://www.gutenberg.org/ebooks/20321.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Las Casas’s Brevísima relación was first published in Seville in 1552, and this anonymous English version was printed in London in 1689; both were published long before 1931 and have no surviving copyright. Project Gutenberg identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/20321"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/20321/pg20321.txt",
+    "downloadSha256": "db8621bc6765a9b97892b3a8e8774415bf642ec719219500aebbff534397095a",
+    "method": "Project Gutenberg 20321 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Took everything from the narrative’s title (“THE CRUELTIES / OF THE / Spaniards / Committed in / AMERICA.”) to “FINIS.”, omitting the PG header and footer, the preparer’s note, the 1689 title page and the anonymous preface. The title became a level-2 heading with its lines joined by spaces, and each one-line section title beginning “Of” (with or without the transcription’s italic underscores) a level-2 heading; rows of hyphens between sections were dropped; paragraphs had their line wrapping joined with single spaces (a line ending in a hyphen joined without one, as in “West-Indians”) and runs of spaces collapsed. Forty-nine readings in blocks 1–8 were then corrected to the 1689 printing after collation (see edition)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        0,
+        8
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 174,
+    "sha256": "5db28a9c92f1338d67c37a08ca17a34ff55d784edb93a0a222e29300ed07fb15"
+  }
+}
