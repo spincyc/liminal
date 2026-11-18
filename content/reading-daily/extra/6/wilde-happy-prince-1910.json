@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "wilde-happy-prince-1910",
+  "readings": [
+    {
+      "id": "reading-6-wilde-happy-prince-1910-01",
+      "title": "The Nightingale and the Rose — The price of a red rose",
+      "sourceId": "wilde-happy-prince-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 11,
+        "totalMinutes": 22
+      },
+      "challenge": "Compare how the Student, the small creatures of the garden and the Nightingale each explain the same tears.",
+      "focus": "A bird decides that Love is worth more than Life on the strength of a stranger’s weeping.",
+      "context": "Oscar Wilde published this story in The Happy Prince and Other Tales (1888), fairy tales in which generous acts often go unrewarded. A holm-oak is an evergreen oak; a spray is a small branch; a sun-dial tells the time by a shadow. Wilde capitalizes Love, Life and Philosophy as if they were persons.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Nightingale and the Rose,” from the opening through the Nightingale’s decision; opens ““SHE said that she would dance with me if I brought her red roses,” cried the young…”; closes “…is better than Life, and what is the heart of a bird compared to the heart of a man?””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-wilde-happy-prince-1910-02",
+        "blocks": [
+          88,
+          118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "608bd77fc1a8c822cb2f96c12df33fd40c76ac99b418809f898aa51adfb6feef"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wilde-happy-prince-1910-01-q1",
+          "prompt": "What does the Student say he lacks, and what does he say he already has?",
+          "facilitatorNotes": [
+            "He lacks one red rose, yet he has read “all that the wise men have written.” The gap between his learning and his helplessness over a flower is the story’s first irony."
+          ],
+          "evidence": [
+            "I have read all that the wise men have written",
+            "for want of a red rose is my life made wretched"
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-01-q2",
+          "prompt": "The Lizard laughs, while the Nightingale “understood the secret.” Whose response to the tears seems more reasonable at this point?",
+          "facilitatorNotes": [
+            "The Lizard, “something of a cynic,” finds weeping over a flower ridiculous; the Nightingale treats it as a mystery of Love. Either can be defended now, and the ending will test both."
+          ],
+          "evidence": [
+            "how very ridiculous!",
+            "thought about the mystery of Love"
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-01-q3",
+          "prompt": "How does the request to three rose-trees build toward the third tree’s answer?",
+          "facilitatorNotes": [
+            "The same plea and refusal repeat while the colours move from white to yellow to red. The pattern raises hope, then the right tree has been ruined by winter, and the only way left is terrible."
+          ],
+          "evidence": [
+            "But the Tree shook its head.",
+            "stain it with your own heart’s-blood"
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-01-q4",
+          "prompt": "Weigh the Nightingale’s reasoning in her last speech. Is her conclusion convincing?",
+          "facilitatorNotes": [
+            "She names real pleasures of life before deciding that “Love is better than Life.” Her question assumes a man’s heart is worth more than a bird’s, though she knows the Student only from his looks and tears; readers may admire her generosity or doubt her judgment."
+          ],
+          "evidence": [
+            "Death is a great price to pay for a red rose",
+            "what is the heart of a bird compared to the heart of a man?",
+            "though I knew him not"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wilde-happy-prince-1910-02",
+      "title": "The Nightingale and the Rose — A rose in the gutter",
+      "sourceId": "wilde-happy-prince-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Track what each character understands about the rose, and notice who never learns what it cost.",
+      "focus": "A sacrifice made for love meets a world that values usefulness, price and display.",
+      "context": "Recap: a Student weeps because the Professor’s daughter will dance with him only if he brings her a red rose, and his garden has none. The Nightingale, believing him a true lover, learned from the rose-tree under his window that she can make a red rose only by singing all night with her breast against a thorn, until her heart’s blood stains it. She has chosen to do it. A pallet-bed is a narrow, hard bed; Metaphysics is a branch of philosophy about the nature of reality.",
+      "contentNote": "The Nightingale presses a thorn into her heart and dies singing; the death is told through the song rather than in graphic detail.",
+      "excerpt": {
+        "locator": "“The Nightingale and the Rose,” from the Nightingale’s return to the Student to the end; opens “So she spread her brown wings for flight, and soared into the air. She swept over the…”; closes “So he returned to his room and pulled out a great dusty book, and began to read.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-wilde-happy-prince-1910-01",
+        "continuesTo": null,
+        "blocks": [
+          119,
+          149
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "719738b9441d4ce545a64d3c2ab7e472555d93c9f8e585ccec01d25ae53cbf90"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wilde-happy-prince-1910-02-q1",
+          "prompt": "How does the rose change colour as the Nightingale’s song changes subject?",
+          "facilitatorNotes": [
+            "Pale as mist while she sings of a boy’s and girl’s first love, pink with passion, crimson only when the thorn reaches her heart. The colour tracks the cost: the deeper the song, the greater the pain."
+          ],
+          "evidence": [
+            "Pale was it, at first, as the mist that hangs over the river",
+            "only a Nightingale’s heart’s-blood can crimson the heart of a rose"
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-02-q2",
+          "prompt": "What does each person see in the finished rose?",
+          "facilitatorNotes": [
+            "The Student calls it luck and expects a Latin name; the girl prefers jewels because they cost more; then a cart-wheel goes over it. Nobody sees the price that was actually paid."
+          ],
+          "evidence": [
+            "what a wonderful piece of luck!",
+            "everybody knows that jewels cost far more than flowers",
+            "a cart-wheel went over it"
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-02-q3",
+          "prompt": "The Student says the Nightingale is “all style” and “would not sacrifice herself for others.” What makes his judgment painfully ironic?",
+          "facilitatorNotes": [
+            "He passes it just before she gives her life for him, and he dismisses her song as useless while it is making his rose. Some readers also hear Wilde mocking anyone who demands that art do “practical good”."
+          ],
+          "evidence": [
+            "she is all style, without any sincerity",
+            "She would not sacrifice herself for others.",
+            "What a pity it is that they do not mean anything, or do any practical good."
+          ]
+        },
+        {
+          "id": "reading-6-wilde-happy-prince-1910-02-q4",
+          "prompt": "Was the Nightingale’s sacrifice wasted? Use the ending to argue your view.",
+          "facilitatorNotes": [
+            "In the plot it changes nothing: the Student goes back to “a great dusty book.” Some readers argue that the beauty still mattered, since the Moon lingers and the music reaches the sea; others read the story as a warning about giving everything to someone who cannot see you."
+          ],
+          "evidence": [
+            "So he returned to his room and pulled out a great dusty book, and began to read.",
+            "The white Moon heard it, and she forgot the dawn"
+          ]
+        }
+      ]
+    }
+  ]
+}

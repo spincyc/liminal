@@ -1,0 +1,1502 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "kipling-jungle-book-1910",
+  "readings": [
+    {
+      "id": "reading-6-kipling-jungle-book-1910-01",
+      "title": "Night-Song in the Jungle",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Untangle short lines whose word order is unusual, and decide who is speaking.",
+      "focus": "Eight lines at the very start of the book announce the hour when the hunters go out, and the law they keep.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. Kipling printed this short song at the very front of the book, before the first Mowgli story. Rann the Kite (a hawk) and Mang the Bat are named as the animals are named in the Mowgli stories; a byre is a cow-shed; talons are a bird’s claws and a tush is a tusk; “Good hunting!” is the greeting of the jungle people, and the Jungle Law is the code they live by. The title comes at the end, in italics, as Kipling set it.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Night-Song in the Jungle,” the verses at the front of the book, with their title line; opens “Now Rann, the Kite, brings home the night That Mang, the Bat, sets free-- The herds are…”; closes “_Night-Song in the Jungle._”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          2
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe552715cdcf32170bdd5437047ad80f4be234cec01645224584a532e1a1b805"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q1",
+          "prompt": "What happens at the hour this song describes? Who is shut in, and who is let out?",
+          "facilitatorNotes": [
+            "The farm herds are shut in their sheds and huts, and the hunters are “loosed till dawn.” The singer speaks for the hunters (“we”): the night belongs to them. Ask which animals readers imagine in that “we.”"
+          ],
+          "evidence": [
+            "The herds are shut in byre and hut,",
+            "For loosed till dawn are we."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q2",
+          "prompt": "The kite “brings home the night” and the bat “sets free” something. What picture of nightfall do the first two lines make?",
+          "facilitatorNotes": [
+            "The kite, a day bird, flies home at dusk as if carrying the dark with it; the bat comes out as night is let loose. The word order allows another reading, that the night sets the bat free; either way, one creature’s ending is another’s beginning."
+          ],
+          "evidence": [
+            "Now Rann, the Kite, brings home the night",
+            "That Mang, the Bat, sets free--"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q3",
+          "prompt": "“This is the hour of pride and power.” Whose pride is it? Do these lines sound frightening or exciting to you?",
+          "facilitatorNotes": [
+            "The hunters’: “Talon and tush and claw” lists their weapons in three hard, short words. To the herd it is frightening; to the singer it is a proud boast. Readers can say which side the music puts them on."
+          ],
+          "evidence": [
+            "This is the hour of pride and power,",
+            "Talon and tush and claw."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q4",
+          "prompt": "Why might Kipling open the whole book with “Good hunting all / That keep the Jungle Law”?",
+          "facilitatorNotes": [
+            "It welcomes the reader into the jungle’s world, where hunting is allowed but only under a law. That idea of law runs through the Mowgli stories. Some readers will hear a blessing, others a warning to those who break the Law."
+          ],
+          "evidence": [
+            "Oh, hear the call!--Good hunting all",
+            "That keep the Jungle Law!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-02",
+      "title": "Hunting-Song of the Seeonee Pack",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the small changes in three nearly identical stanzas and follow the story they tell.",
+      "focus": "A wolf scout sees deer at dawn, carries word to the pack, and the hunt begins, in a song built on repetition.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. In “Mowgli’s Brothers,” a human baby is adopted by a wolf family and accepted into the Seeonee wolf pack, until at last he must leave it. Kipling placed this song after that story. The sambhur is a large Indian deer, and a stag “belled” when it gave its loud call; to sup is to drink; to bay is to howl while chasing; to “give tongue” is to cry out on the scent.",
+      "contentNote": "The song celebrates wolves hunting deer.",
+      "excerpt": {
+        "locator": "“Hunting-Song of the Seeonee Pack,” complete poem; opens “As the dawn was breaking the Sambhur belled Once, twice, and again! And a doe leaped…”; closes “…in the dark--the dark! Tongue--give tongue to it! Hark! O Hark! Once, twice, and again!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          161,
+          163
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "10296f7d49c24631baf1be6d8586adefb00235e3281060baccf020d212eb216d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q1",
+          "prompt": "Each stanza begins almost the same way. What changes from stanza to stanza, and what story do the changes tell?",
+          "facilitatorNotes": [
+            "First the sambhur calls and a doe leaps up; then a wolf carries word to the pack; then the whole pack yells. The opening line itself changes from “the Sambhur belled” to “the Wolf-pack yelled”: the hunted animal’s call gives way to the hunters’ cry."
+          ],
+          "evidence": [
+            "As the dawn was breaking the Sambhur belled",
+            "As the dawn was breaking the Wolf-pack yelled"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q2",
+          "prompt": "Who is the “I” of the first stanza, and what part does he play in the hunt?",
+          "facilitatorNotes": [
+            "A wolf scouting alone, who sees the deer and then steals back to tell the pack. The hunt depends on one watcher and many runners working together, as a wolf pack does."
+          ],
+          "evidence": [
+            "This I, scouting alone, beheld,",
+            "And a wolf stole back--and a wolf stole back"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q3",
+          "prompt": "Why repeat “Once, twice, and again!” in every stanza, and phrases like “a doe leaped up--and a doe leaped up”?",
+          "facilitatorNotes": [
+            "The repeats sound like the deer’s calls, the pack’s cries and the beat of running feet. They also make the song easy to chant together, as a pack song would be. Try reading it aloud to hear the rhythm."
+          ],
+          "evidence": [
+            "Once, twice, and again!",
+            "And a doe leaped up--and a doe leaped up"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q4",
+          "prompt": "The last stanza praises “Feet in the jungle that leave no mark!” Whose side is the song on? How do you feel about the deer?",
+          "facilitatorNotes": [
+            "The wolves’: it praises their silent feet and night eyes. The deer appear only as prey, glimpsed for a moment. Some readers will share the pack’s excitement; others will feel for the doe. Both responses notice how the song is built."
+          ],
+          "evidence": [
+            "Feet in the jungle that leave no mark!",
+            "Eyes that can see in the dark--the dark!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-03",
+      "title": "Maxims of Baloo",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Turn each two-line saying into plain advice, and notice the joke hidden in some of them.",
+      "focus": "The old bear who teaches Mowgli the Law gives four pieces of advice to the young, some wise, some funny, all a little sharp.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. In the Mowgli stories Baloo, the sleepy brown bear, teaches the man-cub Mowgli the Law of the Jungle. Kipling put these sayings, or maxims, at the head of “Kaa’s Hunting,” a story in which Mowgli ignores what Baloo has taught him. Gloss is shine; a bullock is a young ox; the sambhur is a large deer; to gore is to wound with horns; to oppress is to bully; fubsy means plump and squat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Maxims of Baloo,” the verses at the head of “Kaa’s Hunting,” with their title line; opens “His spots are the joy of the Leopard: his horns are the Buffalo's pride-- Be clean, for…”; closes “_Maxims of Baloo._”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          165,
+          169
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4e950c1fbe006fc8a80b36e6d888130b3f2fd875a8d635da455d26cfa04259d5"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q1",
+          "prompt": "Choose one maxim and put it into plain words. What does it teach?",
+          "facilitatorNotes": [
+            "The first says a good hunter keeps himself clean and healthy, and his shining coat shows his strength; the last says a young animal after its first success should not boast. Accept any clear paraphrase tied to the words."
+          ],
+          "evidence": [
+            "Be clean, for the strength of the hunter is known by the gloss",
+            "Let him think and be still."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q2",
+          "prompt": "The second maxim is a joke at the young listener’s expense. What is the joke?",
+          "facilitatorNotes": [
+            "A youngster rushes to tell the elders that a bullock can toss him; they knew it “ten seasons before.” The young think their painful discoveries are news. Readers may know the feeling from both sides."
+          ],
+          "evidence": [
+            "Ye need not stop work to inform us",
+            "we knew it ten seasons"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q3",
+          "prompt": "Why should a cub be kind to “the cubs of the stranger”? Is Baloo’s reason a good one?",
+          "facilitatorNotes": [
+            "Because the little fubsy stranger may have a bear for a mother. The reason is self-interest, which makes it funny, but it also teaches respect for those you do not know. Notice that Mowgli himself is a stranger’s cub, and Baloo is a bear."
+          ],
+          "evidence": [
+            "Oppress not the cubs of the stranger",
+            "For though they are little and fubsy, it may be the Bear is"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q4",
+          "prompt": "The last maxim answers a cub who boasts “There is none like to me!” Why might Baloo want Mowgli to hear it before “Kaa’s Hunting”?",
+          "facilitatorNotes": [
+            "Pride after one early success is dangerous when “the Jungle is large and the Cub he is small.” The story that follows tests exactly that. Ask readers to predict what kind of trouble a proud cub might meet."
+          ],
+          "evidence": [
+            "says the Cub in the pride of his",
+            "But the Jungle is large and the Cub he is small."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-04",
+      "title": "Road-Song of the Bandar-Log",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear the monkeys’ boasts in their bouncing rhythm, and notice where each stanza breaks off.",
+      "focus": "Kipling lets the Monkey-People mock themselves: grand plans, borrowed words and nothing finished.",
+      "context": "In “Kaa’s Hunting,” from Rudyard Kipling’s The Jungle Book (1894), the Bandar-log, or Monkey-People, carry the boy Mowgli off through the treetops; the other animals scorn them as a people without a law who chatter, boast and forget. Kipling placed this song after the story. A festoon is a hanging loop, like a garland; a Cupid’s bow is the curved bow of Cupid, the archer god of love. “Scumfish” is a rare word: let the leaping lines suggest its sense.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Road-Song of the Bandar-Log,” complete poem; opens “Here we go in a flung festoon, Half-way up to the jealous moon! Don't you envy our…”; closes “…and the noble noise we make, Be sure, be sure, we're going to do some splendid things!_”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          363,
+          366
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "345e6f660d9607e2fa052b4ccffc6e24dff1e1c7fd5694db5a22aaffbf0a4b1e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q1",
+          "prompt": "What do the monkeys want their listeners to envy? Is any of it a real achievement?",
+          "facilitatorNotes": [
+            "Their prancing bands, their extra hands and their curly tails: things they were born with, not things they have done. Boasting about their bodies takes the place of deeds."
+          ],
+          "evidence": [
+            "Don't you envy our pranceful bands?",
+            "Don't you wish you had extra hands?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q2",
+          "prompt": "Each of the first three stanzas turns on “never mind.” What is broken off each time?",
+          "facilitatorNotes": [
+            "An insult (“Now you’re angry”), a plan (“Now we’re going to”) and a pretence (“Let’s pretend we are”) are all dropped for the same taunt about a tail. The refrain acts out their short attention."
+          ],
+          "evidence": [
+            "Now we're going to--never mind,",
+            "Brother, thy tail hangs down behind"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q3",
+          "prompt": "“Now we are talking just like men.” What is the joke, and at whom might it be aimed?",
+          "facilitatorNotes": [
+            "They jabber every sound they have heard “all together” and call it talk. The line mocks the monkeys’ imitation of people and, perhaps, people who repeat what they have heard without understanding it; readers can argue whether Kipling meant the joke to land on humans too."
+          ],
+          "evidence": [
+            "Jabber it quickly and all together!",
+            "Now we are talking just like men."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q4",
+          "prompt": "The last stanza switches to long, rushing lines. What proof do the monkeys offer that they will “do some splendid things”?",
+          "facilitatorNotes": [
+            "Only “the rubbish in our wake” and “the noble noise we make.” Mess and noise stand in for accomplishment, and the galloping rhythm makes the boast sound even emptier, or, to some readers, rather joyful."
+          ],
+          "evidence": [
+            "By the rubbish in our wake, and the noble noise we make,",
+            "Be sure, be sure, we're going to do some splendid things!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-05",
+      "title": "Mowgli’s Song",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a victory chant that turns into a string of unanswered questions, and track the singer’s two feelings.",
+      "focus": "Triumph over Shere Khan cannot settle where Mowgli belongs; the song holds pride and grief together.",
+      "context": "In “Tiger! Tiger!” from Rudyard Kipling’s The Jungle Book (1894), Mowgli, the boy raised by wolves, lives for a time in a village as a herd-boy. When the tiger Shere Khan, who has sworn to kill him, sleeps after a meal in a ravine, Mowgli and his wolf brothers drive the buffalo herd down on him and he is trampled to death. Mowgli skins him, keeping a promise to bring the hide to the wolves’ Council Rock, and the villagers, believing him a sorcerer, drive him out with stones. Rama is the lead buffalo bull; Akela and Gray Brother are wolves; Ikki is the porcupine and Mang the bat; the Waingunga is the river. Read the long chanting lines aloud.",
+      "contentNote": "The song celebrates the tiger’s death and describes skinning him with a knife; villagers throw stones and Mowgli’s mouth bleeds.",
+      "excerpt": {
+        "locator": "“Mowgli’s Song, that he sang at the Council Rock when he danced on Shere Khan’s hide,” complete poem; opens “The Song of Mowgli--I, Mowgli, am singing. Let the jungle listen to the things I have…”; closes “…well, O Wolves! _Ahae!_ My heart is heavy with the things that I do not understand.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          486,
+          487
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "698e5db11567aaecf3f57967e116d8af7f638ecb766ccf3fea9a219f784a047d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q1",
+          "prompt": "How does Mowgli turn Shere Khan’s own words against him in the opening lines?",
+          "facilitatorNotes": [
+            "He repeats the tiger’s boast and his insulting name for Mowgli, then taunts the tiger about his last drink. A threat becomes a mockery now that the tiger is dead."
+          ],
+          "evidence": [
+            "Shere Khan said he would kill--would kill!",
+            "Mowgli, the Frog!",
+            "Drink deep, Shere Khan, for when wilt thou drink again?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q2",
+          "prompt": "Why does Mowgli speak as if the dead tiger were asleep and could lend him his coat?",
+          "facilitatorNotes": [
+            "The pretended politeness is mocking triumph, the enemy treated as a host. It may strike readers as cruel gloating or as a way of honouring a great foe; both have support."
+          ],
+          "evidence": [
+            "We will not wake him, for his strength is very great.",
+            "Lend me thy coat, Shere Khan."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q3",
+          "prompt": "Several sections in a row end with “Why?” What is Mowgli asking, and does the song answer?",
+          "facilitatorNotes": [
+            "Why the village cast him out, why the wolves did too, why he lives between village and jungle, and why he laughs while crying. No answer comes: the victory has not settled where he belongs."
+          ],
+          "evidence": [
+            "I did them no harm, but they were afraid of me. Why?",
+            "As Mang flies between the beasts and the birds so fly I between the village and the jungle. Why?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q4",
+          "prompt": "“I am two Mowglis, but the hide of Shere Khan is under my feet.” Who are the two Mowglis, and why does the hide come after “but”?",
+          "facilitatorNotes": [
+            "One belongs to the jungle and one to the village; one rejoices and one grieves. The hide is a solid fact to stand on against a self he cannot settle, though the last line admits there is much he does not understand; readers may take the hide as comfort or as a lonely prize."
+          ],
+          "evidence": [
+            "I am two Mowglis, but the hide of Shere Khan is under my feet.",
+            "My heart is heavy with the things that I do not understand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-06",
+      "title": "The White Seal — A white coat on a crowded beach",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Picture an enormous, noisy setting from a few exact numbers and details, and notice who claims to be telling the tale.",
+      "focus": "The story begins with a beach of fighting fur seals, a proud father and a baby who is not like the rest.",
+      "context": "“The White Seal” comes from Rudyard Kipling’s The Jungle Book (1894), the book of the Mowgli stories and “Rikki-tikki-tavi.” It is set on St. Paul, an island in the Bering Sea between Alaska and Russia, where fur seals came ashore by the hundreds of thousands each summer to raise their young. A comber is a long curling wave; basalt is dark volcanic rock; a nursery here is a family’s stretch of beach; the holluschickie are the young unmarried males.",
+      "contentNote": "Bull seals fight savagely for places on the beach and are badly wounded.",
+      "excerpt": {
+        "locator": "“The White Seal,” from the Seal Lullaby through Kotick’s birth and his mother’s song; opens “Oh! hush thee, my baby, the night is behind us, And black are the waters that sparkled so…”; closes “…as bad can be; But splash and grow strong, And you can't be wrong, Child of the Open Sea!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-kipling-jungle-book-1910-07",
+        "blocks": [
+          489,
+          510
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "664edc83e6b0e3144d87ef0e04dd6a8958f2240c26b91608fd2de4a57baa86f1"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q1",
+          "prompt": "Who is said to have told this story to the narrator, and why might Kipling begin this way?",
+          "facilitatorNotes": [
+            "Limmershin the Winter Wren, blown onto a steamer and nursed in the narrator’s cabin. The playful frame makes the tale both a joke and a witness’s report; readers may notice the narrator vouching for a bird’s honesty."
+          ],
+          "evidence": [
+            "Limmershin, the Winter Wren, told me the tale",
+            "Limmershin is a very odd little bird, but he knows how to tell the truth."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q2",
+          "prompt": "What makes Sea Catch frightening, and which rule shows he is not simply cruel?",
+          "facilitatorNotes": [
+            "His size, teeth, scars and trick of striking from a feigned sideways look; yet he never chases a beaten seal. He fights for room by the sea, not for the pleasure of hurting."
+          ],
+          "evidence": [
+            "he was always ready for just one fight more",
+            "Yet Sea Catch never chased a beaten seal, for that was against the Rules of the Beach."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q3",
+          "prompt": "Why will Sea Catch not move to quieter Otter Island, as Matkah suggests?",
+          "facilitatorNotes": [
+            "Others “would say we were afraid,” so they must “preserve appearances.” Kipling uses the seals to poke fun at human pride, and says so outright when he calls them as unaccommodating as men."
+          ],
+          "evidence": [
+            "If we went there they would say we were afraid.",
+            "they were just as stupid and unaccommodating as men"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q4",
+          "prompt": "How do Kotick’s parents react to the news that he will be white, and what might that predict?",
+          "facilitatorNotes": [
+            "Sea Catch snorts that there has never been a white seal; Matkah answers that there will be now and sings to him. A seal who is the first of his kind may see what others cannot; readers might predict trouble, greatness or both."
+          ],
+          "evidence": [
+            "There never has been such a thing in the world as a white seal.",
+            "there's going to be now"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-07",
+      "title": "The White Seal — Learning the sea",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a long sequence of lessons, and sort those that come from his mother, from other creatures and from his own experience.",
+      "focus": "Kotick becomes a creature of the open sea through teaching, danger and his own senses.",
+      "context": "Recap: on the island of St. Paul in the Bering Sea, where a million fur seals come ashore each summer, the great fighter Sea Catch and his gentle wife Matkah have a son, Kotick, whose coat is turning white, though no white seal has ever been seen. Matkah sings him a song warning that baby seals must not swim too soon. Mange is a skin disease; the Grampus is the killer whale; a fathom is six feet of depth; Juan Fernandez is an island far south, off Chile.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s first weeks through his return to the island as a yearling; opens “Of course the little fellow did not understand the words at first. He paddled and…”; closes “…they had been born and heard the old seals, their fathers, fighting in the rolling mist.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-06",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-08",
+        "blocks": [
+          511,
+          522
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9a86aaa08937dd825fc88fa4ede6e715626c47267ac3832252073127d3375bdb"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q1",
+          "prompt": "What happens the first time Kotick goes into the sea, and how does it connect with his mother’s song?",
+          "facilitatorNotes": [
+            "A wave carries him out and he nearly drowns, his head sinking and flippers flying up just as the song warned. The song was practical advice, learned the hard way."
+          ],
+          "evidence": [
+            "exactly as his mother had told him in the song",
+            "if the next wave had not thrown him back again he would have drowned"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q2",
+          "prompt": "What is the “feel of the water,” and why is it useful?",
+          "facilitatorNotes": [
+            "A tingling of the skin that warns of bad weather; the porpoise steers by the same feeling in his tail. The seals read the sea with their bodies, a skill that matters later in the story."
+          ],
+          "evidence": [
+            "tingly, prickly feelings meant bad weather coming",
+            "My tail tingles, youngster"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q3",
+          "prompt": "In the long list of Matkah’s lessons, which seems strangest to you, and why might it be there?",
+          "facilitatorNotes": [
+            "Many readers pick the warning never to look at a boat, “particularly a row boat”: a lesson about men set among fishing skills and given without explanation. Others may choose the polite wave to the albatross; any choice should explain its place in the list."
+          ],
+          "evidence": [
+            "never to stop and look at a boat or a ship, but particularly a row boat"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q4",
+          "prompt": "What calls Kotick back north, and how do the other seals greet him?",
+          "facilitatorNotes": [
+            "A spring laziness and the memory of the beaches, the seaweed and the roar; his mates ask where he got his coat. He belongs to the young seals and yet is marked out from them."
+          ],
+          "evidence": [
+            "he remembered the good firm beaches of Novastoshnah seven thousand miles away",
+            "But where did you get that coat?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-08",
+      "title": "The White Seal — The killing-grounds",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how a terrible scene is told in plain, quick sentences, and compare how different animals answer Kotick’s horror.",
+      "focus": "One seal sees what the others ignore, and his elders advise him to accept it.",
+      "context": "Recap: Kotick, the only white fur seal ever born on the island of St. Paul, has spent his first year learning the Pacific and has come home, almost pure white, with the other young seals (the holluschickie). The Fire-dance is played in sea water lit up by tiny glowing creatures. In Kipling’s time, the island’s Aleut hunters, working for a fur company, drove young seals inland each summer and killed them for their skins. Sea Vitch is a walrus; “Stareek” means old man; the burgomaster is a large gull.",
+      "contentNote": "Men drive young seals inland, club them to death and skin them, seen through Kotick’s eyes. The narrator calls the Aleut hunters “not clean people” and describes their faces in a demeaning way; these are prejudiced generalizations of Kipling’s time about the Indigenous people of the islands.",
+      "excerpt": {
+        "locator": "“The White Seal,” from the Fire-dance through Kotick’s return from Walrus Islet and his parents’ advice; opens “That night Kotick danced the Fire-dance with the yearling seals. The sea is full of fire…”; closes “…Kotick.\" And Kotick went off and danced the Fire-dance with a very heavy little heart.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-07",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-09",
+        "blocks": [
+          523,
+          555
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "221647b700691c14623d70b6a9e23b936cd5b2c2f0d78a628f04a0e27d13d15e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q1",
+          "prompt": "How do the hunters react to the white seal, and what does their fear show?",
+          "facilitatorNotes": [
+            "Kerick turns pale, prays and wonders whether Kotick is a drowned man’s ghost; Patalamon calls him unlucky. The hunters are superstitious about the one seal who does not behave like the rest, and who follows them alone."
+          ],
+          "evidence": [
+            "Perhaps it is old Zaharrof's ghost.",
+            "That's the first time a seal has ever come to the killing-grounds alone."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q2",
+          "prompt": "How is the killing told differently from the lively descriptions earlier in the story?",
+          "facilitatorNotes": [
+            "Plainly and quickly: the watch, the cooling-off, a command, clubs “as fast as they could,” skins whipped off. The flat telling, from Kotick’s point of view, is more shocking than description would be."
+          ],
+          "evidence": [
+            "and then the men clubbed the seals on the head as fast as they could",
+            "little Kotick did not recognize his friends any more"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q3",
+          "prompt": "What is reasonable in the sea-lion’s answer, and what is missing from it?",
+          "facilitatorNotes": [
+            "He is right that men return wherever seals come, and he points Kotick to someone who may know more; but he treats the killing as routine. The seals on the beach do the same, and Kipling says the difference is that they have not seen it."
+          ],
+          "evidence": [
+            "unless you can find an island where no men ever come, you will always be driven",
+            "But none of the other seals had seen the killing, and that made the difference between him and his friends."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q4",
+          "prompt": "Kotick’s father and mother both tell him to give up. Are they wrong?",
+          "facilitatorNotes": [
+            "Sea Catch advises him to grow big enough to fight for himself; Matkah says the killing cannot be stopped. Both speak from experience and love, but they offer safety for one seal, not an answer for all; readers may defend their realism or side with Kotick."
+          ],
+          "evidence": [
+            "In another five years you ought to be able to fight for yourself.",
+            "You will never be able to stop the killing. Go and play in the sea, Kotick."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-09",
+      "title": "The White Seal — Five seasons of searching",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow years of travel compressed into a few pages, and notice how a remembered insult becomes the clue.",
+      "focus": "Kotick keeps searching through failure, and a dying seal’s story gives him a reason to try once more.",
+      "context": "Recap: Kotick, the only white fur seal ever born on the island of St. Paul, saw men club and skin the young seals. Searching for an island where men never come, he was told by a walrus to ask Sea Cow, and a gull screamed that Sea Cow was the only thing in the sea uglier than the walrus, with worse manners. His parents told him to grow up and stop worrying. Whalers boiled whale blubber for oil; Kerguelen, the Galapagos and the other islands named lie scattered across the southern oceans; Masafuera is an island off Chile where seals were once killed by the hundred thousand.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s first voyage of exploration through his discovery of Sea Cow; opens “That autumn he left the beach as soon as he could, and set off alone because of a notion…”; closes “…and he tumbled backward in the water, for he knew that he had found Sea Cow at last.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-08",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-10",
+        "blocks": [
+          556,
+          571
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f74cb74c9ba562d3cb29b83399db753af04ac255cc55d1db82adf521d9fa97a5"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-09-q1",
+          "prompt": "What does Kotick find on every island that looks right, and how does he read the signs?",
+          "facilitatorNotes": [
+            "A whaler’s smoke on the horizon, or traces of a former seal nursery, and he reasons that where men have come once they will come again. His search depends on reading evidence of what happened before he arrived."
+          ],
+          "evidence": [
+            "there was always the smoke of a whaler on the horizon",
+            "where men had come once they would come again"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-09-q2",
+          "prompt": "Why does the dying seal of Masafuera tell him to try once more?",
+          "facilitatorNotes": [
+            "He remembers a story that a white seal would one day lead the seals to a quiet place. The legend gives Kotick’s difference a purpose, though readers may argue that he succeeds because he alone keeps looking, as he says himself."
+          ],
+          "evidence": [
+            "some day a white seal would come out of the north and lead the seal people to a quiet place",
+            "I am the only seal, black or white, who ever thought of looking for new islands."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-09-q3",
+          "prompt": "What does Kotick mean when he tells his mother about the seventh wave?",
+          "facilitatorNotes": [
+            "That a later effort may reach farther than the earlier ones. He uses the sea’s own pattern as a reason to try again instead of marrying and settling down."
+          ],
+          "evidence": [
+            "Give me another season",
+            "Remember, Mother, it is always the seventh wave that goes farthest up the beach."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-09-q4",
+          "prompt": "How does Kotick realize he has found Sea Cow, and why is the moment funny?",
+          "facilitatorNotes": [
+            "Losing patience with the bowing, speechless creatures, he insults them in the very words the gull once used, and the insult turns out to be the identification. His bad temper solves the puzzle."
+          ],
+          "evidence": [
+            "you're the only people I've ever met uglier than Sea Vitch--and with worse manners",
+            "he knew that he had found Sea Cow at last"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-10",
+      "title": "The White Seal — The tunnel and the fight",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh a hero’s methods: patience while following the sea cows, force when persuading the seals.",
+      "focus": "Kotick finds a safe home, but the seals will follow him only after he beats them.",
+      "context": "Recap: Kotick, the white fur seal, has spent five seasons searching the oceans for a beach where men never come, to save the seals of St. Paul from the yearly killing. A dying seal told him a legend that a white seal would lead the seals to safety, and at last, off Copper Island, he has found Sea Cow: huge, slow, silent sea-grazers that a walrus said might know such a place. (Kipling’s Sea Cow is based on Steller’s sea cow, which hunters had in fact wiped out by about 1770.) A telegraphic code is signalling by taps; twenty fathoms is 120 feet deep.",
+      "contentNote": "Kotick fights and wounds many seals, including a young seal who mocks him; the beach is left “torn and bleeding.”",
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s journey with the sea cows to the end of the story; opens “The sea cows went on schlooping and grazing, and chumping in the weed, and Kotick asked…”; closes “…each year, while the holluschickie play round him, in that sea where no man comes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-09",
+        "continuesTo": null,
+        "blocks": [
+          572,
+          599
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "29f0902eae6861f533a71ef04f39d3d0b752e85ed0cf0e2f950afae5dba250f7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-10-q1",
+          "prompt": "What makes Kotick begin to respect the sea cows he first thought so foolish?",
+          "facilitatorNotes": [
+            "He notices they are following a warm current, then sees them swim fast and dive through a hidden tunnel. He concludes they must be wiser than he thought; judging by looks proved wrong."
+          ],
+          "evidence": [
+            "till he saw that they were following up a warm current of water, and then he respected them more",
+            "Sea Cow must be wiser than I thought."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-10-q2",
+          "prompt": "What makes the new beaches safe? Which feature matters most?",
+          "facilitatorNotes": [
+            "A tunnel deep under a cliff, cliffs men cannot climb down, shoals that would wreck a ship six miles out, good fishing, and the feel of water no man has visited. Readers may argue for the tunnel or the shoals, using the text."
+          ],
+          "evidence": [
+            "a line of bars and shoals and rocks that would never let a ship come within six miles of the beach",
+            "no men had ever come there"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-10-q3",
+          "prompt": "Kotick asks, “What’s the use of fighting?” Why does he fight anyway?",
+          "facilitatorNotes": [
+            "The young seal says he never fought for a nursery and has no right to give orders, and the others laugh. The seals will only believe someone who proves himself on their terms."
+          ],
+          "evidence": [
+            "you can't come from no one knows where and order us off like this",
+            "unless your heads are dragged off your silly necks you won't believe"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-10-q4",
+          "prompt": "At the end Kotick is “red from head to tail.” Is his victory a triumph, a sad necessity or both?",
+          "facilitatorNotes": [
+            "He saves the seals with the same kind of violence he wanted them to escape, and persuasion failed where force succeeded. Yet his father joins him, the seals follow, and the story ends in a sea “where no man comes,” so many readers will call it a triumph with a cost."
+          ],
+          "evidence": [
+            "He was not a white seal any more, but red from head to tail.",
+            "in that sea where no man comes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-11",
+      "title": "Lukannon",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare the three stanzas that begin “I met my mates in the morning” and notice how small changes mark a great loss.",
+      "focus": "A seal anthem remembers a crowded, joyful home and mourns what the sealers have done to it.",
+      "context": "Kipling placed this song after “The White Seal” in The Jungle Book (1894). That story follows Kotick, a white fur seal from St. Paul in the Bering Sea, who sees hunters drive young seals inland and kill them for their skins, and who searches for a beach where men never come. Sealers killed fur seals in enormous numbers in the nineteenth century. Lukannon is one of the island’s beaches; ground-swell is a deep rolling sea; the offing is open water off the shore; the Salt House is where the skins were kept; the Gooverooska is a seabird; a viceroy rules in a king’s place.",
+      "contentNote": "The song mourns seals that sealers shoot, club and drive to slaughter.",
+      "excerpt": {
+        "locator": "“Lukannon,” Kipling’s headnote and the complete song; opens “This is the great deep-sea song that all the St. Paul seals sing when they are heading…”; closes “…egg the tempest flings ashore, The beaches of Lukannon shall know their sons no more!_”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          601,
+          607
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a9f913f397a0e374a7942388aadd36b0ac49ff0ea4a050de109bf95552dd23ff"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-11-q1",
+          "prompt": "The line “I met my mates in the morning” comes three times. What changes in it?",
+          "facilitatorNotes": [
+            "First “and oh, but I am old!”, then “I’ll never meet them more!”, then the tense changes: “I meet my mates,” now “a broken, scattered band.” A remembered crowd becomes a present handful of survivors."
+          ],
+          "evidence": [
+            "I met my mates in the morning (and oh, but I am old!)",
+            "I meet my mates in the morning, a broken, scattered band."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-11-q2",
+          "prompt": "What do the italic stanzas remember about Lukannon, and why might they be set apart?",
+          "facilitatorNotes": [
+            "Pleasant stations, dances that churned the sea to flame, fog, lichens and smooth playgrounds: home as a chorus remembers it. The italics mark the shared refrain, a song inside the song, as fits Kipling’s description of a “National Anthem.”"
+          ],
+          "evidence": [
+            "The song of midnight dances that churned the sea to flame",
+            "The beaches of Lukannon--the home where we were born!",
+            "a sort of very sad seal National Anthem"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-11-q3",
+          "prompt": "How does the stanza about men connect with “The White Seal”?",
+          "facilitatorNotes": [
+            "In the story the hunters drive the young seals inland “just like sheep” to the killing-grounds near the Salt House. The seals’ own word “silly” admits a helplessness that Kotick refused to accept."
+          ],
+          "evidence": [
+            "Men shoot us in the water and club us on the land;",
+            "Men drive us to the Salt House like silly sheep and tame,"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-11-q4",
+          "prompt": "What does the last stanza ask, and what does the shark’s egg predict?",
+          "facilitatorNotes": [
+            "The singers send the birds south to tell their woe before the beaches are emptied, like a shark’s egg-case thrown ashore with nothing inside. The anthem ends in fear, not hope; readers may contrast it with Kotick’s safe sea or connect it with real animals hunted to extinction."
+          ],
+          "evidence": [
+            "Ere, empty as the shark's egg the tempest flings ashore,",
+            "The beaches of Lukannon shall know their sons no more!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-12",
+      "title": "Darzee’s Chaunt",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how the long and short lines imitate a bird’s song, and notice what the singer cannot stop doing.",
+      "focus": "A tailorbird’s victory song praises the mongoose hero, and then praises the singer.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. In “Rikki-tikki-tavi,” a young mongoose living with an English family in India kills the two cobras, Nag and Nagaina, who threatened the family and the garden birds. Darzee the tailorbird, who sews his nest from leaves, once sang a victory song too soon and was scolded by Rikki as a “stupid tuft of feathers.” Kipling placed this song after the story. A chaunt is a chant; fledglings are young birds; impotent means powerless; when Rikki fought, his tail puffed out like a bottle-brush.",
+      "contentNote": "The song rejoices over the cobras’ death and the throwing of a body on the rubbish heap.",
+      "excerpt": {
+        "locator": "“Darzee’s Chaunt (sung in honor of Rikki-tikki-tavi),” the song and its closing note; opens “Singer and tailor am I-- Doubled the joys that I know-- Proud of my lilt through the sky,…”; closes “(_Here Rikki-tikki interrupted, and the rest of the song is lost._)”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          724,
+          728
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b169c7093163c8ff7c7935244894b7e8315cde068f734e28e86754c5d07fdf4d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-12-q1",
+          "prompt": "Darzee calls himself a “Singer and tailor.” How does the first stanza tie his two kinds of work together?",
+          "facilitatorNotes": [
+            "Both are weaving: he goes “over and under” with thread to make his nest, and in the same way with notes to make his music. The long last line itself seems to weave back and forth. Students may notice he is proud of both."
+          ],
+          "evidence": [
+            "Over and under, so weave I my music--so weave I",
+            "Proud of the house that I sew--"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-12-q2",
+          "prompt": "How does Darzee describe the cobras without ever naming them? Which phrase is the most surprising?",
+          "facilitatorNotes": [
+            "As “Evil,” “Death in the garden” and “Terror that hid in the roses.” “Death in the garden lies dead” is a paradox: death itself has died. Naming them by what they meant to the birds makes the victory feel larger than one fight."
+          ],
+          "evidence": [
+            "Death in the garden lies dead.",
+            "Terror that hid in the roses is impotent"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-12-q3",
+          "prompt": "In the fourth stanza Darzee changes his mind about who should praise Rikki. What does that change show about him?",
+          "facilitatorNotes": [
+            "He calls on the birds to praise Rikki “with nightingale words,” then decides “Nay, I will praise him instead”: he wants to be the star singer. The comedy matches the story’s Darzee, cheerful and vain."
+          ],
+          "evidence": [
+            "Praise him with nightingale words--",
+            "Nay, I will praise him instead."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-12-q4",
+          "prompt": "Why might Kipling end with the note that Rikki “interrupted, and the rest of the song is lost”? What does the interruption suggest about the hero?",
+          "facilitatorNotes": [
+            "Rikki does not want or need endless praise, or simply has had enough of Darzee’s chatter, as in the story. The joke also deflates the grand song. Readers might feel the loss of the rest or enjoy the ending; both are fair."
+          ],
+          "evidence": [
+            "Here Rikki-tikki interrupted, and the rest of the song is lost."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-13",
+      "title": "Toomai of the Elephants — Kala Nag and the Keddah",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Keep track of three generations of one family and an elephant older than all of them.",
+      "focus": "An old, fearless working elephant and a ten-year-old boy who loves the danger his father dislikes.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. This story is set in British India in the 1880s, among the Garo hills of Assam, where a government department caught wild elephants and trained them for work. A mahout is an elephant driver; the Keddah is the stockade into which wild elephants are driven; an ankus is an elephant-goad; a howdah is a seat on an elephant’s back; a Rajah is a prince. Kala Nag served in real campaigns of the British army: the Afghan war of 1842, the war in Abyssinia (now Ethiopia) in 1868, when the Emperor Theodore died at Magdala, and the timber-yards of Moulmein in Burma. Cawnpore was a large army station. The verses at the start are spoken by a captive elephant. Little Toomai’s shouts are explained in brackets.",
+      "contentNote": "Kala Nag kills a tiger, and once half killed a young elephant; elephants die in war service; wild elephants are driven, roped and kept in a stockade by torchlight and blank gunfire. Big Toomai slaps his son.",
+      "excerpt": {
+        "locator": "“Toomai of the Elephants,” the opening verses and the story from the start to the night Little Toomai throws the rope; opens “I will remember what I was, I am sick of rope and chain-- I will remember my old strength…”; closes “…him up to Big Toomai, who slapped him then and there, and put him back on the post.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-kipling-jungle-book-1910-14",
+        "blocks": [
+          730,
+          745
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fc7009bf37a11fce9e6123fe9748409de043d21a68bffb1868f34780bee39df8"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-13-q1",
+          "prompt": "Who speaks the verses at the start, and what does the speaker long for? How might they change the way you read a story about working elephants?",
+          "facilitatorNotes": [
+            "A captive elephant, “sick of rope and chain,” who refuses to “sell my back to man for a bundle of sugar-cane” and wants to return to the forest. The verses remind us that the elephants’ service was not their choice, even when they are proud and well cared for; they may also hint at what the elephants will do later in the story."
+          ],
+          "evidence": [
+            "I am sick of rope and chain",
+            "I will not sell my back to man for a bundle of sugar-cane"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-13-q2",
+          "prompt": "What did Kala Nag’s mother teach him, and how did he learn that she was right?",
+          "facilitatorNotes": [
+            "That “elephants who were afraid always got hurt.” He backed away from a bursting shell into piled rifles and was pricked by bayonets, so he gave up being afraid and became the best elephant in the service. The lesson came from pain as much as from advice."
+          ],
+          "evidence": [
+            "elephants who were afraid always got hurt",
+            "So, before he was twenty-five, he gave up being afraid"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-13-q3",
+          "prompt": "Compare what Big Toomai wants from his work with what Little Toomai loves about it.",
+          "facilitatorNotes": [
+            "The father wants “brick elephant-lines,” flat roads, short hours and a pension, and dislikes wild elephants. The son loves steep paths, rain, misty mornings and the “mad rush and blaze and hullaballoo” of the drive. The list of things he loves runs on in one long sentence, like his excitement."
+          ],
+          "evidence": [
+            "Give me brick elephant-lines, one stall to each elephant",
+            "the mad rush and blaze and hullaballoo of the last night's drive"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-13-q4",
+          "prompt": "What does Little Toomai do in the Keddah, and how do Kala Nag and Big Toomai each respond?",
+          "facilitatorNotes": [
+            "He climbs a post and yells encouragement, then slips down among the fighting elephants to throw a dropped rope to a driver. Kala Nag picks him up gently and hands him to his father, who slaps him. The elephant protects; the father punishes. Readers may see both as care."
+          ],
+          "evidence": [
+            "Kala Nag saw him, caught him in his trunk, and handed him up to Big Toomai, who slapped him then and there"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-14",
+      "title": "Toomai of the Elephants — When thou hast seen the elephants dance",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Work out what a joke means to the people who laugh at it, and then decide whether it might be true.",
+      "focus": "A great man’s teasing promise gives a boy hope, while his father wants him to forget the jungle.",
+      "context": "Recap: Little Toomai, ten years old, is the son of Big Toomai, driver of the old fighting elephant Kala Nag. He loves the dangerous work of driving wild elephants into the Keddah, the great stockade, which his father dislikes. Last night he slipped among the fighting elephants and threw a rope to a driver, and his father slapped him. Petersen Sahib, a white official, is head of the elephant-catching for the Government; “Sahib” was a title of respect for Europeans in India, and “Protector of the Poor” a respectful way of addressing an official. Pickets are stakes for tying animals; an anna was a small coin; “moonshine” means nonsense; the Dihang is a river.",
+      "contentNote": "Big Toomai sneers at the hill people as “dirty Assamese jungle-folk,” and the drivers trade insults; newly caught elephants are beaten and prodded on the march.",
+      "excerpt": {
+        "locator": "“Toomai of the Elephants,” from Big Toomai’s scolding to the first march toward the plains; opens “Next morning he gave him a scolding, and said: \"Are not good brick elephant-lines and a…”; closes “…for the new elephants; but they lost their tempers long before they got there.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-13",
+        "continuesTo": null,
+        "blocks": [
+          746,
+          776
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8907ccea29cb1b9a891d446fa3162f8f1dab68b72e350d3c1f11ba4ff558a2ef"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-14-q1",
+          "prompt": "What does Big Toomai fear will happen to his son, and what does his scolding reveal about his pride?",
+          "facilitatorNotes": [
+            "That Petersen Sahib might make the boy a hunter who will be “trampled to death in the Keddah.” He also looks down on the hunters as lower than a mahout with a pension, and calls the hill people “dirty.” Fear for his son and pride in his family’s rank are mixed together."
+          ],
+          "evidence": [
+            "at last to be trampled to death in the Keddah",
+            "Is the family of Toomai of the Elephants to be trodden underfoot in the dirt of a Keddah?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-14-q2",
+          "prompt": "After the scolding, Little Toomai says nothing to his father but talks to Kala Nag. What do his words show?",
+          "facilitatorNotes": [
+            "The repeated “perhaps” shows a hope he hardly dares to speak: being noticed by Petersen Sahib might change his future. Talking to the elephant while pulling a thorn shows where he feels at home. The interruption about the thorn makes the moment boyish and real."
+          ],
+          "evidence": [
+            "and perhaps--and perhaps--and perhaps--who knows?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-14-q3",
+          "prompt": "Why does everyone laugh when Little Toomai answers “Not green corn, Protector of the Poor,--melons”? How does he feel?",
+          "facilitatorNotes": [
+            "He corrects the great man with exact honesty, confessing a small theft; and most of the men had taught their elephants the same trick as boys. He is hanging in the air in front of them all and wishes he were “eight feet underground.” Petersen Sahib’s reply shows he likes the boy’s spirit."
+          ],
+          "evidence": [
+            "Most of them had taught their elephants that trick when they were boys",
+            "he wished very much that he were eight feet underground"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-14-q4",
+          "prompt": "What does “When thou hast seen the elephants dance” mean to the elephant-catchers? How does the Assamese driver make the reader wonder whether it might come true?",
+          "facilitatorNotes": [
+            "It is an old joke that means “never,” since no man has seen the elephants dance. But the driver says the wild elephants will dance tonight and that he has seen the place, and warns Big Toomai to double-chain his elephants. Big Toomai calls it “moonshine.” The chapter leaves the reader, like the boy, curious."
+          ],
+          "evidence": [
+            "that is an old joke among elephant-catchers, and it means just never",
+            "They will dance, and it behooves thy father"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-15",
+      "title": "Shiv and the Grasshopper",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a story told in a lullaby, and notice how the chorus changes slightly each time.",
+      "focus": "A small trick tests a great promise: that every creature, even the least, has its portion.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. In “Toomai of the Elephants,” Little Toomai’s mother sings this lullaby to his baby brother in the elephant camp. Kipling retells a story about Shiva (also called Shiv and Mahadeo), one of the great gods of Hinduism, and his wife Parbati (Parvati). The guddee is a throne; kine are cattle; carrion is dead flesh, and a kite is a bird that eats it; the dole is the sharing out of gifts. Read the italic chorus aloud.",
+      "contentNote": "A lullaby in Kipling’s English about Hindu gods; it is a literary retelling, not a full account of Hindu belief or scripture.",
+      "excerpt": {
+        "locator": "“Shiv and the Grasshopper (the song that Toomai’s mother sang to the baby),” complete poem; opens “Shiv, who poured the harvest and made the winds to blow, Sitting at the doorways of a day…”; closes “…camel, fodder for the kine, And mother's heart for sleepy head, O little son of mine!_”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          818,
+          820
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b18d15cd63d0715eaca280d4d6aeb1bd17edd024b28c2f8bd7f22ca804b96f74"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-15-q1",
+          "prompt": "Make a list of what Shiv gives, and to whom. Is his giving equal? Is it fair?",
+          "facilitatorNotes": [
+            "The rich get wheat and the poor millet; holy men get scraps; tigers get cattle, kites get carrion, wolves get bones. Everyone gets “his portion,” but the portions are very different. The song presents this as the order of the world; students may admire its care for all or question its inequality."
+          ],
+          "evidence": [
+            "Gave to each his portion, food and toil and fate,",
+            "Wheat he gave to rich folk, millet to the poor,"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-15-q2",
+          "prompt": "What trick does Parbati play, and what does she discover when she looks at the grasshopper?",
+          "facilitatorNotes": [
+            "She hides the smallest creature to show that Shiv has missed one. But it is already eating a new leaf, so even “the least of little things” was fed. Her laughter turns to fear and wonder, and she prays."
+          ],
+          "evidence": [
+            "Stole the little grasshopper and hid it in her breast.",
+            "Saw the Least of Little Things gnawed a new-grown leaf!"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-15-q3",
+          "prompt": "The chorus ends “And mother's heart for sleepy head, O little son of mine!” How does that line join the story of the gods to the mother singing?",
+          "facilitatorNotes": [
+            "Among all Shiv’s gifts, the baby’s portion is his mother’s love. The singer places her own child in the great list of creatures who are cared for. The changing middle line of the chorus (“turn and see,” “least of little things”) follows the story, but the last line always returns to the baby."
+          ],
+          "evidence": [
+            "And mother's heart for sleepy head, O little son of mine!",
+            "But this was least of little things, O little son of mine!"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-15-q4",
+          "prompt": "Why might a mother in a hard working camp sing this particular story to a baby?",
+          "facilitatorNotes": [
+            "It promises that even the smallest is provided for, a comfort for a poor family and for a baby, the “least” in the camp. Some readers will also hear a lesson about accepting one’s portion. Ask students to support either reading from the song."
+          ],
+          "evidence": [
+            "Who hath surely given meat to all that live."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-16",
+      "title": "Her Majesty’s Servants — A stampede in the rain",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Get to know five speakers in the dark by their voices, manners and boasts.",
+      "focus": "The army’s animals talk among themselves at night, and their first subject is fear.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. “Her Majesty’s Servants,” the last story, is told by an Englishman in a vast army camp at Rawal Pindi (now Rawalpindi in Pakistan) in 1885, when the Viceroy, who ruled British India for Queen Victoria, reviewed his troops for a visit by the Amir, the ruler of Afghanistan. A screw-gun battery has small cannon carried in pieces by mules and screwed together for firing; the Ninth Lancers are a cavalry regiment; the 39th Native Infantry is a regiment of Indian soldiers. To plowter is to flounder about; rammers are poles for loading cannon; pickets and heel-ropes tie animals for the night; a fourteen-hand mule is about fourteen times four inches high at the shoulder; a yoke joins a pair of bullocks. The opening verse is Kipling’s.",
+      "contentNote": "The narrator calls the Amir’s escort “savage men and savage horses” and uses the colonial word “natives”; a mule kicks a camel.",
+      "excerpt": {
+        "locator": "“Her Majesty’s Servants,” the opening verse and the story from the start to the troop-horse’s words on cowardice; opens “You can work it out by Fractions or by simple Rule of Three, But the way of Tweedle-dum…”; closes “…at home in Australia till we were scared to death of the loose ends of our head-ropes.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-kipling-jungle-book-1910-17",
+        "blocks": [
+          822,
+          854
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd24132312b0a0d9f916041a8ec1b6fa7ed1b348230131083c32a8428624deaa"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-16-q1",
+          "prompt": "The opening verse says “the way of Tweedle-dum is not the way of Tweedle-dee.” What does it lead you to expect from the story?",
+          "facilitatorNotes": [
+            "That different creatures have different natures, which no arithmetic can turn into one rule. The story will show each animal convinced that its own way is the right one. Ask students to test the prediction as they read on."
+          ],
+          "evidence": [
+            "But the way of Tweedle-dum is not the way of Tweedle-dee."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-16-q2",
+          "prompt": "How does the narrator explain that he can understand the animals? How does the camel’s complaint prove to him that it wrecked his tent?",
+          "facilitatorNotes": [
+            "He knows “camp-beast language” (not wild-beast language) picked up from Indian drivers, a joke told with a straight face. The camel says it fought “a white thing that waved” and was hit by a stick: the tent and its broken pole, from the camel’s point of view."
+          ],
+          "evidence": [
+            "I knew enough of beast language--not wild-beast language, but camp-beast language",
+            "I have fought with a white thing that waved, and it took a stick and hit me on the neck."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-16-q3",
+          "prompt": "What do the first words and actions of the camel, the mule and the troop-horse show about each one?",
+          "facilitatorNotes": [
+            "The camel is humble and frightened (“My lords”); Billy the mule is bossy and quick to kick, proud of his battery; the troop-horse arrives “as steadily as though he were on parade” and complains about his sleep like an officer. Each voice is a character type."
+          ],
+          "evidence": [
+            "as steadily as though he were on parade",
+            "I am only a baggage-camel of the 39th Native Infantry, and I am not so brave as you are, my lords."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-16-q4",
+          "prompt": "The troop-horse says, “Now, don't be angry after you've been afraid. That's the worst kind of cowardice.” What does he mean? Do you agree?",
+          "facilitatorNotes": [
+            "Being scared in the dark is forgivable, he says; pretending afterwards that you were not, by snapping at others, is worse. He admits his own regiment has stampeded over a story about snakes. Students can discuss whether anger after fear is cowardice or just embarrassment."
+          ],
+          "evidence": [
+            "Anybody can be forgiven for being scared in the night",
+            "That's the worst kind of cowardice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-17",
+      "title": "Her Majesty’s Servants — Every beast’s way of fighting",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Compare four descriptions of battle, and notice how each speaker judges the others.",
+      "focus": "Every animal thinks its own way of fighting is the only sensible one, and pride in breeding nearly starts a fight.",
+      "context": "Recap: one rainy night in a huge army camp at Rawal Pindi, the narrator, sheltering among the cannon, overhears runaway camp animals: a frightened baggage-camel, Billy the screw-gun mule and a young mule recruit, a cavalry troop-horse from Australia, and a pair of gun-bullocks. They have been talking about fear. Bridle-wise means turning at once when the rein touches the neck; hocks are joints in a horse’s hind legs; a farrier shoes horses; poppy shells are small shells; to split a hen’s ear is to do the impossible. “Two Tails” is camp slang for the elephant; Hapur is a town near Delhi; a sacred bull of Shiva is a bull dedicated to the Hindu god. A Brumby is an Australian wild horse; Sunol was a famous American racing mare and Carbine a great Australian racehorse; a skate is a worthless horse; Malaga is in Spain, and a jackass is a male donkey.",
+      "contentNote": "The animals describe battle: knives, a horse that will trample a fallen man, cannon fire, bullocks killed. They trade insults about breeding.",
+      "excerpt": {
+        "locator": "“Her Majesty’s Servants,” from Billy’s question about active service to the quarrel between the mule and the troop-horse; opens “\"That's all very well in camp,\" said Billy; \"I'm not above stampeding myself, for the fun…”; closes “…by any parrot-mouthed, pig-headed mule in a pop-gun peashooter battery. Are you ready?\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-16",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-18",
+        "blocks": [
+          855,
+          891
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1424b8138422a15b7bd895185462d8c07ed2ada05519d0c400f1dc22a35ee66d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-17-q1",
+          "prompt": "What does the troop-horse mean by “bridle-wise,” and why does he call it “life or death to your man”?",
+          "facilitatorNotes": [
+            "Turning instantly at the touch of the rein, so the rider can steer in a fight without using his hands. Horse and rider depend on each other, so the rider’s life is the horse’s life. Billy says mules just obey the man at their head, and supposes “it comes to the same thing.”"
+          ],
+          "evidence": [
+            "It means life or death to your man, and of course that's life or death to you.",
+            "I suppose it comes to the same thing."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-17-q2",
+          "prompt": "Billy calls his own way “scientific and neat” and the horse’s way “knives--pah!” What does each think of the other’s work, and why?",
+          "facilitatorNotes": [
+            "Billy prizes hidden climbing and keeping still while the guns do the work; the horse could not stand being fired at without charging. Each judges by its own nature. The story invites us to see that both are needed, and that each is a little ridiculous in its certainty."
+          ],
+          "evidence": [
+            "That's scientific and neat; but knives--pah!",
+            "Fired at without the chance of running into the people who are firing!"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-17-q3",
+          "prompt": "The bullocks say that when some are killed “there is all the more grazing for those that are left. This is Fate.” Is their calm wise, or a sign that they do not understand?",
+          "facilitatorNotes": [
+            "They are steady because they do not imagine what might happen; they simply eat and pull. Readers may find this wise acceptance, comic stupidity, or something chilling. The next part of the story picks up this question of imagination and fear."
+          ],
+          "evidence": [
+            "there is all the more grazing for those that are left. This is Fate--nothing but Fate."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-17-q4",
+          "prompt": "How does the quarrel between Billy and the troop-horse begin? Why does the narrator explain it with racehorses?",
+          "facilitatorNotes": [
+            "The horse hints at Billy’s father, a donkey, and Billy calls him a Brumby, a horse of no breeding; the horse answers with his relation to Carbine. The narrator compares it to a champion being called a nag, so readers feel the insult. Pride in ancestors, not anything either animal has done, makes them ready to fight."
+          ],
+          "evidence": [
+            "every mule hates to be reminded that his father was a donkey",
+            "I'm related on my mother's side to Carbine, winner of the Melbourne Cup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-18",
+      "title": "Her Majesty’s Servants — Betwixt and between",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow an argument about why imagination can make a creature more afraid.",
+      "focus": "The elephant explains a fear that comes from knowing too much, and a young mule asks the question nobody can answer.",
+      "context": "Recap: at night in the army camp, the narrator has overheard the camp animals boasting about how each fights: the troop-horse charges with his rider, Billy the mule climbs mountains with the screw-guns, the camels sit in a square while men fire over them, and the gun-bullocks pull the big guns and graze calmly even when some are killed. Billy and the troop-horse were about to fight over their ancestry. “Two Tails” is the elephant, picketed nearby. Pachydermatous means thick-skinned (a pachyderm is an elephant or rhinoceros), and an anachronism is something out of its proper time; betwixt means between. Vixen is the narrator’s fox-terrier. “Hukm hai” means “It is an order.”",
+      "contentNote": "The animals talk about blood and fear in battle; a little dog bullies the elephant.",
+      "excerpt": {
+        "locator": "“Her Majesty’s Servants,” from the elephant’s voice in the dark to the answer “Obey the man next to you”; opens “\"On your hind legs!\" squealed Billy. They both reared up facing each other, and I was…”; closes “…to you who gives the order, or you'll stop all the battery, besides getting a thrashing.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-17",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-19",
+        "blocks": [
+          892,
+          942
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "88d7b87b740c6246fbff6aba40df415c867d9d388b3cba517dea8257f518abbb"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-18-q1",
+          "prompt": "Two Tails says he is “betwixt and between.” What can he do that the bullocks cannot, and why does that make him afraid?",
+          "facilitatorNotes": [
+            "He can “see inside my head what will happen when a shell bursts”; the bullocks “see straight in front.” He knows enough to imagine the danger but not enough to master the fear, unlike his captain, who “shakes all over, but he knows too much to run away.” Imagination is both his intelligence and his weakness."
+          ],
+          "evidence": [
+            "I can see inside my head what will happen when a shell bursts",
+            "I know just enough to be uncomfortable, and not enough to go on in spite of it."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-18-q2",
+          "prompt": "Billy says, “giving a thing a long name doesn't make it any better.” Is he right about “Pachydermatous Anachronism”?",
+          "facilitatorNotes": [
+            "Partly: the long name does not cure the fear. But the name means something real, a creature caught between the wild and the army, and Two Tails uses it to understand himself. The troop-horse says “I think I understand.” Students can take either side."
+          ],
+          "evidence": [
+            "giving a thing a long name doesn't make it any better",
+            "It means betwixt and between, and that is just where I am."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-18-q3",
+          "prompt": "Two Tails is terrified of Vixen. What do he and the troop-horse conclude about fear after the dog runs off?",
+          "facilitatorNotes": [
+            "Everyone is afraid of something: the elephant of a little dog, the camel of bad dreams, the horses of trumpeting. The troop-horse says it is “lucky” that they do not all have to fight the same way. Fear and courage differ by nature, which brings back the opening verse."
+          ],
+          "evidence": [
+            "I'm frightened of a little dog, and the camel here is frightened by bad dreams in the night.",
+            "It is very lucky for us that we haven't all got to fight in the same way"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-18-q4",
+          "prompt": "The young mule asks why they have to fight at all. What answers does he get, and why is he told he wants “to know too much”?",
+          "facilitatorNotes": [
+            "“Because we are told to”; orders come from whoever is at their head or on their back. When he asks who gives those men orders, no one answers; Billy warns that asking is “one way of getting kicked.” Students may see obedience as what makes an army work, or notice that the question is left unanswered."
+          ],
+          "evidence": [
+            "want to know is, why we have to fight at all.",
+            "Now you want to know too much, young un"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-19",
+      "title": "Her Majesty’s Servants — The review",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice what the narrator knows about the animals that the crowd at the review does not, and weigh the story’s final answer.",
+      "focus": "A grand parade shows the army’s power, and the story ends by explaining it as a chain of obedience.",
+      "context": "Recap: during a rainy night in the army camp the animals argued about how each fights and what each fears; the elephant, Two Tails, admitted he is afraid because he can imagine danger, and a young mule asked why they must fight at all. The answer was: because of orders. The narrator’s dog, Vixen, has found him. A dog-cart is a light two-wheeled carriage; astrakhan is curly lamb’s wool; “Bonnie Dundee” is a Scottish tune played for the cavalry; a forty-pounder is a heavy siege gun. The Viceroy ruled British India for Queen Victoria, who was also Empress of India; a native officer is an Indian officer of the army.",
+      "contentNote": "Vixen boasts that she is not looked after by “a black bullock-driver,” a racist remark; the bullocks flee because Englishmen eat beef. The story admires British imperial power in India and shows the Amir, ruler of Afghanistan, frightened by the troops.",
+      "excerpt": {
+        "locator": "“Her Majesty’s Servants,” from the bullocks’ leave-taking to the end of the story; opens “The gun-bullocks got up to go. \"Morning is coming,\" they said. \"We will go back to our…”; closes “…\"your Amir whom you do not obey must come here and take orders from our Viceroy.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-18",
+        "continuesTo": null,
+        "blocks": [
+          943,
+          971
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc90ba30f2af3a1f46c1373856c4266fd65b32e129ac6f7e3cd93a12da3ad9a7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-19-q1",
+          "prompt": "The bullocks say they are “the only people to-night who have not been afraid.” What happens a moment later, and why?",
+          "facilitatorNotes": [
+            "Hearing that the man with Vixen is white, they panic and break their yoke, because Englishmen eat beef. The proudest claim of courage is followed by the wildest flight, a joke on the bullocks, and perhaps a reminder that every creature fears something."
+          ],
+          "evidence": [
+            "we are the only people to-night who have not been afraid",
+            "They--eat--us! Pull!"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-19-q2",
+          "prompt": "At the review, how does each animal from the night appear? What does the narrator notice that others in the crowd could not?",
+          "facilitatorNotes": [
+            "The troop-horse sets the time for his squadron; Two Tails pulls with the oxen behind him; the seventh pair of bullocks has “a new yoke” and looks stiff; Billy marches “as though he commanded all the troops.” Only the narrator knows why the yoke is new and how vain Billy is, so the parade is full of private jokes."
+          ],
+          "evidence": [
+            "The seventh pair had a new yoke, and they looked rather stiff and tired.",
+            "Billy the mule carried himself as though he commanded all the troops"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-19-q3",
+          "prompt": "Why does the great advance frighten the Amir? What was the review meant to show him?",
+          "facilitatorNotes": [
+            "Three-quarters of a mile of men, horses and guns comes straight at him until the ground shakes; for a moment he seems ready to draw his sword. The display was meant to impress the ruler of a neighbouring country with British power. Students may see it as hospitality, as a threat, or both."
+          ],
+          "evidence": [
+            "the ground began to shake, like the deck of a steamer when the engines are going fast",
+            "now his eyes began to get bigger and bigger"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-19-q4",
+          "prompt": "The native officer explains the parade as a chain of obedience ending with “the Empress.” Is his last answer the story’s lesson, a proud boast, or both? What would the young mule say?",
+          "facilitatorNotes": [
+            "The story clearly admires order: everyone, beast and man, obeys the one above. The officer’s final line uses that to belittle Afghanistan, whose chiefs “obey only our own wills.” Readers today may question an empire’s pride in obedience; the young mule’s “who gives them the orders?” is answered here, but not his question why."
+          ],
+          "evidence": [
+            "They obey, as the men do.",
+            "your Amir whom you do not obey must come here and take orders from our Viceroy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-20",
+      "title": "Parade-Song of the Camp Animals",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how each part of the song has its own rhythm, fitted to the animals who sing it.",
+      "focus": "Each group of animals boasts in its own voice, until all of them sing together about marching without knowing why.",
+      "context": "Rudyard Kipling’s The Jungle Book (1894) mixes the Mowgli stories with other animal tales set in India and the far north, each followed by a song or poem. In “Her Majesty’s Servants,” the narrator overhears the animals of an army camp in British India at night, each sure that its own way of serving is the best: the elephants who will not go near the guns, the bullocks who pull them, the cavalry horses, the mountain mules and the baggage camels. This song follows the story. Alexander the Great used elephants in war; Hercules is the strong hero of Greek myth; the Forty-Pounder train is a heavy gun with its team; withers are the ridge between a horse’s shoulders; “Stables” and “Water” are bugle calls; Lancers, Hussars and Dragoons are kinds of cavalry; the commissariat is the army’s supply department; to trollop is to slouch along; a goad is a pointed stick for driving animals.",
+      "contentNote": "A song about animals marching to war.",
+      "excerpt": {
+        "locator": "“Parade-Song of the Camp Animals,” complete, all six parts; opens “We lent to Alexander the strength of Hercules, The wisdom of our foreheads, the cunning…”; closes “…each in his degree;_ _Children of the yoke and goad,_ _Pack and harness, pad and load._”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          973,
+          986
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6022d27b512324ccce9366dc9b4767065f034f6be4fca20a36d55cd4f40e957f"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-20-q1",
+          "prompt": "The gun-bullocks call the elephants “Those heroes in their harnesses.” What are they really saying? Which other part of the song shows animals judging one another?",
+          "facilitatorNotes": [
+            "It is sarcasm: the elephants back away from cannon fire, so the bullocks must haul the guns. The elephants boast of serving Alexander, but the bullocks have the last word in their stanza; the mules curse drivers who “cannot pack a load.” Each group praises itself and looks down on others, as in the story."
+          ],
+          "evidence": [
+            "Those heroes in their harnesses avoid a cannon-ball,",
+            "Bad luck to all the driver-men that cannot pack"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-20-q2",
+          "prompt": "Say the cavalry horses’ lines and the mules’ lines aloud. How does each rhythm suit the animals?",
+          "facilitatorNotes": [
+            "The horses’ quick, even lines canter like the tune they love, “Bonnie Dundee”; the mules’ long, uneven lines scramble and spill over the line-ends, like climbing on loose stones. Students can tap the beats to test it."
+          ],
+          "evidence": [
+            "The Cavalry Canter of \"Bonnie Dundee\"!",
+            "For we can wriggle and climb, my lads, and turn up"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-20-q3",
+          "prompt": "The camels say they “haven't a camelty tune.” What is their marching song instead, and why is it funny?",
+          "facilitatorNotes": [
+            "A string of grumbles, “Can't! Don't! Sha'n't! Won't!”, and a cheer whenever someone’s load falls off. They are proud of being difficult. The made-up word “camelty” and the noises make the stanza the most comic in the song."
+          ],
+          "evidence": [
+            "Can't!  Don't!  Sha'n't!  Won't!",
+            "Somebody's load has tipped off in the road--"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-20-q4",
+          "prompt": "In “All the Beasts Together,” the men who march beside the animals “Cannot tell why we or they / March and suffer day by day.” How does this ending differ from the end of the story?",
+          "facilitatorNotes": [
+            "The story ends with a proud answer: they obey, and that is how it is done. The song admits that neither beasts nor men know why they suffer, a darker note that echoes the young mule’s question. Readers may find the two endings in tension, or see the song as Kipling’s second thought."
+          ],
+          "evidence": [
+            "Cannot tell why we or they",
+            "March and suffer day by day."
+          ]
+        }
+      ]
+    }
+  ]
+}

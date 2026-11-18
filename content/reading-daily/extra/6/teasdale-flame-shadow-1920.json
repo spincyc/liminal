@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "teasdale-flame-shadow-1920",
+  "readings": [
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-01",
+      "title": "August Moonrise",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the place where the poem stops looking at the evening and starts speaking to Beauty, and work out why the turn comes there.",
+      "focus": "A walk at moonrise in August becomes a vow to Beauty that the speaker says not even death can break.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. The poem is set at dusk in the Connecticut hills in late summer. Heady means strong enough to make you dizzy; ecstasy is overwhelming joy; fusing means melting together, as metal is melted and recast; to atone is to make up for a wrong.",
+      "contentNote": "The speaker calmly imagines her own death.",
+      "excerpt": {
+        "locator": "“August Moonrise,” complete poem; opens “The sun was gone, and the moon was coming Over the blue Connecticut hills; The west was…”; closes “Let this single hour atone For the theft of all of me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          30,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d32cee75e774c6ef09316d673c40d2dd7e2260e93ad246528c768af235fdce33"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-01-q1",
+          "prompt": "Follow the colours of the sky and hills from the opening line to “Down the hill I went.” How does the light change?",
+          "facilitatorNotes": [
+            "A rosy west and a flushed east, maples turned black against the sunset, a hazy orange moon becoming yellow gold, and hills darkening “fold on fold” to a blue deeper than any flower. The colours deepen as the daylight drains, so the description also measures time passing."
+          ],
+          "evidence": [
+            "And the hazy orange moon grew up And slowly changed to yellow gold",
+            "To a deeper blue than a flower could hold."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-01-q2",
+          "prompt": "Why might Teasdale compare the swallows to “dark petals blown from a tree”? What does the comparison catch about their flight?",
+          "facilitatorNotes": [
+            "They dart “now together and now apart,” scattered and regathered like petals in a gust, and they look dark against the bright sky. The simile softens quick, sharp movement into something drifting and lovely, in keeping with the evening."
+          ],
+          "evidence": [
+            "Now together and now apart Like dark petals blown from a tree;"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-01-q3",
+          "prompt": "“Down the hill I went, and then / I forgot the ways of men.” What does the speaker leave behind, and what takes its place?",
+          "facilitatorNotes": [
+            "Ordinary human business and habits give way to the senses: strong, damp, cool night smells and the shine of the pool. The joy comes through the body, not through thought. Some readers hear “the ways of men” as society’s rules and expectations, others as simply the daytime world; either fits."
+          ],
+          "evidence": [
+            "I forgot the ways of men,",
+            "Wakened ecstasy in me On the brink of a shining pool."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-01-q4",
+          "prompt": "In the second stanza the speaker imagines giving up her breath, laughter, eyes and heart. What does she think Beauty will do with them, and how can one hour “atone” for losing them?",
+          "facilitatorNotes": [
+            "Beauty will melt them down and remake them, “fusing with intenser fire,” into something closer to what Beauty wants, as a smith recasts metal. One hour of perfect certainty is worth the “theft” of her whole self. Some readers find this consoling; others find Beauty here a demanding power that takes everything, and the word “theft” supports them too."
+          ],
+          "evidence": [
+            "So that you can make anew, Fusing with intenser fire, Something nearer your desire;",
+            "Let this single hour atone For the theft of all of me."
+          ]
+        }
+      ],
+      "months": [
+        8
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-02",
+      "title": "The Voice",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a poem built from lists, and work out what the lists are for and whose voice speaks at the end.",
+      "focus": "The speaker sees herself as made from everything that came before her, and hears the dead urging her on.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. Atoms are the tiny particles all matter is made of, and cells are the living units of a body; mutation means change. Teasdale draws on the science of her day, which taught that living things had slowly changed over immense ages. Karnak is a great temple site in ancient Egypt; Cyprus is a Mediterranean island settled since ancient times; “time out of mind” means longer ago than anyone remembers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Voice,” complete poem; opens “Atoms as old as stars, Mutation on mutation, Millions and millions of cells Dividing yet…”; closes “…I hear them cry: \"Forever Seek for Beauty, she only Fights with man against Death!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          62,
+          64
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "61309a6efd352b1017b6ba10b36ddd283f9841d5a1502d469cd219b2048b5c2a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-02-q1",
+          "prompt": "The first stanza tells where the speaker’s body came from. Trace the journey: what is she made of, and where has it been?",
+          "facilitatorNotes": [
+            "Atoms as old as the stars, cells dividing through countless changes, air and earth, Eastern rivers and tropical seas. Everything in her body has been somewhere else for ages before arriving. The stanza saves the destination, “myself,” for the last line, so a whole history of the universe ends in one person."
+          ],
+          "evidence": [
+            "Atoms as old as stars,",
+            "Unto myself I came."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-02-q2",
+          "prompt": "The second stanza begins “My spirit like my flesh.” How does it copy the first stanza’s pattern, and what new idea does it add?",
+          "facilitatorNotes": [
+            "The pattern is the same, many sources flowing into one person, but now the sources are people: cave-men, hunters, shepherds, ancient cities. Her thoughts are inherited from the forgotten dead, as many as bubbles of foam. The parallel claims that mind and body alike are made of the past."
+          ],
+          "evidence": [
+            "Sprang from a thousand sources,",
+            "Spring from dead men and women, Forgotten time out of mind"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-02-q3",
+          "prompt": "Who speaks the words in quotation marks at the end, and why might the poem be called “The Voice,” singular?",
+          "facilitatorNotes": [
+            "The dead who “come with me,” using her breath to find words. Their message is to seek Beauty, the only ally humanity has against Death. The many become one voice, and it speaks through the living speaker; she is its instrument for “a moment’s space.”"
+          ],
+          "evidence": [
+            "I come and they come with me Finding words with my breath;",
+            "Seek for Beauty, she only Fights with man against Death!"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-02-q4",
+          "prompt": "Does the poem make a person seem larger or smaller? What would it mean to carry so many of the dead with you?",
+          "facilitatorNotes": [
+            "Larger, because she holds the whole past and is never alone; smaller, because she is only “here for a moment” and the voices outlast her, so one may wonder which thoughts are truly her own. Good answers notice that the poem holds both and point to the lines that support each."
+          ],
+          "evidence": [
+            "Here for a moment's space Into the light out of darkness,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-03",
+      "title": "“I Know the Stars”",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare what the speaker knows with the one thing she cannot know, and notice how the poem keeps that thing for last.",
+      "focus": "Knowledge of the stars and of other people fails in front of one person’s eyes.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. Aldebaran and Altair are bright stars: Aldebaran glows orange-red in the constellation Taurus, the Bull, and Altair shines in Aquila, the Eagle.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“I Know the Stars,” complete poem; opens “I know the stars by their names, Aldebaran, Altair, And I know the path they take Up…”; closes “…many things, But the years come and go, I shall die not knowing The thing I long to know.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          127,
+          130
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dfb699595bd541aba8ccafd90b3c244088ac1ebb34634a8c27b7e14a185d60ab"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-03-q1",
+          "prompt": "What two kinds of knowledge does the speaker claim in the first two stanzas, and what has the second kind done to her?",
+          "facilitatorNotes": [
+            "She knows the stars’ names and paths, which can be learned from books and watching, and she knows people’s secrets from the look in their eyes, learned from experience. The second has made her “sad and wise”: knowing people costs more than knowing stars."
+          ],
+          "evidence": [
+            "I know the stars by their names,",
+            "Have made me sad and wise."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-03-q2",
+          "prompt": "Why might this one person’s eyes be “dark” to her, when she can read the eyes of others?",
+          "facilitatorNotes": [
+            "Possible answers: because she cares so much about the answer that she cannot trust what she sees; because the other person is guarded; because she fears what she would find. The eyes “seem to call and call,” so they invite her, and that makes their darkness more painful."
+          ],
+          "evidence": [
+            "But your eyes are dark to me",
+            "Though they seem to call and call--"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-03-q3",
+          "prompt": "The last stanza never says what “the thing” is. How do we know, and why might the poem leave it unnamed?",
+          "facilitatorNotes": [
+            "The third stanza has already said it: whether the person loves her. Leaving it unnamed makes the last line a sigh rather than a statement, and “I shall die not knowing” stretches one uncertainty over a whole life, as “the years come and go.”"
+          ],
+          "evidence": [
+            "I cannot tell if you love me Or do not love me at all.",
+            "I shall die not knowing The thing I long to know."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-03-q4",
+          "prompt": "The poem begins with stars and ends with one person. Why might Teasdale begin so far away?",
+          "facilitatorNotes": [
+            "The stars are immensely distant yet easy to know; the person is close yet impossible to know. Beginning with “heaven’s broad blue stair” makes the failure at the end more striking, and shows that knowledge is not the same as understanding someone."
+          ],
+          "evidence": [
+            "Up heaven's broad blue stair."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-04",
+      "title": "May Day",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how the speaker moves from sensing the morning at a distance to touching it, and what reason the last stanza gives.",
+      "focus": "A spring morning after rain, and why the speaker feels she must love every part of it.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. May Day, the first of May, is an old festival of spring. At a first communion, a Christian ceremony, children receive bread and wine in church for the first time; girls traditionally wear white dresses and veils.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“May Day,” complete poem; opens “A delicate fabric of bird song Floats in the air, The smell of wet wild earth Is…”; closes “…how can I be sure I shall see again The world on the first of May Shining after the rain?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          151,
+          154
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c52220894fb596ef5185362ec8616e23e2c14ec0e0125b0998d97bf7ced96073"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-04-q1",
+          "prompt": "Which senses does the first stanza use, and which does the third? How does the speaker come closer to the world?",
+          "facilitatorNotes": [
+            "First hearing and smell: bird song floating like a fine cloth, the smell of wet earth everywhere. Then taste and touch: a raindrop tried with her lips, grass under her hand. She moves from receiving the morning to reaching out and handling it."
+          ],
+          "evidence": [
+            "A delicate fabric of bird song Floats in the air,",
+            "The raindrop try with my lips, The grass with my touch;"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-04-q2",
+          "prompt": "Explain the two comparisons in the second stanza. What do the maple leaves and the pear trees share with what they are compared to?",
+          "facilitatorNotes": [
+            "New maple leaves are small, red and crumpled tight, like a clenched hand not yet opened. Pear trees covered in white blossom stand like girls dressed in white for their first communion: pure, solemn, perhaps a little shy. Both images are about beginnings."
+          ],
+          "evidence": [
+            "Are clenched like a hand,",
+            "Like girls at their first communion The pear trees stand."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-04-q3",
+          "prompt": "What does the closing question reveal about why the speaker “must pass nothing by”?",
+          "facilitatorNotes": [
+            "She cannot be sure she will live to see another May. Her eager love of every small thing comes from knowing life is short; the poem was written in wartime, though it never names the war. Some readers hear simple delight with a passing shadow, others a real fear; both fit the question."
+          ],
+          "evidence": [
+            "Oh I must pass nothing by Without loving it much,",
+            "For how can I be sure I shall see again"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-04-q4",
+          "prompt": "Is the poem happy or anxious? Find a word or phrase that supports each answer.",
+          "facilitatorNotes": [
+            "Happy: “delicate,” “shining,” the communion-white trees. Anxious: “must,” “how can I be sure.” The best answers see that the happiness is sharpened by the anxiety: the world shines brighter because it might be lost."
+          ],
+          "evidence": [
+            "The world on the first of May Shining after the rain?"
+          ]
+        }
+      ],
+      "months": [
+        5
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-05",
+      "title": "“There Will Come Soft Rains”",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how a gentle list of spring things leads to the hardest idea in the poem, and decide what tone the ending has.",
+      "focus": "A war poem with no battle in it: nature carrying on after people are gone.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. She wrote this poem during the First World War (1914–1918), in which millions died, and marked it “War Time” beneath the title. It is written in couplets, pairs of rhyming lines. Tremulous means trembling; whims are passing fancies.",
+      "contentNote": "The poem imagines the human race wiped out by war.",
+      "excerpt": {
+        "locator": "“There Will Come Soft Rains (War Time),” complete poem; opens “(War Time)”; closes “And Spring herself, when she woke at dawn, Would scarcely know that we were gone.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          204,
+          210
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b98b47c14ad3e2e5cfb4468328ffb73e253af88fd0b0f85d98e777c650d4ee1e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-05-q1",
+          "prompt": "List what the first three couplets show. What do these things have in common, and what is missing?",
+          "facilitatorNotes": [
+            "Rain and the smell of the ground, circling swallows, frogs singing at night, plum trees in blossom, robins on a fence: all spring, all nature, all calm. People are missing. Only the fence-wire, something people made, is left behind, a quiet hint of what is coming."
+          ],
+          "evidence": [
+            "And frogs in the pools singing at night,",
+            "Whistling their whims on a low fence-wire;"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-05-q2",
+          "prompt": "The word “war” appears once in the poem itself. How does the fourth couplet change the way we read everything before it?",
+          "facilitatorNotes": [
+            "It tells us the creatures will neither know nor care about the war. Looking back, the peaceful spring scenes turn out to be a world after us, and their gentleness becomes eerie rather than comforting."
+          ],
+          "evidence": [
+            "And not one will know of the war, not one Will care at last when it is done."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-05-q3",
+          "prompt": "Why might Teasdale turn Spring into a woman who wakes at dawn? What does the word “scarcely” add?",
+          "facilitatorNotes": [
+            "Giving Spring a mind and a waking moment makes her indifference sharper: even a person-like Spring would hardly notice. “Scarcely” means barely or almost not, which is more humbling than “not at all.” Humanity, which thinks itself so important, would leave hardly a trace in her memory."
+          ],
+          "evidence": [
+            "And Spring herself, when she woke at dawn, Would scarcely know that we were gone."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-05-q4",
+          "prompt": "Is the ending comforting, bitter, or both?",
+          "facilitatorNotes": [
+            "Comforting, because beauty and life go on whatever people do. Bitter, because war seems pointless when the earth would not miss us. The poem’s calm, unhurried couplets can make its warning stronger than shouting would. Accept any reading supported by the lines."
+          ],
+          "evidence": [
+            "Not one would mind, neither bird nor tree If mankind perished utterly;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-06",
+      "title": "Winter Stars",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Track the three times this short poem holds together: the war, the speaker’s girlhood, and the stars.",
+      "focus": "In a time of grief, one constellation stays the same.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. While she wrote this, American soldiers were fighting and dying in France, “beyond the sea.” The “another city” of her girlhood is St. Louis. Orion, a constellation named after a hunter in Greek myth, rises in the east on winter evenings and is easy to find by the three bright stars of his belt.",
+      "contentNote": "The poem refers to young soldiers dying in the First World War.",
+      "excerpt": {
+        "locator": "“Winter Stars,” complete poem; opens “I went out at night alone; The young blood flowing beyond the sea Seemed to have drenched…”; closes “…its wars, All things are changed, save in the east The faithful beauty of the stars.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          223,
+          226
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "62d930ab3c42026f5b2cc43cc0721bcf46ca137d8715db79d5ba644e09ffbaa0"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-06-q1",
+          "prompt": "What weighs on the speaker as she goes out alone? What does the image of “drenched” wings suggest?",
+          "facilitatorNotes": [
+            "The deaths of young soldiers overseas. Her spirit is pictured as a bird whose wings are soaked, so heavy that it cannot fly. The image links her sorrow directly to the blood, which makes it more painful."
+          ],
+          "evidence": [
+            "The young blood flowing beyond the sea",
+            "Seemed to have drenched my spirit's wings--"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-06-q2",
+          "prompt": "Why does the speaker remember watching Orion as a girl? What connects that girl to the woman she is now?",
+          "facilitatorNotes": [
+            "The same stars shone over another city when she was young and “dreaming my dreams.” Orion links her past self to her present one; the girl had dreams, and the woman has lost some of them, but the stars are the same."
+          ],
+          "evidence": [
+            "Dreaming my dreams on winter nights,",
+            "I watched Orion as a girl Above another city's lights."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-06-q3",
+          "prompt": "In the last stanza, list everything that goes or changes, and the one thing that does not. Why might Teasdale call the stars’ beauty “faithful”?",
+          "facilitatorNotes": [
+            "Years, dreams, youth and the world’s heart all go or break; only the stars stay. “Faithful” makes them like a loyal friend who keeps a promise, always in the same place at the same season."
+          ],
+          "evidence": [
+            "Years go, dreams go, and youth goes too,",
+            "The faithful beauty of the stars."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-06-q4",
+          "prompt": "Does the sight of Orion end the speaker’s sorrow? Use the poem’s words to decide.",
+          "facilitatorNotes": [
+            "Not entirely: in the final stanza the world’s heart still “breaks beneath its wars.” But Orion burning “steadily” gives her something steady to hold. It is a consolation, not a cure. Some readers find the comfort stronger than that; let them argue from the lines."
+          ],
+          "evidence": [
+            "Burn steadily as long ago.",
+            "The world's heart breaks beneath its wars,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-07",
+      "title": "Faces",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out what the speaker sees in strangers’ eyes, and how the last stanza turns the question back on her.",
+      "focus": "In a crowded city street, a single glance can show too much.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. In this poem she walks through a crowded city street, passing strangers. A disguise is anything that hides who a person really is, including a calm public face.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Faces,” complete poem; opens “People that I meet and pass In the city's broken roar, Faces that I lose so soon And have…”; closes “…street, Can it be, oh can it be In the meeting of our eyes That you know as much of me?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          269,
+          272
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "203c3b38d8c2604d694dfeffd9a70fd986ae600fc8366c6c40c78ca559f7a606"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-07-q1",
+          "prompt": "Which words in the first stanza show how brief these meetings are? What does “broken roar” suggest about the city?",
+          "facilitatorNotes": [
+            "“Meet and pass,” “lose so soon,” “never found before”: each face appears and vanishes. The city’s roar is “broken,” noise in jagged pieces, not one steady sound, as if the crowd itself is in fragments."
+          ],
+          "evidence": [
+            "People that I meet and pass In the city's broken roar,",
+            "Faces that I lose so soon"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-07-q2",
+          "prompt": "What does the speaker see when a stranger’s eyes meet hers? Why is she “ashamed” as well as sad?",
+          "facilitatorNotes": [
+            "Hidden feelings, secrets and sorrow that the stranger tries to cover with a “poor disguise.” She is ashamed because she has seen what was not meant to be seen, almost as if she had read a private letter, and sad because what she sees is grief."
+          ],
+          "evidence": [
+            "How ashamed I am, and sad To have pierced your poor disguise?",
+            "Secrets rushing without sound Crying from your hiding places--"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-07-q3",
+          "prompt": "“Let me go, I cannot bear.” Nobody is holding the speaker. What is she asking to be released from?",
+          "facilitatorNotes": [
+            "From feeling the sorrow of everyone she passes. Seeing so much pain in strangers is overwhelming; she wants to stop noticing. Readers may disagree about whether this is a weakness or a sign of unusual sympathy."
+          ],
+          "evidence": [
+            "Let me go, I cannot bear The sorrow of the passing faces."
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-07-q4",
+          "prompt": "The last stanza begins with a dash and a new question. What does the speaker suddenly realise, and how does it change the poem?",
+          "facilitatorNotes": [
+            "If she can read the strangers, they can read her: she too has a disguise, and her own secrets may show. She becomes one of the passing faces. The poem ends not with her looking at others but afraid of being seen, or perhaps hoping to be understood."
+          ],
+          "evidence": [
+            "Can it be, oh can it be In the meeting of our eyes That you know as much of me?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-teasdale-flame-shadow-1920-08",
+      "title": "Summer Storm",
+      "sourceId": "teasdale-flame-shadow-1920",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the three animals hidden in the storm, then decide why the two people under the tree are not afraid.",
+      "focus": "A storm made of wild animals, and two people who have faced worse.",
+      "context": "Sara Teasdale (1884–1933) grew up in St. Louis, Missouri, and lived in New York from 1916. Flame and Shadow (1920) collects poems she wrote during and just after the First World War. Wrath means great anger. The poem is written in very short lines with two strong beats each.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Summer Storm,” complete poem; opens “The panther wind Leaps out of the night, The snake of lightning Is twisting and white,…”; closes “…We have met fate together And love and pain, Why should we fear The wrath of the rain!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          296,
+          296
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2150fceb761f834a307619e5778ec5d9946991136dc968955e7ab35bc69dd170"
+      },
+      "questions": [
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-08-q1",
+          "prompt": "Name the three animals Teasdale turns parts of the storm into. Why does each one fit?",
+          "facilitatorNotes": [
+            "The panther wind leaps suddenly out of the dark, as a hunting cat does; the snake of lightning twists, white and quick; the lion of thunder roars. Each animal matches the movement or sound of its part of the storm."
+          ],
+          "evidence": [
+            "The panther wind Leaps out of the night,",
+            "The snake of lightning Is twisting and white,"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-08-q2",
+          "prompt": "Where does the poem turn from the storm to the people? How do the dashes help?",
+          "facilitatorNotes": [
+            "At “Roars--and we.” The dash cuts the roar short and swings the sentence round to the two people, who sit “still and content”: wild motion set against stillness. The second dash, after “tree,” makes a pause before the reason they are calm."
+          ],
+          "evidence": [
+            "Roars--and we Sit still and content Under a tree--"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-08-q3",
+          "prompt": "Why should two people who have “met fate together / And love and pain” not fear the rain? Do you agree with their reasoning?",
+          "facilitatorNotes": [
+            "They have shared life’s real storms, so a storm of weather seems small, and their bond is the true shelter. Some students will point out that sitting under a tree in lightning is actually dangerous. That is true, and worth saying; the poem is about how they feel, and their calm may be confidence or recklessness."
+          ],
+          "evidence": [
+            "We have met fate together And love and pain,"
+          ]
+        },
+        {
+          "id": "reading-6-teasdale-flame-shadow-1920-08-q4",
+          "prompt": "The poem ends with an exclamation mark where we might expect a question mark. What does that tell you about the last question?",
+          "facilitatorNotes": [
+            "It is not really a question: no answer is expected. The exclamation makes it a confident, almost joyful declaration that they will not fear the storm."
+          ],
+          "evidence": [
+            "Why should we fear The wrath of the rain!"
+          ]
+        }
+      ]
+    }
+  ]
+}

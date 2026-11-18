@@ -4,7 +4,7 @@
   "author": "Sara Teasdale",
   "title": "Flame and Shadow",
   "translator": null,
-  "edition": "New York: Macmillan, 1920. PG591 is an undated-print-exemplar transcription: every selected poem was visually collated in full against the digitized Harvard copy, IA flameandshadow00teasgoog, whose copyright page states Published, October, 1920. PG straight quotes, double-hyphen dashes, indentation, stanza spacing and metrical lineation are retained; scan typographic quotes, display capitals and printer-wrapped lines differ. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds the whole of Flame and Shadow: the dedication and every poem in all its sections.",
+  "edition": "New York: Macmillan, 1920. PG591 is an undated-print-exemplar transcription: every selected poem was visually collated in full against the digitized Harvard copy, IA flameandshadow00teasgoog, whose copyright page states Published, October, 1920. PG straight quotes, double-hyphen dashes, indentation, stanza spacing and metrical lineation are retained; scan typographic quotes, display capitals and printer-wrapped lines differ. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds the whole of Flame and Shadow: the dedication and every poem in all its sections. The eight further poems read as Grade 6 calendar readings (August Moonrise, The Voice, “I Know the Stars,” May Day, “There Will Come Soft Rains,” Winter Stars, Faces and Summer Storm) were collated word by word with the same copy’s OCR, every difference decided on its page image; no reading changed.",
   "publicationYear": 1920,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/591",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/591/pg591.txt",
     "downloadSha256": "35957a4171c9f603127f41212ae6f5ac3e3ca3ccdc5d96bf1de3df9fef99591d",
-    "method": "Whole library text: Project Gutenberg plain text (eBook 591, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), from the dedication through the last poem; the PG header and footer, the transcriber’s note on the text, the repeated title and contents pages, the [End of original text.] marker and the appended biographical note are excluded. The transcription’s uniform two-space left margin is removed from every line, so the further indentation it uses for turned lines and (five spaces) for italicised stanzas is kept relative to it; tildes marking italic words are kept as transcribed; the book title, the section numerals and the poem titles are headings, and the parenthetical subtitles under two titles are one-line paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+    "method": "Whole library text: Project Gutenberg plain text (eBook 591, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), from the dedication through the last poem; the PG header and footer, the transcriber’s note on the text, the repeated title and contents pages, the [End of original text.] marker and the appended biographical note are excluded. The transcription’s uniform two-space left margin is removed from every line, so the further indentation it uses for turned lines and (five spaces) for italicised stanzas is kept relative to it; tildes marking italic words are kept as transcribed; the book title, the section numerals and the poem titles are headings, and the parenthetical subtitles under two titles are one-line paragraphs. Converted by a scratch Node script; every nightly reading was located exactly. Section headings are level-2 headings: a numeral alone (I, III), or, where the section has a title, numeral and title (II. Memories, IV. In a Hospital, VI. The Dark Cup, IX. By the Sea, XII. Songs For Myself), which the first conversion had left as stanzas."
   },
   "scope": {
     "complete": true,
@@ -29,6 +29,10 @@
       [
         10,
         14
+      ],
+      [
+        30,
+        32
       ],
       [
         40,
@@ -43,8 +47,20 @@
         53
       ],
       [
+        62,
+        64
+      ],
+      [
         96,
         99
+      ],
+      [
+        127,
+        130
+      ],
+      [
+        151,
+        154
       ],
       [
         180,
@@ -59,12 +75,28 @@
         191
       ],
       [
+        204,
+        210
+      ],
+      [
+        223,
+        226
+      ],
+      [
         231,
         233
       ],
       [
+        269,
+        272
+      ],
+      [
         276,
         276
+      ],
+      [
+        296,
+        296
       ],
       [
         307,
@@ -78,6 +110,6 @@
   },
   "text": {
     "blocks": 347,
-    "sha256": "b01ddb2536a2ec67f7ed92f4802de67d0325d2ebdd4135cbcfe8a613f93cd749"
+    "sha256": "8bb8496bf6702b120cf4d077075a6507b7288224f6699fa40568193822875dde"
   }
 }

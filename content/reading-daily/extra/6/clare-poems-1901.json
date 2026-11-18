@@ -1,0 +1,1281 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "clare-poems-1901",
+  "readings": [
+    {
+      "id": "reading-6-clare-poems-1901-01",
+      "title": "What Is Life?",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a poem built of questions and answers, and weigh the pictures it uses for each answer.",
+      "focus": "A young poet asks what life, hope, trouble, death and peace are, and answers each with a short, sharp picture.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, worked in the fields while he taught himself to write poetry. This is an early poem, in the serious style of the religious verse he had read. An hour-glass is a sand-timer; “still repeated” means always repeated; nought is nothing; vain means empty or useless; a flow’ret is a little flower; bounty is generous giving; devoted wretches are doomed, unhappy people; a seal closes a letter so that no one can read it; to crave is to long for; vanity here means emptiness; to prize is to value.",
+      "contentNote": "The poem describes life as a trial full of sorrow, and death as a rest that the weary long for.",
+      "excerpt": {
+        "locator": "“What Is Life?,” complete poem; opens “ And what is Life?--An hour-glass on the run, A mist retreating from the morning sun, A…”; closes “…That happiness vain man’s denied to know, Until he’s call’d to claim it in the skies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          5
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "da871457ab753ccb298876bd404ec715ee25543e72716ae6c7f585d28b9d0b67"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-01-q1",
+          "prompt": "The first stanza answers “what is Life?” with several pictures. Choose two. What do they say about life?",
+          "facilitatorNotes": [
+            "An hour-glass running out and a mist burning off in the sun both vanish quickly: life is short and passing. The “busy, bustling” dream adds that it is full of activity that means little. Ask which picture seems truest."
+          ],
+          "evidence": [
+            "And what is Life?--An hour-glass on the run,",
+            "A mist retreating from the morning sun,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q2",
+          "prompt": "Happiness is “A bubble on the stream, / That in the act of seizing shrinks to nought.” What does this mean? Can you think of an example?",
+          "facilitatorNotes": [
+            "Grab a bubble and it bursts: trying to seize happiness destroys it. Students may offer examples of looking forward to something that disappointed them, or argue that happiness can be held after all."
+          ],
+          "evidence": [
+            "And happiness?--A bubble on the stream,",
+            "That in the act of seizing shrinks to nought."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q3",
+          "prompt": "The speaker cannot explain trouble. What does he say about it? Why might he call it a “bounty”?",
+          "facilitatorNotes": [
+            "Trouble is given so freely that there must be some reason for it, but only Wisdom knows it; the reason is still sealed by Fate. “Bounty” usually means generous gifts, so using it of trouble is bitterly ironic."
+          ],
+          "evidence": [
+            "So free and liberal as thy bounty flows,",
+            "Some necessary cause must surely be."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q4",
+          "prompt": "What final answer does the last stanza give to “what is Life?” Do you accept it?",
+          "facilitatorNotes": [
+            "Life is a “trial,” a test that teaches people to value the happiness they will find only in heaven. It is a religious comfort after a gloomy poem. Some readers find it hopeful; others find it a sad way to see this world."
+          ],
+          "evidence": [
+            "’Tis but a trial all must undergo;",
+            "Until he’s call’d to claim it in the skies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-02",
+      "title": "The Universal Epitaph",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read an eight-line poem twice, and notice how it turns from the dead man to the reader.",
+      "focus": "A gravestone refuses to flatter the dead man, then asks the living to judge themselves.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, spent his life among village churchyards and their gravestones. An epitaph is the writing on a gravestone, and universal means belonging to everyone. To daub is to smear thickly, as with cheap paint; frailties are weaknesses; viler means more wicked.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Universal Epitaph,” complete poem; opens “No flattering praises daub my stone, My frailties and my faults to hide; My faults and…”; closes “…my sad confession view; But ask your soul, if it can say, That I’m a viler man than you.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          17,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a7912561ea9b962cbabdf4508f0df8f5b9228d24ee4f0cf277fd2a6570d6a77"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-02-q1",
+          "prompt": "What does the first stanza suggest most epitaphs do? Why does this one refuse?",
+          "facilitatorNotes": [
+            "They “daub” the stone with flattering praise to hide the dead person’s faults. This man’s faults are “all known,” so praise would be a lie. “Daub” makes the usual praise sound cheap and messy."
+          ],
+          "evidence": [
+            "No flattering praises daub my stone,",
+            "My frailties and my faults to hide;"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-02-q2",
+          "prompt": "“I liv’d in sin--in sin I died.” What does the shape of this line do?",
+          "facilitatorNotes": [
+            "The words turn round and come back (“sin . . . sin”), like a life that never changed. It is blunt and honest, with no excuses. Some readers hear despair, others a kind of courage."
+          ],
+          "evidence": [
+            "My faults and failings all are known--",
+            "I liv’d in sin--in sin I died."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-02-q3",
+          "prompt": "Why is this epitaph called “universal”? Is the dead man asking for mercy, or accusing the reader?",
+          "facilitatorNotes": [
+            "It could stand on anyone’s grave, since everyone has faults; the last lines make each reader ask whether they are any better. It asks not to be condemned, and also warns against judging. Students can argue for either tone."
+          ],
+          "evidence": [
+            "But ask your soul, if it can say,",
+            "That I’m a viler man than you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-03",
+      "title": "The Harvest Morning",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a working morning hour by hour, and notice where the poet stops describing and speaks to someone directly.",
+      "focus": "A cheerful picture of harvest also pleads for the poor who glean and for the labourers poets ignore.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, worked in the fields he wrote about. Each stanza here follows the nine-line pattern Edmund Spenser invented. To teem is to unload; the bird-boy scares birds off the crops; gleaners gather the grain left after reaping; the stubs are the stubble; the bevering hour is the mid-morning break for food and drink, and the horn is a drinking horn.",
+      "contentNote": "Harvest workers pass round a bottle; one stanza dwells admiringly on a poor girl’s beauty.",
+      "excerpt": {
+        "locator": "“The Harvest Morning,” complete poem; opens “Cocks wake the early morn with many a crow; Loud-striking village clock has counted four;…”; closes “…Wealth, which you in vain deride, Beauties of richest bloom, superior to your pride.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          20,
+          27
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4080fdad15e61fa41c788c59521352470abacf1e2c6ce859c34b7f5d5c93076"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-03-q1",
+          "prompt": "Which sounds wake the farm and keep it busy? Find at least three.",
+          "facilitatorNotes": [
+            "Cocks crowing, the village clock striking four, the bird-boy’s horn, rattling waggons, grunting hogs and gabbling geese, the mower whetting his scythe. The noise shows a whole community at work before the heat of the day."
+          ],
+          "evidence": [
+            "Cocks wake the early morn with many a crow;",
+            "The bird-boy’s pealing horn is loudly blow’d;"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q2",
+          "prompt": "In the fifth stanza the poet turns to the farmers. What does he ask of them, and what does he warn?",
+          "facilitatorNotes": [
+            "To let the poor glean, since winter and poverty are near and the farmer will never miss the scraps; whoever refuses is a “harden’d, hungry hound” who will lack blessings. Description becomes a plea for fairness."
+          ],
+          "evidence": [
+            "The humble gleaner entrance in your ground;",
+            "But he shall never lack, that giveth to the poor."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q3",
+          "prompt": "What does the stanza about Emma add to the poem’s thinking about poverty?",
+          "facilitatorNotes": [
+            "Her beauty goes “unseen” because she is poor, and the poet blames Poverty for confining worth. Some readers find the admiring description old-fashioned or uncomfortable; it still supports the claim that rural people deserve notice."
+          ],
+          "evidence": [
+            "Thy beauties blooming in low life unseen,",
+            "Had Fortune blest, sweet girl, this lot had ne’er been thine."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q4",
+          "prompt": "The last stanza says poets “disdain to sing” rural life. How does the whole poem answer that?",
+          "facilitatorNotes": [
+            "By singing it in detail, from scythe to sheaves to the bevering hour; Clare, a labourer himself, claims country life for poetry and tells Wealth its pride is mistaken. Readers may ask whether the poem shows the hardship as clearly as the charm."
+          ],
+          "evidence": [
+            "What sweet descriptions bards disdain to sing;",
+            "Beauties of richest bloom, superior to your pride."
+          ]
+        }
+      ],
+      "months": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-04",
+      "title": "The Gipsy’s Camp",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Separate what a speaker’s description tells us about the person described from what it tells us about him.",
+      "focus": "A remembered fortune-telling becomes a comic story of a boy’s hope, his growing doubt and a curse he still half fears.",
+      "context": "John Clare grew up poor in a Northamptonshire village, where Romani families, then called gipsies, often camped on the commons. Here he remembers a fortune-teller from his boyhood. A Sybil is a prophetess; clack is chatter; morts means lots; a groat (fourpence) and a farthing are small coins; Job is the man in the Bible who loses everything.",
+      "contentNote": "The speaker describes the Romani fortune-teller in demeaning words (“midnight hags,” “tawny smoked flesh,” “gibberish”), stereotypes common in Clare’s time. She curses the boy, half comically.",
+      "excerpt": {
+        "locator": "“The Gipsy’s Camp,” complete poem; opens “How oft on Sundays, when I’d time to tramp, My rambles led me to a gipsy’s camp, Where…”; closes “…Of not a hoarded farthing be possest, And when all’s done, be shov’d to hell at last!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          69,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "96d08e4329efed09007743e051c0a1e1d21e187195aae5fe9445d3da122d1490"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-04-q1",
+          "prompt": "How does the speaker describe the fortune-teller and her shelter? Which words record what he saw, and which are judgments?",
+          "facilitatorNotes": [
+            "Observed: rags, hat and cloak, hazel sticks bent into a tent, a hedge keeping off the wind. Judged: “midnight hags,” “Uncouth,” “gibberish.” The insults belong to the prejudices of Clare’s time; the exact account of how she builds her shelter shows real knowledge of her skill."
+          ],
+          "evidence": [
+            "Her pliant bending hazel’s arching sticks;",
+            "To hear her gibberish tale so quaintly spoke,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q2",
+          "prompt": "What did the boy pay for, and what did he get?",
+          "facilitatorNotes": [
+            "A groat bought a fortune in which squires and lords seemed within his reach. The comic line shows how cheap the promise was and how much the boy wanted it."
+          ],
+          "evidence": [
+            "And Squire and Lord were purchas’d with a groat."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q3",
+          "prompt": "What changes when “man’s unbelieving taste” comes round, and how does the fortune-teller answer?",
+          "facilitatorNotes": [
+            "Growing up, he stops believing and stops paying; she stamps, spits and curses him with poverty and damnation. The curse is furious, yet the scene is also funny, partly at the boy’s expense."
+          ],
+          "evidence": [
+            "But as man’s unbelieving taste came round,",
+            "She furious stampt her shoeless foot aground,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q4",
+          "prompt": "Read the two lines in parentheses. Is the older speaker joking, or does the curse still trouble him?",
+          "facilitatorNotes": [
+            "A whole fate settled “for fourpence” sounds mock-tragic. Clare himself lived and died poor, so some readers hear real bitterness under the joke; both readings can use the exclamations."
+          ],
+          "evidence": [
+            "(Alas, for fourpence how my die is cast!)",
+            "And when all’s done, be shov’d to hell at last!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-05",
+      "title": "Rustic Fishing",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a whole day of hope and disappointment, and notice how closely Clare watches both the boys and the brook.",
+      "focus": "Village boys skip church to go fishing, catch almost nothing, and have a wonderful day.",
+      "context": "John Clare (1793–1864) grew up in Helpston, a Northamptonshire village of meadows and brooks. Here he watches boys who slip away on Sunday morning to fish instead of going to church. Flags, reeds, bulrushes, osiers (willows), meadow-sweet and keck (cow parsley) grow by water; a moor-hen is a water bird; roach, bream and gudgeons are small river fish, and struttles are sticklebacks; the float or cork bobs to show a bite; willow-wicks are willow twigs for carrying fish; sloomy means sluggish; meet means fitting. Choak’d is an old spelling of choked.",
+      "contentNote": "Boys bait hooks with worms; at the end they expect to be beaten with hazel switches for staying out all day.",
+      "excerpt": {
+        "locator": "“Rustic Fishing,” complete poem; opens “On Sunday mornings, freed from hard employ, How oft I mark the mischievous young boy With…”; closes “…And hazel twigs, in readiness prepar’d, For their long absence brings a meet reward.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          96
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1e903889583bc6f01f3f796b895135d5ca4ab9da3c56f5294eee2d4c42053c3"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-05-q1",
+          "prompt": "How do the boys get ready, and what does their gear tell you about them?",
+          "facilitatorNotes": [
+            "Poles and lines, crooked pins for hooks, worms dug out of dunghills with a knife. The home-made tackle shows boys who are poor, inventive and very eager. Clare calls the baited hook a “harmless treachery”: a trick played on the fish."
+          ],
+          "evidence": [
+            "For make-shifts oft crook’d pins to thread were tied;",
+            "The harmless treachery of his hooks to bait;"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-05-q2",
+          "prompt": "Clare spends many lines on the brook itself. How does he make it seem almost alive?",
+          "facilitatorNotes": [
+            "It is choked by weeds, struggles to find its way, murmurs as if it wants to be free, grows “weary” and finally rests in a pool. He describes it like a tired creature, and the pool where it rests is just where the boys can fish."
+          ],
+          "evidence": [
+            "In fluttering struggles murmuring to be free,--",
+            "Till, seemly weary of each choak’d control,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-05-q3",
+          "prompt": "How does Clare show the boys’ hope? Find the lines where they mistake something for a bite.",
+          "facilitatorNotes": [
+            "They watch floats that “seldom sink”; a fish nibbles and slinks away; any wobble or ripple from the breeze looks like a bite, and the willow-wicks wait for a catch that never comes. Their hope stays “untir’d” all day."
+          ],
+          "evidence": [
+            "They watch their floating corks that seldom sink,",
+            "Still wobbling curves keep wavering like a bite:"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-05-q4",
+          "prompt": "The boys catch almost nothing and face punishment at home. Was the day a failure? What does Clare seem to think?",
+          "facilitatorNotes": [
+            "They switch happily to chasing minnows and wading, and “fancy well repaid.” Clare calls them “sons of solitude and streams” and writes of their joy with affection; the “meet reward” of hazel twigs sounds half joking. He seems to think their freedom was worth more than fish. Some readers will note that the poem also shows the punishment waiting, which grown-ups of the time thought just."
+          ],
+          "evidence": [
+            "In this new change they fancy well repaid.",
+            "And hazel twigs, in readiness prepar’d,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-06",
+      "title": "December",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Gather the customs, then find where the poem turns from describing them to worrying about them.",
+      "focus": "A village Christmas in every detail, and a poet’s fear that such customs are disappearing.",
+      "context": "John Clare describes the Christmas of an English village in his youth. Want means poverty; rimy means frosty; besom’d means swept with a broom of twigs; a swain is a young man courting; the wates (waits) were bands of carol singers who went round at night; the Morris dancers and the winter play were village performances with a clown and Harlequin; a wassail-singer sang for drink and coins; a Christmas box was a tip for apprentices and servants; a fagot is a bundle of firewood; a cotter is a cottager.",
+      "contentNote": "Grown-ups warm and drink ale, and young people kiss under the mistletoe.",
+      "excerpt": {
+        "locator": "“December,” complete poem; opens “Glad Christmas comes, and every hearth Makes room to give him welcome now, E’en want will…”; closes “…from her haughty mind, And soon the poet’s song will be The only refuge they can find.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          115
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "924fe2140d1834e81da7027d947d72ddcd59869da42854cfe9655504026763b9"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-06-q1",
+          "prompt": "How does the village get ready for Christmas in the first four stanzas? Find three preparations.",
+          "facilitatorNotes": [
+            "Houses swept the day before, evergreens stuck in the windows, snow swept from the doors, holly and yew on candlesticks and pictures; the housewife puts her spinning away, neighbours exchange greetings, children walk through the snow to granny’s cake. Even the poor crown Christmas with holly."
+          ],
+          "evidence": [
+            "Each house is swept the day before, And windows stuck with evergreens,",
+            "And children pace the crumping snow To taste their granny’s cake again."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-06-q2",
+          "prompt": "How do the children see the snow in the ninth and tenth stanzas? What does this show about children’s imagination?",
+          "facilitatorNotes": [
+            "They call the snowflakes feathers from geese being plucked in the sky for a Christmas up above, and they play on the ice as if the snow were April grass. Imagination turns winter into a feast and a summer."
+          ],
+          "evidence": [
+            "Likening the snow to falling feathers,",
+            "Of people pulling geese above, And keeping Christmas in the skies."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-06-q3",
+          "prompt": "In stanzas eleven to thirteen the poet remembers his own childhood Christmases. What does he remember, and how does he feel about it now?",
+          "facilitatorNotes": [
+            "The wooden horse on wheels, the gingerbread coach, sugar plums, gilt picture books bought with promises to study, and toys broken within a minute. Grown-up sense says such joys are childish, yet memory loves to count them again: fond, with a touch of sadness."
+          ],
+          "evidence": [
+            "The wooden horse with arching head,",
+            "And count past pleasures o’er again."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-06-q4",
+          "prompt": "What worry appears in the last stanza, and where was it hinted earlier? Was Clare right?",
+          "facilitatorNotes": [
+            "Pride and fashion scorn simple customs, and soon only poems will keep them. The mistletoe stanza hinted it: “The shadow still of what hath been.” Many customs he lists, such as the wates and the village plays, did fade; others, such as carols and mistletoe, survive. Poems like this one are part of how we know about the rest."
+          ],
+          "evidence": [
+            "And soon the poet’s song will be The only refuge they can find.",
+            "The shadow still of what hath been, Which fashion yearly fades away."
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-07",
+      "title": "The Approach of Spring",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Keep track of a long poem that speaks to a season as if she were a person, and pick out its most exact details.",
+      "focus": "Clare welcomes Spring as a fearless young woman and notices every small sign of her coming, then explains why she is his favourite season.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, knew the fields, hedges and streams of his village closely. Here he speaks to Spring as “thou,” as if she were a young woman arriving. To beguile is to charm; a fairy ring is a circle of darker grass made by fungi; chiding means scolding; fain means gladly; undaunted means fearless; a mantle is a cloak; dappled means spotted; apace means quickly; to crimp is to wrinkle; the bream is a fish; a swain is a young countryman; to dally is to linger playfully; to illume is to light up; rank means grown thick and coarse; ere means before; dun is dull grey-brown; garb is clothing; solace is comfort; the linnet is a small finch; to lisp is to speak softly, like a small child.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Approach of Spring,” complete poem; opens “Now once again, thou lovely Spring, Thy sight the day beguiles; For fresher greens the…”; closes “…what they bring; I’ve watch’d them, and am warn’d to pay A preference to Spring.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          117,
+          132
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cb1c70de05f8183bd57c83a59aabfdd48096bd4fca6620d6a168307b19127807"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-07-q1",
+          "prompt": "Who is “thou” in this poem? How does Clare turn Spring into a person?",
+          "facilitatorNotes": [
+            "Spring herself, an “undaunted maiden.” Her home is the woods, her cloak the south wind and her wreath the swelling buds; later Nature dresses her as a queen. Ask why Clare calls her fearless: winter’s winds still try to hold her back."
+          ],
+          "evidence": [
+            "Now once again, thou lovely Spring,",
+            "Undaunted maiden, thou shalt find"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-07-q2",
+          "prompt": "Find three signs of spring in the middle stanzas. Which detail shows Clare looking most closely?",
+          "facilitatorNotes": [
+            "A blossom peeping through drifts of dead leaves, a lonely bee droning in the sun, rings spreading round a leaping fish, children looking for flowers. The ring that “Crimps round the leaping bream” is exact: someone has stood by the water and watched."
+          ],
+          "evidence": [
+            "The little hopeful blossom peeps,",
+            "Crimps round the leaping bream;"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-07-q3",
+          "prompt": "Some old leaves have “hung the season through.” What happens to them, and what does that suggest?",
+          "facilitatorNotes": [
+            "Some trees and hedges keep their dead leaves all winter; in spring they flutter down, “Leaving their place” to the new buds. The old makes way for the new, quietly, as part of the year’s cycle."
+          ],
+          "evidence": [
+            "A few leaves flutter from the woods,",
+            "Leaving their place for swelling buds"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-07-q4",
+          "prompt": "In the last four stanzas the speaker says he has loved every season. Why does he still prefer spring? Do you agree?",
+          "facilitatorNotes": [
+            "He loved winter’s calm, autumn’s gentle song and summer’s green, even its heat. But spring is like a child’s first words, and its flowers come like dreams, full of promise of what is coming. Students can argue for their own favourite season using details as exact as Clare’s."
+          ],
+          "evidence": [
+            "And I have loved the Winter’s calm",
+            "First lisp the voice of Spring;"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-08",
+      "title": "Thoughts in a Church-yard",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Collect the opposites the churchyard brings together, and notice how the last stanza talks about death.",
+      "focus": "In the churchyard the rich and the poor, the master and the slave, lie side by side at peace.",
+      "context": "John Clare walks through a village churchyard, where the dead are buried around the church. Crost means crossed out; a miser hoards money and an heir inherits it; folly’s freaks are foolish whims; teazing (teasing) cares are nagging worries; the ignis fatuus (Latin for “foolish fire”) is a flickering light over marshes said to lead travellers astray; a reckoning is a bill.",
+      "contentNote": "A meditation on death that calls the grave a place of rest.",
+      "excerpt": {
+        "locator": "“Thoughts in a Church-yard,” complete poem; opens “Ah! happy spot, how still it seems Where crowds of buried memories sleep; How quiet…”; closes “…the business done; On them the last demand is made, And heaven’s eternal peace is won.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          232,
+          236
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bcaf04ad4fa85d3a765f3a98f442d1f695c80cb4af00495040e1b30037a295fc"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-08-q1",
+          "prompt": "Why does the speaker call the churchyard a “happy spot”? Who, according to him, is weeping?",
+          "facilitatorNotes": [
+            "It is quiet and still, and Nature seems to dream over the dead. Only the living weep: “our troubled thoughts.” The surprise is that the dead are at peace and the visitors are the ones who suffer."
+          ],
+          "evidence": [
+            "Ah! happy spot, how still it seems",
+            "’Tis but our troubled thoughts that weep."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-08-q2",
+          "prompt": "List the pairs of people who lie together here. What has death done to the differences between them?",
+          "facilitatorNotes": [
+            "Master and slave, miser and heir, rich and poor, the honoured, the brave, the beautiful girl and her plain neighbour. Death cancels rank, money and beauty: all are equal and all are quiet."
+          ],
+          "evidence": [
+            "There sleeps the master with the slave;",
+            "There rest the miser and the heir,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-08-q3",
+          "prompt": "The last stanza describes death in the language of money and business. Find the words and explain the comparison.",
+          "facilitatorNotes": [
+            "The bill made out, the reckoning paid, the account book crossed through, the business done, the last demand made. Life is like a debt; death settles the account. The first stanza began the idea with “Life’s book shuts here.”"
+          ],
+          "evidence": [
+            "The bill’s made out, the reck’ning paid,",
+            "Life’s book shuts here--its page is lost"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-08-q4",
+          "prompt": "Is the poem comforting, or does it make life sound too hard? Consider the line “Sought rest, and only found it there.”",
+          "facilitatorNotes": [
+            "Comforting: toil and worry end, and heaven’s peace is won. Bleak: life is called strife, turmoil and a “poisoned cup,” and some people found rest only in the grave. Clare, a poor labourer, knew hard lives at first hand. Accept answers on either side that use the lines."
+          ],
+          "evidence": [
+            "Sought rest, and only found it there.",
+            "Care’s poisoned cup is drain’d and done,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-09",
+      "title": "Decay",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a refrain that changes a little in every stanza, and decide what has really been lost.",
+      "focus": "The fields and streams are the same as ever, but the poet can no longer see the wonder he once saw in them.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, became famous for his first books of poems and was then forgotten; in middle age he suffered poverty and illness, and he wrote this poem in those years. Poesy is poetry, pictured as a woman; “on the wane” means shrinking, like the moon; Fancy is imagination; “on the flitting” means moving away; laurel shades are shady walks in a grand garden; heaths are open wild land; “a-dry” means thirsty; to pledge someone’s health is to drink to them, and draughts are drinks; nectar is the drink of the gods; to undeceive is to show someone the truth; a ranger here is a wanderer; rushes are marsh plants; rapture is great joy; swarthy means dark; Adam’s gardens are Eden; an ember is a glowing coal.",
+      "contentNote": "The speaker feels that joy, love, friendship and hope have all faded from his life.",
+      "excerpt": {
+        "locator": "“Decay,” complete poem; opens “O Poesy is on the wane, For Fancy’s visions all unfitting; I hardly knew her face again,…”; closes “…Joy the art of true believing; For Poesy is on the wane, O could I feel her faith again!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          262,
+          269
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e34f5b786869a2ce4d7fb15ee81fa2f5361ed7983e06cb3328d7ff942145b3b2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-09-q1",
+          "prompt": "What does the speaker mean when he says Poesy is “on the wane”? Is he talking only about writing poems?",
+          "facilitatorNotes": [
+            "He no longer recognises Poetry’s face, and Nature too seems to be moving away: fields, grass and sky have become “common things.” What is fading is a way of seeing, the wonder that made poems possible."
+          ],
+          "evidence": [
+            "I hardly knew her face again,",
+            "Nature herself seems on the flitting."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-09-q2",
+          "prompt": "Why did a bank with brambles and molehills once mean more to him than a grand garden?",
+          "facilitatorNotes": [
+            "He loved wild, ordinary places, with ruts and heaths, more than laurel walks and neat gravel paths. Now even those places look plain: “The bramble’s dwindled to a bramble!” The bramble has not changed; his eyes have. Ask why that line is both funny and sad."
+          ],
+          "evidence": [
+            "Was more to me than laurel shades,",
+            "The bramble’s dwindled to a bramble!"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-09-q3",
+          "prompt": "What were mushrooms once to him? What does that tell you about the wonder he has lost?",
+          "facilitatorNotes": [
+            "Fairy bowers with marble pillars, places where even Danger stopped to pick flowers: a child’s imagination that could turn anything into a story. Now he sees only “withered stalks and fading trees.”"
+          ],
+          "evidence": [
+            "When mushrooms they were fairy bowers,",
+            "Mere withered stalks and fading trees,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-09-q4",
+          "prompt": "The refrain changes slightly in almost every stanza. Compare two versions. Does the poem end in complete despair?",
+          "facilitatorNotes": [
+            "It moves from “I hardly know her face” to “I cannot find her face,” “Nor love nor joy is mine,” and at last a wish: “O could I feel her faith again!” Stanza seven also says he has had his “summer thrills.” Some readers find comfort in that; others hear only loss."
+          ],
+          "evidence": [
+            "But I have had my summer thrills,",
+            "O could I feel her faith again!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-10",
+      "title": "The Autumn Robin",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a long poem stanza by stanza and collect what different people do when they meet the robin.",
+      "focus": "Praise of a plain, common bird becomes an argument about which beauty deserves notice.",
+      "context": "John Clare worked outdoors all his life and wrote about common birds. The English robin goes on singing through autumn and winter, after most birds fall quiet. Livery is a servant’s uniform, here the bird’s russet coat; hinds are farm workers; a clown is a country fellow, not a circus performer; the tube is a gun barrel; to prune a wing is to preen it.",
+      "contentNote": "A farm worker shoots birds for food in winter but spares the robin.",
+      "excerpt": {
+        "locator": "“The Autumn Robin,” complete poem; opens “Sweet little bird in russet coat, The livery of the closing year! I love thy lonely…”; closes “…thy autumn praise prolong, As they would share the happy prime Of thy eternal song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          279,
+          293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8585983607533f7abdfdc51b47521fc76bec2ddb948c8b33dd4159b04ad9ab02"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-10-q1",
+          "prompt": "List the people who stop for the robin. What does each one change or give up?",
+          "facilitatorNotes": [
+            "The shepherd sits to listen, the hedger pauses, the boy who mocks songbirds leaves the gate unclapped, the milkmaid stops her song, the man with the gun turns it away, the hungry gipsy boy leaves berries. Small acts show the bird’s hold on ordinary people."
+          ],
+          "evidence": [
+            "The hedger pauses, ere he knocks",
+            "He turns the tube away."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-10-q2",
+          "prompt": "Clare compares the robin with the swallow, martin, sparrow and wren. What makes the robin different?",
+          "facilitatorNotes": [
+            "The others build “with doubtful faith,” out of reach; the robin trusts people and nests so low a toddler could touch it. Its trust wins it favour, though the poem also notices it seems to “court” danger."
+          ],
+          "evidence": [
+            "Domestic and confiding bird!",
+            "May reach with tiny hands."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-10-q3",
+          "prompt": "Why is the robin “missing and forgot” in summer, and who wins attention instead?",
+          "facilitatorNotes": [
+            "A thousand summer singers drown its quiet notes, and the famous nightingale takes the public praise. Fame goes to the showy; the robin sings when nothing else does."
+          ],
+          "evidence": [
+            "The far-famed nightingale, that shares",
+            "Thou at the dull and dying year."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-10-q4",
+          "prompt": "In the last stanza Clare wishes his verse could imitate the robin’s song. What might he be saying about himself as a poet?",
+          "facilitatorNotes": [
+            "Like the robin he is a plain rural singer, easily overlooked beside louder voices; if his words matched its song, Time would keep even his “meanest verse.” Some readers hear modesty, others a quiet claim to lasting worth."
+          ],
+          "evidence": [
+            "My words but imitate thy lay,",
+            "Nor throw the meanest verse away,"
+          ]
+        }
+      ],
+      "months": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-11",
+      "title": "A Spring Morning",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find everything in the poem that is in love, and decide whether the last line is true to the rest.",
+      "focus": "Spring as the season when the whole countryside falls in love.",
+      "context": "John Clare celebrates spring in seven pairs of rhyming lines. Dells are small wooded valleys; drapery is cloth hung in folds; meads are meadows; rifling means robbing; amorous means loving; a pilgrimage is a long journey.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Spring Morning,” complete poem; opens “The Spring comes in with all her hues and smells, In freshness breathing over hills and…”; closes “…flowers join lips below; the leaves above; And every sound that meets the ear is Love.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          295,
+          295
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "93c6e792ea98bdbde23e8e6177ab3829b5d05b3422cc580a5e8fa85604ee92e2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-11-q1",
+          "prompt": "Which senses does the poem appeal to? Find one detail for each.",
+          "facilitatorNotes": [
+            "Sight: spring’s “hues” and May’s gorgeous drapery of blossom. Smell: “smells” and meadows “washed fragrant.” Hearing: laughing springs, singing birds, the cooing dove, the crow, barking foxes. The morning reaches every sense at once."
+          ],
+          "evidence": [
+            "The Spring comes in with all her hues and smells,",
+            "And meads washed fragrant by their laughing springs."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-11-q2",
+          "prompt": "The new flowers are still free from “the bold rifling of the amorous bee.” What does that tell you about the time of year, and about the bee?",
+          "facilitatorNotes": [
+            "The flowers have only just opened; the bees have not reached them yet, so it is very early in the season. The bee is pictured as a bold, loving robber who will soon steal their nectar."
+          ],
+          "evidence": [
+            "Fresh are new opened flowers, untouched and free From the bold rifling of the amorous bee."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-11-q3",
+          "prompt": "Which creatures show love or joy? Which surprises you most?",
+          "facilitatorNotes": [
+            "The dove coos, the hoarse crow finds “softer notes,” the foxes play and bark for joy, and even flowers and leaves “join lips.” The crow trying to sound tender is comic; the foxes barking for joy in the dark woods may also surprise."
+          ],
+          "evidence": [
+            "And the hoarse crow finds softer notes for love.",
+            "The foxes play around their dens, and bark In joy’s excess,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-11-q4",
+          "prompt": "The last line says “every sound that meets the ear is Love.” Does the poem earn that claim?",
+          "facilitatorNotes": [
+            "Sound after sound has been tied to love, so the ending gathers them all up. A careful reader may notice the “woodland shadows dark” just before it, a small shadow in the brightness. Either way, the capital L makes Love almost a person ruling the season."
+          ],
+          "evidence": [
+            "The flowers join lips below; the leaves above; And every sound that meets the ear is Love."
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-12",
+      "title": "The Crab-Tree",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare the grown man who returns to the hedges with the boy who once played there.",
+      "focus": "Spring brings a grown man back to the treasures of his boyhood, almost.",
+      "context": "John Clare, now a grown man, goes back to the hedges of his boyhood in spring. A pledge here is a token or promise; as wont means as usual; sedge is coarse grass by water; pooty-shells are snail shells; the May is hawthorn blossom; erst means formerly; esteems are things one prizes; a crab-tree is a wild apple tree, with pink and white blossom.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Crab-Tree,” complete poem; opens “Spring comes anew, and brings each little pledge That still, as wont, my childish heart…”; closes “…the heart-stirring past as present seems, Save the bright sunshine of those fairy dreams.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          297,
+          297
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a1039bef19ee99d8659d6bb0a1e6b20cb7fec0b169a094ae1a6c64bb55a6f408"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-12-q1",
+          "prompt": "What does the speaker do each spring, and what did he do as a boy?",
+          "facilitatorNotes": [
+            "He stoops for violets among the ivy and dead leaves, spots the snail shells he collected as a boy, and scrambles through brambles for crab-apple blossom. He is repeating his boyhood habits."
+          ],
+          "evidence": [
+            "I stoop again for violets in the hedge,",
+            "The pooty-shells I gathered when a boy:"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-12-q2",
+          "prompt": "Why does he say spring “deceives” his “childish heart”? What has changed in him?",
+          "facilitatorNotes": [
+            "Spring’s signs promise the old joy, but cares have “chilled the relish” he once had. Part of him still believes the promise; the rest knows it cannot be kept."
+          ],
+          "evidence": [
+            "That still, as wont, my childish heart deceives;",
+            "And chilled the relish which I had for joy."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-12-q3",
+          "prompt": "What does climbing for crab-blossom do for him? Find the line where past and present seem to meet.",
+          "facilitatorNotes": [
+            "A grown man scrambles through the brambles and fills his hands with blossom, until “the heart-stirring past as present seems”: for a moment he feels like a boy again."
+          ],
+          "evidence": [
+            "Up ’mid the bramble for my old esteems,",
+            "Till the heart-stirring past as present seems,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-12-q4",
+          "prompt": "The last line begins with “Save,” meaning except. What is still missing, and how does that one word change the ending?",
+          "facilitatorNotes": [
+            "The “bright sunshine of those fairy dreams”: the hopes and wonder of childhood cannot be recovered. “Save” undercuts the happy moment just as it peaks, making the ending bittersweet."
+          ],
+          "evidence": [
+            "Save the bright sunshine of those fairy dreams."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-13",
+      "title": "Home Yearnings",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how the poem’s question keeps returning, and work out what freedom means to the speaker.",
+      "focus": "A man shut away longs for the fields and the freedom of his boyhood.",
+      "context": "John Clare spent most of his last twenty-seven years in asylums for the mentally ill, far from his home countryside; in this poem the speaker calls the place where he is a prison. Verdant means green; a fallow field is ploughed land left unplanted; a fen is marshy land; e’en is evening; a lea is a meadow; rills are little streams; desolate means lonely and miserable.",
+      "contentNote": "The speaker is confined against his will and longs for freedom and home.",
+      "excerpt": {
+        "locator": "“Home Yearnings,” complete poem; opens “O for that sweet, untroubled rest, That poets oft have sung!-- The babe upon its mother’s…”; closes “…of sleep. When shall I see the wood and plain, And dream those happy dreams again?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          311,
+          317
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c601e1033e9e25139d6e75df414dfd31d999f3daab5e4760127311e3aed390f7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-13-q1",
+          "prompt": "Most stanzas end with a question or a cry. What does the speaker long for?",
+          "facilitatorNotes": [
+            "Untroubled rest like a baby’s on its mother’s breast; his native fields, fens and wilds; the wood and plain where he dreamed as a boy. The repeated “When shall I…?” shows a longing that is never answered."
+          ],
+          "evidence": [
+            "When shall I know that sleep again?",
+            "When shall I see the wood and plain, And dream those happy dreams again?"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-13-q2",
+          "prompt": "Why does he love “the weeds along the fen” more than garden flowers?",
+          "facilitatorNotes": [
+            "Weeds grow wild and free; garden flowers are planted, tended and kept in their place. For someone shut in, the wild glen means freedom, and that makes even weeds sweet."
+          ],
+          "evidence": [
+            "I love the weeds along the fen, More sweet than garden flowers,",
+            "For freedom haunts the humble glen"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-13-q3",
+          "prompt": "What do the sheep, crows and cows have that the speaker does not?",
+          "facilitatorNotes": [
+            "Freedom, which is “their mate,” their companion; he is “lone and desolate.” The plain line “Here prison injures health and me” says outright what the rest of the poem feels."
+          ],
+          "evidence": [
+            "Because sweet freedom is their mate, While I am lone and desolate.",
+            "Here prison injures health and me:"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-13-q4",
+          "prompt": "The last two stanzas turn to the past: “I loved.” What did boyhood give him, and is his memory of it entirely true?",
+          "facilitatorNotes": [
+            "The winds, Nature’s song of liberty, the wood, vale and stream, and dreams; even work felt like play. Clare’s boyhood was poor and full of farm labour, so longing may make the past brighter than it was. Both the happiness and the softening are worth discussing."
+          ],
+          "evidence": [
+            "There even toil itself was play;",
+            "I loved the wood, the vale, the stream, For there my boyhood used to dream."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-14",
+      "title": "Love Lives Beyond the Tomb",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find everywhere the poem says love lives, and why it ends where it began.",
+      "focus": "Love outlasts death and fills the world, in a song that circles back to its start.",
+      "context": "John Clare wrote many love poems and songs; this one repeats its first stanza at the end. Fond means loving; eve’s dews are the evening dew; eternal means lasting forever.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Love Lives Beyond the Tomb,” complete poem; opens “Love lives beyond the tomb, And earth, which fades like dew! I love the fond, The…”; closes “…the tomb, And earth, which fades like dew! I love the fond, The faithful, and the true.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          319,
+          324
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c9ef6776fc84905e6ed063473b490da02821fdd8e97431fbfe53ff4264a1b6f2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-14-q1",
+          "prompt": "List the places where love “lives,” “is seen” or “is heard.” Which surprised you?",
+          "facilitatorNotes": [
+            "Beyond the tomb, in sleep and healthy dreams, in flowers and morning dew, in the green hours of earth and the blue of heaven, in spring sunlight, on angels’ wings, where spring and lovers meet. Love is everywhere, from the grave to the sky."
+          ],
+          "evidence": [
+            "Love lives in sleep;",
+            "’Tis seen in flowers,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-14-q2",
+          "prompt": "The opening says love lives beyond the tomb “And earth, which fades like dew!” What does the comparison claim?",
+          "facilitatorNotes": [
+            "Earth is as short-lived as dew, which vanishes in the morning sun; love outlasts both death and the world itself. The comparison makes the solid earth seem fragile and love seem stronger than anything."
+          ],
+          "evidence": [
+            "Love lives beyond the tomb, And earth, which fades like dew!"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-14-q3",
+          "prompt": "Why might Clare repeat the first stanza at the end? Does it mean the same the second time?",
+          "facilitatorNotes": [
+            "The circle is like love that never ends. After the list of places, the claim feels proved, and “I love the fond, / The faithful, and the true” becomes his own vow about whom he loves."
+          ],
+          "evidence": [
+            "I love the fond, The faithful, and the true."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-14-q4",
+          "prompt": "Look at the short indented lines and the rhymes. How do they make the poem sound like a song?",
+          "facilitatorNotes": [
+            "Short and longer lines alternate, simple rhymes chime (sleep and weep, flowers and hours), and the rhythm lilts. It reads like a hymn or a song meant to be remembered and sung."
+          ],
+          "evidence": [
+            "Eve’s dews may weep, But love delightful seems."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-15",
+      "title": "The Tell-Tale Flowers",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow how the same flowers mean different things at different times of a life.",
+      "focus": "Wild flowers that delighted a child later seem to whisper a young man’s secret love, and at last fall silent.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, knew the wild flowers of his parish by their country names, and many of his poems remember a first love. A tell-tale is someone who tells secrets. To cleave is to cut through; a glen is a narrow valley and a lea a meadow; primroses and cowslips are yellow spring flowers; to reprove is to scold; a recess is a hidden corner and a bower a shady shelter; nip’t means picked; the mouse-ear is Clare’s name for the forget-me-not; the king-cup is the marsh marigold; a dell is a small hollow; eventide is evening; a knoll is a small hill; culled means picked; a bier is the stand on which a coffin is carried, and to deck is to decorate.",
+      "contentNote": "The speaker remembers a love he has lost and now lives alone.",
+      "excerpt": {
+        "locator": "“The Tell-Tale Flowers,” complete poem; opens “And has the Spring’s all-glorious eye No lesson to the mind? The birds that cleave the…”; closes “…deck the bier of Spring; And birds upon the bush or tree All sing a different tale to me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          330,
+          341
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "947dd3f80b98f83ae7796581a4a9327a302eb1ceaace286582706d0f6e13e719"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-15-q1",
+          "prompt": "What do flowers bring back to the speaker in “Winter’s hours”? What did they mean to him as a child?",
+          "facilitatorNotes": [
+            "Even their names bring back spring and childhood. A primrose was worth more than money and land; he talked to violets and thought the bowing cowslips danced for joy. But already “in my distress” they seem “valueless.”"
+          ],
+          "evidence": [
+            "Brings Spring to me in Winter’s hours,",
+            "Was more than gold and lands to me."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-15-q2",
+          "prompt": "How do the flowers become “tell-tale” when he is a young man? What secret do they tell?",
+          "facilitatorNotes": [
+            "They seem to speak the name of the girl he loves: the violets say her eyes were blue, the cowslips sing her name over the meadow. He is so shy that he picks the cowslips so they cannot hear his thoughts."
+          ],
+          "evidence": [
+            "They told the names of early love.",
+            "I nip’t them that they should not hear:"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-15-q3",
+          "prompt": "Why do the flowers without names stay silent?",
+          "facilitatorNotes": [
+            "A named flower carries memories and stories; the nameless ones come “as strangers” and tell him nothing. The poem suggests that names and memories are what let things speak to us. Ask whether readers have places or things that “speak” to them in this way."
+          ],
+          "evidence": [
+            "But those without, as strangers, came",
+            "They bloomed and kept their thoughts unknown."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-15-q4",
+          "prompt": "How does the last stanza answer the question the poem opened with?",
+          "facilitatorNotes": [
+            "The poem began by asking whether spring’s flowers leave no memory. At the end the seasons have “nought to say,” he lives alone, and flowers decorate spring’s coffin. The love seems lost, and the birds sing “a different tale.” Readers can say what they think has happened."
+          ],
+          "evidence": [
+            "And has the Spring’s all-glorious eye",
+            "Flowers deck the bier of Spring;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-16",
+      "title": "To John Milton",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow the plant and weather images that Clare uses to argue that true fame outlasts critics.",
+      "focus": "A poor poet asks for a share of a great poet’s power, and argues that real fame grows slowly.",
+      "context": "John Milton (1608–1674) wrote Paradise Lost, a long poem about the fall of Adam and Eve, and in his lifetime was attacked by many enemies for his politics. John Clare, a farm labourer who taught himself to write poetry, addresses him here. Fain means gladly; the Muse is the spirit that inspires poets; in the Bible, Elisha received the cloak (mantle) and the spirit of the prophet Elijah; faction means a political party; a lay is a song; the bay, or laurel, is an evergreen whose leaves once crowned poets; obsequies are funeral rites; posterity means the generations to come.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To John Milton,” complete poem; opens “Poet of mighty power, I fain Would court the muse that honoured thee, And, like Elisha’s…”; closes “…light the Muse’s skies; Ay, it shall rise, and shine, and be A sun in song’s posterity.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          343,
+          353
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef9a217286d065e34d235470c217108f4bc3381067521da35ad6ce62f33dd0a2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-16-q1",
+          "prompt": "What does Clare ask for in the first stanza, and what does the comparison with Elisha suggest about how he sees himself?",
+          "facilitatorNotes": [
+            "To be inspired by the same Muse, gain some of Milton’s intensity and share his mantle. Elisha was Elijah’s follower and heir, so Clare pictures himself as a humble disciple hoping to inherit a little of the master’s power."
+          ],
+          "evidence": [
+            "And, like Elisha’s spirit, gain A part of thy intensity;",
+            "And share the mantle which she flung"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-16-q2",
+          "prompt": "How does Clare describe the attacks on Milton, and what becomes of them?",
+          "facilitatorNotes": [
+            "Faction’s scorn, clouds of malice, critics’ wrath, sneers and envy. They pass like clouds over the sun; envy gnaws its own heart; the scoffers are like hornets that die when summer ends. Milton simply smiled and made no reply."
+          ],
+          "evidence": [
+            "Though clouds of malice pass’d thy sun, They could not hide it long;",
+            "Hornets that summer warmed to fly, Shall at the death of summer die."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-16-q3",
+          "prompt": "Why are evergreens such as the bay and the ivy good images for lasting fame? What are the “summer flowers” and “summer birds”?",
+          "facilitatorNotes": [
+            "Evergreens stay green in winter, when everything else has faded. Summer flowers and birds are poets who are popular for a season and then forgotten. Storms that break blossom only stir the bay, and the ivy thrives on ruins where crowds no longer come."
+          ],
+          "evidence": [
+            "But blasts that break the blossom down Do only stir the bay;",
+            "The music of these summer birds Is silent in a winter sky,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-16-q4",
+          "prompt": "Clare’s first book was a success, but later he was neglected and almost forgotten. Why might this poem have mattered to him personally?",
+          "facilitatorNotes": [
+            "If real fame comes late and outlasts the crowd’s praise, neglect need not be the final verdict. He may be comforting himself as much as praising Milton. Clare is now widely read, so his hope came true; readers can discuss whether he was right that the crowd’s praise means little."
+          ],
+          "evidence": [
+            "Fame lives not in the breath of words, In public praises’ hue and cry;",
+            "The bard his glory ne’er receives Where summer’s common flowers are seen,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-17",
+      "title": "I Am! Yet What I Am",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Hold together the poem’s claim to exist and its account of losing nearly everything else.",
+      "focus": "In deep isolation the speaker still insists “I am,” and longs for a peace beyond people.",
+      "context": "John Clare spent the last twenty-three years of his life in an asylum in Northampton, far from his family, and wrote this poem there. Oblivious means forgetful; a host is a crowd; esteem is self-respect; vaulted means arched like a roof.",
+      "contentNote": "The speaker describes loneliness, abandonment and losing his sense of self; the poem was written in a mental hospital.",
+      "excerpt": {
+        "locator": "“I Am! Yet What I Am,” complete poem; opens “I am! yet what I am who cares, or knows? My friends forsake me like a memory lost. I am…”; closes “…Full of high thoughts, unborn. So let me lie, The grass below; above the vaulted sky.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          355,
+          357
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e23ebef45aa65e02748087e02c040e22e8cd1f4642fd22f2377564233b165f0"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-17-q1",
+          "prompt": "The poem opens with a statement and a question. What does the speaker know for certain, and what does he not know?",
+          "facilitatorNotes": [
+            "He knows he exists; he does not know what he is, and no one else cares or knows. Existence remains after friends, esteem and identity have gone."
+          ],
+          "evidence": [
+            "I am! yet what I am who cares, or knows?"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-17-q2",
+          "prompt": "Find the images of being lost at sea. What do they show about his state of mind?",
+          "facilitatorNotes": [
+            "He is “toss’d” into a “living sea of waking dream” and suffers the “shipwreck” of his self-respect. He is adrift, and the waking dream blurs what is real."
+          ],
+          "evidence": [
+            "Into the living sea of waking dream,",
+            "But the huge shipwreck of my own esteem"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-17-q3",
+          "prompt": "Why might those he loved best now seem “stranger than the rest”?",
+          "facilitatorNotes": [
+            "Losing the closest people hurts most, so their absence feels strangest; or his illness makes even familiar faces unrecognisable. Either reading should use the step from “strange” to “stranger.”"
+          ],
+          "evidence": [
+            "Are strange--nay, they are stranger than the rest."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-17-q4",
+          "prompt": "What does he long for in the last stanza? Is the ending peaceful, sad or both?",
+          "facilitatorNotes": [
+            "A place no person has touched, alone with God, sleeping as in childhood, with grass below and sky above. Some readers hear calm and relief, others a wish for death; the image holds both rest and the grave."
+          ],
+          "evidence": [
+            "I long for scenes where man has never trod,",
+            "The grass below; above the vaulted sky."
+          ]
+        }
+      ]
+    }
+  ]
+}
