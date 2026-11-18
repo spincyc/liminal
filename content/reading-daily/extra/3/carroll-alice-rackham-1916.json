@@ -1,0 +1,1331 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "carroll-alice-rackham-1916",
+  "readings": [
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-01",
+      "title": "Alice: the opening poem, “All in the golden afternoon”",
+      "sourceId": "carroll-alice-rackham-1916",
+      "workTitle": "All in the golden afternoon",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Picture a real afternoon from small clues, and work out who the three listeners are.",
+      "focus": "Carroll remembers the boat trip on which the story of Wonderland was first told.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. This poem opens the book. The “cruel Three” are the three sisters; Prima, Secunda and Tertia are Latin for First, Second and Third. Oars are “plied” when they are worked; an edict is an order; “anon” means soon; a pilgrim is a traveller to a holy place, who might bring home a wreath of flowers to remember it.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The prefatory poem “All in the golden afternoon,” complete; opens “All in the golden afternoon Full leisurely we glide; For both our oars, with little…”; closes “…mystic band, Like pilgrim's wither'd wreath of flowers Pluck'd in a far-off land.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c2e98f10fbb1866f75e4fe7cdc17283ff7ff4f76610948b2884e9e54fbedfca"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-01-q1",
+          "prompt": "Who is rowing the boat, and how well? Find the lines that tell you.",
+          "facilitatorNotes": [
+            "The children are: “little arms” work the oars “with little skill,” and “little hands” only pretend to steer. The boat drifts slowly, which fits a lazy, golden afternoon."
+          ],
+          "evidence": [
+            "For both our oars, with little skill,",
+            "By little arms are plied,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-01-q2",
+          "prompt": "What does each of the three sisters want from the storyteller?",
+          "facilitatorNotes": [
+            "Prima orders him to begin; Secunda hopes there will be nonsense in it; Tertia interrupts about once a minute. Three different listeners, three different demands."
+          ],
+          "evidence": [
+            "Her edict \"to begin it\"—",
+            "\"There will be nonsense in it!\"—",
+            "While Tertia interrupts the tale"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-01-q3",
+          "prompt": "When the tired storyteller tries to stop, what do the children cry? Why is that funny?",
+          "facilitatorNotes": [
+            "He says “The rest next time—” and they answer “It is next time!” They will not let him stop, which is how the long story grew one piece at a time."
+          ],
+          "evidence": [
+            "\"The rest next time—\" \"It is next time!\""
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-01-q4",
+          "prompt": "In the last stanza Carroll calls the story a “wither’d wreath of flowers.” What does he hope Alice will do with it? Why might he call it withered?",
+          "facilitatorNotes": [
+            "He hopes she will keep it gently among her memories of childhood. Withered flowers are kept to remember a journey after it is over; the golden afternoon is past, but the story keeps it. Some readers hear a little sadness about growing up."
+          ],
+          "evidence": [
+            "Lay it where Childhood's dreams are twined",
+            "Like pilgrim's wither'd wreath of flowers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-02",
+      "title": "Alice, chapter I, part 1: Down the rabbit-hole",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow Alice’s thoughts as she talks to herself, and notice the narrator’s jokes in brackets.",
+      "focus": "A bored girl follows a rabbit with a watch and falls into a world where odd things seem natural.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. This is the first chapter. A waistcoat is a vest; marmalade is orange jam; latitude and longitude are lines on a map; Alice means the Antipodes, places on the opposite side of the earth, but gets the word wrong; to curtsey is to bob down politely.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Down the Rabbit-Hole,” from the beginning through the end of the fall; opens “ALICE was beginning to get very tired of sitting by her sister on the bank, and of having…”; closes “…thump! thump! down she came upon a heap of sticks and dry leaves, and the fall was over.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-03",
+        "blocks": [
+          9,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b1ce0f34bd5ec2f65afc2339d5baffb691d2ad7ca89baaa85aeb92c1e86df6f9"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-02-q1",
+          "prompt": "Why is Alice bored at the start? What does she think a book needs?",
+          "facilitatorNotes": [
+            "Her sister’s book has no pictures or conversations, which Alice thinks are the whole use of a book. This book, the reader may notice, has plenty of both."
+          ],
+          "evidence": [
+            "\"and what is the use of a book,\" thought Alice, \"without pictures or conversations?\""
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-02-q2",
+          "prompt": "What did not surprise Alice about the White Rabbit, and what finally made her jump up and chase it?",
+          "facilitatorNotes": [
+            "Hearing it talk seemed natural at the time; seeing it take a watch out of a waistcoat-pocket did not. The narrator says she should have wondered at the talking too."
+          ],
+          "evidence": [
+            "nor did Alice think it so very much out of the way to hear the Rabbit say to itself,",
+            "the Rabbit actually took a watch out of its waistcoat-pocket,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-02-q3",
+          "prompt": "What does Alice do with the empty marmalade jar, and why? What does that show about her?",
+          "facilitatorNotes": [
+            "She puts it back in a cupboard as she falls, so as not to drop it on somebody below. She stays careful and polite even in the strangest moment."
+          ],
+          "evidence": [
+            "she did not like to drop the jar for fear of killing somebody underneath,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-02-q4",
+          "prompt": "As she grows sleepy, “Do cats eat bats?” turns into “Do bats eat cats?” Why does the narrator say it “didn't much matter which way she put it”?",
+          "facilitatorNotes": [
+            "She cannot answer either question, so turning it round makes no difference to her. The swap also shows her mind drifting into a dream."
+          ],
+          "evidence": [
+            "as she couldn't answer either question, it didn't much matter which way she put it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-03",
+      "title": "Alice, chapter I, part 2: A golden key and DRINK ME",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 6,
+        "totalMinutes": 17
+      },
+      "challenge": "Keep track of the key, the door and the bottle, and enjoy the narrator’s joking “rules.”",
+      "focus": "Alice finds a way into a lovely garden but is the wrong size for it.",
+      "context": "Recap: Alice followed a White Rabbit with a watch down a rabbit-hole and fell for a long time, talking to herself about her cat, Dinah, until she landed on a heap of sticks and leaves. A telescope folds up into itself when it is shut.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, from her landing to her shrinking to ten inches high, ending “for she could not remember ever having seen such a thing”; opens “Alice was not a bit hurt, and she jumped up on to her feet in a moment: she looked up,…”; closes “…after the candle is blown out, for she could not remember ever having seen such a thing.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-02",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-04",
+        "blocks": [
+          19,
+          27
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "54529eea3dd797693db4c0029e1a1fbda82729714a3130ea876f13676bd01f61"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-03-q1",
+          "prompt": "What does Alice find on the glass table, and what does it open?",
+          "facilitatorNotes": [
+            "A tiny golden key, which fits a little door about fifteen inches high hidden behind a curtain. Through it she sees “the loveliest garden you ever saw.”"
+          ],
+          "evidence": [
+            "there was nothing on it but a tiny golden key,",
+            "behind it was a little door about fifteen inches high:"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-03-q2",
+          "prompt": "Why doesn’t Alice drink from the bottle at once? What “rules” does she remember?",
+          "facilitatorNotes": [
+            "She checks that it is not marked “poison,” remembering stories of children who forgot simple rules: red-hot pokers burn, deep cuts bleed, poison disagrees with you. The narrator is joking: the rules are so obvious that they are funny."
+          ],
+          "evidence": [
+            "see whether it's marked 'poison' or not;",
+            "it is almost certain to disagree with you, sooner or later."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-03-q3",
+          "prompt": "What does the drink taste like? What is funny about the list?",
+          "facilitatorNotes": [
+            "Cherry-tart, custard, pineapple, roast turkey, coffee and hot buttered toast: sweet and savoury favourites all at once, which no real drink could taste like."
+          ],
+          "evidence": [
+            "a sort of mixed flavour of cherry-tart, custard, pineapple, roast turkey, coffee, and hot buttered toast,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-03-q4",
+          "prompt": "Why does Alice wait a few minutes after she shrinks? What worries her?",
+          "facilitatorNotes": [
+            "She fears she might keep shrinking until she goes out “like a candle.” Then she tries to imagine a candle flame after it is blown out, which is impossible: Carroll enjoys questions with no answer."
+          ],
+          "evidence": [
+            "in my going out altogether, like a candle.",
+            "she tried to fancy what the flame of a candle looks like after the candle is blown out,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-04",
+      "title": "Alice, chapters I–II: EAT ME, and curiouser and curiouser",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 6,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow Alice’s reasoning about the cake, and notice how she talks to herself as if she were two people.",
+      "focus": "Alice tries to solve her problem by logic, and the answer goes wrong in a new way.",
+      "context": "Recap: underground, Alice found a tiny door into a lovely garden and a little golden key that fits it. A bottle labelled “DRINK ME” shrank her to ten inches high, just right for the door. To box someone’s ears is to slap them; croquet is a lawn game played with mallets and balls; a carrier delivered parcels; “Esq.” is a polite title once written after a man’s name; a fender is a low guard in front of a fireplace; kid gloves are made of soft goatskin.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, from the forgotten key to the end, and Chapter II, “Pool of Tears,” to the White Rabbit’s flight; opens “After a while, finding that nothing more happened, she decided on going into the garden…”; closes “…white kid gloves and the fan, and scurried away into the darkness as hard as he could go.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-03",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-05",
+        "blocks": [
+          28,
+          41
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "08e14a7932f5af5f926f21cc8c275b2dcade9ff5b6a32f202ce78557d3cf9ba9"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-04-q1",
+          "prompt": "What went wrong once Alice was small enough for the door?",
+          "facilitatorNotes": [
+            "She had left the key on the glass table and could not climb its slippery leg to reach it, so she sat down and cried."
+          ],
+          "evidence": [
+            "she found she had forgotten the little golden key,",
+            "the poor little thing sat down and cried."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-04-q2",
+          "prompt": "What does the narrator tell us about the advice Alice gives herself?",
+          "facilitatorNotes": [
+            "She gives herself very good advice but seldom follows it; she sometimes scolds herself to tears, and once boxed her own ears for cheating herself at croquet. She likes pretending to be two people."
+          ],
+          "evidence": [
+            "She generally gave herself very good advice (though she very seldom followed it),",
+            "this curious child was very fond of pretending to be two people."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-04-q3",
+          "prompt": "Before eating the cake, Alice decides she will get into the garden whatever happens. Explain her reasoning. Does it work?",
+          "facilitatorNotes": [
+            "Larger, she can reach the key; smaller, she can creep under the door. Sensible, but it fails: she grows to over nine feet, gets the key, and is now far too big for the door."
+          ],
+          "evidence": [
+            "if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-04-q4",
+          "prompt": "“Curiouser and curiouser!” is not good English. Why does Alice say it? What other nonsense does she talk to her feet?",
+          "facilitatorNotes": [
+            "She is so surprised that she forgets how to speak properly. She says goodbye to her feet, now far away, and plans to post them boots at Christmas, addressed to “Alice’s Right Foot, Esq.” Then she admits it is nonsense."
+          ],
+          "evidence": [
+            "she was so much surprised, that for a moment she quite forgot how to speak good English",
+            "Alice's Right Foot, Esq."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-05",
+      "title": "Alice, chapter II, part 2: Who in the world am I?",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 6,
+        "totalMinutes": 16
+      },
+      "challenge": "Watch Alice test her own memory, and hear what is wrong with what she recites.",
+      "focus": "After so many changes, Alice wonders whether she is still herself.",
+      "context": "Recap: in the underground hall Alice has shrunk and grown so much that she is now nine feet tall, far too big for the little door to the garden, and has cried a great pool of tears. The White Rabbit ran past and dropped his gloves and fan when she spoke to him. Ringlets are long curls; to signify is to matter. Children of Carroll’s time learned a poem beginning “How doth the little busy bee,” which praises a hard-working bee; Alice’s version goes wrong.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, from “Alice took up the fan and gloves” to her escape from shrinking away altogether; opens “Alice took up the fan and gloves, and, as the hall was very hot, she kept fanning herself…”; closes “…\"for I never was so small as this before, never! And I declare it's too bad, that it is!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-04",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-06",
+        "blocks": [
+          42,
+          48
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f9afc0cf498f19f0f5dd95033c3c8d0435f66016477206e1cb0334af9719f70b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-05-q1",
+          "prompt": "Alice wonders if she was changed in the night. How does she test whether she is still herself?",
+          "facilitatorNotes": [
+            "She compares herself with friends (she cannot be Ada, whose hair is curly) and tests what she knows: times tables, geography, a poem she learned."
+          ],
+          "evidence": [
+            "was I the same when I got up this morning?",
+            "I'll try if I know all the things I used to know."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-05-q2",
+          "prompt": "What goes wrong with her times tables and her geography? Say them aloud.",
+          "facilitatorNotes": [
+            "“Four times five is twelve, and four times six is thirteen”; “London is the capital of Paris.” Everything comes out wrong, so she decides she must have become Mabel."
+          ],
+          "evidence": [
+            "four times five is twelve, and four times six is thirteen,",
+            "London is the capital of Paris,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-05-q3",
+          "prompt": "Her poem comes out about a crocodile. What seems friendly about him, and what is he really doing?",
+          "facilitatorNotes": [
+            "He grins cheerfully, spreads his claws neatly and “welcomes little fishes in, / With gently smiling jaws”: he is eating them. The polite words hide a meal. The poem she meant to say praised a busy bee."
+          ],
+          "evidence": [
+            "How cheerfully he seems to grin,",
+            "And welcomes little fishes in,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-05-q4",
+          "prompt": "If she is Mabel, Alice says she will stay down here. What would she say to people calling her? What do her last words show she really feels?",
+          "facilitatorNotes": [
+            "She would ask “Who am I then?” and only come up if she liked being that person. But then she bursts into tears and wishes they would call: she is lonely and tired of being alone."
+          ],
+          "evidence": [
+            "Who am I then? Tell me that first,",
+            "I am so very tired of being all alone here!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-06",
+      "title": "Alice, chapter II, part 3: The pool and the Mouse",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice each time Alice forgets who she is talking to.",
+      "focus": "Alice tries to make friends with a Mouse, and keeps saying exactly the wrong thing.",
+      "context": "Recap: Alice has grown huge and shrunk small again in the underground hall; while she was nine feet tall she cried a great pool of tears. Holding the White Rabbit’s fan made her shrink to about two feet. Bathing machines were huts on wheels rolled into the sea for bathers to change in. William the Conqueror invaded England from France in 1066. “Où est ma chatte?” is French for “Where is my cat?” A terrier is a small dog bred to catch rats.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, from her fall into the salt water to the end of the chapter; opens “As she said these words her foot slipped, and in another moment, splash! she was up to…”; closes “…other curious creatures. Alice led the way, and the whole party swam to the shore.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-05",
+        "continuesTo": null,
+        "blocks": [
+          49,
+          60
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1d11cf4ba3f8488b236e0e549c0f9f72c43398a9dba37b095ea8a5555078efd6"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-06-q1",
+          "prompt": "Where does Alice think she has fallen at first? How does she find out the truth?",
+          "facilitatorNotes": [
+            "Into the sea, so she could go home by railway, since every English beach she knows has a station behind it. Then she realizes it is the pool of tears she cried when she was nine feet tall."
+          ],
+          "evidence": [
+            "Her first idea was that she had somehow fallen into the sea,",
+            "she was in the pool of tears which she had wept when she was nine feet high."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-06-q2",
+          "prompt": "Why does Alice say “O Mouse!”? Where did she get the idea?",
+          "facilitatorNotes": [
+            "From her brother’s Latin grammar book, which lists “O mouse!” as the form for speaking to a mouse. She is trying to be correct and polite."
+          ],
+          "evidence": [
+            "A mouse—of a mouse—to a mouse—a mouse—O mouse!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-06-q3",
+          "prompt": "Alice upsets the Mouse twice. What does she talk about each time, and why does it upset him?",
+          "facilitatorNotes": [
+            "First cats (her French sentence, then Dinah “catching mice”), then a terrier that “kills all the rats.” She keeps forgetting that she is talking to a mouse."
+          ],
+          "evidence": [
+            "she's such a capital one for catching mice",
+            "He says it kills all the rats and—oh dear!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-06-q4",
+          "prompt": "Is Alice being unkind to the Mouse? Use what she says and does to decide.",
+          "facilitatorNotes": [
+            "She does not mean harm: she apologizes, tries to change the subject and calls him back gently. But she keeps forgetting how things look to him. Readers may call her thoughtless, kind, or both."
+          ],
+          "evidence": [
+            "Oh, I beg your pardon!",
+            "Mouse dear! Do come back again,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-07",
+      "title": "Alice, chapter III, part 1: The driest thing, and a Caucus-race",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 6,
+        "totalMinutes": 16
+      },
+      "challenge": "Catch the jokes that come from words with two meanings.",
+      "focus": "A soaking-wet crowd tries two silly ways of getting dry.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. Alice has fallen into a strange world under the ground and cried a pool of tears. She has swum ashore with a Mouse and a crowd of creatures that fell in: a Duck, a Dodo (a large bird that no longer exists), a Lory (a kind of parrot), an Eaglet (a young eagle) and others. The Mouse reads from a real history lesson about William the Conqueror. To adjourn a meeting is to end it for now; a caucus is a political meeting.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter III, “A Caucus-race and a Long Tale,” from the beginning through the end of the race; opens “THEY were indeed a queer-looking party that assembled on the bank—the birds with draggled…”; closes “…\"The race is over!\" and they all crowded round it, panting, and asking \"But who has won?\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-08",
+        "blocks": [
+          62,
+          80
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a28985fc6d2c2b54780c4b26ed8722545aa56080c6bcc0426d287ad32b8c5ae"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-07-q1",
+          "prompt": "What does the Lory say to win its argument with Alice? Why won’t Alice accept it?",
+          "facilitatorNotes": [
+            "“I am older than you, and must know better.” Alice will not agree without knowing its age, and the Lory refuses to tell. Readers can decide whether being older really makes someone right."
+          ],
+          "evidence": [
+            "I am older than you, and must know better;",
+            "the Lory positively refused to tell its age,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-07-q2",
+          "prompt": "The Mouse calls its history lesson “the driest thing I know.” What two meanings of “dry” are mixed up?",
+          "facilitatorNotes": [
+            "Dry can mean dull and boring, or not wet. The Mouse hopes a boring lesson will dry them off, and of course it does not."
+          ],
+          "evidence": [
+            "This is the driest thing I know."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-07-q3",
+          "prompt": "The Duck and the Mouse disagree about the word “it.” What does the Duck think “found it” means?",
+          "facilitatorNotes": [
+            "The Duck thinks “it” must be a thing you find, “a frog or a worm,” so it asks what the archbishop found. In “found it advisable,” “it” does not name a thing at all. The Duck is being literal."
+          ],
+          "evidence": [
+            "it's generally a frog or a worm.",
+            "The question is, what did the archbishop find?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-07-q4",
+          "prompt": "How does the Caucus-race work? Why is it hard to tell who has won?",
+          "facilitatorNotes": [
+            "The course is a rough circle, there is no start signal, and everyone runs and stops when they like. With no start and no finish line, there is no way to know who won; the race only ends when they are dry."
+          ],
+          "evidence": [
+            "they began running when they liked, and left off when they liked,",
+            "But who has won?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-08",
+      "title": "Alice, chapter III, part 2: Prizes, a long tale, and Dinah",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Hear how one word can sound like another, and follow how a party falls apart.",
+      "focus": "Alice’s misunderstandings drive off the Mouse, and her talk of Dinah empties the shore.",
+      "context": "Recap: Alice and a wet crowd of birds and animals tried to get dry, first by listening to the Mouse’s dull history lesson, then by running a Caucus-race in which everyone started and stopped when they liked. Now the Dodo must decide who has won. Comfits are small sweets; a thimble protects a finger when sewing; a cur is a mean dog; to prosecute is to accuse someone in court; pretexts are made-up excuses.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter III, from the Dodo’s judgment to the end of the chapter; opens “This question the Dodo could not answer without a great deal of thought, and it stood for…”; closes “…half hoping that the Mouse had changed his mind, and was coming back to finish his story.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-07",
+        "continuesTo": null,
+        "blocks": [
+          81,
+          111
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3eb9968f8f9fed791056c8aac79fed7c3314b74fb2918a6dbe6e16a24586d6e1"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-08-q1",
+          "prompt": "How does the Dodo decide who has won? Who provides the prizes, and what is odd about Alice’s own prize?",
+          "facilitatorNotes": [
+            "“Everybody has won, and all must have prizes,” paid for by Alice: one comfit each. Her own prize is her own thimble, solemnly handed back to her. Alice thinks it absurd but does not dare laugh."
+          ],
+          "evidence": [
+            "Everybody has won, and all must have prizes.",
+            "We beg your acceptance of this elegant thimble;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-08-q2",
+          "prompt": "Alice hears “tale” as “tail.” What story does the Mouse tell, and is the trial in it fair?",
+          "facilitatorNotes": [
+            "Fury, a dog, tells a mouse they will go to court; when the mouse says a trial with no judge or jury is a waste of breath, Fury says he will be both, and condemn the mouse to death. It is not fair at all, which explains why the Mouse hates dogs. The lines get shorter and shorter, like a tail narrowing to its tip."
+          ],
+          "evidence": [
+            "It is a long tail, certainly,",
+            "'I'll be judge, I'll be jury,'"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-08-q3",
+          "prompt": "“I had not!” cries the Mouse. What does Alice hear, and why does the Mouse walk away?",
+          "facilitatorNotes": [
+            "She hears “a knot!” and offers to help undo it. The Mouse thinks she is making fun of him with nonsense. Alice meant to help, but she has not been listening."
+          ],
+          "evidence": [
+            "always ready to make herself useful,",
+            "You insult me by talking such nonsense!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-08-q4",
+          "prompt": "What does Alice say that sends everyone home? Why does she end up crying?",
+          "facilitatorNotes": [
+            "She boasts that Dinah catches mice and will “eat a little bird as soon as look at it.” The birds make excuses and leave. She is left alone, missing Dinah, and feels lonely."
+          ],
+          "evidence": [
+            "she'll eat a little bird as soon as look at it!",
+            "On various pretexts they all moved off,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-09",
+      "title": "Alice, chapter IV, part 1: Mary Ann, and a house too small",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 6,
+        "totalMinutes": 16
+      },
+      "challenge": "Notice how Alice is ordered about, and how she reasons about another strange bottle.",
+      "focus": "Mistaken for a servant, Alice grows until she fills a whole house.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. Alice has fallen into a strange world under the ground, where eating and drinking change her size, and she is very small just now. A crowd of animals has just left her alone after she talked too much about her cat, Dinah. Earlier she had picked up the White Rabbit’s fan and gloves, but lost them. A housemaid was a servant who cleaned a house; to be executed is to be put to death as a punishment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “The Rabbit sends in a Little Bill,” from the beginning until she stops growing; opens “IT was the White Rabbit, trotting slowly back again, and looking anxiously about as it…”; closes “…no sort of chance of her ever getting out of the room again, no wonder she felt unhappy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-10",
+        "blocks": [
+          113,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd820b4b2af296d2836cfc1907ed5042549f28b6463f6e315c4b002f76d905f2"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-09-q1",
+          "prompt": "Who does the Rabbit think Alice is? Why doesn’t she explain his mistake?",
+          "facilitatorNotes": [
+            "Mary Ann, his housemaid. She is so frightened that she runs off at once to do as he says."
+          ],
+          "evidence": [
+            "Why, Mary Ann, what are you doing out here?",
+            "Alice was so much frightened that she ran off at once"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-09-q2",
+          "prompt": "Alice imagines Dinah sending her on messages. What is the joke?",
+          "facilitatorNotes": [
+            "Usually people give pets orders. Here a rabbit orders Alice about, so she imagines her own cat doing the same, and decides nobody would let a cat give orders in the house."
+          ],
+          "evidence": [
+            "I suppose Dinah'll be sending me on messages next!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-09-q3",
+          "prompt": "This bottle has no “DRINK ME” label. Why does Alice drink anyway? Is her reason a good one?",
+          "facilitatorNotes": [
+            "Because something interesting always happens when she eats or drinks, and she hopes to grow large. It is a curious reason more than a safe one; in Chapter I she checked for “poison” first."
+          ],
+          "evidence": [
+            "I know something interesting is sure to happen,",
+            "I do hope it will make me grow large again,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-09-q4",
+          "prompt": "Describe Alice’s position when she finally stops growing. How does the narrator make it funny as well as frightening?",
+          "facilitatorNotes": [
+            "She lies on the floor with one elbow against the door, one arm out of the window and one foot up the chimney. The narrator gives the exact silly details, and Alice’s “Now I can do no more, whatever happens” sounds both brave and comic."
+          ],
+          "evidence": [
+            "she put one arm out of the window, and one foot up the chimney,",
+            "Now I can do no more, whatever happens."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-10",
+      "title": "Alice, chapter IV, part 2: Pat, Bill and the chimney",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 6,
+        "totalMinutes": 18
+      },
+      "challenge": "Work out what is happening outside from sounds alone, as Alice must.",
+      "focus": "Stuck inside the house, Alice argues with herself and fights off the Rabbit’s helpers.",
+      "context": "Recap: mistaken for the White Rabbit’s housemaid, Mary Ann, Alice went into his house to fetch his gloves and fan, drank from a bottle, and grew until she filled a room, with one arm out of the window and one foot up the chimney. A cucumber-frame is a small glass box for growing cucumbers; “yer honour” is a respectful way to address a gentleman; slates are roof tiles.",
+      "contentNote": "Pat the gardener speaks in a comic Irish accent (“arrum”), a stage joke of Carroll’s time. Alice kicks Bill the Lizard up the chimney.",
+      "excerpt": {
+        "locator": "Chapter IV, from “It was much pleasanter at home” to the crowd reviving Bill; opens “\"It was much pleasanter at home,\" thought poor Alice, \"when one wasn't always growing…”; closes “…now—Don't choke him—How was it, old fellow? What happened to you? Tell us all about it!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-09",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-11",
+        "blocks": [
+          121,
+          139
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad5c78037b613a6f11d1a586c85ef59801e57fe1781d11506cd566d1bc8f3ce8"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-10-q1",
+          "prompt": "Alice argues with herself about growing up. What would be good and bad about never getting any older?",
+          "facilitatorNotes": [
+            "Good: she would never be an old woman. Bad: she would always have lessons to learn. Then she answers herself that there is no room for lesson-books in here anyway."
+          ],
+          "evidence": [
+            "never to be an old woman—but then—always to have lessons to learn!",
+            "making quite a conversation of it altogether;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-10-q2",
+          "prompt": "Alice says, “There ought to be a book written about me.” Why is that funny for the reader?",
+          "facilitatorNotes": [
+            "We are reading that very book. Alice imagines writing it when she grows up; the joke is that someone already has."
+          ],
+          "evidence": [
+            "There ought to be a book written about me, that there ought!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-10-q3",
+          "prompt": "Alice cannot see outside. Find one thing she hears and what she works out from it.",
+          "facilitatorNotes": [
+            "A shriek, a fall and broken glass tell her the Rabbit may have fallen into a cucumber-frame; voices and a rumble of cart-wheels tell her they have brought ladders; the shouting tells her Bill is being sent down the chimney."
+          ],
+          "evidence": [
+            "from which she concluded that it was just possible it had fallen into a cucumber-frame,",
+            "Bill's to go down"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-10-q4",
+          "prompt": "“Why, they seem to put everything upon Bill!” How do the others treat Bill? What does Alice do to him, and how do you feel about it?",
+          "facilitatorNotes": [
+            "Everyone passes every job to Bill, a small lizard, including going down the chimney. Alice, who even feels sorry for him, still kicks him straight back up. Readers may laugh, feel sorry for Bill, or both."
+          ],
+          "evidence": [
+            "they seem to put everything upon Bill!",
+            "she gave one sharp kick,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-11",
+      "title": "Alice, chapter IV, part 3: Pebbles, cakes and an enormous puppy",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Test Alice’s reasoning, and see how size changes what is dangerous.",
+      "focus": "Alice escapes the house only to meet a friendly puppy big enough to trample her.",
+      "context": "Recap: Alice, grown huge inside the White Rabbit’s house, has fought off the Rabbit and his helpers; when Bill the Lizard came down the chimney, she kicked him out again. A Jack-in-the-box is a toy figure that springs out of a box; a barrowful is a wheelbarrow-load; to worry a stick is to shake and bite it; a hookah is a tall pipe in which smoke is drawn through water.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, from Bill’s account of his flight to the end of the chapter; opens “At last came a little feeble, squeaking voice, (\"That's Bill,\" thought Alice,) \"Well, I…”; closes “…smoking a long hookah, and taking not the smallest notice of her or of anything else.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-10",
+        "continuesTo": null,
+        "blocks": [
+          140,
+          154
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "13f923368a8ca511bac4cbc2deb2606cf44846f9dab461d957ccf2b3e5c88021"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-11-q1",
+          "prompt": "How does Bill describe what happened to him? Why is his description funny?",
+          "facilitatorNotes": [
+            "“Something comes at me like a Jack-in-the-box, and up I goes like a sky-rocket!” He never saw it was Alice’s foot, and his comparisons are bigger than his voice."
+          ],
+          "evidence": [
+            "something comes at me like a Jack-in-the-box, and up I goes like a sky-rocket!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-11-q2",
+          "prompt": "The pebbles turn into little cakes. Explain Alice’s reasoning before she eats one. Is it good reasoning?",
+          "facilitatorNotes": [
+            "Any cake will change her size; it cannot make her larger, because there is no room; so it must make her smaller. It works, though the middle step is more hope than rule, as “I suppose” admits."
+          ],
+          "evidence": [
+            "as it can't possibly make me larger, it must make me smaller, I suppose."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-11-q3",
+          "prompt": "The puppy is friendly. Why is it still dangerous, and how does Alice manage it?",
+          "facilitatorNotes": [
+            "It is enormous next to her, and could trample her by accident or eat her if hungry. She plays fetch with a stick, dodges behind a thistle, and slips away when it is tired out. She compares it to playing with a cart-horse."
+          ],
+          "evidence": [
+            "it was very like having a game of play with a cart-horse,",
+            "This seemed to Alice a good opportunity for making her escape;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-11-q4",
+          "prompt": "The chapter ends on top of a mushroom. What does Alice see, and what do you predict?",
+          "facilitatorNotes": [
+            "A large blue caterpillar sitting with its arms folded, smoking a hookah and taking no notice of her. Predictions vary: perhaps it will help her, or be rude, or have something to do with changing size."
+          ],
+          "evidence": [
+            "a large blue caterpillar, that was sitting on the top with its arms folded,",
+            "taking not the smallest notice of her or of anything else."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-12",
+      "title": "Alice, chapter V, part 1: “Who are you?” and Father William",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Read the Caterpillar’s short, cross remarks in a sleepy voice, then enjoy a poem that turns a lesson upside down.",
+      "focus": "A creature that will someday change completely asks Alice who she is, and she cannot say.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. Recap: Alice followed a White Rabbit down a rabbit-hole into Wonderland, where eating and drinking keep changing her size. Now she is only three inches tall and has found a large Caterpillar sitting on a mushroom. A hookah is a tall pipe for smoking; languid means slow and lazy; a chrysalis is the case in which a caterpillar turns into a butterfly. “Father William” makes fun of a serious poem by Robert Southey that children of Carroll’s time learned by heart, in which a wise old man explains how sensible living kept him healthy. Suet is hard fat; supple means bending easily; a shilling was a coin.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “Advice from a Caterpillar,” from the beginning through “You are old, Father William” to the Caterpillar’s verdict on it; opens “THE Caterpillar and Alice looked at each other for some time in silence: at last the…”; closes “…to end,\" said the Caterpillar, decidedly, and there was silence for some minutes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-13",
+        "blocks": [
+          156,
+          192
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b5bcc15d28b348c23a9f855017cfa4f0c6dc1673966714b2ddbba3487f305e27"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-12-q1",
+          "prompt": "Why can’t Alice answer “Who are you?” What has happened to her that makes it hard?",
+          "facilitatorNotes": [
+            "She has changed size so many times since morning that she is not sure she is the same person: “I’m not myself, you see.” The Caterpillar takes her words literally and is no help."
+          ],
+          "evidence": [
+            "I hardly know, sir, just at present—at least I know who I was when I got up this morning, but I think I must have been changed several times since then."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-12-q2",
+          "prompt": "Alice thinks a caterpillar, of all creatures, should understand changing. What does she say, and how does it answer?",
+          "facilitatorNotes": [
+            "That it will become a chrysalis and then a butterfly and will surely feel a little queer. It answers “Not a bit.” The joke is that the creature that changes most completely will not admit that change is strange."
+          ],
+          "evidence": [
+            "when you have to turn into a chrysalis—you will some day, you know—and then after that into a butterfly,",
+            "Not a bit,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-12-q3",
+          "prompt": "List some of the Caterpillar’s very short remarks. How do they make Alice feel, and how does she handle it?",
+          "facilitatorNotes": [
+            "“I don’t see.” “It isn’t.” “Why?” “Keep your temper.” “No.” She grows irritated, turns to leave, then swallows her anger and waits in case it says something worth hearing. Try reading its lines aloud in a slow, superior voice."
+          ],
+          "evidence": [
+            "Alice felt a little irritated at the Caterpillar's making such very short remarks,",
+            "swallowing down her anger as well as she could."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-12-q4",
+          "prompt": "In the poem the young man asks four questions. Which of Father William’s answers do you find silliest, and why?",
+          "facilitatorNotes": [
+            "He stands on his head because he is sure he has no brain; he offers to sell the youth some ointment; his jaw is strong from arguing with his wife; and at the fourth question he refuses and threatens to kick his son downstairs. Accept any choice with a reason."
+          ],
+          "evidence": [
+            "But, now that I'm perfectly sure I have none,",
+            "Allow me to sell you a couple?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-12-q5",
+          "prompt": "The Caterpillar says the poem is “wrong from beginning to end.” In Southey’s real poem the old man gives wise answers. Why might Carroll enjoy turning a serious lesson-poem into this?",
+          "facilitatorNotes": [
+            "He keeps the pattern of questions and answers but makes the old man ridiculous and rude, so children who had to recite the serious poem would laugh at the surprise. Ask whether Carroll’s Father William teaches anything at all; some readers say he teaches that grown-ups can be silly too."
+          ],
+          "evidence": [
+            "It is wrong from beginning to end,",
+            "Father William replied to his son,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-13",
+      "title": "Alice, chapter V, part 2: One side and the other side",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 7,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow quick changes of size and picture each one exactly.",
+      "focus": "A rude adviser gives Alice the secret she needs, but she must work out how to use it.",
+      "context": "Recap: Alice, only three inches tall after many changes of size, has met a Caterpillar sitting on a mushroom and smoking a tall pipe called a hookah. It asked her “Who are you?”, had her recite “You are old, Father William,” and told her it was wrong from beginning to end. Piteous means pitiful; a morsel is a small bite.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, from the Caterpillar asking what size Alice wants to be to the pigeon flying into her face; opens “The Caterpillar was the first to speak.”; closes “…a large pigeon had flown into her face, and was beating her violently with its wings.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-12",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-14",
+        "blocks": [
+          193,
+          211
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "27f324ca0e6d27b40d49c162c3e9796b223e4138848c846df21ce5842cae5474"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-13-q1",
+          "prompt": "Why does the Caterpillar get angry when Alice calls three inches “a wretched height”?",
+          "facilitatorNotes": [
+            "It is exactly three inches high itself, so she has insulted it without meaning to. Alice wishes creatures were not so easily offended; ask readers how it feels to hear your own size called bad."
+          ],
+          "evidence": [
+            "three inches is such a wretched height to be.",
+            "(it was exactly three inches high)"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-13-q2",
+          "prompt": "What does the Caterpillar tell Alice about the mushroom? Why is it a hard puzzle?",
+          "facilitatorNotes": [
+            "One side will make her taller and the other shorter. But the mushroom is perfectly round, so which parts are its “sides”? She breaks a bit off the edge with each hand."
+          ],
+          "evidence": [
+            "One side will make you grow taller, and the other side will make you grow shorter.",
+            "as it was perfectly round, she found this a very difficult question."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-13-q3",
+          "prompt": "What happens when she nibbles the right-hand bit, and then the left? Act out or draw each change.",
+          "facilitatorNotes": [
+            "Right-hand: she shrinks so fast that her chin hits her foot. Left-hand: her head is free, but her neck grows so long that it rises like a stalk above the treetops and she cannot see her hands."
+          ],
+          "evidence": [
+            "she felt a violent blow underneath her chin: it had struck her foot!",
+            "an immense length of neck, which seemed to rise like a stalk out of a sea of green leaves"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-13-q4",
+          "prompt": "How does the Caterpillar seem to know what Alice is only thinking? What does that suggest about Wonderland?",
+          "facilitatorNotes": [
+            "She thinks “One side of what?” and it answers “Of the mushroom,” as if she had spoken aloud. Wonderland’s creatures seem to know more than they let on. Some readers find it spooky, others funny."
+          ],
+          "evidence": [
+            "just as if she had asked it aloud;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-13-q5",
+          "prompt": "Alice has “never been so much contradicted in all her life.” Was the Caterpillar helpful in the end, even though it was rude?",
+          "facilitatorNotes": [
+            "It gave her the mushroom’s secret, which will let her choose her size, and told her to keep her temper. Some readers say a rude helper is still a helper; others say it helped in the least helpful way possible."
+          ],
+          "evidence": [
+            "she had never been so much contradicted in all her life before,",
+            "You'll get used to it in time,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-14",
+      "title": "Alice, chapter V, part 3: “Serpent!”",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 7,
+        "totalMinutes": 17
+      },
+      "challenge": "Find the flaw in an argument, while understanding why the one making it is upset.",
+      "focus": "A worried mother bird decides what Alice is from the one thing that matters to her.",
+      "context": "Recap: the Caterpillar told Alice that one side of its mushroom makes her grow and the other makes her shrink. Nibbling the two pieces, she first shrank until her chin hit her foot, then grew a neck so long that it rose above the treetops. As she bent it down among the leaves, a pigeon flew at her face. Subdued means quieter; contempt is scorn; to venture is to dare.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, from the Pigeon’s scream to the end of the chapter, when Alice makes herself nine inches high; opens “\"Serpent!\" screamed the Pigeon.”; closes “…not venture to go near the house till she had brought herself down to nine inches high.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-13",
+        "continuesTo": null,
+        "blocks": [
+          212,
+          230
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "36616876507960e19c099205802e0b92380b2034886e8804131f451493b71f64"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-14-q1",
+          "prompt": "Why does the Pigeon think Alice is a serpent?",
+          "facilitatorNotes": [
+            "Her long neck winds through the treetops like a snake, and the Pigeon has been fighting off serpents that come after its eggs."
+          ],
+          "evidence": [
+            "but never one with such a neck as that!",
+            "You're a serpent; and there's no use denying it."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-14-q2",
+          "prompt": "Where has the Pigeon tried to nest, and why hasn’t it slept for three weeks?",
+          "facilitatorNotes": [
+            "Among tree roots, in banks, in hedges, and at last in the highest tree, but the serpents find it everywhere, so it watches for them night and day while hatching its eggs. Ask readers to feel for the Pigeon too."
+          ],
+          "evidence": [
+            "I've tried the roots of trees, and I've tried banks, and I've tried hedges,",
+            "I haven't had a wink of sleep these three weeks!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-14-q3",
+          "prompt": "Alice says “I’m a little girl” “rather doubtfully.” Why is she unsure?",
+          "facilitatorNotes": [
+            "After so many changes she does not feel sure what she is; it echoes the Caterpillar’s “Who are you?” Her doubt makes her sound to the Pigeon as if she is inventing a story."
+          ],
+          "evidence": [
+            "rather doubtfully, as she remembered the number of changes she had gone through that day."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-14-q4",
+          "prompt": "The Pigeon says that if little girls eat eggs, “they’re a kind of serpent.” What is wrong with that reasoning? Is the Pigeon right about anything?",
+          "facilitatorNotes": [
+            "Sharing one habit does not make two creatures the same kind: people drink milk, but that does not make them calves. Still, to a bird guarding eggs, anything that eats eggs is an enemy, so its worry makes sense. It even says it does not matter to it which she is."
+          ],
+          "evidence": [
+            "but if they do, why then they're a kind of serpent, that's all I can say.",
+            "what does it matter to me whether you're a little girl or a serpent?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-14-q5",
+          "prompt": "Back at her right size, why does Alice make herself small again before going near the little house? What has she learned?",
+          "facilitatorNotes": [
+            "The house is only about four feet high, and at her full size she would frighten whoever lives there. She now uses the mushroom on purpose and thinks about how others will feel."
+          ],
+          "evidence": [
+            "it'll never do to come upon them this size: why, I should frighten them out of their wits!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-15",
+      "title": "Alice, chapter VI, part 1: Two footmen and a peppery kitchen",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice when an answer is correct but no help at all.",
+      "focus": "Alice meets servants and a duchess whose manners make polite conversation impossible.",
+      "context": "Lewis Carroll was the pen name of Charles Dodgson (1832–1898), a mathematics teacher at Oxford University. He first made up this story on a boat trip in 1862 for three sisters, Lorina, Alice and Edith Liddell, and published it as Alice’s Adventures in Wonderland in 1865; this printing has pictures by Arthur Rackham. Recap: in Wonderland Alice has learned from a Caterpillar that one side of a mushroom makes her grow and the other makes her shrink. She has made herself nine inches tall to visit a little house in the wood. A footman is a servant who opens doors and carries messages; livery is a servant’s uniform; croquet is a lawn game played with mallets and balls. “To grin like a Cheshire cat” was an old saying before Carroll used it; Cheshire is a county in England. A cauldron is a huge pot; fire-irons are the poker and tongs.",
+      "contentNote": "The Duchess shouts at the baby, and the cook throws fire-irons and dishes at her and the baby. In this nonsense world nobody seems to notice, but Alice is right to be alarmed.",
+      "excerpt": {
+        "locator": "Chapter VI, “Pig and Pepper,” from the beginning to the cook throwing pans at the Duchess and the baby; opens “FOR a minute or two she stood looking at the house, and wondering what to do next, when…”; closes “…so much already, that it was quite impossible to say whether the blows hurt it or not.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-16",
+        "blocks": [
+          232,
+          260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d747fa1e1ba10ab4fde37eb89e95c6771b162a6971d26862705a8f46a6936103"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-15-q1",
+          "prompt": "How does Alice decide that the two servants are footmen? What would she have called them from their faces?",
+          "facilitatorNotes": [
+            "By their livery. From their faces she would have called one a fish and the other a frog; Carroll mixes animals and people."
+          ],
+          "evidence": [
+            "she considered him to be a footman because he was in livery: otherwise, judging by his face only, she would have called him a fish"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-15-q2",
+          "prompt": "What do the two footmen say as they hand over the letter? What is funny about it?",
+          "facilitatorNotes": [
+            "They say the same message, the Frog-Footman only changing the order of the words. It is solemn and pointless, and when they bow their curls get tangled together."
+          ],
+          "evidence": [
+            "For the Duchess. An invitation from the Queen to play croquet.",
+            "From the Queen. An invitation for the Duchess to play croquet."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-15-q3",
+          "prompt": "The Frog-Footman gives two reasons why knocking is no use. Are they good reasons? Why does Alice find him so annoying?",
+          "facilitatorNotes": [
+            "He is on the same side of the door as she is, and the noise inside is too loud for anyone to hear: both true. But he will not answer her real question, stares at the sky, and keeps saying he will sit there for days. His logic is right and useless."
+          ],
+          "evidence": [
+            "First, because I'm on the same side of the door as you are;",
+            "Are you to get in at all?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-15-q4",
+          "prompt": "What is everyone in the kitchen doing? Which two things do not sneeze, and why might that be?",
+          "facilitatorNotes": [
+            "The Duchess nurses a howling, sneezing baby; the cook stirs a soup full of pepper; only the cook and a grinning cat do not sneeze. Perhaps the cook is used to her own pepper, and a Cheshire cat simply grins. Accept guesses."
+          ],
+          "evidence": [
+            "The only things in the kitchen that did not sneeze, were the cook, and a large cat which was sitting on the hearth and grinning from ear to ear."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-15-q5",
+          "prompt": "Alice tries to make polite conversation with the Duchess. How does it go?",
+          "facilitatorNotes": [
+            "She asks why the cat grins and gets “It’s a Cheshire cat, and that’s why,” then a shout of “Pig!” at the baby, then “You don’t know much.” She was pleased to be talking and then hurt. Ask how good manners work in a place where nobody else has any."
+          ],
+          "evidence": [
+            "and that's why. Pig!",
+            "You don't know much,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-16",
+      "title": "Alice, chapter VI, part 2: A lullaby, and a baby that grunts",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Hear a pun, and gather clues to a change before the story names it.",
+      "focus": "Alice rescues a baby nobody else cares for, and it turns into something else.",
+      "context": "Recap: Alice, nine inches tall, got past an unhelpful Frog-Footman into the Duchess’s smoky kitchen, where the soup is full of pepper and everyone sneezes except the cook and a grinning Cheshire cat. The Duchess was nursing a howling baby when the cook began throwing pans and plates. The Duchess’s song makes fun of a gentle poem of Carroll’s time that began “Speak gently”; he turns it upside down. An axis is the imaginary line the earth turns around; “abide” means stand; “figures” here are numbers.",
+      "contentNote": "The cook throws a saucepan and a frying-pan, and the Duchess’s lullaby says to beat a little boy when he sneezes while she shakes and tosses the baby. This is Carroll turning a gentle poem upside down; Alice, who is horrified and carries the baby to safety, is the one to listen to.",
+      "excerpt": {
+        "locator": "Chapter VI, from Alice’s cry “Oh, please mind what you’re doing!” to the baby trotting away into the wood; opens “\"Oh, please mind what you're doing!\" cried Alice, jumping up and down in an agony of…”; closes “…little startled by seeing the Cheshire Cat sitting on a bough of a tree a few yards off.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-15",
+        "continuesTo": "reading-3-carroll-alice-rackham-1916-17",
+        "blocks": [
+          261,
+          278
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5be49d22a28f93fc87bd29637c994b6b2e3080fb0bd87dc561e02e6120a0877c"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-16-q1",
+          "prompt": "What does the Duchess answer when Alice begs the cook to be careful? What does she do with Alice’s word “axis”?",
+          "facilitatorNotes": [
+            "She says the world would go round faster if everybody minded their own business. Alice shows off that the earth turns on its axis in twenty-four hours, and the Duchess hears “axes” and says “chop off her head.” A pun; and Alice’s showing off goes wrong, since she is not even sure whether it is twenty-four hours or twelve."
+          ],
+          "evidence": [
+            "If everybody minded their own business,",
+            "chop off her head."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-16-q2",
+          "prompt": "Read the Duchess’s lullaby. What is wrong with it as a lullaby?",
+          "facilitatorNotes": [
+            "A lullaby should be gentle; this one says to speak roughly and beat a child for sneezing, claims he does it to annoy, and she shakes the baby at every line. The chorus “Wow! wow! wow!” sounds like howling. Carroll is mocking a sweet poem about speaking gently."
+          ],
+          "evidence": [
+            "Speak roughly to your little boy,",
+            "giving it a violent shake at the end of every line:"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-16-q3",
+          "prompt": "Why does Alice take the baby away? What does that show about her?",
+          "facilitatorNotes": [
+            "She believes the Duchess and the cook will kill it within a day or two, and that leaving it behind would be murder. She is brave and kind, even though the baby is strange and hard to hold."
+          ],
+          "evidence": [
+            "If I don't take this child away with me,",
+            "wouldn't it be murder to leave it behind?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-16-q4",
+          "prompt": "What clues show that the baby is turning into a pig before Alice is sure? List them in order.",
+          "facilitatorNotes": [
+            "It grunts; its nose turns up like a snout; its eyes grow very small; there are no tears; then it is “neither more nor less than a pig.” Carroll reveals it bit by bit, and the Duchess shouted “Pig!” at it earlier."
+          ],
+          "evidence": [
+            "much more like a snout than a real nose;",
+            "it was neither more nor less than a pig,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-16-q5",
+          "prompt": "Alice says it makes “rather a handsome pig” and thinks of other children who might do well as pigs. Is she being unkind, funny, or both?",
+          "facilitatorNotes": [
+            "Both: she is relieved, and a little rude, and Carroll shares the joke with the reader. Readers may discuss whether it is fair to judge anyone by looks, and still enjoy the comedy."
+          ],
+          "evidence": [
+            "it would have made a dreadfully ugly child: but it makes rather a handsome pig, I think."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-alice-rackham-1916-17",
+      "title": "Alice, chapter VI, part 3: “We’re all mad here”",
+      "sourceId": "carroll-alice-rackham-1916",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Test the Cat’s arguments: which sound sensible, and which really are?",
+      "focus": "A grinning cat answers every question logically and unhelpfully, then disappears a piece at a time.",
+      "context": "Recap: Alice left an unhelpful footman and the Duchess’s peppery kitchen carrying the Duchess’s baby, to keep it safe; but it turned into a pig and trotted off into the wood. Now she sees the Cheshire Cat, which grinned all through the Duchess’s kitchen, sitting in a tree. Mad here means crazy, not angry. “Mad as a March hare” and “mad as a hatter” were old sayings: hares leap wildly in spring, and hat-makers were said to go strange from the mercury used in making felt. Thatched means roofed; giddy means dizzy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, from the Cheshire Cat in the tree to the end of the chapter at the March Hare’s house; opens “The Cat only grinned when it saw Alice. It looked good-natured, she thought: still it had…”; closes “…it should be raving mad after all! I almost wish I'd gone to see the Hatter instead!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-alice-rackham-1916-16",
+        "continuesTo": null,
+        "blocks": [
+          279,
+          309
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "25d40cd4643e868febcc745360c54c35ad7bfbd6b8a135332a2e09bcf54f01cd"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-17-q1",
+          "prompt": "Alice asks which way she ought to go. Why can’t the Cat give her a proper answer?",
+          "facilitatorNotes": [
+            "That depends on where she wants to get to, and she does not much care where; so any way will do, and she will get somewhere if she walks long enough. The answers are perfectly logical and no help at all."
+          ],
+          "evidence": [
+            "That depends a good deal on where you want to get to,",
+            "Then it doesn't matter which way you go,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-17-q2",
+          "prompt": "How does the Cat prove that it is mad? Is the proof any good?",
+          "facilitatorNotes": [
+            "A dog growls when angry and wags its tail when pleased; the Cat does the opposite, so it must be mad. Alice says she calls it purring, not growling, which spoils the comparison; and a cat need not behave like a dog. The argument sounds neat but rests on a bad comparison."
+          ],
+          "evidence": [
+            "Now I growl when I'm pleased, and wag my tail when I'm angry. Therefore I'm mad.",
+            "I call it purring, not growling,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-17-q3",
+          "prompt": "The Cat says Alice must be mad “or you wouldn’t have come here.” Do you agree with Alice that this proves nothing?",
+          "facilitatorNotes": [
+            "It assumes that only mad people come to Wonderland, which is what it is trying to prove. Yet some readers enjoy the idea: Alice did follow a talking rabbit down a hole. Accept either side with reasons."
+          ],
+          "evidence": [
+            "or you wouldn't have come here.",
+            "Alice didn't think that proved it at all;"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-17-q4",
+          "prompt": "How does the Cat vanish the last time? Why does Alice call it the most curious thing she ever saw?",
+          "facilitatorNotes": [
+            "Slowly, tail first and grin last, and the grin stays in the air after the rest has gone. A cat without a grin is ordinary; a grin without a cat is something you can say and picture but never see."
+          ],
+          "evidence": [
+            "beginning with the end of the tail, and ending with the grin,",
+            "but a grin without a cat!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-alice-rackham-1916-17-q5",
+          "prompt": "Which house does Alice choose to visit, and why? What does the house look like?",
+          "facilitatorNotes": [
+            "The March Hare’s, hoping it will be less mad in May than in March. The chimneys are shaped like ears and the roof is thatched with fur, so it is plainly a hare’s house. She grows to two feet first, and still goes timidly; readers who know chapter VII know a tea-party is coming."
+          ],
+          "evidence": [
+            "perhaps as this is May, it won't be raving mad—at least not so mad as it was in March.",
+            "the chimneys were shaped like ears and the roof was thatched with fur."
+          ]
+        }
+      ]
+    }
+  ]
+}

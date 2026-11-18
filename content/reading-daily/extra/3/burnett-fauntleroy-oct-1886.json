@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "burnett-fauntleroy-oct-1886",
+  "readings": [
+    {
+      "id": "reading-3-burnett-fauntleroy-oct-1886-01",
+      "title": "Little Lord Fauntleroy, chapter XIV, part 1: A clumsy plotter",
+      "sourceId": "burnett-fauntleroy-oct-1886",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 7,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow how a lie comes apart, and work out a plan from the clues the narrator gives.",
+      "focus": "A false claim to Cedric’s title starts to fail, and the family lawyer sets a trap.",
+      "context": "Little Lord Fauntleroy (1886) is a novel by Frances Hodgson Burnett (1849–1924), who was born in England and lived in the United States; it first came out in parts in St. Nicholas, an American children’s magazine. Cedric Errol, a seven-year-old boy from New York, learned that he was Lord Fauntleroy, heir to his grandfather, the Earl of Dorincourt, and came to live in England; his mother lives nearby at Court Lodge. Then a woman arrived saying she had married the Earl’s eldest son, Bevis, who has died, and that her son was the true heir. In New York, Cedric’s friend Dick, a shoeshine boy, recognized her picture in a newspaper: she was Minna, who had married Dick’s older brother, Ben. Mr. Hobbs, the grocer who was Cedric’s other friend, and a young lawyer wrote letters to England. Mr. Havisham is the Earl’s lawyer. An heir is the person who will inherit; an earldom is an earl’s rank and lands; an impostor pretends to be someone else; to cable was to send a telegram along the cable under the ocean; insolent means rude and proud; an inn is a small hotel.",
+      "contentNote": "The story turns on inherited titles and wealth; a woman lies to claim them for her son.",
+      "excerpt": {
+        "locator": "Chapter XIV, from the beginning to Mr. Havisham’s arrival at the inn with three visitors; opens “It is astonishing how short a time it takes for very wonderful things to happen. It had…”; closes “…a sharp-faced boy and one was a big young man and the third was the Earl of Dorincourt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-burnett-fauntleroy-oct-1886-02",
+        "blocks": [
+          3,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ac5b96caf581405b59010e934071e97c1ef26dccf1cdc2946b790d0b3524b86d"
+      },
+      "questions": [
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-01-q1",
+          "prompt": "The first paragraph describes three great changes in Cedric’s life. What are they, and how long did each take?",
+          "facilitatorNotes": [
+            "From a boy in a quiet New York street to an English nobleman; from nobleman to “penniless little impostor” when the woman’s claim came; and back again. The first two took only “a few minutes, apparently,” and the narrator says the third took less time than you might expect."
+          ],
+          "evidence": [
+            "to transform him from a small boy, living the simplest life in a quiet street, into an English nobleman,",
+            "to change him from an English nobleman into a penniless little impostor,"
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-01-q2",
+          "prompt": "Why was the woman found out so quickly? What were her mistakes about?",
+          "facilitatorNotes": [
+            "She was “not nearly so clever as she was wicked.” Under Mr. Havisham’s questions she slipped about her child: the birthplace in London was false, the boy seemed older than she said, and she muddled his birth date and then lost her temper."
+          ],
+          "evidence": [
+            "was not nearly so clever as she was wicked;",
+            "All the mistakes she made were about her child."
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-01-q3",
+          "prompt": "What is Mr. Havisham’s plan? Why does he keep meeting her and pretending to investigate?",
+          "facilitatorNotes": [
+            "To bring the two Tiptons from America in secret and suddenly confront her with them. Meeting her keeps her from suspecting, so she feels safe, grows insolent, and is caught off guard."
+          ],
+          "evidence": [
+            "suddenly confront her with them when she is not expecting it.",
+            "kept her from suspecting anything by continuing to have interviews with her,"
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-01-q4",
+          "prompt": "Who are the three people Mr. Havisham brings into her room? Is it fair to trap her by surprise? Explain.",
+          "facilitatorNotes": [
+            "The sharp-faced boy is Dick and the big young man is Ben, the two Tiptons; the Earl comes last, which makes the biggest surprise. Many readers think the trick is fair because she lied to take what was not hers; others may feel uneasy about tricking anyone."
+          ],
+          "evidence": [
+            "she began to be as insolent as might have been expected.",
+            "one was a sharp-faced boy and one was a big young man and the third was the Earl of Dorincourt."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-burnett-fauntleroy-oct-1886-02",
+      "title": "Little Lord Fauntleroy, chapter XIV, part 2: “Hello, Minna!”",
+      "sourceId": "burnett-fauntleroy-oct-1886",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 6,
+        "totalMinutes": 16
+      },
+      "challenge": "Read each character’s feelings in what they do, not only in what they say.",
+      "focus": "Ben and Dick prove who the woman really is, and a boy leaves with the father he has just met.",
+      "context": "Recap: a woman claimed that her son, not Cedric, was the true heir of the Earl of Dorincourt. Mr. Havisham, the Earl’s lawyer, grew suspicious and secretly sent to America for Dick and Ben Tipton, who knew her as Minna; Ben had married her. Now Mr. Havisham has walked into her room at the inn with Dick, Ben and the Earl. To swear to someone is to promise in court that you know who they are; aristocratic means belonging to the nobility; an eyeglass is a single lens held to one eye.",
+      "contentNote": "Minna rages and makes threats, and Mr. Havisham warns that she could be locked up. A father takes his young son away from the boy’s mother.",
+      "excerpt": {
+        "locator": "Chapter XIV, from the woman’s cry of terror to her leaving for London; opens “She sprang to her feet and actually uttered a cry of terror. It broke from her before she…”; closes “…night she left the Dorincourt Arms and took the train to London, and was seen no more.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-burnett-fauntleroy-oct-1886-01",
+        "continuesTo": null,
+        "blocks": [
+          9,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2ee672d4421c3f1cc87a1df1e8ba1fdedd71c4c96293ac78727030a6f529b563"
+      },
+      "questions": [
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-02-q1",
+          "prompt": "How do Dick and Ben each react when they see Minna? What does that tell you about their past with her?",
+          "facilitatorNotes": [
+            "Dick grins and greets her cheekily: he is glad to see her caught. Ben stands still, then turns his back because he cannot bear to look at her. Both have seen her rages before, and Ben was clearly hurt by her."
+          ],
+          "evidence": [
+            "It must be confessed that Dick grinned a little when he saw her.",
+            "as if the sight of her was hateful to him, as indeed it was."
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-02-q2",
+          "prompt": "What proof does Ben offer? What does the boy’s face prove?",
+          "facilitatorNotes": [
+            "Ben can swear to who she is in court, bring a dozen witnesses, and send them to her own father. The boy looks just like Ben and has the three-cornered scar on his chin; “the” scar suggests it was described in the letters. He is Ben’s son, not the son of Bevis, so he cannot be the heir."
+          ],
+          "evidence": [
+            "I can swear to her in any court,",
+            "there was the three-cornered scar on his chin."
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-02-q3",
+          "prompt": "Why is Tom pleased to go away with a man he has never met? How do you think he feels?",
+          "facilitatorNotes": [
+            "He has lived with other people since he was a baby, disliked the woman who suddenly said she was his mother, and is used to strange things happening. Readers may feel glad for him, or sorry that a child has been passed around so much."
+          ],
+          "evidence": [
+            "It evidently rather pleased him to hear that he was going away.",
+            "He had been so accustomed to queer experiences"
+          ]
+        },
+        {
+          "id": "reading-3-burnett-fauntleroy-oct-1886-02-q4",
+          "prompt": "The Earl says nothing in this scene. What does he do, and what might he be thinking?",
+          "facilitatorNotes": [
+            "He calmly looks at the raging woman through his eyeglass. He may feel scorn for her, relief that Cedric is still his heir, or quiet satisfaction; his calm contrasts sharply with her fury."
+          ],
+          "evidence": [
+            "the Earl was calmly gazing at her through his eyeglasses,"
+          ]
+        }
+      ]
+    }
+  ]
+}

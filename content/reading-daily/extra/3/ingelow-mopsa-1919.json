@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "ingelow-mopsa-1919",
+  "readings": [
+    {
+      "id": "reading-3-ingelow-mopsa-1919-01",
+      "title": "Mopsa the Fairy, chapter V, part 1: The gypsy’s selling song",
+      "sourceId": "ingelow-mopsa-1919",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Keep track of the parrot’s warnings, then notice the moment Jack forgets them.",
+      "focus": "A spell that feels like cobwebs draws Jack toward a dangerous fairy, and a rude parrot breaks it.",
+      "context": "Jean Ingelow (1820–1897) was an English poet and storyteller. In Mopsa the Fairy (1869) a boy named Jack is carried into Fairyland with tiny fairies asleep in his pockets, and travels down a wonderful river through strange countries with their own rules. Recap: at a busy fairy market beside the river, Jack found caged parrots begging for a handkerchief. When he touched their cage they knew he was a boy, and the old parrot whispered that they are fairies imprisoned by their enemies, the gypsies, then took Jack’s handkerchief. The chapter opens with lines from Shakespeare’s play Othello about a magic handkerchief given by an Egyptian charmer; the English once wrongly believed that the Roma came from Egypt, which is where the word “gypsy” comes from. Malicious means wanting to harm; to allure or wheedle is to tempt or coax; a passion here is a rage; gossamer is fine spider-thread. The “brown people,” the mushroom people and the feather-coated folk are imaginary tribes of the fairy market, named by their looks.",
+      "contentNote": "Ingelow uses “gypsy,” the period word for Roma people, for a wicked fairy who cheats and traps others. That picture repeats old, unfair stereotypes about Roma people; it belongs to Ingelow’s 1869 fantasy, not to real people.",
+      "excerpt": {
+        "locator": "Chapter V, “The Parrot in His Shawl,” from the opening lines from Othello to the parrot’s coughing fit and mocking chorus; opens “That handkerchief Did an Egyptian to my mother give; She was a charmer, and could almost…”; closes “…of the gypsy’s song, and all his parrot friends in the other cages joined in the chorus.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-ingelow-mopsa-1919-02",
+        "blocks": [
+          277,
+          290
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b4ac1abfb4b0f83c1291439124c9fe8ceafd9564b0a05ac8b33195b8341934fa"
+      },
+      "questions": [
+        {
+          "id": "reading-3-ingelow-mopsa-1919-01-q1",
+          "prompt": "What does the old parrot warn Jack about? List his warnings.",
+          "facilitatorNotes": [
+            "Not to let the gypsy lure him into the woods, not to let her coax or frighten him into giving up the fairies in his pockets, and not to buy anything, because his money in her palm would work as a charm against him. He also hopes to use her baby to get her driven away."
+          ],
+          "evidence": [
+            "Mind you do not let her allure you into the woods,",
+            "your money in her palm would act as a charm against you."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-01-q2",
+          "prompt": "What does Jack feel when the gypsy sings? How does Ingelow make a spell something you can almost touch?",
+          "facilitatorNotes": [
+            "Cobwebs before his face, and gossamer threads floating from her to him and drawing him nearer, until he is “covered all over with cobwebs” and no longer minds. A spell felt as sticky threads: you can picture being caught like a fly."
+          ],
+          "evidence": [
+            "He felt as if there were some cobwebs before his face,",
+            "Jack felt as if he was covered all over with cobwebs;"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-01-q3",
+          "prompt": "Why does Jack move closer to the cart, even after the warning?",
+          "facilitatorNotes": [
+            "He sees her baby, wonders whether it is heavy for her, and wishes he could help; then all his wish is to please her. His kindness is turned against him. Ask whether being kind can make someone easier to trick."
+          ],
+          "evidence": [
+            "wondered whether it was heavy for her to carry, and wished he could help her.",
+            "All his wish was to please her, and get close to her;"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-01-q4",
+          "prompt": "What does the parrot do just as Jack is about to buy? Is it really rude?",
+          "facilitatorNotes": [
+            "He bursts into a violent fit of coughing “to clear my throat” and screams a saucy copy of her song, with all the parrots joining in. Jack thinks it very rude, but it breaks the spell at exactly the right moment, as the parrot planned when he said he would put her in a passion."
+          ],
+          "evidence": [
+            "the parrot suddenly burst into a violent fit of coughing,",
+            "I shall try to put her in a passion."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-01-q5",
+          "prompt": "The chapter begins with Shakespeare’s lines about a handkerchief from an Egyptian charmer. Why might Ingelow put them here?",
+          "facilitatorNotes": [
+            "A handkerchief is going to matter in this chapter: the parrots already have Jack’s. The lines hint that a handkerchief can carry a charm. Ask readers to predict what part it will play."
+          ],
+          "evidence": [
+            "That handkerchief",
+            "Did an Egyptian to my mother give;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-ingelow-mopsa-1919-02",
+      "title": "Mopsa the Fairy, chapter V, part 2: The parrot’s song and the turnip baby",
+      "sourceId": "ingelow-mopsa-1919",
+      "genre": "fantasy fiction",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow a noisy, fast scene, and decide whether the crowd’s anger at the gypsy is fair.",
+      "focus": "The parrot’s mockery makes the gypsy lose her temper, and the crowd sees she is a cheat.",
+      "context": "Recap: at a fairy market Jack has met caged parrots who are really fairies, imprisoned by a fairy gypsy woman. The old parrot warned Jack not to buy from her, but her selling song cast a spell that felt like cobwebs, and Jack was about to buy when the parrot broke in with a coughing fit and began to scream a mocking copy of her song. To woo is to court someone you hope to marry; quoth means said. Impudent means cheeky; indignation is anger at something unfair; becoming means looking good on someone. The “brown people,” the mushroom people and the feather-coated folk are imaginary tribes of the fairy market, named by their looks.",
+      "contentNote": "Ingelow uses “gypsy,” the period word for Roma people, for a wicked fairy who cheats and traps others. That picture repeats old, unfair stereotypes about Roma people; it belongs to Ingelow’s 1869 fantasy, not to real people. In her rage she swings what looks like her baby at the cage (it turns out to be a turnip in baby clothes), and the crowd throws her goods back at her.",
+      "excerpt": {
+        "locator": "Chapter V, from the parrot’s song of John Brady to his “Share and share alike”; opens “My fair lady’s a dear, dear lady— I walked by her side to woo. In a garden alley, so…”; closes “…the old parrot in answer. “A word in your ear; ‘Share and share alike’ is a fine motto.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-ingelow-mopsa-1919-01",
+        "continuesTo": "reading-3-ingelow-mopsa-1919-03",
+        "blocks": [
+          291,
+          308
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d862e6420a52654d9e0d1f7091d5d03437f6703f819e9f32eeca53964b435543"
+      },
+      "questions": [
+        {
+          "id": "reading-3-ingelow-mopsa-1919-02-q1",
+          "prompt": "What happens in the parrot’s two verses about John Brady and his lady?",
+          "facilitatorNotes": [
+            "In the first she tells John to go away because she does not love him; in the second, when he has passed her by, she sits alone and begs him to woo her again. It is a silly love story sung to mock the gypsy’s song."
+          ],
+          "evidence": [
+            "I love not you,",
+            "once more woo now,"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-02-q2",
+          "prompt": "How does the parrot make the gypsy even angrier, and what happens when she throws things at his cage?",
+          "facilitatorNotes": [
+            "He pretends to sob over the “affecting” song while his wife wipes his beak with Jack’s handkerchief. She throws a brush and then everything large in her cart, but the swinging only makes him sing louder."
+          ],
+          "evidence": [
+            "Oh! oh! it’s so affecting, this song is.",
+            "How delightful it is to be swung!"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-02-q3",
+          "prompt": "Everyone is horrified when the gypsy strikes at the cage with her baby. What do they discover, and what does it show about her?",
+          "facilitatorNotes": [
+            "It is not a real baby but a bundle of clothes with a turnip for a head. She has been carrying a fake baby to win sympathy, and the crowd calls her a cheat and demands its money back. The parrot hoped “by means of that baby” to get her driven away, and now it has happened."
+          ],
+          "evidence": [
+            "it was not a real baby at all, but a bundle of clothes, and its head was a turnip.",
+            "You’re a cheat! a cheat!"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-02-q4",
+          "prompt": "What happens to the cobwebs Jack felt? Why do you think they vanish?",
+          "facilitatorNotes": [
+            "They are all gone, and he no longer cares about the gypsy. Perhaps the spell breaks when she stops singing, or when everyone sees her trick. Accept answers with a reason."
+          ],
+          "evidence": [
+            "the cobwebs which had seemed to float about his face were all gone;"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-02-q5",
+          "prompt": "What do the parrots do with the two handkerchiefs? Why does the crowd draw back?",
+          "facilitatorNotes": [
+            "The cloth that covered the “baby” has caught in the cage wires, so the parrots now have two handkerchiefs. They fold them like shawls and sit on the perch like old ladies. In the corner of one are curious red letters, and the crowd draws away in alarm: it must be the gypsy’s own handkerchief, and important. “Share and share alike” hints that the parrot is planning a bargain."
+          ],
+          "evidence": [
+            "in the corner of the handkerchief were seen some curious letters, marked in red.",
+            "‘Share and share alike’ is a fine motto."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-ingelow-mopsa-1919-03",
+      "title": "Mopsa the Fairy, chapter V, part 3: “My friends, then”",
+      "sourceId": "ingelow-mopsa-1919",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Work out the rules of the gypsy’s magic from what she fears.",
+      "focus": "The old parrot gives up his own chance of freedom for his friends, and Jack frees a fairy in a surprising way.",
+      "context": "Recap: at a fairy market, caged parrots who are really fairies have shamed the gypsy fairy who imprisoned them: the old parrot mocked her song until she lost her temper and was shown to be a cheat, carrying a turnip dressed as a baby. Now the parrots are wearing two handkerchiefs as shawls, Jack’s and one with strange red letters in its corner, the gypsy’s own. Ermine is white fur; a girdle is a belt. The “brown people,” the mushroom people and the feather-coated folk are imaginary tribes of the fairy market, named by their looks.",
+      "contentNote": "Ingelow uses “gypsy,” the period word for Roma people, for a wicked fairy who cheats and traps others. That picture repeats old, unfair stereotypes about Roma people; it belongs to Ingelow’s 1869 fantasy, not to real people. Jack pulls a parrot’s head off; it is only a disguise, and a fairy is inside.",
+      "excerpt": {
+        "locator": "Chapter V, from the gypsy asking what the parrots want to the first fairy pulled out of her parrot covering; opens ““What do you mean by all this?” said the gypsy, rising, and going with slow steps to the…”; closes “…and laid her in her bosom. She was a splendid little creature, about half a foot long.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-ingelow-mopsa-1919-02",
+        "continuesTo": "reading-3-ingelow-mopsa-1919-04",
+        "blocks": [
+          309,
+          332
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2062b44ea59638104ff3ce29eae27eaac83477725966b86f7b02e5816fdaa7e1"
+      },
+      "questions": [
+        {
+          "id": "reading-3-ingelow-mopsa-1919-03-q1",
+          "prompt": "Why is the gypsy suddenly so frightened? What does the parrot threaten?",
+          "facilitatorNotes": [
+            "The parrots have her own handkerchief with her marks on it. The parrot asks Jack whether people ever “pick out the marks” and pecks at the letters, and she cries that he is hurting her. Her power seems to be tied up in the handkerchief."
+          ],
+          "evidence": [
+            "But do they never pick out the marks?",
+            "Oh! you’re hurting me."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-03-q2",
+          "prompt": "The gypsy will free the old parrot if he gives back her handkerchief, but not his friends. What does he choose, and what does it show?",
+          "facilitatorNotes": [
+            "“My friends, then”: he gives up his own chance so that all the others go free. The narrator calls him “the brave old parrot.”"
+          ],
+          "evidence": [
+            "My friends, then,",
+            "you must let all my friends out too."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-03-q3",
+          "prompt": "Why does the gypsy need a handkerchief over her eyes? Why is she afraid to use Jack’s?",
+          "facilitatorNotes": [
+            "She dare not say her spell with her eyes open. Her own handkerchief was woven by human hands, so nobody can see through it; Jack’s was woven “over the water” too, in the human world, but the parrot says she can “do no harm” with it, so perhaps it will not let her cheat. Ingelow leaves the magic partly hidden; accept guesses."
+          ],
+          "evidence": [
+            "I dare not say the words with my eyes open.",
+            "you can do no harm with that."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-03-q4",
+          "prompt": "What does Jack do while the gypsy’s eyes are covered? How does he feel about it at first?",
+          "facilitatorNotes": [
+            "He pulls the handkerchief tied round the parrot-wife’s neck, terribly hard, and stops, afraid he will pull her head off; the parrot says “only pull.” He does, and finds a fairy’s head inside: the parrot body was a covering. He trusts a friend’s strange instructions."
+          ],
+          "evidence": [
+            "I shall pull her head off,",
+            "there was another head inside,—a fairy’s head."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-03-q5",
+          "prompt": "Describe the fairy who comes out. Who takes care of her?",
+          "facilitatorNotes": [
+            "About half a foot long and nearly dead from being squeezed through the wires, in a green gown with an ermine collar, a velvet robe, a crimson belt and little yellow shoes. A kind brown woman takes her at once and holds her to her breast. The rescue is funny and tender at once."
+          ],
+          "evidence": [
+            "velvet robe, and crimson girdle, and little yellow shoes.",
+            "a kind brown woman took her instantly, and laid her in her bosom."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-ingelow-mopsa-1919-04",
+      "title": "Mopsa the Fairy, chapter V, part 4: The condor and the boat",
+      "sourceId": "ingelow-mopsa-1919",
+      "genre": "fantasy fiction",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Explain a fantasy rule (“all fairies have two forms”), and judge whether the rescued parrots go too far.",
+      "focus": "The fairies go free, their captor is driven off, and Jack escapes a fight he wants no part of.",
+      "context": "Recap: at a fairy market, a fairy gypsy woman had imprisoned hundreds of fairies as caged parrots. The old parrot shamed her into breaking her spell, giving up his own freedom so that all his friends’ cages opened, and Jack pulled the parrot covering off the old parrot’s wife, freeing a tiny fairy. A condor is a huge vulture with a bare neck. A brand is a burning stick; to skulk is to hide in a guilty way. The “brown people,” the mushroom people and the feather-coated folk are imaginary tribes of the fairy market, named by their looks.",
+      "contentNote": "Ingelow uses “gypsy,” the period word for Roma people, for a wicked fairy who cheats and traps others. That picture repeats old, unfair stereotypes about Roma people; it belongs to Ingelow’s 1869 fantasy, not to real people. The parrots mob the gypsy until she changes into a condor, and the market folk and the gypsies fight with poles and spades; Jack is frightened by the violence and runs away.",
+      "excerpt": {
+        "locator": "Chapter V, from the old parrot calling Jack a brave boy to the end of the chapter; opens ““There’s a brave boy!” cried the parrot. Jack glanced round, and saw that not all the…”; closes “…and nothing happened of the least consequence; so he slept comfortably till morning.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-ingelow-mopsa-1919-03",
+        "continuesTo": null,
+        "blocks": [
+          333,
+          351
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3d839be14a6f2e62f683239028e373229b477272f31abc7d8ec4f8a14f0ed849"
+      },
+      "questions": [
+        {
+          "id": "reading-3-ingelow-mopsa-1919-04-q1",
+          "prompt": "How does Jack free the old parrot? What can the gypsy do when she unties her eyes?",
+          "facilitatorNotes": [
+            "He pulls again, very hard, for it is a tough old parrot, and a fine fairy comes through, leaving his parrot skin and the handkerchief behind. The gypsy screams for her handkerchief, but her spell only opens places where fairies are trapped, and the cage is empty now."
+          ],
+          "evidence": [
+            "what a tough old parrot that was, and how Jack tugged before his cunning head would come off!",
+            "the gypsy’s spell would only open places where she had confined fairies,"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-04-q2",
+          "prompt": "What do the parrots do to the gypsy? What does “all fairies have two forms” explain?",
+          "facilitatorNotes": [
+            "They swoop down and cover her until she has to take her other form, a great black condor, so that she cannot hurt them while she stays in their country. The gypsy was a fairy in a woman’s shape, just as the fairies were in parrot shape."
+          ],
+          "evidence": [
+            "Make her take her other form,",
+            "all fairies have two forms."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-04-q3",
+          "prompt": "Jack asks “What are they going to do to the poor gypsy?” and later runs off. What does this show about him?",
+          "facilitatorNotes": [
+            "Though she tried to trap him, he calls her “poor,” and the fighting frightens him so much that he has seen enough of such a dangerous country. He does not enjoy revenge. Readers can discuss whether the parrots went too far."
+          ],
+          "evidence": [
+            "What are they going to do to the poor gypsy?",
+            "Jack was so frightened at the violent way in which the gypsies and the other tribes were knocking each other about, that he ran off,"
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-04-q4",
+          "prompt": "Why do the parrots burn the gypsy’s handkerchief and the scraps of her clothes?",
+          "facilitatorNotes": [
+            "So that she will not find enough of herself to “put herself together again”: burning them keeps her from changing back and hurting them. The handkerchief was part of her power."
+          ],
+          "evidence": [
+            "She won’t find much of herself here,",
+            "It will not be very easy to put herself together again."
+          ]
+        },
+        {
+          "id": "reading-3-ingelow-mopsa-1919-04-q5",
+          "prompt": "How does the chapter end for Jack? Why might Ingelow end such a wild day so quietly?",
+          "facilitatorNotes": [
+            "The parrot fairies kiss their hands to him, thank him and leave him food; he eats supper and sleeps till morning with his fairies asleep in his pockets, and “nothing happened of the least consequence.” After noise and danger comes calm. Ask readers how they feel after an exciting day."
+          ],
+          "evidence": [
+            "This has been a most extraordinary day,",
+            "nothing happened of the least consequence;"
+          ]
+        }
+      ]
+    }
+  ]
+}
