@@ -99,6 +99,23 @@ test("levels start on fresh sheets and every night numbers its own pages", () =>
   assert.equal(T.nightsTeX(levels[0].nights).tex.match(/LIMINAL-LEVEL-START/g).length, 1);
   assert.throws(() => T.documentTeX([]), /at least one level/);
   assert.throws(() => T.nightTeX({ day: night("a"), source, meta: "" }), /footer metadata/);
+  assert.equal(tex.match(/LIMINAL-READING-START/g).length, 3);
+});
+
+test("the print view's document starts every reading on an odd page, level by level", () => {
+  const levels = [{ nights: ["a", "b", "c"].map(id => ({ day: night(id), source, meta: "Grade 1 · " + id })) }, { nights: [{ day: night("d"), source, meta: "Grade 2 · d" }] }];
+  const { tex, nights, oddStarts } = T.printTeX(levels);
+  assert.equal(nights, 4); assert.equal(oddStarts, true);
+  assert.equal(tex.match(/^\\cleardoublepage$/gm).length, 4); assert.doesNotMatch(tex, /^\\clearpage$/m);
+  assert.equal(tex.match(/LIMINAL-LEVEL-START/g).length, 2); assert.equal(tex.match(/LIMINAL-READING-START/g).length, 4);
+  assert.deepEqual([...tex.matchAll(/\\papermeta\}\{Grade (\d) \\textperiodcentered\{\} (\w)\}/g)].map(match => match[1] + match[2]), ["1a", "1b", "1c", "2d"]);
+  // check-pdf holds the typeset document to the same rule, from the log.
+  const { inspect } = require("../tools/check-pdf");
+  const pdf = new TextEncoder().encode("%PDF-1.5\n%%EOF"), log = pages => "Output written on main.pdf (9 pages)\n" + pages;
+  assert.deepEqual(inspect(pdf, log("LIMINAL-LEVEL-START 1\nLIMINAL-READING-START 1\nLIMINAL-READING-START 3\nLIMINAL-LEVEL-START 5\nLIMINAL-READING-START 5"), 2, { nights: 3, oddStarts: true }).problems, []);
+  assert.deepEqual(inspect(pdf, log("LIMINAL-LEVEL-START 1\nLIMINAL-READING-START 1\nLIMINAL-READING-START 2"), 1, { nights: 2, oddStarts: true }).problems, ["nights start on even pages 2"]);
+  assert.deepEqual(inspect(pdf, log("LIMINAL-LEVEL-START 1\nLIMINAL-READING-START 1\nLIMINAL-READING-START 2"), 1, { nights: 2 }).problems, []);
+  assert.deepEqual(inspect(pdf, log("LIMINAL-LEVEL-START 1\nLIMINAL-READING-START 1"), 1, { nights: 2 }).problems, ["2 nights but 1 reading starts"]);
 });
 
 test("continued nights print their own title, the work, and their place in the run", () => {

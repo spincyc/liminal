@@ -268,7 +268,7 @@
   // supplied by the caller; `run` is its place in a continued reading. Only
   // reader-facing fields are used: the titles, credits, text, context,
   // content note, focus, challenge and question prompts.
-  function paper(entry, state, { newSheet = false } = {}) {
+  function paper(entry, state, { newSheet = false, oddStart = false } = {}) {
     const { day, source, meta } = entry;
     if (!day || !source) throw new Error("a printed night needs its reading and source");
     if (typeof meta !== "string" || !meta.trim()) throw new Error("a printed night needs its footer metadata");
@@ -282,8 +282,8 @@
     const note = D.sourceNote(source);
     const reference = inline(note.credit, state) + ". " + inline(note.rights, state) + (note.url ? " " + link(note.url, note.linkText, state) : "");
     const estimate = "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes;
-    return [newSheet ? "\\cleardoublepage" : "\\clearpage",
-      ...(newSheet ? ["\\typeout{LIMINAL-LEVEL-START \\the\\value{page}}"] : []),
+    return [newSheet || oddStart ? "\\cleardoublepage" : "\\clearpage",
+      ...(newSheet ? ["\\typeout{LIMINAL-LEVEL-START \\the\\value{page}}"] : []), "\\typeout{LIMINAL-READING-START \\the\\value{page}}",
       "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\papermeta}{" + text(meta, state) + "}",
       "\\twocolumn[{\\begin{center}",
       "{\\LARGE\\bfseries " + inline(title, state) + "\\par}\\vspace{1.4ex}",
@@ -304,21 +304,25 @@
   // A document of levels, each a list of nights. Every level starts on a
   // fresh sheet (an odd page, with a blank verso inserted when needed), so
   // two-sided printing never puts two levels on one sheet; every night starts
-  // a new page and numbers its pages from 1. Returns the TeX source and the
-  // engine it needs: pdfLaTeX unless a word needs the script font.
-  function documentTeX(levels) {
+  // a new page, or with `oddStarts` a fresh sheet too, and numbers its pages
+  // from 1. Returns the TeX source and the engine it needs: pdfLaTeX unless a
+  // word needs the script font.
+  function documentTeX(levels, { oddStarts = false } = {}) {
     if (!Array.isArray(levels) || !levels.length || levels.some(level => !level || !Array.isArray(level.nights) || !level.nights.length)) {
       throw new Error("a printed document needs at least one level with at least one night");
     }
     const state = context();
-    const body = levels.map(level => level.nights.map((entry, i) => paper(entry, state, { newSheet: i === 0 })).join("\n")).join("\n");
+    const body = levels.map(level => level.nights.map((entry, i) => paper(entry, state, { newSheet: i === 0, oddStart: oddStarts })).join("\n")).join("\n");
     const engine = state.script ? "xelatex" : "pdflatex";
-    return { tex: preamble(engine) + "\\begin{document}\n" + body + "\\end{document}\n", engine,
+    return { tex: preamble(engine) + "\\begin{document}\n" + body + "\\end{document}\n", engine, oddStarts: !!oddStarts,
       levels: levels.length, nights: levels.reduce((sum, level) => sum + level.nights.length, 0) };
   }
   const nightTeX = entry => documentTeX([{ nights: [entry] }]);
   const nightsTeX = entries => documentTeX([{ nights: entries }]);
   const dayTeX = entries => documentTeX(entries.map(entry => ({ nights: [entry] })));
+  // The print view's document: levels in order, each level's readings in date
+  // order, every reading starting on an odd page.
+  const printTeX = levels => documentTeX(levels, { oddStarts: true });
 
   // A night with its source resolved from a course or week slice, and its
   // place in a continued reading when the course holds the whole run.
@@ -334,5 +338,5 @@
   }
 
   return { ENGINES, STYLE, FONTS, preamble, support, characters, text, inline, verse, table, blocks, paper,
-    documentTeX, nightTeX, nightsTeX, dayTeX, entry, schoolMeta, context, continuation, runOf };
+    documentTeX, nightTeX, nightsTeX, dayTeX, printTeX, entry, schoolMeta, context, continuation, runOf };
 });

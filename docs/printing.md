@@ -106,8 +106,9 @@ Tuesday 17 November 2026" (`printMeta` in `src/lib/daily-reading.js`). A
 continued reading's "Part N of M" comes from the grade's browse list, so a run
 that crosses a week boundary keeps it. While it runs, progress shows under the
 toolbar and the menu item becomes **Cancel PDF**; opening another reading
-cancels it. **Print a day for several levels** (`#print/…`) makes one PDF with
-`dayTeX`, each level on a fresh sheet. Without the runtime both buttons are
+cancels it. **Print readings for several levels** (`#print/…`) makes one PDF
+with `printTeX` for a range of up to 31 dates or a school night: level by
+level, each level's readings in date order, every reading on an odd page. Without the runtime both buttons are
 disabled and say that PDF generation is unavailable; browser print and the
 HTML student download remain.
 
@@ -115,8 +116,9 @@ Other pages can reuse the helper. `LiminalPdfAction.run({ tex, engine,
 filename, onProgress, signal })` typesets and saves. `LiminalPdfAction.control({
 prepare })` builds the button, progress text and license link, where
 `prepare()` returns `{ tex, engine, filename }`. `LiminalReadingTeX.nightTeX`,
-`nightsTeX` and `dayTeX` (one level per night, each on a fresh sheet) produce
-the TeX and name the engine.
+`nightsTeX`, `dayTeX` (one level per night, each on a fresh sheet) and
+`printTeX` (levels of readings, every reading on a fresh sheet) produce the TeX
+and name the engine; `documentTeX(levels, { oddStarts })` underlies them.
 
 The runner fetches only from the site's origin. It verifies every file's size
 and SHA-256, runs the engine in a disposable worker, refuses any log with a
@@ -176,7 +178,9 @@ Known limits:
 
 - `node tools/check-pdf.js [--out DIR]`, part of `tools/check-all.js`, typesets
   the corpus above with the real engines against `dist/`. It requires a
-  complete PDF and every level starting on an odd page. It skips without a
+  complete PDF, every level starting on an odd page, every night on a page of
+  its own, and in the print view's document (a week across Christmas for
+  three levels) every night on an odd page. It skips without a
   runtime unless `LIMINAL_REQUIRE_NATIVE_TEX=1`.
 - `test/reading-tex.test.js` walks every character of every published night,
   and pins engine choice, level starts, continued-night titles and

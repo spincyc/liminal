@@ -1,16 +1,17 @@
-/* Print a day for several levels: choose a calendar date or a school night
-   and the levels, see what will print, then make one PDF in which every
-   level starts on a fresh sheet. Decisions (what each level prints, footers,
-   file names) come from lib/daily-reading.js; the TeX from lib/reading-tex.js
-   (dayTeX); typesetting and saving from app/pdf-action.js (see
-   docs/printing.md). Without the typesetter the PDF button is disabled with
-   a sentence saying so, and browser printing remains. */
+/* Print readings for several levels: choose a range of calendar dates (one
+   date is a range of one) or a school night, and the levels; see what will
+   print; then make one PDF, level by level with each level's readings in date
+   order, in which every reading starts on an odd page. Decisions (what each
+   level prints, footers, file names) come from lib/daily-reading.js; the TeX
+   from lib/reading-tex.js (printTeX); typesetting and saving from
+   app/pdf-action.js (see docs/printing.md). Without the typesetter the PDF
+   button is disabled with a sentence saying so, and browser printing remains. */
 (function () {
   "use strict";
   const D = window.LiminalDailyReading, Cal = window.LiminalReadingCalendar, R = window.LiminalDailyReadingRender;
   const $ = id => document.getElementById(id);
-  const form = $("dailyPrintForm"), byDate = $("dailyPrintByDate"), byNight = $("dailyPrintByNight"), dateInput = $("dailyPrintDate");
-  const weekSelect = $("dailyPrintWeek"), daySelect = $("dailyPrintDay"), levels = $("dailyPrintLevels"), preview = $("dailyPrintPreview");
+  const form = $("dailyPrintForm"), byDate = $("dailyPrintByDate"), byNight = $("dailyPrintByNight"), dateInput = $("dailyPrintDate"), untilInput = $("dailyPrintUntil");
+  const weekSelect = $("dailyPrintWeek"), daySelect = $("dailyPrintDay"), levels = $("dailyPrintLevels"), preview = $("dailyPrintPreview"), count = $("dailyPrintCount");
   const browserButton = $("dailyPrintBrowser"), note = $("dailyPrintNote"), pages = $("dailyPrintPages");
   const T = window.LiminalReadingTeX, A = window.LiminalPdfAction;
   let ctx = null, ready = false, loaded = [], version = 0, pdf = null;
@@ -19,7 +20,7 @@
   function setupPdf() {
     const placeholder = $("dailyPrintPdf");
     if (!T || !A) { placeholder.disabled = true; note.before(R.el("p", "PDF generation is unavailable in this copy of the site.", "daily-pdf")); return null; }
-    const control = A.control({ label: "Make one PDF", prepare: () => loaded.length ? { ...T.dayTeX(entries()), filename: D.printFilename({ ...selection(), grades: loaded.map(item => item.grade) }) } : null });
+    const control = A.control({ label: "Make one PDF", prepare: () => loaded.length ? { ...T.printTeX(printLevels()), filename: D.printFilename({ ...selection(), grades: loaded.map(item => item.grade) }) } : null });
     control.button.id = "dailyPrintPdf"; control.button.classList.add("daily-primary"); placeholder.replaceWith(control.button);
     const line = R.el("p", undefined, "daily-pdf"); line.append(control.status, " ", control.credits); note.before(line);
     return control;
@@ -45,14 +46,25 @@
     browserButton.addEventListener("click", printHere);
   }
   // The form is the state; its route is kept in the address without
-  // reloading the view, so a chosen day can be bookmarked or shared.
+  // reloading the view, so a chosen range can be bookmarked or shared. A
+  // last date equal to the first (or none) prints that one date.
   function selection() {
     const grades = [...levels.querySelectorAll("input:checked")].map(box => D.gradeFromKey(box.value));
-    return byNight.checked ? { week: Number(weekSelect.value), day: Number(daySelect.value), grades } : { date: D.validDate(dateInput.value) ? dateInput.value : ctx.today, grades };
+    if (byNight.checked) return { week: Number(weekSelect.value), day: Number(daySelect.value), grades };
+    const date = D.validDate(dateInput.value) ? dateInput.value : ctx.today;
+    return { date, until: D.validDate(untilInput.value) && untilInput.value !== date ? untilInput.value : null, grades };
   }
-  function changed() {
+  // The last date's picker offers the first date through a month after it.
+  function limits() {
+    const first = D.validDate(dateInput.value) ? dateInput.value : null;
+    untilInput.min = first || ""; untilInput.max = first ? Cal.addDays(first, D.MAX_PRINT_DAYS - 1) || "" : "";
+  }
+  function changed(event) {
+    // A first date moved past the last one takes the last one with it.
+    if (event && event.target === dateInput && D.validDate(dateInput.value) && (!D.validDate(untilInput.value) || untilInput.value < dateInput.value)) untilInput.value = dateInput.value;
+    limits();
     const chosen = selection();
-    dateInput.disabled = !byDate.checked; weekSelect.disabled = daySelect.disabled = !byNight.checked;
+    dateInput.disabled = untilInput.disabled = !byDate.checked; weekSelect.disabled = daySelect.disabled = !byNight.checked;
     history.replaceState(null, "", D.printRoute(chosen));
     update(chosen);
   }
@@ -60,64 +72,106 @@
     ctx = context; setup(context.index);
     const night = !!selected.week;
     byNight.checked = night; byDate.checked = !night;
-    dateInput.value = selected.date || context.today; weekSelect.value = selected.week || 1; daySelect.value = selected.day || 1;
-    dateInput.disabled = night; weekSelect.disabled = daySelect.disabled = !night;
+    dateInput.value = selected.date || context.today; untilInput.value = selected.until || dateInput.value; limits();
+    weekSelect.value = selected.week || 1; daySelect.value = selected.day || 1;
+    dateInput.disabled = untilInput.disabled = night; weekSelect.disabled = daySelect.disabled = !night;
     const grades = selected.grades.length ? selected.grades : [context.remembered && D.gradeAt(context.index, context.remembered.grade) ? context.remembered.grade : context.index.grades[0].grade];
     levels.querySelectorAll("input").forEach(box => { box.checked = grades.includes(D.gradeFromKey(box.value)); });
-    if (selected.invalid) context.announce("That print link was not fully recognized; check the day and levels.", true);
+    if (selected.invalid) context.announce("That print link was not fully recognized; check the dates and levels.", true);
     update(selection());
   }
 
-  // What each level prints: its reading for the date or night, resolved
-  // from the built files, with the footer that names it.
-  async function resolve(item, chosen) {
-    if (chosen.date) {
-      const calendar = await ctx.getJson(D.calendarFile(item.grade)), entry = Cal.readingOn(calendar, chosen.date);
-      if (!entry || !D.validReadingId(item.grade, entry.id)) throw new Error("No reading");
-      const data = await ctx.getJson(D.readingFile(item.grade, entry.id));
-      if (data.grade !== item.grade || !data.reading || data.reading.id !== entry.id) throw new Error("Mismatch");
-      const run = Cal.runOn(calendar, chosen.date);
-      return { ...item, reading: data.reading, source: data.source, run: run && { part: run.part, of: run.of }, packet: { ...D.studentPacket(item.grade, data.reading, data.source), date: chosen.date } };
-    }
-    const course = await ctx.getJson(D.weekFile(item.grade, chosen.week)), day = D.dayAt(course, chosen.week, chosen.day), source = D.sourceAt(course, day);
+  // What each level prints: its reading for each date, or for the school
+  // night, resolved from the built files, with the footer that names it.
+  async function dateNight(item, night) {
+    const entry = Cal.readingOn(item.calendar, night.date);
+    if (!entry || !D.validReadingId(item.grade, entry.id)) throw new Error("No reading");
+    const data = await ctx.getJson(D.readingFile(item.grade, entry.id));
+    if (data.grade !== item.grade || !data.reading || data.reading.id !== entry.id) throw new Error("Mismatch");
+    const run = Cal.runOn(item.calendar, night.date);
+    return { ...night, reading: data.reading, source: data.source, run: run && { part: run.part, of: run.of },
+      packet: { ...D.studentPacket(item.grade, data.reading, data.source), date: night.date } };
+  }
+  async function schoolNight(item, night) {
+    const course = await ctx.getJson(D.weekFile(item.grade, night.week)), day = D.dayAt(course, night.week, night.day), source = D.sourceAt(course, day);
     if (!day || !source || course.grade !== item.grade) throw new Error("Mismatch");
-    const browse = await ctx.getJson(D.browseFile(item.grade)).catch(() => null), run = browse && D.continuation(item.grade, browse.nights, chosen.week, chosen.day);
-    return { ...item, reading: day, source, run: run && { part: run.part, of: run.of }, packet: D.studentReading(course, chosen.week, chosen.day) };
+    const browse = await ctx.getJson(D.browseFile(item.grade)).catch(() => null), run = browse && D.continuation(item.grade, browse.nights, night.week, night.day);
+    return { ...night, reading: day, source, run: run && { part: run.part, of: run.of }, packet: D.studentReading(course, night.week, night.day) };
+  }
+  // Runs `task` over `items` a few at a time, keeping their order.
+  async function inTurn(items, task, width = 6) {
+    const results = new Array(items.length);
+    let next = 0;
+    const worker = async () => { while (next < items.length) { const at = next++; results[at] = await task(items[at]); } };
+    await Promise.all(Array.from({ length: Math.min(width, items.length) }, worker));
+    return results;
+  }
+  const failed = item => ({ ...item, available: false, reason: "A reading for " + item.label + " could not be loaded." });
+  async function load(plan, chosen) {
+    const prepared = await Promise.all(plan.map(async item => {
+      if (!item.available || !chosen.date) return item;
+      try { return { ...item, calendar: await ctx.getJson(D.calendarFile(item.grade)) }; } catch (error) { return failed(item); }
+    }));
+    const jobs = prepared.flatMap(item => item.available ? item.nights.map(night => ({ item, night })) : []);
+    const done = await inTurn(jobs, ({ item, night }) => (chosen.date ? dateNight(item, night) : schoolNight(item, night)).catch(() => null));
+    return prepared.map(item => {
+      if (!item.available) return item;
+      const nights = done.filter((night, at) => jobs[at].item === item);
+      return nights.every(Boolean) ? { ...item, nights } : failed(item);
+    });
+  }
+
+  function describe(night) {
+    const credit = D.selectionCredit(night.reading, night.source);
+    return [R.el("p", night.reading.title, "daily-print-title"),
+      R.el("p", [credit.author, night.reading.time.totalMinutes + " min", night.run ? "Part " + night.run.part + " of " + night.run.of : null].filter(Boolean).join(" · "), "daily-muted")];
+  }
+  // One level of the preview; over a range, its readings in date order.
+  function level(item) {
+    const li = R.el("li", undefined, item.available ? "daily-print-item" : "daily-print-item is-unavailable");
+    li.append(R.el("p", item.label + (item.available && item.nights.length > 1 ? " · " + item.nights.length + " readings" : ""), "daily-print-level"));
+    if (!item.available) { li.append(R.el("p", item.reason, "daily-muted")); return li; }
+    if (item.nights.length === 1) { li.append(...describe(item.nights[0])); return li; }
+    const list = R.el("ol", undefined, "daily-print-nights");
+    list.append(...item.nights.map(night => {
+      const row = R.el("li"), holiday = Cal.holidayOn(night.date);
+      row.append(R.el("p", Cal.shortDate(night.date) + (holiday ? " · " + holiday.name : ""), "daily-print-date"), ...describe(night));
+      return row;
+    }));
+    li.append(list);
+    return li;
   }
   async function update(chosen) {
-    const mine = ++version, plan = D.printPlan(ctx.index, chosen), canPdf = engine();
+    const mine = ++version, canPdf = engine(), problem = chosen.date ? D.printRangeProblem(chosen.date, chosen.until) : null;
+    const plan = D.printPlan(ctx.index, chosen);
     if (pdf) pdf.cancel();
     const pdfButton = $("dailyPrintPdf");
     preview.setAttribute("aria-busy", "true"); pdfButton.disabled = browserButton.disabled = true;
-    const results = await Promise.all(plan.map(item => item.available ? resolve(item, chosen).catch(() => ({ ...item, available: false, reason: "This reading could not be loaded." })) : item));
+    const results = problem ? [] : await load(plan, chosen);
     if (mine !== version) return;
     loaded = results.filter(item => item.available);
-    preview.replaceChildren(...(results.length ? results.map((item, i) => {
-      const li = R.el("li", undefined, item.available ? "daily-print-item" : "daily-print-item is-unavailable");
-      li.append(R.el("p", item.label + (item.available && loaded.indexOf(item) > 0 ? canPdf ? " · starts on a fresh sheet" : " · starts on a new page" : ""), "daily-print-level"));
-      if (!item.available) { li.append(R.el("p", item.reason, "daily-muted")); return li; }
-      const credit = D.selectionCredit(item.reading, item.source);
-      li.append(R.el("p", item.reading.title, "daily-print-title"),
-        R.el("p", [credit.author, item.reading.time.totalMinutes + " min", item.run ? "Part " + item.run.part + " of " + item.run.of : null].filter(Boolean).join(" · "), "daily-muted"));
-      return li;
-    }) : [R.el("li", "Choose at least one level.", "daily-print-item is-unavailable")]));
+    const message = text => [R.el("li", text, "daily-print-item is-unavailable")];
+    preview.replaceChildren(...(!plan.length ? message("Choose at least one level.") : problem ? message(problem) : results.map(level)));
     preview.setAttribute("aria-busy", "false");
-    $("dailyPrintIntro").textContent = canPdf ? "One PDF in which each level starts on a fresh sheet, so two-sided printing never puts two levels on one sheet of paper." :
-      "Every chosen level’s reading for one day, each starting on a new page.";
+    const readings = loaded.reduce((sum, item) => sum + item.nights.length, 0);
+    count.textContent = !readings ? "" : readings === 1 ? "One reading." : readings + " readings" + (loaded.length > 1 ? ", " + loaded.length + " levels" : "") + ".";
+    $("dailyPrintIntro").textContent = canPdf ? "One PDF, level by level, with each level’s readings in date order. Every reading starts on an odd page, so two-sided printing gives each reading sheets of its own." :
+      "Every chosen level’s readings, level by level and in date order, each starting on a new page.";
     pdfButton.disabled = !canPdf || !loaded.length; browserButton.disabled = !loaded.length;
-    note.textContent = canPdf ? "The PDF starts each level on an odd page, adding a blank back where needed." :
-      "Printing from this browser starts each level on a new page; on a two-sided printer a level can share a sheet with the one before it.";
+    note.textContent = canPdf ? "The PDF adds a blank back page wherever a reading would otherwise start on an even page." :
+      "Printing from this browser starts every reading on a new page; on a two-sided printer a reading can share a sheet with the one before it.";
   }
 
-  function entries() { return loaded.map(item => ({ day: item.reading, source: item.source, meta: item.footer, run: item.run })); }
-  // Browser printing: every level's student copy, each starting a new page.
+  // The PDF's levels, each a list of its readings in date order.
+  function printLevels() { return loaded.map(item => ({ nights: item.nights.map(night => ({ day: night.reading, source: night.source, meta: night.footer, run: night.run })) })); }
+  // Browser printing: every reading's student copy, each starting a new page.
   function printHere() {
     if (!loaded.length) return;
-    pages.replaceChildren(...loaded.map(item => {
+    pages.replaceChildren(...loaded.flatMap(item => item.nights.map(night => {
       const section = R.el("section", undefined, "daily-print-level-copy");
-      section.append(R.el("p", item.footer + " · Liminal", "daily-print-level-meta"), R.reading(item.packet, { run: item.run }));
+      section.append(R.el("p", night.footer + " · Liminal", "daily-print-level-meta"), R.reading(night.packet, { run: night.run }));
       return section;
-    }));
+    })));
     // Reading ids are unique per page; the copies are print-only.
     pages.querySelectorAll("[id]").forEach(node => node.removeAttribute("id"));
     document.body.classList.add("daily-printing-day");

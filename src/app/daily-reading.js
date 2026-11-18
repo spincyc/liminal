@@ -497,9 +497,9 @@
 
   async function printView(selected, focus) {
     ++request;
-    showOnly("print"); crumbs([{ label: "Print a day" }]);
-    announce("Print a day for several levels.");
-    setTitle(["Print a day for several levels"]);
+    showOnly("print"); crumbs([{ label: "Print readings" }]);
+    announce("Print readings for several levels.");
+    setTitle(["Print readings for several levels"]);
     P.show(selected, { index, getJson, today: today(), remembered, announce });
     if (focus) $("dailyPrintHeading").focus();
   }

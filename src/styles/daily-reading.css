@@ -192,6 +192,8 @@
 .daily-choice { display: flex; align-items: center; gap: 8px; min-height: var(--tap); }
 .daily-choice input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: var(--color-accent); }
 .daily-field { display: grid; gap: 3px; max-width: 14rem; margin: 0 0 6px 28px; font-size: .8125rem; }
+.daily-print-dates { display: flex; flex-wrap: wrap; gap: 0 14px; margin-left: 28px; }
+.daily-print-dates .daily-field { flex: 1 1 10rem; margin-left: 0; }
 .daily-print-night { margin: 0 0 0 28px; }
 .daily-print-night select { width: auto; min-width: 4.5rem; }
 .daily-print-levels { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0 14px; }
@@ -200,6 +202,11 @@
 .daily-print-item { padding-block: 8px; border-bottom: 1px solid var(--color-line); }
 .daily-print-level { font-weight: 600; }
 .daily-print-title { font: italic 1rem/1.4 var(--font-serif); }
+.daily-print-count { margin: 4px 0 0; color: var(--color-muted); font-size: .875rem; }
+.daily-print-nights { margin: 4px 0 0; padding-left: 0; list-style: none; }
+.daily-print-nights > li { padding-block: 6px; border-top: 1px dashed var(--color-line); }
+.daily-print-nights p { margin: 0; }
+.daily-print-date { font-size: .8125rem; font-weight: 600; color: var(--color-muted); }
 .daily-print-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .daily-page .daily-primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); font-weight: 600; }
 .daily-page .daily-primary[hidden] { display: none; }

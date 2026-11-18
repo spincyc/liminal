@@ -184,7 +184,7 @@ an unrecognized part falls back to the nearest valid view and says so):
 | `#<grade>/date[/<YYYY-MM-DD>]` | The reading for a calendar date (default today) |
 | `#<grade>/month/<YYYY-MM>` | A month of the date calendar |
 | `#<grade>/reading/<reading-id>` | Any reading by ID (school-night IDs redirect to their night) |
-| `#print[/date/<YYYY-MM-DD>\|/night/<week>/<day>][/<grade>,<grade>…]` | Print a day for several levels |
+| `#print[/date/<YYYY-MM-DD>\|/dates/<first>/<last>\|/night/<week>/<day>][/<grade>,<grade>…]` | Print readings for several levels |
 
 `<grade>` is the grade key (`k`, `1`–`12`, `a1`…). `library.html` has `#<work-id>`,
 `#<work-id>/<reading-id>` (the passage marked as current) and `#<work-id>/b<n>`
@@ -249,16 +249,22 @@ new), and a holiday shows its name with an accent rule. The note under the
 heading says when readings return and names the month's holidays. The Year
 view's calendar link opens at this month.
 
-**Print a day.** Choose a calendar date or a school night and any levels; the
-preview lists what each level prints, or why it cannot (a level without a
-date calendar). A print link without a day opens today's date when a chosen
-level has a calendar, otherwise a school night. **Make one PDF**
-typesets a single document (`LiminalReadingTeX.dayTeX`) in which every level
-starts on a fresh sheet; footers name a school night by week and day and a
-calendar reading by its date. Without the typesetter the button is disabled
-and says so. **Print from this browser** prints each level's student copy on a
-new page; on a two-sided printer a level may then share a sheet with the one
-before it, which the page says.
+**Print readings.** Choose a range of calendar dates (From and Through, up to
+31 days; one date is a range of one) or a school night, and any levels; the
+preview lists what each level prints, date by date with holidays named, or why
+it cannot (a level without a date calendar, a last date before the first, a
+range longer than a month). A print link without a day opens today's date when
+a chosen level has a calendar, otherwise a school night. **Make one PDF**
+typesets a single document (`LiminalReadingTeX.printTeX`): level by level in
+the order listed, each level's readings in date order, and every reading
+starting on an odd page, with a blank verso inserted where needed, so
+two-sided printing gives each reading sheets of its own. Footers name a school
+night by week and day and a calendar reading by its date. The view loads each
+reading's file a few at a time; the largest print (31 days, 13 levels: 403
+readings, about 850 pages) typesets in seconds. Without the typesetter the
+button is disabled and says so. **Print from this browser** prints each
+reading's student copy on a new page; on a two-sided printer a reading may then
+share a sheet with the one before it, which the page says.
 
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
 two columns, a centered title and author, and a small footer containing the grade,

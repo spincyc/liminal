@@ -24,8 +24,10 @@ function stagedRuntime(dist = DIST) {
   return match ? JSON.parse(match[1]) : null;
 }
 
-// What a finished document must satisfy, from its bytes and log.
-function inspect(bytes, log, levels) {
+// What a finished document must satisfy, from its bytes and log: every level
+// starts on an odd page, every night on a page of its own, and in a document
+// made with odd starts (the print view's) every night on an odd page too.
+function inspect(bytes, log, levels, { nights = null, oddStarts = false } = {}) {
   const problems = [];
   const head = Buffer.from(bytes.subarray(0, 5)).toString("latin1"), tail = Buffer.from(bytes.subarray(-1024)).toString("latin1");
   if (head !== "%PDF-" || !tail.includes("%%EOF")) problems.push("not a complete PDF");
@@ -35,7 +37,12 @@ function inspect(bytes, log, levels) {
   if (starts.length !== levels) problems.push(levels + " levels but " + starts.length + " level starts");
   const even = starts.filter(page => page % 2 === 0);
   if (even.length) problems.push("levels start on even pages " + even.join(", "));
-  return { pages, starts, problems };
+  const readings = [...log.matchAll(/LIMINAL-READING-START (\d+)/g)].map(match => Number(match[1]));
+  if (nights !== null && readings.length !== nights) problems.push(nights + " nights but " + readings.length + " reading starts");
+  if (new Set(readings).size !== readings.length) problems.push("two nights start on one page");
+  const evenReadings = readings.filter(page => page % 2 === 0);
+  if (oddStarts && evenReadings.length) problems.push("nights start on even pages " + evenReadings.join(", "));
+  return { pages, starts, readings, problems };
 }
 
 async function main(argv) {
@@ -58,7 +65,7 @@ async function main(argv) {
     try {
       const result = await harness.generate({ runner, site: DIST, runtimePath: runtime.url, runtimeSHA256: runtime.sha256, runtimeBytes: runtime.bytes,
         engine: item.document.engine, files: [{ path: "main.tex", data: item.document.tex }], entrypoint: "main.tex", cache: false });
-      const report = inspect(result.bytes, result.log, item.levels);
+      const report = inspect(result.bytes, result.log, item.levels, item.document);
       if (out) fs.writeFileSync(path.join(out, item.name + ".pdf"), result.bytes);
       const line = item.name + ": " + item.document.engine + ", " + item.document.nights + " nights, " + report.pages + " pages, "
         + result.byteLength + " bytes, " + ((Date.now() - started) / 1000).toFixed(1) + " s";

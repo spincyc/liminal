@@ -302,6 +302,7 @@ test("Readings links follow the grade shown: none in the address means the remem
   assert.equal(links("#print/night/3/2/12,k", "5").plans, "curriculum.html#common-core-reading/12");
   assert.equal(links("#print/night/3/2", "5").plans, "curriculum.html#common-core-reading/5", "a night's day number is not a grade");
   assert.equal(links("#print/date/2026-11-17/a1", null).daily, "daily-reading.html#browse/a1");
+  assert.equal(links("#print/dates/2026-12-21/2026-12-27/12,k", "5").plans, "curriculum.html#common-core-reading/12");
   assert.equal(links("#print", "7").weeks, "weeks.html#common-core-reading/7/1");
   assert.equal(links("#browse/8", "5").plans, "curriculum.html#common-core-reading/8", "the address wins over the remembered grade");
   assert.equal(links("", "5", "library.html").plans, "curriculum.html#common-core-reading/5");

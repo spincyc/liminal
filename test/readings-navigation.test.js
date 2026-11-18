@@ -19,11 +19,40 @@ test("routes cover the year, nights, dates, months, readings and the day print",
   // A reading id must belong to the grade; anything else falls back like a bad night.
   assert.equal(D.view(index, "#5/reading/reading-3-x-01", opts).view, "read");
   assert.equal(D.view(index, "#5/reading/../../x", opts).view, "read");
-  assert.deepEqual(D.view(index, "#print/night/3/2/k,5", opts), { view: "print", course: null, grade: null, date: null, week: 3, day: 2, grades: [0, 5], invalid: false });
+  assert.deepEqual(D.view(index, "#print/night/3/2/k,5", opts), { view: "print", course: null, grade: null, date: null, until: null, week: 3, day: 2, grades: [0, 5], invalid: false });
   assert.deepEqual(D.view(index, "#print/date/2026-12-25/5,k,5", opts).grades, [0, 5]);
   assert.equal(D.view(index, "#print/date/2026-12-25/9", opts).invalid, true);
   assert.equal(D.view(index, "#print", opts).date, "2026-11-17");
   assert.equal(D.view(index, "#5/3/2", opts).view, "read");
+});
+
+test("a print takes a range of up to a month of dates, level by level in date order", () => {
+  const opts = { grade: 5, today: "2026-11-17" };
+  assert.deepEqual(D.view(index, "#print/dates/2026-12-21/2026-12-27/5,k", opts),
+    { view: "print", course: null, grade: null, date: "2026-12-21", until: "2026-12-27", week: null, day: null, grades: [0, 5], invalid: false });
+  assert.equal(D.view(index, "#print/dates/2026-12-21/2026-12-21/5", opts).until, null, "a range of one date is that date");
+  // An unusable range is flagged and falls back to its first date.
+  for (const hash of ["#print/dates/2026-12-27/2026-12-21/5", "#print/dates/2026-12-01/2027-01-01/5", "#print/dates/2026-12-21/5", "#print/dates/2026-02-30/2026-03-02/5"]) {
+    const view = D.view(index, hash, opts);
+    assert.equal(view.invalid, true, hash); assert.equal(view.until, null, hash);
+  }
+  assert.equal(D.view(index, "#print/dates/2026-12-27/2026-12-21/5", opts).date, "2026-12-27");
+  assert.equal(D.printRoute({ date: "2026-12-21", until: "2026-12-27", grades: [0, 5] }), "#print/dates/2026-12-21/2026-12-27/k,5");
+  assert.equal(D.printRoute({ date: "2026-12-21", until: "2026-12-21", grades: [5] }), "#print/date/2026-12-21/5");
+  assert.equal(D.printFilename({ date: "2026-12-21", until: "2026-12-27", grades: [0, 5] }), "liminal-readings-2026-12-21-to-2026-12-27-k-5.pdf");
+  assert.deepEqual(D.printDates("2028-02-27", "2028-03-01"), ["2028-02-27", "2028-02-28", "2028-02-29", "2028-03-01"]);
+  assert.deepEqual(D.printDates("2026-12-31", "2027-01-01"), ["2026-12-31", "2027-01-01"]);
+  assert.equal(D.printDates("2026-01-01", "2026-01-31").length, D.MAX_PRINT_DAYS);
+  assert.deepEqual(D.printDates("2026-01-01", "2026-02-01"), []); assert.deepEqual(D.printDates("2026-01-02", "2026-01-01"), []);
+  assert.deepEqual(D.printDates("9999-12-30", "9999-12-31"), ["9999-12-30", "9999-12-31"]); assert.deepEqual(D.printDates("2026-11-17"), ["2026-11-17"]);
+  assert.equal(D.printRangeProblem("2026-12-21", "2026-12-27"), null); assert.equal(D.printRangeProblem("2026-12-21"), null);
+  assert.match(D.printRangeProblem("2026-12-27", "2026-12-21"), /comes before the first/);
+  assert.match(D.printRangeProblem("2026-12-01", "2027-01-01"), /at most 31 days/);
+  const plan = D.printPlan(index, { date: "2026-12-24", until: "2026-12-26", grades: [0, 3, 5] });
+  assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false], [5, true]]);
+  assert.deepEqual(plan[2].nights, [{ date: "2026-12-24", footer: "Grade 5 · Thursday 24 December 2026" },
+    { date: "2026-12-25", footer: "Grade 5 · Friday 25 December 2026" }, { date: "2026-12-26", footer: "Grade 5 · Saturday 26 December 2026" }]);
+  assert.match(D.printPlan(index, { date: "2026-12-26", until: "2026-12-24", grades: [5] })[0].reason, /comes before the first/);
 });
 
 test("route and file builders accept only valid grades, dates and ids", () => {
@@ -102,10 +131,10 @@ test("Tonight offers the plan's night, the next school night and today's date re
 test("the day print says what each level prints, or why it cannot", () => {
   const plan = D.printPlan(index, { date: "2026-11-17", grades: [0, 3, 9], formatDate: () => "Tue, Nov 17" });
   assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false]]);
-  assert.equal(plan[0].footer, "Kindergarten · Tue, Nov 17"); assert.match(plan[1].reason, /Grade 3 is not available yet/);
-  assert.equal(D.printPlan(index, { week: 3, day: 2, grades: [3] })[0].footer, "Grade 3 · Week 3 · Day 2");
+  assert.equal(plan[0].nights[0].footer, "Kindergarten · Tue, Nov 17"); assert.equal(plan[0].nights.length, 1); assert.match(plan[1].reason, /Grade 3 is not available yet/);
+  assert.deepEqual(D.printPlan(index, { week: 3, day: 2, grades: [3] })[0].nights, [{ week: 3, day: 2, footer: "Grade 3 · Week 3 · Day 2" }]);
   assert.equal(D.printPlan(index, { grades: [3] })[0].available, false);
-  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5] })[0].footer, "Grade 5 · Tuesday 17 November 2026");
+  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5] })[0].nights[0].footer, "Grade 5 · Tuesday 17 November 2026");
   assert.equal(D.printMeta(0, { date: "2028-02-29" }), "Kindergarten · Tuesday 29 February 2028");
   assert.equal(D.printMeta(5, { week: 3, day: 2 }), "Grade 5 · Week 3 · Day 2");
   assert.equal(D.printMeta(5), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(5, { date: "2026-02-30" }), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(99), null);
@@ -239,7 +268,7 @@ test("unrecognized routes fall back to the remembered grade, and school-night id
 
 test("a print link without a day opens today's date only when a chosen level has a calendar", () => {
   const opts = { grade: 3, today: "2026-11-17" };
-  assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, week: 1, day: 1, grades: [], invalid: false });
+  assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, until: null, week: 1, day: 1, grades: [], invalid: false });
   assert.equal(D.view(index, "#print", { ...opts, grade: 5 }).date, "2026-11-17");
   assert.equal(D.view(index, "#print/3", opts).week, 1);
   assert.equal(D.view(index, "#print/3,5", opts).date, "2026-11-17");
@@ -276,6 +305,6 @@ test("a level with a calendar has a reading for every date of any year", () => {
   assert.equal(D.calendarHas(index, 5, "2027-02-29"), false); assert.equal(D.calendarHas(index, 13, "2026-11-18"), false);
   const plan = D.printPlan(index, { date: "1999-12-25", grades: [0, 3, 5] });
   assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false], [5, true]]);
-  assert.equal(plan[2].footer, "Grade 5 · Saturday 25 December 1999");
+  assert.equal(plan[2].nights[0].footer, "Grade 5 · Saturday 25 December 1999");
 });
 

@@ -98,7 +98,7 @@
       // and #print/.../<grade>,<grade>: the first grade. Without a grade in
       // the address the page shows the remembered grade (data.readingGrade).
       const browse = parts[0] === "browse", print = parts[0] === "print";
-      const requested = browse ? parts.length <= 3 ? parts[1] : null : print ? (parts[parts[1] === "date" ? 3 : parts[1] === "night" ? 4 : 1] || "").split(",")[0] : parts[0];
+      const requested = browse ? parts.length <= 3 ? parts[1] : null : print ? (parts[parts[1] === "date" ? 3 : parts[1] === "night" || parts[1] === "dates" ? 4 : 1] || "").split(",")[0] : parts[0];
       readingGrade = READING_GRADE.test(requested) ? requested : null;
       key = readingGrade || (READING_GRADE.test(data.readingGrade) ? data.readingGrade : "k");
       if (browse && parts.length === 3 && READING_GRADE.test(parts[1]) && WEEK.test(parts[2])) week = parts[2];

@@ -128,7 +128,7 @@ their own, and the calendar fits any year), and print one day for several
 levels at once. The **Library** (`library.html`) reads every source work whole,
 with each nightly passage marked and linked. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
-Generate PDF typesets the reading on screen, or one day for several levels,
+Generate PDF typesets the reading on screen, or a range of dates for several levels,
 in the browser, in the
 [printed packet style](docs/reading-packets.md); nothing is uploaded and no PDFs
 are stored ([printing](docs/printing.md)).

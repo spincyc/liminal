@@ -157,8 +157,13 @@
         invalid: parts.length > 3 || parts.length >= 2 && !requested || parts.length === 3 && !week };
     }
     if (parts[0] === "print") {
-      let date = null, week = null, day = null, rest = parts.slice(1), invalid = false;
+      let date = null, until = null, week = null, day = null, rest = parts.slice(1), invalid = false;
       if (rest[0] === "date") { date = validDate(rest[1]) ? rest[1] : today; invalid = !validDate(rest[1]); rest = rest.slice(2); }
+      else if (rest[0] === "dates") {
+        // A range of dates; an unusable one falls back to its first date.
+        const ok = validDate(rest[2]) && printDates(rest[1], rest[2]).length > 0;
+        date = validDate(rest[1]) ? rest[1] : today; until = ok ? rest[2] : null; invalid = !ok; rest = rest.slice(3);
+      }
       else if (rest[0] === "night") {
         const ok = rest.length >= 3 && validDay(Number(rest[1]), Number(rest[2])) && /^\d+$/.test(rest[1] + rest[2]);
         week = ok ? Number(rest[1]) : 1; day = ok ? Number(rest[2]) : 1; invalid = !ok; rest = rest.slice(3);
@@ -170,7 +175,8 @@
       if (!date && week === null) {
         if (anyToday(chosen.length ? chosen : fallback ? [fallback.grade] : [])) date = today; else { week = 1; day = 1; }
       }
-      return { view: "print", course: null, grade: null, date, week, day, grades: [...new Set(chosen)].sort((x, y) => x - y), invalid };
+      if (until === date) until = null;
+      return { view: "print", course: null, grade: null, date, until, week, day, grades: [...new Set(chosen)].sort((x, y) => x - y), invalid };
     }
     const requested = gradeAt(index, gradeFromKey(parts[0]));
     if (requested && parts[1] === "date" && parts.length <= 3) {
@@ -196,9 +202,10 @@
   function dateRoute(grade, date) { return validGrade(grade) && validDate(date) ? "#" + gradeKey(grade) + "/date/" + date : ""; }
   function monthRoute(grade, month) { return validGrade(grade) && ISO_MONTH.test(String(month)) ? "#" + gradeKey(grade) + "/month/" + month : ""; }
   function readingRoute(grade, id) { return validReadingId(grade, id) ? "#" + gradeKey(grade) + "/reading/" + id : ""; }
-  function printRoute({ date = null, week = null, day = null, grades = [] } = {}) {
+  function printRoute({ date = null, until = null, week = null, day = null, grades = [] } = {}) {
     const keys = grades.filter(validGrade).map(gradeKey).join(",");
-    const what = validDate(date) ? "/date/" + date : validDay(week, day) ? "/night/" + week + "/" + day : "";
+    const what = validDate(date) && validDate(until) && until !== date ? "/dates/" + date + "/" + until
+      : validDate(date) ? "/date/" + date : validDay(week, day) ? "/night/" + week + "/" + day : "";
     return "#print" + what + (keys ? "/" + keys : "");
   }
   // Built files a view loads. Paths come from validated grades and ids only.
@@ -281,11 +288,11 @@
     else if (validGrade(grade) && !entries.length) entries.push({ kind: "start", grade, label: "Start the " + gradeLabel(grade) + " school year: " + nightLabel(1, 1), href: route(grade, 1, 1) });
     return entries;
   }
-  // The multi-level day print: what each chosen level prints for a date or a
-  // school night, and the footer that names it. A level without a date
-  // calendar cannot print a date; it says so instead of printing nothing.
-  // `formatDate` names a date in the footer (reading-calendar's shortDate in
-  // the browser); footers follow the packets' "Grade 5 · Week 3 · Day 2".
+  // The multi-level print: what each chosen level prints for a range of
+  // dates (one date is a range of one) or a school night, and the footer that
+  // names each reading. A level without a date calendar cannot print a date;
+  // it says so instead of printing nothing. `formatDate` names a date in the
+  // footer; footers follow the packets' "Grade 5 · Week 3 · Day 2".
   // Printed footers. A school night's matches reading-tex's schoolMeta
   // ("Grade 5 · Week 3 · Day 2"); a calendar reading has no week or day, so
   // it names its date ("Grade 5 · Tuesday 17 November 2026"), and a reading
@@ -305,18 +312,48 @@
     if (validDay(week, day)) return gradeLabel(grade) + " · Week " + week + " · Day " + day;
     return gradeLabel(grade) + " · Calendar reading";
   }
-  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = null } = {}) {
+  // Each level's `nights` are in date order: [{ date, footer }] for dates,
+  // [{ week, day, footer }] for a school night.
+  function printPlan(index, { date = null, until = null, week = null, day = null, grades = [], formatDate = null } = {}) {
+    const dates = validDate(date) ? printDates(date, until || date) : [], problem = validDate(date) ? printRangeProblem(date, until) : null;
     return grades.filter(grade => gradeAt(index, grade)).map(grade => {
-      if (validDate(date)) return !hasCalendar(index, grade)
-        ? { grade, label: gradeLabel(grade), available: false, reason: "The date calendar for " + gradeLabel(grade) + " is not available yet." }
-        : { grade, label: gradeLabel(grade), available: true, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(date) : printMeta(grade, { date }) };
+      const level = { grade, label: gradeLabel(grade) };
+      if (validDate(date)) {
+        if (!hasCalendar(index, grade)) return { ...level, available: false, reason: "The date calendar for " + gradeLabel(grade) + " is not available yet." };
+        if (problem) return { ...level, available: false, reason: problem };
+        return { ...level, available: true, nights: dates.map(when => ({ date: when, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(when) : printMeta(grade, { date: when }) })) };
+      }
       return validDay(week, day)
-        ? { grade, label: gradeLabel(grade), available: true, footer: printMeta(grade, { week, day }) }
-        : { grade, label: gradeLabel(grade), available: false, reason: "Choose a date or a school night." };
+        ? { ...level, available: true, nights: [{ week, day, footer: printMeta(grade, { week, day }) }] }
+        : { ...level, available: false, reason: "Choose a date or a school night." };
     });
   }
-  function printFilename({ date = null, week = null, day = null, grades = [] } = {}) {
-    return "liminal-readings-" + (validDate(date) ? date : validDay(week, day) ? "w" + week + "d" + day : "day") + "-" + grades.filter(validGrade).map(gradeKey).join("-") + ".pdf";
+  // A print takes at most a month of dates.
+  const MAX_PRINT_DAYS = 31;
+  function nextDate(date) {
+    const [year, month, day] = date.split("-").map(Number), at = new Date(0);
+    at.setUTCFullYear(year, month - 1, day + 1);
+    const next = at.getUTCFullYear();
+    return next > 9999 ? null : String(next).padStart(4, "0") + "-" + String(at.getUTCMonth() + 1).padStart(2, "0") + "-" + String(at.getUTCDate()).padStart(2, "0");
+  }
+  // Every date from `date` to `until` (inclusive) in order: [] when either is
+  // not a date, `until` comes first, or the range is longer than a print takes.
+  function printDates(date, until = date) {
+    if (!validDate(date) || !validDate(until || date) || (until || date) < date) return [];
+    const dates = [];
+    for (let at = date; at && at <= (until || date) && dates.length <= MAX_PRINT_DAYS; at = nextDate(at)) dates.push(at);
+    return dates.length > MAX_PRINT_DAYS ? [] : dates;
+  }
+  // Why a range of dates cannot print, or null when it can.
+  function printRangeProblem(date, until = null) {
+    if (!validDate(date)) return "Choose a date.";
+    if (until !== null && until !== "" && !validDate(until)) return "Choose a last date.";
+    if (until && until < date) return "The last date comes before the first; choose a last date on or after it.";
+    return printDates(date, until || date).length ? null : "Choose at most " + MAX_PRINT_DAYS + " days.";
+  }
+  function printFilename({ date = null, until = null, week = null, day = null, grades = [] } = {}) {
+    const what = validDate(date) && validDate(until) && until !== date ? date + "-to-" + until : validDate(date) ? date : validDay(week, day) ? "w" + week + "d" + day : "day";
+    return "liminal-readings-" + what + "-" + grades.filter(validGrade).map(gradeKey).join("-") + ".pdf";
   }
   // Genre families. The corpus records 50-odd free-text genres; browsing
   // groups them into a few families people recognise. Order matters: the
@@ -417,6 +454,6 @@
     navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
     MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
     readingFile, calendarFile, SPANS_FILE, hasCalendar, calendarHas, nightLabel, documentTitle, beforeYouRead, continuation,
-    STORAGE_KEY, parseRemembered, remember, tonight, dateCommit, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
+    STORAGE_KEY, parseRemembered, remember, tonight, dateCommit, printPlan, printMeta, printFilename, printDates, printRangeProblem, MAX_PRINT_DAYS, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
     genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };
 });

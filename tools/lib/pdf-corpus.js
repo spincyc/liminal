@@ -10,11 +10,13 @@
 // shape and size a real night can ask for. The rest are real readings.
 const D = require("../../src/lib/daily-reading");
 const T = require("../../src/lib/reading-tex");
+const C = require("../../src/lib/reading-calendar");
 
 // Courses as the build resolves them (tools/build-daily-reading.js), so the
 // corpus follows any change in how readings are stored.
-let loaded = null;
-const all = () => loaded || (loaded = new Map(require("../build-daily-reading").loadDailyReading().courses.map(item => [D.gradeKey(item.grade), item])));
+let daily = null, loaded = null;
+const reading = () => daily || (daily = require("../build-daily-reading").loadDailyReading());
+const all = () => loaded || (loaded = new Map(reading().courses.map(item => [D.gradeKey(item.grade), item])));
 const course = key => all().get(key);
 const publishedKeys = () => [...all().keys()];
 function night(key, week, day) {
@@ -32,6 +34,21 @@ const dayEntries = (week, day, date) => publishedKeys().map(key => {
   const item = night(key, week, day);
   return T.entry(course(key), item, D.gradeLabel(D.gradeFromKey(key)) + " · " + date);
 });
+
+// A level's calendar readings for each date of a range, in date order, as the
+// print view resolves them, with the print view's footers.
+function rangeEntries(key, dates) {
+  const grade = D.gradeFromKey(key), readings = reading().readingsByGrade.get(grade), calendar = reading().calendars.get(grade);
+  if (!readings || !calendar) throw new Error("no date calendar for " + key);
+  const sources = [...course(key).sources, ...reading().extras.filter(extra => extra.grade === grade).flatMap(extra => extra.sources)];
+  const list = [...readings.values()];
+  return dates.map(date => {
+    const at = C.readingOn(calendar, date), day = readings.get(at && typeof at === "object" ? at.id : at);
+    const source = day && sources.find(item => item.id === day.sourceId);
+    if (!day || !source) throw new Error("no reading for " + key + " on " + date);
+    return { day, source, meta: D.printMeta(grade, { date }), run: T.runOf(list, day) };
+  });
+}
 
 function coverageNight(script) {
   const sets = T.characters();
@@ -68,7 +85,11 @@ function documents() {
     ["day-2026-11-17", dayEntries(13, 2, "Tue, Nov 17, 2026").map(item => ({ nights: [item] }))],
     ["day-2026-11-19", dayEntries(13, 4, "Thu, Nov 19, 2026").map(item => ({ nights: [item] }))],
   ];
-  return list.map(([name, levels]) => ({ name, levels: levels.length, document: T.documentTeX(levels) }));
+  // A week across Christmas for three levels, as the print view makes it:
+  // level by level, in date order, every reading on an odd page.
+  const week = D.printDates("2026-12-21", "2026-12-27");
+  return [...list.map(([name, levels]) => ({ name, levels: levels.length, document: T.documentTeX(levels) })),
+    { name: "dates-2026-12-21-to-2026-12-27", levels: 3, document: T.printTeX(["k", "5", "12"].map(key => ({ nights: rangeEntries(key, week) }))) }];
 }
 
 module.exports = { documents, publishedKeys, course, coverageNight };
