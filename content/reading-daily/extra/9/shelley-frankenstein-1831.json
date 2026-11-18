@@ -1216,6 +1216,325 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-18",
+      "title": "Frankenstein, Chapter XX: the broken promise",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate Victor’s reasoning from the moment he acts. Then reread the creature’s last threat and ask what it could mean besides what Victor assumes.",
+      "focus": "Victor destroys the companion he promised, the creature turns from pleading to command, and a single threatening sentence shapes everything after it.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. Recap: the creature, after telling Victor his story of loneliness and rejection, demanded a female companion and promised to leave Europe with her for the wilds of South America. Victor agreed, travelled with his friend Henry Clerval through England and Scotland, then left Clerval and went alone to a bare island in the Orkneys to do the work. Victor often calls the creature a “dæmon” (an evil spirit). A casement is a window that opens on hinges.",
+      "contentNote": "Victor tears apart the half-made female creature; the creature threatens revenge and death.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XX, from the start through Victor’s first day alone on the island after the creature’s threat; opens “I sat one evening in my laboratory; the sun had set, and the moon was just rising from…”; closes “…like a death-knell, they appeared like a dream, yet distinct and oppressive as a reality.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-19",
+        "blocks": [
+          583,
+          602
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8751be68e3094e592b5d5377e40fb822f71f6c2bc5f64194bfe78edc81fd317b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-18-q1",
+          "prompt": "Victor lists his reasons for stopping. Name three. Which of them treat the female creature as a thinking being with her own will?",
+          "facilitatorNotes": [
+            "She might be “ten thousand times more malignant”; she might refuse “a compact made before her creation”; the two might hate each other, or she might leave him for “the superior beauty of man”; and their children might be “a race of devils.”",
+            "The second and third reasons imagine her as a person who could choose. Ask whether that makes Victor’s decision more responsible or more troubling, since he is deciding for someone who cannot yet speak."
+          ],
+          "evidence": [
+            "might refuse to comply with a compact made before her creation",
+            "a race of devils would be propagated upon the earth"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-18-q2",
+          "prompt": "Victor reasons quietly in the moonlight, but he destroys the work only when he sees the creature at the window. Is this a moral decision or an act of panic?",
+          "facilitatorNotes": [
+            "The reasoning comes first and is serious: he asks whether he has the right to “inflict this curse upon everlasting generations.” But the act itself comes “with a sensation of madness” and “trembling with passion” at the sight of the “ghastly grin.”",
+            "Defensible views differ. Some say the creature’s face only confirmed a choice already made; others say fear and disgust did the deciding. Victor later claims he now sees “clearly,” which readers can test."
+          ],
+          "evidence": [
+            "Had I right, for my own benefit, to inflict this curse upon everlasting generations?",
+            "trembling with passion, tore to pieces the thing on which I was engaged"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-18-q3",
+          "prompt": "“You are my creator, but I am your master;--obey!” How has the relationship between the two changed, and what grievance does the creature voice?",
+          "facilitatorNotes": [
+            "He once “reasoned” and pleaded; now he commands, threatening to make Victor’s life wretched. His grievance is loneliness: every man has a wife and every beast a mate, while he is “alone,” and his affection was met with “detestation and scorn.”",
+            "Victor calls this malice; readers may hear real injury inside the threats. Ask whether revenge, “dearer than light or food,” is a choice the creature makes here."
+          ],
+          "evidence": [
+            "You are my creator, but I am your master;--obey!",
+            "Shall each man,\" cried he, \"find a wife for his bosom, and each beast have his mate, and I be alone?"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-18-q4",
+          "prompt": "How does Victor interpret “I shall be with you on your wedding-night”? What possibility does his interpretation leave out?",
+          "facilitatorNotes": [
+            "He assumes the creature will kill him then: “In that hour I should die.” He grieves for Elizabeth only as the bride who will lose him.",
+            "The threat names a time, not a victim. Readers may suspect someone else is in danger, and should notice that Victor never asks. That is part of what the novel shows about his self-absorption, or his inability to think past his own fear."
+          ],
+          "evidence": [
+            "It is well. I go; but remember, I shall be with you on your wedding-night.",
+            "In that hour I should die, and at once satisfy and extinguish his malice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-19",
+      "title": "Frankenstein, Chapter XX: adrift, and a hostile shore",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Victor’s moods hour by hour through one night and day at sea, and notice how the older narrator builds suspense at the end.",
+      "focus": "Disposing of the remains feels like a crime; a storm at sea shows Victor how much he still wants to live; a strange town meets him with suspicion.",
+      "context": "Recap: on his Orkney island Victor destroyed the female companion he had half made, while the creature watched from the window. The creature vowed revenge, said “I shall be with you on your wedding-night,” and rowed away toward the mainland. Victor’s friend Henry Clerval is waiting in Scotland and has plans for a journey to India. A skiff is a small boat; a magistrate is a local judge.",
+      "contentNote": "Victor sinks the remains of the half-made body; he is nearly lost at sea; a crowd treats him as a murderer.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XX, from Clerval’s letter to the end of the chapter; opens “The sun had far descended, and I still sat on the shore, satisfying my appetite, which…”; closes “…of the frightful events which I am about to relate, in proper detail, to my recollection.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-18",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-20",
+        "blocks": [
+          603,
+          619
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "45f787ef3c8262e4f09d096b2bf60def724fb05ae1e983deb93291121013f117"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-19-q1",
+          "prompt": "Victor says he “almost felt as if I had mangled the living flesh of a human being,” and that sinking the basket felt like “a dreadful crime.” Why might he feel this, if he believes he did right?",
+          "facilitatorNotes": [
+            "The body was nearly complete, and he made it to live; destroying it at night, in secret, looks like hiding a murder. His feelings do not match his reasoning.",
+            "Some readers take this as a sign that the female creature was already in some sense a person; others see Victor’s habitual guilt. Both can be argued from these sentences."
+          ],
+          "evidence": [
+            "I almost felt as if I had mangled the living flesh of a human being",
+            "I felt as if I was about the commission of a dreadful crime"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-19-q2",
+          "prompt": "Victor says “a film had been taken from before my eyes.” What does he now see clearly, and what does he still not consider?",
+          "facilitatorNotes": [
+            "He now judges that making a second creature would be “an act of the basest and most atrocious selfishness,” where before he felt bound by his promise. But he does “not reflect that a voluntary act of mine could avert” the threat.",
+            "He has clarity about one decision and none about what to do next: he does not warn anyone or change his plans. Ask whether a person can be right about the choice and still careless about its results."
+          ],
+          "evidence": [
+            "I now felt as if a film had been taken from before my eyes",
+            "I did not reflect that a voluntary act of mine could avert it"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-19-q3",
+          "prompt": "At sea he cries that the sea is “to be my grave,” yet when he sees land “tears gushed from my eyes.” What does Victor learn about himself, and how does he state it?",
+          "facilitatorNotes": [
+            "He has just wished to live out his life on a barren rock and expected to die, yet the sight of land fills him with “a flood of warm joy.” He sums it up: “how strange is that clinging love we have of life even in the excess of misery!”",
+            "The episode tests his claims of wanting death. Readers might ask whether his despair is less complete than he says, or whether the body simply overrules the mind."
+          ],
+          "evidence": [
+            "I looked upon the sea, it was to be my grave.",
+            "How mutable are our feelings, and how strange is that clinging love we have of life even in the excess of misery!"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-19-q4",
+          "prompt": "How do the townspeople’s answers build suspense? What does the last paragraph tell you that Victor did not know then?",
+          "facilitatorNotes": [
+            "They whisper, refuse his questions (“You will know that soon enough”), and only then say a gentleman was “found murdered here last night.” Victor feels sure of his innocence.",
+            "The older narrator steps in: “Little did I then expect the calamity,” and then “I must pause here.” Ask how this pause, addressed to Walton, makes the next chapter feel inevitable."
+          ],
+          "evidence": [
+            "You will know that soon enough",
+            "you are to give an account of the death of a gentleman who was found murdered here last night",
+            "Little did I then expect the calamity that was in a few moments to overwhelm me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-20",
+      "title": "Frankenstein, Chapter XXI: the evidence and the body",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Weigh the witnesses as a juror would, then notice how Victor’s own behaviour becomes evidence against him.",
+      "focus": "Testimony builds a strong-seeming case; the victim is Clerval; Victor’s cries of guilt are true in one sense and false in another.",
+      "context": "Recap: Victor destroyed the companion he was making for the creature, who vowed revenge and rowed toward the mainland. Victor sailed out at night to sink the remains, was blown off course, and landed in an Irish town where a crowd took him to Mr. Kirwin, the magistrate, to answer for a murder committed the night before. William, Victor’s little brother, was strangled by the creature; Justine Moritz, a servant of the family, was executed for that murder. The town’s name is printed as “* * *,” a novelist’s way of not naming a real place. Deposed means gave sworn testimony; an apothecary prepared medicines.",
+      "contentNote": "A strangled body; Victor’s delirium, imprisonment and wish to die.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XXI, from the start through Victor’s first weeks in prison and Mr. Kirwin’s care; opens “I was soon introduced into the presence of the magistrate, an old benevolent man, with…”; closes “…to see that I was not neglected; but his visits were short, and with long intervals.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-19",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-21",
+        "blocks": [
+          621,
+          640
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2074862b064fa128f10042cd18c5ff408dfedf0e11ff6d2cfd6e297a8731653"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-20-q1",
+          "prompt": "List the evidence against Victor. Which pieces are strong, and which are guesses?",
+          "facilitatorNotes": [
+            "Daniel Nugent saw “a single man” in a boat like Victor’s; a woman saw a boat push off from the spot; other men reason that the wind could have driven him back. The body was warm and dry, so not drowned.",
+            "The boat sightings were by starlight and at a distance; the men’s theory that he “brought the body from another place” is speculation. Ask what alibi Victor knows he has, and why he feels “perfectly tranquil.”"
+          ],
+          "evidence": [
+            "as far as he could judge by the light of a few stars, it was the same boat in which I had just landed",
+            "it was likely, that as I did not appear to know the shore"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-20-q2",
+          "prompt": "Why does Victor tremble when the witness mentions “the black mark of fingers”? How does the magistrate read it?",
+          "facilitatorNotes": [
+            "He recognizes how his brother William was killed and knows the creature has struck. The magistrate, who cannot know this, “drew an unfavourable augury”: a reasonable inference from the wrong cause.",
+            "The scene shows how innocent knowledge can look like guilt, a theme that ran through Justine’s trial. Ask whether Victor’s secret is now harming him as it harmed her."
+          ],
+          "evidence": [
+            "the black mark of fingers on his neck",
+            "The magistrate observed me with a keen eye, and of course drew an unfavourable augury from my manner."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-20-q3",
+          "prompt": "At the coffin Victor cries, “Have my murderous machinations deprived you also … of life?” In what sense is he a murderer, and in what sense not?",
+          "facilitatorNotes": [
+            "He did not strangle Clerval, but he made the creature, refused it, and destroyed its companion, knowing it had threatened revenge. In his fever he calls himself “the murderer of William, of Justine, and of Clerval.”",
+            "Readers can argue that his guilt is moral responsibility, not legal guilt, or that he takes on too much and so excuses the creature. The question returns at the end of the novel."
+          ],
+          "evidence": [
+            "Have my murderous machinations deprived you also, my dearest Henry, of life?",
+            "I called myself the murderer of William, of Justine, and of Clerval."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-20-q4",
+          "prompt": "Victor first judges the nurse and physician harshly, then learns what Mr. Kirwin has done. What does this show about how he reads other people at this point?",
+          "facilitatorNotes": [
+            "He sees “utter carelessness” in the doctor and “brutality” in the nurse and asks who could care for “a murderer.” Then he learns Kirwin chose the best room and provided both doctor and nurse, though he keeps his visits short.",
+            "Victor’s judgments come through his misery. Some readers trust his picture of the nurse, whose words are indeed unfeeling; others notice that his first reflections are corrected by fact within a paragraph."
+          ],
+          "evidence": [
+            "utter carelessness was visible in the first, and the expression of brutality was strongly marked in the visage of the second",
+            "I soon learned that Mr. Kirwin had shown me extreme kindness."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-21",
+      "title": "Frankenstein, Chapter XXI: a visitor, a release and a night at sea",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how a single misunderstanding turns a kind visit into suspicion and back. Then follow Victor’s despair to the one duty that moves him.",
+      "focus": "Victor’s father arrives, the charge is dropped, and Victor returns toward Geneva with nothing left but watchfulness and the drug that lets him sleep.",
+      "context": "Recap: in an Irish town Victor was charged with the murder of a young man found strangled on the beach, and when he was shown the body it was his friend Henry Clerval. He fell into a fever for two months and woke in prison, where the magistrate, Mr. Kirwin, had quietly arranged a doctor and the best room. Victor’s native language is French; Elizabeth is his cousin and intended bride; Ernest is his younger brother. The assizes were the periodic county courts; a grand jury decided whether a case should go to trial. Laudanum, opium dissolved in alcohol, was a common medicine. Havre-de-Grace is the French port now called Le Havre; maladie du pays is French for homesickness.",
+      "contentNote": "Victor wishes to die and makes attempts on his own life, which others prevent; he takes a double dose of laudanum to sleep.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XXI, from Mr. Kirwin’s visit in prison to the end of the chapter; opens “One day, while I was gradually recovering, I was seated in a chair, my eyes half open,…”; closes “…calm forgetfulness, of which the human mind is by its structure peculiarly susceptible.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-20",
+        "continuesTo": null,
+        "blocks": [
+          641,
+          669
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb7ec72400053dcff8dc375b68ed11e15b03343f2d8dfacabdcd4cad4e54f614"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-21-q1",
+          "prompt": "Why does Victor cry “Oh! take him away!” when told a friend has come? How does Kirwin read the outburst, and how is it resolved?",
+          "facilitatorNotes": [
+            "Victor assumes the creature has come “to mock at my misery.” Kirwin takes the horror as “a presumption of my guilt” and speaks severely, until Victor learns it is his father and is transformed from “anguish to pleasure.”",
+            "The scene repeats the pattern of the inquest: Victor’s secret knowledge makes innocent fear look like guilt. Ask how close Victor comes, again, to being judged by his manner."
+          ],
+          "evidence": [
+            "Oh! take him away! I cannot see him; for God's sake, do not let him enter!",
+            "He could not help regarding my exclamation as a presumption of my guilt"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-21-q2",
+          "prompt": "Victor tells Kirwin that being freed from the charge is “my least concern.” Why? What does he want instead?",
+          "facilitatorNotes": [
+            "He is “the most miserable of mortals,” and death would be no evil. Even after the grand jury rejects the bill, “the walls of a dungeon or a palace were alike hateful.”",
+            "His despair is complete, yet notice what he still fears: the first thing he asks his father is whether Elizabeth and Ernest are safe. Ask what that question reveals."
+          ],
+          "evidence": [
+            "That is my least concern",
+            "for to me the walls of a dungeon or a palace were alike hateful",
+            "Are you then safe--and Elizabeth--and Ernest?"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-21-q3",
+          "prompt": "What image haunts Victor after his release? Why does Shelley pair those two sets of eyes?",
+          "facilitatorNotes": [
+            "Two eyes glare through the darkness: Clerval’s dying eyes with their long lashes, and the creature’s “watery, clouded eyes” as he first saw them at Ingolstadt.",
+            "The pairing joins victim and maker of the crime, and takes Victor back to the night he gave the creature life, which he recalls again on the ship. Some readers see his guilt fusing the two; others see grief and terror kept apart."
+          ],
+          "evidence": [
+            "the glimmer of two eyes that glared upon me",
+            "the watery, clouded eyes of the monster, as I first saw them in my chamber at Ingolstadt"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-21-q4",
+          "prompt": "What duty finally overcomes Victor’s “selfish despair”? Is it a duty of love or of revenge?",
+          "facilitatorNotes": [
+            "He must return to Geneva to “watch over the lives of those I so fondly loved” and to lie in wait to kill the creature, “the monstrous Image which I had endued with the mockery of a soul.”",
+            "It is both in one sentence. Ask readers whether protecting his family and hunting the creature fit together, and notice that he calls his own despair “selfish.” The chapter ends with only a “truce” between him and the future."
+          ],
+          "evidence": [
+            "Yet one duty remained to me, the recollection of which finally triumphed over my selfish despair.",
+            "the monstrous Image which I had endued with the mockery of a soul still more monstrous",
+            "a feeling that a truce was established between the present hour and the irresistible, disastrous future"
+          ]
+        }
+      ]
     }
   ]
 }
