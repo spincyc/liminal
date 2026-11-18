@@ -69,6 +69,209 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-02",
+      "title": "Robinson Crusoe: a first voyage and a first storm",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Listen for two Crusoes: the young man who feels the storm and the old narrator who judges him. Track each vow made in fear and what undoes it.",
+      "focus": "A repentance that lasts exactly as long as the bad weather.",
+      "context": "Daniel Defoe published Robinson Crusoe in 1719 as the memoir of a sailor told in old age; this is an 1808 edition. Recap: Crusoe’s father, a retired merchant in York, begged him to stay in “the middle station of life” and warned that God would not bless him if he went to sea. The Humber is the estuary at Hull. The prodigal son is the young man in Jesus’s parable (Luke 15) who wastes his inheritance and comes home to be forgiven. “A capful of wind” is a mere breeze; punch is a drink of spirits, sugar and water.",
+      "contentNote": "Crusoe gets drunk to forget his fear.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, opening of the narrative, from Crusoe’s departure from Hull through the bowl of punch after the first storm; opens “It was not till almost a year after this that I broke loose, though, in the meantime, I…”; closes “…the worst and most hardened wretch among us would confess both the danger and the mercy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-defoe-robinson-crusoe-1808-03",
+        "blocks": [
+          11,
+          14
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bde006b0c9c2047c13103643c1af1897ce3cabee20b54bec94935fd47ade6fb8"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-02-q1",
+          "prompt": "How does Crusoe leave home? What does the old narrator’s string of “without” phrases show about how he now judges that day?",
+          "facilitatorNotes": [
+            "He goes on impulse: a friend at Hull offers a free passage and he sails “in an ill hour” without telling his parents. The narrator piles up what he left out (God’s blessing, his father’s, any thought of consequences) and adds that no adventurer’s misfortunes “began sooner, or continued longer.”",
+            "The date and the foreshadowing come from someone who knows how the story ends. Some readers find the older voice preachy; others hear real regret."
+          ],
+          "evidence": [
+            "without asking God’s blessing, or my father’s, without any consideration of circumstances or consequences",
+            "Never any young adventurer’s misfortunes, I believe, began sooner, or continued longer than mine."
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-02-q2",
+          "prompt": "In the storm Crusoe resolves to go home “like a true repenting prodigal.” What does the comparison mean, and what undoes the resolution?",
+          "facilitatorNotes": [
+            "Like the son in the parable, he means to return to his father and admit he was wrong. But when the sea calms his companion mocks him as a “fresh-water sailor,” the punch is made, and “in that one night’s wickedness I drowned all my repentance.”",
+            "The verb “drowned” is a grim joke: the sea that threatened to drown him did not, but drink drowns his good intentions. Students may point out how quickly fear and peer pressure both change his mind."
+          ],
+          "evidence": [
+            "I resolved that I would, like a true repenting prodigal, go home to my father",
+            "in that one night’s wickedness I drowned all my repentance"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-02-q3",
+          "prompt": "The narrator compares his calming thoughts to the calming sea and says Providence meant to leave him “entirely without excuse.” How does he explain the storms, and is the explanation convincing?",
+          "facilitatorNotes": [
+            "The older Crusoe reads the storms as warnings from God, each harder than the last; the younger Crusoe simply waits for the weather to change and forgets. The comparison of mind and sea makes his conscience as changeable as the water.",
+            "Readers can accept the religious explanation as Crusoe’s belief, which shapes the whole book, or question whether it is hindsight imposed on ordinary bad luck. The text supports discussing both."
+          ],
+          "evidence": [
+            "as the sea was returned to its smoothness of surface and settled calmness by the abatement of that storm, so the hurry of my thoughts being over",
+            "Providence, as in such cases generally it does, resolved to leave me entirely without excuse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-03",
+      "title": "Robinson Crusoe: the great storm in Yarmouth Roads",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how Crusoe measures the storm by watching the experienced seamen, and how frankly he records his own uselessness.",
+      "focus": "A second storm, worse than the first, and the same lesson ignored.",
+      "context": "Recap: Crusoe ran away to sea from Hull against his father’s wishes. Terrified in a first storm, he vowed to go home, but his friend laughed at him and a night of drinking “drowned” his repentance. Yarmouth Roads is a sheltered anchorage off the Norfolk coast where ships waited for a fair wind. To “founder” is to fill with water and sink; colliers are coal ships; the boatswain is the officer in charge of rigging, anchors and the crew’s work. In the parable of the prodigal son, the father “killed the fatted calf” to celebrate his son’s return.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Robinson Crusoe, from the arrival in Yarmouth Roads through the rescue and Crusoe’s missed chance to go home; opens “The sixth day of our being at sea we came into Yarmouth Roads; the wind having been…”; closes “…Yarmouth Roads, it was a great while before he had any assurance that I was not drowned.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-defoe-robinson-crusoe-1808-02",
+        "continuesTo": "reading-9-defoe-robinson-crusoe-1808-04",
+        "blocks": [
+          15,
+          23
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e1a6fdf36c1c94237b15f67486e71c032a194c26e4680dd3a721701ed52162f"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-03-q1",
+          "prompt": "How does Crusoe make the reader feel the danger? Find places where he shows it through the seamen rather than through his own feelings.",
+          "facilitatorNotes": [
+            "He sees “terror and amazement in the faces even of the seamen,” overhears the master praying softly, and watches the master and boatswain “at their prayers.” For a beginner who cannot judge a storm himself, the fear of experts is the best measure.",
+            "The scene answers the companion who called the first storm “a capful of wind”: now the professionals are afraid."
+          ],
+          "evidence": [
+            "now I began to see terror and amazement in the faces even of the seamen themselves",
+            "Lord be merciful to us! we shall be all lost, we shall be all undone!"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-03-q2",
+          "prompt": "When the distress gun fires, Crusoe faints, and a sailor pushes him aside with his foot. Why might a narrator include such an unflattering moment?",
+          "facilitatorNotes": [
+            "It shows his ignorance (he did not even know what “founder” meant) and his insignificance in a crisis, when “every body had his own life to think of.” The honesty makes the account more believable.",
+            "Some readers find the scene comic; others find it frightening, since he could have been left for dead. Both responses fit the plain way he tells it."
+          ],
+          "evidence": [
+            "It was my advantage in one respect, that I did not know what they meant by founder till I inquired.",
+            "thrusting me aside with his foot, let me lie, thinking I had been dead"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-03-q3",
+          "prompt": "“Had I now had the sense to have gone back to Hull…” Why does the narrator return to the parable of the prodigal son here, and what does the detail about his father add?",
+          "facilitatorNotes": [
+            "He states what did not happen: his father would have welcomed him as the father in the parable welcomed his son. The people of Yarmouth even gave the crew money to go home. The note that his father long feared him drowned shows the cost of the voyage to his family.",
+            "The conditional sentence lets the reader feel the missed chance. Students may discuss why, with money in hand and every reason to return, he still does not."
+          ],
+          "evidence": [
+            "my father, an emblem of our blessed Saviour’s parable, had even killed the fatted calf for me",
+            "it was a great while before he had any assurance that I was not drowned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-04",
+      "title": "Robinson Crusoe: a master’s warning and a voyage to Guinea",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate the advice others give Crusoe, his own reasons for ignoring it, and the general lessons the old narrator draws.",
+      "focus": "Shame keeps Crusoe from going home, and a profitable voyage feeds the ambition that will ruin him.",
+      "context": "Recap: Crusoe’s first ship sank in a storm off Yarmouth; the crew was rescued and given money to go home, but Crusoe did not go. In the Bible, the prophet Jonah fled from God by ship to Tarshish, and a storm raged until the sailors threw him overboard. Guinea is the West African coast; in Crusoe’s time Europeans traded goods there for gold, ivory and enslaved people. An “adventure” is goods a passenger takes to trade on his own account; “40l.” is forty pounds; a foremastman is an ordinary sailor; a calenture is a tropical fever; “the line” is the equator.",
+      "contentNote": "The West African trade Crusoe joins also bought and sold enslaved people; this passage describes only his trade in goods for gold.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from Crusoe’s “ill fate” after the wreck through his first voyage to the coast of Guinea; opens “But my ill fate pushed me on now with an obstinacy that nothing could resist; and though…”; closes “…being upon the coast, from the latitude of 15 degrees north even to the line itself.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-defoe-robinson-crusoe-1808-03",
+        "continuesTo": null,
+        "blocks": [
+          24,
+          34
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ed4aa3aa25d316a382cfebb5e54e3fd57da6cacb556e04a33c34aaa7892adf1f"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-04-q1",
+          "prompt": "The master of the wrecked ship compares Crusoe to Jonah. What does he mean, and how does the narrator respond to the claim?",
+          "facilitatorNotes": [
+            "He suggests the storm came because of Crusoe, as it came because of Jonah, and that Heaven has shown what he can expect at sea. The narrator calls the outburst “an excursion of his spirits” that went “farther than he could have authority to go”: no man can declare God’s judgment so confidently.",
+            "Still, the narrator records the master’s prophecy of “nothing but disasters and disappointments,” which the rest of the book fulfils. Students may notice that he rejects the claim but keeps the warning."
+          ],
+          "evidence": [
+            "perhaps this is all befallen us on your account, like Jonah in the ship of Tarshish",
+            "farther than he could have authority to go",
+            "wherever you go, you will meet with nothing but disasters and disappointments"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-04-q2",
+          "prompt": "Crusoe observes that young people “are not ashamed to sin, and yet are ashamed to repent.” What keeps him from going home, and do you think the observation is true?",
+          "facilitatorNotes": [
+            "He imagines being laughed at by the neighbours, and as the memory of danger fades so does his wish to return. The older narrator turns his own case into a general rule about pride.",
+            "Students may test the maxim against their own experience; it applies well beyond sailing. Some will argue that embarrassment is a weaker motive than ambition, which the next paragraphs reveal."
+          ],
+          "evidence": [
+            "shame opposed the best motions that offered to my thoughts",
+            "they are not ashamed to sin, and yet are ashamed to repent"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-04-q3",
+          "prompt": "The Guinea voyage is the only successful one in Crusoe’s life. What does he gain from it, and why does he call its success the start of his ruin?",
+          "facilitatorNotes": [
+            "An honest captain teaches him navigation and helps him turn forty pounds of trinkets into gold-dust worth almost three hundred: “this voyage made me both a sailor and a merchant.” But profit fills him with “aspiring thoughts,” so success becomes the trap.",
+            "He also admits that he travelled “in the habit of a gentleman” rather than learning a sailor’s work. Readers can discuss whether his ruin comes from ambition, from luck, or from this habit of wanting the reward without the training."
+          ],
+          "evidence": [
+            "this voyage made me both a sailor and a merchant",
+            "this filled me with those aspiring thoughts which have so completed my ruin",
+            "I would always go on board in the habit of a gentleman"
+          ]
+        }
+      ]
     }
   ]
 }
