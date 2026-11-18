@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "dickens-christmas-carol-1905",
+  "readings": [
+    {
+      "id": "reading-8-dickens-christmas-carol-1905-01",
+      "title": "A Christmas Carol — Stave One: the carol at the keyhole",
+      "sourceId": "dickens-christmas-carol-1905",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how the narrator’s comic exaggerations turn weather and street life into a comment on Scrooge.",
+      "focus": "A whole city keeps Christmas in the cold, while Scrooge treats a holiday as a theft.",
+      "context": "A Christmas Carol (1843) by Charles Dickens follows Ebenezer Scrooge, a London moneylender who scorns Christmas, through one night of ghostly visits. This passage comes late on Christmas Eve, after Scrooge has refused his nephew’s invitation and two gentlemen collecting for the poor. Links are torches; a brazier is an iron fire basket; the Mansion House is the Lord Mayor’s residence; in legend St. Dunstan seized the Devil by the nose with tongs. The clerk, Bob Cratchit, works in a cell-like room called the “tank”; half-a-crown is a coin worth a fraction of his week’s pay; a comforter is a long scarf.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Stave One, “Marley’s Ghost,” from the thickening fog on Christmas Eve to the clerk’s run home; opens “Meanwhile the fog and darkness thickened so, that people ran about with flaring links,…”; closes “…and then ran home to Camden Town as hard as he could pelt, to play at blindman's buff.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          82
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7a5a9e41c53cfb4566c07f389ada4dc1aa03e4a4fea91a50bc8b78a7f9482464"
+      },
+      "questions": [
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-01-q1",
+          "prompt": "The ice from the water-plug is “misanthropic,” and the church tower’s teeth seem to chatter. What do these comic personifications add to the opening paragraph?",
+          "facilitatorNotes": [
+            "Objects take on human moods. “Misanthropic” (hating people) is a word that fits Scrooge, so the cold seems to share his temper, while the bright shops and the brazier answer it with warmth and company. Some readers will treat the lines as pure fun; both readings notice that Dickens makes the weather a character."
+          ],
+          "evidence": [
+            "turned to misanthropic ice",
+            "as if its teeth were chattering in its frozen head up there"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-01-q2",
+          "prompt": "The boy at the keyhole sings “God bless you, merry gentleman.” Why is that a pointed line to quote, and what does Scrooge prefer instead?",
+          "facilitatorNotes": [
+            "Scrooge is the gentleman being blessed, and he answers the blessing with a ruler. The narrator says the frost is “more congenial” to him than the song: he would rather have cold than kindness."
+          ],
+          "evidence": [
+            "Scrooge seized the ruler with such energy of action",
+            "leaving the keyhole to the fog, and even more congenial frost"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-01-q3",
+          "prompt": "How does Scrooge argue that a paid holiday is unfair to him? Is the clerk’s reply an answer to the argument?",
+          "facilitatorNotes": [
+            "Scrooge reverses the case: docking a day’s wages would make the clerk feel ill-used, so paying for no work makes Scrooge ill-used. He sees everything as an exchange, so a holiday becomes “picking a man’s pocket.” The clerk does not dispute the arithmetic; he appeals to the occasion. Some readers notice that Scrooge grants the day anyway, which suggests custom binds even him."
+          ],
+          "evidence": [
+            "you don't think me ill used when I pay a day's wages for no work",
+            "A poor excuse for picking a man's pocket every twenty-fifth of December!"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-01-q4",
+          "prompt": "The clerk has no great-coat, yet he slides down Cornhill twenty times and runs home to play. What does the last paragraph suggest about where joy comes from in this story?",
+          "facilitatorNotes": [
+            "His poverty, shown quietly in the parenthesis, does not stop his delight, and his play contrasts with Scrooge’s “growl.” The parenthesis also records what Scrooge’s wages cannot buy; readers may find the picture cheerful, sentimental, or both."
+          ],
+          "evidence": [
+            "(for he boasted no great-coat)",
+            "Scrooge walked out with a growl"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-8-dickens-christmas-carol-1905-02",
+      "title": "A Christmas Carol — Stave One: the phantoms at the window",
+      "sourceId": "dickens-christmas-carol-1905",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Watch Scrooge joke and bargain under pressure, and compare what Marley says with what Scrooge is then shown.",
+      "focus": "A warning turns into a sight: spirits who long to help the living and no longer can.",
+      "context": "A Christmas Carol (1843) by Charles Dickens follows Ebenezer Scrooge, a London moneylender who scorns Christmas, through one night of ghostly visits. On Christmas Eve the ghost of Scrooge’s dead partner, Jacob Marley, has appeared in his rooms wearing a chain he forged in life, lamenting that he never made mankind his business. The “wrapper” is the cloth tied round a dead person’s head to keep the jaw shut. “Humbug,” Scrooge’s favourite word, means nonsense or fraud.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Stave One, “Marley’s Ghost,” from “Hear me!” to the end of the stave; opens “\"Hear me!\" cried the Ghost. \"My time is nearly gone.\"”; closes “…of repose, went straight to bed without undressing, and fell asleep upon the instant.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-dickens-christmas-carol-1905-03",
+        "blocks": [
+          156,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a5d7667fb257b2ba47b691a8c0192c72c5895e7be8774e5b68dec6096d20b131"
+      },
+      "questions": [
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-02-q1",
+          "prompt": "Scrooge begs Marley not to be “flowery” and asks whether he could “take ’em all at once.” What do these replies show about how he is taking the warning?",
+          "facilitatorNotes": [
+            "Even frightened, he treats the hauntings like an unpleasant appointment to get over with, and the comedy shows he has not yet grasped how serious they are. Others may read the jokes as nervousness: a way of keeping fear at a distance."
+          ],
+          "evidence": [
+            "Don't be flowery, Jacob! Pray!",
+            "Couldn't I take 'em all at once, and have it over, Jacob?"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-02-q2",
+          "prompt": "Marley calls the Three Spirits a “chance and hope of my procuring.” Why does Scrooge’s face fall, and why might the visits still be a gift?",
+          "facilitatorNotes": [
+            "He hoped for a reprieve and hears of three more hauntings. Marley says that without them Scrooge cannot avoid Marley’s own fate; the hope lies in being changed, not in being spared discomfort."
+          ],
+          "evidence": [
+            "Scrooge's countenance fell almost as low as the Ghost's had done.",
+            "you cannot hope to shun the path I tread"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-02-q3",
+          "prompt": "What is the misery of the phantoms outside the window? Why is the ghost with the iron safe a fitting example?",
+          "facilitatorNotes": [
+            "They want to interfere for good in human matters and have lost the power for ever. The safe, a moneyed man’s burden, now holds back a ghost who can see a woman and infant in need and cannot help them. The punishment is to see need and be unable to act, which is exactly what Scrooge can still do."
+          ],
+          "evidence": [
+            "they sought to interfere, for good, in human matters, and had lost the power for ever",
+            "a monstrous iron safe attached to its ankle"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-02-q4",
+          "prompt": "Scrooge tries to say “Humbug!” and stops, and then the narrator offers five reasons why he needs sleep. How does this ending leave open what has happened?",
+          "facilitatorNotes": [
+            "The unfinished word shows his old certainty failing. The list mixes a supernatural cause with comic everyday ones, such as the Ghost’s dull conversation, so the narrator teases rather than settles whether this was real. Readers may weigh how much the joke undercuts the warning, or only lightens it."
+          ],
+          "evidence": [
+            "but stopped at the first syllable",
+            "or his glimpse of the Invisible World, or the dull conversation of the Ghost"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-8-dickens-christmas-carol-1905-03",
+      "title": "A Christmas Carol — Stave Two: the Ghost of Christmas Past",
+      "sourceId": "dickens-christmas-carol-1905",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Picture a figure built out of contradictions, and connect its strangest features to what it stands for.",
+      "focus": "A stopped clock, a visitor both young and old, and a light Scrooge would rather cover.",
+      "context": "Recap: Marley’s Ghost has warned Scrooge that three spirits will visit him, the first when the bell tolls One, and the phantoms outside his window have shown him spirits who can no longer help anyone. A repeater is a watch that chimes the hour when its spring is pressed. A “First of Exchange” is a bill promising payment a set number of days after it is presented; a “United States security” was a London joke for a worthless bond, after several American states failed to pay their debts. An extinguisher is a cone-shaped cap for putting out a candle.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Stave Two, “The First of the Three Spirits,” from Scrooge’s waking to “you shall be upheld in more than this!”; opens “When Scrooge awoke it was so dark, that, looking out of bed, he could scarcely…”; closes “…said the Spirit, laying it upon his heart, \"and you shall be upheld in more than this!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-dickens-christmas-carol-1905-02",
+        "continuesTo": null,
+        "blocks": [
+          179,
+          217
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46dcbd8c85eff5e64e6166b49ba91d1e2c980c0d88e1e77279724aa38878a070"
+      },
+      "questions": [
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-03-q1",
+          "prompt": "When Scrooge fears he has slept through a whole day, what thought makes it a relief that there is no noise in the street? What does this tell us about him?",
+          "facilitatorNotes": [
+            "If day had vanished, bills payable after “three days” would be worthless, so his relief is about his money. Even in a supernatural crisis his mind goes first to business."
+          ],
+          "evidence": [
+            "would have become a mere United States security if there were no days to count by"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-03-q2",
+          "prompt": "The Ghost is like a child and like an old man, carries winter holly but wears summer flowers, and keeps losing and regaining its shape. Why might the Ghost of Christmas Past look like this?",
+          "facilitatorNotes": [
+            "Memory mixes ages and seasons, and it is vivid in some places and dissolves in others, as the flickering belt and shifting limbs suggest. Some readers connect the young face and white hair to an old man seeing his own childhood. Other readings are possible if they rest on the details."
+          ],
+          "evidence": [
+            "like a child: yet not so like a child as like an old man",
+            "now a thing with one arm, now with one leg, now with twenty legs"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-03-q3",
+          "prompt": "Scrooge wants the Spirit to put on its cap. Why does the Spirit object so strongly, and what might its light stand for?",
+          "facilitatorNotes": [
+            "The cap is an extinguisher, and the light is the clear sight that memory gives. The Spirit blames people like Scrooge, whose “passions made this cap,” for keeping that light low. That Scrooge cannot say why he asked hints at a wish not to see."
+          ],
+          "evidence": [
+            "would you so soon put out, with worldly hands, the light I give?",
+            "Perhaps Scrooge could not have told anybody why"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-03-q4",
+          "prompt": "The narrator breaks in: “as close to it as I am now to you.” What does this sentence do to the reader’s position in the scene?",
+          "facilitatorNotes": [
+            "It sounds like a storyteller reading aloud by the fire, and it places the reader inside Scrooge’s bedroom, close enough to feel the ghost. Some readers hear a teasing tone, as in a ghost story told to frighten listeners pleasantly."
+          ],
+          "evidence": [
+            "as close to it as I am now to you, and I am standing in the spirit at your elbow"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-03-q5",
+          "prompt": "The Ghost first says it comes for Scrooge’s “welfare,” then corrects itself to “reclamation.” What is the difference, and why does the Ghost change the word?",
+          "facilitatorNotes": [
+            "Scrooge thinks his welfare would be served by a night’s sleep, so the Ghost names its real purpose: to reclaim him, as one reclaims something lost or spoiled. The change shows the Spirit hearing his thoughts and refusing a comfortable word."
+          ],
+          "evidence": [
+            "Your reclamation, then. Take heed!",
+            "a night of unbroken rest would have been more conducive to that end"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-8-dickens-christmas-carol-1905-04",
+      "title": "A Christmas Carol — Stave Two: Fan comes to fetch her brother",
+      "sourceId": "dickens-christmas-carol-1905",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Infer what a family was like from a child’s happy speech, and notice what the Ghost makes Scrooge connect.",
+      "focus": "A rescue from a lonely school, and the nephew Scrooge has refused.",
+      "context": "A Christmas Carol (1843) by Charles Dickens follows Ebenezer Scrooge, a London moneylender who scorns Christmas, through one night of ghostly visits. The Ghost of Christmas Past has taken Scrooge back to the school where he spent lonely holidays as a boy, reading by himself while the other boys went home; watching, Scrooge wept and wished he had given something to the boy who sang at his door. A box is a trunk; a chaise is a light carriage driven by a postboy; the “sweep” is the curved drive; to gainsay is to deny.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Stave Two, “The First of the Three Spirits,” from “Let us see another Christmas!” to Scrooge’s brief “Yes”; opens “The Ghost smiled thoughtfully, and waved its hand: saying, as it did so, \"Let us see…”; closes “Scrooge seemed uneasy in his mind; and answered briefly, \"Yes.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          242,
+          257
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5f120a25be435b11cd3eb13c797a054cc830663d7d7774d8118d78a4c7350211"
+      },
+      "questions": [
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-04-q1",
+          "prompt": "How does the narrator show that years have passed since the last Christmas the Ghost showed, without giving a date?",
+          "facilitatorNotes": [
+            "The boy is larger, and the room decays: panels shrink, windows crack, plaster falls. He is no longer reading but pacing. The setting ages along with the loneliness."
+          ],
+          "evidence": [
+            "Scrooge's former self grew larger at the words, and the room became a little darker and more dirty",
+            "He was not reading now, but walking up and down despairingly."
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-04-q2",
+          "prompt": "What does Fan’s joyful speech reveal about the Scrooge household? Which words hint at what home was like before?",
+          "facilitatorNotes": [
+            "“So much kinder than he used to be” implies a harsh father, and she had to ask “once more.” The present happiness rests on an earlier unkindness that may explain why the boy was left at school, though the text only hints at it."
+          ],
+          "evidence": [
+            "Father is so much kinder than he used to be, that home's like Heaven!",
+            "I was not afraid to ask him once more if you might come home"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-04-q3",
+          "prompt": "How does Dickens make the schoolmaster comic? Find a phrase where the joke lies in an unexpected pairing of words.",
+          "facilitatorNotes": [
+            "“Ferocious condescension” joins anger with lofty politeness; the “curiously light wine” and “curiously heavy cake” mock his stinginess, and even the postboy refuses his drink. Readers may choose different phrases; ask what each says about the man."
+          ],
+          "evidence": [
+            "ferocious condescension",
+            "curiously light wine, and a block of curiously heavy cake"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-04-q4",
+          "prompt": "Why does the Ghost bring up Fan’s child, and why does Scrooge answer only “Yes”?",
+          "facilitatorNotes": [
+            "Fan’s son is the nephew whose Christmas invitation Scrooge refused the day before. The Ghost ties Scrooge’s love for his sister to his coldness toward her child. His short answer suggests he sees the connection and is not ready to admit it; some readers hear shame, others irritation."
+          ],
+          "evidence": [
+            "Your nephew!",
+            "Scrooge seemed uneasy in his mind; and answered briefly"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-8-dickens-christmas-carol-1905-05",
+      "title": "A Christmas Carol — Stave Two: one shadow more",
+      "sourceId": "dickens-christmas-carol-1905",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a scene of noisy happiness and work out why it wounds the person watching it.",
+      "focus": "The life Scrooge did not choose, and a light he cannot put out.",
+      "context": "A Christmas Carol (1843) by Charles Dickens follows Ebenezer Scrooge, a London moneylender who scorns Christmas, through one night of ghostly visits. The Ghost of Christmas Past has just shown Scrooge the young woman he was once engaged to, Belle, releasing him because he had come to love money more than her. A matron is a married woman. “The celebrated herd in the poem” is Wordsworth’s cattle, “forty feeding like one.” The extinguisher is the cone-shaped cap the Spirit carries.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Stave Two, “The First of the Three Spirits,” from “Spirit! show me no more!” to the end of the stave; opens “\"Spirit!\" said Scrooge, \"show me no more! Conduct me home. Why do you delight to torture…”; closes “…his hand relaxed; and had barely time to reel to bed before he sank into a heavy sleep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          310,
+          329
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9582390b2c0e4ded8a8d602ff596dd8b13e24d74857ecbfa1a1681528f74b6e8"
+      },
+      "questions": [
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-05-q1",
+          "prompt": "Scrooge begs to see “no more,” but the Ghost insists on “one shadow more.” Why is this happy family harder for him to watch than Belle’s farewell?",
+          "facilitatorNotes": [
+            "The farewell showed a loss; this shows what the loss cost: a full house, and a daughter who might have called him father. Happiness he could have had hurts more than a sad memory."
+          ],
+          "evidence": [
+            "might have called him father, and been a spring-time in the haggard winter of his life"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-05-q2",
+          "prompt": "In the long paragraph about the children, someone says, “What would I not have given to be one of them!” Who is speaking, and what does the interruption add?",
+          "facilitatorNotes": [
+            "The narrator himself, in an affectionate, playful voice. He voices a longing Scrooge cannot put into words. Some readers find the passage charming; others find it odd or sentimental. Both can point to its shy, joking confessions."
+          ],
+          "evidence": [
+            "What would I not have given to be one of them!",
+            "to have had the lightest licence of a child, and yet to have been man enough to know its value"
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-05-q3",
+          "prompt": "What does Belle’s husband’s report, “Quite alone in the world,” show Scrooge about himself?",
+          "facilitatorNotes": [
+            "He hears how others see him: alone in his office while his partner lies dying. The remark is casual, not cruel, which makes it more painful to hear."
+          ],
+          "evidence": [
+            "there he sat alone. Quite alone in the world, I do believe."
+          ]
+        },
+        {
+          "id": "reading-8-dickens-christmas-carol-1905-05-q4",
+          "prompt": "Scrooge presses the extinguisher down but cannot hide the light. What might this ending suggest about memory, and about whether his change has begun?",
+          "facilitatorNotes": [
+            "He tries to shut away what he has seen, yet the light streams out: memories once uncovered cannot be put back. The Ghost does not even resist, as if the struggle were with Scrooge himself. Readers may see his resistance as proof that change has not begun, or as a sign that it already hurts."
+          ],
+          "evidence": [
+            "he could not hide the light, which streamed from under it in an unbroken flood upon the ground",
+            "with no visible resistance on its own part"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    }
+  ]
+}
