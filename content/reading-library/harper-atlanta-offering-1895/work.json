@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/679/pg679.txt",
     "downloadSha256": "4fc1f2c6581d644428f30cf0e811881dc13ec95b2be1cc3f17cfc6b7847058c7",
-    "method": "Project Gutenberg plain text (eBook 679, Poems, UTF-8) from the PG mirror, compared with the Penn-hosted scan of the 1895 Atlanta Offering (https://web.english.upenn.edu/~cavitch/pdf-library/Harper_Atlanta_Offerings.pdf, retrieved 2026-11-17, SHA-256 e65a1b11c72214506bb3bac8769a347a6a088e7b69962535f9798fd8f41bdb5a). Kept the Isaiah epigraph and the poems from My Mother’s Kiss through Songs for the People, which is where the 1895 scan ends (p. 70); the seven further poems in PG 679 (Let the Light Enter to The Burdens of All, one of them on Maceo’s death in 1896) belong to a later enlarged printing and are excluded, as are the PG header and footer, the reprint title pages, the contents and the running heads with page numbers that PG keeps. Each blank-line chunk became a stanza with PG’s lines and two-space indentation kept; poem titles are headings. The twelve poems used as nightly readings were then replaced, block range for block range, by their collated text: eight punctuation marks corrected to the scan and stanzas re-joined across printed page breaks (log in the curator’s scratch lane). Converted by a scratch Node script; every nightly reading was located exactly. Harper’s one footnote, printed with an asterisk in Tried and True, is a [Footnote *: …] paragraph where the transcription places it, and its call in the verse is [*]. The November 2026 corrections in five further poems are logged in the Grade 4 calendar lane (logs/harper-atlanta-offering-1895.batch2.patch.txt)."
+    "method": "Project Gutenberg plain text (eBook 679, Poems, UTF-8) from the PG mirror, compared with the Penn-hosted scan of the 1895 Atlanta Offering (https://web.english.upenn.edu/~cavitch/pdf-library/Harper_Atlanta_Offerings.pdf, retrieved 2026-11-17, SHA-256 e65a1b11c72214506bb3bac8769a347a6a088e7b69962535f9798fd8f41bdb5a). Kept the Isaiah epigraph and the poems from My Mother’s Kiss through Songs for the People, which is where the 1895 scan ends (p. 70); the seven further poems in PG 679 (Let the Light Enter to The Burdens of All, one of them on Maceo’s death in 1896) belong to a later enlarged printing and are excluded, as are the PG header and footer, the reprint title pages, the contents and the running heads with page numbers that PG keeps. Each blank-line chunk became a stanza with PG’s lines and two-space indentation kept; poem titles are headings. The twelve poems used as nightly readings were then replaced, block range for block range, by their collated text: eight punctuation marks corrected to the scan and stanzas re-joined across printed page breaks (log in the curator’s scratch lane). Converted by a scratch Node script; every nightly reading was located exactly. Harper’s one footnote, printed with an asterisk in Tried and True, is a [Footnote *: …] paragraph where the transcription places it, and its call in the verse is [*]. The November 2026 corrections in five further poems are logged in the Grade 4 calendar lane (logs/harper-atlanta-offering-1895.batch2.patch.txt). Two four-line stanzas that a printed page break had divided into two blocks each (one each in JAMIE'S PUZZLE and A STORY OF THE REBELLION) were joined on 2026-11-18."
   },
   "scope": {
     "complete": true,
@@ -60,36 +60,36 @@
       ],
       [
         190,
-        205
+        204
       ],
       [
-        207,
-        222
+        206,
+        221
       ],
       [
-        238,
-        257
+        237,
+        256
       ],
       [
-        259,
-        263
+        258,
+        262
       ],
       [
-        310,
-        317
+        309,
+        316
       ],
       [
-        328,
-        339
+        327,
+        337
       ],
       [
-        390,
-        396
+        388,
+        394
       ]
     ]
   },
   "text": {
-    "blocks": 397,
-    "sha256": "dc195b302563d700f2cefb0cd97e3c5c5c20321198ede4af35579e506c1a7b63"
+    "blocks": 395,
+    "sha256": "b16051b160a1bcc1638b3b462feea9fa4bec51184d286ded2d54ccf8b363d93a"
   }
 }
