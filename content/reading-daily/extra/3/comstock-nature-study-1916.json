@@ -153,6 +153,79 @@
     },
     {
       "id": "reading-3-comstock-nature-study-1916-03",
+      "title": "The Chipping Sparrow — the hair-bird and its teasing children (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Find the places where Comstock is joking, and explain what each joke tells you about the bird.",
+      "focus": "A small sparrow that nests by the front door, lines its nest with hair and spoils its children.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The chipping sparrow, or “chippy,” is a small sparrow with a reddish-brown cap that often nests near houses. Treasure trove is a lucky find; a piazza is a porch; a brood is a family of young birds hatched together. Pertinaciously means stubbornly; progeny means children; garb means clothes; a door-stone is the step in front of a door.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Chipping Sparrow,” Teacher’s Story, the paragraphs on the nest and the young; opens “One peculiarity of the nest has given this sparrow the common name of hair-bird, for the…”; closes “…the bushes as we pass, as if it had not tested our harmlessness on our own door-stone.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          665,
+          666
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "480e2ed80b282d3366d0e6d7c670fac9d1a1f8531c1dd229c75975289aab9519"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-03-q1",
+          "prompt": "Why is the chippy called the “hair-bird”? Where does the hair come from?",
+          "facilitatorNotes": [
+            "Its nest is almost always lined with long, coarse hair, usually from the tails of horses or cattle, caught on boards and burs when the animals switch their tails."
+          ],
+          "evidence": [
+            "the lining is almost always of long, coarse hair, usually treasure trove from the tails of horses or cattle"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-03-q2",
+          "prompt": "What did two nests in Comstock’s own yard show? Why does she call the chippy “resourceful”?",
+          "facilitatorNotes": [
+            "The “hair market” had run out, so the birds used soft, dead white-pine needles instead, and they made a fine lining. Resourceful means finding another way when what you need is missing. Ask what readers would use."
+          ],
+          "evidence": [
+            "evidently the hair market was exhausted and the soft, dead needles of the white pine were used instead"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-03-q3",
+          "prompt": "Comstock calls the young birds “piggish” and the parents “frazzled out.” What is going on, and whose patience runs out first?",
+          "facilitatorNotes": [
+            "The grown-up young keep following their tired parents and begging, and the parents keep feeding them. Comstock jokes that the parents have no idea of discipline and that the watching humans lose patience before the birds do."
+          ],
+          "evidence": [
+            "beg to be fed; the chippy parents evidently have no idea of discipline",
+            "until our patience, at least, is exhausted."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-03-q4",
+          "prompt": "Why does the chippy become “a stranger to us” in the fall? What does the last sentence suggest about the bird in summer?",
+          "facilitatorNotes": [
+            "The parents lose their red-brown caps and go off to the fields in flocks, so we no longer recognise them, and they dodge into bushes. In summer, nesting by the house, the bird had learned that people there were harmless; one bold pair even built over the front door. Comstock sounds a little hurt."
+          ],
+          "evidence": [
+            "In the fall the chippy parents lose their red-brown caps and have streaked ones instead;",
+            "as if it had not tested our harmlessness on our own door-stone."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-04",
       "title": "The Catbird — a performer of many acts (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -181,7 +254,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-03-q1",
+          "id": "reading-3-comstock-nature-study-1916-04-q1",
           "prompt": "How did the young catbirds behave when Comstock walked into their territory?",
           "facilitatorNotes": [
             "They squalled loudly and followed her as she backed away, looking triumphant. She says they “obviously enjoyed” her fright: that is her reading of their behavior."
@@ -192,7 +265,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-03-q2",
+          "id": "reading-3-comstock-nature-study-1916-04-q2",
           "prompt": "What happened on the spring morning when Comstock heard a cardinal? What did she decide it meant?",
           "facilitatorNotes": [
             "She rushed to the window and found a catbird singing the cardinal’s song. Cardinals were rare in New York, so she decided this catbird had spent the winter in the South among cardinals and learned their song there."
@@ -202,7 +275,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-03-q3",
+          "id": "reading-3-comstock-nature-study-1916-04-q3",
           "prompt": "Comstock and Mr. Mathews disagree about the catbird’s true song. What does each of them think?",
           "facilitatorNotes": [
             "Mathews thinks it is a medley of other birds’ songs; Comstock finds it “very individual,” its own. She still agrees the catbird is a true mocker, so both can be partly right."
@@ -212,7 +285,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-03-q4",
+          "id": "reading-3-comstock-nature-study-1916-04-q4",
           "prompt": "Why does Comstock say the catbird belongs to vaudeville? Which details support the joke?",
           "facilitatorNotes": [
             "Like a vaudeville performer it has many acts: lovely songs, scolding, a cat-like call slipped into its song, and imitations of robins and even chickens. Its plain gray feathers are its “slate-colored tights,” a costume."
@@ -225,7 +298,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-04",
+      "id": "reading-3-comstock-nature-study-1916-05",
       "title": "The Screech Owl — a chilling song and a turning head (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -254,7 +327,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-04-q1",
+          "id": "reading-3-comstock-nature-study-1916-05-q1",
           "prompt": "Why is the screech owl’s song so “fascinating,” according to Comstock? How does the owl himself hear it?",
           "facilitatorNotes": [
             "Not because it is musical, but because it sends chills up and down the listener’s spine. To the owl it is “the most beautiful music in the world,” a call to his mate."
@@ -265,7 +338,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-04-q2",
+          "id": "reading-3-comstock-nature-study-1916-05-q2",
           "prompt": "How are the owl’s eyes suited to hunting at night?",
           "facilitatorNotes": [
             "They are very large, and the pupil opens until it covers most of the eye in the dark, like a cat’s."
@@ -276,7 +349,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-04-q3",
+          "id": "reading-3-comstock-nature-study-1916-05-q3",
           "prompt": "Why are the owl’s eyes in the front of its head, like ours? How does it see behind?",
           "facilitatorNotes": [
             "It hunts rather than being hunted, so it needs to focus ahead on its prey. To look behind, it turns its head “as if it were fitted on a ball-bearing joint.”"
@@ -287,7 +360,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-04-q4",
+          "id": "reading-3-comstock-nature-study-1916-05-q4",
           "prompt": "Describe Comstock’s experiment with the captive owl. What did she discover, and what did she not quite see?",
           "facilitatorNotes": [
             "She walked around it; it followed her with its head almost all the way round, then snapped back so fast she could hardly see the movement. She had to guess how it turned. Ask why a watcher should say when something happened too fast to see."
@@ -300,7 +373,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-05",
+      "id": "reading-3-comstock-nature-study-1916-06",
       "title": "The Crow — both sides of the case (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -329,7 +402,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-05-q1",
+          "id": "reading-3-comstock-nature-study-1916-06-q1",
           "prompt": "What did crows learn about the devices farmers used to keep them out of the corn?",
           "facilitatorNotes": [
             "That the devices were harmless, so they could ignore them. Comstock uses this as evidence of how intelligent crows are."
@@ -339,7 +412,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-05-q2",
+          "id": "reading-3-comstock-nature-study-1916-06-q2",
           "prompt": "Which crows does Comstock dislike, and which does she admire?",
           "facilitatorNotes": [
             "She dislikes the old crow that steals her suet and the crows that raid robins’ nests; she admires a flock that worked in a nearby field and several tame crows she befriended."
@@ -350,7 +423,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-05-q3",
+          "id": "reading-3-comstock-nature-study-1916-06-q3",
           "prompt": "What does Comstock mean when she says the crow’s “virtues and … sins” are judged “from our standpoint”?",
           "facilitatorNotes": [
             "A crow is called good or bad by what it does to people, their crops and the birds they like; the crow itself is simply living. That is why she asks readers to “listen to both sides” before judging."
@@ -361,7 +434,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-05-q4",
+          "id": "reading-3-comstock-nature-study-1916-06-q4",
           "prompt": "“I find with crows, as with people, I like some more than I do others.” Is that a fair way to judge animals? Was her answer to the nest-raiding crows fair?",
           "facilitatorNotes": [
             "She judges crows one by one instead of all alike. Some readers will think protecting the nestlings was right; others will say the crows were only doing what crows do. Ask for reasons from the paragraph."
@@ -373,7 +446,93 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-06",
+      "id": "reading-3-comstock-nature-study-1916-07",
+      "title": "The Cardinal — a devoted father and a bird that should be free (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Collect the evidence that the father cardinal is a good parent, and decide what Comstock thinks about caging wild birds.",
+      "focus": "A bright red bird whose dull-colored children, hungry winters and beautiful song all have a reason.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The cardinal, or redbird, is a songbird; the male is bright red and the female mostly brownish. A grosbeak is a bird with a thick beak for cracking seeds. Exemplary means a model for others; fledglings are young birds just out of the nest; exigencies are needs. Premises are someone’s house and grounds; dexterous means skilful; a menace is a danger; a migrant is a bird that travels south for the winter. Comstock names a group that worked to protect wild birds. Today it is against the law in the United States to keep a wild cardinal in a cage.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Cardinal Grosbeak,” Teacher’s Story, the paragraphs on the nest, the family and the bird’s food, with the lines of verse that close the story; opens “The nest is built in bushes, vines or low trees, often in holly, laurel or other low…”; closes “…resound and rise Until they meet the cloudless skies, And echo o’er the distant hills.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1031,
+          1033
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe47e994babd99da52fdaeab5a5cd8f00592deab11842a5d13cbcd84bb218d7f"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-07-q1",
+          "prompt": "What does the father cardinal do while the mother sits on the eggs, and after the young hatch?",
+          "facilitatorNotes": [
+            "He feeds his mate tenderly and sings to her, works hard catching insects for the nestlings, attacks any intruder however large, and looks after the first brood while she hatches the second."
+          ],
+          "evidence": [
+            "he cares for and feeds his mate tenderly and sings to her gloriously while she is sitting;",
+            "While the mother bird is hatching the second brood the father keeps the first brood with him"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-07-q2",
+          "prompt": "Why are all the young cardinals dull-colored like their mother, even the young males?",
+          "facilitatorNotes": [
+            "The dull color hides them from enemies while they cannot take care of themselves; Comstock thinks that bright red young would hardly ever survive. Ask why the bright father can risk being seen."
+          ],
+          "evidence": [
+            "Their dull color protects the young birds from the keen eyes of their enemies",
+            "If the male fledglings were the color of their father, probably not one would escape a tragic death."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-07-q3",
+          "prompt": "How can people bring cardinals to their yards in winter? What warning is hidden in Comstock’s advice?",
+          "facilitatorNotes": [
+            "Scatter corn where cats do not go; since cardinals stay in one place all year, they may then nest nearby. The warning is about cats, which catch birds at feeders."
+          ],
+          "evidence": [
+            "we may coax them to our grounds by scattering corn in some place not frequented by cats;",
+            "since the cardinal is not naturally a migrant but likes to stay in one locality summer and winter."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-07-q4",
+          "prompt": "What used to happen to many young cardinals? What law does Comstock want, and why?",
+          "facilitatorNotes": [
+            "Nestlings were taken and shipped in cages to Europe until bird protectors stopped it. Ohio forbade caging cardinals, and she wants every Southern state to do the same, because the bird does not live long or happily in a cage and sings best free. Ask whether readers agree."
+          ],
+          "evidence": [
+            "Many nestlings were formerly taken, to ship in cages to Europe,",
+            "since it does not live long or happily in confinement."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-07-q5",
+          "prompt": "In the closing lines of verse, where is the redbird singing? Why might Comstock put them right after the part about cages?",
+          "facilitatorNotes": [
+            "Along a dusty river road, its notes rising to the cloudless sky and echoing over the hills. The free bird’s song fills a whole landscape, the opposite of a cage."
+          ],
+          "evidence": [
+            "The saucy redbird chirps and trills;",
+            "Until they meet the cloudless skies,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-08",
       "title": "The Goldfish — a Midas touch made by people (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -402,7 +561,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-06-q1",
+          "id": "reading-3-comstock-nature-study-1916-08-q1",
           "prompt": "Why does Comstock think of King Midas when she sees goldfish?",
           "facilitatorNotes": [
             "They look as if someone with a golden touch had handled them. She jokes that Midas might have touched little fish in Chinese streams."
@@ -413,7 +572,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-06-q2",
+          "id": "reading-3-comstock-nature-study-1916-08-q2",
           "prompt": "What “magic” really made goldfish golden?",
           "facilitatorNotes": [
             "People, by “selecting and breeding” the fish over a long time. Their wild ancestors in China were plain green."
@@ -424,7 +583,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-06-q3",
+          "id": "reading-3-comstock-nature-study-1916-08-q3",
           "prompt": "What happens to goldfish that escape into rivers? Why would a bright gold fish have trouble in the wild?",
           "facilitatorNotes": [
             "Their young return to olive-green. A brilliant fish would be easy for bigger fish to see and eat, like “glittering bait”; green keeps a fish safe."
@@ -435,7 +594,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-06-q4",
+          "id": "reading-3-comstock-nature-study-1916-08-q4",
           "prompt": "What advice does Comstock give for keeping goldfish? Which piece surprises you most?",
           "facilitatorNotes": [
             "Change the water at least twice a week, and do not overfeed: goldfish “are more likely to die from overfeeding than from starving.” They can live seven or nine years. Many readers are surprised that too much food is the danger."
@@ -448,7 +607,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-07",
+      "id": "reading-3-comstock-nature-study-1916-09",
       "title": "The Stickleback — a father who builds and guards (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -477,7 +636,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-07-q1",
+          "id": "reading-3-comstock-nature-study-1916-09-q1",
           "prompt": "What does the stickleback build his nest from, and what holds it together?",
           "facilitatorNotes": [
             "Fine green algae called frog-spittle, fastened to grass stems with a waterproof glue that his own body makes and spins out in threads."
@@ -488,7 +647,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-07-q2",
+          "id": "reading-3-comstock-nature-study-1916-09-q2",
           "prompt": "Comstock says “home is his sphere literally.” What shape and size is the nest?",
           "facilitatorNotes": [
             "A hollow ball about the size of a glass marble, three-quarters of an inch across, with a round door at the side. “Sphere” also means the place where someone belongs, so the sentence is a pun."
@@ -499,7 +658,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-07-q3",
+          "id": "reading-3-comstock-nature-study-1916-09-q3",
           "prompt": "Once the eggs are in the nest, what jobs does the father do?",
           "facilitatorNotes": [
             "He stands at the door fanning water over the eggs with his fins, attacks every intruder, and guards until the young hatch and float away."
@@ -510,7 +669,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-07-q4",
+          "id": "reading-3-comstock-nature-study-1916-09-q4",
           "prompt": "Comstock calls the mother “a flighty creature.” Is she describing the fish, or judging them as if they were people? How might you say the same thing without judging?",
           "facilitatorNotes": [
             "She is judging in a joking, human way. Plainly put: in this species the male cares for the eggs and the females leave after laying. Some readers will enjoy the jokes; others will notice they make the mother sound careless."
@@ -522,7 +681,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-08",
+      "id": "reading-3-comstock-nature-study-1916-10",
       "title": "The Sunfish — a fish with more courage than wisdom (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -551,7 +710,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-08-q1",
+          "id": "reading-3-comstock-nature-study-1916-10-q1",
           "prompt": "List the sunfish’s names. Which ones come from its shape?",
           "facilitatorNotes": [
             "Pumpkin seed, tobacco box and sunfish come from its shape; it is also called bream and pondfish. Comstock says “pumpkin seed” is the most graphic, because seen from the side it looks like one."
@@ -562,7 +721,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-08-q2",
+          "id": "reading-3-comstock-nature-study-1916-10-q2",
           "prompt": "What happened when Comstock caught a sunfish? Why does she say it had “more courage than wisdom”?",
           "facilitatorNotes": [
             "She thought it was a bass, threw it back, and within five minutes it grabbed her hook again. Brave, but not wise."
@@ -573,7 +732,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-08-q3",
+          "id": "reading-3-comstock-nature-study-1916-10-q3",
           "prompt": "Why didn’t Comstock keep the fish to eat?",
           "facilitatorNotes": [
             "She “never could make up my mind to kill a fish for the sake of one mouthful of food.” It was too small to be worth a life to her."
@@ -583,7 +742,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-08-q4",
+          "id": "reading-3-comstock-nature-study-1916-10-q4",
           "prompt": "Seen from above, the sunfish is “widest at the eyes.” Why does Comstock call that “a canny arrangement”? What other shape does she compare it to?",
           "facilitatorNotes": [
             "Its large eyes can turn in every direction to spot an enemy or a dinner. She compares the body to “a powerful craft,” a boat with a rounded nose. Readers may choose their own comparison."
@@ -596,7 +755,156 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-09",
+      "id": "reading-3-comstock-nature-study-1916-11",
+      "title": "The Tree-frog — a peeper that changes color (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Explain one of Comstock’s experiments, and use her evidence to answer a “how” question.",
+      "focus": "Tiny frogs that vanish against their background, sing with a balloon throat and climb glass.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Tree-frogs are small frogs that climb. Pickering’s hyla is the spring peeper, a tiny tree-frog whose loud chorus rings from ponds in early spring. A chameleon is a lizard famous for changing color. Resonant means ringing and full; a membrane is a thin skin; a sounding-sac is a pouch that makes a sound louder. To secrete is to give off a liquid; vertical means straight up and down. The cicada is a large insect that makes a shrill buzz in summer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Tree-frog, or Tree-toad,” Teacher’s Story, the paragraphs on color, song and toes; opens “The reason we see so little of tree-frogs, is because they are protected from discovery…”; closes “…of these sticky, disc-like toes that the tree-frogs hold themselves upon the tree trunks.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1448,
+          1449
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cc7c7ca1ee3d9649775d3b1eac1693f0c68552c20ffe8944b0dc794756f5ebff"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-11-q1",
+          "prompt": "Why do we see so few tree-frogs, even when we can hear them?",
+          "facilitatorNotes": [
+            "They change color to match their background, so they are hidden from discovery."
+          ],
+          "evidence": [
+            "they are protected from discovery by their color."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-11-q2",
+          "prompt": "Describe Comstock’s experiment with three peepers. What did it show? Why did it matter that all three started the same color?",
+          "facilitatorNotes": [
+            "She put three pale yellowish-brown peepers on a fern, on dark soil and on a purple flower bud; within half an hour each matched its surroundings. Because they began alike, the different results must come from the backgrounds."
+          ],
+          "evidence": [
+            "have placed one upon a fern, one on dark soil and one on the purple bud of a flower.",
+            "Within half an hour, each matched its surroundings so closely,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-11-q3",
+          "prompt": "How can such a small frog make such a loud noise? How could you watch it happen?",
+          "facilitatorNotes": [
+            "The thin skin under its throat swells into a sounding-sac, almost big enough to “balloon the little chap off his perch.” You can watch at night by lamplight, because tree-frogs ignore artificial light."
+          ],
+          "evidence": [
+            "the thin membrane beneath the throat swells out until it seems almost large enough to balloon the little chap off his perch.",
+            "none of the tree-frogs seem to pay any attention to an artificial light;"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-11-q4",
+          "prompt": "How can a tree-frog climb up glass? Why is a glass jar the best place to study its feet?",
+          "facilitatorNotes": [
+            "Its toes end in little round discs that give off a sticky substance, with smaller discs underneath, and it spreads its toes wide. Through the glass you can see the underside of the feet while it climbs."
+          ],
+          "evidence": [
+            "toes and fingers ending in little round discs which secrete at will a substance",
+            "the way to study these wonderful feet is when the frog is climbing up the sides of the glass jar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-12",
+      "title": "The Eft — short legs, a helpful tail and golden eyes (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Separate what Comstock saw for herself from what she guesses, and test her description with your own body.",
+      "focus": "A small salamander in a moss jar shows how it walks, why its tail matters and how it guards its eyes.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The red-spotted newt spends part of its life on land as a bright orange-red “eft,” crawling over damp woodland floors, before it returns to ponds as a greenish adult. Comstock kept one in a glass jar with moss so she could watch it. Inadequate means not enough; to take observations is to look around carefully; to right itself is to turn back the right way up.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Newt, Eft or Salamander,” Teacher’s Story, the paragraph on legs, tail, walking and eyes; opens “The legs and feet look queerly inadequate for such a long body, since they are short and…”; closes “…pull them back into its head and close the slit after them, thus making them very safe.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1503,
+          1503
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6835c508374fa07b5a9dbfa1c3385af94d7e63d113f5983d88444ee69b4983a5"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-12-q1",
+          "prompt": "The eft’s legs look “queerly inadequate.” Why? What can it do with them anyway?",
+          "facilitatorNotes": [
+            "They are short and far apart under a long body. Yet it can stay still for a long time and then dart like a flash, or creep slowly, lifting its head to look around."
+          ],
+          "evidence": [
+            "The legs and feet look queerly inadequate for such a long body,",
+            "It has a misleading way of remaining motionless for a long time and then darting forward like a flash,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-12-q2",
+          "prompt": "List the ways the eft uses its tail. Which use is Comstock sure of, and how does she know?",
+          "facilitatorNotes": [
+            "It twines the tail around things when needed, pushes with it while crawling, and uses it to turn over when it lands on its back. She is sure about the pushing because she watched the tail curve and press against the ground as the feet moved."
+          ],
+          "evidence": [
+            "I am sure it is also used to push the eft while crawling,",
+            "with its help, it can right itself speedily."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-12-q3",
+          "prompt": "How does the eft walk? What does it do on a strange surface like glass? Try the walk yourself on hands and knees.",
+          "facilitatorNotes": [
+            "It moves one front foot, then the hind foot on the other side, and after a rest starts again where it left off. On glass it touches its lower lip to the surface as if testing it."
+          ],
+          "evidence": [
+            "it moves forward one front foot and then the hind foot on the other side;",
+            "it seems to feel the way by touching its lower lip to the surface as if to test it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-12-q4",
+          "prompt": "How does Comstock know the eft sees well? How does it protect its eyes without eyelids?",
+          "facilitatorNotes": [
+            "When it sees her face coming toward the moss jar it climbs over to the other side. It pulls its eyes back into its head and closes the slit over them."
+          ],
+          "evidence": [
+            "when it sees my face approaching the moss jar, it climbs promptly over to the other side.",
+            "the eft can pull them back into its head and close the slit after them,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-13",
       "title": "The Cotton-tail Rabbit — tracks in the snow (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -625,7 +933,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-09-q1",
+          "id": "reading-3-comstock-nature-study-1916-13-q1",
           "prompt": "How did Comstock know rabbits were wandering around her house at night?",
           "facilitatorNotes": [
             "After each fresh snowfall she could follow their tracks around the house, under the spruces and through the orchard."
@@ -635,7 +943,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-09-q2",
+          "id": "reading-3-comstock-nature-study-1916-13-q2",
           "prompt": "Describe a cotton-tail’s track. Why do the big hind prints land ahead of the small front ones?",
           "facilitatorNotes": [
             "Two long prints side by side, with two smaller ones between and a little behind. The rabbit plants its front feet like a vaulting pole and swings its hind feet past them. The prints are blurry because its feet are hairy. Try drawing it."
@@ -646,7 +954,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-09-q3",
+          "id": "reading-3-comstock-nature-study-1916-13-q3",
           "prompt": "Why does Comstock say Molly “was very considerate” in the garden? Is she serious?",
           "facilitatorNotes": [
             "The rabbit ate the grass in the cress bed and left the cress. Comstock is joking: the rabbit was eating what it liked, and she pretends it was being polite."
@@ -656,7 +964,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-09-q4",
+          "id": "reading-3-comstock-nature-study-1916-13-q4",
           "prompt": "“The long, strong hind legs and the long ears tell the whole bunny story.” What story do they tell? What do the ears say?",
           "facilitatorNotes": [
             "Ears hear the enemy and legs carry the rabbit away. Ears laid back mean calm but watchful; straight up, alert and anxious; one forward and one back, “where did that sound come from?”"
@@ -669,7 +977,92 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-10",
+      "id": "reading-3-comstock-nature-study-1916-14",
+      "title": "The House Mouse — what a long tail is for (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow how a question becomes an observation, and notice how sure Comstock is about each answer.",
+      "focus": "Watching a pet mouse climb a string answers the question of why its tail is so long.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Comstock kept a house mouse in a large glass jar so she could watch it. Transverse ridges run across something, not along it; sparse means few and thin. Dr. Ida Reveley was another scientist. A brace is something pressed against a surface to hold steady; to verify is to check that something is true.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The House Mouse,” Teacher’s Story, the paragraphs on the tail, legs and feet; opens “At first glance one wonders what possible use a mouse can make of a tail which is as long…”; closes “…people like to eat and, when eating, holds its food in its front paws like a squirrel.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1706,
+          1707
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7ff8c89268f557365855887e378902f33174fc0395073dca9619ec723dd24c46"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-14-q1",
+          "prompt": "What question does Comstock begin with?",
+          "facilitatorNotes": [
+            "What use a mouse can make of a tail as long as its body."
+          ],
+          "evidence": [
+            "one wonders what possible use a mouse can make of a tail which is as long as its body,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-14-q2",
+          "prompt": "Who first noticed that mice use their tails to climb? What did Comstock do with that idea?",
+          "facilitatorNotes": [
+            "Dr. Ida Reveley pointed it out, and Comstock checked it herself with her own mouse. Good scientists test each other’s observations instead of simply believing them."
+          ],
+          "evidence": [
+            "Dr. Ida Reveley first called my attention to the fact that the house mouse uses its tail in climbing.",
+            "I verified this interesting observation,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-14-q3",
+          "prompt": "Describe exactly what the mouse did with its tail on the string, and on the edge of the jar cover.",
+          "facilitatorNotes": [
+            "It climbed the string hand over hand like a sailor; to stretch toward the jar’s edge it wound its tail two or three times around the string and hung by its hind feet and tail. On the cover it pressed its tail hard against the glass as a brace."
+          ],
+          "evidence": [
+            "he invariably wound his tail about the string two or three times,",
+            "he invariably used his tail as a brace against the side of the glass,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-14-q4",
+          "prompt": "Comstock says “undoubtedly” about climbing but “I am sure that often” about jumping. Which did she see directly? How could you find out about the jumps?",
+          "facilitatorNotes": [
+            "She watched the climbing many times (“invariably”); the tail’s help in leaping is her judgement from watching fast jumps. Readers might suggest filming in slow motion."
+          ],
+          "evidence": [
+            "Undoubtedly the tail is of great service when climbing up the sides of walls.",
+            "I am sure that often the tail is used as a brace to guide and assist the leap."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-14-q5",
+          "prompt": "How does a mouse stand when it explores, and how does it eat?",
+          "facilitatorNotes": [
+            "On its hind feet with its little front paws folded under its chin, stretching up amazingly high; it holds its food in its front paws like a squirrel."
+          ],
+          "evidence": [
+            "folding its little front paws under its chin",
+            "holds its food in its front paws like a squirrel."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-15",
       "title": "The Red Squirrel — observations and roads (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -698,7 +1091,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-10-q1",
+          "id": "reading-3-comstock-nature-study-1916-15-q1",
           "prompt": "What does a squirrel do when it stops to “take observations”?",
           "facilitatorNotes": [
             "It sits up on its haunches, bends forward and presses its paws against its chest, as if saying “Be still, oh my beating heart!”"
@@ -709,7 +1102,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-10-q2",
+          "id": "reading-3-comstock-nature-study-1916-15-q2",
           "prompt": "Why does Comstock call that gesture “pure affectation”?",
           "facilitatorNotes": [
             "Because the squirrel is not really frightened: it knows it can get away safely. Some readers may wonder how Comstock can know what the squirrel knows."
@@ -719,7 +1112,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-10-q3",
+          "id": "reading-3-comstock-nature-study-1916-15-q3",
           "prompt": "How does a squirrel hiding behind a tree give itself away?",
           "facilitatorNotes": [
             "It peeps out and whisks back, but its tail sticks out: as Riley says, “he lets his own tail tell on him.”"
@@ -729,7 +1122,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-10-q4",
+          "id": "reading-3-comstock-nature-study-1916-15-q4",
           "prompt": "What did Comstock find by keeping notes on squirrel paths near her home? Why might a squirrel be careful off its roads but reckless on them?",
           "facilitatorNotes": [
             "Squirrels use the same roads, some with “air bridges” between particular branches. Off them they go warily; on them they rush. They know every jump on a familiar road but not on new ground."
@@ -742,7 +1135,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-11",
+      "id": "reading-3-comstock-nature-study-1916-16",
       "title": "The Little Brown Bat — mothers, twins and senseless fears (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -771,7 +1164,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-11-q1",
+          "id": "reading-3-comstock-nature-study-1916-16-q1",
           "prompt": "How does a mother bat care for her babies?",
           "facilitatorNotes": [
             "She feeds them milk while cradling them in her wings, takes them on her evening hunts clinging to her neck, and hangs them on a twig when she needs to work alone."
@@ -782,7 +1175,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-11-q2",
+          "id": "reading-3-comstock-nature-study-1916-16-q2",
           "prompt": "What do bats do in winter, and when do they come out again?",
           "facilitatorNotes": [
             "They hibernate in hollow trees or caves and wake when insects are flying again."
@@ -793,7 +1186,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-11-q3",
+          "id": "reading-3-comstock-nature-study-1916-16-q3",
           "prompt": "Name two “senseless fears” about bats. How does Comstock answer each one?",
           "facilitatorNotes": [
             "That a bat wants to tangle itself in a woman’s hair (it would frighten the bat more than the lady); that bats bring bedbugs (an “ungrateful slander,” since they come in for mosquitoes); that all bats are vampires (there are none in the United States)."
@@ -804,7 +1197,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-11-q4",
+          "id": "reading-3-comstock-nature-study-1916-16-q4",
           "prompt": "Comstock says scientists should study bats “from a nature-study instead of an anatomical standpoint.” What does she mean? Why might watching a live bat teach something that a dead one cannot?",
           "facilitatorNotes": [
             "Anatomy studies a body’s parts, often from dead specimens; nature study watches what living animals do. To learn what the leaf-like growths on some bats’ noses are for, you would have to see them in use. (Scientists now know such bats use them in finding their way by sound.)"
@@ -817,7 +1210,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-12",
+      "id": "reading-3-comstock-nature-study-1916-17",
       "title": "Dogs — how a dog shows what it feels (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -846,7 +1239,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-12-q1",
+          "id": "reading-3-comstock-nature-study-1916-17-q1",
           "prompt": "Choose three feelings Comstock describes. How does a dog show each one?",
           "facilitatorNotes": [
             "Delight: leaping, little barks, tail up. Friendliness: sniffing, then wagging. Anger: growling, teeth showing, tail stiff behind. Fear: whining and lying flat. Shame: tail between the legs, slinking away. Readers may add signs from dogs they know."
@@ -857,7 +1250,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-12-q2",
+          "id": "reading-3-comstock-nature-study-1916-17-q2",
           "prompt": "What does a dog seem to say when it stands at attention?",
           "facilitatorNotes": [
             "“Well, what’s doing?” Comstock gives the dog a voice to show its alert, curious look, with one ear lifted."
@@ -867,7 +1260,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-12-q3",
+          "id": "reading-3-comstock-nature-study-1916-17-q3",
           "prompt": "Why would barking while chasing an animal seem foolish? How does Comstock explain it?",
           "facilitatorNotes": [
             "It tells the hunted animal where the dog is. But dogs come from wolves that hunt in packs, and the barking keeps the pack together."
@@ -878,7 +1271,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-12-q4",
+          "id": "reading-3-comstock-nature-study-1916-17-q4",
           "prompt": "Why does a dog howl at music, according to Comstock? What does she suggest music does to people?",
           "facilitatorNotes": [
             "Music wakes the old wild habit of howling to call the pack. She suggests music also stirs strong, old feelings in people and frees us for a while from everyday rules. Readers can say whether music does that for them."
@@ -891,7 +1284,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-13",
+      "id": "reading-3-comstock-nature-study-1916-18",
       "title": "The Cat — Jenny, who adopted a baby (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -920,7 +1313,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-13-q1",
+          "id": "reading-3-comstock-nature-study-1916-18-q1",
           "prompt": "How did Jenny come to “adopt” the baby? What had just happened to her?",
           "facilitatorNotes": [
             "She had lost her first kittens to a savage cat from the woods, and seemed to understand that the baby, though bigger than she was, was an infant."
@@ -931,7 +1324,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-13-q2",
+          "id": "reading-3-comstock-nature-study-1916-18-q2",
           "prompt": "What did Jenny bring to the cradle? Why did it please the baby more than her mother?",
           "facilitatorNotes": [
             "Half-killed mice to play with, as a mother cat brings prey to kittens. The baby liked it; her mother certainly did not. Comstock is joking about it now."
@@ -942,7 +1335,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-13-q3",
+          "id": "reading-3-comstock-nature-study-1916-18-q3",
           "prompt": "Describe, step by step, how Jenny learned to open latched doors.",
           "facilitatorNotes": [
             "She played with the latch until people opened the door for her; one day she pushed it down by chance and the door opened; after that she always did it, then tried other doors, hanging by one front leg through the handle and pressing the thumb-piece with the other foot."
@@ -953,7 +1346,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-13-q4",
+          "id": "reading-3-comstock-nature-study-1916-18-q4",
           "prompt": "Jenny also tried the latches from the other side, then “soon ceased this futile waste of energy.” What does that tell you about how she learned?",
           "facilitatorNotes": [
             "She tried, saw it did not work, and stopped: she learned from results, not only from habit. Some readers may say she simply gave up; either way, she noticed the difference."
@@ -966,7 +1359,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-14",
+      "id": "reading-3-comstock-nature-study-1916-19",
       "title": "The Horse — the voice and the hand (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -995,7 +1388,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-14-q1",
+          "id": "reading-3-comstock-nature-study-1916-19-q1",
           "prompt": "What did the excellent horseman say about the whip and the voice?",
           "facilitatorNotes": [
             "The whip may teach a horse to obey the voice, but a well-trained horse is controlled by voice and hand. He relied on the horse’s feelings."
@@ -1006,7 +1399,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-14-q2",
+          "id": "reading-3-comstock-nature-study-1916-19-q2",
           "prompt": "Why does a horse shy? Why does Comstock say the habit was once useful?",
           "facilitatorNotes": [
             "Wild horses jumped aside to escape an enemy crouching in the grass. A habit that annoys us now once saved horses’ lives, so the voice, not a blow, should calm it."
@@ -1016,7 +1409,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-14-q3",
+          "id": "reading-3-comstock-nature-study-1916-19-q3",
           "prompt": "Comstock gives a test for anyone who doubts that a frozen bit should be warmed. What is it, and why is it convincing?",
           "facilitatorNotes": [
             "Put a frozen piece of steel in your own mouth. It makes the reader feel what the horse feels."
@@ -1026,7 +1419,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-14-q4",
+          "id": "reading-3-comstock-nature-study-1916-19-q4",
           "prompt": "Comstock says grooming is “a part of its rights.” What does she think people owe a horse? Do you agree that animals have rights?",
           "facilitatorNotes": [
             "Regular food, warm water in winter, a warmed bit, a blanket when sweating in the cold, no tight check-rein, careful grooming. Calling these “rights” means they are owed, not favors. Readers may agree, or say kindness is a duty without calling it a right."
@@ -1039,7 +1432,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-15",
+      "id": "reading-3-comstock-nature-study-1916-20",
       "title": "The Pig — small eyes and a clever brain (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1068,7 +1461,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-15-q1",
+          "id": "reading-3-comstock-nature-study-1916-20-q1",
           "prompt": "What made Comstock notice pigs’ eyes when she was a small girl?",
           "facilitatorNotes": [
             "She was told her buttonholes would look like a pig’s eye if her stitches were too far apart. The remark made her observe pigs’ eyes ever after."
@@ -1079,7 +1472,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-15-q2",
+          "id": "reading-3-comstock-nature-study-1916-20-q2",
           "prompt": "What evidence does Comstock give that the pig is intelligent?",
           "facilitatorNotes": [
             "Its eyes “gleam with intelligence”; it has a good memory, learns tricks, follows its master like a dog; trained pigs pick out cards and count; wild hogs are full of strategy."
@@ -1090,7 +1483,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-15-q3",
+          "id": "reading-3-comstock-nature-study-1916-20-q3",
           "prompt": "Why, according to Comstock, don’t farm pigs get a chance to use their brains? When do they show how clever they are?",
           "facilitatorNotes": [
             "People stuff them with fattening food. They show their cleverness when they break out of the sty and refuse to be driven back."
@@ -1101,7 +1494,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-15-q4",
+          "id": "reading-3-comstock-nature-study-1916-20-q4",
           "prompt": "People often call someone a “pig” to insult them. After reading this, do you think pigs deserve their bad name? Use Comstock’s words.",
           "facilitatorNotes": [
             "Comstock thinks they do not: “the most intelligent of all the farm animals, if it is only given a chance.” Readers may agree, or point out that she is one admirer. Ask what “if it is only given a chance” suggests about how we judge animals."
@@ -1113,7 +1506,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-16",
+      "id": "reading-3-comstock-nature-study-1916-21",
       "title": "The Monarch — caterpillar whips and a jewel of jade (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1142,7 +1535,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-16-q1",
+          "id": "reading-3-comstock-nature-study-1916-21-q1",
           "prompt": "Describe the full-grown monarch caterpillar. What are its “whiplash-like organs” for?",
           "facilitatorNotes": [
             "About two inches long, green with yellow and black stripes, with two long whips near the head and two at the rear. Comstock thinks they frighten away parasitic flies."
@@ -1153,7 +1546,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-16-q2",
+          "id": "reading-3-comstock-nature-study-1916-21-q2",
           "prompt": "What memory from childhood does Comstock share? Why does she add it?",
           "facilitatorNotes": [
             "As a child she felt “creepy” watching the caterpillars lash their whips. If the flies were as frightened as she was, the caterpillars were safe. The memory makes the whips’ purpose easy to believe."
@@ -1164,7 +1557,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-16-q3",
+          "id": "reading-3-comstock-nature-study-1916-21-q3",
           "prompt": "How do the caterpillar’s colors protect it in two different ways?",
           "facilitatorNotes": [
             "The bright colors warn birds it tastes bad; when it drops into the grass, the same stripes hide it from less fussy animals."
@@ -1175,7 +1568,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-16-q4",
+          "id": "reading-3-comstock-nature-study-1916-21-q4",
           "prompt": "Comstock calls the chrysalis “the most beautiful gem in Nature’s jewel casket.” Find the words that make it sound like jewellery. Is this good science writing, or too fancy?",
           "facilitatorNotes": [
             "Jade, gold-foil, jet, gilt buttons, garniture. The words help readers picture exact colors; she even tests the gold with a lens. Some will find it lovely, others too much; both can point to “I maintain,” which marks it as her opinion."
@@ -1188,7 +1581,708 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-17",
+      "id": "reading-3-comstock-nature-study-1916-22",
+      "title": "The Woolly Bear — a caterpillar that rolls into a ball (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Connect each thing the woolly bear does to a problem it solves.",
+      "focus": "A fuzzy autumn caterpillar that feels its way and hides inside its own bristles.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The woolly bear is the fuzzy caterpillar of the Isabella tiger moth, black at both ends and reddish-brown in the middle. In autumn woolly bears are often seen crossing paths, looking for a sheltered place to spend the winter; in spring they spin cocoons and later become moths. Antennæ (one antenna) are feelers; minute means very tiny; elastic means springy; fatal means causing death.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Isabella Tiger Moth or Woolly Bear,” Teacher’s Story, the paragraph on the head, the hairs and keeping it through the winter; opens “The woolly bear’s head is polished black; its antennæ are two tiny, yellow projections…”; closes “…winter temperature. Keeping it in a warm room during the winter often proves fatal.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2290,
+          2290
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "967890aafa885fcb64e663ef08b075989476aa30abb54f047b4c639c604e2698"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-22-q1",
+          "prompt": "How does the woolly bear find its way when it cannot see far?",
+          "facilitatorNotes": [
+            "Its eyes are tiny, so it stretches out the front of its body and reaches in every direction to feel for something to cling to."
+          ],
+          "evidence": [
+            "because of its minute eyes, the woolly bear cannot see very far",
+            "It does this by stretching out the front end of the body and reaching in every direction,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-22-q2",
+          "prompt": "What happens when you try to pick up a woolly bear? Why is it hard?",
+          "facilitatorNotes": [
+            "It rolls into a little ball, and its springy hairs make it very hard to grab."
+          ],
+          "evidence": [
+            "it rolls up in a little ball, and the hairs are so elastic that we take it up with great difficulty."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-22-q3",
+          "prompt": "How do the hairs protect the woolly bear from birds?",
+          "facilitatorNotes": [
+            "Birds do not like bristles for food; rolled up, the caterpillar looks like nothing but a little bundle of bristles, so the bird leaves it alone."
+          ],
+          "evidence": [
+            "the bird sees only a little bundle of bristles and lets it alone."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-22-q4",
+          "prompt": "Why does a woolly bear found in autumn eat so little? Why should it be kept outdoors in winter, not in a warm room?",
+          "facilitatorNotes": [
+            "It has finished growing. It needs the ordinary winter cold, sheltered from storms; a warm room often kills it. Its body is made to rest through the cold, and warmth upsets that rest. If readers keep one, they should let it go in a sheltered spot."
+          ],
+          "evidence": [
+            "It does not eat very much after we find it in autumn, because its growth is completed.",
+            "Keeping it in a warm room during the winter often proves fatal."
+          ]
+        }
+      ],
+      "months": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-23",
+      "title": "The Sphinx Moths — three riddles (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Turn a nature lesson into riddles, and try to answer them before you read on.",
+      "focus": "A moth that looks like a hummingbird, a caterpillar with a horn at the wrong end and a pupa like a jug.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Sphinx moths, also called hawk moths or hummingbird moths, are big, fast moths that hover in front of flowers at dusk. A larva (plural larvæ) is a caterpillar; a pupa is the resting stage between caterpillar and moth. In ancient Greek myth the Sphinx asked travellers a riddle and ate those who could not answer it; the Great Sphinx of Egypt is a huge stone lion with a human head. Linnaeus was the Swedish scientist who gave many living things their scientific names. Vaudeville was a kind of stage show made of many short acts.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Hummingbird, or Sphinx, Moths,” Teacher’s Story, the first two paragraphs; opens “IF during the early evening, when all the swift humming birds are abed, we hear the whirr…”; closes “…surely useless?” and the third, “Why do I look like a jug with a handle and no spout?””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2392,
+          2393
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3268a5c85ed1ac9cbc76d1cdd9d020cfd667cae54cf2265e73456f562d2e5116"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-23-q1",
+          "prompt": "What three things might we find, and when and where would we find each one?",
+          "facilitatorNotes": [
+            "In the early evening, a blur of wings hovering before a deep flower and whizzing off; a caterpillar with a horn on its rear end that rears up when disturbed; and in spring, while digging the garden, a brown shell with a long “jug handle” on one side."
+          ],
+          "evidence": [
+            "a caterpillar with a horn on the wrong end of the body,",
+            "a strange, brown segmented shell, with a long jug handle at one side,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-23-q2",
+          "prompt": "Why did Linnaeus call these moths “sphinx”?",
+          "facilitatorNotes": [
+            "He thought the caterpillar, resting or rearing up to threaten, looked like the Egyptian Sphinx with its head raised."
+          ],
+          "evidence": [
+            "because he fancied he saw a resemblance in the resting or threatening attitude of the larvæ to the Egyptian Sphinx,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-23-q3",
+          "prompt": "Put each of the moth’s three riddles into your own words. Can you guess any answers?",
+          "facilitatorNotes": [
+            "Let readers guess first. The moth hovers and darts like a hummingbird; a horn or eye-spot at the rear may scare or fool an enemy into attacking the less important end; the “jug handle” holds the moth’s very long tongue while it grows inside the pupa."
+          ],
+          "evidence": [
+            "“Am I a humming-bird?”",
+            "“Why do I look like a jug with a handle and no spout?”"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-23-q4",
+          "prompt": "How does Comstock make this lesson feel like a game? Find her joke about the Sphinx.",
+          "facilitatorNotes": [
+            "She builds the first paragraph as a guessing game (“then we know”), turns the moth into a riddler, and jokes that the Sphinx was a stage performer who bored people with riddles and ate those who failed."
+          ],
+          "evidence": [
+            "who went about boring people by asking them riddles; and, if they could not give the right answers, very promptly ate them up."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-24",
+      "title": "The Grasshopper — a leg like a steel spring (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Explain a movement step by step, and act it out.",
+      "focus": "How a grasshopper’s hind legs turn it into a living spring.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Comstock wrote her Teacher’s Stories for teachers, so she sometimes talks about how to teach. Salient means most noticeable. The femur is the thick upper part of an insect’s leg and the tibia the thin lower part. A spiked heel is like the spikes on a running shoe. Dynamics is the science of how things move; propelled means pushed forward.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Grasshopper,” Teacher’s Story, the paragraph on the hind legs and jumping; opens “Since we naturally select the most salient characteristic of a creature to present first…”; closes “…needed to escape them. However, when the grasshopper makes a journey it uses its wings.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2519,
+          2519
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c6da9516a4d47c09219292d23229127346f8efdfd85a15c9f9325d805b19531b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-24-q1",
+          "prompt": "What clue tells you at first glance that a creature is a jumper?",
+          "facilitatorNotes": [
+            "Unusually strong hind legs. Ask readers to name other jumpers and check their legs."
+          ],
+          "evidence": [
+            "When any creature has unusually strong hind legs, we may be sure it is a jumper,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-24-q2",
+          "prompt": "Describe the grasshopper’s hind leg. Why do its muscles look braided?",
+          "facilitatorNotes": [
+            "The femur is nearly as long as the body and full of powerful muscles that look braided because of how they attach to the hard outer skeleton; the tibia is long and stiff as steel."
+          ],
+          "evidence": [
+            "contains many powerful muscles which have the appearance of being braided,",
+            "the tibia of the hind leg is long and as stiff as if made of steel."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-24-q3",
+          "prompt": "Explain how the grasshopper gets ready to jump, then jumps. Can you crouch and spring the same way?",
+          "facilitatorNotes": [
+            "It lowers the femur below the closed wings until the tibia lies alongside it and the foot presses the ground; the spines at the end of the tibia dig in like a spiked heel; the whole insect is tense; then the legs straighten like a steel spring."
+          ],
+          "evidence": [
+            "lowers the great femur below the level of the closed wings",
+            "are pressed against the ground like a spiked heel,",
+            "Then, like a steel spring, the long legs straighten"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-24-q4",
+          "prompt": "Why does the grasshopper need to jump so well? When does it use its wings instead?",
+          "facilitatorNotes": [
+            "So many kinds of birds eat grasshoppers that it must escape quickly; for a real journey it flies."
+          ],
+          "evidence": [
+            "since so many species of birds feed upon the grasshopper, its leaping power is much needed to escape them.",
+            "However, when the grasshopper makes a journey it uses its wings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-25",
+      "title": "The Black Cricket — a musician who cleans his antennæ (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Picture two actions happening at once, and reason about why a body part matters.",
+      "focus": "A cricket in a cage keeps singing while it polishes its long feelers.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Comstock kept crickets in a cage to watch them. A male cricket “sings” by rubbing his wings together, which Comstock calls his wing mandolin (a mandolin is a stringed instrument). Simple eyes are tiny extra eyes that some insects have besides their large eyes. Antennæ (one antenna) are feelers. Palpi are small feelers near an insect’s mouth; palatable means good to eat; a lens is a magnifying glass; gusto is great enjoyment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Black Cricket,” Teacher’s Story, the paragraph on the head, antennæ and eating; opens “The cricket’s features are not so easily made out, because the head is polished and…”; closes “…take hold of the substance they are eating with the front feet as if to make sure of it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2567,
+          2567
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "713adb85dfdbb5ea284a23fbbf926fed1e54470f06b39b3036b25e4b57c1cc62"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-25-q1",
+          "prompt": "Comstock is not sure crickets are fussy about keeping clean. What part of the body does she say they are always cleaning?",
+          "facilitatorNotes": [
+            "Their antennæ."
+          ],
+          "evidence": [
+            "but they are always cleaning their antennæ:"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-25-q2",
+          "prompt": "Describe how the cricket cleaned an antenna. What else was he doing at the same moment?",
+          "facilitatorNotes": [
+            "He was playing his “wing mandolin” loudly. He put up a foot, bent the antenna down to his mouth, and pulled it slowly through his jaws, nibbling it clean to the tip."
+          ],
+          "evidence": [
+            "I have seen a cricket play his wing mandolin lustily and at the same time carefully clean his antennæ;",
+            "he then pulled the antenna through his jaws with great deliberation, nibbling it clean to the very end."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-25-q3",
+          "prompt": "Why might a cricket take such care of its antennæ? Use clues from the paragraph.",
+          "facilitatorNotes": [
+            "They are longer than its body and always moving, so they matter a great deal for feeling its way, and the lens shows many joints that make them bend. Dirt might dull them. Accept other reasons."
+          ],
+          "evidence": [
+            "The antennæ are longer than the body and very active;",
+            "they are many jointed."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-25-q4",
+          "prompt": "How could you watch a cricket eat? What would you see?",
+          "facilitatorNotes": [
+            "Put melon or another sweet, juicy fruit in its cage. It tests food with its palpi, bites out pieces with jaws that work sideways, and holds the food with its front feet."
+          ],
+          "evidence": [
+            "bite out pieces with their sidewise working jaws,",
+            "They take hold of the substance they are eating with the front feet as if to make sure of it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-26",
+      "title": "Dragon-flies and Damsel-flies — children of the sun (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Compare a poet’s picture of dragon-flies with a naturalist’s, and learn to tell two insects apart.",
+      "focus": "Beside a summer pond, the swift insects that disappear when a cloud covers the sun.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The reading opens with lines from “The Fountain of Youth” by the American poet James Russell Lowell. Dragon-flies and the smaller, slimmer damsel-flies hunt other insects over ponds and streams; they do not sting people. Rushes are tall grass-like plants at the water’s edge. Long ago people told frightening stories about dragon-flies, for example that they could sew up a child’s ears; Comstock calls such stories “slander,” false talk that harms a reputation. To sate hunger is to satisfy it; iridescent means shimmering with changing colors.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Dragon-flies and Damsel-flies,” Teacher’s Story, from Lowell’s lines to the differences between dragon-flies and damsel-flies at rest; opens “In summer-noon flushes When all the wood hushes, Blue dragon-flies knitting To and fro in…”; closes “…very many species of dragon and damsel-flies, but they all have the same general habits.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2640,
+          2642
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5633ccbda911568b6096945d4368e78ddb70b4db56638f6e618491bfbcabe6ea"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-26-q1",
+          "prompt": "In Lowell’s lines, what are the dragon-flies doing? Which words make the scene dreamy?",
+          "facilitatorNotes": [
+            "Knitting to and fro in the sun, flitting with a sidelong jerk, sinking down on the rushes, sitting motionless and hearing the brook, “to dream in the sun.” The noon hush and the soft rhymes add to the mood."
+          ],
+          "evidence": [
+            "Blue dragon-flies knitting",
+            "To dream in the sun."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-26-q2",
+          "prompt": "Why does Comstock call dragon-flies “children of the sun”?",
+          "facilitatorNotes": [
+            "When a cloud shades the water, most of them vanish as if they had put on a fairy-tale cloak of invisibility; only a few kinds fly in shade as well as sunshine."
+          ],
+          "evidence": [
+            "if some cloud throws its shadow on the waters for some moments, the dragon-flies disappear as if they wore the invisible cloak of the fairy tale."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-26-q3",
+          "prompt": "How might the big green skimmer have started the false stories about dragon-flies?",
+          "facilitatorNotes": [
+            "It is curious, darts into houses and hovers close to examine people’s faces. That could frighten someone who did not know it was harmless."
+          ],
+          "evidence": [
+            "it is full of curiosity, and will hold itself on wings whirring too rapidly to even make a blur, while it examines our faces"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-26-q4",
+          "prompt": "Why do the smaller kinds keep close to the water’s surface?",
+          "facilitatorNotes": [
+            "The big dragon-flies fly higher and would eat them; “dragons do not stop to inquire whether their victims are relatives or not.”"
+          ],
+          "evidence": [
+            "for these insects are well named dragons, and dragons do not stop to inquire whether their victims are relatives or not."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-26-q5",
+          "prompt": "How can you tell a dragon-fly from a damsel-fly when they rest? Name one other difference.",
+          "facilitatorNotes": [
+            "A resting dragon-fly holds its wings out flat as if flying; a damsel-fly folds its wings together over its back. Damsel-flies are also slimmer and more brightly colored, with eyes set far apart on the sides of the head."
+          ],
+          "evidence": [
+            "The dragon-fly extends both wings as if in flight",
+            "but the damsel-flies fold their wings together over the back when resting."
+          ]
+        }
+      ],
+      "months": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-27",
+      "title": "The Ant-lion — an ogre at the bottom of a pit (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow how a trap works, and notice how Comstock borrows from fairy tales to describe a real insect.",
+      "focus": "A small larva digs a sand pit and waits at the bottom for ants.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The ant-lion is the larva (young stage) of a winged insect. It digs a funnel-shaped pit in dry, sandy soil and waits buried at the bottom for ants and other small insects to fall in. An ogre is a man-eating giant in fairy tales, and “Golden Locks and the bears” is the story of Goldilocks. Booty is something carried off; topography is the ups and downs of the land; spindle-shaped means fat in the middle and narrow at both ends. A fusillade is a rapid burst of shots; unwieldy means clumsy and heavy.",
+      "contentNote": "An ant falls into the pit and is killed: the ant-lion seizes it in its jaws and sucks its blood until it shrivels.",
+      "excerpt": {
+        "locator": "“The Ant-Lion,” Teacher’s Story, the first three paragraphs; opens “ACHILD is thrilled with fairy stories of ogres in their dens, with the bones of their…”; closes “…by the struggles of the ant, and soon the loss of blood weakens her and she shrivels up.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2730,
+          2732
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1678ac51613dcf5dea819e29f03a0cdcc227d339bf8202be8f4ac922cff98afb"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-27-q1",
+          "prompt": "Why does Comstock call the ant-lion an “ogre”? Why does she say the ants are lucky?",
+          "facilitatorNotes": [
+            "Like a fairy-tale ogre in its den, it waits in its pit for victims. The ants are lucky because they do not know about it, so they cannot be terrified."
+          ],
+          "evidence": [
+            "The ants have real ogres, but luckily, they do not know about it and so cannot suffer from agonizing fears."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-27-q2",
+          "prompt": "How does the ant-lion’s trap depend on the way ants behave?",
+          "facilitatorNotes": [
+            "An ant is so busy with her work that she hurries uphill and downhill without noticing the shape of the ground, so sooner or later one will run into a pit."
+          ],
+          "evidence": [
+            "the ant is so absorbed in her work that she carries her booty up hill and down dale with small regard for the topography of the country."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-27-q3",
+          "prompt": "Why is the slope of the pit always as steep as the soil will stand? What would happen if it were gentler, or steeper?",
+          "facilitatorNotes": [
+            "A gentler slope would let the ant climb out; a steeper one would collapse. The steepest safe slope makes the ant slide down."
+          ],
+          "evidence": [
+            "for the slope is always as steep as the soil will stand without slipping."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-27-q4",
+          "prompt": "The ant-lion has no mouth. How does it feed?",
+          "facilitatorNotes": [
+            "Each jaw is made of two grooved pieces that form a tube with a hole at the tip, leading straight to the throat, so it sucks its food through its jaws."
+          ],
+          "evidence": [
+            "since the ant-lion has no mouth.",
+            "thus form a tube with a hole in the tip"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-27-q5",
+          "prompt": "Explain step by step how the trap catches an ant. How do the ant-lion’s strange back legs help?",
+          "facilitatorNotes": [
+            "The ant slides in and struggles; jets of sand thrown from the bottom knock her back down; the jaws seize her. If she pulls hard, the buried body anchors the ant-lion and its crooked hind legs push it backward in a tug of war."
+          ],
+          "evidence": [
+            "a jet of sand, aimed well from the bottom of the pit, hits her and knocks her back.",
+            "his peculiar, crooked hind legs push his body backward in this strange tug of war;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-28",
+      "title": "The Lace-wing — eggs on stalks and a hungry hatchling (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Find the words that turn a tiny insect into a character, and decide which of Comstock’s statements she could really know.",
+      "focus": "A mother insect lays each egg on its own silk stalk, and the hatchling makes a daring climb down to breakfast.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The lace-wing is a delicate green insect with lacy wings and golden eyes. Its larva, called the aphis-lion, eats aphids, tiny soft insects that suck the sap of plants. Comstock watched a mother lace-wing lay her eggs on a leaf. Canny means clever; frivolous means silly; a distaff is a stick for spinning thread; to disport is to play. Callow means young and unready; a bumper is a full cup raised for a toast; to remonstrate is to protest; a conviction is a firm belief.",
+      "contentNote": "The newly hatched aphis-lion sucks an aphid dry, and Comstock jokes that it might eat its own unhatched brothers and sisters if it could reach them.",
+      "excerpt": {
+        "locator": "“The Mother Lace-wing and the Aphis-lion,” Teacher’s Story, the paragraphs on the eggs and the hatching; opens “However, if we watch her we shall see that she is a canny creature despite her frivolous…”; closes “…never realize when they are being eaten; they simply dimly wonder what is happening.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2751,
+          2752
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "76acc0f4e035519f69358ace2f610dd6f7b4cef20901e915bf13b8ca29574a23"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-28-q1",
+          "prompt": "How does the mother lace-wing make a stalk for each egg?",
+          "facilitatorNotes": [
+            "She presses a drop of sticky fluid onto the leaf, lifts her body and spins the drop into a thread half an inch long, which dries stiff; then she lays an egg at its tip."
+          ],
+          "evidence": [
+            "she spins the drop into a thread a half inch long or more,",
+            "which she lays at the very tip of it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-28-q2",
+          "prompt": "Describe the hatchling’s first trip down its egg stalk. Which words make it sound like a frightened child?",
+          "facilitatorNotes": [
+            "It clings tightly as if afraid of the “dizzy height,” hangs on “for dear life,” gathers courage, and climbs down the stalk like a rope with many new grips and panics; at the bottom it stands still as if dazed. Comstock’s words make an insect feel like a brave small child."
+          ],
+          "evidence": [
+            "as if fearful of such a dizzy height above his green floor;",
+            "with many new grips and panics, he finally achieves the bottom in safety."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-28-q3",
+          "prompt": "Why is it “a lucky thing” that the other eggs are high on their stalks? Why might the mother lay them that way?",
+          "facilitatorNotes": [
+            "The hatchling might eat his own brothers and sisters, never having met them. The stalks keep the eggs out of reach of the first to hatch, and perhaps of other crawling hunters too."
+          ],
+          "evidence": [
+            "it is a lucky thing for his brothers and sisters, still unhatched, that they are high above his head and out of reach,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-28-q4",
+          "prompt": "How does the aphis-lion eat an aphid? Could Comstock know that aphids “never realize” they are being eaten?",
+          "facilitatorNotes": [
+            "It seizes the aphid in hollow jaws, lifts it high “as if drinking a bumper,” and sucks it dry. Her last sentence is a belief she calls her “conviction,” not something she could observe; readers can say whether they share it."
+          ],
+          "evidence": [
+            "he lifts it high in the air, as if drinking a bumper,",
+            "It is my conviction that aphids never realize when they are being eaten;"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-28-q5",
+          "prompt": "Comstock says the mother looks frivolous but is canny, then flies off “care free.” Is that fair to her?",
+          "facilitatorNotes": [
+            "The stalks show careful planning, so she is clever despite her delicate looks; once the eggs are safely laid there is nothing more she can do. Readers may think “care free” is a little unfair."
+          ],
+          "evidence": [
+            "she is a canny creature despite her frivolous appearance;",
+            "knowing that she has done all she can for her family."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-29",
+      "title": "The House-fly — a nature lesson that goes to war (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow an argument, and decide whether you agree with the exception Comstock makes.",
+      "focus": "Why a gentle teacher of nature study declares war on the house-fly.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Comstock wrote this lesson not long after scientists showed that house-flies carry germs from dirt and waste onto food. In the idea of evolution, the “fit” are the living things best suited to survive. Imperturbable means calm and impossible to upset; progeny means children; dhura is a grain eaten in Egypt; to gird up your loins is to get ready for hard work. Economic science here means science that protects money and crops; a handmaiden is a helper; subjugation is conquering; microbes are germs; a reconnaissance is a scouting trip before a battle; hygiene is keeping clean to stay healthy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The House-fly,” Teacher’s Story, the first two paragraphs; opens “THE house-fly is surely an up-to-date member of that select class which evolutionists…”; closes “…war of extermination; the fighting tactics may be given in lessons on health and hygiene.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2813,
+          2814
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8d294df573a2ae3055642461f65f0d737417147a6f82e303f37ea7b5b3a980b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-29-q1",
+          "prompt": "How does Comstock show that the house-fly lives everywhere?",
+          "facilitatorNotes": [
+            "She lists meals around the world, rice in Hong Kong, dhura in Egypt, macaroni in Italy, pie in America and tamales in Mexico, with the fly at every table."
+          ],
+          "evidence": [
+            "whether we be eating rice in Hong Kong, dhura in Egypt, macaroni in Italy, pie in America, or tamales in Mexico."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-29-q2",
+          "prompt": "What did slapping and shooing do for the fly, according to Comstock? What discovery changed how people fight it?",
+          "facilitatorNotes": [
+            "She jokes that it only gave the fly exercise. Scientists found that what the fly leaves behind on food, the germs, matters far more than what it eats."
+          ],
+          "evidence": [
+            "which effort on our part apparently gave it exhilarating exercise.",
+            "what the house-fly takes of our food, is of little consequence to what it leaves behind."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-29-q3",
+          "prompt": "Comstock says nature study should follow “its own peaceful path.” Why does she make an exception here? How do the wolves and bears help her explain?",
+          "facilitatorNotes": [
+            "When there is a real danger to people, nature study can help the public understand and fight it. In her grandfather’s day the danger was wolves and bears; now it is germs, carried by flies, mosquitoes and fleas."
+          ],
+          "evidence": [
+            "I have always held that nature-study should follow its own peaceful path",
+            "If our woods were filled with wolves and bears, as they were in the days of my grandfather,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-29-q4",
+          "prompt": "Comstock, who loves insects, calls this “a war of extermination.” Should a nature lesson ever be about getting rid of an animal? What do you think?",
+          "facilitatorNotes": [
+            "Open question. Note her care: she says we may never conquer microbes but can make them nearly harmless, and that the “fighting tactics” belong in health lessons. Readers might compare the fly with insects she admires."
+          ],
+          "evidence": [
+            "which we may never hope to conquer but which, with proper precautions, we may render comparatively harmless.",
+            "must be a reconnaissance for a war of extermination;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-30",
+      "title": "The Colorado Potato-beetle — warning colors (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Explain why an insect might be safer when it is seen than when it hides.",
+      "focus": "A striped beetle that plays dead, then fights back with a bad-tasting juice.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The Colorado potato-beetle is a yellow-and-black striped beetle that eats potato leaves; it spread across North America in the 1800s and became a serious garden pest. Warning colors are bright colors that tell enemies an animal tastes bad or is dangerous. To play possum is to pretend to be dead, as the opossum does. Copiously means in large amounts; the thorax is the middle part of an insect’s body; glands are body parts that make a liquid; brazen means bold and shameless; larvæ are the young, grub-like stage.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Colorado Potato-beetle,” Teacher’s Story, the first paragraph; opens “THE potato-beetle is not a very attractive insect, but it has many interesting…”; closes “…seem to know that they are far safer when seen by birds than when concealed from them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2839,
+          2839
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f98ab5f48819ea5f77fab08193083abec25a4c45159f6e8b550127ef1cf6fc3b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-30-q1",
+          "prompt": "What does the beetle do first when you pick it up? What happens if you squeeze it?",
+          "facilitatorNotes": [
+            "It falls on its back, folds its legs and antennæ and plays dead. If squeezed, it squirts an orange-red, bad-smelling liquid, more the harder you press."
+          ],
+          "evidence": [
+            "“plays possum” in a very canny manner.",
+            "immediately an orange-red liquid is ejected on the hand,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-30-q2",
+          "prompt": "What does a bird learn from tasting one, and how do the beetle’s colors help?",
+          "facilitatorNotes": [
+            "The liquid tastes horrible, so a sensible bird soon learns to leave alone orange and yellow beetles striped with black; the bright colors remind it."
+          ],
+          "evidence": [
+            "it is indeed a stupid bird that does not soon learn to let severely alone orange and yellow beetles, striped with black."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-30-q3",
+          "prompt": "Where does the liquid come from, and how can you find out?",
+          "facilitatorNotes": [
+            "By watching closely: it oozes along the back edge of the thorax and the front of the wing-covers, where glands make it when it is needed."
+          ],
+          "evidence": [
+            "if we observe closely we can see it issuing along the hind edge of the thorax"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-30-q4",
+          "prompt": "Why do the larvæ eat the potato leaves without hiding? Explain the last sentence.",
+          "facilitatorNotes": [
+            "They have the same glands. Birds that have learned the lesson leave visible ones alone; a hidden larva might be grabbed by surprise before the bird saw its warning colors."
+          ],
+          "evidence": [
+            "They seem to know that they are far safer when seen by birds than when concealed from them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-31",
       "title": "The Firefly — the summer sowing of lights (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1217,7 +2311,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-17-q1",
+          "id": "reading-3-comstock-nature-study-1916-31-q1",
           "prompt": "When do fireflies make their lights, and when do they stop?",
           "facilitatorNotes": [
             "On warm, damp nights in July and August, and some in September, from early twilight until the night grows cold."
@@ -1228,7 +2322,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-17-q2",
+          "id": "reading-3-comstock-nature-study-1916-31-q2",
           "prompt": "How do different kinds of fireflies flash differently?",
           "facilitatorNotes": [
             "Some fly near the grass, others above our heads; some blink briefly, some give longer flashes that show their direction, and one southern kind draws “gleaming curlicues.”"
@@ -1239,7 +2333,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-17-q3",
+          "id": "reading-3-comstock-nature-study-1916-31-q3",
           "prompt": "Why does Comstock find the firefly’s flash “startling” to people?",
           "facilitatorNotes": [
             "The flash is clearly done on purpose, by the beetle’s will, while people “cannot even blush or turn pale voluntarily.” The insect can do something we cannot."
@@ -1250,7 +2344,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-17-q4",
+          "id": "reading-3-comstock-nature-study-1916-31-q4",
           "prompt": "Riley says the fireflies are “like golden seeds” sown upon the night, and Comstock carries the picture on. What might the “harvest” be? And what two meanings does she play with in “socially brilliant”?",
           "facilitatorNotes": [
             "Brilliant means both shining and very good company; the flashing is “for the attraction of their mates,” so the harvest may be the mates the lights bring together, which few people ever notice. Readers may suggest other harvests, such as the next summer’s fireflies."
@@ -1269,7 +2363,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-18",
+      "id": "reading-3-comstock-nature-study-1916-32",
       "title": "The Ant-Nest — the ant nurses (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1298,7 +2392,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-18-q1",
+          "id": "reading-3-comstock-nature-study-1916-32-q1",
           "prompt": "When a nest is attacked, which young are saved first? Why might that be?",
           "facilitatorNotes": [
             "The oldest, usually the pupæ. Comstock thinks the ants “realize the cost and care of rearing their young”: the oldest have had the most care and are nearest to being grown."
@@ -1308,7 +2402,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-18-q2",
+          "id": "reading-3-comstock-nature-study-1916-32-q2",
           "prompt": "What did Comstock see when she gave her ants some hard-boiled egg yolk?",
           "facilitatorNotes": [
             "The nurses dumped the larvæ around its edges to eat, and she could see the yellow yolk through their see-through bodies, all the way along."
@@ -1319,7 +2413,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-18-q3",
+          "id": "reading-3-comstock-nature-study-1916-32-q3",
           "prompt": "How do the nurses carry the pupæ? Why does Comstock say people are wrong to call pupæ “ants’ eggs”?",
           "facilitatorNotes": [
             "Gently, by the loose pupal skin, “like carrying a baby by its clothes.” Pupæ are almost as large as an ant; real ants’ eggs are no bigger than pin points."
@@ -1330,7 +2424,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-18-q4",
+          "id": "reading-3-comstock-nature-study-1916-32-q4",
           "prompt": "Comstock makes the ants sound like people: a “graded school,” “baby sisters,” “Come along, you stupid!” Find one more example. Does this help you understand the ants, or does it make them seem too human?",
           "facilitatorNotes": [
             "Other examples: a callow curls up “like a kitten,” the nurses “make a toilet,” the callows are “herded together.” The comparisons make the behavior easy to picture; but ants do not speak, and “Come along, you stupid!” is her joke. Readers should tell what she saw from what she imagined."
@@ -1343,7 +2437,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-19",
+      "id": "reading-3-comstock-nature-study-1916-33",
       "title": "The Yellow-Jacket — a polite guest at the camp table (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1372,7 +2466,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-19-q1",
+          "id": "reading-3-comstock-nature-study-1916-33-q1",
           "prompt": "What “important fact” about wasps does Comstock say people need to understand?",
           "facilitatorNotes": [
             "Wasps are very nervous themselves and “detest that quality in others”: they dislike nervousness in the creatures around them."
@@ -1382,7 +2476,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-19-q2",
+          "id": "reading-3-comstock-nature-study-1916-33-q2",
           "prompt": "What do the yellow-jackets do at the family’s camp meals?",
           "facilitatorNotes": [
             "They inspect the food, fan the family’s faces with their wings, choose sweet fruit, and even swoop on the roast beef like a hawk."
@@ -1393,7 +2487,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-19-q3",
+          "id": "reading-3-comstock-nature-study-1916-33-q3",
           "prompt": "Why does the family stay calm? What is the only way they expect to be stung?",
           "facilitatorNotes": [
             "They know that unless they accidentally pinch a wasp, they will not be harmed. Calm people do not alarm the nervous wasps."
@@ -1404,7 +2498,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-19-q4",
+          "id": "reading-3-comstock-nature-study-1916-33-q4",
           "prompt": "Comstock says the wasps are “extra polite in their manners.” What evidence does she give? Is “polite” a fair word for a wasp?",
           "facilitatorNotes": [
             "After eating syrup, a wasp cleans its front feet by passing them through its jaws: “a wasp way of using a finger bowl.” Some readers will enjoy the joke; others may say the wasp is just cleaning, not being polite. Both can be right about different things."
@@ -1417,7 +2511,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-20",
+      "id": "reading-3-comstock-nature-study-1916-34",
       "title": "The Leaf-cutter Bee — a basket made of rose leaves (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1446,7 +2540,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-20-q1",
+          "id": "reading-3-comstock-nature-study-1916-34-q1",
           "prompt": "What did Comstock see the bee do on the rose bush? What comparison does she use for the bee flying off with its load?",
           "facilitatorNotes": [
             "It cut a circle out of a leaf with its jaws in a wink and flew off holding it, the green disk as big for the bee as a bass drum hung on a small drummer."
@@ -1457,7 +2551,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-20-q2",
+          "id": "reading-3-comstock-nature-study-1916-34-q2",
           "prompt": "The second paragraph begins “I knew the story of the little bee.” Which part did Comstock see with her own eyes, and which part does she tell from what she already knew?",
           "facilitatorNotes": [
             "She saw only the cutting, and then found the holes in the leaves; the bee never came back. The tunnel, cups, pollen, egg and lids come from her knowledge, which is why she writes “perhaps,” “maybe” and “probably.”"
@@ -1468,7 +2562,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-20-q3",
+          "id": "reading-3-comstock-nature-study-1916-34-q3",
           "prompt": "Put the bee’s work in order, from the tunnel to the lid.",
           "facilitatorNotes": [
             "She finds or digs a tunnel; folds long leaf pieces into a thimble-shaped cup glued with saliva; fills it with a paste of pollen and nectar; lays an egg; cuts round lids to seal it; then builds more cups in a row."
@@ -1479,7 +2573,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-20-q4",
+          "id": "reading-3-comstock-nature-study-1916-34-q4",
           "prompt": "Why does Comstock call the bee “a nice mathematician”?",
           "facilitatorNotes": [
             "Nice here means exact. She cuts each lid just a little larger than the cup’s rim so it can be pushed in and fit tightly."
@@ -1491,7 +2585,90 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-21",
+      "id": "reading-3-comstock-nature-study-1916-35",
+      "title": "The Bumblebee — a queen who starts alone (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 7,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a bee family through a season, and explain why its home looks so untidy.",
+      "focus": "A bumblebee queen builds a family from nothing each spring, and her daughters take over the work.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Bumblebees are large, furry bees that live in small colonies, often in a hole in the ground. Honeybees store enough honey to feed the whole hive through the winter. Thrifty and forehanded mean careful to save and plan ahead; a visitant is a visitor. Bee-bread is a mix of pollen and nectar that young bees eat; a grub is a larva; a pupa is the resting stage before the adult insect. Ambrosia is the food of the Greek gods; swaddling clothes are cloths wrapped around a baby.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Bumblebee,” Teacher’s Story, the paragraph on the colony from spring to the honey-cells; opens “The bumblebees are not so thrifty and forehanded as are the honeybees, and do not provide…”; closes “…that it was stored in the deserted cradles and swaddling clothes of the bumblebee grubs.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3062,
+          3062
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81a090ce23154b737bab8a140f44a7cb029b8e5f274608558196936d2d2c82d5"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-35-q1",
+          "prompt": "Which bumblebees survive the winter? What does Comstock admit she does not know?",
+          "facilitatorNotes": [
+            "Only the queens. She does not know exactly how; perhaps they are better fed and tougher than the workers."
+          ],
+          "evidence": [
+            "Only the mother bees, or queens as they are called, survive the cold season.",
+            "Just how they do it, we do not know,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-35-q2",
+          "prompt": "Why should a farmer or fruit grower be “as anxious as she” that the queen finds a good nest?",
+          "facilitatorNotes": [
+            "She and her children will pollinate his fruit and seed crops."
+          ],
+          "evidence": [
+            "she and her children will render him most efficient aid in growing his fruit and seed."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-35-q3",
+          "prompt": "Follow the queen’s work, then her daughters’. How does the queen’s job change once the workers hatch?",
+          "facilitatorNotes": [
+            "At first she does everything: finds the nest, gathers pollen and nectar, makes bee-bread and lays eggs. When the workers come out, they gather food and care for the young, and she stays home laying eggs."
+          ],
+          "evidence": [
+            "She toils early and late,",
+            "meanwhile, the queen remains at home and devotes her energies to laying eggs"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-35-q4",
+          "prompt": "Why is a bumblebee’s comb so disorderly compared with a honeybee’s?",
+          "facilitatorNotes": [
+            "Its cells are simply the hollows that grubs made by burrowing in any direction through the bee-bread, later strengthened with wax and used to store honey."
+          ],
+          "evidence": [
+            "the cells in the bumblebee’s nest are simply made by the young bees burrowing in any direction,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-35-q5",
+          "prompt": "What is Comstock’s joke about the farm boy and the honey? How would you feel about eating it?",
+          "facilitatorNotes": [
+            "Farm boys used to raid bumblebee nests for the honey; she suggests it might taste less heavenly if he knew it was kept in the old cradles and baby clothes of the grubs."
+          ],
+          "evidence": [
+            "if he knew that it was stored in the deserted cradles and swaddling clothes of the bumblebee grubs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-36",
       "title": "The Garden Snail — eyes on stalks (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1520,7 +2697,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-21-q1",
+          "id": "reading-3-comstock-nature-study-1916-36-q1",
           "prompt": "What happens when you turn a snail on its back and wait?",
           "facilitatorNotes": [
             "After a while the folded tail end of the foot pushes out, and then the head and horns come “bubbling out.”"
@@ -1531,7 +2708,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-21-q2",
+          "id": "reading-3-comstock-nature-study-1916-36-q2",
           "prompt": "What are a snail’s long “horns” really? Explain the marble-and-glove comparison.",
           "facilitatorNotes": [
             "Stalks with an eye at each tip. To pull an eye back, the snail draws it down inside the stalk, the way a marble on a glove fingertip could be pulled back through the middle of the finger."
@@ -1542,7 +2719,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-21-q3",
+          "id": "reading-3-comstock-nature-study-1916-36-q3",
           "prompt": "What are the shorter horns for?",
           "facilitatorNotes": [
             "They are feelers, used all the time to test the surface the snail is crawling on."
@@ -1552,7 +2729,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-21-q4",
+          "id": "reading-3-comstock-nature-study-1916-36-q4",
           "prompt": "Comstock is “convinced that snails have decided views about where they wish to go.” What evidence does she give? Does it convince you?",
           "facilitatorNotes": [
             "She tried for hours to keep snails crawling along the porch railing, and every one turned crosswise to crawl under the edge “where it was nice and dark.” Some readers will agree; others will say the snails were seeking dark, damp places rather than having opinions."
@@ -1565,7 +2742,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-22",
+      "id": "reading-3-comstock-nature-study-1916-37",
       "title": "The Earthworm — the little plowman (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1594,7 +2771,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-22-q1",
+          "id": "reading-3-comstock-nature-study-1916-37-q1",
           "prompt": "What does Comstock call the earthworm in the first sentence? Why does she say it was there first?",
           "facilitatorNotes": [
             "“Essentially the farmer.” It was plowing, harrowing and fertilizing the land “long before man conceived the idea of tilling the soil.”"
@@ -1605,7 +2782,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-22-q2",
+          "id": "reading-3-comstock-nature-study-1916-37-q2",
           "prompt": "How does the earthworm “plow” and “harrow”?",
           "facilitatorNotes": [
             "It plows by bringing subsoil up from deep down; it harrows by grinding soil in its sand-filled gizzard, making it finer than a rake can."
@@ -1616,7 +2793,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-22-q3",
+          "id": "reading-3-comstock-nature-study-1916-37-q3",
           "prompt": "Name two more farm jobs the earthworm does, and how.",
           "facilitatorNotes": [
             "Fertilizing (dragging leaves, flowers and bones into its burrows, where they decay); drainage (boring holes that carry off water); planting (covering seeds with soil); cultivating (keeping soil fine round roots)."
@@ -1627,7 +2804,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-22-q4",
+          "id": "reading-3-comstock-nature-study-1916-37-q4",
           "prompt": "Comstock uses one comparison, the worm as farmer, all the way through. Why is that a good way to teach about earthworms? Does the comparison go too far anywhere?",
           "facilitatorNotes": [
             "Readers already know what a farmer does, so each job makes the worm’s work clear and important. But worms do not plan: “have never studied any system of drainage” admits it. Some may think “adept in the use of fertilizers” goes too far."
@@ -1640,7 +2817,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-23",
+      "id": "reading-3-comstock-nature-study-1916-38",
       "title": "The Crayfish — a nest dug in the aquarium (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1669,7 +2846,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-23-q1",
+          "id": "reading-3-comstock-nature-study-1916-38-q1",
           "prompt": "How does the crayfish start digging her nest?",
           "facilitatorNotes": [
             "At one side of the tank she pushes her feelers and nippers down between the glass and the stones, grabs a pebble in each claw and pulls it up."
@@ -1679,7 +2856,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-23-q2",
+          "id": "reading-3-comstock-nature-study-1916-38-q2",
           "prompt": "Comstock compares the crayfish to a lady and to a schoolboy. What is each comparison describing?",
           "facilitatorNotes": [
             "Tucking her tail under her body is like a lady tucking up her skirts for work; holding the load down with her jaw-feet is like a schoolboy steadying a pile of books with his chin."
@@ -1690,7 +2867,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-23-q3",
+          "id": "reading-3-comstock-nature-study-1916-38-q3",
           "prompt": "What does the crayfish’s tail “say” when she drops her load? How can a tail say anything?",
           "facilitatorNotes": [
             "“There!” The tail snaps straight as she lets go. Comstock is reading the gesture as a word, the way people read each other’s body language."
@@ -1700,7 +2877,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-23-q4",
+          "id": "reading-3-comstock-nature-study-1916-38-q4",
           "prompt": "What does one crayfish do with the earthworm she is given? Which words describe what happened, and which describe what Comstock thinks the crayfish felt?",
           "facilitatorNotes": [
             "She carries the worm and a pebble to the other nest and throws both on her neighbor, who rears up waving his claws. “Seized,” “glided” and “threw down” describe actions; “spitefully” and “crayfish profanity” are Comstock’s guesses at feelings. Readers can decide whether the guesses seem fair."
@@ -1713,7 +2890,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-24",
+      "id": "reading-3-comstock-nature-study-1916-39",
       "title": "Daddy-Longlegs — legs that feel the world (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1742,7 +2919,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-24-q1",
+          "id": "reading-3-comstock-nature-study-1916-39-q1",
           "prompt": "What did Comstock see when a daddy-longlegs walked into a drop of water?",
           "facilitatorNotes": [
             "Its foot never got wet, because it touched the water’s surface so lightly."
@@ -1752,7 +2929,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-24-q2",
+          "id": "reading-3-comstock-nature-study-1916-39-q2",
           "prompt": "Which legs are longest, and what are they used for?",
           "facilitatorNotes": [
             "The second pair. They explore the surroundings; when he runs, he spreads them wide and keeps them moving, feeling things by touch."
@@ -1763,7 +2940,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-24-q3",
+          "id": "reading-3-comstock-nature-study-1916-39-q3",
           "prompt": "How long would your legs be if they were as long, for your size, as a daddy-longlegs’ legs? Why does Comstock give this comparison?",
           "facilitatorNotes": [
             "About forty feet. It explains why the creature moves so fast, and makes its strange shape easy to imagine."
@@ -1773,7 +2950,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-24-q4",
+          "id": "reading-3-comstock-nature-study-1916-39-q4",
           "prompt": "When the long legs sense food, the daddy-longlegs changes how it moves. Describe it. Why does it move this way?",
           "facilitatorNotes": [
             "It teeters, tipping its body down at every step, so its palpi can explore the ground below; it can stretch them out to test a substance. Readers may compare it with how they would check a strange food."
@@ -1786,7 +2963,95 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-25",
+      "id": "reading-3-comstock-nature-study-1916-40",
+      "title": "The Hepatica — a flower that faces the sun (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Decide whether names matter, and find what makes a small flower seem brave.",
+      "focus": "One of the first wildflowers of spring talks back to the scientists and stands up to the snow.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The hepatica is one of the first wildflowers of spring in the woods of eastern North America, with pale blue, pink or white flowers above leathery three-lobed leaves. The first paragraph is a passage Comstock quotes from a children’s book of wild flowers. Sepals are the small leaf-like parts that wrap a flower bud; petals are usually the colorful parts; bracts are small leaves just below a flower. Sodden means soaked; glacial means icy; an optical delusion is a trick of the eyes. The acanthus is a plant whose leaves were carved on ancient Greek columns; tapestries are woven wall-hangings.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Hepatica,” Teacher’s Story, the first two paragraphs; opens ““The wise men say the hepatica flower has no petals but has pink, white or purple sepals…”; closes “…to the snow-drifts, looking out on a gray-brown world, nodding to it and calling it good.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3487,
+          3488
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aed0a26367bec80cc13dd5ad82cb51f8b06c15c618b7ae3ff14bde66013c57ce"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-40-q1",
+          "prompt": "What do “the wise men” say about the hepatica’s flower? What does the hepatica answer?",
+          "facilitatorNotes": [
+            "That it has no petals, only colored sepals, and that the three leaflets below are bracts. The hepatica answers that the bees do not care what the parts are called, and asks why it should not wear its pretty “petticoat” as a dress."
+          ],
+          "evidence": [
+            "the hepatica flower has no petals but has pink, white or purple sepals instead:",
+            "Since my petticoat is pretty enough for a dress why should not I wear it thus?"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-40-q2",
+          "prompt": "Does it matter what we call the parts of a flower? Who is right, the wise men or the hepatica?",
+          "facilitatorNotes": [
+            "Both have a point: exact names help scientists compare plants, but the parts do the same job, showing bees where the pollen is. Let readers argue."
+          ],
+          "evidence": [
+            "The bees do not care whether they are sepals or petals since they are pretty in color, and show where the pollen is to be found."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-40-q3",
+          "prompt": "Why does Comstock go looking for hepaticas? What are the woods like?",
+          "facilitatorNotes": [
+            "A longing for spring wakes with the first warm sunshine. The woods are soaked, with streams and puddles fed by snowdrifts still heaped on the north side of things."
+          ],
+          "evidence": [
+            "because there is a longing for spring in our hearts that awakens with the first warm sunshine.",
+            "having their sources in the snow-drifts still heaped on the north side of things,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-40-q4",
+          "prompt": "Why does the flower at first seem like “an optical delusion”?",
+          "facilitatorNotes": [
+            "A speck of pale blue or pink-purple among all the browns is so unexpected that she has to look again to be sure."
+          ],
+          "evidence": [
+            "a bit of pale-blue or pink-purple that at first seems like an optical delusion;"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-40-q5",
+          "prompt": "What makes these flowers “brave”? What do they seem to say about the gray-brown world?",
+          "facilitatorNotes": [
+            "They face the sun with their backs to the snowdrifts and nod to the gray-brown world, “calling it good,” as if they believe in spring before anyone else does."
+          ],
+          "evidence": [
+            "these brave little flowers stand with their faces to the sun and their backs to the snow-drifts,",
+            "nodding to it and calling it good."
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-41",
       "title": "The Evening Primrose — a flower that opens at dusk (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1815,7 +3080,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-25-q1",
+          "id": "reading-3-comstock-nature-study-1916-41-q1",
           "prompt": "When does the evening primrose usually open? What signs show that a bud is getting ready?",
           "facilitatorNotes": [
             "On a warm evening, usually about sunset (anywhere from four o’clock to nine or ten). For two or three days the long tube turns yellow and a row of petals pushes up between the sepals."
@@ -1826,7 +3091,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-25-q2",
+          "id": "reading-3-comstock-nature-study-1916-41-q2",
           "prompt": "How does the umbrella comparison help explain why one petal seems to do all the work?",
           "facilitatorNotes": [
             "The petals are wrapped round each other like a folded umbrella, so one petal’s edge comes free first and seems to lead, though all of them are pushing."
@@ -1836,7 +3101,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-25-q3",
+          "id": "reading-3-comstock-nature-study-1916-41-q3",
           "prompt": "How long does the opening take? What reasons does Comstock give for the difference?",
           "facilitatorNotes": [
             "Once half an hour, another time two or three minutes. She suggests it depends on the flower’s vigor, and says garden kinds open faster than wild ones."
@@ -1846,7 +3111,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-25-q4",
+          "id": "reading-3-comstock-nature-study-1916-41-q4",
           "prompt": "Comstock says it is hard “not to attribute to them consciousness of action.” What does she mean? Find another place where she writes as if the flower could want something.",
           "facilitatorNotes": [
             "It is hard not to feel the petals mean to open, because they move so fast. She also says the petals are “pushing for freedom” and that the sepals “seem to try to repress them.” She knows it is a plant; the speed tempts her, and us."
@@ -1859,7 +3124,92 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-26",
+      "id": "reading-3-comstock-nature-study-1916-42",
+      "title": "The Hedge Bindweed — the weakling that won (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Compare how something looks with what it is doing, and test a fact with a real vine.",
+      "focus": "A graceful vine with pink flowers that can strangle a burdock and turn a cornfield into a garden.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Hedge bindweed is a twining vine, a wild relative of the morning-glory, with pink or white trumpet-shaped flowers. The burdock is a big, tough weed with huge leaves and prickly burs. A pyramid is a shape with a broad base and a pointed top; beset means covered; a trellis is a frame for plants to climb; to flaunt is to show off; an oppressor is someone who crushes others. Quirls are curls; a tendril is a thin twisting stem.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Hedge Bindweed,” Teacher’s Story, the first two paragraphs; opens “I once saw by the roadside a beautiful pyramid, covered completely with green leaves and…”; closes “…own tendrils, they twist until so hard-twisted that they form a support in themselves.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3749,
+          3750
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8f3ac3dbe30a8736ce31897ab5ab3c0267aa4e1dd6b8462473f7239bc559d087"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-42-q1",
+          "prompt": "What was the beautiful green pyramid Comstock found by the roadside?",
+          "facilitatorNotes": [
+            "A burdock completely smothered by bindweed: its huge leaves had withered, it had no burs, and the vine had squeezed the life out of it."
+          ],
+          "evidence": [
+            "for the first time in my life I felt sorry for a burdock;",
+            "the bindweed had caught it in its hundred embraces and had squeezed the life out of it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-42-q2",
+          "prompt": "Why is it surprising that the bindweed won? Can you think of anything else weak that wins by holding on?",
+          "facilitatorNotes": [
+            "The mighty burdock might have scorned such a weak plant, if plants could scorn, yet the vine’s hundred grips defeated it. Readers may think of ivy on a wall or roots that crack pavement."
+          ],
+          "evidence": [
+            "a weakling plant which it must have scorned at first, had it been capable of this sensation."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-42-q3",
+          "prompt": "What was the “most beautiful garden” in Florida? Why does Comstock say it “suggested nothing of the oppressor”?",
+          "facilitatorNotes": [
+            "A cornfield in which every plant had become a trellis for bindweed. It looked lovely, but the vine was choking the corn: beauty can hide harm."
+          ],
+          "evidence": [
+            "which resolved itself later into a field of corn, in which every plant had been made a trellis for the bindweed;",
+            "with a grace and charm that suggested nothing of the oppressor."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-42-q4",
+          "prompt": "How does the bindweed catch hold of a support?",
+          "facilitatorNotes": [
+            "It lifts and sways its growing tips; the tip is bent into a hook, and when the hook catches something it fastens very quickly; the young leaves hook over and the vine makes its first loop."
+          ],
+          "evidence": [
+            "the way each extreme tip is bent into a hook",
+            "when during its graceful swaying the hook catches to some object, it makes fast with amazing rapidity;"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-42-q5",
+          "prompt": "Which way does bindweed twine? What does it do when it has nothing to climb, or only something wobbly?",
+          "facilitatorNotes": [
+            "Always the same way, following the hands of the clock; readers can check a vine. With no support it carpets the grass; on something unsteady its tendrils twist so hard they become a support themselves."
+          ],
+          "evidence": [
+            "following the direction of the hands of the clock",
+            "they twist until so hard-twisted that they form a support in themselves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-43",
       "title": "The Milkweed — a pod like a hammock full of babies (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1888,7 +3238,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-26-q1",
+          "id": "reading-3-comstock-nature-study-1916-43-q1",
           "prompt": "What does Comstock admire first about a green milkweed pod?",
           "facilitatorNotes": [
             "Its beautiful shape, and the rows of raised points along the seam, “like embossed embroidery” on its soft, felty surface."
@@ -1899,7 +3249,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-26-q2",
+          "id": "reading-3-comstock-nature-study-1916-43-q2",
           "prompt": "What did Comstock do with milkweed pods when she was a child?",
           "facilitatorNotes": [
             "She and other children emptied the pods and shut bumblebees inside “to hear them sing,” but always let them go. Now she thinks the pod’s own contents are more interesting."
@@ -1909,7 +3259,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-26-q3",
+          "id": "reading-3-comstock-nature-study-1916-43-q3",
           "prompt": "What three things are inside the pod?",
           "facilitatorNotes": [
             "A line of white velvet (the seed-support), brown seeds overlapping with their “heads all in one direction,” and shining milkweed silk."
@@ -1920,7 +3270,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-26-q4",
+          "id": "reading-3-comstock-nature-study-1916-43-q4",
           "prompt": "Comstock compares the pod’s seam to finished cloth, its silk to a skein, and the seed-support to “a hammock full of babies.” Which comparison helps you see the pod best? Why does she use words from sewing?",
           "facilitatorNotes": [
             "Any choice with a reason works. Sewing words (selvage, embroidery, skein, reel) fit because the pod looks carefully made, as if by a skilled hand; she says no human reel could give such shine. The hammock image makes the seeds seem cared for."
@@ -1933,7 +3283,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-27",
+      "id": "reading-3-comstock-nature-study-1916-44",
       "title": "The Mullein — a plant the sheep will not eat (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -1962,7 +3312,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-27-q1",
+          "id": "reading-3-comstock-nature-study-1916-44-q1",
           "prompt": "What question did Comstock ask the mullein, and how did she try to answer it?",
           "facilitatorNotes": [
             "Why don’t the sheep like you; are you bitter? She took a bite herself. It did not taste bitter, but her tongue burned from the prickly felt on the leaf."
@@ -1973,7 +3323,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-27-q2",
+          "id": "reading-3-comstock-nature-study-1916-44-q2",
           "prompt": "What trick did her grandmother once play on her, and what did she learn from it?",
           "facilitatorNotes": [
             "She was told that rubbing her cheeks with mullein would make her beautiful; her cheeks turned red and then purple. She learned that comfort matters more than beauty, and later, under a microscope, why: the felt is made of sharp little spikes."
@@ -1984,7 +3334,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-27-q3",
+          "id": "reading-3-comstock-nature-study-1916-44-q3",
           "prompt": "Find two ways the mullein protects itself. What does each one protect it from?",
           "facilitatorNotes": [
             "The felt keeps grazing animals away and stops the leaves drying out in drought; the deep taproot reaches water and food below other plants."
@@ -1995,7 +3345,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-27-q4",
+          "id": "reading-3-comstock-nature-study-1916-44-q4",
           "prompt": "The mullein beats the sheep, but Comstock finds a “far more dangerous enemy.” What is it? Why is it more dangerous?",
           "facilitatorNotes": [
             "Little white grubs, young snout beetles, living inside the seed capsules. Sheep only fail to eat the leaves, but the grubs eat the seeds, the plant’s future plants."
@@ -2007,7 +3357,81 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-28",
+      "id": "reading-3-comstock-nature-study-1916-45",
+      "title": "The Teasel — a flower-head that blooms from the middle (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Picture and draw a pattern of blooming, and notice when a scientist admits she does not know.",
+      "focus": "A prickly weed whose flowers open in two bands that march apart.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The teasel is a tall, prickly weed with egg-shaped flower-heads covered in stiff spines; dried teasel heads were once used to brush up the soft surface of woollen cloth. An axil is the angle where a leaf joins the stem. An involucre is a ring of leaf-like parts around a flower-head; bracts are small, often stiff, leaf-like parts. Geometrical means made of regular shapes and lines; girt means circled; the apex is the top. Goldenrod and clover are common wildflowers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Teasel,” Teacher’s Story, the paragraphs on the flower-head and how it blossoms; opens “The flower stems come off at the axils of the leaves and therefore each pair stands at…”; closes “…are younger, we may find all stages of this blossoming in the flower-heads of one plant.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4071,
+          4072
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5b4c17fbdfb4b5dbcbd96edbc8bc298ba9d314c196866dd674652bf50f03034c"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-45-q1",
+          "prompt": "How does the teasel protect its flowers?",
+          "facilitatorNotes": [
+            "The flowers sit in dense heads armed with spines, inside a ring of long, upcurving spiny prongs; the spines are so stiff that they crackle as they spring back."
+          ],
+          "evidence": [
+            "the head is set in an involucre of long, upcurving spiny prongs.",
+            "can hear them crackle as they spring back."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-45-q2",
+          "prompt": "What wins Comstock’s admiration when she looks closely at the flower-head?",
+          "facilitatorNotes": [
+            "The geometrical pattern made by the folded bases of the spines, set in diagonal rows."
+          ],
+          "evidence": [
+            "the exquisite geometrical design made by the folded bases of the spines, set in diagonal rows."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-45-q3",
+          "prompt": "Compare how goldenrod, clover and teasel come into bloom. Draw the teasel’s pattern.",
+          "facilitatorNotes": [
+            "Goldenrod blooms from the tip toward the base, clover from the base toward the tip. The teasel starts with a purple band around its middle that splits into two bands moving apart, one down to the prongs and one up to the top."
+          ],
+          "evidence": [
+            "But the teasel begins at the middle and blossoms both ways,",
+            "Away from each other this double procession moves,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-45-q4",
+          "prompt": "Comstock writes, “how it knows just where to begin is more than we can tell.” Why is it good for a scientist to say that? How can you see every stage at once?",
+          "facilitatorNotes": [
+            "Admitting what is unknown is honest and leaves a question for others to explore. The side flower-heads from the leaf axils are younger, so one plant shows every stage."
+          ],
+          "evidence": [
+            "how it knows just where to begin is more than we can tell.",
+            "we may find all stages of this blossoming in the flower-heads of one plant."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-46",
       "title": "The Pumpkin — two kinds of flowers and their treasure (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -2036,7 +3460,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-28-q1",
+          "id": "reading-3-comstock-nature-study-1916-46-q1",
           "prompt": "How can you tell which pumpkin flower will become a pumpkin?",
           "facilitatorNotes": [
             "It has a little green globe, the ovary, below it."
@@ -2046,7 +3470,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-28-q2",
+          "id": "reading-3-comstock-nature-study-1916-46-q2",
           "prompt": "What do the stigmas look like, and what must a bee do to reach the nectar in that flower?",
           "facilitatorNotes": [
             "Like tiny boxing-gloves on posts. The bee must “stand on her head” and brush her pollen-dusty side against them."
@@ -2057,7 +3481,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-28-q3",
+          "id": "reading-3-comstock-nature-study-1916-46-q3",
           "prompt": "Some people said bees visit the other kind of flower only for pollen. What did Comstock find?",
           "facilitatorNotes": [
             "Three small openings at the base of the pedestal; bees push their tongues through them, and below is a velvet-lined “treasure cave” with nectar she could taste. “I am convinced that this is not all of the story.”"
@@ -2068,7 +3492,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-28-q4",
+          "id": "reading-3-comstock-nature-study-1916-46-q4",
           "prompt": "Why does the pumpkin need bees? What would happen without them?",
           "facilitatorNotes": [
             "Only insects carry pollen from the flower that makes it to the flower that needs it; without them no pumpkins would grow. Ask what else in a garden depends on bees."
@@ -2081,7 +3505,80 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-29",
+      "id": "reading-3-comstock-nature-study-1916-47",
+      "title": "The Chestnut — stars of yellow chenille (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Use Comstock’s numbers to estimate something too big to count.",
+      "focus": "A great tree covered in starry tufts of flowers, each tuft holding thousands of tiny stamens.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The American chestnut was once one of the commonest big trees in the forests of the eastern United States. Around the time Comstock wrote, a disease called chestnut blight, brought in by accident from Asia, began killing them, and within a few decades nearly all were gone; scientists are still working to bring the tree back. Chenille is a fuzzy yarn; a catkin is a long, dangling cluster of tiny flowers; stamens are the parts of a flower that make pollen, each tipped with an anther; the calyx is the cup under a flower. A rosette is a round cluster; to estimate is to make a careful guess.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Chestnut,” Teacher’s Story, the paragraph on the blossoms; opens “The chestnut is always a beautiful tree, whether green in summer or glowing golden yellow…”; closes “…of the catkins in a blossom-star, we get a glimmering of the amount of pollen produced.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5135,
+          5135
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "035b8083e98fad423b6699f09d9597510c4978ab6c15390dbbf7323c76e0b72d"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-47-q1",
+          "prompt": "When is the chestnut most beautiful, and what does it look like then?",
+          "facilitatorNotes": [
+            "In late June and July, when it is covered with pale yellow “stars.”"
+          ],
+          "evidence": [
+            "it is most beautiful during late June and July, when covered with constellations of pale yellow stars."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-47-q2",
+          "prompt": "What is each “star” made of? Why does it look like chenille?",
+          "facilitatorNotes": [
+            "Each is a rosette of catkins six or eight inches long; tufts of tiny stamens stand out all along each catkin like the fuzz on chenille yarn."
+          ],
+          "evidence": [
+            "each ray consists of a catkin often six or eight inches in length, looking like a thread of yellowish chenille fringe,",
+            "No wonder it looks like chenille!"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-47-q3",
+          "prompt": "Comstock estimated the stamens in one catkin. If a star has thirty catkins, about how many stamens does it have? Why does she not finish the sum?",
+          "facilitatorNotes": [
+            "About 2,500 × 30 = 75,000 stamens in one star, each anther full of pollen, and a tree has very many stars. She leaves the reader to imagine it: “a glimmering.”"
+          ],
+          "evidence": [
+            "In one catkin I estimated that there were approximately 2,500 stamens developed,",
+            "we get a glimmering of the amount of pollen produced."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-47-q4",
+          "prompt": "Why might a tree make so much pollen? What does it tell you about how hard it is for pollen to reach a flower?",
+          "facilitatorNotes": [
+            "Accept reasoned guesses. Chestnut pollen is carried by insects and wind, and most of it never reaches a seed-making flower, so the tree makes enormous amounts to be sure some does."
+          ],
+          "evidence": [
+            "each anther packed with pollen."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-48",
       "title": "The Brook — a gang of workmen (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -2110,7 +3607,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-29-q1",
+          "id": "reading-3-comstock-nature-study-1916-48-q1",
           "prompt": "When is the brook doing the least work, and when is it working hardest?",
           "facilitatorNotes": [
             "Least when its water is perfectly clear; hardest when it is “roily,” usually after rain."
@@ -2121,7 +3618,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-29-q2",
+          "id": "reading-3-comstock-nature-study-1916-48-q2",
           "prompt": "Poets talk about the brook “playing.” What does Comstock say it is really doing?",
           "facilitatorNotes": [
             "Digging and carrying: each drop snatches up a little earth and uses it to knock loose more. The muddy water shows the load."
@@ -2132,7 +3629,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-29-q3",
+          "id": "reading-3-comstock-nature-study-1916-48-q3",
           "prompt": "What happens when the brook reaches level ground? In what order does it drop its load?",
           "facilitatorNotes": [
             "The drops “act tired” and let their loads fall: gravel and rocks first, fine soil last and farthest."
@@ -2143,7 +3640,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-29-q4",
+          "id": "reading-3-comstock-nature-study-1916-48-q4",
           "prompt": "Comstock calls the brook “a gang of workmen each of which is using its own load as a tool.” How does this picture help explain why a flood digs so much? Can you think of another picture for it?",
           "facilitatorNotes": [
             "More water means more drops, each with a crowbar or pickaxe, working together and fast; so the channel grows deeper and wider. Readers might suggest an army, a crowd of shovellers, or a conveyor belt; ask which fits best."
@@ -2156,7 +3653,79 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-30",
+      "id": "reading-3-comstock-nature-study-1916-49",
+      "title": "How a Brook Drops Its Load — clear water and muddy water (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Explain a cause and effect you could test in a tray of soil.",
+      "focus": "Why grass keeps a stream clear, and why the direction of a plow can save a farm.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. Erosion is the wearing away of soil and rock by water, wind or ice. A delta is a fan of mud and sand that a stream drops where it slows down, as in a pool. A rill is a tiny stream; a mulch is a covering laid over soil to protect it; fertile soil is rich enough to grow good crops. Contour plowing means plowing across a slope, following its curves, instead of straight up and down.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How a Brook Drops Its Load,” Teacher’s Story, the paragraph on rain and plowing; opens “The action of rain upon the surface of the ground is in itself an excellent lesson in…”; closes “…in the direction of plowing has saved or destroyed the fertility of hillside farms.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5522,
+          5522
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0423b564ea00321ff273ca4ab6663554151704da11be67fbb0e61b07746e8b19"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-49-q1",
+          "prompt": "After a heavy rain on bare ground, what can you see?",
+          "facilitatorNotes": [
+            "The finer soil has been sorted out and washed away, leaving the larger gravel and stones."
+          ],
+          "evidence": [
+            "where the finer material has been sorted out and carried away, leaving the larger gravel and stones."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-49-q2",
+          "prompt": "Why does a little stream through a meadow stay clear, while one through plowed ground turns muddy? What reason matters most, according to Comstock?",
+          "facilitatorNotes": [
+            "Not mainly the roots holding the banks: the grass covers the ground like a mulch and protects the soil from the blows of the raindrops. Plowed ground has no cover."
+          ],
+          "evidence": [
+            "the grass on the surface of the ground acts as a mulch and protects the soil from the erosive impact of the raindrops."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-49-q3",
+          "prompt": "Explain why plowing across a hill is better than plowing up and down. How could you test it?",
+          "facilitatorNotes": [
+            "Furrows across the slope catch the water; furrows up and down become channels that rush water and soil downhill. Try two trays of soil with grooves in different directions and a watering can."
+          ],
+          "evidence": [
+            "When the furrow is carried crosswise, the water after showers can not dash away,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-49-q4",
+          "prompt": "Why does this matter so much to farmers? What does “saved or destroyed the fertility” mean?",
+          "facilitatorNotes": [
+            "The fine soil that washes away is the richest part. Losing it can ruin a farm’s ability to grow crops; keeping it saves the farm."
+          ],
+          "evidence": [
+            "carrying off in it all the finer and more fertile portions of the soil.",
+            "this difference in the direction of plowing has saved or destroyed the fertility of hillside farms."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-50",
       "title": "The Magnet — a mystery we can play with (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -2185,7 +3754,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-30-q1",
+          "id": "reading-3-comstock-nature-study-1916-50-q1",
           "prompt": "What did sailors of the Middle Ages believe about a magnetic island?",
           "facilitatorNotes": [
             "That a mountain island of lodestone pulled the nails out of passing ships and wrecked them. The fear even shaped how they sailed."
@@ -2196,7 +3765,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-30-q2",
+          "id": "reading-3-comstock-nature-study-1916-50-q2",
           "prompt": "Comstock says, “We know what it does, but we do not know what it is.” Name two things she says we know a magnet does.",
           "facilitatorNotes": [
             "Force flows from the ends; unlike ends attract and like ends repel; there is less force halfway between the poles; the force reaches across a gap; it can pass to iron tacks to make a chain."
@@ -2207,7 +3776,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-30-q3",
+          "id": "reading-3-comstock-nature-study-1916-50-q3",
           "prompt": "What does the chain of tacks show? What happens when the tacks are taken off the magnet?",
           "facilitatorNotes": [
             "The magnet can pass its force to iron objects, so each tack holds the next. Taken off, they no longer stick together."
@@ -2218,7 +3787,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-30-q4",
+          "id": "reading-3-comstock-nature-study-1916-50-q4",
           "prompt": "Describe the game of “stealing tacks.” Why is a game a good way to learn about magnets?",
           "facilitatorNotes": [
             "A stronger magnet takes tacks away from a weaker one, which shows that some magnets are stronger. Playing lets children test and compare for themselves instead of only being told. Ask what else could be tested with two magnets."
@@ -2230,7 +3799,91 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-31",
+      "id": "reading-3-comstock-nature-study-1916-51",
+      "title": "Water Forms — water in a cap of darkness (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow one drop of water through its disappearances and reappearances, and connect a poem to the science.",
+      "focus": "Comstock tells the everyday changes of water as if they were fairy-tale magic.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. In fairy tales a cap of darkness makes its wearer invisible. To evaporate is to turn from liquid water into water vapor, an invisible gas in the air. Percy Bysshe Shelley was an English poet; in his poem “The Cloud” the cloud itself speaks. A nursling is a baby being cared for; pores are tiny holes; a stratum is a layer. Crystals are solids with regular shapes, like the six-pointed stars of snowflakes.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Water Forms,” Teacher’s Story, the first four paragraphs, with lines from Shelley’s “The Cloud”; opens “Water, in its various changing forms, is an example of another overworked miracle—so…”; closes “…have been drawn together by crystal magic, leaving portions of the glass dry and clear.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5758,
+          5761
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e0fb4cbcb95d61b50f0ba79c327ce953c1dda8ec466c506138dedecd8867207b"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-51-q1",
+          "prompt": "Why does Comstock call water an “overworked miracle”?",
+          "facilitatorNotes": [
+            "It is so common that we stop noticing how amazing its changes are."
+          ],
+          "evidence": [
+            "so common that we fail to see the miraculous in it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-51-q2",
+          "prompt": "Follow the drop of water from the towel on the washing line. Where does it go, and what might it become?",
+          "facilitatorNotes": [
+            "It evaporates, flying off into the air unseen, and may next appear as part of a white cloud sailing across the sky."
+          ],
+          "evidence": [
+            "it flies off in the atmosphere invisible to our eyes;",
+            "they may occur as a portion of the white masses of cloud sailing across the blue sky,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-51-q3",
+          "prompt": "What is the “key-word” that makes the vapor visible again? Name three ways it can appear.",
+          "facilitatorNotes": [
+            "“Cold.” Meeting cold air it becomes cloud, mist or rain; on a cold ice pitcher it becomes drops; on the ground cooling at night it becomes dew."
+          ],
+          "evidence": [
+            "This word is “cold.”",
+            "it appears as dew."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-51-q4",
+          "prompt": "What happens to the mist on a window-pane on a very cold night?",
+          "facilitatorNotes": [
+            "It freezes into crystals shaped like ferns, stars or trees, and the drops are drawn together, leaving parts of the glass clear."
+          ],
+          "evidence": [
+            "we find next morning upon the window-pane exquisite ferns, or stars, or trees,",
+            "leaving portions of the glass dry and clear."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-51-q5",
+          "prompt": "Shelley’s cloud says, “I change, but I cannot die.” How do Comstock’s paragraphs explain that line?",
+          "facilitatorNotes": [
+            "Water keeps changing form, from liquid to invisible vapor to cloud, rain, dew and frost, but it is never destroyed; the same water goes round and round."
+          ],
+          "evidence": [
+            "I change, but I cannot die."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-52",
       "title": "The Story of the Stars — suns, double stars and light-years (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -2259,7 +3912,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-31-q1",
+          "id": "reading-3-comstock-nature-study-1916-52-q1",
           "prompt": "What does Comstock say every shining star really is? What did she think some stars might have?",
           "facilitatorNotes": [
             "A great blazing sun. She thought many might have worlds like the earth spinning round them, too far away to see. Since the 1990s astronomers have found thousands of such planets."
@@ -2270,7 +3923,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-31-q2",
+          "id": "reading-3-comstock-nature-study-1916-52-q2",
           "prompt": "What is a double star? How long do different pairs take to circle each other?",
           "facilitatorNotes": [
             "Two suns that swing round a common center but look like one star. Some take five years, others sixteen or forty-six, one “lazy pair” about sixteen hundred, and some only a few hours."
@@ -2281,7 +3934,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-31-q3",
+          "id": "reading-3-comstock-nature-study-1916-52-q3",
           "prompt": "What is a light-year, and why do astronomers use it?",
           "facilitatorNotes": [
             "The distance light travels in a year, about six trillion miles. Distances in miles are too large to grasp."
@@ -2292,7 +3945,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-31-q4",
+          "id": "reading-3-comstock-nature-study-1916-52-q4",
           "prompt": "Comstock says the light from the Pole-star left it “almost half a century ago.” Astronomers now measure it as over four hundred years. What does that tell you about reading an old science book? Why is it still worth reading?",
           "facilitatorNotes": [
             "Measurements improve, so numbers in old books may be out of date; check them against newer sources. But her main idea is still right: starlight is old light, and looking at a star is looking into the past. Readers may find that idea the most amazing part."
@@ -2305,7 +3958,7 @@
       ]
     },
     {
-      "id": "reading-3-comstock-nature-study-1916-32",
+      "id": "reading-3-comstock-nature-study-1916-53",
       "title": "The Pole-star and the Dippers — finding the North Star (excerpt)",
       "sourceId": "comstock-nature-study-1916",
       "genre": "nature essay",
@@ -2334,7 +3987,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-comstock-nature-study-1916-32-q1",
+          "id": "reading-3-comstock-nature-study-1916-53-q1",
           "prompt": "Why does Comstock say star study should begin with the Big Dipper and the Pole-star?",
           "facilitatorNotes": [
             "They give a fixed starting point for finding any other star."
@@ -2344,7 +3997,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-32-q2",
+          "id": "reading-3-comstock-nature-study-1916-53-q2",
           "prompt": "How do you find the Pole-star from the Big Dipper? Try drawing it.",
           "facilitatorNotes": [
             "Draw a line through the two outer stars of the bowl and continue it: it reaches the Pole-star. These two are called the pointers."
@@ -2354,7 +4007,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-32-q3",
+          "id": "reading-3-comstock-nature-study-1916-53-q3",
           "prompt": "Why does the Pole-star never set for people in the Northern Hemisphere? Is there a South Pole-star?",
           "facilitatorNotes": [
             "The northern end of the earth’s axis points almost straight at it, so it stays above the North Pole while the sky seems to turn. There is no convenient South Pole-star."
@@ -2365,7 +4018,7 @@
           ]
         },
         {
-          "id": "reading-3-comstock-nature-study-1916-32-q4",
+          "id": "reading-3-comstock-nature-study-1916-53-q4",
           "prompt": "Comstock says twice that something is only a coincidence. What are the two coincidences? Why does she bother to point them out?",
           "facilitatorNotes": [
             "That the Pole-star lies where the earth’s axis points, and that a compass needle points nearly toward it. She wants readers not to think the star pulls on the earth or the compass; her blackboard-and-pointer comparison makes the same point. Ask why it matters not to mix up “happens together” with “causes.”"
@@ -2373,6 +4026,178 @@
           "evidence": [
             "the North Star has nothing to do with the axis of our earth any more than the figure on the blackboard has to do with the pointer;",
             "It is also a coincidence that the needle of the mariner’s compass points toward the North Star;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-54",
+      "title": "The Pleiades — a misty cluster of stars (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Separate what eyes can see from what telescopes and cameras reveal, and imagine distances too big to picture.",
+      "focus": "A tiny smudge of stars in the winter sky that turns out to be a family of thousands.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The Pleiades are a small, close group of stars in the evening sky from late autumn through winter, near the bright reddish star Aldebaran; they are also called the Seven Sisters. A constellation is a pattern of stars; enthralled means held spellbound; a nebula is a huge cloud of gas and dust in space; infinity means endlessness. Astronomers have learned more since Comstock wrote: today they count about a thousand stars in the cluster, about 440 light-years away, and think the mist around it is a separate dust cloud the stars are passing through, not the cloud they were born from.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Aldebaran and the Pleiades,” Teacher’s Story, the paragraph on the Pleiades; opens “Although we are attracted by many bright stars in the winter sky, yet there is a little…”; closes “…Pleiades, and much poetic imagining has been developed to account for the “lost Pleiad.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6085,
+          6085
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7452c4fa763ef8d8cf777657b782f0b36db51132baab04c58a40282a608321c0"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-54-q1",
+          "prompt": "How many stars in the Pleiades can most people see? How many did sky photography reveal?",
+          "facilitatorNotes": [
+            "Most eyes count six; nine are bright enough to have names; photographs showed more than three thousand (today astronomers count about a thousand true members). On a clear winter night readers can count for themselves."
+          ],
+          "evidence": [
+            "most eyes can count only six stars in the constellation.",
+            "sky photography has revealed to us that there are more than three thousand stars in this little group."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-54-q2",
+          "prompt": "What reasons did astronomers have for thinking these stars belong together?",
+          "facilitatorNotes": [
+            "The mist that seems to loop between them, and the facts that they are at the same stage of life, are made of the same materials and move together in the same direction. Astronomers still think they are a family that formed together."
+          ],
+          "evidence": [
+            "the stars are all in the same stage of development and have the same chemical composition, and they are all moving together in the same direction."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-54-q3",
+          "prompt": "The stars look close together. How far apart are they really? How long does their light take to reach us?",
+          "facilitatorNotes": [
+            "So far apart that our sun and all its planets could roll between them unnoticed; light takes years to cross from one to another and several hundred years to reach us. The light we see tonight left them hundreds of years ago."
+          ],
+          "evidence": [
+            "our own sun and all its planets could roll in between them and never be noticed.",
+            "it takes light several hundred years to reach us from them."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-54-q4",
+          "prompt": "What is the “lost Pleiad”? Why might people have made up stories about it?",
+          "facilitatorNotes": [
+            "An old story says people once saw seven stars, not six, so poets invented reasons for one disappearing. The name Seven Sisters needs seven; some sharp-eyed people really can see seven or more."
+          ],
+          "evidence": [
+            "once the unaided eye could see seven instead of six stars in the Pleiades,"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-54-q5",
+          "prompt": "Why do the Pleiades give Comstock “a feeling of the infinity of the universe”?",
+          "facilitatorNotes": [
+            "A smudge that looks tiny holds thousands of suns spread over unimaginable distances; it makes the universe feel endless. Ask readers what makes them feel small, or big, when they look at the sky."
+          ],
+          "evidence": [
+            "Perhaps no stars in the heavens give us such a feeling of the infinity of the universe as do the Pleiades;"
+          ]
+        }
+      ],
+      "months": [
+        11,
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-3-comstock-nature-study-1916-55",
+      "title": "The Moon — always half lit (excerpt)",
+      "sourceId": "comstock-nature-study-1916",
+      "genre": "nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Explain the moon’s changing shapes with one simple fact, and imagine the earth seen from the moon.",
+      "focus": "Why the moon seems to change shape though it is always there, and lit, just the same.",
+      "context": "Anna Botsford Comstock (1854–1930) was a naturalist and artist who taught nature study at Cornell University in Ithaca, New York. Her Handbook of Nature-Study (1911) was written for teachers, and each lesson opens with a “Teacher’s Story” telling what she herself had watched. Her observations are more than a hundred years old: read them as one careful watcher’s record, not a modern field guide. The phases of the moon are its changing shapes over about a month: new, crescent, quarter, full and back again. Reflected light is light that bounces off something. Earthshine is sunlight bounced off the earth onto the moon. An eclipse of the moon happens when the earth’s shadow falls on it. “The old moon in the new moon’s arms” is an old saying for a thin bright crescent with the rest of the moon faintly visible. A lamp and a ball in a dark room make a good model of the phases.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Moon,” Teacher’s Story, the paragraph on the moon’s phases and earthshine; opens “The moon is a member of our sun’s family, his granddaughter we might call her if the…”; closes “…moon when the earth passes between the sun and the moon, hiding the latter in its shadow.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6230,
+          6230
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7db9717aa9530d83c07300b29fd48f745847a0e280bcb50635eb25fd56b6ce4f"
+      },
+      "questions": [
+        {
+          "id": "reading-3-comstock-nature-study-1916-55-q1",
+          "prompt": "Why is one half of the moon always dark?",
+          "facilitatorNotes": [
+            "The moon has no light of its own; it shines only by reflecting sunlight, so the half facing away from the sun is always in shadow."
+          ],
+          "evidence": [
+            "since the moon has no fires or light of its own, it shines by light reflected from the sun and, therefore, one-half of it is always in shadow."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-55-q2",
+          "prompt": "Why do we call it a “quarter” moon when it looks like half a circle?",
+          "facilitatorNotes": [
+            "We see half of the lighted half, and half of a half is one quarter of the whole moon."
+          ],
+          "evidence": [
+            "because all we can see is one-half of one-half which is one-quarter;"
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-55-q3",
+          "prompt": "When we say there is “no moon,” where is it? Is its far side ever in the dark for good?",
+          "facilitatorNotes": [
+            "It is still there with its lit side turned away from us. The sun shines on every side of it in turn, even the side we never see."
+          ],
+          "evidence": [
+            "we say there is no moon, although it is always there just the same.",
+            "the sun shines on all sides of it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-55-q4",
+          "prompt": "What would the earth look like from the moon? How does that explain “the old moon in the new moon’s arms”?",
+          "facilitatorNotes": [
+            "A splendid “moon” almost four times as wide as ours. Sunlight bouncing off the earth faintly lights the dark part of the moon beside the bright crescent."
+          ],
+          "evidence": [
+            "Think what a splendid moon our earth must seem to the lady in the moon!",
+            "is visible because of the earthshine reflected from it."
+          ]
+        },
+        {
+          "id": "reading-3-comstock-nature-study-1916-55-q5",
+          "prompt": "How is “the old moon in the new moon’s arms” different from an eclipse?",
+          "facilitatorNotes": [
+            "It happens at a thin crescent, when the moon is near the sun in our sky. An eclipse of the moon can happen only at full moon, when the earth passes between the sun and the moon and its shadow covers the moon."
+          ],
+          "evidence": [
+            "an eclipse must always occur at the full of the moon when the earth passes between the sun and the moon,"
           ]
         }
       ]
