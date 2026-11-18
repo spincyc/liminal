@@ -332,3 +332,18 @@ test("the reader renders emphasis and source tables as elements built from text"
   assert.match(html, /<table class="daily-table"><tbody><tr><th scope="col">Date<\/th><th scope="col">Count<\/th><\/tr><tr class="daily-table-span"><td colspan="2">1855<\/td><\/tr><tr><td>Dec\. 13th<\/td><td>1<\/td><\/tr>/);
   assert.match(html, /role="region"/);
 }));
+test("a work collated only in places lends readings only from them, and inline nights count as read", () => {
+  const work = Array.from({ length: 8 }, (_, i) => ({ type: "paragraph", text: "Library paragraph number " + i + " of the collated fixture work." }));
+  const record = collated => ({ work: { scope: collated ? { complete: true, note: null, collated } : { complete: true, note: null } }, blocks: work });
+  const course = fixture();
+  const source = c => c.sources.push({ ...c.sources[0], id: "lib-work-1900", author: "Library Author", title: "Library fixture work", url: "https://example.org/lib", textUrl: "https://example.org/lib/text" });
+  source(course);
+  const cite = (day, first, last) => { day.sourceId = "lib-work-1900"; day.excerpt.blocks = [first, last]; day.blocks = work.slice(first, last + 1).map(b => ({ ...b })); day.questions.forEach(q => { q.evidence = ["Library paragraph number"]; }); day.excerpt.textHash = B.textHash(day); };
+  cite(course.days[0], 0, 1); cite(course.days[1], 4, 5);
+  assert.equal(B.validateCorpus([course], { library: new Map([["lib-work-1900", record([[0, 1], [4, 5]])]]) }).length, 1);
+  assert.throws(() => B.validateCorpus([course], { library: new Map([["lib-work-1900", record([[0, 1]])]]) }), /reading-k-w01-d2 reads blocks 4–5 of lib-work-1900, outside the text collated/);
+  // A night with its own text that reproduces block 1 overlaps a range reading of it.
+  const inline = fixture(1); source(inline); inline.days[0].sourceId = "lib-work-1900"; inline.days[0].excerpt.inlineReason = "Drops a note anchor.";
+  inline.days[0].blocks = [{ type: "paragraph", text: work[1].text }]; inline.days[0].questions.forEach(q => { q.evidence = ["Library paragraph number"]; }); inline.days[0].excerpt.textHash = B.textHash(inline.days[0]);
+  assert.throws(() => B.validateCorpus([course, inline], { library: new Map([["lib-work-1900", record(null)]]) }), /overlapping excerpts of lib-work-1900/);
+});

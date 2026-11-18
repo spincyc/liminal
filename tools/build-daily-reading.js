@@ -223,6 +223,13 @@ function validateCorpus(courses, { complete = false, completeAdvanced = false, e
       assert(!furthest || !before(item.start, furthest.end), "overlapping excerpts of " + work + ": " + furthest?.id + " and " + item.id);
       if (!furthest || before(furthest.end, item.end)) furthest = item;
     }
+    // A work checked against its printed witness only in places lends
+    // readings only from those places (scope.collated, docs/reading-library.md).
+    const collated = library.get(work).work && library.get(work).work.scope.collated;
+    if (collated) for (const item of spans) {
+      assert(collated.some(([first, last]) => first <= item.start[0] && item.end[0] <= last),
+        item.id + " reads blocks " + item.start[0] + "–" + item.end[0] + " of " + work + ", outside the text collated with its witness (scope.collated); collate them first and record it, or choose another passage");
+    }
   }
   return courses;
 }
