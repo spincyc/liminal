@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "kingsley-heroes-1889",
+  "readings": [
+    {
+      "id": "reading-5-kingsley-heroes-1889-01",
+      "title": "The Heroes: Danae enslaved and Athené’s question (Perseus, Part II, first part)",
+      "sourceId": "kingsley-heroes-1889",
+      "genre": "myth",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow the story while noticing the places where Kingsley stops to tell you what to think.",
+      "focus": "Perseus grows up strong and good, his mother is enslaved, and in a dream Athené asks him what kind of life is worth living.",
+      "context": "Charles Kingsley (1819–1875), an English clergyman and novelist, retold three Greek myths for his own children in The Heroes, first published in 1856; this is the 1889 printing. He often speaks to his young readers directly and adds his own lessons to the old stories. In Part I, King Acrisius of Argos, told that his daughter Danae’s son would kill him, set Danae and her baby Perseus adrift in a chest; Dictys, a kind fisherman, rescued them on the island of Seriphos and took them into his home. A quoit is a heavy ring thrown in a game; to lade a ship is to load it; Zeus is the king of the Greek gods, whom Kingsley calls the Immortals; Pallas Athené is the goddess of wisdom and war; a gourd is a vine with large fruit that spreads along the ground; the Titans were giant enemies of the gods; a Gorgon is a monster.",
+      "contentNote": "King Polydectes makes Danae a slave because she will not marry him; she wears a chain and is “perhaps” beaten. Athené speaks of young heroes being slain and of selfish people going “down unloved into hell,” and Perseus sees Medusa’s face, with vipers for hair.",
+      "excerpt": {
+        "locator": "Perseus, Part II, “How Perseus Vowed a Rash Vow,” from the start through Perseus’s dream at Samos; opens “Fifteen years were past and gone, and the babe was now grown to be a tall lad and a…”; closes “…saw before him the face of that dreadful woman, with the vipers writhing round her head.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-kingsley-heroes-1889-02",
+        "blocks": [
+          43,
+          56
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "522180d0affd26d15a959b366beadb21219bf0a233eba371c742478c8aaf5f07"
+      },
+      "questions": [
+        {
+          "id": "reading-5-kingsley-heroes-1889-01-q1",
+          "prompt": "What is Perseus like at fifteen? Which of his qualities does Kingsley say came from Dictys?",
+          "facilitatorNotes": [
+            "He is a head taller than any man on the island and the best at running, wrestling, boxing, the quoit, the javelin, rowing and the harp. Kingsley credits Dictys with something different: he is “brave and truthful, gentle and courteous” because Dictys “had trained him well.” The islanders explain his strength by calling him the son of Zeus; Kingsley explains his goodness by his upbringing. Readers may link this to Dictys’s welcome in Part I."
+          ],
+          "evidence": [
+            "he was taller by a head than any man in the island",
+            "brave and truthful, gentle and courteous, for good old Dictys had trained him well"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-01-q2",
+          "prompt": "Why is Danae made a slave? Which words tell you how Kingsley wants you to feel about Polydectes, before he even acts?",
+          "facilitatorNotes": [
+            "She will not marry a man she does not love, so the king says, “If you will not be my wife, you shall be my slave.” Before that, Kingsley has already judged him: “not a righteous man, like Dictys; but greedy, and cunning, and cruel.” The list of her hard work and the words “poor Danae” build pity. Ask readers to sort what happens from the narrator’s opinions about it."
+          ],
+          "evidence": [
+            "greedy, and cunning, and cruel",
+            "If you will not be my wife, you shall be my slave."
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-01-q3",
+          "prompt": "Athené describes two kinds of people, “souls of clay” and “souls of fire.” What is the difference, and which does Perseus choose to be?",
+          "facilitatorNotes": [
+            "Souls of clay live at ease “like sheep in the pasture,” eat what others have grown, give no shade to anyone, and are forgotten when they die. Souls of fire are driven through danger to fight monsters; some die young and some win “noble names.” Perseus chooses the dangerous life: better to die young with the chance of a noble name than to live at ease and be forgotten."
+          ],
+          "evidence": [
+            "They fatten at ease, like sheep in the pasture",
+            "Better to die in the flower of youth, on the chance of winning a noble name"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-01-q4",
+          "prompt": "Is a quiet, comfortable life really worth nothing, as Athené suggests? What do you think Kingsley wanted his own children to learn here, and do you agree?",
+          "facilitatorNotes": [
+            "Kingsley admired courage and hard service, and his goddess scorns people who “eat what they did not sow,” that is, who live off other people’s work, rather than people who simply live quietly. Readers may object that good, peaceful people such as Dictys the fisherman matter too, and that Athené prizes fame. Notice that her first order is not an adventure: Perseus must go home and “do the work which waits there.”"
+          ],
+          "evidence": [
+            "eat what they did not sow",
+            "Return to your home, and do the work which waits there for you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-kingsley-heroes-1889-02",
+      "title": "The Heroes: the rash vow (Perseus, Part II, second part)",
+      "sourceId": "kingsley-heroes-1889",
+      "genre": "myth",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Trace how one person sets a trap, step by step, and how another walks into it.",
+      "focus": "Perseus rescues his mother from the king, but at a feast Polydectes shames him into promising the Gorgon’s head.",
+      "context": "Recap: Perseus, raised by the kind fisherman Dictys on the island of Seriphos, dreamed at Samos that the goddess Athené showed him Medusa the Gorgon’s face and told him to go home and do the work waiting for him there. While he was away, King Polydectes, Dictys’s brother, made Perseus’s mother Danae a slave because she would not marry him. A hand-mill is a pair of round stones turned by hand to grind grain; a mastiff is a big guard dog and a boar a wild pig; temple-sweepers kept a goddess’s temple clean, and no one could be dragged from her altar; to do homage is to honour a ruler; a foundling is a baby found abandoned; scoffers are people who mock.",
+      "contentNote": "Perseus almost kills the king with a stone hand-mill. At the feast the guests mock him for being poor and for not knowing who his father is.",
+      "excerpt": {
+        "locator": "Perseus, Part II, “How Perseus Vowed a Rash Vow,” from Perseus’s return to Seriphos through Polydectes’ command; opens “So he returned home; and when he came to Seriphos, the first thing which he heard was…”; closes “…he had fallen into a trap; but his promise lay upon him, and he went out without a word.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-kingsley-heroes-1889-01",
+        "continuesTo": "reading-5-kingsley-heroes-1889-03",
+        "blocks": [
+          57,
+          76
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e09bdc7472953815163a12dfb2cc961aff93d445306ed4c373c3958763e5819"
+      },
+      "questions": [
+        {
+          "id": "reading-5-kingsley-heroes-1889-02-q1",
+          "prompt": "What stops Perseus from killing Polydectes? Compare the reasons his mother and Dictys give.",
+          "facilitatorNotes": [
+            "Danae gives a practical reason: they are strangers, and the people would turn on them, so “we shall both die.” Dictys asks for mercy out of love and gratitude: the king is his brother, and he raised Perseus “as my own son.” Ask which reason readers find stronger. Perseus’s anger gives way to the people he loves."
+          ],
+          "evidence": [
+            "if you kill the king, all the people will fall on us",
+            "Remember that he is my brother."
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-02-q2",
+          "prompt": "How does Polydectes set his trap? List his steps in order.",
+          "facilitatorNotes": [
+            "He cannot win by force, so he pretends to forgive Perseus and forget Danae; he proclaims a feast at which every guest must bring a present; he waits until Perseus, “a poor sailor-lad,” stands ashamed at the door; then he has him brought in and asks for his present in front of everyone. Kingsley tells us it is a plan: “Now this was what Polydectes wanted.”"
+          ],
+          "evidence": [
+            "not being able to get what he wanted by force, cast about in his wicked heart how he might get it by cunning",
+            "Now this was what Polydectes wanted"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-02-q3",
+          "prompt": "What do the guests say to Perseus? Why do their words hurt him so much?",
+          "facilitatorNotes": [
+            "They call him driftwood washed up on the island and mock him for not knowing his father while letting old women call him the son of Zeus. They attack the things he cannot help: his poverty and his unknown birth. Kingsley says he “grew mad with shame”; readers may connect this to how mockery can push anyone into saying something rash."
+          ],
+          "evidence": [
+            "like a piece of weed or drift-wood",
+            "he does not know who his father is"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-02-q4",
+          "prompt": "Kingsley calls the promise “boasting,” yet says Perseus “felt in his heart that he was braver than all those scoffers.” Was the vow foolish, brave, or both?",
+          "facilitatorNotes": [
+            "Both can be argued. It is rash: he speaks “hardly knowing what he said,” is “half afraid” afterwards, and soon sees “he had fallen into a trap.” But it is not empty: the dream has given him a real goal, and he is braver than the men laughing at him. The part’s title, “How Perseus Vowed a Rash Vow,” gives Kingsley’s verdict; readers can disagree."
+          ],
+          "evidence": [
+            "So he said boasting",
+            "he felt in his heart that he was braver than all those scoffers",
+            "he saw that he had fallen into a trap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-kingsley-heroes-1889-03",
+      "title": "The Heroes: the sandals and the sword (Perseus, Part II, end)",
+      "sourceId": "kingsley-heroes-1889",
+      "genre": "myth",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Keep track of a long set of instructions and the gifts that go with them.",
+      "focus": "Athené and Hermes come to Perseus in answer to his prayer, give him the way, the shield, the sandals and the sword, and tell him to leap.",
+      "context": "Recap: mocked at King Polydectes’ feast, Perseus rashly promised to bring back the head of Medusa the Gorgon, and the king told him never to return without it. Hermes is the messenger of the gods, called the Argus-slayer because he killed the hundred-eyed giant Argus; a scimitar is a curved sword; the Hyperboreans were a people the Greeks imagined living beyond the north wind; the Nymphs, daughters of the Evening Star, live in the far west; Olympus is the mountain home of the gods; a burnt-offering is a gift burned for a god; the Ister is the river Danube. Kingsley names Medusa’s sisters Stheino and Euryte, and calls Zeus “the Ægis-holder”; Amaltheié was the goat that nursed him as a baby.",
+      "contentNote": "Athené warns that Perseus may die where “no man will ever find your bones,” and tells how Medusa, once a beautiful maiden, was turned into a monster for an unnamed sin. Perseus is to cut off her head.",
+      "excerpt": {
+        "locator": "Perseus, Part II, “How Perseus Vowed a Rash Vow,” from Perseus’s prayer on the cliffs to the end of Part II; opens “Down to the cliffs he went, and looked across the broad blue sea; and he wondered if his…”; closes “…led him on northward ever, like a crane who follows the spring toward the Ister fens.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-kingsley-heroes-1889-02",
+        "continuesTo": "reading-5-kingsley-heroes-1889-04",
+        "blocks": [
+          77,
+          103
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "641cdc76425d488e6808b705400317dcd2e74158a5e76c2bb6690d4a7bcecf89"
+      },
+      "questions": [
+        {
+          "id": "reading-5-kingsley-heroes-1889-03-q1",
+          "prompt": "What does Perseus pray on the cliffs? What does the sentence he repeats show about how he has changed since the feast?",
+          "facilitatorNotes": [
+            "“Rashly and angrily I promised; but cunningly and patiently will I perform.” He admits the promise was a mistake made in anger, and decides to keep it with cleverness and patience instead. He says it three times, weeping, and at first there is no answer at all, which makes the silver cloud more wonderful when it comes."
+          ],
+          "evidence": [
+            "Rashly and angrily I promised; but cunningly and patiently will I perform.",
+            "But there was no answer, nor sign"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-03-q2",
+          "prompt": "Make a list of what Perseus is given and what each thing is for.",
+          "facilitatorNotes": [
+            "The way: north to the Gray Sisters, who will send him to the Nymphs, who will send him to the Gorgon. The polished shield, so that he looks at Medusa’s reflection, never her face. The goat-skin, to wrap the head with his face turned away. Hermes’s sandals, to carry him over the sea and guide him. The sword, which “needs no second stroke.” Drawing the chain of places can help keep it straight."
+          ],
+          "evidence": [
+            "look not at her herself, but at her image in the brass",
+            "These sandals of mine will bear you across the seas",
+            "needs no second stroke"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-03-q3",
+          "prompt": "What does Athené say Medusa once was, and what happened to her? Why might Kingsley include this?",
+          "facilitatorNotes": [
+            "She was once “a maiden as beautiful as morn,” but in her pride she committed a sin so bad that “the sun hid his face,” and she was changed: vipers for hair, claws for hands, a heart full of “shame and rage,” and eyes that turn people to stone. Kingsley does not say what the sin was; ancient writers told her story in different ways, and an adult can decide how much more to say. The history makes her a warning against pride, and also a person who was changed, not only a monster."
+          ],
+          "evidence": [
+            "Once she was a maiden as beautiful as morn",
+            "her heart was filled with shame and rage"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-03-q4",
+          "prompt": "Athené will not let Perseus say goodbye to his mother. Why not? Where does he find the courage to leap?",
+          "facilitatorNotes": [
+            "She fears “your heart relent at her weeping,” and promises to comfort Danae herself; even his offering to the gods must wait, for it will be Medusa’s head. He looks down and shudders, but is “ashamed to show his dread,” thinks of Medusa and of fame, and jumps. Readers may find Athené hard or wise. Courage here is not having no fear but leaping anyway, and the leap is rewarded: “instead of falling he floated.”"
+          ],
+          "evidence": [
+            "lest your heart relent at her weeping",
+            "he was ashamed to show his dread",
+            "instead of falling he floated, and stood, and ran along the sky"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-kingsley-heroes-1889-04",
+      "title": "The Heroes: the three Gray Sisters (Perseus, Part III, first part)",
+      "sourceId": "kingsley-heroes-1889",
+      "genre": "myth",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Picture far-off places from long lists of names and images, and decide when the hero is clever and when he is unkind.",
+      "focus": "Perseus flies to the frozen edge of the world and tricks the Gray Sisters into showing him the way to the Gorgon.",
+      "context": "Recap: the goddess Athené and Hermes gave Perseus a polished shield, winged sandals and a sword for killing Medusa the Gorgon, and told him to ask the way of the three Gray Sisters in the far north. He leapt from the cliffs of Seriphos and ran along the sky. Kingsley’s first long paragraph is a journey north through real places: Greek islands, Athens and Thebes, the plains of Thessaly, the Thracian mountains and the river Ister, now the Danube; Pæons, Dardans and Triballi were peoples living north of Greece. Venerable means old and honoured; “chaunted” is an old spelling of chanted; the tin isles were islands in the far west where tin was found, perhaps near Britain; Iberian means of Spain and Portugal; Galatæa is a queen of the sea-nymphs and the Tritons are sea-gods who blow shells; Atlas is the giant who holds the sky and the earth apart.",
+      "contentNote": "Kingsley calls the peoples north of Greece “barbarous,” as the ancient Greeks called all foreigners. Perseus snatches the Gray Sisters’ only eye, threatens to throw it into the sea, and calls them “Cruel and proud old women.”",
+      "excerpt": {
+        "locator": "Perseus, Part III, “How Perseus Slew the Gorgon,” from the start through Perseus’s arrival at the mountain of Atlas; opens “So Perseus started on his journey, going dry-shod over land and sea; and his heart was…”; closes “…and flowers; but there was no smoke rising from any glen, nor house, nor sign of man.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-kingsley-heroes-1889-03",
+        "continuesTo": null,
+        "blocks": [
+          105,
+          119
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a6cccd583f1ee6e70efdf3a9961a2b5e85df4c64a22945aab0fa5b256d85323a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-kingsley-heroes-1889-04-q1",
+          "prompt": "What is strange and frightening about the place where the Gray Sisters live? Find details that make it feel cold and dead.",
+          "facilitatorNotes": [
+            "It is at “the edge of the everlasting night,” where the air is full of feathers (snowflakes), the ground is hard with ice, and nothing lives, “not a fly, not a moss.” Even the sea spray falls as snow, and there are bones frozen in the cliff. The moon shines but gives no warmth. Each detail takes away one more sign of life."
+          ],
+          "evidence": [
+            "There was no living thing around them, not a fly, not a moss upon the rocks",
+            "The surge broke up in foam, but it fell again in flakes of snow"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-04-q2",
+          "prompt": "The sisters share one eye and one tooth, and they sing “Why the old times were better than the new.” What kind of people might Kingsley be making fun of?",
+          "facilitatorNotes": [
+            "They have an eye but “could not see,” a tooth but “could not eat,” and moonlight that does not warm them; they hate “new rulers” and say “all new things are bad.” Kingsley seems to be mocking people who live in the past and refuse anything new. Readers may also enjoy them simply as a strange picture from the old myth; both readings fit."
+          ],
+          "evidence": [
+            "They passed the eye from one to the other, but for all that they could not see",
+            "Why the old times were better than the new.",
+            "all new things are bad"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-04-q3",
+          "prompt": "Perseus pities the sisters at first, then stops. Why? Was his trick fair?",
+          "facilitatorNotes": [
+            "He speaks to them politely and honours their age, but they hate him and want to bite him, so he “left off pitying them,” takes the eye as it passes, and threatens to throw it into the sea. He keeps the promise he made on the cliff to act “cunningly,” and he does give the eye back. Some readers will call it clever; others will think stealing from blind old women is bullying, even unfriendly ones."
+          ],
+          "evidence": [
+            "And Perseus pitied the three Gray Sisters; but they did not pity themselves.",
+            "left off pitying them",
+            "I have your eye; and I will throw it into the sea"
+          ]
+        },
+        {
+          "id": "reading-5-kingsley-heroes-1889-04-q4",
+          "prompt": "Compare Perseus’s journey south with the Gray Sisters’ world. What changes, and what might the change mean?",
+          "facilitatorNotes": [
+            "Going south, the sun rises higher “day by day,” terns and gulls fly “laughing” round his head, dolphins offer rides, sea-nymphs sing all night, and the journey ends at a rose-red mountain with valleys and waterfalls. The cold, joyless north gives way to warmth, play and life. Kingsley adds a comment of his own: the sisters, now icebergs, weep at the summer and the south wind “which fill young hearts with joy”; Perseus is heading toward that joy."
+          ],
+          "evidence": [
+            "the terns and the sea-gulls swept laughing round his head",
+            "Day by day the sun rose higher",
+            "which fill young hearts with joy"
+          ]
+        }
+      ]
+    }
+  ]
+}
