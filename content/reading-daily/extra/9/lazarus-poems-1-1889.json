@@ -270,6 +270,87 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-lazarus-poems-1-1889-05",
+      "title": "Heroes",
+      "sourceId": "lazarus-poems-1-1889",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Find the line where the poem turns from the dead to the living. Then follow the living heroes from the Virginia woods to the plains, the town and a farm.",
+      "focus": "A poem about the Civil War that honours the dead, then asks who will praise the soldiers who came home.",
+      "context": "Emma Lazarus (1849–1887), a New York poet best known for “The New Colossus,” wrote these poems in the 1870s and 1880s; the text is from the Poems published after her death (1889). This poem looks back on the Civil War (1861–1865), in which more than six hundred thousand soldiers died; many of its great battles were fought in the woods of Virginia. Braves are brave men; unmeet means unfitting; nathless means nevertheless; enwove means woven; a patriarchal life is one like that of the patriarchs in Genesis, herding and farming; swart means dark, sunburned. It is read on Veterans Day, which honours all who have served in the armed forces, the living as well as the dead: the turn this poem makes halfway through.",
+      "contentNote": "Remembers the war dead and disabled veterans, without graphic detail.",
+      "excerpt": {
+        "locator": "Complete poem: Heroes; The Poems of Emma Lazarus, vol. I (1889); opens “In rich Virginian woods, The scarlet creeper reddens over graves, Among the solemn trees…”; closes “…and the near, With antique virtues from some mystic land, Of knightly deeds and dreams.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          73,
+          85
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c956089815a457110a5071b3c276599f4613d5a671e30ac927862b3d23c9a16d"
+      },
+      "questions": [
+        {
+          "id": "reading-9-lazarus-poems-1-1889-05-q1",
+          "prompt": "The first four stanzas are about the dead. What does the speaker say they deserve, and what in the peaceful Virginia woods keeps bringing them to mind?",
+          "facilitatorNotes": [
+            "They deserve “Blessings and tears of aching thankfulness” and flowers for their graves woven into wreaths, the customs of decorating soldiers’ graves. Every breeze and trembling tree “revives within our mind” those who lie beneath the living beauty.",
+            "The contrast of living beauty above and the dead below is the point: peace does not erase them. The dash after “dead” makes the reader pause on the word."
+          ],
+          "evidence": [
+            "For brave dead soldiers, these:",
+            "Blessings and tears of aching thankfulness,",
+            "Who lie beneath the living beauty, dead,—"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-05-q2",
+          "prompt": "“But who has sung their praise, / Not less illustrious, who are living yet?” Where does the poem find these living heroes, and why does it praise them for forgetting?",
+          "facilitatorNotes": [
+            "They have “scaled the mountain” and come down to live “upon the plain”: hunting and harvesting on the Western plains, working mines, “toiling in the town.” They are “rich enough their action to forget” and keep “their simpleness intact,” so their modesty adds “more lustre yet” to their victory.",
+            "Heroism shifts from one great act to a long, quiet life after it. Students may ask whether forgetting is really possible, or whether the poem asks too much of returning soldiers."
+          ],
+          "evidence": [
+            "And rich enough their action to forget;",
+            "descend to live upon the plain;"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-05-q3",
+          "prompt": "“Not o’er the dead, but over these, your tears, / O brothers, ye may weep!” Who are “these,” and why might they envy the dead? Do you agree with where the speaker directs our tears?",
+          "facilitatorNotes": [
+            "“These” are the wounded, “Maimed, helpless, lingering still through suffering years,” who may envy “the restful sleep” of comrades who died. The speaker reverses the usual mourning: the dead are at rest, while the wounded still suffer.",
+            "Some readers find this the poem’s most honest moment; others object that it treats disabled veterans only as objects of pity, after stanzas that praised the living for their strength. Both views can cite “condemned to live.”"
+          ],
+          "evidence": [
+            "And those condemned to live,",
+            "Not o’er the dead, but over these, your tears,"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-05-q4",
+          "prompt": "The poem ends with a farmer whose “frank eyes” show “The hero’s soul.” How do the last two stanzas change the meaning of the title? Does the language of knights suit these men?",
+          "facilitatorNotes": [
+            "Heroes are not only the famous or the fallen but ordinary men “in the common fields and streets,” who cast the light of “antique virtues” and “knightly deeds and dreams” onto “the present and the near.”",
+            "Some readers think the knightly language honours plain work; others think it romanticizes war and hides what soldiers did. On Veterans Day, ask what it means to see a veteran in an ordinary neighbour."
+          ],
+          "evidence": [
+            "Thus in the common fields and streets they stand;",
+            "They cast upon the present and the near,"
+          ]
+        }
+      ],
+      "holiday": "veterans-day"
     }
   ]
 }

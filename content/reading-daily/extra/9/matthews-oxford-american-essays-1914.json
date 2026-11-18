@@ -806,6 +806,255 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-12",
+      "title": "Buds and Bird-Voices: spring at the Old Manse",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Nathaniel Hawthorne",
+      "workTitle": "Buds and Bird-Voices",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow the essay from the window to the fields to the writer’s own mind. Mark each place where a sign of spring becomes a claim about death and life.",
+      "focus": "A New England spring watched closely, and a writer’s argument with himself about whether anything can be truly new.",
+      "context": "Nathaniel Hawthorne (1804–1864), later the author of The Scarlet Letter, wrote this essay in the spring of 1843 at the Old Manse in Concord, Massachusetts, an old minister’s house where he and his wife lived after their marriage; he collected it in Mosses from an Old Manse (1846). The “old mansion” is the Manse, the river is the Concord, and Hawthorne liked to say the house was haunted by the ghost of an old clergyman. Paradisiacal means like paradise, the garden of Eden; verdure is fresh green growth; bedizened means gaudily dressed; utilitarianism judges things only by their usefulness; “thou murmurer” is the writer scolding himself for complaining. It is read on Easter, a spring feast of new life, because the essay watches a “corpse-like world” won back “from death to life.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Buds and Bird-Voices, the first half of the essay, from the opened study window through the withered leaves and “the renewing power of the spirit”; opens “Balmy Spring--weeks later than we expected, and months later than we longed for…”; closes “…be released from earth. It will need the air of heaven to revive its pristine energies.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          256,
+          262
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2310786e40bc1a707f9c1f7b31b1e80d3d4a1695e557223caafc7437318ab078"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-12-q1",
+          "prompt": "In the first paragraph, what does Hawthorne let out of his study window, and what does he say spring is for?",
+          "facilitatorNotes": [
+            "He lets out the “forms of thought or fancy” that kept him company all winter, and “Brooding Meditation” flies off like an owl. Spring restores “the old paradisiacal economy of life”: “we live, not to think nor to labor, but for the simple end of being happy.”",
+            "Notice that the essay soon breaks its own rule: by the end of this passage he is brooding hard about decay. Ask whether the opening is a resolution, a joke, or both."
+          ],
+          "evidence": [
+            "Brooding Meditation may flap her dusky wings",
+            "we live, not to think nor to labor, but for the simple end of being happy"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-12-q2",
+          "prompt": "The second paragraph calls the snowy land “the corpse-like world.” Follow how it turns from death to life. Which does Hawthorne decide is real, the green patches or the bare land around them?",
+          "facilitatorNotes": [
+            "The snow is a “vast white napkin” over a corpse; then gentle winds and showers melt it, and grass sprouts at the edge of the drifts. A green slope “looks unreal—a prophecy, a hope,” but he reverses the expected judgment: the barren landscape, not the green, “is a shadow and a dream.”",
+            "So the small sign of life is the reality and the large dead landscape the illusion. Some students will call this wishful seeing; others will connect it to his claim that each moment “wins some portion of the earth from death to life.”"
+          ],
+          "evidence": [
+            "the face of the corpse-like world",
+            "But beauty is never a delusion;",
+            "Each moment wins some portion of the earth from death to life;"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-12-q3",
+          "prompt": "Why do old lilacs look wrong to Hawthorne when old apple trees do not? What does he say this means for people?",
+          "facilitatorNotes": [
+            "Plants that grow “only for beauty” ought to “flourish only in immortal youth”; a “grandfatherly lilac-bush” is ludicrous. Apple trees grow old “without reproach” because they bear fruit, the price usefulness demands for a long life. People who can give the world “nothing but flowers” should, if they grow old, bear “some kind of fruit.”",
+            "The tone is half joking. Students can test it: is usefulness the only excuse for old age, or is Hawthorne mocking that very demand with a word like “inexorably”?"
+          ],
+          "evidence": [
+            "Apple trees, on the other hand, grow old without reproach.",
+            "the atonement which utilitarianism inexorably demands for the privilege of lengthened life"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-12-q4",
+          "prompt": "In the paragraph about withered leaves Hawthorne argues with himself. What is his complaint, how does he answer it, and is the answer convincing?",
+          "facilitatorNotes": [
+            "He wishes he could live as in Eden’s first spring, without treading on “dry bones and mouldering relics” of earlier years. Then he rebukes himself (“Oh, thou murmurer”): “There is no decay. Each human soul is the first created inhabitant of its own Eden.” Renewal comes from within, from “the renewing power of the spirit.”",
+            "A defensible reading: spring becomes a picture of rising from death that each person can repeat, which is why the essay suits Easter. Others may find the answer too quick after so much decay, and the paragraph itself ends by imagining a spirit that has lost this power."
+          ],
+          "evidence": [
+            "Oh, thou murmurer",
+            "There is no decay. Each human soul is the first created inhabitant of its own Eden.",
+            "the renewing power of the spirit"
+          ]
+        }
+      ],
+      "holiday": "easter"
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-13",
+      "title": "Our March to Washington: through New York and Philadelphia",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Theodore Winthrop",
+      "workTitle": "Our March to Washington",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Read for two moods at once: a cheerful volunteer’s jokes, and the hints of what the march might cost.",
+      "focus": "A young soldier’s high-spirited account of marching off to war in April 1861, written weeks before he was killed.",
+      "context": "Theodore Winthrop (1828–1861), a New York lawyer and writer, marched south as a private in the Seventh Regiment of the New York militia on April 19, 1861, a week after the Civil War began at Fort Sumter, when Washington was cut off and in danger. That same day a pro-Southern mob in Baltimore attacked the Sixth Massachusetts Regiment, and soldiers and townspeople were killed, so the Seventh went round by sea. The Atlantic Monthly printed his account in June 1861; on June 10, Winthrop, by then an officer on a general’s staff, was killed at Big Bethel in Virginia, one of the first Union officers to die in the war. A howitzer is a short cannon; a “bhoy” is a New York street tough; quarter-eagles are $2.50 gold coins; Latakia is a tobacco; “vivers” are provisions; the Plug Uglies were a Baltimore gang; Quakers said “thee.” It is read on Memorial Day, which remembers those who died serving in the armed forces.",
+      "contentNote": "Mentions the Baltimore riot, in which soldiers and civilians were killed; the writer jokes about his own coffin.",
+      "excerpt": {
+        "locator": "Our March to Washington, the opening sections “Through the City” and “Philadelphia”, to the regiment’s embarking on the Boston; opens “AT three o'clock in the afternoon of Friday, April 19, we took our peacemaker, a neat…”; closes “…If ever the heavens smiled fair weather on any campaign, they have done so on ours.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          568,
+          594
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3605a1b23de507bc1305ea08a96c67c3ea577b7401da707bd7fca87755e7758a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-13-q1",
+          "prompt": "What gifts and greetings does the crowd shower on the regiment along Broadway, and how does Winthrop make them funny?",
+          "facilitatorNotes": [
+            "Handkerchiefs fall “like a snow,” gloves pelt the men “with love-taps,” and men press knives, combs, soap, slippers, cigars and fruit on them; a “bhoy” offers his “dorg.” Blessings come mixed with shouts of “Bully for you!”, two to one.",
+            "The humour is in the long list, the street dialect and Winthrop’s mock complaint that he got no gifts himself. Ask what the jokes do for a reader who knows where the men are going."
+          ],
+          "evidence": [
+            "Handkerchiefs, of course, came floating down upon us from the windows, like a snow.",
+            "Pretty little gloves pelted us with love-taps."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-13-q2",
+          "prompt": "“These were the comic incidents of the march,” Winthrop writes, “but underlying all was the tragic sentiment.” Where else does a darker note sound beneath the cheerful one?",
+          "facilitatorNotes": [
+            "The crowd “seems to be taking the measure of my coffin”; news arrives of the “rascal attack” in Baltimore; the men sing because the more a man sings, “the better he is likely to fight”; the Quaker ladies pray that the country be saved from blood “unless blood must be shed to preserve Law and Liberty.”",
+            "Each dark note is lightly made, often as a joke, and the passage ends in fair weather. Students can discuss whether the lightness is courage, youth, or a way of not thinking about what lies ahead."
+          ],
+          "evidence": [
+            "seems to be taking the measure of my coffin",
+            "underlying all was the tragic sentiment that we might have tragic work presently to do",
+            "unless blood must be shed to preserve Law and Liberty"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-13-q3",
+          "prompt": "What “grand fact” does the march teach Winthrop, and how does he say he learned it? Does the rest of the passage support it?",
+          "facilitatorNotes": [
+            "That “our great city was with us as one man, utterly united in the great cause.” He learned it “by two senses”: hundreds of thousands roared it, and thousands slapped it onto his knapsack. Jersey City, the New Jersey line, an Irish shopkeeper and two Quaker ladies add more witnesses.",
+            "A cheering crowd in the first week of a four-year war proves enthusiasm more than unity, and Winthrop himself calls the Seventh a sign of the loyalty of the city’s “conservative” class. Accept answers that weigh the evidence either way."
+          ],
+          "evidence": [
+            "our great city was with us as one man",
+            "This grand fact I learned by two senses."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-13-q4",
+          "prompt": "Winthrop was killed less than two months after this march. Does knowing that change how you hear “It was worth a life, that march” or “if I live to breakfast again”? Should it?",
+          "facilitatorNotes": [
+            "When he wrote them, the phrases were cheerful exaggeration: the march was an experience worth a lifetime, and the breakfast line is a joke about hungry soldiers. Read now, they seem to foretell his death.",
+            "Some readers think a text should be read as its writer meant it, so the essay’s value is its unknowing high spirits; others think the irony is exactly why it belongs on Memorial Day, which remembers such people one by one. Both can cite the passage’s mix of jokes and “tragic sentiment.”"
+          ],
+          "evidence": [
+            "It was worth a life, that march.",
+            "I hope, if I live to breakfast again in the Lapierre House"
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-14",
+      "title": "Colonialism in the United States: independence declared, and independence of mind",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Henry Cabot Lodge",
+      "workTitle": "Colonialism in the United States",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Find Lodge’s thesis and the two stages of independence he describes. Then decide whether his evidence, Franklin above all, persuades you.",
+      "focus": "A historian argues that declaring independence in 1776 was the quick part: Americans took much longer to stop thinking like colonists.",
+      "context": "Henry Cabot Lodge (1850–1924), a Boston historian who later served more than thirty years as a United States senator from Massachusetts, published this essay in the Atlantic Monthly in May 1883; reprinting it in 1914, he added a note that the colonial spirit had since weakened. A colony is a settlement ruled from a mother country; provincial means narrow, small-town. England recognized American independence in the Treaty of Paris (1783); George III was the British king. Spain’s Christian kingdoms fought the Moors, Muslim rulers of much of Spain, for centuries; the Puritans ruled England in the 1650s; the Saxon invasion is the settlement of England by Germanic peoples in the 400s. Lodge’s talk of an “English race” reflects a theory of inherited national character common in his day. It is read on Independence Day because it asks what declaring independence did, and did not, change.",
+      "contentNote": "Lodge generalizes about whole peoples (Spaniards, South Americans, the French, the “English race”) in ways now recognized as stereotypes.",
+      "excerpt": {
+        "locator": "Colonialism in the United States, the opening paragraphs, through the colonists’ “habit of mental dependence”; opens “Nothing is more interesting than to trace, through many years and almost endless…”; closes “…breaking out now here, now there, have at last brought it so near to final extinction.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1057,
+          1066
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e1e3f9dc8880ed9073e00c2365f796ea66030e993a68a3e2af505023488c5442"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-14-q1",
+          "prompt": "What “habit of thought” does Lodge set out to trace, and how does the image of the river that disappears underground explain his method?",
+          "facilitatorNotes": [
+            "He will trace “the colonial spirit in our modes of thought,” a habit of looking to England that outlived political dependence. Like a river that vanishes underground and resurfaces “with new shapes and colors,” an idea can seem to disappear and come back looking unrelated, yet “it is always the same river.”",
+            "So he will link opinions that seem “sporadic and independent” into one family with “a common ancestor.” Ask whether this is a strength of the essay or a way of making any resemblance count as proof."
+          ],
+          "evidence": [
+            "it is always the same river",
+            "They all have the same pedigree"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-14-q2",
+          "prompt": "Lodge says armed revolution is quick. What was the harder and slower part of becoming independent, and how does he explain the slowness?",
+          "facilitatorNotes": [
+            "The war took a few years, from 1776 to the victory of 1782 and a government by 1789. The “second stage in the conflict” was “that of ideas and opinions”: Americans kept English law and government, wisely in his view, but also kept a colonial dependence in books, art, learning, fashion and manners.",
+            "He blames the “slow mind and ingrained conservatism of the English race.” Students should see that this explanation rests on a theory of inherited national character, which is weak as evidence."
+          ],
+          "evidence": [
+            "Armed revolution is quick.",
+            "We then entered upon the second stage in the conflict, that of ideas and opinions."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-14-q3",
+          "prompt": "Why does Lodge prefer the word “colonial” to “provincial,” and how does he define a colony?",
+          "facilitatorNotes": [
+            "“Provincial” has become a vague insult for anything we dislike; “colonial” has historical point and can be defined exactly: a colony is “an off-shoot from a parent stock, and its chief characteristic is dependence.” The less dependent it becomes, the nearer it comes to “national existence.”",
+            "The definition lets him measure independence by degrees rather than by a single date. Ask what his list of dependencies includes: goods, politics, books, colleges, professions, fashions, manners."
+          ],
+          "evidence": [
+            "its chief characteristic is dependence",
+            "When we sought to originate, we simply imitated."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-14-q4",
+          "prompt": "Lodge calls Franklin the “one great exception” and his autobiography “the corner-stone” of American literature. What makes Franklin “genuinely and intensely American” to him? Does one exception support his case or weaken it?",
+          "facilitatorNotes": [
+            "Franklin’s “audacity,” “fertility” and “adaptability,” his ease before “kings and princes,” and the Autobiography’s “perfect originality,” free of “English colonialism.” Like lightning that shows how dark the storm is, the exception shows how colonial everyone else was.",
+            "Franklin’s Autobiography is among this level’s calendar readings, so students can test the claim against the book itself. Some will argue one brilliant exception proves little about a whole people; others that Lodge uses it fairly as a measure. On Independence Day, ask what an independent mind would look like now."
+          ],
+          "evidence": [
+            "the luminous genius of Franklin",
+            "It is American in feeling, without any taint of English colonialism."
+          ]
+        }
+      ],
+      "holiday": "independence-day"
     }
   ]
 }

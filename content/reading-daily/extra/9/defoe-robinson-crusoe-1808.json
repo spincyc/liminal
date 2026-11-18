@@ -752,6 +752,167 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-11",
+      "title": "Robinson Crusoe: the fourth anniversary and the want of thankfulness",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "List what Crusoe has more of than he can use. Then sort his reasons for being thankful into kinds.",
+      "focus": "Alone on his island, Crusoe counts his blessings: what he has, what he might have lacked, and what he thinks he deserved.",
+      "context": "Daniel Defoe published Robinson Crusoe in 1719, presenting it as the true memoir of a sailor; this is an 1808 edition. Recap: Crusoe was shipwrecked on September 30, 1659, on an uninhabited island off the coast of South America. He saved tools, guns and food from the wreck, has built a fortified home, grows corn, keeps goats and has turned to the Bible, and he keeps each anniversary of his landing as a day of prayer and fasting. Father Abraham and Dives come from Jesus’ parable of a rich man who after death sees the poor man Lazarus across “a great gulf”; the prophet Elijah was fed by ravens in the wilderness. Viz. means namely; a gross is twelve dozen; to repine is to complain. It is read on Thanksgiving because Crusoe works out, item by item, what he has to be thankful for.",
+      "contentNote": "Crusoe imagines “savages” who might “murder and devour” him.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, Crusoe’s reflections on keeping the fourth anniversary of his landing; opens “In the middle of this work I finished my fourth year in this place, and kept my…”; closes “…and after I made a just improvement of these things, I went away, and was no more sad.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          424,
+          436
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "18db03c33828dd73b466c4595aca1abce9fd45d8ef5d9d66990b69c5ebebbbfd"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-11-q1",
+          "prompt": "What does Crusoe have more of than he can use, and what general rule does he draw from it?",
+          "facilitatorNotes": [
+            "Corn, turtles, timber and grapes: he could raise “ship-loadings of corn” but grows only what he needs, since a surplus rots or feeds the dog and the vermin. His rule: the good things of this world are good to us only “as they are for our use.”",
+            "He calls himself “lord of the whole manor” or “king or emperor,” a joke with a point: owning things means little when there is no one to share or trade with."
+          ],
+          "evidence": [
+            "all the good things of this world are no farther good to us, than as they are for our use",
+            "I was lord of the whole manor"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-11-q2",
+          "prompt": "Why would Crusoe give all his gold for “six-penny-worth of turnip and carrot seed”? What does the island show about value that life in a town might hide?",
+          "facilitatorNotes": [
+            "On the island money buys nothing, while seeds, a hand-mill, tobacco-pipes or ink would be of real use. The coins grow mouldy in a drawer, and diamonds would be worth no more, “because of no use.”",
+            "Students can argue whether he has found a true rule or a special case: in a society, money is useful because others accept it. His claim that a miser “would have been cured” assumes the miser’s trouble is wanting more than he can use."
+          ],
+          "evidence": [
+            "I would have given it all for six-penny-worth of turnip and carrot seed out of England",
+            "there the nasty, sorry, useless stuff lay"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-11-q3",
+          "prompt": "Crusoe makes three comparisons that make him thankful: with what he lacks, with what might have happened without the wreck, and with what he deserved. Which seems strongest to you, and why?",
+          "facilitatorNotes": [
+            "First, he learns to consider “what I enjoyed, rather than what I wanted,” concluding that discontent springs from “the want of thankfulness” (want means both desire and lack). Second, without the ship’s tools he would have lived “like a mere savage.” Third, he had lived without God and never once said “Thank God,” yet was punished less than he deserved.",
+            "The first is about attention, the second about luck or providence, the third about guilt and mercy. Students who do not share Crusoe’s faith can still weigh the first two; ask which would help someone in real trouble."
+          ],
+          "evidence": [
+            "all our discontents about what we want, appeared to me to spring from the want of thankfulness for what we have",
+            "I never once had the words, Thank God, so much as on my mind, or in my mouth"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-11-q4",
+          "prompt": "The passage ends: “I went away, and was no more sad.” What has changed, Crusoe’s situation or his way of seeing it? Is that a strength of gratitude or a danger?",
+          "facilitatorNotes": [
+            "Nothing outside him has changed: he still has “no society, which was my affliction.” He “worked my mind up” first to resignation and then to “sincere thankfulness,” until his life is a life of sorrow one way and of mercy another.",
+            "Some readers see wisdom: gratitude makes a hard life bearable. Others ask whether counting blessings can turn into accepting what ought to be changed. Note the irony that he gives thanks for “no savages to murder and devour me”; later in the novel, the savages come."
+          ],
+          "evidence": [
+            "With these reflections I worked my mind up",
+            "as my life was a life of sorrow one way, so it was a life of mercy another;",
+            "I went away, and was no more sad."
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-12",
+      "title": "Robinson Crusoe: Friday speaks of his country",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the conversation twice: once for what Friday says, once for what Crusoe makes of it. Mark every “I understood.”",
+      "focus": "A rescued Carib man tells the man he must call Master about his people, the sea and the bearded strangers who “killed much mans.”",
+      "context": "Daniel Defoe published Robinson Crusoe in 1719, presenting it as the true memoir of a sailor; this is an 1808 edition. Recap: after more than twenty years alone, Crusoe rescued a young man from captors who had brought him to the island to be killed and eaten. He named him Friday, after the day of the rescue, taught him to call him Master, and has been teaching him English and Christianity. The Oroonoque is the Orinoco River of South America, and Trinidad lies off its mouth; the Caribs, a people of that coast and the islands, gave the Caribbean its name. Christopher Columbus reached Trinidad and the mouth of the Orinoco on his third voyage, in 1498. It is read on Columbus Day as a meeting between a European and a native of the Americas, told by the European.",
+      "contentNote": "Cannibalism is discussed; Crusoe calls Friday a “savage” and a “creature,” renders his English as broken, and treats him as a servant who must call him Master.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from “the pleasantest year” with Friday through Friday’s account of the Caribs, the great river and the bearded men; opens “This was the pleasantest year of all the life I led in this place. Friday began to talk…”; closes “…escape from this place, and that this poor savage might be a means to help me to do it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          657,
+          676
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "187ee8cdb88a8dae9b1adaedda2dbf99f3ecbf5ff39ed5f1a4febfd64659b900"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-12-q1",
+          "prompt": "Friday says his nation always fights “the better.” How, then, was he taken prisoner? What does the conversation show about how much English he now speaks?",
+          "facilitatorNotes": [
+            "His side was outnumbered where he was, though it won elsewhere and took prisoners by the thousand; the captors carried him off by canoe, and “my nation have no canoe that time.” His English is clear but has its own grammar, and Crusoe glosses it (“that is, he meant”).",
+            "Friday’s logic is sound: a nation can win a battle while some of its fighters are taken. Ask whose words come across as more reasonable in this exchange."
+          ],
+          "evidence": [
+            "Yes, yes, we always fight the better;",
+            "my nation have no canoe that time."
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-12-q2",
+          "prompt": "Crusoe sets the conversation out like a play, with speakers named Friday and Master. What do those names show about the relationship? Who gets to interpret whom?",
+          "facilitatorNotes": [
+            "Crusoe named Friday after a day of the week and labels himself Master. Friday’s words always pass through Crusoe: “By this I understood,” “by which I understood he meant.” Crusoe also says he “began really to love the creature.”",
+            "A defensible reading: the affection is real but unequal, and the word “creature” and the speech labels fix Friday as a servant. Some students will see Defoe letting the reader notice more than Crusoe does."
+          ],
+          "evidence": [
+            "I began really to love the creature;",
+            "By this I understood, that my man Friday had formerly been among the savages"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-12-q3",
+          "prompt": "What does Crusoe learn about the currents, the nations and the “white-bearded men”? How does he explain what Friday tells him?",
+          "facilitatorNotes": [
+            "The current comes from “the mighty river Oroonoque,” the land to the west is Trinidad, and Friday’s people are Caribs. Far to the west live bearded men like Crusoe who “had killed much mans”; Crusoe takes them to be the Spaniards, whose cruelties in America every nation remembered “from father to son.”",
+            "Defoe’s English readers knew stories of Spanish cruelty in the Americas, so Crusoe condemns another nation’s conquest. Ask what Friday’s people remember, and how long such memories last."
+          ],
+          "evidence": [
+            "they had killed much mans, that was his word",
+            "whose cruelties in America had been spread over the whole countries, and were remembered by all the nations from father to son"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-12-q4",
+          "prompt": "Friday points to Crusoe’s whiskers to describe the killers: they were “like me.” Then Crusoe hopes Friday “might be a means” to help him escape. What does this ending suggest about how Crusoe sees Friday, and about the meeting of Europeans and Americans?",
+          "facilitatorNotes": [
+            "Crusoe passes over the likeness Friday has drawn between him and the Spaniards and moves straight to his own plan; “this poor savage” becomes “a means.” A passage that began with love ends with use.",
+            "Readers may defend Crusoe as a castaway who naturally longs for home, or read the scene as a small model of the colonial encounter: the stranger learns the land from its people and plans how they can serve him. Accept either if it is argued from the text."
+          ],
+          "evidence": [
+            "there dwelt white-bearded men, like me",
+            "this poor savage might be a means to help me to do it"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
     }
   ]
 }

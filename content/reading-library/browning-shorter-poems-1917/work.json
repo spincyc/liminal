@@ -4,7 +4,7 @@
   "author": "Robert Browning",
   "title": "Browning’s Shorter Poems",
   "translator": null,
-  "edition": "Selected and edited by Franklin T. Baker, fourth edition revised and enlarged, Macmillan, New York, 1917 (copyright 1899), as identified by the transcribed title and printing pages. Selected poems only; editor notes and separators omitted. Superscript-style degree-sign note callouts and right-margin line numbers removed; wording, stanza breaks and verse lines retained. The library holds Browning’s poems as the volume prints them, from The Pied Piper of Hamelin through One Word More, with their titles, subtitles and section numerals as headings; Baker’s preface, introduction, chronological list, bibliography and notes are omitted as editorial matter.",
+  "edition": "Selected and edited by Franklin T. Baker, fourth edition revised and enlarged, Macmillan, New York, 1917 (copyright 1899), as identified by the transcribed title and printing pages. Selected poems only; editor notes and separators omitted. Superscript-style degree-sign note callouts and right-margin line numbers removed; wording, stanza breaks and verse lines retained. The library holds Browning’s poems as the volume prints them, from The Pied Piper of Hamelin through One Word More, with their titles, subtitles and section numerals as headings; Baker’s preface, introduction, chronological list, bibliography and notes are omitted as editorial matter. For a Grade 10 calendar reading, “Childe Roland to the Dark Tower Came” was collated word by word on 2026-11-18 against the page images of the first printing of the same Baker selection (New York: Macmillan, 1899; Internet Archive browningsshorter00brow, pages 168–177), no scan of the 1917 printing having been found: four punctuation errors of the transcription, where it departs from that printing and from Browning’s own text, were corrected (“at the end descried.” to “descried,”, “What, with my search” to “What with my search”, “the horizon’s bound,” to “bound.”, “with all the plain, to choose?” to “with all the plain to choose?”). Two places where the 1899 printing has a full stop and the transcription, like Browning’s own text, has “once,” and “fight;” were kept as possible corrections in the revised 1917 printing; “Gods knows when” is as printed in 1899.",
   "publicationYear": 1917,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/16376",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/1/6/3/7/16376/16376-8.txt",
     "downloadSha256": "48bf4760cbf53a7ff872167208d7639e709c7e1ad76e0cfff1b0037828bda3a3",
-    "method": "Project Gutenberg 16376 in its original Latin-1 plain-text file (16376-8.txt, the same transcription as the UTF-8 text but keeping accented letters such as “Frà” and “RÉGIME” that the current pg16376.txt flattens), decoded to UTF-8 with CRLF normalised to LF. Kept only the poems section (from THE PIED PIPER OF HAMELIN to the NOTES heading); removed every degree-sign note callout and every right-margin line number, and the rows of asterisks between poems; single all-capital lines became headings (level 2 for titles in the contents, level 3 for subtitles and section numerals); every other blank-line-separated group became a stanza with its lines and indentation as in the file."
+    "method": "Project Gutenberg 16376 in its original Latin-1 plain-text file (16376-8.txt, the same transcription as the UTF-8 text but keeping accented letters such as “Frà” and “RÉGIME” that the current pg16376.txt flattens), decoded to UTF-8 with CRLF normalised to LF. Kept only the poems section (from THE PIED PIPER OF HAMELIN to the NOTES heading); removed every degree-sign note callout and every right-margin line number, and the rows of asterisks between poems; single all-capital lines became headings (level 2 for titles in the contents, level 3 for subtitles and section numerals); every other blank-line-separated group became a stanza with its lines and indentation as in the file. The four Childe Roland corrections from the 2026-11-18 calendar collation declared in the edition were applied to the stanza blocks."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 611,
-    "sha256": "cf14b9eac3990798bd4034020e0d89858830d3148bbca9a84536989bec9f5cef"
+    "sha256": "75605f04c59f511babef44b9df7a4b1c64ac6880024f3ddf8cf109ba7edaa806"
   }
 }

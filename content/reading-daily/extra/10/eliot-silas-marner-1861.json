@@ -1008,6 +1008,93 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-eliot-silas-marner-1861-15",
+      "title": "Silas Marner excerpt: Christmas in Raveloe (Chapter X, end)",
+      "sourceId": "eliot-silas-marner-1861",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 18,
+        "totalMinutes": 26
+      },
+      "challenge": "Set three Christmases side by side, Silas’s, the village church’s and the Red House’s, and ask what each one lacks.",
+      "focus": "A robbed weaver alone on Christmas Day, a village glad without knowing quite why, and a squire’s son who cannot quiet his anxiety.",
+      "context": "George Eliot’s Silas Marner (1861) is set in Raveloe, an English farming village around 1800. Silas, a linen-weaver, came there fifteen years before the story opens, after his chapel congregation in a northern town wrongly found him guilty of theft; he lives alone and hoards the gold his weaving earns. Recap: on a stormy night Silas’s hoard of gold was stolen; no one knows that the thief was Dunstan (Dunsey) Cass, the Squire’s younger son, who has not been seen since. Godfrey, the elder son, is secretly and unhappily married to a woman in another town, a secret Dunsey used to get money from him, and he loves Nancy Lammeter, whom he cannot honestly court. Mr Macey, the parish clerk, and Dolly Winthrop, a kindly neighbour, had urged Silas to go to church at Christmas. The Red House is the Squire’s house; the Athanasian Creed is a long statement of Christian belief read on a few feast days; pillions are cushions for a woman riding behind a horseman; bandboxes are boxes for hats and clothes. The reading falls on Christmas because it follows one Christmas Day in Raveloe.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter X, from Silas’s Christmas-day alone to the end of the chapter; opens “And so, notwithstanding the honest persuasions of Mr Macey and Dolly Winthrop, Silas…”; closes “…though in noisy Christmas company; refusing to be utterly quieted even by much drinking.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          327,
+          339
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fd628af213c75d2174cb60cf014021cee71aa8ef21eb1a41ad03eb05cc9d292a"
+      },
+      "questions": [
+        {
+          "id": "reading-10-eliot-silas-marner-1861-15-q1",
+          "prompt": "How does Silas spend Christmas Day? Find two details of the weather and two of his house that show his state of mind.",
+          "facilitatorNotes": [
+            "Alone, eating a neighbour’s gift of meat “in sadness of heart.” The black frost seems to “press cruelly on every blade of grass,” the half-icy pool “shivered,” and the snow shuts him in “with his narrow grief.” He leaves his shutters open and his door unlocked, since he has nothing left to guard, and lets the fire go grey."
+          ],
+          "evidence": [
+            "Silas spent his Christmas-day in loneliness",
+            "not caring to close his shutters or lock his door"
+          ]
+        },
+        {
+          "id": "reading-10-eliot-silas-marner-1861-15-q2",
+          "prompt": "The churchgoers feel “that something great and mysterious had been done for them.” How does the narrator describe their understanding of Christmas? Is she mocking them?",
+          "facilitatorNotes": [
+            "Their feeling is “vague”: grown men could find no more words for it than children, and it is helped along by a breakfast of toast and ale and by the length of the service, the Athanasian Creed prized for being long. Then they go home to eat, drink and be merry “without diffidence.” The tone is ironic but affectionate: the feeling is real though unexamined. Some readers hear sharper satire of religion as mere custom."
+          ],
+          "evidence": [
+            "faces prepared for a longer service than usual by an odorous breakfast of toast and ale",
+            "something great and mysterious had been done for them in heaven above, and in earth below"
+          ]
+        },
+        {
+          "id": "reading-10-eliot-silas-marner-1861-15-q3",
+          "prompt": "Eliot puts a short paragraph about Silas’s past between his lonely evening and the church bells. What does it remind us of, and how does it sharpen the contrast?",
+          "facilitatorNotes": [
+            "That Silas “once loved his fellow with tender love, and trusted in an unseen goodness,” though even he barely remembers it. The village is celebrating exactly that unseen goodness, merrily and without thought, while the man who once trusted it most deeply sits shut out. The next word, “But,” turns from him to the bells."
+          ],
+          "evidence": [
+            "once loved his fellow with tender love, and trusted in an unseen goodness",
+            "But in Raveloe village the bells rang merrily"
+          ]
+        },
+        {
+          "id": "reading-10-eliot-silas-marner-1861-15-q4",
+          "prompt": "Godfrey argues with “Anxiety” as if it were a person. What dangers does Anxiety name, how does Godfrey answer, and who wins?",
+          "facilitatorNotes": [
+            "Anxiety names Dunsey’s return and spite, money wanted “in another quarter,” his mother’s diamond pin, and his father forcing him to give his reasons for not marrying Nancy. Godfrey answers only with hopes: Dunsey may stay away, something may happen, Nancy is coming. He tells Anxiety to hold its tongue, but it goes on, not quieted “even by much drinking.” Anxiety wins; Godfrey can only put things off."
+          ],
+          "evidence": [
+            "Hold your tongue, and don't worry me.",
+            "refusing to be utterly quieted even by much drinking"
+          ]
+        },
+        {
+          "id": "reading-10-eliot-silas-marner-1861-15-q5",
+          "prompt": "Silas is alone; Godfrey is surrounded by company. Which of them is lonelier on this Christmas Day, and which seems closer to a change?",
+          "facilitatorNotes": [
+            "A defensible answer: Godfrey is lonelier in company, because he cannot tell anyone his secret and talks only to his own fear, while Silas’s grief is at least open. Others say Silas, who has no one at all. As for change, the open door matters: Silas no longer locks out the world, and readers who know the novel will remember what comes through that door on New Year’s Eve. Godfrey, still hoping something will happen, is waiting rather than changing."
+          ],
+          "evidence": [
+            "though in noisy Christmas company",
+            "pressing his head between his hands and moaning"
+          ]
+        }
+      ],
+      "holiday": "christmas"
     }
   ]
 }

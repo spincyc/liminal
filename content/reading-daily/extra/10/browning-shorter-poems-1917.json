@@ -784,7 +784,7 @@
       },
       "challenge": "Read four songs lifted out of a play, then ask how knowing who hears them changes what they mean.",
       "focus": "A girl’s songs of dawn, faith and love, and the people they reach without her knowing.",
-      "context": "Robert Browning (1812–1889) wrote these songs for his verse play Pippa Passes (1841). Pippa, a girl who works in the silk mills of Asolo, a small Italian town, spends her one holiday of the year walking through the town and singing; she never knows that people overhear her songs at moments of crisis and are changed by them. The first song is her greeting to the dawn; “The year’s at the spring” is overheard by two lovers who murdered the woman’s husband the night before. In the last, a page sings unseen to a queen’s maid. Hist means hush; tresses are long hair; messes are servings of food; jesses are the straps on a hawk’s legs; to cleave is to split.",
+      "context": "Robert Browning (1812–1889) wrote these songs for his verse play Pippa Passes (1841). Pippa, a girl who works in the silk mills of Asolo, a small Italian town, spends her one holiday of the year walking through the town and singing; she never knows that people overhear her songs at moments of crisis and are changed by them. The first song is her greeting to the dawn; “The year’s at the spring” is overheard by two lovers who murdered the woman’s husband the night before. In the last, a page sings unseen to a queen’s maid. Hist means hush; tresses are long hair; messes are servings of food; jesses are the straps on a hawk’s legs; to cleave is to split. In the play Pippa’s holiday is New Year’s Day and the first song greets its dawn, which is why the reading falls on 1 January.",
       "contentNote": null,
       "excerpt": {
         "locator": "The four songs printed as SONGS FROM PIPPA PASSES; opens “Day! Faster and more fast, O'er night's brim, day boils at last: Boils, pure gold, o'er…”; closes “…her tresses, \"'Tis only a page that carols unseen, Fitting your hawks their jesses!\")”.",
@@ -844,7 +844,8 @@
             "Are we: there is no last nor first."
           ]
         }
-      ]
+      ],
+      "holiday": "new-year"
     },
     {
       "id": "reading-10-browning-shorter-poems-1917-14",
@@ -1115,7 +1116,7 @@
       },
       "challenge": "Follow the sonnet’s argument step by step, as if it answered an examiner’s question.",
       "focus": "A poet’s case for freedom: what liberty has given him, he cannot deny to anyone else.",
-      "context": "Robert Browning (1812–1889) wrote this sonnet late in life in answer to the question in its title. In Victorian Britain the Liberal Party stood for reform: wider voting rights, religious freedom and free trade. Haply means perhaps, by chance; fetters are chains; convention means custom; emancipated means freed, a word then used of slaves set free.",
+      "context": "Robert Browning (1812–1889) wrote this sonnet late in life in answer to the question in its title. In Victorian Britain the Liberal Party stood for reform: wider voting rights, religious freedom and free trade. Haply means perhaps, by chance; fetters are chains; convention means custom; emancipated means freed, a word then used of slaves set free. It is read on Independence Day for its argument that one who owes everything to liberty may not deny it to anyone else.",
       "contentNote": null,
       "excerpt": {
         "locator": "Complete poem WHY I AM A LIBERAL; opens “\"Why?\" Because all I haply can and do, All that I am now, all I hope to be,-- Whence…”; closes “…Who live, love, labour freely, nor discuss A brother's right to freedom. That is \"Why.\"”.",
@@ -1164,7 +1165,8 @@
             "Who live, love, labour freely, nor discuss"
           ]
         }
-      ]
+      ],
+      "holiday": "independence-day"
     },
     {
       "id": "reading-10-browning-shorter-poems-1917-19",
@@ -1293,6 +1295,93 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-21",
+      "title": "“Childe Roland to the Dark Tower Came”",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 18,
+        "totalMinutes": 30
+      },
+      "challenge": "Read a nightmare journey stanza by stanza, and decide what the knight finds, or fails to find, at its end.",
+      "focus": "A worn-out knight crosses a land of horrors to the Tower he has sought all his life, and almost misses it.",
+      "context": "Robert Browning (1812–1889) published this poem in Men and Women (1855); asked what it meant, he said he had no allegory in mind. The title is a line sung by Edgar, disguised as a madman, in Shakespeare’s King Lear. A childe is a young man of noble birth; the speaker is the last of “The Band,” knights who have all failed in the quest for the Dark Tower. Askance means sideways, with suspicion; an estray is a stray animal; cockle and spurge are weeds; bents are stiff grasses; pashing means crushing; colloped means lying in thick folds; a howlet is an owl; bespate means spattered; a cirque is a round arena and a mews an enclosure; Tophet is a name for hell, and Apollyon the devil in The Pilgrim’s Progress; a rood is a quarter-acre; the heft is the handle of a knife; a slug-horn is a horn or trumpet. It is read on Halloween for its haunted land and the ghosts of the lost knights who gather to watch the end.",
+      "contentNote": "A nightmare landscape of death and decay: a dying man hearing his own funeral planned, a starved and tortured-looking horse, a feared corpse in a river, a shriek like a baby’s, a torture wheel, and a friend executed as a traitor. The old man is called a “cripple” as an insult, and galley-slaves are pictured forced to fight, “Christians against Jews.”",
+      "excerpt": {
+        "locator": "Complete poem \"CHILDE ROLAND TO THE DARK TOWER CAME\"; opens “_(See Edgar's song in \"Lear.\")_”; closes “…the slug-horn to my lips I set, And blew. \"_Childe Roland to the Dark Tower came._\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          486,
+          521
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f212ca3e748746f56b7ff58de4524c27dc0a6bf3af7f12993c016c0ea4a4597"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-21-q1",
+          "prompt": "In the first three stanzas, what does the speaker believe about the old man, and what does he do anyway? Why?",
+          "facilitatorNotes": [
+            "He is sure the “hoary cripple” lies in every word and is posted there to snare travellers. Yet he turns “acquiescingly” where he points, with neither pride nor hope, only “gladness that some end might be.” After years of searching he would welcome any end, even failure."
+          ],
+          "evidence": [
+            "My first thought was, he lied in every word,",
+            "So much as gladness that some end might be."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-21-q2",
+          "prompt": "Find three things on the plain that seem to suffer or to be cruel. What does the speaker’s hatred of the horse show about his own mind?",
+          "facilitatorNotes": [
+            "Grass as scant as hair in leprosy, mud “kneaded up with blood,” willows flung down like “a suicidal throng,” a river that has done them some wrong. He decides the horse “must be wicked to deserve such pain,” assuming that suffering is punishment; he reads malice and guilt into everything he sees. Some readers take the land as real enchantment, others as the speaker’s despair made visible; the poem allows both."
+          ],
+          "evidence": [
+            "I never saw a brute I hated so;",
+            "He must be wicked to deserve such pain."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-21-q3",
+          "prompt": "He tries to steady himself with memories of Cuthbert and Giles. What happens to each memory, and why does he decide “Better this present than a past like that”?",
+          "facilitatorNotes": [
+            "Each happy memory turns to shame: Cuthbert’s face recalls “one night’s disgrace,” and Giles, “the soul of honour,” ends with a hangman pinning a parchment to his breast, a traitor spat upon. The past offers no refuge, so he goes back to the dark path. His comrades, like the plain, are spoiled."
+          ],
+          "evidence": [
+            "Alas, one night's disgrace!",
+            "Poor traitor, spit upon and curst!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-21-q4",
+          "prompt": "When he finally sees the Tower he calls himself “Dunce, / Dotard.” Why? What is the Tower like, and who is watching?",
+          "facilitatorNotes": [
+            "He has spent “a life” training for the sight and still did not recognise the place until the trap had shut. The Tower is plain and squat, “blind as the fool’s heart,” nothing like a castle of romance. The hills crouch like giants watching a hunted animal, and the lost adventurers stand along the hillsides “in a sheet of flame,” come to see him fail."
+          ],
+          "evidence": [
+            "After a life spent training for the sight!",
+            "The round squat turret, blind as the fool's heart,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-21-q5",
+          "prompt": "The poem ends as he blows the horn and speaks its title. Is the ending a victory, a defeat, or neither? Use the last stanza.",
+          "facilitatorNotes": [
+            "We never learn what happens next. One defensible answer: it is a victory of will. Surrounded by every failure before him, he is “Dauntless” and announces himself anyway, choosing courage when success is impossible. Others read doom: the trap has shut and the watching dead await one more “picture.” A third view: the last line repeats the title, so the blast is the poem itself, the story told at last."
+          ],
+          "evidence": [
+            "Dauntless the slug-horn to my lips I set,",
+            "As when a trap shuts--you're inside the den."
+          ]
+        }
+      ],
+      "holiday": "halloween"
     }
   ]
 }

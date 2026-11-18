@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "henry-four-million-1906",
+  "readings": [
+    {
+      "id": "reading-9-henry-four-million-1906-01",
+      "title": "The Gift of the Magi",
+      "sourceId": "henry-four-million-1906",
+      "genre": "short story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch the narrator as closely as the characters. Mark each place where he speaks to you directly, and decide whether he is joking.",
+      "focus": "A young couple with $1.87, two treasures, and an ending that the narrator turns into an argument about wisdom.",
+      "context": "O. Henry was the pen name of William Sydney Porter (1862–1910), who wrote hundreds of short stories about ordinary New Yorkers, many with surprise endings. This story first appeared in a New York newspaper in December 1905 and was collected in The Four Million (1906), a title that answers the boast that only four hundred people in New York society were worth noticing. A flat is an apartment; a pier-glass is a tall mirror; a fob chain hangs from a pocket watch; the “mendicancy squad” was the police who arrested beggars; meretricious means showy; the Queen of Sheba and King Solomon were rich rulers in the Bible; the magi are the wise men who brought gifts to the infant Jesus. Twenty dollars a week was a modest clerk’s wage. It is read at Christmas because the story takes place on Christmas Eve and ends with the givers of the first Christmas gifts.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Four Million (1906), complete story “The Gift of the Magi”; opens “One dollar and eighty-seven cents. That was all. And sixty cents of it was in pennies.…”; closes “…receive gifts, such as they are wisest. Everywhere they are wisest. They are the magi.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          65,
+          110
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "175d7c9e3d1ccea15ec6f7e0c0ba149652c26067f8359686456156a8144a3d06"
+      },
+      "questions": [
+        {
+          "id": "reading-9-henry-four-million-1906-01-q1",
+          "prompt": "What are the two treasures of the James Dillingham Youngs, and how does the narrator show how much they mean?",
+          "facilitatorNotes": [
+            "Jim’s gold watch, his father’s and grandfather’s, and Della’s hair. The narrator exaggerates for comedy: Della’s hair would put the Queen of Sheba’s jewels to shame, and King Solomon would “pluck at his beard from envy” at the watch.",
+            "The jokes set up the ending: each treasure will be given up for a gift meant for the other’s treasure."
+          ],
+          "evidence": [
+            "two possessions of the James Dillingham Youngs in which they both took a mighty pride",
+            "just to see him pluck at his beard from envy"
+          ]
+        },
+        {
+          "id": "reading-9-henry-four-million-1906-01-q2",
+          "prompt": "How does O. Henry show the Youngs’ poverty without making the story miserable? Find details of the flat and the money, and describe the narrator’s tone about them.",
+          "facilitatorNotes": [
+            "One dollar and eighty-seven cents saved by “bulldozing the grocer”; an $8 flat with a letter-box no letter would enter; a name card on which “Dillingham” seems ready to shrink to “D.” Yet Jim is “greatly hugged,” “Which is all very good.”",
+            "The narrator’s jokes (life is “sobs, sniffles, and smiles, with sniffles predominating”) keep pity at a distance. Some readers find the comedy warm; others think it makes light of real hardship."
+          ],
+          "evidence": [
+            "One dollar and eighty-seven cents.",
+            "life is made up of sobs, sniffles, and smiles, with sniffles predominating"
+          ]
+        },
+        {
+          "id": "reading-9-henry-four-million-1906-01-q3",
+          "prompt": "When Jim first sees Della, his expression terrifies her. What is in his face, and why does he keep asking whether her hair is gone, as if he could not understand it?",
+          "facilitatorNotes": [
+            "It is “not anger, nor surprise, nor disapproval, nor horror”; he simply stares. He is stunned not by the haircut but by what it means for the combs in his pocket, which the reader does not yet know about. The narrator even warns that a “dark assertion will be illuminated later on.”",
+            "A second reading shows how carefully the surprise ending is prepared. Ask whether holding back the combs is fair to the reader."
+          ],
+          "evidence": [
+            "It was not anger, nor surprise, nor disapproval, nor horror",
+            "This dark assertion will be illuminated later on."
+          ]
+        },
+        {
+          "id": "reading-9-henry-four-million-1906-01-q4",
+          "prompt": "The narrator calls the Youngs “two foolish children” who “most unwisely sacrificed” their treasures, then says that of all who give gifts “these two were the wisest.” How can both be true? Do you agree with the last paragraph?",
+          "facilitatorNotes": [
+            "Their gifts are useless now, so the sacrifice looks foolish; but each gave up the thing they valued most for the other, so the giving itself was wise. The magi “invented the art of giving Christmas presents”; the Youngs, the narrator says, are the true magi.",
+            "Some readers find the ending sentimental or preachy after so much joking; others think the joking earns it. Students may also notice the narrator’s joke that the magi’s gifts possibly bore “the privilege of exchange in case of duplication.”"
+          ],
+          "evidence": [
+            "two foolish children in a flat who most unwisely sacrificed for each other the greatest treasures of their house",
+            "of all who give gifts these two were the wisest",
+            "They are the magi."
+          ]
+        }
+      ],
+      "holiday": "christmas"
+    }
+  ]
+}
