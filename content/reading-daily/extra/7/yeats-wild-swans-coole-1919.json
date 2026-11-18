@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "yeats-wild-swans-coole-1919",
+  "readings": [
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-01",
+      "title": "In Memory of Major Robert Gregory",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow an elegy through twelve stanzas of a single evening’s thoughts, and track how a refrain gathers meaning.",
+      "focus": "A poet names his dead friends one by one and finds that one death is too much for words.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Robert Gregory, Lady Gregory’s only son, was a painter, scholar and horseman who joined the Royal Flying Corps and was killed when his plane was shot down over Italy in January 1918; he is the airman of “An Irish Airman Foresees His Death.” Yeats wrote this elegy (a poem of mourning) while making a home in an old stone tower near Coole. Lionel Johnson was a poet; John Synge a playwright who lived among the people of the Aran Islands; George Pollexfen, Yeats’s uncle, studied astrology (“opposition, square and trine” are positions of the stars). Sir Philip Sidney (1554–1586), poet and soldier, died young of a battle wound and was remembered as the perfect gentleman. Turf is peat burned as fuel; fagots are bundles of sticks; a meet is a gathering for a hunt.",
+      "contentNote": "An elegy for a young pilot killed in the First World War.",
+      "excerpt": {
+        "locator": "“In Memory of Major Robert Gregory,” the whole poem, stanzas 1–12; opens “Now that we're almost settled in our house I'll name the friends that cannot sup with us…”; closes “…brought A fitter welcome; but a thought Of that late death took all my heart for speech.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          13,
+          35
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46567e15375627d6c9230df18646cd5a4d2f1d627b516e06b2a7b83f03783da4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-01-q1",
+          "prompt": "Where is the speaker as the poem opens, and why can none of the friends he names “set us quarrelling”?",
+          "facilitatorNotes": [
+            "He has nearly settled into an ancient tower and imagines bringing friends to supper by a turf fire. Old and new friends usually quarrel, but these cannot, because all of them are dead. The calm opening makes the grief that follows more striking."
+          ],
+          "evidence": [
+            "For all that come into my mind are dead."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-01-q2",
+          "prompt": "Why is Robert Gregory’s death different for the speaker from the deaths of his older friends?",
+          "facilitatorNotes": [
+            "The older friends died in the natural course of life, and he is “accustomed to their lack of breath.” Gregory was young, his friend’s son, “our perfect man,” and his death feels like a breach of manners, a “discourtesy.” The polite word makes death sound like a rude guest, which sharpens the shock."
+          ],
+          "evidence": [
+            "I am accustomed to their lack of breath,\nBut not that my dear friend's dear son,",
+            "Could share in that discourtesy of death."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-01-q3",
+          "prompt": "“Soldier, scholar, horseman, he” returns in three stanzas. What does the poem praise in Gregory, and what does the fire image in the eleventh stanza suggest about his short life?",
+          "facilitatorNotes": [
+            "He rode fearlessly, painted with “stern colour” and “delicate line,” understood every craft, and did all “as though he had but that one trade alone.” Some people burn damp sticks slowly; he consumed “the entire combustible world in one small room,” a brilliant blaze that ended because the work was done. Readers may find consolation in a complete life or only more grief at “What made us dream that he could comb grey hair?”"
+          ],
+          "evidence": [
+            "Soldier, scholar, horseman, he,",
+            "others may consume\nThe entire combustible world in one small room\nAs though dried straw"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-01-q4",
+          "prompt": "What had the speaker planned to do, and why does the poem end without doing it?",
+          "facilitatorNotes": [
+            "He meant to recall everyone he had loved, “with some appropriate commentary on each.” The thought of Gregory’s death “took all my heart for speech,” so grief overwhelms the plan. The poem ends by admitting it cannot finish, an honest close for an elegy."
+          ],
+          "evidence": [
+            "With some appropriate commentary on each;",
+            "Of that late death took all my heart for speech."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-02",
+      "title": "Under the Round Tower",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Contrast a beggar’s grand dream with what he does when he wakes.",
+      "focus": "A vagrant sleeps on his ancestor’s tomb and dreams of the sun and moon dancing.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Glendalough, in County Wicklow, has the ruins of an early Irish monastery and a tall, slender round tower; the O’Byrnes were the old ruling family of that district. Billy Byrne, their descendant, is a beggar and petty thief. “Lapped up in linen” means wrapped in fine sheets; “a brace of blackbirds” is a pair.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Under the Round Tower,” the whole poem; opens “'Although I'd lie lapped up in linen A deal I'd sweat and little earn If I should live as…”; closes “…in a feather-bed, I cannot find the peace of home On great-grandfather's battered tomb.'”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          44,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46e0cd937a2a42d7e52c46a7448e1fc67b0d708acfa37a1787eceed94fb84751"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-02-q1",
+          "prompt": "Why does Billy Byrne choose to sleep on his great-grandfather’s tomb?",
+          "facilitatorNotes": [
+            "He refuses to sweat for little pay as his neighbours do, even for a comfortable bed. Sleeping on the tomb of the O’Byrnes connects him to a proud family past, which may promise a luck or peace his present life lacks."
+          ],
+          "evidence": [
+            "A deal I'd sweat and little earn\nIf I should live as live the neighbours,",
+            "Stretch bones till the daylight come\nOn great-grandfather's battered tomb."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-02-q2",
+          "prompt": "Describe the dream. How does the sound of the lines suit what the sun and moon are doing?",
+          "facilitatorNotes": [
+            "The sun, a “golden king,” and the moon, a “silver lady,” bellow and prance up the tower until they dance on its top and sing like blackbirds till dawn. Repeated, reversed phrases (“bellowing up and bellowing round,” “prancing round and prancing up”) make the lines turn and climb like the dancers. Readers may see a vision of harmony or of marriage between opposites."
+          ],
+          "evidence": [
+            "Of golden king and silver lady,\nBellowing up and bellowing round,",
+            "Prancing round and prancing up\nUntil they pranced upon the top."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-02-q3",
+          "prompt": "What does Billy decide when he wakes? How does his decision relate to the dream?",
+          "facilitatorNotes": [
+            "He concludes his luck is broken and plans to pick a pocket and sleep in a feather-bed. The splendid vision gave him no peace and no use; he falls back on petty crime. Some readers find the ending comic, others sad: a man given a glimpse of glory cannot live by it."
+          ],
+          "evidence": [
+            "It's certain that my luck is broken,",
+            "I cannot find the peace of home\nOn great-grandfather's battered tomb."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-03",
+      "title": "Tom O'Roughley",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Interpret paired images and decide how far the poet stands behind a speaker’s startling claim.",
+      "focus": "A wise fool praises aimless joy and claims death is nothing to mourn.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Tom O’Roughley is an invented character, a kind of wise fool. “Logic choppers” argue over fine points; the archangel Michael is the warrior angel of the Bible, pictured here as a trumpeter. “Zigzag wantonness” means carefree, unplanned movement; a “measure” is a dance; a second wind is fresh strength that returns after exhaustion.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Tom O'Roughley,” the whole poem; opens “'Though logic choppers rule the town, And every man and maid and boy Has marked a distant…”; closes “…that sort he said, 'And if my dearest friend were dead I'd dance a measure on his grave.'”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          68,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "64d98e29d2d329eebd6cc73962ef5fec06411424d6a68352d463d99688967537"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-03-q1",
+          "prompt": "Tom contrasts two ways of living in the first stanza. What are they?",
+          "facilitatorNotes": [
+            "In the town, ruled by logic choppers, everyone has “marked a distant object down,” aiming at a goal. Tom praises joy without any aim, which he calls “pure.” He watches the sea surges, which also move without purpose."
+          ],
+          "evidence": [
+            "An aimless joy is a pure joy,"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-03-q2",
+          "prompt": "Explain the two images in “wisdom is a butterfly / And not a gloomy bird of prey.”",
+          "facilitatorNotes": [
+            "A butterfly wanders, light and delighting; a bird of prey fixes on a target and hunts it. Tom’s wisdom plays and drifts rather than seizing and calculating. Readers can test the claim: is planning really unwise?"
+          ],
+          "evidence": [
+            "And wisdom is a butterfly\nAnd not a gloomy bird of prey."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-03-q3",
+          "prompt": "Tom says he would “dance a measure” on his dearest friend’s grave. What might he mean, and does the poet agree with him?",
+          "facilitatorNotes": [
+            "If dying is only “a second wind,” death is renewal, so dancing celebrates instead of mocking. Yet the speaker keeps his distance (“Or so did Tom O'Roughley say,” “Or something of that sort he said”), reporting rather than endorsing. Students may compare the elegy for Robert Gregory in the same book, where grief leaves the poet speechless."
+          ],
+          "evidence": [
+            "What's dying but a second wind?",
+            "Or something of that sort he said,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-04",
+      "title": "The People",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow an argument in verse and decide who wins it.",
+      "focus": "A poet complains about the town that slanders him, and is answered by a woman who has suffered more.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. The poet speaks with “my phoenix,” his name for Maud Gonne, the Irish revolutionary he loved for many years (the phoenix is a mythical bird reborn from its ashes). The “unmannerly town” is Dublin. Ferrara and Urbino are Italian cities whose Renaissance courts Yeats admired for art and courtesy; the duchess of Urbino’s circle was famous for talk that lasted till dawn. “Defamed” means slandered; “pilferers of public funds” steal public money; “abashed” means ashamed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The People,” the whole poem; opens “'What have I earned for all that work,' I said, 'For all that I have done at my own…”; closes “…words, I was abashed, and now they come to mind After nine years, I sink my head abashed.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          136,
+          137
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "141609308c0a5c089f3a704d01dc52d6593da12133b20b627ae3f51dc1041080"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-04-q1",
+          "prompt": "What does the speaker complain about, and what life does he imagine he might have had instead?",
+          "facilitatorNotes": [
+            "He has served Dublin and received only “daily spite,” losing his reputation overnight. He imagines living among the courtly ghosts of Ferrara and Urbino, choosing his company and scenery, “the one substantial right” of a writer. His complaint is eloquent and also a little self-pitying."
+          ],
+          "evidence": [
+            "The daily spite of this unmannerly town,\nWhere who has served the most is most defamed,",
+            "I might have used the one substantial right\nMy trade allows: chosen my company,"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-04-q2",
+          "prompt": "How does the phoenix answer him?",
+          "facilitatorNotes": [
+            "She was attacked by the corrupt people she had driven out and even by people she had served and fed, yet she has never “complained of the people.” Her answer is short and plain beside his long speech, and it rebukes him without arguing."
+          ],
+          "evidence": [
+            "and set upon me\nThose I had served and some that I had fed;",
+            "Yet never have I, now nor any time,\nComplained of the people."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-04-q3",
+          "prompt": "The speaker replies that people of “deed” differ from people of “thought.” Does his reply win? What does his confession at the end show?",
+          "facilitatorNotes": [
+            "He says a person of action can have the purity of “a natural force,” but a thinking mind cannot stop seeing and speaking. It is a real point, yet his heart “leaped at her words,” and nine years later he still hangs his head. By ending with his shame, the poet lets the reader see him lose the argument honestly. Readers may still defend his right to complain."
+          ],
+          "evidence": [
+            "You, that have not lived in thought but deed,\nCan have the purity of a natural force,",
+            "I was abashed, and now they come to mind\nAfter nine years, I sink my head abashed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-05",
+      "title": "The Balloon of the Mind and To a Squirrel at Kyle-na-gno",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare two very short poems by what they ask for and what they fear.",
+      "focus": "Two commands to something free: a mind that will not fit its shed, and a squirrel that will not come to play.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. These two short poems stand side by side in the book. Kyle-na-gno is a wood on the Coole estate. A balloon here is a gas-filled airship that “bellies” (swells like a sail) in the wind and must be hauled into its shed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Balloon of the Mind” and “To a Squirrel at Kyle-na-gno,” both poems complete; opens “Hands, do what you're bid; Bring the balloon of the mind That bellies and drags in the…”; closes “…I'd a gun To strike you dead? When all I would do Is to scratch your head And let you go.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          156,
+          158
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "05bc3a4ccfc0727834528a76e6e5b13a885e37267094ea3e7fb16b0cef559982"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-05-q1",
+          "prompt": "In “The Balloon of the Mind,” who is being told what to do, and what is the mind compared to?",
+          "facilitatorNotes": [
+            "The poet orders his own hands, perhaps the hands that write. The mind is a huge balloon swelling and dragging in the wind, hard to pull into a “narrow shed,” which may be a poem’s small form or the discipline of a page. Four short lines enact the effort."
+          ],
+          "evidence": [
+            "Hands, do what you're bid;\nBring the balloon of the mind",
+            "Into its narrow shed."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-05-q2",
+          "prompt": "In “To a Squirrel,” what does the speaker want, and why does the squirrel run?",
+          "facilitatorNotes": [
+            "He wants to play and scratch its head; the squirrel runs as if he had a gun. The question “Why should you run” is gentle and a little hurt, but the squirrel has good reason, since people do shoot squirrels. The tiny rhyming lines sound playful, like the invitation."
+          ],
+          "evidence": [
+            "As though I'd a gun\nTo strike you dead?"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-05-q3",
+          "prompt": "Both poems try to bring something wild under control. Which attempt seems more likely to succeed, and does either poem hint that capture would spoil the thing?",
+          "facilitatorNotes": [
+            "The balloon must be squeezed into a narrow shed, which sounds like a struggle and a loss of its swelling freedom. The squirrel would only be scratched and then “let go,” a promise that respects its freedom. Readers may decide the squirrel poem is wiser, or that the mind, unlike a squirrel, needs to be brought in to make anything at all."
+          ],
+          "evidence": [
+            "That bellies and drags in the wind",
+            "And let you go."
+          ]
+        }
+      ]
+    }
+  ]
+}
