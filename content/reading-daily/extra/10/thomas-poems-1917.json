@@ -770,6 +770,460 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-13",
+      "title": "Haymaking",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch the poem move from a lively morning to a scene where everything stops, and ask what the stillness is for.",
+      "focus": "An English hayfield at rest, turned by the poem into a picture outside time.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. John Clare was a poet of country life, William Cobbett a writer on rural England, and George Morland and John Crome painters of farms and landscapes, all from around 1800. Holly sheds old leaves in early summer; the mill-foot is where water leaves a mill; the nettle-creeper is a country name for the whitethroat, a small warbler; a tosser is a machine for turning hay to dry it; the team is the waggon’s horses; woodbine is honeysuckle; a grange is a farmhouse with its barns.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem HAYMAKING; opens “AFTER night's thunder far away had rolled The fiery day had a kernel sweet of cold, And…”; closes “…All of us gone out of the reach of change-- Immortal in a picture of an old grange.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          165,
+          165
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4ec7f37c3ecc0d07319c3246b1c3b6c2f350f221ffe614c60ea7353d3dc2cbf3"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-13-q1",
+          "prompt": "The poem begins after a night of thunder. Which details make the morning seem new, almost the first morning of the world?",
+          "facilitatorNotes": [
+            "The clouds uncurl “Like the first gods before they made the world / And misery”; the mill water tumbles “happier than any crowd” of children let out of school; the birds sing “unceasingly” and the swift shrieks in “fierce glee.” Everything is fresh, joyful and before sorrow."
+          ],
+          "evidence": [
+            "Like the first gods before they made the world",
+            "Of children pouring out of school aloud."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-13-q2",
+          "prompt": "Halfway through, the poem stops moving. List what is still, and say how the sentences and rhythm change.",
+          "facilitatorNotes": [
+            "The haymakers rest, the tosser lies “forsook,” the waggon stands without its team, the horses wait in the shade, and the men lean on their rakes “about to begin, / But still.” Short sentences and the repeated “still” and “silent” slow the verse as the scene holds its breath."
+          ],
+          "evidence": [
+            "The men leaned on their rakes, about to begin,",
+            "But still. And all were silent. All was old,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-13-q3",
+          "prompt": "The scene is “Older than Clare and Cobbett, Morland and Crome” and ends as “a picture of an old grange.” What does it mean for the haymakers to be “out of the reach of change,” and why might a poet in wartime want that?",
+          "facilitatorNotes": [
+            "The moment becomes timeless, like a painting or a country poem: the men, horses and tools say what they will say for ever. Yet the line also says “All of us gone,” so timelessness comes at the cost of being past. Written during the war, the poem can be read as preserving an England that soldiers fought for, or as an elegy for a life about to vanish; both readings fit."
+          ],
+          "evidence": [
+            "All of us gone out of the reach of change--",
+            "Immortal in a picture of an old grange."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-14",
+      "title": "The Sun Used to Shine",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the war enters and leaves a poem about two friends walking, and what the ending does with their memory.",
+      "focus": "A friendship in the first months of the war, remembered after it has passed.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. The poem remembers walks in Gloucestershire in the late summer of 1914, just after the war began, with the American poet Robert Frost, who encouraged Thomas to write poetry. Betonies are purple wildflowers; Hades is the underworld of Greek myth; the Crusades were medieval religious wars; aught means anything.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE SUN USED TO SHINE; opens “THE sun used to shine while we two walked Slowly together, paused and started Again, and…”; closes “…through other flowers In those fields under the same moon Go talking and have easy hours.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          179,
+          186
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b97011888e2ecdc5a9338d9c1b9e738f54569a1eb8897827d144fcbafbf6a1e2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-14-q1",
+          "prompt": "How did the two walkers spend their days? What does the poem say they paid “small heed” to?",
+          "facilitatorNotes": [
+            "They walked, paused, mused or talked “As either pleased,” never disagreed about where to rest, and gave little thought to the future or the recent past. Talk of men, poetry and the war gave way easily to an apple hollowed by wasps or a flower at the forest’s edge. The ease of the friendship shows in the easy rhythm."
+          ],
+          "evidence": [
+            "As either pleased, and cheerfully parted",
+            "And the late past we gave small heed."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-14-q2",
+          "prompt": "The war is “remote” here. When does it come back to mind, and how do the friends keep it at a distance?",
+          "facilitatorNotes": [
+            "At moonrise, when they think of soldiers far to the east who see the same moon. Yet they could “as well imagine the Crusades / Or Caesar’s battles”: the war seems as far away as ancient history. The crocuses born “In sunless Hades fields” hint at death even in the flowers."
+          ],
+          "evidence": [
+            "Came back to mind with the moonrise",
+            "Could as well imagine the Crusades"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-14-q3",
+          "prompt": "From “Everything / To faintness like those rumours fades” the poem piles up similes. What fades, and how does the last stanza answer that loss?",
+          "facilitatorNotes": [
+            "The brook’s glitter, the walks, the two men, the apples, the talks and silences all fade like sand covered by the tide. The last stanza imagines “other men through other flowers” in the same fields under the same moon. That can be consoling, because life and friendship go on, or painful, because the speaker and his walks are replaceable. Readers may add that Thomas himself was killed in the war he once found remote."
+          ],
+          "evidence": [
+            "And silences--like memory's sand",
+            "Go talking and have easy hours."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-15",
+      "title": "October",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the earth’s mood with the speaker’s, and decide what the last lines conclude about happiness.",
+      "focus": "A beautiful autumn day, and a man who cannot be as happy as the day is beautiful.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Thomas suffered from long periods of depression; melancholy is a lasting, heavy sadness. Harebell, scabious and tormentil are small wildflowers of hill pasture; gossamers are fine spider threads that drift in the air; gorse is a prickly shrub that flowers in almost every month of the year.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem OCTOBER; opens “THE green elm with the one great bough of gold Lets leaves into the grass slip, one by…”; closes “…day, And this mood by the name of melancholy Shall no more blackened and obscured be.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          188,
+          189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b2778a283a8c5309433e8290cd0a328f9197d65a1bc7021a82d561b4b5bbb376"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-15-q1",
+          "prompt": "Find details in the first stanza that show how gently autumn is arriving.",
+          "facilitatorNotes": [
+            "The elm lets its leaves slip “one by one”; the wind is too light to shake birch leaves off the fern; the gossamers “wander at their own will”; only the squirrels complain, at steps heavier than birds’. Nothing is violent; autumn comes almost as softly as spring."
+          ],
+          "evidence": [
+            "Lets leaves into the grass slip, one by one,--",
+            "The gossamers wander at their own will."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-15-q2",
+          "prompt": "The speaker says he “might / As happy be as earth is beautiful, / Were I some other.” What stands between him and happiness?",
+          "facilitatorNotes": [
+            "The earth renews itself season by season, so that October can feel “fresh again and new / As Spring”; he cannot turn with the seasons, and he cannot be someone else. The problem is not the day but the self who sees it, unlike the gorse, which has “no time not to be gay.”"
+          ],
+          "evidence": [
+            "As happy be as earth is beautiful,",
+            "Were I some other or with earth could turn"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-15-q3",
+          "prompt": "How do the last four lines change the speaker’s judgment of the day? Is the ending hopeful?",
+          "facilitatorNotes": [
+            "He wonders whether this is happiness after all, and predicts that one day he will remember it as a happy day and stop calling his mood melancholy. Happiness, it seems, may be recognized only in memory. Some readers find that consoling; others find it sad that joy can be known only afterwards; the “who knows?” keeps both open."
+          ],
+          "evidence": [
+            "But if this be not happiness,--who knows?",
+            "Some day I shall think this a happy day,"
+          ]
+        }
+      ],
+      "months": [
+        10
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-16",
+      "title": "Liberty",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the speaker’s argument about freedom, and notice where it turns.",
+      "focus": "Being free to do anything and wanting nothing, and a choice, at the end, for imperfect life.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Thomas often wrote about his long spells of depression and his difficulty in deciding how to live. “Half in love” echoes John Keats’s “Ode to a Nightingale,” in which Keats says he has been “half in love with easeful Death.”",
+      "contentNote": "Explores depression and a wish to wipe out one’s own past, which the poem turns away from at the end.",
+      "excerpt": {
+        "locator": "Complete poem LIBERTY; opens “THE last light has gone out of the world, except This moonlight lying on the grass like…”; closes “…that have an end, with life and earth, And this moon that leaves me dark within the door.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          196,
+          196
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f7199836ad62137aff6081558871790be4d2e9bceb0b13d10b471faf7d98eb97"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-16-q1",
+          "prompt": "Describe the scene. What has the moonlight done to the world, and why does the speaker feel that he and the moon alone are left?",
+          "facilitatorNotes": [
+            "The last light is gone and moonlight lies “like frost” beyond the elm’s shadow. It seems everything else has slept for ages, the past and even his own thoughts buried, while he and the moon “stand idle over the grave.” The scene makes him a survivor with nothing to do."
+          ],
+          "evidence": [
+            "This moonlight lying on the grass like frost",
+            "Live yet and here stand idle over the grave"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-16-q2",
+          "prompt": "“There's none less free than who / Does nothing and has nothing else to do.” Explain the paradox. What kind of liberty does the speaker have?",
+          "facilitatorNotes": [
+            "Freedom with nothing one wants to do is no freedom at all: he is free “only for what is not to his mind,” and nothing is to his mind. He and the moon have liberty only “To dream what we could do if we were free.” Liberty without desire feels like emptiness."
+          ],
+          "evidence": [
+            "There's none less free than who",
+            "Being free only for what is not to his mind,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-16-q3",
+          "prompt": "Keats was “half in love with easeful Death”; Thomas is “half in love with pain.” What does he choose instead of wiping out his hours, and how does the final image leave him?",
+          "facilitatorNotes": [
+            "He turns from the wish to erase his past toward “what is imperfect,” tears and mirth, “things that have an end, with life and earth.” Choosing pain and imperfection over death is a choice for living. But the moon “leaves me dark within the door”: he stands on a threshold, still in shadow. Readers can argue whether the ending affirms life or only just holds on to it."
+          ],
+          "evidence": [
+            "And yet I still am half in love with pain,",
+            "And this moon that leaves me dark within the door."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-17",
+      "title": "November",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Look closely at what most people would call ugly, and compare two ways of looking up from it.",
+      "focus": "Mud and clean sky: a defence of the dirty earth.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. This is one of the first poems he wrote, at the end of 1914. Hobnails are short nails in the soles of heavy boots; “charactered” means written, like the letters of an alphabet; dinted means dented.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem NOVEMBER; opens “NOVEMBER'S days are thirty: November's earth is dirty, Those thirty days, from first to…”; closes “…is to the sky; He loves even the mud whose dyes Renounce all brightness to the skies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          198,
+          199
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a2e5750641fefd32d35de02cab36dda696b8719a3035cee8bd47474e2aa5c3d"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-17-q1",
+          "prompt": "Why are the paths “the prettiest things on ground” in a month whose earth is “dirty”?",
+          "facilitatorNotes": [
+            "They are printed with the marks of boots and of small animals and birds, “foot and wing-tip overprinted / Or separately charactered,” like writing. The mud keeps a record of every life that crossed it, which makes it beautiful to a careful eye."
+          ],
+          "evidence": [
+            "With foot and wing-tip overprinted",
+            "Of little beast and little bird."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-17-q2",
+          "prompt": "Find the list of what makes up the mud. Why does the poet bother to name what “men scorn”?",
+          "facilitatorNotes": [
+            "“Twig, leaf, flint, thorn, / Straw, feather”: short, packed lines that mash things together as the mud does. By naming each thing he refuses to dismiss it with one word; the abrupt “Condemned as mud” sounds like an unfair verdict."
+          ],
+          "evidence": [
+            "Twig, leaf, flint, thorn,",
+            "Condemned as mud."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-17-q3",
+          "prompt": "Two people stare up at the clean November sky. How do they differ, and which does the poem seem to prefer?",
+          "facilitatorNotes": [
+            "One imagines a refuge in the pure sky, away from the mud. The other loves earth and November more, because without them the sky would mean as little to him as he does to the sky; he loves even the mud for giving all its brightness to the heavens. The poem ends with the second, which suggests its sympathy, though readers may see the two as moods any one person might have."
+          ],
+          "evidence": [
+            "One imagines a refuge there",
+            "He loves even the mud whose dyes"
+          ]
+        }
+      ],
+      "months": [
+        11
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-18",
+      "title": "The Gallows",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Listen to the ballad’s refrains, and ask what the poem might be about besides a gamekeeper’s gibbet.",
+      "focus": "A nursery-rhyme tune for the bodies of shot animals.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Gamekeepers protected the pheasants on country estates by killing animals that preyed on them or their eggs, and often hung the bodies in a row on a fence or tree, a “gamekeeper’s gallows,” to show their employer and to warn other animals. A keeper here is a gamekeeper.",
+      "contentNote": "Describes animals shot and their bodies left hanging.",
+      "excerpt": {
+        "locator": "Complete poem THE GALLOWS; opens “THERE was a weasel lived in the sun With all his family, Till a keeper shot him with his…”; closes “…In the sun and in the snow, Without pain, without pleasure, On the dead oak tree bough.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          206,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19d100d113176f662c554e9212dd07bacf137f2b11f2b2032855cb2c1fdf9d84"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-18-q1",
+          "prompt": "What does the poem say about each animal’s life, and what happens to every one?",
+          "facilitatorNotes": [
+            "The weasel lived “in the sun / With all his family”; the crow was “a thief and a murderer”; the magpie could “both talk and do.” Whatever their lives, innocent or guilty, clever or not, the keeper shoots them all and hangs them on the same bough."
+          ],
+          "evidence": [
+            "a weasel lived in the sun",
+            "But a thief and a murderer"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-18-q2",
+          "prompt": "Which lines return, with small changes, in every stanza? What do the refrains and the jingling rhythm do to the subject?",
+          "facilitatorNotes": [
+            "“In the sun and in the snow,” “Without pleasure, without pain” and “On the dead oak tree bough,” reversed in the last stanza to “Without pain, without pleasure.” The nursery-rhyme beat makes the deaths sound like a children’s song, which is both gentle and chilling; the refrains swing like the bodies, for ever."
+          ],
+          "evidence": [
+            "Without pleasure, without pain,",
+            "Without pain, without pleasure,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-18-q3",
+          "prompt": "“There are no more sins to be sinned,” and the dead have “endless leisure.” Is the poem only about vermin on a gibbet? Consider that Thomas wrote it during the First World War.",
+          "facilitatorNotes": [
+            "The irony is plain: death ends sin and gives leisure no one wanted, and the magpie’s talents did not “avail.” Many readers hear the war’s dead in “many other beasts / And birds . . . / taken from their feasts / And hung up there together”; others read it as a clear-eyed country poem about killing in the name of game. The poem never says, so both readings rest on the same details."
+          ],
+          "evidence": [
+            "There are no more sins to be sinned",
+            "To swing and have endless leisure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-19",
+      "title": "“Home”",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice what the three walkers share and what they keep to themselves, and why the speaker stops at a single word.",
+      "focus": "Comrades who are not friends, a word that cannot be said, and homesickness kept under control.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. From 1915 he was a soldier, and in 1916 he was teaching at an army camp in Essex; this poem is usually read as a walk back to camp with two fellow soldiers after a day out in the snow. A league is about three miles; the three men come from three counties far apart.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem “HOME”; opens “FAIR was the morning, fair our tempers, and We had seen nothing fairer than that land,…”; closes “…else I should be Another man, as often now I seem, Or this life be only an evil dream.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          218,
+          224
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e59cc8847133b824dff651907e19d252a76d26714db89bbd27250570e0b2c2a5"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-19-q1",
+          "prompt": "Why do the three walk faster when they see “the cold roofs”? What is waiting for them there?",
+          "facilitatorNotes": [
+            "There is “nothing to return for, except need”: food, sleep and the company of men they have lived with. They have never been happy there and could not be. Someone’s joke about the “beaten horse” running home puts their eagerness in its place."
+          ],
+          "evidence": [
+            "There was nothing to return for, except need,",
+            "Happy we had not been there, nor could be."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-19-q2",
+          "prompt": "The word “home” raises a smile in all three. What does the smile mean, and why does no one say so?",
+          "facilitatorNotes": [
+            "The camp is not home; each is thinking of his own home far away. The smile admits it without words, and saying more would break the rule of the place: they are “fellows in a union that ends / With the necessity for it,” not friends. Readers may find this honest about wartime comradeship, or bleak."
+          ],
+          "evidence": [
+            "That all knew what he meant and none would say.",
+            "But fellows in a union that ends"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-19-q3",
+          "prompt": "Why does the speaker allow himself only “the mere word” “Homesick”? What does he fear would happen if he admitted more?",
+          "facilitatorNotes": [
+            "If he let the feeling in fully he “could not endure it / For a day longer”: he would become “Another man,” or his life would seem “an evil dream.” Keeping the word playful is how he survives the “captivity.” Yet the poem itself admits more than the word, which shows what the restraint costs."
+          ],
+          "evidence": [
+            "If I should ever more admit",
+            "Or this life be only an evil dream."
+          ]
+        }
+      ]
     }
   ]
 }
