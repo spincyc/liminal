@@ -70,7 +70,7 @@
       return;
     }
     const readings = library.works.reduce((sum, work) => sum + work.readings, 0);
-    $("librarySummary").textContent = library.works.length + " complete public-domain works behind " + readings.toLocaleString("en-US") + " nightly readings. Read any of them whole, with every nightly passage marked.";
+    $("librarySummary").textContent = library.works.length + " public-domain works behind " + readings.toLocaleString("en-US") + " nightly readings. Read any of them whole, with every nightly passage marked.";
     apply();
     announce((invalid ? "That library link was not recognized. " : "") + "Showing " + library.works.length + " works.", invalid);
     if (focusNext) $("libraryHeading").focus();
@@ -114,8 +114,11 @@
     const heads = (meta.contents || []).filter(item => item.level === 1);
     const entries = heads.length ? heads.map(item => ({ label: item.text, block: item.block })) : meta.chunks.map((chunk, i) => ({ label: "Part " + (i + 1), block: chunk.first }));
     if (!entries.length || entries[0].block > 0) entries.unshift({ label: "Beginning", block: 0 });
-    jump.replaceChildren(option("Part " + (chunkIndex + 1) + " of " + meta.chunks.length, ""), ...entries.map(item => option(item.label, String(item.block))));
-    jump.value = "";
+    // The selection stays on the place shown (the last heading at or before
+    // this part's first block); choosing another opens it only on Go or Enter.
+    const first = meta.chunks[chunkIndex].first, here = entries.filter(item => item.block <= first).pop() || entries[0];
+    jump.replaceChildren(...entries.map(item => option(item.label, String(item.block))));
+    jump.value = String(here.block);
   }
   function partNav(meta, i, position, existing) {
     const chunks = meta.chunks, id = meta.work.id;
@@ -163,7 +166,7 @@
       if (meta.schemaVersion !== 1 || !meta.work || meta.work.id !== selected.id || !Array.isArray(meta.chunks) || !meta.chunks.length) throw new Error("Work mismatch");
       if (current !== request) return;
       const cited = selected.reading ? (meta.uses || []).find(item => item.id === selected.reading) : null, use = Lib.hasRange(cited) ? cited : null;
-      const block = use ? use.blocks[0] : selected.block !== null ? selected.block : 0, i = Math.max(0, Lib.chunkAt(meta, block));
+      const block = use ? use.blocks[0] : selected.block !== null ? selected.block : 0, found = Lib.chunkAt(meta, block), i = Math.max(0, found);
       const part = meta.chunks[i], chunk = await getJson(part.file);
       if (current !== request) return;
       if (chunk.work !== selected.id || chunk.first !== part.first || !Array.isArray(chunk.blocks)) throw new Error("Chunk mismatch");
@@ -183,13 +186,16 @@
       const target = use ? $("passage-" + use.id) : selected.block !== null ? $("b" + selected.block) : null;
       if (target) { target.scrollIntoView({ block: "start" }); if (use) { const link = target.querySelector("a"); if (link) link.focus({ preventScroll: true }); } }
       else if (focusNext) { $("libraryWorkTitle").focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
-      if (selected.reading && cited && !use) announce(cited.title + " keeps its own text, so no passage is marked. Showing " + work.title + " from its beginning.");
+      if (selected.block !== null && found < 0) announce("That place is past the end of " + work.title + ". Showing it from its beginning.", true);
+      else if (selected.reading && cited && !use) announce(cited.title + " keeps its own text, so no passage is marked. Showing " + work.title + " from its beginning.");
       else if (selected.reading && !use) announce("That reading is not in this work. Showing the work from its beginning.", true);
     } catch (_) {
       if (current !== request) return;
       setCrumbs([{ label: "Unavailable" }]);
       $("libraryWorkTitle").textContent = "This work could not be opened";
       $("libraryWorkBy").textContent = ""; $("libraryWorkMeta").textContent = ""; $("libraryWorkAbout").replaceChildren(); $("libraryBottom").replaceChildren();
+      // Nothing from the work shown before may lead on from here.
+      $("libraryNavigation").replaceChildren(); topNav = null; jump.replaceChildren();
       const back = R.el("p"); back.append(R.link("Back to the library", "library.html")); text.replaceChildren(back);
       announce("This work could not be opened. It may not be in the library yet.", true);
     } finally { if (current === request) text.setAttribute("aria-busy", "false"); }
@@ -210,8 +216,13 @@
     for (const control of [query]) control.addEventListener("input", apply);
     for (const control of [level, family, author, period]) control.addEventListener("change", apply);
     query.form.addEventListener("submit", event => { event.preventDefault(); apply(); });
-    jump.form.addEventListener("submit", event => event.preventDefault());
-    jump.addEventListener("change", () => { const id = Lib.parseRoute(window.location.hash).id; if (id && jump.value !== "") window.location.hash = Lib.route(id, Number(jump.value)); });
+    // Go (or Enter) opens the chosen place; changing the selection alone does not.
+    jump.form.addEventListener("submit", event => {
+      event.preventDefault();
+      const id = Lib.parseRoute(window.location.hash).id;
+      if (id && jump.value !== "") window.location.hash = Lib.route(id, Number(jump.value));
+    });
+    jump.addEventListener("keydown", event => { if (event.key === "Enter") { event.preventDefault(); jump.form.requestSubmit(); } });
     window.addEventListener("hashchange", route);
     route();
   }

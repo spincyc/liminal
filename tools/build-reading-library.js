@@ -50,6 +50,18 @@ function validateWork(work, blocks, bytes, where) {
   assert(work.scope && typeof work.scope.complete === "boolean", "missing scope at " + where);
   if (work.scope.complete) assert(work.scope.note === null, "a complete work has no scope note at " + where);
   else text(work.scope.note, where + ".scope.note");
+  assert(Object.keys(work.scope).every(key => ["complete", "note", "collated"].includes(key)), "unexpected scope field at " + where);
+  if (work.scope.collated !== undefined) {
+    // Blocks checked against the printed witness, when only part of the text
+    // was (docs/reading-library.md): ascending, disjoint, non-adjacent ranges.
+    assert(Array.isArray(work.scope.collated) && work.scope.collated.length > 0, "scope.collated lists block ranges at " + where);
+    let previous = -2;
+    for (const range of work.scope.collated) {
+      assert(Array.isArray(range) && range.length === 2 && range.every(Number.isInteger) && range[0] > previous + 1 && range[0] <= range[1] && range[1] < blocks.length,
+        "scope.collated holds ascending [first, last] block ranges inside the text, merged where they touch, at " + where);
+      previous = range[1];
+    }
+  }
   assert(work.text && work.text.blocks === blocks.length && work.text.sha256 === sha256(bytes), "text.jsonl does not match work.text (blocks/sha256) at " + where + "; run node tools/reading-library.js seal " + work.id);
   assert(blocks.some(block => block.type !== "heading"), "text holds only headings at " + where);
   blocks.forEach((block, i) => plain(block.text, where + ".text." + i));
@@ -109,7 +121,9 @@ function buildLibrary({ library, uses = new Map(), output = path.join(ROOT, "dis
     works.push({ id, author: work.author, title: work.title, translator: work.translator, year: work.publicationYear,
       words, levels, genres, readings: used.length, complete: work.scope.complete, file: libraryFile(id) });
   }
-  works.sort((a, b) => a.author.localeCompare(b.author) || a.title.localeCompare(b.title));
+  // Work ids begin with the author's surname (docs/reading-library.md), so
+  // id order is the library's shelf order: by surname, then title.
+  works.sort((a, b) => a.id.localeCompare(b.id));
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify({ schemaVersion: 1, works }) + "\n");
   return { works: works.length };
 }
