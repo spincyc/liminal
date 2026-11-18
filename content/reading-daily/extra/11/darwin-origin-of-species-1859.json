@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "darwin-origin-of-species-1859",
+  "readings": [
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-01",
+      "title": "Origin of Species: Do domestic breeds revert? (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Identify the objection Darwin answers and the kind of evidence he says would settle it.",
+      "focus": "Whether domestic breeds can count as evidence about species in nature.",
+      "context": "Chapter I argues from tame animals and cultivated plants toward wild species. Darwin has just admitted that the laws of inheritance are unknown. Reversion is a return to an ancestral form; the aboriginal stock is the original wild ancestor; esculent means edible; a difference of “generic value” is large enough to separate genera.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” from the claim that domestic varieties revert when run wild to the question of single or several parent-species; opens “Having alluded to the subject of reversion, I may here refer to a statement often made by…”; closes “…domestic races, there is presumptive, or even strong, evidence in favour of this view.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-02",
+        "blocks": [
+          23,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6f7e0daf2da265a0e82647bcd5f64ad872160627352f34e9562a831c3e576697"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-01-q1",
+          "prompt": "What objection does the first paragraph answer, and why would it damage Darwin’s whole argument if it were true?",
+          "facilitatorNotes": [
+            "Naturalists claim that domestic varieties revert to the wild stock when run wild, so nothing can be inferred from domestic races to natural species. Darwin’s method depends on that inference, so he asks for the “decisive facts” behind the claim and lists the difficulties of proving it."
+          ],
+          "evidence": [
+            "Hence it has been argued that no deductions can be drawn from domestic races to species in a state of nature.",
+            "I have in vain endeavoured to discover on what decisive facts"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-01-q2",
+          "prompt": "Darwin imagines an experiment on cabbages in poor soil, then says its result “is not of great importance.” Why?",
+          "facilitatorNotes": [
+            "Turning a breed loose changes its conditions of life, so reversion there would not show a tendency to revert under unchanged conditions. That is the claim that matters, and for it there is “not a shadow of evidence”: breeders have kept horses, cattle and vegetables true for generations."
+          ],
+          "evidence": [
+            "for by the experiment itself the conditions of life are changed",
+            "But there is not a shadow of evidence in favour of this view"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-01-q3",
+          "prompt": "Why does Darwin treat the disagreements of “competent judges” as evidence?",
+          "facilitatorNotes": [
+            "Almost every domestic race has been called a variety by some judges and a descendant of a distinct species by others. Such constant doubt suggests there is no sharp line between races and species. Readers can ask whether the disagreement shows that the categories blend or only that the judges lack information."
+          ],
+          "evidence": [
+            "If any marked distinction existed between domestic races and species, this source of doubt could not so perpetually recur."
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-01-q4",
+          "prompt": "What would follow if all the dog breeds named here came from one wild species, and why does Darwin decline that convenient conclusion?",
+          "facilitatorNotes": [
+            "It would shake belief in the fixity of closely allied wild species such as the foxes. But Darwin says he does not believe all dogs come from one species, and claims only “presumptive, or even strong” evidence for single origin in some other races. He gives up an example that would suit him."
+          ],
+          "evidence": [
+            "then such facts would have great weight in making us doubt about the immutability",
+            "I do not believe, as we shall presently see, that all our dogs have descended from any one wild species"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-02",
+      "title": "Origin of Species: One wild ancestor or many? (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Follow how Darwin accepts part of a rival view while rejecting its extreme form.",
+      "focus": "Deep time, geography and the limits of crossing as explanations of domestic breeds.",
+      "context": "Recap: Darwin has answered the claim that domestic breeds revert to wild stock and argued that breeds differ in the way allied species do; he doubts that all dogs come from one wild species. Here he weighs single against multiple origins. Mr. Horner, Mr. Blyth and Sir John Sebright were researchers and breeders of his day; Canidæ is the dog family; a mongrel is a cross between breeds.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference. He uses “savage” and “barbarian” for peoples he ranked below Europeans, a period hierarchy to examine rather than accept.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” from the supposed choice of variable animals for taming to the failure of crossing to make new races; opens “It has often been assumed that man has chosen for domestication animals and plants having…”; closes “…nor can I find a single case on record of a permanent race having been thus formed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-01",
+        "continuesTo": null,
+        "blocks": [
+          26,
+          29
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aa302e63f14ac7dfec214ea0a969d570f25860968dc18e6ebe103543458a49f4"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-02-q1",
+          "prompt": "How does Darwin answer the assumption that early people chose to tame animals with a special tendency to vary?",
+          "facilitatorNotes": [
+            "The first tamer could not have foreseen variability or hardiness, and animals that vary little or suit only one climate, such as the ass and the camel, were tamed anyway. Darwin predicts that any species bred as long would vary as much."
+          ],
+          "evidence": [
+            "how could a savage possibly know, when he first tamed an animal, whether it would vary",
+            "they would vary on an average as largely"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-02-q2",
+          "prompt": "What does Darwin conclude from the breeds pictured on ancient Egyptian monuments, and why does the evidence of pottery matter?",
+          "facilitatorNotes": [
+            "Diverse breeds in Egypt prove only that some breeds are four or five thousand years old. Pottery from thirteen or fourteen thousand years ago, and people with half-tame dogs before that, push domestication back into time long enough for breeds to form."
+          ],
+          "evidence": [
+            "what does it show, but that some of our breeds originated there, four or five thousand years ago?"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-02-q3",
+          "prompt": "Darwin accepts several wild ancestors for dogs but calls the many-ancestors view an “absurd extreme” when pushed. What reasoning draws the line?",
+          "facilitatorNotes": [
+            "Geography: Britain has hardly one mammal of its own, yet one author gives it eleven peculiar wild sheep; each European country has its own breeds but not its own wild species. And no wild canid resembles the bull-dog or Italian greyhound. Breeds must have formed under domestication."
+          ],
+          "evidence": [
+            "One author believes that there formerly existed in Great Britain eleven wild species of sheep peculiar to it!",
+            "so unlike all wild Canidæ"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-02-q4",
+          "prompt": "Why does Darwin doubt that crossing a few wild species explains the variety of breeds?",
+          "facilitatorNotes": [
+            "Crossing gives only intermediates, so the extreme forms would have had to exist in the wild. A first cross may be uniform, but its descendants scatter until “hardly two of them will be alike,” and Sebright’s experiment failed. This clears the way for selection as the main cause."
+          ],
+          "evidence": [
+            "by crossing we can get only forms in some degree intermediate between their parents",
+            "nor can I find a single case on record of a permanent race having been thus formed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-03",
+      "title": "Origin of Species: Why breeders doubt common descent (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh a list of reasons, then notice how Darwin turns experts’ certainty into a warning.",
+      "focus": "Historical testimony, personal doubt and the blind spot of specialists.",
+      "context": "Darwin has argued that every breed of domestic pigeon, however different, descends from one wild species, the rock-pigeon (Columba livia). These paragraphs finish the case. Carriers, tumblers and fantails are fancy breeds; a fancier breeds animals for show; Akber Khan is the Mughal emperor Akbar.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” the last two paragraphs on the origin of domestic pigeons; opens “In favour of this view, I may add, firstly, that C. livia, or the rock-pigeon, has been…”; closes “…the idea of species in a state of nature being lineal descendants of other species?”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          38,
+          39
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c4d4ac1ba4d59628b045a07ffd12c7f3aaabc539ab867cd878382d619698e5e"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-03-q1",
+          "prompt": "Darwin adds four reasons for the rock-pigeon view. Which seems strongest to you, and which depend on chapters still to come?",
+          "facilitatorNotes": [
+            "The rock-pigeon can be tamed and resembles the breeds; sub-breeds form an almost perfect series between extremes; each breed’s distinctive traits are highly variable; and pigeons have been bred with care for thousands of years. The series is the most direct evidence; the third and fourth explicitly point forward to the discussion of selection."
+          ],
+          "evidence": [
+            "we can make an almost perfect series between the extremes of structure",
+            "the explanation of this fact will be obvious when we come to treat of selection"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-03-q2",
+          "prompt": "Why bring Pliny’s Romans, Akbar’s court and the Dutch into an argument about pigeons?",
+          "facilitatorNotes": [
+            "They show long, intense, worldwide attention to breeding, the conditions under which great variation could accumulate. Historical testimony stands in for the measurements no one made."
+          ],
+          "evidence": [
+            "they can reckon up their pedigree and race",
+            "His Majesty by crossing the breeds, which method was never practised before, has improved them astonishingly."
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-03-q3",
+          "prompt": "Darwin admits he once found common descent as hard to believe as any naturalist would. Why is that admission useful to his argument?",
+          "facilitatorNotes": [
+            "He meets the reader’s disbelief by sharing it, then shows what changed his mind: keeping and watching pigeons. A converted sceptic is a persuasive witness."
+          ],
+          "evidence": [
+            "I felt fully as much difficulty in believing that they could ever have descended from a common parent"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-03-q4",
+          "prompt": "Why are expert breeders convinced that each breed has its own wild ancestor, and what “lesson of caution” does Darwin draw for naturalists?",
+          "facilitatorNotes": [
+            "Long study fixes their eyes on differences; they win prizes by selecting slight variations yet “refuse to sum up” what generations of them could do. Naturalists who accept common descent for breeds against the breeders, but deride it for wild species, may be making the breeders’ mistake."
+          ],
+          "evidence": [
+            "refuse to sum up in their minds slight differences accumulated during many successive generations",
+            "may they not learn a lesson of caution"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-04",
+      "title": "Origin of Species: Selection without intending it (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Separate the evidence that shows selection from the evidence that shows only attention to breeding.",
+      "focus": "Unconscious selection: change that no breeder intended.",
+      "context": "Darwin has shown what breeders achieve by methodical selection, choosing animals to breed toward a goal. Here he answers the objection that selection is a modern practice and names a second kind. Bakewell and Collins were eighteenth-century English stock-breeders; Youatt wrote standard works on livestock; “roguing” is pulling inferior plants from a crop.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference. He uses “savage” and “barbarian” for peoples he ranked below Europeans, a period hierarchy to examine rather than accept. He repeats a travellers’ report, now considered unreliable, that the people of Tierra del Fuego killed old women in famine.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” from the antiquity of selection to unconscious selection among peoples who keep animals; opens “It may be objected that the principle of selection has been reduced to methodical…”; closes “…and devouring their old women, in times of dearth, as of less value than their dogs.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-05",
+        "blocks": [
+          45,
+          49
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "827b9578bedad4daacbdcc8b33ee8011085b05a3951a419756102f65db3006d2"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-04-q1",
+          "prompt": "How does Darwin show that selection is not a modern discovery, and what does he admit about some of his examples?",
+          "facilitatorNotes": [
+            "He cites English laws on choice animals, a Chinese encyclopaedia, Roman writers, Genesis, Pliny and Livingstone: selection appears across ages and cultures because inheritance is “so obvious.” He concedes that some facts show only careful attention to breeding, not selection."
+          ],
+          "evidence": [
+            "Some of these facts do not show actual selection",
+            "for the inheritance of good and bad qualities is so obvious"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-04-q2",
+          "prompt": "What is “Unconscious” selection, and why does Darwin call it more important for his purpose than methodical selection?",
+          "facilitatorNotes": [
+            "Breeding from one’s best animals with no wish to change the breed still changes it over centuries. It shows that lasting change needs no plan, which is the bridge from human selection to selection in nature."
+          ],
+          "evidence": [
+            "results from every one trying to possess and breed from the best individual animals",
+            "he has no wish or expectation of permanently altering the breed"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-04-q3",
+          "prompt": "Why are such slow changes hard to prove, and which of Darwin’s substitute evidence is most convincing?",
+          "facilitatorNotes": [
+            "Without old measurements or drawings, change goes unnoticed. He uses less-improved breeds in remote districts, old pigeon treatises, racehorses that outrun their Arab ancestors, and Youatt’s two Leicester flocks, bred from one stock without intent yet now looking like different varieties. The flocks come closest to a controlled comparison."
+          ],
+          "evidence": [
+            "Slow and insensible changes of this kind could never be recognised unless actual measurements or careful drawings",
+            "they have the appearance of being quite different varieties"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-04-q4",
+          "prompt": "In the last paragraph, what is Darwin’s argument, and what in its evidence should a reader question?",
+          "facilitatorNotes": [
+            "The logical point is sound: people who never think about inheritance still save their most useful animals in hard times, so selection happens anyway. The supporting example is hearsay wrapped in a ranking of peoples; the argument does not need it, and readers should examine it as prejudice and weak evidence."
+          ],
+          "evidence": [
+            "so that in this case there would be a kind of unconscious selection going on",
+            "We see the value set on animals even by the barbarians of Tierra del Fuego"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-05",
+      "title": "Origin of Species: Breeds without birthdays (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow how one principle explains several puzzling facts at once.",
+      "focus": "Why the origins of breeds, like those of dialects, go unrecorded.",
+      "context": "Recap: Darwin has argued that besides deliberate breeding there is unconscious selection, the habit of breeding from one’s best animals, which slowly changes breeds no one meant to change. Here he applies it to garden plants and to the oddities of breeds. Heartsease is the pansy; a pelargonium is a geranium; the fantail and pouter are pigeon breeds; a bird’s crop is a pouch in its throat.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference. Darwin ranks peoples as “civilised” and “uncivilised,” a period hierarchy, and uses it to explain why no crop plants had come from Australia or the Cape.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” from improvement in garden plants to the unrecorded origins of domestic breeds; opens “In plants the same gradual process of improvement, through the occasional preservation of…”; closes “…small of any record having been preserved of such slow, varying, and insensible changes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-04",
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-06",
+        "blocks": [
+          50,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "94640d29026dc8c866996a51a68022bb9a08910647a283b8af3da80bef87cf8a"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-05-q1",
+          "prompt": "Gardeners are praised for “wonderful skill.” Why does Darwin deny that skill was the main cause?",
+          "facilitatorNotes": [
+            "The art was simple: always grow the best known variety, sow its seed, and keep any slightly better seedling. The result built up almost unconsciously; the classical gardeners never imagined our pears."
+          ],
+          "evidence": [
+            "the art, I cannot doubt, has been simple",
+            "never thought what splendid fruit we should eat"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-05-q2",
+          "prompt": "Darwin says no region “inhabited by quite uncivilised man” has given Europe a plant worth growing. What does this claim assume, and how could it be tested?",
+          "facilitatorNotes": [
+            "It assumes that worth means worth to European gardens and that such peoples selected nothing. A test would need evidence of what those peoples grew and how; Darwin offers none, so the claim rests on his ranking of peoples."
+          ],
+          "evidence": [
+            "neither Australia, the Cape of Good Hope, nor any other region inhabited by quite uncivilised man, has afforded us a single plant worth culture"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-05-q3",
+          "prompt": "Why does Darwin call the phrase “trying to make a fantail” “utterly incorrect”?",
+          "facilitatorNotes": [
+            "A breeder can only select variations that nature first supplies; the man who kept a pigeon with a slightly larger tail never imagined the fantail. The breed is an accumulation, not a design, the key step toward natural selection."
+          ],
+          "evidence": [
+            "He can never act by selection, excepting on variations which are first given to him in some slight degree by nature.",
+            "never dreamed what the descendants of that pigeon would become"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-05-q4",
+          "prompt": "What does comparing a breed to “a dialect of a language” explain?",
+          "facilitatorNotes": [
+            "A breed has no definite birth: improved animals spread locally, get a provincial name only when valued, and leave no record of their slow beginnings. So our ignorance of breed origins is what the theory predicts, not evidence against it. Readers may extend the analogy to species."
+          ],
+          "evidence": [
+            "a breed, like a dialect of a language, can hardly be said to have had a definite origin",
+            "the chance will be infinitely small of any record having been preserved"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-06",
+      "title": "Origin of Species: What favours the breeder, and the chapter’s verdict (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Track the hedges in a summary, then weigh the confident claim that closes it.",
+      "focus": "The conditions that let selection work, and selection named as the predominant cause.",
+      "context": "Recap: Darwin has argued that gardeners and fanciers improve plants and animals by selecting slight variations, mostly without a plan, and that breeds, like dialects, have no recorded beginnings. Now he lists what makes selection succeed or fail, then sums up the chapter. William Marshall wrote on English farming; correlation of growth means that changing one part changes others with it.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter I, “Variation under Domestication,” from the circumstances favourable to selection to the end of the chapter; opens “I must now say a few words on the circumstances, favourable, or the reverse, to man’s…”; closes “…or unconsciously and more slowly, but more efficiently, is by far the predominant Power.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-05",
+        "continuesTo": null,
+        "blocks": [
+          56,
+          58
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "34ef4788d0a81fc5de864cc23e55ef94d972ec4d4875409810c60f2d985a906b"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-06-q1",
+          "prompt": "Why does a large number of individuals matter so much to selection?",
+          "facilitatorNotes": [
+            "Useful variations are rare, so more individuals give more chances; when stock is scarce every animal is bred and selection stops. Hence Marshall’s poor Yorkshire flocks “never can be improved,” while nurserymen outdo amateurs."
+          ],
+          "evidence": [
+            "the chance of their appearance will be much increased by a large number of individuals being kept",
+            "they never can be improved"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-06-q2",
+          "prompt": "What does the strawberry example show about variation and attention?",
+          "facilitatorNotes": [
+            "The strawberry “had always varied”; new varieties seemed to appear only when gardeners began picking out the best plants, because attention let selection accumulate the differences. Darwin mocks the remark that reverses cause and effect."
+          ],
+          "evidence": [
+            "I have seen it gravely remarked, that it was most fortunate that the strawberry began to vary just when gardeners began to attend closely to this plant.",
+            "No doubt the strawberry had always varied"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-06-q3",
+          "prompt": "How does Darwin explain why cats, donkeys, peacocks and geese have few distinct breeds?",
+          "facilitatorNotes": [
+            "Not by a lack of variation but by selection never being applied: cats cannot be paired, donkeys are kept in small numbers by the poor, peacocks are hard to rear, and geese are valued only for food and feathers. The theory explains an absence as well as a presence."
+          ],
+          "evidence": [
+            "may be attributed in main part to selection not having been brought into play"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-06-q4",
+          "prompt": "The summary lists many causes of variation, then names one “predominant Power.” How much does Darwin claim, and how much does he admit not knowing?",
+          "facilitatorNotes": [
+            "He names conditions of life, inheritance and reversion, unknown laws, correlation, use and disuse, and crossing, and calls the result “infinitely complex.” After these hedges comes a confident verdict for selection. Readers can judge whether the chapter has earned the capital P."
+          ],
+          "evidence": [
+            "The final result is thus rendered infinitely complex.",
+            "is by far the predominant Power"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-07",
+      "title": "Origin of Species: Species or variety? The experts disagree (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Use disagreement among experts as evidence about the categories they use.",
+      "focus": "Why naturalists cannot agree where varieties end and species begin.",
+      "context": "Chapter II asks whether wild species vary as domestic breeds do. Darwin has just said that naturalists have no agreed definition of a species. A flora is a catalogue of a region’s plants; polymorphic means occurring in many forms; the primrose and cowslip are related wildflowers; Gärtner was a German expert on plant crossing.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter II, “Variation under Nature,” from the frequency of doubtful forms to the young naturalist’s difficulties; opens “That varieties of this doubtful nature are far from uncommon cannot be disputed. Compare…”; closes “…have to trust almost entirely to analogy, and his difficulties will rise to a climax.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-08",
+        "blocks": [
+          66,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5e405ccb8bed453ff9f8b282afbaa62052ef1426d641c9c172b6652b38220cfb"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-07-q1",
+          "prompt": "What does the gap between Babington’s 251 species and Bentham’s 112 show?",
+          "facilitatorNotes": [
+            "Two botanists describe the same British plants and differ by 139 “doubtful forms”: rank depends on the judge. The exclamation mark shows how striking Darwin finds it."
+          ],
+          "evidence": [
+            "a difference of 139 doubtful forms!"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-07-q2",
+          "prompt": "How does distance affect the ranking of doubtful forms, and why does Darwin ask what distance “will suffice”?",
+          "facilitatorNotes": [
+            "Naturalists tend to call separated forms distinct species, but no distance can be named as the threshold: America and Europe, the Azores, Madeira, Ireland. The question exposes how arbitrary the line is, as Darwin felt with the Galápagos birds."
+          ],
+          "evidence": [
+            "what distance, it has been well asked, will suffice?",
+            "how entirely vague and arbitrary is the distinction between species and varieties"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-07-q3",
+          "prompt": "What evidence suggests that the primrose and cowslip are separate species, and what leads Darwin to call them varieties?",
+          "facilitatorNotes": [
+            "They differ in look, flavour, smell, flowering time, station, altitude and range, and cross only with difficulty: “hardly” better evidence could be wished for. But intermediate links that are probably not hybrids, and much experiment, show common parents. He states the strongest case for distinctness before overturning it."
+          ],
+          "evidence": [
+            "We could hardly wish for better evidence of the two forms being specifically distinct.",
+            "they descend from common parents, and consequently must be ranked as varieties"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-07-q4",
+          "prompt": "How does the young naturalist’s judgment change as he studies more widely, and what does that suggest about the categories?",
+          "facilitatorNotes": [
+            "At first he multiplies species, impressed by differences like the pigeon-fancier; wider study brings more hard cases; he settles them only by admitting much variation, and with forms from distant countries he must rely on analogy. The categories reflect the observer’s range of knowledge as much as nature."
+          ],
+          "evidence": [
+            "His general tendency will be to make many species",
+            "he will have to trust almost entirely to analogy, and his difficulties will rise to a climax"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-08",
+      "title": "Origin of Species: Varieties as species in the making (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Distinguish what Darwin infers from a series of forms from what he says remains to be proved.",
+      "focus": "Species as named stages in a continuous process, and a prediction that can be tested.",
+      "context": "Recap: Darwin has shown that competent naturalists constantly disagree whether a form is a species or a variety, as with the primrose and cowslip. Now he draws his conclusion and proposes a test. Incipient means beginning; a genus (plural genera) is a group of closely related species; Alphonse de Candolle and Joseph Hooker were leading botanists.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter II, “Variation under Nature,” from the lack of any clear line between species and varieties to the prediction about large genera; opens “Certainly no clear line of demarcation has as yet been drawn between species and…”; closes “…why more varieties should occur in a group having many species, than in one having few.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-07",
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-09",
+        "blocks": [
+          70,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5813b5624925a963224b9b748d2a2710e857887407b358b263c26b641d5ac55f"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-08-q1",
+          "prompt": "Darwin arranges individual differences, varieties, sub-species and species in one series. What does he infer from it, and how far does he say the inference is proved?",
+          "facilitatorNotes": [
+            "A graded series “impresses the mind with the idea of an actual passage”: a well-marked variety is an incipient species. But a series of forms does not by itself prove movement along it, and Darwin says the belief must be judged by the weight of the whole book."
+          ],
+          "evidence": [
+            "a series impresses the mind with the idea of an actual passage",
+            "a well-marked variety may be justly called an incipient species"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-08-q2",
+          "prompt": "What does Darwin mean by calling “species” a term “arbitrarily given for the sake of convenience”?",
+          "facilitatorNotes": [
+            "Species and variety differ in degree, and the names mark convenient points on a continuum rather than fixed natural kinds. In 1859, when species were widely held to be separately created and fixed, this was a radical claim. Readers may ask whether a name can be arbitrary while the groups it names are real."
+          ],
+          "evidence": [
+            "I look at the term species, as one arbitrarily given for the sake of convenience"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-08-q3",
+          "prompt": "Why should the dominant species of a country produce the most varieties?",
+          "facilitatorNotes": [
+            "Widely spread, common species meet more conditions and competitors, and their slightly modified offspring inherit the advantages that made the parents dominant, so their varieties are likelier to last. Darwin notes that Hooker checked the tables, while saying the subject is “rather perplexing.”"
+          ],
+          "evidence": [
+            "which oftenest produce well-marked varieties, or, as I consider them, incipient species",
+            "will still inherit those advantages that enabled their parents to become dominant"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-08-q4",
+          "prompt": "Darwin predicts that species in large genera should vary more. Why does his view predict this, while independent creation gives “no apparent reason” for it?",
+          "facilitatorNotes": [
+            "Where many species have formed, conditions have favoured variation and probably still do: where there are large trees, expect saplings. Separate creation predicts nothing about the pattern. A theory that risks a testable prediction is stronger than one that can accommodate any result."
+          ],
+          "evidence": [
+            "Where many large trees grow, we expect to find saplings.",
+            "there is no apparent reason why more varieties should occur in a group having many species"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-09",
+      "title": "Origin of Species: The manufactory of species (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Evaluate a numerical test and the limits Darwin places on what it shows.",
+      "focus": "A predicted pattern in the catalogues, and the argument that only descent explains it.",
+      "context": "Recap: Darwin has argued that varieties are species in the making and predicted that species in large genera, where many species have already formed, should now produce more varieties. Here he reports his test and sums up the chapter. Coleopterous insects are beetles; Fries and Westwood were naturalists; Watson divided Great Britain into botanical provinces.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter II, “Variation under Nature,” from the test of the large-genera prediction to the end of the chapter; opens “To test the truth of this anticipation I have arranged the plants of twelve countries,…”; closes “…forms of life throughout the universe become divided into groups subordinate to groups.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-08",
+        "continuesTo": null,
+        "blocks": [
+          78,
+          83
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ecef3fcdd96c5911c23901578a093eef6f04e342c699d458d2172bf89cab9866"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-09-q1",
+          "prompt": "How did Darwin test his prediction, and what did he do to guard against a misleading result?",
+          "facilitatorNotes": [
+            "He split the plants of twelve countries and the beetles of two districts into larger and smaller genera, and found more varying species, and more varieties per species, in the larger genera. He repeated the division with the smallest genera excluded and got the same result."
+          ],
+          "evidence": [
+            "it has invariably proved to be the case",
+            "when all the smallest genera, with from only one to four species, are absolutely excluded from the tables"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-09-q2",
+          "prompt": "Why does Darwin say that a perfect result, every large genus varying and no small one, “would have been fatal” to his theory?",
+          "facilitatorNotes": [
+            "Geology shows small genera growing and large ones declining and vanishing, so the theory predicts only an average tendency. An absolute pattern would contradict the fossil record. The claim is deliberately limited."
+          ],
+          "evidence": [
+            "for if this had been so, it would have been fatal to my theory",
+            "All that we want to show is, that where many species of a genus have been formed, on an average many are still forming"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-09-q3",
+          "prompt": "What does the “manufactory of species” metaphor contribute, and how might it mislead?",
+          "facilitatorNotes": [
+            "It makes species-formation an ongoing, slow process: where the factory has been busy it is still running. But a factory implies a maker and a plan, which Darwin’s argument denies; his “if we may use the expression” shows he knows it."
+          ],
+          "evidence": [
+            "the manufactory of species has been active",
+            "if we may use the expression"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-09-q4",
+          "prompt": "The chapter ends by calling these analogies “utterly inexplicable” if each species was independently created. How strong is that kind of argument?",
+          "facilitatorNotes": [
+            "It argues to the best explanation: clustering “like satellites,” small differences and restricted ranges all fit species that began as varieties. Independent creation could be stretched to allow any pattern, but it explains none of them. Readers can say what evidence would weaken Darwin’s case."
+          ],
+          "evidence": [
+            "little groups of species are generally clustered like satellites around certain other species",
+            "these analogies are utterly inexplicable if each species has been independently created"
+          ]
+        }
+      ]
+    }
+  ]
+}
