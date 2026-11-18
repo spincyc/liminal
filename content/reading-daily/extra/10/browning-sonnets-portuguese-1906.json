@@ -1605,6 +1605,70 @@
     },
     {
       "id": "reading-10-browning-sonnets-portuguese-1906-26",
+      "title": "Sonnet XL",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Sort the images of other people’s love in the octave, and find where the poem turns to “thou.”",
+      "focus": "Love that a smile starts and a slip ends, set against a love that waits through sickness.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Forsooth (“indeed”) is ironic here: love so called. Mussulmans are Muslims and Giaours, a Turkish word, non-Muslims; throwing a kerchief at a smile recalls the tale of an Eastern ruler who chose a woman by tossing her a handkerchief. Ruth is pity. Polypheme is Polyphemus, the one-eyed giant of Greek myth who loved the sea-nymph Galatea and, rejected, killed the youth she loved. To gainsay is to deny.",
+      "contentNote": "“Mussulmans and Giaours” draws on the period’s stereotype of Eastern lovers as careless and cruel.",
+      "excerpt": {
+        "locator": "Complete poem XL; opens “Oh, yes! they love through all this world of ours! I will not gainsay love, called love…”; closes “…and sickness, to bring souls to touch, And think it soon when others cry “Too late.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          79,
+          79
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1836f5766f2748a2fabeb31f0fc8596e217ae126b4c7e3a69fc2b8dfa58ae1b1"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q1",
+          "prompt": "What does the speaker grant in the first lines, and how does her tone show she is not impressed?",
+          "facilitatorNotes": [
+            "She grants that people love everywhere; she will not deny love, or what is “called love forsooth.” She has heard it talked of since her youth. “Called love forsooth” and the shrug of “Oh, yes!” suggest that much of what passes for love is talk."
+          ],
+          "evidence": [
+            "Oh, yes! they love through all this world of ours!",
+            "I will not gainsay love, called love forsooth:"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q2",
+          "prompt": "What do the “kerchiefs” and Polypheme’s “white tooth” say about ordinary love? How little does it take to turn it?",
+          "facilitatorNotes": [
+            "Lovers who choose at a smile and have no pity for weeping; a giant’s tooth that slips on a nut when rain has made the shell too smooth. Something as slight as a slippery shell can turn love “aside to hate / Or else to oblivion,” as Polyphemus’s love turned to murderous jealousy."
+          ],
+          "evidence": [
+            "Throw kerchiefs at a smile, and have no ruth",
+            "Will turn the thing called love, aside to hate"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q3",
+          "prompt": "The turn comes in the middle of line 11: “But thou art not such / A lover.” What makes him different, and why might “Too late” matter to this speaker in particular?",
+          "facilitatorNotes": [
+            "He can wait “through sorrow and sickness” and still think it soon when others would say it is too late. The speaker was nearly forty and long an invalid; she had believed love had come too late for her. His patience answers her fear, and the sonnet runs past the usual break, as if it could not wait."
+          ],
+          "evidence": [
+            "Through sorrow and sickness, to bring souls to touch,",
+            "And think it soon when others cry “Too late.”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-27",
       "title": "Sonnet XLI",
       "sourceId": "browning-sonnets-portuguese-1906",
       "genre": "poetry",
@@ -1633,7 +1697,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-browning-sonnets-portuguese-1906-26-q1",
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q1",
           "prompt": "Whom does she thank in the octave, and how does she picture them?",
           "facilitatorNotes": [
             "Everyone who loved her: people who paused near the “prison-wall” (her years shut in as an invalid) to hear her music “in its louder parts,” then went on to market or temple. They are admirers of her published poetry; her thanks are real, but they did not stay."
@@ -1644,7 +1708,7 @@
           ]
         },
         {
-          "id": "reading-10-browning-sonnets-portuguese-1906-26-q2",
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q2",
           "prompt": "How is he different? What does he drop, and what does he listen for?",
           "facilitatorNotes": [
             "He lays down the “instrument” of his own “divinest Art,” his poetry, to listen to what she said “between my tears”: not the loud public parts of her music, but the moment her voice failed in a sob. He attended to her private grief rather than her reputation."
@@ -1655,7 +1719,7 @@
           ]
         },
         {
-          "id": "reading-10-browning-sonnets-portuguese-1906-26-q3",
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q3",
           "prompt": "“Instruct me how to thank thee!” What answer does the sestet find? Can a poem do what she hopes?",
           "facilitatorNotes": [
             "She wishes to send her “soul’s full meaning” into future years, so that they will greet “Love that endures” from a life that will end. The poems themselves become her thanks, and modern readers are the future years she addressed. Readers can debate whether a poem can carry love beyond its writer’s life, or only the memory of it."
@@ -1663,6 +1727,70 @@
           "evidence": [
             "My soul’s full meaning into future years,",
             "Love that endures, from life that disappears!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-28",
+      "title": "Sonnet XLII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find the line she once wrote and the line she wants written now, and explain what changed between them.",
+      "focus": "A poet revises her own prophecy of despair: the future need not copy the past.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. The first line quotes her own earlier sonnet “Past and Future” (1844). A ministering angel is a guardian spirit; the white throne of God comes from the Book of Revelation; “copy fair” means to make a clean copy. A pilgrim’s staff that puts out green leaves recalls legends of saints’ staffs that blossomed as a sign of grace. To impearl is to adorn with pearl-like drops; an epigraph is an inscription or motto set at the head of a book or chapter.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XLII; opens “My future will not copy fair my past— I wrote that once; and thinking at my side My…”; closes “…curled, And write me new my future’s epigraph, New angel mine, unhoped for in the world!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          83,
+          83
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "283c4c37fd8124dd316d6c99ad00eff0ca8665441be0ed202836dae12f687f64"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q1",
+          "prompt": "“My future will not copy fair my past.” What did that line mean when she first wrote it, and whom did she expect to confirm it?",
+          "facilitatorNotes": [
+            "It meant her future would not repeat her happy past; grief and illness had ended it. She imagined her “ministering life-angel” looking up to God’s throne as if agreeing. When she “turned at last,” she saw instead the beloved, a human being “not unallied / To angels.”"
+          ],
+          "evidence": [
+            "My future will not copy fair my past—",
+            "And there, instead, saw thee, not unallied"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q2",
+          "prompt": "What happens to her “pilgrim’s staff”? What does the image suggest about her life?",
+          "facilitatorNotes": [
+            "At the sight of him the dry staff of a weary pilgrim buds and puts out green leaves wet with morning dew. A life she thought finished, a stick for walking toward death, revives; the miracle, borrowed from saints’ legends, makes the change seem like grace."
+          ],
+          "evidence": [
+            "While budding, at thy sight, my pilgrim’s staff",
+            "Gave out green leaves with morning dews impearled."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q3",
+          "prompt": "In the last lines she rejects one book and asks for another. What does she want him to write, and what does “copy” now mean?",
+          "facilitatorNotes": [
+            "She no longer wants a fair copy of “life’s first half”; she leaves the old pages, curled with long brooding, and asks him to write her “future’s epigraph.” She once used “copy” to say the past could not return; now she wants something new, not a copy at all. The beloved, “New angel mine,” takes the place of the guardian angel of the first quatrain."
+          ],
+          "evidence": [
+            "I seek no copy now of life’s first half:",
+            "And write me new my future’s epigraph,"
           ]
         }
       ]
