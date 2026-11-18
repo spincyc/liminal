@@ -226,6 +226,381 @@
     },
     {
       "id": "reading-6-robinson-children-night-1905-04",
+      "title": "Ballade of a Ship",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how a refrain that ends every stanza changes the way you read each one.",
+      "focus": "A king’s son and three hundred revellers sail out on a moonlit night and drown, and the poem asks whether the dead can rest.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, liked old French verse forms. A ballade has three eight-line stanzas and a short last stanza, the envoy, often addressed to a prince; every stanza ends with the same refrain. This one tells of the White Ship, which struck a rock off Normandy in 1120 with the only legitimate son of King Henry I of England aboard; nearly everyone drowned, and the crew and passengers were said to have been drunk. Roystering means rowdy; for aye means forever; a ghoul is an evil spirit that feeds on the dead; a reef is a ridge of rock just under the sea; wan means pale; alway means always; steel here means swords.",
+      "contentNote": "A shipwreck in which some three hundred people drown after a night of drinking.",
+      "excerpt": {
+        "locator": "“Ballade of a Ship,” complete poem, with its envoy; opens “Down by the flash of the restless water The dim White Ship like a white bird lay;…”; closes “…still shudder and steel still slay, Where the bones of the brave in the wave are lying?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          30,
+          34
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "076c88bc61a78d38fae58e2f86f027807293fc4d954b084405502c82af9dae1c"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q1",
+          "prompt": "How does the first stanza make the ship and the night beautiful? Which line warns, from the start, how it will end?",
+          "facilitatorNotes": [
+            "The ship lies “like a white bird,” the moon lights the foam and the stars play on the water. The refrain, “the bones of the brave in the wave are lying,” tells the ending before the voyage begins. Ask whether “brave” fits drunken revellers, or is said with irony."
+          ],
+          "evidence": [
+            "The dim White Ship like a white bird lay;",
+            "And the bones of the brave in the wave are lying."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q2",
+          "prompt": "The passengers are “Revelling on for the lone, cold slaughter.” What is strange about this phrase?",
+          "facilitatorNotes": [
+            "They are having the time of their lives while heading for death, and they do not know it, though the reader does. Robinson adds a “ghoul’s eye” watching them unseen. The gap between their joy and their fate makes the stanza chilling."
+          ],
+          "evidence": [
+            "Revelling on for the lone, cold slaughter",
+            "Nor ever they knew of a ghoul's eye spying"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q3",
+          "prompt": "How does the third stanza tell the wreck? Why might Robinson put a “torturing silence” before the shrieks?",
+          "facilitatorNotes": [
+            "The reef “caught” the ship in “his hard clutch,” like a monster. The silence is the moment of understanding before the screaming; it makes the horror felt rather than only heard. Some readers think the silence worse than the noise."
+          ],
+          "evidence": [
+            "The pitiless reef in his hard clutch caught her,",
+            "A torturing silence of wan dismay --"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q4",
+          "prompt": "The envoy asks the drowned prince a question. What is it, and what answer do you think the poem expects?",
+          "facilitatorNotes": [
+            "Whether he sleeps peacefully to the sound of the sea, or whether, where the dead lie, love still suffers and swords still kill. The poem leaves it open; the repeated refrain may suggest the dead lie still, while the world above goes on fighting."
+          ],
+          "evidence": [
+            "Prince, do you sleep to the sound alway",
+            "Or does love still shudder and steel still slay,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-05",
+      "title": "Ballade of Dead Friends",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how short lines and a handful of rhymes can carry a large, sad idea.",
+      "focus": "Time mocks our grief for friends who leave us, and the poem asks what lasts.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, liked old French verse forms. A ballade has three stanzas and a short closing envoy, all ending with the same refrain; here every stanza uses only three rhyme sounds. Spurns means kicks aside; a jester is a clown; to ply a trade is to work at it; shrouds are cloths wrapped round the dead; nighing means coming near.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Ballade of Dead Friends,” complete poem, with its envoy; opens “As we the withered ferns By the roadway lying, Time, the jester, spurns All our prayers…”; closes “…The truth we fear to know: Death will end our crying For friends that come and go.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          49,
+          53
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cd41bdc713e2b5375b6531762169ab578ed39d625a5204dabbaa99058ffef098"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q1",
+          "prompt": "The first stanza compares us to “withered ferns / By the roadway lying.” Who treats us that way, and how?",
+          "facilitatorNotes": [
+            "Time, “the jester,” kicks aside our prayers, tears and questions as if they were dead ferns. Calling Time a jester suggests it mocks us. The made-up word “where-and-whying” sums up our endless questions."
+          ],
+          "evidence": [
+            "Time, the jester, spurns",
+            "All our where-and-whying"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q2",
+          "prompt": "What does life learn “at last” in the second stanza? Is that hopeful?",
+          "facilitatorNotes": [
+            "That “All but Love is dying,” and love is the “trade” we follow. Yet the stanza ends with buying shrouds. Some readers find hope in love’s lasting; others notice that love leads straight to grief. The poem holds both."
+          ],
+          "evidence": [
+            "All but Love is dying;",
+            "Shrouds are what we're buying"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q3",
+          "prompt": "The refrain is “For friends that come and go.” Does it mean friends who die, friends who drift away, or both?",
+          "facilitatorNotes": [
+            "The title says “dead friends,” and the third stanza has men “to dust are drying.” But “come and go” is also how we speak of friends who leave our lives, and men search “New faces” for new ones. Both meanings fit; ask which seems sadder."
+          ],
+          "evidence": [
+            "New faces, dimly spying",
+            "For friends that come and go."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q4",
+          "prompt": "How does the envoy answer all the questions of the poem?",
+          "facilitatorNotes": [
+            "Death is “the truth we fear to know,” and it will end our crying by ending us. It is a grim answer, said calmly. Readers may find it bleak or strangely comforting."
+          ],
+          "evidence": [
+            "The truth we fear to know:",
+            "Death will end our crying"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-06",
+      "title": "Her Eyes",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a story told in short rhyming stanzas, and offer an interpretation of an ending that does not explain itself.",
+      "focus": "A famous painter shuts himself away to paint one woman’s face, and cannot finish her eyes until he gives them heaven and hell.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, often told stories of puzzling lives in a few stanzas. Sere means dried up; humor here means mood; perilous means dangerous; wrought means made with skill; deathless means immortal; an arbiter is a judge.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Her Eyes,” complete poem; opens “Up from the street and the crowds that went, Morning and midnight, to and fro, Still was…”; closes “…grim; But the longer he lives with her eyes to see, The plainer it all comes back to him.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          55,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ceb08241cad5cd147d5af8d9ff0f5a336fa88a9991fe66d17fca0b3865a7d5e2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q1",
+          "prompt": "What did the painter win “at last,” and what does he do instead of enjoying it?",
+          "facilitatorNotes": [
+            "Fame: “the whole world rang with the praise of him.” He hides his triumph and goes on searching for something more, until he is gray. Success does not satisfy him."
+          ],
+          "evidence": [
+            "And the whole world rang with the praise of him.",
+            "But he cloaked his triumph, and searched, instead,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q2",
+          "prompt": "What is wrong with the face he paints at first? How does the poem answer its own question, “Did God forget?”",
+          "facilitatorNotes": [
+            "The eyes seem “like a soul half done.” Later the poem says “God never forgets”: the eyes were waiting for the painter to understand what they needed. Ask what a “half done” soul would look like."
+          ],
+          "evidence": [
+            "They seemed somehow like a soul half done.",
+            "God never forgets."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q3",
+          "prompt": "Why do the eyes need “a glimmer of hell” as well as “a gleam of heaven”? Do you agree?",
+          "facilitatorNotes": [
+            "Pure goodness looks unreal; a real person has faults and dangers too. The face is already “perilous” and an angel’s at once. Students may agree that being human means being mixed, or argue for another reading."
+          ],
+          "evidence": [
+            "With a gleam of heaven to make them pure,",
+            "And a glimmer of hell to make them human."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q4",
+          "prompt": "The painting becomes “his wife.” What do the last lines suggest about the painter? Say how sure you can be.",
+          "facilitatorNotes": [
+            "He has given his life to an image instead of a living woman, and her love seems to “punish” him; perhaps he now sees what he gave up, or the woman the painting recalls. The poem does not say what “comes back to him.” A good answer names its evidence and admits the uncertainty."
+          ],
+          "evidence": [
+            "For his wife, and his constant arbiter",
+            "The plainer it all comes back to him."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-07",
+      "title": "Villanelle of Change",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow two refrains through a strict form and notice how their meaning shifts.",
+      "focus": "The battlefield of Marathon still echoes with ghosts, but the glory of Greece has passed, as everything does.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, enjoyed strict old forms. A villanelle has nineteen lines, five three-line stanzas and a four-line ending, with only two rhyme sounds, and its first and third lines return again and again. At Marathon, in 490 BC, the Athenians defeated an invading Persian army; ancient writers said the sounds of the battle could still be heard there at night. To don is to put on; Helicon is a Greek mountain sacred to the Muses, goddesses of poetry; Acheron is a river of the underworld in Greek myth; Hellas is Greece.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Villanelle of Change,” complete poem; opens “Since Persia fell at Marathon, The yellow years have gathered fast: Long centuries have…”; closes “…fallen to the last: -- Since Persia fell at Marathon, Long centuries have come and gone.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          75
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2262a16adaa5a0d2191c6c5d11c0873d8306bdba71e209fa8208a0079570d46f"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q1",
+          "prompt": "Find the two lines that keep returning. What does each one say?",
+          "facilitatorNotes": [
+            "“Since Persia fell at Marathon” names one famous moment; “Long centuries have come and gone” names the time that has passed since. The poem keeps setting the event against the time that buries it."
+          ],
+          "evidence": [
+            "Since Persia fell at Marathon,",
+            "Long centuries have come and gone."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q2",
+          "prompt": "What legend about the battlefield does the poem tell? How do the words “(they say)” change it?",
+          "facilitatorNotes": [
+            "At night the plain is said to shake with a “ghostly battle-blast,” as if the past were fighting again. “They say” marks it as a story heard, not something the speaker claims to know."
+          ],
+          "evidence": [
+            "And yet (they say) the place will don",
+            "Shakes to a ghostly battle-blast,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q3",
+          "prompt": "What has happened to the glory of Greece by the end? What might “The first has fallen to the last” mean?",
+          "facilitatorNotes": [
+            "Its glory has gone down into Acheron, the river of the dead, and its suns have “all shone.” The victorious Greeks, once first, have fallen as the Persians did. “Greek shame” is puzzling: perhaps glory that later turned to shame. Accept readings that admit the difficulty."
+          ],
+          "evidence": [
+            "The suns of Hellas have all shone,",
+            "The first has fallen to the last: --"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q4",
+          "prompt": "Why might a villanelle, which keeps returning to the same lines, suit a poem about change?",
+          "facilitatorNotes": [
+            "The refrains stay while everything else moves on, like the name of Marathon outlasting the Greece that won it. Or the repetition itself sounds like years passing, one after another. Ask readers how the last two lines sound when they finally come together."
+          ],
+          "evidence": [
+            "Long centuries have come and gone.",
+            "The yellow years have gathered fast:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-08",
+      "title": "John Evereldown",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Tell two voices apart in a dialogue poem, and hear what the repeated questions do.",
+      "focus": "On a starless night an old man walks to town because the women call him, and he cannot stop.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, set many poems in an imaginary New England town he called Tilbury Town. This poem is a dialogue: someone at a house by the road questions an old man walking out late at night, and the old man answers. A league is about three miles.",
+      "contentNote": "An old man says he cannot stop following the women who call him to town at night, and that God is no friend to him.",
+      "excerpt": {
+        "locator": "“John Evereldown,” complete poem; opens “\"Where are you going to-night, to-night, -- Where are you going, John Evereldown? There's…”; closes “…-- But I follow the women wherever they call, And that's why I'm going to Tilbury Town.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          80
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63f4c687db10ef8a0c3e3b4bff74f4c711aba7a921ac4544878dcb569faf3051"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q1",
+          "prompt": "Who are the two speakers, and how can you tell them apart?",
+          "facilitatorNotes": [
+            "Stanzas one and three are the questioner, who asks, worries and invites him in by the fire; stanzas two and four are John, who answers each time with “Tilbury Town.” The pattern of question and answer is the poem’s shape."
+          ],
+          "evidence": [
+            "Come in by the fire, old man, and wait!",
+            "There's where I'm going, to Tilbury Town."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q2",
+          "prompt": "What makes John’s walk eerie? Find the details.",
+          "facilitatorNotes": [
+            "No star, no lamp, a stare “as a dead man might,” a path through the forest “where none can see,” and in the last stanza “the dead men crawl.” He walks away from the light, as if towards something like death."
+          ],
+          "evidence": [
+            "Why do you stare as a dead man might?",
+            "The shadows may creep and the dead men crawl, --"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q3",
+          "prompt": "“And while they call can a man be free?” What does John mean? Is he free?",
+          "facilitatorNotes": [
+            "He feels he must answer the call; he even prays to be “done with it all” and cannot stop. He is not free, and knows it. Readers can talk about habits or longings that people feel they cannot resist, without guessing more than the poem says."
+          ],
+          "evidence": [
+            "And while they call can a man be free?",
+            "God knows if I pray to be done with it all,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q4",
+          "prompt": "The questioner says “the road be smooth and the path be straight.” Why might that line be ironic?",
+          "facilitatorNotes": [
+            "The road to town is easy, but John’s life is not straight, and he says “God is no friend” to him. The smooth road leads somewhere he would rather not go. Some readers will pity John; others will judge him."
+          ],
+          "evidence": [
+            "Though the road be smooth and the path be straight,",
+            "But God is no friend to John Evereldown."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-09",
       "title": "Luke Havergal",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -254,7 +629,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-04-q1",
+          "id": "reading-6-robinson-children-night-1905-09-q1",
           "prompt": "Where is Luke told to go, and which details of that place return at the end?",
           "facilitatorNotes": [
             "The western gate, where crimson vines cling to the wall and leaves fall at twilight. The last stanza repeats the gate, the leaves and the promise almost word for word, so the instruction sounds like a summons or a spell."
@@ -265,7 +640,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-04-q2",
+          "id": "reading-6-robinson-children-night-1905-09-q2",
           "prompt": "Who speaks in the third stanza, and how does that change the advice you heard in the first?",
           "facilitatorNotes": [
             "The voice comes “Out of a grave”: it may be the dead woman or another spirit. Advice from the dead about reaching the dead is less reassuring than it first sounded; some readers find it loving, others sinister."
@@ -275,7 +650,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-04-q3",
+          "id": "reading-6-robinson-children-night-1905-09-q3",
           "prompt": "Why does the voice deny Luke a dawn in the east and point him west?",
           "facilitatorNotes": [
             "East is sunrise and a new day; west is sunset and ending. The voice refuses him a fresh start and says only darkness can end his darkness. Readers may hear patience, faith or despair in that line."
@@ -286,7 +661,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-04-q4",
+          "id": "reading-6-robinson-children-night-1905-09-q4",
           "prompt": "What is the “one way to where she is”? Separate what the poem states from what readers guess.",
           "facilitatorNotes": [
             "Stated: the way is bitter and needs faith. Guessed: it could mean waiting faithfully until his own death, keeping faith with her memory, or something more dangerous. The poem refuses to choose, and a careful answer says so."
@@ -299,7 +674,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-05",
+      "id": "reading-6-robinson-children-night-1905-10",
       "title": "The House on the Hill",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -328,7 +703,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-05-q1",
+          "id": "reading-6-robinson-children-night-1905-10-q1",
           "prompt": "Follow the two refrains. Where do they finally stand together, and what does that do to the ending?",
           "facilitatorNotes": [
             "“They are all gone away” and “There is nothing more to say” take turns, then stand side by side in the last stanza. Joined, they close the poem as if no more words could follow."
@@ -338,7 +713,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-05-q2",
+          "id": "reading-6-robinson-children-night-1905-10-q2",
           "prompt": "If there is “nothing more to say,” why do the speakers keep returning to the house?",
           "facilitatorNotes": [
             "They admit it is empty, yet they still “stray” around it and imagine its people. The refrain claims silence while the form keeps repeating it, which shows memory or grief that will not settle. Some readers find the visitors foolish, others loyal."
@@ -349,7 +724,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-05-q3",
+          "id": "reading-6-robinson-children-night-1905-10-q3",
           "prompt": "Who are “they,” and who is “we”? What does the poem gain by never telling us?",
           "facilitatorNotes": [
             "No names and no story of why the people left or died. Leaving them unnamed lets the house stand for any lost home or past, and the speakers themselves call their imagining “wasted skill.”"
@@ -362,7 +737,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-06",
+      "id": "reading-6-robinson-children-night-1905-11",
       "title": "Richard Cory",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -391,7 +766,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-06-q1",
+          "id": "reading-6-robinson-children-night-1905-11-q1",
           "prompt": "List what the townspeople admire about Richard Cory. Which of these could they actually see or hear?",
           "facilitatorNotes": [
             "His looks, clothes, manners, greeting, wealth and schooling: all public surfaces. They watch him from the pavement, and nothing they report comes from inside his life."
@@ -402,7 +777,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-06-q2",
+          "id": "reading-6-robinson-children-night-1905-11-q2",
           "prompt": "Which words make him sound royal, and why might the speakers reach for them?",
           "facilitatorNotes": [
             "“from sole to crown,” “imperially slim,” “richer than a king.” Royal words show how far above themselves the townspeople place him; they may also hint at the distance between him and everyone else."
@@ -413,7 +788,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-06-q3",
+          "id": "reading-6-robinson-children-night-1905-11-q3",
           "prompt": "What does the third stanza tell us about the speakers’ own lives, and why does it come just before the end?",
           "facilitatorNotes": [
             "They work, wait “for the light,” go without meat and curse the bread. The contrast suggests they assume money and grace would end their troubles; the last line contradicts that assumption at once."
@@ -424,7 +799,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-06-q4",
+          "id": "reading-6-robinson-children-night-1905-11-q4",
           "prompt": "The poem gives no reason for its ending. Is that a weakness or the point?",
           "facilitatorNotes": [
             "A strong answer: the silence is the point, because the town never knew him and neither do we. Others may want a cause; that wish is worth discussing, as long as the discussion stays with what watching from outside cannot show."
@@ -437,7 +812,71 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-07",
+      "id": "reading-6-robinson-children-night-1905-12",
+      "title": "Calvary",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read a sonnet whose turn from the first eight lines to the last six changes the meaning of a date.",
+      "focus": "The crucifixion happened long ago, the poem says, yet people keep repeating it.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, wrote this sonnet about the crucifixion of Jesus (“the Master”), which Christians believe took place at Calvary, a hill outside Jerusalem, about nineteen hundred years before Robinson wrote. Martyred means made to suffer for a belief; to gibe is to mock; houndish means like a pack of hounds; vengeless means not taking revenge; writhing means twisting in pain.",
+      "contentNote": "The poem describes the mocking and suffering of Jesus on the way to his crucifixion.",
+      "excerpt": {
+        "locator": "“Calvary,” complete poem; opens “Friendless and faint, with martyred steps and slow, Faint for the flesh, but for the…”; closes “…Tell me, O Lord -- tell me, O Lord, how long Are we to keep Christ writhing on the cross!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          104,
+          105
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "57dcf96e2be4aa53c7c149b336a75201ac580de0131a5514ce3f260f530eb3e2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-12-q1",
+          "prompt": "Who does the poem say mocked Jesus on the way to Calvary? Why “We” and not “they”?",
+          "facilitatorNotes": [
+            "“We” makes all people, the speaker and reader included, part of the crowd. It refuses to blame a distant mob only. Ask how the poem would feel with “they.”"
+          ],
+          "evidence": [
+            "We gibed him, as he went, with houndish glee,",
+            "We cursed his vengeless hands thrice wretchedly, --"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-12-q2",
+          "prompt": "The first eight lines end: “And this was nineteen hundred years ago.” How do the last six lines change the meaning of that line?",
+          "facilitatorNotes": [
+            "At first it sounds like distance: long ago. Then “after nineteen hundred years the shame / Still clings”: the cruelty has not ended. The date becomes an accusation."
+          ],
+          "evidence": [
+            "And this was nineteen hundred years ago.",
+            "But after nineteen hundred years the shame"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-12-q3",
+          "prompt": "What does the last line mean: “how long / Are we to keep Christ writhing on the cross”?",
+          "facilitatorNotes": [
+            "Each failure of love, especially by those who claim faith, repeats the crucifixion. The speaker asks when “love’s courage” will be strong enough to end it. Readers of any belief can discuss what cruelty, or what kindness, the poem has in mind."
+          ],
+          "evidence": [
+            "Ah, when shall come love's courage to be strong!",
+            "Are we to keep Christ writhing on the cross!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-13",
       "title": "Amaryllis",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -466,7 +905,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-07-q1",
+          "id": "reading-6-robinson-children-night-1905-13-q1",
           "prompt": "What happens in the first eight lines? What does the speaker find at the grave?",
           "facilitatorNotes": [
             "An old man totters up and asks him to see the grave he has made for Amaryllis; moved by pity, the speaker goes, and sees an ancient woman, “shrunk to skin and bone.” The name promises youth and beauty; the body is old and withered."
@@ -477,7 +916,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-07-q2",
+          "id": "reading-6-robinson-children-night-1905-13-q2",
           "prompt": "What sounds come from beyond the forest, and how do they differ from the old man’s voice?",
           "facilitatorNotes": [
             "Loud progress, the “bold / Incessant scream of commerce,” the glad trumpets of the world: confident, noisy, never stopping. Against them the old man’s quavering lament is small and private."
@@ -487,7 +926,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-07-q3",
+          "id": "reading-6-robinson-children-night-1905-13-q3",
           "prompt": "Why does the thought that “Amaryllis had grown old” make the speaker lonely and sad while the world is glad?",
           "facilitatorNotes": [
             "Amaryllis never ages in poems; if she has grown old, the old dream of beauty and simple song has died, and the busy modern world does not notice or care. The speaker, a poet, feels left behind with the old man."
@@ -497,7 +936,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-07-q4",
+          "id": "reading-6-robinson-children-night-1905-13-q4",
           "prompt": "Is this a poem about a real old woman, or about something else? Which details support each reading?",
           "facilitatorNotes": [
             "Literally, a grieving old man has buried his wife in the woods. Symbolically, the name from poetry, the dreamlike meeting and the contrast with commerce suggest the death of an old kind of poetry. The poem lets both stand."
@@ -509,7 +948,71 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-08",
+      "id": "reading-6-robinson-children-night-1905-14",
+      "title": "Kosmos",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Separate the questions a poem asks from the answer it finally gives.",
+      "focus": "A sonnet asks whether life is a cruel joke, and answers with courage and love.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, often wrote sonnets about doubt and faith. Kosmos is Greek for the ordered universe. A jester is a clown who entertains a court; branded means marked with a hot iron, as criminals once were; largess is generous giving; “builders on the sand” recalls Jesus’s story of the foolish man whose house on the sand fell down; forsooth means truly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Kosmos,” complete poem; opens “Ah, -- shuddering men that falter and shrink so To look on death, -- what were the days…”; closes “…Be brave! To-morrow you will understand The doubt, the pain, the triumph, and the Truth!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          119,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef1700c311ef7ddacea7374a2cc9cf9cab418c707e234cea01e41efd69b60ea6"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-14-q1",
+          "prompt": "What does the speaker say makes our days bearable?",
+          "facilitatorNotes": [
+            "“The love that finds us when we go”: love at the end of life. Without it, life would be only a struggle to forgive. The opening speaks to people afraid of death."
+          ],
+          "evidence": [
+            "Where life is half a struggle to forgive,",
+            "But for the love that finds us when we go?"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-14-q2",
+          "prompt": "“Is God a jester?” What picture of the world do these questions make? Does the speaker believe it?",
+          "facilitatorNotes": [
+            "God laughing as he throws “branded wretches” into a life of striving for an end that never comes. The speaker asks rather than states, putting the fear into words in order to answer it."
+          ],
+          "evidence": [
+            "Does he laugh and throw",
+            "For some vague end that never shall arrive?"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-14-q3",
+          "prompt": "What answer does the last part of the poem give to those whose plans and works have failed? Is it convincing?",
+          "facilitatorNotes": [
+            "Love is not “so small”; be brave, and “To-morrow” the doubt and pain will make sense. It is a promise, not a proof. Some readers find it stirring; others think it asks for faith instead of answering the question."
+          ],
+          "evidence": [
+            "Is love so small, forsooth?",
+            "To-morrow you will understand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-15",
       "title": "The Pity of the Leaves",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -538,7 +1041,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-08-q1",
+          "id": "reading-6-robinson-children-night-1905-15-q1",
           "prompt": "What does the old man hear in the wind?",
           "facilitatorNotes": [
             "Words of the past, from lips that will never speak again: the voices of people who have died. The wind is “loud with ancestral shame,” so old wrongs or regrets come back with it."
@@ -549,7 +1052,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-08-q2",
+          "id": "reading-6-robinson-children-night-1905-15-q2",
           "prompt": "Find the sound words in the first eight lines. How do they make the wind seem alive?",
           "facilitatorNotes": [
             "“Shrieked,” “shriek,” “reverberant,” “loud”: the wind even answers its own shriek, as if talking to itself, and “Vengeful” gives it a purpose, revenge. It behaves like a character, not weather."
@@ -560,7 +1063,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-08-q3",
+          "id": "reading-6-robinson-children-night-1905-15-q3",
           "prompt": "How do the leaves plague him? Why do they stop, and what happens when he cries?",
           "facilitatorNotes": [
             "They skip over the stones with a “freezing whisper,” stop “just to let him know / How dead they were,” then flutter away when he weeps, like withered souls. They remind him of death and seem to mock him, or perhaps they are ghosts of the people he remembers."
@@ -571,7 +1074,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-08-q4",
+          "id": "reading-6-robinson-children-night-1905-15-q4",
           "prompt": "Why might the poem be called “The Pity of the Leaves”? Do the leaves pity him, or is the title ironic?",
           "facilitatorNotes": [
             "The leaves seem cruel, so “pity” may be bitterly ironic. Or “pity” may mean a pitiful thing, as in “the pity of it,” since the leaves are dead and nearly forgotten like him. Accept readings that test the title against the poem."
@@ -583,7 +1086,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-09",
+      "id": "reading-6-robinson-children-night-1905-16",
       "title": "Aaron Stark",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -612,7 +1115,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-09-q1",
+          "id": "reading-6-robinson-children-night-1905-16-q1",
           "prompt": "Which comparisons tie Aaron Stark to money, and which to an animal?",
           "facilitatorNotes": [
             "His eyes are “like little dollars in the dark,” so greed is part of his body; his words come out as if “a cur were chary of its bark,” a guarded, snapping dog."
@@ -623,7 +1126,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-09-q2",
+          "id": "reading-6-robinson-children-night-1905-16-q2",
           "prompt": "Why is he “Glad” of his “hard renown”?",
           "facilitatorNotes": [
             "He enjoys being disliked or feared; the reputation confirms him. Readers may see pride, or a man who has chosen loneliness as protection."
@@ -633,7 +1136,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-09-q3",
+          "id": "reading-6-robinson-children-night-1905-16-q3",
           "prompt": "Why does Aaron laugh only when he hears pity? What do you make of that laugh?",
           "facilitatorNotes": [
             "Pity treats him as someone to be sorry for, and he rejects it. The laugh may be scorn, bitter pride or self-defence; the parenthesis stresses that nothing else amuses him. Some readers pity him more for it, others find him repellent."
@@ -646,7 +1149,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-10",
+      "id": "reading-6-robinson-children-night-1905-17",
       "title": "Charles Carville’s Eyes",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -675,7 +1178,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-10-q1",
+          "id": "reading-6-robinson-children-night-1905-17-q1",
           "prompt": "How do Charles Carville’s eyes and mouth disagree?",
           "facilitatorNotes": [
             "His eyes are “forever sad” and lifeless; his mouth “redeemed” them and “beamed.” People who knew him read the mouth; strangers saw only melancholy."
@@ -686,7 +1189,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-10-q2",
+          "id": "reading-6-robinson-children-night-1905-17-q2",
           "prompt": "What does “we were out of touch” admit about the speaker and the town?",
           "facilitatorNotes": [
             "Many did not even hear half of what he said and ignored his ideas. The speaker counts himself among them, so the poem is partly a confession."
@@ -697,7 +1200,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-10-q3",
+          "id": "reading-6-robinson-children-night-1905-17-q3",
           "prompt": "How can dead eyes “speak”? Explain the last two lines.",
           "facilitatorNotes": [
             "Only after his death did people attend to what he had thought; the blank eyes, remembered, seem to hold the meaning they missed. Readers may hear regret, or a comment on honouring people too late."
@@ -710,7 +1213,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-11",
+      "id": "reading-6-robinson-children-night-1905-18",
       "title": "The Dead Village",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -739,7 +1242,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-11-q1",
+          "id": "reading-6-robinson-children-night-1905-18-q1",
           "prompt": "What did the village have before “the change came,” and how does the speaker know?",
           "facilitatorNotes": [
             "Gaiety, men, children at play, music. But “they say”: the happy past is reported, not witnessed, so even the memory is secondhand."
@@ -750,7 +1253,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-11-q2",
+          "id": "reading-6-robinson-children-night-1905-18-q2",
           "prompt": "How does music describe both the village’s life and its death?",
           "facilitatorNotes": [
             "The children’s hands kept “in tune / The strings that stretch from heaven”; then the music “passed away” and “failed.” Music suggests harmony and a link with heaven, so its failure is the village’s death."
@@ -761,7 +1264,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-11-q3",
+          "id": "reading-6-robinson-children-night-1905-18-q3",
           "prompt": "The poem never says what killed the village. What does the last line add, and how should we read it?",
           "facilitatorNotes": [
             "No plague, war or poverty is named. “God frowned” may be the speaker’s way of naming a disaster he cannot explain, a bitter accusation, or a statement of faith; readers should say which words support their reading."
@@ -773,7 +1276,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-12",
+      "id": "reading-6-robinson-children-night-1905-19",
       "title": "Fleming Helphenstine",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -802,7 +1305,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-12-q1",
+          "id": "reading-6-robinson-children-night-1905-19-q1",
           "prompt": "What first impression does the speaker form, and how does it change in the first eight lines?",
           "facilitatorNotes": [
             "He suspects something too polished, then the joyful “Hollo!” wins him over, and they talk and joke like old friends."
@@ -813,7 +1316,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-12-q2",
+          "id": "reading-6-robinson-children-night-1905-19-q2",
           "prompt": "What happens at the turn? Find the words that show both men’s feelings.",
           "facilitatorNotes": [
             "A “queer, quick frown,” a hard look both ways, then “strained shame” that makes both “cringe and wince.” Something passes between them that both recognise and neither names."
@@ -824,7 +1327,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-12-q3",
+          "id": "reading-6-robinson-children-night-1905-19-q3",
           "prompt": "Why might the speaker add “be that as it may” to the stranger’s name? What explanations does the poem leave open?",
           "facilitatorNotes": [
             "He doubts the name, hinting the man is not what he seems. They may have recognised each other, seen something false in each other, or felt their sudden friendliness was unearned. Good answers stay with the shame and the dodge rather than inventing a plot."
@@ -837,7 +1340,71 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-13",
+      "id": "reading-6-robinson-children-night-1905-20",
+      "title": "Thomas Hood",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read a tribute that depends on knowing a little about its subject, and find the sadness under the jokes.",
+      "focus": "A comic poet’s jokes, the sonnet says, were a cloak over bitterness and sorrow.",
+      "context": "Thomas Hood (1799–1845) was an English poet famous for comic verse full of puns, who also wrote grim and tender poems: “The Dream of Eugene Aram,” about a schoolmaster at Lynn who was secretly a murderer, and “Fair Ines,” about a lady who sails away to the West. Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, wrote this sonnet about him. A winding-sheet is a cloth wrapped round a dead body; pleasantries are jokes; akin means related; anon means soon after; a chord here is a musical note.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Thomas Hood,” complete poem; opens “The man who cloaked his bitterness within This winding-sheet of puns and pleasantries,…”; closes “…dead -- As if the joys of time to dreams had fled, Or sailed away with Ines to the West.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          161,
+          162
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4104d158ced44c9d40c8dd3cfed27a23b57816482db50f4b7aa4c814361d522f"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-20-q1",
+          "prompt": "The speaker calls Hood’s puns a “winding-sheet.” What does that comparison suggest about the jokes?",
+          "facilitatorNotes": [
+            "A winding-sheet wraps the dead: the jokes cover a bitterness, almost bury it. It is a dark way to describe comedy, and it tells us how the speaker reads Hood."
+          ],
+          "evidence": [
+            "The man who cloaked his bitterness within",
+            "This winding-sheet of puns and pleasantries,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-20-q2",
+          "prompt": "“His brother was the branded man of Lynn.” What does this line say about Hood?",
+          "facilitatorNotes": [
+            "Hood wrote with sympathy about Eugene Aram, the murderer; he saw “a world of anguish and of sin” as a brother, not a judge. God gave him uncommon eyes. Readers may connect this with the tragedies “woven” into his jokes."
+          ],
+          "evidence": [
+            "His brother was the branded man of Lynn;",
+            "God never gave to look with common eyes"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-20-q3",
+          "prompt": "How does the reader’s feeling change in the last six lines?",
+          "facilitatorNotes": [
+            "“We laugh, and crown him,” but soon feel unrest, shadows and the “ghost of mirth.” The laughter fades into sadness, as if joy had sailed away like Fair Ines. Ask readers whether they know funny people or stories that leave this feeling."
+          ],
+          "evidence": [
+            "We laugh, and crown him; but anon we feel",
+            "As if the very ghost of mirth were dead --"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-21",
       "title": "Reuben Bright",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -866,7 +1433,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-13-q1",
+          "id": "reading-6-robinson-children-night-1905-21-q1",
           "prompt": "What does the speaker not want us to think about Reuben Bright, and why might a reader think it?",
           "facilitatorNotes": [
             "That a butcher is “any more a brute than you or I.” Killing animals for a living might seem to harden a man; the speaker heads off that idea and includes the reader in the comparison."
@@ -876,7 +1443,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-13-q2",
+          "id": "reading-6-robinson-children-night-1905-21-q2",
           "prompt": "How does the poem show Reuben’s grief? Point to actions rather than named feelings.",
           "facilitatorNotes": [
             "He stares, shakes, cries “like a great baby” until the women cry too; afterwards he packs away the things she made with cedar to keep them. The actions carry the feeling."
@@ -887,7 +1454,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-13-q3",
+          "id": "reading-6-robinson-children-night-1905-21-q3",
           "prompt": "Why does he tear down the slaughter-house? Offer more than one reason and test each against the poem.",
           "facilitatorNotes": [
             "He may be unable to face killing after facing death, or the place may be bound up with their life together, or the act may be grief that gives up his living. The poem gives no reason, so the act speaks for itself; connect it to the opening defence of the butcher."
@@ -899,7 +1466,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-14",
+      "id": "reading-6-robinson-children-night-1905-22",
       "title": "The Tavern",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -928,7 +1495,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-14-q1",
+          "id": "reading-6-robinson-children-night-1905-22-q1",
           "prompt": "What does the speaker see when he passes the Tavern now?",
           "facilitatorNotes": [
             "Rank weeds, strange grass, torn blue curtains and broken glass: present facts of neglect, with the broken glass hinting at violence."
@@ -938,7 +1505,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-14-q2",
+          "id": "reading-6-robinson-children-night-1905-22-q2",
           "prompt": "What frightens him: the place itself, or something he imagines?",
           "facilitatorNotes": [
             "He feels “as if” he saw the ghost of the murdered host. The fear comes from the past he pictures; words like “seem” and “as if” mark it as imagination."
@@ -949,7 +1516,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-14-q3",
+          "id": "reading-6-robinson-children-night-1905-22-q3",
           "prompt": "What does the town actually know about the Tavern’s story, and what does the poem invite us to guess?",
           "facilitatorNotes": [
             "Only that years ago a stranger galloped up after midnight and nearly ran down John Evereldown. Readers may connect the rider with the murder, but the poem offers no proof; good answers keep fact and guess apart."
@@ -962,7 +1529,71 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-15",
+      "id": "reading-6-robinson-children-night-1905-23",
+      "title": "On the Night of a Friend’s Wedding",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear the grim joke in the first lines and the change of mood in the last six.",
+      "focus": "Among friends at a wedding, a poet feels that the self they admire is about to vanish.",
+      "context": "Edwin Arlington Robinson (1869–1935), an American poet from Gardiner, Maine, was shy, poor and little known when he wrote this sonnet. Reaping the “sheaves that I have sown” means getting what one’s life has earned; to prate is to chatter; ingenuously means innocently; askew means crooked; untenanted means empty, with no one living in it; a mirage is an image of something that is not really there.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“On the Night of a Friend’s Wedding,” complete poem; opens “If ever I am old, and all alone, I shall have killed one grief, at any rate; For then,…”; closes “…Like a tall ship that floats above the foam A little while, and then breaks utterly.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          186,
+          187
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65ff89215f36936d296c9272ab9524657a8419058eb486d47151eb818e936b45"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-23-q1",
+          "prompt": "What “one grief” does the speaker expect old age to kill? Is he joking?",
+          "facilitatorNotes": [
+            "The grief of waiting: when he is old and alone, he will not have long to wait for the end, and for what his life has earned. It is a grim joke (“thank God”), and it tells us he is lonely now."
+          ],
+          "evidence": [
+            "If ever I am old, and all alone,",
+            "For then, thank God, I shall not have to wait"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-23-q2",
+          "prompt": "How do the friends see the speaker, and how does he see himself?",
+          "facilitatorNotes": [
+            "They chatter “ingenuously” about his songs; he says “The devil only knows what I have done.” Their admiration does not match what he knows of himself, or what he fears."
+          ],
+          "evidence": [
+            "The devil only knows what I have done,",
+            "About my songs to such and such a one."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-23-q3",
+          "prompt": "What happens to the “mirage of me” at the end? Why compare it to a tall ship?",
+          "facilitatorNotes": [
+            "The friends’ picture of him is “untenanted,” empty, and he feels it about to crumble, like a ship seen floating in a mirage above the sea that suddenly breaks up. A wedding changes friendships, and he feels left behind. Some readers hear self-pity, others honest loneliness."
+          ],
+          "evidence": [
+            "For their untenanted mirage of me",
+            "Like a tall ship that floats above the foam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-24",
       "title": "Walt Whitman",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -991,7 +1622,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-15-q1",
+          "id": "reading-6-robinson-children-night-1905-24-q1",
           "prompt": "The poem begins by saying that Whitman, God, love, life and death are each “a name.” What does that mean, and why is it a gloomy start?",
           "facilitatorNotes": [
             "Once the singer is dead, he is only a name, a word without the living person; and the speaker fears that God, love and death are names too, which we are too blind to understand. All we can do is “blink, and wonder.”"
@@ -1002,7 +1633,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-15-q2",
+          "id": "reading-6-robinson-children-night-1905-24-q2",
           "prompt": "Explain the reversal: “Last night it was the song that was the man, / But now it is the man that is the song.”",
           "facilitatorNotes": [
             "While Whitman lived, his songs expressed the man; now that he is dead, the man lives only in his songs. Swapping the words in the second line acts out the change it describes."
@@ -1012,7 +1643,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-15-q3",
+          "id": "reading-6-robinson-children-night-1905-24-q3",
           "prompt": "Why, according to the speaker, do people “not hear him very much to-day”? Who does hear him?",
           "facilitatorNotes": [
             "His voice is “too pure,” “too large” and too triumphant for the present. A few hear him, and they know he will sing to all people in time. Robinson, then unknown himself, may be counting himself among those few."
@@ -1023,7 +1654,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-15-q4",
+          "id": "reading-6-robinson-children-night-1905-24-q4",
           "prompt": "The last stanza begins with a question about the opening line. How does the speaker answer himself?",
           "facilitatorNotes": [
             "He takes back “ended”: no song that has been sung ever ends, and no name is a dead name; what we write, “on proud marble or on sand,” stays forever. Sand is a surprising choice, since sand washes away; readers can debate whether that makes the claim braver or less believable."
@@ -1036,7 +1667,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-16",
+      "id": "reading-6-robinson-children-night-1905-25",
       "title": "The Wilderness",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -1065,7 +1696,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-16-q1",
+          "id": "reading-6-robinson-children-night-1905-25-q1",
           "prompt": "What signs of the season does the first stanza give, and how do they push the wanderers to leave?",
           "facilitatorNotes": [
             "Frost on the marshes, a frozen wind over dead black water, a moan and a wailing “dirge” in the woods, and ashes where autumn’s crimson was. Summer’s glory has gone; the land itself seems to send them home."
@@ -1076,7 +1707,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-16-q2",
+          "id": "reading-6-robinson-children-night-1905-25-q2",
           "prompt": "What waits for them at home, according to the refrains and the third stanza?",
           "facilitatorNotes": [
             "The lights of home, a fire that is “young forever,” a gleaming window, a warm hearth, love, and “a faithful woman’s eyes.” Home is warmth and faithfulness, set against frost and wandering."
@@ -1087,7 +1718,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-16-q3",
+          "id": "reading-6-robinson-children-night-1905-25-q3",
           "prompt": "Who is the “roving-fiend,” and why must they leave before he holds them?",
           "facilitatorNotes": [
             "The restless urge to keep wandering, pictured as a devil. Once his hands close on a man, no one can leave him, and no one will admit he is an enemy. So they must go now, quietly: “the less we brag the better.”"
@@ -1098,7 +1729,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-16-q4",
+          "id": "reading-6-robinson-children-night-1905-25-q4",
           "prompt": "The last refrain speaks of “dead men all around us.” How does it change the mood of the ending?",
           "facilitatorNotes": [
             "The earlier refrains promised home; this one shows what happens to those who stayed, frozen men who mock with a hard laugh. The call becomes urgent and frightening. The dead men may also be the wind in the rushes heard as voices; the poem ends with wind, not home."
@@ -1111,7 +1742,7 @@
       ]
     },
     {
-      "id": "reading-6-robinson-children-night-1905-17",
+      "id": "reading-6-robinson-children-night-1905-26",
       "title": "Romance",
       "sourceId": "robinson-children-night-1905",
       "genre": "poetry",
@@ -1140,7 +1771,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-robinson-children-night-1905-17-q1",
+          "id": "reading-6-robinson-children-night-1905-26-q1",
           "prompt": "In “Boys,” how does the speaker’s description of the three friends change from the first line to the last?",
           "facilitatorNotes": [
             "Friends, then more than friends, then more than brothers; then a doubtful “Brothers?” and “there it ends.” The closeness belonged to boyhood and did not last."
@@ -1151,7 +1782,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-17-q2",
+          "id": "reading-6-robinson-children-night-1905-26-q2",
           "prompt": "Which words and marks show the speaker’s doubt? What might he be feeling?",
           "facilitatorNotes": [
             "“It seemed to me,” the trailing dots, the question “Brothers?” They suggest hesitation and perhaps hurt: something later broke the friendship, or he now sees how young they were. The poem never says which."
@@ -1161,7 +1792,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-17-q3",
+          "id": "reading-6-robinson-children-night-1905-26-q3",
           "prompt": "What do we learn about James Wetherell, and what does the poem refuse to tell?",
           "facilitatorNotes": [
             "People told stories about him that “we” never half believed; they liked him and treated him well. Now “some things have come to light” and he has vanished. We never learn what he did, or where he went."
@@ -1172,7 +1803,7 @@
           ]
         },
         {
-          "id": "reading-6-robinson-children-night-1905-17-q4",
+          "id": "reading-6-robinson-children-night-1905-26-q4",
           "prompt": "Why might Robinson call these two poems “Romance”? Is the title serious or ironic?",
           "facilitatorNotes": [
             "Romance promises adventure and glamour, but both poems end flatly: “there it ends,” “There is n’t very much to write.” The title may be ironic, or it may mean the stories we invent about people we never really knew. Accept either if it is argued from the lines."
