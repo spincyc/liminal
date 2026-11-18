@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "eliot-prufrock-1917",
+  "readings": [
+    {
+      "id": "reading-11-eliot-prufrock-1917-01",
+      "title": "Portrait of a Lady",
+      "sourceId": "eliot-prufrock-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate what is said aloud from what the speaker only thinks, across three visits spread over a year.",
+      "focus": "A young man’s evasions in the face of an older woman’s hopes, and the self-knowledge he half reaches.",
+      "context": "Eliot’s dramatic monologue follows a young man’s visits to an older woman in December, in April and in October. The epigraph is from Christopher Marlowe’s play The Jew of Malta (about 1590). Velleities are faint wishes; cauchemar is French for nightmare; bocks are glasses of beer; a “dying fall” is a falling musical cadence, a phrase from Shakespeare’s Twelfth Night.",
+      "contentNote": "The epigraph jokes about fornication and a dead woman; the speaker imagines the lady’s death.",
+      "excerpt": {
+        "locator": "Prufrock and Other Observations, “Portrait of a Lady,” the whole poem with its epigraph, sections I–III; opens “Thou hast committed— Fornication: but that was in another country, And besides, the wench…”; closes “…with a \"dying fall\" Now that we talk of dying— And should I have the right to smile?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          25,
+          42
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bbd45e57b27b19607392a349a08f9a63d3c1c11825468075057047f52e3d944"
+      },
+      "questions": [
+        {
+          "id": "reading-11-eliot-prufrock-1917-01-q1",
+          "prompt": "In section I the lady speaks at length, while the speaker’s response happens “Inside my brain.” What is the effect of that difference?",
+          "facilitatorNotes": [
+            "She talks effusively about rare friendship; he answers nothing aloud, hears a “dull tom-tom” hammering its own prelude, labels her speech a “false note,” and proposes escape into tobacco and beer. Readers may judge him cold, or her performance insincere; the poem gives us only his side."
+          ],
+          "evidence": [
+            "Inside my brain a dull tom-tom begins",
+            "That is at least one definite \"false note.\""
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-01-q2",
+          "prompt": "In section II the lady says youth “smiles at situations which it cannot see.” How does the speaker’s reply confirm or answer her?",
+          "facilitatorNotes": [
+            "“I smile, of course, / And go on drinking tea”: he does exactly what she describes. The line is comic and damning at once, and “of course” suggests a habit of not engaging."
+          ],
+          "evidence": [
+            "And smiles at situations which it cannot see.",
+            "I smile, of course,"
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-01-q3",
+          "prompt": "After leaving he keeps his “countenance” over the newspaper. What breaks his self-possession, and what does it reveal?",
+          "facilitatorNotes": [
+            "A tired street piano and the smell of hyacinths, “Recalling things that other people have desired.” He knows desire mainly secondhand. His question “Are these ideas right or wrong?” can refer to her feelings, his own, or his detachment; let readers argue which."
+          ],
+          "evidence": [
+            "I keep my countenance,",
+            "Recalling things that other people have desired."
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-01-q4",
+          "prompt": "The poem ends with the speaker imagining the lady’s death. How does this connect with the epigraph, and why would she “have the advantage”?",
+          "facilitatorNotes": [
+            "The epigraph excuses a sin because “the wench is dead”; the young man imagines a death that would leave him, pen in hand, unsure what to feel. Her emotion would be vindicated and his detachment exposed. Some readers find the ending self-pitying; others an honest admission that he cannot claim the right to smile."
+          ],
+          "evidence": [
+            "And besides, the wench is dead.",
+            "Would she not have the advantage, after all?",
+            "And should I have the right to smile?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-eliot-prufrock-1917-02",
+      "title": "The Boston Evening Transcript and Aunt Helen",
+      "sourceId": "eliot-prufrock-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Hear the satire in solemn phrasing applied to small, exact details.",
+      "focus": "Genteel Boston seen by a bored relative: a newspaper’s readers and a maiden aunt’s death.",
+      "context": "Two short satires from the same family world as “Cousin Nancy.” The Boston Evening Transcript was the city’s genteel evening paper. La Rochefoucauld (1613–1680) was a French writer of cynical maxims. Dresden here means fine porcelain.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Prufrock and Other Observations, “The Boston Evening Transcript” and “Aunt Helen,” both whole poems; opens “The readers of the Boston Evening Transcript Sway in the wind like a field of ripe corn.”; closes “…second housemaid on his knees— Who had always been so careful while her mistress lived.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          67,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d55957b74086ddaa142211f8caf47c2b433579b16eb3da3c2142d1fd376401f"
+      },
+      "questions": [
+        {
+          "id": "reading-11-eliot-prufrock-1917-02-q1",
+          "prompt": "What does comparing the newspaper’s readers to “a field of ripe corn” suggest about them?",
+          "facilitatorNotes": [
+            "They sway together, passive and alike, without individual minds; ripe corn waits to be harvested. A pastoral image is used to deflate."
+          ],
+          "evidence": [
+            "Sway in the wind like a field of ripe corn."
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-02-q2",
+          "prompt": "Evening wakes “the appetites of life in some” and brings others the paper. Where is the speaker, and how does the long sentence show his feeling?",
+          "facilitatorNotes": [
+            "He carries the paper to Cousin Harriet, turning “Wearily” as if nodding goodbye to La Rochefoucauld at the end of a street that is time: a farewell to appetite, or to the cynic who would have described these people exactly. Readers may hear self-mockery as well as contempt."
+          ],
+          "evidence": [
+            "Wakening the appetites of life in some",
+            "Wearily, as one would turn to nod good-bye to Rochefoucauld,"
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-02-q3",
+          "prompt": "In “Aunt Helen,” which details of the death are comic, and what do they reveal about her household?",
+          "facilitatorNotes": [
+            "“Silence in heaven” borrows the grandeur of Revelation, then shrinks to silence at her end of the street; the undertaker wipes his feet; the dogs are provided for and the parrot dies too; the clock ticks on. Her life was propriety and possessions."
+          ],
+          "evidence": [
+            "Now when she died there was silence in heaven",
+            "But shortly afterwards the parrot died too."
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-02-q4",
+          "prompt": "What does the final image of the footman and the housemaid say about the order Aunt Helen kept?",
+          "facilitatorNotes": [
+            "The decorum existed only while she watched; life resumes in the servants’ irreverence the moment she is gone. Some readers side with the servants; others see the poem mocking everyone in the house."
+          ],
+          "evidence": [
+            "Holding the second housemaid on his knees",
+            "Who had always been so careful while her mistress lived."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-eliot-prufrock-1917-03",
+      "title": "Mr. Apollinax and Hysteria",
+      "sourceId": "eliot-prufrock-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 17,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow how a polite scene is overrun by images the speaker cannot control.",
+      "focus": "Laughter as a force that threatens genteel order, in a guest and in a woman at tea.",
+      "context": "“Mr. Apollinax” is generally taken to recall the British philosopher Bertrand Russell’s visit to Harvard in 1914; Mrs. Phlaccus and the Cheetahs are invented hosts. Priapus was a Greek fertility god whose statues stood in gardens; the old man of the sea is the shape-changing sea god Proteus; centaurs are half horse. “Hysteria” is a prose poem; the word was then commonly applied to supposedly uncontrolled emotion in women.",
+      "contentNote": "Both poems use sexual imagery, and “Hysteria” fixes on a woman’s laughing body from a male speaker’s anxious point of view.",
+      "excerpt": {
+        "locator": "Prufrock and Other Observations, “Mr. Apollinax” and “Hysteria,” both whole poems; opens “When Mr. Apollinax visited the United States His laughter tinkled among the teacups. I…”; closes “…might be collected, and I concentrated my attention with careful subtlety to this end.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          76,
+          79
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "83c76d3d26eeeaec8e8a3557426ec6b68b61e528cb05c19cf1174758324cbb68"
+      },
+      "questions": [
+        {
+          "id": "reading-11-eliot-prufrock-1917-03-q1",
+          "prompt": "How do the hosts’ remarks at the end of “Mr. Apollinax” judge their guest, and what do they show about the hosts?",
+          "facilitatorNotes": [
+            "He is “charming,” but “what did he mean?”, he has “pointed ears,” and someone “might have challenged” him. They retreat into small doubts, and the speaker remembers them only as a slice of lemon and a bitten macaroon."
+          ],
+          "evidence": [
+            "But after all what did he mean?",
+            "I remember a slice of lemon, and a bitten macaroon."
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-03-q2",
+          "prompt": "The speaker imagines Mr. Apollinax through Priapus, the old man of the sea and centaurs. What do these figures have in common?",
+          "facilitatorNotes": [
+            "They are ancient, wild, sexual and not quite human: pagan energy set loose among teacups. The speaker is fascinated and a little afraid, even imagining the guest’s head rolling under a chair."
+          ],
+          "evidence": [
+            "His laughter was submarine and profound",
+            "I heard the beat of centaurs’ hoofs over the hard turf"
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-03-q3",
+          "prompt": "In “Hysteria,” how does the description of laughter turn the woman into a landscape and the speaker into a victim?",
+          "facilitatorNotes": [
+            "Her teeth become “accidental stars” drilled like soldiers; he is drawn in and lost in the “dark caverns of her throat.” Laughter is experienced as being swallowed. Readers should notice that this is his fear, not her account."
+          ],
+          "evidence": [
+            "her teeth were only accidental stars with a talent for squad-drill",
+            "lost finally in the dark caverns of her throat"
+          ]
+        },
+        {
+          "id": "reading-11-eliot-prufrock-1917-03-q4",
+          "prompt": "What do the waiter’s repeated sentence and the speaker’s final decision add to the scene?",
+          "facilitatorNotes": [
+            "The waiter’s anxious formula tries to restore normal tea-time order; the speaker resolves, with “careful subtlety,” to stop the shaking so the “fragments of the afternoon” can be collected. Both answer emotion with procedure. Some readers find him ridiculous; others hear real panic."
+          ],
+          "evidence": [
+            "if the lady and gentleman wish to take their tea in the garden",
+            "some of the fragments of the afternoon might be collected"
+          ]
+        }
+      ]
+    }
+  ]
+}
