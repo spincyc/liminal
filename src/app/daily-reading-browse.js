@@ -69,7 +69,7 @@
     // Keep a choice that still applies to this grade.
     modeSelect.value = !modeField.hidden && [...modeSelect.options].some(item => item.value === mode) ? mode : "";
     genreSelect.value = [...genreSelect.options].some(item => item.value === genre) ? genre : "";
-    jump.replaceChildren(option("Choose…", ""), ...Array.from({ length: 36 }, (_, i) => option("Week " + (i + 1), String(i + 1))));
+    jump.replaceChildren(...Array.from({ length: 36 }, (_, i) => option("Week " + (i + 1), String(i + 1))));
   }
 
   function apply() {
@@ -101,16 +101,20 @@
   // Shows a grade. `last` is the night most recently opened in the reader:
   // when it belongs to this grade it is marked and brought into view, and
   // its week is the current week. `week` (from #browse/<grade>/<week>)
-  // opens and shows that week instead.
-  function show(data, { last = null, week = null, focus = false } = {}) {
+  // opens and shows that week instead. `reveal` moves focus and scroll to
+  // the last night (returning from the reader); otherwise it is only marked.
+  let shownWeek = 1;
+  function show(data, { last = null, week = null, focus = false, reveal = false } = {}) {
     const lastHere = last && last.grade === data.grade ? last : null, currentWeek = lastHere ? lastHere.week : null;
     shown = build(data, week || currentWeek || 1, currentWeek);
+    shownWeek = week || currentWeek || 1;
     const span = D.minutesSpan(data.nights), modes = D.modes(data.nights);
     summary.textContent = D.gradeLabel(data.grade) + " · " + data.nights.length + " nights in 36 weeks · " + (span ? minutes(span) + " each" : "") + (modes.length === 1 ? " · " + D.modeLabel(modes[0]) : "");
     const about = R.disclosure("About this reading year", "daily-year");
     about.append(R.el("p", data.overview));
     list.replaceChildren(about, shown.year);
     filters(data.nights); apply();
+    jump.value = String(shownWeek);
     let target = null;
     if (week) {
       const found = shown.weeks.find(item => item.week === week);
@@ -126,7 +130,7 @@
         target = found.element.querySelector("a"); target.setAttribute("aria-current", "true");
       }
     }
-    if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: week ? "start" : "center" }); }
+    if (target && (week || reveal)) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: week ? "start" : "center" }); }
     else if (focus) { const heading = $("dailyBrowseHeading"); heading.focus(); heading.scrollIntoView({ block: "start" }); }
   }
 
@@ -136,7 +140,11 @@
   query.form.addEventListener("submit", event => { event.preventDefault(); apply(); });
   // "Go to week" is a link in disguise: it changes the route, so the
   // browser's Back returns to where the reader was.
-  jump.addEventListener("change", () => { if (shown && jump.value) window.location.hash = D.browseRoute(shown.data.grade, Number(jump.value)); jump.value = ""; });
+  // Choosing a week changes nothing until Go or Enter (WCAG 3.2.2): arrow
+  // keys move through the list without leaving the page.
+  function goToWeek() { if (shown && jump.value) window.location.hash = D.browseRoute(shown.data.grade, Number(jump.value)); }
+  $("dailyJumpGo").addEventListener("click", goToWeek);
+  jump.addEventListener("keydown", event => { if (event.key === "Enter") { event.preventDefault(); goToWeek(); } });
   // Printing the year prints a reading log: every week open, then restored.
   let printing = null;
   window.addEventListener("beforeprint", () => { if (!shown || document.body.dataset.readingView !== "browse") return; printing = shown.weeks.map(({ element }) => element.open); shown.weeks.forEach(({ element }) => { element.open = true; }); });

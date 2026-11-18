@@ -58,6 +58,18 @@ then holds every whole individual work used from it, and `scope.note` says
 exactly what is included and why. `text` binds the record to
 its text: run `node tools/reading-library.js seal <work-id>` after any change.
 
+`scope.collated` (optional) lists the block ranges, `[[first, last], …]`
+ascending and merged where they touch, that were checked against the printed
+witness when only part of the text was: a transcription whose print exemplar is
+unidentified and whose selected excerpts alone were collated (the bounded
+fallback in [daily reading](daily-reading.md#source-research-and-rights)), or a
+transcription whose collated passages showed errors enough that the unchecked
+rest cannot be trusted. Every reading of such a work, school night or calendar
+reading, lies inside a listed range, and the build refuses one that does not.
+To read new text from the work, collate those blocks against the witness named
+in `edition` the same way, apply the witness's readings, extend `collated`,
+say so in `edition`, and seal.
+
 ## Text conventions
 
 The text follows the edition as printed, with the conventions of nightly
