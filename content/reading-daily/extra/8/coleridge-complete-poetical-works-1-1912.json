@@ -991,6 +991,81 @@
       "months": [
         12
       ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-14",
+      "title": "The Raven",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Hear the poem in the voice of the boy telling it, and follow one acorn from the pigs’ feast to the shipwreck.",
+      "focus": "A nursery-tale rhythm carrying a story of grief and revenge.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote his best-known poems in 1797–1798, while living at Nether Stowey in Somerset and working closely with William Wordsworth, with whom he published Lyrical Ballads (1798). This ballad, dated 1797 at the end, was first printed in 1798. Its subtitle presents it as a tale a schoolboy tells the younger children at Christmas, so the jingling rhyme and loose rhythm are part of the joke. Mast is the acorns and nuts that pigs eat from the forest floor; jet is a black stone; Melancholy, gloom, is imagined as a witch; “enow” means enough; “in leathern guise” means dressed in leather; a pent-house is a sloping roof over a door, so the Woodman’s brow juts out; a “hem” is a grunt; a ship “bulged” on a rock when its hull was stove in; fleet means swiftly.",
+      "contentNote": "The Woodman’s felling kills the Raven’s young, and a shipwreck drowns everyone aboard while the Raven rejoices.",
+      "excerpt": {
+        "locator": "The Raven: A Christmas Tale, told by a School-boy to his little Brothers and Sisters, the whole poem with its date; opens “A CHRISTMAS TALE, TOLD BY A SCHOOL-BOY TO HIS LITTLE BROTHERS AND SISTERS”; closes “1797.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          770,
+          774
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cc57f1df89dd425b246d63dd771c4fb470e64b5f5d4ba1680dc5fd60625ce635"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-14-q1",
+          "prompt": "The subtitle says a schoolboy is telling this tale to his little brothers and sisters. Find two places where you can hear the boy’s voice. What does he skip, and why?",
+          "facilitatorNotes": [
+            "“I can’t tell half his adventures” skips many years in four lines; “they did say” passes on a rumour; “happy enow” and “See! see!” sound like a storyteller performing for listeners. He hurries past the dull parts to the exciting ones, as children’s storytelling does. Some readers hear Coleridge gently mocking ballad style as well."
+          ],
+          "evidence": [
+            "I can't tell half his adventures.",
+            "He belonged, they did say, to the witch Melancholy!"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-14-q2",
+          "prompt": "Trace the life of the single acorn the pigs leave behind. What is ironic about the Raven’s part in it?",
+          "facilitatorNotes": [
+            "The Raven buries it beside the river; it becomes the oak where he nests and raises his young; the Woodman fells it, floats it downriver and builds it into a ship. The Raven planted his own home, and the tree he planted becomes the ship whose loss he celebrates."
+          ],
+          "evidence": [
+            "He picked up the acorn and buried it straight",
+            "And with this tree and others they made a good ship."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-14-q3",
+          "prompt": "Does the Raven cause the storm? What does the poem say, and what does it leave open?",
+          "facilitatorNotes": [
+            "It never says so: the storm simply rises, “in sight of the land,” while the Raven circles and caws “to the blast.” His tie to “the witch Melancholy” and his feathers that stay dry in rain hint at dark powers, so readers may decide it is magic, fate punishing the Woodman, or chance the Raven enjoys."
+          ],
+          "evidence": [
+            "Such a storm there did rise as no ship could withstand.",
+            "Round and round flew the raven, and cawed to the blast."
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-14-q4",
+          "prompt": "“They had taken his all, and REVENGE IT WAS SWEET!” Is the Raven’s revenge just? How do you think the poem wants us to take this ending?",
+          "facilitatorNotes": [
+            "His loss is real: his young killed, his mate dead of a broken heart. But the drowned sailors did nothing to him, and he thanks Death for “this treat.” A child may cheer the rough justice; an older reader sees revenge falling on the innocent and grief turned cruel. The capital letters may be the boy’s glee, or Coleridge’s irony at it."
+          ],
+          "evidence": [
+            "He heard the last shriek of the perishing souls",
+            "And he thank'd him again and again for this treat:"
+          ]
+        }
+      ]
     }
   ]
 }

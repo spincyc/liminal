@@ -1529,6 +1529,81 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-22",
+      "title": "Emma’s Dell (“It was an April morning: fresh and clear”)",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow the speaker’s mood from scattered delight to a single chosen place, and listen for the moment the sounds of the valley come together.",
+      "focus": "How a person makes a place their own without owning it.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. This is the first of his “Poems on the Naming of Places” (1800), in which he gives private names to spots near Grasmere in memory of people he loved; “To Joanna” and “A narrow girdle of rough stones and crags” belong to the same group. “Emma” is generally taken to be his sister Dorothy. A rivulet is a small stream; vernal means of spring; tardy means late; a glen and a dell are narrow valleys; sallies are sudden bursts; a linnet is a small finch; furze is gorse, a yellow-flowered shrub; resplendent means shining.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“It was an April morning: fresh and clear,” the first of the Poems on the Naming of Places, the whole poem; opens “It was an April morning: fresh and clear The Rivulet, delighting in its strength, Ran…”; closes “…When they have cause to speak of this wild place, May call it by the name of Emma's Dell.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          566,
+          566
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8ea7d1575b41e97560bd699c22ca7c764f8513254021c4fb8c8c5f8025ecb658"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-22-q1",
+          "prompt": "In the first seventeen lines, what does everything in the valley seem to want? Find two images that make the season impatient, and one that makes it content.",
+          "facilitatorNotes": [
+            "The stream runs “with a young man’s speed”; the budding groves seem eager “to urge on / The steps of June,” as if their colours were only in the way. Yet “an entire contentment” fills the air, and even leafless trees look as if summer were their natural face. Spring here is eager and satisfied at once."
+          ],
+          "evidence": [
+            "Ran with a young man's speed",
+            "Such an entire contentment in the air"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-22-q2",
+          "prompt": "The speaker roams “in the confusion of my heart, / Alive to all things and forgetting all.” What state of mind is this, and how does the waterfall change it?",
+          "facilitatorNotes": [
+            "An open, unfocused happiness in which he takes everything in and holds on to nothing. At the turn of the glen the waterfall’s “glad sound” gathers the lamb, dog, linnet and thrush into one song, and everything heard before seems mere “common pleasure.” Scattered feeling finds a centre; some readers call this the poem’s turning point."
+          ],
+          "evidence": [
+            "I roamed in the confusion of my heart,",
+            "Of common pleasure: beast and bird, the lamb,"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-22-q3",
+          "prompt": "The song seems “like the wild growth / Or like some natural produce of the air, / That could not cease to be.” What do these comparisons suggest?",
+          "facilitatorNotes": [
+            "No one composes the music; it grows like a plant out of the place itself. “Could not cease to be” gives a passing moment the feeling of permanence, and that feeling leads to his wish to fix the spot with a name."
+          ],
+          "evidence": [
+            "Or like some natural produce of the air,",
+            "That could not cease to be."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-22-q4",
+          "prompt": "Why “Our thoughts at least are ours”? What does naming the dell for Emma give, and why does he imagine shepherds using the name after he is dead?",
+          "facilitatorNotes": [
+            "He owns no land (the only house in view is a distant mountain-cottage), but his thoughts and his gift of a name are his own. The name costs nothing, makes the place “my other home,” and may outlive them both, though “perhaps” keeps the hope modest. The poem itself is what makes the name last. Some readers find the gesture tender; others find it a little possessive of a place shepherds already know."
+          ],
+          "evidence": [
+            "Our thoughts at least are ours; and this wild nook,",
+            "May call it by the name of Emma's Dell."
+          ]
+        }
+      ]
     }
   ]
 }
