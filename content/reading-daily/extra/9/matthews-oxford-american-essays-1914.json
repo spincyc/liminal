@@ -285,92 +285,6 @@
     },
     {
       "id": "reading-9-matthews-oxford-american-essays-1914-05",
-      "title": "Gifts",
-      "sourceId": "matthews-oxford-american-essays-1914",
-      "author": "Ralph Waldo Emerson",
-      "workTitle": "Gifts",
-      "genre": "essay",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 12,
-        "discussionMinutes": 16,
-        "totalMinutes": 28
-      },
-      "challenge": "Emerson writes in short, bold sentences that often contradict common sense. Mark three you agree with and three you want to argue with.",
-      "focus": "Why choosing and receiving gifts is so awkward, and what Emerson thinks a true gift is.",
-      "context": "Ralph Waldo Emerson (1803–1882), lecturer, poet and essayist of Concord, Massachusetts, published “Gifts” in his Essays: Second Series (1844). Chancery is a court that handles, among other things, bankrupt estates; a workhouse was an institution where the poor were housed and made to work; to “cocker” is to pamper. The Furies are the avenging goddesses of Greek myth. Timon of Athens, in the story Shakespeare dramatized, gave lavishly to his friends and turned against all mankind when they did not help him in his poverty. Jove is the king of the Roman gods.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "Gifts, by Ralph Waldo Emerson in The Oxford Book of American Essays (1914), complete with its verse motto; opens “\"Gifts of one who loved me,-- Twas high time they came; When he ceased to love me, Time…”; closes “…and leave you out. But love them, and they feel you, and delight in you all the time.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          207,
-          215
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "83ec861d764fdd7a2cdaa7cd2c4f30879fa55e65690c3b152ffa996587d87421"
-      },
-      "questions": [
-        {
-          "id": "reading-9-matthews-oxford-american-essays-1914-05-q1",
-          "prompt": "Why does Emerson say flowers and fruits are “always fit presents”? What does “a ray of beauty outvalues all the utilities of the world” claim?",
-          "facilitatorNotes": [
-            "Flowers are useless in a practical sense, so giving them asserts that beauty matters more than use; they seem like “love and beauty” interrupting nature’s stern laws. Fruits are the “flower of commodities,” things whose value can be “fantastic.”",
-            "His image of “music heard out of a workhouse” puts beauty in the harshest place he can think of. Ask students whether they agree that useless gifts can be the best ones."
-          ],
-          "evidence": [
-            "Flowers and fruits are always fit presents",
-            "flowers, because they are a proud assertion that a ray of beauty outvalues all the utilities of the world",
-            "they are like music heard out of a workhouse"
-          ]
-        },
-        {
-          "id": "reading-9-matthews-oxford-american-essays-1914-05-q2",
-          "prompt": "“Rings and other jewels are not gifts, but apologies for gifts. The only gift is a portion of thyself.” What does Emerson mean? Test his list of examples against gifts you have given or received.",
-          "facilitatorNotes": [
-            "A true gift carries the giver’s own life and work: the poet’s poem, the shepherd’s lamb, the girl’s sewing. A shop-bought gift represents only the goldsmith’s talent and the buyer’s money; it is a “cold, lifeless business.”",
-            "Some students will object that most people cannot make what others need, and that buying with earned money is also a portion of oneself. Emerson exempts “necessity”: when a man has no shoes, give him shoes."
-          ],
-          "evidence": [
-            "Rings and other jewels are not gifts, but apologies for gifts. The only gift is a portion of thyself.",
-            "But it is a cold, lifeless business when you go to the shops to buy me something"
-          ]
-        },
-        {
-          "id": "reading-9-matthews-oxford-american-essays-1914-05-q3",
-          "prompt": "Emerson claims that “We do not quite forgive a giver” and that “the debtor naturally wishes to give you a slap.” Why might receiving a gift cause resentment? Do you think he is right?",
-          "facilitatorNotes": [
-            "Gifts threaten independence: we want to be “self-sustained,” and a gift puts us in debt. If we show too much pleasure, the giver sees that we love the thing and not him; the expectation of gratitude is “mean,” so Emerson sides with the ungrateful against Timon.",
-            "Many students will resist this. Ask for examples of awkward gifts or favours, and whether the awkwardness came from the gift or from the way it was given."
-          ],
-          "evidence": [
-            "We do not quite forgive a giver.",
-            "the expectation of gratitude is mean",
-            "the debtor naturally wishes to give you a slap"
-          ]
-        },
-        {
-          "id": "reading-9-matthews-oxford-american-essays-1914-05-q4",
-          "prompt": "How does the essay end? Explain “No services are of any value, but only likeness,” and the image of people who “eat your service like apples.”",
-          "facilitatorNotes": [
-            "After all the difficulties, Emerson says love is “the genius and god of gifts” and cannot be regulated. Services alone do not join people; they are consumed and forgotten. Only real kinship of spirit (“likeness”) and love make people “feel you.”",
-            "Readers may find this ending warm or bleak: warm about love, bleak about kindness without it. Compare the motto at the top: gifts that stop when love stops."
-          ],
-          "evidence": [
-            "No services are of any value, but only likeness.",
-            "They eat your service like apples, and leave you out. But love them, and they feel you, and delight in you all the time."
-          ]
-        }
-      ],
-      "months": [
-        12
-      ]
-    },
-    {
-      "id": "reading-9-matthews-oxford-american-essays-1914-06",
       "title": "The Philosophy of Composition: beginning with the end",
       "sourceId": "matthews-oxford-american-essays-1914",
       "author": "Edgar Allan Poe",
@@ -390,7 +304,7 @@
         "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the start through the length of “The Raven”; opens “CHARLES DICKENS, in a note now lying before me, alluding to an examination I once made of…”; closes “…intended poem--a length of about one hundred lines. It is, in fact, a hundred and eight.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-07",
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-06",
         "blocks": [
           271,
           282
@@ -401,7 +315,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-06-q1",
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q1",
           "prompt": "What is the “radical error” Poe finds in the usual way of constructing a story, and what does he do instead?",
           "facilitatorNotes": [
             "Most writers begin with a thesis or a striking event and fill the “crevices” as they go. Poe begins with an effect on the reader, then chooses incidents and tone to produce it, with the ending always in view.",
@@ -413,7 +327,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-06-q2",
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q2",
           "prompt": "Why, according to Poe, do most writers hide how they work? What does his long list of theatre properties suggest about writing?",
           "facilitatorNotes": [
             "Vanity: they prefer to seem inspired by “a species of fine frenzy.” The wheels, scene-shifting tackle and red paint make the poet an actor staging an illusion, and Poe offers to show the machinery.",
@@ -425,7 +339,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-06-q3",
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q3",
           "prompt": "Poe claims the poem proceeded “with the precision and rigid consequence of a mathematical problem,” beginning with its length. Is his reasoning about length convincing?",
           "facilitatorNotes": [
             "He argues that unity of impression needs a single sitting and that intense excitement is brief, so a long poem is “merely a succession of brief ones,” and half of Paradise Lost is prose. Then he arrives at about a hundred lines, in fact a hundred and eight.",
@@ -439,7 +353,7 @@
       ]
     },
     {
-      "id": "reading-9-matthews-oxford-american-essays-1914-07",
+      "id": "reading-9-matthews-oxford-american-essays-1914-06",
       "title": "The Philosophy of Composition: Beauty, melancholy and “Nevermore”",
       "sourceId": "matthews-oxford-american-essays-1914",
       "author": "Edgar Allan Poe",
@@ -458,8 +372,8 @@
       "excerpt": {
         "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from Poe’s choice of effect through his account of composing the climactic stanza first; opens “My next thought concerned the choice of an impression, or effect, to be conveyed: and…”; closes “…have purposely enfeebled them, so as not to interfere with the climacteric effect.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-06",
-        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-08",
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-05",
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-07",
         "blocks": [
           283,
           294
@@ -470,7 +384,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-07-q1",
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q1",
           "prompt": "Poe separates Beauty from Truth and Passion. What does each satisfy, and why does he think poetry belongs to Beauty?",
           "facilitatorNotes": [
             "Beauty is “an effect,” an elevation of the soul; Truth satisfies the intellect and demands precision; Passion excites the heart and demands homeliness. Truth and Passion are “far more readily attainable in prose,” so they may enter a poem only as subordinate contrasts, like discords in music.",
@@ -482,7 +396,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-07-q2",
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q2",
           "prompt": "How does Poe arrive at the word “Nevermore,” and then at a raven? Which step looks most like logic and which most like taste?",
           "facilitatorNotes": [
             "A varied refrain must be brief, so a single word; sonorous, so a long o with r; melancholy, so “Nevermore.” A reasoning person would not repeat it, so a non-reasoning creature: first a parrot, then a raven, more “in keeping” with the tone.",
@@ -494,7 +408,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-07-q3",
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q3",
           "prompt": "Poe calls the death of a beautiful woman “unquestionably, the most poetical topic in the world.” How does he reach this conclusion, and what does the reasoning leave out?",
           "facilitatorNotes": [
             "Melancholy is the proper tone; death is the most melancholy topic; it is most poetical when joined to Beauty; so a beautiful woman’s death, mourned by her lover. The woman exists only as the occasion of someone else’s feeling.",
@@ -508,7 +422,7 @@
       ]
     },
     {
-      "id": "reading-9-matthews-oxford-american-essays-1914-08",
+      "id": "reading-9-matthews-oxford-american-essays-1914-07",
       "title": "The Philosophy of Composition: a chamber, a storm and an emblem",
       "sourceId": "matthews-oxford-american-essays-1914",
       "author": "Edgar Allan Poe",
@@ -527,7 +441,7 @@
       "excerpt": {
         "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the remarks on versification to the end; opens “And here I may as well say a few words of the versification. My first object (as usual)…”; closes “…soul _from out that shadow_ that lies floating on the floor Shall be lifted--nevermore.\"”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-07",
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-06",
         "continuesTo": null,
         "blocks": [
           295,
@@ -539,7 +453,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q1",
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q1",
           "prompt": "Why does Poe insist on “a close circumscription of space”? How do the storm and the marble bust serve the same principle?",
           "facilitatorNotes": [
             "A small room works like “a frame to a picture,” concentrating attention. The storm outside contrasts with the stillness within, and white marble with black plumage; Pallas suits a scholar and sounds well. Each choice is justified by effect, not realism.",
@@ -551,7 +465,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q2",
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q2",
           "prompt": "Poe says that, read as a simple narrative, the poem never oversteps “the limits of the real.” What keeps the student asking questions when he can guess the answer?",
           "facilitatorNotes": [
             "An escaped tame raven seeks shelter from a storm and repeats its one learned word. The student “guesses the state of the case” but keeps asking, driven by superstition and “the human thirst for self-torture,” to enjoy “the luxury of sorrow.”",
@@ -563,7 +477,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-08-q3",
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q3",
           "prompt": "What does Poe mean by “suggestiveness,” and why does he save the poem’s first metaphor for the end? Do you accept his statement of what the Raven stands for?",
           "facilitatorNotes": [
             "A bare narrative has “hardness or nakedness”; it needs an “undercurrent, however indefinite, of meaning,” though not so much that meaning becomes the upper current, his jab at the transcendentalists. “From out my heart” turns readers toward a moral, and the last stanza makes the Raven an emblem of mournful and never-ending remembrance.",
@@ -577,7 +491,7 @@
       ]
     },
     {
-      "id": "reading-9-matthews-oxford-american-essays-1914-09",
+      "id": "reading-9-matthews-oxford-american-essays-1914-08",
       "title": "Free Trade vs. Protection in Literature",
       "sourceId": "matthews-oxford-american-essays-1914",
       "author": "Samuel McChord Crothers",
@@ -608,7 +522,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-09-q1",
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q1",
           "prompt": "Crothers says lasting literature is “an accident.” What does the young man at the Social Justice meeting add to that claim?",
           "facilitatorNotes": [
             "The young man reasons that equal rights should mean an equal right to be a genius, and asks “Then why ain’t I?” Crothers cannot answer. Genius cannot be claimed as a right, planned by critics, or produced by effort alone; it “happens.”",
@@ -621,7 +535,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-09-q2",
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q2",
           "prompt": "Explain the title’s comparison. Why, according to Crothers, can literature never be a “protected industry”?",
           "facilitatorNotes": [
             "Actors and singers sell their work only in the present, so the living hold a kind of monopoly. A reader, though, can choose any book from any century, and an old book is often cheaper: “The book which has just come from the press has no advantage over the book that is a century old.”",
@@ -634,7 +548,7 @@
           ]
         },
         {
-          "id": "reading-9-matthews-oxford-american-essays-1914-09-q3",
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q3",
           "prompt": "Compare the visitor at the art exhibition with the reader alone in the library. Why does privacy matter so much to Crothers’s argument?",
           "facilitatorNotes": [
             "At the exhibition the visitor feels watched and tries “to look pleased”; in the library he is like a voter in a secret ballot, free to enjoy what he enjoys. Literary fashions fail because “Few people will follow a fashion except when other people are looking at them.”",
