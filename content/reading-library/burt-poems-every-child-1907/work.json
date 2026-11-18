@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "burt-poems-every-child-1907",
+  "author": "Various; selected, with notes, by Mary E. Burt",
+  "title": "Poems That Every Child Should Know",
+  "translator": null,
+  "edition": "New York: Doubleday, Page & Company, the revised printing dated 1907 on its title page (illustrated and decorated by Blanche Ostertag; copyright 1904, first published April 1904). In this printing Tennyson’s “The Death of the Old Year” (p. 86) takes the place of Robert W. Chambers’s “The Recruit” in the first printing; the contents and pagination otherwise match the 1904 printing. The text is the Project Gutenberg transcription (eBook #16436), made from a later Doubleday, Doran & Co. reprint for The Parents’ Institute of the same revised text (its contents give “Columbus” as p. 160 for the printed 169). Collated: the eight poems the calendar reads, each with its attribution line (A Visit From St. Nicholas, Little Orphant Annie, The Song in Camp, The Death of the Old Year, The Battle of Blenheim, Columbus, The Burial of Sir John Moore at Corunna, America), word by word against the OCR of the 1907 scan (Harvard copy, archive.org poemsthateveryc00unkngoog) and, all but The Death of the Old Year, the 1904 scan (Library of Congress copy, archive.org poemsthateverych00burt), with the page images checked where the transcription and OCR disagreed. Four printed readings replace the transcription’s: “eight tiny reindeer,” and “called them by name;” (A Visit From St. Nicholas), “and then a speck--” without a comma (Columbus), and “hollow’d” (The Burial of Sir John Moore). The transcription’s conventions are kept: curly quotation marks, “--” for printed dashes, _underscores_ for italics, small capitals as capitals, and Burns’s glosses as [Footnote n: …] paragraphs with their [n] anchors. Burt’s preface and headnotes are paragraphs; verse keeps the transcription’s lines and indentation measured from its verse margin (a hanging opening quotation mark stands one column left); poets’ names under the poems are paragraphs; part titles are level-1 headings, the parts’ mottoes level-2 and poem titles level-3. Left out: the reprint’s title page and imprint, the illustrations, the acknowledgments to publishers, the contents, the index of authors and the index of first lines.",
+  "publicationYear": 1907,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/16436",
+  "textUrl": "https://www.gutenberg.org/cache/epub/16436/pg16436.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Copyright 1904 by Doubleday, Page & Company; the revised text used here was in print by 1907 (dated title page of the Harvard copy). Everything reproduced (Burt’s preface and headnotes and the poems, all published by 1907) was published before 1931 and is public domain in the United States in 2026; Project Gutenberg records the eBook as public domain in the USA. The later reprint’s title page and all illustrations are excluded.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/poemsthateveryc00unkngoog"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/16436/pg16436.txt",
+    "downloadSha256": "8b03b0c0ab9ae4db971e344a70c98524ad6ae033c413d63530b30b48b4d39238",
+    "method": "Project Gutenberg plain text (eBook 16436, UTF-8) from the PG mirror, CR line ends removed, converted by a scratch Node script. Kept the Preface (with Burt’s signature and date) and the six Parts to the end of the last poem; removed the PG header and footer, the title page and imprint, the acknowledgments to publishers, the contents, the index of authors, the index of first lines, every [Illustration] marker and the book-title line at the head of Part I. Blank-line groups are split into runs: lines at the left margin are prose (a paragraph, wraps joined with single spaces), indented lines are verse (one stanza block, the transcription’s 4-space verse margin removed and deeper indentation kept), and a capitalised line set far to the right is an attribution paragraph; a group of capital lines at the left margin is a poem title (a title in two lines is joined). The four emendations named in the edition statement are applied, each asserted to match exactly once. The calendar readings were located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        192,
+        193
+      ],
+      [
+        313,
+        317
+      ],
+      [
+        360,
+        371
+      ],
+      [
+        497,
+        503
+      ],
+      [
+        670,
+        681
+      ],
+      [
+        982,
+        987
+      ],
+      [
+        1017,
+        1025
+      ],
+      [
+        1249,
+        1253
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 1803,
+    "sha256": "d9151cceb9b55ddcef3f8c4a919d9ea23f1d8f9fcd2fe959869f45b768dd4366"
+  }
+}

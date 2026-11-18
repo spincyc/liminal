@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "burt-poems-every-child-1907",
+  "readings": [
+    {
+      "id": "reading-4-burt-poems-every-child-1907-01",
+      "title": "Columbus",
+      "sourceId": "burt-poems-every-child-1907",
+      "author": "Joaquin Miller",
+      "workTitle": "Columbus",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a conversation that repeats, and notice what changes each time and what never does.",
+      "focus": "Night after night the frightened mate begs the Admiral for orders, and Columbus gives the same answer until a light appears.",
+      "context": "Mary E. Burt, a New York teacher, gathered the poems her pupils loved best in Poems That Every Child Should Know (1904); this reading follows the 1907 printing. Joaquin Miller (1837–1913) was a poet of the American West; when Burt printed this poem he was still living in California. In 1492 Christopher Columbus, an Italian sailor working for the king and queen of Spain, sailed west across the Atlantic hoping to reach Asia; on October 12 his ships reached an island in the Bahamas where the Taíno people already lived. Columbus Day remembers that landing, and many places now keep the same day as Indigenous Peoples’ Day, to honor the peoples who were here first. The Azores are islands far out in the Atlantic; the gates of Hercules are the Strait of Gibraltar, once the edge of the known sea; the mate is the ship’s second officer. Mutinous means ready to rebel against the captain; wan means pale; swarthy means darkened by sun and weather; blanched means gone white with fear.",
+      "contentNote": "The poem tells the voyage from the sailors’ side only. It does not mention the people already living in the Americas, many of whom were enslaved or killed by the Spanish after Columbus arrived.",
+      "excerpt": {
+        "locator": "“Columbus,” by Joaquin Miller, the whole poem; opens “Behind him lay the gray Azores, Behind the gates of Hercules; Before him not the ghost of…”; closes “…Time’s burst of dawn; He gained a world! he gave that world Its watch-word: “On! and on!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          982,
+          986
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b91f3f96cd3a4d0525c80278b79a11a029d078e789bbb9ce06c40ab04d9268ad"
+      },
+      "questions": [
+        {
+          "id": "reading-4-burt-poems-every-child-1907-01-q1",
+          "prompt": "Each stanza, the mate brings the Admiral a new worry. What are the worries, in order, and how does the danger grow?",
+          "facilitatorNotes": [
+            "First the stars have gone, so they cannot steer; then the men are rebellious, pale and weak; then the mate fears they could all die with no one, not even God, knowing; at last the sea itself seems ready to swallow them and hope is gone. Each worry is bigger than the last."
+          ],
+          "evidence": [
+            "For lo! the very stars are gone;",
+            "My men grow mut’nous day by day;",
+            "Should I and all my men fall dead.",
+            "What shall we do when hope is gone?"
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-01-q2",
+          "prompt": "The mate speaks in long, worried sentences, but the Admiral answers in a few words that hardly change. Why might Miller give Columbus so few words? What do they show about him?",
+          "facilitatorNotes": [
+            "The short answer that never changes shows a man who will not be shaken: the more frightened the mate grows, the firmer the reply sounds, until “the words leaped as a leaping sword.” The repeated line also becomes the poem’s refrain. Some readers may think he is being stubborn or careless of his men’s fears; a careful captain might listen. Both readings fit the words."
+          ],
+          "evidence": [
+            "“Why say, sail on! and on!”",
+            "He said: “Sail on! and on!”",
+            "The words leaped as a leaping sword:"
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-01-q3",
+          "prompt": "In the fourth stanza the sea “shows his teeth” and “curls his lip.” What creature is the sea being compared to, and why does Miller make it come alive just here?",
+          "facilitatorNotes": [
+            "The sea is like a snarling animal, a wolf or a dog lying in wait to bite. Making it a living enemy shows that this is the worst moment of the voyage, the darkest point just before the light appears in the next stanza."
+          ],
+          "evidence": [
+            "This mad sea shows his teeth to-night,",
+            "He curls his lip, he lies in wait,"
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-01-q4",
+          "prompt": "The poem ends, “He gained a world! he gave that world / Its watch-word.” What does Miller think the voyage gave the world? The land Columbus reached was already home to many peoples. How might they have told the story of that night?",
+          "facilitatorNotes": [
+            "Miller praises perseverance: the lesson of “On! and on!” is what he thinks America should learn from Columbus. But “gained a world” tells the story from Europe’s side, as if the land were empty and waiting. The Taíno who met the ships might tell of strangers arriving, and of what that arrival cost them. Students may both admire the courage of the sailors and ask whose world it was."
+          ],
+          "evidence": [
+            "A light! a light! a light! a light!",
+            "He gained a world! he gave that world"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    },
+    {
+      "id": "reading-4-burt-poems-every-child-1907-02",
+      "title": "The Song in Camp",
+      "sourceId": "burt-poems-every-child-1907",
+      "author": "Bayard Taylor",
+      "workTitle": "The Song in Camp",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Watch how a poem about a battle turns its attention away from the battle, and what it finds instead.",
+      "focus": "On the night before an attack, British soldiers sing an old love song, each thinking of someone at home.",
+      "context": "Mary E. Burt, a New York teacher, gathered the poems her pupils loved best in Poems That Every Child Should Know (1904); this reading follows the 1907 printing. Bayard Taylor (1825–1878) was an American poet and traveler. His poem is set in 1855, during the Crimean War, when British and French armies besieged the Russian port of Sevastopol on the Black Sea; the Redan and the Malakoff were Russian forts. A guardsman is a soldier of a royal regiment; a battery is a row of cannons; mortars are short cannons that throw shells high into the air. The Severn, the Clyde and the Shannon are rivers of England, Scotland and Ireland. “Annie Laurie” is an old Scottish love song. Veterans Day, November 11, began as Armistice Day, when the fighting of the First World War stopped in 1918; it honors all who have served in war.",
+      "contentNote": "A soldier is killed in the attack; “dumb and gory” means silent and bloody.",
+      "excerpt": {
+        "locator": "“The Song in Camp,” by Bayard Taylor, the whole poem; opens ““Give us a song!” the soldiers cried, The outer trenches guarding, When the heated guns…”; closes “…truth and valour wearing: The bravest are the tenderest,-- The loving are the daring.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          360,
+          370
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f81159b361d572195a2a24c930d0d012ff9e415382247f46f1edbd653013141f"
+      },
+      "questions": [
+        {
+          "id": "reading-4-burt-poems-every-child-1907-02-q1",
+          "prompt": "Why do the soldiers ask for a song, and why just then? What will happen “to-morrow”?",
+          "facilitatorNotes": [
+            "The guns have stopped for a while, and the guardsman knows they must attack the forts the next day; many may die. They sing “while we may,” because tomorrow will bring “enough of sorrow.”"
+          ],
+          "evidence": [
+            "We storm the forts to-morrow;",
+            "Sing while we may, another day"
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-02-q2",
+          "prompt": "They sang of love, “and not of fame.” Why might soldiers on the night before a battle choose a love song instead of a song about glory? What does it mean that “each heart recalled a different name”?",
+          "facilitatorNotes": [
+            "On the edge of danger they think of the people they love, not of Britain’s glory. Every soldier sings the same words about Annie Laurie, but each has his own sweetheart, wife or mother in mind, so one song holds all their different homes."
+          ],
+          "evidence": [
+            "They sang of love, and not of fame;",
+            "Each heart recalled a different name,",
+            "But all sang “Annie Laurie.”"
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-02-q3",
+          "prompt": "What is the “something” on the soldier’s cheek? Why might the poet not say the word?",
+          "facilitatorNotes": [
+            "Tears, washing clean lines through the gunpowder smoke on his face. Not naming them lets the reader see them without embarrassing the soldier; it also shows how unexpected tears are on a soldier’s face."
+          ],
+          "evidence": [
+            "Something upon the soldier’s cheek",
+            "Washed off the stains of powder."
+          ]
+        },
+        {
+          "id": "reading-4-burt-poems-every-child-1907-02-q4",
+          "prompt": "After the song, the guns begin again. What has happened to the singer by the end, and who mourns him? Taylor closes: “The bravest are the tenderest,-- / The loving are the daring.” Do you agree that tenderness and courage go together?",
+          "facilitatorNotes": [
+            "The attack begins at once, and the singers who die are mourned far away: Irish Nora weeps for one, English Mary for another. Taylor says the men who love most are the bravest, because love gives them something to fight and endure for. Some may answer that fear and duty matter as much as love, or that the poem makes death in battle sound too fine. Either way, the poem asks us to remember each soldier as a person who loved someone."
+          ],
+          "evidence": [
+            "And once again a fire of hell",
+            "For a singer, dumb and gory;",
+            "The bravest are the tenderest,--",
+            "The loving are the daring."
+          ]
+        }
+      ],
+      "holiday": "veterans-day"
+    }
+  ]
+}

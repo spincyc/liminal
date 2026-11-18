@@ -150,7 +150,8 @@
             "As sweet companions as might be had."
           ]
         }
-      ]
+      ],
+      "holiday": "halloween"
     },
     {
       "id": "reading-5-frost-boys-will-1915-03",
@@ -829,81 +830,6 @@
           "evidence": [
             "It will be long ere the marshes resume,",
             "It will be long ere the earliest bird:"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-5-frost-boys-will-1915-12",
-      "title": "My Butterfly",
-      "sourceId": "frost-boys-will-1915",
-      "genre": "poetry",
-      "readingMode": "shared",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 11,
-        "totalMinutes": 19
-      },
-      "challenge": "Untangle old-fashioned words and long sentences to follow a young man’s grief for a butterfly, and for more than a butterfly.",
-      "focus": "Finding a butterfly’s broken wing in autumn, the speaker remembers its summer flight and one dizzy day when the wind flung its wing against his cheek.",
-      "context": "A Boy’s Will (1913) was Robert Frost’s first book of poems, published in London when he was thirty-nine; this is the 1915 New York printing. Its title comes from a line by Longfellow, “A boy’s will is the wind’s will.” “My Butterfly” was the first poem Frost ever sold, to a New York magazine in 1894, when he was twenty. His note in the contents: “There are things that can never be the same.” Thine, thee, thou and thy are old forms of your and you; emulous means competing, here the flowers that rivalled the butterfly’s colours; daft means foolish; frighted means frightened; oft means often; dappled means spotted; dalliance is playful idling; precipitate means headlong; “I wist” means I knew; rife means everywhere; languor is lazy dreaminess; distraught means upset; a zephyr is a light breeze; the eaves are the overhanging edge of a roof.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "“My Butterfly,” complete poem; opens “Thine emulous fond flowers are dead, too, And the daft sun-assaulter, he That frighted…”; closes “…I said, And the strange birds say. I found it with the withered leaves Under the eaves.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          238,
-          245
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "cf9c94a6220505fe3d7d2d589b3ddc9077c8c1db127e07923edf8b31a12d2d40"
-      },
-      "questions": [
-        {
-          "id": "reading-5-frost-boys-will-1915-12-q1",
-          "prompt": "Whom is the speaker talking to, and what has happened to it?",
-          "facilitatorNotes": [
-            "A butterfly, now dead. Its flowers are dead too, and the foolish creature that used to frighten it is “fled or dead”; only the speaker is left to mourn. At the end he finds its broken wing among the withered leaves."
-          ],
-          "evidence": [
-            "Save only me",
-            "I found that wing broken to-day!"
-          ]
-        },
-        {
-          "id": "reading-5-frost-boys-will-1915-12-q2",
-          "prompt": "How long ago does the summer seem, and how did the butterfly fly then?",
-          "facilitatorNotes": [
-            "Snow has not fallen yet, but summer seems “forever” ago. Then the butterfly flew with “all the dazzling other ones,” tossed, tangled and whirled “Like a limp rose-wreath in a fairy dance.”"
-          ],
-          "evidence": [
-            "But it is long ago—",
-            "Tossed, tangled, whirled and whirled above,"
-          ]
-        },
-        {
-          "id": "reading-5-frost-boys-will-1915-12-q3",
-          "prompt": "The speaker gives two explanations for the butterfly’s death. What are they?",
-          "facilitatorNotes": [
-            "Fate made it “for the pleasure of the wind,” to be tossed about and worn out; or God let it flutter free, then, afraid it would go too far, snatched it back too roughly. Both make a fragile, careless creature the plaything of something stronger. Some readers find the picture of God grabbing too hard strange; others find it moving."
-          ],
-          "evidence": [
-            "That fate had made thee for the pleasure of the wind,",
-            "Snatched thee, o'er eager, with ungentle grasp."
-          ]
-        },
-        {
-          "id": "reading-5-frost-boys-will-1915-12-q4",
-          "prompt": "Why does he remember the day the wing touched his cheek? What might Frost’s note, “There are things that can never be the same,” mean here?",
-          "facilitatorNotes": [
-            "On a dreamy, dizzy summer day, when he was too upset to speak, the breeze threw the butterfly’s wing against his face: a wild, sudden touch of beauty. Now that same wing lies broken. The summer, the butterfly, perhaps his own young happiness are gone for good. Many readers think he mourns more than a butterfly; ask what else it might be."
-          ],
-          "evidence": [
-            "But the wild touch of thy dye-dusty wing!",
-            "I found it with the withered leaves"
           ]
         }
       ]

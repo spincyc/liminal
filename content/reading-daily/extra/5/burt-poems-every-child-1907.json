@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "burt-poems-every-child-1907",
+  "readings": [
+    {
+      "id": "reading-5-burt-poems-every-child-1907-01",
+      "title": "The Burial of Sir John Moore at Corunna",
+      "sourceId": "burt-poems-every-child-1907",
+      "author": "Charles Wolfe",
+      "workTitle": "The Burial of Sir John Moore at Corunna",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 12,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how much of the poem is about what did not happen, and what that absence says.",
+      "focus": "On a dark night after a battle, a British general’s men bury him in haste on the walls of a Spanish town before they sail away.",
+      "context": "Charles Wolfe (1791–1823) was a young Irish clergyman when he wrote this poem; printed without his name in 1817, it became one of the most recited poems in English. Sir John Moore was a British general killed in January 1809 at Corunna (A Coruña), a port in northern Spain, while his army held off the French so that it could escape by sea. His officers buried him that night on the ramparts, the town’s fortress walls, and sailed the next day. Mary E. Burt printed the poem in Poems That Every Child Should Know (1904); this reading follows the 1907 printing. A corse is a corpse; a martial cloak is a soldier’s cloak; the billow is the sea; “retiring” here means the army’s withdrawal; to reck is to care; upbraid means to blame or scold; gory means bloody. Memorial Day remembers those who died serving in war.",
+      "contentNote": "The poem describes a hurried burial at night after a general’s death in battle, with the enemy still firing.",
+      "excerpt": {
+        "locator": "“The Burial of Sir John Moore at Corunna,” by Charles Wolfe, the whole poem; opens “Not a drum was heard, not a funeral note, As his corse to the rampart we hurried; Not a…”; closes “…We carved not a line, and we raised not a stone-- But we left him alone with his glory!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1017,
+          1024
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cda4f6e2a6dc92bae7793f277ab77353517394a434ec9c12060f1251360a6636"
+      },
+      "questions": [
+        {
+          "id": "reading-5-burt-poems-every-child-1907-01-q1",
+          "prompt": "The poem begins with what did not happen at the burial. List everything that was missing. Why might Wolfe begin this way?",
+          "facilitatorNotes": [
+            "No drum, no funeral music, no farewell volley, no coffin, no shroud, only a few prayers, and in the end no carved line or stone. A general would expect a grand military funeral; listing what he did not get shows the haste and danger, and makes us feel the honor he deserved."
+          ],
+          "evidence": [
+            "Not a drum was heard, not a funeral note,",
+            "No useless coffin enclosed his breast,",
+            "We carved not a line, and we raised not a stone--"
+          ]
+        },
+        {
+          "id": "reading-5-burt-poems-every-child-1907-01-q2",
+          "prompt": "Who is telling this, and what details show the danger the burial party is in?",
+          "facilitatorNotes": [
+            "“We”: the officers and soldiers who bury him. They dig at dead of night by moonlight and a dim lantern, turning the earth with bayonets because they have no spades; the enemy’s guns go on firing; the clock strikes the hour for the army to withdraw before they have finished."
+          ],
+          "evidence": [
+            "The sods with our bayonets turning;",
+            "When the clock struck the hour for retiring;",
+            "That the foe was sullenly firing."
+          ]
+        },
+        {
+          "id": "reading-5-burt-poems-every-child-1907-01-q3",
+          "prompt": "“And we bitterly thought of the morrow.” What are the soldiers thinking about tomorrow, and why “bitterly”?",
+          "facilitatorNotes": [
+            "Tomorrow they will be at sea, and their general will lie in a foreign land where the enemy and strangers will walk over his grave and may speak lightly of him. They can neither stay to guard him nor bring him home; leaving him behind is the bitter part."
+          ],
+          "evidence": [
+            "That the foe and the stranger would tread o’er his head,",
+            "And we far away on the billow!",
+            "Lightly they’ll talk of the spirit that’s gone,"
+          ]
+        },
+        {
+          "id": "reading-5-burt-poems-every-child-1907-01-q4",
+          "prompt": "The last line says they left him “alone with his glory.” Is he honored after all, without a stone or a funeral? How can a poem remember the dead in a way a monument cannot?",
+          "facilitatorNotes": [
+            "His glory, the memory of what he did, needs no stone, and the poem itself became his monument, learned by heart for two hundred years. Some readers find “glory” a comfort; others notice how lonely “alone” sounds. A poem travels with the people who say it, wherever they are, as remembrance on Memorial Day does."
+          ],
+          "evidence": [
+            "But we left him alone with his glory!",
+            "But little he’ll reck, if they let him sleep on"
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    }
+  ]
+}

@@ -1444,6 +1444,159 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-20",
+      "title": "The Story of Mankind: Columbus and the western route (excerpt)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Sort what van Loon says people knew, what they guessed, and what they never found out.",
+      "focus": "Van Loon explains how Columbus came to sail west, what happened on the first voyage, and the truth Columbus never knew.",
+      "context": "The book was written in 1921, and some of its science and dates have since been corrected; historians still argue about parts of Columbus’s early life, such as his studies and his voyage north. In the 1400s Portuguese sailors were feeling their way around Africa toward India and China (Cathay), whose spices and silks Europe wanted. Columbus Day, the second Monday of October, marks his landing on October 12, 1492, on an island in the Bahamas that its Taíno people called Guanahani; many places now keep the day as Indigenous Peoples’ Day as well, remembering the peoples who already lived in the Americas. Leif Ericsson’s Norsemen had reached North America about the year 1000. Zipangu is Japan; gaol is jail; “their most Catholic Majesties” are Ferdinand and Isabella of Spain.",
+      "contentNote": "Van Loon uses the old, mistaken name “red Indians” for the Native people Columbus met and took back to Spain. He also mentions that the men Columbus left behind were never seen alive again.",
+      "excerpt": {
+        "locator": "“The Great Discoveries,” from the debate over an eastern or a western route to the Indies through Columbus’s death; opens “These many voyages had convinced the Portuguese geographers and cartographers that while…”; closes “…solid continent between Europe and Asia and that he had found the direct route to China.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          671,
+          677
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "582d23ea55c06d709aa44e4e8876aaa5897e543337c53260714e2c4cc8c5deae"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-20-q1",
+          "prompt": "Van Loon says that the experts of that day already knew the earth was round. Then what were they arguing about?",
+          "facilitatorNotes": [
+            "Which way to the Indies was better: east around Africa, the route the Portuguese had been exploring, or west across the open Atlantic. The question was the route, not the shape of the earth."
+          ],
+          "evidence": [
+            "the earth was not as flat as a pancake but was round",
+            "they were now debating the respective advantages of the eastern and the western routes"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-20-q2",
+          "prompt": "What might Colombo have heard among the people of the far North, and why would it matter to him? What does van Loon think of his claim to have visited Iceland?",
+          "facilitatorNotes": [
+            "The Norse of Greenland had reached a land to the west, Vineland, centuries before; the story of a “vast land in the distant west” survived among northern fishermen. It would encourage him that land lay across the ocean. Van Loon doubts the Iceland visit and jokes that the Faröe Islands are cold enough in February to be mistaken for it."
+          ],
+          "evidence": [
+            "vast land in the distant west",
+            "cold enough in February to be mistaken for Iceland by any one"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-20-q3",
+          "prompt": "Van Loon says the story of Columbus is “too well known to bear repeating,” then lists its dates. Which details in his list are left out of the usual story? What do the criminals, the 44 men and “his Indians” add?",
+          "facilitatorNotes": [
+            "Many of the crew were criminals promised pardon; the 44 men left at La Navidad were never seen alive again; Columbus carried Native people back to Spain to show his patrons. These details show a voyage that was not a tidy triumph: it cost lives, including those of the people Columbus met and took away."
+          ],
+          "evidence": [
+            "many of whom were criminals",
+            "none of whom was ever again seen alive",
+            "together with his Indians"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-20-q4",
+          "prompt": "“Alas, Columbus never knew the truth.” What was the truth, and why “alas”? Many people say Columbus did not really discover America, since millions of people already lived there. What does the word “discover” leave out?",
+          "facilitatorNotes": [
+            "He died believing he had found islands off Asia, never knowing that a whole continent lay between Europe and Asia; “alas” pities a man who never understood his own voyage. “Discover” tells the story from Europe’s side: the Taíno did not need to be discovered, and for them Europeans arrived. Students may keep the word for what Europe learned while noticing whose story it leaves out."
+          ],
+          "evidence": [
+            "Alas, Columbus never knew the truth.",
+            "he died in the firm belief that there was no solid continent between Europe and Asia"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-21",
+      "title": "The Story of Mankind: the American Revolution (excerpt)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a whole war told in a few paragraphs, and notice where van Loon slows down to say what mattered most.",
+      "focus": "Van Loon tells how the American colonies broke from Britain, and why the Declaration of Independence mattered beyond America.",
+      "context": "The book was written in 1921, and some of its science and dates have since been corrected; here van Loon, who came to the United States from the Netherlands as a young man, writes about his new country with strong opinions: watch where he praises and where he mocks. Before 1776 thirteen British colonies stretched along the Atlantic coast. George III was king of Great Britain and Lord North his chief minister; the Continental Congress was the meeting of delegates from the colonies in Philadelphia. The Declaration of Independence, adopted on July 4, 1776, the day Independence Day celebrates, declared the colonies free and gave the reasons. The shot “heard round the world” comes from Ralph Waldo Emerson’s “Concord Hymn,” about the first battle at Lexington and Concord in 1775. Petrograd is St. Petersburg in Russia. Momentous means very important; absolved means set free.",
+      "contentNote": "Van Loon gives sharp opinions as if they were facts, about the Pilgrims, King George and the German princes who hired out soldiers. He does not mention that the new nation kept slavery, though the Declaration says that all men are created equal.",
+      "excerpt": {
+        "locator": "“The American Revolution,” from the colonists of the Atlantic seaboard to the shot “heard around the world”; opens “Only a very small part of this vast domain was inhabited. From Massachusetts in the…”; closes “…of the old statecraft and the old diplomacy under several tons of democratic bricks.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          916,
+          924
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e6c908e916b9324d87957ba7487164f22a90e26541f07570a857efc8a288551"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-21-q1",
+          "prompt": "What kind of people does van Loon say lived in the colonies, and what had the wilderness taught them? Do you trust his picture of them?",
+          "facilitatorNotes": [
+            "Independent, self-reliant sons of hardy ancestors who hated restraint and meant to be their own masters. It is a sweeping picture: not everyone crossed the ocean bravely or by choice; many came as servants bound to work off their passage, and enslaved Africans were brought by force. Students may find some truth in it and still notice what it leaves out."
+          ],
+          "evidence": [
+            "In the wilderness they had learned independence and self-reliance.",
+            "Lazy and timourous people did not cross the ocean in those days."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-21-q2",
+          "prompt": "“Bad feeling caused more bad feeling.” How does van Loon say the quarrel grew into a war? Whom does he blame most?",
+          "facilitatorNotes": [
+            "The government annoyed the colonists, and they annoyed it back, until peaceful argument failed and they took up arms and became rebels, risking death if captured. He blames the British side most: a king who was not intelligent and a minister given to drowsiness and indifference."
+          ],
+          "evidence": [
+            "The government annoyed the colonists and the colonists, who hated to be bothered in this way, began to annoy the British government.",
+            "From being loyal subjects, they turned rebels"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-21-q3",
+          "prompt": "Van Loon says one event was “more interesting than the campaigns of Washington.” What was it, and why did it take courage?",
+          "facilitatorNotes": [
+            "The vote for independence and the Declaration in June and July 1776. It came in the first year of the war, with the British holding most coastal towns and more troops arriving by the shipload; the delegates were declaring themselves traitors to the king, and only men sure of their cause would dare."
+          ],
+          "evidence": [
+            "Only men who were deeply convinced of the righteousness of their cause would have found the courage",
+            "these united colonies are, and of right ought to be, free and independent states"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-21-q4",
+          "prompt": "Van Loon says the famous shot was not really heard around the world, but that it “landed in the powder house of European discontent.” What does he mean? Why would the colonists’ success matter to people living in European slums?",
+          "facilitatorNotes": [
+            "The American example, a people throwing off a king and governing itself by a written constitution, showed the discontented of Europe that what seemed impossible could be done; it helped spark the French Revolution. The powder-house image suggests both hope and a coming explosion of violence. Students may weigh whether one country’s freedom can really change others’."
+          ],
+          "evidence": [
+            "The success of the American colonists showed them that many things were possible which had been held impossible only a short time before.",
+            "It landed in the powder house of European discontent"
+          ]
+        }
+      ],
+      "holiday": "independence-day"
     }
   ]
 }
