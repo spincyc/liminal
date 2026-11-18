@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "longfellow-complete-poetical-works-1902",
+  "readings": [
+    {
+      "id": "reading-3-longfellow-complete-poetical-works-1902-01",
+      "title": "Decoration Day",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 9,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice how a poem about soldiers’ graves keeps using the words of a soldiers’ camp.",
+      "focus": "On the day for decorating soldiers’ graves, the poet tells the dead to sleep in peace and promises that they will be remembered.",
+      "context": "Henry Wadsworth Longfellow (1807–1882) was the best-loved American poet of his time; this is one of the last poems he wrote, printed in In the Harbor (1882), the year he died. After the Civil War (1861–1865), Americans began to set aside a spring day to lay flowers on soldiers’ graves. It was called Decoration Day; today it is Memorial Day, when we remember those who died serving in war. Comrades are fellow soldiers; arms are weapons, and grounded arms are weapons laid down; to molest is to bother or harm; a sentry or sentinel is a soldier on guard; to start to your feet is to jump up; a truce is a time when fighting stops; sod is grassy earth; to deck is to decorate.",
+      "contentNote": "The poem speaks to soldiers who died in war, imagining them asleep in their graves.",
+      "excerpt": {
+        "locator": "In the Harbor, “Decoration Day,” the whole poem; opens “Sleep, comrades, sleep and rest On this Field of the Grounded Arms, Where foes no more…”; closes “…We deck with fragrant flowers; Yours has the suffering been, The memory shall be ours.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4341,
+          4346
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "64ff242a31e7dabe0e83689fa8ce80ff673f3ebd20eeb0328d5f4d9db4d4b717"
+      },
+      "questions": [
+        {
+          "id": "reading-3-longfellow-complete-poetical-works-1902-01-q1",
+          "prompt": "Who are the “comrades” the poem speaks to, and where are they sleeping? Find two other names the poem gives that place.",
+          "facilitatorNotes": [
+            "Soldiers who died in war, now buried in a cemetery. The poem calls it the “Field of the Grounded Arms,” a “camp of Death,” and their graves “silent tents of green.”"
+          ],
+          "evidence": [
+            "Sleep, comrades, sleep and rest",
+            "But in this camp of Death",
+            "Your silent tents of green"
+          ]
+        },
+        {
+          "id": "reading-3-longfellow-complete-poetical-works-1902-01-q2",
+          "prompt": "How was the soldiers’ sleep different while they were alive? What used to wake them, and what can no longer hurt them?",
+          "facilitatorNotes": [
+            "They slept on the hard ground and jumped up at a cannon’s roar or the drum’s call to battle. Now no sound wakes them, and they have no fever and no bleeding, aching wounds."
+          ],
+          "evidence": [
+            "At the cannon's sudden roar,",
+            "No wound that bleeds and aches."
+          ]
+        },
+        {
+          "id": "reading-3-longfellow-complete-poetical-works-1902-01-q3",
+          "prompt": "The poem keeps calling the graves a camp and the dead soldiers sleepers. Why might Longfellow talk about death this way?",
+          "facilitatorNotes": [
+            "Soldiers lived in camps and tents, so their graves become a last camp where at last they can rest in peace, the “Truce of God.” Speaking of sleep is gentle, a comfort to families. Some readers may feel it makes death sound too easy; both views can be heard."
+          ],
+          "evidence": [
+            "All is repose and peace,",
+            "It is the Truce of God!"
+          ]
+        },
+        {
+          "id": "reading-3-longfellow-complete-poetical-works-1902-01-q4",
+          "prompt": "Read the last two lines: “Yours has the suffering been, / The memory shall be ours.” What is the job of the living on Decoration Day? How can people keep that promise?",
+          "facilitatorNotes": [
+            "The soldiers did the suffering; the living must remember them. People keep the promise by decorating graves with flowers and by keeping the soldiers in their thoughts, which the poem says will stand guard like sentinels."
+          ],
+          "evidence": [
+            "We deck with fragrant flowers;",
+            "The memory shall be ours.",
+            "The thoughts of men shall be"
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    }
+  ]
+}

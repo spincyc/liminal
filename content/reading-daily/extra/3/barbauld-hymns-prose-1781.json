@@ -623,83 +623,8 @@
             "child of immortality! mourn no longer."
           ]
         }
-      ]
-    },
-    {
-      "id": "reading-3-barbauld-hymns-prose-1781-09",
-      "title": "Hymn XII (“There is a land”)",
-      "sourceId": "barbauld-hymns-prose-1781",
-      "workTitle": "Hymn XII",
-      "genre": "devotional prose",
-      "readingMode": "shared",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 8,
-        "totalMinutes": 16
-      },
-      "challenge": "Follow the “but” pattern of the opening, then see how the hymn describes a place with no “but.”",
-      "focus": "The last hymn describes heaven by taking away everything that spoils good things on earth.",
-      "context": "Anna Laetitia Barbauld (1743–1825) was an English poet and teacher. Her Hymns in Prose for Children (1781) were meant to be learned by heart and said aloud; she chose prose instead of rhyme, built each hymn from repeated sentence patterns, and joined the idea of God to things a child can see and hear. Older verb forms such as “taketh” mean “takes,” and “thou” and “thee” mean “you.” This is the last hymn in the book. Myriads are huge numbers; cherubim are angels; hen-bane is a poisonous plant; a desart is a desert. Abraham, Moses, Elijah, Daniel and the shepherd king David (“the son of Jesse”) are people from the Bible. People once believed toads could spit poison; they cannot.",
-      "contentNote": "This eighteenth-century Christian hymn speaks from its author’s faith; its statements about God are her beliefs, which readers may or may not share. It speaks of parents and friends who have died.",
-      "excerpt": {
-        "locator": "Hymn XII, the complete hymn; opens “The rose is sweet, but it is surrounded with thorns: the lily of the valley is fragrant,…”; closes “…to be here but for a little while, and there for ever, even for ages of eternal years.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          161,
-          181
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "f681a1e59e422ec250ad9d0a7838317d3723f20e38b7849f7766da6f99670ec5"
-      },
-      "questions": [
-        {
-          "id": "reading-3-barbauld-hymns-prose-1781-09-q1",
-          "prompt": "In the first three sentences, what spoils each good thing? Give two examples.",
-          "facilitatorNotes": [
-            "The rose has thorns; the lily grows among brambles; spring soon passes; winter destroys summer’s beauty; the rainbow vanishes; life is “swallowed up in death.” Each sentence turns on “but.”"
-          ],
-          "evidence": [
-            "The rose is sweet, but it is surrounded with thorns:",
-            "The rainbow is very glorious, but it soon vanisheth away:"
-          ]
-        },
-        {
-          "id": "reading-3-barbauld-hymns-prose-1781-09-q2",
-          "prompt": "How is “that land” different? Find two things that are there and two that are not.",
-          "facilitatorNotes": [
-            "Roses without thorns, eternal spring, the tree of life, flowers that never fade; no winter cold, no summer scorching, no sickness, no wars or quarrels. It is described by taking the “but” away."
-          ],
-          "evidence": [
-            "There is a land, where the roses are without thorns,",
-            "In that country there are no wars nor quarrels,"
-          ]
-        },
-        {
-          "id": "reading-3-barbauld-hymns-prose-1781-09-q3",
-          "prompt": "What does the hymn promise about parents and friends who have died?",
-          "facilitatorNotes": [
-            "That “there we shall embrace them again” and never be separated. Handle gently with children who have lost someone; the hymn speaks from the author’s faith, and families may answer in their own ways."
-          ],
-          "evidence": [
-            "When our parents and friends die, and are laid in the cold ground,",
-            "and be separated no more."
-          ]
-        },
-        {
-          "id": "reading-3-barbauld-hymns-prose-1781-09-q4",
-          "prompt": "The hymn says the earth is “pleasant” but that country is “far better.” Does it want children to love the earth, or to wait for heaven? Use the hymn’s words.",
-          "facilitatorNotes": [
-            "Both: “This earth is pleasant, for it is God’s earth,” yet “That happy land is our home.” Some readers will feel the hymn asks them to enjoy the earth while thinking often of heaven; others may feel it makes earth seem less important. Either is defensible from the last paragraphs."
-          ],
-          "evidence": [
-            "This earth is pleasant, for it is God's earth,",
-            "That happy land is our home:"
-          ]
-        }
-      ]
+      ],
+      "holiday": "easter"
     }
   ]
 }
