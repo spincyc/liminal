@@ -4,7 +4,7 @@ const fs = require("node:fs"), path = require("node:path");
 const L = require("../src/lib/reading-library");
 const RL = require("../tools/build-reading-library");
 const B = require("../tools/build-daily-reading");
-const { locate } = require("../tools/reading-library");
+const { locate, parseMap, remapExcerpt } = require("../tools/reading-library");
 
 const blocks = [
   { type: "heading", level: 1, text: "CHAPTER I" },
@@ -44,6 +44,9 @@ test("text serialises one canonical block per line and refuses anything else", (
   assert.equal(L.parseText('{"type":"paragraph","text":"NIL PEJUS EST CAELIBE VITÂ"}\n').length, 1);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"the second mate 19Eliza (talk) 02:12, 3 December 2023 (UTC) said"}\n'), /signature/);
   assert.equal(L.parseText('{"type":"paragraph","text":"histori (talk); vosse (you)"}\n').length, 1);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"13&frac12; inches"}\n'), /HTML entity/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"caf&#233;"}\n'), /HTML entity/);
+  assert.equal(L.parseText('{"type":"paragraph","text":"Smith & Sons; R&D"}\n').length, 1);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"Fare {footnote A shilling.}"}\n'), /illustration/);
   assert.deepEqual(L.parseText('{"type":"heading","level":1,"text":"NOTES"}\n{"type":"paragraph","text":"FOOTNOTES:"}\n{"type":"paragraph","text":"[Footnote 1: Tweed.]"}\n').length, 3);
 });
@@ -119,4 +122,23 @@ test("a reading with its own text still covers the passage it reads", () => {
   assert.deepEqual(B.coveredBlocks(exact, "w", work, new Map()), [1, 3]);
   // A block repeated in the work (a refrain) never marks coverage.
   assert.deepEqual(B.coveredBlocks({ blocks: [work[2]] }, "w", work, new Map()), []);
+});
+
+test("remap maps every old block once, shifts citations and refuses ones it cannot carry", () => {
+  // 50 old blocks: 30–31 removed (apparatus), 41 split in two, the rest shifted.
+  const table = parseMap("0-29=0, 30-31=-, 32-40=30, 41=39..40, 42-=41", 50, 49);
+  assert.deepEqual([table.get(29), table.get(30), table.get(32), table.get(49)],
+    [{ first: 29, last: 29, split: false }, null, { first: 30, last: 30, split: false }, { first: 48, last: 48, split: false }]);
+  const whole = { blocks: [32, 41], startChar: 4, endChar: null };
+  assert.equal(remapExcerpt(whole, table), null);
+  assert.deepEqual(whole.blocks, [30, 40]);
+  assert.match(remapExcerpt({ blocks: [29, 30] }, table), /removed block 30/);
+  assert.match(remapExcerpt({ blocks: [35, 41], startChar: null, endChar: 12 }, table), /ends inside split block 41/);
+  assert.match(remapExcerpt({ blocks: [41, 45], startChar: 3, endChar: null }, table), /starts inside split block 41/);
+  // Gaps, overlaps, a short map or a count that disagrees with the new text are refused.
+  assert.throws(() => parseMap("0-29=0, 31-=30", 50), /continue at old block 30/);
+  assert.throws(() => parseMap("0-29=0", 50), /stops at old block 30/);
+  assert.throws(() => parseMap("0-29=0, 30-=31", 50), /follow on at 30/);
+  assert.throws(() => parseMap("0-=0", 50, 49), /new text has 49/);
+  assert.throws(() => parseMap("0-1=0..3, 2-=4", 50), /one old block/);
 });
