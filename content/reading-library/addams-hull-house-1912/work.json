@@ -4,7 +4,7 @@
   "author": "Jane Addams",
   "title": "Twenty Years at Hull-House, with Autobiographical Notes",
   "translator": null,
-  "edition": "University of Pennsylvania 'A Celebration of Women Writers' transcription of New York: The Macmillan Company, 1912 printing (copyright 1910; first published November 1910), identified by its transcribed title, imprint and copyright leaves. Used in place of Project Gutenberg #1325, which derives from an earlier version of this transcription but alters dashes and several words. HTML tags, page numbers and illustration captions are omitted; a word divided across a page break is rejoined, and a compound hyphenated at a source line end (self-government, Hull-House) is closed up; a paragraph that the HTML splits around an illustration is rejoined; whitespace normalized. Chapter-opening small capitals appear as capitals, as transcribed. The library holds the Preface and Chapters I–XVIII with their numbers and titles as headings; the title page, contents, lists of plates and illustrations, and the site’s About This Edition note are omitted. The normalisations above are applied throughout the book: every word divided across a page break is rejoined (the three divided compounds Hull-House, half-crazed and junk-shops keep their hyphen), and every paragraph split around an illustration is rejoined. The passages read by the Grade 10 calendar readings from Chapters VIII, IX and XII were collated on 2026-11-18 against the Internet Archive scan of a 1912 Macmillan printing (twentyyearsathul0000jane_m4s6), every difference decided on the page image, and corrected to the printed text in 92 places, none of them in an existing reading: an omitted phrase restored (“at six o’clock, doing it thus early,” Chapter VIII), misreadings such as “country” for “county,” “this own kind,” “or first concern,” “the residents of Hull-House” and “nonresidence” for “non-resistance,” a doubled “the,” a missing full stop, two stray spaces before punctuation, and the printing’s own commas, hyphens, word divisions and spellings (“clew,” “towards,” “every one,” “Cæsar”), with its misprints “dispair” and “monoplies” kept; the rest of the book, including the school-night passages, is not collated and likely departs from the printing in the same way.",
+  "edition": "University of Pennsylvania 'A Celebration of Women Writers' transcription of New York: The Macmillan Company, 1912 printing (copyright 1910; first published November 1910), identified by its transcribed title, imprint and copyright leaves. Used in place of Project Gutenberg #1325, which derives from an earlier version of this transcription but alters dashes and several words. HTML tags, page numbers and illustration captions are omitted; a word divided across a page break is rejoined, and a compound hyphenated at a source line end (self-government, Hull-House) is closed up; a paragraph that the HTML splits around an illustration is rejoined; whitespace normalized. Chapter-opening small capitals appear as capitals, as transcribed. The library holds the Preface and Chapters I–XVIII with their numbers and titles as headings; the title page, contents, lists of plates and illustrations, and the site’s About This Edition note are omitted. The normalisations above are applied throughout the book: every word divided across a page break is rejoined (the three divided compounds Hull-House, half-crazed and junk-shops keep their hyphen), and every paragraph split around an illustration is rejoined. Every passage that a Grade 10 reading cites was collated on 2026-11-18 against the Internet Archive scan of a 1912 Macmillan printing (twentyyearsathul0000jane_m4s6), every difference decided on the page image, and corrected to the printed text: Chapters VIII, IX and XII in 92 places, and Chapters I–VII, X, XI and XVIII in 211 more (I 15, II 23, III 34, IV 10, V 36, VI 19, VII 5, X 29, XI 29, XVIII 11). The corrections restore omitted text (“at six o’clock, doing it thus early,” Chapter VIII; “to much visiting of its art gallery and opera house, and,” Chapter IV; single words such as “to record,” “inside,” “indirect” and “three”), mend misreadings such as “country” for “county,” “historic” for “heroic,” “unresponsible” for “unresponsive,” “introduction” for “instruction,” “privileges” for “advantages,” “facilities” for “faculties” and “nonresidence” for “non-resistance,” remove doubled words, and adopt the printing’s own commas, hyphens, word divisions and spellings (“clew,” “towards,” “gayly,” “receipt,” “Baliol,” “Michael Angelo’s,” “æsthetic,” “Gælic,” “courtsey,” “unforgetable,” “Cæsar”). The printing’s misprints are kept: “dispair,” “monoplies,” “horded” for hoarded, “Altgelt” (three times, Chapter X) for Altgeld, and Bellerophon’s fight with “the Minotaur” (Addams’s slip for the Chimera). Two printed readings that school nights quote are not yet applied: “count that day lost” (the text has “count the day lost”) and “down East” (“Down East”), both Chapter V. Only the collated passages (scope.collated) may be read; the rest of the book is not collated and likely departs from the printing in the same way.",
   "publicationYear": 1912,
   "translationYear": null,
   "url": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html",
@@ -20,14 +20,52 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html",
     "downloadSha256": "4fb96d0650c3a868e4d4ddc9a0383d2bbb901eb8bd4c406215e966432f955521",
-    "method": "UPenn A Celebration of Women Writers HTML. Kept the Preface and the chapters; removed comments, page-number, facing-page and verso markers, rules, every image with its centred caption paragraph, and the contents and illustration lists. Each P became a paragraph (whitespace collapsed, entities decoded, small-capital spans joined to their initials as transcribed); block-indented P elements (quoted verse) became stanzas with line-break tags as line ends and no-break-space indentation kept; each chapter H2 gave a level-2 number heading and a level-3 title heading. A word hyphenated before a page-number marker was joined without the hyphen, except three compounds (Hull-House twice, half-crazed, junk-shops); a hyphen at an HTML line end was closed up without a space. A paragraph resumed after an illustration (or in a P marked as a continuation) was joined to the previous paragraph when that one ended without closing punctuation or the resumed text began in lower case (41 places). Chapters VIII, IX and XII (blocks 238–264, 267–296 and 370–399) were afterwards corrected in 92 places to the 1912 printing on the Internet Archive scan twentyyearsathul0000jane_m4s6, as the edition records."
+    "method": "UPenn A Celebration of Women Writers HTML. Kept the Preface and the chapters; removed comments, page-number, facing-page and verso markers, rules, every image with its centred caption paragraph, and the contents and illustration lists. Each P became a paragraph (whitespace collapsed, entities decoded, small-capital spans joined to their initials as transcribed); block-indented P elements (quoted verse) became stanzas with line-break tags as line ends and no-break-space indentation kept; each chapter H2 gave a level-2 number heading and a level-3 title heading. A word hyphenated before a page-number marker was joined without the hyphen, except three compounds (Hull-House twice, half-crazed, junk-shops); a hyphen at an HTML line end was closed up without a space. A paragraph resumed after an illustration (or in a P marked as a continuation) was joined to the previous paragraph when that one ended without closing punctuation or the resumed text began in lower case (41 places). Chapters VIII, IX and XII (blocks 238–264, 267–296 and 370–399) were afterwards corrected in 92 places to the 1912 printing on the Internet Archive scan twentyyearsathul0000jane_m4s6, and Chapters I–VII, X, XI and XVIII (blocks 12–142, 145–195, 198–220, 299–319, 335–351 and 595–604) in 211 places the same way, two printed readings that school nights quote (blocks 165 and 169) held back, as the edition records."
   },
   "scope": {
     "complete": true,
-    "note": null
+    "note": null,
+    "collated": [
+      [
+        12,
+        142
+      ],
+      [
+        145,
+        195
+      ],
+      [
+        198,
+        220
+      ],
+      [
+        238,
+        264
+      ],
+      [
+        267,
+        296
+      ],
+      [
+        299,
+        319
+      ],
+      [
+        335,
+        351
+      ],
+      [
+        370,
+        399
+      ],
+      [
+        595,
+        604
+      ]
+    ]
   },
   "text": {
     "blocks": 635,
-    "sha256": "36d5a1b82c051b7162ff5edd6961a08e768334d43ec08caaf7f08d2120de9530"
+    "sha256": "d758d26a716c2478af859678b140fc23136d85a1607c6521ac37075e5c672110"
   }
 }
