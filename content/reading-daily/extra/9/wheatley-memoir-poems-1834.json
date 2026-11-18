@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "wheatley-memoir-poems-1834",
+  "readings": [
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-01",
+      "title": "To Mæcenas",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Track the speaker’s comparisons between herself, the great poets and her patron. Reread the stanza about Terence slowly, with the footnote.",
+      "focus": "A modest dedication that also stakes a claim to poetic fame.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. This opening poem addresses an unnamed patron as Mæcenas, the Roman friend and supporter of the poets Virgil and Horace. In Homer’s Iliad, Patroclus begs his friend Achilles (“Pelides,” son of Peleus) for help. Maro and “the Mantuan sage” are Virgil; the Nine are the Muses, whose mountains are Helicon and Parnassus. Terence was a Roman playwright born in North Africa. Phoebus is the sun god and Aurora the dawn; lays are songs.",
+      "contentNote": "Wheatley uses the period phrase “Afric’s sable race” (sable means black).",
+      "excerpt": {
+        "locator": "To Mæcenas; complete poem with Wheatley’s note, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “MÆCENAS, you, beneath the myrtle shade, Read o'er what poets sung, and shepherds played.…”; closes “…ring. Then grant, Mæcenas, thy paternal rays; Hear me propitious, and defend my lays.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "91bdcd14882b38a11753abad0cac1d5fb63847ba2c2bdaf016262ea879490217"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q1",
+          "prompt": "How does the speaker compare herself with Homer, Virgil and her patron? Find the lines where she seems to make her own gift small.",
+          "facilitatorNotes": [
+            "Homer moves her to “horror” and tears; she wishes she could rival Virgil, but mourns “a grovelling mind”; the patron’s breast is “the Muses’ home,” while “The faltering music dies upon my tongue.”",
+            "Such modesty was a convention of dedications. Readers may take it as convention, as real anxiety, or as a strategic pose: she displays command of the very classics she says she cannot rival."
+          ],
+          "evidence": [
+            "But here I sit, and mourn a grovelling mind,",
+            "The faltering music dies upon my tongue."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q2",
+          "prompt": "Why does she ask the Muses about Terence? What exactly is she asking, and what might she be hoping for?",
+          "facilitatorNotes": [
+            "Terence, “an African by birth,” received the Muses’ favour; she asks why that grace went “To one alone of Afric’s sable race.” The question protests that only one African poet is remembered.",
+            "It also quietly places her in his line. Accept answers that hear complaint, ambition, or both, if they rest on the wording of the question."
+          ],
+          "evidence": [
+            "To one alone of Afric's sable race,",
+            "He was an African by birth."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q3",
+          "prompt": "She says she will “snatch a laurel from thine honored head.” What is bold about the image, and how does the ending balance it?",
+          "facilitatorNotes": [
+            "The laurel is the poet’s prize; snatching one from the patron is playful daring, softened at once by “While you, indulgent, smile upon the deed.” The closing lines return to praise and ask him to protect her songs.",
+            "The poem pays tribute and asserts her right to fame in the same breath. Some readers find the gesture charming; others find it pointed."
+          ],
+          "evidence": [
+            "I 'll snatch a laurel from thine honored head,",
+            "Hear me propitious, and defend my lays."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-02",
+      "title": "On Being Brought from Africa to America",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 19,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the eight lines several times: first for the speaker’s story, then for whom she addresses, then for the grammar and punctuation of the last two lines.",
+      "focus": "A short poem that answers racial scorn with the audience’s own professed faith.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. She wrote this poem around 1768, as a teenager. “Benighted” means in darkness, without knowledge; “sable” means black. In Genesis, Cain murdered his brother and received a mark from God, which some people of her time falsely claimed was dark skin. “Refined” can mean both purified, as metal is, and cultivated.",
+      "contentNote": "The poem calls Africa a “pagan land,” uses the period word “Negroes,” and quotes a racist claim in order to answer it.",
+      "excerpt": {
+        "locator": "On Being Brought from Africa to America; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “'T WAS mercy brought me from my pagan land, Taught my benighted soul to understand That…”; closes “…Remember, Christians, Negroes black as Cain May be refined, and join the angelic train.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          16,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d4cb215b36b63c7b3ecec74ee7806060fe78044a87bd1adb3a514cf9a241d3f4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q1",
+          "prompt": "The first four lines call being brought from Africa “mercy.” What does the speaker say she gained, and what does the poem leave unsaid?",
+          "facilitatorNotes": [
+            "She gained Christian faith, the knowledge of “a God” and “a Saviour.” The poem says nothing of capture, the ocean crossing or slavery, and the verb “brought” hides who brought her.",
+            "Readers debate whether this is sincere faith, the constraint of writing for white patrons, or a strategic opening that wins the audience before the challenge. The text supports discussing all three; the omission alone does not prove a single motive."
+          ],
+          "evidence": [
+            "'T WAS mercy brought me from my pagan land,",
+            "Once I redemption neither sought nor knew."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q2",
+          "prompt": "Who are the “some” of line five, and how does the poem answer them? Notice the quotation marks and the word “Christians.”",
+          "facilitatorNotes": [
+            "They view her people “with scornful eye” and say their colour is “a diabolic dye.” Setting their words in quotation marks makes them a view to be examined, not hers.",
+            "She then turns to “Christians” directly and reminds them that Black people may be “refined” and join “the angelic train,” equal candidates for salvation, as the scorners’ own faith requires them to accept."
+          ],
+          "evidence": [
+            "Some view our sable race with scornful eye--",
+            "'Their color is a diabolic dye.'"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q3",
+          "prompt": "Is the ending humble or commanding? Look at the verb “Remember” and at what the last line claims.",
+          "facilitatorNotes": [
+            "“Remember” is an imperative addressed to Christian readers, so a young enslaved poet takes the position of teacher. The last line claims a full share in salvation, which undercuts the scorn just quoted.",
+            "Some critics also read “black as Cain” against the Christians who scorn, though the grammar here most naturally attaches it to “Negroes.” Students may hear humility, rebuke or both; ground each claim in the syntax."
+          ],
+          "evidence": [
+            "Remember, Christians, Negroes black as Cain",
+            "May be refined, and join the angelic train."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-03",
+      "title": "On the Death of the Rev. Mr. George Whitefield",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Find where the elegy turns from loss to vision. Then look closely at the speech Wheatley gives Whitefield and at the word “we.”",
+      "focus": "An elegy that consoles through faith and quietly imagines a community that includes Africans as equals.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. George Whitefield (1714–1770) was an English preacher of the evangelical revival whose outdoor sermons drew enormous crowds in Britain and America; he died in Massachusetts in September 1770. Wheatley’s elegy, printed that year as a single sheet, made her name known on both sides of the Atlantic. The Countess of Huntingdon, his patron, is the noblewoman to whom Wheatley later dedicated her book. Zion here means heaven; an auditory is an audience.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "On the Death of the Rev’d Mr. George Whitefield, 1770; complete poem with Wheatley’s note, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “HAIL, happy saint! on thine immortal throne, Possest of glory, life, and bliss unknown;…”; closes “…While the tomb, safe, retains its sacred trust, Till life divine re-animates the dust.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          31,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b7261234042d34473819a38319cdbf0612fd2e7a5fa46797d135f1ad0d1770d1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q1",
+          "prompt": "How does the elegy move from mourning to celebration? Find the line where its direction changes.",
+          "facilitatorNotes": [
+            "It opens with loss: no more “music of thy tongue,” and a setting sun that “shines no more.” Then it turns upward: “Behold the prophet in his towering flight!” The last stanza sets his stilled breath beside a vision of the skies.",
+            "Readers may notice that the earthly grief (crowds, orphans, the Countess) remains real even as faith consoles it."
+          ],
+          "evidence": [
+            "Unhappy, we the setting sun deplore,",
+            "Behold the prophet in his towering flight!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q2",
+          "prompt": "Wheatley puts words into Whitefield’s mouth. Whom does he invite, and why might “Take him, ye Africans” matter in a poem by an enslaved African woman?",
+          "facilitatorNotes": [
+            "He invites the wretched, starving sinners, preachers, Americans and Africans alike: an “Impartial Saviour.” Africans stand on the same footing as “my dear Americans” and are promised they shall be “sons, and kings, and priests to God,” titles of dignity for people the law treated as property.",
+            "Some readers see bold social meaning; others see conventional evangelical language. Both readings rest on this stanza."
+          ],
+          "evidence": [
+            "Take him, ye Africans, he longs for you;",
+            "Impartial Saviour is his title due:"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q3",
+          "prompt": "The poem says Whitefield “longed to see America excel” and speaks of “we Americans.” What community does the elegy imagine, and where does the speaker place herself in it?",
+          "facilitatorNotes": [
+            "A shared American and Christian public: New England, its youth, the orphans, the Countess across the ocean. The speaker includes herself in “we Americans,” an identity still new in 1770.",
+            "For an enslaved poet to claim that “we” is notable. Students may ask whom it includes and whom it leaves out."
+          ],
+          "evidence": [
+            "He longed to see America excel;",
+            "we Americans revere"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-04",
+      "title": "To S. M., a Young African Painter, on Seeing His Works",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Mark every word that connects painting with life or creation, then follow the poem’s turn from this world to the next.",
+      "focus": "One young Black artist addressing another as an equal in a shared vocation.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. S. M. is generally identified as Scipio Moorhead, an enslaved young artist in Boston, who is thought to have drawn the portrait of Wheatley printed at the front of her book. “Pencil” here means paintbrush. Salem (Jerusalem) with its “twice six gates” is the heavenly city of the Book of Revelation. Damon and Aurora are stock names from pastoral and classical verse; seraphic means angelic.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "To S. M., a Young African Painter, On seeing his Works; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “To show the lab'ring bosom's deep intent, And thought in living characters to paint, When…”; closes “…Cease, gentle Muse! the solemn gloom of night Now seals the fair creation from my sight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          208,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "01b89ef938dc8b8d5553a8b7daa9ade1012186a4ab7699a21a3e5a95b6658ce4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q1",
+          "prompt": "What does Wheatley praise in S. M.’s work? Which words show her treating painting as a kind of creation?",
+          "facilitatorNotes": [
+            "He paints “thought in living characters,” and his “breathing figures” live; the effect is “A new creation rushing on my sight!” Bringing figures to life was the highest praise in the art talk of her day.",
+            "She also joins his gift to hers: “the painter’s and the poet’s fire.”"
+          ],
+          "evidence": [
+            "And breathing figures learnt from thee to live,",
+            "A new creation rushing on my sight!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q2",
+          "prompt": "Why might it matter that this poem, by an enslaved African poet, addresses a young African painter as an artistic equal?",
+          "facilitatorNotes": [
+            "It is one artist encouraging another, wishing him “immortal fame” and imagining them together in heaven, where his tongue and her muse both rise. In colonial Boston, few would have granted two enslaved young people such a vocation.",
+            "Some readers stress the poem’s religious hope; others its mutual recognition. Both are present in the text."
+          ],
+          "evidence": [
+            "Still may the painter's and the poet's fire,",
+            "There shall thy tongue in heavenly murmurs flow,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q3",
+          "prompt": "Near the end she says that in heaven there will be “No more” of Damon’s sighs or Aurora’s eyes. What is she setting aside, and why does the poem end with night?",
+          "facilitatorNotes": [
+            "She sets aside the pastoral and classical conventions of earthly verse for “nobler themes” and “purer language.” Night then “seals the fair creation from my sight,” ending where seeing and painting stop, to wait for the day she has imagined.",
+            "Some read the close as calm devotion; others as a sober acknowledgment of limits in this world."
+          ],
+          "evidence": [
+            "For nobler themes demand a nobler strain,",
+            "Now seals the fair creation from my sight."
+          ]
+        }
+      ]
+    }
+  ]
+}
