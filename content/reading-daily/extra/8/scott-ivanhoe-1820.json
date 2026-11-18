@@ -303,6 +303,381 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-05",
+      "title": "Ivanhoe: England in 1194 (Chapter VII, part 1)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a chain of historical causes, and notice how Scott sets glamour against hardship.",
+      "focus": "The troubled kingdom behind the tournament, and a narrator who judges before we meet his characters.",
+      "context": "Ivanhoe (1820), by the Scottish novelist Sir Walter Scott (1771–1832), is a historical romance set in England in 1194, when King Richard the Lion-Heart, coming home from the Crusade, has been held prisoner abroad and his brother Prince John hopes to keep his throne; Saxon families such as Cedric’s still resent the Norman lords who conquered England in 1066. This chapter is headed “CHAPTER VIII.” in the first edition, which had numbered an earlier chapter twice; later editions call it Chapter VII. After the Palmer parted from Isaac at Sheffield, Scott turns to the great tournament at Ashby, toward which all his characters are travelling. The motto comes from John Dryden’s version of Chaucer’s Knight’s Tale, “Palamon and Arcite.” Liveries are uniforms; a buckler is a shield; a palfrey is a riding horse; “subaltern” oppression is oppression by petty officials; Arthur of Brittany, son of John’s elder brother Geoffrey, had a better claim to the throne than John; profligate means wasteful and immoral; perfidious means treacherous; the forest laws reserved hunting in royal forests for the king, with savage penalties; usurious interest is excessive interest; cankers are spreading sores; a real was a small Spanish coin, and a bull-feast is a bullfight; a Passage of Arms is a tournament in which a group of challengers holds the field against all comers.",
+      "contentNote": "Scott blames the nobles’ debts partly on Jewish moneylenders’ “usurious interest” and says nobles escaped their creditors by violence; this reflects the novel’s nineteenth-century assumptions about medieval Jews.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the seventh chapter (printed “CHAPTER VIII.”), from its motto to the crowds hastening to Ashby; opens “Knights, with a long retinue of their squires, In gaudy liveries march and quaint…”; closes “…of persons of all ranks hastened upon the appointed morning to the place of combat.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-scott-ivanhoe-1820-06",
+        "blocks": [
+          368,
+          373
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "993953871dc20fb736adf55883f2ce5c70c59f28f17e365a92b9f09b421a6470"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-05-q1",
+          "prompt": "Scott opens with England’s troubles. Name three, and explain how they feed one another.",
+          "facilitatorNotes": [
+            "King Richard is a prisoner; John plots with Philip of France against Richard and against Arthur, gathering hardened crusaders who hope for civil war; oppression and the forest laws drive men into outlaw bands; nobles act as petty tyrants, borrow heavily and turn on their creditors; disease strikes the poor hardest. With no king to give justice, each trouble breeds the next."
+          ],
+          "evidence": [
+            "King Richard was absent a prisoner",
+            "a prey to every species of subaltern oppression"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-05-q2",
+          "prompt": "How does Scott describe Prince John before he even appears? What effect does this have on how we will see him?",
+          "facilitatorNotes": [
+            "“Light, profligate, and perfidious,” working to keep in prison the brother to whom he owed so many favours. Telling us first makes us watch John’s actions for proof. Some readers may prefer to judge characters from what they do rather than from the narrator’s verdict."
+          ],
+          "evidence": [
+            "His own character being light, profligate, and perfidious",
+            "to prolong the captivity of his brother Richard, to whom he stood indebted for so many favours"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-05-q3",
+          "prompt": "Why does Scott compare the tournament crowd to “the half-starved citizen of Madrid” at a bullfight? Is the comparison fair?",
+          "facilitatorNotes": [
+            "Rich and poor alike, in the middle of misery, crave a spectacle, as a starving man spends his thought on a bullfight. Scott, writing for readers of 1820, links the past with his own time; the comparison suggests escape and perhaps folly. Readers may think of the spectacles of their own day."
+          ],
+          "evidence": [
+            "the half-starved citizen of Madrid, who has not a real left to buy provisions for his family",
+            "Neither duty nor infirmity could keep youth or age from such exhibitions."
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-05-q4",
+          "prompt": "The motto lists knights in “gaudy liveries,” smiths, yeomen and “clowns … with cudgels.” How does it set up the chapter, compared with the history that follows?",
+          "facilitatorNotes": [
+            "The motto gives chivalry’s bright, festive side: colours, gold bits, eager horses and crowds. The history gives prison, plots, outlaws and plague. Scott sets the glamour of the tournament against the misery around it, a contrast the coming scenes will play out."
+          ],
+          "evidence": [
+            "In gaudy liveries march and quaint attires",
+            "The condition of the English nation was at this time sufficiently miserable."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-06",
+      "title": "Ivanhoe: The Lists at Ashby (Chapter VII, part 2)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Build a clear picture of a place from a long description, and notice who is placed where.",
+      "focus": "A stage set for conflict: space, rank and suspense.",
+      "context": "Recap: Scott has described England in 1194, with King Richard a prisoner, Prince John plotting to take the throne, outlaws in the forests and nobles acting as petty tyrants; yet rich and poor flock to the great tournament at Ashby. The lists are the fenced ground where knights fight on horseback; palisades are fences of stakes; heralds proclaim and judge rank, helped by pursuivants; pavilions are large tents; “sylvan” means of the woods; an esplanade is a level open space; farriers shoe horses; the pit was the floor of a theatre below the boxes; the promiscuous multitude is the mixed crowd; emblazoned means painted as on a coat of arms; La Royne de la Beaulté et des Amours is Old French for the Queen of Beauty and of Love; marshals keep order on the field; “refractory” means unruly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the seventh chapter (printed “CHAPTER VIII.”), from “The scene was singularly romantic” to the filling of the galleries; opens “The scene was singularly romantic. On the verge of a wood, which approached to within a…”; closes “…It was of course amongst these that the most frequent disputes for precedence occurred.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-05",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-07",
+        "blocks": [
+          374,
+          380
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c15b50f802ed4271a31bb987c1f71068e07f7564948011334ffca3713b9efd0"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-06-q1",
+          "prompt": "Describe, or sketch, the layout of the lists. Where are the challengers, where will other knights enter, and where will Prince John sit?",
+          "facilitatorNotes": [
+            "A quarter-mile square with rounded corners in a hollow meadow; through the south gate a slope up to five black-and-russet pavilions for the challengers; at the north gate an enclosure for knights who will answer them; the Prince’s raised gallery in the middle of the east side, opposite the point of impact, and the Queen of Beauty’s gallery facing it on the west."
+          ],
+          "evidence": [
+            "five magnificent pavilions, adorned with pennons of russet and black",
+            "exactly opposite to the spot where the shock of the combat must take place"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-06-q2",
+          "prompt": "Who are the five challengers? Which names have you met before, and what might that suggest about the tournament?",
+          "facilitatorNotes": [
+            "Brian de Bois-Guilbert, the Templar who planned to seize Isaac, has the place of honour; beside him are Reginald Front-de-Bœuf, one of the two barons to whose castles the Templar meant Isaac to be carried, and Richard de Malvoisin, who shares the other baron’s name; then Grentmesnil and Vipont. All are Normans, and several are men we have seen scheming against a defenceless guest, so readers may expect the challengers to be the villains and wonder who will answer them."
+          ],
+          "evidence": [
+            "The central pavilion, as the place of honour, had been assigned to Brian de Bois-Guilbert",
+            "On one side of his tent were pitched those of Reginald Front-de-Bœuf and Richard de Malvoisin"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-06-q3",
+          "prompt": "How does the seating sort the crowd by rank? Find the comparison Scott uses to make it familiar to his readers.",
+          "facilitatorNotes": [
+            "Nobles and ladies sit in tapestried galleries; yeomen and better-off spectators in a narrow space “compared to the pit of a theatre”; the mixed crowd on banks of turf; others in trees and even a church steeple. Even quarrels over seats are settled by rank: axe-shafts for commoners, heralds for their betters."
+          ],
+          "evidence": [
+            "might be compared to the pit of a theatre",
+            "being readily employed as arguments to convince the most refractory"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-06-q4",
+          "prompt": "What does Scott find surprising about the ladies, and what mystery does he leave unsolved?",
+          "facilitatorNotes": [
+            "More ladies than men come to a sport “too bloody and dangerous,” one would think, to please them. And the throne of the Queen of Beauty and of Love, hung with Cupid’s “common-place emblems,” has no named occupant. Scott’s irony touches the clichés of romance, while the empty throne creates suspense: someone will have to choose her."
+          ],
+          "evidence": [
+            "a sport, which one would have thought too bloody and dangerous to afford them much pleasure",
+            "But who the Queen of Beauty and of Love was to prove, no one was prepared to guess."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-07",
+      "title": "Ivanhoe: Isaac Seeks a Place, and Prince John Arrives (Chapter VII, part 3)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Look behind the confidence or splendour of each figure for the calculation or character beneath it.",
+      "focus": "Wealth, rank and power in a crowd, and appearances the crowd mistakes for character.",
+      "context": "Recap: the tournament ground at Ashby is filling. Five Norman challengers, among them the Templar Bois-Guilbert, Front-de-Bœuf and Malvoisin, hold the field; galleries await Prince John and the unnamed Queen of Beauty and of Love; crowds quarrel over places. Isaac of York has come after his flight from Cedric’s hall. A gaberdine is a long coat; Montdidier is an old Norman family; Lincoln green is the cloth foresters wore; a baldric is a shoulder belt; the Prior of Jorvaulx, Prior Aymer, appeared earlier in the novel; Knights Templars and Knights of St John (Hospitallers) were orders of warrior monks; Saladin was the sultan who held Jerusalem; contemned means despised; to caracole is to prance in half-turns; a rheno is a fur cape; sables are costly furs; maroquin is fine goatskin leather.",
+      "contentNote": "An impoverished Norman and a yeoman insult Isaac in antisemitic terms (“Dog of an unbeliever”; “sucking the blood of his miserable victims”), and the narration presents Jews as moneylenders who survived by noble protection.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the seventh chapter (printed “CHAPTER VIII.”), from the quarrel over Isaac’s place to the crowd’s applause for Prince John; opens “\"Dog of an unbeliever,\" said an old man, whose thread-bare tunic bore witness to his…”; closes “…with which he managed his palfrey, were sufficient to merit their clamorous applause.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-06",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-08",
+        "blocks": [
+          381,
+          386
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "085f968e5d1ca0be6973ae6a703fb307afab976cf496e7bac5ec67b982685147"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-07-q1",
+          "prompt": "Why does Isaac, so timid at Rotherwood, now push boldly into the front row? What does Scott’s explanation tell us about his position?",
+          "facilitatorNotes": [
+            "In a public place no noble dares harm him; the law and self-interested barons protect him; and Prince John is negotiating a large loan from the Jews of York in which Isaac has a big share. His boldness is a calculation: his safety depends on his usefulness to the powerful."
+          ],
+          "evidence": [
+            "knew well that upon the present he had nothing to fear",
+            "Prince John was even then in the very act of negociating a large loan from the Jews of York"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-07-q2",
+          "prompt": "Compare the two men who object to Isaac. What does each have, and what does each lack?",
+          "facilitatorNotes": [
+            "The old Norman has rank without money: a threadbare tunic with sword, dagger and gold chain. The yeoman has skill and self-confidence: a forester’s dress, twelve arrows, a six-foot bow. Both resent Isaac’s wealth, and the yeoman’s “bottled spider” image is cruel. The bystanders side with the poor Norman."
+          ],
+          "evidence": [
+            "whose thread-bare tunic bore witness to his poverty",
+            "swelled him like a bottled spider"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-07-q3",
+          "prompt": "How does Scott use the Prior of Jorvaulx’s boots to comment on Prince John’s followers?",
+          "facilitatorNotes": [
+            "Their points curl so far that they are tied to his belt, so he cannot use his stirrups: absurd vanity in a churchman, who perhaps enjoys showing off his riding to the ladies. Laymen and clergy in John’s train are equally “light” and “gay,” with mercenaries and marauding barons among them."
+          ],
+          "evidence": [
+            "as light in their dress, and as gay in their demeanour as their companions",
+            "effectually prevented him from putting his foot into the stirrup"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-07-q4",
+          "prompt": "Scott says the Prince’s open, handsome face “is often mistaken for manly frankness.” What does he say it really shows, and how does most of the crowd judge him?",
+          "facilitatorNotes": [
+            "The “reckless indifference” of a pleasure-seeker sure of his superior birth. The crowd, “a hundred to one,” judges by his furs, boots, golden spurs and graceful riding, and cheers. Again appearance and character part company, and the narrator asks us to look deeper than the crowd."
+          ],
+          "evidence": [
+            "Such an expression is often mistaken for manly frankness",
+            "were sufficient to merit their clamorous applause"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-08",
+      "title": "Ivanhoe: Rebecca, and the Saxons’ Gallery (Chapter VII, part 4)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Ask whose eyes the description looks through, and what each insult is meant to achieve.",
+      "focus": "Mockery as a political weapon; a description that makes a woman something to be looked at.",
+      "context": "Recap: at the Ashby tournament Isaac of York, sure of Prince John’s protection because the Prince needs a loan, has pushed into the front row with his daughter Rebecca and been insulted by bystanders; now the handsome, contemptuous Prince rides round the lists with his frivolous followers, among them Prior Aymer of Jorvaulx. Aquiline means hooked like an eagle’s beak; a simarre is a long robe; an agraffe is a jewelled clasp; “the wisest king who ever lived” is Solomon, and the Canticles (the Song of Songs), the Bible’s love poem traditionally ascribed to him, supplies the rose of Sharon and the lily of the valley; Mammon is wealth; marks and byzants are coins; an houri is a beautiful maiden of the Muslim paradise; a congee is a bow; hinds and churls are peasants; Athelstane, here “of Conigsmark,” descends from the last Saxon kings; vis inertiæ is Latin for the force of inertia.",
+      "contentNote": "Prince John mocks Isaac with antisemitic insults and leers at Rebecca, and the narrator’s own description lingers on her body and her “Eastern” difference. Athelstane is said to be a heavy drinker.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the seventh chapter (printed “CHAPTER VIII.”), from the Prince’s first sight of Rebecca to Athelstane’s stare; opens “In his joyous caracole round the lists; the attention of the Prince was called by the…”; closes “…in it something extremely ludicrous. But the impatient John regarded it in no such light.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-07",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-09",
+        "blocks": [
+          387,
+          395
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7aa8e63634356adf60292ad67d34657d5f5a58f197cc52178bcbb448129f746b"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-08-q1",
+          "prompt": "How does Scott describe Rebecca? Which details present her as beautiful, and which as foreign? Whose eyes are we looking through?",
+          "facilitatorNotes": [
+            "Her figure, dark complexion, eyes, brows, teeth and curls; her turban, “Eastern dress,” Persian silk, ostrich feather and diamonds. The narrator invokes Prince John as a “shrewd connoisseur” and dwells on her neck and unfastened clasps: a male outsider’s gaze that makes her something to be looked at. The proud ladies scoff but secretly envy. Readers can watch whether later chapters give her a voice of her own."
+          ],
+          "evidence": [
+            "even though it had been judged by as shrewd a connoisseur as Prince John",
+            "scoffed and sneered at by the proud dames who sat above her, but secretly envied by those who affected to deride them"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-08-q2",
+          "prompt": "Prince John calls Isaac “my prince of usurers” and orders him a seat in the gallery. Why honour him and insult him at the same time?",
+          "facilitatorNotes": [
+            "Isaac is his source of money, “my prince of supplies,” and the favour costs John nothing while it shows his power. The honour is a joke at Isaac’s expense, “at least as much mockery as courtesy,” and his followers laugh obediently. Isaac answers with a bow, “nothing embarrassed.”"
+          ],
+          "evidence": [
+            "my prince of supplies, with his lovely Jewess, shall have a place in the gallery",
+            "in which, however, there was at least as much mockery as courtesy"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-08-q3",
+          "prompt": "Why does John choose Cedric’s and Athelstane’s places in particular?",
+          "facilitatorNotes": [
+            "Scott has told us John hates the few powerful Saxon families and never misses a chance to affront them. Forcing proud Saxon nobles to make room for a Jew humiliates both at once; “Saxon churls!” shows the contempt."
+          ],
+          "evidence": [
+            "Saxon churls!—out upon them!",
+            "the family of Cedric the Saxon, with that of his ally and kinsman Athelstane"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-08-q4",
+          "prompt": "How does Athelstane respond to the order? How do his friends and his critics explain his character, and which explanation does Scott seem to favour?",
+          "facilitatorNotes": [
+            "He neither obeys nor resists; he simply stares, opposing only “the vis inertiæ,” which is “extremely ludicrous.” Friends say he lacks decision, not courage; others blame inherited drunkenness and “brutal debauchery.” Scott gives the harsher view the last and longest word. Readers may compare him with Cedric, who is about to act."
+          ],
+          "evidence": [
+            "he was very generally called Athelstane the Unready",
+            "opposed only the vis inertiæ to the will of John"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-09",
+      "title": "Ivanhoe: A Lance, a Bow and a Shield of Brawn (Chapter VII, part 5)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a confrontation that turns from violence to laughter, and weigh who wins and who pays.",
+      "focus": "Courage, a hidden threat, a cruel joke and a theft applauded as generosity.",
+      "context": "Recap: at the Ashby tournament Prince John, to humiliate the Saxons, has ordered Cedric and the slow Athelstane to make room in their gallery for Isaac of York and his daughter Rebecca; Athelstane only stares. Bracy is Maurice de Bracy, leader of “free companions,” mercenaries (Condottieri) who fight for pay; a yeoman is a free commoner; to “hit the white” is to hit the centre of a target; King William Rufus was killed by an arrow, said to be Walter Tyrrell’s, while hunting in 1100 (Scott calls him John’s grandfather; he was a more distant relative); churls are peasants; “an it please” means if it please; horse-furniture is harness; brawn is boar’s meat, here a ham, which Jewish law forbids; an alderman is a town official; a jennet is a small horse; byzants are gold coins.",
+      "contentNote": "Prince John calls Isaac “infidel dog” and threatens to have him flayed; Wamba thrusts pork in his face and Isaac falls down the steps to the crowd’s laughter; John then takes his purse. The scene shows public cruelty to a Jew treated as entertainment.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the seventh chapter (printed “CHAPTER VIII.”), from Bracy’s lance to the end of the chapter; opens “\"The Saxon porker,\" he said, \"is either asleep or minds me not—Prick him with your lance,…”; closes “…as much applause from the spectators as if he had done some honest and honourable action.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-08",
+        "continuesTo": null,
+        "blocks": [
+          396,
+          416
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "675468e1e752b38578a08808e95dc8692f2d36cf35d9b0d880031eefe458b499"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-09-q1",
+          "prompt": "How do Athelstane and Cedric respond to Bracy’s lance? What does the crowd’s reaction show?",
+          "facilitatorNotes": [
+            "Athelstane cannot even draw back; Cedric, “as prompt as his companion was tardy,” cuts off the lance-point with one blow. Even John’s attendants murmured at the order, and the crowd cheers Cedric: popular feeling is against the Prince, who looks round for “some safe and easy victim.”"
+          ],
+          "evidence": [
+            "as prompt as his companion was tardy",
+            "a general exclamation of the crowd uttered in loud applause of the spirited conduct of Cedric"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-09-q2",
+          "prompt": "What is dangerous about the yeoman’s answers and the voice from the crowd? Why does John back down?",
+          "facilitatorNotes": [
+            "The yeoman calmly says he cheers any good shot or blow and can hit a woodsman’s mark; an unseen voice adds “Wat Tyrrell's mark,” a reminder that a king was once killed by an arrow. The veiled threat “incensed and alarmed” John; he has the archer watched and promises to test his skill, which sets up a later trial."
+          ],
+          "evidence": [
+            "I always add my hollo",
+            "This allusion to the fate of William Rufus"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-09-q3",
+          "prompt": "Wamba heads off a clash between Cedric and the Prince by thrusting a ham in Isaac’s face. Why does the crowd laugh, and how should a reader respond to the joke?",
+          "facilitatorNotes": [
+            "The ham is pork, forbidden to Jews; Isaac recoils, falls down the steps, and everyone, John included, laughs while Wamba claims the prize. The jest heads off a fight between Cedric and the Prince, protecting Wamba’s master, but it is paid for by the humiliation of an old man. Readers can see it as both quick-witted and cruel."
+          ],
+          "evidence": [
+            "The catastrophe was prevented by the clown Wamba",
+            "an excellent jest to the spectators, who set up a loud laughter"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-09-q4",
+          "prompt": "Reread the last sentence. What is Scott’s judgment of John’s “generosity,” and of the crowd?",
+          "facilitatorNotes": [
+            "John asks to borrow “a handful” of coins, snatches the whole purse, tosses two pieces to Wamba and rides on, applauded “as if he had done some honest and honourable action.” The irony exposes theft dressed as generosity and a crowd that cheers splendour. Isaac’s confidence in the Prince’s protection has proved hollow."
+          ],
+          "evidence": [
+            "settled Isaac's doubts by snatching the pouch itself from his side",
+            "as if he had done some honest and honourable action"
+          ]
+        }
+      ]
     }
   ]
 }
