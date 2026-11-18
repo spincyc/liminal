@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "whittier-poems-nature-1892",
+  "author": "John Greenleaf Whittier",
+  "title": "Poems of Nature; Poems Subjective and Reminiscent; Religious Poems",
+  "translator": null,
+  "edition": "Poems of Nature: Poems Subjective and Reminiscent: Religious Poems (The Writings of John Greenleaf Whittier, Riverside Edition, volume II), Boston and New York: Houghton, Mifflin and Company (The Riverside Press, Cambridge), the printing whose copyright notice runs from 1848 to 1891 and ends “Copyright, 1892, by George F. Bagley and George W. Cate, executors and trustees, and Houghton, Mifflin & Co.”; the scan used as witness is dated MDCCCXCIII on its title page. Text from Project Gutenberg eBook 9574 (The Works of John Greenleaf Whittier, Volume II, produced by David Widger), which does not name its print exemplar; its contents, Whittier’s headnotes and dates match this volume. The library holds the whole volume from POEMS OF NATURE to the last poem; the PG contents list is left out, and the section title that PG joins to the first poem’s title (POEMS SUBJECTIVE AND REMINISCENT MEMORIES) is split into its two headings. The poem the nightly readings use, “The Pumpkin” (blocks 589–594, printed pages 107–109), was collated word by word in November 2026 against the OCR text of the Internet Archive scan poemsofnaturepoe0000john: one reading was changed to the print (“with two rats for her team!”, page 108, where the transcription has no stop); the print’s spaced exclamation marks and semicolons, small-capital first word, running heads and page numbers are typographic and not represented, the transcription’s double hyphens stand for the print’s em dashes, and the print’s turned-over long lines are joined as in the transcription. Outside that poem the text has not been collated and keeps the transcription.",
+  "publicationYear": 1892,
+  "translationYear": null,
+  "url": "https://archive.org/details/poemsofnaturepoe0000john",
+  "textUrl": "https://www.gutenberg.org/cache/epub/9574/pg9574.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The scanned copyright page gives US copyright dates from 1848 to 1891 for Whittier and his publishers and 1892 for his executors and Houghton, Mifflin & Co.; the title page is dated 1893. Works published in the United States before 1931 are in the US public domain as of 2026. Project Gutenberg eBook 9574 is labelled public domain in the USA; no translation, later introduction or illustration is reproduced.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/poemsofnaturepoe0000john"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/9574/pg9574.txt",
+    "downloadSha256": "1813b7cbf05c9cf75c2c735e138e760c56d1e01c1987f99524a3f9efa456ec02",
+    "method": "Project Gutenberg plain text (eBook 9574, CRLF normalised to LF) from the PG mirror, converted by a scratch Python script from the section title POEMS OF NATURE after the contents list to the PG footer, excluding the PG header and footer. The three section titles are level-1 headings and poem titles level-2 headings (the transcription’s trailing full stops kept where it has them); each indented verse chunk is a stanza block with the transcription’s five-space margin removed, so deeper indents (turned-over lines and indented lines) stay relative to it; a poem’s closing year is a paragraph; Whittier’s prose headnotes and epigraphs, unindented in the transcription, are paragraphs with wraps joined; _underscores_ for italics are kept. One reading was then changed to the collated print (block 593)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        589,
+        594
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 1863,
+    "sha256": "ec10385b0d126d0bb7d8ce508035beee143f2dcf119031b9f288de718299f8e7"
+  }
+}
