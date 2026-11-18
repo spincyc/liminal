@@ -673,6 +673,680 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-10",
+      "title": "How the First Letter Was Written, part 1: A broken spear",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Enjoy the long joke-names, and notice why Taffy and the Stranger-man cannot understand each other.",
+      "focus": "A girl and her father need a message sent home, but nobody can write yet.",
+      "context": "Rudyard Kipling (1865–1936) was born in Bombay, India, and made up the Just So Stories (1902) as bedtime stories for his own children; “Best Beloved” is the child listening. Each story explains, in a made-up and joking way, how an animal came to be as it is. They are called “Just So” because his daughter wanted them told exactly the same way every time, so read every word. This story is not about an animal: it imagines how writing began. Neolithic means from the New Stone Age, thousands of years ago, before writing; a Primitive here is a Stone Age person. Jutes and Angles were early peoples of England; Dravidians are peoples of southern India. Carp are fish; sinews are tough cords from an animal’s body, used for tying; resin is sticky tree gum. “A pretty kettle of fish” means a mess. Slang is very casual language.",
+      "contentNote": "Taffy’s long name says she ought to be spanked; it is a family joke in the story.",
+      "excerpt": {
+        "locator": "“How the First Letter Was Written,” from the beginning to Taffy asking the Stranger-man to fetch the black-handled spear; opens “ONCE upon a most early time was a Neolithic man. He was not a Jute or an Angle, or even a…”; closes “…ask for Daddy's other spear—the one with the black handle that hangs over our fireplace.'”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-kipling-just-so-1912-11",
+        "blocks": [
+          308,
+          322
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "69de6c0d63ed2197893433ee2249f0b32d68e64cbd771a1fe9e64e9d32d0a11e"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-10-q1",
+          "prompt": "What do the family’s long names mean? Which one do you like best, and why?",
+          "facilitatorNotes": [
+            "Tegumai is “Man-who-does-not-put-his-foot-forward-in-a-hurry,” Teshumai “Lady-who-asks-a-very-many-questions,” and Taffy “Small-person-without-any-manners-who-ought-to-be-spanked.” Each name is a joke about the person. Readers can invent a name like this for themselves."
+          ],
+          "evidence": [
+            "'Man-who-does-not-put-his-foot-forward-in-a-hurry';",
+            "'Lady-who-asks-a-very-many-questions';"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-10-q2",
+          "prompt": "What goes wrong at the river, and why can’t Taffy run home for the other spear?",
+          "facilitatorNotes": [
+            "Tegumai breaks his spear on the river bottom, and they are miles from home. He says it is too far for her “little fat legs” and she might fall into the beaver-swamp."
+          ],
+          "evidence": [
+            "he accidentally broke it clean across by jabbing it down too hard on the bottom of the river.",
+            "'It's too far for your little fat legs,' said Tegumai."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-10-q3",
+          "prompt": "What does Taffy wish she and her Daddy could do?",
+          "facilitatorNotes": [
+            "Write, so they could send a message home for the new spear. Her father scolds her for saying “awful,” but agrees it would be a convenience."
+          ],
+          "evidence": [
+            "'I say, Daddy, it's an awful nuisance that you and I don't know how to write, isn't it?",
+            "If we did we could send a message for the new spear.'"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-10-q4",
+          "prompt": "The Stranger-man thinks Taffy is “a very wonderful child” and her father a great Chief. Why does he think that? What is really happening?",
+          "facilitatorNotes": [
+            "He cannot understand their language, so he guesses from what he sees: a child who stamps and makes faces, and a man who will not look at him must be very important. Really Tegumai is just busy mending his spear. The joke is that both sides misunderstand; ask readers to predict where that will lead."
+          ],
+          "evidence": [
+            "She must be the daughter of that noble Chief who is so great that he won't take any notice of me.",
+            "and he did not understand one word of Tegumai's language."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-11",
+      "title": "How the First Letter Was Written, part 2: Taffy’s picture",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Imagine Taffy’s picture from her words, and compare what she means with what the Stranger-man thinks it means.",
+      "focus": "Taffy draws a message, and the Stranger-man reads it completely wrong.",
+      "context": "Recap: long ago, before anyone could write, a Stone Age man called Tegumai broke his fish-spear far from home. His daughter Taffy wished they could send a message to her Mummy for the black-handled spear. A Stranger-man came by who spoke a different language; Taffy asked him to fetch the spear, but he understood nothing, and decided Tegumai must be a great Chief. In the printed book a picture of Taffy’s drawing appears where the story says “Now this is the picture”; here, Taffy’s own words describe it. To be ’fended is to be offended.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the First Letter Was Written,” from the Stranger-man giving Taffy the birch-bark to Tegumai going on fishing; opens “The Stranger-man (and he was a Tewara) thought, 'This is a very, very wonderful child.…”; closes “'Very well,' said Tegumai, and went on fishing.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-10",
+        "continuesTo": "reading-3-kipling-just-so-1912-12",
+        "blocks": [
+          323,
+          334
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d3a9f3c6ece460c5d4640d4619c33231aea060562d6582e9426f222e57a41f4"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-11-q1",
+          "prompt": "Why does the Stranger-man give Taffy a piece of birch-bark? What does Taffy think it means?",
+          "facilitatorNotes": [
+            "He means it as a sign that his heart is white like the bark and he means no harm. Taffy thinks he wants her Mummy’s address written down. Already they mean different things."
+          ],
+          "evidence": [
+            "to show that his heart was as white as the birch-bark and that he meant no harm;",
+            "You want my Mummy's living address?"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-11-q2",
+          "prompt": "Why is the Stranger-man surprised when Taffy takes his shark’s tooth?",
+          "facilitatorNotes": [
+            "He was told that anyone who touched his magic tooth without leave would swell up or burst, and she does not. So he decides to be even more polite."
+          ],
+          "evidence": [
+            "if anybody touched it without my leave they would immediately swell up or burst,"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-11-q3",
+          "prompt": "List what Taffy draws, and one thing in her picture that does not look the way she meant.",
+          "facilitatorNotes": [
+            "Daddy fishing with the broken spear, the black-handled spear, herself explaining, the Stranger-man holding the spear, two trees, a hill, the beavers’ heads in the swamp, the Cave, and Mummy holding up her hands. The spear looks as if it is “sticking in Daddy's back,” and her hair seems to stand up. Try drawing the picture from her description."
+          ],
+          "evidence": [
+            "It looks as if it was sticking in Daddy's back,",
+            "I haven't put in all the beavers, because I can't draw beavers, but I've drawn their heads,"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-11-q4",
+          "prompt": "What does the Stranger-man think the picture says? Why do his ideas make sense to him?",
+          "facilitatorNotes": [
+            "That the great Chief is surrounded by enemies with spears and needs his tribe; that is why the Chief turned his back, so hidden enemies would not see a message. Each wrong guess fits what he has seen. Ask readers why a picture can mean different things to different people."
+          ],
+          "evidence": [
+            "If I do not fetch this great Chief's tribe to help him, he will be slain by his enemies",
+            "Now I see why the great Chief pretended not to notice me!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-12",
+      "title": "How the First Letter Was Written, part 3: The whole Tribe comes",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a misunderstanding as it grows bigger and bigger, and enjoy Kipling’s heaps of long words.",
+      "focus": "Taffy’s mother reads the picture as a story of attack, and the whole Tribe marches out.",
+      "context": "Recap: long ago, before writing, a Stone Age girl called Taffy drew a picture on birch-bark so that a Stranger-man, who did not speak her language, could fetch her father’s other spear from her mother. He thought the picture showed her father, a great Chief, attacked by enemies, and raced off to get help. Kipling piles up grand titles from many countries and times (Hetmans, Neguses, Woons, Akhoonds, Warlocks, Angekoks, Juju-men, Bonzes) for fun; they all mean chiefs, officers or holy men. Villeins and serfs were poor farm workers who served a lord; hierarchical order means arranged from most to least important. An oration is a speech.",
+      "contentNote": "The Neolithic ladies knock the Stranger-man down, sit on him, pull his hair and fill it with mud, and the Tribe plans to cut off his head; it is played for comedy, and no one is hurt in the end.",
+      "excerpt": {
+        "locator": "“How the First Letter Was Written,” from the Stranger-man handing Teshumai the picture to Tegumai saying his only visitor was the Stranger-man; opens “The Stranger-man—did you know he was a Tewara?—hurried away with the picture and ran for…”; closes “…that you are trying to choke. Aren't you well, or are you ill, O Tribe of Tegumai?'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-11",
+        "continuesTo": "reading-3-kipling-just-so-1912-13",
+        "blocks": [
+          335,
+          348
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1d4599c9e8b859ab65b0389d8eddb9634a8ebf570f01483b65bd5e1ae947c5d3"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-12-q1",
+          "prompt": "What does Teshumai think the picture shows? Find two things she reads wrong.",
+          "facilitatorNotes": [
+            "That the Stranger-man has stuck Tegumai “all full of spears” and frightened Taffy. The broken spear looks like a broken arm, the spear looks stuck in his back, and the beavers look like “a whole pack of people.”"
+          ],
+          "evidence": [
+            "He has stuck my Tegumai all full of spears,",
+            "they were Taffy's beavers really, but they did look rather like people"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-12-q2",
+          "prompt": "What do the Neolithic ladies do to the Stranger-man? How does he behave?",
+          "facilitatorNotes": [
+            "They knock him down, sit on him in a line of six, fill his hair with mud and call him names. He stays polite and says nothing, though he is “really annoyed.”"
+          ],
+          "evidence": [
+            "knocked him down and sat on him in a long line of six,",
+            "the Stranger-man (in spite of being a Tewara) was really annoyed."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-12-q3",
+          "prompt": "Kipling lists the whole Tribe marching out, then asks, “Aren’t those beautiful words, Best Beloved?” Read the list aloud. Why might he enjoy them, and do you?",
+          "facilitatorNotes": [
+            "The words are grand, strange and fun to say, and the huge parade is funny because it is all for a broken spear. Some readers love the sound; others find it a jumble. Either answer is fine with a reason."
+          ],
+          "evidence": [
+            "(Aren't those beautiful words, Best Beloved?)",
+            "they frightened every fish for twenty miles,"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-12-q4",
+          "prompt": "Taffy calls it her “surprise.” Who is most surprised, and why is Tegumai not pleased?",
+          "facilitatorNotes": [
+            "Everyone is surprised: Taffy at the crowd, the Tribe to find Tegumai safe, Teshumai to find no enemies. Tegumai says it “has ruined all my fishing for the day” and calls the Tribe “very interfering.” Readers may choose a different person and explain."
+          ],
+          "evidence": [
+            "'Very,' said Tegumai; 'but it has ruined all my fishing for the day.",
+            "You're a very interfering people.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-13",
+      "title": "How the First Letter Was Written, part 4: A great invention",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Listen to Taffy explain her picture, then hear what the Head Chief says it means for the future.",
+      "focus": "A mix-up becomes the first step toward writing, and Kipling ends with a poem about the place where it happened.",
+      "context": "Recap: long ago, before writing, a Stone Age girl called Taffy drew a picture to send a Stranger-man for her father’s spear. Her mother and the whole Tribe read it as a picture of her father attacked by enemies; they beat the Stranger-man, filled his hair with mud, and marched to the river, only to find Taffy and her father, Tegumai, quite safe. In the verse, Merrow Down, Guildford, the river Wey, Shere, Bramley and Shamley are real places near the town of Guildford in Surrey, in the south of England. The ancient Britons lived there long ago; the Phoenicians were traders from the eastern Mediterranean; to barter is to trade; jet is a black stone; torques are neck rings. “Racial talks” in Kipling’s day meant talks between different peoples.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the First Letter Was Written,” from the Head Chief’s complaint about the picture to the end of the story and its verse; opens “'He came with a horrible picture,' said the Head Chief,—'a picture that showed you were…”; closes “…than six times bigger then; And all the Tribe of Tegumai They cut a noble figure then!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-12",
+        "continuesTo": null,
+        "blocks": [
+          349,
+          367
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "437edd7da630ec82d6ff9228d977d4a66f9f6d9f1b0e91f46c75b1e92beb85cb"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-13-q1",
+          "prompt": "How does Taffy explain the parts of her picture that frightened everyone?",
+          "facilitatorNotes": [
+            "There was only one spear, drawn three times to make sure; it only looked stuck in Daddy because the bark was too small; the “bad people” were her beavers, showing the way through the swamp; and Mummy looked pleased. Then she calls them “the stupidest people in the world.”"
+          ],
+          "evidence": [
+            "There was only one spear. I drawded it three times to make sure.",
+            "and those things that Mummy called bad people are my beavers."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-13-q2",
+          "prompt": "Who laughs, and who does not? Why might the ladies not join in?",
+          "facilitatorNotes": [
+            "The Head Chief, the Stranger-man, Tegumai and all the Tribe laugh; Teshumai and the Neolithic ladies do not, and keep saying “idiot!” Perhaps they feel foolish, or are cross that the men are laughing at what they did. Readers may have other ideas."
+          ],
+          "evidence": [
+            "The only people who did not laugh were Teshumai Tewindrow and all the Neolithic ladies.",
+            "and said 'idiot!' ever so often."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-13-q3",
+          "prompt": "What does the Head Chief say Taffy has invented? What does he promise about letters, and what advice does he give for next time?",
+          "facilitatorNotes": [
+            "Writing: at present only pictures, which are not always understood, but one day there will be twenty-six letters and people will “say exactly what we mean without any mistakes.” Next time, send someone who speaks their language to explain. Ask whether writing has really ended all mistakes."
+          ],
+          "evidence": [
+            "It is a great invention, and some day men will call it writing.",
+            "pictures are not always properly understood."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-13-q4",
+          "prompt": "The verse says the place where Taffy lived is now “A grassy track to-day.” How does the poem change the feeling of the story at the end?",
+          "facilitatorNotes": [
+            "After the comedy, it looks back across thousands of years: bison once roamed there, the river was six times bigger, and the Tribe of Tegumai “cut a noble figure then,” but now there is only a track. Some readers find it a little sad; others find it exciting to imagine people long ago in a real place."
+          ],
+          "evidence": [
+            "A grassy track to-day it is—",
+            "They cut a noble figure then!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-14",
+      "title": "How the Alphabet Was Made, part 1: The carp-fish mouth",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow how a sound becomes a picture, and draw the sign yourself.",
+      "focus": "Taffy and her father turn the sound “ah” into a drawing they can both remember.",
+      "context": "Rudyard Kipling (1865–1936) was born in Bombay, India, and made up the Just So Stories (1902) as bedtime stories for his own children; “Best Beloved” is the child listening. Each story explains, in a made-up and joking way, how an animal came to be as it is. They are called “Just So” because his daughter wanted them told exactly the same way every time, so read every word. This story follows “How the First Letter Was Written,” in which Taffy’s picture-letter was badly misread and a Stranger-man got mud in his hair. Like that story, it is not about an animal: it imagines how the alphabet began. Taffy’s family lives in the Stone Age, before writing. Kipling drew each sign the characters make; the numbers in brackets, such as (1.), point to those drawings, which are not included here, so draw each sign yourself as the characters describe it. Hides are animal skins; a marrow-bone has soft marrow inside to eat; “inciting” is Taffy’s word for exciting. A carp’s feeler is a whisker by its mouth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the Alphabet Was Made,” from the beginning to Tegumai promising to be surprised by the carp-fish sign; opens “THE week after Taffimai Metallumai (we will still call her Taffy, Best Beloved) made that…”; closes “…when I see it anywhere, as if you had jumped out from behind a tree and said \"Ah!\"'”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-kipling-just-so-1912-15",
+        "blocks": [
+          369,
+          387
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0c3d83782adf071005f81e70792413565b903b488e5b63a415efa7f2a546dba7"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-14-q1",
+          "prompt": "What did the picture-letter mix-up cost Taffy’s Daddy? Who does Taffy say was to blame?",
+          "facilitatorNotes": [
+            "Two soft, fringed deerskins paid to the Stranger-man. Taffy says “We didn't do anything”: it was Mummy, the other ladies, and the mud. Her Daddy would rather not talk about it."
+          ],
+          "evidence": [
+            "I had to pay two deerskins—soft ones with fringes—to the Stranger-man",
+            "'We didn't do anything,' said Taffy."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-14-q2",
+          "prompt": "Why does Taffy say her Daddy looks like a carp-fish? Is she being rude?",
+          "facilitatorNotes": [
+            "When he says “Ah!” with his mouth open, he looks like a carp with its mouth open. She says it is not rude but part of her “secret-surprise-think.”"
+          ],
+          "evidence": [
+            "'You look just like a carp-fish with its mouth open.",
+            "'I'm not meaning rude, really and truly,' said Taffy."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-14-q3",
+          "prompt": "What will the carp-mouth picture remind Tegumai of? Why does he add the feeler?",
+          "facilitatorNotes": [
+            "The “ah” noise, as if Taffy had jumped out and surprised him. The feeler shows it is a carp, since perch and trout have none."
+          ],
+          "evidence": [
+            "it will remind you of that ah-noise.",
+            "'cause the perches and trouts haven't got feelers."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-14-q4",
+          "prompt": "Tegumai speaks “in the voice that grown-ups use when they are truly attending.” What makes him start listening properly? Draw the carp’s open mouth standing on its head, with the feeler across it: what letter does it look like?",
+          "facilitatorNotes": [
+            "He sees that a picture can stand for a sound, not just a thing, and that is something new. Kipling’s drawing looks like the letter A. (The real letter A grew from an old picture of an ox’s head; Kipling’s carp is his own joke.)"
+          ],
+          "evidence": [
+            "in the voice that grown-ups use when they are truly attending.",
+            "Here's just his mouth, and that means ah."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-15",
+      "title": "How the Alphabet Was Made, part 2: Tail, egg and snake",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Match each new sound to its picture and say why the picture fits.",
+      "focus": "Signs for sounds can be joined into words, and words can be left for someone far away.",
+      "context": "Recap: a week after the picture-letter mix-up, Taffy and her father Tegumai, a Stone Age family who cannot write, are fishing by the Wagai river. Taffy has invented a game: a carp-fish’s open mouth, with its feeler across, stands for the sound “ah.” Kipling drew each sign the characters make; the numbers in brackets, such as (1.), point to those drawings, which are not included here, so draw each sign yourself as the characters describe it. Flints are sharp stones once used for spear-heads; fever is an illness with a high temperature.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the Alphabet Was Made,” from Taffy asking for another noise to her dancing round her Daddy over “yo, bad water”; opens “'Now, make another noise,' said Taffy, very proud.”; closes “…and a round egg! O Daddy, we must tell Mummy, quick!' and Taffy danced all round him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-14",
+        "continuesTo": "reading-3-kipling-just-so-1912-16",
+        "blocks": [
+          388,
+          415
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "66873cd7dce394c800bc384b4cc84ccbdeae4c70b1294862dfce514bb4c7adee"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-15-q1",
+          "prompt": "How do they draw “Yah”? Why does Taffy want the two parts drawn separately?",
+          "facilitatorNotes": [
+            "The “yer” part is a carp’s tail, the “ah” part its mouth. If they are joined she will forget which is which, and a carp standing on its head shows its tail first."
+          ],
+          "evidence": [
+            "Draw it separate. Draw his tail.",
+            "'Here's a carp-fish tail for the yer-noise.'"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-15-q2",
+          "prompt": "What pictures do they choose for “Oh!” and “Ssh!”? Why do they fit?",
+          "facilitatorNotes": [
+            "An egg or round stone for “Oh,” because the mouth makes a round shape; a hissing snake for “Ssh,” the noise a snake makes when it does not want to be disturbed."
+          ],
+          "evidence": [
+            "You make your mouth all around like an egg or a stone.",
+            "It's the noise a snake makes, Daddy, when it is thinking and doesn't want to be disturbed."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-15-q3",
+          "prompt": "Tegumai says they have found “the big secret of the world.” What does he compare it to?",
+          "facilitatorNotes": [
+            "The finest thing since the Tribe began using shark’s teeth instead of flints for spear-heads: a great invention."
+          ],
+          "evidence": [
+            "I believe we've found out the big secret of the world.",
+            "since the Tribe of Tegumai took to using shark's teeth instead of flints for their spear-heads."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-15-q4",
+          "prompt": "Tail and egg by a swamp pool spell “yo,” bad water. Why does Taffy dance? What can writing do that talking cannot?",
+          "facilitatorNotes": [
+            "Her Daddy could warn her even when he is miles away hunting; the sign speaks for him. Writing carries words across distance and time. Readers can name signs and notes that do this today."
+          ],
+          "evidence": [
+            "'But I needn't be near the water at all. I might be miles away, hunting, and still——'",
+            "All that in a carp-fish-tail and a round egg!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-16",
+      "title": "How the Alphabet Was Made, part 3: Sky-water",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Find the problem each new sign solves, and read a word the way Taffy does.",
+      "focus": "Signs must not be mixed up, and Taffy reads her first word without being told it.",
+      "context": "Recap: Taffy and her father Tegumai, Stone Age people who cannot yet write, are inventing signs for sounds: a carp-fish’s open mouth for “ah,” its tail for “yer,” an egg for “oh,” a snake for “ssh.” They have found that tail and egg by a pool can say “yo,” bad water, even when Tegumai is far away. Drying-poles are frames for hanging animal skins to dry. Kipling drew each sign the characters make; the numbers in brackets, such as (1.), point to those drawings, which are not included here, so draw each sign yourself as the characters describe it. ",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the Alphabet Was Made,” from “so,” dinner, and “sho,” the drying-poles, to Taffy reading “shu-ya” as the rain begins; opens “'Not yet,' said Tegumai; 'not till we've gone a little further. Let's see. Yo is bad…”; closes “…know it was going to rain and I'd take my beaver-skin hood. Wouldn't Mummy be surprised!'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-15",
+        "continuesTo": "reading-3-kipling-just-so-1912-17",
+        "blocks": [
+          416,
+          437
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0b40236ee7305557fb2e3c951f842693e4c71f33c4892d2f80a458e21f0eacee"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-16-q1",
+          "prompt": "What problem does Tegumai see with the snake-and-egg sign? Why does it matter so much to Taffy?",
+          "facilitatorNotes": [
+            "“So” means dinner but “sho” means the drying-poles. If Taffy came home for dinner and found she had to hang hot, hairy hides, she would be cross."
+          ],
+          "evidence": [
+            "So means \"come and have dinner,\" but sho means the drying-poles",
+            "I hate helping to hang heavy, hot, hairy hides on them."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-16-q2",
+          "prompt": "Why does Taffy reject the spotty snake, and what do they draw instead?",
+          "facilitatorNotes": [
+            "Spots might be left out in a hurry and she would be caught. They draw the drying-poles themselves after the snake, “and make quite sure.”"
+          ],
+          "evidence": [
+            "And p'raps if you were in a hurry you might leave them out,",
+            "I think we'd better draw a picture of the horrid high drying-poles their very selves,"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-16-q3",
+          "prompt": "How do they show the thin “oo” sound? Why not a thin egg?",
+          "facilitatorNotes": [
+            "A round egg with a little hole at the end, “to show how the O-noise runs out all thin.” A thin egg drawn in a hurry might be mistaken for the round one."
+          ],
+          "evidence": [
+            "We'll open a little hole at the end of the round egg to show how the O-noise runs out all thin,",
+            "If we drew that in a hurry we might mistake it for the round egg itself."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-16-q4",
+          "prompt": "Taffy reads “shu-ya” just as a raindrop falls. Why is this the moment they have “found the Secret”?",
+          "facilitatorNotes": [
+            "She worked out a message nobody said aloud: “I told it you without saying a word.” The raindrop proves she read it right. Some readers may say the raindrop helped her guess; Taffy admits it “made me quite sure.”"
+          ],
+          "evidence": [
+            "If you can, we've found the Secret.'",
+            "'And I told it you without saying a word, didn't I?'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-17",
+      "title": "How the Alphabet Was Made, part 4: “Shu-ya-las ya-maru”",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Build a whole sentence sound by sound, and notice the little inventions that make it readable.",
+      "focus": "Father and daughter write their first sentence, with signs as simple as they can make them and spaces between words.",
+      "context": "Recap: Taffy and her father Tegumai, a Stone Age family who cannot write, have invented signs for sounds (a carp’s open mouth, its tail, an egg, a snake, drying-poles, an egg with a hole), and Taffy has just read their first written word, “shu-ya,” sky-water, rain. In their language “las” means ending or breaking and “maru” means come to. Kipling drew each sign the characters make; the numbers in brackets, such as (1.), point to those drawings, which are not included here, so draw each sign yourself as the characters describe it. To jostle is to bump and push.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How the Alphabet Was Made,” from Tegumai dancing to his saying “That's enough for to-day”; opens “Tegumai got up and danced. (Daddies didn't mind doing those things in those days.) 'More…”; closes “…for years and years after the biggest trees you can see are all chopped up for firewood.'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-16",
+        "continuesTo": "reading-3-kipling-just-so-1912-18",
+        "blocks": [
+          438,
+          459
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7732918525508e344d372b2a25250ad2b1d9142516a187bc3a360df9bfe3edab"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-17-q1",
+          "prompt": "What message does Tegumai want to write next? Why is it so hard?",
+          "facilitatorNotes": [
+            "“Shu-ya-las, ya maru”: the rain is ending, come to the river. It needs new sounds, like la, m and r, and they are “the first people in all the world” to try."
+          ],
+          "evidence": [
+            "'Shu-ya-las, ya maru. (Sky-water ending. River come to.)",
+            "And we're the first people in all the world who've ever tried to do it, Taffimai!'"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-17-q2",
+          "prompt": "How do they find a sign for “la”? What does Taffy wish she had drawn for the Stranger-man?",
+          "facilitatorNotes": [
+            "“Las” also means breaking, and “shi-las” means a broken spear, so a broken spear becomes “la.” She wishes she had written “shi-las” instead of “silly beaver pictures.”"
+          ],
+          "evidence": [
+            "'And shi-las means that your spear is broken.",
+            "If I'd only thought of that instead of drawing silly beaver pictures for the Stranger!'"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-17-q3",
+          "prompt": "What pictures do they make for “m” and for “rrr”? Why does Tegumai put in only one tooth?",
+          "facilitatorNotes": [
+            "A shut mouth for “m”; the rough edge of a shark-tooth saw for “rrr.” He keeps it simple: “the easier we make our sound-pictures the better for everybody.”"
+          ],
+          "evidence": [
+            "We'll draw a shut mouth like this.'",
+            "the easier we make our sound-pictures the better for everybody."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-17-q4",
+          "prompt": "Taffy suggests putting something between the words so they won’t “jostle.” Why is that a good idea? Try writing a sentence with no spaces and see.",
+          "facilitatorNotes": [
+            "Without spaces, the signs run together and are hard to read, “same as if they were carps.” Tegumai leaves a space: the first space between words. Readers will find a no-space sentence slow and confusing."
+          ],
+          "evidence": [
+            "Hadn't we better put a little bit of stick or something between each word,",
+            "'Oh, I'll leave a space for that,' said her Daddy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-kipling-just-so-1912-18",
+      "title": "How the Alphabet Was Made, part 5: The Alphabet, all complete",
+      "sourceId": "kipling-just-so-1912",
+      "genre": "literary animal tale",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow how pictures turned into plain letters, then listen to how the closing verse changes the mood.",
+      "focus": "Drawn over and over, the sound-pictures grow simpler until they are an alphabet; the verse remembers Taffy long ago.",
+      "context": "Recap: Taffy and her father Tegumai, a Stone Age family, have spent a day inventing a sign for each sound (a carp’s mouth, a tail, an egg, a snake, drying-poles, a broken spear, a shut mouth, a saw-tooth) and have written their first sentence, about rain and the river. They are keeping it a secret from Taffy’s mother, Teshumai. A water-tank here is a stone basin for water; a pike is a fierce fish. Hieroglyphics, Demotics, Runics and Cufics are real kinds of old writing; Kipling mixes in made-up ones for fun. Surrey is a county in the south of England, where the first story’s verse places Taffy’s home; bracken is fern; elf-locks are tangled curls.",
+      "contentNote": "Kipling’s daughter Josephine, for whom he first told the Taffy stories, died in 1899 at the age of six; many readers hear that loss in the closing verse.",
+      "excerpt": {
+        "locator": "“How the Alphabet Was Made,” from the evening of drawing by the fire to the end of the story and its verse; opens “So they went home, and all that evening Tegumai sat on one side of the fire and Taffy on…”; closes “…far she cannot call to him, Comes Tegumai alone to find The daughter that was all to him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-kipling-just-so-1912-17",
+        "continuesTo": null,
+        "blocks": [
+          460,
+          472
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4b3e3e421723dc4cec8864befa2d50d116b8a6585d8fdbb1d8d7f9f76d7e6362"
+      },
+      "questions": [
+        {
+          "id": "reading-3-kipling-just-so-1912-18-q1",
+          "prompt": "What message does Taffy find on the water-tank? What does she do, and what does she think of writing now?",
+          "facilitatorNotes": [
+            "“Ya-las”: the water is running out. She fills the tank, and grumbles, “These picture-sounds are rather a bother!” Writing can also give you chores. Then she pulls her Daddy’s ear, the one she may pull when she has been good."
+          ],
+          "evidence": [
+            "she saw Ya-las (water is ending or running out) chalked on the side of the big stone water-tank,",
+            "'These picture-sounds are rather a bother!"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-18-q2",
+          "prompt": "How did the T-sound picture change? Why did all the pictures become plainer?",
+          "facilitatorNotes": [
+            "It began as the whole family holding hands; drawn six or seven times it got scratchier, until it was only a thin, long Tegumai with his arms out. Drawn over and over, every picture became “plainer and easier.”"
+          ],
+          "evidence": [
+            "till at last the T-sound was only a thin long Tegumai with his arms out",
+            "they became plainer and easier,"
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-18-q3",
+          "prompt": "Choose two other letters from Kipling’s list and explain where he says their shapes came from. Is this how the alphabet really began?",
+          "facilitatorNotes": [
+            "Z is the snake turned round; E a twiddle; B the beaver; N noses; G a pike’s mouth; K the pike’s mouth with a spear; W the winding river. It is Kipling’s invention; the real alphabet grew over thousands of years from old picture-signs, as the story hints with “thousands and thousands” of years."
+          ],
+          "evidence": [
+            "They turned the hissy-snake the other way round for the Z-sound,",
+            "and there was the Alphabet, all complete."
+          ]
+        },
+        {
+          "id": "reading-3-kipling-just-so-1912-18-q4",
+          "prompt": "In the verse, Taffy comes “dancing through the fern,” but Tegumai comes “alone” and “so far she cannot call to him.” How does the ending feel after the jokes of the story? Why might Kipling end this way?",
+          "facilitatorNotes": [
+            "Many readers find it sad and full of longing: the Tribe is gone, and a father searches for “The daughter that was all to him.” Knowing about Kipling’s daughter makes it sadder; some readers see it simply as a picture of the far past. Let readers say how it made them feel, gently."
+          ],
+          "evidence": [
+            "Comes Taffy dancing through the fern",
+            "The daughter that was all to him."
+          ]
+        }
+      ]
     }
   ]
 }
