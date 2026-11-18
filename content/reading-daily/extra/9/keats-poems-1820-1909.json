@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "keats-poems-1820-1909",
+  "readings": [
+    {
+      "id": "reading-9-keats-poems-1820-1909-01",
+      "title": "The Eve of St. Agnes, stanzas I–XIII: a bitter night and a lover’s risk",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the first stanzas aloud for their slow, cold sounds, then notice when the poem’s temperature and pace change. Keep track of who knows what as Porphyro enters the castle.",
+      "focus": "A frame of age, cold and devotion around a young woman’s superstition and a young man’s dangerous hope.",
+      "context": "John Keats (1795–1821) wrote this narrative poem in 1819 and published it in 1820, in the volume used here. It is set in a medieval castle on St. Agnes’ Eve, January 20, when, by folk belief, a girl who performed certain rites might dream of her future husband. A Beadsman is an old man paid to pray, telling his rosary beads; “argent” means silver; “amort” means as if dead; St. Agnes’s emblem is a lamb. Each stanza has eight lines of ten syllables and a ninth of twelve, the form Edmund Spenser invented. Porphyro’s family and Madeline’s are enemies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas I–XIII; opens “St. Agnes' Eve--Ah, bitter chill it was! The owl, for all his feathers, was a-cold; The…”; closes “…Which none but secret sisterhood may see, When they St. Agnes' wool are weaving piously.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-02",
+        "blocks": [
+          92,
+          104
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8eab6502a96a9bb118eb4d911b9a972c31dd66a380693a987480c6b09c416164"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q1",
+          "prompt": "The poem opens not with the lovers but with the Beadsman. What do the cold, the carved dead and his penance establish before the music begins?",
+          "facilitatorNotes": [
+            "Bitter cold reaches even the owl; the Beadsman’s frosted breath seems to rise “for heaven, without a death”; the tomb sculptures freeze behind black rails. Age, death and self-denial frame the young lovers before we meet them, and he turns away from “Music’s golden tongue” to sit in ashes.",
+            "Readers may see him as a foil, renunciation set against desire, or as a reminder that all this passion will end in death. Keep him in mind for the last stanza."
+          ],
+          "evidence": [
+            "Seem'd taking flight for heaven, without a death,",
+            "The sculptur'd dead, on each side, seem to freeze,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q2",
+          "prompt": "What must Madeline do to have her vision, and how does Keats show her absorption at the ball? Is the narrator mocking her “whim”?",
+          "facilitatorNotes": [
+            "She must go to bed without supper, lie on her back and look only upward. At the ball she sees “many a sweeping train” without heeding it, and the cavaliers retreat unnoticed.",
+            "“Hoodwink’d with faery fancy” and “whim” carry gentle irony, yet the verse also enters her yearning. Students can argue whether the poem respects or teases her belief."
+          ],
+          "evidence": [
+            "Nor look behind, nor sideways, but require",
+            "Hoodwink'd with faery fancy; all amort,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q3",
+          "prompt": "How dangerous is the castle for Porphyro? Look at the language Angela and the narrator use for Madeline’s kinsmen.",
+          "facilitatorNotes": [
+            "“Barbarian hordes,” “Hyena foemen,” dogs that would curse his lineage, “the whole blood-thirsty race”: the danger raises the stakes and makes old Angela his only ally.",
+            "Some readers notice that we hear only one side; the hostile family is caricature, as in a romance. Comparisons with Romeo entering the Capulet house are fair."
+          ],
+          "evidence": [
+            "Hyena foemen, and hot-blooded lords,",
+            "They are all here to-night, the whole blood-thirsty race!"
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-02",
+      "title": "The Eve of St. Agnes, stanzas XIV–XXVII: the stratagem and the chamber",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the argument between Angela and Porphyro step by step. Then read the chamber stanzas slowly for colour and light, asking whose eyes we are seeing through.",
+      "focus": "A lover’s plan that the poem both romanticizes and questions, and a heroine seen as a sacred picture.",
+      "context": "Recap: On St. Agnes’ Eve, a bitterly cold night, Madeline left the noisy feast in her family’s castle hoping to dream of her future husband. Porphyro, from an enemy family, slipped into the castle, and the old nurse Angela has hidden him in a little moonlit room. A beldame is an old woman; “mickle” means much; cates are delicacies; a tambour frame holds embroidery. Merlin, the wizard of Arthurian legend, was imprisoned by an enchantress, the “Demon” of stanza XIX. Gules is the heraldic word for red; a missal is a prayer book; “swart Paynims” are dark-skinned pagans.",
+      "contentNote": "With the nurse’s help Porphyro hides in Madeline’s bedroom to watch her, unseen, as she prays and undresses; the description is not explicit. A simile mentions “swart Paynims,” a period phrase for dark-skinned non-Christians.",
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas XIV–XXVII; opens “\"St. Agnes! Ah! it is St. Agnes' Eve-- Yet men will murder upon holy days: Thou must hold…”; closes “…alike from sunshine and from rain, As though a rose should shut, and be a bud again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-01",
+        "continuesTo": "reading-9-keats-poems-1820-1909-03",
+        "blocks": [
+          105,
+          118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c3e7610b54c579a2742b1655535302e1e0eb29dd53554309e1b252a75030fac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q1",
+          "prompt": "Angela calls Porphyro “A cruel man and impious.” What is his “stratagem,” and why does she finally agree to it?",
+          "facilitatorNotes": [
+            "To be hidden in Madeline’s chamber “that he might see her beauty unespied, / And win perhaps that night a peerless bride.” Angela yields after his oath, his threat to rouse his enemies, and a “gentler speech” the poem does not quote; she insists he must marry the lady.",
+            "Readers differ: an ardent lover’s romance, or a deception the poem lets us notice. The narrator’s own comparison with Merlin’s betrayal is a clue worth discussing."
+          ],
+          "evidence": [
+            "A cruel man and impious thou art:",
+            "That he might see her beauty unespied,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q2",
+          "prompt": "The moonlight through the stained-glass window colours Madeline as she kneels. What do the colours and comparisons make her seem, and to whom?",
+          "facilitatorNotes": [
+            "Warm gules, rose-bloom, amethyst and “a glory, like a saint”: she looks like “a splendid angel, newly drest, / Save wings.” The heraldry of the window adds rank and blood to the picture.",
+            "Much of this is Porphyro’s view, and he “grew faint.” Ask whether the poem worships her or turns her into an object to be looked at; both answers can cite the stanza."
+          ],
+          "evidence": [
+            "And on her hair a glory, like a saint:",
+            "She seem'd a splendid angel, newly drest,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q3",
+          "prompt": "The passage ends: “As though a rose should shut, and be a bud again.” What does the simile suggest about Madeline’s sleep, and why might it be unsettling here?",
+          "facilitatorNotes": [
+            "Sleep encloses her, “Blissfully haven’d both from joy and pain,” clasped like a closed prayer book. A rose cannot become a bud again, so the image of protected innocence is beautiful and impossible.",
+            "With Porphyro watching from the closet, some readers feel tension beneath the loveliness; others read the stanza as pure enchantment. Let students defend either."
+          ],
+          "evidence": [
+            "As though a rose should shut, and be a bud again.",
+            "Blissfully haven'd both from joy and pain;"
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-03",
+      "title": "The Eve of St. Agnes, stanzas XXVIII–XLII: the waking and the flight",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the feast stanzas for sound and texture, then follow the shift when Madeline wakes. In the last stanza notice the sudden change of tense and distance.",
+      "focus": "Dream against waking, and an ending that turns a warm romance into an old, cold tale.",
+      "context": "Recap: Hidden by the nurse Angela in Madeline’s chamber, Porphyro has watched her pray, undress and fall asleep, awaiting the dream St. Agnes promises. A Morphean amulet would bring sleep (Morpheus was god of dreams); Fez, Samarcand and Lebanon are distant places of luxury trade; an eremite is a hermit; “La belle dame sans mercy” means the beautiful lady without pity. “Vermeil” is vermilion red; wassaillers are revellers; Rhenish is Rhine wine; an arras is a wall tapestry.",
+      "contentNote": "The lovers’ union while Madeline is half-dreaming is implied rather than described (“Into her dream he melted”), and readers have long debated it. The last stanza reports the deaths of Angela and the Beadsman.",
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas XXVIII–XLII, to the end of the poem; opens “Stol'n to this paradise, and so entranced, Porphyro gazed upon her empty dress, And…”; closes “…The Beadsman, after thousand aves told, For aye unsought for slept among his ashes cold.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-02",
+        "continuesTo": null,
+        "blocks": [
+          119,
+          133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ac3a7dc65060b77d5c2660016174d4724228e43f711ba3650a514f1ad11e44b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q1",
+          "prompt": "Why does Porphyro set out a feast that no one eats? Choose two lines from the list and say what they add.",
+          "facilitatorNotes": [
+            "Candied fruit, jellies, syrups “tinct with cinnamon,” manna and dates carried from Fez to Lebanon: an extravagant offering of sensation in a cold room, more like a ritual or dream than a meal. The rich sounds slow the poem before the waking.",
+            "Readers may see devotion, seduction, or Keats’s own delight in the senses. The feast is never touched, which is worth noticing."
+          ],
+          "evidence": [
+            "And lucent syrops, tinct with cinnamon;",
+            "From silken Samarcand to cedar'd Lebanon."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q2",
+          "prompt": "When Madeline wakes, why does she weep? Compare the Porphyro of her dream with the one kneeling before her.",
+          "facilitatorNotes": [
+            "Her dream gave a voice of sweet vows and eyes “spiritual and clear”; the real man is “pallid, chill, and drear.” When she understands “No dream,” she calls herself “a deceived thing.” Porphyro answers with promises of marriage and a home.",
+            "Readers disagree whether the night is romance (she begs him not to leave and flees with him) or deception (she was half-dreaming and calls herself deceived). The text supports discussing both, carefully."
+          ],
+          "evidence": [
+            "How chang'd thou art! how pallid, chill, and drear!",
+            "Though thou forsakest a deceived thing;--"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q3",
+          "prompt": "The final stanza jumps backward: “ay, ages long ago / These lovers fled away into the storm.” How does this ending change the story you have just read?",
+          "facilitatorNotes": [
+            "The warm present-tense romance suddenly becomes distant legend; the lovers vanish into the storm, the Baron’s guests have nightmares, Angela dies, and the Beadsman sleeps “among his ashes cold.” The cold of the opening returns.",
+            "Some readers find the escape triumphant, framed as an old tale; others find the coda a reminder that all of it is long dead. The shift of tense and distance supports either."
+          ],
+          "evidence": [
+            "And they are gone: ay, ages long ago",
+            "For aye unsought for slept among his ashes cold."
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-04",
+      "title": "Robin Hood: To a Friend",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Robin Hood",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Read aloud to hear the quick ballad rhythm, then mark every “no more,” “never,” “gone” and “Honour.” Decide where the poem turns, and why.",
+      "focus": "Nostalgia for an outlaw greenwood, set against a present of rents, money and felled oaks.",
+      "context": "Keats wrote this in 1818 in reply to his friend, the poet John Hamilton Reynolds, who had sent him sonnets about Robin Hood. Robin Hood, Little John and Maid Marian are the outlaws of English ballads, living in Sherwood Forest and dressed in Lincoln green. Gamelyn is a medieval outlaw tale; “grene shawe” is old English for green wood; the Trent is a river near Sherwood. A pall is a cloth over a coffin; a wight is a person; to “try a burden” is to sing a refrain. Oaks felled with “dockyard strokes” went to build the navy’s ships.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Robin Hood. To a Friend; opens “No! those days are gone away, And their hours are old and gray, And their minutes buried…”; closes “…And to all the Sherwood-clan! Though their days have hurried by Let us two a burden try.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          168,
+          172
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a72841937d666d89728acc55df3c0819f9483ae4ff89d577dd68935af725a3bf"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q1",
+          "prompt": "The poem begins “No!” What is the speaker contradicting, and what has replaced the world of Robin Hood?",
+          "facilitatorNotes": [
+            "He answers an unspoken wish that the old days might return. The outlaws’ hours lie buried under the leaves of many years; the land now has rents and leases, its oaks have gone to the dockyards, and honey “Can’t be got without hard money!”",
+            "Students may notice the playful exaggeration: the poem knows it is idealizing."
+          ],
+          "evidence": [
+            "Since men knew nor rent nor leases.",
+            "Can't be got without hard money!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q2",
+          "prompt": "How does the poem’s music change from lament to celebration? Use the repeated words.",
+          "facilitatorNotes": [
+            "The first stanzas pile up negatives (“no more,” “never,” “Gone”) in quick ballad couplets that sound merry even while mourning. The last stanza turns to a toast of “Honour to…” and ends with “Let us two a burden try,” a song for two friends.",
+            "Loss becomes an occasion to sing together. Some readers hear consolation; others hear wistful irony."
+          ],
+          "evidence": [
+            "Gone, the merry morris din;",
+            "Let us two a burden try."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q3",
+          "prompt": "If Robin and Marian came back, “She would weep, and he would craze.” Is the poem only nostalgic, or also a criticism of its own time?",
+          "facilitatorNotes": [
+            "Marian’s wild bees charging for honey is a joke, but the felled oaks and the rents point to land turned into property and forests turned into a navy. The outlaws are idealized in order to judge the present.",
+            "Both readings, light nostalgia and quiet social criticism, fit; strong answers show how the comic lines carry the serious point."
+          ],
+          "evidence": [
+            "She would weep, and he would craze:",
+            "Fall'n beneath the dockyard strokes,"
+          ]
+        }
+      ]
+    }
+  ]
+}
