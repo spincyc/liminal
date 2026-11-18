@@ -42,6 +42,11 @@ test("text serialises one canonical block per line and refuses anything else", (
   assert.throws(() => L.parseText('{"type":"paragraph","text":"long words like EncyclopÃ¦dia"}\n'), /decoded as Latin-1/);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"itâ€™s"}\n'), /decoded as Latin-1/);
   assert.equal(L.parseText('{"type":"paragraph","text":"NIL PEJUS EST CAELIBE VITÂ"}\n').length, 1);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"the second mate 19Eliza (talk) 02:12, 3 December 2023 (UTC) said"}\n'), /signature/);
+  assert.equal(L.parseText('{"type":"paragraph","text":"histori (talk); vosse (you)"}\n').length, 1);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"13&frac12; inches"}\n'), /HTML entity/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"caf&#233;"}\n'), /HTML entity/);
+  assert.equal(L.parseText('{"type":"paragraph","text":"Smith & Sons; R&D"}\n').length, 1);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"Fare {footnote A shilling.}"}\n'), /illustration/);
   assert.deepEqual(L.parseText('{"type":"heading","level":1,"text":"NOTES"}\n{"type":"paragraph","text":"FOOTNOTES:"}\n{"type":"paragraph","text":"[Footnote 1: Tweed.]"}\n').length, 3);
 });
