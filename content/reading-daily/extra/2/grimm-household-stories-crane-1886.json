@@ -592,6 +592,587 @@
       "months": [
         12
       ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-09",
+      "title": "The Elves, the third story: the changeling",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out why a strange trick works.",
+      "focus": "A mother follows her neighbours’ odd advice to get her own baby back from the elves.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. This is the last of three short stories the Grimms told under the title “The Elves.” People once believed that elves might steal a baby and leave one of their own, a changeling, in its place. The hearth is the fireplace.",
+      "contentNote": "The elves take a baby from its mother; at the end it is brought back safe.",
+      "excerpt": {
+        "locator": "“The Elves,” the third of its three stories (III), whole; opens “The elves once took a child away from its mother, and left in its place a changeling with…”; closes “…right child; and they laid it near the hearth, and carried the changeling away with them.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1684,
+          1686
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "57c91ace5965b8a50423d38855a6b35cb08dd45c5d50f018dc1a3663d5a04e3e"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q1",
+          "prompt": "How is the changeling different from the mother’s child?",
+          "facilitatorNotes": [
+            "It has a big head and staring eyes and does nothing but eat and drink."
+          ],
+          "evidence": [
+            "a changeling with a big head and staring eyes, who did nothing but eat and drink"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q2",
+          "prompt": "What do the neighbours tell the mother to do, and what is supposed to happen?",
+          "facilitatorNotes": [
+            "Boil water in two egg-shells by the fire; that will make the changeling laugh, and if he laughs, it will be all over with him."
+          ],
+          "evidence": [
+            "boil water in two egg-shells",
+            "if he laughed, it would be all over with him"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q3",
+          "prompt": "Why does the changeling laugh? What does his rhyme give away?",
+          "facilitatorNotes": [
+            "Cooking in an egg-shell is so silly that he has never seen it, though he is “old as forest tree.” The baby-looking creature turns out to be very old, so his laugh gives him away."
+          ],
+          "evidence": [
+            "Though old I be",
+            "Cooking in an egg-shell never did I see!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q4",
+          "prompt": "The mother was in trouble, and help came from her neighbours. Could she have solved it alone?",
+          "facilitatorNotes": [
+            "The story suggests not: the neighbours knew the old trick. Some children may say she was brave to try something so strange; both help and courage matter."
+          ],
+          "evidence": [
+            "The mother in her trouble went to her neighbours and asked their advice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-10",
+      "title": "Old Sultan",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Decide whether a character is loyal, tricky, or both.",
+      "focus": "An old dog escapes being put down by a trick his friend the wolf invents, then stays loyal to his master.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. A peasant is a poor farmer. A threshing-flail is a farm tool for beating grain. In old duels each fighter brought a helper called a “second”; satisfaction means paying back an insult. A sabre is a curved sword; the culprit is the one to blame.",
+      "contentNote": "The peasant means to kill his old dog because it is no longer useful, and the wolf carries off the baby as part of a trick (the child is not hurt). The master beats the wolf with a flail.",
+      "excerpt": {
+        "locator": "“Old Sultan,” the whole story; opens “There was once a peasant who owned a faithful dog called Sultan, now grown so old that he…”; closes “…who came down, quite ashamed of his timidity, and made peace with the dog once more.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1892,
+          1908
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1092408d0cdafc9079fb9c83219b612426ec474ab9f4e9476a55a9597a0fb4bd"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q1",
+          "prompt": "Why does the peasant want to get rid of Sultan, and what does his wife say?",
+          "facilitatorNotes": [
+            "Sultan has lost all his teeth, so no thief would fear him. The wife says he has served them faithfully for years and deserves food and shelter in his old age."
+          ],
+          "evidence": [
+            "he has never a tooth, and no thief would mind him in the least",
+            "he deserves food and shelter in his old age"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q2",
+          "prompt": "What is the wolf’s plan?",
+          "facilitatorNotes": [
+            "The wolf will carry off the baby while the parents are hay-making, Sultan will chase him, the wolf will drop it, and Sultan will bring it back, so the parents will be grateful."
+          ],
+          "evidence": [
+            "you must rush after me, as if to save it from me"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q3",
+          "prompt": "What does the wolf ask in return, and how does Sultan answer?",
+          "facilitatorNotes": [
+            "To be allowed to carry off a fat sheep. Sultan refuses, because he must stay true to his master, and even warns the master."
+          ],
+          "evidence": [
+            "I cannot consent to it; I must remain true to my master."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q4",
+          "prompt": "Is Sultan a good friend to the wolf? Is he a good dog to his master? Can he be both?",
+          "facilitatorNotes": [
+            "He used the wolf’s trick to save himself but would not let the wolf steal. Some children will say he is loyal where it matters; others that he cheated his master once. After a duel won by fear (the wolf mistakes the three-legged cat’s raised tail for a sword), the two make peace."
+          ],
+          "evidence": [
+            "made peace with the dog once more"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-11",
+      "title": "The Sleeping Beauty, part 1: the thirteenth wise woman",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice how a promise and a curse are both kept.",
+      "focus": "A wise woman left out of a feast curses the baby princess, and another softens the curse.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Thou, thy and thee are old words for “you” and “your.” Wise women here are fairies. To bestow is to give; a prophecy tells the future; a spindle is a pointed stick used for spinning thread; flax is a plant spun into linen; a scullion is a kitchen boy.",
+      "contentNote": "The thirteenth wise woman says the princess will die when she pricks her finger; the twelfth changes this to a hundred years’ sleep.",
+      "excerpt": {
+        "locator": "“The Sleeping Beauty,” from the king and queen’s wish to the whole castle’s falling asleep; opens “In times past there lived a king and queen, who said to each other every day of their…”; closes “…went to sleep. And the wind ceased, and not a leaf fell from the trees about the castle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-12",
+        "blocks": [
+          1941,
+          1952
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "70ee710b477bd9cf0eb7e6309793adfda8bad8043ff59e04f022ecd1c566e25f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q1",
+          "prompt": "Why is one wise woman left out of the feast?",
+          "facilitatorNotes": [
+            "There are thirteen, but the king has only twelve golden plates for them to eat from."
+          ],
+          "evidence": [
+            "as he had only provided twelve golden plates for them to eat from, one of them had to be left out"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q2",
+          "prompt": "Why can’t the twelfth wise woman simply cancel the curse?",
+          "facilitatorNotes": [
+            "She can only soften it, not undo it, so she changes death to a deep sleep of a hundred years."
+          ],
+          "evidence": [
+            "though she could not do away with the evil prophecy, yet she could soften it"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q3",
+          "prompt": "The king burns every spindle in the kingdom. Why doesn’t that keep the princess safe?",
+          "facilitatorNotes": [
+            "An old woman in a hidden tower is still spinning, and the princess has never seen a spindle, so she does not know to be careful."
+          ],
+          "evidence": [
+            "What thing is that that twists round so briskly?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q4",
+          "prompt": "When the princess falls asleep, what else stops? Which detail do you like best?",
+          "facilitatorNotes": [
+            "The king, queen and court, horses, dogs, pigeons, flies, the fire, the roasting meat, the cook in the middle of pulling the scullion’s hair, even the wind. Let children choose and explain."
+          ],
+          "evidence": [
+            "the meat on the spit ceased roasting",
+            "not a leaf fell from the trees about the castle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-12",
+      "title": "The Sleeping Beauty, part 2: the hedge of thorns",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Ask why one person succeeds where many failed.",
+      "focus": "A hundred years later a prince finds the thorn hedge turned to flowers, and the whole castle wakes.",
+      "context": "Recap: an angry wise woman, left out of a feast, cursed a baby princess to prick herself with a spindle and die. Another changed the curse to a hundred years’ sleep. At fifteen the princess pricked her finger, and the whole castle fell asleep with her. Lamentable means very sad; to dissuade is to talk someone out of something; wonderment is amazement.",
+      "contentNote": "Many young princes are caught in the thorns and die there; the cook boxes the scullion’s ear when he wakes.",
+      "excerpt": {
+        "locator": "“The Sleeping Beauty,” from the hedge of thorns to the end; opens “Then round about that place there grew a hedge of thorns thicker every year, until at…”; closes “…was held with all splendour, and they lived very happily together until their lives' end.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-11",
+        "continuesTo": null,
+        "blocks": [
+          1953,
+          1956
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "224e42fce5eb081d56a0986dfea1feb3e873e2500d5c1983b794367e883a032a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q1",
+          "prompt": "What grows around the castle, and what happens to the princes who try to get through?",
+          "facilitatorNotes": [
+            "A hedge of thorns that hides all but the roof’s weather-vane; the thorns hold them like strong hands and they die."
+          ],
+          "evidence": [
+            "the thorns held fast together like strong hands"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q2",
+          "prompt": "Is the last prince braver than the others, or luckier? What does the story say?",
+          "facilitatorNotes": [
+            "He is brave, but the story says the hundred years were just over, so the thorns turned to flowers and let him through. Children may argue for courage, luck, or good timing."
+          ],
+          "evidence": [
+            "For now the hundred years were at an end"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q3",
+          "prompt": "As the prince walks in, everything is just as it was when the sleep began. Which details from part 1 come back?",
+          "facilitatorNotes": [
+            "The horses and dogs, the pigeons with heads under wings, the flies on the wall, the cook with his hand raised to strike the scullion, the king and queen asleep."
+          ],
+          "evidence": [
+            "the cook in the kitchen had his hand uplifted to strike the scullion"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q4",
+          "prompt": "When everyone wakes, the story lists them all again. Why tell the list a second time?",
+          "facilitatorNotes": [
+            "It shows the whole frozen world starting up at once, and it is funny: the cook finishes the blow he began a hundred years ago. Some children will enjoy the sound of the list; others the joke."
+          ],
+          "evidence": [
+            "the cook gave the scullion such a box on the ear that he roared out",
+            "the flies on the wall crept on a little farther"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-13",
+      "title": "King Thrushbeard, part 1: the proud princess",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Hear how a repeated question and answer change a character.",
+      "focus": "A princess who mocks every suitor is married to a beggar and learns what her pride has cost her.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Suitors are men who want to marry someone. An epithet is a nickname; a thrush is a songbird with a pointed beak; a ballad-singer sings songs for money; alms are gifts to the poor; afeared means afraid; fare is food.",
+      "contentNote": "The king forces his daughter to marry a beggar because of an angry oath. The beggar makes her work until her hands bleed and calls her useless.",
+      "excerpt": {
+        "locator": "“King Thrushbeard,” from the princess’s mocking of her suitors to her failure at spinning; opens “A king had a daughter who was beautiful beyond measure, but so proud and overbearing that…”; closes “…and tried to spin, but the harsh thread cut her soft fingers, so that the blood flowed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-14",
+        "blocks": [
+          1958,
+          1998
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7bc27d96e07868704acd30fa6c2a548c195ed0fd5b25f1e8a0fe0156aa516532"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q1",
+          "prompt": "What does the princess say about the suitors? Choose one of her insults.",
+          "facilitatorNotes": [
+            "“What a tub!” for a fat one, “A game-cock” for a red-faced one, and a chin “like a thrush’s beak” for the good tall king. She laughs at how they look, not at who they are."
+          ],
+          "evidence": [
+            "What a tub!",
+            "he has a chin like a thrush's beak"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q2",
+          "prompt": "What oath does the king swear, and why does he keep it?",
+          "facilitatorNotes": [
+            "That she shall marry the first beggar who comes to the door. He says an oath must be kept, so it must be done."
+          ],
+          "evidence": [
+            "I took an oath to give you to the first beggar that came, and so it must be done."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q3",
+          "prompt": "Three times she asks whose land they are passing. What does she learn, and how does her answer change her?",
+          "facilitatorNotes": [
+            "Each time it is King Thrushbeard’s and “might have been thine,” and each time she wishes she had married him. The repeated rhyme shows her pride turning to regret."
+          ],
+          "evidence": [
+            "It is King Thrushbeard's, and might have been thine.",
+            "Would I had taken that good King Thrushbeard!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q4",
+          "prompt": "What goes wrong when she tries to make baskets and spin?",
+          "facilitatorNotes": [
+            "The hard twigs hurt her hands, and the thread cuts her fingers until they bleed. She has never had to work."
+          ],
+          "evidence": [
+            "the hard twigs wounded her tender hands",
+            "the harsh thread cut her soft fingers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-14",
+      "title": "King Thrushbeard, part 2: the broken pots",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 7,
+        "totalMinutes": 15
+      },
+      "challenge": "Look back at earlier events once a secret is told.",
+      "focus": "The princess sells pots, works as a kitchen-maid, and learns who her beggar husband really is.",
+      "context": "Recap: a proud princess mocked every man who wanted to marry her, nicknaming a good king “Thrushbeard.” Her angry father married her to a beggar, who took her to a tiny hut and made her work. Earthen vessels are clay pots; victuals are food; to bewail is to be sorry; a fathom is six feet; in the guise of means dressed up as.",
+      "contentNote": "A drunken soldier smashes her pots, and the court laughs at her when food spills from her pockets. The husband says he did it all to punish her pride.",
+      "excerpt": {
+        "locator": "“King Thrushbeard,” from selling pots in the market to the end; opens “\"Look now!\" said the man, \"you are no good at any sort of work; I made a bad bargain when…”; closes “…began in good earnest. I cannot help wishing that you and I could have been there too.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-13",
+        "continuesTo": null,
+        "blocks": [
+          1999,
+          2010
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "07f1bc64f12f53165171a838aae825f4c8443a19a1037ab9326c7b19d740f1ff"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q1",
+          "prompt": "What happens to her pots on the second market day?",
+          "facilitatorNotes": [
+            "A drunken horse-soldier rides straight into them and breaks them into a thousand pieces."
+          ],
+          "evidence": [
+            "breaking them into a thousand pieces"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q2",
+          "prompt": "Standing at the wedding door, what does she think about?",
+          "facilitatorNotes": [
+            "Her own fate, and how her pride and haughtiness brought her so low."
+          ],
+          "evidence": [
+            "bewailed her former pride and haughtiness which had brought her so low"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q3",
+          "prompt": "What three people turn out to be King Thrushbeard in disguise?",
+          "facilitatorNotes": [
+            "The beggar-man, the horse-soldier who broke her pots, and of course the king at the wedding."
+          ],
+          "evidence": [
+            "I and the beggar-man with whom you lived in the wretched little hut are one",
+            "it was I who broke your pots in the guise of a horse-soldier"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q4",
+          "prompt": "He says he did it all to bring down her proud heart. Was his plan kind, fair, or cruel?",
+          "facilitatorNotes": [
+            "She was cruel to others and is truly sorry now; but he lied to her, made her poor and shamed her. Many readers today find his tricks unkind; others say the story wants to show pride punished. Let children take a side and give reasons."
+          ],
+          "evidence": [
+            "I did all that to bring down your proud heart",
+            "I have done great wrong, and am not worthy to be your wife."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-15",
+      "title": "Rumpelstiltskin, part 1: straw into gold",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Track what each bargain costs, and notice when the price goes up.",
+      "focus": "A miller’s boast traps his daughter, and a little man spins gold for her for a higher price each night.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. A miller grinds grain into flour. To give himself consequence means to make himself seem important. A spindle and bobbin hold thread on a spinning wheel; avaricious means greedy for money.",
+      "contentNote": "The king says the girl will die if she does not spin the straw into gold.",
+      "excerpt": {
+        "locator": "“Rumpelstiltskin,” from the miller’s boast to the wedding; opens “There was once a miller who was poor, but he had one beautiful daughter. It happened one…”; closes “…caused the wedding to be held at once, and the miller's pretty daughter became a queen.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-16",
+        "blocks": [
+          2158,
+          2177
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb5028e0570c33f150f6037632dfc134355e34d155eb79d3ad942d669d0e19b0"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q1",
+          "prompt": "How does the miller get his daughter into trouble?",
+          "facilitatorNotes": [
+            "He boasts to the king that she can spin straw into gold, just to seem important."
+          ],
+          "evidence": [
+            "to give himself consequence, he told him that he had a daughter who could spin gold out of straw"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q2",
+          "prompt": "What does the girl give the little man each night?",
+          "facilitatorNotes": [
+            "Her necklace, then the ring from her finger, and the third night, when she has nothing left, a promise of her first child."
+          ],
+          "evidence": [
+            "My necklace",
+            "The ring from my finger",
+            "Then you must promise me the first child you have after you are queen"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q3",
+          "prompt": "Why does the king keep asking for more?",
+          "facilitatorNotes": [
+            "He is greedy: he could never have enough gold. He marries her because he thinks no one richer can be found."
+          ],
+          "evidence": [
+            "as he could never have enough of gold"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q4",
+          "prompt": "The girl thinks, “But who knows whether that will happen?” Was it wise to make the promise?",
+          "facilitatorNotes": [
+            "She was desperate and the danger was now; but a promise about the future still has to be kept. Children may blame her, the miller, or the greedy king."
+          ],
+          "evidence": [
+            "\"But who knows whether that will happen?\" thought the girl"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-16",
+      "title": "Rumpelstiltskin, part 2: guessing the name",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow a three-day search and notice how the answer is found.",
+      "focus": "The queen has three days to guess the little man’s name, and a messenger overhears it.",
+      "context": "Recap: a miller boasted that his daughter could spin straw into gold. A little man spun it for her three nights, and the last time she promised him her first child. She married the king and became queen. To lament is to cry out in sorrow; singular means unusual; Caspar, Melchior and Balthazar are the names of the three wise men in Christmas stories.",
+      "contentNote": "The little man comes to take the queen’s baby. In his rage at the end he tears himself in two.",
+      "excerpt": {
+        "locator": "“Rumpelstiltskin,” from the little man’s return to the end; opens “In a year's time she brought a fine child into the world, and thought no more of the…”; closes “…with both his hands in such a fury that he split in two, and there was an end of him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-15",
+        "continuesTo": null,
+        "blocks": [
+          2178,
+          2198
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "af32496845f00c6a6d40f93dacdd52f4bd0bc41375627002c91076d11fc671b5"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q1",
+          "prompt": "What does the little man want more than all the treasures of the world?",
+          "facilitatorNotes": [
+            "Something living: the child. That is why riches will not make him go away."
+          ],
+          "evidence": [
+            "I would rather have something living than all the treasures of the world."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q2",
+          "prompt": "Why does he give the queen three days?",
+          "facilitatorNotes": [
+            "She weeps so much that he takes pity on her. Ask whether that surprises children."
+          ],
+          "evidence": [
+            "the little man had pity upon her"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q3",
+          "prompt": "How does the queen search for names on each day?",
+          "facilitatorNotes": [
+            "First all the names she knows, then the unusual names of the neighbours’ servants, then the messenger’s report from the woods."
+          ],
+          "evidence": [
+            "Perhaps you are called Roast-ribs, or Sheepshanks, or Spindleshanks?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q4",
+          "prompt": "On the last day she first asks “Jack?” and “Harry?” Why not say the right name at once?",
+          "facilitatorNotes": [
+            "She is teasing him and enjoying it, letting him think he has won before the surprise. Some children may think she was nervous and wanted to be sure."
+          ],
+          "evidence": [
+            "Are you called Jack?",
+            "Then perhaps your name is Rumpelstiltskin!"
+          ]
+        }
+      ]
     }
   ]
 }
