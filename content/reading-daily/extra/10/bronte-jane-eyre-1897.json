@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "bronte-jane-eyre-1897",
+  "readings": [
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-01",
+      "title": "Jane Eyre excerpt: an answer from Thornfield, and Bessie’s visit",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the Thornfield Jane builds from one letter with the facts it contains, and notice what Bessie’s visit shows her about herself.",
+      "focus": "Jane arranges her own future by letter and testimonial, while a visitor from her childhood measures how far she has come.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane, now eighteen, has spent eight years at Lowood, a charity school, after a hard childhood with her aunt Mrs. Reed at Gateshead Hall. Restless after her friend and teacher Miss Temple married and left, she advertised for a post as a governess, asking for replies to the post-office at Lowton under the initials J.E. Bessie was the Reeds’ nursemaid and the one person at Gateshead who was sometimes kind to her. Sublunary means earthly; to be plucked is to fail a university examination.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter X, from the walk to Lowton post-office to the end of the chapter; opens “The succeeding week seemed long: it came to an end at last, however, like all sublunary…”; closes “…which was to bear me to new duties and a new life in the unknown environs of Millcote.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-02",
+        "blocks": [
+          713,
+          773
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1e4c7ec342f3a2d9ec2d9d27aa26dde61c077c1ab60535780c02ced1f0ddcab"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-01-q1",
+          "prompt": "From one short letter Jane builds a whole picture of Mrs. Fairfax and Thornfield. Which details are evidence, and which are invention?",
+          "facilitatorNotes": [
+            "Evidence: an old-fashioned, uncertain hand, a seal marked F, one pupil under ten, thirty pounds a year, an address seventy miles nearer London. Invention: the black gown and widow’s cap, a “neat orderly” house, a place well away from the factory smoke. Her wish to be “respectable, proper” shapes the picture, and the candle going out ends the daydream on a joke against herself."
+          ],
+          "evidence": [
+            "the writing was old-fashioned and rather uncertain, like that of an elderly lady",
+            "I saw her in a black gown and widow’s cap"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-01-q2",
+          "prompt": "How does Jane get permission to leave Lowood, and what does Mrs. Reed’s answer reveal?",
+          "facilitatorNotes": [
+            "The superintendent mediates, Mr. Brocklehurst refers the matter to Mrs. Reed as “natural guardian,” and Mrs. Reed replies that she has given up all interest in Jane. Indifference has replaced open cruelty, and the committee’s testimonial gives Jane a character of her own, earned at school rather than granted by family."
+          ],
+          "evidence": [
+            "she had long relinquished all interference in my affairs",
+            "formal leave was given me to better my condition if I could"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-01-q3",
+          "prompt": "Bessie quizzes Jane on piano, drawing, French and needlework. What does Bessie value, and how does Jane take the remark that she was “no beauty as a child”?",
+          "facilitatorNotes": [
+            "Bessie measures a lady by accomplishments and looks, and is delighted that Jane outdoes the Reed girls. Jane smiles but admits she is “not quite indifferent”: at eighteen she wants to please. The older narrator is candid about this small vanity. Bessie’s news of an uncle, John Eyre, who sailed for Madeira, is a thread the novel will pick up."
+          ],
+          "evidence": [
+            "you look like a lady, and it is as much as ever I expected of you: you were no beauty as a child.",
+            "I was not quite indifferent to its import"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-02",
+      "title": "Jane Eyre excerpt: arriving at Thornfield (Chapter XI, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice when the narrator speaks to “reader” directly, and why she stages her arrival like a scene in a play.",
+      "focus": "Fear and hope in a strange place, and an unexpectedly kind welcome.",
+      "context": "Recap: Jane has accepted a post as governess to one little girl at Thornfield, near the manufacturing town of Millcote, offered by a Mrs. Fairfax. After an evening with Bessie, the nursemaid of her childhood, she leaves Lowood by coach. The “boots” is an inn servant who carries luggage; “happen” in the driver’s dialect means perhaps, and “noan so far fro’” means not so far from; negus is hot wine and water with sugar and spice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, from the George Inn at Millcote through Jane’s first morning in her room; opens “A new chapter in a novel is something like a new scene in a play; and when I draw up the…”; closes “…pleasant: not perhaps that day or that month, but at an indefinite future period.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-01",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-03",
+        "blocks": [
+          775,
+          820
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b5b0ae028087f1117e78bdc90c7bd8cd9731a67acca8d71374fc76d7cfce63c3"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-02-q1",
+          "prompt": "Why does the narrator open the chapter by comparing it to “a new scene in a play” and addressing “reader” directly? What does this do to our sense of Jane waiting at the inn?",
+          "facilitatorNotes": [
+            "The older narrator sets the stage, furniture and all, then admits that the comfortable figure we “see” is anxious inside. We get the outside and the inside at once, and the direct address makes the reader a companion in her doubts."
+          ],
+          "evidence": [
+            "A new chapter in a novel is something like a new scene in a play",
+            "Reader, though I look comfortably accommodated, I am not very tranquil in my mind."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-02-q2",
+          "prompt": "On the drive Jane prepares herself for “a second Mrs. Reed.” What has the past taught her to expect, and what is new in how she reasons about it?",
+          "facilitatorNotes": [
+            "Gateshead taught her that her best might be “spurned with scorn.” What is new is a way out: paid work means she is “not bound to stay” and can advertise again. Earning a living changes her from a dependent child into someone who can leave."
+          ],
+          "evidence": [
+            "I pray God Mrs. Fairfax may not turn out a second Mrs. Reed",
+            "I am not bound to stay with her!"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-02-q3",
+          "prompt": "Mrs. Fairfax treats Jane “like a visitor.” Why does this surprise Jane, and what in Mrs. Fairfax’s long speech hints at the loneliness of Thornfield?",
+          "facilitatorNotes": [
+            "Governesses were often kept at a cold distance, neither family nor servants, so Jane expected “coldness and stiffness.” Mrs. Fairfax’s winter with only the butcher and the postman, her rule of keeping servants “at due distance,” and the front rooms too dreary to sleep in all show a large, empty house and a woman starved of company. Readers may notice that her own sense of rank is part of the loneliness."
+          ],
+          "evidence": [
+            "She treats me like a visitor",
+            "one must keep them at due distance, for fear of losing one’s authority"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-03",
+      "title": "Jane Eyre excerpt: Mr. Rochester’s house and Mr. Rochester’s ward (Chapter XI, second part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Track how two misunderstandings, about who owns Thornfield and whose child the pupil is, are cleared up, and what Jane feels about each.",
+      "focus": "Rank and dependence: Mrs. Fairfax turns out to be an employee like Jane, and the pupil a child trained to perform.",
+      "context": "Recap: Jane reached Thornfield late at night and was welcomed warmly by Mrs. Fairfax, whom she took to be the owner and her pupil’s mother. A cuirass is body armour; rooks are crows that nest together; a ward is a child in someone’s legal care; a bonne is a nursemaid. Adèle speaks French: “C’est là ma gouvernante!” means “That is my governess!” and “Mais oui, certainement” means “Why yes, certainly.” La Fontaine wrote verse fables.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, from Jane dressing on her first morning through Adèle’s account of coming to England; opens “I rose; I dressed myself with care: obliged to be plain—for I had no article of attire…”; closes “…has brought me to England, and now he is gone back again himself, and I never see him.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-02",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-04",
+        "blocks": [
+          821,
+          856
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0ce9de35f6a3dec74549daf3a415f5ebf59b80cfe1598d17544b6679697d4318"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-03-q1",
+          "prompt": "Why is Jane “better pleased than ever” to learn that Mrs. Fairfax is only the housekeeper?",
+          "facilitatorNotes": [
+            "Their equality is “real; not the mere result of condescension.” After Gateshead, Jane distrusts kindness that a superior can withdraw; kindness between equals leaves her “freer.”"
+          ],
+          "evidence": [
+            "The equality between her and me was real; not the mere result of condescension on her part",
+            "my position was all the freer"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-03-q2",
+          "prompt": "Dressing for the day, Jane wishes she were “handsomer” and says she had “a reason, and a logical, natural reason too.” Why might the narrator leave that reason unexplained?",
+          "facilitatorNotes": [
+            "She was young, starting a new life, and wanted to be liked; the older narrator, who knows what is coming, teases the reader without telling. Some readers will hear a hint of romance to come; others ordinary self-consciousness. The passage supports both, and the silence is deliberate."
+          ],
+          "evidence": [
+            "I sometimes regretted that I was not handsomer",
+            "yet I had a reason, and a logical, natural reason too"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-03-q3",
+          "prompt": "What does Adèle’s singing and recitation show about how she has been raised, and is Jane’s judgment of it fair?",
+          "facilitatorNotes": [
+            "She sings a forsaken lady’s song of love and jealousy “with the lisp of childhood,” then recites with practised gestures: she was trained to entertain adult visitors. Jane finds it “in very bad taste,” a judgment shaped by Lowood plainness. Readers may also note the child’s real skill and her affection for Mr. Rochester, who “has not kept his word.”"
+          ],
+          "evidence": [
+            "in very bad taste that point was: at least I thought so",
+            "he has brought me to England, and now he is gone back again himself, and I never see him"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-04",
+      "title": "Jane Eyre excerpt: the third storey and a laugh (Chapter XI, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate the house as Mrs. Fairfax shows it from the house as Jane’s imagination reads it.",
+      "focus": "A tour of Thornfield that ends in an unexplained laugh, guided by someone who explains too little.",
+      "context": "Recap: Jane has learned that Thornfield belongs to Mr. Rochester, who is seldom there, that Mrs. Fairfax is its housekeeper, and that her pupil is his French ward, Adèle Varens. Spar is a glittering mineral; Parian marble is the fine white marble of the Greek island of Paros; the leads are a flat lead-covered roof. In the old tale, Bluebeard kept a locked room holding the bodies of his former wives; “after life’s fitful fever they sleep well” is from Shakespeare’s Macbeth. Adèle’s French at the end means “Ladies, dinner is served! I’m very hungry!”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, from the first lessons in the library to the end of the chapter; opens “After breakfast, Adèle and I withdrew to the library, which room, it appears, Mr.…”; closes “We found dinner ready, and waiting for us in Mrs. Fairfax’s room.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-03",
+        "continuesTo": null,
+        "blocks": [
+          857,
+          899
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c9bb9dc557a711af57d90409a1d215c97f96e7f809aef0d5ea69b8af62c93fb0"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-04-q1",
+          "prompt": "What does Jane want to know about Mr. Rochester, and why can’t Mrs. Fairfax tell her?",
+          "facilitatorNotes": [
+            "Jane asks about his character; Mrs. Fairfax answers with land, family respect and “a very good master.” The narrator is impatient with people who cannot sketch a character. Yet the housekeeper’s one real observation, that you cannot tell whether he jests or means it, is the most revealing thing said."
+          ],
+          "evidence": [
+            "you cannot be always sure whether he is in jest or earnest",
+            "There are people who seem to have no notion of sketching a character"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-04-q2",
+          "prompt": "How does the description of the third storey prepare for the laugh before it comes?",
+          "facilitatorNotes": [
+            "Furniture like “types of the Hebrew ark,” embroidery by fingers long turned to “coffin-dust,” “a shrine of memory,” talk of ghosts and a violent family, the dazzling roof followed by a black attic, and a corridor of shut doors “like a corridor in some Bluebeard’s castle.” Each detail tilts the ordinary house toward a tale of horror."
+          ],
+          "evidence": [
+            "like a corridor in some Bluebeard’s castle",
+            "a home of the past: a shrine of memory"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-04-q3",
+          "prompt": "The narrator says “the event showed me I was a fool for entertaining a sense even of surprise.” Do you trust this explanation of the laugh? Which details make you doubt it?",
+          "facilitatorNotes": [
+            "The laugh is “distinct, formal, mirthless,” then “tragic” and “preternatural”; Mrs. Fairfax’s answer is vague (“Some of the servants, very likely”), and “Remember directions!” implies standing orders about Grace Poole. The plain, red-haired servant seems to dispel the ghost, but the older narrator’s irony invites suspicion. Ask readers to keep both the explanation and the doubts."
+          ],
+          "evidence": [
+            "Remember directions!",
+            "It was a curious laugh; distinct, formal, mirthless."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-05",
+      "title": "Jane Eyre excerpt: “women feel just as men feel” (Chapter XII, opening)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 18,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow an argument that grows from one governess’s restlessness into a claim about millions of lives.",
+      "focus": "Jane’s defence of her own discontent, and one of the novel’s most famous claims about women.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane has been governess at Thornfield Hall for three months, teaching Mr. Rochester’s French ward Adèle and keeping company with the kindly housekeeper Mrs. Fairfax; Mr. Rochester himself has not yet appeared. On her first day she heard a strange laugh in the third-storey corridor and was told it came from a servant, Grace Poole. Par parenthèse means by the way; cant is pious talk not meant sincerely; porter is a dark beer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, from the first months at Thornfield through Jane’s account of the household; opens “The promise of a smooth career, which my first calm introduction to Thornfield Hall…”; closes “…vapid and confused answers as were calculated rather to check than encourage inquiry.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-06",
+        "blocks": [
+          901,
+          907
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "866efbf9ba08e31c660f9fab0411fe02ebb41a30aa9f27372f62a76d2ad8186a"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-05-q1",
+          "prompt": "Jane describes her feelings for Adèle and Mrs. Fairfax in what she calls “cool language.” Why does she insist on it, and whom is she arguing against?",
+          "facilitatorNotes": [
+            "Against “solemn doctrines about the angelic nature of children” and the idea that a governess owes her pupil “idolatrous devotion.” She claims truth over sentiment; her affection is real but proportionate to what each person gives. Readers can decide whether this coolness is honesty or a guard against disappointment."
+          ],
+          "evidence": [
+            "I am not writing to flatter parental egotism, to echo cant, or prop up humbug; I am merely telling the truth.",
+            "a conscientious solicitude for Adèle’s welfare and progress, and a quiet liking for her little self"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-05-q2",
+          "prompt": "What does Jane do when the restlessness is worst, and what does “a tale that was never ended” suggest about her imagination?",
+          "facilitatorNotes": [
+            "She climbs to the roof to look past the horizon and paces the third-storey corridor, telling herself an endless story full of the “incident, life, fire, feeling” her days lack. Imagination is both relief and a sign of hunger. Note where she paces: the corridor of the laugh."
+          ],
+          "evidence": [
+            "I longed for a power of vision which might overpass that limit",
+            "to open my inward ear to a tale that was never ended"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-05-q3",
+          "prompt": "“Women feel just as men feel.” Trace the argument of this paragraph. Is the young governess speaking, or the older narrator, and does the argument depend on Jane’s own case?",
+          "facilitatorNotes": [
+            "The claim widens: everyone needs action; millions are in “silent revolt”; women need exercise for their faculties as their brothers do; confining them to puddings and stockings is narrow-minded. The present tense (“It is thoughtless”) marks the mature narrator’s conviction, meant beyond her own situation. Virginia Woolf later called the jump from this paragraph to Grace Poole’s laugh an awkward break, a sign of anger entering the story; others read the laugh as the paragraph’s dark echo. Both readings can be argued."
+          ],
+          "evidence": [
+            "women feel just as men feel; they need exercise for their faculties, and a field for their efforts, as much as their brothers do",
+            "Nobody knows how many rebellions besides political rebellions ferment in the masses of life which people earth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-06",
+      "title": "Jane Eyre excerpt: a rider in Hay Lane (Chapter XII, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 8,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch a scene tip between fairy tale and the commonplace, and compare what Jane says she felt with what she does.",
+      "focus": "A first meeting staged through sound, folklore and an accident on the ice.",
+      "context": "Recap: after three quiet months at Thornfield teaching Adèle, Jane is restless for wider experience. It is now January. A stile is a step over a fence; hips and haws are the red berries of wild rose and hawthorn; the causeway is the paved middle of the lane; a beck is a stream. Adèle’s French means “Come back soon, my good friend, my dear Miss Jenny.” The proverb of Mahomet and the mountain means going to what will not come to you.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, from the January walk to Hay to the end of the chapter; opens “October, November, December passed away. One afternoon in January, Mrs. Fairfax had…”; closes “…then she hurried out to give orders about tea, and I went upstairs to take off my things.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-05",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-07",
+        "blocks": [
+          908,
+          968
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a35d4b0b6c96d2eb010b46cd9e55335857ffaee3eec18482978624526f345557"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-06-q1",
+          "prompt": "Before the horse appears, Jane hears it and remembers Bessie’s “Gytrash.” How does Brontë use sound and expectation to stage this first meeting?",
+          "facilitatorNotes": [
+            "The lane is so silent that she hears distant streams; then “tramp, tramp, a metallic clatter” blots them out, like a dark crag painted across a soft background. The great dog fits the Gytrash exactly, until a rider appears and “broke the spell.” The fairy-tale mood ends in a fall on the ice and an oath."
+          ],
+          "evidence": [
+            "A rude noise broke on these fine ripplings and whisperings",
+            "The man, the human being, broke the spell at once."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-06-q2",
+          "prompt": "Why does the stranger’s roughness “set Jane at her ease”? What does she say about handsome young men?",
+          "facilitatorNotes": [
+            "A handsome, gallant young man would have frightened her off, because she would have assumed he could have no sympathy with anything in her. A frowning, rude, unhandsome man makes her an equal, so she dares to insist on helping. Her sense of her own plainness shapes her courage."
+          ],
+          "evidence": [
+            "the frown, the roughness of the traveller, set me at my ease",
+            "I should have known instinctively that they neither had nor could have sympathy with anything in me"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-06-q3",
+          "prompt": "Jane calls the meeting an incident of “no romance,” yet she stops at the stile on the way home hoping to see the rider again. How should a reader weigh her words against her actions?",
+          "facilitatorNotes": [
+            "What she values openly is having acted: she was “weary of an existence all passive.” But the stranger’s face hangs in “the gallery of memory,” she listens for hoofs, and she lingers outside rather than return to Thornfield’s “viewless fetters.” The words deny romance; the actions suggest more interest than she admits. The last lines reveal who the rider was."
+          ],
+          "evidence": [
+            "an incident of no moment, no romance, no interest in a sense",
+            "I was weary of an existence all passive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-07",
+      "title": "Jane Eyre excerpt: tea with the master (Chapter XIII, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a conversation in which every polite form is broken, and work out who gains by it.",
+      "focus": "A contest of manners: Mr. Rochester’s rudeness and Jane’s composure.",
+      "context": "Recap: walking to Hay to post a letter, Jane helped a stranger whose horse slipped on the ice; back at Thornfield she learned he was Mr. Rochester, the master, home with a sprained ankle. Adèle’s French: “And that must mean there will be a present in it for me, and perhaps for you too, miss. Monsieur spoke of you: he asked me my governess’s name, and whether she wasn’t a small person, rather thin and a little pale. I said yes: because it’s true, isn’t it, miss?” A cadeau is a present; choler is anger; the “men in green” are fairies; a meed is a reward.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIII, from Mr. Rochester’s first day at home through his first questions to Jane; opens “Mr. Rochester, it seems, by the surgeon’s orders, went to bed early that night; nor did…”; closes “The widow looked bewildered.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-06",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-08",
+        "blocks": [
+          970,
+          1030
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cb76851911d04b3b085eadbff84217e7304418813d037c5795db0725c3310c5a"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-07-q1",
+          "prompt": "Why does Mr. Rochester’s rudeness leave Jane “quite disembarrassed”? What advantage does she find in it?",
+          "facilitatorNotes": [
+            "Polished courtesy would oblige her to answer with grace she does not have; “harsh caprice” obliges her to nothing, and calm silence gives her “the advantage.” She is also simply curious to see what he will do next. The scene repeats the lane: roughness frees her."
+          ],
+          "evidence": [
+            "harsh caprice laid me under no obligation",
+            "a decent quiescence, under the freak of manner, gave me the advantage"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-07-q2",
+          "prompt": "How does Jane turn “Are you fond of presents?” into an exchange she wins?",
+          "facilitatorNotes": [
+            "She will not give the expected answer, says a present “has many faces,” claims nothing as a stranger, and then turns his praise of Adèle’s progress into her present. He can only say “Humph!” She accepts only what she has earned."
+          ],
+          "evidence": [
+            "a present has many faces to it, has it not?",
+            "it is the meed teachers most covet—praise of their pupils’ progress"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-07-q3",
+          "prompt": "Mr. Rochester talks of fairy tales, bewitched horses and “the men in green.” Why might he speak this way, and what does Jane’s serious answer show?",
+          "facilitatorNotes": [
+            "He half-jokes that she looks as if she came from another world, perhaps testing whether she will be flustered or silly. She answers in the same mock-solemn key, showing she can play his game; Mrs. Fairfax’s dropped knitting marks how strange this talk sounds to an outsider. Some readers hear flirtation, others an examination of her nerve."
+          ],
+          "evidence": [
+            "I thought unaccountably of fairy tales, and had half a mind to demand whether you had bewitched my horse",
+            "The men in green all forsook England a hundred years ago"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-08",
+      "title": "Jane Eyre excerpt: three watercolours (Chapter XIII, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Read three described paintings as clues to the painter, and notice where an explanation stops short.",
+      "focus": "Jane’s inner life shown in her art, and the gaps in what anyone will say about Mr. Rochester.",
+      "context": "Recap: Mr. Rochester has summoned Jane and Adèle to tea, ignored them, then questioned Jane about her past and teased that she bewitched his horse. Mr. Brocklehurst is the harsh clergyman who ran Lowood. “The head and front of his offending” is from Shakespeare’s Othello. A cormorant is a large black sea-bird. Latmos is the mountain where the moon goddess of Greek myth loved the shepherd Endymion; “the likeness of a kingly crown” and “the shape which shape had none” come from Milton’s description of Death in Paradise Lost.",
+      "contentNote": "Jane recalls hunger and harsh treatment at Lowood, and one of her paintings shows a drowned body.",
+      "excerpt": {
+        "locator": "Chapter XIII, from Mr. Rochester’s questions about Lowood to the end of the chapter; opens ““Miss Eyre, have you ever lived in a town?””; closes “…It was evident, indeed, that she wished me to drop the subject, which I did accordingly.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-07",
+        "continuesTo": null,
+        "blocks": [
+          1031,
+          1106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "054d24ed85b2f313eaf564bb4ef980d38eaecdb5d06250dbaf5eaa5bdd62591f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-08-q1",
+          "prompt": "How does Jane describe Mr. Brocklehurst, and why does Mr. Rochester press her with “And was that the head and front of his offending?”",
+          "facilitatorNotes": [
+            "She begins with small grievances (cut hair, bad needles), and only when pressed names the serious ones: he starved the girls and frightened them with tales of sudden death. His question pushes her from politeness to candour; he wants to see whether she will speak her mind."
+          ],
+          "evidence": [
+            "He starved us when he had the sole superintendence of the provision department",
+            "And was that the head and front of his offending?"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-08-q2",
+          "prompt": "Choose one of the three watercolours. What might it reveal about the painter, and why does Jane call the pictures “nothing wonderful”?",
+          "facilitatorNotes": [
+            "A cormorant holding a gold bracelet over a drowned arm; the Evening Star as a woman rising into a stormy sky; a colossal crowned head against an iceberg. Loss, longing and despair can each be argued. Jane belittles them because her hand fell short of what she saw; Mr. Rochester calls the thoughts “elfish.” Some readers treat the pictures as foreshadowing; others as the inner life of a girl with no other outlet."
+          ],
+          "evidence": [
+            "my hand would not second my fancy",
+            "As to the thoughts, they are elfish."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-08-q3",
+          "prompt": "Mrs. Fairfax’s account of the Rochester family is full of hedges: “perhaps,” “I believe,” “I never clearly knew.” What does Jane learn, and what is left out?",
+          "facilitatorNotes": [
+            "An elder brother, Rowland, and a money-minded father put Edward into “a painful position” to make his fortune; he broke with them and has lived unsettled since inheriting nine years ago. Left out: what that position was, and why he avoids Thornfield (“Perhaps he thinks it gloomy”). Jane notes that the answer is evasive; the reader should file the gap away."
+          ],
+          "evidence": [
+            "what the precise nature of that position was I never clearly knew",
+            "The answer was evasive."
+          ]
+        }
+      ]
+    }
+  ]
+}
