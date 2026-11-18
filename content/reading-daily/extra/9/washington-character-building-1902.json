@@ -5,6 +5,75 @@
   "readings": [
     {
       "id": "reading-9-washington-character-building-1902-01",
+      "title": "The Virtue of Simplicity",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "List the kinds of simplicity Washington asks for (in attitude, work, spending, dress and speech). Then decide what single danger they all guard against.",
+      "focus": "Humility and thoroughness as the foundation of a growing institution, and plain living as an answer to hostile laws.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. William H. Baldwin, Jr., a railroad president, chaired Tuskegee’s board of trustees; John D. Rockefeller, Jr., son of the founder of Standard Oil, visited and spoke at the school in 1901. Students built many of Tuskegee’s buildings themselves, making the bricks and laying them. Collars were then detachable and starched, and a laundered collar was a mark of prosperity. Around 1900 several Southern states, Alabama among them in 1901, passed laws and constitutions that took the vote from Black citizens and enforced segregation.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Character Building, complete address “The Virtue of Simplicity”; opens “I hope that you all paid strict attention to what Mr. William H. Baldwin, Jr., who…”; closes “…to be respected and praised and recognized will be respected and praised and recognized.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          55,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "647d42d2f6e3ef1b03342aaccd4152eb1f130cd57e7ab54a1501f0ac3ae451f6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-01-q1",
+          "prompt": "Washington warns that success “may injure them more than poverty.” Why does he fear success for Tuskegee, and what does he say humility does not mean?",
+          "facilitatorNotes": [
+            "If the school becomes “stuck up,” its supporters will lose confidence, and it depends on their goodwill to grow. Humility keeps the school thorough and worthy of support. But he insists that being humble does not mean being “cringing and unmanly.”",
+            "Students may notice that his advice is both a moral principle and a practical strategy for a Black school in the South relying on donors. Discuss whether the two motives strengthen or weaken each other."
+          ],
+          "evidence": [
+            "success may injure them more than poverty",
+            "I do not mean that it is necessary for us to lose sight of what the world calls manhood and womanhood; that it is necessary to be cringing and unmanly"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-01-q2",
+          "prompt": "What exactly does Washington object to in the poor student with the shining laundered collar? Is his objection fair?",
+          "facilitatorNotes": [
+            "Not the collar itself (“I like to see every collar shine”) but the pretence: a student whose tuition is paid by others shows the world a prosperity he does not have. He would rather the money went toward tuition, and the student learned to launder his own collar. “Get the man first.”",
+            "Some readers find the example sensible and funny; others think it intrudes on a young man’s small dignity. The text gives his reasons fully, so students can weigh them."
+          ],
+          "evidence": [
+            "It is much better for a young man to learn to launder his collars himself, than to pretend to the world that he is what he is not.",
+            "I do not, however, want you to get the idea that collars make the man.",
+            "I should like to have you pay that money for a part of your tuition"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-01-q3",
+          "prompt": "Washington ends by moving from simple words to the laws some states were passing. How does he connect plain living with the struggle against those laws, and are you persuaded?",
+          "facilitatorNotes": [
+            "He urges one-syllable words and praises Rockefeller’s plain speech, then claims that no law or power “can neutralize the influence of a high, pure, simple and useful life,” and that no one can “permanently hold back” a people who gain real strength.",
+            "His answer to injustice is character and achievement rather than protest. Some readers find that hopeful and dignified; others ask whether personal virtue can answer laws that took away the vote. Both positions can cite the closing paragraphs."
+          ],
+          "evidence": [
+            "If you can get a word with one syllable that will express your meaning, use it in preference to one of two syllables.",
+            "there is no power on earth, that can neutralize the influence of a high, pure, simple and useful life",
+            "No one can in any way permanently hold back a race of people"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-02",
       "title": "Have You Done Your Best?",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -33,7 +102,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-01-q1",
+          "id": "reading-9-washington-character-building-1902-02-q1",
           "prompt": "Washington asks students to imagine answering “by their fireside,” in front of parents, friends, teachers and donors. Why frame self-examination this way rather than as a private question?",
           "facilitatorNotes": [
             "Imagining these people makes the students’ effort a matter of honesty toward those who “struggled,” “sacrificed” and “toiled for years, in ways you do not know of.” Wasted time becomes a kind of broken trust, not only a personal loss.",
@@ -45,7 +114,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-01-q2",
+          "id": "reading-9-washington-character-building-1902-02-q2",
           "prompt": "Why does Washington spend a whole paragraph on the toothbrush and room inspections? What does “in the dark, as well as in the light” mean?",
           "facilitatorNotes": [
             "Small, private habits test whether a person acts from conscience or only for inspection. Using the toothbrush “in the dark” means doing right when no one checks, which is the same honesty he asks for in lessons and work.",
@@ -57,7 +126,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-01-q3",
+          "id": "reading-9-washington-character-building-1902-02-q3",
           "prompt": "Washington says both that dishonest effort “does not pay” and that without honest effort you cannot “be yourself in the sight of God.” Are these the same reason? Which does the talk rely on more?",
           "facilitatorNotes": [
             "One reason is practical, the other moral and religious. The close leans on the practical (“it doesn’t pay”), but much of the talk appeals to conscience and to the people the student owes. His repeated “It isn’t too late” keeps either motive hopeful.",
@@ -75,7 +144,145 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-02",
+      "id": "reading-9-washington-character-building-1902-03",
+      "title": "European Impressions",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort Washington’s observations into lessons he wants his listeners to learn and points on which he says they are already ahead. Then find the one sentence aimed at the whole South.",
+      "focus": "A traveller’s report used as an argument for practical education and as an indirect criticism of lawlessness at home.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. In 1899 friends paid for Washington and his wife, the educator Margaret Murray Washington, to rest in Europe. Swanley, in Kent, had an agricultural college for women. Holstein cattle are a dairy breed; dykes are banks built to hold back the sea. Toussaint Louverture (about 1743–1803), leader of the Haitian Revolution, died a prisoner in France. Camp-meetings were outdoor religious gatherings.",
+      "contentNote": "A European’s remark refers to lynching in the American South.",
+      "excerpt": {
+        "locator": "Character Building, complete address “European Impressions”; opens “Some people here in America think that some of us make too much ado over the matter of…”; closes “…His parting word to me was, \"The United States is good enough for me in the future.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          120,
+          137
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ee6e423ef8f4af0e70a740000d9e45cd32ddc63e1ac91edfc7013c49bfbb99dc"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-03-q1",
+          "prompt": "Washington begins with the women at Swanley studying chemistry and spreading manure. What criticism is he answering, and why is this example well chosen?",
+          "facilitatorNotes": [
+            "Some Americans thought Tuskegee made “too much ado” about industrial training. He shows educated European women, “graduates from high schools and colleges,” choosing practical agriculture, so such training cannot be called a mark of inferiority.",
+            "His phrase “races that are years ahead of us” reflects his belief in gradual racial progress; students may question that framework while granting the force of the example."
+          ],
+          "evidence": [
+            "Some people here in America think that some of us make too much ado over the matter of industrial training for the Negro.",
+            "intelligent, cultivated women, who were most of them graduates from high schools and colleges"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-03-q2",
+          "prompt": "What should Southern Black farmers learn from the Dutch, and on what points does Washington say his own people are ahead?",
+          "facilitatorNotes": [
+            "He recommends intensive farming of a few acres instead of “fifty acres poorly tilled,” fine dairying, windmills, and college training for farmers. But in “grace, beauty, and carriage,” in public manners and in “all that marks a lady or gentleman,” he says his people do not suffer by comparison.",
+            "Balancing advice with praise keeps the talk from sounding like a lecture on inferiority; some readers also hear him answering white Americans’ stereotypes."
+          ],
+          "evidence": [
+            "how to make a living from a small plot of ground well cultivated, instead of from forty or fifty acres poorly tilled",
+            "in all that marks a lady or gentleman, our people in the South do not suffer at all by the comparison"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-03-q3",
+          "prompt": "“No law; they kill.” How does Washington use a European’s remark to criticise the South, and how direct is he?",
+          "facilitatorNotes": [
+            "He says respect for law is “the great lesson which the entire South must learn,” and lets a foreigner’s shrug name the violence of lynching. He ends with a prayer rather than an accusation.",
+            "Readers may find the indirection wise for a Black leader speaking in Alabama in 1902, or too cautious. Notice that the lesson is addressed to “the entire South,” white as well as Black."
+          ],
+          "evidence": [
+            "This is the great lesson which the entire South must learn",
+            "No law; they kill.",
+            "I pray God that no part of our country may much longer have such a reputation as that in any part of the world."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-04",
+      "title": "What Will Pay",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Test each piece of Washington’s evidence: who says it, how he knows it, and whether it would convince a doubter.",
+      "focus": "An argument for honesty in the practical language of profit, ending in a larger question.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. The Panic of 1857 was a financial crisis in which many American banks failed. Dr. John Hall was a famous New York preacher. A penitentiary is a prison.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Character Building, complete address “What Will Pay”; opens “I wish to talk with you for a few minutes upon a subject that is much discussed,…”; closes “…over and over again: \"Will it pay me in this world? Will it pay me in the world to come?\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          150,
+          165
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5915c5525fdedd4a817642b66b9aaeecdedca0f183d859dd70104e47c6defc6e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-04-q1",
+          "prompt": "Does Washington argue that honesty is right or that honesty is profitable? Look at how the talk begins and how it ends.",
+          "facilitatorNotes": [
+            "He adopts his listeners’ own question, “What will pay?”, and answers in its terms: dishonesty never pays in business, work or school. But the businessmen’s answer is given “to say nothing of the future life or of doing right for right’s sake,” and the last question adds “the world to come.”",
+            "The practical argument opens the door to the moral one. Students may ask whether honesty would still be right if it did not pay."
+          ],
+          "evidence": [
+            "nothing short of downright honesty and fair dealing ever paid in any business",
+            "to say nothing of the future life or of doing right for right's sake",
+            "Will it pay me in this world? Will it pay me in the world to come?"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-04-q2",
+          "prompt": "Why does Washington tell about students who give “half a dozen excuses” for wanting to go home?",
+          "facilitatorNotes": [
+            "It brings the lesson from banks to his listeners’ own lives: honesty means stating “the exact reason” and sticking to it. A student who changes stories reveals that none is true.",
+            "Some readers may sympathise with the homesick student; Washington’s point is not that wanting to go home is wrong but that disguising the reason is."
+          ],
+          "evidence": [
+            "In some cases I have had students give me half a dozen excuses in little more than the same number of minutes.",
+            "The proper thing for students to do, when they wish to go home, is to state the exact reason, and then stick to it."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-04-q3",
+          "prompt": "How strong is Washington’s evidence? Consider the forty businessmen, the banker William Taylor and Dr. John Hall.",
+          "facilitatorNotes": [
+            "The businessmen are successful men describing their own honesty, so they may not be impartial witnesses; Washington recalls the Taylor story with hedges (“I think it was 1857,” “I believe”). The stories illustrate that reputation is a kind of capital (money flowed into an honest bank during a panic) rather than proving that honesty always wins.",
+            "Students might argue that anecdotes are enough for a Sunday talk meant to inspire, or that dishonest people sometimes prosper. “Character is a power” is the claim the stories serve."
+          ],
+          "evidence": [
+            "Every one of the forty answered, without hesitation",
+            "I think it was 1857",
+            "money had been added to the deposits of his bank that day instead of being withdrawn",
+            "Character is a power."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-05",
       "title": "What Is to Be Our Future?",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -104,7 +311,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-02-q1",
+          "id": "reading-9-washington-character-building-1902-05-q1",
           "prompt": "The donor asks what the future of Tuskegee will be. Why does Washington say the outside world is “sure,” and what question does he think matters more?",
           "facilitatorNotes": [
             "He is confident that money will come if the school deserves it. The real question is whether students and teachers will be “worthy of that support,” so he moves responsibility from the donors to his listeners.",
@@ -116,7 +323,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-02-q2",
+          "id": "reading-9-washington-character-building-1902-05-q2",
           "prompt": "What is the difference between doing work and improving it? Why does Washington insist that an institution cannot “stand still”?",
           "facilitatorNotes": [
             "Many people will sweep a room or plough a field; few find better ways to do it. He asks students to “put brains into our work,” improving every year, because a school, like a person, grows either stronger or weaker.",
@@ -128,7 +335,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-02-q3",
+          "id": "reading-9-washington-character-building-1902-05-q3",
           "prompt": "Washington concludes: “We cannot talk our way into our rights.” How does the Clinton, Iowa, story support this, and what does his aside about the town’s few Black residents reveal?",
           "facilitatorNotes": [
             "Two well-run restaurants won the trust of white townspeople, which supports his claim that visible achievement changes opinion. But he admits that the good opinion may come partly from there being few Black people in the town, which weakens the example.",
@@ -142,7 +349,76 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-03",
+      "id": "reading-9-washington-character-building-1902-06",
+      "title": "What Would Father and Mother Say?",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the talk turns halfway, from what students should avoid to what they should learn. Decide which half Washington thinks matters more.",
+      "focus": "A test of conduct borrowed from home, and a lesson in practical kindness.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. Many Tuskegee students were the first in their families to go away to school, and their parents often struggled to keep them there. The officer of the day enforced rules; students drilled on a parade ground. General Samuel Chapman Armstrong founded Hampton Institute in Virginia, where Washington himself studied. A theological seminary trains ministers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Character Building, complete address “What Would Father and Mother Say?”; opens “I think there is no more important or more critical time in a person's life than when he…”; closes “…about my doing this?\" will enable you to answer the question with pride and satisfaction.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          373,
+          385
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c88137a4ae0efc4fe830a956ef3ed65039cc07e82c9ebb0f7fec69d35e336d60"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-06-q1",
+          "prompt": "Washington offers a test: “What would my father or my mother think of this?” Why does he think it works, and when might it fail?",
+          "facilitatorNotes": [
+            "It reminds students of the people who sacrificed for them and makes every act something they would or would not be willing to report home. He adds that knowledge and skill are worthless without “high, upright character.”",
+            "Students may point out that the test assumes wise parents, or that growing up sometimes means disagreeing with one’s family. Washington is speaking to young people far from home for the first time."
+          ],
+          "evidence": [
+            "There is no better way to test an act than to ask yourself the question",
+            "We can fill your heads with knowledge, and we can train your hands to work with skill, but unless all this training of head and hand is based upon high, upright character"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-06-q2",
+          "prompt": "How does Washington make the story of the mother’s message powerful? Look at its timing and his questions.",
+          "facilitatorNotes": [
+            "The message from a struggling mother arrives after her son “had already disgraced himself” and been sent away. Washington asks “where was that boy?” and answers himself, so the audience feels the gap between the mother’s hopes and the son’s conduct.",
+            "His last remark, that the boy was trying to hide his disgrace, shows the father-and-mother test working by its absence."
+          ],
+          "evidence": [
+            "Now, when this message was delivered, where was that boy?",
+            "He had already disgraced himself, and had been sent away from the institution.",
+            "No wonder he was trying to conceal his misconduct and disgrace from her."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-06-q3",
+          "prompt": "What does Washington call “the greatest lesson of all,” and why does he end with the seminary students who offered to black his boots?",
+          "facilitatorNotes": [
+            "Brotherly love shown in small acts: giving a seat in chapel to a stranger, inviting a new student to share a table. General Armstrong’s unselfishness and the seminary students’ eagerness to serve their guest are his models.",
+            "He does not say so, but advanced theology students offering to black a Black visitor’s boots reversed the usual pattern of service in 1902; students may infer why the experience impressed him. The talk ends by tying kindness back to the parents’ approval."
+          ],
+          "evidence": [
+            "the greatest lesson of all is the lesson of brotherly love, of usefulness and of charity",
+            "they will rise in chapel and give their seats to students who are strangers at the school",
+            "they were not above serving me, even to the extent of offering to black my boots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-07",
       "title": "Substance vs. Shadow",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -171,7 +447,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-03-q1",
+          "id": "reading-9-washington-character-building-1902-07-q1",
           "prompt": "Washington claims that education “increase[s] a person’s wants.” Why does that create a crisis, and what is his solution?",
           "facilitatorNotes": [
             "Once educated, a person wants more rooms, better clothes, a collar and tie. The crisis comes if education has not also increased the ability to pay for these things; his solution is industrial education, which builds skill alongside culture.",
@@ -183,7 +459,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-03-q2",
+          "id": "reading-9-washington-character-building-1902-07-q2",
           "prompt": "Choose one of the three examples (the wedding, the titles or the memorial collection) and explain what the shadow and the substance are in it. Which example is the most persuasive?",
           "facilitatorNotes": [
             "The $150 wedding is show, followed by a rented one-room cabin; the many “doctors, professors, or colonels” are titles without worth; the $6.00 engrossing leaves sixty-five cents for the school. The memorial story is the most exact, because Washington counts the cost.",
@@ -195,7 +471,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-03-q3",
+          "id": "reading-9-washington-character-building-1902-07-q3",
           "prompt": "Washington jokes about “five dollar hats on heads that at most are not worth more than fifty cents.” Is his ridicule fair? Consider why fine clothes and titles might have mattered to Black Americans in 1902.",
           "facilitatorNotes": [
             "Washington uses humour to shame his own listeners into thrift. But in the Jim Crow South, white people commonly refused to call Black adults “Mr.” or “Mrs.,” so dress and titles could be claims to the dignity that was being denied.",
@@ -209,7 +485,77 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-04",
+      "id": "reading-9-washington-character-building-1902-08",
+      "title": "Character as Shown in Dress",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Test Washington’s opening claim against the rest of the talk. Separate his economic arguments from his judgments about taste.",
+      "focus": "Dress as a sign of priorities, and a warning against spending on show.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. A fop is a man vain about his clothes; kid gloves are made of fine thin leather. Sixth Avenue in New York and Cambridge Street in Boston ran near the Black neighbourhoods of those cities. Twenty dollars a month was a low wage. Washington’s audience included young women and men, and his advice often addresses them separately.",
+      "contentNote": "Washington criticises students who lighten their skin with powder and judges young women’s appearance by what men will “respect,” in the attitudes of his time.",
+      "excerpt": {
+        "locator": "Character Building, complete address “Character as Shown in Dress”; opens “It is surprising how much we can tell about a person's character by his dress. I think it…”; closes “…your education, but now is the only time that you have in which to secure the education.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          410,
+          418
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d399062bb0700465d0f65d1975254163e3f8d2d5ce7b020d8e8d92c06811e294"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-08-q1",
+          "prompt": "Washington opens by saying “we can tell about a person’s character by his dress.” Does the rest of the talk support that claim, or limit it?",
+          "facilitatorNotes": [
+            "He shows dress revealing priorities: the person who goes in rags all week to be showy on Sunday, or spends a month’s wages on gloves and jewellery. But he ends by saying that if students “get something into your head,” dress “will adjust” itself; dress follows character, it does not make it.",
+            "Students may question judging anyone by clothes, especially the poor. Washington’s own advice, “Dress in the way that your pocket will allow,” partly answers that objection."
+          ],
+          "evidence": [
+            "It is surprising how much we can tell about a person's character by his dress.",
+            "Dress in the way that your pocket will allow.",
+            "Only get something into your head, and then you will find that these matters of dress will adjust themselves."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-08-q2",
+          "prompt": "What economic argument lies under Washington’s jokes about fops and brass jewellery?",
+          "facilitatorNotes": [
+            "Money spent on display is money not saved for land, homes or education: a man earning “twenty dollars a month” in kid gloves, or jewellery bought by the piece that wholesales “a bushel” for a few dollars. Multiplied across a whole people, he says, it is “thousands of dollars every year.”",
+            "Some readers find the thrift sensible and the comedy (brass you can “almost smell”) effective; others think he polices the small pleasures of poor people. Both readings use his examples."
+          ],
+          "evidence": [
+            "who perhaps earn about twenty dollars a month, standing on the street corners with kid gloves on",
+            "jewellery that you actually can get for six dollars and seven dollars a bushel at wholesale",
+            "Our people spend thousands of dollars every year for this cheap jewellery."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-08-q3",
+          "prompt": "In the shoes and face-powder passages, what does Washington say people are trying to disguise, and what does he value instead?",
+          "facilitatorNotes": [
+            "They squeeze into small shoes to seem to have small feet, and some powder their faces to “improve our colour,” that is, to look lighter. He answers that “it is just as honourable to have a large foot as a small one” and that there is “no use” in changing one’s colour: nothing about their bodies needs hiding.",
+            "His rejection of skin-lightening resists a prejudice that valued lighter skin. Yet he frames the advice in terms of what “any man will” respect in a girl, which many readers today will question. Both points deserve discussion."
+          ],
+          "evidence": [
+            "it is just as honourable to have a large foot as a small one",
+            "Some of us think we can improve our colour.",
+            "There is no use for this."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-09",
       "title": "Sing the Old Songs",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -238,7 +584,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-04-q1",
+          "id": "reading-9-washington-character-building-1902-09-q1",
           "prompt": "How does Washington explain “A little child shall lead them”? What quality, in his view, has made great leaders?",
           "facilitatorNotes": [
             "A child is always its true self, “never appearing big when it is little.” Leaders of every faith and race who stood on that “rock of truth” drew people to them, and his list runs from Luther and Lincoln to Frederick Douglass.",
@@ -250,7 +596,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-04-q2",
+          "id": "reading-9-washington-character-building-1902-09-q2",
           "prompt": "Washington calls the spirituals “simple” and “child-like.” Look closely at the Daniel song and the boy’s song. Do they seem simple to you?",
           "facilitatorNotes": [
             "“Why can’t He deliber me?” argues from evidence: God freed Daniel, Jonah and the three young men, so why not the enslaved singer? The boy who is to be sold sings “I’m gwine to tell God how-a’ you sarved me,” a promise to testify against those who mistreated him. Both voice protest within faith.",
@@ -262,7 +608,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-04-q3",
+          "id": "reading-9-washington-character-building-1902-09-q3",
           "prompt": "“Why does every attempt at improvement spoil them?” How does Washington move from the songs to a lesson for “an individual or a race”? Is the promise of his final sentence convincing?",
           "facilitatorNotes": [
             "The songs are admired because they are real, not imitation; likewise, a person or people who reject “sham” and plant themselves on “the solid granite of nature” will win respect, and prejudice will “hide” its face.",
@@ -271,6 +617,76 @@
           "evidence": [
             "But sham, buffoonery, mere imitation, mere superficiality, never has brought success and never will bring it.",
             "race prejudice, senseless customs, oppressions, will hide their faces forever in blushing shame."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-10",
+      "title": "Getting Down to Mother Earth",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Track one metaphor (foundation, bed-rock, roots) from the first paragraph to the last, and decide what it allows Washington to argue.",
+      "focus": "Land ownership and practical skill as the foundation for everything else a people may build.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. Most Black Southerners at the time farmed land they did not own, renting it or working for a share of the crop and borrowing against the next harvest, so that many stayed in debt year after year. A note or check that is “honoured” is one a bank or store will accept. Russell H. Conwell was a famous Philadelphia minister; the Independent was a New York weekly magazine.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Character Building, complete address “Getting Down to Mother Earth”; opens “One of the highest ambitions of every man leaving Tuskegee Institute should be to help…”; closes “…and have their foundation in Mother Earth. What is true of the tree is true of a race.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          444,
+          456
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6d2958c8cc59b320804f16a0c0ce76a46524f1186b8bf74cc44cc1412bbf31b6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-10-q1",
+          "prompt": "Follow the metaphor of foundations through the talk. How does it change from the first paragraph to the last, and what does it let Washington argue?",
+          "facilitatorNotes": [
+            "It begins as a house: without bed-rock, everything is “plaster” and “make-believe.” It ends as a tree whose roots in “clay, and rocks, and sand” feed its blossoms. The first image dismisses show without substance; the second answers critics who say he ignores morals and culture, which grow from economic roots.",
+            "Students may test whether a metaphor proves anything, or whether it only makes a case memorable."
+          ],
+          "evidence": [
+            "all else is but plaster, but make-believe, but the paper on the walls of a house without framework",
+            "You cannot plant a tree in air and have it live.",
+            "What is true of the tree is true of a race."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-10-q2",
+          "prompt": "What makes the story of the Alabama farmer persuasive? What does Washington mean by saying he “seemed to be what the white men about him were”?",
+          "facilitatorNotes": [
+            "For twenty years the farmer looked prosperous on borrowed mules, a borrowed buggy and unpaid clothes; he imitated the appearance of his white neighbours without their ownership. By giving everything back and pulling the plough himself by moonlight, he built a debt-free life and became a bank stockholder.",
+            "The story shows independence through ownership, but at enormous cost. Some readers find it inspiring; others notice how much hardship it asks of people denied fair conditions."
+          ],
+          "evidence": [
+            "He seemed to be what the white men about him were.",
+            "He had resolved to be a man.",
+            "by moonlight he pulled a plough which the boy guided"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-10-q3",
+          "prompt": "Washington hopes the race “will remain” agricultural and wants schools to produce “job-makers.” How persuasive do you find his programme?",
+          "facilitatorNotes": [
+            "He argues from numbers (eighty-five per cent farm), from history (nearly every people began on the land) and from independence: ministers who farm can lead rather than cater. He also insists that “nature draws no colour line.”",
+            "Some of his contemporaries argued that this programme set Black ambition too low and accepted the loss of political rights. Others saw it as the surest road to independence. Accept either view supported by the text."
+          ],
+          "evidence": [
+            "because the race is an agricultural one, and because my hope is that it will remain such",
+            "What we should do in all our schools is to turn out fewer job-seekers and more job-makers.",
+            "nature draws no colour line"
           ]
         }
       ]
