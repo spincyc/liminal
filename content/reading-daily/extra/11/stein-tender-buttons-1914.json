@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "stein-tender-buttons-1914",
+  "readings": [
+    {
+      "id": "reading-11-stein-tender-buttons-1914-01",
+      "title": "Tender Buttons: the list and the first of Roastbeef (Food, part 1)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Read long, rhythmic sentences for their patterns before their sense.",
+      "focus": "A list that promises order, and a roast that turns into feeling.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. The first section, Objects, has short pieces on glass, boxes, umbrellas and dresses. “Food” opens with a list of its own titles; “Roastbeef” is by far its longest piece. Stein had studied psychology with William James and was interested in how attention moves, and in painting that broke objects into planes, as Cubism did.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Food,” its opening list of titles and the first five paragraphs of “Roastbeef”; opens “ROASTBEEF; MUTTON; BREAKFAST; SUGAR; CRANBERRIES; MILK; EGGS; APPLE; TAILS; LUNCH; CUPS;…”; closes “…is certainly the desertion is not a reduced description, a description is not a birthday.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-stein-tender-buttons-1914-02",
+        "blocks": [
+          192,
+          199
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9265a28a83954114a52be8714305c9b0d86e36ea0b95108d40e7223198373b34"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-01-q1",
+          "prompt": "“Food” begins with a list of titles separated by semicolons. What kind of list does it resemble, and what do entries such as “SINGLE; FISH” and “AND CLEAR SOUP AND ORANGES AND OATMEAL” do to the idea of an orderly menu?",
+          "facilitatorNotes": [
+            "It looks like a table of contents or a day’s menu running from roast to dinner. But one title, “Single Fish,” is split in two, and another begins with “AND,” so the list announces order and unsettles it at once. Some readers see the meals of a day; others see a cook’s shopping list."
+          ],
+          "evidence": [
+            "SINGLE; FISH",
+            "AND CLEAR SOUP AND ORANGES AND OATMEAL"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-01-q2",
+          "prompt": "The first sentence of “Roastbeef” moves from inside to outside and from morning to evening. Track its pairs. How does the paragraph slide from the meat to feeling?",
+          "facilitatorNotes": [
+            "Inside “sleeping,” outside “reddening” (a roast’s pink centre and browned crust), morning “meaning,” evening “feeling”: rhyming -ing words carry the reader from the joint to a day to an emotion. The paragraph then lists what is in feeling (resting, mounting, resignation, recognition) and stops abruptly: “This makes sand.” Some readers hear a body or a day as much as a roast."
+          ],
+          "evidence": [
+            "In the inside there is sleeping, in the outside there is reddening",
+            "in the morning there is meaning, in the evening there is feeling"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-01-q3",
+          "prompt": "In the third paragraph, find the run of “every time there is … there is …” and the long chain joined by “and.” What happens to sense and sound as the chain goes on?",
+          "facilitatorNotes": [
+            "The repeated statements insist that each thing is simply itself (“every time there is silence there is silence”). The “and” chain then piles up qualities and colors (tender, central, the red, the yellow) until it ends “and altogether,” like stirring or carving that takes everything in. Meaning thins as rhythm thickens; that may be the experience the passage wants."
+          ],
+          "evidence": [
+            "every time there is silence there is silence",
+            "and the centre and the yellow and the tender and the better, and altogether"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-01-q4",
+          "prompt": "“The whole thing is not understood and this is not strange considering that there is no education.” Can this sentence be read as Stein commenting on her own writing? What else might it describe?",
+          "facilitatorNotes": [
+            "Many readers take it as a wink: the writing is not understood because no one has yet been taught to read this way. In context it also belongs to carving and cooking (“the difference in cutting”). A later line, “a description is not a birthday,” separates describing a thing from the event itself. Students should hold such self-commentary lightly; the sentence works either way."
+          ],
+          "evidence": [
+            "The whole thing is not understood and this is not strange considering that there is no education",
+            "a description is not a birthday"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-02",
+      "title": "Tender Buttons: Roastbeef, continued (Food, part 2)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Hear verse inside prose.",
+      "focus": "Rhyme, the room of a kitchen, and the word “suppose.”",
+      "context": "Recap: “Food” has opened with a list of its own titles and the first long paragraphs of “Roastbeef,” in which inside and outside, morning and evening, sleeping and feeling pass through a roast. A snipe is a small game bird. The paragraphs here grow shorter, and the first reads almost as rhymed verse.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Roastbeef,” from “Lovely snipe and tender turn” to “Coal any coal is copper.”; opens “Lovely snipe and tender turn, excellent vapor and slender butter, all the splinter and…”; closes “…and a spoonful, a whole spoon that is full is not spilling. Coal any coal is copper.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-stein-tender-buttons-1914-01",
+        "continuesTo": "reading-11-stein-tender-buttons-1914-03",
+        "blocks": [
+          200,
+          215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d78d914d44cb9335894cde4433747a244243701d83fab7c933cd86bfdb5c171"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-02-q1",
+          "prompt": "Read “Lovely snipe and tender turn” aloud. What makes it sound like a poem, and what kinds of words do its rhymes pair?",
+          "facilitatorNotes": [
+            "It falls into short, regular, rhyming units: tender/slender, trunk/drunk, success/tenderness, tea/symmetry. The rhymes join food (snipe, butter, tea) with feeling (joy, tenderness) and with form (section, symmetry), like a toast or a grace before a meal. Some readers hear a nursery rhyme turned strange by “poisonous darkening drunk.”"
+          ],
+          "evidence": [
+            "all the splinter and the trunk, all the poisonous darkening drunk",
+            "all the section and the tea, all the stouter symmetry"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-02-q2",
+          "prompt": "“Room to comb chickens and feathers and ripe purple … all room has no shadow.” What kind of room is this, and how does it square with the later sentence about “a shadow in a kitchen”?",
+          "facilitatorNotes": [
+            "Room as space in a working kitchen: room to clean birds, stack plates, send things away, keep heat. It ends “all room has no shadow,” yet a few lines later there is a shadow in a kitchen “because every little thing is bigger,” perhaps a child’s view, or things looming in close quarters. The contradiction is left standing; the book’s last section is called “Rooms.”"
+          ],
+          "evidence": [
+            "all room has no shadow",
+            "there is a shadow in a kitchen because every little thing is bigger"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-02-q3",
+          "prompt": "Find the sentences built on “Suppose” and “Supposing.” How does the paragraph about bones move from supposing to certainty?",
+          "facilitatorNotes": [
+            "“Suppose there is a pigeon, suppose there is.” Then “Supposing there is a bone, there is a bone,” until “When there are bones there is no supposing there are bones.” Repetition turns a hypothesis into a fact, as the bones are the hard remainder of a roast. Some readers hear a parody of logic textbooks."
+          ],
+          "evidence": [
+            "Suppose there is a pigeon, suppose there is.",
+            "When there are bones there is no supposing there are bones."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-02-q4",
+          "prompt": "“Hope in gates, hope in spoons, hope in doors, hope in tables, no hope in daintiness and determination. Hope in dates.” What pattern is set up and broken? Where, according to the sentence, does hope belong?",
+          "facilitatorNotes": [
+            "Solid household things earn hope; fussiness and grim will do not. “Hope in dates” then puns: the fruit, or days on a calendar. Hope belongs to ordinary objects and time. Readers can propose other patterns; the sentence rewards being said aloud."
+          ],
+          "evidence": [
+            "no hope in daintiness and determination",
+            "Hope in dates."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-03",
+      "title": "Tender Buttons: Roastbeef, ended (Food, part 3)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow requests and infinitives to an ending that calls itself a result.",
+      "focus": "“Please be the beef,” a list of things to do, and what “a result” means here.",
+      "context": "Recap: “Roastbeef” has moved through inside and outside, feeling and sand, rhymed lines of snipe and butter, a kitchen with and without shadows, and bones that need no supposing. Lilacs bloom in spring. “Pomp and circumstance” is the familiar phrase for ceremony.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Roastbeef,” from “Claiming nothing” to the end of the piece; opens “Claiming nothing, not claiming anything, not a claim in everything, collecting claiming,…”; closes “…hardness and a reason and the rest and remainder. There is no delight and no mathematics.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-stein-tender-buttons-1914-02",
+        "continuesTo": null,
+        "blocks": [
+          216,
+          231
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "30ff7d737b1e785a07958f2c01d036d8fa4fef7cb99bd9c6ec76bdc23d7d6616"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-03-q1",
+          "prompt": "“Please be the beef, please beef, pleasure is not wailing.” Who might be speaking, and to whom? What does the slide from “please” to “pleasure” do?",
+          "facilitatorNotes": [
+            "A cook or diner seems to coax the meat itself: be carved cleanly, be considerate. “Please” slides into “pleasure” by sound, so politeness becomes enjoyment. Some readers hear a lover’s plea underneath the kitchen comedy."
+          ],
+          "evidence": [
+            "Please be the beef, please beef, pleasure is not wailing.",
+            "please be carved clear, please be a case of consideration"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-03-q2",
+          "prompt": "Paragraph 224 is a list of things “to” do. Look at the endings of its phrases. What does the sound do that the meaning does not?",
+          "facilitatorNotes": [
+            "Many phrases end in -er words (blinder, darker, redder, better, dinner, together, sinner, sweeter, thinner, dimmer), a chain of near-rhymes that gives the list momentum and makes it sound like a vow or a recipe. “To sort out dinner, to remain together” suggests a shared household; Stein lived with Alice B. Toklas. The sound holds the list together where sense does not."
+          ],
+          "evidence": [
+            "to sort out dinner, to remain together",
+            "to continue thinner, to increase in resting recreation"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-03-q3",
+          "prompt": "“A sentence of a vagueness that is violence is authority.” How can vagueness be violence? Connect the word “sentence” with “prison.”",
+          "facilitatorNotes": [
+            "A sentence is both a grammatical unit and a judge’s verdict, and the sentence ends in “a prison.” A vague verdict imposes power without explaining itself. Readers can ask whether Stein’s own vague sentences claim that power or refuse it. “There is no turn in terror” adds menace either way."
+          ],
+          "evidence": [
+            "A sentence of a vagueness that is violence is authority and a mission and stumbling and also certainly also a prison.",
+            "There is no turn in terror."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-03-q4",
+          "prompt": "The last paragraph says “This is a result.” What is the result, according to the list before it, and what does the final sentence deny?",
+          "facilitatorNotes": [
+            "“Juice and size and baking and exhibition”: the roast done and served, with sacrifice and nonchalance. “No superposition and circumstance” echoes “pomp and circumstance,” and the piece ends coolly: “There is no delight and no mathematics.” After so much feeling the ending denies both pleasure and calculation. Some read the spring and lilacs as time passing over the meal."
+          ],
+          "evidence": [
+            "The result the pure result is juice and size and baking and exhibition",
+            "There is no delight and no mathematics."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-04",
+      "title": "Tender Buttons: Mutton (Food)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Track a few words that return in a piece that otherwise keeps changing.",
+      "focus": "Bones, likeness, and the price of lamb.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. “Mutton” follows the long “Roastbeef” in the Food section. Mutton is the meat of a grown sheep, lamb that of a young one.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Mutton,” complete; opens “A letter which can wither, a learning which can suffer and an outrage which is…”; closes “…it is cheaper because so little is more. Lecture, lecture and repeat instruction.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          232,
+          245
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc7f40e3c09f552d2bcb09fef0e4f92a611a731d3934d4deec3c07d35808a316"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-04-q1",
+          "prompt": "Where do bones appear in “Mutton,” and how does Stein make a bone both a leftover and something important?",
+          "facilitatorNotes": [
+            "“If there is anything left it is a bone. It is not solitary.” Later: “why is a bone outstanding.” A bone is what remains after eating and also the frame that holds a body up; “outstanding” puns on sticking out and being excellent. The bones carry over from “Roastbeef.”"
+          ],
+          "evidence": [
+            "surely if there is anything left it is a bone. It is not solitary.",
+            "why is a bone outstanding"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-04-q2",
+          "prompt": "“Light curls very light curls have no more curliness than soup. This is not a subject.” What is Stein doing with comparison here and in “like that and not more like that than the same resemblance”?",
+          "facilitatorNotes": [
+            "She makes comparisons that cancel themselves: curls no curlier than soup, a likeness like nothing but resemblance. It reads as a parody of simile, the tool most poems use to describe things. “This is not a subject” may refuse the idea that a piece must be about something."
+          ],
+          "evidence": [
+            "Light curls very light curls have no more curliness than soup. This is not a subject.",
+            "like that and not more like that than the same resemblance"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-04-q3",
+          "prompt": "Paragraph 242 is a run of questions and answers. What kind of conversation does it sound like, and what does “All this makes cherries” do to it?",
+          "facilitatorNotes": [
+            "A catechism or an interrogation: “Does it dirty a ceiling. It does not.” Conditions are added (“if prices are sweet,” “if there is no undertaker”). Then a conclusion that cannot follow, “All this makes cherries,” comically undoes the logic. Readers may hear dinner-table cross-examination."
+          ],
+          "evidence": [
+            "Does it dirty a ceiling. It does not.",
+            "All this makes cherries."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-04-q4",
+          "prompt": "Why might “Lecture, lecture and repeat instruction” be a fitting close for this piece, or for its reader?",
+          "facilitatorNotes": [
+            "Just before, a paradox: lamb is cheaper “because so little is more,” though one might expect the younger meat to cost more. Then “Lecture, lecture and repeat instruction”: teaching by repetition, which is Stein’s own method, and perhaps an instruction to reread. Some readers hear a teacher’s weariness, others a joke on the reader’s wish for a lesson."
+          ],
+          "evidence": [
+            "why is lamb cheaper, it is cheaper because so little is more",
+            "Lecture, lecture and repeat instruction."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-05",
+      "title": "Tender Buttons: Breakfast (Food)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 9,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice how cups, plates and cakes take on other meanings.",
+      "focus": "Change, imitation, mending, and what cups mean.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. In “Food” the meals follow loosely through a day: “Breakfast” comes after the meats and before “Lunch” and “Dinner.” A stomacher was a decorated panel worn on the front of a dress; a larder is a pantry.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Breakfast,” complete; opens “A change, a final change includes potatoes. This is no authority for the abuse of cheese.…”; closes “…color, does it not even show in the explanation and singularly not at all stationary.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          246,
+          268
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1efb650b5674e8f4cdc4e96296014abb47cb34fc5786f4b60bec5a8f921af082"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-05-q1",
+          "prompt": "“A sudden slice changes the whole plate, it does so suddenly.” Find other sentences about change and imitation in the first paragraphs. What has breakfast to do with change?",
+          "facilitatorNotes": [
+            "“A change, a final change includes potatoes”; “imitation succeed imitations.” Breakfast repeats every morning yet starts each day new; one slice rearranges a plate the way a painter’s stroke changes a still life. Readers may connect this with Cubist painters re-seeing everyday objects."
+          ],
+          "evidence": [
+            "A sudden slice changes the whole plate, it does so suddenly.",
+            "An imitation, more imitation, imitation succeed imitations."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-05-q2",
+          "prompt": "“A white cup means a wedding. A wet cup means a vacation.” What is Stein imitating, and what does the pattern do with meaning?",
+          "facilitatorNotes": [
+            "Fortune-telling with tea-cups, or a dictionary of signs: each cup is assigned a meaning with total confidence and no reason. It ends with a cup that means “a capital arrangement between the drawer and the place that is open,” furniture rather than fate. It may tease readers who hunt for hidden meanings in her own text."
+          ],
+          "evidence": [
+            "A white cup means a wedding. A wet cup means a vacation.",
+            "A single cup means a capital arrangement between the drawer and the place that is open."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-05-q3",
+          "prompt": "“A hurt mended stick, a hurt mended cup … hurt and mended is so necessary that no mistake is intended.” What does repetition do to the phrase “hurt mended”?",
+          "facilitatorNotes": [
+            "It fuses into one idea: things are always both damaged and repaired, and the mending is “necessary.” “No mistake is intended” sounds like a reassurance after a quarrel or an accident at table. Students may find tenderness here, or simply the pleasure of the phrase."
+          ],
+          "evidence": [
+            "a hurt mended, hurt and mended is so necessary that no mistake is intended"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-05-q4",
+          "prompt": "The last paragraph gives instructions: “Seat a knife near a cage … arrange the white place.” What scene does it set, and what does it leave the reader asking?",
+          "facilitatorNotes": [
+            "Setting a table, or composing a still life: a knife, a cage, a cat and scissors, a white cloth spread. It ends in questions about whether the arrangement “shows” in the house or the explanation. The reader is left as the one arranging, which may be the point."
+          ],
+          "evidence": [
+            "Seat a knife near a cage and very near a decision",
+            "Spread it all and arrange the white place, does this show in the house"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-06",
+      "title": "Tender Buttons: Sugar, Cranberries, Milk and Eggs (Food)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Compare short pieces on simple foods by their sound and syntax.",
+      "focus": "Fragments, commands, a title used twice, and a darker current.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. These five short pieces follow “Breakfast.” Britain had begun paying old age pensions in 1909, shortly before Stein wrote. Worsted is woollen yarn.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Sugar,” “Cranberries,” the two pieces called “Milk,” and “Eggs,” complete; opens “A violent luck and a whole sample and even then quiet.”; closes “Cut up alone the paved way which is harm. Harm is old boat and a likely dash.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          269,
+          310
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f00df3e45ff9fb3e3c62e7395b3d7f95210eb1860d8b28fe4da7a42f40e0665b"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-06-q1",
+          "prompt": "“Sugar” is made mostly of short sentences and fragments. Choose two that seem most like sugar, by sound or sense, and two that seem least. What does the difference suggest?",
+          "facilitatorNotes": [
+            "“The teasing is tender and trying and thoughtful” and “Cuddling comes in continuing a change” sound sweet; “a heavy choking” and “a signal poison” do not. Sugar is pleasure and danger at once. Students’ choices will differ, and the comparison is the point."
+          ],
+          "evidence": [
+            "The teasing is tender and trying and thoughtful.",
+            "A puzzle, a monster puzzle, a heavy choking, a neglected Tuesday."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-06-q2",
+          "prompt": "“Cranberries” begins with questions and turns to commands. What do the questions touch on, and how do the commands (“Count the chain, cut the grass … murder flies”) sound?",
+          "facilitatorNotes": [
+            "The questions reach outside the kitchen, to “old age pensions” and “a witness,” public matters. The commands are household chores that escalate from counting to “murder flies,” then become something like a jelly recipe (“Cut the whole space into twenty-four spaces”). Kitchen work and public life sit in the same sentences."
+          ],
+          "evidence": [
+            "could there not be in the present settlement of old age pensions",
+            "Count the chain, cut the grass, silence the noon and murder flies."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-06-q3",
+          "prompt": "There are two pieces called “Milk.” How do they differ, and why might Stein give the same title twice?",
+          "facilitatorNotes": [
+            "The first is seven short lines of cups, colds and stolen goods; the second is one line of climbing and “hanging.” The same thing is attempted twice and comes out differently, as the four “Chicken” pieces later do. A title is not a definition but an occasion."
+          ],
+          "evidence": [
+            "All the goods are stolen, all the blisters are in the cup.",
+            "Hanging hanging."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-06-q4",
+          "prompt": "“Eggs” ends “Cut up alone the paved way which is harm.” Look for words of cutting, poison and harm across these pieces. Is there a darker current under the kitchen?",
+          "facilitatorNotes": [
+            "“Cut a gas jet uglier,” “a signal poison,” “murder flies,” “All the goods are stolen,” “harm.” Cutting is kitchen work and also violence; Stein’s food is not simply cozy. Others will find these words playful rather than dark; both readings can cite the text."
+          ],
+          "evidence": [
+            "Cut up alone the paved way which is harm.",
+            "a signal poison"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-07",
+      "title": "Tender Buttons: Apple to Custard (Food)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Hear how sound pulls words into each other.",
+      "focus": "Chains of sound, a neglected cup, and a cake that was a sign.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. These eight short pieces sit in the middle of “Food,” between breakfast and dinner. Eucalyptus is a fragrant tree; sherry is a fortified wine.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "“Apple,” “Tails,” “Lunch,” “Cups,” “Rhubarb,” “Single Fish,” “Cake” and “Custard,” complete; opens “Apple plum, carpet steak, seed clam, colored wine, calm seen, cold cream, best shake,…”; closes “…has mellow real mellow. It is better than lakes whole lakes, it is better than seeding.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          311,
+          346
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e1069cb0b8b25cda938a0a42e1f54703033b1df1d2bd923777cfbfcfb28938fb"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-07-q1",
+          "prompt": "Read the opening of “Apple” aloud: “Apple plum, carpet steak, seed clam, colored wine, calm seen, cold cream.” What links each pair, and what happens to meaning when sound leads?",
+          "facilitatorNotes": [
+            "Two-word units linked by echo: clam and calm, seed and seen, cold cream. Sound makes new compounds (“carpet steak”) that no one would describe on purpose, and the piece ends in a child’s request, “a little piece please.” The images come from the sounds, not the other way round."
+          ],
+          "evidence": [
+            "Apple plum, carpet steak, seed clam, colored wine, calm seen, cold cream, best shake",
+            "a little piece a little piece please"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-07-q2",
+          "prompt": "In “Cups,” “A cup is neglected by being all in size” becomes “A cup is neglected by being full of size.” What does the small change do? What is a cup by the last lines?",
+          "facilitatorNotes": [
+            "Varying one phrase makes the reader look again, as a painter re-draws a cup from a new angle. By the end the cup is defined by its hollow: “in between no sense that is to say music, memory, musical memory.” An empty container holds what cannot be held."
+          ],
+          "evidence": [
+            "A cup is neglected by being all in size.",
+            "it has in between no sense that is to say music, memory, musical memory"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-07-q3",
+          "prompt": "“Rhubarb is susan not susan.” The piece is one sentence of “not”s. What does a definition by negation tell us about rhubarb, or about defining?",
+          "facilitatorNotes": [
+            "It defines by excluding: not wild, not laughable, not in little places, not please. A thing can be marked out by everything it is not, and the name “susan” appears only to be denied. The method mocks dictionaries and still leaves an outline."
+          ],
+          "evidence": [
+            "Rhubarb is susan not susan not seat in bunch toys",
+            "not in neglect and vegetable"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-07-q4",
+          "prompt": "“Cake” uses the past tense: “We came back … This meant cake. It was a sign.” What small story can you piece together, and how sure can you be of it?",
+          "facilitatorNotes": [
+            "Fragments of an occasion: a return, an experiment with a can, a hat pin long looked for, a yellow result. Perhaps a cake baked to mark a homecoming. Any story is the reader’s assembly, and “It was a sign” may describe the reader’s own wish to find one."
+          ],
+          "evidence": [
+            "We came back.",
+            "This meant cake. It was a sign."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-08",
+      "title": "Tender Buttons: Potatoes to Cucumber (Food)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Read very short pieces as experiments in how little a text needs.",
+      "focus": "Repeated titles, sentences cut short, and four tries at “Chicken.”",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. These twenty-two pieces are the shortest in “Food”; some are a single phrase, and several titles repeat.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. ",
+      "excerpt": {
+        "locator": "From “Potatoes” to “Cucumber,” twenty-two short pieces, complete; opens “Real potatoes cut in between.”; closes “…and relet put in, rest in a slender go in selecting, rest in, rest in in white widening.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          347,
+          399
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3495c7ae787513595f2da82a122683f395a53caa0b614d4a63b619ecad4dce8a"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-08-q1",
+          "prompt": "“Roast Potatoes” reads in full: “Roast potatoes for.” What is missing, and what does the missing word do? Compare the first “Potatoes”: “Real potatoes cut in between.”",
+          "facilitatorNotes": [
+            "The sentence stops on a preposition with no object: for whom, for what? The reader supplies the rest, as with a label or an interrupted recipe. “Cut in between” names the act of preparation itself. Very short texts hand most of the work to the reader."
+          ],
+          "evidence": [
+            "Roast potatoes for.",
+            "Real potatoes cut in between."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-08-q2",
+          "prompt": "Read the four pieces titled “Chicken” in order. What changes from one to the next, and why might Stein make four attempts?",
+          "facilitatorNotes": [
+            "From “chicken is a peculiar third” to “alas a dirty third, alas a dirty bird,” where sound slides third/bird/word, to a doubtful list, to “sticking with a chicken.” They read like drafts, or a cook trying again; repetition becomes revision. Some readers hear schoolyard rhyme in the second."
+          ],
+          "evidence": [
+            "chicken is a peculiar third",
+            "alas a dirty third, alas a dirty bird"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-08-q3",
+          "prompt": "“Butter” and “Cooking” are built on repeated openings (“It is a need,” “alas”). What effect does each repetition have?",
+          "facilitatorNotes": [
+            "“It is a need” sounds like a chant or a political demand (“a state flower”); “Alas, alas the pull alas the bell” is a mock lament over kitchen things and a “wedding butter meat.” Repetition makes ordinary items sound ceremonial and comic at once."
+          ],
+          "evidence": [
+            "It is a need it is a need that a flower a state flower.",
+            "Alas, alas the pull alas the bell alas the coach in china"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-08-q4",
+          "prompt": "“End of Summer” and “Chain-Boats” are not foods. Why might they appear in “Food,” and what do they add?",
+          "facilitatorNotes": [
+            "Food belongs to seasons and outings: the end of summer, a day on the water. They may be the drift of a mind at table, or a reminder that meals are occasions as well as things. Students may argue that the section’s subject is attention, not food."
+          ],
+          "evidence": [
+            "Little eyelets that have hammer and a check with stripes between a lounge",
+            "Chain-boats are merry, are merry blew, blew west, carpet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-stein-tender-buttons-1914-09",
+      "title": "Tender Buttons: Dinner to A Centre in a Table (Food, end)",
+      "sourceId": "stein-tender-buttons-1914",
+      "genre": "prose poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 9,
+        "totalMinutes": 29
+      },
+      "challenge": "Listen to words breaking apart and re-forming.",
+      "focus": "Eating as sound, a line that returns, and a centre to end on.",
+      "context": "Gertrude Stein (1874–1946), an American writer living in Paris among painters such as Picasso, published Tender Buttons in 1914 in three sections: Objects, Food and Rooms. These pieces close “Food” and lead into “Rooms.” The list that opened “Food” promised “COCOA; AND CLEAR SOUP AND ORANGES AND OATMEAL”; here the line returns. Cod liver oil was a common tonic; tunny is tuna.",
+      "contentNote": "Stein’s experimental prose breaks grammar and expected sense on purpose. No single hidden meaning is required; answers should rest on particular words, sounds and patterns. In the long paragraph of “Dinner,” among words that run into nonsense, Stein uses a racial slur; it is part of her text, and the questions do not repeat it.",
+      "excerpt": {
+        "locator": "From “Dinner” to “A Centre in a Table,” the end of “Food”; opens “Not a little fit, not a little fit sun sat in shed more mentally.”; closes “…next to a foldersome waiter and re letter and read her. Read her with her for less.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          400,
+          446
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8c34bffea2f27b9db6c13cb84aeea082de3e666e8786c03675e84b163614b301"
+      },
+      "questions": [
+        {
+          "id": "reading-11-stein-tender-buttons-1914-09-q1",
+          "prompt": "In “Eating,” how does Stein break words apart and rebuild them (“Eat ting,” “he heat it heat eating”)? What does this do to the act of eating?",
+          "facilitatorNotes": [
+            "She splits “eating” into “eat ting” and re-hears it as “he heat,” so the word becomes heat and a person; “is it so” repeats like chewing. Sound takes over sense as a mouth takes over food. Reading aloud makes the effect plain."
+          ],
+          "evidence": [
+            "Eat ting, eating a grand old man said roof",
+            "Eating he heat eating he heat it eating, he heat it heat eating."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-09-q2",
+          "prompt": "“Cocoa and clear soup and oranges and oat-meal.” appears twice in “Orange In,” after appearing in the list that opened “Food.” What does its return do?",
+          "facilitatorNotes": [
+            "It is a refrain that closes a circle: the menu promised at the start arrives at the end, plain and readable among sound-play like “Go lack go lack use to her.” It may feel like a lucid moment, or like a breakfast list turning up at dinner."
+          ],
+          "evidence": [
+            "Cocoa and clear soup and oranges and oat-meal.",
+            "Go lack go lack use to her."
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-09-q3",
+          "prompt": "Paragraph 439 repeats “a no since” in changing lengths. Read it aloud. What can you hear in it?",
+          "facilitatorNotes": [
+            "Many readers hear “a nuisance,” and before it “only excreate a no since” sounds like “only create a nuisance.” Others hear “innocence,” or “no since when,” a question about time. The repetition makes the listener do the hearing; more than one answer is defensible."
+          ],
+          "evidence": [
+            "real is, real is only, only excreate, only excreate a no since",
+            "a no since when since"
+          ]
+        },
+        {
+          "id": "reading-11-stein-tender-buttons-1914-09-q4",
+          "prompt": "“Food” ends with “A Centre in a Table.” How do its “suppose” sentences build, and why might a centre, rather than a dessert, close the section?",
+          "facilitatorNotes": [
+            "Each supposition adds a word (cod liver, oil, tunny, pressed, china), piling up like the courses of a meal. Then the piece turns to people: “Next to me next to a folder … read her.” A table’s centre is where a household gathers, and the next section, “Rooms,” opens with “Act so that there is no use in a centre.” The ending sets up its own undoing."
+          ],
+          "evidence": [
+            "suppose a cod liver oil tunny pressed is china",
+            "Next to me next to a folder"
+          ]
+        }
+      ]
+    }
+  ]
+}
