@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "cullen-color-1925",
+  "readings": [
+    {
+      "id": "reading-7-cullen-color-1925-01",
+      "title": "Tableau",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Explain how paired images describe a friendship that onlookers condemn.",
+      "focus": "Two boys, one Black and one white, walk arm in arm past disapproving neighbours.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A tableau is a striking scene, like a picture held still. Donald Duff, to whom the poem is dedicated, was a white friend of Cullen’s. “Sable” means black; in the 1920s friendships across the colour line drew stares and anger from both sides.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Tableau,” the whole poem with its dedication; opens “_For Donald Duff_”; closes “…and see no wonder That lightning brilliant as a sword Should blaze the path of thunder.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          58,
+          61
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "39881f9e45ce6d73690f505d55fff3aa65b516ea49336b54eb016bdfaa040bf1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-01-q1",
+          "prompt": "How do the two groups of onlookers react, and what is surprising about their reactions?",
+          "facilitatorNotes": [
+            "Black neighbours stare from behind lowered blinds; white neighbours talk openly, “indignant.” Both disapprove, so the boys are judged from both sides of the colour line, not only by one. The poem shows prejudice as something a whole street shares."
+          ],
+          "evidence": [
+            "From lowered blinds the dark folk stare,\nAnd here the fair folk talk,",
+            "Indignant that these two should dare\nIn unison to walk."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-01-q2",
+          "prompt": "What do the comparisons to day and night, and to lightning and thunder, suggest about the two boys?",
+          "facilitatorNotes": [
+            "Each pair belongs together: day and night make one whole turn of time, and lightning goes with thunder. The images present the boys as partners in a natural order, not opposites. Readers may notice that each comparison gives both boys beauty and pride."
+          ],
+          "evidence": [
+            "The golden splendor of the day,\nThe sable pride of night.",
+            "That lightning brilliant as a sword\nShould blaze the path of thunder."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-01-q3",
+          "prompt": "The boys “see no wonder” in their friendship. Why does the poem stress that they do not notice the stares?",
+          "facilitatorNotes": [
+            "To them walking together is simply natural; the “wonder” exists only in the onlookers’ eyes. Their calm makes the neighbours look small. The dedication suggests Cullen drew on his own friendship, though the poem speaks for any such pair."
+          ],
+          "evidence": [
+            "Oblivious to look and word\nThey pass, and see no wonder"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-02",
+      "title": "Heritage",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Hold a long poem’s contradictions in mind: a speaker who denies a feeling while showing it.",
+      "focus": "A young Black American asks what Africa means to him and cannot settle the answer.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Harold Jackman, to whom the poem is dedicated, was Cullen’s close friend. “Three centuries removed” means the speaker’s ancestors were brought from Africa as slaves about three hundred years earlier. A juggernaut is a huge, unstoppable force; to “doff” is to take off; corollas are the petals of a flower; “heathen” means not Christian; the “twice-turned cheek” recalls Jesus’s teaching to turn the other cheek.",
+      "contentNote": "The poem draws on the 1920s picture of Africa as “jungle” and “barbaric,” which the speaker both repeats and struggles with. It questions the picture of Christ as white, and a few lines describe dancing and lovers.",
+      "excerpt": {
+        "locator": "“Heritage,” the whole poem with its dedication; opens “(_For Harold Jackman_)”; closes “…_Not yet has my heart or head_ _In the least way realized_ _They and I are civilized._”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          144,
+          151
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "715b5e18a45376d38ca6c66d19dd56fab389f3a896091442fe58b1e6f905df14"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-02-q1",
+          "prompt": "In the third stanza the speaker calls Africa “a book one thumbs / Listlessly.” How do the stanzas that begin “So I lie” contradict that?",
+          "facilitatorNotes": [
+            "He claims Africa bores him, yet he cannot shut out the drums even with his thumbs in his ears, and the rain makes him “twist and squirm.” “So I lie” can mean he lies awake, and also that he tells a lie: the claim of indifference is not true. Readers can decide which meaning is stronger."
+          ],
+          "evidence": [
+            "Africa? A book one thumbs\nListlessly, till slumber comes.",
+            "So I lie, who always hear,\nThough I cram against my ear\nBoth my thumbs, and keep them there,\nGreat drums throbbing through the air."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-02-q2",
+          "prompt": "The poem’s Africa is full of jungles, drums and “wild barbaric birds.” Where might the speaker’s picture come from?",
+          "facilitatorNotes": [
+            "He is “three centuries removed” and has never seen Africa, so his images come from books and the stereotypes of his time, as his own phrase about thumbing a book admits. The poem is partly about the gap between a real heritage and the pictures others have given him. Students should notice the stereotypes without assuming the poem simply believes them."
+          ],
+          "evidence": [
+            "_One three centuries removed_\n_From the scenes his fathers loved,_"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-02-q3",
+          "prompt": "Why does the speaker wish that the Christ he serves were black, and why does he ask forgiveness?",
+          "facilitatorNotes": [
+            "A Black Christ would share his people’s suffering, a “kindred woe” that would guide him. Having dismissed African gods made by human hands, he admits he too fashions “dark gods,” and fears this is a “human creed.” He plays a “double part,” loyal to his faith and longing for it to include him."
+          ],
+          "evidence": [
+            "Wishing He I served were black,",
+            "Lord, forgive me if my need\nSometimes shapes a human creed."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-02-q4",
+          "prompt": "What does the final stanza admit about the speaker’s struggle?",
+          "facilitatorNotes": [
+            "He must keep cooling his pride and blood “all day long and all night through,” afraid a hidden fire will burn. The last lines say he has not yet “realized” that he is “civilized,” which can be heard as sad, as ironic about what “civilized” means, or as an honest admission that the conflict is unresolved."
+          ],
+          "evidence": [
+            "_Quench my pride and cool my blood,_\n_Lest I perish in the flood._",
+            "They and I are civilized."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-03",
+      "title": "Seven epitaphs",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Find the twist in a very short poem, and explain how a few lines can judge a whole life.",
+      "focus": "Comic, sharp verses imagined for the gravestones of seven kinds of people.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. An epitaph is a short verse for a gravestone; these are imaginary ones written for types of people. A cherub is a child angel; an anarchist rejects all government; in the Bible, Samson killed a thousand men with a donkey’s jawbone and drew his strength from his uncut hair; “adamantine” means unbreakable; “Open Sesame” opens the robbers’ cave in the tale of Ali Baba; a death’s-head is a skull and crape is black cloth worn in mourning.",
+      "contentNote": "These are comic verses about death. “For a Lady I Know” mocks a white woman who imagines Black people as servants even in heaven.",
+      "excerpt": {
+        "locator": "Epitaphs, seven poems from “For a Lady I Know” to “For a Pessimist”; opens “SHE even thinks that up in heaven Her class lies late and snores, While poor black…”; closes “…a hat, Calamity his cape, While on his face a death’s-head sat And waved a bit of crape.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          163,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d1013a926392095ed21a63bbb2ed077dea5224e657cc4c761d0da648743897a5"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-03-q1",
+          "prompt": "What does the lady in “For a Lady I Know” believe about heaven, and what does the epitaph reveal about her?",
+          "facilitatorNotes": [
+            "She imagines that her own class sleeps late in heaven while “poor black cherubs” do the chores. In four lines Cullen exposes her snobbery and racism: she cannot picture even heaven without servants. “She even thinks” makes the reader share the speaker’s amazement."
+          ],
+          "evidence": [
+            "SHE even thinks that up in heaven\nHer class lies late and snores,\nWhile poor black cherubs rise at seven\nTo do celestial chores."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-03-q2",
+          "prompt": "How can one epitaph serve for an evolutionist and his opponent?",
+          "facilitatorNotes": [
+            "Death “proves” both were right: the body returns to “primal clay,” as the evolutionist expected, and the soul rises, as his religious opponent believed. The joke is that two men who argued all their lives end up agreeing. Readers can say whether the poem takes a side."
+          ],
+          "evidence": [
+            "SHOWING that our ways agreed,\nDeath is proof enough;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-03-q3",
+          "prompt": "Choose two other epitaphs. How does each one’s last line or image turn the joke, and which one is the harshest?",
+          "facilitatorNotes": [
+            "The atheist now begs mountains to hide him from God’s “reproachful eyes”; the magician meets a door with no magic word; the pessimist wore his coffin as a hat all his life; the anarchist’s storming could not break death’s law; the “lovely lady” should not be dug up. Answers will differ; students should point to the turn in the final line."
+          ],
+          "evidence": [
+            "Hide me from the stabbing pain\nIn His reproachful eyes.",
+            "Now am barred behind a door\nThat has no “Open Sesame.”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-04",
+      "title": "Judas Iscariot",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Recognise when a poet is openly reimagining a well-known story, and judge his reasons.",
+      "focus": "A ballad that asks us to see the disciple who betrayed Jesus as a loving friend.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. In the Gospels, Judas Iscariot is the disciple who betrayed Jesus to the authorities for thirty pieces of silver, identifying him with a kiss, and later hanged himself. Cullen, the son of a Harlem minister, retells the story in ballad stanzas. A lute is a stringed instrument; a tryst is a meeting; “under ban” means condemned.",
+      "contentNote": "The poem retells the betrayal of Jesus and refers to Judas’s suicide. It changes the Gospel story deliberately.",
+      "excerpt": {
+        "locator": "“Judas Iscariot,” the whole poem; opens “I THINK when Judas’ mother heard His first faint cry the night That he was born, that…”; closes “…little Jewish lad Who gave young Christ heart, soul, and limb, And all the love he had.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          252,
+          263
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "92c2133d5c4868e9253cfcbe5a8c448c15396fb871943b90ffd850f7fcc7885d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-04-q1",
+          "prompt": "The speaker keeps saying “I think” and “perhaps.” What kind of story is he telling?",
+          "facilitatorNotes": [
+            "An imagined one: he fills in what the Gospels leave out, Judas’s birth, his mother’s love, his childhood with Jesus. The hedges admit that this is the speaker’s version, not scripture, and invite the reader to consider it rather than accept it."
+          ],
+          "evidence": [
+            "I THINK when Judas’ mother heard\nHis first faint cry the night",
+            "I think he knew the growing Christ,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-04-q2",
+          "prompt": "In this poem, why does Judas betray Jesus? How is that different from the usual story?",
+          "facilitatorNotes": [
+            "Christ asks him to: it is the task assigned to him, as feeding the sheep is assigned to Peter, so that the plan of salvation can be fulfilled. Judas accepts “the sorry part” out of love, knowing he will be scorned. The usual story blames greed; here the thirty coins become a “monstrous weight” of pain, not a prize."
+          ],
+          "evidence": [
+            "Then, Judas, you must kill\nOne whom you love, One who loves you",
+            "So Judas took the sorry part,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-04-q3",
+          "prompt": "How does the speaker want us to remember Judas? Why might a poet choose to defend the most hated figure in the story?",
+          "facilitatorNotes": [
+            "As “the little Jewish lad” who gave Jesus all his love, not as a traitor. Defending the despised fits a poet who writes elsewhere about people judged unfairly. Some readers will find the poem merciful and moving; others will object that it rewrites a sacred story. The poem’s direct appeal to “you … friend” asks each reader to choose."
+          ],
+          "evidence": [
+            "But I would rather think of him\nAs the little Jewish lad"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-05",
+      "title": "In Memory of Col. Charles Young",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Connect an elegy’s images to the history behind it.",
+      "focus": "A lament for a Black officer denied his command, ending in a prophecy.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Charles Young (1864–1922), born into slavery in Kentucky, was the third Black graduate of the U.S. Military Academy at West Point and the first Black colonel in the U.S. Army. In 1917, as America entered the First World War, the Army retired him on medical grounds, keeping him from a command in France; he rode on horseback from Ohio to Washington, D.C., to prove his fitness. He died in 1922 in Lagos, Nigeria, while serving as a military attaché in West Africa, and was first buried there. An elegy is a poem of mourning.",
+      "contentNote": "The poem mourns a soldier held back by racial discrimination.",
+      "excerpt": {
+        "locator": "“In Memory of Col. Charles Young,” the whole poem; opens “ALONG the shore the tall, thin grass That fringes that dark river, While sinuously soft…”; closes “…that work below; From your rich dust and slaughtered will A tree with tongues will grow.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          281,
+          284
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6cb6901b0fadfe2a204c166824c0333370eac2a2dea8ae1b534b722701ae1f2c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-05-q1",
+          "prompt": "Where does the poem place Young’s grave? Which details show it is far from America?",
+          "facilitatorNotes": [
+            "Beside “that dark river,” with tom-toms throbbing above it and the hills “weird with light”: Africa, where he died. The setting connects him to the continent of his ancestors. Readers might discuss whether the African images honour him or exoticise the place."
+          ],
+          "evidence": [
+            "Above your grave the tom-toms throb,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-05-q2",
+          "prompt": "What might the “honeyed lies” be, and what happens to them at the “great dark heart”?",
+          "facilitatorNotes": [
+            "Sweet-sounding official reasons and flattery, like the medical excuse that kept him from command. At the great heart of grief, drained bitter like a well, the lies find nothing to drink and “die.” The image says that mourning sees through the excuses."
+          ],
+          "evidence": [
+            "And all the honeyed lies they tell\nCome there to thirst and die."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-05-q3",
+          "prompt": "What does the final image, “a tree with tongues,” promise?",
+          "facilitatorNotes": [
+            "His “slaughtered will,” the ambition that was killed, becomes roots no lie can kill, and from his dust a tree will grow that speaks: his story will be told by those who come after. The poem turns grief into a prophecy of remembrance. Readers may see the tree as later generations of Black soldiers, writers, or both."
+          ],
+          "evidence": [
+            "No lie is strong enough to kill\nThe roots that work below;",
+            "A tree with tongues will grow."
+          ]
+        }
+      ]
+    }
+  ]
+}
