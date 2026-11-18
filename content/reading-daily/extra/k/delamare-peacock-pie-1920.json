@@ -830,6 +830,136 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-14",
+      "title": "The Song of Soldiers",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Count the soldiers as the poem goes on, and listen to the sea.",
+      "focus": "Someone sitting by the sea sees one ghostly soldier, then ten, then a whole army marching to battle, while the sea grows louder behind.",
+      "context": "Memorial Day remembers the soldiers who died in America’s wars, and this poem imagines soldiers from long ago marching past like ghosts. Musing means thinking quietly; a dyke is a bank of earth that holds back the sea; a pike is a long spear; dayshine is daylight; a fen is flat, wet land; a host is a huge crowd; in dark array means in dark rows; the fray is the battle; dree is an old word meaning to suffer or bear.",
+      "contentNote": "Ghostly soldiers march with cannon toward battle and “the fate the brave must dree,” that is, toward their deaths.",
+      "excerpt": {
+        "locator": "Songs, “The Song of Soldiers,” the complete poem; opens “AS I sat musing by the frozen dyke, There was one man marching with a bright steel pike,…”; closes “…fate the brave must dree, And behind me roared the drums, rang the trumpets of the sea.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          286,
+          288
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "13e0a4df3a7f3c7c0b3eec1990a83492e42f408d7109872809c798a0ea4b11aa"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-14-q1",
+          "prompt": "How many soldiers does the speaker see each time? What happens to the number?",
+          "facilitatorNotes": [
+            "First one man with a steel pike, then ten, then a whole host with horses and cannon. The army grows bigger in every verse."
+          ],
+          "evidence": [
+            "There was one man marching with a bright steel pike,",
+            "'twas not one but ten",
+            "'twas a host in dark array,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-14-q2",
+          "prompt": "Listen to the last line of each verse. What is the sea doing, and how does it change?",
+          "facilitatorNotes": [
+            "First it moans and murmurs, then it shouts and shatters, then it roars like drums and rings like trumpets. As the army grows, the sea grows louder, until it sounds like a battle itself."
+          ],
+          "evidence": [
+            "And behind me was the moaning and the murmur of the sea.",
+            "And behind me roared the drums, rang the trumpets of the sea."
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-14-q3",
+          "prompt": "Are these soldiers really there? Where are they marching, and how does the poem seem to feel about them?",
+          "facilitatorNotes": [
+            "They come “like a ghost” and “in dreams,” so the speaker is imagining soldiers of long ago. They march to battle, to the fate “the brave” must suffer. The poem calls them brave and makes them seem grand and sad at once; Memorial Day remembers soldiers like these. Some children may find the poem spooky more than sad; the ghosts and mist fit that feeling too."
+          ],
+          "evidence": [
+            "Marching in the dayshine like a ghost came he,",
+            "Moving like a shadow to the fate the brave must dree,"
+          ]
+        }
+      ],
+      "holiday": "memorial-day"
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-15",
+      "title": "The Old Soldier",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture an old soldier from his face, his clothes and his song.",
+      "focus": "A thin, ragged old soldier asks for a crust at the door, and after supper he sings the song of youth that never grows old.",
+      "context": "Veterans Day honors people who have served as soldiers and sailors, many of them long ago. A crust is a piece of bread; thinned very bare means made very thin; suchlike means things like that; spray is a little branch; supped means ate supper; trolled means sang cheerfully; tightsome means tight; peaked means thin and pale; grizzled means grey-haired. “Fol rol dol rol di do” is a chorus that means nothing at all; it is sung for the sound.",
+      "contentNote": "The soldier has been through “powder and bullets and wounds,” and he is poor and hungry.",
+      "excerpt": {
+        "locator": "Places and People, “The Old Soldier,” the complete poem; opens “THERE came an Old Soldier to my door, Asked a crust, and asked no more; The wars had…”; closes “…grizzled head, And these were the very same words he said — A Fol-rol-dol-rol-_di_-do.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          176,
+          179
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "61107d89053f2a0504953423a37a2cb7c3726596ac0d818dbec5a75f85b6f495"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-15-q1",
+          "prompt": "What does the Old Soldier ask for at the door?",
+          "facilitatorNotes": [
+            "Only a crust of bread, and nothing more."
+          ],
+          "evidence": [
+            "Asked a crust, and asked no more;"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-15-q2",
+          "prompt": "What has made him so thin and ragged? Which words help you see him?",
+          "facilitatorNotes": [
+            "Years of war: fighting and marching everywhere, powder, bullets, wounds and drums. His nose sticks out, his cheeks are sunk in, his beard bristles, and he wears a belt pulled tight round his hungry belly."
+          ],
+          "evidence": [
+            "The wars had thinned him very bare,",
+            "Most of him rags, and all of him lean,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-15-q3",
+          "prompt": "After supper the Old Soldier sings “the song of youth that never grows old.” He is old, poor and tired, so why might he sing such a merry song?",
+          "facilitatorNotes": [
+            "The supper and the spring day cheer him; the song may remind him of being young, or keep him young inside. His last words are only the chorus, so the poem shows him cheerful rather than telling us his troubles. Some children will feel sorry for him; others will admire how cheerful he stays. Both can point to the song, and to the supper someone gave him."
+          ],
+          "evidence": [
+            "The song of youth that never grows old,",
+            "Called Fol rol dol rol di do."
+          ]
+        }
+      ],
+      "holiday": "veterans-day"
     }
   ]
 }

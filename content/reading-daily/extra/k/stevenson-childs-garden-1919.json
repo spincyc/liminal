@@ -204,7 +204,7 @@
       },
       "challenge": "Picture a long list of faraway places, one after another.",
       "focus": "A child who has only read about the world plans every place he will visit, and ends by imagining other children’s toys.",
-      "context": "The child in this poem has not been to these places; he knows them from books and pictures. Golden apples come from old stories; Crusoes are people shipwrecked alone, like Robinson Crusoe; a mosque is a Muslim place of worship and a minaret its tall tower; a bazaar is a market; a palanquin is a covered chair carried on poles; a caravan is a line of travellers with camels. Read it as one long breath of wishes.",
+      "context": "The child in this poem has not been to these places; he knows them from books and pictures. Golden apples come from old stories; Crusoes are people shipwrecked alone, like Robinson Crusoe; a mosque is a Muslim place of worship and a minaret its tall tower; a bazaar is a market; a palanquin is a covered chair carried on poles; a caravan is a line of travellers with camels. Read it as one long breath of wishes. It is read on Columbus Day: in 1492 Christopher Columbus, too, sailed west hoping to reach the Eastern cities and China he knew from books, and landed instead on islands where the Taíno people already lived.",
       "contentNote": "The poem names “negro hunters' huts,” an old word for Black African people, and pictures faraway lands as a Victorian child’s storybook showed them.",
       "excerpt": {
         "locator": "X, “Travel,” the complete poem; opens “I SHOULD like to rise and go Where the golden apples grow;-- Where below another sky…”; closes “…Heroes, fights and festivals; And in a corner find the toys Of the old Egyptian boys.”.",
@@ -253,7 +253,8 @@
             "Of the old Egyptian boys."
           ]
         }
-      ]
+      ],
+      "holiday": "columbus-day"
     },
     {
       "id": "reading-k-stevenson-childs-garden-1919-05",
@@ -965,7 +966,7 @@
       },
       "challenge": "Hear what the child wants to be when he grows up and compare it with the others’ wishes.",
       "focus": "A child admires the man who lights the street lamps and asks him for one small kindness.",
-      "context": "Before electric streetlights, a lamplighter walked through town each evening with a ladder and a flame to light the gas lamps. Leerie is the child’s name for him. Posting means hurrying; tea is the early evening meal; a banker looks after money.",
+      "context": "Before electric streetlights, a lamplighter walked through town each evening with a ladder and a flame to light the gas lamps. Leerie is the child’s name for him. Posting means hurrying; tea is the early evening meal; a banker looks after money. It is read on Labor Day, a holiday for the people whose work keeps a town going.",
       "contentNote": null,
       "excerpt": {
         "locator": "XXX, “The Lamplighter,” the complete poem; opens “MY tea is nearly ready and the sun has left the sky; It's time to take the window to see…”; closes “…by with ladder and with light, O Leerie, see a little child and nod to him to-night!”.",
@@ -1011,7 +1012,8 @@
             "O Leerie, see a little child and nod to him to-night!"
           ]
         }
-      ]
+      ],
+      "holiday": "labor-day"
     },
     {
       "id": "reading-k-stevenson-childs-garden-1919-17",
@@ -1666,7 +1668,7 @@
       },
       "challenge": "Hold a before-and-after picture in mind: eggs now, flying birds soon.",
       "focus": "Children watching a nest realize that the tiny birds will soon do what children never can.",
-      "context": "An arbour is a shady shelter of leaves; the laurel is a bushy evergreen; gabies are silly people who stare; frail means easily broken. Children of Stevenson’s time often looked into wild nests. Today wild birds’ nests and eggs are protected by law, so we watch without touching.",
+      "context": "An arbour is a shady shelter of leaves; the laurel is a bushy evergreen; gabies are silly people who stare; frail means easily broken. Children of Stevenson’s time often looked into wild nests. Today wild birds’ nests and eggs are protected by law, so we watch without touching. It is read at Easter, the spring holiday of new life, when eggs are a sign of what is about to hatch.",
       "contentNote": null,
       "excerpt": {
         "locator": "Garden Days, II, “Nest Eggs,” the complete poem; opens “BIRDS all the sunny day Flutter and quarrel Here in the arbour-like Tent of the laurel.”; closes “In spite of our wisdom And sensible talking, We on our feet must go Plodding and walking.”.",
@@ -1716,10 +1718,7 @@
           ]
         }
       ],
-      "months": [
-        4,
-        5
-      ]
+      "holiday": "easter"
     },
     {
       "id": "reading-k-stevenson-childs-garden-1919-28",
@@ -1908,70 +1907,6 @@
           "evidence": [
             "O how much wiser you would be",
             "He digs the flowers and cuts the hay,"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-k-stevenson-childs-garden-1919-31",
-      "title": "Historical Associations",
-      "sourceId": "stevenson-childs-garden-1919",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 4,
-        "discussionMinutes": 6,
-        "totalMinutes": 10
-      },
-      "challenge": "Follow a child’s tour of a garden that is also a land of adventures.",
-      "focus": "A child shows his uncle that the ordinary garden is the scene of spells, escapes and a great ride, which ends back on the lawn in time for tea.",
-      "context": "Historical associations are the famous events that belong to a place. Uncle Jim sees only a garden where he smokes his pipe. Ali Baba is from an old story of a cave full of treasure; Robert Bruce was a king of Scotland and William Tell a Swiss hero; Siberia is a very cold part of Russia and Tartary an old name for lands in the middle of Asia; Babylon was a great ancient city. To loiter is to hang about; fetters are chains; gorse is a prickly bush; amain means at full speed; a ford is a shallow place to cross a river.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "Garden Days, VIII, “Historical Associations,” the complete poem; opens “DEAR Uncle Jim, this garden ground That now you smoke your pipe around, Has seen immortal…”; closes “…the lawn, in time for tea, And from our steeds alighted down Before the gates of Babylon.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          288,
-          296
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "ef8a3e9e78782638f8abc3539bc0e3b0fab8428a6a96ba14d7f2b790677b8ef3"
-      },
-      "questions": [
-        {
-          "id": "reading-k-stevenson-childs-garden-1919-31-q1",
-          "prompt": "Name some of the places the child shows his uncle in the garden.",
-          "facilitatorNotes": [
-            "The sea and the sand, Shepherd's Land, the fairy hollyhocks, Ali Baba's rocks, and Frozen Siberia. Children can point to places in a room or garden and rename them the same way."
-          ],
-          "evidence": [
-            "Here is the sea, here is the sand,",
-            "And there are Ali Baba's rocks."
-          ]
-        },
-        {
-          "id": "reading-k-stevenson-childs-garden-1919-31-q2",
-          "prompt": "What happened to the child in “Frozen Siberia,” and how did he get free?",
-          "facilitatorNotes": [
-            "An enchanter’s spell bound him in chains in a dungeon with Robert Bruce and William Tell, until they burst their iron chains and rode away with giants charging behind."
-          ],
-          "evidence": [
-            "Was bound by an enchanter's spell.",
-            "Our iron fetters burst in twain."
-          ]
-        },
-        {
-          "id": "reading-k-stevenson-childs-garden-1919-31-q3",
-          "prompt": "Where does the great ride end? Why might the poet put “in time for tea” right beside “the gates of Babylon”?",
-          "facilitatorNotes": [
-            "On the lawn, in time for tea, which in the game is also Babylon. Both are true at once for the child: the adventure ends exactly where real life goes on. Some children may say the game simply had to stop for tea."
-          ],
-          "evidence": [
-            "Upon the lawn, in time for tea,",
-            "Before the gates of Babylon."
           ]
         }
       ]

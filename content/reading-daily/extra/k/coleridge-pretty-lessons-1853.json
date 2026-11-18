@@ -16,7 +16,7 @@
       },
       "challenge": "Hear the year go round, one month at a time.",
       "focus": "Each month brings its own weather, flowers, animals or treats, from January snow to Christmas in December.",
-      "context": "Sara Coleridge wrote this poem to help her son learn the months, and it became famous on its own. Dams are mother sheep; gilliflowers are sweet-smelling flowers; sheaves of corn are bundles of cut grain, and the harvest home is the end of harvest; a pheasant is a large bird; sportsmen here are hunters. These are English seasons, and your months may look different.",
+      "context": "Sara Coleridge wrote this poem to help her son learn the months, and it became famous on its own. Dams are mother sheep; gilliflowers are sweet-smelling flowers; sheaves of corn are bundles of cut grain, and the harvest home is the end of harvest; a pheasant is a large bird; sportsmen here are hunters. These are English seasons, and your months may look different. It is read on New Year’s Day, when the year starts again with January.",
       "contentNote": null,
       "excerpt": {
         "locator": "Pretty Lessons, “The Months,” the complete poem; opens “JANUARY brings the snow, Makes our feet and fingers glow.”; closes “Chill December brings the sleet, Blazing fire, and Christmas treat.”.",
@@ -65,7 +65,8 @@
             "Chill December brings the sleet,"
           ]
         }
-      ]
+      ],
+      "holiday": "new-year"
     },
     {
       "id": "reading-k-coleridge-pretty-lessons-1853-02",
@@ -258,134 +259,6 @@
           "evidence": [
             "But then they had never a tail in the world.",
             "Were two silly children whom Herbert knows well!"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-k-coleridge-pretty-lessons-1853-05",
-      "title": "Signs of Rain",
-      "sourceId": "coleridge-pretty-lessons-1853",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 3,
-        "discussionMinutes": 7,
-        "totalMinutes": 10
-      },
-      "challenge": "Collect the clues that rain is coming.",
-      "focus": "Birds and animals all seem to know the weather is changing, each showing it in its own way.",
-      "context": "Long ago country people watched animals to guess the weather. A thrush is a songbird; to devour is to eat up. A hillock is a small hill; trooping means going in a group. Rooks are big black birds, like crows, that live together and chatter. Next time clouds gather, watch the birds together.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "Pretty Lessons, “Signs of Rain,” the complete poem; opens “THE Thrush has been silent for many a long day, But now he sings loudly, and what does he…”; closes “…are discussing the very same matter— While homeward returning how loudly they chatter!”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          124,
-          126
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "eca723da49bc5d853ea3930d1a93ab4dc902b5f3d110fb0587f44266ba00d8b0"
-      },
-      "questions": [
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-05-q1",
-          "prompt": "Why is the Thrush singing loudly after being silent so long?",
-          "facilitatorNotes": [
-            "He thinks a shower is coming, and after rain there will be worms and slugs for him to eat."
-          ],
-          "evidence": [
-            "He says that he thinks there will soon be a shower,",
-            "And he shall have earth-worms and slugs to devour."
-          ]
-        },
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-05-q2",
-          "prompt": "Which other animals seem to know the weather is changing?",
-          "facilitatorNotes": [
-            "The swan brushes the water with her wing, the woodpecker drums, the deer go up the little hill, the swallows dart about, and the rooks chatter."
-          ],
-          "evidence": [
-            "The Woodpecker drums, though she lately was drooping;",
-            "The Swallows are darting and wheeling about,"
-          ]
-        },
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-05-q3",
-          "prompt": "What are the Rooks talking about, the poem says? Could birds really know when rain is coming?",
-          "facilitatorNotes": [
-            "The same thing as everyone else: the change in the weather. The poem imagines them discussing it. Birds do often behave differently before a storm, which is why people watched them; children can say what they have noticed."
-          ],
-          "evidence": [
-            "The Rooks are discussing the very same matter—",
-            "While homeward returning how loudly they chatter!"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-k-coleridge-pretty-lessons-1853-06",
-      "title": "The Seasons",
-      "sourceId": "coleridge-pretty-lessons-1853",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 4,
-        "discussionMinutes": 6,
-        "totalMinutes": 10
-      },
-      "challenge": "Hear each season described twice, once gloomy and once glad.",
-      "focus": "Every season has a hard side and a happy side, and the poem gives each its turn.",
-      "context": "Sara Coleridge wrote these Pretty Lessons in Verse for her own children. A blast is a strong wind; hop-poles are tall bare poles for climbing plants; a social season is a time for being together; variable means changeable; a zephyr is a soft breeze; garlands on the thorn are blossom on the hawthorn; joyance is joy; sultry means hot and sticky; laburnum is a tree whose hanging yellow flowers are its golden tresses; bowers are shady places; melancholy means sad; relics are what is left; luxuriant means rich and plentiful; to glad is to gladden.",
-      "contentNote": "The last lines speak to pheasants that “must fall for our delight”: in autumn people shot pheasants to eat.",
-      "excerpt": {
-        "locator": "Pretty Lessons, “The Seasons,” the complete poem; opens “WINTER is a dreary time; Then we hear the howling blast, Then the trees are bare as…”; closes “…our sight, Fruits grow ripe; and, glittering pheasants, You must fall for our delight.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          258,
-          265
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "f6e98c74d3d842e4200e4a74baf731f4e81157e76c5cafecf5e6434f97b8177d"
-      },
-      "questions": [
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-06-q1",
-          "prompt": "What makes winter dreary, and what makes it a happy time?",
-          "facilitatorNotes": [
-            "Dreary: howling wind, bare trees, rain and hail. Happy: everyone gathers round the fire with books, pictures, fun and feasting."
-          ],
-          "evidence": [
-            "Then the trees are bare as hop-poles,",
-            "Then we gather round the fire;"
-          ]
-        },
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-06-q2",
-          "prompt": "What makes spring “sweet and merry”?",
-          "facilitatorNotes": [
-            "Blossom on the hawthorn, birds singing in the woods, and lambs and colts being born."
-          ],
-          "evidence": [
-            "Fills the groves with songs of joyance,",
-            "Then the lamb and colt are born."
-          ]
-        },
-        {
-          "id": "reading-k-coleridge-pretty-lessons-1853-06-q3",
-          "prompt": "Every season gets a sad verse and a happy verse. Which season do you like best, and what would you put in its happy verse?",
-          "facilitatorNotes": [
-            "Any season, with a reason. The poem’s pattern shows that even a favourite season has a hard side and even a gloomy one has something to enjoy; children can make up a line of their own."
-          ],
-          "evidence": [
-            "Summer’s a delightful season;",
-            "Autumn time is melancholy;"
           ]
         }
       ]

@@ -16,7 +16,7 @@
       },
       "challenge": "Hear where the fairies live and what they do to people who cross them.",
       "focus": "The fairies of the Irish hills are tiny and lovely, but also strange and a little dangerous.",
-      "context": "William Allingham was an Irish poet, and this is his best-known poem. A glen is a narrow valley; rushes are tall grasses that grow by water. Columbkill, Slieveleague and Rosses are places in Ireland; the Northern Lights are coloured lights in the night sky. People once believed fairies could carry children away.",
+      "context": "William Allingham was an Irish poet, and this is his best-known poem. A glen is a narrow valley; rushes are tall grasses that grow by water. Columbkill, Slieveleague and Rosses are places in Ireland; the Northern Lights are coloured lights in the night sky. People once believed fairies could carry children away. It is read on Halloween, the night when, people used to say, fairies and goblins were out and about.",
       "contentNote": "The fairies steal a girl named Bridget; when she comes back after seven years her friends are gone, and the poem says she died of sorrow.",
       "excerpt": {
         "locator": "“The Fairies,” the complete poem; opens “UP the airy mountain, Down the rushy glen, We daren't go a-hunting For fear of little…”; closes “…folk, good folk, Trooping all together; Green jacket, red cap, And white owl's feather!”.",
@@ -65,7 +65,8 @@
             "He shall find their sharpest thorns"
           ]
         }
-      ]
+      ],
+      "holiday": "halloween"
     },
     {
       "id": "reading-k-allingham-rhymes-young-folk-1887-02",
@@ -643,70 +644,6 @@
           "evidence": [
             "My Friend, that's perfectly true.",
             "And touch'd his old hat to the Lady."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-k-allingham-rhymes-young-folk-1887-11",
-      "title": "Tom Cricket",
-      "sourceId": "allingham-rhymes-young-folk-1887",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 4,
-        "discussionMinutes": 6,
-        "totalMinutes": 10
-      },
-      "challenge": "Follow a quarrel at a midnight party and hear how it ends.",
-      "focus": "The cockroaches want Tom’s music but think him proud when he will not join their supper; the cook’s arrival ends the argument.",
-      "context": "A cricket is a small insect that chirps by rubbing its wings, so people said it played the fiddle; its horns are its feelers. Cockroaches are insects that come out in kitchens at night. A ball is a dancing party; a rabble rout is a jumbled crowd; quested means searched; prim means stiff and proud; a scullion is a kitchen helper; to boot means as well.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "“Tom Cricket,” the complete poem; opens “TOM CRICKET he sat in his hole in the wall, Close to the kitchen fire, Up and down ran…”; closes “…salute! In came the Cook, and the Scullion to boot, And off they all scampered madly.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          152,
-          157
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "629cd007a403ca401214d17a12bbee9f54938ab2e9c0227040fe7d45c123b7d1"
-      },
-      "questions": [
-        {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q1",
-          "prompt": "Why do the Cockroaches call to Tom Cricket?",
-          "facilitatorNotes": [
-            "They want to have a ball, a dance, and they want his fiddle music."
-          ],
-          "evidence": [
-            "our hearts are set on a ball,",
-            "And your music we desire!"
-          ]
-        },
-        {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q2",
-          "prompt": "Tom asks for a piece of potato. Why won’t Jack Cockroach fetch it, and why won’t Tom come down?",
-          "facilitatorNotes": [
-            "Jack thinks Tom is proud and wants to eat alone; Tom says he is too slim to mix in the crowd. Children may decide Tom is shy, small, or a little proud; the poem lets either side speak."
-          ],
-          "evidence": [
-            "to mix in the crowd I'm too slim",
-            "I see you are proud and prim;"
-          ]
-        },
-        {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q3",
-          "prompt": "What do the Cockroaches plan to do to Tom, and what stops them?",
-          "facilitatorNotes": [
-            "They want to fill his hole with soot, but the Cook and the Scullion come in and they all run away. Tom ends safe in his hole, so the cross cockroaches lose."
-          ],
-          "evidence": [
-            "Let's fill up the mouth of his cave with soot,",
-            "In came the Cook, and the Scullion to boot,"
           ]
         }
       ]

@@ -534,68 +534,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "reading-k-taylor-rhymes-nursery-1831-09",
-      "title": "A Wasp and a Bee",
-      "sourceId": "taylor-rhymes-nursery-1831",
-      "genre": "poetry",
-      "readingMode": "adult-read-aloud",
-      "time": {
-        "readingMinutes": 4,
-        "discussionMinutes": 6,
-        "totalMinutes": 10
-      },
-      "challenge": "Follow a conversation and the lesson drawn from it at the end.",
-      "focus": "A handsome wasp asks why people prefer the plain bee, and the bee says the trouble is the wasp’s sting.",
-      "context": "Wasps and bees are both striped insects that can sting, and bees make honey. Elegant means graceful; homely means plain; ill-natured means unkind; fair means good-looking. The last verse speaks to people, not to insects.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "“A Wasp and a Bee,” the complete poem (the initials printed after it omitted); opens “A wasp met a bee that was just buzzing by, And he said, little cousin, can you tell me…”; closes “…the wasp, if ill-natured they are, They will never be loved, if they’re ever so fair.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          415,
-          420
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "48da9448dacc3cd089773402741baaeedc2a9dbae0981db430830027e4d9ea0e"
-      },
-      "questions": [
-        {
-          "id": "reading-k-taylor-rhymes-nursery-1831-09-q1",
-          "prompt": "What is the wasp proud of?",
-          "facilitatorNotes": [
-            "Its shining gold-yellow back and its elegant shape."
-          ],
-          "evidence": [
-            "My back shines as bright and as yellow as gold,"
-          ]
-        },
-        {
-          "id": "reading-k-taylor-rhymes-nursery-1831-09-q2",
-          "prompt": "Why does the bee say people do not love the wasp?",
-          "facilitatorNotes": [
-            "Because of its sting and the mischief it does, not because of its looks."
-          ],
-          "evidence": [
-            "They cannot put up with, and that is your sting."
-          ]
-        },
-        {
-          "id": "reading-k-taylor-rhymes-nursery-1831-09-q3",
-          "prompt": "The last verse turns the story into a lesson for people. What is the lesson?",
-          "facilitatorNotes": [
-            "Unkind people will not be loved however good-looking they are: kindness matters more than looks. Some children will point out that bees can sting too, a fair point the poem does not answer."
-          ],
-          "evidence": [
-            "Because, like the wasp, if ill-natured they are,",
-            "They will never be loved, if they’re ever so fair."
-          ]
-        }
-      ]
     }
   ]
 }
