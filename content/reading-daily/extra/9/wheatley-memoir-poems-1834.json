@@ -274,6 +274,88 @@
     },
     {
       "id": "reading-9-wheatley-memoir-poems-1834-05",
+      "title": "Goliath of Gath",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "If you know the Bible story, watch for what Wheatley adds. Mark the speeches: who speaks, to whom, and with what boast or warning.",
+      "focus": "Wheatley retells David and Goliath as a classical epic, with speeches, similes and a heavenly messenger.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. The story of the shepherd boy David, son of Jesse, who kills the Philistine giant Goliath with a sling, is told in the First Book of Samuel, chapter 17. Wheatley tells it in the manner of Homer’s epics as English readers knew them from Alexander Pope’s translations, in rhyming pairs of lines. The Nine are the Muses; Phoebus is the sun; greaves are leg armour and a targe a shield; a shekel was a weight; “Jacob’s race” means Israel; Saul is the king, Eliab David’s eldest brother, and the son of Ner is Abner, Saul’s general; Salem is Jerusalem.",
+      "contentNote": "Describes the giant’s death in bloody detail, including his beheading, and the slaughter of the fleeing army.",
+      "excerpt": {
+        "locator": "Goliath of Gath; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “YE martial powers, and all ye tuneful Nine, Inspire my song, and aid my high design. The…”; closes “…bride. \"Knit to my soul, forever thou remain \"With me, nor quit my regal roof again.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          47,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b1f16bf2827bf63bb7aacf16b1050ff5af399666ca0e87c66d19e30c0f2158ca"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q1",
+          "prompt": "The poem opens by calling on “martial powers” and the Muses, and the sun god Phoebus shines on Goliath’s shield. Why might Wheatley tell a Bible story in the language of classical epic?",
+          "facilitatorNotes": [
+            "Epic style lifts the story to the level of Homer and shows the poet’s command of the grandest form. It also turns David into a hero like Achilles or Hector, with speeches before battle.",
+            "Some readers find the mix of pagan gods and the God of Israel awkward; others see it as normal for the poetry of her time. For a young enslaved poet, writing epic was itself a bold claim."
+          ],
+          "evidence": [
+            "YE martial powers, and all ye tuneful Nine,",
+            "While Phoebus blazed refulgent on his shield."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q2",
+          "prompt": "How do Eliab and Saul each doubt David? How does David answer each of them?",
+          "facilitatorNotes": [
+            "Eliab accuses him of “base ambition” and sends him back to his sheep; David answers mildly, “What have I done?” Saul thinks a boy cannot fight a lifelong warrior; David tells how he killed a lion and a bear with only his crook, and trusts the same God.",
+            "David then refuses Saul’s armour as “untry'd.” Ask students what the poem suggests about using the weapons you know rather than borrowed ones."
+          ],
+          "evidence": [
+            "I know the base ambition of thine heart,",
+            "And with no other weapon than my crook,",
+            "Nor chose to venture with those arms untry'd;"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q3",
+          "prompt": "The Bible has no angel visiting Goliath; Wheatley invents one. What does the cherub tell him, and how does the scene change the meaning of the fight?",
+          "facilitatorNotes": [
+            "The angel calls Goliath a “Rebellious wretch” who has denied God, foretells that “a beardless boy” will kill him, and says that even he could not stop the sentence. The fight becomes the carrying out of a divine judgment that Goliath has been warned of and ignores.",
+            "The scene builds suspense and dramatic irony, since we know what Goliath does not believe. Some readers feel it reduces David’s courage; others think it makes Goliath’s pride the real subject."
+          ],
+          "evidence": [
+            "And thou shalt perish by a beardless boy.",
+            "Myself a rebel to my king would prove.",
+            "\"Your words are lost on me,\" the giant cries,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q4",
+          "prompt": "After the bloody victory, how does David describe himself to the king? What might the closing lines suggest about who is “small” and who is great?",
+          "facilitatorNotes": [
+            "He answers humbly: his tribe and city are small, but valiant and loyal. The boy who has just beheaded a giant claims nothing for himself, and the king binds him to his house.",
+            "Readers may connect the old story of the weak overcoming the mighty with the situation of its author, though the poem never says so. Ask whether that reading adds to the poem or goes beyond the evidence."
+          ],
+          "evidence": [
+            "What scenes of slaughter, and what seas of blood!",
+            "Small is my tribe, but valiant in the fight;",
+            "Small is my city, but thy royal right."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-06",
       "title": "On Imagination",
       "sourceId": "wheatley-memoir-poems-1834",
       "genre": "poetry",
@@ -302,7 +384,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-05-q1",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q1",
           "prompt": "How does the poem show Imagination’s power over space? Find the lines where the mind travels.",
           "facilitatorNotes": [
             "On Imagination’s “pinions” the mind can “surpass the wind,” leave “the rolling universe behind,” rove “From star to star” and grasp “the mighty whole” in one view. Nothing limits where thought can go.",
@@ -315,7 +397,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-05-q2",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q2",
           "prompt": "How does Imagination defeat winter in the fourth stanza? Look closely at the verbs.",
           "facilitatorNotes": [
             "Though “Winter frowns,” the fields “may flourish,” frozen rivers “may burst their iron bands,” and Flora and Sylvanus restore flowers and leaves. Every verb is “may”: these are possibilities in the mind, not facts outside the window.",
@@ -327,7 +409,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-05-q3",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q3",
           "prompt": "Just as she is about to describe the sunrise, the speaker stops. Why does the poem end by giving up?",
           "facilitatorNotes": [
             "She leaves “reluctant” because “Winter austere forbids me to aspire” and northern storms chill her fancy. Imagination, which conquered winter in the fourth stanza, is now conquered by it, and she calls her song “unequal” to its subject.",
@@ -342,7 +424,169 @@
       ]
     },
     {
-      "id": "reading-9-wheatley-memoir-poems-1834-06",
+      "id": "reading-9-wheatley-memoir-poems-1834-07",
+      "title": "Niobe in Distress, part 1: Niobe’s boast",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "The poem is full of names from Greek myth. Use the context to keep track of the family trees, then focus on what each speaker claims and why.",
+      "focus": "A proud queen insults a goddess, and a narrator who has warned us already lets the gods prepare their revenge.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. The poem is a free retelling of the story of Niobe from the Roman poet Ovid’s Metamorphoses, and of a well-known painting of it by the Welsh painter Richard Wilson. Niobe, queen of Thebes, is the daughter of Tantalus and wife of the musician Amphion; her lands in Asia Minor are Phrygia and Mæonia. Latona (Leto in Greek), daughter of the Titan Coeus, is the mother of Apollo (Phoebus) and Diana (Phebe); when she was pregnant, no land would shelter her except the small island of Delos, where Mount Cynthus stands. Manto is a prophetess, daughter of the seer Tiresias; Cadmus founded Thebes; Aurora is the dawn.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Niobe in Distress for Her Children Slain by Apollo, from the title and opening invocation through Apollo’s answer to Latona, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “APOLLO'S wrath, to man the dreadful spring Of ills innumerous, tuneful goddess sing! Thou…”; closes “…thy complaints, mine be the task assigned \"To punish and to scourge the rebel mind.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-wheatley-memoir-poems-1834-08",
+        "blocks": [
+          187,
+          200
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8af48325abe7b52922863f62b270494bb23f40e16bbe416b803ae0edaf7fa482"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q1",
+          "prompt": "Wheatley asks the Muse to inspire “What Wilson painted, and what Ovid wrote,” and calls herself “last and meanest of the rhyming train.” What is she claiming she will do, and how should we take her modesty?",
+          "facilitatorNotes": [
+            "She will turn a Roman poem and an English painting into her own English verse, combining two arts. Calling herself the least of poets was a convention of the time.",
+            "Coming from an enslaved young woman in Boston, the convention may also be strategic, disarming readers before she attempts a grand subject. Compare her opening of “To Mæcenas.”"
+          ],
+          "evidence": [
+            "What Wilson painted, and what Ovid wrote.",
+            "Though last and meanest of the rhyming train!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q2",
+          "prompt": "Before anything goes wrong, the narrator tells Niobe she would have been a “happier mother” if her children had been “less beloved.” What is the narrator warning about? Is it really love that destroys them?",
+          "facilitatorNotes": [
+            "The warning foreshadows the slaughter: her “too vehement” love turns into pride in her children, and pride brings punishment. The poem says love, but the story shows boasting.",
+            "Some students will say that blaming her love is unfair to a mother; others will see the narrator naming the root of her pride. Ask them to decide after part 2."
+          ],
+          "evidence": [
+            "But thou hadst far the happier mother proved, If this fair offspring had been less beloved:",
+            "Thy love, too vehement, hastens to destroy"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q3",
+          "prompt": "What reasons does Niobe give why she, rather than Latona, deserves worship? Which of her arguments is the most dangerous?",
+          "facilitatorNotes": [
+            "Her divine ancestry, her wealth, her fame among the Phrygians, and above all her fourteen children, which make her safe: even if some are taken, “More than Latona's number will remain.” She mocks Latona as a homeless wanderer taken in by Delos.",
+            "The last boast is the most dangerous, since it invites exactly the loss she says cannot hurt her. Her contempt for a goddess who was once homeless is also cruel."
+          ],
+          "evidence": [
+            "Lo here an empress with a goddess joined.",
+            "Till pitying Delos took the wanderer in.",
+            "More than Latona's number will remain."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q4",
+          "prompt": "Latona asks Apollo to kill Niobe’s sons for their mother’s words, and he agrees to “scourge the rebel mind.” Is this justice? What words do the gods use for Niobe?",
+          "facilitatorNotes": [
+            "They call her blaspheming, imperious, rebellious, and say “all her father in her tongue rebels.” The punishment falls on children who did nothing, which many readers find unjust.",
+            "In the ancient story the gods’ honour comes first. Ask whether Wheatley’s poem accepts that view or lets us question it; keep the question open for part 2."
+          ],
+          "evidence": [
+            "But all her father in her tongue rebels;",
+            "Wrap her own sons, for her blaspheming breath,",
+            "To punish and to scourge the rebel mind."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-08",
+      "title": "Niobe in Distress, part 2: the seven-fold funeral",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the poet varies the deaths so that each child is a person, and watch Niobe’s pride rise and fall.",
+      "focus": "The gods’ revenge, a mother’s grief and defiance, and an ending in stone.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Part 1 told how Niobe, queen of Thebes, boasted that her fourteen children made her greater than the goddess Latona, and stopped the women of Thebes from worshipping her; Latona asked her son Apollo (Phoebus) to punish Niobe through her sons, and Apollo’s sister Diana (Phebe) joined him. Here the archer gods strike the children one by one. Fame is pictured as a winged messenger; a corse is a corpse; “sable vestures” are black mourning clothes. The asterisk on the last stanza points to a note saying that stanza is “the work of another hand,” someone other than Wheatley.",
+      "contentNote": "Describes in detail the killing of fourteen children with arrows, one wound graphic, and the suicide of their father with a dagger.",
+      "excerpt": {
+        "locator": "Niobe in Distress for Her Children Slain by Apollo, from the descent of Apollo and Diana on Thebes to the end, with the closing stanza marked as by another hand, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “This Phebe joined. They wing their instant flight, Thebes trembled as the immortal powers…”; closes “[Footnote *: This verse to end is the work of another hand.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-wheatley-memoir-poems-1834-07",
+        "continuesTo": null,
+        "blocks": [
+          201,
+          207
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f144a9b7bdedf1309eca933a8f97aaf9ec84d213380fd71ff862f707c6d61a5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q1",
+          "prompt": "How does the poet make each son’s death different? Which death affects you most, and why?",
+          "facilitatorNotes": [
+            "Ismenus falls while racing; Sypylus flees like a sailor before a storm; two brothers die wrestling, “Together”; Alphenor dies trying to lift them; Ilioneus prays, and Apollo pities him “too late.” The variety turns a list into separate losses.",
+            "Many readers are struck by Apollo’s pity: even the god regrets the arrow he cannot recall. Others notice the poem calls the arrow “crime-avenging,” though the sons committed no crime."
+          ],
+          "evidence": [
+            "Together they their cruel fate bemoaned,",
+            "Apollo heard, and pity touched his heart, But ah! too late, for he had sent the dart:",
+            "Attempts to extract the crime-avenging rod;"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q2",
+          "prompt": "Trace Niobe’s changes after the sons die. Why, at her lowest point, does she boast again?",
+          "facilitatorNotes": [
+            "At first she is “less haughty,” weeping “nor weeps unpitied by the foe”; then she calls Latona cruel and boasts that her daughters still outnumber the goddess’s children. Grief makes her “more presumptuous” rather than humble, and the bow-string sounds again.",
+            "Some readers see stubborn pride; others see a mother’s defiance of cruel gods. Her challenge to Latona to “show the cause” of her triumph is a real question about justice."
+          ],
+          "evidence": [
+            "How strangely changed! yet beautiful in woe, She weeps, nor weeps unpitied by the foe.",
+            "Yet greater numbers to my lot remain.",
+            "By her distresses more presumptuous grown."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q3",
+          "prompt": "When Niobe begs “spare me one,” “the vocal hills replied.” What is the effect of the echo, and of the daughter dying in her arms?",
+          "facilitatorNotes": [
+            "The hills repeat her plea as if all nature joins it, or as if no one but the echo is listening. The youngest daughter dies in the very embrace that tries to protect her.",
+            "The daughter who tries “To soothe her mother” and blames “the inclement skies” gives the poem a voice that questions the gods. Ask whether the poem now sides with Niobe."
+          ],
+          "evidence": [
+            "the vocal hills replied:",
+            "And blames the fury of the inclement skies,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q4",
+          "prompt": "The final stanza, by “another hand,” turns Niobe to stone. How does its ending image sum up the story? Why might the book mark it as not Wheatley’s?",
+          "facilitatorNotes": [
+            "Bereft of everyone, she freezes into a marble statue, but the marble still weeps: grief outlasts pride and even life. The image is the famous end of Ovid’s story.",
+            "The note keeps the book honest about who wrote what, which mattered for a volume meant to prove an African woman’s authorship. Students can compare the added stanza’s style with Wheatley’s."
+          ],
+          "evidence": [
+            "But from the marble steal the silent tears.",
+            "This verse to end is the work of another hand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-09",
       "title": "To S. M., a Young African Painter, on Seeing His Works",
       "sourceId": "wheatley-memoir-poems-1834",
       "genre": "poetry",
@@ -371,7 +615,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-06-q1",
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q1",
           "prompt": "What does Wheatley praise in S. M.’s work? Which words show her treating painting as a kind of creation?",
           "facilitatorNotes": [
             "He paints “thought in living characters,” and his “breathing figures” live; the effect is “A new creation rushing on my sight!” Bringing figures to life was the highest praise in the art talk of her day.",
@@ -383,7 +627,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-06-q2",
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q2",
           "prompt": "Why might it matter that this poem, by an enslaved African poet, addresses a young African painter as an artistic equal?",
           "facilitatorNotes": [
             "It is one artist encouraging another, wishing him “immortal fame” and imagining them together in heaven, where his tongue and her muse both rise. In colonial Boston, few would have granted two enslaved young people such a vocation.",
@@ -395,7 +639,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-06-q3",
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q3",
           "prompt": "Near the end she says that in heaven there will be “No more” of Damon’s sighs or Aurora’s eyes. What is she setting aside, and why does the poem end with night?",
           "facilitatorNotes": [
             "She sets aside the pastoral and classical conventions of earthly verse for “nobler themes” and “purer language.” Night then “seals the fair creation from my sight,” ending where seeing and painting stop, to wait for the day she has imagined.",
