@@ -17,7 +17,7 @@
       "challenge": "Decide whether an animal’s behaviour shows a “sense of humour,” or whether that is the writer’s interpretation.",
       "focus": "A puppy sent to chase a coyote learns a hard lesson, and the joke goes on too long.",
       "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. In 1897 he stayed in Yellowstone National Park, where animals were protected from hunting. A picket-pin ground-squirrel sits up straight like a tent peg; to “lay for” someone is to wait to ambush him; tedious means tiresome.",
-      "contentNote": "The dog’s name, Chink, is also an ethnic slur against Chinese people; readers may prefer to say “the dog” when reading aloud. The writer hints that the dog’s owner secretly killed the coyote, although it was protected in the park.",
+      "contentNote": "The dog’s name, Chink, is also an ethnic slur against Chinese people; it is printed here as Seton wrote it. The writer hints that the dog’s owner secretly killed the coyote, although it was protected in the park.",
       "excerpt": {
         "locator": "Chapter I, “The Cute Coyote,” the section “The Coyote’s Sense of Humour,” whole; opens “To understand the Coyote fully one must remember that he is simply a wild dog, getting…”; closes “…it, but I have my suspicions, although in those days the Coyote was a protected animal.”.",
         "isCompleteWork": false,
@@ -1700,6 +1700,775 @@
           "evidence": [
             "then the cat discreetly went indoors",
             "looked at the distant landscape, with his hair on his back still bristling."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-24",
+      "title": "Wild Animals at Home: stalking a band of elk (the elk, part 1)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Sort what Seton saw for himself from what he explains about elk in general.",
+      "focus": "A careful stalk is spoiled by two chipmunks, and Seton explains why the bulls are not with the cows in summer.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. In 1897 he spent a summer in Yellowstone National Park, where hunting was forbidden. The elk, or wapiti, is a big deer; a cow is a female, a bull a male, and a band a group. “Sign” means tracks and droppings; to chew the cud is to chew food brought back up from the stomach, as cows do; the timber-line is the height above which trees stop growing; “moollys” is a cowboy word for hornless cattle. Seton’s sketches are not shown here.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “Horns and Hoofs and Legs of Speed,” from the start of “The Elk or Wapiti” through “Stalking a Band of Elk”; opens “The Rocky Mountain Elk, or Wapiti, is the finest of all true Deer. The cows weigh 400 to…”; closes “…weapons are due to mosquito or fly stings suffered in the early period of formation.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-seton-wild-animals-home-1923-25",
+        "blocks": [
+          174,
+          180
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0940cd7f1d6e6323b23ea1cb0d25fe296e1a0d551e000522af18ddf246973971"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-24-q1",
+          "prompt": "What spoils Seton’s stalk? Tell what happens in order, from the chipmunks to the elk running away.",
+          "facilitatorNotes": [
+            "Two chipmunks make a noisy fuss, the elk turn their ears, noses and eyes his way, he lies still, and then the wind shifts and carries his smell to them. About fifty cows and their calves crash away. There are two warnings: the chipmunks’ noise and the scent."
+          ],
+          "evidence": [
+            "a pair of mischievous little Chipmunks",
+            "the mountain breeze veered suddenly and bore the taint of man to those watchful mothers"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-24-q2",
+          "prompt": "Seton gives the elk “megaphone ears,” “funnel noses” and “blazing telescopic eyes.” What do these comparisons tell you about how elk notice danger?",
+          "facilitatorNotes": [
+            "Each sense is like an instrument: big ears that gather sound, noses that draw in scent, eyes that see far. Turning all three toward him at once shows the whole herd on guard."
+          ],
+          "evidence": [
+            "The Elk turned all their megaphone ears, their funnel noses and their blazing telescopic eyes my way."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-24-q3",
+          "prompt": "Why are the bulls off by themselves in summer, according to Seton?",
+          "facilitatorNotes": [
+            "They are growing new antlers, which are shed every spring and regrow in five months. Without weapons they become meek, and they live high up where the food is rich and there are fewer flies."
+          ],
+          "evidence": [
+            "engaged in the equally engrossing occupation of growing their antlers",
+            "He becomes as meek as he was warlike."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-24-q4",
+          "prompt": "Seton says some bumps on antlers may come from insect stings. Did he see this, or is it a guess? How can you tell?",
+          "facilitatorNotes": [
+            "It is a guess: “quite probable” marks it. He reasons from a fact he does state, that growing antlers are tender and full of blood. A good reader notices the difference between “I saw” and “it is probable.”"
+          ],
+          "evidence": [
+            "It is quite probable that some of the queer bumps",
+            "even the antlers are sensitive while growing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-25",
+      "title": "Wild Animals at Home: the bugling elk (the elk, part 2)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 10,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a writer turns sound into words, and when he admits what he did not see.",
+      "focus": "In autumn the bulls bugle challenges and fight; Seton hears their battles but always arrives too late.",
+      "context": "Recap: in summer elk cows raise their calves while the bulls live apart, quietly growing new antlers. Velvet is the soft furry skin on a growing antler; a sapling is a young tree; the Shoshonees, as Seton spells them, are the Shoshone Mountains east of Yellowstone; “perlite” is the old hunter’s way of saying polite. Seton’s sketch of the fight is not shown here.",
+      "contentNote": "Bull elk fight, and Seton finds the body of a bull killed in battle.",
+      "excerpt": {
+        "locator": "Chapter IV, “Horns and Hoofs and Legs of Speed,” the section “The Bugling Elk,” whole; opens “During the summer the bulls attend strictly to their self-development, but late August…”; closes “…strong, what like was he who downed him, pierced him through and left him on the plain.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-seton-wild-animals-home-1923-24",
+        "continuesTo": "reading-4-seton-wild-animals-home-1923-26",
+        "blocks": [
+          182,
+          189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0129a28fc3a78015e4e3e72ec5e40f30aa0648f84a33134a1f11a69ed0122d8d"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-25-q1",
+          "prompt": "How does Seton describe the bugle call? Find the words that show it changing from beginning to end.",
+          "facilitatorNotes": [
+            "It begins low, rises to a scream, falls to a rumbling growl and breaks into shorter growls that die away. Then he “translates” it into words: a challenge to fight."
+          ],
+          "evidence": [
+            "Beginning low and rising in pitch to a veritable scream of piercing intensity",
+            "\"I am out for a fight!"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-25-q2",
+          "prompt": "Seton turns the elk calls into speech, question and answer. Is that fair to the elk, or is he putting words in their mouths?",
+          "facilitatorNotes": [
+            "It is playful, and it gets the meaning across: one bull challenges, another accepts. But elk do not think in English, and the capital letters are Seton’s joke. Readers can decide whether the translation helps or misleads."
+          ],
+          "evidence": [
+            "\"Yes, yes, yes!",
+            "Nor does he usually have long to wait."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-25-q3",
+          "prompt": "“We all love to see a fight when not personally in danger.” Do you agree? What does the sentence show about Seton?",
+          "facilitatorNotes": [
+            "It is an honest confession: he is curious and wants to see the battle as much as anyone. The joke is that he never does. Readers may disagree that everyone loves to watch a fight."
+          ],
+          "evidence": [
+            "for we all love to see a fight when not personally in danger",
+            "but the fight I missed"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-25-q4",
+          "prompt": "Seton never saw an elk fight, yet he drew one. How did he do it, and why does the old hunter say it beats a photograph?",
+          "facilitatorNotes": [
+            "He drew it from the hunter’s description, and the hunter says it is “exactly like it was.” A drawing can show what a witness remembers even when no camera was there. Readers might ask how far a picture made from someone else’s memory can be trusted."
+          ],
+          "evidence": [
+            "from the hunter's description made the sketch",
+            "that's away ahead of any photograph I ever seen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-26",
+      "title": "Wild Animals at Home: snapping a charging bull (the elk, end)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Compare two adventures told side by side, and decide which man took the greater risk.",
+      "focus": "Seton tricks a bull into charging him from a safe seat; his friend Fossum photographs one with no tree to climb.",
+      "context": "Recap: in autumn bull elk bugle challenges and fight; Seton heard many battles but never arrived in time to see one. To extemporize is to make something up on the spot; opalescent means shimmering with changing colours, like an opal; malignant means full of ill will; to snap is to take a quick photograph, and the plate was the glass on which an old camera made its picture. Fort Yellowstone was the army post that guarded the park. Fossum’s photograph, “No. xiv, b,” is not shown here. Today Yellowstone asks visitors to stay at least 25 yards from elk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “Horns and Hoofs and Legs of Speed,” the section “Snapping a Charging Bull,” whole; opens “At one time in a Californian Park I heard the war-bugle of an Elk. He bawled aloud in…”; closes “…is no sign of shake on landscape or on Elk, and the picture is actually over-exposed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-seton-wild-animals-home-1923-25",
+        "continuesTo": null,
+        "blocks": [
+          191,
+          197
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0b40583ee317d5b368a60c25e14de63b1e7eb66bd51b624e9e4ec659b5bd7d2e"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-26-q1",
+          "prompt": "How does Seton get the bull to come to him? Why is the joke on the bull?",
+          "facilitatorNotes": [
+            "He makes a horn on the spot and answers the challenge, and the bull trots in roaring. When it charges, Seton is up a tree: he invited a fight and then would not fight."
+          ],
+          "evidence": [
+            "I extemporized a horn and answered him according to his mood.",
+            "I was safely up a tree."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-26-q2",
+          "prompt": "Find the words Seton uses for the bull’s face and eyes. What feeling do they create?",
+          "facilitatorNotes": [
+            "Ears back, muzzle raised, nose curled, teeth showing, mane bristling, eyes blazing green: a picture of fury. “Half a ton of hate” sums it up. The details make the reader feel the danger, even though we know Seton is safe."
+          ],
+          "evidence": [
+            "in his eyes there blazed a marvellous fire of changing opalescent green",
+            "with all the power of half a ton of hate"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-26-q3",
+          "prompt": "What made Fossum’s adventure more dangerous than Seton’s, and what saved him?",
+          "facilitatorNotes": [
+            "He was in an open valley with no tree. The click of the camera woke the bull, which ran straight at him, and he kept focusing until it was ten feet away. A snowdrift that held the man but not the elk saved him."
+          ],
+          "evidence": [
+            "stood there quietly focussing his camera, till the bull was within ten feet",
+            "a deep snowdrift that would carry the man, and would not carry the Elk"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-26-q4",
+          "prompt": "Seton praises Fossum’s “most amazing nerve.” Was it nerve, or foolishness? Use the story to explain.",
+          "facilitatorNotes": [
+            "Both can be argued. Seton admires the steady, unshaken picture; but Fossum risked his life for a photograph and was saved by luck. Readers might compare Seton, who chose a tree first."
+          ],
+          "evidence": [
+            "Fossum with the most amazing nerve",
+            "there is no sign of shake on landscape or on Elk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-27",
+      "title": "Wild Animals at Home: the siren call (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice a storyteller’s feelings changing as he tells, and decide what he wants you to feel at the end.",
+      "focus": "Seton calls a moose so well with a home-made horn that his partner shoots it, and he never calls one again.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. The moose is the largest deer. The Kippewa country is lake and forest land in Quebec; the Hunting Moon is an old name for an autumn month. A moose caller imitates a cow (female) moose to draw a bull within range. Wattap is spruce root used to sew birch-bark; “bad medicine” and “hoodoo” mean bad luck. In old Greek stories a siren sang to lure sailors to their deaths; the Florentine assassins were hired killers in old Italy.",
+      "contentNote": "A moose is shot and dies. Seton uses “halfbreed,” an old and now offensive word for a person of mixed Indigenous and white ancestry.",
+      "excerpt": {
+        "locator": "Chapter IV, “Horns and Hoofs and Legs of Speed,” from “The Moose, the Biggest of All Deer” through “The Siren Call”; opens “The Moose is one of the fine animals that have responded magnificently to protection in…”; closes “…a Moose since, and that rifle has hung unused in its rack from that to the present day.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          216,
+          234
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e812a1a23e6a64f3d4ae74283d5b5eec7e0ba1105ff1628209e3942667f4b27"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-27-q1",
+          "prompt": "Why does Seton say the moose “responded magnificently to protection”? What numbers support him?",
+          "facilitatorNotes": [
+            "In the park they grew from about fifty in 1897 to about five hundred and fifty, and spread wherever the woods suited them. Protection alone was enough: “all they needed was a little help.”"
+          ],
+          "evidence": [
+            "from about fifty in 1897 to some five hundred and fifty to-day",
+            "But all they needed was a little help"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-27-q2",
+          "prompt": "Seton sets out “in a spirit of half jest.” What does he do to show off, and what do the guides think of it?",
+          "facilitatorNotes": [
+            "He makes a birch-bark horn the old way and draws dancing “hoodoo Moose” on it. The guides shake their heads and say no moose will come. The moose does come; the bad luck turns out to be of another kind."
+          ],
+          "evidence": [
+            "I'll have to go out and show you men how to call a Moose.",
+            "Moose never come"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-27-q3",
+          "prompt": "Why does Seton wait a full fifteen minutes between calls, and why does he check his watch?",
+          "facilitatorNotes": [
+            "A cow that seems too eager scares the bull away, so there is an “etiquette” of waiting; and when you wait hard, a minute feels like twenty, so he cannot trust his guess. It shows his skill."
+          ],
+          "evidence": [
+            "it is easy to spoil all by trying to go too fast",
+            "when one is waiting so hard, the minute is like twenty"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-27-q4",
+          "prompt": "Who is Seton’s partner, and how does each person in the canoe feel when the moose dies?",
+          "facilitatorNotes": [
+            "The partner is a woman, as “she” and “the fair killer” show; she has tears in her eyes. The guide sobs too, but from triumph. Seton finds it “so unlovely.” Three people, three different feelings."
+          ],
+          "evidence": [
+            "There were tears in the eyes of the fair killer",
+            "and a different sob was heard at my elbow"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-27-q5",
+          "prompt": "Seton compares himself to assassins who trapped a brave man by “crying like a woman.” Why is the comparison so harsh, and what does he decide?",
+          "facilitatorNotes": [
+            "He feels he used the moose’s own love-call as a lie to lure it. “It is a proud thing to act a lie so cleverly” is bitter. He never called a moose again, and the rifle hung unused. He does not say all hunting is wrong; readers can discuss what exactly he regrets."
+          ],
+          "evidence": [
+            "it is a proud thing to act a lie so cleverly",
+            "But I have never called a Moose since"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-28",
+      "title": "Wild Animals at Home: the vanished buffalo and the flashing antelope (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Test the limits of a writer’s claim, and notice when a story told to him becomes something he checked.",
+      "focus": "The buffalo fell from millions to a few hundred; Seton asks what protection can and cannot do.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. The buffalo is the American bison. A ruminant is an animal that chews the cud; a man-o’-war is a warship; a heliograph sends signals by flashing sunlight from a mirror. The mark [B] points to Seton’s footnote, which names another of his books. Buffalo-birds are cowbirds. Seton’s claim that the buffalo’s end was “inevitable” is his opinion: the great herds were shot mostly for their hides, and their loss also took away the living of the Plains nations who depended on them. Pronghorn, which Seton feared were doomed, now number in the hundreds of thousands.",
+      "contentNote": "Seton writes a Native American man’s words in broken English, as many writers of his time did.",
+      "excerpt": {
+        "locator": "Chapter IV, “Horns and Hoofs and Legs of Speed,” from “The Biggest of Our Game--The Buffalo” through “The Doomed Antelope and His Heliograph”; opens “\"Yes, that's a buffalo-bird,\" said the old Indian, pointing to some black birds, with…”; closes “…have passed away. A small band is yet to be seen wintering on the prairie near Gardiner.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          236,
+          252
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6562de8bff8e3ad150287875409f6923ee1a4371d1a3c8d35182da9c89fc054c"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-28-q1",
+          "prompt": "Seton first thought the buffalo-bird story was “a lusty myth.” What did he find when he looked into it?",
+          "facilitatorNotes": [
+            "The birds really did follow the buffalo, nested in the wool of fallen skulls and lined their nests with buffalo wool; he even knew of a crippled bird that spent a winter in a bull’s mane. The story “bore the searchlight”: it held up when tested."
+          ],
+          "evidence": [
+            "But the tale bore the searchlight better than I thought.",
+            "roosted at night between the mighty horns"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-28-q2",
+          "prompt": "Put Seton’s buffalo numbers in order. What story do they tell?",
+          "facilitatorNotes": [
+            "Over 50,000,000 in 1500; 800 in 1895; about 3,000 when he wrote. In the park, valleys “black-speckled” twenty years before, thirty in 1900, two hundred now. A huge fall, then a small climb under protection."
+          ],
+          "evidence": [
+            "I estimate them at over 50,000,000 in A.D. 1500. In 1895 they were down to 800",
+            "In 1900 the remnant in the Park had fallen to thirty"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-28-q3",
+          "prompt": "Seton says the end of the great herds “was inevitable,” but also that “we brought it on forty or fifty years before it was necessary.” Do the two claims fit together? Is the first one proved?",
+          "facilitatorNotes": [
+            "He means settlers would have pushed the herds out in the end, and admits people hurried it. But “inevitable” is an opinion, not a proved fact, and his own figures show protection bringing buffalo back. Readers can argue either way from the text."
+          ],
+          "evidence": [
+            "it is well to remind the reader that it was inevitable",
+            "only we brought it on forty or fifty years before it was necessary"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-28-q4",
+          "prompt": "What is the antelope’s “heliograph,” and what is it for?",
+          "facilitatorNotes": [
+            "Muscles lift the white hair on its rump into a shining disc that flashes in the sun and shows for miles. It usually warns of danger and also helps antelope find each other, as when Seton saw two bands come together."
+          ],
+          "evidence": [
+            "they can erect the white hair of the rump patch into a large, flat, snow-white disc",
+            "The flash is usually a signal of danger"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-28-q5",
+          "prompt": "Why does Seton call the antelope “doomed” even though it was protected? Was he right?",
+          "facilitatorNotes": [
+            "Its numbers in the park had fallen to a third in spite of protection, and he feared a law of nature was against it. He was wrong about the species: pronghorn recovered across the West. A careful prediction can still fail."
+          ],
+          "evidence": [
+            "in spite of good protection, continue to go down"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-29",
+      "title": "Wild Animals at Home: Old Silver-grizzle, the badger (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a writer who has changed his mind about an animal, and weigh his reasons.",
+      "focus": "Seton defends the badger, confesses how he once treated one, and explains its surprising friendships.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. A badger is a strong, low, digging animal of the plains. Dirigible means steerable, like an airship; a conceit here is a fanciful idea; “in ill odour” means disliked; gregarious means living in herds. The Saskatchewan and the Souris are rivers of the Canadian prairie, where Seton lived as a young man. “First endured, then pitied, then embraced” is borrowed from the poet Alexander Pope.",
+      "contentNote": "Seton calls Native Americans “redmen,” an old term now considered offensive. As a boy he and his companions killed a badger for its skin; he does not describe how.",
+      "excerpt": {
+        "locator": "Chapter VII, “Old Silver-grizzle--The Badger,” from the opening through “His Sociable Bent”; opens “A brilliant newspaper man once gave vast publicity to the story that at last a use had…”; closes “…Evidently it was a partnership founded on good-will, however it may have been begun.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          309,
+          323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6057f3b8d1e68a2822409987b6837161d73974b10c50f1369f25726e955037a4"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-29-q1",
+          "prompt": "The chapter opens with a newspaper story about a “dirigible Badger” that digs post-holes. Was it true? Why might Seton begin with it?",
+          "facilitatorNotes": [
+            "It was a joke or hoax, and Seton says he could disprove it. It leads to the one real complaint against badgers: holes that break horses’ legs and riders’ necks."
+          ],
+          "evidence": [
+            "Unfortunately I was in a position to disprove this pretty conceit.",
+            "this indiscretion has made many enemies"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-29-q2",
+          "prompt": "Seton calls the badger both “valiant” and “harmless.” Does his own description support both words?",
+          "facilitatorNotes": [
+            "Valiant: the heart of a bulldog, the claws of a grizzly, brave to the last ditch. Harmless: it minds its own business if let alone and eats farm pests. It is not harmless to ground-squirrels, so “harmless” means harmless to people who leave it be."
+          ],
+          "evidence": [
+            "He minds his own business, if let alone",
+            "he has the heart of a bulldog, the claws of a Grizzly, and the jaws of a small crocodile"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-29-q3",
+          "prompt": "Compare Seton’s meeting with a badger in 1882 and his meeting in 1897. How had he changed?",
+          "facilitatorNotes": [
+            "In 1882, as a boy, he grabbed a badger’s tail and, with helpers, killed it for its skin; he admits he had not learned respect. In 1897 he carried a camera, and both he and the badger fell into holes. He can laugh at himself now, and he respects the animal."
+          ],
+          "evidence": [
+            "I wanted his skin, and I had not learned to respect his exemplary life and dauntless spirit.",
+            "For a moment we both looked very foolish"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-29-q4",
+          "prompt": "How might a badger and a coyote become partners? Which parts of Seton’s explanation are guesses?",
+          "facilitatorNotes": [
+            "The coyote follows the digging badger to catch ground-squirrels that bolt out of the back door, and the badger gets used to it. “Probable,” “no doubt” and “I do not know” mark guesses; what observers actually saw was the two travelling together."
+          ],
+          "evidence": [
+            "This is the probable history of a typical case",
+            "More than one observer has seen a Badger and a Coyote travelling together"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-30",
+      "title": "Wild Animals at Home: Chink’s great catch, and a squirrel in disguise (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Enjoy a comic story told with a straight face, then notice the writer turn from fun to a fact that surprises him.",
+      "focus": "A puppy who does everything wrong finally catches a picket-pin, and a striped ground-squirrel turns out not to be what it looks like.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. Chink was a young dog in Seton’s camp in Yellowstone in 1897. A picket-pin ground-squirrel sits bolt upright by its hole like a picket-pin, the wooden peg used to tie up a horse. A tussock is a clump of grass; derisive means mocking; livery is a uniform; incontrovertible means impossible to argue with; omnivorous means eating both plants and animals.",
+      "contentNote": "The dog’s name, Chink, is also an ethnic slur against Chinese people; it is printed here as Seton wrote it. Chink’s master blames his clumsiness on “a streak of Irish,” an old joke at the expense of Irish people. A ground-squirrel eats a young mouse.",
+      "excerpt": {
+        "locator": "Chapter VIII, “The Squirrel and His Jerky-tail Brothers,” from “Chink and the Picket-pins” through “The Ground-squirrel That Pretends It’s a Chipmunk”; opens “As already noted in the Coyote chapter, we had in camp that summer the little dog called…”; closes “…insignia of a grain-eater, yet ruthlessly indulging in such a bloody and cannibal feast.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          383,
+          393
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a5d8e8b039d2463c9aca59d40c9d402aab4a60589db3a23d723d81fd59c8ef5"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-30-q1",
+          "prompt": "Describe Chink’s way of hunting. Where does it go wrong every time?",
+          "facilitatorNotes": [
+            "He begins a careful stalk far away, gets too excited to crawl, stands up and walks, then charges barking just when he should be most careful. The squirrel waits, dives, and kicks sand into his open mouth."
+          ],
+          "evidence": [
+            "doing everything wrong end first, as usual",
+            "throwing with its hind feet a lot of sand right into Chink's eager, open mouth"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-30-q2",
+          "prompt": "“Perseverance, he seemed to believe, must surely win in the end, as indeed it did.” How is the ending a joke? Do you believe a dog can feel foolish?",
+          "facilitatorNotes": [
+            "He finally catches a picket-pin, but a wooden one. Seton says anyone who doubts a dog knows it has made a fool of itself should have seen Chink sneak behind the tent. That is Seton’s reading of the dog’s behaviour; readers can decide whether it is evidence."
+          ],
+          "evidence": [
+            "actually caught his victim",
+            "he sheepishly sneaked out of sight behind the tent"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-30-q3",
+          "prompt": "Why does Seton say the striped Golden Ground-squirrel is “not a Chipmunk at all”? What decides the question?",
+          "facilitatorNotes": [
+            "Its coat, stripes and manners look like a chipmunk’s, but its skull and body show it is a ground-squirrel. Looks can mislead; the evidence inside settles it."
+          ],
+          "evidence": [
+            "the incontrovertible evidence of its inner life, as indicated by skull and makeup"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-30-q4",
+          "prompt": "Why does the story of the ground-squirrel eating a mouse give Seton “an unpleasant sensation”? Is his feeling fair to the animal?",
+          "facilitatorNotes": [
+            "It looks like “innocence personified” and like a seed-eater, so the meat-eating shocks him; he even jokes that the mouse was bad-tempered. But the animal is simply omnivorous. His feeling comes from what he expected, which links back to Chink, who was also fooled by appearances."
+          ],
+          "evidence": [
+            "in appearance, innocence personified",
+            "it gives one an unpleasant sensation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-31",
+      "title": "Wild Animals at Home: the ghost rabbit (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Read a dog’s barking as Seton does, and separate what happened from what it seemed to mean.",
+      "focus": "A trained hound runs in terror from a white rabbit, and a shy hare grows tame where it is protected.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. Before he went west, Seton lived in Ontario, Canada. A hound follows animals by scent; to tree an animal is to chase it up a tree; to bay is to bark long and deep; falsetto means high-pitched. An albino animal is born without colouring, so it is white. A cottontail is a common rabbit, and a jackrabbit is a hare. Narrow-gauge railways had small tracks, so a “narrow-gauge mule” is a small one. The mark [C] points to Seton’s note at the end of the chapter, which says the white rabbit later proved to be a tame rabbit gone wild.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Rabbits and Their Habits,” from “The Ghost Rabbit” through “A Narrow-gauge Mule--The Prairie Hare”; opens “An entirely different side of Rabbit life is seen in another mysterious incident that I…”; closes “…in the winter, when the snow mantle of his range might otherwise make it too conspicuous.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          454,
+          462
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0f5a52e97804a99db4a387d953a11364ca100594254570c69aeab44f4d6dc4d6"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-31-q1",
+          "prompt": "How could Seton tell from the hound’s barking what animal it was following?",
+          "facilitatorNotes": [
+            "A deep, strong bark at regular intervals meant a fox; a broken, uncertain one meant a rabbit; a high yelp meant the animal was treed. He listened the way a person reads a report."
+          ],
+          "evidence": [
+            "The hound's bark for a Fox was deep, strong, and at regular intervals",
+            "But for a Rabbit it was broken, uncertain, irregular"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-31-q2",
+          "prompt": "Seton writes the dog’s barks as words, “Rabbit, Rabbit, Rabbit” and then “Police! Help! Murder!” What does this show about what happened?",
+          "facilitatorNotes": [
+            "The dog goes in confidently and comes out in a panic, hiding behind Seton’s legs. The joking translation makes the sudden change easy to hear."
+          ],
+          "evidence": [
+            "shrieking, \"Police! Help! Murder!\"",
+            "cowering up against my legs"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-31-q3",
+          "prompt": "Seton says Ranger acted “as though he thought that he had seen a ghost.” Is that something Seton observed, or his interpretation? What else might explain it?",
+          "facilitatorNotes": [
+            "He observed the dog fleeing and cowering; the ghost is his interpretation, offered as a joke. An animal that looked and smelled unlike any rabbit Ranger knew could have startled him. Seton admits he never explained it, though his footnote later identified the rabbit."
+          ],
+          "evidence": [
+            "Dogs are not supposed to be superstitious",
+            "that I have never been able to explain"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-31-q4",
+          "prompt": "What is unusual about the prairie hares near the Mammoth Hot Springs Hotel, and what does Seton think explains it?",
+          "facilitatorNotes": [
+            "Everywhere else he found them the wildest of hares, but here two let him photograph them from thirty feet, and the species had become common. He credits the protection the park gave them."
+          ],
+          "evidence": [
+            "At a distance of thirty feet they gave me good chances to take pictures",
+            "Another evidence of the efficacy of protection."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-32",
+      "title": "Wild Animals at Home: the dangerous night visitor (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how the same event happens three times and grows more frightening each time.",
+      "focus": "A range bull, maddened by the smell of blood, keeps coming back to the camp in the night.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. Earlier that day, camping in the Sierra mountains of California, Seton had milked a half-wild range cow while cowboys held her with ropes. The milk had blood in it, so the cowboys poured it out near the camp. Range cattle roam free and are hardly tame. A portentous sound warns of something bad; brawn is muscle; to admonish is to scold; “bluggy” is a joking baby-word for bloody; side arms are pistols.",
+      "contentNote": "A bull walks through the sleeping camp; at the end the cowboys seem to shoot it.",
+      "excerpt": {
+        "locator": "Chapter XI, “Sneak-cats--Big and Small,” the section “The Dangerous Night Visitor,” whole; opens “That night about sundown, just as we finished supper, there came from the near prairie…”; closes “…the boys came back and said, \"well, you bet he won't be here again,\" I believed them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          551,
+          559
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d28dbc37851416057654c7e92d9f03f4997675467d43166b8381ec1812cebbf"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-32-q1",
+          "prompt": "The bull comes three times. How does each visit come closer and grow more frightening?",
+          "facilitatorNotes": [
+            "First it paws the ground where the milk was spilt, at the edge of the trees; then it strides into camp in the moonlight; at midnight it walks between the beds and the wagon. Each time the cowboys drive it off, and each time it returns nearer."
+          ],
+          "evidence": [
+            "there was the monster at the place where that evil milk was spilt",
+            "he walked down the narrow space between our beds and the wagon"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-32-q2",
+          "prompt": "Why does Seton lie still instead of jumping up when the bull walks past his bed?",
+          "facilitatorNotes": [
+            "A startled bull, angry or scared, might trample them; a horse would step over a sleeper, but a bull will not. He waits until it has passed and then yells for help. Knowing animals keeps him safe."
+          ],
+          "evidence": [
+            "Had I jumped up and yelled, he, whether mad or scared, might have trampled one or other of us.",
+            "That is the bull of it; a horse steps over."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-32-q3",
+          "prompt": "How does Seton make you hear the bull? Find two different ways he writes its sound.",
+          "facilitatorNotes": [
+            "He describes it (“portentous rumbling roar,” “deep, vibrating organ tone,” a bellow that runs along the ground and makes his legs shake) and he spells it out: “Row-ow-ow-ow.” Feeling the sound through the ground makes it more frightening."
+          ],
+          "evidence": [
+            "that deep, vibrating organ tone",
+            "that ponderous bellow running along the ground"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-32-q4",
+          "prompt": "“I asked no questions.” What do you think happened to the bull, and why doesn’t Seton say so directly?",
+          "facilitatorNotes": [
+            "The “pop, pop” of pistols and “he won't be here again” suggest the cowboys shot it. Seton leaves it unsaid, perhaps because he did not like it, or because the reader can work it out."
+          ],
+          "evidence": [
+            "I heard the \"pop, pop\" of side arms",
+            "I asked no questions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-33",
+      "title": "Wild Animals at Home: when the bears lost their fear (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Weigh a writer’s claim against the examples he gives, and decide who was to blame in each.",
+      "focus": "Years of protection make Yellowstone’s bears bold, and Seton tells what happens when people and bears forget to keep their distance.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. Fifteen years before, he had spent a day hidden by the garbage pile of a Yellowstone hotel, watching and photographing the bears that came to feed. A sanctuary is a place where animals are protected; annals are records kept year by year; a larder is a food store; a drubbing is a beating. Buffalo Jones was then in charge of the park’s wild animals. Feeding bears at the hotels was later stopped, and today visitors must stay at least 100 yards from bears in Yellowstone.",
+      "contentNote": "A mother bear injures a photographer; a grizzly is hauled up a tree by a rope and beaten with a club as a punishment.",
+      "excerpt": {
+        "locator": "Chapter XII, “Bears of High and Low Degree,” the section “Further Annals of the Sanctuary,” from its opening to the grizzly sent to the Washington Zoo; opens “All of this was fifteen years ago. Since then there have been some interesting changes,…”; closes “…babies was sent to Washington Zoo, where he is now doing duty as an exhibition Grizzly.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          597,
+          605
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e2fd740ab9aafa97a76886154451a0ce565507dfe3ef0079da1b0e75531579a"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-33-q1",
+          "prompt": "What does Seton mean by “the gradual removal of the restraining fear of men”? Why does it worry him?",
+          "facilitatorNotes": [
+            "Protected bears stop being afraid of people, and many more now gather at once. Without that fear, he wonders, might they become a danger to the people living in the park?"
+          ],
+          "evidence": [
+            "the gradual removal of the restraining fear of men",
+            "as many as twenty or twenty-five Bears are now to be seen there at once"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-33-q2",
+          "prompt": "Tell the camera-hunter’s story from the mother bear’s side. Why did she charge?",
+          "facilitatorNotes": [
+            "He left his hiding place and crept toward her family; the cubs ran whining to her; she saw a strange “one-eyed” creature (the camera) chasing them. In her eyes he was attacking her cubs."
+          ],
+          "evidence": [
+            "he decided to go to them",
+            "evidently chasing her cubs to harm them"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-33-q3",
+          "prompt": "Seton says the bears had “never abused the confidence man had placed in them,” then gives exceptions. In each story, who was more to blame, the bear or the people?",
+          "facilitatorNotes": [
+            "The photographer approached the cubs himself. The old grizzly learned from people that tents meant food, though he still did real damage. Readers may blame the bears, the people, or both, and should use the details."
+          ],
+          "evidence": [
+            "the Bears in the Park had never abused the confidence man had placed in them",
+            "white canvas walls rising in the woods were merely invitations to a dinner ready and waiting"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-33-q4",
+          "prompt": "Was Buffalo Jones’s punishment of the grizzly a good idea? What could a bear learn from a beating?",
+          "facilitatorNotes": [
+            "Seton tells it as a famous feat with a lasso. The bear might learn to fear people again, or nothing at all; another grizzly was simply sent to a zoo. Today parks keep food away from bears instead. Readers can disagree."
+          ],
+          "evidence": [
+            "he received a drubbing that has become famous in the moving-picture world",
+            "Another of these big, spoiled babies was sent to Washington Zoo"
           ]
         }
       ]
