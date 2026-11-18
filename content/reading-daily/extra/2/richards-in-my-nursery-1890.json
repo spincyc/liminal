@@ -884,6 +884,674 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-13",
+      "title": "Wouldn’t",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how one repeated word builds a poem, and notice where the pattern breaks.",
+      "focus": "A little girl says “wouldn’t” to everything until her family tickles and kisses her out of it.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A crib is a baby’s bed; to coax is to persuade gently; to be fain is to be willing or glad.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Wouldn’t,” the whole poem; opens “She wouldn't have on her naughty bib! She wouldn't get into her naughty crib! She…”; closes “…her and tossed her, until she was fain To promise she wouldn't say \"wouldn't\" again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          348,
+          351
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6af679dae1b7e3546fa1f51207db80bbc74f9f546ecb09bf21f7dd80c690523a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-13-q1",
+          "prompt": "Name three things the girl wouldn’t do.",
+          "facilitatorNotes": [
+            "Wear her bib, get into her crib, look at her picture-book, help the cook, be petted, eat her rice, give a kiss. The list keeps going, which is part of the joke."
+          ],
+          "evidence": [
+            "She wouldn't have on her naughty bib!",
+            "She wouldn't run out to help the cook!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-13-q2",
+          "prompt": "Twice the poem says what she would do. What are those two things?",
+          "facilitatorNotes": [
+            "Put her foot in her Sunday hat, and do exactly whatever she pleased. The change from “wouldn’t” to “would” makes those lines stand out."
+          ],
+          "evidence": [
+            "And she would put her foot in her Sunday hat.",
+            "And she would do exactly whatever she pleased."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-13-q3",
+          "prompt": "The poem calls the bib, the crib and the rice “naughty.” Who is really being naughty?",
+          "facilitatorNotes": [
+            "The girl. The speaker playfully blames the things, perhaps the way a cross child feels about them. Some children may say the speaker is teasing her gently."
+          ],
+          "evidence": [
+            "her naughty bib",
+            "naughty rice to eat"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-13-q4",
+          "prompt": "How do the grown-ups change her mind? Was that a good way?",
+          "facilitatorNotes": [
+            "They tickle her from her toes to her curls and kiss and toss her until she promises. Most children will say it is kinder than scolding; some may say she only promised because she was laughing."
+          ],
+          "evidence": [
+            "We tickled her up, and we tickled her down,",
+            "To promise she wouldn't say \"wouldn't\" again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-14",
+      "title": "Will-o’-the-Wisp",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare what someone hopes for with what really happens.",
+      "focus": "A boy follows a will-o’-the-wisp’s lantern, hoping to find a pot of gold at the journey’s end.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A will-o’-the-wisp is a flickering light sometimes seen at night over marshy ground; old stories said it led travellers astray. To murmur is to grumble; naught means nothing; a swamp is wet, muddy land.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Will-o’-the-Wisp,” the whole poem; opens “\"Will-o'-the-wisp! Will-o'-the-wisp! Show me your lantern true! Over the meadow and over…”; closes “…tired and cold; He had come, alas! to his journey's end, But where was the pot of gold?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          353,
+          355
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "298aa9ff42054e82552fe6d2be008cf5b7485b4808260cb27641f0e680da2b98"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-14-q1",
+          "prompt": "What does the boy promise the will-o’-the-wisp, and what does he want in return?",
+          "facilitatorNotes": [
+            "He promises to follow gladly, never grumble or ask to rest, and always be its friend, if only it will give him the pot of gold."
+          ],
+          "evidence": [
+            "If you'll only give me the pot of gold"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-14-q2",
+          "prompt": "Where does the light lead him, and what does it do there?",
+          "facilitatorNotes": [
+            "To a lonely swamp, where it puts out its lantern and vanishes in the chilly evening."
+          ],
+          "evidence": [
+            "Flew down to a lonely swamp;",
+            "He put out his lantern and vanished away"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-14-q3",
+          "prompt": "The will-o’-the-wisp never says a word. Did it trick the boy, or did he trick himself?",
+          "facilitatorNotes": [
+            "It only lit its lantern and flew; the boy did all the promising and hoping. Some children will blame the wisp for leading him on; others will say he wanted gold so much he did not think."
+          ],
+          "evidence": [
+            "Lighted his lantern true;",
+            "And thinking of naught but the journey's end,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-14-q4",
+          "prompt": "The poem ends with a question. How would you answer it?",
+          "facilitatorNotes": [
+            "There was never any gold; or the gold was only in his hopes. Some children may say the journey itself was something, even though he came home cold."
+          ],
+          "evidence": [
+            "But where was the pot of gold?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-15",
+      "title": "An Old Rat’s Tale",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out what a poem hints at but never says.",
+      "focus": "Two rats who love each other smell some cheese, go out, and never come back.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A tale is a story, and it sounds just like “tail.” To dwell is to live somewhere; to befall is to happen to someone.",
+      "contentNote": "The ending hints that the rats were caught, perhaps in a trap baited with cheese; the poem does not say.",
+      "excerpt": {
+        "locator": "“An Old Rat’s Tale,” the whole poem; opens “He was a rat, and she was a rat, And down in one hole they did dwell. And each was as…”; closes “…them go with pain. But what them befell I never can tell, For they never came back again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          366,
+          369
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1fbf03828859b3d3e1784c644ec1cf04bb7503214ad047591a9655ef38b0953c"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-15-q1",
+          "prompt": "How does each verse show the two rats doing the same things?",
+          "facilitatorNotes": [
+            "Each begins “He … and she …”: he was a rat and she was a rat, he had a tail and she had a tail, he smelt the cheese and she smelt the cheese, he ventured out and she ventured out."
+          ],
+          "evidence": [
+            "He had a tail, and she had a tail;",
+            "So he ventured out and she ventured out;"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-15-q2",
+          "prompt": "What does each rat say about the other’s tail? What is funny about it?",
+          "facilitatorNotes": [
+            "Each says their love’s tail is the finest in the world, except their own. They love each other, but each still thinks they are best."
+          ],
+          "evidence": [
+            "In the world, excepting mine!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-15-q3",
+          "prompt": "Why might Richards call the poem a “Tale” and not a “Tail”?",
+          "facilitatorNotes": [
+            "It is a story, and also a pun: the rats’ tails are in it. Children enjoy spotting that the two words sound alike."
+          ],
+          "evidence": [
+            "Both long and curling and fine."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-15-q4",
+          "prompt": "What do you think happened to the rats? Why won’t the speaker say?",
+          "facilitatorNotes": [
+            "Most children will guess a trap with cheese in it, or a cat. The speaker saw them go “with pain” and leaves it unsaid, perhaps to be gentle, perhaps to let us guess."
+          ],
+          "evidence": [
+            "And I saw them go with pain.",
+            "For they never came back again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-16",
+      "title": "The Forty Little Ducklings",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice when the poet stops the story to talk to you.",
+      "focus": "Forty ducklings set off for the river on a hot day, get lost, and take revenge on the Ancient Gander.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A gait is a way of walking; the Muse is the spirit poets say gives them ideas; repose is rest. A mustard plaster was a hot cloth spread with mustard, an old home cure. “Doctor Quack” is a joke, since a quack is also a fake doctor.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Forty Little Ducklings,” the whole poem with its printed note; opens “[A story with a certain amount of truth in it.]”; closes “…the first thing that they did, Was to peck the Ancient Gander, till he ran away and hid.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          377,
+          383
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4f8256e932fedea1a2f72c9651fbae2b4369e0f0a9c73cf76b78ee289a462136"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-16-q1",
+          "prompt": "Why do the ducklings set off down the road?",
+          "facilitatorNotes": [
+            "The day is very warm and the river is cool; they say any duck who did not go now would be a fool."
+          ],
+          "evidence": [
+            "the day is very warm!",
+            "the river's very cool!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-16-q2",
+          "prompt": "The poet says “goed” is not good grammar. Why does she keep it?",
+          "facilitatorNotes": [
+            "It rhymes with “road,” and she jokes that a poet cannot stop for small things when an idea is flowing. She even invites you to change it."
+          ],
+          "evidence": [
+            "The same it is not grammar,—you may change it if you choose,—"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-16-q3",
+          "prompt": "Whom do the ducklings blame for getting lost, and what do they do about it?",
+          "facilitatorNotes": [
+            "The Ancient Gander, who told them the river was very near. When they are well again, they peck him till he runs away and hides."
+          ],
+          "evidence": [
+            "We asked the Ancient Gander, and he said 'twas very near.",
+            "Was to peck the Ancient Gander, till he ran away and hid."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-16-q4",
+          "prompt": "The note says the poem has “a certain amount of truth in it.” Which parts might be true, and which are made up?",
+          "facilitatorNotes": [
+            "Lost ducklings, a tired row of them, and a farmer carrying them home could really happen; handkerchiefs, mustard plasters and Doctor Quack are made up. Children may disagree about some parts, such as the Gander."
+          ],
+          "evidence": [
+            "A story with a certain amount of truth in it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-17",
+      "title": "The Phrisky Phrog",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Find the problem that keeps two friends apart, and decide whose fault it is.",
+      "focus": "A frog and a snail love each other dearly but cannot agree on where to live.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Richards spells “frisky frog” and “snail” in a funny old-fashioned way. List means listen; piteous means sad; sylvan means of the woods; grewsome (gruesome) means horrid; a bower is a shady, leafy place; tremulous means trembling.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Phrisky Phrog,” the whole poem; opens “Now list, oh! list to the piteous tale Of the Phrisky Phrog and the Sylvan Snayle; Of…”; closes “…Though they loved each other so fond and true, They didn't know what in the world to do.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          416,
+          421
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c61a67032428ccb518b609f5b1892610031be88f2b73324be0e2608b6f7aa5f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-17-q1",
+          "prompt": "Where does each of them live?",
+          "facilitatorNotes": [
+            "The Phrog in a bog, the Snayle in a hole in the end of a log."
+          ],
+          "evidence": [
+            "The Phrog lived down in a grewsome bog,",
+            "The Snayle in a hole in the end of a log;"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-17-q2",
+          "prompt": "What does each say is wrong with the other’s home?",
+          "facilitatorNotes": [
+            "The Snayle says the swamp is too cold and damp for a lady; the Phrog says a hole in a log is no place for a frog."
+          ],
+          "evidence": [
+            "'twas too cold and damp",
+            "Was no possible place for a Phrisky Phrog."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-17-q3",
+          "prompt": "Compare their two invitations. What is the same, and what is different?",
+          "facilitatorNotes": [
+            "One says “Come down!” and the other “Come up”; each praises a home the other dislikes; both end “And be happy with me.”"
+          ],
+          "evidence": [
+            "Come down! come down, my beautiful Snayle!",
+            "Come up, come up, to my home so sweet,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-17-q4",
+          "prompt": "Whose fault is it that they never marry? Could they have solved it?",
+          "facilitatorNotes": [
+            "Neither would give way, so it is both. Children may suggest taking turns, finding a new home, or say a frog and a snail really do need different places. The poem calls it a sad tale, but it is told for fun."
+          ],
+          "evidence": [
+            "But he wouldn't come, and she wouldn't go,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-18",
+      "title": "The Shark",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice how a boaster gives himself away.",
+      "focus": "A shark sits on a rooftop singing about his own greatness until he makes everyone ill.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Blithe means cheerful; cheroots are cigars; a single glass in the eye is a monocle, one round lens; Martin and Day was a brand of boot blacking; to troll and to carol are to sing loudly and happily; perils are dangers; a crown is an old coin.",
+      "contentNote": "The shark smokes cigars and boasts about eating ships and frightening sailors.",
+      "excerpt": {
+        "locator": "“The Shark,” the whole poem; opens “Oh! blithe and merrily sang the shark, As he sat on the house-top high: A-cleaning his…”; closes “…ill. And I'll wager a crown that unless he's come down, He is probably carolling still.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          440,
+          447
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "04ff20f2c70c5724d4939a1a56692ceb03fed99cbf219aa1fd50403ff0ed68b9"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-18-q1",
+          "prompt": "What is the shark doing on the house-top?",
+          "facilitatorNotes": [
+            "Cleaning his boots, smoking cigars, wearing a monocle, and singing “Gobble-em-upsky ho!”"
+          ],
+          "evidence": [
+            "A-cleaning his boots, and smoking cheroots,",
+            "Of \"Gobble-em-upsky ho!\""
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-18-q2",
+          "prompt": "Name two things he boasts about in his song.",
+          "facilitatorNotes": [
+            "That he ate ships like chips when he was young, that whales would give their tails for a glance from him, and that swordfish swore they would die for him."
+          ],
+          "evidence": [
+            "He sang of the ships that he'd eaten like chips",
+            "He sang of the whales who'd have given their tails"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-18-q3",
+          "prompt": "He thinks it is “queer” that no one comes to look at his wisdom tooth. Why don’t they?",
+          "facilitatorNotes": [
+            "Nobody wants to get close to the teeth of a shark who says he eats ships. He doesn’t see what everyone else sees."
+          ],
+          "evidence": [
+            "It is queer that no one draws near"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-18-q4",
+          "prompt": "The poem says he sang until he made everyone ill, and may be “carolling still.” What does Richards think of boasters?",
+          "facilitatorNotes": [
+            "They go on and on, never notice they are tiresome, and never stop. Children may enjoy the shark anyway, since he is so cheerful."
+          ],
+          "evidence": [
+            "Until he made every one ill.",
+            "He is probably carolling still."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-19",
+      "title": "Master Jack’s Song",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how a song pokes fun at other kinds of songs.",
+      "focus": "A boy home from Christmas at his grandmother’s sings that her jam cupboard is the fairest spot on land or sea.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Master was a polite title for a boy. Groves are small woods; bowers are leafy shelters; quinces are hard yellow fruit made into jelly; catsup is ketchup; an anchorite is a hermit who lives alone and eats very little; a chorus is the part of a song repeated after each verse.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Master Jack’s Song,” the whole poem with its printed note; opens “[Written after spending the Christmas Holidays at Grandmamma's.]”; closes “…me, On the land or on the sea, Is the charming little cupboard where the jam-pots grow.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          480,
+          488
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d32e8fc223f0fccb1cda4aa7dc994cbbd23def324e643766aba7892cb878eeda"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-19-q1",
+          "prompt": "What does Jack say other people sing about?",
+          "facilitatorNotes": [
+            "Groves where they walk with their loves, moonlit waves, flowery bowers and breezy meadows: the usual subjects of love songs and nature poems."
+          ],
+          "evidence": [
+            "You may talk about your moonlit waves that fall and flow.",
+            "Never tell me of your meadows where the breezes blow!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-19-q2",
+          "prompt": "What is in Grandmamma’s cupboard? Name four things.",
+          "facilitatorNotes": [
+            "Peaches in syrup, raspberries, cherries, plums, pickles, catsup, marmalades, jellies and quinces."
+          ],
+          "evidence": [
+            "There the golden peaches shine",
+            "And the marmalades and jellies in a goodly row."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-19-q3",
+          "prompt": "Why is it funny to say the jam-pots “grow”?",
+          "facilitatorNotes": [
+            "Jam-pots do not grow; Jack talks about the cupboard as if it were a garden, the kind of place other songs praise. It shows how much he loves it."
+          ],
+          "evidence": [
+            "Where the jelly jolly, jelly jolly jam-pots grow."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-19-q4",
+          "prompt": "Jack says the quinces would tempt even a hermit. What is the fairest spot to you? Is a cupboard a fair choice?",
+          "facilitatorNotes": [
+            "He means the jam would tempt someone who has given up treats. Children can name their own favourite place and say what makes it special; some will side with the meadows."
+          ],
+          "evidence": [
+            "Would an anchorite inspire",
+            "The fairest spot to me,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-20",
+      "title": "Mother Rosebush",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Follow a joke that runs all through a poem.",
+      "focus": "A mother takes her little daughter Rose into the garden to meet the roses as if they were her cousins.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Damask, Blush, General Jacqueminot, Gloire de Dijon, Cloth-of-Gold, Baltimore Belle, Queen of the Prairie, Moss, Maréchal Niel, Niphetos, Snow Queen and Cherokee are all names of real roses. Rose-nobles were old gold coins; a calyx is the green cup that holds a flower bud.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Mother Rosebush,” the whole poem; opens “There are roses that grow on a vine, on a vine, There are roses that grow on a stalk; But…”; closes “…me; For if you are my daughter, it stands to reason, Your own Mother Rosebush I must be.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          490,
+          494
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a84154ad8c7fdecf3ba380ee87a18f335650e58af3552bcb7955264ed55ce2a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-20-q1",
+          "prompt": "Why does the mother call herself “Mother Rosebush”?",
+          "facilitatorNotes": [
+            "Her daughter is named Rose, so if Rose is a rose, her mother must be the rosebush she grows on."
+          ],
+          "evidence": [
+            "Your own Mother Rosebush I must be."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-20-q2",
+          "prompt": "How is little Rose different from the roses in the garden?",
+          "facilitatorNotes": [
+            "The garden roses grow on vines and stalks; she grows on ten little toes."
+          ],
+          "evidence": [
+            "Grows on ten little toes,",
+            "That has ten little toes,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-20-q3",
+          "prompt": "The mother talks to the roses as if they were people. Choose one and tell what she says to it.",
+          "facilitatorNotes": [
+            "The Baltimore Belle and Queen of the Prairie look cross because the butterfly and the bee have left them for Moss; Maréchal Niel keeps his buds buttoned up; careless Niphetos lets hers flutter; Cherokee keeps climbing."
+          ],
+          "evidence": [
+            "Now, why are your ladyships looking so cross?",
+            "You train up your buds in the way they should go,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-20-q4",
+          "prompt": "At the end she asks Rose to put on her calyx. What do you think she means, and which rose does she love best?",
+          "facilitatorNotes": [
+            "Put on her bonnet or coat, as a bud wears its green calyx; the rose she loves best is her daughter. Children may also notice that the poem ends where it began."
+          ],
+          "evidence": [
+            "Put on your calyx and come with me;",
+            "And she is the Rose for me."
+          ]
+        }
+      ],
+      "months": [
+        6
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-21",
+      "title": "The Hornet and the Bee",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Compare two suitors, then see whether the choice was wise.",
+      "focus": "A hornet asks a bee to marry him, but she scorns him for a showy cockchafer, and the ending is a surprise.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A suitor is someone who asks to marry. A cockchafer, here a “cockychafer,” is a big beetle that whirs as it flies. A bonnet with a poke sticks out in front; venison pasty is deer-meat pie; trig means neat; to scorn is to refuse proudly; to tarry is to linger; a toilet here means getting dressed.",
+      "contentNote": "The hornet offers rum and wine, and at supper the cockchafer eats his bride.",
+      "excerpt": {
+        "locator": "“The Hornet and the Bee,” the whole poem; opens “Said the hornet to the bee, \"Pray you, will you marry me? Will you be my little wife, For…”; closes “…to sup, Cockychafer ate her up. Thus concludes the history Of the hornet and the bee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          499,
+          502
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "59b9b4b3d565fc4023f2c8e6a21c575d4bbae66075f80776d08d7a52f551b39d"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-21-q1",
+          "prompt": "What does the hornet promise the bee? Which promises sound silly?",
+          "facilitatorNotes": [
+            "A velvet cloak, a bonnet, a horse, venison pie, rum and wine, but also a cabbage in her hair and apple-cores to eat."
+          ],
+          "evidence": [
+            "With a cabbage in your hair.",
+            "Devilled bones and apple-cores,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-21-q2",
+          "prompt": "Why does the bee refuse him?",
+          "facilitatorNotes": [
+            "He has no money, cannot make honey, cannot play the fiddle, and is pinched in the middle; besides, she loves the cockchafer."
+          ],
+          "evidence": [
+            "Marry one devoid of money,",
+            "And is pinched up in the middle?"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-21-q3",
+          "prompt": "What does the cockchafer give her at the wedding?",
+          "facilitatorNotes": [
+            "A goblin-green dress, a hat and feathers, worsted mittens on her feet, wine, and a feast of roasted mouse, bunny-fish, porridge and lobster-claws."
+          ],
+          "evidence": [
+            "Wedding dress of goblin green,",
+            "Roasted mouse and bunny-fish,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-21-q4",
+          "prompt": "What happens at supper? Was the bee wise to choose the cockchafer?",
+          "facilitatorNotes": [
+            "He eats her up. She chose the loud, prancing suitor over the plain one; some children will find the ending funny, others shocking, and some will say the hornet’s offer was no better."
+          ],
+          "evidence": [
+            "Cockychafer whirring loud,",
+            "Cockychafer ate her up."
+          ]
+        }
+      ]
     }
   ]
 }
