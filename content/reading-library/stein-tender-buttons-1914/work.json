@@ -4,7 +4,7 @@
   "author": "Gertrude Stein",
   "title": "Tender Buttons",
   "translator": null,
-  "edition": "The 1914 English text, explicitly dated 1914 on the title page of Project Gutenberg ebook 15396, produced by Suzanne Shell, Josephine Paolucci, and the Online Distributed Proofreading Team. Titles, paragraph divisions, unusual grammar, and punctuation are retained without correction; Gutenberg line wrapping within prose paragraphs is joined with spaces. The library text holds all three sections, Objects, Food and Rooms, complete; the title page and contents are omitted. The paragraphs of Rooms read by the Grade 11 calendar readings (blocks 462–512) were compared word by word, punctuation included, with the OCR text of the 1914 Claire Marie printing (Internet Archive tenderbuttonsobj00steirich) and, where they differed, its page images; two readings changed to the printed text: “painstaking” (block 486, where the transcription had “paintaking”) and the full stop in “Why is the name changed. The name” (block 495).",
+  "edition": "The 1914 English text, explicitly dated 1914 on the title page of Project Gutenberg ebook 15396, produced by Suzanne Shell, Josephine Paolucci, and the Online Distributed Proofreading Team. Titles, paragraph divisions, unusual grammar, and punctuation are retained without correction; Gutenberg line wrapping within prose paragraphs is joined with spaces. The library text holds all three sections, Objects, Food and Rooms, complete; the title page and contents are omitted. The paragraphs of Rooms read by the Grade 11 calendar readings (blocks 462–512) were compared word by word, punctuation included, with the OCR text of the 1914 Claire Marie printing (Internet Archive tenderbuttonsobj00steirich) and, where they differed, its page images; two readings changed to the printed text: “painstaking” (block 486, where the transcription had “paintaking”) and the full stop in “Why is the name changed. The name” (block 495). The pieces of Food read by the Grade 11 calendar readings (blocks 192–446) were compared the same way, capitals included; two readings changed to the printed text: “darkning” (block 200, where the transcription had “darkening”) and the semicolon in “nearly bats; all this went” (block 316, a comma in the transcription).",
   "publicationYear": 1914,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/15396",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/15396/pg15396.txt",
     "downloadSha256": "a0c0e46ad2645dc1a1c9d4aa990b2c95668899ff99988d789101109c332ebfb5",
-    "method": "Project Gutenberg plain text (pglaf mirror of ebook 15396). Removed the Gutenberg header, footer, licence, producer credit, title page and contents; joined wrapped prose lines with single spaces; the three section names became level-1 headings and every capitalised piece title a level-2 heading."
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 15396). Removed the Gutenberg header, footer, licence, producer credit, title page and contents; joined wrapped prose lines with single spaces; the three section names became level-1 headings and every capitalised piece title a level-2 heading. Four readings (blocks 200, 316, 486 and 495) were then corrected to the 1914 printing after collation (see edition)."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 533,
-    "sha256": "df5e0643efc35fdc9bb0225d28ceca813a6bc6585458ecfdc3584a69ff9eba0a"
+    "sha256": "6d0e61d391bf058d1d8e8b8f8a0f9b34b165e095691de7b732a0eb69fe9b819f"
   }
 }
