@@ -122,15 +122,23 @@
     }));
   }
   function today() { return Cal.today(); }
+  // The calendar is written a cycle year at a time: a level's written years
+  // come from the index, so no view promises a date before loading anything.
+  function writtenYears(grade) { const course = D.gradeAt(index, grade); return course && course.calendar ? course.calendarYears : null; }
+  function hasReading(grade, date) { return D.calendarHas(index, grade, date, Cal.isWritten); }
 
   // ---- The More menu: secondary actions for the reading shown ----
+  // A view with nothing to offer here (today's notice, say) hides the menu.
   function menuItems(items) {
-    more.panel.replaceChildren(...items.filter(Boolean).flatMap(item => {
+    const shown = items.filter(Boolean);
+    more.panel.replaceChildren(...shown.flatMap(item => {
       if (item.node) return [item.node, ...(item.after ? [item.after] : [])];
       const node = item.href ? R.link(item.label, item.href) : button(item.label, item.run);
       if (item.disabled) node.disabled = true;
       return [node];
     }));
+    more.element.hidden = !shown.length;
+    if (!shown.length) more.element.open = false;
   }
   // The PDF control for the reading shown; a new reading cancels a PDF in progress.
   function pdfItem() {
@@ -250,11 +258,16 @@
     crumbs([{ label: D.gradeLabel(selected.grade) }]);
     const list = $("dailyYear"); list.setAttribute("aria-busy", "true");
     announce("Opening " + D.gradeLabel(selected.grade) + "…");
-    const monthLink = $("dailyMonthLink");
-    monthLink.hidden = !D.hasCalendar(index, selected.grade);
-    monthLink.href = D.monthRoute(selected.grade, today().slice(0, 7));
+    // The date calendar opens at this month, or, while this year is not
+    // written yet, at the month where it begins (or the nearest written one).
+    const monthLink = $("dailyMonthLink"), opens = Cal.opening(writtenYears(selected.grade), today());
+    monthLink.hidden = !opens;
+    if (opens) {
+      monthLink.href = D.monthRoute(selected.grade, opens.slice(0, 7));
+      monthLink.textContent = opens === today() ? "This month’s date calendar" : "Date calendar: " + Cal.monthLabel(opens.slice(0, 7));
+    }
     const lastNight = remembered && remembered.night && remembered.night.grade === selected.grade ? remembered.night : null;
-    $("dailyPrintLink").href = D.hasCalendar(index, selected.grade) ? D.printRoute({ date: today(), grades: [selected.grade] }) :
+    $("dailyPrintLink").href = hasReading(selected.grade, today()) ? D.printRoute({ date: today(), grades: [selected.grade] }) :
       D.printRoute({ week: selected.week || (lastNight ? lastNight.week : 1), day: selected.week ? 1 : lastNight ? lastNight.day : 1, grades: [selected.grade] });
     try {
       const data = await browseData(selected.grade);
@@ -276,7 +289,7 @@
     const nights = remembered && remembered.night ? await browseData(remembered.night.grade).then(data => data.nights).catch(() => null) : null;
     const plan = await planNight(when);
     if (current !== request) return;
-    const entries = D.tonight({ index, state: remembered, planNight: plan, today: when, nights });
+    const entries = D.tonight({ index, state: remembered, planNight: plan, today: when, nights, isWritten: Cal.isWritten });
     list.replaceChildren(...entries.map(entry => {
       const item = R.el("li", undefined, "daily-tonight-" + entry.kind);
       const main = R.link("", entry.href); main.className = "daily-tonight-link";
@@ -366,24 +379,38 @@
     topNavigationOf({ label: "Calendar days, top", previous: dayLink(previous, { label: "Previous day: " + Cal.longDate(previous) }),
       next: dayLink(next, { label: "Next day: " + Cal.longDate(next) }) });
     if (movement && movement.top) C.focusNavigation(topNavigation, movement.step);
-    const month = date.slice(0, 7), monthLabel = Cal.MONTHS[Number(month.slice(5)) - 1] + " " + month.slice(0, 4);
-    crumbs([{ label: D.gradeLabel(grade), href: D.browseRoute(grade) }, { label: monthLabel, href: D.hasCalendar(index, grade) ? D.monthRoute(grade, month) : null }, { label: Cal.longDate(date).replace(/, \d{4}$/, "") }]);
+    const month = date.slice(0, 7);
+    crumbs([{ label: D.gradeLabel(grade), href: D.browseRoute(grade) }, { label: Cal.monthLabel(month), href: D.hasCalendar(index, grade) ? D.monthRoute(grade, month) : null }, { label: Cal.longDate(date).replace(/, \d{4}$/, "") }]);
     saveRemembered(selected);
-    const calendarActions = [{ label: "Today", href: D.dateRoute(grade, today()) }, D.hasCalendar(index, grade) && { label: "This month’s calendar", href: D.monthRoute(grade, month) },
+    const todayAction = date !== today() && { label: "Today", href: D.dateRoute(grade, today()) };
+    const calendarActions = [todayAction, D.hasCalendar(index, grade) && { label: "This month’s calendar", href: D.monthRoute(grade, month) },
       { label: "Print this date for several levels", href: D.printRoute({ date, grades: [grade] }) }];
+    // Honest absence, without loading anything: a level with no calendar,
+    // or a date in a cycle year not written yet. Say so, and link to where
+    // readings are.
+    const absent = (section, heading, message) => {
+      packetShown = null; clearPdf(); menuItems([todayAction]); printFooter.textContent = "";
+      container.replaceChildren(section);
+      setTitle([Cal.longDate(date), D.gradeLabel(grade)]);
+      announce((selected.invalid ? "That date was not recognized. Showing today. " : "") + message, selected.invalid); busy(false);
+      if (focus) { heading.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: "instant" }); }
+    };
     if (!D.hasCalendar(index, grade)) {
-      // Honest absence: say so, and offer the school year.
-      packetShown = null; clearPdf(); menuItems(calendarActions.slice(0, 1)); printFooter.textContent = "";
       const note = R.el("section", undefined, "daily-unavailable");
       const heading = R.el("h1", "The date calendar for " + D.gradeLabel(grade) + " is not available yet"); heading.tabIndex = -1;
-      note.append(heading, R.el("p", "Each level’s calendar appears once it has a reading for every day of three years. Meanwhile, the school year’s 180 nights are ready."));
-      const links = R.el("p"); links.append(R.link("Open the " + D.gradeLabel(grade) + " school year", D.browseRoute(grade)));
-      const other = index.grades.filter(course => course.calendar);
-      if (other.length) links.append(document.createTextNode(" · "), R.link("Date calendar for " + D.gradeLabel(other[0].grade), D.dateRoute(other[0].grade, date)));
-      note.append(links); container.replaceChildren(note);
-      setTitle([Cal.longDate(date), D.gradeLabel(grade)]);
-      announce("The date calendar for " + D.gradeLabel(grade) + " is not available yet."); busy(false);
-      if (focus) { heading.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: "instant" }); }
+      note.append(heading, R.el("p", M.WRITTEN_BY_YEAR + " Meanwhile, the school year’s 180 nights are ready."));
+      const links = [{ label: "Open the " + D.gradeLabel(grade) + " school year", href: D.browseRoute(grade) }];
+      // Another level's calendar, at this date or the nearest one it has.
+      const other = index.grades.find(course => course.calendar), at = other && Cal.opening(other.calendarYears, date);
+      if (at) links.push({ label: "Date calendar for " + D.gradeLabel(other.grade), href: D.dateRoute(other.grade, at) });
+      note.append(M.links(links));
+      absent(note, heading, "The date calendar for " + D.gradeLabel(grade) + " is not available yet.");
+      return;
+    }
+    const missing = Cal.unwritten(writtenYears(grade), date);
+    if (missing) {
+      const note = M.notice(grade, missing);
+      absent(note, note.querySelector("h1"), missing.heading + ".");
       return;
     }
     announce("Opening the reading for " + Cal.longDate(date) + "…");
@@ -400,7 +427,7 @@
         from: run.part > 1 ? dayLink(previous, { label: Cal.shortDate(previous) }) : null,
         to: run.part < run.of ? dayLink(next, { label: Cal.shortDate(next) }) : null };
       const before = R.el("p", undefined, "daily-date-note");
-      before.append(R.el("span", Cal.longDate(date), "daily-date-long"), document.createTextNode(" · " + Cal.cycleNote(date) + "."));
+      before.append(R.el("span", Cal.longDate(date), "daily-date-long"), document.createTextNode(" · " + Cal.cycleNote(date, calendar) + "."));
       if (entry.week) { before.append(document.createTextNode(" Also the school year’s ")); before.append(R.link(D.nightLabel(entry.week, entry.day), D.route(grade, entry.week, entry.day)), document.createTextNode(".")); }
       const bottom = C.navigation({ label: "Calendar days, bottom", steps: ["previous", "next"],
         previous: dayLink(previous, { text: "‹ " + Cal.shortDate(previous) }), next: dayLink(next, { text: Cal.shortDate(next) + " ›" }) });
@@ -428,12 +455,14 @@
       const excerpt = data.reading.excerpt, step = id => id && D.validReadingId(grade, id) ? { href: D.readingRoute(grade, id) } : null;
       topNavigationOf({ label: "Continued reading, top", previous: step(excerpt.continuesFrom) && { ...step(excerpt.continuesFrom), label: "Previous part" },
         next: step(excerpt.continuesTo) && { ...step(excerpt.continuesTo), label: "Next part" } });
-      let before = null, date = null;
+      // The next date this reading falls on, in the years written so far.
+      let before = null, calendar = null, date = null;
       if (D.hasCalendar(index, grade)) {
-        date = await calendarData(grade).then(calendar => Cal.nextDateOf(calendar, selected.id, today())).catch(() => null);
+        calendar = await calendarData(grade).catch(() => null);
         if (current !== request) return;
+        date = calendar && Cal.nextDateOf(calendar, selected.id, today());
       }
-      if (date) { before = R.el("p", undefined, "daily-date-note"); before.append(document.createTextNode("On the date calendar: "), R.link(Cal.longDate(date), D.dateRoute(grade, date)), document.createTextNode(" · " + Cal.cycleNote(date) + ".")); }
+      if (date) { before = R.el("p", undefined, "daily-date-note"); before.append(document.createTextNode("On the date calendar: "), R.link(Cal.longDate(date), D.dateRoute(grade, date)), document.createTextNode(" · " + Cal.cycleNote(date, calendar) + ".")); }
       const run = { part: 0, of: 0, from: step(excerpt.continuesFrom) && { label: "the previous part", href: D.readingRoute(grade, excerpt.continuesFrom) },
         to: step(excerpt.continuesTo) && { label: "the next part", href: D.readingRoute(grade, excerpt.continuesTo) } };
       showReading({ grade, reading: data.reading, source: data.source, packet: D.studentPacket(grade, data.reading, data.source), run, current: () => current === request, before });
@@ -450,7 +479,7 @@
   async function monthView(selected, focus) {
     const current = ++request, grade = selected.grade, month = selected.month;
     showOnly("month"); monthGrade.value = D.gradeKey(grade);
-    const label = Cal.MONTHS[Number(month.slice(5)) - 1] + " " + month.slice(0, 4);
+    const label = Cal.monthLabel(month);
     crumbs([{ label: D.gradeLabel(grade), href: D.browseRoute(grade) }, { label }]);
     $("dailyMonthHeading").textContent = label + " · " + D.gradeLabel(grade);
     setTitle([label, D.gradeLabel(grade) + " date calendar"]);
@@ -462,12 +491,19 @@
       if (focus) $("dailyMonthHeading").focus();
       return;
     }
+    const missing = Cal.unwritten(writtenYears(grade), month + "-01");
+    if (missing) {
+      M.unwritten(grid, { grade, month, note: missing }); $("dailyMonthNote").textContent = ""; grid.setAttribute("aria-busy", "false");
+      announce((selected.invalid ? "That month was not recognized. Showing " + label + ". " : "") + missing.heading + ".", selected.invalid);
+      if (focus) $("dailyMonthHeading").focus();
+      return;
+    }
     grid.setAttribute("aria-busy", "true"); announce("Opening " + label + "…");
     try {
       const [calendar, spans] = await Promise.all([calendarData(grade), getJson(D.SPANS_FILE)]);
       if (current !== request) return;
       M.show(grid, { grade, month, calendar, spans, today: today() });
-      $("dailyMonthNote").textContent = "Cycle year " + Cal.cycleYear(Number(month.slice(0, 4))) + " of " + Cal.CYCLE + ". Each date’s reading returns three years later.";
+      $("dailyMonthNote").textContent = Cal.monthNote(month, calendar);
       announce((selected.invalid ? "That month was not recognized. Showing " : "Showing ") + label + ".", selected.invalid);
       if (focus) $("dailyMonthHeading").focus();
     } catch (_) {
@@ -487,7 +523,7 @@
 
   // ---- Routing ----
   function route(focus = false) {
-    const selected = D.view(index, window.location.hash, { grade: remembered && remembered.grade, today: today() });
+    const selected = D.view(index, window.location.hash, { grade: remembered && remembered.grade, today: today(), isWritten: Cal.isWritten });
     if (selected.view === "print") return printView(selected, focus);
     if (!selected.course) return;
     if (selected.view === "browse") return browse(selected, focus);
