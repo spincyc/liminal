@@ -422,7 +422,7 @@
       "context": "Recap: Farrington, a clerk who drinks, failed to finish a copy, was berated by his employer Mr. Alleyne, and answered him with a cutting retort before the whole office. A pawn-office lends money against goods; a crown is five shillings; a half-one and small hot specials are whiskeys; Apollinaris is mineral water; the Tivoli was a music hall.",
       "contentNote": "Heavy drinking and sexual leering; the story ends with a father beating his young son with a stick.",
       "excerpt": {
-        "locator": "Counterparts, from the section break after the office scene to the end of the story; opens “******”; closes “…say a Hail Mary for you, pa, if you don't beat me. . . . I'll say a Hail Mary. . . .\"”.",
+        "locator": "Counterparts, from the section break after the office scene to the end of the story; opens “. . . . . . . .”; closes “…say a Hail Mary for you, pa, if you don't beat me. . . . I'll say a Hail Mary. . . .\"”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-12-joyce-dubliners-1917-06",
         "continuesTo": null,
@@ -432,7 +432,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "59972f40162dc25f71b4c71ff33dfec1c7ef255328918ae1a439319a41114a19"
+        "textHash": "89fa2e80c7086514883c0c6541f968f3c25cbf72a194485d5788e0a1387e710a"
       },
       "questions": [
         {
@@ -476,6 +476,592 @@
           "evidence": [
             "He began to mimic his son's flat accent",
             "I'll say a Hail Mary for you, pa, if you don't beat me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-08",
+      "title": "A Mother — part 1: a contract for four concerts",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how the narrator’s phrasing judges Mrs. Kearney before the plot gives her anything to do.",
+      "focus": "Ambition, respectability and a contract in the world of the Irish Revival.",
+      "context": "From Joyce’s Dubliners (1914), fifteen stories of Dublin life around 1900. Mr. Holohan is assistant secretary of the Eire Abu Society, a nationalist cultural society. The Irish Revival promoted the Irish language and culture; the name Kathleen recalls Cathleen Ni Houlihan, a traditional figure for Ireland. Skerries, Howth and Greystones are seaside places near Dublin. The Antient Concert Rooms were a Dublin hall; a guinea was a pound and a shilling; a house “filled with paper” is filled with free tickets.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Mother, from the opening through the cancelled Friday concert; opens “Mr. Holohan, assistant secretary of the Eire Abu Society, had been walking up and down…”; closes “…a male. She was glad that he had suggested coming with her. She thought her plans over.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-joyce-dubliners-1917-09",
+        "blocks": [
+          831,
+          853
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d312c93d9bd19b6dd0ecc58ec4f6f60ca44f206af190c8dab8451e1a2d8d5cf4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-08-q1",
+          "prompt": "“Miss Devlin had become Mrs. Kearney out of spite.” What does the rest of the paragraph explain, and how does the narrator’s tone treat her?",
+          "facilitatorNotes": [
+            "Unbending and proud, she waited for a brilliant suitor, consoled herself with Turkish Delight in secret, and married a much older bootmaker when friends began to gossip. Phrases like “the chilly circle of her accomplishments” are ironic, close to mocking. Some readers find the tone unfair to a woman with few choices; the same details also show how few choices she had."
+          ],
+          "evidence": [
+            "She sat amid the chilly circle of her accomplishments, waiting for some suitor to brave it and offer her a brilliant life.",
+            "she silenced them by marrying Mr. Kearney, who was a bootmaker on Ormond Quay."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-08-q2",
+          "prompt": "How does Mrs. Kearney use the Irish Revival?",
+          "facilitatorNotes": [
+            "She “determined to take advantage of her daughter's name,” hires an Irish teacher, and joins a circle that exchanges Irish postcards and says good-bye in Irish. The revival is a route to standing as much as a cause. The satire falls on the fashionable side of the movement as well as on her."
+          ],
+          "evidence": [
+            "Mrs. Kearney determined to take advantage of her daughter's name and brought an Irish teacher to the house.",
+            "said good-bye to one another in Irish"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-08-q3",
+          "prompt": "Compare Mrs. Kearney with Mr. Holohan and Mr. Fitzpatrick. Who is competent, and how does the narrator show it?",
+          "facilitatorNotes": [
+            "Holohan walks up and down and makes notes, “but in the end it was Mrs. Kearney who arranged everything”; she knows how to word bills and order a programme. Fitzpatrick has a vacant smile and chews his programme to pulp. She does the work while the men hold the authority."
+          ],
+          "evidence": [
+            "but in the end it was Mrs. Kearney who arranged everything.",
+            "he chewed one end of it into a moist pulp"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-08-q4",
+          "prompt": "Why does she not ask “And who is the Cometty pray?”, and what does her view of her husband as being like the General Post Office suggest about her position?",
+          "facilitatorNotes": [
+            "It would not be ladylike, so she keeps silent. She values her husband as “something large, secure and fixed,” for his “abstract value as a male”: his presence may carry weight that her words do not. Readers can take this as satire of her snobbery or as a picture of the limits she works within; it can be both."
+          ],
+          "evidence": [
+            "But she knew that it would not be ladylike to do that: so she was silent.",
+            "she appreciated his abstract value as a male."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-09",
+      "title": "A Mother — part 2: the night of the grand concert",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch how each new character is drawn in a few details, and what those details say about Dublin’s musical world.",
+      "focus": "Small vanities among the performers, and a demand that begins to set Mrs. Kearney apart.",
+      "context": "Recap: Mrs. Kearney arranged for her daughter Kathleen to accompany four concerts of the Eire Abu Society for eight guineas. The first concerts were thinly attended and the Friday concert was cancelled; suspicious of the committee, she has brought her husband on Saturday. The Feis Ceoil is an Irish music festival; Maritana is a popular opera; Mrs. Pat Campbell was a famous actress; the Freeman is the Freeman’s Journal, a Dublin newspaper.",
+      "contentNote": "A newspaperman’s leering view of a young woman.",
+      "excerpt": {
+        "locator": "A Mother, from the Saturday arrival to the Freeman man’s drink upstairs; opens “The night of the grand concert came. Mrs. Kearney, with her husband and daughter, arrived…”; closes “…upon which he balanced the fine problem of his finances. He was widely respected.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-08",
+        "continuesTo": "reading-12-joyce-dubliners-1917-10",
+        "blocks": [
+          854,
+          876
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63ebdbbcc93fb29be7964b5cbed80d91b52ce3d41209dcae1e93eee59250f485"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-09-q1",
+          "prompt": "How does Miss Beirne’s face change as she looks at the rain, and why might Joyce include her?",
+          "facilitatorNotes": [
+            "The melancholy of the wet street wipes away her trustfulness and enthusiasm, and she sighs that they did their best. She stands for the society’s hopeful amateur effort, which Mrs. Kearney meets with a curt “No, thank you!”"
+          ],
+          "evidence": [
+            "She looked out at the rain until the melancholy of the wet street effaced all the trustfulness and enthusiasm from her twisted features.",
+            "Ah, well! We did our best, the dear knows."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-09-q2",
+          "prompt": "Choose two of the performers (Mr. Duggan, Mr. Bell, Madam Glynn). Which details make each comic or pitiable?",
+          "facilitatorNotes": [
+            "Duggan rose from a hall porter’s son to grand opera but wipes his nose in his gloved hand; Bell won a bronze medal on his fourth try and hides jealousy under friendliness; Madam Glynn, in a faded dress, is caught by a shadow that falls “revengefully” on her collar-bone. The precision can feel cruel or compassionate; readers may disagree about which."
+          ],
+          "evidence": [
+            "he marred the good impression by wiping his nose in his gloved hand once or twice out of thoughtlessness",
+            "On his fourth trial he had been awarded a bronze medal.",
+            "The shadow took her faded dress into shelter but fell revengefully into the little cup behind her collar-bone."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-09-q3",
+          "prompt": "Mrs. Kearney says she has her contract. What do Mr. Holohan’s replies show about how the society is run?",
+          "facilitatorNotes": [
+            "Each official passes the obligation to someone else: Holohan says Fitzpatrick has charge of payment and that it is not his business. Her claim is sound; the question the story raises is how others will judge her manner of pressing it."
+          ],
+          "evidence": [
+            "Mr. Holohan said that it wasn't his business.",
+            "I have my contract, and I intend to see that it is carried out."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-09-q4",
+          "prompt": "What do Mr. Hendrick and Mr. O’Madden Burke add to the story? Look closely at the “moral umbrella.”",
+          "facilitatorNotes": [
+            "The press that will review the concert does not stay for it, and Hendrick takes Miss Healy’s politeness as tribute to himself. Burke balances his finances on his imposing name and is “widely respected.” These are the men whose judgement of Mrs. Kearney will count, and the narration has already shown how much their respectability is worth."
+          ],
+          "evidence": [
+            "His magniloquent western name was the moral umbrella upon which he balanced the fine problem of his finances.",
+            "He was widely respected."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-10",
+      "title": "A Mother — part 3: “I'm asking for my rights”",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Decide whose judgement the ending invites you to share, and whether you share it.",
+      "focus": "A woman’s demand for what a contract owes, and a community that closes ranks against her.",
+      "context": "Recap: Kathleen Kearney was engaged to accompany four concerts for eight guineas. One concert was cancelled, and on the last night her mother cannot get the secretaries to say when Kathleen will be paid; the audience is waiting. Four pounds eight shillings is half of eight guineas. Killarney is a sentimental song; “fol-the-diddle-I-do” mocks a self-important official.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Mother, from the standoff in the dressing-room to the end of the story; opens “While Mr. Holohan was entertaining the Freeman man Mrs. Kearney was speaking so…”; closes “…proper thing, Holohan,\" said Mr. O'Madden Burke, poised upon his umbrella in approval.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-09",
+        "continuesTo": null,
+        "blocks": [
+          877,
+          911
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b4ad49ad9fc4e8e175c8a31cbac9564f9a6b2c1f7721c96f93b4b56895ca2969"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-10-q1",
+          "prompt": "What does Mrs. Kearney demand before the concert can begin, and how does Kathleen behave?",
+          "facilitatorNotes": [
+            "She will not let Kathleen play without her money; when Fitzpatrick pays half, she notes it is four shillings short. Kathleen looks at her shoe, “it was not her fault,” then on her own leads the first singer out. Her silence can be read as embarrassment, as obedience, or as a quiet judgement of her own."
+          ],
+          "evidence": [
+            "She won't go on without her money.",
+            "This is four shillings short.",
+            "Kathleen looked down, moving the point of her new shoe: it was not her fault."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-10-q2",
+          "prompt": "“They wouldn't have dared to have treated her like that if she had been a man.” Is Mrs. Kearney right? Use evidence from the whole story.",
+          "facilitatorNotes": [
+            "The baritone, a man, “had been paid his money” and wants peace, and no committee member takes responsibility for the contract. Yet her insistence also damages Kathleen’s career. A defensible reading is that she is right about the injustice and wrong in her tactics; others see the line as self-pity. The narration reports her view without endorsing it."
+          ],
+          "evidence": [
+            "They wouldn't have dared to have treated her like that if she had been a man.",
+            "He had been paid his money and wished to be at peace with men."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-10-q3",
+          "prompt": "What changes after Mr. Holohan says “I thought you were a lady”?",
+          "facilitatorNotes": [
+            "Argument gives way to a verdict on her conduct as a woman: “condemned on all hands.” Her mimicry of the secretaries had given her a voice; now she stands “like an angry stone image” and leaves. The charge of being unladylike wins where the contract could not be answered."
+          ],
+          "evidence": [
+            "I thought you were a lady,",
+            "After that Mrs. Kearney's conduct was condemned on all hands",
+            "She stood still for an instant like an angry stone image"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-10-q4",
+          "prompt": "Why might Joyce end with Mr. O’Madden Burke “poised upon his umbrella in approval” rather than with Mrs. Kearney? What does the title “A Mother” add?",
+          "facilitatorNotes": [
+            "The last word goes to the man whose respectability rests on a name and an umbrella, so his approval is hollow. The title asks whether her fight is for Kathleen or for herself; the story leaves the daughter almost silent. Readers may feel relief at her exit and irony at the committee’s self-satisfaction at once."
+          ],
+          "evidence": [
+            "You did the proper thing, Holohan,",
+            "poised upon his umbrella in approval."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-11",
+      "title": "Grace — part 1: the fall",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Gather what the crowd, the constable and Mr. Power reveal about the injured man before the narrator tells his history.",
+      "focus": "A fall, literal and social, told with detached precision.",
+      "context": "From Joyce’s Dubliners (1914), fifteen stories of Dublin life around 1900. A curate here is a barman; an ulster is a long overcoat; an outsider is a two-wheeled hired car; the Ballast Office had a public clock. Mr. Power works in the Royal Irish Constabulary office at Dublin Castle, the seat of British government in Ireland. E.C. is a City of London postal district.",
+      "contentNote": "Drunkenness and a bloody injury, including a bitten tongue.",
+      "excerpt": {
+        "locator": "Grace, from the opening through Mr. Power’s departure from the Kernans’ house; opens “Two gentlemen who were in the lavatory at the time tried to lift him up: but he was quite…”; closes “. . . . . . . .”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-joyce-dubliners-1917-12",
+        "blocks": [
+          913,
+          973
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c8846b61faacca9390fe3f4534a98cbabdcbff2f6e1de301992244fd15ba866"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-11-q1",
+          "prompt": "How does the opening present the injured man before we learn his name? What is the effect?",
+          "facilitatorNotes": [
+            "He is “the man,” “the injured man,” “the person on the floor,” smeared with filth, with a “dark medal of blood” by his head. The anonymous, almost clinical view makes his fall a public spectacle; “medal” is an ironic decoration."
+          ],
+          "evidence": [
+            "his clothes were smeared with the filth and ooze of the floor on which he had lain, face downwards.",
+            "A dark medal of blood had formed itself near the man's head on the tessellated floor."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-11-q2",
+          "prompt": "Which details make the scene comic as well as grim?",
+          "facilitatorNotes": [
+            "The constable licks his pencil and makes “ready to indite” as if he feared a delusion; the crowd “distended and closed again elastically”; Kernan insists “'s nothing” through a bitten tongue. Readers may feel sympathy and amusement at once, which suits the story’s detached tone."
+          ],
+          "evidence": [
+            "licked the lead of his pencil and made ready to indite",
+            "The ring of onlookers distended and closed again elastically."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-11-q3",
+          "prompt": "What do the silk hat and gaiters mean to Mr. Kernan, and how does his position compare with Mr. Power’s?",
+          "facilitatorNotes": [
+            "By grace of them a man could always “pass muster”: appearance is dignity. His hat is now dinged and battered. Power’s rise and Kernan’s decline are “arcs” that cross. The phrase “By grace of” gives the title’s word its first, worldly sense."
+          ],
+          "evidence": [
+            "By grace of these two articles of clothing, he said, a man could always pass muster.",
+            "The arc of his social rise intersected the arc of his friend's decline"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-11-q4",
+          "prompt": "Mr. Power promises, “We'll make a new man of him.” What does the scene at the Kernans’ house suggest about that promise?",
+          "facilitatorNotes": [
+            "Power notices the children’s manners and accents with a thoughtful brow; Mrs. Kernan says her husband has been drinking since Friday and does not think he has a home. Power’s promise is cheerful and made “gaily.” “A new man” echoes the Christian language of conversion; the story will test whether anything so deep is on offer."
+          ],
+          "evidence": [
+            "He was surprised at their manners and at their accents, and his brow grew thoughtful.",
+            "He's been drinking since Friday.",
+            "We'll make a new man of him,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-12",
+      "title": "Grace — part 2: friends at the bedside",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 10,
+        "totalMinutes": 29
+      },
+      "challenge": "Track the plan the friends keep from Mr. Kernan, and how each man’s history shapes what he says.",
+      "focus": "Marriage, respectability, and a conversation steered by a capable man.",
+      "context": "Recap: Tom Kernan, a commercial traveller in decline, fell drunk down the stairs of a bar and bit his tongue. His friend Mr. Power brought him home and promised Mrs. Kernan that his friends would make a new man of him. The Sacred Heart is a Catholic devotion; the banshee is a spirit of Irish folklore. Peloothered means drunk; bostooms are louts; omadhauns are fools. Bona-fide travellers could buy drink on Sunday outside the city. “65, catch your cabbage” is a joke about drilling country recruits to the police.",
+      "contentNote": "The narration reports the men’s antisemitic contempt for a moneylender, including a slur on his disabled son; heavy drinking and an unhappy marriage.",
+      "excerpt": {
+        "locator": "Grace, from Mrs. Kernan’s watching the car out of sight to the friends’ plan to meet on Thursday; opens “Mrs. Kernan's puzzled eyes watched the car till it was out of sight. Then she withdrew…”; closes “\"Half-seven at M'Auley's be it!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-11",
+        "continuesTo": "reading-12-joyce-dubliners-1917-13",
+        "blocks": [
+          974,
+          1047
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c8886dd2f7f299217bb47ae759f7549d823d0631de905de004270d561677c75c"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-12-q1",
+          "prompt": "How does the paragraph on Mrs. Kernan’s marriage sum up twenty-five years? What is her religion like?",
+          "facilitatorNotes": [
+            "She found a wife’s life irksome within three weeks, became a mother, and keeps house shrewdly; she accepts her husband’s drinking “as part of the climate.” Religion is a habit, “bounded by her kitchen,” with room for the banshee and the Holy Ghost alike. The tone is comic but not unkind: she is practical rather than devout."
+          ],
+          "evidence": [
+            "She accepted his frequent intemperance as part of the climate",
+            "Her faith was bounded by her kitchen, but, if she was put to it, she could believe also in the banshee and in the Holy Ghost."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-12-q2",
+          "prompt": "Why is Mr. Cunningham “the very man for such a case”? Is there irony in the choice?",
+          "facilitatorNotes": [
+            "He is sensible, informed by the police courts, and his friends defer to him, even thinking his face like Shakespeare’s. Yet his own wife is an incurable drunkard who has pawned their furniture six times. His authority is social, and the man sent to reform a drinker has failed to reform one at home."
+          ],
+          "evidence": [
+            "He had set up house for her six times; and each time she had pawned the furniture on him.",
+            "His friends bowed to his opinions and considered that his face was like Shakespeare's."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-12-q3",
+          "prompt": "Why does Mr. Kernan want the details of his evening “to remain vague,” and what does the passage about Mr. Harford reveal about the friends?",
+          "facilitatorNotes": [
+            "He was abandoned by Harford and is ashamed. The friends know Harford’s drinking habits and stay silent. The narration voices their resentment of Harford as a moneylender in antisemitic terms, then notes that “at other times” they remember his good points: their contempt is prejudice that comes and goes with their debts. Discuss whether the narration shares the prejudice or exposes it."
+          ],
+          "evidence": [
+            "He wished the details of the incident to remain vague.",
+            "At other times they remembered his good points."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-12-q4",
+          "prompt": "Why does Mr. Power answer M'Coy’s question “as if Mr. Kernan had asked it”? What does it show about the code among these men?",
+          "facilitatorNotes": [
+            "Power resents M'Coy for borrowing valises under false pretences and resents “such low playing of the game” more than the loss. The men keep finely graded rules of respectability, enforced through small snubs that the others may not even notice."
+          ],
+          "evidence": [
+            "More than he resented the fact that he had been victimised he resented such low playing of the game.",
+            "He answered the question, therefore, as if Mr. Kernan had asked it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-13",
+      "title": "Grace — part 3: washing the pot",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 17,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how the friends recruit Mr. Kernan without ever simply asking him.",
+      "focus": "Persuasion through talk, and religion as a matter of class and loyalty.",
+      "context": "Recap: Mr. Kernan is in bed after his drunken fall. His friends Power, Cunningham and M'Coy have come, with Mrs. Kernan’s blessing, to bring him back to the Catholic Church, which he joined at his marriage and has neglected for twenty years. A retreat is a series of sermons and devotions; Father Tom Burke was a famous Dominican preacher; an Orangeman belongs to a Protestant society loyal to the Crown; “the Prisoner of the Vatican” was a name for the popes after Italy took Rome in 1870.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Grace, from Mr. Kernan’s question about Thursday to the announcement of a visitor; opens “There was a short silence. Mr. Kernan waited to see whether he would be taken into his…”; closes “\"Not a doubt of it,\" said Mr. Kernan warmly.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-12",
+        "continuesTo": "reading-12-joyce-dubliners-1917-14",
+        "blocks": [
+          1048,
+          1108
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2d326ea579d47d74f4bf018dfea35c727d72ff97e091cd0722d5a26f1f2c0e91"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-13-q1",
+          "prompt": "How do the friends reveal the retreat, and why does Mr. Cunningham call it washing the pot?",
+          "facilitatorNotes": [
+            "Cunningham is evasive (“a little . . . spiritual matter”) until Power says it point blank. The homely metaphor and “a nice collection of scoundrels” make it sound like a shared lark, and Cunningham’s sudden idea that Kernan join seems staged. Persuasion works through fellowship rather than argument."
+          ],
+          "evidence": [
+            "it's just a little . . . spiritual matter.",
+            "we're all going to wash the pot.",
+            "You might join in and we'd have a four-handed reel."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-13-q2",
+          "prompt": "Why does Mr. Kernan show “a stiff neck,” and what wins him over?",
+          "facilitatorNotes": [
+            "He will not seem to be managed, so he listens “with an air of calm enmity.” Talk of the Jesuits flatters him: they are educated and cater for the upper classes, and that is why he has “a feeling for them.” Snobbery does what piety could not."
+          ],
+          "evidence": [
+            "he thought he owed it to his dignity to show a stiff neck.",
+            "The Jesuits cater for the upper classes,",
+            "That's why I have a feeling for them."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-13-q3",
+          "prompt": "What does the talk about Father Tom Burke and Crofton suggest about what these men value in religion?",
+          "facilitatorNotes": [
+            "They admire the preacher’s style and voice, and admit he was not much of a theologian. Kernan quotes an Orangeman’s tolerant remark, M'Coy half agrees, and Cunningham closes ranks: “our religion is the religion.” Religion here is performance and tribal loyalty more than belief; some readers also hear genuine warmth in the memory."
+          ],
+          "evidence": [
+            "Upon my word it was magnificent, the style of the oratory.",
+            "our religion is the religion, the old, original faith."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-14",
+      "title": "Grace — part 4: Credo",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh what the friends claim to know against how confidently they claim it, and watch the mood of the room change.",
+      "focus": "Confident half-knowledge, and a story that produces a feeling of faith.",
+      "context": "Recap: Mr. Kernan’s friends have persuaded him, half against his will, to join them at a retreat for business men at the Jesuit church on Thursday. Now a grocer, Mr. Fogarty, arrives with whisky. Leo XIII was Pope from 1878 to 1903 and Pius IX before him; ex cathedra means with the full authority of the papal office; the Vatican Council declared papal infallibility in 1870. John MacHale was Archbishop of Tuam; Credo is Latin for “I believe.” At a retreat’s close the congregation renews its baptismal vows holding lighted candles.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Grace, from Mr. Fogarty’s arrival to Mr. Kernan’s refusal of the candles; opens “Mrs. Kernan came to the door of the bedroom and announced:”; closes “. . . . . . . .”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-13",
+        "continuesTo": "reading-12-joyce-dubliners-1917-15",
+        "blocks": [
+          1109,
+          1201
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "69c4b9d7a321fba6da983578e3740304126d0f56e23173699fa79f9991a4c369"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-14-q1",
+          "prompt": "Follow the argument over Leo XIII’s motto and the German cardinal. How reliable is the friends’ knowledge, and why does it not matter to them?",
+          "facilitatorNotes": [
+            "They correct one another with confidence: “Lux upon Lux,” “Lux in Tenebris,” “Tenebrae”; the cardinal is “Dolling . . . or Dowling.” Their facts are muddled (the German who refused the dogma was the theologian Döllinger, not a cardinal), but authority in this room comes from tone, and Cunningham wins by being positive."
+          ],
+          "evidence": [
+            "it was Lux upon Lux.",
+            "a German cardinal by the name of Dolling . . . or Dowling"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-14-q2",
+          "prompt": "How does Mr. Cunningham’s story of John MacHale change the room?",
+          "facilitatorNotes": [
+            "MacHale argues against infallibility, then shouts “Credo!” the moment the Pope declares it. The words build “the vast image of the church” in the listeners’ minds, and Mrs. Kernan enters a “solemn company.” The story produces a feeling of faith whose content is submission; whether that feeling is real devotion or a mood is open to argument."
+          ],
+          "evidence": [
+            "shouted out with the voice of a lion",
+            "Mr. Cunningham's words had built up the vast image of the church in the minds of his hearers."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-14-q3",
+          "prompt": "Mr. Kernan agrees to the retreat but bars the candles. What does his objection reveal?",
+          "facilitatorNotes": [
+            "He accepts confession but calls the candles “magic-lantern business,” the scruple of a man of Protestant stock, and he enjoys “having created an effect on his audience.” His conversion is partly performance; his wife’s retort points the irony."
+          ],
+          "evidence": [
+            "I bar the magic-lantern business.",
+            "conscious of having created an effect on his audience",
+            "There's a nice Catholic for you!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-joyce-dubliners-1917-15",
+      "title": "Grace — part 5: the spiritual accountant",
+      "sourceId": "joyce-dubliners-1917",
+      "genre": "short fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Compare the sermon’s language with what the story has shown of the men listening to it.",
+      "focus": "Religion translated into business, and the irony of the story’s title.",
+      "context": "Recap: after his drunken fall, Tom Kernan has been talked by his friends Cunningham, Power, M'Coy and Fogarty into attending a retreat for business men. A transept is a cross-arm of a church; a quincunx is an arrangement of five, four at the corners and one in the centre; the red light before the altar marks the reserved Sacrament. Father Purdon’s text is Luke 16:8–9, the close of the parable of the unjust steward, who is praised for dealing shrewdly with his master’s debtors; Mammon is wealth thought of as a god.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Grace, the retreat at the Jesuit church in Gardiner Street, to the end of the story; opens “The transept of the Jesuit Church in Gardiner Street was almost full; and still at every…”; closes “…But, with God's grace, I will rectify this and this. I will set right my accounts.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-joyce-dubliners-1917-14",
+        "continuesTo": null,
+        "blocks": [
+          1202,
+          1212
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9dd7823f685eee34ed6c0c51cc76a33380de2caba1eb75456530b1f76f26c46f"
+      },
+      "questions": [
+        {
+          "id": "reading-12-joyce-dubliners-1917-15-q1",
+          "prompt": "Who sits in the congregation around Mr. Kernan, and what does the list suggest?",
+          "facilitatorNotes": [
+            "Harford the moneylender, Fanning the “mayor maker,” Grimes with his pawnbroker’s shops, a nephew up for a job, Hendrick of the Freeman, and poor O’Carroll. It is the city’s web of money and influence, and Kernan feels “more at home” as he recognises faces. The church gathers the same men the pubs and offices do."
+          ],
+          "evidence": [
+            "Mr. Harford, the moneylender",
+            "Gradually, as he recognised familiar faces, Mr. Kernan began to feel more at home."
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-15-q2",
+          "prompt": "How does Father Purdon interpret his text, and what is strange about his reading?",
+          "facilitatorNotes": [
+            "He admits it is one of the most difficult texts, then presents the worshippers of Mammon as “exemplars” for business men and calls himself their “spiritual accountant.” A parable about a dishonest steward becomes reassurance that ordinary dealings can be squared with God. Some readers find this a hollow bargain; others say he meets his audience where they live."
+          ],
+          "evidence": [
+            "It was one of the most difficult texts in all the Scriptures, he said, to interpret properly.",
+            "setting before them as exemplars in the religious life those very worshippers of Mammon",
+            "he was their spiritual accountant"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-15-q3",
+          "prompt": "The story is called “Grace.” Where, if anywhere, does grace appear?",
+          "facilitatorNotes": [
+            "In theology grace is God’s free, unearned gift. In the story the word has meant the grace of a silk hat and Mr. Fogarty’s grace of manner; here it is a phrase in a bookkeeper’s formula. A defensible reading is that the story shows grace reduced to accounts; others argue that the plain admission “I find this wrong” keeps its possibility open."
+          ],
+          "evidence": [
+            "But, with God's grace, I will rectify this and this.",
+            "to be straight and manly with God"
+          ]
+        },
+        {
+          "id": "reading-12-joyce-dubliners-1917-15-q4",
+          "prompt": "Joyce’s brother said the story’s three parts follow Dante’s journey from Hell through Purgatory to Paradise. How well does this last scene play the part of Paradise?",
+          "facilitatorNotes": [
+            "The fall to the lavatory floor and the sickbed fit Hell and Purgatory comically. Paradise is a church of black coats and white collars and a sermon that ends in balanced accounts. The parallel sharpens the irony; readers can argue whether the ending is pure satire or holds some real hope."
+          ],
+          "evidence": [
+            "The light of the lamps of the church fell upon an assembly of black clothes and white collars",
+            "Well, I have verified my accounts. I find all well."
           ]
         }
       ]
