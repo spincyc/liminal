@@ -514,6 +514,231 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-09",
+      "title": "Twenty Years at Hull-House: a Saturday night in East London (Chapter IV, first part)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Weigh a single overwhelming scene as evidence, and notice how Addams judges both what she saw and how she saw it.",
+      "focus": "A first sight of extreme poverty, and the discovery that a cultivated mind can get in the way of seeing it.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. After college Addams began medical training in Philadelphia, but illness ended it, and her doctor sent her to Europe for two years. Dr. S. Weir Mitchell was a Philadelphia physician known for prescribing long bed rest; Carlyle’s Frederick the Great is a long history and Gray’s Anatomy a medical textbook. Hucksters are street sellers; farthings and ha’pennies were the smallest English coins; the “submerged tenth” was a new phrase for the very poorest part of the population. Thomas De Quincey was an English essayist; “The Vision of Sudden Death” is part of his essay on a night ride on the mail-coach. The saying about “conduct” comes from the critic Matthew Arnold.",
+      "contentNote": "Describes starving people in London eating spoiled food. “Savagery,” used of humanity’s distant past, reflects period ideas of human progress.",
+      "excerpt": {
+        "locator": "Chapter IV, “The Snare of Preparation,” from the opening through “conduct, and not culture”; opens “THE winter after I left school was spent in the Woman's Medical College of Philadelphia,…”; closes “…the moderns plainly said that \"conduct, and not culture is three fourths of human life.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          111,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dcc3e6f488e3fbc2f5417ccd5dfc523f4307509ba8fc1281078b3d84c11c5586"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-09-q1",
+          "prompt": "Addams says she can recall these struggles only through notebooks written “only in moments of deep depression.” How should that affect the way we read the chapter? What other cause of her struggles does she admit?",
+          "facilitatorNotes": [
+            "She warns that her record is lopsided: the notebooks catch her low points, not her ordinary days. She also concedes that her long illness and “nervous depression” lay behind much of it, though she insists it “could not have been all due to my health.” A memoirist who questions her own sources invites the reader to weigh them too."
+          ],
+          "evidence": [
+            "only in moments of deep depression when overwhelmed by a sense of failure",
+            "doubtless there was much nervous depression at the foundation of the spiritual struggles which this chapter is forced to record"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-09-q2",
+          "prompt": "In the Mile End Road scene, what details does Addams give first, and what is her “final impression”? Why might the hands stay with her for the rest of her life?",
+          "facilitatorNotes": [
+            "She first notes clothing, pale faces and the “cunning” of people who must bargain or starve, and the man who eats a raw cabbage on the curb. What remains is “myriads of hands,” reaching for food already unfit to eat. Hands mean work and need at once, “this oldest tool” of human progress, which is why a classroom of raised hands still brings the scene back."
+          ],
+          "evidence": [
+            "but of myriads of hands, empty, pathetic, nerveless and workworn",
+            "this oldest tool with which man has dug his way from savagery"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-09-q3",
+          "prompt": "Addams calls what she saw “most fragmentary and lurid” and “quite unfair.” Unfair to whom? Why include the admission?",
+          "facilitatorNotes": [
+            "Unfair to the many people already working among the poor, whom the tourists never saw, and perhaps to the poor themselves, shown to visitors as a spectacle by a guide pleased with a “new phrase.” She admits that a single vivid glimpse is weak evidence, even as she shows how strongly it shaped her. Readers can ask whether a scene can be unfair as evidence and still true as experience."
+          ],
+          "evidence": [
+            "It was, of course, a most fragmentary and lurid view of the poverty of East London, and quite unfair.",
+            "I should have been shown either less or more"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-09-q4",
+          "prompt": "Why does remembering De Quincey at that moment disgust her? Do you agree that literature “only served to cloud the really vital situation”?",
+          "facilitatorNotes": [
+            "De Quincey, facing an accident, could not shout a warning until he had remembered a line of Homer; Addams, facing hunger, reached for De Quincey. She sees a “vicious circle” of educated people who respond to life through books. Yet she makes the point with a literary story and a quotation, in a memoir that is itself literature, so readers can argue that books may also sharpen what we see."
+          ],
+          "evidence": [
+            "lumbering our minds with literature that only served to cloud the really vital situation spread before our eyes",
+            "conduct, and not culture is three fourths of human life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-10",
+      "title": "Twenty Years at Hull-House: a sweet dessert in the morning (Chapter IV, middle)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow an argument about education that moves between general claims and particular scenes, and test the claims against the scenes.",
+      "focus": "Cultivation without purpose, a protest that changes nothing, and a search for fellowship.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. In the 1880s, after illness ended her medical training, Addams spent two years in Europe, where a night in the poorest part of London had shocked her into doubting the value of her studies. Weltschmerz (German) is world-weariness; pensions are boarding-houses; a Hausfrau is a housewife; Saxe-Coburg was a small German duchy; Baron Stockmar was tutor and adviser to Prince Albert, Queen Victoria’s husband; Albrecht Dürer was a German artist of the Reformation era, and St. Hubert is one of his engravings; the Roman Campagna is the countryside round Rome; the Catacombs are early Christian burial tunnels; Mazzini was a leader of Italian unification. “The great refusal” is Dante’s phrase for turning down a great calling. The two lines of verse open Matthew Arnold’s poem “Self-Dependence.”",
+      "contentNote": "Describes women scarred by scalding at work.",
+      "excerpt": {
+        "locator": "Chapter IV, from the “Weltschmerz” of educated young women through Addams’s joining the village church; opens “For two years in the midst of my distress over the poverty which, thus suddenly driven…”; closes “…be so easy for the world to slip back into the doctrines of selection and aristocracy?”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          121,
+          132
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6960e926c2f3e208a4bf0b1e48cb844bc57ab407662b97e288f10d251bb6a298"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-10-q1",
+          "prompt": "Addams argues that the first generation of college women had lost “that simple and almost automatic response to the human appeal.” What does she think their education did to them?",
+          "facilitatorNotes": [
+            "It trained them to acquire knowledge and “receive impressions,” not to act, and kept them so sheltered that they were never asked to do anything, not even to refuse. Ask whether the criticism is of women’s education in particular or of any education that keeps students as spectators, and whether it still applies."
+          ],
+          "evidence": [
+            "had developed too exclusively the power of acquiring knowledge and of merely receiving impressions",
+            "they are so sheltered and pampered they have no chance even to make \"the great refusal.\""
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-10-q2",
+          "prompt": "Compare the mother and the daughter in the pensions. What does the daughter want to cry out, and why can’t she say it?",
+          "facilitatorNotes": [
+            "The mother bustles, talks bad German and makes real connections; the daughter sits “being cultivated.” The daughter knows she has fine chances and no real talent, and envies her mother’s busy girlhood full of obstacles. She cannot say so without sounding ungrateful and wounding her mother. Addams writes as if from inside the daughter; readers may suspect she is describing herself."
+          ],
+          "evidence": [
+            "I am simply smothered and sickened with advantages.",
+            "It is like eating a sweet dessert the first thing in the morning."
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-10-q3",
+          "prompt": "In Saxe-Coburg Addams crosses the square to protest. What happens, and why does the incident spoil the book she had been reading?",
+          "facilitatorNotes": [
+            "The brewery owner receives her with “exasperating indifference,” and the innkeeper slips away; the protest changes nothing. But it changes how she reads: a tutor devoted to making “princely the mind of his prince” seems blind to the multitude, and she turns to Dürer because his pictures refuse a “smooth and cultivated view of life.” Readers can judge whether her protest was brave, naive or both."
+          ],
+          "evidence": [
+            "Stung into action by one of those sudden indignations against cruel conditions which at times fill the young with unexpected energy",
+            "how could a good man, feeling so keenly his obligation"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-10-q4",
+          "prompt": "Addams joined the village church at twenty-five. What reasons does she give, and how does the decision connect with her “devotion to the ideals of democracy”?",
+          "facilitatorNotes": [
+            "She felt no emotional “conversion” but wanted “an outward symbol of fellowship” after many “piteous failures.” She saw early Christianity, “the faith of the fisherman and the slave,” as a protest against a world built for a privileged few. The same chapter laughs at her walk into Rome like a pilgrim, so readers can notice how she separates sincere conviction from youthful theatre."
+          ],
+          "evidence": [
+            "I took upon myself the outward expressions of the religious life with all humility and sincerity",
+            "the faith of the fisherman and the slave had been boldly opposed to the accepted moral belief that the well-being of a privileged few might justly be built upon the ignorance and sacrifice of the many"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-11",
+      "title": "Twenty Years at Hull-House: a bullfight in Madrid (Chapter IV, end)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 10,
+        "totalMinutes": 27
+      },
+      "challenge": "Track the experiences that finally move Addams from study to action, and judge which one does the work.",
+      "focus": "Good motives without knowledge, a naive faith in authority, and a moment of self-disgust that becomes a plan.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. In her twenties, after illness ended her medical training, Addams spent years studying and travelling in Europe while doubting the value of culture cut off from action. Collateral is property pledged against a loan; a promissory note is a written promise to repay; satyrs are goat-legged figures of Greek myth. The London match girls struck in 1888 against low pay and “phossy jaw,” a disease of the jawbone caused by phosphorus in match factories. The Positivists followed the French philosopher Auguste Comte’s “religion of humanity.” Caparisoned horses wear ornamental coverings; a raison d’être is a reason for existing. Ellen Gates Starr, her school friend, later founded Hull-House with her. Toynbee Hall in East London was the first settlement house.",
+      "contentNote": "Describes starving hogs eating one of their own, children compared to animals, a disfiguring industrial disease, and a bullfight in which bulls and horses are killed. A streetcar conductor, quoted by Addams, uses the ethnic slur “dago” for Italian immigrants.",
+      "excerpt": {
+        "locator": "Chapter IV, from the drought-stricken farm to the end of the chapter; opens “In one of the intervening summers between these European journeys I visited a western…”; closes “…when they are longing to construct the world anew and to conform it to their own ideals.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          133,
+          142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d5dc2b5424fdc3b072f7442895c41664cbe5990753d4f5153a4681e615171b45"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-11-q1",
+          "prompt": "Why does Addams withdraw her mortgage money, and what does the sheep farm teach her about good motives?",
+          "facilitatorNotes": [
+            "She cannot accept interest from farms that drought can reduce to such misery, though withdrawing causes “hardship to the farmers.” The sheep farm, meant to do good, ends in rotting hoofs because neither partner knew the work. Her own phrase, “the impeccability of her motives,” mocks the idea that meaning well is enough."
+          ],
+          "evidence": [
+            "It seemed to me quite impossible to receive interest from mortgages placed upon farms which might at any season be reduced to such conditions",
+            "perhaps one partner depended too much upon the impeccability of her motives"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-11-q2",
+          "prompt": "At the match girls’ meeting Addams did not connect what she saw with “the labor movement.” What did she still believe, according to her comparison with a young character of Wells’s?",
+          "facilitatorNotes": [
+            "That somewhere a body of “authoritative people” would put things right once they knew; that the world might be tragic but never “contemptible or squalid or self-seeking.” Her search for a “cathedral of humanity” in Ulm and Comte belongs to the same hope. Her “smug notebook” shows the older writer smiling at it."
+          ],
+          "evidence": [
+            "that somewhere in Church or State are a body of authoritative people who will put things to rights as soon as they really know what is wrong",
+            "it never for an instant occurs to him that it may be contemptible or squalid or self-seeking"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-11-q3",
+          "prompt": "Why does the bullfight, rather than any scene of poverty, finally move her to act? What does she accuse herself of?",
+          "facilitatorNotes": [
+            "She watched the killing with “comparative indifference” because romantic associations (knights, gladiators) covered it, and her shocked friends made her see this. That night she recognized the same habit in her life: a beautiful plan had become “a defense for continued idleness.” The ox-cart image turns noble self-image into plain self-seeking."
+          ],
+          "evidence": [
+            "a mere paper reform had become a defense for continued idleness",
+            "I had been tied to the tail of the veriest ox-cart of self-seeking"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-11-q4",
+          "prompt": "The chapter’s title comes from Tolstoy, found “years afterward.” What is “the snare of preparation,” and does the chapter prove it is a snare? Could more preparation have helped her?",
+          "facilitatorNotes": [
+            "It is endless study and travel that keep the young from acting “at the very period of life when they are longing to construct the world anew.” Her years of culture and the bullfight support Tolstoy; but the sheep farm shows what action without knowledge costs, and her trip to Toynbee Hall is preparation of a practical kind. A strong answer distinguishes passive “receptivity” from learning by doing."
+          ],
+          "evidence": [
+            "It is easy to become the dupe of a deferred purpose, of the promise the future can never keep",
+            "hopelessly entangling them in a curious inactivity"
+          ]
+        }
+      ]
     }
   ]
 }
