@@ -29,7 +29,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "2b5b0b9c49919c674611fedea44b2206c6f033e28b56685f826f02e519748f95"
+        "textHash": "2bf7febbfd7e1d5a2448254c876b6a256ce208988a54d0bdba11bfde40347d1c"
       },
       "questions": [
         {
@@ -62,7 +62,7 @@
           ],
           "evidence": [
             "the name of Ivanhoe, in the halls where by nature and kindred it should have sounded most acceptably",
-            "Had disease laid her hand heavy up on his strength and comeliness?"
+            "Had disease laid her hand heavy upon his strength and comeliness?"
           ]
         },
         {
@@ -91,7 +91,7 @@
       },
       "challenge": "Compare what the Palmer says about Isaac with how he treats him, and follow Isaac from terror to suspicion to hope.",
       "focus": "A rescue offered with contempt, and a victim who has learned to distrust help.",
-      "context": "Recap: the Palmer, a mysterious pilgrim staying the night at Cedric’s hall of Rotherwood, has told the Lady Rowena what little he says he knows of the banished Knight of Ivanhoe. Isaac of York, a Jewish moneylender, has also been given shelter; at supper the Templar Brian de Bois-Guilbert and his Saracen (Muslim) slaves showed open hatred of him. St Dunstan was an English saint; matins are morning prayers; to be “abstracted” is to be stolen; a Musselman is a Muslim; Philip de Malvoisin and Reginald Front-de-Bœuf are Norman barons; the rack was an instrument of torture; Isaac recalls the Bible’s account of captives of Rabbah put under saws and axes; Lazarus is the beggar in Jesus’s parable; an Ishmaelite here is a Muslim; to “gird up our loins” is to make ready for a journey.",
+      "context": "Recap: the Palmer, a mysterious pilgrim staying the night at Cedric’s hall of Rotherwood, has told the Lady Rowena what little he says he knows of the banished Knight of Ivanhoe. Isaac of York, a Jewish moneylender, has also been given shelter; at supper the Templar Brian de Bois-Guilbert and his Saracen (Muslim) slaves showed open hatred of him. St Dunstan was an English saint; matins are morning prayers; to be “abstracted” is to be stolen; a Musselman is a Muslim; Philip de Malvoisin and Reginald Front-de-Bœuf are Norman barons; the rack was an instrument of torture; Isaac recalls the Bible’s account of captives of Rabbah put under saws and axes; Lazarus is the beggar in Jesus’s parable; an Ishmaelite here is a Muslim; to “gird up our loins” is to make ready for a journey. The 1820 printing has no stop after “the mixed language of the country” before Isaac’s cry, nor after “his pilgrim’s staff”; the text follows the page as printed.",
       "contentNote": "Servants insult Isaac in antisemitic terms, Isaac dreams of torture, and the Palmer’s help is mixed with contempt. Scott shows these prejudices to expose them, but his narration also shares some of its age’s stereotypes; they are perspectives to examine, not descriptions of a people.",
       "excerpt": {
         "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the sixth chapter (printed “CHAPTER VII.”), from the cells of the household to Isaac’s decision to flee; opens “In the anti-room he found his attendant Anwold, who, taking the torch from the hand of…”; closes “…urgency of his companion; \"but I must secure the means of leaving this place—follow me.\"”.",
@@ -104,7 +104,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "1505ba29b28d09bf2e2e60314302675a06ad192103f3157c465ffe7f396aa0e3"
+        "textHash": "aadebc3e55693c4e38eac9ca4f386833e5b0c744162e481ee97e021dfeb2c616"
       },
       "questions": [
         {
@@ -180,7 +180,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "327ae8540373379bfce72d55b4d2c1628ba93aeb831a086a40e22597170a733e"
+        "textHash": "0a1ad6d222944971ee9e80035c8869ef60fdf05cac77de330f9369b24212c497"
       },
       "questions": [
         {
@@ -675,6 +675,535 @@
           "evidence": [
             "settled Isaac's doubts by snatching the pouch itself from his side",
             "as if he had done some honest and honourable action"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-10",
+      "title": "Ivanhoe: A Jest, and the Laws of the Lists (Chapter VIII, part 1)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice who objects to Prince John’s jest and on what grounds, and keep the four laws of the tournament straight.",
+      "focus": "A prince whose followers must manage him, and a ceremony that turns combat into rules.",
+      "context": "Recap: at the tournament of Ashby, Prince John has insulted the Saxon Cedric and Isaac of York, been answered boldly by a yeoman archer, and ridden off with Isaac’s purse while the crowd laughed. This chapter is headed “CHAPTER IX.” in the first edition, which had numbered an earlier chapter twice; later editions call it Chapter VIII. The motto comes from “Palamon and Arcite,” a poem about two knights who fight for one lady. “By my halidom” is an oath (by my holy relics); the Prior of Jorvaulx is the head of an abbey; to “gage” is to pledge; a palfrey is a riding horse; the “arms of courtesy” are blunted lances; “at outrance” (French à outrance) means to the death; largesse is a shower of gifts; cap-a-pee means from head to foot; a span is about nine inches, and pennons are small flags.",
+      "contentNote": "Prince John proposes Rebecca, a Jewish woman, as Queen of Beauty only to insult the Saxons, lumping them together as “dog or hog,” and the Prior answers “a Jewess!” in horror. Scott presents the jest as an insult even John’s own followers reject; the scene shows the period’s contempt for Jews.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the eighth chapter (printed “CHAPTER IX.”), from its motto to the knights crowding the northern end of the lists; opens “At this the challenger with fierce defy His trumpet sounds; the challenged makes reply:…”; closes “…them, joined with the restless motion of the feathers to add liveliness to the scene.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-scott-ivanhoe-1820-11",
+        "blocks": [
+          418,
+          439
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "740a8ee67ab35668b43b7b40f0cae86b397e783f290c84609867e101a621f65d"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-10-q1",
+          "prompt": "Why does Prince John propose Rebecca as Queen of Love and Beauty? What does “Saxon or Jew, dog or hog” show about how he sees both?",
+          "facilitatorNotes": [
+            "Not from admiration: he wants “to mortify the Saxon churls.” His phrase lumps Saxons and Jews with animals; Rebecca is only a tool for an insult. The Prior’s horror shows a different prejudice, the fear of scandal (“stoned out of the lists”)."
+          ],
+          "evidence": [
+            "were it only to mortify the Saxon churls",
+            "Saxon or Jew, dog or hog, what matters it?"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-10-q2",
+          "prompt": "Bracy and Waldemar Fitzurse both object. What reason does each give, and what does John’s retreat (“I did but jest”) show about who holds power?",
+          "facilitatorNotes": [
+            "Bracy says no knight would fight under such an insult; Waldemar says it would ruin John’s plans and claims a counsellor’s right, since his own safety is staked with John’s. John gives way at Waldemar’s tone: he depends on followers he cannot afford to lose. Students may notice that the objection is to insulting the knights, not to using Rebecca."
+          ],
+          "evidence": [
+            "no knight here will lay lance in rest if such an insult is attempted",
+            "your interest and safety are not more deeply gaged than theirs",
+            "I did but jest"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-10-q3",
+          "prompt": "What is the difference between touching a challenger’s shield with the reverse of the lance and with the sharp end? Why does Scott spell out the rules before any fighting?",
+          "facilitatorNotes": [
+            "The reverse chooses the arms of courtesy, lances with a flat board on the tip; the sharp end means a fight “at outrance,” with real weapons. Knowing the rules lets readers feel the stakes when a knight later makes that choice."
+          ],
+          "evidence": [
+            "If he did so with the reverse of his lance",
+            "But if the shield was touched with the sharp end of the lance"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-10-q4",
+          "prompt": "Reread the sentence that ends the laws. What is Scott’s verdict on John as a politician, and how has this chapter already proved it?",
+          "facilitatorNotes": [
+            "John tries to buy popularity with games for the people but keeps throwing it away by “wanton aggression” on their feelings. The Rebecca jest a page earlier is an example, and Waldemar used the same word, “wantonness.” Students may add the purse-snatching of the last chapter."
+          ],
+          "evidence": [
+            "which he was perpetually throwing down by some inconsiderate act of wanton aggression",
+            "It is the mere wantonness of insult"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-11",
+      "title": "Ivanhoe: The Challengers Hold the Field (Chapter VIII, part 2)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the narrator as he steps out of the story to comment and back in again, and ask what each comment does.",
+      "focus": "Glory and forgetting: the first jousts, a crowd’s taste for danger, and a Saxon’s wounded pride.",
+      "context": "Recap: Prince John’s followers talked him out of naming Rebecca Queen of Love and Beauty, and the heralds proclaimed the laws: five challengers, led by the Templar Brian de Bois-Guilbert, will meet all comers, and a shield struck with the sharp end of a lance means a fight with real weapons. The narrator pretends to follow an old “Saxon authority,” the Wardour Manuscript, which Scott made up. The “contemporary poet” is Samuel Taylor Coleridge; Scott quotes from memory the close of his “The Knight’s Tomb,” which this library also holds. Escutcheons are painted shields of arms; the five challengers are Bois-Guilbert, Malvoisin, Front-de-Bœuf, Grantmesnil and Ralph de Vipont, a Knight of St John (a Hospitaller, a member of a religious order of knights); the “attaint” is a fair, square strike; the melée (mêlée) is the general fight planned for the second day; clowns here are country people; “foiled” means beat back. The 1820 printing ends the paragraph about the unpopular challengers with a comma (“strangers and foreigners,”); the text keeps the page as printed.",
+      "contentNote": "Knights are thrown to the ground and disgraced. Cedric counts every Norman victory as a defeat for England; such national feeling is a perspective the novel examines.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the eighth chapter (printed “CHAPTER IX.”), from the opening of the barriers to the Prince’s talk of giving the prize to Bois-Guilbert; opens “At length the barriers were opened, and five knights, chosen by lot, advanced slowly into…”; closes “…Bois-Guilbert, who had, with a single spear, overthrown two knights, and foiled a third.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-10",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-12",
+        "blocks": [
+          440,
+          455
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ddee1852096bafe7580af84c0b275f038730ca909cfd44cc91396dde347f0141"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-11-q1",
+          "prompt": "Scott refuses to describe the knights’ arms and quotes three lines about knights who are “dust.” What is he saying about fame, and how does it change the way we watch the jousts that follow?",
+          "facilitatorNotes": [
+            "Their castles are now “green mounds,” their names forgotten: the splendour is temporary. Then “Now, however, no whit anticipating the oblivion” turns back to knights fighting for a glory that will not last. Some readers find the passage melancholy; others hear irony about chivalry itself."
+          ],
+          "evidence": [
+            "The knights are dust, And their good swords are rust",
+            "no whit anticipating the oblivion which awaited their names and feats"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-11-q2",
+          "prompt": "Why are some spectators “rather disappointed” that the first knights choose the arms of courtesy? What comparison does the narrator make with his own day?",
+          "facilitatorNotes": [
+            "They enjoy a tournament “exactly in proportion to the danger.” The same sort of people, he says, now applaud “the deepest tragedies”: a joke that links medieval bloodthirst to his readers’ own tastes. Students might ask whether audiences today are different."
+          ],
+          "evidence": [
+            "were rather disappointed at the champions choosing the arms of courtesy",
+            "who, in the present day, applaud most highly the deepest tragedies"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-11-q3",
+          "prompt": "Why is breaking a lance “athwart” an opponent counted more disgraceful than being thrown from the horse?",
+          "facilitatorNotes": [
+            "A fall might be an accident; swerving shows clumsy handling of weapon and horse. The code values skill and control above luck."
+          ],
+          "evidence": [
+            "a circumstance which was accounted more disgraceful than being actually unhorsed",
+            "whereas the other evinced awkwardness"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-11-q4",
+          "prompt": "Wamba says it is better to be “the best man among a hundred, than the best man of two.” What does he mean, how do Athelstane and Cedric take it, and what does the exchange show about Cedric’s hopes?",
+          "facilitatorNotes": [
+            "Athelstane will fight only in tomorrow’s crowded melée; Wamba mocks him with praise that sounds like a compliment. Athelstane hears a compliment, Cedric hears the joke and glares. Cedric wants Athelstane to save England’s honour, but his chosen champion is “too inert.” Some readers take Wamba to mean the melée is the safer stage; others that Athelstane avoids single combat."
+          ],
+          "evidence": [
+            "It was better to be the best man among a hundred, than the best man of two.",
+            "Athelstane took the observation as a serious compliment",
+            "a disposition too inert and unambitious"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-12",
+      "title": "Ivanhoe: The Disinherited Knight (Chapter VIII, part 3)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Judge a masked stranger only by what he does and says, without deciding who he is.",
+      "focus": "A challenge to the death, an exchange of boasts, and a raven on a shield.",
+      "context": "Recap: the five challengers, led by the Templar Bois-Guilbert, have beaten every knight who rode against them; Cedric fumes at the Norman triumph, the slow Athelstane will not fight, and Prince John is ready to give Bois-Guilbert the prize. Desdichado is Spanish for “disinherited”; Ralph de Vipont is the challenger from the Hospitallers; a pavilion is a large tent; the Templars were an order of fighting monks, sworn at first to poverty; “Gramercy” means many thanks; Gare le Corbeau is French for “Beware the raven”; hams are the backs of a horse’s thighs; a demi-volte is a half turn on horseback.",
+      "contentNote": "The Templar promises his challenger death before nightfall, and the two knights meet at full gallop.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the eighth chapter (printed “CHAPTER IX.”), from the solitary trumpet to the silence before the second course; opens “At length, as the Saracenic music of the challengers concluded one of those long and high…”; closes “…a silence, so deep and so dead, that it seemed the multitude were afraid even to breathe.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-11",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-13",
+        "blocks": [
+          456,
+          466
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b9ae84706e32709590bb973568f2e03c7ffc3ab2cfa35066d1219429101b489f"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-12-q1",
+          "prompt": "What do the crowd’s shouts advise, and what does the stranger do instead? Why is everyone astonished?",
+          "facilitatorNotes": [
+            "The crowd tells him to touch Vipont’s shield, “your cheapest bargain.” He rides to the strongest challenger and strikes Bois-Guilbert’s shield with the sharp end, a challenge to mortal combat. It suggests great confidence or a personal quarrel; the passage does not say which."
+          ],
+          "evidence": [
+            "he has the least sure seat, he is your cheapest bargain",
+            "struck with the sharp end of his spear the shield of Brian de Bois-Guilbert until it rung again"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-12-q2",
+          "prompt": "Compare the Templar’s words with the stranger’s replies. Who wins the exchange, and how?",
+          "facilitatorNotes": [
+            "The Templar asks if he has confessed and promises he will “sleep in paradise.” The stranger answers that he is “fitter to meet death,” a jab at the Templar’s conscience, then repays mockery with mock courtesy: take a fresh horse and lance. Cool replies turn the threat back on the boaster."
+          ],
+          "evidence": [
+            "I am fitter to meet death than thou art",
+            "for this night thou shalt sleep in paradise",
+            "I advise thee to take a fresh horse and a new lance"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-12-q3",
+          "prompt": "Bois-Guilbert changes his shield. What did the old device mean, what does the new one say, and what does the narrator think of the Templars?",
+          "facilitatorNotes": [
+            "Two knights sharing one horse recalled the order’s humble, poor beginnings, which the narrator says they traded for “arrogance and wealth.” The raven gripping a skull, with “Beware the raven,” is pure threat. The change of shields is a small picture of the order’s change."
+          ],
+          "evidence": [
+            "representing two knights riding upon one horse",
+            "which they had since exchanged for the arrogance and wealth",
+            "Gare le Corbeau"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-12-q4",
+          "prompt": "How does Scott make the first course feel fast and the pause after it feel slow? Point to words that set each pace.",
+          "facilitatorNotes": [
+            "“The speed of lightning,” “the shock of a thunderbolt” and lances that “burst into shivers” give speed; then applause is hushed into a silence “so deep and so dead” that the crowd seem afraid to breathe. Readers wait with the crowd."
+          ],
+          "evidence": [
+            "closed in the centre of the lists with the shock of a thunderbolt",
+            "hushed into a silence, so deep and so dead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-13",
+      "title": "Ivanhoe: Five Victories (Chapter VIII, part 4)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Compare how the stranger beats each challenger, and decide which victory tells most about him.",
+      "focus": "Skill, courtesy, and a toast that takes sides.",
+      "context": "Recap: an unknown knight calling himself Desdichado, the Disinherited, struck the Templar Bois-Guilbert’s shield with the sharp end of his lance; their first course ended even, and the crowd is silent before the second. A truncheon is a short staff of command; the girths are the straps that hold a saddle on; the beaver is the lower face-guard of a helmet; Cave, Adsum is Latin for “Beware, I am here”; a casque is a helmet.",
+      "contentNote": "Knights are thrown violently; one is carried off senseless and bleeding.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the eighth chapter (printed “CHAPTER IX.”), from the second course to the end of the chapter; opens “A few minutes pause having been allowed, that the combatants and their horses might…”; closes “…of the Prince and Marshals, announcing that day's honours to the Disinherited Knight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-12",
+        "continuesTo": null,
+        "blocks": [
+          467,
+          478
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "78c09177d81494159f4daa3ed6a8a8b3b967bbfe8f1ae847d0faa5056d9ec6b7"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-13-q1",
+          "prompt": "Why does the Templar fall? Does the narrator let us think the stranger simply outfought him?",
+          "facilitatorNotes": [
+            "The stranger switched his aim to the helmet, “a mark more difficult to hit”; the Templar’s own blow was fair and strong, and he might have kept his seat “had not the girths of his saddle burst.” Scott gives the stranger the bolder skill but saves the Templar’s reputation; readers may say luck decided it, or that the harder aim earned the win."
+          ],
+          "evidence": [
+            "changing his aim almost in the moment of encounter, he addressed it to the helmet",
+            "had not the girths of his saddle burst, he might not have been unhorsed"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-13-q2",
+          "prompt": "What do the two knights say after the marshals part them, and what do their words promise for the rest of the story?",
+          "facilitatorNotes": [
+            "The Templar hopes to meet “where there are none to separate us”; the stranger is ready on foot or horseback, with any weapon. Both promise a later fight without rules."
+          ],
+          "evidence": [
+            "where there are none to separate us",
+            "On foot or horseback, with spear, with axe, or with sword"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-13-q3",
+          "prompt": "The victor drinks “To all true English hearts, and to the confusion of foreign tyrants.” Who in the galleries would cheer, and who would take offence?",
+          "facilitatorNotes": [
+            "Saxons such as Cedric, and the common people, hear a champion of England; the Norman challengers and Prince John, who favours them, hear an insult. Some readers think “foreign tyrants” points at John himself; the toast is also a clue to the stranger’s loyalties."
+          ],
+          "evidence": [
+            "To all true English hearts, and to the confusion of foreign tyrants."
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-13-q4",
+          "prompt": "Which of the four later victories shows something besides strength? Why might Scott include it?",
+          "facilitatorNotes": [
+            "Against Grantmesnil, whose young horse reared, the stranger raised his lance and offered a second course; Grantmesnil yielded, beaten as much by courtesy as by skill. Courtesy is a knightly virtue too, set against the Templar’s threats and Vipont’s bloody fall."
+          ],
+          "evidence": [
+            "the Disinherited Knight shewed as much courtesy as he had hitherto evinced courage and dexterity",
+            "avowing himself vanquished as much by the courtesy as by the address of his opponent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-14",
+      "title": "Ivanhoe: Could It Be the King? (Chapter IX, part 1)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how guesses about a hidden face reveal more about the guessers than about the knight.",
+      "focus": "A prince’s fear of his absent brother.",
+      "context": "Recap: at the Ashby tournament an unknown knight, the Disinherited, has overthrown all five challengers, beginning with the Templar Bois-Guilbert, and drunk to “all true English hearts” and the confusion of “foreign tyrants.” This chapter is headed “CHAPTER X.” in the first edition, which gives the next chapter that number too; later editions call it Chapter IX. The motto describes the queen of an old English poem, “The Flower and the Leaf”; Agnus castus is a shrub. Incognito means with one’s name hidden; “atchieved” is an old spelling of achieved; “Wot ye” means do you know; the four seas “girth” (encircle) Britain; a Knight of St John is a Hospitaller, like the beaten Vipont, while Bracy sides with the rival Templars; “pitch” is height; “Over God’s forbode!” means God forbid. King Richard, John’s elder brother, has been a prisoner abroad on his way home from the Crusade, and John hopes to keep his throne.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the ninth chapter (printed “CHAPTER X.”), from its motto to the delivery of the war-horse; opens “—————— In the midst was seen A lady of a more majestic mien, By stature and by beauty…”; closes “…an answer might be returned in the deep and awful accents of Richard the Lion-hearted.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-scott-ivanhoe-1820-15",
+        "blocks": [
+          480,
+          492
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "121c64bb63cb75d48eb5087391e605f5b718a8c122bdf039bb93169ea3a8bb5f"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-14-q1",
+          "prompt": "Why do the marshals accept the knight’s refusal to show his face, while Prince John does not?",
+          "facilitatorNotes": [
+            "Vows to stay incognito were common, so the marshals “pressed no farther.” John, already displeased that his favourites lost, sneers that the knight is disinherited “of his courtesy as of his lands.” His irritation turns a custom into an insult."
+          ],
+          "evidence": [
+            "there was none more common than those by which they engaged to remain incognito",
+            "this same knight hath been disinherited, as well of his courtesy as of his lands"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-14-q2",
+          "prompt": "Follow the guesses from Bracy, Fitzurse and the whisper in the train. Why does the last guess frighten John so much?",
+          "facilitatorNotes": [
+            "Bracy cannot guess, Fitzurse suggests a crusader coming home, and someone whispers Richard himself. John turns “as pale as death” because his brother’s return would end his scheming, and he begs his followers to keep their promises. The fear shows how insecure his power is."
+          ],
+          "evidence": [
+            "It might be the King—it might be Richard Cœur-de-Lion himself.",
+            "remember your promises and stand truly by me"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-14-q3",
+          "prompt": "How does Fitzurse calm the Prince, and why is John not fully reassured?",
+          "facilitatorNotes": [
+            "He argues from size: the knight lacks three inches of Richard’s height, and his horse could not carry Richard. John still trembles lest Richard’s “deep and awful accents” answer from the visor; a guilty conscience imagines the worst."
+          ],
+          "evidence": [
+            "he wants three inches of King Richard's height",
+            "he trembled lest from the barred visor of the mailed form before him"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-14-q4",
+          "prompt": "How does the Knight of St John answer Bracy’s boast? What does the quarrel show about John’s supporters?",
+          "facilitatorNotes": [
+            "When Bracy praises the blow that unhorsed the Hospitaller Vipont, the Knight of St John retorts that “your Temple champion” rolled over three times. The two religious orders compete even in defeat; John’s side is split by small jealousies, and John has to silence them."
+          ],
+          "evidence": [
+            "your Temple champion had no better luck",
+            "I saw Bois-Guilbert roll thrice over"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-15",
+      "title": "Ivanhoe: The Choice of a Queen (Chapter IX, part 2)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Separate what Prince John says from why he says it, using the narrator’s list of his motives.",
+      "focus": "A prize, a hint, and a slow ride past the galleries.",
+      "context": "Recap: the marshals brought the masked victor before Prince John, who feared for a moment that the knight was his brother King Richard come home; John handed him the prize, a war-horse. Earlier that day John had proposed Rebecca, the daughter of Isaac of York, as Queen of Love and Beauty to insult the Saxons, and his followers stopped him. War-furniture is a horse’s armour and harness; the pummel (pommel) is the front of the saddle; a ducal crown is a duke’s coronet; licentious means immoral in his pleasures; predilection is preference; muscadine is a sweet wine.",
+      "contentNote": "The narrator recalls John’s “indecent” jest about Rebecca and calls him “licentious”; the ladies are inspected for their beauty, and Scott jokes about the older ones.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the ninth chapter (printed “CHAPTER X.”), from the knight’s silent bow to the Saxons’ gallery; opens “But the Disinherited Knight spoke not a word in reply to the compliment of the Prince,…”; closes “…for a huge goblet of muscadine, he quaffed it to the health of the Disinherited Knight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-14",
+        "continuesTo": null,
+        "blocks": [
+          493,
+          503
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ffb9e5e0d4d9ea1c5fa3b8959073ae4b50d099307d2c3be7e3e650212cbaa524"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-15-q1",
+          "prompt": "The knight answers John’s compliment with only a bow, then rides twice round the lists. Why does the narrator say this display was not vanity?",
+          "facilitatorNotes": [
+            "He is showing the Prince’s gift “to the best advantage,” a courteous way of honouring it. His silence also keeps his identity hidden and leaves John uneasy. Some readers may still see pride in it."
+          ],
+          "evidence": [
+            "spoke not a word in reply to the compliment of the Prince",
+            "was removed by the propriety shewn in exhibiting to the best advantage the princely reward"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-15-q2",
+          "prompt": "Scott lists John’s motives for hinting that the knight should choose Alicia. Name three, and say which is the most cunning.",
+          "facilitatorNotes": [
+            "To make people forget his jest about Rebecca, to please Waldemar, to win Alicia’s favour, and to make Waldemar the knight’s enemy if he chooses someone else. The last is a trap that works either way. Students may argue for another."
+          ],
+          "evidence": [
+            "He wished to banish from the minds of the chivalry around him his own indecent and unacceptable jest",
+            "a powerful enemy in the person of Waldemar Fitzurse"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-15-q3",
+          "prompt": "How do the ladies behave as the knight inspects the galleries, and what is the narrator’s tone?",
+          "facilitatorNotes": [
+            "Some blush, some look proud or unconcerned, two or three laugh; the veiled ones are teased as “beauties of ten years standing.” The tone is gently mocking, a comedy of vanity in the middle of the pageant; some readers will find the joke about older women unkind."
+          ],
+          "evidence": [
+            "Some blushed, some assumed an air of pride and dignity",
+            "these were beauties of ten years standing"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-15-q4",
+          "prompt": "Why does the narrator say the Saxons’ gallery deserved the knight’s preference? Contrast Cedric, Rowena and Athelstane.",
+          "facilitatorNotes": [
+            "Cedric leaned out over the balcony, cheering with “his whole heart and soul”; Rowena watched as closely but hid her feelings; even sluggish Athelstane drank the knight’s health. Rowena’s restraint hints at feelings she keeps private."
+          ],
+          "evidence": [
+            "with half his body stretched over the balcony",
+            "though without betraying the same intense interest",
+            "Even the unmoved Athelstane had shewn symptoms of shaking off his apathy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-16",
+      "title": "Ivanhoe: The Queen of Love and Beauty (Chapter IX, part 3)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Watch how each speaker uses language itself, Saxon, French or silence, as a move in a contest.",
+      "focus": "A crown laid at a Saxon lady’s feet, a refused invitation, and a threat to an archer.",
+      "context": "Recap: at the tournament of Ashby an unknown knight, the Disinherited, has defeated all five challengers and must now name the Queen of Love and Beauty. Prince John hinted that he should choose Alicia, the daughter of John’s adviser Waldemar Fitzurse; the knight rode slowly past the galleries and stopped beneath the Lady Rowena, Cedric’s ward, whose Saxon party had cheered him all day. Before this passage Scott turns for five paragraphs to Isaac of York and his daughter Rebecca, watching the jousts; Isaac’s anxious remarks reveal that the knight’s horse and armour came from him. This chapter is headed “CHAPTER X.” in the first edition, which gives the next chapter that number too; later editions call it Chapter IX. Alfred the Great was the most famous Saxon king; a donative is a gift of money; a jennet is a small horse; outrecuidance (from French) is arrogance; Needwood and Charnwood are forests of the Midlands; the yeoman is the archer who answered John boldly earlier in the day.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the ninth chapter (printed “CHAPTER X.”), from the champion’s pause beneath Rowena’s balcony to the end of the chapter; opens “Whether from indecision or some other motive of hesitation, the champion of the day…”; closes “…from two hours to two hours, surrounded the lists, and kept watch during the night.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          509,
+          532
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "486053d851f94748e963693d28c0530b157f84a5eaac84a01582cf516faf160e"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-16-q1",
+          "prompt": "What makes the choice of Rowena a political act as well as a personal one? Use the two crowds’ reactions.",
+          "facilitatorNotes": [
+            "Norman ladies murmur at the preference given to “a Saxon beauty,” while the people cheer “the Saxon Princess” and “the race of the immortal Alfred.” Crowning a Saxon at a Norman prince’s tournament answers John’s hint and his earlier insults to the Saxons; whether the knight meant it so is left open."
+          ],
+          "evidence": [
+            "as much unused to see the preference given to a Saxon beauty",
+            "long live the race of the immortal Alfred!"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-16-q2",
+          "prompt": "John’s remark about the knight’s eyes is meant to flatter Alicia. Why does it offend her father instead?",
+          "facilitatorNotes": [
+            "Saying the knight’s eyes are “none of the clearest” announces to everyone that Alicia was passed over. Waldemar answers with dignity that every knight chooses freely and his daughter seeks no one’s favour. The narrator calls it John’s lifelong misfortune not to understand the people he wants to win."
+          ],
+          "evidence": [
+            "his choice hath no less proved that his eyes are none of the clearest",
+            "My daughter courts distinction from no one"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-16-q3",
+          "prompt": "Cedric answers for Rowena “in his native Saxon,” and John pretends not to understand. What is each of them doing with language?",
+          "facilitatorNotes": [
+            "Cedric refuses the Norman banquet because they speak only “the language … of our fathers”: a proud rejection of Norman manners in the Saxon tongue. John is “well skilled” in Saxon but pretends ignorance, an insult in return, and mocks Rowena as a “mute sovereign.” Language becomes a weapon in the Saxon–Norman feud."
+          ],
+          "evidence": [
+            "speak only the language, and practise only the manners of our fathers",
+            "affecting not to understand the Saxon language, in which, however, he was well skilled"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-16-q4",
+          "prompt": "The chapter ends with forges glowing and guards on watch. How does this quiet ending prepare for tomorrow, and what has John set in motion against the yeoman?",
+          "facilitatorNotes": [
+            "John orders the yeoman watched and threatens to test his bow; the yeoman calmly says he will stay for the archery. Armourers working “through the whole night” and the guarded lists make the empty field a place of preparation for the general tournament. Some readers hear calm before violence."
+          ],
+          "evidence": [
+            "On your life, suffer not that fellow to escape.",
+            "which was to continue through the whole night, in order to repair or alter the armour"
           ]
         }
       ]
