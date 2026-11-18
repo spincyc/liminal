@@ -389,6 +389,136 @@
     },
     {
       "id": "reading-k-lear-nonsense-books-1894-07",
+      "title": "A Nonsense Alphabet, part 1: A to M",
+      "sourceId": "lear-nonsense-books-1894",
+      "workTitle": "Nonsense Alphabets",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear each letter matched with something that begins with it, and the little shout that follows.",
+      "focus": "Lear gives every letter a tiny rhyme and an exclamation, some fond and some teasing.",
+      "context": "Edward Lear made several alphabets for children; this one is read over two nights, and each letter has a four-line rhyme and then a short shout. If you can, write or point to each capital letter as you come to it. Seldom means hardly ever; crafty means sly; stately means grand; a jackdaw is a black bird; principal means main; this kite is a toy flown on a string; gloom is darkness; a mill grinds grain into flour.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, Stories, Botany and Alphabets, the first of the nonsense alphabets (“A was an ant”), letters A to M; opens “A was an ant Who seldom stood still, And who made a nice house In the side of a hill.”; closes “m! Useful old mill!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-lear-nonsense-books-1894-08",
+        "blocks": [
+          400,
+          437
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65c31f6059131f2478cd28ee38c60b3b897993212561e994e1e3bc999f0094fd"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q1",
+          "prompt": "What does the ant do, and what does the duck always say?",
+          "facilitatorNotes": [
+            "The ant hardly ever stands still and makes a house in the side of a hill; the duck lives in the water and always says “Quack!”"
+          ],
+          "evidence": [
+            "And who made a nice house",
+            "And always said \"Quack!\""
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q2",
+          "prompt": "What happened when the cat chased the rat?",
+          "facilitatorNotes": [
+            "The rat grabbed the cat’s tail, and the cat lost his courage. Lear still calls him “Crafty old cat!” Ask whether the cat or the rat was braver."
+          ],
+          "evidence": [
+            "But his courage did fail",
+            "When she seized on his tail."
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q3",
+          "prompt": "Which thing in tonight’s letters would you feel sorry for? Why?",
+          "facilitatorNotes": [
+            "Many children choose the ice that nobody tasted, so it was wasted; Lear’s shout, “All that good ice!”, sounds sorry too. Others may choose the fish caught in a net, though it got away. Any choice with a reason fits."
+          ],
+          "evidence": [
+            "But which nobody tasted;",
+            "All that good ice!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-08",
+      "title": "A Nonsense Alphabet, part 2: N to Z",
+      "sourceId": "lear-nonsense-books-1894",
+      "workTitle": "Nonsense Alphabets",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Keep track of the letter, the thing and the shout, all the way to Z.",
+      "focus": "The second half of the alphabet brings a cross pig, a naughty rabbit, a tortoise that never comes back, and dazzling zinc.",
+      "context": "Recap: Lear’s alphabet gives each letter a little rhyme and a shout, from A, an ant who made a house in a hill, to M, a mill. Surly means grumpy; a quail is a small bird; morn means morning; bowers are shady garden places; sugar-tongs lift lumps of sugar; an urn is a big metal pot of hot water for tea; a villa is a country house; frantic means wild; Xerxes was a king of Persia long ago; fury and passion mean great anger; a yew is a dark evergreen tree; an abode is a home; zinc is a shiny grey metal.",
+      "contentNote": "The X rhyme calls King Xerxes, a king of ancient Persia, a Turk “Renowned for his fashion / Of fury and passion,” repeating an old English idea that Turks were hot-tempered.",
+      "excerpt": {
+        "locator": "Nonsense Songs, Stories, Botany and Alphabets, the first of the nonsense alphabets (“A was an ant”), letters N to Z; opens “N was a net Which was thrown in the sea To catch fish for dinner For you and for me.”; closes “z! Beautiful zinc!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-lear-nonsense-books-1894-07",
+        "continuesTo": null,
+        "blocks": [
+          439,
+          476
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4828883b81eedd62ddb16f1a1dbadb6b1f6fced36b2bfb48f3904e9024548cf3"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-08-q1",
+          "prompt": "Why is the pig cross?",
+          "facilitatorNotes": [
+            "His tail is too curly, and that makes him surly, or grumpy. Lear calls him “Cross little pig!”"
+          ],
+          "evidence": [
+            "But his tail was too curly,",
+            "And that made him surly."
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-08-q2",
+          "prompt": "What happens to the tortoise? How does the shout after it make you feel?",
+          "facilitatorNotes": [
+            "He walks slowly away and never comes back, and the shout is “Torty never came back!” Some children find it sad, others funny because tortoises are so slow; both are fair."
+          ],
+          "evidence": [
+            "He walked slowly away,",
+            "Torty never came back!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-08-q3",
+          "prompt": "Lear calls the rabbit naughty. What did it do? Would the rabbit think it was naughty?",
+          "facilitatorNotes": [
+            "It eats the flowers in people’s gardens. To a gardener that is naughty; to a rabbit it is only dinner. Children may take either side."
+          ],
+          "evidence": [
+            "Of eating the flowers",
+            "Naughty fat rabbit!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-09",
       "title": "The Pobble Who Has No Toes",
       "sourceId": "lear-nonsense-books-1894",
       "genre": "poetry",
@@ -417,7 +547,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-lear-nonsense-books-1894-07-q1",
+          "id": "reading-k-lear-nonsense-books-1894-09-q1",
           "prompt": "What does Aunt Jobiska say will keep the Pobble’s toes safe?",
           "facilitatorNotes": [
             "Drinking pink lavender water, and keeping his nose warm in scarlet flannel. Ask what a warm nose has to do with toes: nothing, which is the joke."
@@ -428,7 +558,7 @@
           ]
         },
         {
-          "id": "reading-k-lear-nonsense-books-1894-07-q2",
+          "id": "reading-k-lear-nonsense-books-1894-09-q2",
           "prompt": "What happens to the scarlet flannel, and to the Pobble’s toes?",
           "facilitatorNotes": [
             "A sea-green Porpoise carries off the flannel, and when the Pobble looks down, all his toes are gone."
@@ -439,7 +569,7 @@
           ]
         },
         {
-          "id": "reading-k-lear-nonsense-books-1894-07-q3",
+          "id": "reading-k-lear-nonsense-books-1894-09-q3",
           "prompt": "At the end, Aunt Jobiska says Pobbles are happier without their toes. Do you believe her? Why might she say it?",
           "facilitatorNotes": [
             "She may want to cheer him up with a feast, or she may simply be sure of everything, as she was about his nose. Children can decide; nobody in the poem ever finds out who took the toes."
@@ -447,6 +577,70 @@
           "evidence": [
             "Of eggs and buttercups fried with fish;",
             "That Pobbles are happier without their toes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-10",
+      "title": "Mr. and Mrs. Discobbolos",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a couple who climb up high and then begin to worry about coming down.",
+      "focus": "A worry about falling turns into a happy decision never to come down at all.",
+      "context": "Edward Lear wrote nonsense poems full of made-up words; the Nupiter Piffkin and the Biscuit Buffalo are creatures he invented. Camomile tea is made from a flower; sate is an old way of saying sat; flumpetty is Lear’s word for falling with a thump; a moat is a ditch of water round a castle; strife means quarrelling and trouble. Say each “Oh! W! X! Y! Z!” like a big gasp.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Laughable Lyrics, “Mr. and Mrs. Discobbolos,” the complete poem (stanzas I–IV); opens “Mr. and Mrs. Discobbolos Climbed to the top of a wall. And they sate to watch the sunset…”; closes “…There is no more trouble ahead, Sorrow or any such thing, For Mr. and Mrs. Discobbolos!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          894,
+          900
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f92d74b2e97a0c1e38791276e86191821dfcb4c8b5f54d25499eceb4d4772a8"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-10-q1",
+          "prompt": "Where do Mr. and Mrs. Discobbolos go, and what do they take with them?",
+          "facilitatorNotes": [
+            "To the top of a wall, to watch the sunset; they take a roll and some Camomile tea."
+          ],
+          "evidence": [
+            "Climbed to the top of a wall.",
+            "They took up a roll and some Camomile tea,"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-10-q2",
+          "prompt": "What sudden thought spoils their happy evening?",
+          "facilitatorNotes": [
+            "Mrs. Discobbolos wonders what would happen if they fell, onto thorns or into the moat, and then that they might never get down at all."
+          ],
+          "evidence": [
+            "Suppose we should happen to fall!!!!!",
+            "That perhaps we shall never go down any more!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-10-q3",
+          "prompt": "What do they decide in the end? Is staying on the wall a good answer to their worry?",
+          "facilitatorNotes": [
+            "To stay up there for ever, singing, with no knives, chairs or troubles. It is a nonsense answer: they stop worrying by never moving. Children may say they will get hungry or cold, or that it sounds peaceful; both can quote the song."
+          ],
+          "evidence": [
+            "To remain for ever just where we are.",
+            "There is no more trouble ahead,"
           ]
         }
       ]
