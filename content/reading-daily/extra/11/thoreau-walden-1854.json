@@ -1,0 +1,830 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "thoreau-walden-1854",
+  "readings": [
+    {
+      "id": "reading-11-thoreau-walden-1854-01",
+      "title": "Walden: The labors of my neighbors (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Hear how Thoreau makes his ordinary neighbours look strange by comparing them with myth and travellers’ tales.",
+      "focus": "A defence of writing in the first person, and the charge that Concord lives a life of needless penance.",
+      "context": "Henry David Thoreau (1817–1862) lived in a cabin he built at Walden Pond, near Concord, Massachusetts, from 1845 to 1847, and published Walden in 1854. “Economy,” its long first chapter, opens here. Hercules’ friend Iolaus seared the necks of the many-headed hydra; Deucalion and Pyrrha repeopled the earth after a flood by throwing stones that became people. The Latin lines are from Ovid, followed by Sir Walter Raleigh’s English version.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. The Brahmins’ penances are taken from European travellers’ accounts and stereotype Hindu ascetic practice.",
+      "excerpt": {
+        "locator": "Economy, from the opening of the book to the stones of Deucalion and Pyrrha; opens “When I wrote the following pages, or rather the bulk of them, I lived alone, in the…”; closes “…oracle, throwing the stones over their heads behind them, and not seeing where they fell.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          9
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b1a1e57b9065f470d1bba58af1c60611dd130ce7ee29303df429bbd7cbe86a4"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-01-q1",
+          "prompt": "Thoreau says the only difference between his book and others “in respect to egotism” is that he keeps the “I.” What defence of first-person writing does he make?",
+          "facilitatorNotes": [
+            "Every book is spoken by a first person; he knows no one better than himself; and he asks of every writer “a simple and sincere account of his own life.” Readers can decide whether this disarms the charge of egotism or wittily confirms it."
+          ],
+          "evidence": [
+            "We commonly do not remember that it is, after all, always the first person that is speaking.",
+            "a simple and sincere account of his own life"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-01-q2",
+          "prompt": "How do the Brahmins’ penances and the labours of Hercules describe Thoreau’s Concord neighbours?",
+          "facilitatorNotes": [
+            "Exotic self-tortures that readers find astonishing are “hardly more incredible” than what he sees in Concord’s shops and fields. Hercules’ labours were twelve and ended; the neighbours’ never end, and every crushed head grows two more. The familiar is made strange."
+          ],
+          "evidence": [
+            "doing penance in a thousand remarkable ways",
+            "as soon as one head is crushed, two spring up"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-01-q3",
+          "prompt": "Why does Thoreau call it a “misfortune” to inherit farms, houses and cattle?",
+          "facilitatorNotes": [
+            "Possessions are “more easily acquired than got rid of”: the heir becomes a serf of the soil, pushing a barn before him down the road of life. He grants that the portionless still have “labor enough” in their own flesh, so the attack is on unnecessary burdens, not on work."
+          ],
+          "evidence": [
+            "for these are more easily acquired than got rid of",
+            "Who made them serfs of the soil?"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-01-q4",
+          "prompt": "What does the myth of Deucalion and Pyrrha add to the argument, and how does the last sentence treat it?",
+          "facilitatorNotes": [
+            "People made of stone are hard and fit for endless labour, which the Latin and Raleigh’s rhyme celebrate. Thoreau then calls it “blind obedience to a blundering oracle”: people throw their effort behind them without seeing where it falls. The plain sentence deflates the grand quotation."
+          ],
+          "evidence": [
+            "Approving that our bodies of a stony nature are.",
+            "So much for a blind obedience to a blundering oracle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-02",
+      "title": "Walden: Lives of quiet desperation (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Test a provocative comparison against what you know of the thing compared.",
+      "focus": "Debt, self-enslavement and the habit of mistaking custom for necessity.",
+      "context": "Thoreau has said that his Concord neighbours labour at endless, self-imposed tasks, burdened by inherited farms. Here he widens the charge. Æs alienum is Latin for debt (“another’s brass”); William Wilberforce led the British campaign against slavery in the West Indies; the “chief end of man” is the first question of the Westminster Shorter Catechism.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. Thoreau, an opponent of slavery, calls attention to “Negro Slavery” almost “frivolous” beside self-enslavement, a comparison to examine critically.",
+      "excerpt": {
+        "locator": "Economy, from the labouring man’s lack of leisure to Thoreau’s dismissal of his elders’ advice; opens “Most men, even in this comparatively free country, through mere ignorance and mistake,…”; closes “…which I think valuable, I am sure to reflect that this my Mentors said nothing about.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          14
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c6cd41bac907922947afb049c238e1d0d95829ed49980bb700a0cb662dc91007"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-02-q1",
+          "prompt": "How does the long sentence about debt imitate the life it describes?",
+          "facilitatorNotes": [
+            "It never stops: participle after participle, “always promising to pay, promising to pay,” lying, flattering, voting, contracting into “a nutshell of civility.” The breathless syntax is the treadmill of the debtor, who dies “insolvent” while still promising."
+          ],
+          "evidence": [
+            "always promising to pay, promising to pay, to-morrow, and dying to-day, insolvent",
+            "contracting yourselves into a nutshell of civility"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-02-q2",
+          "prompt": "Thoreau says it is almost “frivolous” to attend to slavery in the South when people are slave-drivers of themselves. How might a reader who has read Douglass answer him?",
+          "facilitatorNotes": [
+            "Thoreau’s point is inner servitude to one’s own opinion. But the whip, the auction and the separated family are not chosen, and Douglass shows the difference between a metaphor and a condition. “I may almost say” hedges, and Thoreau opposed slavery elsewhere; still, the comparison shrinks real bondage to make a rhetorical point. Weigh its force against its cost."
+          ],
+          "evidence": [
+            "the gross but somewhat foreign form of servitude called Negro Slavery",
+            "but worst of all when you are the slave-driver of yourself"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-02-q3",
+          "prompt": "“The mass of men lead lives of quiet desperation.” What evidence does Thoreau give, and what does he mean by saying that wisdom does not do “desperate things”?",
+          "facilitatorNotes": [
+            "Resignation is despair confirmed; city and country are both desperate; even games hide despair, because play comes after work. Wisdom is not a frantic escape but a deliberate change, which is what his experiment at the pond will be."
+          ],
+          "evidence": [
+            "What is called resignation is confirmed desperation.",
+            "But it is a characteristic of wisdom not to do desperate things."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-02-q4",
+          "prompt": "Thoreau says he has never heard “the first syllable of valuable or even earnest advice” from his elders. Is the argument persuasive or self-serving?",
+          "facilitatorNotes": [
+            "He argues that no custom is to be trusted without proof and that life is “an experiment” each person must try. The claim is deliberately extreme, and readers may notice that his own book is advice from an older man to the young."
+          ],
+          "evidence": [
+            "No way of thinking or doing, however ancient, can be trusted without proof.",
+            "I have yet to hear the first syllable of valuable or even earnest advice from my seniors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-03",
+      "title": "Walden: No precedents for an untried life (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow how Thoreau lets an opponent’s own surroundings refute him.",
+      "focus": "The case against precedent, and a turn toward the question of what life actually requires.",
+      "context": "Thoreau has argued that most people live in “quiet desperation,” trapped by habit, and that the old have no advice worth having for an untried life. He continues the case against precedent before turning to the necessaries of life. John Evelyn wrote on trees in the seventeenth century; a merchant’s day-book is his daily ledger.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live.",
+      "excerpt": {
+        "locator": "Economy, from the farmer who says vegetable food makes no bones to the proposal to study the necessaries of life; opens “One farmer says to me, \"You cannot live on vegetable food solely, for it furnishes…”; closes “…as our skeletons, probably, are not to be distinguished from those of our ancestors.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-thoreau-walden-1854-04",
+        "blocks": [
+          15,
+          20
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b6d5f5da80073b8244b1ff155ade74529111d6bd32d439e458918cb994203677"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-03-q1",
+          "prompt": "How does the farmer’s remark about “vegetable food” refute itself?",
+          "facilitatorNotes": [
+            "While he insists that vegetables make no bones, his oxen, with “vegetable-made bones,” drag him and his plough along. Thoreau adds that what one circle calls a necessity another calls a luxury and a third has never heard of."
+          ],
+          "evidence": [
+            "it furnishes nothing to make bones with",
+            "which, with vegetable-made bones, jerk him and his lumbering plough along"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-03-q2",
+          "prompt": "How does Thoreau use the old rules of Solomon, the Roman praetors and Hippocrates against the idea that life has been fully explored?",
+          "facilitatorNotes": [
+            "The ancients regulated even the spacing of trees and the cutting of nails, as if nothing were left undecided. Thoreau calls that sense of exhaustion as old as Adam and insists that “man’s capacities have never been measured.”"
+          ],
+          "evidence": [
+            "Hippocrates has even left directions how we should cut our nails",
+            "nor are we to judge of what he can do by any precedents, so little has been tried"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-03-q3",
+          "prompt": "What does Thoreau wish for when he imagines looking “through each other’s eyes for an instant,” and how do the beans and the stars lead to it?",
+          "facilitatorNotes": [
+            "The sun that ripens his beans lights other worlds, and distant beings watch the same star: there are as many views of life as viewers. Seeing through another’s eyes would teach more than history or poetry. The thought checks his confidence in any one way of living, his own included."
+          ],
+          "evidence": [
+            "Could a greater miracle take place than for us to look through each other's eyes for an instant?",
+            "This was not the light in which I hoed them."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-03-q4",
+          "prompt": "“If I repent of any thing, it is very likely to be my good behavior.” Is Thoreau rejecting morality or redefining it?",
+          "facilitatorNotes": [
+            "He rejects his neighbours’ “good,” which he takes to be conformity, in favour of an “irresistible voice” calling him away. It is a redefinition grounded in conscience, but readers may find it arrogant as well as liberating."
+          ],
+          "evidence": [
+            "The greater part of what my neighbors call good I believe in my soul to be bad",
+            "I hear an irresistible voice which invites me away from all that."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-04",
+      "title": "Walden: The necessaries of life (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow an analogy through its uses and notice where Thoreau admits its limits.",
+      "focus": "Life reduced to keeping warm, and voluntary poverty as the vantage point of wisdom.",
+      "context": "Recap: Thoreau has argued that custom is no proof, that human capacities have never been measured, and that one should find out what the necessaries of life really are. Justus von Liebig was a German chemist; New Holland was an old name for Australia; “à la mode” puns on fashion and on beef stewed à la mode.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. Thoreau sets “savage” against “civilized” in the period’s ranking of peoples, sometimes to reverse it, never to question the terms. He quotes Darwin’s description of the people of Tierra del Fuego as “naked savages.”",
+      "excerpt": {
+        "locator": "Economy, from the definition of a necessary of life to the philosopher’s vital heat; opens “By the words, necessary of life, I mean whatever, of all that man obtains by his own…”; closes “…a man be a philosopher and not maintain his vital heat by better methods than other men?”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-thoreau-walden-1854-03",
+        "continuesTo": null,
+        "blocks": [
+          21,
+          23
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "42cb94a1e3f8ac81d80b93e43353c94fdb9cc9430d2419b20d9a3912b5bbd23e"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-04-q1",
+          "prompt": "How does Thoreau define a “necessary of life,” and what four heads does he reach?",
+          "facilitatorNotes": [
+            "Whatever people have long obtained by their own exertion and hardly ever do without. For most animals that is food; for people in New England it is Food, Shelter, Clothing and Fuel, and only once these are secured can “the true problems of life” be faced."
+          ],
+          "evidence": [
+            "Food, Shelter, Clothing, and Fuel",
+            "for not till we have secured these are we prepared to entertain the true problems of life"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-04-q2",
+          "prompt": "How does the analogy of the body as a stove organise the argument, and where does Thoreau admit its limits?",
+          "facilitatorNotes": [
+            "Food is fuel, and shelter and clothing hold in the heat, so animal life nearly equals animal heat and the “grand necessity” is keeping warm. He concedes that vital heat is not fire, “but so much for analogy,” and then turns the analogy into satire: the rich are not warm but “cooked.”"
+          ],
+          "evidence": [
+            "man's body is a stove, and food the fuel",
+            "Of course the vital heat is not to be confounded with fire; but so much for analogy."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-04-q3",
+          "prompt": "Thoreau borrows Darwin’s observation of the Fuegians. How does he use it, and what in his use should a reader question?",
+          "facilitatorNotes": [
+            "As evidence that hardiness can make clothing less necessary, and to ask whether “hardiness” and “intellectualness” could be combined. The single traveller’s observation and the ranking language carry the argument; ask whether they can bear its weight."
+          ],
+          "evidence": [
+            "to be streaming with perspiration at undergoing such a roasting",
+            "Is it impossible to combine the hardiness of these savages with the intellectualness of the civilized man?"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-04-q4",
+          "prompt": "Why does Thoreau claim that a wise observer of life needs “the vantage ground of what we should call voluntary poverty”?",
+          "facilitatorNotes": [
+            "Luxury bears only luxury; the ancient philosophers were poor outwardly and rich inwardly; a philosopher lives by wisdom, not only thinks it. Readers may ask whether voluntary poverty is itself a privilege of those free to choose it."
+          ],
+          "evidence": [
+            "There are nowadays professors of philosophy, but not philosophers.",
+            "from the vantage ground of what we should call voluntary poverty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-05",
+      "title": "Walden: A hound, a bay horse, and a turtle-dove (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Interpret a deliberately riddling paragraph without claiming more certainty than the text allows.",
+      "focus": "What lies beyond the necessaries, and Thoreau’s mock-official account of how he spent his years.",
+      "context": "Thoreau has listed the necessaries of life, food, shelter, clothing and fuel, and argued that the wise live simply in order to think freely. Here he says whom he is writing for and describes, in riddles and jokes, how he has spent his time. A radicle is a seedling’s first root; esculents are edible plants; a sinecure is a paid post with no duties.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live.",
+      "excerpt": {
+        "locator": "Economy, from the man warmed by the necessaries to Thoreau’s unaudited accounts; opens “When a man is warmed by the several modes which I have described, what does he want next?…”; closes “…less accepted, still less paid and settled. However, I have not set my heart on that.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          24,
+          34
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4e138a3ccbf6824f1ada2e726511cc28a1c456d017686424aba9613262cb4aa"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-05-q1",
+          "prompt": "What does the plant image in the first paragraph say about why the necessaries are worth securing?",
+          "facilitatorNotes": [
+            "A root is secured so that the shoot can rise; nobler plants are valued for their fruit in the air, while humbler ones are cut down once their root is fat. A life spent only on necessaries is a vegetable harvested before it flowers."
+          ],
+          "evidence": [
+            "Why has man rooted himself thus firmly in the earth, but that he may rise in the same proportion into the heavens above?",
+            "so that most would not know them in their flowering season"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-05-q2",
+          "prompt": "Whom does Thoreau say he is not addressing, and whom is he? Why count himself, “to some extent,” among the contented?",
+          "facilitatorNotes": [
+            "Not the strong, not those inspired by present conditions, not the well employed, but the discontented who complain without improving their lot, and the rich who have forged “golden or silver fetters.” Including himself among the contented softens the attack and suggests that his own life is not a rebuke to every reader."
+          ],
+          "evidence": [
+            "but mainly to the mass of men who are discontented",
+            "have forged their own golden or silver fetters"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-05-q3",
+          "prompt": "“I long ago lost a hound, a bay horse, and a turtle-dove.” What might the losses stand for, and why does Thoreau not explain?",
+          "facilitatorNotes": [
+            "Readers have proposed lost ideals, innocence or spiritual aims; Thoreau warns of secrets “inseparable from its very nature.” Notice that others have heard and seen them and seem as eager to recover them, so the loss is shared. Defend a reading and say where it stops."
+          ],
+          "evidence": [
+            "I long ago lost a hound, a bay horse, and a turtle-dove, and am still on their trail.",
+            "they seemed as anxious to recover them as if they had lost them themselves"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-05-q4",
+          "prompt": "How does Thoreau use the language of jobs and public office to describe his days outdoors, and what is the point of the joke?",
+          "facilitatorNotes": [
+            "He is a reporter to an unread journal, inspector of storms, surveyor of paths, herdsman of the wild stock, never admitted to town office, his accounts never audited. The civic vocabulary satirises how society measures useful work and gently mocks his own unpaid devotion."
+          ],
+          "evidence": [
+            "For many years I was self-appointed inspector of snow storms and rain storms",
+            "My accounts, which I can swear to have kept faithfully, I have, indeed, never got audited"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-06",
+      "title": "Walden: Baskets no one would buy (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the language of trade as irony and as self-description at once.",
+      "focus": "Why Thoreau went to Walden, told as if it were a business venture.",
+      "context": "Thoreau has described years of watching weather and walking the woods without pay or recognition. Here he explains, in the vocabulary of commerce, why he went to Walden Pond. The Celestial Empire is China; “native bottoms” are American ships; tare and tret are allowances for packaging and waste; the navigator La Pérouse vanished at sea in 1788.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. He tells an anecdote about a Native American basket-seller, whom he calls “a strolling Indian,” with period assumptions about the man’s reasoning.",
+      "excerpt": {
+        "locator": "Economy, from the basket-seller at the lawyer’s door to Walden Pond as a place of business; opens “Not long since, a strolling Indian went to sell baskets at the house of a well-known…”; closes “…wind, and ice in the Neva, would sweep St. Petersburg from the face of the earth.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          35,
+          38
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7ad2cef1c4928f49c031eae5d55b3321228261a46f363206d9625f4ca79df9af"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-06-q1",
+          "prompt": "What lesson does Thoreau draw from the basket-seller, and how does he apply it to himself?",
+          "facilitatorNotes": [
+            "The seller thought making baskets was enough and had not made them worth anyone’s while to buy. Thoreau has also woven “a kind of basket of a delicate texture,” his writing, and rather than learn to sell it he studied how not to need to."
+          ],
+          "evidence": [
+            "I too had woven a kind of basket of a delicate texture",
+            "I studied rather how to avoid the necessity of selling them"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-06-q2",
+          "prompt": "How should a reader weigh the way Thoreau tells the basket-seller’s story?",
+          "facilitatorNotes": [
+            "It treats the man’s reasoning as naive, though it also mocks the lawyer whose wealth follows “by some magic.” The man’s question, “do you mean to starve us?”, points to the poverty of Native people in nineteenth-century New England, which Thoreau does not take up. Readers can ask whom the anecdote finally criticises."
+          ],
+          "evidence": [
+            "do you mean to starve us?",
+            "that the lawyer had only to weave arguments, and by some magic wealth and standing followed"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-06-q3",
+          "prompt": "Why does Thoreau describe going to Walden as going “into business”?",
+          "facilitatorNotes": [
+            "He borrows his neighbours’ vocabulary for a private, spiritual project: to “transact some private business with the fewest obstacles.” The phrase mocks commerce and also claims that his purpose is as serious as any trade."
+          ],
+          "evidence": [
+            "to transact some private business with the fewest obstacles",
+            "not to live cheaply nor to live dearly there"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-06-q4",
+          "prompt": "The long paragraph about the China trade lists everything a merchant must do. Is it parody, praise, or both?",
+          "facilitatorNotes": [
+            "The breathless list, pilot and captain and owner and underwriter at once, parodies commercial frenzy. Yet the vigilance and “universal knowledge” it demands also describe the self-reliant inquiry Thoreau intends at the pond."
+          ],
+          "evidence": [
+            "to be at once pilot and captain, and owner and underwriter",
+            "as demand a universal knowledge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-07",
+      "title": "Walden: Enterprises that require new clothes (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Separate the comic examples from the claim they are built to support.",
+      "focus": "Clothes as a measure of respectability, and the demand for a new wearer rather than new clothes.",
+      "context": "Thoreau has called his move to Walden Pond a business venture undertaken without the usual capital. He now takes the necessaries one at a time, beginning with clothing. Ida Pfeiffer was an Austrian traveller whose account of travelling round the world appeared in 1850; the dash in her quoted sentence stands for an omitted word.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live.",
+      "excerpt": {
+        "locator": "Economy, the first two paragraphs on Clothing; opens “As this business was to be entered into without the usual capital, it may not be easy to…”; closes “…and be inevitably cashiered at last by our own opinion, as well as that of mankind.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-thoreau-walden-1854-08",
+        "blocks": [
+          39,
+          40
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65a4eaae463980c8b17cb5fb1c6a22d9d445ebd8f917c04c7e4b2ff1e87d4523"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-07-q1",
+          "prompt": "What two purposes of clothing does Thoreau name, and what does he say actually governs most people’s choices?",
+          "facilitatorNotes": [
+            "To keep in vital heat and, “in this state of society,” to cover nakedness; but love of novelty and regard for others’ opinions rule instead. People care “not what is truly respectable, but what is respected.”"
+          ],
+          "evidence": [
+            "the object of clothing is, first, to retain the vital heat, and secondly, in this state of society, to cover nakedness",
+            "for he considers, not what is truly respectable, but what is respected"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-07-q2",
+          "prompt": "How do the scarecrow, the farmer’s coat on a stake and the dog that barks at clothed strangers make the same point?",
+          "facilitatorNotes": [
+            "Clothes stand in for the person: we know “a great many coats and breeches” and few men, a farmer is recognised by his coat on a stake, and the dog judges strangers by dress, not character. Each comic exaggeration shows rank residing in garments."
+          ],
+          "evidence": [
+            "We know but few men, a great many coats and breeches.",
+            "but was easily quieted by a naked thief"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-07-q3",
+          "prompt": "“Beware of all enterprises that require new clothes, and not rather a new wearer of clothes.” What change does Thoreau think must come first?",
+          "facilitatorNotes": [
+            "An inner change: people want “something to be” more than something to do with. New clothes should come only when one has outgrown the old, as the loon moults alone or the snake casts its skin “by an internal industry and expansion.”"
+          ],
+          "evidence": [
+            "beware of all enterprises that require new clothes, and not rather a new wearer of clothes",
+            "All men want, not something to do with, but something to do, or rather something to be."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-07-q4",
+          "prompt": "Thoreau calls New Englanders who honour wealth in dress “heathen” in need of “a missionary.” What is the effect of turning those words on his readers?",
+          "facilitatorNotes": [
+            "New England sent missionaries to the “heathen” abroad; Thoreau finds the idolaters at home, bowing to wealth in “democratic” towns. The reversal attacks his readers’ moral self-image with their own vocabulary."
+          ],
+          "evidence": [
+            "Even in our democratic New England towns the accidental possession of wealth",
+            "are so far heathen, and need to have a missionary sent to them"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-08",
+      "title": "Walden: What “they” make now (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Follow the argument from personal dress to the system that makes clothes.",
+      "focus": "Fashion as an impersonal authority, and the factory that serves corporations rather than wearers.",
+      "context": "Recap: Thoreau has argued that clothing should keep us warm and cover us, that most people dress for others’ opinion, and that a new undertaking needs “a new wearer of clothes,” not new clothes. Exogenous plants grow by adding layers outside; liber is inner bark; to girdle a tree is to cut a ring through its bark, which kills it; the Graces and the Parcæ (Fates) are classical goddesses; operatives are factory workers.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. He calls the taste for new patterns “childish and savage” and mentions the “Cannibal Islands,” period phrases.",
+      "excerpt": {
+        "locator": "Economy, from clothing compared to bark to the factory system; opens “We don garment after garment, as if we grew like exogenous plants by addition without.…”; closes “…Therefore, though they should fail immediately, they had better aim at something high.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-thoreau-walden-1854-07",
+        "continuesTo": null,
+        "blocks": [
+          41,
+          45
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "00103eec0f6597a894a0846a0468afa9b7b6182fa874bd344001088645b746ae"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-08-q1",
+          "prompt": "Thoreau compares layers of clothing to the layers of a tree. What does the comparison let him say about which garments matter?",
+          "facilitatorNotes": [
+            "Thin, fanciful outer clothes are a false skin that can be stripped without harm; the shirt is the “true bark,” which cannot be removed without killing the man. One should be dressed so simply that one can “lay his hands on himself in the dark.”"
+          ],
+          "evidence": [
+            "our shirts are our liber or true bark, which cannot be removed without girdling and so destroying the man",
+            "he can lay his hands on himself in the dark"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-08-q2",
+          "prompt": "Why does the tailoress’s “They do not make them so now” absorb Thoreau so much?",
+          "facilitatorNotes": [
+            "“They” is quoted like an authority “as impersonal as the Fates,” and he asks what kinship They have to him. His reply, that they make them so now, claims the authority for himself. Fashion has replaced the Graces and Fates as a goddess."
+          ],
+          "evidence": [
+            "as if she quoted an authority as impersonal as the Fates",
+            "We worship not the Graces, nor the Parcæ, but Fashion."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-08-q3",
+          "prompt": "According to the paragraph on costume, what makes any costume dignified or ridiculous?",
+          "facilitatorNotes": [
+            "“All costume off a man is pitiful or grotesque”; only the serious eye and sincere life within it make clothing worthy. The soldier struck by a cannonball wears rags as well as purple. Value lies in the life, not the cloth."
+          ],
+          "evidence": [
+            "It is only the serious eye peering from and the sincere life passed within it, which restrain laughter",
+            "When the soldier is hit by a cannon ball rags are as becoming as purple."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-08-q4",
+          "prompt": "How does the last paragraph move from fashion to the factory system, and what principle closes it?",
+          "facilitatorNotes": [
+            "The factory aims to enrich corporations, not to clothe people well, and its workers are sinking toward the condition of England’s. “In the long run men hit only what they aim at,” so one should aim high even at the risk of failing. The critique of the buyer’s whim becomes a critique of production."
+          ],
+          "evidence": [
+            "that the corporations may be enriched",
+            "In the long run men hit only what they aim at."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-09",
+      "title": "Walden: A box by the railroad (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Decide where Thoreau is joking and where, as he insists, he is not.",
+      "focus": "How little shelter is truly necessary, tested by a tool-box and by seventeenth-century bark houses.",
+      "context": "Thoreau has dealt with clothing and turns to shelter. Samuel Laing was a Scottish travel writer; Daniel Gookin was the Massachusetts Colony’s superintendent of Native peoples under its rule, writing in 1674; a clew is the thread that led Theseus out of the labyrinth.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. Thoreau sets “savage” against “civilized” in the period’s ranking of peoples, sometimes to reverse it, never to question the terms. Thoreau and Gookin describe Native peoples and their houses from a colonist’s standpoint.",
+      "excerpt": {
+        "locator": "Economy, the first three paragraphs on Shelter; opens “As for a Shelter, I will not deny that this is now a necessary of life, though there are…”; closes “…down and put up in a few hours; and every family owned one, or its apartment in one.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          46,
+          48
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "474375316339707946caeca332b219dec206c6fc744cae0c66b68feeefd799f8"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-09-q1",
+          "prompt": "Why does Thoreau trace shelter back to a hollow in a rock and to children playing house?",
+          "facilitatorNotes": [
+            "The wish for shelter is ancient and natural, but civilisation has gone so far that “we know not what it is to live in the open air.” He suggests that poets and saints would do better under the sky: “Birds do not sing in caves.”"
+          ],
+          "evidence": [
+            "our lives are domestic in more senses than we think",
+            "Birds do not sing in caves, nor do doves cherish their innocence in dovecots."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-09-q2",
+          "prompt": "What does the list “a workhouse, a labyrinth without a clew, a museum, an almshouse, a prison, or a splendid mausoleum” suggest about how a house can fail?",
+          "facilitatorNotes": [
+            "Each is a building with its own trap: labour, confusion, display, poverty, confinement, death. A house built without “Yankee shrewdness” can become any of them."
+          ],
+          "evidence": [
+            "lest after all he find himself in a workhouse, a labyrinth without a clew, a museum, an almshouse, a prison, or a splendid mausoleum instead"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-09-q3",
+          "prompt": "Is Thoreau serious about living in the railroad tool-box?",
+          "facilitatorNotes": [
+            "He insists “I am far from jesting”: the box offers freedom from landlord and rent, while many are “harassed to death” paying for a larger box. The proposal is a thought experiment about the least shelter one needs; readers may debate how practical it is, but Thoreau warns that economy “cannot so be disposed of” by laughter."
+          ],
+          "evidence": [
+            "Many a man is harassed to death to pay the rent of a larger and more luxurious box",
+            "I am far from jesting."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-09-q4",
+          "prompt": "Why does Thoreau quote Gookin’s description of Native houses at length, and what does it show?",
+          "facilitatorNotes": [
+            "A colonial official testifies that bark houses were as warm as the best English houses, built in a day or two, and owned by every family: good shelter need not be costly. The witness is a colonist describing people under his authority, so readers should notice whose eyes they are seeing through."
+          ],
+          "evidence": [
+            "I have often lodged in their wigwams, and found them as warm as the best English houses.",
+            "and every family owned one, or its apartment in one"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-10",
+      "title": "Walden: The cost of a thing (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Apply a new definition consistently and see what it overturns.",
+      "focus": "Cost measured in life rather than money, and whether civilisation has improved housing.",
+      "context": "Thoreau has argued that shelter can be slight, citing a railroad tool-box and the bark houses of seventeenth-century Massachusetts. Here he tests whether civilisation has improved the dwelling. A Rumford fireplace is an efficient shallow design; the closing quotations are from Ezekiel 18, which rejects the proverb that children suffer for their fathers’ sins.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. Thoreau sets “savage” against “civilized” in the period’s ranking of peoples, sometimes to reverse it, never to question the terms.",
+      "excerpt": {
+        "locator": "Economy, from the claim that every family in the savage state owns a shelter to the verses from Ezekiel; opens “In the savage state every family owns a shelter as good as the best, and sufficient for…”; closes “…of the father, so also the soul of the son is mine: the soul that sinneth it shall die.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          49,
+          52
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5cea02f0e2b1ee9942b20ee921d5773ce1274159310a542ff3f4c9e3d0f8525d"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-10-q1",
+          "prompt": "Thoreau defines “the cost of a thing” as “the amount of what I will call life which is required to be exchanged for it.” How does the definition change the comparison between a rented house and a wigwam?",
+          "facilitatorNotes": [
+            "Counted in years of labour at a dollar a day, an eight-hundred-dollar house costs ten or fifteen years, more than half a working life, and rent is only “a doubtful choice of evils.” The wigwam costs little life. Luxury becomes expensive in the only currency that matters."
+          ],
+          "evidence": [
+            "the cost of a thing is the amount of what I will call life which is required to be exchanged for it",
+            "he must have spent more than half his life commonly before his wigwam will be earned"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-10-q2",
+          "prompt": "What objection does Thoreau anticipate, and how does he answer it?",
+          "facilitatorNotes": [
+            "That the renter gets a palace by comparison, with the improvements of centuries. Thoreau asks why such a man is so commonly poor, and sets a test: civilisation must produce better dwellings without making them cost more. He grants that civilisation is an advance, “though only the wise improve their advantages.”"
+          ],
+          "evidence": [
+            "But how happens it that he who is said to enjoy these things is so commonly a poor civilized man",
+            "it must be shown that it has produced better dwellings without making them more costly"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-10-q3",
+          "prompt": "Thoreau says stored property serves the individual mainly to pay for his funeral. What is the sting in the joke, and what larger argument follows?",
+          "facilitatorNotes": [
+            "Saving for security ends in buying one’s burial, and “perhaps a man is not required to bury himself.” The larger argument: civilisation makes life an institution in which the individual is absorbed for the good of the race, and he wants its advantages without that sacrifice."
+          ],
+          "evidence": [
+            "But perhaps a man is not required to bury himself.",
+            "in which the life of the individual is to a great extent absorbed"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-10-q4",
+          "prompt": "Why end with Ezekiel’s rejection of the proverb about sour grapes?",
+          "facilitatorNotes": [
+            "The proverb, like “the poor ye have always with you,” treats inherited burdens as fate. Ezekiel’s God abolishes the excuse: each soul answers for itself. Thoreau uses scripture to deny that poverty and inherited debt are inevitable. Readers may find the application apt or strained."
+          ],
+          "evidence": [
+            "ye shall not have occasion any more to use this proverb in Israel",
+            "the soul that sinneth it shall die"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-thoreau-walden-1854-11",
+      "title": "Walden: The house that has got him (excerpt)",
+      "sourceId": "thoreau-walden-1854",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Weigh personal observation, local records and historical examples as evidence for a social claim.",
+      "focus": "Ownership that owns its owner, and the poverty that civilisation’s improvements leave behind.",
+      "context": "Thoreau has defined the cost of a thing as the life exchanged for it and asked whether a civilised family’s house is worth its years. Now he looks at his neighbours. A springe is a snare; Momus was the Greek god of mockery; “suent” is New England dialect for smooth-running; the poet quoted is George Chapman; operatives are factory workers.",
+      "contentNote": "Nineteenth-century prose retains original gendered wording, historical allusions, and historical spelling. This is a literary argument to examine, not a universal prescription for how to live. Thoreau sets “savage” against “civilized” in the period’s ranking of peoples, sometimes to reverse it, never to question the terms. He describes Irish railroad labourers’ shanties as “sties” and, in bitter irony, calls enslaved Southern labourers “a staple production of the South.”",
+      "excerpt": {
+        "locator": "Economy, from the mortgaged farms of Concord to the poor minority beside the railroads; opens “When I consider my neighbors, the farmers of Concord, who are at least as well off as the…”; closes “…the South. But to confine myself to those who are said to be in moderate circumstances.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          53,
+          58
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dcf0c35e4ea94a5d352c008a449dc4a153103c74a80da258ef7864fefd2f3bf8"
+      },
+      "questions": [
+        {
+          "id": "reading-11-thoreau-walden-1854-11-q1",
+          "prompt": "What does Thoreau find when he asks the assessors and the bank about Concord’s farms?",
+          "facilitatorNotes": [
+            "Hardly anyone owns a farm free and clear; the history of a homestead is kept at the bank that holds its mortgage; perhaps three men have paid for their farms with labour. The annual Cattle Show carries on as if the “agricultural machine” ran smoothly."
+          ],
+          "evidence": [
+            "If you would know the history of these homesteads, inquire at the bank where they are mortgaged.",
+            "I doubt if there are three such men in Concord."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-11-q2",
+          "prompt": "“It be the house that has got him.” How does Thoreau make the owner the possession of what he owns?",
+          "facilitatorNotes": [
+            "The farmer sets a snare for comfort and catches his own leg; houses are so unwieldy that we are “imprisoned rather than housed” in them; some families have waited a generation to sell and “only death will set them free.” The bad neighbourhood to escape is ourselves."
+          ],
+          "evidence": [
+            "got his own leg into it",
+            "we are often imprisoned rather than housed in them"
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-11-q3",
+          "prompt": "“It has created palaces, but it was not so easy to create noblemen and kings.” What distinction is Thoreau drawing?",
+          "facilitatorNotes": [
+            "Material improvement against moral improvement. If civilised people spend their lives getting necessaries and comforts like anyone else, Thoreau asks what entitles them to better houses."
+          ],
+          "evidence": [
+            "While civilization has been improving our houses, it has not equally improved the men who are to inhabit them."
+          ]
+        },
+        {
+          "id": "reading-11-thoreau-walden-1854-11-q4",
+          "prompt": "How does the last paragraph turn from the comfortable majority to the “poor minority,” and what evidence does Thoreau bring?",
+          "facilitatorNotes": [
+            "One class’s luxury is balanced by another’s indigence: the pyramid-builders fed on garlic, the mason returning to a hut, the shanties he passes daily beside the railroad, England’s operatives, Ireland, and the enslaved labourers of the South. Readers can ask what his daily walks can establish and what the historical examples add."
+          ],
+          "evidence": [
+            "The luxury of one class is counterbalanced by the indigence of another.",
+            "the shanties which every where border our railroads, that last improvement in civilization"
+          ]
+        }
+      ]
+    }
+  ]
+}
