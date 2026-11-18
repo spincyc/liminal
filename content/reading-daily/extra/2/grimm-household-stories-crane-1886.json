@@ -529,7 +529,7 @@
       },
       "challenge": "Follow how a gift is answered with another gift.",
       "focus": "A poor shoemaker’s work is finished every night by unseen helpers, until he and his wife decide to thank them.",
-      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. The Grimms printed three short stories together under the title “The Elves”; this is the first (a school night reads the second). A conscience is a sense of right and wrong; a purchaser is a buyer; waistcoats and breeches are vests and knee-length trousers; spruce means neat and smart; a cobbler makes and mends shoes.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. The Grimms printed three short stories together under the title “The Elves”; this is the first (a school night reads the second). A conscience is a sense of right and wrong; a purchaser is a buyer; waistcoats and breeches are vests and knee-length trousers; spruce means neat and smart; a cobbler makes and mends shoes. It is read on Labor Day, a holiday for working people, because it is a story about honest, skilful work and about thanking the workers who help us.",
       "contentNote": null,
       "excerpt": {
         "locator": "“The Elves,” the first of its three stories (the shoemaker); opens “There was once a shoemaker, who, through no fault of his own, became so poor that at last…”; closes “…went well with the shoemaker as long as he lived, and whatever he took in hand prospered.”.",
@@ -589,9 +589,7 @@
           ]
         }
       ],
-      "months": [
-        12
-      ]
+      "holiday": "labor-day"
     },
     {
       "id": "reading-2-grimm-household-stories-crane-1886-09",

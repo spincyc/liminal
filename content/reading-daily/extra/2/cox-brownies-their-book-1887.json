@@ -574,7 +574,7 @@
       },
       "challenge": "Find the details that show how people celebrated a holiday long ago.",
       "focus": "The Brownies borrow fireworks from a locked building and celebrate Independence Day on a hill above the sleeping town.",
-      "context": "Palmer Cox’s Brownies are imaginary little sprites who come out only at night and take care never to be seen by people. Independence Day, the Fourth of July, celebrates the American colonies declaring themselves free of the British king in 1776. Roman candles, wheels, bombs, crackers and rockets are fireworks; a bust is a statue of a head and shoulders; “him who led his tattered band” and “the Father of his Country” both mean George Washington; a fusillade is many shots at once.",
+      "context": "Palmer Cox’s Brownies are imaginary little sprites who come out only at night and take care never to be seen by people. Independence Day, the Fourth of July, celebrates the American colonies declaring themselves free of the British king in 1776. Roman candles, wheels, bombs, crackers and rockets are fireworks; a bust is a statue of a head and shoulders; “him who led his tattered band” and “the Father of his Country” both mean George Washington; a fusillade is many shots at once. It is read on the Fourth of July, the birthday of the United States, when towns still celebrate with fireworks.",
       "contentNote": "The Brownies help themselves to fireworks from a locked building, and several are singed and burned setting them off.",
       "excerpt": {
         "locator": "“The Brownies’ Fourth of July,” the whole poem; opens “WHEN Independence Day was nigh, And children laid their pennies by, Arranging plans how…”; closes “…roaming 'round; And with reluctant feet they fled When morning tinged the sky with red.”.",
@@ -633,9 +633,7 @@
           ]
         }
       ],
-      "months": [
-        7
-      ]
+      "holiday": "independence-day"
     }
   ]
 }

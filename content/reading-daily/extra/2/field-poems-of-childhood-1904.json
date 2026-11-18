@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "grade": 2,
+  "work": "field-poems-of-childhood-1904",
+  "readings": [
+    {
+      "id": "reading-2-field-poems-of-childhood-1904-01",
+      "title": "Jest ’Fore Christmas",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen to how Bill talks, and decide whether he is really good.",
+      "focus": "A boy who is up to mischief all year tells how polite and good he becomes just before Christmas, and why.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Bill talks the way a country boy of his time might: jest is just, ruther is rather, ’fore is before, perlite is polite, biz is business. Fauntleroy is a storybook boy dressed in velvet and curls; castor-ile is castor oil, a nasty-tasting medicine; “there ain’t no flies on me” means nobody gets the better of me; a clipper sled is a fast sled; to larrup is to whip; Buffalo Bill ran a Wild West show; to mind your p’s and q’s is to watch your manners. Read it in a boy’s voice and enjoy the sound.",
+      "contentNote": "Bill sets his dog on the cat, says he is glad he is not a girl, and repeats his grandmother’s talk of “cannibuls” on “Ceylon’s Isle” (now Sri Lanka), where “only man is vile,” words from an old missionary hymn that insulted the people who lived there. Say so plainly if a child asks.",
+      "excerpt": {
+        "locator": "“Jest ’Fore Christmas,” the whole poem; opens “Father calls me William, sister calls me Will, Mother calls me Willie, but the fellers…”; closes “…things yer ’d like to see upon that tree, Jest ’fore Christmas be as good as yer kin be!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          321,
+          325
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "31ff1bafa262bd4ee981ac19564394d22a75ddfa1236a77ef40f0bbcbe92adcc"
+      },
+      "questions": [
+        {
+          "id": "reading-2-field-poems-of-childhood-1904-01-q1",
+          "prompt": "What does Bill get up to during the rest of the year?",
+          "facilitatorNotes": [
+            "He sets his dog on the cat, hooks rides on the grocery cart and laughs when the grocer reaches for him with the whip, eats green apples and goes swimming."
+          ],
+          "evidence": [
+            "Got a yeller dog named Sport, sick him on the cat;",
+            "we all hook a ride!"
+          ]
+        },
+        {
+          "id": "reading-2-field-poems-of-childhood-1904-01-q2",
+          "prompt": "How do Sport and the cat know that something has changed?",
+          "facilitatorNotes": [
+            "Sport hangs about, solemn and still, as if asking what is wrong; the cat creeps down from her perch wondering what has become of her two enemies."
+          ],
+          "evidence": [
+            "so solemn-like an’ still",
+            "wonders what’s become"
+          ]
+        },
+        {
+          "id": "reading-2-field-poems-of-childhood-1904-01-q3",
+          "prompt": "Mother says, “How improved our Willie is!” Why does Father suspect him?",
+          "facilitatorNotes": [
+            "Father was a boy once himself, so he knows the trick: being good just before Christmas to get presents."
+          ],
+          "evidence": [
+            "father, havin’ been a boy hisself, suspicions me"
+          ]
+        },
+        {
+          "id": "reading-2-field-poems-of-childhood-1904-01-q4",
+          "prompt": "The last verse gives advice to other children. Is Bill really good, or only good at seeming good? What do you think the poet wants us to notice?",
+          "facilitatorNotes": [
+            "He is good only for the presents, and he says so; the poem jokes about it and still lets us like him. Some children will say that pretending to be good at least practises good manners; others that goodness lasting only till Christmas is not real. Both can use the last lines."
+          ],
+          "evidence": [
+            "Was made, they say, for proper kids, an’ not for naughty boys;",
+            "Jest ’fore Christmas be as good as yer kin be!"
+          ]
+        }
+      ],
+      "holiday": "christmas"
+    }
+  ]
+}
