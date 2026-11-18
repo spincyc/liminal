@@ -382,6 +382,452 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-07",
+      "title": "The Easter Flower",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a memory that carries both a religious meaning and a private one.",
+      "focus": "At a cold Easter far from home, the speaker remembers one lily.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. Easter celebrates Christ rising from the tomb. The Easter lily is a white lily that blooms in spring; rime is frost.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Easter Flower,” the whole poem; opens “Far from this foreign Easter damp and chilly My soul steals to a pear-shaped plot of…”; closes “…And I, a pagan, worshiped at its shrine, Yielding my heart unto its perfumed power.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          12,
+          14
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "46f35d49f3be8db73d0c26afb40019b6a4ee4b70990889da30263288e6429686"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-07-q1",
+          "prompt": "Where is the speaker, and where does his soul go? Which details mark each place?",
+          "facilitatorNotes": [
+            "He is in a “foreign” place where Easter is “damp and chilly”; his soul goes to “a pear-shaped plot of ground” at home where a lily bloomed. The precise detail of the shape makes the memory vivid and real."
+          ],
+          "evidence": [
+            "Far from this foreign Easter damp and chilly",
+            "My soul steals to a pear-shaped plot of ground,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-07-q2",
+          "prompt": "The lily “burst the tomb for freedom sweet and brief.” How does the poem tie the flower to Easter? Why might “freedom” and “brief” matter to this speaker?",
+          "facilitatorNotes": [
+            "Blooming is pictured as rising from the tomb, like the Easter story, so people called it “the resurrection flower.” Its freedom is brief, as a flower’s life is. For someone far from home, “freedom” may also suggest his own longing. Readers can decide how much to read into it."
+          ],
+          "evidence": [
+            "It burst the tomb for freedom sweet and brief",
+            "And some called it the resurrection flower;"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-07-q3",
+          "prompt": "Others saw “a sacred sign.” How is the speaker’s worship different?",
+          "facilitatorNotes": [
+            "He calls himself “a pagan”: he worships the flower’s beauty and scent, not what it symbolises. He gives his heart to its “perfumed power.” It is a bold self-description in a poem about Easter; some readers will say his real religion is memory and home."
+          ],
+          "evidence": [
+            "And many thought it was a sacred sign,",
+            "And I, a pagan, worshiped at its shrine, Yielding my heart unto its perfumed power."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-08",
+      "title": "Alfonso, Dressing to Wait at Table",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice how the title and the last stanza change the meaning of a song.",
+      "focus": "Waiters getting ready for work, and one who sings.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. The speaker is one of a group of waiters. A glory-hole is a cramped storeroom or crew space; rakes are pleasure-loving men; falsetto is a high singing voice; alloy is a cheaper metal mixed into gold. “Wherefore” means why; “importunate” means demanding. “Paleface” was a slang term for a white person.",
+      "contentNote": "The speaker calls the white diners “palefaces.”",
+      "excerpt": {
+        "locator": "“Alfonso, Dressing to Wait at Table,” the whole poem; opens “Alfonso is a handsome bronze-hued lad Of subtly-changing and surprising parts; His moods…”; closes “…ancient places? Soon we shall be beset by clamouring Of hungry and importunate palefaces.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "31b0e53bedbd5f53196d46de26cfec32b5b1ca0e28c3a4a3851c7ad9780d6610"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-08-q1",
+          "prompt": "How does the speaker describe Alfonso? Find words that show admiration.",
+          "facilitatorNotes": [
+            "He is handsome and “bronze-hued,” his moods are storms, and his voice is gold “without alloy,” pure. The speaker clearly loves to hear him. The admiration makes the last stanza more pointed."
+          ],
+          "evidence": [
+            "Alfonso is a handsome bronze-hued lad",
+            "Are rarest notes of gold without alloy."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-08-q2",
+          "prompt": "Who are “we” and “our”? How do the title and the last stanza change what Alfonso’s song means?",
+          "facilitatorNotes": [
+            "They are his fellow waiters, dressing in the crew space. His song of “carefree men” and wine sits against their real evening: serving demanding white customers. The song becomes an escape, a dream of being the one who is served and free."
+          ],
+          "evidence": [
+            "Alfonso’s voice of mellow music thrills Our swaying forms",
+            "Soon we shall be beset by clamouring Of hungry and importunate palefaces."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-08-q3",
+          "prompt": "“But, O Alfonso! wherefore do you sing / Dream-songs of carefree men and ancient places?” Is the speaker scolding, pitying or envying Alfonso?",
+          "facilitatorNotes": [
+            "Several readings fit: a gentle warning that reality is about to break in; sadness that such a voice must wait at table; envy or admiration that he can still dream. The question is left unanswered, which lets the reader choose."
+          ],
+          "evidence": [
+            "wherefore do you sing Dream-songs of carefree men and ancient places?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-09",
+      "title": "North and South",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Find the half of the title that the poem never describes.",
+      "focus": "A sonnet of slow, sunny days in the tropics.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. This poem is a sonnet, fourteen lines long. The “tropic lands” are the warm islands of the Caribbean, such as Jamaica. “Swarthy” means dark-skinned; strands are shores.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“North and South,” the whole poem; opens “O sweet are tropic lands for waking dreams! There time and life move lazily along. There…”; closes “…The sea beats softly on the emerald strands— O sweet for quiet dreams are tropic lands!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          55,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a25d2288f2fe2783fcee2981f7a5547aa145322a5397c9c486cce6f4823a77c1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-09-q1",
+          "prompt": "List the living things in the poem and what each one is doing. What do they have in common?",
+          "facilitatorNotes": [
+            "Crickets chirp, lizards loll, children play, a hummingbird darts, a buzzard floats “for endless hours.” Almost everything is relaxed and unhurried; even the buzzard is “leisured.” The poem itself moves “lazily along.”"
+          ],
+          "evidence": [
+            "Gay-colored lizards loll all through the day,",
+            "The leisured buzzard floats upon the breeze,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-09-q2",
+          "prompt": "The title is “North and South,” but the poem describes only the South. Where is the North?",
+          "facilitatorNotes": [
+            "It is the place the speaker is in now, never named: by implication busy, cold and hurried. Its absence makes the South glow. Readers might also ask whether a picture of “idleness” everywhere is a fair one, or a homesick dream that leaves out work and hardship."
+          ],
+          "evidence": [
+            "O sweet are tropic lands for waking dreams!",
+            "A breath of idleness is in the air"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-09-q3",
+          "prompt": "The first and last lines are almost the same. What changes, and why frame the poem this way?",
+          "facilitatorNotes": [
+            "“Waking dreams” becomes “quiet dreams,” and the order of the words turns round. The poem circles back on itself, like a daydream returning to its start, and ends more softly than it began."
+          ],
+          "evidence": [
+            "O sweet are tropic lands for waking dreams!",
+            "O sweet for quiet dreams are tropic lands!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-10",
+      "title": "The Castaways",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice how a poem’s order differs from the order of what the speaker saw.",
+      "focus": "Spring in a city park, and the people on its benches.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. This poem is a sonnet. A castaway is someone shipwrecked and abandoned; here it means people cast out by society. “Daubed” means smeared with paint.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Castaways,” the whole poem; opens “The vivid grass with visible delight Springing triumphant from the pregnant earth, The…”; closes “…and deep. Moaning I turned away, for misery I have the strength to bear but not to see.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          142,
+          142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d16d52350a1d68af47e692096b2fe3f606bc291bc128b295c89c24f711731404"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-10-q1",
+          "prompt": "The first eight lines describe spring. Then: “Not these, not these did I at first behold!” What did he see first? Why does the poem show spring before it?",
+          "facilitatorNotes": [
+            "He first saw the castaways on the benches; the poem reverses that order. The reader enjoys spring and then has it snatched away, so the reader feels the shock the speaker felt."
+          ],
+          "evidence": [
+            "Not these, not these did I at first behold!",
+            "The castaways of life, a few asleep,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-10-q2",
+          "prompt": "Compare the words used for spring with the words used for the people. What contrast does the poem draw?",
+          "facilitatorNotes": [
+            "Spring is “triumphant,” “pregnant,” golden, joyful: life renewing itself. The people are “withered,” “desolate,” in shadow. Nature begins again each year; these lives do not."
+          ],
+          "evidence": [
+            "Springing triumphant from the pregnant earth,",
+            "Some withered women desolate and mean,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-10-q3",
+          "prompt": "“For misery / I have the strength to bear but not to see.” What does he mean? Is turning away a weakness?",
+          "facilitatorNotes": [
+            "He can endure his own suffering, but watching others suffer is beyond him. It is an honest confession. Readers may call it compassion, since their pain hurts him, or avoidance, since he turns away rather than helping; the poem allows both."
+          ],
+          "evidence": [
+            "Moaning I turned away, for misery I have the strength to bear but not to see."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-11",
+      "title": "Outcast",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a sonnet from longing to loss, and weigh the images it uses for Africa.",
+      "focus": "A speaker who feels at home neither in the West nor in the land of his ancestors.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. This poem is a sonnet. The “fathers” of the first line are the speaker’s African ancestors. To hold something “in fee” is to own it outright; a clime is a region of the world.",
+      "contentNote": "The speaker imagines Africa through words such as “jungle” and “darkness,” and speaks of “the white man’s menace.”",
+      "excerpt": {
+        "locator": "“Outcast,” the whole poem; opens “For the dim regions whence my fathers came My spirit, bondaged by the body, longs. Words…”; closes “…For I was born, far from my native clime, Under the white man’s menace, out of time.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          136,
+          136
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bc3b199cda24ab2cba4dda55d74c602749a465453aa2378d0d580e59a966641a"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-11-q1",
+          "prompt": "What does the speaker long for, and what holds him back?",
+          "facilitatorNotes": [
+            "He longs for “the dim regions whence my fathers came,” but “the great western world holds me in fee”: it owns him, and he bends his knee to its “alien gods.” His spirit is “bondaged,” a word that recalls slavery."
+          ],
+          "evidence": [
+            "For the dim regions whence my fathers came My spirit, bondaged by the body, longs.",
+            "But the great western world holds me in fee,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-11-q2",
+          "prompt": "How can he long for words “never heard” and songs that are “forgotten”? What do the words “jungle” and “darkness” add, and do you accept them?",
+          "facilitatorNotes": [
+            "The loss is inherited: whatever his ancestors knew was taken from him before he was born, so he feels it without knowing it. “Jungle” and “darkness” echo Western images of Africa; he may mean them tenderly (“darkness and … peace”), but readers can question whether he has absorbed the very view of Africa the West imposed."
+          ],
+          "evidence": [
+            "Words felt, but never heard, my lips would frame;",
+            "I would go back to darkness and to peace,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-11-q3",
+          "prompt": "What does it mean to be born “out of time”? How does the last part of the poem answer the first?",
+          "facilitatorNotes": [
+            "The first eight lines long for return; the last six admit it is impossible. He walks “a ghost,” “a thing apart,” born far from his “native clime” and in the wrong age, under racial threat. “Out of time” can mean in the wrong era, out of rhythm, or too late."
+          ],
+          "evidence": [
+            "And I must walk the way of life a ghost Among the sons of earth, a thing apart;",
+            "Under the white man’s menace, out of time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-12",
+      "title": "Baptism",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Decide what a poem’s central image stands for, and defend your reading.",
+      "focus": "A speaker who chooses to walk alone into a furnace.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. This poem is a sonnet. Baptism is a ceremony, often with water, marking the start of a new life; this one is by fire. In the Book of Daniel, three young men thrown into a furnace walk out unharmed. “Aspish” means like an asp, a poisonous snake.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Baptism,” the whole poem; opens “Into the furnace let me go alone; Stay you without in terror of the heat. I will go naked…”; closes “…I will come out, back to your world of tears, A stronger soul within a finer frame.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          151,
+          151
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4925b93582a175f2cd1489ea99b625b7b5a758ea2d18ed5302d0e559d6c00ecc"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-12-q1",
+          "prompt": "Whom does the speaker call “you,” and what does he ask of them?",
+          "facilitatorNotes": [
+            "Those who fear: they are to stay outside, “in terror of the heat,” while he goes in alone. He separates himself from people who will not face what he will face."
+          ],
+          "evidence": [
+            "Into the furnace let me go alone; Stay you without in terror of the heat."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-12-q2",
+          "prompt": "What does he promise about how he will behave in the fire? What does the fire do in return?",
+          "facilitatorNotes": [
+            "He will not quiver, show defeat or moan. The fire spits spears and its “red aspish tongues shout wordlessly my name,” as if the ordeal were calling him personally. His pride matches the fire’s violence."
+          ],
+          "evidence": [
+            "I will not quiver in the frailest bone,",
+            "Red aspish tongues shout wordlessly my name."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-12-q3",
+          "prompt": "What might the furnace stand for? Use the last lines to support your answer.",
+          "facilitatorNotes": [
+            "Any great ordeal: racism, hardship, the struggle of an artist. The fire destroys his fears and remakes him: “A stronger soul within a finer frame.” A “baptism of fire” is a first, testing trial. Readers can defend different readings; the poem names no single meaning."
+          ],
+          "evidence": [
+            "Desire destroys, consumes my mortal fears,",
+            "A stronger soul within a finer frame."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-13",
+      "title": "The Lynching",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Read a poem of witness closely, and notice where it places the blame.",
+      "focus": "A sonnet about a man murdered by a mob and the crowd that comes to look.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. This poem is a sonnet. A lynching is a murder by a mob, without trial; in the late nineteenth and early twentieth centuries thousands of Black Americans were lynched, often before crowds. “Char” here means the burned body.",
+      "contentNote": "This poem describes the burned and hanging body of a man murdered by a mob, and a crowd, including children, that rejoices at it.",
+      "excerpt": {
+        "locator": "“The Lynching,” the whole poem; opens “His Spirit in smoke ascended to high heaven. His father, by the cruelest way of pain, Had…”; closes “…little lads, lynchers that were to be, Danced round the dreadful thing in fiendish glee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          149,
+          149
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd1894020953ec8bd7039799a627a5b66302a72df1e7795e74fa5d91013ccac2"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-13-q1",
+          "prompt": "The first four lines speak of spirit, heaven, a father and an unforgiven sin. What story do they echo, and why might McKay begin this way?",
+          "facilitatorNotes": [
+            "They echo the death of Christ: a son called back to his Father “by the cruelest way of pain.” The murdered man is given the dignity of a martyr. “The awful sin” is unclear: it may be the crime he was accused of, never tried, or the lynchers’ sin, which remains unforgiven. The poem never says what he was accused of, and that silence matters."
+          ],
+          "evidence": [
+            "His Spirit in smoke ascended to high heaven.",
+            "His father, by the cruelest way of pain, Had bidden him to his bosom once again;",
+            "The awful sin remained still unforgiven."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-13-q2",
+          "prompt": "What is the effect of the star that “Hung pitifully” over the body?",
+          "facilitatorNotes": [
+            "“Hung” echoes the hanging. The star shows pity when the people do not, and it may be the star that “ever guided him,” yet could not save him. Nature mourns while the crowd celebrates."
+          ],
+          "evidence": [
+            "All night a bright and solitary star",
+            "Hung pitifully o’er the swinging char."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-13-q3",
+          "prompt": "The last six lines turn to the crowd. What is most terrible about it, and what does “lynchers that were to be” predict?",
+          "facilitatorNotes": [
+            "No woman shows sorrow, and the boys dance with glee: they are learning hatred and will become the next lynchers. The poem blames not only the mob but the whole watching community, and shows cruelty passed to children. “Steely blue” eyes mark the crowd as white."
+          ],
+          "evidence": [
+            "The women thronged to look, but never a one Showed sorrow in her eyes of steely blue;",
+            "And little lads, lynchers that were to be, Danced round the dreadful thing in fiendish glee."
+          ]
+        }
+      ]
     }
   ]
 }
