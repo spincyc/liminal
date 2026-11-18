@@ -217,3 +217,53 @@ test("a reading-level plan names tonight's night, or the next one", () => {
   const real = LL.makePlan({ startDate: "2026-11-16", core: { level: 5, index: 10 }, stretch: null, libraryLevels: [5] });
   assert.deepEqual(LL.nightOn(real, "2026-11-17"), { level: 5, week: 3, day: 2, date: "2026-11-17", kind: "core" });
 });
+
+test("unrecognized routes fall back to the remembered grade, and school-night ids redirect only to real nights", () => {
+  const opts = { grade: 5, today: "2026-11-17" };
+  // Finding 10: an unknown grade keeps the remembered one and is marked invalid (so it is not remembered).
+  for (const hash of ["#zz/3/2", "#a1/1/1", "#5/37/1", "#7/3/2"]) {
+    const selected = D.view(index, hash, opts);
+    assert.equal(selected.view, "read", hash); assert.equal(selected.grade, 5, hash); assert.equal(selected.invalid, true, hash);
+  }
+  assert.equal(D.view(index, "#zz/3/2", {}).grade, 0);
+  // Finding 11: a night's id opens the night; one naming no real night is invalid, never an empty redirect.
+  assert.deepEqual(D.view(index, "#5/reading/reading-5-w03-d2", opts), { view: "read", course: index.grades[2], grade: 5, week: 3, day: 2, redirect: true, invalid: false });
+  for (const id of ["reading-5-w37-d1", "reading-5-w00-d1", "reading-5-w03-d6"]) {
+    const selected = D.view(index, "#5/reading/" + id, opts);
+    assert.equal(selected.view, "read", id); assert.equal(selected.redirect, false, id); assert.equal(selected.invalid, true, id);
+    assert.notEqual(D.route(selected.grade, selected.week, selected.day), "", id);
+  }
+});
+
+test("a print link without a day opens today's date only when a chosen level has a calendar", () => {
+  const opts = { grade: 3, today: "2026-11-17" };
+  assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, week: 1, day: 1, grades: [], invalid: false });
+  assert.equal(D.view(index, "#print", { ...opts, grade: 5 }).date, "2026-11-17");
+  assert.equal(D.view(index, "#print/3", opts).week, 1);
+  assert.equal(D.view(index, "#print/3,5", opts).date, "2026-11-17");
+  assert.equal(D.view(index, "#print/date/2026-12-25/3", opts).date, "2026-12-25");
+});
+
+test("dates run from 0001-01-01 to 9999-12-31 in both libraries, with no step past either end", () => {
+  for (const value of ["0001-01-01", "0099-12-31", "0100-01-01", "2028-02-29", "9999-12-31"]) {
+    assert.equal(D.validDate(value), true, value); assert.notEqual(Cal.parseDate(value), null, value);
+  }
+  for (const value of ["0000-01-01", "2027-02-29", "1900-02-29", "2026-13-01", "10000-01-01", "2026-1-01"]) {
+    assert.equal(D.validDate(value), false, value); assert.equal(Cal.parseDate(value), null, value);
+  }
+  assert.equal(Cal.addDays("0100-01-01", -1), "0099-12-31"); assert.equal(Cal.addDays("0001-03-01", -1), "0001-02-28");
+  assert.equal(Cal.addDays("9999-12-31", 1), null); assert.equal(Cal.addDays("0001-01-01", -1), null);
+  assert.equal(Cal.longDate("0099-12-31"), "Thursday, December 31, 99");
+  assert.equal(D.dateRoute(5, "0099-12-31"), "#5/date/0099-12-31"); assert.equal(D.dateRoute(5, null), "");
+  assert.equal(Cal.addMonths("9999-12", 1), null); assert.equal(Cal.addMonths("0001-01", -1), null); assert.equal(Cal.addMonths("0001-01", 1), "0001-02");
+  assert.equal(Cal.monthGrid({ years: [[], [], []] }, null, "0050-03").weeks.flat().filter(Boolean).length, 31);
+});
+
+test("a typed date opens only when complete and committed; the picker's choice opens at once", () => {
+  assert.equal(D.dateCommit({ value: "2027-11-17", current: "2026-11-17" }), "2027-11-17");
+  assert.equal(D.dateCommit({ value: "0202-11-17", current: "2026-11-17", typing: true }), null);
+  assert.equal(D.dateCommit({ value: "2027-11-17", current: "2026-11-17", typing: true, explicit: true }), "2027-11-17");
+  assert.equal(D.dateCommit({ value: "2026-11-17", current: "2026-11-17", explicit: true }), null);
+  assert.equal(D.dateCommit({ value: "", current: "2026-11-17", explicit: true }), null);
+  assert.equal(D.dateCommit({ value: "2027-02-29", explicit: true }), null);
+});

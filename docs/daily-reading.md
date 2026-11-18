@@ -167,7 +167,7 @@ an unrecognized part falls back to the nearest valid view and says so):
 
 **Year.** One grade's school year as a single column of 36 weeks. Each week's
 summary names its works and total minutes; the current week is marked and
-opens first, and "Go to week" jumps to any other. An open week lists five
+opens first, and "Go to week" (with Go or Enter) opens any other. An open week lists five
 nights with title, author, minutes, genre and, only when the grade mixes
 modes, the reading mode. Continued readings say "Part 2 of 5 · began Week 3,
 Day 4". Search matches every word against titles, authors, works and genres,
