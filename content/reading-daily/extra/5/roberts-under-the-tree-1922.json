@@ -1121,6 +1121,533 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-16",
+      "title": "Milking Time",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a small everyday event in order, and notice which sense each stanza uses.",
+      "focus": "A child turns waiting for warm milk at the barnyard gate into a little ceremony of sights, smells and sounds.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. On a farm the cows were milked by hand in the evening. Shucks are the dry husks around ears of corn, and the silk is the fine threads at the tip of an ear; a china mug is a cup of glazed pottery. Milk straight from the cow is warm and foamy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Milking Time,” complete poem; opens “When supper time is almost come, But not quite here, I cannot wait, And so I take my…”; closes “…streams commence To run and drip along the sides, He hands it to me through the fence.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          18,
+          22
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "45479c6e8060758d28e9c3e13d2530ad679d7766568350c99ea06d53be619799"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-16-q1",
+          "prompt": "Why does the child go down to the milking gate before supper? What does “I cannot wait” tell you about her?",
+          "facilitatorNotes": [
+            "Supper is “almost come, / But not quite here,” and she is too eager to wait for the milk to be carried up to the house, so she takes her own mug to the gate. The milk fresh from the cow is a treat she looks forward to every day."
+          ],
+          "evidence": [
+            "When supper time is almost come,",
+            "But not quite here, I cannot wait,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-16-q2",
+          "prompt": "Describe the cow from the poem’s details. Which detail could only someone standing very close have noticed?",
+          "facilitatorNotes": [
+            "She eats shucks and spills the little silk, her eyes are “purple” and “big and soft,” and she “always smells like milk.” The colour of her eyes and the bits of corn silk falling from her mouth are close-up details; a child at the gate sees the cow at her own height."
+          ],
+          "evidence": [
+            "Her purple eyes are big and soft--",
+            "She always smells like milk."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-16-q3",
+          "prompt": "“And then he makes the stream come out.” Why might milking look to a child like something Father makes happen?",
+          "facilitatorNotes": [
+            "She sees only the result: Father takes the mug and a stream of milk appears. Milking takes skill, and to a small child it can look almost like magic. The words “makes” and “come out” show her wonder at it."
+          ],
+          "evidence": [
+            "And then he makes the stream come out.",
+            "And foaming all about."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-16-q4",
+          "prompt": "The poem ends as Father hands the mug through the fence. Why stop there, before she drinks?",
+          "facilitatorNotes": [
+            "The pleasure of the poem is the waiting and the watching: the mug filling until little streams run down its sides. Stopping at the moment of the gift leaves the taste to the reader. The fence also marks where her world ends and the cow’s begins. Readers may prefer an ending with the drink, and can say why."
+          ],
+          "evidence": [
+            "To run and drip along the sides,",
+            "He hands it to me through the fence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-17",
+      "title": "Miss Kate-Marie",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice the gap between what the grown-ups mean the child to learn and what she actually pays attention to.",
+      "focus": "A child’s first Sunday school is remembered for a rose, a silky dress and a teacher’s wriggling tongue, not for the lesson.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Sunday school is a class about religion held at church. Teachers often asked children set questions from a catechism, a little book of questions and answers; a common first question was “Who made you?”, answered “God.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Miss Kate-Marie,” complete poem; opens “And it was Sunday everywhere, And Father pinned a rose on me And said he guessed he'd…”; closes “…to fuss or frown; I liked to watch her little tongue And see it wriggle up and down.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          33,
+          38
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd14e866ed9a98cf2cd39e50ff2f9834ad51cbec61febec2a8ea60bb16528801"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-17-q1",
+          "prompt": "Where did the child think Father was taking her, and where did it turn out she was going?",
+          "facilitatorNotes": [
+            "Father said he would “take / Me down to see Miss Kate-Marie,” which sounds like a visit, and it “all turned out / To be a Sunday school.” Nobody explained beforehand, so the child discovers it, as children often discover what grown-ups have planned."
+          ],
+          "evidence": [
+            "Me down to see Miss Kate-Marie.",
+            "To be a Sunday school, and there"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-17-q2",
+          "prompt": "List everything the child noticed. How much of it belongs to the lesson?",
+          "facilitatorNotes": [
+            "Her rose, the teacher’s yellow lace hat and soft thin dress, the little book, the questions, and above all the tongue “wriggling out and in.” Only the book and the questions belong to the lesson, and she remembers the questions as a guessing game."
+          ],
+          "evidence": [
+            "Her hat was made of yellow lace;",
+            "And asked the things for us to guess."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-17-q3",
+          "prompt": "What is “Who-made-y-God”? Why is it printed as one hyphenated word?",
+          "facilitatorNotes": [
+            "It is the catechism question “Who made you?” with its answer “God,” run together as a child hears a phrase she has not understood: one long sound, like a name. The spelling lets the reader hear it the way she did. Some readers may think at first it is a name, which is just the point."
+          ],
+          "evidence": [
+            "She asked about Who-made-y-God,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-17-q4",
+          "prompt": "Is the poem making fun of Miss Kate-Marie, of the child, or of neither?",
+          "facilitatorNotes": [
+            "Miss Kate-Marie “was very good,” let her stand by her chair and “never seemed to fuss or frown,” so the child liked her. The comedy is in the child’s honest attention: she watches the tongue instead of the lesson and says so. Some readers will find the tongue detail a little unkind; others think it is simply what a small child would notice."
+          ],
+          "evidence": [
+            "Miss Kate-Marie was very good",
+            "I liked to watch her little tongue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-18",
+      "title": "The Pulpit",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow the turn from what the child sees in church to what she imagines, and notice the words set in italics.",
+      "focus": "During a long service a child invents a tiny family living inside the pulpit and wonders about their lives, which turn out to be much like her own.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. A pulpit is the raised stand at the front of a church from which the minister reads and preaches; some, like this one, are boxed in like a little house with a slanting top for the Bible. Hymns are songs of worship. In the last two stanzas the book prints “they” and “they’re” in italics, shown here between underscores.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Pulpit,” complete poem; opens “On Sunday when I go to church I wear my dress that's trimmed with lace. I sit beside my…”; closes “…lamp goes out, And what their little dreams are like And what _they_ wonder all about.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          85,
+          91
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6de4edc3c9568128a9c0e42e2c71f7c750cf90b22b68e4f72062fa25268b1f2"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-18-q1",
+          "prompt": "What does the child do in church, and what does Dr. Brown do?",
+          "facilitatorNotes": [
+            "She wears her lace-trimmed dress, sits by her mother and is “very quiet in my place.” Dr. Brown reads hymns, preaches loudly while the bells ring, and at the end shuts the Bible on top of the pulpit. She is quiet outside, but her mind is busy."
+          ],
+          "evidence": [
+            "Am very quiet in my place.",
+            "And shuts the Bible on the top."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-18-q2",
+          "prompt": "Why might the pulpit look to her like a “little house”?",
+          "facilitatorNotes": [
+            "It is boxed in, not very tall or wide, with a top like a roof, and she cannot see inside it. Something closed and house-shaped invites a child to imagine who lives there, as dolls’ houses do."
+          ],
+          "evidence": [
+            "I watch the little pulpit house--",
+            "It isn't very tall or wide--"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-18-q3",
+          "prompt": "Why are the little people’s words printed in italics?",
+          "facilitatorNotes": [
+            "The stress sets “they” apart from everyone else in church: these are her own secret people, not the minister or the congregation. Read aloud, the stressed word sounds like a child lowering her voice over a secret. Readers can try reading the stanza with and without the stress."
+          ],
+          "evidence": [
+            "And if _they_ cook and walk up stairs.",
+            "And what _they_ wonder all about."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-18-q4",
+          "prompt": "The little people say prayers, are scared when the lamp goes out, dream and wonder. How are their lives like the child’s own?",
+          "facilitatorNotes": [
+            "She is in church, where people pray; she knows being scared in the dark; and she is wondering right now. She has imagined a small copy of her own life. The last line, about what they wonder, turns the poem back on the wonderer herself."
+          ],
+          "evidence": [
+            "And say some kind of little prayers.",
+            "Because the bedroom lamp goes out,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-19",
+      "title": "The Picnic",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Read a list of events and decide what the list shows about the person who made it.",
+      "focus": "A child tells a church picnic in the order she remembers it, so toads, kisses, a swing and chicken wings all count the same.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Miss Kate-Marie, the Sunday-school teacher, and Mr. Wells come into other poems in the book. A katydid is a big green insect like a grasshopper. A ring game is a singing game played in a circle; in some, the player chosen kneels and is kissed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Picnic,” complete poem; opens “They had a picnic in the woods, And Mother couldn't go that day, But the twins and…”; closes “…after we'd played Two other songs, I had some cake And another wing and some lemonade.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          157,
+          164
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "923ff6ac9860431376d220880b6d00edd110a7e02e5fc041624f523780f54d6f"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-19-q1",
+          "prompt": "Who could not go to the picnic, and how did the children get there?",
+          "facilitatorNotes": [
+            "Mother could not go that day, but the twins, Brother and the speaker went, riding “on the wagon full of hay.” The ride is part of the treat."
+          ],
+          "evidence": [
+            "And Mother couldn't go that day,",
+            "We rode on the wagon full of hay."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-19-q2",
+          "prompt": "How did Joe B. Kirk feel about being kissed in the ring game? How does the child know?",
+          "facilitatorNotes": [
+            "He “didn't mind a bit”: he walked around, swung his arms and “seemed to be very glad of it.” She reads his feelings from what his body does, the way children watch one another. Some readers think he was showing off; others that he was embarrassed and covering it up."
+          ],
+          "evidence": [
+            "But Joe B. didn't mind a bit.",
+            "And seemed to be very glad of it."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-19-q3",
+          "prompt": "Why did Miss Marie send Mr. Jim off to fish? What might a grown-up guess that the child does not say?",
+          "facilitatorNotes": [
+            "She says the game is “for her and the little folks,” so he should go with the men. A grown-up reader may guess that Mr. Jim wanted to join a game in which Miss Kate-Marie kisses the players. The child reports it without explaining, and the reader fills the gap. Others may think he simply was too big for a children’s game."
+          ],
+          "evidence": [
+            "Then Mr. Jim said he would play,",
+            "And he could go and fish with the men."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-19-q4",
+          "prompt": "Count the food in the last two stanzas. What does the ending show about what she remembers best?",
+          "facilitatorNotes": [
+            "A peach, a chicken wing, a little cherry pie, bread, cake, another wing and lemonade: the list grows as the poem ends. Whatever else happened, the eating is what she remembers in detail. Readers may argue that the ring game or the swing mattered more, and point to the lines."
+          ],
+          "evidence": [
+            "Gave me a peach and a chicken wing.",
+            "And another wing and some lemonade."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-20",
+      "title": "In Maryland",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Work out who “we” are in a memory from long before the speaker was born.",
+      "focus": "A family story about a grandmother who watched ships on a wide river becomes the child’s own picture, told as if she had been there.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Grandmother Barbara belongs to the family’s past; “Grandmother Barbara’s day” means her time, long ago, before the family came to Kentucky. Maryland is on the Atlantic coast, where wide rivers run into the Chesapeake Bay and sailing ships went up and down them.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“In Maryland,” complete poem; opens “When it was Grandmother Barbara's day, We lived on a hill, and down below, Beyond the…”; closes “…as blue as the sky, And all day long and all day long We watched the little ships go by.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          237,
+          241
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cdab8b2b64b59498dd7670398b31b3416f1fa8d9e6241f0a287e345ae08137a8"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-20-q1",
+          "prompt": "How can you tell that this happened long ago?",
+          "facilitatorNotes": [
+            "It happened in “Grandmother Barbara's day,” and the ships are sailing ships with white sails, not steamboats. The family lived somewhere else then, on a hill above a river in Maryland."
+          ],
+          "evidence": [
+            "When it was Grandmother Barbara's day,",
+            "And all the sails were white."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-20-q2",
+          "prompt": "Who are “we” in this poem? Could the speaker have been there?",
+          "facilitatorNotes": [
+            "“We” is the family, but the speaker is a child in Kentucky, so she could not have lived in Grandmother Barbara’s time. She tells a story she has heard as if it were her own memory, as people sometimes do with family stories heard many times. Some readers will take “we” to mean the speaker really was there; ask what in the poem decides it."
+          ],
+          "evidence": [
+            "We lived on a hill, and down below,",
+            "We watched the little ships go by."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-20-q3",
+          "prompt": "Why might Grandmother Barbara never have tired of watching the river?",
+          "facilitatorNotes": [
+            "The ships came from and went to faraway places, and the wide blue water was beautiful (“my! it was a sight”). She may have longed to travel, or been waiting for someone, or simply loved the view; the poem leaves it open, so readers can choose and give a reason."
+          ],
+          "evidence": [
+            "She never was too tired of it",
+            "To watch the river any more."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-20-q4",
+          "prompt": "The last stanza says “all day long and all day long.” What does the repetition do?",
+          "facilitatorNotes": [
+            "It stretches the line out the way the long days of watching stretched, and it sounds like a child telling a story. The water as “blue as the sky” makes the river seem endless too."
+          ],
+          "evidence": [
+            "And all day long and all day long",
+            "And the water was blue, as blue as the sky,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-21",
+      "title": "Autumn Fields",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a child learns about places she has not seen from what someone brings home.",
+      "focus": "A tired walker’s report, and the seeds on his clothes, let a child see and smell the autumn countryside second-hand.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The man is probably the child’s father, home from a long walk across the farms. Watergaps are gaps in a fence where it crosses a stream; stiles are steps for climbing over a fence; sticktights are burrs that cling to clothes; Logan’s woods, Walton’s branch (a small stream) and Simms are neighbours’ places; papaws are soft wild fruits; red haws are the berries of the hawthorn; shocks are bundles of corn stalks stood up in a field after harvest; clods are lumps of earth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Autumn Fields,” complete poem; opens “He said his legs were stiff and sore For he had gone some twenty-eight miles, And he'd…”; closes “…that he had seen. And I could smell the shocks and clods, And the land where he had been.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          257,
+          262
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "12c4cd7e13b70af08f21d5871ac7f18ecfb51467c557f83672a2c1c32f7478f7"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-21-q1",
+          "prompt": "How far did he walk, and what made the walk hard?",
+          "facilitatorNotes": [
+            "Twenty-eight miles, through watergaps, fences, gates and stiles, over tangled brush and plowed fields. No wonder his legs were “stiff and sore.”"
+          ],
+          "evidence": [
+            "For he had gone some twenty-eight miles,",
+            "For some of that land was tangled brush,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-21-q2",
+          "prompt": "What has he brought home on his clothes? Why does the poem mention it?",
+          "facilitatorNotes": [
+            "Sticktights and “little dusts of seeds and stems”: evidence of where he has been. Part of the fields has come home with him, which is how the child can know them."
+          ],
+          "evidence": [
+            "And there were sticktights on his clothes",
+            "And little dusts of seeds and stems."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-21-q3",
+          "prompt": "“He said the miles were on his feet.” What does he mean?",
+          "facilitatorNotes": [
+            "His feet are so tired that he can feel every mile in them, as if the distance were something he carried. It is a grown-up’s way of talking that the child repeats, perhaps liking the sound of it."
+          ],
+          "evidence": [
+            "And he said the miles were on his feet."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-21-q4",
+          "prompt": "The child sits by him “To see the things that he had seen.” Can she really smell the shocks and clods?",
+          "facilitatorNotes": [
+            "Perhaps literally: the smells of the fields may be on his clothes and boots. But mostly she imagines her way into his day from his words and the seeds he carries. Both readings fit the last stanza; ask readers which they prefer."
+          ],
+          "evidence": [
+            "To see the things that he had seen.",
+            "And I could smell the shocks and clods,"
+          ]
+        }
+      ],
+      "months": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-22",
+      "title": "The Wolves",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 13,
+        "totalMinutes": 18
+      },
+      "challenge": "Work out from two short lines who Clem, Joe, Sandy and Evaline were, and notice whose story the poem tells and whose it leaves out.",
+      "focus": "A child repeats a frontier family story about wolves at a cabin door; its opening lines show, without comment, that the family once held people in slavery.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Roberts grew up in Springfield, Kentucky, among family stories of the pioneers who settled the state. Grandmother Polly is an ancestor from those days, when wolves still lived in Kentucky’s woods; “married and gone” means married and moved away to a home of her own. Slavery was legal in Kentucky until December 1865, and slaveholding parents often “gave” enslaved men, women and children to a daughter when she married, as they gave land or horses. Clem, Joe, Sandy and Evaline were almost certainly such people. The child names them only to say when the wolf story happened. The book prints “them” in italics, shown here between underscores.",
+      "contentNote": "The poem mentions without comment four people whom Polly’s father “had given her”: almost certainly enslaved people, handed to a married daughter as property. The wolves howl and show their teeth at a woman alone.",
+      "excerpt": {
+        "locator": "“The Wolves,” complete poem; opens “When Grandmother Polly had married and gone, But before her father had given her Clem, Or…”; closes “…fur. They came and howled by Polly's door And showed their little white teeth at her.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          267,
+          270
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a886195055a583aa69a6e8f7bb5c2caacc58ea540ab35ce11ecda76f25735e9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-22-q1",
+          "prompt": "The poem says when the wolf story happened by naming two events. What are they?",
+          "facilitatorNotes": [
+            "After Polly “had married and gone,” but before her father “had given her” Clem, Joe, Sandy or Evaline. Families often date old stories by events like these rather than by years."
+          ],
+          "evidence": [
+            "When Grandmother Polly had married and gone,",
+            "But before her father had given her Clem,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-22-q2",
+          "prompt": "Who were Clem, Joe, Sandy and Evaline? What clues does the poem give, and what does history add?",
+          "facilitatorNotes": [
+            "They have people’s names, and a father “gives” them to his married daughter, as he might give land or a horse. In Kentucky before 1865 that is how enslaved people were handed down in slaveholding families. Some readers may first guess pets or children; the word “given” and the stressed “them” point to people treated as property. Say plainly that this was wrong, and that it was legal then."
+          ],
+          "evidence": [
+            "Or Joe, or Sandy, or Evaline--",
+            "But before her father had given her Clem,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-22-q3",
+          "prompt": "How are the wolves described? Do they sound more frightening or more frightened?",
+          "facilitatorNotes": [
+            "They run down from the rocks at night, bristle their fur, howl by her door and show their teeth: real danger to a woman alone in a cabin. But “trembly fur” and “little white teeth” are a child’s words that make the wolves sound small, even nervous. Readers can argue either way from those words."
+          ],
+          "evidence": [
+            "And bristled up their trembly fur.",
+            "And showed their little white teeth at her."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-22-q4",
+          "prompt": "The family story remembers Polly’s fear of the wolves in detail but mentions Clem, Joe, Sandy and Evaline only in passing. Whose stories are missing?",
+          "facilitatorNotes": [
+            "The story is told from Polly’s side: her danger and courage are worth retelling, while the four people appear only to mark the time. Their own stories, where they came from, whom they left behind, what they feared, are not told. The child speaker probably does not notice; a reader can. Readers may also discuss whether Roberts, writing in 1922, meant us to notice; the poem gives no sign either way."
+          ],
+          "evidence": [
+            "She used to live in a far-away place,",
+            "Or Joe, or Sandy, or Evaline--"
+          ]
+        }
+      ]
     }
   ]
 }
