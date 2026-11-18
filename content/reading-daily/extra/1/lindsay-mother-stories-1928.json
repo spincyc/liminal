@@ -217,6 +217,150 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-04",
+      "title": "The Giant Energy and the Fairy Skill — too strong to help",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 5,
+        "totalMinutes": 13
+      },
+      "challenge": "Count the jobs the good woman gives the giant, and what goes wrong each time.",
+      "focus": "A giant who badly wants to help keeps spoiling things, and a patient friend shows him where to learn.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Energy means strength and the wish to keep doing things; skill means knowing how to do something well. A steeple is the tall pointed top of a church. Zeal is great eagerness. A cistern is a tank that holds water, and a pump brings the water up. A mullein is a tall weed with a long stalk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Giant Energy and the Fairy Skill,” without the motto for the mother printed before it, from the start to the giant seeing the fairy palace; opens “Long, long ago, when there were giants to be seen, as they might be seen now if we only…”; closes “…pebbles, he heard a strange bird singing, and saw among the trees the fairy palace.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-05",
+        "blocks": [
+          424,
+          443
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5c35ba9749ccbd0fbd0b154f4ab17c01fcd3738f93ced30da3504181bdf3a43a"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-04-q1",
+          "prompt": "Why will nobody give the giant work?",
+          "facilitatorNotes": [
+            "He is so big and clumsy that he breaks things, like knocking down the steeple or tearing off part of a roof."
+          ],
+          "evidence": [
+            "he was so great and clumsy that people were afraid to trust their work to him"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-04-q2",
+          "prompt": "What three jobs does the good woman give him? What goes wrong each time?",
+          "facilitatorNotes": [
+            "He carries china and breaks it all, runs with milk and spills every drop, and pumps water until the yard floods."
+          ],
+          "evidence": [
+            "every bit of the china was broken",
+            "found her yard as well as her tubs full of water"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-04-q3",
+          "prompt": "The good woman never scolds the giant. Why does she keep trusting him?",
+          "facilitatorNotes": [
+            "She forgives him and loves him; she can see he truly wants to help. Some children will think she should give up; ask what would have happened then."
+          ],
+          "evidence": [
+            "She had forgiven him for breaking her china, and had made up her mind to trust him again"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-04-q4",
+          "prompt": "“Don’t go so fast. Stand still and listen!” Why are these just the right words for this giant?",
+          "facilitatorNotes": [
+            "His trouble is always rushing and using too much strength; the directions only work if he slows down and notices small things, like a bent stalk and shining pebbles."
+          ],
+          "evidence": [
+            "Don't go so fast,",
+            "Stand still and listen!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-05",
+      "title": "The Giant Energy and the Fairy Skill — learning to be a helper",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Listen for each new thing the giant learns, and which part of the way home goes into his work.",
+      "focus": "Patient practice turns a clumsy giant into a maker of beautiful things, and he brings them home.",
+      "context": "Recap: Giant Energy, very strong and very eager, kept breaking and spilling whatever he tried to do, though a good woman kept trusting him. She sent him to learn from the Fairy Skill, through a meadow of daffodils, past a bent mullein stalk and a willow, and across a brook on shining pebbles. A loom is a frame for weaving cloth or carpet; a shuttle carries the thread under and over. A potter’s wheel spins so clay can be shaped into cups. A goldsmith makes things of gold.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Giant Energy and the Fairy Skill,” from the fairy palace to the end; opens “He never could tell how it looked; but he thought it was made of sunshine, with the…”; closes “And this is the way that young Giant Energy learned to be a helper in the world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-04",
+        "continuesTo": null,
+        "blocks": [
+          444,
+          466
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7cef7ed07803ff9c38d538fa790b3dd39c088f307c646d0f5c5ab829f03fd5a7"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-05-q1",
+          "prompt": "What is the giant’s first job in the workshop? What does Fairy Skill do with her wand?",
+          "facilitatorNotes": [
+            "Untangling threads without breaking them. Each time she makes them tangled again, so he must practise until it is perfect."
+          ],
+          "evidence": [
+            "she changed them into a tangled heap again"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-05-q2",
+          "prompt": "What things does the giant learn to make?",
+          "facilitatorNotes": [
+            "Untangled threads, carpets on a loom, cups and saucers on the potter’s wheel, and chains, bracelets and necklaces of gold."
+          ],
+          "evidence": [
+            "the giant learned to be steady"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-05-q3",
+          "prompt": "His carpet looks like a meadow full of daffodils, and the pearls are like the brook’s pebbles. Why does he put those things in his work?",
+          "facilitatorNotes": [
+            "He thinks of the way he came, which he learned by going slowly and noticing. Some children will say he is thinking of the good woman; the way led from her house."
+          ],
+          "evidence": [
+            "As he wove, he thought of the way by which he had come"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-05-q4",
+          "prompt": "Who gets the carpet, the cup and the chain? Why her?",
+          "facilitatorNotes": [
+            "The good woman, the one he loves best, who trusted him when no one else would."
+          ],
+          "evidence": [
+            "he hung the chain around the good woman's neck, and she was more beautiful than a queen"
+          ]
+        }
+      ]
     }
   ]
 }
