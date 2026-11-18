@@ -773,6 +773,134 @@
     },
     {
       "id": "reading-10-thomas-poems-1917-13",
+      "title": "May 23",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Enjoy a portrait of a country character, then reread it in the light of the last line.",
+      "focus": "A perfect spring day, a free gift of flowers, and a man who vanishes.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Thomas lived for some years in the village of Steep in Hampshire; Oakshott and Wheatham Hill are places near it. Cowslips are yellow spring wildflowers; cress is watercress, which grows in clear streams, and a rill is a small stream; flints are stones in the road; a bur is a prickly seed-head that clings to clothes; a copse is a small wood; midges are tiny biting flies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem MAY 23; opens “THERE never was a finer day, And never will be while May is May,-- The third, and not the…”; closes “…the road like hops, That fine day, May the twenty-third, The day Jack Noman disappeared.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          129,
+          131
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f415ec5f0d3e63a11755e802aa4187394326f4980f5f88a055927db1b2bf353d"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-13-q1",
+          "prompt": "Who is Jack Noman, and how does the speaker feel about him? Find details that show both his roughness and his charm.",
+          "facilitatorNotes": [
+            "He is old, crooked and “jaunty,” perhaps a little drunk (“Who could say if his roll / Came from . . . ale?”), with leaves and burs on his coat from sleeping outdoors. He is brown as the ploughland and wears cowslips in his button-hole and cap. The speaker likes him without reservation: he is “welcome as the nightingale.”"
+          ],
+          "evidence": [
+            "He was welcome as the nightingale.",
+            "That clung to his coat from last night's bed,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-13-q2",
+          "prompt": "“Where did they come from, Jack?” “Don't ask it, / And you'll be told no lies.” What does this exchange suggest? Why does Jack refuse to sell?",
+          "facilitatorNotes": [
+            "Jack hints that the cresses and cowslips were gathered where he had no right to them, and the speaker answers that in that case he can’t buy. Jack gives them away instead, with a hint that “something” in return next time would be welcome. Both play a game of manners that keeps the gift honest and the friendship easy."
+          ],
+          "evidence": [
+            "And you'll be told no lies.",
+            "Take them and these flowers, too, free."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-13-q3",
+          "prompt": "The poem opens with a perfect day and ends “The day Jack Noman disappeared.” How does the last line change what came before? Why might Thomas call him “Noman”?",
+          "facilitatorNotes": [
+            "The whole poem turns out to be the memory of a last meeting; the speaker’s gladness and the fear in the first stanza that the fine weather “could not last” take on new weight. “Noman” sounds like “no man” or nobody: a wanderer without a fixed place, who can vanish without anyone knowing where. Readers may feel the poem itself is the only record he leaves."
+          ],
+          "evidence": [
+            "The day Jack Noman disappeared.",
+            "And the morrow with fear that it could not last"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-14",
+      "title": "The Green Roads",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Listen to the word that ends the first line of every couplet, and to the rhymes hidden inside the second lines.",
+      "focus": "The edge of a forest, where people and memories go and do not return.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Green roads are grassy tracks; a castle keep is the strongest central tower of a castle; to twiddle is to play idly with something.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE GREEN ROADS; opens “THE green roads that end in the forest Are strewn with white goose feathers this June,”; closes “…feathers at the edge of the forest, And hear all day long the thrush repeat his song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          142,
+          150
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f6e90c0c0bf9a9814047c59d3810b5c4509b5d832cafc134d416137712f9d2f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-14-q1",
+          "prompt": "What does the speaker see and hear at the edge of the forest? Sort the details into what stays and what goes.",
+          "facilitatorNotes": [
+            "Goose feathers like a track left by someone who “has never come back”; cottages; an old man and a child wandering towards the trees; a thrush singing; young trees and one dead oak. The cottages and the song stay; the traveller, the old man and the child go, or drift towards going."
+          ],
+          "evidence": [
+            "To show his track. But he has never come back.",
+            "An old man along the green road to the forest"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-14-q2",
+          "prompt": "Every couplet’s first line ends with “forest.” What is the effect of that repetition, and of the rhymes inside the second lines?",
+          "facilitatorNotes": [
+            "The repetition pulls every line back to the forest, like a refrain or like the thrush that repeats its song. The internal rhymes (back/track, towers/flowers, one/alone, long/song) make the second lines chime and turn back on themselves. Readers may find the sound soothing, or hypnotic and slightly ominous."
+          ],
+          "evidence": [
+            "Round one the nettle towers; two are bathed in flowers.",
+            "All day long a thrush twiddles his song."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-14-q3",
+          "prompt": "“All things forget the forest / Excepting perhaps me.” Why is the speaker the one who remembers? What might the forest stand for in a poem by a man who died in the war soon after writing it?",
+          "facilitatorNotes": [
+            "The oak saw “the ages pass,” but it is dead and its memories are lost; only the speaker holds the scene in mind. The forest can be read as the past, as death, or as the unknown into which people vanish, like the traveller who never came back. The poem never says, and its plain, quiet details leave the reader to feel it."
+          ],
+          "evidence": [
+            "For the tree is dead: all things forget the forest",
+            "Excepting perhaps me, when now I see"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-15",
       "title": "Haymaking",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -801,7 +929,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-13-q1",
+          "id": "reading-10-thomas-poems-1917-15-q1",
           "prompt": "The poem begins after a night of thunder. Which details make the morning seem new, almost the first morning of the world?",
           "facilitatorNotes": [
             "The clouds uncurl “Like the first gods before they made the world / And misery”; the mill water tumbles “happier than any crowd” of children let out of school; the birds sing “unceasingly” and the swift shrieks in “fierce glee.” Everything is fresh, joyful and before sorrow."
@@ -812,7 +940,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-13-q2",
+          "id": "reading-10-thomas-poems-1917-15-q2",
           "prompt": "Halfway through, the poem stops moving. List what is still, and say how the sentences and rhythm change.",
           "facilitatorNotes": [
             "The haymakers rest, the tosser lies “forsook,” the waggon stands without its team, the horses wait in the shade, and the men lean on their rakes “about to begin, / But still.” Short sentences and the repeated “still” and “silent” slow the verse as the scene holds its breath."
@@ -823,7 +951,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-13-q3",
+          "id": "reading-10-thomas-poems-1917-15-q3",
           "prompt": "The scene is “Older than Clare and Cobbett, Morland and Crome” and ends as “a picture of an old grange.” What does it mean for the haymakers to be “out of the reach of change,” and why might a poet in wartime want that?",
           "facilitatorNotes": [
             "The moment becomes timeless, like a painting or a country poem: the men, horses and tools say what they will say for ever. Yet the line also says “All of us gone,” so timelessness comes at the cost of being past. Written during the war, the poem can be read as preserving an England that soldiers fought for, or as an elegy for a life about to vanish; both readings fit."
@@ -836,7 +964,71 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-14",
+      "id": "reading-10-thomas-poems-1917-16",
+      "title": "Gone, Gone Again",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a poem that slides from the passing seasons to the war and then to a dark, empty house.",
+      "focus": "Time, loss and a speaker who compares himself to an abandoned house.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Blenheim oranges are a variety of apple, ripe in late summer; quays are wharves where ships load and unload; dung is manure; outmoded means old-fashioned; untenanted means with no one living in it.",
+      "contentNote": "Speaks bluntly of young men killed in the war.",
+      "excerpt": {
+        "locator": "Complete poem GONE, GONE AGAIN; opens “GONE, gone again, May, June, July, And August gone, Again gone by,”; closes “…one pane to reflect the sun, For the schoolboys to throw at-- They have broken every one.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          170,
+          177
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5ea73fef5254cce3233fe8f3d3b404e89937271e39de23a2d945aa6a3f468a52"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-16-q1",
+          "prompt": "Why were the summer months “Not memorable / Save that I saw them go”? What does the image of rivers flowing past empty quays add?",
+          "facilitatorNotes": [
+            "Nothing happened in them worth remembering except their passing. The river keeps moving past quays where no ships load: motion with nothing carried, time going by without use. The short lines make the months go quickly."
+          ],
+          "evidence": [
+            "Not memorable",
+            "As past the empty quays"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-16-q2",
+          "prompt": "The apples fall now “As when I was young,” when “the lost one was here,” and when the war began. What links the three times, and how does the stanza’s last line change the tone?",
+          "facilitatorNotes": [
+            "The same harvest rain and grubby falling apples recur across his life and mark it like a clock. The last line, “To turn young men to dung,” is brutally plain after the quiet; it echoes the rotting fruit, as if the dead were only another fallen crop. “The lost one” is never named, which makes the loss more private."
+          ],
+          "evidence": [
+            "Fall grubby from the trees,",
+            "To turn young men to dung."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-16-q3",
+          "prompt": "“I am something like that.” How is the speaker like the old house, and how is he different? What do the broken panes suggest?",
+          "facilitatorNotes": [
+            "Like the house he is old-fashioned, dignified and empty of “the friendliness, the strife” of life. Unlike it he is “still breathing and interested” in houses that are lit. But he has “Not one pane to reflect the sun”: nothing in him can give back light, and small careless damage (schoolboys’ stones) has done it. Readers may hear depression, war-weariness, or both."
+          ],
+          "evidence": [
+            "Still breathing and interested",
+            "They have broken every one."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-17",
       "title": "The Sun Used to Shine",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -865,7 +1057,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-14-q1",
+          "id": "reading-10-thomas-poems-1917-17-q1",
           "prompt": "How did the two walkers spend their days? What does the poem say they paid “small heed” to?",
           "facilitatorNotes": [
             "They walked, paused, mused or talked “As either pleased,” never disagreed about where to rest, and gave little thought to the future or the recent past. Talk of men, poetry and the war gave way easily to an apple hollowed by wasps or a flower at the forest’s edge. The ease of the friendship shows in the easy rhythm."
@@ -876,7 +1068,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-14-q2",
+          "id": "reading-10-thomas-poems-1917-17-q2",
           "prompt": "The war is “remote” here. When does it come back to mind, and how do the friends keep it at a distance?",
           "facilitatorNotes": [
             "At moonrise, when they think of soldiers far to the east who see the same moon. Yet they could “as well imagine the Crusades / Or Caesar’s battles”: the war seems as far away as ancient history. The crocuses born “In sunless Hades fields” hint at death even in the flowers."
@@ -887,7 +1079,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-14-q3",
+          "id": "reading-10-thomas-poems-1917-17-q3",
           "prompt": "From “Everything / To faintness like those rumours fades” the poem piles up similes. What fades, and how does the last stanza answer that loss?",
           "facilitatorNotes": [
             "The brook’s glitter, the walks, the two men, the apples, the talks and silences all fade like sand covered by the tide. The last stanza imagines “other men through other flowers” in the same fields under the same moon. That can be consoling, because life and friendship go on, or painful, because the speaker and his walks are replaceable. Readers may add that Thomas himself was killed in the war he once found remote."
@@ -900,7 +1092,7 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-15",
+      "id": "reading-10-thomas-poems-1917-18",
       "title": "October",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -929,7 +1121,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-15-q1",
+          "id": "reading-10-thomas-poems-1917-18-q1",
           "prompt": "Find details in the first stanza that show how gently autumn is arriving.",
           "facilitatorNotes": [
             "The elm lets its leaves slip “one by one”; the wind is too light to shake birch leaves off the fern; the gossamers “wander at their own will”; only the squirrels complain, at steps heavier than birds’. Nothing is violent; autumn comes almost as softly as spring."
@@ -940,7 +1132,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-15-q2",
+          "id": "reading-10-thomas-poems-1917-18-q2",
           "prompt": "The speaker says he “might / As happy be as earth is beautiful, / Were I some other.” What stands between him and happiness?",
           "facilitatorNotes": [
             "The earth renews itself season by season, so that October can feel “fresh again and new / As Spring”; he cannot turn with the seasons, and he cannot be someone else. The problem is not the day but the self who sees it, unlike the gorse, which has “no time not to be gay.”"
@@ -951,7 +1143,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-15-q3",
+          "id": "reading-10-thomas-poems-1917-18-q3",
           "prompt": "How do the last four lines change the speaker’s judgment of the day? Is the ending hopeful?",
           "facilitatorNotes": [
             "He wonders whether this is happiness after all, and predicts that one day he will remember it as a happy day and stop calling his mood melancholy. Happiness, it seems, may be recognized only in memory. Some readers find that consoling; others find it sad that joy can be known only afterwards; the “who knows?” keeps both open."
@@ -967,7 +1159,7 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-16",
+      "id": "reading-10-thomas-poems-1917-19",
       "title": "Liberty",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -996,7 +1188,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-16-q1",
+          "id": "reading-10-thomas-poems-1917-19-q1",
           "prompt": "Describe the scene. What has the moonlight done to the world, and why does the speaker feel that he and the moon alone are left?",
           "facilitatorNotes": [
             "The last light is gone and moonlight lies “like frost” beyond the elm’s shadow. It seems everything else has slept for ages, the past and even his own thoughts buried, while he and the moon “stand idle over the grave.” The scene makes him a survivor with nothing to do."
@@ -1007,7 +1199,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-16-q2",
+          "id": "reading-10-thomas-poems-1917-19-q2",
           "prompt": "“There's none less free than who / Does nothing and has nothing else to do.” Explain the paradox. What kind of liberty does the speaker have?",
           "facilitatorNotes": [
             "Freedom with nothing one wants to do is no freedom at all: he is free “only for what is not to his mind,” and nothing is to his mind. He and the moon have liberty only “To dream what we could do if we were free.” Liberty without desire feels like emptiness."
@@ -1018,7 +1210,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-16-q3",
+          "id": "reading-10-thomas-poems-1917-19-q3",
           "prompt": "Keats was “half in love with easeful Death”; Thomas is “half in love with pain.” What does he choose instead of wiping out his hours, and how does the final image leave him?",
           "facilitatorNotes": [
             "He turns from the wish to erase his past toward “what is imperfect,” tears and mirth, “things that have an end, with life and earth.” Choosing pain and imperfection over death is a choice for living. But the moon “leaves me dark within the door”: he stands on a threshold, still in shadow. Readers can argue whether the ending affirms life or only just holds on to it."
@@ -1031,7 +1223,7 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-17",
+      "id": "reading-10-thomas-poems-1917-20",
       "title": "November",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -1060,7 +1252,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-17-q1",
+          "id": "reading-10-thomas-poems-1917-20-q1",
           "prompt": "Why are the paths “the prettiest things on ground” in a month whose earth is “dirty”?",
           "facilitatorNotes": [
             "They are printed with the marks of boots and of small animals and birds, “foot and wing-tip overprinted / Or separately charactered,” like writing. The mud keeps a record of every life that crossed it, which makes it beautiful to a careful eye."
@@ -1071,7 +1263,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-17-q2",
+          "id": "reading-10-thomas-poems-1917-20-q2",
           "prompt": "Find the list of what makes up the mud. Why does the poet bother to name what “men scorn”?",
           "facilitatorNotes": [
             "“Twig, leaf, flint, thorn, / Straw, feather”: short, packed lines that mash things together as the mud does. By naming each thing he refuses to dismiss it with one word; the abrupt “Condemned as mud” sounds like an unfair verdict."
@@ -1082,7 +1274,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-17-q3",
+          "id": "reading-10-thomas-poems-1917-20-q3",
           "prompt": "Two people stare up at the clean November sky. How do they differ, and which does the poem seem to prefer?",
           "facilitatorNotes": [
             "One imagines a refuge in the pure sky, away from the mud. The other loves earth and November more, because without them the sky would mean as little to him as he does to the sky; he loves even the mud for giving all its brightness to the heavens. The poem ends with the second, which suggests its sympathy, though readers may see the two as moods any one person might have."
@@ -1098,7 +1290,7 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-18",
+      "id": "reading-10-thomas-poems-1917-21",
       "title": "The Gallows",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -1127,7 +1319,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-18-q1",
+          "id": "reading-10-thomas-poems-1917-21-q1",
           "prompt": "What does the poem say about each animal’s life, and what happens to every one?",
           "facilitatorNotes": [
             "The weasel lived “in the sun / With all his family”; the crow was “a thief and a murderer”; the magpie could “both talk and do.” Whatever their lives, innocent or guilty, clever or not, the keeper shoots them all and hangs them on the same bough."
@@ -1138,7 +1330,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-18-q2",
+          "id": "reading-10-thomas-poems-1917-21-q2",
           "prompt": "Which lines return, with small changes, in every stanza? What do the refrains and the jingling rhythm do to the subject?",
           "facilitatorNotes": [
             "“In the sun and in the snow,” “Without pleasure, without pain” and “On the dead oak tree bough,” reversed in the last stanza to “Without pain, without pleasure.” The nursery-rhyme beat makes the deaths sound like a children’s song, which is both gentle and chilling; the refrains swing like the bodies, for ever."
@@ -1149,7 +1341,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-18-q3",
+          "id": "reading-10-thomas-poems-1917-21-q3",
           "prompt": "“There are no more sins to be sinned,” and the dead have “endless leisure.” Is the poem only about vermin on a gibbet? Consider that Thomas wrote it during the First World War.",
           "facilitatorNotes": [
             "The irony is plain: death ends sin and gives leisure no one wanted, and the magpie’s talents did not “avail.” Many readers hear the war’s dead in “many other beasts / And birds . . . / taken from their feasts / And hung up there together”; others read it as a clear-eyed country poem about killing in the name of game. The poem never says, so both readings rest on the same details."
@@ -1162,7 +1354,71 @@
       ]
     },
     {
-      "id": "reading-10-thomas-poems-1917-19",
+      "id": "reading-10-thomas-poems-1917-22",
+      "title": "Birds’ Nests",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the speaker treats a small embarrassment, and where the poem turns from shame to pleasure.",
+      "focus": "Seeing what was there all along, and the second life of empty nests.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. A dormouse is a small, nut-eating animal like a mouse; goose-grass is a sticky climbing weed; jays are birds of the crow family that rob other birds’ nests; “no game” means no challenge.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem BIRDS’ NESTS; opens “THE summer nests uncovered by autumn wind. Some torn, others dislodged, all dark.…”; closes “…dormouse dined there on hazel-nuts, And grass and goose-grass seeds found soil and grew.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          211,
+          214
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "37a82830ce1fa9a8e8fe908649ba1757ed61bc28f73c1f99a38807b9eddeb625"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-22-q1",
+          "prompt": "Why does the speaker feel “a little shame” when the autumn wind uncovers the nests?",
+          "facilitatorNotes": [
+            "He missed most of them all summer, even nests at eye level, and now anyone can see them. Finding nests used to be a skill, almost a game; now the bare branches make it “no game.” The shame is a countryman’s, proud of how closely he looks."
+          ],
+          "evidence": [
+            "I cannot help a little shame",
+            "The leaves blew off and made the seeing no game."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-22-q2",
+          "prompt": "“'Tis a light pang.” What pleasure does he set against it?",
+          "facilitatorNotes": [
+            "The pleasure of seeing the nests “in their places, now first known,” near home and on distant roads, and of knowing that their secret was kept all summer from boys (if not from jays and squirrels). The nests show how much went on unseen."
+          ],
+          "evidence": [
+            "Still in their places, now first known,",
+            "Boys knew them not,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-22-q3",
+          "prompt": "The poem ends with the winter nests that leaves and berries fell into. What has happened to them, and what might this say about things that are hidden or finished?",
+          "facilitatorNotes": [
+            "A dormouse ate its hazel-nuts there, and seeds found soil and grew: the empty nest has become a tiny garden. Something finished with its first purpose shelters new life. Readers may connect this with memory, with hidden lives, or simply with the value of looking closely; the poem does not insist."
+          ],
+          "evidence": [
+            "Once a dormouse dined there on hazel-nuts,",
+            "And grass and goose-grass seeds found soil and grew."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-23",
       "title": "“Home”",
       "sourceId": "thomas-poems-1917",
       "genre": "poetry",
@@ -1191,7 +1447,7 @@
       },
       "questions": [
         {
-          "id": "reading-10-thomas-poems-1917-19-q1",
+          "id": "reading-10-thomas-poems-1917-23-q1",
           "prompt": "Why do the three walk faster when they see “the cold roofs”? What is waiting for them there?",
           "facilitatorNotes": [
             "There is “nothing to return for, except need”: food, sleep and the company of men they have lived with. They have never been happy there and could not be. Someone’s joke about the “beaten horse” running home puts their eagerness in its place."
@@ -1202,7 +1458,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-19-q2",
+          "id": "reading-10-thomas-poems-1917-23-q2",
           "prompt": "The word “home” raises a smile in all three. What does the smile mean, and why does no one say so?",
           "facilitatorNotes": [
             "The camp is not home; each is thinking of his own home far away. The smile admits it without words, and saying more would break the rule of the place: they are “fellows in a union that ends / With the necessity for it,” not friends. Readers may find this honest about wartime comradeship, or bleak."
@@ -1213,7 +1469,7 @@
           ]
         },
         {
-          "id": "reading-10-thomas-poems-1917-19-q3",
+          "id": "reading-10-thomas-poems-1917-23-q3",
           "prompt": "Why does the speaker allow himself only “the mere word” “Homesick”? What does he fear would happen if he admitted more?",
           "facilitatorNotes": [
             "If he let the feeling in fully he “could not endure it / For a day longer”: he would become “Another man,” or his life would seem “an evil dream.” Keeping the word playful is how he survives the “captivity.” Yet the poem itself admits more than the word, which shows what the restraint costs."
@@ -1221,6 +1477,134 @@
           "evidence": [
             "If I should ever more admit",
             "Or this life be only an evil dream."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-24",
+      "title": "An Old Song",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch a walker at sunset who keeps singing an old song that seems to say the opposite of what he feels.",
+      "focus": "A private path of light, and an old sailors’ song that charms the singer.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. “I'll go no more a-roving” is the chorus of an old sailors’ song, a shanty, whose verse Thomas quotes at the end in italics; to rove is to wander, and a rover can also be a man who goes from one woman to another. Elate means in high spirits; a gull’s cry is called mewing.",
+      "contentNote": "Quotes a bawdy sailors’ song about a woman of Amsterdam; Thomas mentions its “lewdness.”",
+      "excerpt": {
+        "locator": "Complete poem AN OLD SONG; opens “THE sun set, the wind fell, the sea Was like a mirror shaking: The one small wave that…”; closes “…a-roving, since roving's been my ruin, I'll go no more a-roving with you, fair maid._”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          230,
+          234
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4991a088f75ad86b276cbc1a5bd638d71e4cbca8c941130942d0d329e41cf4a4"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-24-q1",
+          "prompt": "What does the speaker see at sunset, and why does he stress that “no one else in the whole world / Saw that same sight”?",
+          "facilitatorNotes": [
+            "A strip of light on the sea like a narrow bright footbridge reaching to him. A path of light on water always points at the person looking, so each viewer sees a different one: the sight is his alone, and as he walks it stays “Just one step from my feet.”"
+          ],
+          "evidence": [
+            "Like a straight narrow footbridge bright",
+            "Saw that same sight."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-24-q2",
+          "prompt": "Why does he keep repeating “I'll go no more a-roving” while he walks “elate”? Is there a contrast between the words and his mood?",
+          "facilitatorNotes": [
+            "The song is a sailor’s regret (“roving's been my ruin”), but he sings it happily while wandering. He says himself that the “wild charm” of the chorus outweighs its words. The tune and the evening matter more than the story the song tells."
+          ],
+          "evidence": [
+            "I walked elate, my bridge always",
+            "By the wild charm the chorus played:"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-24-q3",
+          "prompt": "Why might Thomas end with the old song’s own verse, in italics, instead of his own words? What does an old song give him that description could not?",
+          "facilitatorNotes": [
+            "The poem gives way to the voice of sailors long gone, mixed with the dusk and the gulls. An old song is shared and anonymous; it connects his private bridge of light to many earlier singers. Readers may also notice the gap between the song’s coarse story and the beauty he hears in it."
+          ],
+          "evidence": [
+            "The sailors' song of merry loving",
+            "Mark well what I do say--"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-25",
+      "title": "The Penny Whistle",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Track the black and the white through a winter scene, and think about why the poem ends by praising someone else’s music.",
+      "focus": "Signs of life in a dark winter wood, and a tune that says more than a poem.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. A bugle is a small brass horn; ghylls are steep, narrow wooded valleys with streams; charcoal-burners lived in the woods, slowly burning wood into charcoal under covered mounds; a caravan-hut is a hut on wheels; a penny whistle is a cheap tin whistle.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE PENNY WHISTLE; opens “THE new moon hangs like an ivory bugle In the naked frosty blue; And the ghylls of the…”; closes “…and surely playing On a whistle an olden nursery melody, Says far more than I am saying.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          236,
+          240
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1f18eefe55c673b7fe2eae2f64ceaafacfa8861360f553479f0e5851be0a5b81"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-25-q1",
+          "prompt": "Find the black and the white in the poem. How do they work against each other?",
+          "facilitatorNotes": [
+            "Black: the ghylls “blackened anew,” the brooks’ “black hollow voices,” the sooty charcoal-burners. White and bright: the ivory moon, the linen on the line, the letter, the hut that “gleams” like a kingfisher, the first primroses. The bright things stand out sharply against the winter dark."
+          ],
+          "evidence": [
+            "The charcoal-burners are black, but their linen",
+            "And white the letter the girl is reading"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-25-q2",
+          "prompt": "The brooks roar “Betwixt rage and a moan.” Where does the mood change, and what changes it?",
+          "facilitatorNotes": [
+            "The third stanza turns with “But still”: the caravan-hut gleams, and primroses appear round the old hearths. Human life and the first flowers of spring answer the angry, mournful noise of the brooks."
+          ],
+          "evidence": [
+            "Betwixt rage and a moan.",
+            "First primroses ask to be seen."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-25-q3",
+          "prompt": "The boy’s tune “Says far more than I am saying.” What might it say? Why would a poet admit that a penny whistle says more than his poem?",
+          "facilitatorNotes": [
+            "The tune is old, simple and played in hiding, slowly and surely; it may carry what the girl’s letter holds, or the feeling of the whole scene, without explaining it. Thomas’s modesty is also a method: like the whistle, his poem shows details and leaves the meaning unsaid. Some readers notice that the moon is compared to a bugle, an army instrument, against which the child’s nursery tune sounds gentler."
+          ],
+          "evidence": [
+            "On a whistle an olden nursery melody,",
+            "Says far more than I am saying."
           ]
         }
       ]
