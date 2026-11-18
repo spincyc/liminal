@@ -530,6 +530,403 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-08",
+      "title": "Cranford, chapter IX — A conjuror is coming",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Untangle a letter and a long speech that run their sentences together, and pick out the clue that the speaker herself misses.",
+      "focus": "A travelling conjuror stirs up the town, and each lady’s view of magic shows her character.",
+      "context": "Cranford, first published in parts in 1851–53, is Elizabeth Gaskell’s portrait of a small English town ruled by genteel ladies, mostly unmarried or widowed, who have little money and many rules. The narrator, Mary Smith, a young woman from the manufacturing town of Drumble, often stays with Miss Matty Jenkyns, the gentle younger daughter of the late rector. Matty’s strict elder sister, Miss Jenkyns (Deborah), who kept the town’s code of manners, has died, and Matty has told Mary the sad story of their brother Peter, who ran away to sea long ago. Mary has been away from Cranford for most of a year. Lady Glenmire, a baron’s Scottish widow, is still staying with her sister-in-law, the grand Mrs Jamieson; Miss Pole and Mrs Forrester are Miss Matty’s closest friends. A great-coat is a heavy overcoat, worn here from Michaelmas (29 September) to Lady-day (25 March); Wombwell’s was a famous travelling menagerie; a Saracen’s head turban is a huge one, like those painted on old inn signs; Queen Adelaide was the wife of King William IV. The George is the town inn, with its Assembly Room for dances; clothes-maids are wooden drying frames; Thaddeus of Warsaw and the other titles are romantic novels about noble foreign heroes. The Witch of Endor is a woman in the Bible who calls up a ghost; death-watches are beetles whose ticking was thought to foretell a death; “winding-sheets” are drips of tallow on a candle, named after the cloth that wraps a corpse. Preference is a card game, and a pool is a round of it played for small stakes.",
+      "contentNote": "Miss Matty recalls a menagerie lion that bit off a child’s arm.",
+      "excerpt": {
+        "locator": "Chapter IX, “Signor Brunoni,” from the start to the borrowing of the Encyclopædia; opens “SOON after the events of which I gave an account in my last paper, I was summoned home by…”; closes “…it thankfully, and said Betty should take it home when she came with the lantern.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-gaskell-cranford-1904-09",
+        "blocks": [
+          402,
+          413
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e178ee00a2b67a984f08a33418e0c9a1708d5e5e1d1208ce938e2e4bfb30ee18"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-08-q1",
+          "prompt": "Mary calls Miss Matty’s letter “a very mysterious letter.” What can she work out from it, and what does its jumbled style show about Matty?",
+          "facilitatorNotes": [
+            "A visit, a new cap, a hope that turbans are in fashion, and, only in the P.S., the reason: a conjuror is coming. The run-on sentences, “like written words on blotting-paper,” show how excited and flustered she is, and how much the cap matters to her, though she says she is “too old to care about dress.”"
+          ],
+          "evidence": [
+            "She began many sentences without ending them",
+            "only sea-green was her favourite colour"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-08-q2",
+          "prompt": "Miss Matty says, “what is dress, that we should care anything about it?” How does Gaskell let us see both her disappointment and her good manners?",
+          "facilitatorNotes": [
+            "She follows Mary upstairs “ostensibly to poke the fire” but really to look for the turban, then thanks her kindly while listing what she would have liked. Later Mary overhears her blaming “the Drumble shops.” Mary, who chose the plain cap on purpose, would rather be blamed. Readers can enjoy the comedy and still feel for Matty."
+          ],
+          "evidence": [
+            "ostensibly to poke the fire, but in reality, I do believe, to see if the sea-green turban was not inside the cap-box",
+            "I was foolish to expect anything very genteel out of the Drumble shops"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-08-q3",
+          "prompt": "Reread Miss Pole’s story about the Assembly Room. What puzzling thing does she report without noticing that it is puzzling? And what does the business of the glove show about her?",
+          "facilitatorNotes": [
+            "She meets the conjuror on the stairs, then sees “the very same gentleman” coming from the inner part of the room, where there is no entrance; one man cannot easily be in both places, a clue a careful reader may store away. The glove that was “safe in my muff all the time” suggests she went back out of curiosity and found an excuse, as she often does."
+          ],
+          "evidence": [
+            "the very same gentleman that had met me before, and passed me on the stairs",
+            "it was safe in my muff all the time"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-08-q4",
+          "prompt": "How do Miss Pole, Mrs Forrester and Miss Matty differ about magic? Does Gaskell make Miss Pole’s “scientific” reading look sensible or comic?",
+          "facilitatorNotes": [
+            "Miss Pole is sceptical, Mrs Forrester believes “everything,” and Matty agrees with whoever spoke last, though she tries to be as sensible as her late sister. Miss Pole’s doubt is reasonable, but her reading of A, B and the “third finger” is gibberish to everyone, and it spoils the card game. Students may say she is right in principle and absurd in practice."
+          ],
+          "evidence": [
+            "Miss Matty ranged between the two—always convinced by the last speaker",
+            "conjuring and witchcraft is a mere affair of the alphabet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-09",
+      "title": "Cranford, chapter IX — The Grand Turk",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 9,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice how the narrator shows a whole room’s rules of rank without stating them, and catch the jokes told with a straight face.",
+      "focus": "At the conjuror’s show the ladies are more absorbed in manners, turbans and propriety than in the magic.",
+      "context": "Recap: Miss Matty invited Mary back to Cranford to see Signor Brunoni, a travelling conjuror. Mary brought a plain cap instead of the turban Matty longed for. Miss Pole met the conjuror while poking about the inn and has been studying the Encyclopædia to explain his tricks. Betimes means early; a chapeau bras is a flat hat carried under the arm; the Gunnings were two famous beauties of the 1750s, and Queen Charlotte was the wife of George III; to bridle up is to draw oneself up proudly; legerdemain is sleight of hand. Mussulman is an old word for a Muslim; a churchwarden is an officer of the parish church; the National School was a church school for poor children; sanctioned means approved.",
+      "contentNote": "Miss Pole says the performer’s frowns are “unchristian looks from a Mussulman,” a prejudiced remark the narrator reports with irony; he performs in “Turkish costume.”",
+      "excerpt": {
+        "locator": "Chapter IX, “Signor Brunoni,” from the evening of the performance to the end of the chapter; opens “The next evening we were all in a little gentle flutter at the idea of the gaiety before…”; closes “…in convincing us that we had been cheated, and had not seen Signor Brunoni after all.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-08",
+        "continuesTo": null,
+        "blocks": [
+          414,
+          428
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1dc0cdd3f558877d29267175ab91a5760acec570188e28a1cb1a5d21212f0d6f"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-09-q1",
+          "prompt": "Miss Matty and Mary sit in the dark for an hour and a half before walking twenty yards. What does this tell you about the evening, and about Cranford?",
+          "facilitatorNotes": [
+            "It is a great event in a quiet life, and they will not risk being late; sitting without candles also saves money. Mary records it gently, with the exclamation “And we had only twenty yards to go!” Readers may find it funny, touching, or both."
+          ],
+          "evidence": [
+            "we had an hour-and-a-half to wait before the “doors opened at seven precisely.”",
+            "she thought we had better sit quietly, without lighting the candles"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-09-q2",
+          "prompt": "What does Mary mean when she says that “a mouldy odour of aristocracy lingered” in the Assembly Room? How do the ladies behave there?",
+          "facilitatorNotes": [
+            "The room is shabby and faded, but memories of grand balls hang about it, and the ladies walk “mincingly” as if fine people were watching, when only two boys with toffee are there. They sit apart from the shopkeepers and will not turn round because it is “not the thing.” Mary admires their dignity and laughs at it at once."
+          ],
+          "evidence": [
+            "a mouldy odour of aristocracy lingered about the place",
+            "What “the thing” was, I never could find out"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-09-q3",
+          "prompt": "Miss Matty’s only comment on the magnificent performer is “You see, my dear, turbans are worn.” Why is that funny, and what does it show?",
+          "facilitatorNotes": [
+            "Everyone else is watching the conjuror, but Matty has been thinking about her cap all along; the turban proves she was right. She says it “in a kind, mild, sorrowful tone,” without reproaching Mary directly. The joke is gentle, not cruel."
+          ],
+          "evidence": [
+            "You see, my dear, turbans _are_ worn.",
+            "in a kind, mild, sorrowful tone"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-09-q4",
+          "prompt": "Miss Matty asks Mary to see whether the rector is there. Why, and is Mary’s answer quite honest?",
+          "facilitatorNotes": [
+            "Matty fears the tricks might be “not quite” right; if the clergyman is present the show must be approved by the Church. The rector is grinning among laughing schoolboys, so Mary tells her “the Church was smiling approval”: true in a way, and kind, though the rector came to treat the boys, not to approve magic. Students can judge the white lie."
+          ],
+          "evidence": [
+            "we may conclude that this wonderful man is sanctioned by the Church",
+            "I told Miss Matty that the Church was smiling approval"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-09-q5",
+          "prompt": "Miss Pole insists that the Grand Turk “had not seen Signor Brunoni after all.” Could she be right? What earlier clue might support her?",
+          "facilitatorNotes": [
+            "The bearded performer does not look like the clean-shaven man she met, and she saw “the very same gentleman” in two places at the inn. She may be right that there are two men, though she uses it to argue they were cheated. Later chapters reveal the answer, so accept reasoned guesses."
+          ],
+          "evidence": [
+            "Signor Brunoni had no beard",
+            "had not seen Signor Brunoni after all"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-10",
+      "title": "Cranford, chapter X — Locks, pokers and rumours",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 9,
+        "totalMinutes": 24
+      },
+      "challenge": "Test each link in a chain of reasoning, and separate facts from rumours in a town’s talk.",
+      "focus": "Fear of robbers spreads through Cranford, and the ladies’ explanations reveal more about their pride and prejudices than about the thefts.",
+      "context": "Cranford, first published in parts in 1851–53, is Elizabeth Gaskell’s portrait of a small English town ruled by genteel ladies, mostly unmarried or widowed, who have little money and many rules. The narrator, Mary Smith, a young woman from the manufacturing town of Drumble, often stays with Miss Matty Jenkyns, the gentle younger daughter of the late rector. Matty’s strict elder sister, Miss Jenkyns (Deborah), who kept the town’s code of manners, has died, and Matty has told Mary the sad story of their brother Peter, who ran away to sea long ago. So far in this part: Signor Brunoni, a travelling conjuror who performed in a turban as the “Grand Turk,” has visited the town, and Miss Pole, who met him at the inn, claims she saw him in two places at once. Mrs Forrester is a gentle, poor widow; Martha is Miss Matty’s maid. Bonâ fide means genuine; arrant means complete; to pique oneself is to pride oneself. General Burgoyne commanded British troops in the American Revolutionary War; Madame de Staël was a French writer and Mr Denon a French artist who travelled with Napoleon to Egypt; crape is thin black cloth, used here as a mask; plate is silver spoons and dishes. Philomel is an old poetic name for the nightingale; the chasing on a gun is its engraved decoration; Italian irons are irons for pressing frills.",
+      "contentNote": "Fear of robbery and a story of a killing, told with relish. The ladies compare themselves to people “living among the Red Indians or the French,” an outdated and offensive name for Native Americans; Mrs Forrester blames foreigners, and an “Irish beggar-woman” asking for food is treated as a suspect.",
+      "excerpt": {
+        "locator": "Chapter X, “The Panic,” from the start to the night Miss Pole stays at Miss Matty’s; opens “I THINK a series of circumstances dated from Signor Brunoni’s visit to Cranford, which…”; closes “…Pole had carried off her plate, and thus have a double motive for attacking our house.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-gaskell-cranford-1904-11",
+        "blocks": [
+          430,
+          441
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8705cd9b578e80195c0f62b4c1a575bbebbcb18fa59408c7771b6f6d64578db9"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-10-q1",
+          "prompt": "Describe Miss Matty’s nightly “expedition” round the house. What makes it comic, and what real fear lies underneath?",
+          "facilitatorNotes": [
+            "Three women march with a poker, a hearth-brush and a shovel, frighten themselves with their own clatter and lock themselves in; the rounds get earlier until Matty goes to bed at seven “to get the night over the sooner.” The comedy is affectionate: the fear is real for women living alone."
+          ],
+          "evidence": [
+            "Miss Matty leading the way, armed with the poker, I following with the hearth-brush",
+            "in order to get the night over the sooner"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-10-q2",
+          "prompt": "Follow Mrs Forrester’s reasoning from “strangers” to “a French spy.” Which steps are guesses, and what is her evidence about turbans?",
+          "facilitatorNotes": [
+            "Each “if” turns a possibility into a certainty: Cranford people are too respectable to steal, so strangers; strangers, so foreigners; foreigners, so the French. Her proof that the French wear turbans is a picture of a French writer in one. The narrator lets the reasoning expose itself, while noting that the ladies “looked up to her opinion.”"
+          ],
+          "evidence": [
+            "if strangers, why not foreigners?—if foreigners, who so likely as the French?",
+            "showing clearly that the French, as well as the Turks, wore turbans"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-10-q3",
+          "prompt": "Why are the ladies so sure that “the robberies could never have been committed by any Cranford person”?",
+          "facilitatorNotes": [
+            "The town “piqued itself” on being honest and genteel, so a theft by a neighbour would stain its character; blaming strangers protects its pride. Students may connect this with how people often explain bad news by blaming outsiders."
+          ],
+          "evidence": [
+            "the robberies could never have been committed by any Cranford person",
+            "too genteel and well-bred to be otherwise"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-10-q4",
+          "prompt": "Miss Pole is suspicious because the beggar-woman asked for “the mistress” even though a man’s hat hung in the hall. What does she conclude, and what other explanation is there?",
+          "facilitatorNotes": [
+            "She takes it as proof of a plot. The hat is her own trick (Mr Hoggins’s old hat), so the woman may simply have known who lived there, or have been as hungry as she said. Gaskell lets readers notice what Miss Pole will not: the woman spoke of starving children."
+          ],
+          "evidence": [
+            "saying her children were starving, and she must speak to the mistress",
+            "though there was a hat hanging up in the hall"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-10-q5",
+          "prompt": "Mary compares Miss Pole and Miss Matty swapping horror stories to a nightingale and a musician competing “till poor Philomel dropped down dead.” What is the joke?",
+          "facilitatorNotes": [
+            "Each lady tries to outdo the other, as if telling the most dreadful story were a contest, and they frighten themselves (and Mary) half to death. Miss Pole’s relish shows in how she dwells on the blood. Readers may see this as how fear feeds itself."
+          ],
+          "evidence": [
+            "capped every story with one yet more horrible",
+            "How Miss Pole enjoyed this part of the story, dwelling on each word as if she loved it!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-11",
+      "title": "Cranford, chapter X — Carlo, Mr Mulliner and Mr Hoggins",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 9,
+        "totalMinutes": 24
+      },
+      "challenge": "Compare the explanations offered for each event and decide which the narrator quietly favours.",
+      "focus": "Each new incident is fitted into the robbery story, and a rumour grows every time it is told.",
+      "context": "Recap: robbery rumours have frightened Cranford since the conjuror’s visit. Mrs Forrester decided the thieves must be French spies; Miss Pole, sure her house was about to be robbed, fled with her silver to spend the night at Miss Matty’s. Spillikins is a game played with a heap of little sticks; scouted means rejected; to apprehend is to arrest. Lady Glenmire is Scottish: “where nae men should be” means where no men should be. Carlo is Mrs Jamieson’s old dog; Mr Mulliner is her pompous manservant. Pugnacious means eager to fight; apoplexy is a stroke; Cheltenham is a spa town; followers are maids’ admirers. Elf-locks are tangled hair; a cast in the eye is a squint; a virago is a fierce, bullying woman. Samson and Solomon are the strongest and wisest men in the Bible; a diatribe is an angry speech; candour is frankness.",
+      "contentNote": "A dog dies, perhaps poisoned. Miss Pole’s picture of “that murderous gang” piles up prejudiced images (a hump, a squint, a “masculine-looking” woman she decides is “that Irishman” in disguise). Miss Pole mentions a husband’s heavy drinking.",
+      "excerpt": {
+        "locator": "Chapter X, “The Panic,” from the morning after Miss Pole’s visit to her quarrel with Mr Hoggins’s account; opens “But until Lady Glenmire came to call next day we heard of nothing unusual. The kitchen…”; closes “…clothes, who came spying about my house, with the story about the starving children.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-10",
+        "continuesTo": "reading-6-gaskell-cranford-1904-12",
+        "blocks": [
+          442,
+          455
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6ab05e9333a781ecd2206c2f50913a90a9ae73cd09225e577a195703a260578"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-11-q1",
+          "prompt": "Mr Mulliner offers to fight the robbers. Where is he when he says so, and how does Lady Glenmire show that his offer is worthless?",
+          "facilitatorNotes": [
+            "He has locked himself in his third-storey room (“for fear of draughts”) and calls out of the window. She points out that robbers would pass the ladies’ rooms and everything worth stealing before reaching him; only very quarrelsome thieves would climb to the garret to fight. The comedy is in the gap between his brave words and his locked door."
+          ],
+          "evidence": [
+            "locked the door (for fear of draughts, as he informed them in the morning)",
+            "to go up to a garret, and there force a door in order to get at the champion of the house"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-11-q2",
+          "prompt": "The narrator gives three possible causes of Carlo’s death. What are they, and which seems most likely to you? Why does the town prefer the others?",
+          "facilitatorNotes": [
+            "Fear, revenge by poison, or apoplexy “brought on by too much feeding and too little exercise.” The last, which the narrator assigns to “the more uneducated people,” is probably the true one, which makes the label ironic. The others fit the exciting robbery story, and soon the ladies even suspect the conjuror."
+          ],
+          "evidence": [
+            "he died of apoplexy, brought on by too much feeding and too little exercise",
+            "Could Signor Brunoni be at the bottom of this?"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-11-q3",
+          "prompt": "How does Miss Pole’s description of the “murderous gang” change each time she tells it? What does this show about rumour?",
+          "facilitatorNotes": [
+            "The tall man becomes gigantic, the short one grows a hump and a squint, the woman becomes a man in disguise with a beard. Mary notices that “every time she went over the story some fresh trait of villainy was added.” Each telling makes her more of a heroine. Students can connect this to how stories grow when repeated."
+          ],
+          "evidence": [
+            "every time she went over the story some fresh trait of villainy was added",
+            "he grew to be gigantic in height before we had done with him"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-11-q4",
+          "prompt": "Mr Hoggins says he was not robbed, and that a neck of mutton was probably taken by the cat. Why won’t Miss Pole believe him, and who do you think is right?",
+          "facilitatorNotes": [
+            "She has already decided that a man is “too much of a man to own that he was robbed,” so his denial only proves her case to her. His explanation is ordinary and fits the facts; hers fits her story. Her speech about how men “wish to be considered Samson and Solomon” describes her own wish never to be wrong, which the chorus of ladies does not notice."
+          ],
+          "evidence": [
+            "he believed that that was taken by the cat",
+            "Every mother’s son of them wishes to be considered Samson and Solomon rolled into one"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-12",
+      "title": "Cranford, chapter X — Through Darkness Lane",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Hear what the characters’ confessions, and their excuses, reveal about them.",
+      "focus": "Frightened ladies keep a loyal tradition, admit their private fears, and find dignified reasons for running away from a ghost.",
+      "context": "Recap: Cranford is alarmed by rumours of robbers. Mrs Jamieson’s dog died and she has gone to Cheltenham, leaving Lady Glenmire in her house; Miss Pole keeps improving her description of a “murderous gang,” and has decided the surgeon Mr Hoggins is hiding a robbery. A sedan is a closed chair carried on two poles by two chairmen; Over Place lies along Darkness Lane, just outside the town. Videlicet means namely; a hundredweight of coals is a large sack of coal; Mrs Forrester’s late husband was a major in the army. To be spitted is to be run through with a sword; “cold-pigged” means woken with a splash of cold water. Dr Ferrier and Dr Hibbert wrote books explaining ghosts as illusions; elder-wine is wine made from elderberries, mulled or heated with spices. Counsel are lawyers, and a leading question suggests its own answer; to depose is to state as a witness; mutes were hired mourners at funerals; a causeway is a raised road.",
+      "contentNote": "Talk of robbers, a sword given to a boy to keep under his pillow, and a headless ghost; a boy is “half-starved at home.”",
+      "excerpt": {
+        "locator": "Chapter X, “The Panic,” from Mrs Forrester’s invitation to the end of the chapter; opens “After we had duly condemned the want of candour which Mr Hoggins had evinced, and abused…”; closes “…easy till the getting-up came, when there might have been some difficulty in extrication.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-11",
+        "continuesTo": null,
+        "blocks": [
+          456,
+          471
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a45951fd3cb2f0c1e7083ad0db19b3903063a1907c5aeaac30926a8e2b7427f4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-12-q1",
+          "prompt": "Why do the ladies go to Mrs Forrester’s party although they are frightened of the roads?",
+          "facilitatorNotes": [
+            "It is the anniversary of her wedding, they have gone for many years, and staying away would leave her alone with memories of a “not very happy or fortunate life.” They “nail their colours to the mast”: loyalty wins over fear. The military phrase makes their courage both comic and real."
+          ],
+          "evidence": [
+            "it would not be quite kind to Mrs Forrester",
+            "now they gallantly determined to nail their colours to the mast"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-12-q2",
+          "prompt": "What is Miss Matty’s “ingenious contrivance,” and what does it show about her life and character?",
+          "facilitatorNotes": [
+            "She rolls a child’s penny ball under the bed every night; if it does not come out, she will ring and call for “John and Harry,” men-servants she does not have. The plan is clever, childlike and a little sad; it also recalls Deborah, who disapproved of her flying leap into bed."
+          ],
+          "evidence": [
+            "now she rolled this ball under the bed every night",
+            "just as if she expected men-servants to answer her ring"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-12-q3",
+          "prompt": "Mrs Forrester gives a borrowed boy her husband’s sword. How does Mary’s question expose the danger, and what does Mrs Forrester’s answer show about her?",
+          "facilitatorNotes": [
+            "Mary points out he might run the maid Jenny through by mistake; Mrs Forrester replies he sleeps too soundly to wake. The answer is absurd as a defence plan, but she also feeds him well because he is “half-starved at home,” so the scene shows her kindness as much as her muddle."
+          ],
+          "evidence": [
+            "have spitted her before he had discovered that she was not a Frenchman",
+            "he was half-starved at home, and she told Jenny to see that he got a good meal at night"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-12-q4",
+          "prompt": "At the corner, Miss Pole asks the chairmen to take Miss Matty round by Headingley Causeway “and she is not very strong.” What is Miss Pole really afraid of, and how does the narrator let us see it?",
+          "facilitatorNotes": [
+            "The ghost in Darkness Lane. She has just clutched Mary, begging “Don’t leave me!”, so her concern for Matty’s bones is an excuse, offered “with tremulous dignity.” Matty, inside the chair, begs to hurry on. The last sentence pretends to praise Miss Pole’s “kind purpose” while noting the deep mud: Gaskell’s irony is gentle but clear."
+          ],
+          "evidence": [
+            "She had breath for nothing beyond an imploring “Don’t leave me!”",
+            "which certainly answered Miss Pole’s kind purpose of saving Miss Matty’s bones"
+          ]
+        }
+      ]
     }
   ]
 }
