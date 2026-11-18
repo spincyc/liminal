@@ -724,6 +724,316 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-12",
+      "title": "Memory",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Unpack a single image that carries a whole poem.",
+      "focus": "A man who has known lovely women remembers only one.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. A hare’s “form” is the hollow it presses into grass where it rests; the grass keeps its shape after the hare is gone.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Memory,” the whole poem; opens “One had a lovely face, And two or three had charm, But charm and face were in vain…”; closes “…Because the mountain grass Cannot but keep the form Where the mountain hare has lain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          132,
+          132
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "373758a2feee1d6f4462e2b9268cf56e6b080155ecbefb968776c300dbdbbab5"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-12-q1",
+          "prompt": "How does the speaker describe the women in the first two lines? What does the counting suggest?",
+          "facilitatorNotes": [
+            "One had a lovely face, two or three had charm. The praise is real but cool, and the counting makes them sound like a list. None of them lasted."
+          ],
+          "evidence": [
+            "One had a lovely face, And two or three had charm,"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-12-q2",
+          "prompt": "Explain the picture of the grass and the hare. What does it say about the speaker’s heart?",
+          "facilitatorNotes": [
+            "Mountain grass keeps the shape where a hare lay. His mind keeps the shape of one woman he loved, so no one else fits. “Cannot but” means it has no choice: the memory is not willed."
+          ],
+          "evidence": [
+            "Because the mountain grass Cannot but keep the form Where the mountain hare has lain."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-12-q3",
+          "prompt": "Why might Yeats choose a wild hare, rather than a rose or a star, to stand for the woman? Why is she never named?",
+          "facilitatorNotes": [
+            "A hare is wild, quick and gone almost before you see it; it leaves only an imprint. The woman is present only as an absence, the empty shape she left. Not naming her keeps the poem about what remains."
+          ],
+          "evidence": [
+            "But charm and face were in vain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-13",
+      "title": "A Deep-Sworn Vow",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice where a short poem turns from complaint to confession.",
+      "focus": "A man who made other friends after a broken promise still cannot escape one face.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. A vow is a solemn promise. To clamber is to climb with effort.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Deep-Sworn Vow,” the whole poem; opens “Others because you did not keep That deep-sworn vow have been friends of mine; Yet always…”; closes “…to the heights of sleep, Or when I grow excited with wine, Suddenly I meet your face.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          152,
+          152
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "29d542d819d58a8e2a46ef8cf6eb44cdfc39c621f4f9b35e1ce8c5c91faaa7dc"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-13-q1",
+          "prompt": "What happened between the speaker and “you”? What does the poem leave out?",
+          "facilitatorNotes": [
+            "She did not keep a solemn promise, and so he made other friends. We never learn what the vow was or why she broke it; the poem keeps to his side of the story."
+          ],
+          "evidence": [
+            "Others because you did not keep That deep-sworn vow have been friends of mine;"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-13-q2",
+          "prompt": "When does he meet her face? What do the three moments have in common?",
+          "facilitatorNotes": [
+            "When he faces death, when he falls asleep, and when he is excited with wine. In each his guard is down, and her face comes back without his choosing."
+          ],
+          "evidence": [
+            "Yet always when I look death in the face, When I clamber to the heights of sleep, Or when I grow excited with wine,"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-13-q3",
+          "prompt": "Is the speaker blaming her, forgiving her, or admitting something about himself? Notice how “look death in the face” and “meet your face” echo each other.",
+          "facilitatorNotes": [
+            "The opening sounds like a grievance, but the ending confesses he never got free of her. “Suddenly” shows how it surprises him each time. Her face is set beside death’s, as if both were things he must face. Readers can weigh the blame against the confession."
+          ],
+          "evidence": [
+            "Suddenly I meet your face."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-14",
+      "title": "Another Song of a Fool",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a strange idea, a teacher reborn as a butterfly, and decide what it says about learning.",
+      "focus": "A simple man holds a butterfly and imagines who it used to be.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. The title links this poem to “Two Songs of a Fool,” printed just before it. A birch is a bundle of twigs once used to beat schoolchildren; stark means stern; a clangour is a loud ringing; meat here means food.",
+      "contentNote": "The poem mentions a schoolmaster who beat his pupils.",
+      "excerpt": {
+        "locator": "“Another Song of a Fool,” the whole poem; opens “This great purple butterfly, In the prison of my hands, Has a learning in his eye Not a…”; closes “…and harsh, harsh and sweet, That is how he learnt so well To take the roses for his meat.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          281,
+          283
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "db76b4a4277f82f77a677fb0efae83af1efde77acfc969ca4f207af81dc28fa4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-14-q1",
+          "prompt": "What does the fool hold, and what does he notice about it?",
+          "facilitatorNotes": [
+            "A great purple butterfly, caught “in the prison of my hands.” It has “a learning in his eye” that the fool cannot understand. The fool feels humble before it."
+          ],
+          "evidence": [
+            "This great purple butterfly, In the prison of my hands, Has a learning in his eye Not a poor fool understands."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-14-q2",
+          "prompt": "Who does the fool think the butterfly once was? How did his pupils feel about him?",
+          "facilitatorNotes": [
+            "A schoolmaster with a “stark, denying look,” whose pupils went in fear of his birch and his book. The fool imagines that the stern teacher has been reborn as a butterfly, a fragile creature now held prisoner himself."
+          ],
+          "evidence": [
+            "Once he lived a schoolmaster With a stark, denying look,",
+            "A string of scholars went in fear Of his great birch and his great book."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-14-q3",
+          "prompt": "What did the schoolmaster have to learn, and how? What does “to take the roses for his meat” mean?",
+          "facilitatorNotes": [
+            "Through something “sweet and harsh,” like a ringing bell, perhaps his death or his life’s hard lessons, he learned to live on roses: on beauty and sweetness, the things his stern teaching denied. The teacher who once held others captive is now taught and held. Readers can decide whether this is a punishment, a gift or both."
+          ],
+          "evidence": [
+            "Like the clangour of a bell, Sweet and harsh, harsh and sweet,",
+            "To take the roses for his meat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-15",
+      "title": "To a Young Girl",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out who the three people in a one-sentence poem are, and how they are tied together.",
+      "focus": "An older man tells a young girl he understands her better than her mother can.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Astir means stirring or excited.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To a Young Girl,” the whole poem; opens “My dear, my dear, I know More than another What makes your heart beat so; Not even your…”; closes “…That she denies And has forgot, Set all her blood astir And glittered in her eyes.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          63,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1fc8e9e91fdb4e853b2797262e6841bb03f7f304aa3bbd0c3388158321f67bf3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-15-q1",
+          "prompt": "What does the speaker say he knows, and why does he claim to know it better than the girl’s own mother?",
+          "facilitatorNotes": [
+            "He knows what makes her heart beat so. Her mother once felt the same, and the speaker loved the mother: “Who broke my heart for her.” He recognises the daughter’s feeling because he watched it in the mother."
+          ],
+          "evidence": [
+            "My dear, my dear, I know More than another What makes your heart beat so;",
+            "Not even your own mother Can know it as I know,"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-15-q2",
+          "prompt": "What does the mother now deny and forget? Why might a grown-up deny a “wild thought” she once had?",
+          "facilitatorNotes": [
+            "A youthful passion, a dream, a cause or a love, that “glittered in her eyes.” Grown older, she denies it, perhaps from embarrassment or regret. The speaker cannot forget it, because it broke his heart."
+          ],
+          "evidence": [
+            "When the wild thought, That she denies And has forgot, Set all her blood astir And glittered in her eyes."
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-15-q3",
+          "prompt": "The poem is one long sentence in short lines. Is the speaker warning the girl, comforting her, or remembering his own past?",
+          "facilitatorNotes": [
+            "The short lines rush on in one breath, like a racing heart. “My dear, my dear” is gentle, but the poem turns toward his own old heartbreak. Readers can argue for any of the three, or all of them."
+          ],
+          "evidence": [
+            "Who broke my heart for her"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-yeats-wild-swans-coole-1919-16",
+      "title": "A Prayer on Going into My House",
+      "sourceId": "yeats-wild-swans-coole-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a blessing that turns into a curse, and decide how seriously to take each.",
+      "focus": "A poet blesses his new home and curses anyone who spoils it.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. In 1917 Yeats bought an old stone tower, with a cottage beside it, at Ballylee in County Galway, as a home. Galilee, where Jesus grew up, was a land of farmers and shepherds. Sinbad the sailor is the voyager of the Arabian Nights, where the Loadstone Mountain is a magnetic mountain that pulls the nails out of passing ships. A “limb of the devil” is a wicked or mischievous person. An ash is a tree. To manacle is to chain; an old folk belief held that troublesome ghosts could be banished to the bottom of the Red Sea.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Prayer on Going into My House,” the whole poem; opens “God grant a blessing on this tower and cottage And on my heirs, if all remain unspoiled,…”; closes “…in a government office, shorten his life, Manacle his soul upon the Red Sea bottom.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          212,
+          212
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "47f8b2383f38886cd9625bdb4ef98a345c76335d247480c49bb383cf51084230"
+      },
+      "questions": [
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-16-q1",
+          "prompt": "What does Yeats ask God to bless, and on what condition?",
+          "facilitatorNotes": [
+            "The tower, the cottage and his heirs, “if all remain unspoiled”: no furniture that is not simple enough for shepherd boys in Galilee. He links plainness with holiness."
+          ],
+          "evidence": [
+            "God grant a blessing on this tower and cottage And on my heirs, if all remain unspoiled,",
+            "No table, or chair or stool not simple enough For shepherd lads in Galilee;"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-16-q2",
+          "prompt": "What does he want to handle and see for part of each year? Where does imagination fit?",
+          "facilitatorNotes": [
+            "Only things “the great and passionate have used” through the centuries: old, lasting things. Even a dream of Sinbad bringing a painted chest counts as “a norm,” so imagination belongs inside the tradition he wants to live in."
+          ],
+          "evidence": [
+            "May handle nothing and set eyes on nothing But what the great and passionate have used"
+          ]
+        },
+        {
+          "id": "reading-7-yeats-wild-swans-coole-1919-16-q3",
+          "prompt": "The prayer ends with a curse. Whom does Yeats curse, and how seriously should we take it?",
+          "facilitatorNotes": [
+            "Anyone who cuts down the ash that shades the road or puts up a cottage “planned in a government office.” Chaining a soul to the bottom of the Red Sea is comic exaggeration, but the anger at careless, ugly change is real. Readers may compare it with arguments today about building and trees."
+          ],
+          "evidence": [
+            "should some limb of the devil Destroy the view by cutting down an ash",
+            "Manacle his soul upon the Red Sea bottom."
+          ]
+        }
+      ]
     }
   ]
 }

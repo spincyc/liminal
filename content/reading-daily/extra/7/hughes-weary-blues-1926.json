@@ -818,6 +818,378 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-14",
+      "title": "Poem (“The night is beautiful”)",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the pattern in a very short poem, and notice where it breaks.",
+      "focus": "Three beautiful things in the sky, and three beautiful things about “my people.”",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. In the 1920s, advertisements, cartoons and films often mocked Black faces and features.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Poem,” the one that begins “The night is beautiful,” the whole poem; opens “The night is beautiful, So the faces of my people.”; closes “Beautiful, also, is the sun. Beautiful, also, are the souls of my people.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          115,
+          117
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e6b9803b378263e552d7dcda1afef515808e9276bcb181313a7de82c54bdc673"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-14-q1",
+          "prompt": "The poem pairs three things in the sky with three things about “my people.” Match them up. What links each pair?",
+          "facilitatorNotes": [
+            "Night with faces, stars with eyes, sun with souls. Darkness, light shining out of darkness, and warmth and life. The pairs move inward, from faces to eyes to souls."
+          ],
+          "evidence": [
+            "The stars are beautiful, So the eyes of my people."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-14-q2",
+          "prompt": "Why might comparing faces to the night be a bold choice in 1926?",
+          "facilitatorNotes": [
+            "Poems and prejudice often treated darkness as bad or ugly. Hughes makes it beautiful and claims that beauty for Black faces. He states it calmly as a fact, not an argument."
+          ],
+          "evidence": [
+            "The night is beautiful, So the faces of my people."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-14-q3",
+          "prompt": "What changes in the last stanza, and why might the souls come last?",
+          "facilitatorNotes": [
+            "The sky moves from night to day, and “Beautiful” jumps to the front of the line, with “also” added. The sun is the largest light, and it goes with the souls: the poem ends with beauty that is not about appearance at all."
+          ],
+          "evidence": [
+            "Beautiful, also, is the sun. Beautiful, also, are the souls of my people."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-15",
+      "title": "A Black Pierrot",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a heartbreak through one night, and decide how serious it is.",
+      "focus": "A clown in love is turned down, weeps till dawn, and goes out again.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Pierrot is the sad clown of old French pantomime, dressed in white with a whitened face, who loves and loses. Gay-colored here means brightly coloured.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Black Pierrot,” the whole poem; opens “I am a black Pierrot: She did not love me, So I crept away into the night And the night…”; closes “…like a balloon without air, I went forth in the morning To seek a new brown love.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          120,
+          122
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "275c74105508d6511832f2c0fdd254fc5f82094d639020eb84a1bffcaa546553"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-15-q1",
+          "prompt": "What does the Pierrot do in each stanza after “She did not love me”? How does time move through the poem?",
+          "facilitatorNotes": [
+            "He creeps away into the night, weeps until dawn, and goes out in the morning to seek a new love. One night carries him from hiding, to grief, to starting again."
+          ],
+          "evidence": [
+            "So I crept away into the night And the night was black, too.",
+            "I went forth in the morning To seek a new brown love."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-15-q2",
+          "prompt": "Why might Hughes make his Pierrot black? What does the word “too” do in the first two stanzas?",
+          "facilitatorNotes": [
+            "The traditional Pierrot has a white face; Hughes claims the famous sad clown for a Black speaker. “Too” makes the world match his feelings: the night is black like him, and the dawn bleeds as his heart does."
+          ],
+          "evidence": [
+            "I am a black Pierrot:",
+            "Dripped blood over the eastern hills And my heart was bleeding, too."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-15-q3",
+          "prompt": "Look at the balloon and the last line. Is this heartbreak tragic, funny or hopeful?",
+          "facilitatorNotes": [
+            "A soul “shrunken like a balloon without air” is a sad image and also a comic one, right for a clown. Then he simply goes looking for “a new brown love.” Readers may see resilience, fickleness or brave pretending."
+          ],
+          "evidence": [
+            "So with my once gay-colored soul Shrunken like a balloon without air,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-16",
+      "title": "Poem: To the Black Beloved",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a love poem built from denials, and work out what each denial is really saying.",
+      "focus": "A lover tells his beloved she is not beautiful, and then says something greater.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. “Thou art” and “thou hast” are old forms of “you are” and “you have,” used in prayers and in love poetry. An altar of jewels is a richly decorated church altar; luminous means giving off light. “Nightness” is an unusual word built like “darkness.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Poem,” subtitled “To the Black Beloved,” the whole poem; opens “To the Black Beloved”; closes “…jewels, Would pale in the light Of thy darkness, Pale in the light Of thy nightness.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          139,
+          142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "45dbdf863c2028e18d00d66d59075fb1f3923bf84afce6126645826ccf11f8c4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-16-q1",
+          "prompt": "Each stanza says “Thou art not” and then “Yet thou hast.” What does the beloved lack, and what does she have instead?",
+          "facilitatorNotes": [
+            "Not beautiful, but a loveliness surpassing beauty; not good, but a purity surpassing goodness; not luminous, but a darkness that outshines jewels. Each time, the missing quality is replaced by something greater."
+          ],
+          "evidence": [
+            "Thou art not beautiful Yet thou hast A loveliness Surpassing beauty.",
+            "Thou art not good Yet thou hast A purity Surpassing goodness."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-16-q2",
+          "prompt": "Why might the speaker begin by denying that she is beautiful? Whose idea of beauty might he be answering?",
+          "facilitatorNotes": [
+            "He seems to answer a world whose standard of “beautiful” left out Black women. He lets the word go and claims something better. Some readers will hear a lover’s honesty instead; either way, the denial makes the praise stronger."
+          ],
+          "evidence": [
+            "Ah, My black one,"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-16-q3",
+          "prompt": "What is surprising about “the light / Of thy darkness”? Why might the last stanza be the longest?",
+          "facilitatorNotes": [
+            "Darkness gives off light, enough to make a jewelled altar pale. The poem reverses the usual idea that light is good and dark is bad. The final stanza grows longer as the praise builds and ends on a new word, “nightness.”"
+          ],
+          "evidence": [
+            "Would pale in the light Of thy darkness, Pale in the light Of thy nightness."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-17",
+      "title": "Joy",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Enjoy a poem that sets up a grand search and ends with a surprise.",
+      "focus": "A poet goes looking for Joy and finds her somewhere he did not expect.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. In old poems a nymph is a lovely nature spirit, often chased by gods and poets. A butcher’s cart delivered meat from the shop. Gay here means merry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Joy,” the whole poem; opens “I went to look for Joy, Slim, dancing Joy, Gay, laughing Joy, Bright-eyed Joy,— And I…”; closes “…the arms of the butcher boy! Such company, such company, As keeps this young nymph, Joy!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          85,
+          85
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "474e0d3751170aa952469faa1907ab52dafef63de82e0847f3227b320e8ae458"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-17-q1",
+          "prompt": "How does the speaker picture Joy before he finds her? What kind of search does he seem to expect?",
+          "facilitatorNotes": [
+            "Joy is a girl: slim, dancing, laughing, bright-eyed. He sets out as if on a poetic quest for something rare and lovely."
+          ],
+          "evidence": [
+            "Slim, dancing Joy, Gay, laughing Joy, Bright-eyed Joy,—"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-17-q2",
+          "prompt": "Where does he find her? Why is that surprising?",
+          "facilitatorNotes": [
+            "Driving the butcher’s cart in the arms of the butcher boy: plain work and ordinary young love, not a poetic setting. The grand search ends in a joke."
+          ],
+          "evidence": [
+            "Driving the butcher’s cart In the arms of the butcher boy!"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-17-q3",
+          "prompt": "“Such company, such company” — is the speaker shocked, amused or a little jealous? What is the poem saying about where happiness is found?",
+          "facilitatorNotes": [
+            "The tone is mock-scandalised, and perhaps rueful: Joy is with someone else. Happiness is found in everyday people and work, not where poets look for it. Readers can disagree about the tone."
+          ],
+          "evidence": [
+            "Such company, such company, As keeps this young nymph, Joy!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-18",
+      "title": "A Farewell",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear what a short goodbye says and what it leaves unsaid.",
+      "focus": "A young man leaves respectable people for a wandering life.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Hughes worked as a sailor on voyages to Africa and Europe as a young man. Gypsies here means wandering people who travel from place to place; pious folk are devout, churchgoing people.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Farewell,” the whole poem; opens “With gypsies and sailors, Wanderers of the hills and seas, I go to seek my fortune. With…”; closes “…But you will not miss me,— You who live between the hills And have never seen the seas.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          162,
+          162
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "96868bc7cd2a92c0f4205fd80402fc0249306b5443b75540ce491c0992e7aeb0"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-18-q1",
+          "prompt": "Whom does the speaker go with, and whom does he leave?",
+          "facilitatorNotes": [
+            "He goes with gypsies and sailors, “wanderers of the hills and seas,” to seek his fortune, and parts from “pious folk and fair.” Two ways of life: wandering and settled respectability."
+          ],
+          "evidence": [
+            "With gypsies and sailors, Wanderers of the hills and seas, I go to seek my fortune.",
+            "With pious folk and fair I must have a parting."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-18-q2",
+          "prompt": "“But you will not miss me” — is the speaker hurt, defiant or relieved?",
+          "facilitatorNotes": [
+            "The dash before it suggests a pause. He seems sure the people he leaves never valued him; the line can be read as hurt, proud or simply honest. Readers should say which words support their reading."
+          ],
+          "evidence": [
+            "But you will not miss me,—"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-18-q3",
+          "prompt": "Why does it matter that the people he leaves “have never seen the seas”?",
+          "facilitatorNotes": [
+            "They live “between the hills,” closed in, and cannot understand what he goes looking for. The sea stands for freedom and the wide world. The line may carry a little pity as well as a little pride."
+          ],
+          "evidence": [
+            "You who live between the hills And have never seen the seas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-19",
+      "title": "Poem (“We have tomorrow”)",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "See how a nine-line poem turns time into pictures.",
+      "focus": "Tomorrow, yesterday and today, each given its own image.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Hughes often made new compound words by joining two words with a hyphen.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Poem,” the one that begins “We have tomorrow,” the whole poem; opens “We have tomorrow Bright before us Like a flame.”; closes “And dawn-today Broad arch above the road we came.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          241,
+          243
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2d90f9dd9841242d4dd7a409019a9f5da8194b4dcbc81677603dec933f5a8906"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-19-q1",
+          "prompt": "What picture does the poem give for tomorrow, for yesterday and for today?",
+          "facilitatorNotes": [
+            "Tomorrow is a bright flame ahead; yesterday is a “night-gone thing, a sun-down name”; today is dawn and a broad arch. The past is dark and finished, and the present and future are light."
+          ],
+          "evidence": [
+            "Bright before us Like a flame.",
+            "A night-gone thing, A sun-down name."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-19-q2",
+          "prompt": "Who might “we” be? What does “the road we came” suggest about the past?",
+          "facilitatorNotes": [
+            "In a book about Black life in America, “we” can be Black Americans, the young, or anyone reading. A road suggests a long, hard journey that is now behind them."
+          ],
+          "evidence": [
+            "We have tomorrow",
+            "the road we came"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-19-q3",
+          "prompt": "Why “dawn-today” and an “arch”? What feeling does the poem leave you with?",
+          "facilitatorNotes": [
+            "Today is a beginning, and the arch is like a gateway or a rainbow over the road already travelled. The compound words make time into images. The feeling is hope that remembers the hard road without being ruled by it."
+          ],
+          "evidence": [
+            "And dawn-today Broad arch above"
+          ]
+        }
+      ]
     }
   ]
 }

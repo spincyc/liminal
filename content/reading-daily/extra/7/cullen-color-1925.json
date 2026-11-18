@@ -727,6 +727,322 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-12",
+      "title": "Dialogue",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Judge an argument between two speakers, and notice how the poem’s shape takes sides.",
+      "focus": "A poet’s soul and body argue about whether song is worth it.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A tithe is a tenth of what one earns, given to the church. In the Bible, Jacob dreams of a ladder reaching from earth to heaven. The soul’s longest speech echoes the Twenty-third Psalm (“He maketh me to lie down in green pastures … thou anointest my head with oil; my cup runneth over”). To be surfeited is to be overfilled. Carrion birds eat dead flesh; a lyre is an ancient harp, a sign of poetry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Dialogue,” the whole poem; opens “Soul: THERE is no stronger thing than song; In sun and rain and leafy trees It wafts the…”; closes “…toe to crown, To keep me safe from carrion flocks When singing’s done and lyre laid down?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          274,
+          279
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "156b6d7b3ff01e4df55f17bf65a10cb2469f5b8711047c9019faa08ea97542c3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-12-q1",
+          "prompt": "What does Soul claim song can do? How does Body answer?",
+          "facilitatorNotes": [
+            "Soul says nothing is stronger than song, which carries the timid soul along. Body answers that song leaves it hungry and barefoot: song is not food, drink or shoes. Soul speaks of the spirit; Body speaks of needs."
+          ],
+          "evidence": [
+            "But leaves the body bare to feed Its hunger with its very need.",
+            "Song is not drink; song is not meat, Nor strong, thick shoes for naked feet."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-12-q2",
+          "prompt": "Soul’s longest speech borrows from a psalm. What does it promise the singer, and when? Is it a fair answer to Body?",
+          "facilitatorNotes": [
+            "Milk and bread, green pastures, oil, an overflowing cup, and a crown of stars among the dead. Many of these rewards come from heaven or after death, which does not feed a hungry body now. Some readers will find the promise beautiful and sincere; others will call it a dodge."
+          ],
+          "evidence": [
+            "Who sings by unseen hands is fed With honeyed milk and warm, white bread;",
+            "He sings among the lipless dead With singing stars to crown his head."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-12-q3",
+          "prompt": "Body gets the last word, a question about a coffin. Who wins the argument? Compare the length of the speeches as part of your answer.",
+          "facilitatorNotes": [
+            "Soul’s speeches grow longer and grander; Body’s stay short and blunt. Ending on Body’s question leaves the argument open, and the grim picture of carrion birds is hard to forget. A young poet may be weighing art against earning a living. Readers can argue for either side."
+          ],
+          "evidence": [
+            "But will song buy a wooden box The length of me from toe to crown,",
+            "Song is the weakling’s oaken rod, His Jacob’s ladder dropped from God."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-13",
+      "title": "Gods",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow an honest confession that ends in a daring request.",
+      "focus": "A churchgoer admits that other gods live in his heart.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Alabaster is a smooth white stone; a turret is a small tower. To “win” a place here means to reach it. Revel means to celebrate wildly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Gods,” the whole poem; opens “I FAST and pray and go to church, And put my penny in, But God’s not fooled by such…”; closes “…gleam Too high for me to win, Unless He turns His face and lets Me bring my own gods in.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          288,
+          290
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "00a4c1f88ac5d088208fc9687c4393bc013dfbd919cd742f3b19b753890654fd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-13-q1",
+          "prompt": "What does the speaker do to be good, and why doesn’t it work?",
+          "facilitatorNotes": [
+            "He fasts, prays, goes to church and gives his penny, but God is not fooled by “such slight tricks.” Outward acts do not change what is inside him, and he admits it."
+          ],
+          "evidence": [
+            "I FAST and pray and go to church, And put my penny in,",
+            "But God’s not fooled by such slight tricks,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-13-q2",
+          "prompt": "What might the “gods / That revel in my heart” be? Why can’t he send them away?",
+          "facilitatorNotes": [
+            "Loves, desires, pride, or old beliefs and pleasures; the poem leaves them unnamed. They “revel,” celebrating inside him. He cannot find “an easy word” to dismiss them, which suggests he does not truly want them gone."
+          ],
+          "evidence": [
+            "I cannot hide from Him the gods That revel in my heart,",
+            "Nor can I find an easy word To tell them to depart:"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-13-q3",
+          "prompt": "What does the last stanza ask of God? Is it humble or daring?",
+          "facilitatorNotes": [
+            "Heaven is too high for him to reach unless God “turns His face,” looks away, and lets him bring his own gods in. It is a cheeky bargain and also a plea to be accepted whole. Some readers notice that heaven’s turrets are white."
+          ],
+          "evidence": [
+            "God’s alabaster turrets gleam Too high for me to win,",
+            "Unless He turns His face and lets Me bring my own gods in."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-14",
+      "title": "On Going",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Find how a poem about dying manages to sound light.",
+      "focus": "A speaker imagines becoming flowers, birdsong and rain after death.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. The poem is dedicated to Willard Johnson. Fancy here means imagination; to blow here means to bloom; to be “fain” of something is to long for it.",
+      "contentNote": "The speaker imagines his own death and burial.",
+      "excerpt": {
+        "locator": "“On Going,” the whole poem with its dedication; opens “(_For Willard Johnson_)”; closes “…Quite of my nearness fain, I may come back to her, and talk In liquid words of rain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          299,
+          302
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4de948692e5560a1966644eabc22e645f01875f27e2afdcdb82343506279dee4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-14-q1",
+          "prompt": "What does the speaker expect to become after death? List the forms he imagines.",
+          "facilitatorNotes": [
+            "A spring blossom, a blackbird’s song, snow melting into earth, food for trees, help for lilies, and rain. He imagines death as a change into other living things, not an ending."
+          ],
+          "evidence": [
+            "I’ll bear a blossom with the spring, Or be a blackbird’s song,",
+            "Be food for hungry, growing trees, Or help the lilies blow."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-14-q2",
+          "prompt": "What is the tone of the first two lines? Find another phrase with the same tone.",
+          "facilitatorNotes": [
+            "Confident, almost playful: the grave is “too weak” to hold his imagination for long. He will “fade with ease.” He refuses to make death frightening."
+          ],
+          "evidence": [
+            "A GRAVE is all too weak a thing To hold my fancy long;",
+            "I think that I shall fade with ease,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-14-q3",
+          "prompt": "How does the last stanza change the poem? Is it comforting or sad?",
+          "facilitatorNotes": [
+            "It brings in another person, his love, walking alone and missing him. He promises to come back and talk to her in “liquid words of rain.” A poet’s words become rain. It can be read as comfort, or as a sadness the light tone has been holding back."
+          ],
+          "evidence": [
+            "And if my love should lonely walk, Quite of my nearness fain,",
+            "I may come back to her, and talk In liquid words of rain."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-15",
+      "title": "Mary, Mother of Christ",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice what a very short poem knows that its character does not.",
+      "focus": "A young mother sings her baby to sleep.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. In the Christian story, Mary is the mother of Jesus, who was crucified as a grown man. Coral is a pinkish red; to lull is to soothe to sleep.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Mary, Mother of Christ,” the whole poem; opens “THAT night she felt those searching hands Grip deep upon her breast, She laughed and sang…”; closes “That night she kissed his coral lips How could she know the rest?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          271,
+          272
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "90b9f3345e99f65ee5435a166cc5121dc597b2d28f39ed41332a1a5cbdd06b18"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-15-q1",
+          "prompt": "What is happening “that night”? Whose are the “searching hands”?",
+          "facilitatorNotes": [
+            "Mary is nursing her newborn: the baby’s hands grip her breast, and she laughs and sings a silly tune to send him to sleep. It is an ordinary scene of a mother and baby."
+          ],
+          "evidence": [
+            "THAT night she felt those searching hands Grip deep upon her breast,",
+            "She laughed and sang a silly tune To lull her babe to rest;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-15-q2",
+          "prompt": "“How could she know the rest?” What is “the rest,” and why does the poem not say it?",
+          "facilitatorNotes": [
+            "The crucifixion. Readers who know the story fill it in; Mary cannot. The silence lets a shadow fall over the tender scene: we know what she does not."
+          ],
+          "evidence": [
+            "How could she know the rest?"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-15-q3",
+          "prompt": "The second stanza is only two lines. What is the effect of stopping short? Why “coral lips”?",
+          "facilitatorNotes": [
+            "The poem breaks its own pattern and falls silent, as if cut off. “Coral lips” shows a healthy, rosy baby, which makes the coming death harder to think about. The “silly tune” makes Mary a real young mother, not a statue."
+          ],
+          "evidence": [
+            "That night she kissed his coral lips"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-16",
+      "title": "Two epitaphs for poets",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare two short poems that imagine two poets meeting death in opposite ways.",
+      "focus": "Keats defeats death; Hazel Hall goes with it politely.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. An epitaph is a short verse for a gravestone. John Keats (1795–1821), the English poet, died of tuberculosis at twenty-five and asked that his gravestone say, “Here lies one whose name was writ in water.” Hazel Hall was an American poet. An apostle spreads a faith; “febrile” means feverish; “seared” means burned.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Epitaphs, “For John Keats, Apostle of Beauty” and “For Hazel Hall, American Poet”; opens “NOT writ in water, nor in mist, Sweet lyric throat, thy name; Thy singing lips that cold…”; closes “…I’m a stranger here,” she said to Death, “It’s kind of you to let me take your arm.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          199,
+          202
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0f1f484033f9c6d69c6ca7ab11a9482e7200cdfcd0fab03a46b55546faf6603a"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-16-q1",
+          "prompt": "“NOT writ in water”: how does Cullen answer Keats’s own epitaph?",
+          "facilitatorNotes": [
+            "Keats feared his name would vanish like writing on water. Cullen says the opposite: the name is not written in water or mist, so it will last. Cullen, writing a hundred years later, is the proof."
+          ],
+          "evidence": [
+            "NOT writ in water, nor in mist, Sweet lyric throat, thy name;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-16-q2",
+          "prompt": "In the Keats epitaph, death kisses the poet. What happens to death?",
+          "facilitatorNotes": [
+            "The kiss is turned back: Keats’s lips, still full of song, burn death’s lips. Poetry wins, even in the grave."
+          ],
+          "evidence": [
+            "Thy singing lips that cold death kissed Have seared his own with flame."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-16-q3",
+          "prompt": "How does Hazel Hall meet Death? Compare her with Keats. Which picture of death do you find more moving?",
+          "facilitatorNotes": [
+            "She is timid and troubled, a “stranger here” in life, and she thanks Death for his arm like a shy guest offered an escort. Keats defeats death; she accepts it with good manners. Readers can say which they find more moving and why."
+          ],
+          "evidence": [
+            "she said to Death",
+            "It’s kind of you to let me take your arm."
+          ]
+        }
+      ]
     }
   ]
 }
