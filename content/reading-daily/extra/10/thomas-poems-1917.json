@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "thomas-poems-1917",
+  "readings": [
+    {
+      "id": "reading-10-thomas-poems-1917-01",
+      "title": "The Trumpet",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Hear how a call to rise turns from dreams and lovers toward “the old wars.”",
+      "focus": "A dawn summons that praises the earth and sends men to war in the same breath.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. He wrote this poem in 1916, while training as an artillery officer; in army camps a trumpet sounded reveille, the morning call to rise.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE TRUMPET; opens “RISE up, rise up, And, as the trumpet blowing Chases the dreams of men, As the dawn…”; closes “…the stars Through all the dewy night: Up with the light, To the old wars; Arise, arise!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          2
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "476a9258243c7f010ff64f95b57cb92c4bb79111465335920e9798bffa76c64f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-01-q1",
+          "prompt": "What does the trumpet chase away in the first stanza, and what are the listeners told to scatter?",
+          "facilitatorNotes": [
+            "The dreams of men, as dawn chases the stars; then the dew that covers “the print of last night’s lovers.” The call erases the traces of private night and love."
+          ],
+          "evidence": [
+            "Chases the dreams of men,",
+            "The print of last night's lovers--"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-01-q2",
+          "prompt": "“Forget, men, everything . . . / Except that it is lovelier / Than any mysteries.” What should the listeners remember, and why might soldiers need to?",
+          "facilitatorNotes": [
+            "The newborn earth’s beauty, which outshines any mystery (religious, dreamed or hidden). It is the one thing worth carrying into the day, a reason for living that asks no explanation."
+          ],
+          "evidence": [
+            "Except that it is lovelier",
+            "Than any mysteries."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-01-q3",
+          "prompt": "The poem ends “Up with the light, / To the old wars; / Arise, arise!” Is the ending rousing, ironic, or both? Use earlier images.",
+          "facilitatorNotes": [
+            "The quick rhythm and the dawn are exhilarating, but “old” wars suggests endless repetition, and the lovers’ traces have just been scattered. Written by a soldier who would die in battle, it can be heard as eager, as grimly resigned, or as both at once."
+          ],
+          "evidence": [
+            "To the old wars;",
+            "Open your eyes to the air"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-02",
+      "title": "Two Pewits",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Track the opposites (white and black, earth and sky, cry and silence) and find where the speaker places himself.",
+      "focus": "Birds that refuse to choose between earth and sky, watched by a “ghost.”",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Pewits, also called lapwings, are black-and-white birds of open fields, known for their wild tumbling flight and plaintive cry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem TWO PEWITS; opens “UNDER the after-sunset sky Two pewits sport and cry, More white than is the moon on high…”; closes “…earth and sky, While the moon's quarter silently Rides, and earth rests as silently.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          10
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e462da87310464707f8a5300edbfc78b02c7132e124383403d372b2d97fc6c9d"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-02-q1",
+          "prompt": "How can the pewits be “More white than is the moon” and “More black than earth”?",
+          "facilitatorNotes": [
+            "Their plumage is both; in the half-light one side flashes white and the other shows dark as they turn. They seem to belong to sky and earth at once."
+          ],
+          "evidence": [
+            "More white than is the moon on high",
+            "More black than earth."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-02-q2",
+          "prompt": "Almost every line ends on the same sound as “sky” and “cry.” What does this repeated rhyme do, and what changes in the last lines?",
+          "facilitatorNotes": [
+            "The rhyme returns like the birds’ insistent call and their up-and-down flight. The last two lines shift to “silently,” and the poem closes in the moon’s and the earth’s quiet."
+          ],
+          "evidence": [
+            "Is the one sound under the sky.",
+            "Rides, and earth rests as silently."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-02-q3",
+          "prompt": "Who is “the ghost who wonders why”? Why might the speaker see himself that way?",
+          "facilitatorNotes": [
+            "The human watcher, silent in the dusk, outside the birds’ merriment. A ghost belongs neither to earth nor sky; unlike the birds, he cannot enjoy both. Some read melancholy, others a wry, self-mocking aside."
+          ],
+          "evidence": [
+            "Over the ghost who wonders why",
+            "Nor choose 'twixt earth and sky,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-03",
+      "title": "Swedes",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a comparison that sets a farmyard heap beside a Pharaoh’s tomb, and decide which the poem prefers.",
+      "focus": "Ordinary winter food revealed as a kind of treasure.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Swedes (rutabagas) were stored through winter in a long pile covered with earth; here workers have opened it. Archaeologists had recently opened royal tombs in Egypt’s Valley of the Kings; Amen-hotep is a pharaoh’s name.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem SWEDES; opens “THEY have taken the gable from the roof of clay On the long swede pile. They have let in…”; closes “But dreamless long-dead Amen-hotep lies. This is a dream of Winter, sweet as Spring.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          20,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "075a3da2734a2688a74a7675bac25832eaf6423c450c982ddd4ecc20ac452a15"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-03-q1",
+          "prompt": "What has been uncovered at the start, and what colours does it reveal?",
+          "facilitatorNotes": [
+            "The earth “gable” of the swede pile has been taken off, letting sun onto pale shoots that grew in the dark: white, gold and purple."
+          ],
+          "evidence": [
+            "THEY have taken the gable from the roof of clay",
+            "To the white and gold and purple of curled fronds"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-03-q2",
+          "prompt": "Why compare this to a boy crawling into a Pharaoh’s tomb? What does the boy see?",
+          "facilitatorNotes": [
+            "Mummy, gods, chariot, throne, pottery, alabaster, gold: the splendour of the dead. The swede pile is “more tender-gorgeous”: tender because alive and humble, gorgeous in colour."
+          ],
+          "evidence": [
+            "It is a sight more tender-gorgeous",
+            "A boy crawls down into a Pharaoh's tomb"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-03-q3",
+          "prompt": "“But dreamless long-dead Amen-hotep lies. / This is a dream of Winter, sweet as Spring.” What distinction do the last two lines make?",
+          "facilitatorNotes": [
+            "The pharaoh’s treasure surrounds a corpse without dreams; the sprouting swedes are winter dreaming of spring, life kept in darkness. Some read a preference for humble living things over imperial grandeur; others note that “dream” can also mean illusion."
+          ],
+          "evidence": [
+            "But dreamless long-dead Amen-hotep lies.",
+            "This is a dream of Winter, sweet as Spring."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-04",
+      "title": "Like the Touch of Rain",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a simile through the whole poem and find where it breaks.",
+      "focus": "A remembered parting turned into a door shut against the rain.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. The poem is a brief memory of a woman and two words she said.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem LIKE THE TOUCH OF RAIN; opens “LIKE the touch of rain she was On a man's flesh and hair and eyes When the joy of walking…”; closes “…door Between me and the blessed rain That was never shut before And will not open again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          43,
+          45
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2ef66999e271f92645bd400ad31bf3c44ca6f635d280dc0471edc3fad66a6cc2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-04-q1",
+          "prompt": "What does the opening simile compare “she” to, and what kind of man feels it?",
+          "facilitatorNotes": [
+            "The touch of rain on a man who has been surprised by joy while walking: sudden, fresh, exhilarating."
+          ],
+          "evidence": [
+            "LIKE the touch of rain she was",
+            "When the joy of walking thus"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-04-q2",
+          "prompt": "How is the walker of the second stanza different from the speaker?",
+          "facilitatorNotes": [
+            "The walker loves the storm and then forgets it when he gets home; the speaker will not forget “Go now.” The general case becomes painfully personal."
+          ],
+          "evidence": [
+            "But forgets when he returns",
+            "As I shall not forget her \"Go now.\""
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-04-q3",
+          "prompt": "“Those two words shut a door / Between me and the blessed rain.” What has been lost: the woman, or something larger?",
+          "facilitatorNotes": [
+            "Perhaps the woman; perhaps the power to feel joy as the rain once gave it. A door “never shut before” that “will not open again” suggests a permanent change in the speaker. Readers can argue for either, or both."
+          ],
+          "evidence": [
+            "Those two words shut a door",
+            "That was never shut before"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-05",
+      "title": "If I Should Ever by Chance",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Work out the terms of an imaginary lease, and the joke hidden in its last condition.",
+      "focus": "A father’s gift that costs nothing and asks for close attention to the world.",
+      "context": "One of four “household poems” Thomas wrote in 1916 for his family, while he was a soldier teaching map-reading at an army camp in Essex; most of the names are farms and hamlets near that camp. This one is for his elder daughter, Bronwen. To let is to rent out; orchises are wild orchids; furze (gorse) is a prickly shrub that flowers in almost every month of the year.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem IF I SHOULD EVER BY CHANCE; opens “IF I should ever by chance grow rich I'll buy Codham, Cockridden, and Childerditch,…”; closes “…Childerditch, Roses, Pyrgo and Lapwater,-- I shall give them all to my elder daughter.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          51
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "25497246dd2a6ab57b0d832f60a2a18280acc4979546dc0e8268448fbd764cbc"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-05-q1",
+          "prompt": "What “rent” will the elder daughter pay, and what does it show about what her father values?",
+          "facilitatorNotes": [
+            "Each year’s first violets, primroses and orchises, found before he finds them: attention and delight in the countryside, not money."
+          ],
+          "evidence": [
+            "Each year's first violets, white and lonely,",
+            "She must find them before I do, that is."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-05-q2",
+          "prompt": "Why does the furze matter, given that it blooms almost all year?",
+          "facilitatorNotes": [
+            "If she finds a blossom on furze, the lands are hers forever, and she nearly always can: the condition is a loving loophole, a joke that makes the gift permanent."
+          ],
+          "evidence": [
+            "But if she finds a blossom on furze",
+            "Without rent they shall all for ever be hers,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-05-q3",
+          "prompt": "The poem begins “If I should ever by chance grow rich.” How does that “if” shape the gift, and what does it suggest about the father’s real situation?",
+          "facilitatorNotes": [
+            "He is not rich and will not own these farms; the gift is imaginary. Yet the names, said twice, are a real gift: the music of the places themselves. Given that he was a soldier when he wrote it, readers may find it playful, poignant, or both."
+          ],
+          "evidence": [
+            "IF I should ever by chance grow rich",
+            "I shall give them all to my elder daughter."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-06",
+      "title": "What Shall I Give?",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a list of things a father will not give, and find what he gives instead.",
+      "focus": "Wealth refused as a burden; a child left her own small world.",
+      "context": "One of four “household poems” Thomas wrote in 1916 for his family, while he was a soldier teaching map-reading at an army camp in Essex; most of the names are farms and hamlets near that camp. This one is for his younger daughter, Myfanwy. Havering-atte-Bower in Essex was once a royal palace; Samarcand is a fabled city of Central Asia; the Pleiades are a cluster of stars; Steep is the Hampshire village where the family lived; to cumber is to burden.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem WHAT SHALL I GIVE?; opens “WHAT shall I give my daughter the younger More than will keep her from cold and hunger? I…”; closes “…hair uncurled, Wanting a thousand little things That time without contentment brings.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          53,
+          53
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "58599c98c10748a475afb8a779c1ff58e67bafb9526dce5e138e3470431e405f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-06-q1",
+          "prompt": "What does the father decide to give, and why does he refuse acres and brooks?",
+          "facilitatorNotes": [
+            "Nothing beyond what keeps her from cold and hunger. Land would make her no richer, only burdened; he calls acres “lumber.”"
+          ],
+          "evidence": [
+            "I shall not give her anything.",
+            "Her small hands I would not cumber"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-06-q2",
+          "prompt": "What does the queen in Havering Bower suggest about wealth and power?",
+          "facilitatorNotes": [
+            "She had pleasure and power but sat “Alone, with the shadows”: possession brings no company and no happiness."
+          ],
+          "evidence": [
+            "She would be no richer than the queen",
+            "Alone, with the shadows, pleasure and power."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-06-q3",
+          "prompt": "The poem ends with the child “Wanting a thousand little things / That time without contentment brings.” Is wanting a gift? Explain.",
+          "facilitatorNotes": [
+            "He leaves her Steep, her own world, her “spectacled self,” and the desires of growing up. Wanting keeps a life moving and keeps her herself. But “without contentment” may also mean restlessness; readers can hear wisdom, sadness, or both."
+          ],
+          "evidence": [
+            "But leave her Steep and her own world",
+            "Wanting a thousand little things"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-07",
+      "title": "If I Were to Own",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Work out an imagined bargain between father and son, and notice the turn when the father pictures himself old.",
+      "focus": "Land traded for a blackbird’s song, and a father’s fear of destroying it.",
+      "context": "One of four “household poems” Thomas wrote in 1916 for his family, while he was a soldier teaching map-reading at an army camp in Essex; most of the names are farms and hamlets near that camp. This one is for his son, Merfyn. A tye is an Essex word for a green or common; plovers are lapwings; “for a song” also means very cheaply.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem IF I WERE TO OWN; opens “IF I were to own this countryside As far as a man in a day could ride, And the Tyes were…”; closes “…Martins, Lambkins, or Lillyputs, Should be his till the cart tracks had no ruts.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          55,
+          56
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ce022ccb71a7749ac33df633515f338a53a496b522f791251b6be605d1d8dbf8"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-07-q1",
+          "prompt": "What rent would the father ask his son for each place?",
+          "facilitatorNotes": [
+            "A blackbird’s song at dawn: one song for the use of any of the farms. The phrase “for a song” means almost nothing, and here means something precious."
+          ],
+          "evidence": [
+            "For a song, a blackbird's song, at dawn.",
+            "If he would let me any one"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-07-q2",
+          "prompt": "Explain the strange situation in which the father ends “old and alone.”",
+          "facilitatorNotes": [
+            "If he had shot every blackbird to put in a pie, he would have no songs left to pay with, so the son would have everything and the father nothing. Destroying beauty for appetite costs him his place."
+          ],
+          "evidence": [
+            "Had shot them to put them into a pie,--",
+            "And I was left old and alone."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-07-q3",
+          "prompt": "Why list so many place names, twice? What do the names do in the poem?",
+          "facilitatorNotes": [
+            "Their sounds are a pleasure in themselves, and reciting them is a way of possessing places without owning them. The names are the real gift to the boy. The last line promises them to him for as long as the cart tracks last."
+          ],
+          "evidence": [
+            "Shellow, Rochetts, Bandish, and Pickerells,",
+            "Should be his till the cart tracks had no ruts."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-08",
+      "title": "And You, Helen",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice which gifts are things and which are qualities, and what the last gift admits.",
+      "focus": "A husband’s gifts that confess what he has cost his wife.",
+      "context": "One of four “household poems” Thomas wrote in 1916 for his family, while he was a soldier teaching map-reading at an army camp in Essex; most of the names are farms and hamlets near that camp. This one, the last, is for his wife, Helen Thomas.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem AND YOU, HELEN; opens “AND you, Helen, what should I give you? So many things I would give you Had I an infinite…”; closes “…foul and fair, And myself, too, if I could find Where it lay hidden and it proved kind.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          58,
+          58
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ca313d3f0f42ff64a9d576c46e0796797ba4738cfa1915066adc21ac28e99012"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-08-q1",
+          "prompt": "List what the speaker would give Helen from “an infinite great store.” Which are things and which are qualities?",
+          "facilitatorNotes": [
+            "Lands, waters, flowers, wine are things; youth, loveliness, truth, a clear eye, a better art, children as many as she wished are qualities or chances. Most of the gifts cannot be bought."
+          ],
+          "evidence": [
+            "So many things I would give you",
+            "Lands, waters, flowers, wine,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-08-q2",
+          "prompt": "“I would give you back yourself.” What does this suggest Helen has lost, and to whom?",
+          "facilitatorNotes": [
+            "“All you have lost . . . Or given to me”: some of herself went into the marriage and to him. The line quietly admits a cost he caused."
+          ],
+          "evidence": [
+            "I would give you back yourself,",
+            "Or given to me."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-08-q3",
+          "prompt": "The final gift is “myself, too, if I could find / Where it lay hidden and it proved kind.” What does this admit about the speaker?",
+          "facilitatorNotes": [
+            "He does not know where his own self is, or whether it would be kind if found: an honest confession of withdrawal and difficulty. Readers may find it bleak, loving, or both at once."
+          ],
+          "evidence": [
+            "And myself, too, if I could find",
+            "Where it lay hidden and it proved kind."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-09",
+      "title": "When First",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow sentences that run across stanza breaks, and find the one thing the speaker says has gone for ever.",
+      "focus": "Hope distinguished from health and cheerfulness, and love that grows with use.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. The speaker walks for the last time down a chalk hill he has known for twelve years.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem WHEN FIRST; opens “WHEN first I came here I had hope, Hope for I knew not what. Fast beat My heart at sight…”; closes “…time and necessity Will grow, and louder the heart's dance At parting than at meeting be.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          60,
+          65
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ffa863750bbf4861767c317179fa47c80d769066b16dd40d4f9f69668fa05f91"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-09-q1",
+          "prompt": "What did the speaker feel when he first came here?",
+          "facilitatorNotes": [
+            "Hope “for I knew not what”: his heart beat at the sight of the slope, as if climbing it would show him something no other hill could."
+          ],
+          "evidence": [
+            "Hope for I knew not what.",
+            "Would see something no other hill"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-09-q2",
+          "prompt": "Why does the speaker separate hope from “health” and “cheerfulness”?",
+          "facilitatorNotes": [
+            "Health and cheerfulness come and go within an hour; hope, once gone, does not return. The careful distinction makes the loss exact rather than general gloom."
+          ],
+          "evidence": [
+            "Hope now,--not health, nor cheerfulness,",
+            "Just hope has gone for ever."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-09-q3",
+          "prompt": "The last stanza says love grows with “chance / And use and time and necessity,” and the heart dances louder at parting. Is this a consolation, and how does it change what came before?",
+          "facilitatorNotes": [
+            "Love has taken hope’s place: what grows from long familiarity is stronger, at the moment of leaving, than the first excitement was. Some readers find comfort; others a sad paradox that we know love best when we lose it. Notice how the run-on stanzas carry the thought forward like a walk downhill."
+          ],
+          "evidence": [
+            "One thing I know, that love with chance",
+            "At parting than at meeting be."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-10",
+      "title": "Fifty Faggots",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how a stack of firewood leads the speaker to think about time and the war.",
+      "focus": "What a bird takes for permanent, and what a man cannot foresee.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. Faggots are bundles of sticks cut from underwood (young hazel and ash) for firewood; a copse is a small wood. The poem was written in 1916.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem FIFTY FAGGOTS; opens “THERE they stand, on their ends, the fifty faggots That once were underwood of hazel and…”; closes “…things Have ended, maybe, that I can no more Foresee or more control than robin and wren.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          82,
+          82
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "253090720c5fe7bf10d35423d90138fb3a5ab2d9693720e1a16721a14e1d1f64"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-10-q1",
+          "prompt": "What will the faggots become for the birds next spring, and why not this spring?",
+          "facilitatorNotes": [
+            "A thicket for a blackbird or robin to nest in, trusted because to a bird whatever exists lasts forever. This spring it is too late: the swifts have arrived and nesting has begun."
+          ],
+          "evidence": [
+            "Whatever is for ever to a bird:",
+            "This Spring it is too late; the swift has come."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-10-q2",
+          "prompt": "“Better they will never warm me.” Why might the speaker say this?",
+          "facilitatorNotes": [
+            "On the surface he complains of carrying them on a hot day; underneath, he may not be there to burn them, since the fires will last several winters and the war goes on. The joke carries a foreboding."
+          ],
+          "evidence": [
+            "Better they will never warm me, though they must",
+            "Light several Winters' fires."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-10-q3",
+          "prompt": "How does the ending put the speaker on a level with the robin and the wren? Is that comforting?",
+          "facilitatorNotes": [
+            "He can no more foresee or control what will end, including perhaps his own life, than the birds can. The calm, plain tone holds the fear steady. Some readers find acceptance here, others a quiet dread."
+          ],
+          "evidence": [
+            "The war will have ended, many other things",
+            "Foresee or more control than robin and wren."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-11",
+      "title": "Women He Liked",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow how a man and the lane named after him are remembered, and what the name keeps and loses.",
+      "focus": "Naming, memory, and the unintended results of love.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. A cob is a sturdy, short-legged horse; the stormcock is the mistle thrush; a slough is a muddy hollow.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem WOMEN HE LIKED; opens “WOMEN he liked, did shovel-bearded Bob, Old Farmer Hayward of the Heath, but he Loved…”; closes “…the elms have turned the lane to slough And gloom, the name alone survives, Bob's Lane.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          84,
+          87
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "77b0db26ee330e1a7c353168424b9bbfd46b55aabda224ca653a94fe292a9a16"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-11-q1",
+          "prompt": "What did Bob Hayward love most, and what did that love lead him to do?",
+          "facilitatorNotes": [
+            "Women he liked, horses he loved, but trees most of all; he planted elms all along the lane."
+          ],
+          "evidence": [
+            "Loved horses.",
+            "He planted elms where now the stormcock sings"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-11-q2",
+          "prompt": "“To name a thing beloved man sometimes fails.” What does this line mean in the poem?",
+          "facilitatorNotes": [
+            "The track was lovely, with thickets and nightingales, yet no one had named it; people often fail to name what they love. Bob’s planting gave it a name by accident."
+          ],
+          "evidence": [
+            "To name a thing beloved man sometimes fails.",
+            "Till then the track had never had a name"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-11-q3",
+          "prompt": "Bob’s elms have turned the lane to mud and gloom, and no one passes now. Is the ending ironic, sad, or both? What survives?",
+          "facilitatorNotes": [
+            "His love for trees ruined the lane he loved; only the name, “Bob’s Lane,” is left. Memory outlasts use, and the man survives in a word rather than a place."
+          ],
+          "evidence": [
+            "Out of the elms have turned the lane to slough",
+            "And gloom, the name alone survives, Bob's Lane."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-12",
+      "title": "It Rains",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Hold the speaker’s happiness and sadness together in one scene, and notice what the last image makes of the past.",
+      "focus": "An empty orchard in the rain, a memory of two walking there, and a flower that seems to hang in the air.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. The “parsley” is cow parsley, a tall wild plant with flat heads of tiny white flowers that grows thick in untended ground. “Fined to naught” means thinned to nothing.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem IT RAINS; opens “IT rains, and nothing stirs within the fence Anywhere through the orchard's untrodden,…”; closes “…Figures, suspended still and ghostly white, The past hovering as it revisits the light.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          99,
+          101
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7ad280cf969fe06e622885d6ba1b68fce7b1c2ea05481ca62d6b262fb1e3765e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-12-q1",
+          "prompt": "What details show that no one has been in the orchard?",
+          "facilitatorNotes": [
+            "Nothing stirs; the parsley is “untrodden” and dense as a forest; the raindrops on the grass, “great diamonds,” have no one to break them. The emptiness is made beautiful, not bleak."
+          ],
+          "evidence": [
+            "Anywhere through the orchard's untrodden, dense",
+            "Of rain on the grassblades there is none to break,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-12-q2",
+          "prompt": "The speaker is “nearly as happy as possible” and also “Sad.” What makes him happy, what makes him sad, and what does “Unless alone” add?",
+          "facilitatorNotes": [
+            "He is happy to search the wet wilderness and to think of two people walking and kissing there, forgetting the rain; sad that he will never walk so happily in the rain again, “Unless alone.” The two may be himself and someone in the past, or imagined lovers. “Unless alone” can mean solitude is now his only route to that happiness, or that the shared happiness is gone for good; both readings fit."
+          ],
+          "evidence": [
+            "And I am nearly as happy as possible",
+            "Unless alone, so happy shall I walk"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-12-q3",
+          "prompt": "In the twilight the parsley flower’s stalk disappears and the flower seems to float. How does this image explain “The past hovering as it revisits the light”?",
+          "facilitatorNotes": [
+            "The flower is still there but its support has vanished, so it hangs “suspended still and ghostly white,” as the remembered past returns, vivid but unattached to anything present. “Ghostly” suggests the past is beautiful and also no longer alive."
+          ],
+          "evidence": [
+            "Figures, suspended still and ghostly white,",
+            "The past hovering as it revisits the light."
+          ]
+        }
+      ]
+    }
+  ]
+}
