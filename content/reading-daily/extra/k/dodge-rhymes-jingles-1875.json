@@ -195,6 +195,70 @@
     },
     {
       "id": "reading-k-dodge-rhymes-jingles-1875-04",
+      "title": "Pussy’s Class",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a lesson in which the pupils will not learn one of the things they are taught.",
+      "focus": "A mother cat teaches her kittens to meow, purr and scratch; they will not hiss or scratch, and she lets them go, fondly.",
+      "context": "Mary Mapes Dodge wrote these rhymes for children in America. Here a mother cat holds a class for her kittens. A perfume rare is a special sweet smell; a sharper tone is a crosser voice; “pshaw” is a sound of impatience; “Stpisss!” is a cat’s hiss; fond means loving. Let the child meow, purr and try the hiss for the kittens.",
+      "contentNote": "The mother cat teaches her kittens to scratch children who tease them, boxes their ears with her softest paw, and calls them “sweet little idiots.”",
+      "excerpt": {
+        "locator": "“Pussy's Class,” the complete poem; opens “\"NOW children,\" said Puss, as she shook her head, \"It is time your morning lesson was…”; closes “…Ah well, I was once the same, I suppose\"-- And she looked very wise and rubbed her nose.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          268,
+          276
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bb7dd16f7a735404e6f39a6b36986873bdbbe1526c753f4895a77092f5343796"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q1",
+          "prompt": "What do the kittens say when they want a drink, and what do they do when children are good?",
+          "facilitatorNotes": [
+            "They meow loudly for a drink, and purr softly for good children. Let the child do both."
+          ],
+          "evidence": [
+            "You ought to have heard how those kittens meow'd!",
+            "And the kittens purred as soft as they could."
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q2",
+          "prompt": "What does the mother cat say the kittens must do when children are rough? What do the kittens think about that?",
+          "facilitatorNotes": [
+            "Use their claws. The kittens feel sure they will never need such weapons, and they will not even hiss."
+          ],
+          "evidence": [
+            "You must use your claws when children are rough!",
+            "They felt quite sure they never should need"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q3",
+          "prompt": "At the end she sends them off to play. Is the mother cat cross with her kittens, or loving?",
+          "facilitatorNotes": [
+            "Mostly loving: she is called their “fond mamma,” calls them sweet, and remembers she was the same once. Some children will point out that she boxed their ears and called them idiots, so she is a little cross too; both readings use the poem."
+          ],
+          "evidence": [
+            "said the fond mamma;",
+            "Ah well, I was once the same, I suppose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-05",
       "title": "The Sand Man",
       "sourceId": "dodge-rhymes-jingles-1875",
       "genre": "poetry",
@@ -223,7 +287,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-04-q1",
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q1",
           "prompt": "What does the Sand Man carry, and what does he do with it?",
           "facilitatorNotes": [
             "A silvery horn full of sleepy sand, which he shakes over flowers, lambs and birds and sprinkles over children’s heads."
@@ -234,7 +298,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-04-q2",
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q2",
           "prompt": "Where do the children fall asleep?",
           "facilitatorNotes": [
             "On the carpet, on chairs, curled up on the stairs, in the grass, deep in the hay, and in their mother’s arms. Children may say where they once fell asleep."
@@ -245,7 +309,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-04-q3",
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q3",
           "prompt": "Does anyone know where the Sand Man comes from? What do you think really makes us sleepy?",
           "facilitatorNotes": [
             "Nobody knows, because he is make-believe. Children may say playing hard, the dark, or a warm bed; the poem gives sleep a friendly face instead of a reason."
@@ -258,7 +322,70 @@
       ]
     },
     {
-      "id": "reading-k-dodge-rhymes-jingles-1875-05",
+      "id": "reading-k-dodge-rhymes-jingles-1875-06",
+      "title": "What They Say",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the sound each toy makes and what it seems to say.",
+      "focus": "A boy’s toys each speak in their own noise, and all together cheer for racket.",
+      "context": "Mary Mapes Dodge wrote these rhymes for children in America. A boy is playing with his toys: a drum, a trumpet, a whip, a pop-gun (a toy that shoots out a cork or stick with a pop) and a toy sword. Bub is a pet name for a little boy; racket means noise; the lash is the long string of a whip; a manikin is a little man. Give each toy its own voice.",
+      "contentNote": "The toy pop-gun and toy sword talk about firing and cutting (“cut 'em in bits!”); the gun also warns, “See that you fire in nobody's eye.”",
+      "excerpt": {
+        "locator": "“What They Say,” the complete poem; opens “WHAT does the drum say? \"Rub-a-dub-dub! Rub-a-dub, rub-a-dub! Pound away, bub! Make as…”; closes “…for fun! Babies no longer, but stout little men, Racket forever! and racket again!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          421,
+          426
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "99e2603962e67ac47193085787af2da19c291b5b7f632d5d3a55ab3bdda8460d"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q1",
+          "prompt": "What sound does the drum make, and what sound does the trumpet make?",
+          "facilitatorNotes": [
+            "The drum goes “Rub-a-dub-dub!” and the trumpet “Toot-a-toot-too!” Children can drum and toot."
+          ],
+          "evidence": [
+            "Rub-a-dub-dub!",
+            "Toot-a-toot-too!"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q2",
+          "prompt": "Which toy gives the boy a safety rule? What is the rule?",
+          "facilitatorNotes": [
+            "The pop-gun: never fire it into anyone’s eye."
+          ],
+          "evidence": [
+            "See that you fire in nobody's eye."
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q3",
+          "prompt": "What do all the toys say together at the end? Who do you think is really saying it?",
+          "facilitatorNotes": [
+            "“Hurrah for fun!” and “Racket forever!” Many children will say it is really the boy, proud to be no longer a baby, and the toys speak his feelings. Some may enjoy imagining the toys really talking; the poem allows both."
+          ],
+          "evidence": [
+            "Hurrah for fun!",
+            "Babies no longer, but stout little men,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-07",
       "title": "The Frost-King",
       "sourceId": "dodge-rhymes-jingles-1875",
       "genre": "poetry",
@@ -287,7 +414,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-05-q1",
+          "id": "reading-k-dodge-rhymes-jingles-1875-07-q1",
           "prompt": "What does the Frost-King look like, and what does his touch do?",
           "facilitatorNotes": [
             "His face is white, stern and pale, and his touch is icy cold. He sends the birds south and makes the brooks still by freezing them."
@@ -298,7 +425,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-05-q2",
+          "id": "reading-k-dodge-rhymes-jingles-1875-07-q2",
           "prompt": "What fun does the Frost-King make for children?",
           "facilitatorNotes": [
             "Snow for sledding, frozen rivers for skating, and Jack Frost’s merry tricks that call the children out to play."
@@ -309,7 +436,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-05-q3",
+          "id": "reading-k-dodge-rhymes-jingles-1875-07-q3",
           "prompt": "The poem says he marches “not in wrath or cruelty.” Is the Frost-King kind or unkind?",
           "facilitatorNotes": [
             "He looks stern and makes everything cold, but he is not angry: he rests to watch the sunbeams and makes snow and ice for play. Children may say he is both, which fits a king who is strict but fair."
@@ -327,7 +454,76 @@
       ]
     },
     {
-      "id": "reading-k-dodge-rhymes-jingles-1875-06",
+      "id": "reading-k-dodge-rhymes-jingles-1875-08",
+      "title": "After the Winter",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear everything that is coming with summer, one cheer at a time.",
+      "focus": "A list of birds, insects, flowers and fruit, each greeted with “hurrah!”, builds up to the joy of being alive.",
+      "context": "Mary Mapes Dodge wrote these rhymes for children in America. Katydids are big green insects, like grasshoppers, that sing at night; fire-flies are beetles that glow in the dark; laden means loaded; mites are tiny creatures; these corn-fields are fields of tall maize. Let the child shout every “hurrah!”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“After the Winter,” the complete poem; opens “THE summer is coming--hurrah! Old winter has gone for good. The summer is coming--hurrah!…”; closes “…good and glad: It's the grandest world--hurrah! hurrah! That ever we children have had.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          608,
+          618
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2c7aa16f68a3c83562a94a21bdbbb13b6294c9b6370003590626251b77aab5d2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-08-q1",
+          "prompt": "Name some of the creatures that are coming. Which one would you most like to see?",
+          "facilitatorNotes": [
+            "Chickens, turkeys and ducks, tadpoles, crickets, katydids, fireflies, bumble-bees and swallows. Any choice with a reason counts."
+          ],
+          "evidence": [
+            "The chickens are coming--hurrah!",
+            "The swallows are coming--hurrah!"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-08-q2",
+          "prompt": "What will the children do with the daisies, the fruit and the corn-fields?",
+          "facilitatorNotes": [
+            "Weave the daisies into chains, feast on the fruit, and hide in the tall corn."
+          ],
+          "evidence": [
+            "We'll weave them in many a chain:",
+            "We'll hide in them by-and-by."
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-08-q3",
+          "prompt": "The poem ends by calling this “the grandest world.” How do all the hurrahs lead up to that?",
+          "facilitatorNotes": [
+            "Each new thing that is coming adds more happiness, until the children shout that it is jolly just to be alive. Children may name the one thing that would make summer grand for them."
+          ],
+          "evidence": [
+            "Oh! it's jolly to be alive!",
+            "It's the grandest world--hurrah! hurrah!"
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-09",
       "title": "Out of the Shell",
       "sourceId": "dodge-rhymes-jingles-1875",
       "genre": "poetry",
@@ -356,7 +552,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-06-q1",
+          "id": "reading-k-dodge-rhymes-jingles-1875-09-q1",
           "prompt": "What does the duckling call its eggshell?",
           "facilitatorNotes": [
             "A pretty mean house: too small and poor for such a fine bird."
@@ -366,7 +562,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-06-q2",
+          "id": "reading-k-dodge-rhymes-jingles-1875-09-q2",
           "prompt": "What was it like inside the shell?",
           "facilitatorNotes": [
             "The duckling could not stand up or sit down and lay squeezed from toes to head. Children can curl up small to show it."
@@ -377,7 +573,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-06-q3",
+          "id": "reading-k-dodge-rhymes-jingles-1875-09-q3",
           "prompt": "Will the duckling ever go back into its shell? Why is that funny?",
           "facilitatorNotes": [
             "“Not very soon,” it says, as if it might choose to; of course it never can. The joke is that it talks as if it had a choice."
