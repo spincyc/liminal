@@ -4,7 +4,7 @@
   "author": "W. E. B. Du Bois",
   "title": "The Souls of Black Folk",
   "translator": null,
-  "edition": "Chicago: A. C. McClurg & Co., second edition, June 1, 1903. UNC Documenting the American South transcription of the Guilford College Library copy, call number E185.5.D81; source description, title page and copyright page identify the printing. All selected paragraphs are taken directly from that verified transcription. Original wording, spelling, punctuation, paragraphs and list-item line breaks retained; HTML entities decoded, page labels omitted, prose line wrapping joined, inline italic markup omitted without changing words. The closing quoted German line retains its verse block. No modern introduction is included. The library text runs from The Forethought through The After-Thought, with every chapter's verse epigraph; the title page, dedication, contents (“Herein is Written”) and the bars of music printed before each chapter (images) are omitted. Lists printed inside a paragraph keep one item per line within that paragraph.",
+  "edition": "Chicago: A. C. McClurg & Co., second edition, June 1, 1903. UNC Documenting the American South transcription of the Guilford College Library copy, call number E185.5.D81; source description, title page and copyright page identify the printing. All selected paragraphs are taken directly from that verified transcription. Original wording, spelling, punctuation, paragraphs and list-item line breaks retained; HTML entities decoded, page labels omitted, prose line wrapping joined, inline italic markup omitted without changing words. The closing quoted German line retains its verse block. No modern introduction is included. The library text runs from The Forethought through The After-Thought, with every chapter's verse epigraph; the title page, dedication, contents (“Herein is Written”) and the bars of music printed before each chapter (images) are omitted. Lists printed inside a paragraph keep one item per line within that paragraph. The passages read by the Grade 11 calendar readings (blocks 1–8, 20–25, 43–47, 53–58, 71–74, 87–92, 100–105, 161–173 and 178–193) were compared word by word with the OCR text of a copy of the same second edition (Internet Archive cu31924024920492, Cornell University Library), the third edition’s OCR (soulsblackfolke03boisgoog, same pages) serving only to set aside OCR noise, and differences were decided on the Cornell page images; three readings changed: “credence. Fifty-three per cent” (block 186, where the transcription had “credence Fifty-tree”), “cry hail” (block 188, “cry bail”) and “the caves of evening” (block 193, “the eaves of evening”).",
   "publicationYear": 1903,
   "translationYear": null,
   "url": "https://docsouth.unc.edu/church/duboissouls/menu.html",
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 501,
-    "sha256": "7a2401c9d9755b81d11436b07a906d65332c2be9cd5f8f1e13d5c974e311d4fc"
+    "sha256": "91a76d7531aa62d97db786088fc076ca1d0d5f2fec71ccf5ebba7481e56efb58"
   }
 }
