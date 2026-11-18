@@ -537,6 +537,240 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-08",
+      "title": "The Problems of Philosophy, V: acquaintance and description",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort ten things you know into those you are acquainted with and those you know only by description.",
+      "focus": "Two ways of knowing a thing, and what we are directly acquainted with.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Sense-data are what is immediately known in sensation: colours, sounds, smells, hardnesses. In earlier chapters Russell argued that what we directly see and touch is sense-data, not physical objects, so that the existence of a physical object such as his table is inferred, not given; at the end of Chapter IV he distinguished knowledge of things from knowledge of truths.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “Knowledge by Acquaintance and Knowledge by Description,” from the opening through acquaintance by introspection; opens “In the preceding chapter we saw that there are two sorts of knowledge: knowledge of…”; closes “…therefore of the fact that they, the subjects of their sensations and feelings, exist.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          83,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cd04d4490c2b3d448d607a60d2dff2b1142fa292c9f761b02c3ba972bf53797d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-08-q1",
+          "prompt": "Define acquaintance in your own words. Why does Russell say that true statements about a colour do not make him know the colour itself “any better”?",
+          "facilitatorNotes": [
+            "Acquaintance is direct awareness, with no inference and no knowledge of truths in between. Seeing the shade of brown is complete knowledge of it; saying it is brown or dark gives truths about it, not more of it. Some readers object that naming and comparing do change what we notice; Russell would say that is knowledge of truths."
+          ],
+          "evidence": [
+            "We shall say that we have acquaintance with anything of which we are directly aware, without the intermediary of any process of inference or any knowledge of truths.",
+            "I know the colour perfectly and completely when I see it,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q2",
+          "prompt": "Why is the table known only “by description”? What does Russell conclude about the table itself, and does the conclusion trouble you?",
+          "facilitatorNotes": [
+            "The table is known as the physical object that causes certain sense-data, so all knowledge of it is knowledge of truths connecting it with things we are acquainted with. Strictly, the table itself is not known at all, only that one object fits the description. Many find this startling; it follows from the earlier argument that we can doubt the table but not the sense-data."
+          ],
+          "evidence": [
+            "the physical object which causes such-and-such sense-data.",
+            "the actual thing which is the table is not, strictly speaking, known to us at all.",
+            "We know a description, and we know that there is just one object to which this description applies,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q3",
+          "prompt": "If we were acquainted only with present sense-data, what could we not know? Why does Russell add memory, and what does memory make possible?",
+          "facilitatorNotes": [
+            "We could know nothing of the past, not even that there was one, and no truths about our sense-data, which require acquaintance with universals. Memory gives immediate awareness of what is past and is the source of all knowledge of the past; without it no inference about the past could start."
+          ],
+          "evidence": [
+            "We should only know what is now present to our senses:",
+            "This immediate knowledge by memory is the source of all our knowledge concerning the past:",
+            "since we should never know that there was anything past to be inferred."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-08-q4",
+          "prompt": "How, according to Russell, do we come to know that other people have minds? Do you accept his supposition that animals “never know of their own existence”?",
+          "facilitatorNotes": [
+            "Through sense-data connected with their bodies, interpreted by what we know of our own minds; without acquaintance with our own minds we could not even imagine theirs. The claim about animals is put cautiously (“It seems natural to suppose”), and many today would question it; the reasoning also shows how the knowledge of other minds depends on description."
+          ],
+          "evidence": [
+            "What goes on in the minds of others is known to us through our perception of their bodies,",
+            "But for our acquaintance with the contents of our own minds, we should be unable to imagine the minds of others,",
+            "never become aware of this acquaintance, and thus never know of their own existence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-09",
+      "title": "The Problems of Philosophy, IX: Plato’s ideas and the world of universals",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Take one sentence of your own and mark which words name particulars and which universals.",
+      "focus": "What universals are, how Plato came to them, and why verbs and prepositions matter.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. At the end of Chapter VIII he argued that relations between things seem to belong to a world that is neither mental nor physical, and promised to explore it. Charles I of England was beheaded in 1649. Spinoza and Leibniz were seventeenth-century philosophers; F. H. Bradley was an English philosopher of Russell’s own time.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The World of Universals,” from the opening to “verbs and prepositions”; opens “At the end of the preceding chapter we saw that such entities as relations appear to have…”; closes “…sort represented by adjectives and substantives rather than by verbs and prepositions.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          180,
+          189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8991f34c7f7c22018818fdbdce17f55e27e292eb75d899891ee58b37bddc6adb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-09-q1",
+          "prompt": "How does the problem of universals arise from a question like “What is justice?” Summarise Plato’s answer as Russell gives it.",
+          "facilitatorNotes": [
+            "We look at many just acts for what they have in common; that common nature is justice itself, which Plato calls an idea or form. It is not in minds, though minds grasp it; it is not a particular thing, so it is not in the world of sense; and it is eternal and unchanging. Particular things “partake of” it."
+          ],
+          "evidence": [
+            "it is natural to proceed by considering this, that, and the other just act, with a view to discovering what they have in common.",
+            "The word will be applicable to a number of particular things because they all participate in a common nature or essence.",
+            "it is eternally itself, immutable and indestructible."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q2",
+          "prompt": "Russell accepts the logic of Plato’s theory but sets aside its “mystical developments.” What is the difference? Why does he prefer the word “universal” to “idea”?",
+          "facilitatorNotes": [
+            "The logic is the claim that there are common natures shared by many things. The mysticism is the further belief that they form a more real world we might see in illumination, existing “in heaven.” “Idea” now suggests something in a mind, which Plato did not mean, so Russell uses “universal”: anything that can be shared by many particulars."
+          ],
+          "evidence": [
+            "These mystical developments are very natural, but the basis of the theory is in logic,",
+            "has acquired, in the course of time, many associations which are quite misleading",
+            "a universal will be anything which may be shared by many particulars,"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q3",
+          "prompt": "Why, according to Russell, can no sentence be made without a universal? Test the claim on his examples and on one of your own. Why do we fail to notice universals?",
+          "facilitatorNotes": [
+            "Even “I like this” uses “like,” which many people can bear to many things. In the sentence about Charles I we think of the king, his head and the cutting, all particulars, and pass over “head” and “cut,” which are universals. Such words seem incomplete without context, so we look past them to particulars."
+          ],
+          "evidence": [
+            "It will be seen that no sentence can be made up without at least one word which denotes a universal.",
+            "We feel such words to be incomplete and insubstantial;"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-09-q4",
+          "prompt": "What went wrong, according to Russell, when philosophers attended only to universals named by adjectives and nouns? Trace his chain of reasoning to monism and monadism.",
+          "facilitatorNotes": [
+            "Adjectives and nouns express qualities of single things; verbs and prepositions express relations. Neglecting the second led philosophers to treat every proposition as giving a property to one thing, so relations seemed impossible: either there is only one thing (monism) or many that cannot interact (monadism). It is a bold claim about the history of philosophy; students can weigh whether a grammatical habit could shape so much."
+          ],
+          "evidence": [
+            "those named by verbs and prepositions have been usually overlooked.",
+            "Thus the neglect of prepositions and verbs led to the belief that every proposition can be regarded as attributing a property to a single thing,",
+            "Hence either there can be only one thing in the universe, or, if there are many things, they cannot possibly interact in any way,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-10",
+      "title": "The Problems of Philosophy, XII: Othello’s false belief",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Draw Russell’s theory as a diagram: the mind, the objects, the relation that binds them, and the fact that would make the belief true.",
+      "focus": "How a belief can be false, and what makes a true belief true.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier in this chapter Russell set three requirements for a theory of truth: it must allow for falsehood; truth and falsehood must be properties of beliefs; yet they must depend on something outside the belief. He rejected the view that truth is coherence among beliefs and turned to correspondence with fact, which he now explains. In Shakespeare’s Othello, Iago leads Othello to believe, falsely, that his wife Desdemona loves his lieutenant Cassio.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, “Truth and Falsehood,” from “The necessity of allowing for falsehood” to the end of the chapter; opens “The necessity of allowing for falsehood makes it impossible to regard belief as a…”; closes “…this or that belief is true or false. This consideration will occupy the next chapter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          247,
+          257
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe197c2ba4d9380236e23c7e2767e701c5c6c4150295b5ab6bf3ad1b7e43d443"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-10-q1",
+          "prompt": "Why can belief not be a relation between a mind and a single object, such as Desdemona’s love for Cassio?",
+          "facilitatorNotes": [
+            "If belief were like acquaintance, a relation to one object, it would always be true, because there must be an object to relate to. When the belief is false there is no such object; and to call the object “that Desdemona loves Cassio” would require falsehoods existing independently of minds, which Russell wants to avoid."
+          ],
+          "evidence": [
+            "it would not admit of the opposition of truth and falsehood, but would have to be always true.",
+            "There is in fact no such object, and therefore Othello cannot have any relation to such an object.",
+            "for that would require that there should be objective falsehoods, which subsist independently of any minds;"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q2",
+          "prompt": "What is a relation of three or four terms? How do Russell’s examples, “between” and jealousy, prepare for his account of Othello’s belief?",
+          "facilitatorNotes": [
+            "Some relations need more than two terms: “between” needs three places, jealousy three people, and wishing that someone promote a marriage four. Belief is such a relation: one act of believing knits together Othello, Desdemona, loving and Cassio. Choosing jealousy in a chapter built on Othello is apt."
+          ],
+          "evidence": [
+            "York is between London and Edinburgh;",
+            "Similarly jealousy requires three people:",
+            "knitting together into one complex whole the four terms Othello, Desdemona, loving, and Cassio."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q3",
+          "prompt": "Why does the order of the terms matter? Compare Othello’s judgment that Desdemona loves Cassio with his judgment that Cassio loves Desdemona.",
+          "facilitatorNotes": [
+            "The constituents are the same, but judging has a “sense” or direction that puts them in order, shown by word order in English. The two judgments differ, and could differ in truth. Without order the theory could not tell them apart."
+          ],
+          "evidence": [
+            "Othello's judgment that Cassio loves Desdemona differs from his judgment that Desdemona loves Cassio,",
+            "because the relation of judging places the constituents in a different order in the two cases."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-10-q4",
+          "prompt": "“It is a brick in the structure, not the cement.” Explain the image. What makes a belief true, and in what sense do minds not “create” truth? What is the exception?",
+          "facilitatorNotes": [
+            "In the belief, loving is one of the objects; believing is the cement. If the belief is true there is another whole, a fact, in which loving is the cement binding Desdemona and Cassio in the same order. Beliefs depend on minds for their existence but not for their truth; the exception is beliefs about future things within the believer’s power, “such as catching trains.” Students may think of others: confidence that can make itself come true."
+          ],
+          "evidence": [
+            "it is a brick in the structure, not the cement.",
+            "Thus a belief is true when there is a corresponding fact, and is false when there is no corresponding fact.",
+            "except in the special case where they concern future things which are within the power of the person believing, such as catching trains."
+          ]
+        }
+      ]
     }
   ]
 }
