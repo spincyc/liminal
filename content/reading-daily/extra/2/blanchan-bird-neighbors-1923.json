@@ -525,6 +525,170 @@
         1,
         2
       ]
+    },
+    {
+      "id": "reading-2-blanchan-bird-neighbors-1923-08",
+      "title": "Belted Kingfisher — a bird portrait (excerpt)",
+      "sourceId": "blanchan-bird-neighbors-1923",
+      "genre": "documentary",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Find the place where a writer feels sorry for a bird and laughs at it at the same time.",
+      "focus": "A noisy fisherman bird dives for its dinner, struggles to swallow it, and nests at the end of a tunnel.",
+      "context": "This is historical nature writing from a 1923 edition of a book first published in 1897; some of its facts and opinions about birds are out of date. Secluded means hidden away; a sportsman’s fly is a fishing lure; conspicuous means easy to see; contortions are twistings; strident means harsh; to excavate is to dig; fledglings are young birds; to disgorge is to cough up.",
+      "contentNote": "The kingfisher kills a large fish by knocking it against a branch.",
+      "excerpt": {
+        "locator": "Belted Kingfisher entry, the narrative paragraphs; opens “If the kingfisher is not so neighborly as we could wish, or as he used to be, it is not…”; closes “…birds were being reared, hence the term \"halcyon days,\" meaning days of fair weather.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          625,
+          629
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f6af2e31800e8900f1865b77a8d9ef9949bd319450ce9279965708433b611f6"
+      },
+      "questions": [
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-08-q1",
+          "prompt": "Why don’t kingfishers come close to our homes as they used to?",
+          "facilitatorNotes": [
+            "The streams near houses have been fished out, so they must follow streams back to quiet ponds and lakes in the woods. It is not that they have grown less friendly."
+          ],
+          "evidence": [
+            "because the streams near our homes are fished out"
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-08-q2",
+          "prompt": "Tell, step by step, how the kingfisher catches and eats a fish.",
+          "facilitatorNotes": [
+            "It perches over the water and watches, drops and dives with a splash, returns with the fish in its beak, knocks a big fish against the branch, then gags and tries again and again to swallow it."
+          ],
+          "evidence": [
+            "Suddenly the bird drops—dives; there is a splash, a struggle",
+            "A few sharp knocks, and the struggles of the fish are over"
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-08-q3",
+          "prompt": "Blanchan says the bird’s struggle to swallow makes us smile “in spite of the bird’s evident distress.” Is it all right to smile?",
+          "facilitatorNotes": [
+            "It looks funny, and the writer admits that, while knowing the bird is uncomfortable. Some children will laugh; others will feel sorry for the bird. Both reactions are in the sentence."
+          ],
+          "evidence": [
+            "force a smile in spite of the bird's evident distress"
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-08-q4",
+          "prompt": "What do a mated pair of kingfishers sound like, and how do they really feel?",
+          "facilitatorNotes": [
+            "Their calls are harsh, rattling shrieks that sound like quarrelling, yet they are very devoted to each other."
+          ],
+          "evidence": [
+            "It sounds as if they were perpetually quarrelling, and yet they are really particularly devoted."
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-08-q5",
+          "prompt": "Where does the saying “halcyon days” come from?",
+          "facilitatorNotes": [
+            "From old myths that the halcyon, or kingfisher, built a floating nest and calmed the sea while its young were hatched, so calm, fair days were named for it. Children may guess why people made up such a story about a bird of the water."
+          ],
+          "evidence": [
+            "hence the term \"halcyon days,\" meaning days of fair weather"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-blanchan-bird-neighbors-1923-09",
+      "title": "Blue Jay — a bird portrait (excerpt)",
+      "sourceId": "blanchan-bird-neighbors-1923",
+      "genre": "documentary",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Weigh what a writer says against a bird with what she says for it.",
+      "focus": "The beautiful blue jay is called many bad names, yet Blanchan would not want to lose it.",
+      "context": "This is historical nature writing from a 1923 edition of a book first published in 1897; some of its facts and opinions about birds are out of date. To sojourn is to stay; reverence is deep respect; epithets are names; voracious means very greedy; plumage means feathers. Ralph Waldo Emerson was a famous American writer. A propensity is a habit; to pillage is to raid and rob; moulting is shedding old feathers.",
+      "contentNote": "Blue jays raid other birds’ nests and eat their eggs and young; the book judges the bird in moral words, such as “villainous,” that bird scientists would not use today.",
+      "excerpt": {
+        "locator": "Blue Jay entry, the narrative paragraphs; opens “No bird of finer color or presence sojourns with us the year round than the blue jay. In…”; closes “…not more than three or four true blue birds, and in England, it is said, there is none.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          636,
+          639
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "53aaead03cc525d55a575ce706ea592841534c128039fc9fd3d1ff65506e9d63"
+      },
+      "questions": [
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-09-q1",
+          "prompt": "What bad names have bird-watchers called the blue jay?",
+          "facilitatorNotes": [
+            "Dishonest, cruel, inquisitive, murderous, voracious and villainous."
+          ],
+          "evidence": [
+            "Dishonest, cruel, inquisitive, murderous, voracious, villainous"
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-09-q2",
+          "prompt": "What good does Emerson say the blue jay does?",
+          "facilitatorNotes": [
+            "It buries nuts and hard seeds, so trees and shrubs grow in waste places; he says it does more good than harm."
+          ],
+          "evidence": [
+            "he does \"more good than harm,\""
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-09-q3",
+          "prompt": "Blanchan compares the jay to three other creatures. What are they, and what does each comparison mean?",
+          "facilitatorNotes": [
+            "Mischievous as a small boy (full of tricks), destructive as a monkey (breaks and spoils things), and as good at hiding things as a squirrel (it buries nuts and seeds). Children may say which comparison fits best."
+          ],
+          "evidence": [
+            "He is mischievous as a small boy, destructive as a monkey, deft at hiding as a squirrel."
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-09-q4",
+          "prompt": "Why does Blanchan say we could “ill spare” the blue jay, even after all its faults?",
+          "facilitatorNotes": [
+            "Its colour is like a bit of blue sky, and truly blue birds are rare. Beauty, she says, covers many sins."
+          ],
+          "evidence": [
+            "like a bit of blue sky dropped from above",
+            "beauty covering a multitude of sins"
+          ]
+        },
+        {
+          "id": "reading-2-blanchan-bird-neighbors-1923-09-q5",
+          "prompt": "Is it fair to call a bird “villainous” for eating eggs? What do you think?",
+          "facilitatorNotes": [
+            "Many children will say a jay eats eggs to live and cannot be wicked; others may feel sorry for the birds whose nests it robs. The book is old and judges birds the way people judge people."
+          ],
+          "evidence": [
+            "to pillage and devour the young and eggs of their more peaceful neighbors"
+          ]
+        }
+      ]
     }
   ]
 }
