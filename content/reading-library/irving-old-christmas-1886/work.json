@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/20656/pg20656.txt",
     "downloadSha256": "eefd776307d88b07d9931fd95253708d6ac343ad73474eea6d579bdb2d8704b5",
-    "method": "Project Gutenberg 20656 plain text from the PG mirror aleph.pglaf.org. Kept Irving's text from the first sketch's motto (after its illustrated title) to the end of the NOTES; removed the PG header and footer, the producer credits, the title pages, Caldecott and Cooper's preface, the contents and list of illustrations, every illustration marker and caption (including the illustrated titles of the first and last sketches, Christmas and The Christmas Dinner, which the transcription gives only as illustrations, so those two sketches have no heading), and the printer's imprint. The book title OLD CHRISTMAS is a level-1 heading and the printed sketch titles and NOTES level-2 headings; prose lines joined with single spaces, _underscores_ kept for italics; indented verse is stanzas with indentation removed. Footnotes stay where the transcription places them, at the end of each sketch after its FOOTNOTE: or FOOTNOTES: paragraph label, in the form [Footnote X: text] (the verse note F as a stanza), with their [X] anchors kept in the running text; the NOTES that close the book stay as printed."
+    "method": "Project Gutenberg 20656 plain text from the PG mirror aleph.pglaf.org. Kept the book title, the motto from Hue and Cry after Christmas that this edition prints before the preface, and Irving's text from the first sketch's second motto (after its illustrated title) to the end of the NOTES; removed the PG header and footer, the producer credits, the title pages, Caldecott and Cooper's preface, the contents and list of illustrations, every illustration marker and caption (including the illustrated titles of the first and last sketches, Christmas and The Christmas Dinner, which the transcription gives only as illustrations, so those two sketches have no heading), and the printer's imprint. The book title OLD CHRISTMAS is a level-1 heading and the printed sketch titles and NOTES level-2 headings; prose lines joined with single spaces, _underscores_ kept for italics; indented verse is stanzas with indentation removed. Footnotes stay where the transcription places them, at the end of each sketch after its FOOTNOTE: or FOOTNOTES: paragraph label, in the form [Footnote X: text] (the verse note F as a stanza), with their [X] anchors kept in the running text; the NOTES that close the book stay as printed. The edition statement, the preface, the contents and the list of illustrations, which the first conversion had left in, were taken out on 2026-11-18."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 314,
-    "sha256": "f94b6e4080ab4b655ba3f266d1cf16eb9be1802f863538d9d1f7a504ec6c7b80"
+    "blocks": 195,
+    "sha256": "0131bda6d69bac0fcbdc582bed408f69e2f3b4a6501d4e731297ccf939821025"
   }
 }
