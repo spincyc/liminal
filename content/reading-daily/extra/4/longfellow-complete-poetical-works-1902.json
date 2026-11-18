@@ -1547,6 +1547,172 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-22",
+      "title": "The Old Clock on the Stairs",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear how a refrain that never changes can mean different things as a poem goes on.",
+      "focus": "An old clock in a country house watches feasts, weddings and funerals, and always says the same two words.",
+      "context": "Henry Wadsworth Longfellow published this poem in 1845. The French lines at the top, by the preacher Jacques Bridaine, mean: “Eternity is a clock whose pendulum says over and over, without stopping, only these two words, in the silence of the tombs: ‘Always, never! Never, always!’” A country-seat is a big house in the country; a portico is a porch with columns; a monk who “crosses himself” makes the sign of the cross; the dead of night is its quietest hour; a vicissitude is a change of fortune; awe is wonder mixed with fear; Hospitality, the welcoming of guests, is written here as if it were a person; an old story says that at Egyptian feasts a skeleton was shown to remind guests of death; one’s prime is the best time of life; affluence is plenty; a shroud is the cloth wrapped round a dead body; a horologe is a clock.",
+      "contentNote": "The poem remembers people of the house who have died, and a dead body lying in the house before burial. The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "The Belfry of Bruges and Other Poems, “The Old Clock on the Stairs,” the whole poem with its French epigraph; opens “L'éternité est une pendule dont le balancier dit et redit sans cesse ces deux mots…”; closes “…The horologe of Eternity Sayeth this incessantly,-- \"Forever--never! Never--forever!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1453,
+          1462
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5ecc0b2542f0388091e7897dca1aa3cae94e2ce030bc3f8c2fc70c2dbfc8443d"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-22-q1",
+          "prompt": "Say the clock’s words aloud: “Forever--never! Never--forever!” How do they sound like a clock?",
+          "facilitatorNotes": [
+            "Short, even beats, like tick-tock, tick-tock; and the two words swap places, swinging back and forth like a pendulum. By day the voice is low, but at night it echoes through the whole house."
+          ],
+          "evidence": [
+            "An ancient timepiece says to all,--",
+            "It echoes along the vacant hall,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-22-q2",
+          "prompt": "Longfellow compares the clock to a monk, to God and to a miser. Choose two. What does each comparison make you feel about the clock?",
+          "facilitatorNotes": [
+            "The monk sighing and crossing himself makes it solemn, like a warning; seeing all things like God makes it seem to watch and judge; the miser counting gold suggests that each hour is precious and is being counted away."
+          ],
+          "evidence": [
+            "Like a monk, who, under his cloak,",
+            "Even as a miser counts his gold,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-22-q3",
+          "prompt": "What has happened in this house over the years? Why does it matter that the clock’s message never changes?",
+          "facilitatorNotes": [
+            "Feasts for strangers, children playing, young people dreaming, a wedding, a death. The clock says the same words at every one, happy or sad, like the skeleton at the feast: time keeps passing whatever people feel."
+          ],
+          "evidence": [
+            "The stranger feasted at his board;",
+            "The bride came forth on her wedding night;",
+            "The dead lay in his shroud of snow;"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-22-q4",
+          "prompt": "The speaker asks when the family will all meet again. How does the last stanza change what the clock’s words mean?",
+          "facilitatorNotes": [
+            "At first “never” sounds hopeless. Then the poem splits the words: never here, on earth, but forever there, where parting, pain and death disappear, which Longfellow imagines as heaven. Some readers find this comforting; others still hear the sadness of “never here.”"
+          ],
+          "evidence": [
+            "\"Ah! when shall they all meet again?\"",
+            "Never here, forever there,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-23",
+      "title": "The Three Kings",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how rich details in a familiar story hint at what is still to come.",
+      "focus": "Three Wise Men follow a star to Bethlehem, bring their gifts, and wisely go home by another way.",
+      "context": "Longfellow wrote this late in his life. It retells the Bible story of the Wise Men, or Magi, who followed a star to find the newborn Jesus; Christians remember it on the feast of Epiphany, January 6. The names Melchior, Gaspar and Baltasar come from later Christian tradition, not from the Bible. Herod the Great ruled Judea under the Romans. A prophecy is a foretelling; caskets are small chests; saddlebows are the raised fronts of saddles; furbelows are frills; pomegranates are red fruits, here sewn on as decorations; a dell is a small valley; tidings are news; kine are cows; frankincense and myrrh are sweet-smelling resins, and myrrh was also used to prepare the dead for burial; tribute is a gift owed to a ruler; the Paraclete, a Greek word for comforter or helper, is a name Christians give to God; malice is the wish to do harm.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Birds of Passage, Flight the Fifth, “The Three Kings,” the whole poem; opens “Three Kings came riding from far away, Melchior and Gaspar and Baltasar; Three Wise Men…”; closes “…For they knew his malice and feared his hate, And returned to their homes by another way.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4005,
+          4018
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fa59887b3c80b1ce7c077e9e39fece447347404e6b6b25a634110d276b17e442"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-23-q1",
+          "prompt": "How did the Wise Men know the Prince had been born? What made their star different?",
+          "facilitatorNotes": [
+            "It was so large and clear that every other star turned to a white mist beside it, and they took that as a sign that the Prince of the prophecy was coming. They travelled by night so that it could guide them."
+          ],
+          "evidence": [
+            "For their guide was a beautiful, wonderful star.",
+            "Became a white mist in the atmosphere,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-23-q2",
+          "prompt": "The people at the wells think the Wise Men are “men insane.” Why might they?",
+          "facilitatorNotes": [
+            "Strangers in crimson silk ride up asking for a newborn King of the Jews, when everyone knows the king is Herod the Great. To the people it sounds mad, or even dangerous to say aloud. The Wise Men believe the star; the people have not seen what they have seen."
+          ],
+          "evidence": [
+            "We know of no king but Herod the Great!",
+            "They thought the Wise Men were men insane,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-23-q3",
+          "prompt": "What does each gift stand for in the poem? Which one is surprising to give a baby?",
+          "facilitatorNotes": [
+            "Gold for a king, frankincense for a priest and for God, and myrrh “for the body’s burying.” A gift for burial is a startling present for a newborn: it hints at the death Christians believe Jesus would die."
+          ],
+          "evidence": [
+            "The gold was their tribute to a King,",
+            "The myrrh for the body's burying."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-23-q4",
+          "prompt": "Mary’s heart is “troubled yet comforted.” Why might she feel both at once?",
+          "facilitatorNotes": [
+            "Any parent watching a baby breathe can feel joy and fear together, and the myrrh and the visitors’ strange words add to the worry. The angel’s promise of “an endless reign” comforts her. The poem lets both feelings stand."
+          ],
+          "evidence": [
+            "For the joy of life and the terror of death",
+            "Her heart was troubled yet comforted,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-23-q5",
+          "prompt": "Why do the Kings go home “by another way”? Could the words mean more than a different road?",
+          "facilitatorNotes": [
+            "Herod asked them to bring him news of the child, and they guess he means harm, so they avoid him. Some readers hear more: after what they have seen, the Kings themselves are changed, and cannot go back the way they came."
+          ],
+          "evidence": [
+            "For they knew his malice and feared his hate,",
+            "And returned to their homes by another way."
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1
+      ]
     }
   ]
 }
