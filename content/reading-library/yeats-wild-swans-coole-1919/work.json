@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/32491/pg32491-images.html",
     "downloadSha256": "b2ff902f69114c188c8b5e91a3ebc3b7620ffcc8d0e9b29affc6d1cadea4cee7",
-    "method": "Project Gutenberg 32491 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and the printer's line. Kept the author's preface and closing note; every poem in printed order with titles as level-2 headings (numbered parts level 3), each stanza element and each speech of the dialogue poems one stanza with its verse lines, indentation removed; speaker names as paragraphs; HTML italics as _underscores_; straight quotation marks as transcribed."
+    "method": "Project Gutenberg 32491 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and the printer's line. Kept the author's preface and closing note; every poem in printed order with titles as level-2 headings (numbered parts level 3), each stanza element and each speech of the dialogue poems one stanza with its verse lines, indentation removed; speaker names as paragraphs; HTML italics as _underscores_; straight quotation marks as transcribed. The title of Shepherd and Goatherd, which the first conversion had given as THE SAD SHEPHERD (a poem not in this volume), was corrected on 2026-11-18."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 309,
-    "sha256": "6c0990de40920f1d8b7182e9cac2c0e63e422b0870a584f0dff8a43efbd315cc"
+    "sha256": "f94426fac7dd4dbc021f97b2540327dea2aff8850a75e693cfa132089b871997"
   }
 }

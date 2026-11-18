@@ -1,0 +1,2069 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "doyle-adventures-sherlock-holmes-1892",
+  "readings": [
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01",
+      "title": "“The woman” and a note on Bohemian paper: part 1 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what Holmes actually sees from what he concludes, and test each conclusion against its evidence.",
+      "focus": "Holmes defines his method (“You see, but you do not observe”) before the first client arrives.",
+      "context": "Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892) collects twelve stories first printed in the Strand Magazine; “A Scandal in Bohemia” is the first. Dr. John Watson narrates. He once shared rooms with Holmes at Baker Street in London and has since married. Bohemia was a kingdom in central Europe, now part of the Czech Republic. A gasogene made soda water; a “slavey” was a maid-of-all-work; iodoform and nitrate of silver were medical chemicals. Watson calls himself Holmes’s Boswell: James Boswell wrote a famous life of his friend Samuel Johnson.",
+      "contentNote": "Watson mentions Holmes’s use of cocaine, a legal drug in 1888 whose dangers were not yet widely understood.",
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part I, from the opening through Holmes’s reading of the unsigned note; opens “To Sherlock Holmes she is always _the_ woman. I have seldom heard him mention her under…”; closes “…to showing his face. And here he comes, if I am not mistaken, to resolve all our doubts.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+        "blocks": [
+          4,
+          36
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d6cd4d5cbab2ad544ad79a655b7226ba1fd15cda293446eeb362749e930de713"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q1",
+          "prompt": "Watson calls Holmes “the most perfect reasoning and observing machine,” then says there was “but one woman to him.” What puzzle does the first paragraph set up?",
+          "facilitatorNotes": [
+            "Holmes despises emotion as “grit in a sensitive instrument,” yet one woman stands above all others in his mind. The paragraph tells us she is “the late” Irene Adler, so the story will explain how she earned that place. Readers may notice Watson insists it was not love, which raises the question of what it was."
+          ],
+          "evidence": [
+            "Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his.",
+            "And yet there was but one woman to him"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q2",
+          "prompt": "How does Holmes know that Watson has been out in bad weather and has a careless servant? What is the difference between seeing and observing?",
+          "facilitatorNotes": [
+            "Six parallel cuts on the inside of Watson’s left shoe show that someone scraped off crusted mud clumsily. Watson has seen the stairs hundreds of times but cannot say how many there are; Holmes has observed and knows there are seventeen. Seeing is taking in; observing is noticing and keeping what matters."
+          ],
+          "evidence": [
+            "the leather is scored by six almost parallel cuts",
+            "You see, but you do not observe. The distinction is clear."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-01-q3",
+          "prompt": "Holmes draws two conclusions from the note: where the paper was made and who wrote it. Which conclusion rests on firmer evidence, and why?",
+          "facilitatorNotes": [
+            "The paper’s origin is checked: the woven letters, the German abbreviations and the gazetteer all point to Egria in Bohemia. The writer’s nationality rests on one awkward sentence and a joke about Germans’ verbs; it is a reasonable guess, but someone else could write that way. Holmes himself warns against theorising before having data, so readers can hold him to his own rule."
+          ],
+          "evidence": [
+            "It is a capital mistake to theorize before one has data.",
+            "This account of you we have from all quarters received."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+      "title": "A masked king and a photograph: part 2 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how a client’s disguise and his account of another person can both be partly untrustworthy.",
+      "focus": "The King of Bohemia hires Holmes to recover a photograph, and we meet Irene Adler only through his description.",
+      "context": "Watson has called on Holmes after months apart. Holmes has just shown him an unsigned note on paper made in Bohemia, announcing that a masked visitor will come at a quarter to eight. A brougham is a closed carriage; Astrakhan is curly lambskin; a vizard is a mask. “Incognito” means under a false name; an adventuress was an insulting word for a woman who used charm to gain money or rank; a contralto is a low female singing voice. A cabinet photograph was about the size of a postcard; “carte blanche” means freedom to spend as much as needed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part I, from the arrival of the brougham to the end of part I; opens “As he spoke there was the sharp sound of horses’ hoofs and grating wheels against the…”; closes “…afternoon, at three o’clock, I should like to chat this little matter over with you.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-01",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+        "blocks": [
+          37,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a5943ae4ce8f243d5b0925ce69367688c8a3a60df88bbe90a0575e1a2b12c8fd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q1",
+          "prompt": "How does Watson describe the visitor’s clothes and face? What does “barbaric opulence” tell us about Watson’s own point of view?",
+          "facilitatorNotes": [
+            "The coat, cloak, beryl and fur-trimmed boots are rich “with a richness which would, in England, be looked upon as akin to bad taste”; the lip and chin suggest stubbornness. Watson judges by English standards and finds foreign display slightly ridiculous, so we see the King through an Englishman’s raised eyebrow. Readers may find the chin detail a fair clue to the King’s character later."
+          ],
+          "evidence": [
+            "His dress was rich with a richness which would, in England, be looked upon as akin to bad taste.",
+            "resolution pushed to the length of obstinacy"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q2",
+          "prompt": "Why does Holmes keep murmuring that he was “aware” of things and close his eyes? What does he gain by it?",
+          "facilitatorNotes": [
+            "He shows the King that the disguise is useless and that he is not impressed by rank, until the King tears off the mask. By refusing to play along he gets the plain truth faster. Readers might also see vanity in it: Holmes enjoys knowing first."
+          ],
+          "evidence": [
+            "“I was also aware of that,” murmured Holmes, settling himself down in his arm-chair and closing his eyes.",
+            "If your Majesty would condescend to state your case"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-02-q3",
+          "prompt": "In the quick exchange about letters, paper, seal and photograph, why does only the photograph worry Holmes? And how far should we trust the King’s picture of Irene Adler?",
+          "facilitatorNotes": [
+            "Writing can be called forgery, paper stolen, a seal imitated, a photograph of one person bought; a photograph of both together cannot be explained away. The King describes Irene as beautiful, ruthless and determined to ruin him, but he is the only witness and has tried five times to rob her. Readers should keep his account as one side of the story."
+          ],
+          "evidence": [
+            "We were both in the photograph.",
+            "She has the face of the most beautiful of women, and the mind of the most resolute of men."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+      "title": "A groom at a wedding: part 3 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a story told by Holmes himself and keep track of the questions he is trying to answer as he goes.",
+      "focus": "In disguise, Holmes gathers gossip, follows a hurried couple and ends up as the witness at their wedding.",
+      "context": "The King of Bohemia has hired Holmes to recover a photograph of himself with the singer Irene Adler before his engagement is announced on Monday, and has paid him a thousand pounds for expenses. A groom looks after horses; a mews is a lane of stables; ostlers are stablemen; half-and-half is beer and shag is cheap tobacco. Godfrey Norton is a lawyer from the Inner Temple. A hansom and a landau are carriages; a sovereign is a gold coin. English weddings then had to take place before noon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part II, from Watson’s return to Baker Street through Holmes’s account of the wedding; opens “At three o’clock precisely I was at Baker Street, but Holmes had not yet returned. The…”; closes “…They drove away in different directions, and I went off to make my own arrangements.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-02",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+        "blocks": [
+          125,
+          148
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a2a88f5f6ea60f10077653bf35d6a0ea15a0a278615021496b29054523e62ed4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q1",
+          "prompt": "Why does Holmes go to Briony Lodge disguised as an out-of-work groom? What does the disguise let him learn?",
+          "facilitatorNotes": [
+            "Grooms and cabmen talk freely to one another, so for twopence and some help with the horses he learns Irene’s daily routine and all about her one visitor. A gentleman asking questions would have learned nothing and been noticed. He also hears much he did not want, a comic touch that shows the cost of gossip as a source."
+          ],
+          "evidence": [
+            "There is a wonderful sympathy and freemasonry among horsey men.",
+            "See the advantages of a cabman as a confidant."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q2",
+          "prompt": "Holmes asks whether Norton is Irene’s client, friend or something more. Why does the answer matter to the case?",
+          "facilitatorNotes": [
+            "If Norton is her lawyer, she may have given him the photograph to keep, and Holmes must search his rooms instead of her house. Holmes is reasoning about where the evidence is, not about her private life for its own sake. The wedding answers the question in a way he did not foresee."
+          ],
+          "evidence": [
+            "On the issue of this question depended whether I should continue my work at Briony Lodge, or turn my attention to the gentleman’s chambers in the Temple."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-03-q3",
+          "prompt": "Why does Holmes laugh until he is “limp and helpless”? What is funny, and what has changed for the case?",
+          "facilitatorNotes": [
+            "The detective, disguised as an idler, is dragged to the altar and made to witness the marriage he was spying on, and is even tipped a sovereign by the bride. Underneath the joke the case has changed: a married Irene might leave at once, and her feelings toward the King may be different. Readers can predict whether the marriage helps or hinders Holmes."
+          ],
+          "evidence": [
+            "It was the most preposterous position in which I ever found myself in my life",
+            "The bride gave me a sovereign, and I mean to wear it on my watch-chain in memory of the occasion."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+      "title": "A clergyman, a street fight and a cry of fire: part 4 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a plan before it happens and then check what actually happens against it.",
+      "focus": "Holmes stages an accident outside Briony Lodge, and Watson begins to feel ashamed of his part.",
+      "context": "Disguised as a groom, Holmes has learned Irene Adler’s habits and has been made the witness at her sudden wedding to the lawyer Godfrey Norton. She will return from her drive at seven. A Nonconformist clergyman is a minister of a Protestant church outside the Church of England; John Hare was a well-known actor. A smoke-rocket was a plumber’s device for finding leaks in pipes; an ulster is a long overcoat; guardsmen are soldiers.",
+      "contentNote": "Holmes stages a street fight with fake blood. His reasoning includes a generalisation about women typical of his time.",
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, part II, from Holmes’s plan through the false alarm of fire; opens ““Which are?””; closes “…until we had turned down one of the quiet streets which lead towards the Edgware Road.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-03",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-05",
+        "blocks": [
+          149,
+          198
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd419c8b402bf3c05cb36b5f64c320dfda95c87b952e9cbe5a8bf49a5376a14f"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q1",
+          "prompt": "Watson agrees to break the law before he knows what Holmes wants. What does this short exchange show about their friendship?",
+          "facilitatorNotes": [
+            "Watson trusts Holmes completely and promises without asking questions, as long as the cause is good. Holmes repeats the instructions until Watson can recite them. The rhythm of short lines shows how practised their partnership is; readers may also wonder whether such trust is always wise."
+          ],
+          "evidence": [
+            "“You don’t mind breaking the law?”",
+            "Then I am your man."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q2",
+          "prompt": "Follow Holmes’s reasoning about where the photograph is. Which step is based on evidence, and which on a general belief?",
+          "facilitatorNotes": [
+            "The photograph is too big to carry, she has been searched twice, she means to use it within days, so it is in her house: these steps use facts from the case. “Women are naturally secretive” is a generalisation, the kind of assumption the story will soon test. Readers can notice that the argument would stand without that sentence."
+          ],
+          "evidence": [
+            "It is most unlikely that she carries it about with her. It is cabinet size.",
+            "Women are naturally secretive, and they like to do their own secreting."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-04-q3",
+          "prompt": "Watson says he “never felt more heartily ashamed.” What makes him ashamed, and how does he talk himself into continuing? Is his reason convincing?",
+          "facilitatorNotes": [
+            "He watches Irene kindly caring for the man she thinks was hurt defending her, and knows he is deceiving her. He tells himself they are not injuring her, only preventing her injuring another. Some readers accept that; others notice they are tricking a woman in her own home for a king who has had her robbed and waylaid."
+          ],
+          "evidence": [
+            "I never felt more heartily ashamed of myself in my life",
+            "We are but preventing her from injuring another."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05",
+      "title": "“The woman”: part 5 of 5 (Sherlock Holmes, a scandal in Bohemia)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Return to clues you passed over and see how the ending changes their meaning.",
+      "focus": "Holmes explains his trick, the visit to Briony Lodge brings a surprise, and the story returns to its first words.",
+      "context": "Watson threw the smoke-rocket and cried fire; in the confusion Holmes, disguised as a clergyman and carried in as an injured man, watched Irene Adler’s sitting-room. Now he walks home with Watson. Charing Cross is a London railway station with trains for the Continent (mainland Europe); “née” means “born,” used before a married woman’s former surname; “inviolate” means never broken.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "A Scandal in Bohemia, the end of part II and the whole of part III; opens ““You did it very nicely, doctor,” he remarked. “Nothing could have been better. It is all…”; closes “…when he refers to her photograph, it is always under the honorable title of _the_ woman.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-04",
+        "continuesTo": null,
+        "blocks": [
+          199,
+          263
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "222eb25ee443895d0f8ad0097a4fc29336a459a74808907188f1cd281312fbf0"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q1",
+          "prompt": "Holmes says a woman whose house is on fire rushes to what she values most. How does Irene’s letter show both that the trick worked and that she learned from it?",
+          "facilitatorNotes": [
+            "She did reveal the hiding place, and admits he “took me in completely.” But the moment after the alarm she understood what she had betrayed and began to think, followed him home in disguise and fled. The trick succeeded once; Holmes’s mistake was assuming she would not see through it."
+          ],
+          "evidence": [
+            "When a woman thinks that her house is on fire, her instinct is at once to rush to the thing which she values most.",
+            "But then, when I found how I had betrayed myself, I began to think."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q2",
+          "prompt": "Who said “Good-night, Mister Sherlock Holmes”? Which clues could an alert reader have used before the letter explains it?",
+          "facilitatorNotes": [
+            "Irene, dressed as a young man. Holmes says he has heard the voice before; the speaker is a “slim youth in an ulster” who knows his name. The letter confirms that she is an actress used to “male costume.” Holmes, who always notices, did not observe this time."
+          ],
+          "evidence": [
+            "a slim youth in an ulster who had hurried by",
+            "Male costume is nothing new to me."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q3",
+          "prompt": "The King wishes Irene were “on my level”; Holmes replies that she is “on a very different level.” What does each mean, and why does Holmes ignore the King’s hand?",
+          "facilitatorNotes": [
+            "The King means rank: a singer cannot be a queen. Holmes means character: she kept her word, married for love and outwitted them both, while the King “cruelly wronged” her. Ignoring the outstretched hand is a quiet insult. Readers might also argue Holmes is stung by his own defeat."
+          ],
+          "evidence": [
+            "Is it not a pity that she was not on my level?",
+            "From what I have seen of the lady she seems indeed to be on a very different level to your Majesty"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-05-q4",
+          "prompt": "The story ends where it began, with “the woman.” How has the meaning of that phrase changed since the first paragraph?",
+          "facilitatorNotes": [
+            "At the start it sounded mysterious, even suspicious: a woman of “dubious and questionable memory.” Now it is an “honorable title” for the one person who beat Holmes’s plans with her wit. Holmes has stopped mocking “the cleverness of women.” Readers can discuss whether the story fully overturns his earlier generalisations or only makes an exception for Irene."
+          ],
+          "evidence": [
+            "how the best plans of Mr. Sherlock Holmes were beaten by a woman’s wit",
+            "it is always under the honorable title of _the_ woman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-06",
+      "title": "A client before breakfast: part 1 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what Holmes observes from what he concludes, and notice what Watson’s opening tells and withholds.",
+      "focus": "A terrified client arrives at dawn, and Watson promises a case stranger than any of seventy others.",
+      "context": "“The Adventure of the Speckled Band” is the eighth of the twelve stories in Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892). Dr. John Watson narrates. The case, he says, happened in April 1883, when he and Holmes were bachelors sharing rooms in Baker Street, London. To “knock up” here means to wake someone by knocking. A dog-cart is a light two-wheeled cart; Leatherhead is a town in Surrey, south of London, and Waterloo a London railway station. The second half of a return ticket is the part used for the journey home.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, from the opening through Holmes’s “I am all attention, madam”; opens “On glancing over my notes of the seventy odd cases in which I have during the last eight…”; closes ““I am all attention, madam.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-07",
+        "blocks": [
+          1458,
+          1478
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f476f2198dfd13a2605558b276c0a58ef6059e037889bba48bb8c7ad0fd98b7c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-06-q1",
+          "prompt": "Watson says he can tell this story only now, after “the untimely death of the lady to whom the pledge was given.” What does his first paragraph promise, and what does it keep back?",
+          "facilitatorNotes": [
+            "It promises the most “singular” case of seventy and says the truth about Dr. Grimesby Roylott’s death is less terrible than the rumours. So we learn early that Roylott dies; the suspense is about how and why. Watson does not say who “the lady” was. Many readers will guess it is the client, but the text leaves it open."
+          ],
+          "evidence": [
+            "I cannot recall any which presented more singular features",
+            "wide-spread rumors as to the death of Dr. Grimesby Roylott which tend to make the matter even more terrible than the truth"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-06-q2",
+          "prompt": "How does Holmes know the visitor came by train after a drive in a dog-cart? Which parts of his explanation are things he saw, and which are reasoning?",
+          "facilitatorNotes": [
+            "Seen: the return half of a ticket in her glove and seven fresh mud spatters on her left sleeve. Reasoned: only a dog-cart throws mud like that, and only at a passenger on the driver’s left; arriving so early means she started very early. Readers can ask whether “no vehicle save a dog-cart” is knowledge or overconfidence; she confirms he is right."
+          ],
+          "evidence": [
+            "I observe the second half of a return ticket in the palm of your left glove.",
+            "There is no vehicle save a dog-cart which throws up mud in that way, and then only when you sit on the left-hand side of the driver."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-06-q3",
+          "prompt": "“It is not cold which makes me shiver.” Which details show Helen Stoner’s fear, and why does she say even the one person who cares for her does not believe her?",
+          "facilitatorNotes": [
+            "Her face is “drawn and gray,” her eyes are like a “hunted animal,” and her hair is turning gray at thirty. Her suspicions rest on “small points,” so he treats them as “the fancies of a nervous woman.” She comes to Holmes because he is known for taking small points seriously. Some readers will notice how readily the men around her dismiss a woman’s fear."
+          ],
+          "evidence": [
+            "It is fear, Mr. Holmes. It is terror.",
+            "looks upon all that I tell him about it as the fancies of a nervous woman"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-06-q4",
+          "prompt": "Holmes says “my profession is its own reward.” Using Watson’s first paragraph too, why does Holmes take on a case?",
+          "facilitatorNotes": [
+            "Watson says he worked “for the love of his art” and refused cases that were not unusual or “fantastic”; Holmes asks Helen to pay only his expenses, when she can. One reading is that he is generous; another is that he cares most about a good puzzle. Both fit the text, and a reader can say which seems stronger."
+          ],
+          "evidence": [
+            "working as he did rather for the love of his art than for the acquirement of wealth",
+            "As to reward, my profession is its own reward"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-07",
+      "title": "Stoke Moran and a whistle in the night: part 2 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Keep track of family history, money and the layout of a house, all of which may become evidence.",
+      "focus": "Helen tells of a ruined family, a violent stepfather, and her sister’s question about a whistle at three in the morning.",
+      "context": "Recap: early one April morning in 1883 a frightened young woman in black came to Baker Street; from mud and a ticket Holmes deduced that she had driven to the station and taken the first train. Now she begins her story. Surrey, Berkshire and Hampshire are English counties; the Regency was the years around 1811–1820; a mortgage is a loan against a house; Calcutta (now Kolkata) was then the capital of British India; a capital sentence is a death sentence. A half-pay officer is one not on active duty.",
+      "contentNote": "Helen reports that her stepfather beat his Indian butler to death and calls the Romani people “gypsies” and “vagabonds,” period words now considered offensive. She blames his violence partly on “the tropics,” a common colonial assumption of the time.",
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, Helen Stoner’s account of her family and of her sister’s last evening, through “Pray proceed with your statement”; opens ““My name is Helen Stoner, and I am living with my step-father, who is the last survivor…”; closes ““Quite so. Pray proceed with your statement.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-06",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-08",
+        "blocks": [
+          1479,
+          1506
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0b0f1dd9cdf175137bfd2fe6f00593ca455e2cd4a57696bce5c4e29a4cdd2958"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-07-q1",
+          "prompt": "What has happened to the Roylott family over the generations, and how did Dr. Roylott try to escape the family’s ruin?",
+          "facilitatorNotes": [
+            "Four wasteful heirs and a gambler lost the estates; only a few acres and a mortgaged house remain. The son borrowed money, became a doctor and built a large practice in Calcutta, until his violence sent him to prison. The family story moves from wealth to poverty to violence, which prepares us to fear him."
+          ],
+          "evidence": [
+            "living the horrible life of an aristocratic pauper",
+            "obtained an advance from a relative, which enabled him to take a medical degree"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-07-q2",
+          "prompt": "What does Helen say about her mother’s money? Which condition in the will might a detective want to remember?",
+          "facilitatorNotes": [
+            "The money, “not less than £1000 a year,” goes to Dr. Roylott while the girls live with him, but each daughter is to receive a yearly sum when she marries. Julia died within a fortnight of her wedding day. Helen draws no connection (“no obstacle to our happiness”); readers can notice the possible motive without being sure of it yet."
+          ],
+          "evidence": [
+            "not less than £1000 a year",
+            "with a provision that a certain annual sum should be allowed to each of us in the event of our marriage"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-07-q3",
+          "prompt": "The sisters talk about the whistle. What can they establish, and what remains uncertain?",
+          "facilitatorNotes": [
+            "Established: for several nights Julia has heard a low, clear whistle at about three, and Helen has not. Uncertain: where it comes from. Helen blames the gypsies on the lawn, but Julia points out that Helen should then have heard it too, which hints that the sound comes from somewhere nearer Julia’s room."
+          ],
+          "evidence": [
+            "about three in the morning, heard a low, clear whistle",
+            "perhaps from the next room, perhaps from the lawn",
+            "And yet if it were on the lawn, I wonder that you did not hear it also."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-07-q4",
+          "prompt": "Why do the sisters lock their doors every night, and what does this tell you about life at Stoke Moran?",
+          "facilitatorNotes": [
+            "They fear the cheetah and the baboon that roam the grounds; more broadly, they live in an isolated, frightening house where “No servant would stay.” The locked door will matter later, because it means no one could have entered Julia’s room by the door."
+          ],
+          "evidence": [
+            "We had no feeling of security unless our doors were locked.",
+            "No servant would stay with us"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-08",
+      "title": "A death behind a locked door: part 3 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Sort a witness’s account into what she is sure of and what she only thinks she heard, then test a first theory against it.",
+      "focus": "Julia dies crying out about “the speckled band”; Helen, now sleeping in her room, has heard the whistle again.",
+      "context": "Recap: Helen Stoner lives with her violent stepfather, Dr. Grimesby Roylott, in the decaying family house at Stoke Moran. Two years ago her twin sister Julia, engaged to be married, asked whether Helen had heard a low whistle at three in the morning, then locked herself in for the night. A coroner holds an inquiry into a sudden death; to “screen” someone is to protect him by keeping something back; “livid” here means bluish, like a bruise. The text has Holmes call her “Miss Roylott” once, though her surname is Stoner.",
+      "contentNote": "Julia dies in convulsions after a scream. Holmes finds the marks of her stepfather’s fingers on Helen’s wrist, and she excuses him. The Romani people are called “gypsies.”",
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, from the night of Julia Stoner’s death to Holmes’s first theory, ending “But what in the name of the devil!”; opens ““I could not sleep that night. A vague feeling of impending misfortune impressed me. My…”; closes “…are fatal, or if they may be explained away. But what in the name of the devil!””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-07",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-09",
+        "blocks": [
+          1507,
+          1551
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "293c880fadac997fbd6696916c1ca9f32ad0c07c6442ad7cf7acd478f937edde"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-08-q1",
+          "prompt": "List, in order, what Helen heard and saw on the night Julia died. Which details would a detective most want to test?",
+          "facilitatorNotes": [
+            "A scream; a low whistle; a metallic clang; Julia’s door unlocking; Julia swaying, falling and crying out about the band; her finger pointing toward the doctor’s room. Helen herself admits she “may possibly have been deceived” about the whistle and clang, so those, with the dying words and the pointing, are the details to test."
+          ],
+          "evidence": [
+            "there burst forth the wild scream of a terrified woman",
+            "I seemed to hear a low whistle, such as my sister described, and a few moments later a clanging sound, as if a mass of metal had fallen",
+            "she stabbed with her finger into the air in the direction of the doctor’s room"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-08-q2",
+          "prompt": "The inquiry concluded that Julia was alone when she died. What supports that, and why does Holmes keep asking questions?",
+          "facilitatorNotes": [
+            "The door was locked inside, the shutters barred, walls, floor and chimney checked, no marks of violence or poison found. But “alone” only means no person could get in; Holmes asks about the match and matchbox, which show that she struck a light and looked about. Something frightened or hurt her that the inquiry never found."
+          ],
+          "evidence": [
+            "the door had been fastened upon the inner side",
+            "It is certain, therefore, that my sister was quite alone when she met her end.",
+            "Showing that she had struck a light and looked about her when the alarm took place."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-08-q3",
+          "prompt": "Helen offers two explanations of “a speckled band.” What are they, and how convincing is each?",
+          "facilitatorNotes": [
+            "Either Julia was delirious, or she meant a band of people, the gypsies, whose spotted handkerchiefs might explain “speckled.” The second reads “band” as a group; a reader may notice that “band” can also mean a strip. Holmes is “far from being satisfied,” which suggests neither explanation fits all the facts."
+          ],
+          "evidence": [
+            "merely the wild talk of delirium",
+            "some band of people, perhaps to these very gypsies in the plantation",
+            "Holmes shook his head like a man who is far from being satisfied."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-08-q4",
+          "prompt": "Holmes builds a first theory from five facts and then admits “objections.” What is the theory, and why go to Stoke Moran to test it rather than announce it?",
+          "facilitatorNotes": [
+            "Whistles, gypsies friendly with the doctor, his interest in stopping the marriage, the dying words, and a clang that might be a shutter bar falling: perhaps the gypsies were involved. Watson asks what the gypsies actually did, and Holmes cannot say. He wants to see “whether the objections are fatal”: a theory is something to test, not to believe. Readers can also discuss Helen’s bruised wrist and her excuse for her stepfather, which show why she is afraid to say all she knows."
+          ],
+          "evidence": [
+            "I think that there is good ground to think that the mystery may be cleared along those lines.",
+            "I want to see whether the objections are fatal, or if they may be explained away.",
+            "He is a hard man"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-09",
+      "title": "A bent poker and barred shutters: part 4 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice how a description can judge a character, and watch a theory meet facts that do not fit it.",
+      "focus": "Dr. Roylott threatens Holmes, the will supplies a motive, and the barred shutters rule out an intruder from outside.",
+      "context": "Recap: Helen Stoner has told Holmes how her twin sister died two years ago, alone in a locked room, crying out about “the speckled band,” and how last night, moved into that same room, she heard the same whistle. Holmes found bruises on her wrist and means to examine the rooms while her stepfather is away. A frock-coat is a long formal coat; gaiters cover the lower legs; a hunting-crop is a riding whip; a Jack-in-office is a petty official who enjoys his little power. Holmes goes to Doctors’ Commons to read the mother’s will; the revolver he asks Watson to carry is the “Eley’s No. 2.” A trap is a light carriage, and a stile is a set of steps over a fence.",
+      "contentNote": "A furious man threatens Holmes and bends a steel poker to show his strength; Holmes asks Watson to bring a revolver.",
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, from Dr. Roylott’s visit to Baker Street through Holmes’s test of the shutters at Stoke Moran; opens “The ejaculation had been drawn from my companion by the fact that our door had been…”; closes “…if they were bolted. Well, we shall see if the inside throws any light upon the matter.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-08",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-10",
+        "blocks": [
+          1552,
+          1598
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7b5667c9974f2d23f75fc1eb8fd1c537b8a37d60960ca169719426b5a66e66a0"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-09-q1",
+          "prompt": "How does Watson make Dr. Roylott frightening before he speaks? Find the comparison that sums him up, and one phrase that is a judgment rather than a description.",
+          "facilitatorNotes": [
+            "He fills the doorway; his face is “seared with a thousand wrinkles”; his eyes are “bile-shot”; he looks like “a fierce old bird of prey.” “Marked with every evil passion” is Watson’s judgment dressed as description: no one can see “evil passion” in a face. Readers may decide Watson is right, but should notice he decides early."
+          ],
+          "evidence": [
+            "a fierce old bird of prey",
+            "marked with every evil passion"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-09-q2",
+          "prompt": "Holmes answers Roylott’s questions with remarks about the weather and the crocuses. Why might he do this, and what does the business with the poker show about each man?",
+          "facilitatorNotes": [
+            "He refuses to be bullied and gives away nothing Helen said, and his calm mockery exposes Roylott’s rage. Roylott bends the poker to threaten; Holmes straightens it after he leaves, with no audience but Watson. Some readers will find Holmes reckless: he himself worries that Helen may “suffer” for having been traced."
+          ],
+          "evidence": [
+            "It is a little cold for the time of the year",
+            "seized the poker, and bent it into a curve with his huge brown hands",
+            "with a sudden effort straightened it out again"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-09-q3",
+          "prompt": "What does Holmes learn from the will, and does it prove anything?",
+          "facilitatorNotes": [
+            "The income has fallen to about £750; each daughter who marries can claim £250 a year, so two marriages would leave Roylott “a mere pittance.” This proves a strong motive, not a crime; Holmes still has to find out how Julia died."
+          ],
+          "evidence": [
+            "Each daughter can claim an income of £250, in case of marriage.",
+            "he has the very strongest motives for standing in the way of anything of the sort"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-09-q4",
+          "prompt": "At Stoke Moran Holmes says, “my theory certainly presents some difficulties.” Which theory, and which facts cause the difficulty?",
+          "facilitatorNotes": [
+            "The theory that someone, perhaps the gypsies, came in from outside. The barred shutters have no slit for a knife and solid hinges, so no one could pass them. Meanwhile Helen says the repairs that moved her into Julia’s room were not needed: “an excuse to move me.” Holmes lets the facts change his mind, and the danger moves inside the house."
+          ],
+          "evidence": [
+            "No one could pass these shutters if they were bolted.",
+            "There were none. I believe that it was an excuse to move me from my room."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-10",
+      "title": "A bell-pull that does not ring: part 5 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Collect clues that are ordinary objects in odd conditions, and resist explaining them before the detective does.",
+      "focus": "A dummy bell-rope, a ventilator into the next room, a safe, a saucer of milk and a looped whip.",
+      "context": "Recap: Dr. Roylott burst into Baker Street and threatened Holmes; the mother’s will shows he would lose most of his income if his stepdaughters married. At Stoke Moran Holmes found that no one could open the barred shutters of the room where Julia died, where Helen is now made to sleep. A bell-pull rang a bell in a servant’s room; a ventilator is an opening to let air through; Wilton is a kind of carpet; a camp-bed is a narrow folding bed; a dog-lash is a whip.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, Holmes’s examination of the two bedrooms and his instructions to Helen Stoner; opens “A small side door led into the whitewashed corridor from which the three bedrooms opened.…”; closes “…you, you may rest assured that we shall soon drive away the dangers that threaten you.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-09",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-11",
+        "blocks": [
+          1599,
+          1652
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6c40233b92ca58fbed3f58c5afe910dd42a7e67f746fab340f4a3fdf7e595a43"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-10-q1",
+          "prompt": "Make a list of everything Holmes finds strange in the two bedrooms. Which of these things does Watson see without finding anything strange?",
+          "facilitatorNotes": [
+            "The bell-rope is new, never used, rings nothing and hangs beside the pillow; the ventilator opens into Roylott’s room instead of outside; Roylott’s room has a safe, a saucer of milk, a chair whose seat Holmes studies, and a lash tied in a loop. Watson calls the lash “a common enough lash.” Every clue is an ordinary object used oddly."
+          ],
+          "evidence": [
+            "Why, it’s a dummy",
+            "what a fool a builder must be to open a ventilator into another room",
+            "tied so as to make a loop of whip-cord",
+            "It’s a common enough lash."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-10-q2",
+          "prompt": "Holmes asks whether there is “a cat” in the safe. Why might he ask, and why does the cheetah not answer his question?",
+          "facilitatorNotes": [
+            "A saucer of milk suggests a small animal; a cheetah would want far more, as Holmes says. The milk sits on the safe, so something small may be fed there. Readers can make a prediction, but the text does not yet say what."
+          ],
+          "evidence": [
+            "There isn’t a cat in it, for example?",
+            "a saucer of milk does not go very far in satisfying its wants"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-10-q3",
+          "prompt": "Helen says the bell-rope and ventilator were put in “a couple of years ago.” Why does the timing matter?",
+          "facilitatorNotes": [
+            "Julia died “just two years ago.” The changes were made shortly before her death, and the sisters never needed a bell: “We used always to get what we wanted for ourselves.” Coincidence of dates becomes evidence when the objects have no honest purpose."
+          ],
+          "evidence": [
+            "Yes, it was only put there a couple of years ago.",
+            "Yes, there were several little changes carried out about that time.",
+            "We used always to get what we wanted for ourselves."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-10-q4",
+          "prompt": "Holmes will not tell Helen what killed her sister. Is he right to keep his conclusion to himself?",
+          "facilitatorNotes": [
+            "He wants “clearer proofs,” and a frightened Helen might give the plan away. He does tell her it was not fright but “some more tangible cause,” and that her life may depend on obeying him. Some readers will think she has a right to know; others that his caution protects her. Both can be argued from the text."
+          ],
+          "evidence": [
+            "I should prefer to have clearer proofs before I speak.",
+            "I think that there was probably some more tangible cause.",
+            "Your life may depend upon your compliance."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-11",
+      "title": "The vigil in the dark: part 6 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow Holmes’s reasoning back to small details in Helen’s first account, then feel how silence builds suspense.",
+      "focus": "Holmes explains what the ventilator, rope and clamped bed mean together; then the watchers wait in total darkness.",
+      "context": "Recap: in the room where Julia died Holmes found a bell-rope that rings nothing, hanging beside a ventilator into Dr. Roylott’s room, and in Roylott’s room a safe, a saucer of milk and a whip tied in a loop. He told Helen to signal with a lamp and spend the night in her old room while he and Watson take her place. Palmer and Pritchard were real Victorian doctors hanged for poisoning. A vigil is a night of watching.",
+      "contentNote": "A tense night in the dark; Holmes speaks of doctors who become murderers.",
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, from the Crown Inn through the night watch in the dark bedroom; opens “Sherlock Holmes and I had no difficulty in engaging a bedroom and sitting-room at the…”; closes “…and one and two and three, and still we sat waiting silently for whatever might befall.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-10",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-12",
+        "blocks": [
+          1653,
+          1693
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad90f92146a4a36024842955b812fe0b161fcabf59857d8b5a238920db4221a3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-11-q1",
+          "prompt": "Holmes says he “knew that we should find a ventilator before ever we came to Stoke Moran.” How did he know? Find the detail in Helen’s first account that gave it away.",
+          "facilitatorNotes": [
+            "Julia smelled Dr. Roylott’s cigar in her room, so the rooms must connect; the opening must be small, or the inquiry would have noticed it. Helen mentioned the cigars only in passing, while explaining why Julia came to her room. Holmes keeps details others treat as background."
+          ],
+          "evidence": [
+            "You remember in her statement she said that her sister could smell Dr. Roylott’s cigar.",
+            "I deduced a ventilator."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-11-q2",
+          "prompt": "Why does Holmes care that the bed is clamped to the floor? Put the bed, the rope and the ventilator together.",
+          "facilitatorNotes": [
+            "Whatever comes through the ventilator and down the rope will land on the bed, and the sleeper cannot move the bed out of its path. Holmes calls the rope a “rope” now because it was never a bell-pull. Watson begins to “see dimly,” and so may the reader, but no one yet names what will come."
+          ],
+          "evidence": [
+            "It was clamped to the floor.",
+            "It must always be in the same relative position to the ventilator and to the rope"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-11-q3",
+          "prompt": "Holmes says that when a doctor “does go wrong, he is the first of criminals.” What reasons does he give, and is it a fair generalisation?",
+          "facilitatorNotes": [
+            "A doctor has “nerve” and “knowledge,” and can cause a death that other doctors will not detect; Holmes names two real poisoners. Readers may point out that two cases do not prove a rule, though Roylott fits it: he was the one who “sent for medical aid” the night Julia died."
+          ],
+          "evidence": [
+            "He has nerve and he has knowledge.",
+            "When a doctor does go wrong, he is the first of criminals."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-11-q4",
+          "prompt": "How does Watson make the reader feel the length of the wait? Look at sounds, time and what does not happen.",
+          "facilitatorNotes": [
+            "They sit in absolute darkness, so Watson gives sounds: a night-bird, the cheetah’s whine, the parish clock every quarter hour. “How long they seemed, those quarters!” and the list “Twelve struck, and one and two and three” stretch time. The night part ends with nothing happening yet, which is itself the suspense."
+          ],
+          "evidence": [
+            "How long they seemed, those quarters!",
+            "Twelve struck, and one and two and three, and still we sat waiting silently for whatever might befall."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-12",
+      "title": "The speckled band: part 7 of 7 (Sherlock Holmes, the speckled band)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Check a detective’s explanation clue by clue, and judge his verdict on his own part in a death.",
+      "focus": "The whistle sounds, Holmes strikes, and the “speckled band” is revealed; then Holmes admits his first mistake.",
+      "context": "Recap: Holmes and Watson sit in darkness in the room where Julia Stoner died, waiting for whatever comes from Dr. Roylott’s room through the ventilator and down the false bell-rope to the bed clamped beneath it. It is after three in the morning. A dark-lantern has a shutter to hide its light; a stock is a whip’s handle. Doyle invented the “swamp adder”: no snake of that name exists, and readers have long pointed out that real snakes do not live on milk.",
+      "contentNote": "A man is found dead from a snake bite, staring in his chair. Holmes says his own part in the death will not weigh heavily on his conscience.",
+      "excerpt": {
+        "locator": "The Adventure of the Speckled Band, from the light at the ventilator to the end of the story; opens “Suddenly there was the momentary gleam of a light up in the direction of the ventilator,…”; closes “…death, and I cannot say that it is likely to weigh very heavily upon my conscience.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-11",
+        "continuesTo": null,
+        "blocks": [
+          1694,
+          1711
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2b35a50793211c7272726d3663029bbf4008490828bb06721301cf5edf0728e1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-12-q1",
+          "prompt": "Holmes admits he “had come to an entirely erroneous conclusion.” What misled him, and what made him change his mind?",
+          "facilitatorNotes": [
+            "The gypsies and the word “band,” which he took to mean a group of people. Once the window and the door were ruled out, he looked at the ventilator, the dummy rope and the clamped bed. His lesson: it is dangerous “to reason from insufficient data.” He is willing to say he was wrong, which is part of his method."
+          ],
+          "evidence": [
+            "how dangerous it always is to reason from insufficient data",
+            "whatever danger threatened an occupant of the room could not come either from the window or the door"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-12-q2",
+          "prompt": "Match each clue to its place in Holmes’s explanation: the whistle, the milk, the clang, the chair and the loop of whip-cord. Which part of the explanation is still a guess?",
+          "facilitatorNotes": [
+            "The whistle called the snake back; the milk trained it; the clang was the safe door closing; Roylott stood on the chair to reach the ventilator; the loop was for handling the snake. Holmes says “probably” about the milk, and that the snake might not bite for a week: parts of his account are reasoned guesses, not observations."
+          ],
+          "evidence": [
+            "He had trained it, probably by the use of the milk which we saw, to return to him when summoned.",
+            "The metallic clang heard by Miss Stoner was obviously caused by her step-father hastily closing the door of his safe upon its terrible occupant.",
+            "An inspection of his chair showed me that he had been in the habit of standing on it"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-12-q3",
+          "prompt": "“The band! the speckled band!” How does the title phrase change meaning when we finally see the band, and how did Julia’s words mislead everyone?",
+          "facilitatorNotes": [
+            "Julia described, by the light of her match, a yellow strip with brownish speckles: a band meaning a stripe, not a group of people. Everyone, Holmes included, heard the second meaning. The story turns on one word with two meanings."
+          ],
+          "evidence": [
+            "Round his brow he had a peculiar yellow band, with brownish speckles, which seemed to be bound tightly round his head.",
+            "no doubt to explain the appearance which she had caught a hurried glimpse of by the light of her match"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-12-q4",
+          "prompt": "Holmes calls himself “indirectly responsible” for Roylott’s death but says it will not “weigh very heavily upon my conscience.” Do you agree with his judgment of himself?",
+          "facilitatorNotes": [
+            "He struck at the snake to save his own life and Helen’s; the snake turned on its master, which Holmes calls violence recoiling “upon the violent.” Some readers will agree that justice was done; others will note that the official inquiry never learned the truth, and that a court, not a snake, should judge a murderer. Ask readers to use the text for whichever view they take."
+          ],
+          "evidence": [
+            "Violence does, in truth, recoil upon the violent, and the schemer falls into the pit which he digs for another.",
+            "In this way I am no doubt indirectly responsible for Dr. Grimesby Roylott’s death"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13",
+      "title": "A telegram and a damning case: part 1 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Sort the evidence against a suspect into what witnesses saw, what they believed, and what is only possible.",
+      "focus": "Holmes calls Watson west to a killing in which every fact seems to point at the dead man’s son.",
+      "context": "“The Boscombe Valley Mystery” is the fourth of the twelve stories in Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892). Dr. John Watson narrates. He is now married (he met his wife during one of Holmes’s earlier cases) and works as a doctor, so his “list” is his list of patients; he once served as an army doctor in Afghanistan. Paddington is the London station for trains to the west of England; Herefordshire is a county on the border of Wales. “The colonies” here means Australia. An inquest is an inquiry, led by a coroner, into a sudden death; its jury may name a cause such as “wilful murder.” The assizes were the courts that tried serious crimes. A game-keeper looks after the birds and animals on an estate; a lodge-keeper lives at its gate.",
+      "contentNote": "A man is found beaten to death, and the injuries are described plainly.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Holmes’s telegram through his summary of the facts given at the inquest; opens “We were seated at breakfast one morning, my wife and I, when the maid brought in a…”; closes “…the main facts of the case as they came out before the coroner and at the police-court.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+        "blocks": [
+          623,
+          642
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "caa977bfcebcfa679e4ba2633fc0cdf214e30b43948f9e039b91ca22316d0f9e"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q1",
+          "prompt": "Holmes says he is glad Watson has come because “Local aid is always either worthless or else biassed.” What does this tell you about how Holmes expects the investigation to go?",
+          "facilitatorNotes": [
+            "He expects the local police and witnesses either to be no help or to have already made up their minds. He wants one companion whose honesty he trusts. Readers can watch whether the story bears this out; it also sets up a contest between Holmes and the official view of the case."
+          ],
+          "evidence": [
+            "It makes a considerable difference to me, having some one with me on whom I can thoroughly rely. Local aid is always either worthless or else biassed."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q2",
+          "prompt": "“One of those simple cases which are so extremely difficult.” Watson calls this “paradoxical.” How does Holmes explain it?",
+          "facilitatorNotes": [
+            "An unusual feature (“singularity”) gives a detective something to follow; a plain, ordinary crime gives nothing that points to one person. A case where the obvious suspect is already chosen may hide the clues that would point elsewhere. Readers can ask whether this case is really simple, or only looks it."
+          ],
+          "evidence": [
+            "Singularity is almost invariably a clew. The more featureless and commonplace a crime is, the more difficult is it to bring it home."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q3",
+          "prompt": "List the facts against James McCarthy in Holmes’s summary. For each, decide whether a witness saw it, believed it, or only thought it possible.",
+          "facilitatorNotes": [
+            "Seen: the game-keeper saw James go the same way with a gun; Patience Moran saw a violent quarrel; people saw blood on his hand and sleeve and found the gun near the body. Believed: the game-keeper thought the father was “actually in sight,” so the son was following him. Only possible: he raised his hand “as if to strike,” and the injuries “might very well” have come from the gun. The case is strong, but much of it is interpretation."
+          ],
+          "evidence": [
+            "To the best of his belief, the father was actually in sight at the time, and the son was following him.",
+            "she saw the latter raise up his hand as if to strike his father",
+            "The injuries were such as might very well have been inflicted by the butt-end of his son’s gun"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q4",
+          "prompt": "Look at how Holmes describes the two old Australians. Which small words show he is not sure about their friendship, and why might it matter?",
+          "facilitatorNotes": [
+            "Turner was “apparently” richer; McCarthy was his tenant “but still remained, it seems, upon terms of perfect equality.” A landlord and tenant on equal terms is odd, and Holmes hedges. Both families also avoided their English neighbours. Readers may predict that the men’s shared past in Australia will matter."
+          ],
+          "evidence": [
+            "Turner was apparently the richer man, so McCarthy became his tenant, but still remained, it seems, upon terms of perfect equality"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+      "title": "Circumstantial evidence and a shaving mirror: part 2 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow Holmes as he turns each fact Watson finds suspicious into one that may help the accused.",
+      "focus": "Holmes warns that obvious facts deceive, and explains why the son’s remark at his arrest gives him hope.",
+      "context": "Recap: Holmes and Watson are on the train to Herefordshire. Charles McCarthy has been found beaten to death beside Boscombe Pool, and his son James, seen quarrelling with him with a gun in hand and blood on his sleeve, has been arrested; an inquest jury has found wilful murder. Circumstantial evidence is evidence from which a fact is inferred, as opposed to a witness who saw it happen. Lestrade is a Scotland Yard detective who appeared in A Study in Scarlet, the first Holmes story. Métier is French for trade or calling; “his deserts” means what he deserves; filial duty is a child’s duty to a parent.",
+      "contentNote": "Holmes and Watson discuss hanging, then the penalty for murder in England.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Watson’s “I could hardly imagine a more damning case” to Holmes handing him the newspaper; opens ““I could hardly imagine a more damning case,” I remarked. “If ever circumstantial…”; closes “…points in it which are suggestive. You will find it here, and may read it for yourself.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-13",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+        "blocks": [
+          643,
+          658
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84c6fe6f9a7e099df5928da4f286ef020adfb93cb58d44c7ef323013ddf174f8"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q1",
+          "prompt": "Holmes says circumstantial evidence may point “very straight to one thing” until “you shift your own point of view a little.” What does he mean? Give an example from this case.",
+          "facilitatorNotes": [
+            "The same facts can fit more than one story. Blood on James’s hand fits a killer, but it also fits a son who held his dying father; his gun near the body fits a weapon or a gun he dropped in shock. Holmes still admits “it is very possible that he is indeed the culprit”: he is not claiming James is innocent yet."
+          ],
+          "evidence": [
+            "It may seem to point very straight to one thing, but if you shift your own point of view a little, you may find it pointing in an equally uncompromising manner to something entirely different."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q2",
+          "prompt": "How does Holmes know which side of Watson’s bedroom the window is on? Separate what he sees from what he assumes about Watson.",
+          "facilitatorNotes": [
+            "He sees that Watson’s shave gets worse further back on the left side of his face. He assumes that Watson, a neat military man, shaves by sunlight and would not accept a poor shave if both sides were equally lit. The conclusion depends on that assumption about Watson’s habits; Holmes calls it “a trivial example of observation and inference.”"
+          ],
+          "evidence": [
+            "your shaving is less and less complete as we get farther back on the left side",
+            "I could not imagine a man of your habits looking at himself in an equal light, and being satisfied with such a result."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q3",
+          "prompt": "When arrested, James said it was “no more than his deserts.” Watson calls this a confession. Why does Holmes call it “the brightest rift” in the clouds? Is his reasoning convincing?",
+          "facilitatorNotes": [
+            "A scheming murderer would act surprised or indignant, because that seems innocent; James’s frank acceptance is what an innocent man aware of the evidence might say. His remark can be read as guilt at having quarrelled with his father that very day. Holmes admits another reading: a guilty man with great self-restraint. Readers can decide whether the remark proves anything."
+          ],
+          "evidence": [
+            "Had he appeared surprised at his own arrest, or feigned indignation at it, I should have looked upon it as highly suspicious",
+            "The self-reproach and contrition which are displayed in his remark appear to me to be the signs of a healthy mind, rather than of a guilty one."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q4",
+          "prompt": "“Many men have been hanged on far slighter evidence.” “So they have. And many men have been wrongfully hanged.” What does this short exchange add to the story?",
+          "facilitatorNotes": [
+            "It raises the stakes: if the case is mistaken, an innocent young man will die. Watson speaks for common sense, Holmes for doubt. The exchange also shows why Holmes refuses to “take nothing for granted”: the law can be confidently wrong."
+          ],
+          "evidence": [
+            "Many men have been hanged on far slighter evidence",
+            "And many men have been wrongfully hanged."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+      "title": "The son’s statement: part 3 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Read a witness’s testimony closely, noticing what he explains, what he cannot explain and what he refuses to say.",
+      "focus": "James McCarthy’s own account, a cry of “Cooee!”, a dying word about a rat, and a gray shape that vanished.",
+      "context": "Recap: travelling to Herefordshire, Holmes has warned Watson that obvious facts deceive, and argued that James McCarthy’s calm at his arrest is a point in his favour. Now Watson reads James’s evidence at the inquest, printed in the local paper. A trap is a light two-wheeled carriage; a groom looks after horses; a rabbit-warren is a field of rabbit burrows. A plaid is a long woollen shawl or wrap. Outré is French for strange or far-fetched; Petrarch was an Italian poet of the 1300s; Swindon is a railway town on the way west.",
+      "contentNote": "A son describes finding his father dying of head injuries.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, James McCarthy’s evidence at the inquest and Holmes’s comment on it, through “We lunch at Swindon”; opens “He picked out from his bundle a copy of the local Herefordshire paper, and having turned…”; closes “…of action. We lunch at Swindon, and I see that we shall be there in twenty minutes.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+        "blocks": [
+          659,
+          691
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "11c5232a7af69b90c8b15a451bc342548a93e2423bb351bc6fef2a91608c717c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q1",
+          "prompt": "Where does James’s account agree with the game-keeper’s, and where does it disagree?",
+          "facilitatorNotes": [
+            "Both say James walked toward the Pool with his gun. James denies that he was following his father: he says he did not know his father was ahead and was going to the rabbit-warren. Ask whether a witness who saw two people on one path could easily assume one was following the other."
+          ],
+          "evidence": [
+            "On my way I saw William Crowder, the game-keeper, as he had stated in his evidence; but he is mistaken in thinking that I was following my father."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q2",
+          "prompt": "Why is the coroner suspicious about the cry of “Cooee!”? Can you think of an explanation that does not make James a liar?",
+          "facilitatorNotes": [
+            "James says “Cooee” was a signal between him and his father, yet his father did not know he was back from Bristol. So who was the call for? James has no answer. A possible explanation is that the father called to someone else he was meeting; remember he had “an appointment of importance” at three."
+          ],
+          "evidence": [
+            "How was it, then, that he uttered it before he saw you, and before he even knew that you had returned from Bristol?",
+            "Witness (with considerable confusion): I do not know."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q3",
+          "prompt": "James refuses to tell the cause of the quarrel, though the coroner warns it will harm him. What reasons might an innocent person have for staying silent?",
+          "facilitatorNotes": [
+            "He says it has “nothing to do with the sad tragedy,” so it may be private, may involve someone else, or may embarrass him. Silence looks guilty to the court, but people protect secrets for many reasons. Readers can keep this question open: the story will answer it."
+          ],
+          "evidence": [
+            "It is really impossible for me to tell you. I can assure you that it has nothing to do with the sad tragedy which followed.",
+            "your refusal to answer will prejudice your case considerably"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q4",
+          "prompt": "Holmes says Watson and the coroner give James credit for “too much imagination and too little.” Explain the argument. Is it fair to start by assuming James tells the truth?",
+          "facilitatorNotes": [
+            "Too little: a clever liar would invent a sympathetic reason for the quarrel. Too much: a dull young man would hardly invent something as odd as a dying word about a rat and a vanishing cloth. So the strange details look like truth. Starting from his story is a working hypothesis, which Holmes will test; some readers may see a risk of bias, since Holmes has a client who wants James cleared."
+          ],
+          "evidence": [
+            "Don’t you see that you alternately give him credit for having too much imagination and too little.",
+            "I shall approach this case from the point of view that what this young man says is true, and we shall see whither that hypothesis will lead us."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+      "title": "Miss Turner’s visit: part 4 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice which of a visitor’s many words Holmes seizes on, and why.",
+      "focus": "Lestrade thinks the case is plain; Alice Turner is sure James is innocent; one word, “Victoria,” catches Holmes’s ear.",
+      "context": "Recap: on the train Watson read James McCarthy’s evidence: a “Cooee!” his father could not have meant for him, a dying word about a rat, a gray shape that disappeared. Holmes decided to begin by assuming James was telling the truth. Ross is a small town in Herefordshire. A dustcoat protects clothes from road dust. “The glass” is a barometer, which measures air pressure; a high reading usually means fine weather. “Plain as a pikestaff” means completely obvious. Victoria is a colony (now a state) in south-eastern Australia, famous for its gold-mines. Hereford is the county town, where James is held in prison.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the arrival at Ross through Holmes’s decision to visit the prisoner that night; opens “It was nearly four o’clock when we at last, after passing through the beautiful Stroud…”; closes “…I fear that you will find it very slow, but I shall only be away a couple of hours.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+        "blocks": [
+          692,
+          727
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aafe208387abb4598ca6357ecd20b39601476c2191e454bc8116e979f98ee2dd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q1",
+          "prompt": "Lestrade says Holmes must be eager to see the crime scene, and Holmes answers that it is “entirely a question of barometric pressure.” What does he mean?",
+          "facilitatorNotes": [
+            "The barometer is high and the sky clear, so no rain will wash out the tracks overnight; Holmes can rest and look at the ground tomorrow. He is thinking about the evidence on the ground, which Lestrade has not considered. His joke also teases Lestrade."
+          ],
+          "evidence": [
+            "How is the glass? Twenty-nine, I see. No wind, and not a cloud in the sky."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q2",
+          "prompt": "Compare Watson’s descriptions of Lestrade and of Alice Turner. What do they tell you about the people, and about Watson?",
+          "facilitatorNotes": [
+            "Lestrade is “ferret-like,” “furtive and sly-looking,” in country clothes worn “in deference” to the place; Alice is “lovely,” with shining eyes and a flush of excitement, and Watson credits her with “a woman’s quick intuition.” Watson judges people quickly by their looks and admires her openly. Readers may question both the ferret and the idea that intuition belongs to women."
+          ],
+          "evidence": [
+            "A lean, ferret-like man, furtive and sly-looking",
+            "with a woman’s quick intuition, fastening upon my companion"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q3",
+          "prompt": "What does Alice reveal about the quarrel between James and his father? What did Holmes notice when he asked about her own father’s view?",
+          "facilitatorNotes": [
+            "McCarthy wanted James to marry her; James and she love each other “as brother and sister,” and he did not want to marry yet. Her father opposed the match too. When Holmes asks, “A quick blush passed over her fresh young face,” which may suggest her feelings are more than sisterly. Readers can discuss whether Holmes is reading her or only Watson is."
+          ],
+          "evidence": [
+            "James and his father had many disagreements about me.",
+            "A quick blush passed over her fresh young face as Holmes shot one of his keen, questioning glances at her."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q4",
+          "prompt": "Why might Holmes say “Ha! In Victoria! That is important”? Lestrade calls Holmes “cruel” for giving Alice hope. Who seems right at this point?",
+          "facilitatorNotes": [
+            "McCarthy was the only man who knew Turner “in the old days in Victoria,” at the gold-mines. Holmes is linking the two men’s Australian past to the case, perhaps remembering the “Cooee.” Lestrade thinks false hope is cruel; Holmes says he sees a way to clear James. Readers can say whether Holmes has evidence yet or only a direction."
+          ],
+          "evidence": [
+            "Mr. McCarthy was the only man alive who had known dad in the old days in Victoria.",
+            "I think that I see my way to clearing James McCarthy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+      "title": "Watson thinks it over: part 5 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow Watson’s own reasoning and compare it with what Holmes learns from a different kind of evidence.",
+      "focus": "Watson studies the surgeon’s report; Holmes returns with the secret behind the quarrel and two crucial points.",
+      "context": "Recap: at Ross, Alice Turner told Holmes the McCarthys quarrelled because Charles McCarthy wanted James to marry her, which neither young person nor her father wanted. Her father, John Turner, is ill; he and McCarthy knew each other at the gold-mines of Victoria in Australia. Holmes has gone to the prison at Hereford. A yellow-backed novel was a cheap popular novel; a verbatim account gives every word. The parietal and occipital bones are at the side and the back of the skull. A registry office performs weddings without a church service; the Bermuda Dockyard was a naval base. George Meredith was an English novelist and poet.",
+      "contentNote": "The surgeon’s report on the injuries is summarized. Holmes speaks scornfully of a barmaid, in the class attitudes of his time.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Watson’s evening alone in Ross through Holmes’s report of his visit to the prisoner; opens “I walked down to the station with them, and then wandered through the streets of the…”; closes “…George Meredith, if you please, and we shall leave all minor matters until to-morrow.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+        "blocks": [
+          728,
+          738
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "23c4b27a657685901ba29c307a9df406970609c15464c3f59f621345de18042f"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q1",
+          "prompt": "What does Watson work out from the surgeon’s report? How much does he think it proves?",
+          "facilitatorNotes": [
+            "The blow shattered the back of the skull, so it must have been struck from behind, while the girl saw father and son face to face. That favours James a little. But Watson admits the father “might have turned his back,” so it “did not go for very much.” He weighs evidence honestly instead of claiming too much."
+          ],
+          "evidence": [
+            "Clearly such a blow must have been struck from behind.",
+            "Still, it did not go for very much, for the older man might have turned his back before the blow fell."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q2",
+          "prompt": "How does Watson explain the dying word about a rat and the gray cloth? What does he still not see?",
+          "facilitatorNotes": [
+            "He reasons, as a doctor, that a man dying from a sudden blow is not usually delirious, so “rat” was probably an attempt to name or explain his attacker. The cloth would mean the murderer dropped a garment and came back for it within a dozen paces of the son. He calls it “a tissue of mysteries”: he asks the right questions but cannot answer them."
+          ],
+          "evidence": [
+            "No, it was more likely to be an attempt to explain how he met his fate.",
+            "What a tissue of mysteries and improbabilities the whole thing was!"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q3",
+          "prompt": "What is James’s secret, and why could it not be told at the inquest? How does Holmes speak about James and the barmaid? Do you share his judgment?",
+          "facilitatorNotes": [
+            "James secretly married a barmaid in Bristol two years ago, so he could not propose to Alice, whom he loves, and could not tell his father, who would have cut him off. Holmes calls him “the idiot” caught in “the clutches of a barmaid”: he blames the woman and looks down on her work. Readers may find more sympathy for both young people than Holmes does, while still seeing why James stayed silent."
+          ],
+          "evidence": [
+            "what does the idiot do but get into the clutches of a barmaid in Bristol, and marry her at a registry office?",
+            "you can imagine how maddening it must be to him to be upbraided for not doing what he would give his very eyes to do"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q4",
+          "prompt": "Holmes names two “crucial points.” Why do both point away from James and toward someone else?",
+          "facilitatorNotes": [
+            "McCarthy had an appointment at the Pool, and it could not have been with his son, who was away and not expected. He cried “Cooee!” before he knew his son had returned. So the call and the meeting were for another person. Holmes has turned the coroner’s two suspicious points into evidence of a third person."
+          ],
+          "evidence": [
+            "the murdered man had an appointment with some one at the Pool, and that the some one could not have been his son",
+            "the murdered man was heard to cry ‘Cooee!’ before he knew that his son had returned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+      "title": "Tracks by the Pool: part 6 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Picture a scene from a description and track several sets of footprints at once.",
+      "focus": "Holmes questions McCarthy’s strange confidence, then reads the trampled grass like a page.",
+      "context": "Recap: Holmes learned in prison that James McCarthy could not explain his quarrel because he had secretly married a barmaid, who has now left him; and Holmes pointed out that the dead man’s appointment and his cry of “Cooee!” were meant for someone other than his son. Lichen is a crusty growth on stone; a lens is a magnifying glass; a waterproof is a raincoat. Détour is French for a roundabout way. The Hall is Turner’s large house beside the Pool.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the drive to Hatherley Farm through Holmes’s search of the ground at Boscombe Pool; opens “There was no rain, as Holmes had foretold, and the morning broke bright and cloudless. At…”; closes “…a pathway through the wood until he came to the high-road, where all traces were lost.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+        "blocks": [
+          739,
+          757
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f95307c7f66b034119b96c3efcc3f1638d89f9aaceac7d03b47ab5d13008489b"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q1",
+          "prompt": "Why does Holmes find it “singular” that McCarthy talked of marrying his son to Turner’s daughter? What might he be deducing?",
+          "facilitatorNotes": [
+            "McCarthy lived rent free and depended on Turner’s kindness, yet spoke “in a very cocksure manner” of marrying his son to the heiress, against Turner’s wishes. A dependent man acting as if he could demand anything suggests he had some hold over Turner. Lestrade calls this “theories and fancies”; Holmes replies that Lestrade finds facts hard to “tackle.”"
+          ],
+          "evidence": [
+            "should still talk of marrying his son to Turner’s daughter, who is, presumably, heiress to the estate, and that in such a very cocksure manner",
+            "I find it hard enough to tackle facts, Holmes, without flying away after theories and fancies."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q2",
+          "prompt": "Watson says Holmes was “transformed” on the scent. Which comparisons make him seem like an animal, and what do they show?",
+          "facilitatorNotes": [
+            "His nostrils dilate “with a purely animal lust for the chase”; he runs round “like a dog who is picking up a scent”; he answers questions with a “snarl.” The calm thinker becomes a hunter. The images show total concentration, and perhaps a little that is frightening; Watson admires it."
+          ],
+          "evidence": [
+            "His nostrils seemed to dilate with a purely animal lust for the chase",
+            "He ran round, like a dog who is picking up a scent"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q3",
+          "prompt": "Holmes reads several sets of tracks. Whose are they, and what does each show?",
+          "facilitatorNotes": [
+            "James walked twice and ran once, deep at the toe, which “bears out his story” that he ran back. The father paced up and down; a gun butt shows where James stood listening. Then “tiptoes,” in square, unusual boots, come and go and come again, which Holmes connects with the cloak. Lestrade’s twisting left foot is all over the place, and the lodge-keeper’s party trampled the ground round the body."
+          ],
+          "evidence": [
+            "Twice he was walking, and once he ran swiftly so that the soles are deeply marked, and the heels hardly visible.",
+            "Tiptoes! tiptoes! Square, too, quite unusual boots! They come, they go, they come again—of course that was for the cloak."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q4",
+          "prompt": "“Oh, how simple it would all have been had I been here before they came like a herd of buffalo.” What does Holmes’s complaint say about the way the official investigation was done?",
+          "facilitatorNotes": [
+            "The searchers trampled the evidence; Lestrade raked the Pool for a weapon and left footprints everywhere. They looked for what they expected (a weapon) and destroyed what they did not think to look for (tracks). Readers can compare this with Holmes’s method of looking at everything before deciding."
+          ],
+          "evidence": [
+            "Here is where the party with the lodge-keeper came, and they have covered all tracks for six or eight feet round the body."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+      "title": "Ballarat: part 7 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Check each step of a long chain of reasoning, and decide which steps rest on evidence and which on special knowledge.",
+      "focus": "Holmes describes the murderer exactly, Lestrade laughs, and a map of Australia explains the dying word.",
+      "context": "Recap: at Boscombe Pool, Holmes found James McCarthy’s tracks, which matched his story, and the tiptoe tracks of a stranger in square boots who came back for something; he examined the ground behind a large beech tree and picked up a jagged stone. Nous verrons is French for “We shall see.” A game-leg is a lame leg. Ballarat is a gold-mining town in Victoria, Australia; a colony was a territory ruled by Britain. A monograph is a short scholarly study. A cigar-holder is a short tube for holding a cigar; Rotterdam is a port in the Netherlands.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the stone Holmes carries away through his explanation to Watson, ending “The culprit is—”; opens ““It has been a case of considerable interest,” he remarked, returning to his natural…”; closes “…which was hanging him. I see the direction in which all this points. The culprit is—””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-20",
+        "blocks": [
+          758,
+          807
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b0b3260c4e8db4336c012aab95307ed90120d33bbd9f29a953593132ee4dd519"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q1",
+          "prompt": "How does Holmes know the stone was the weapon, when it shows no marks?",
+          "facilitatorNotes": [
+            "Grass was growing under it, so it had only lain there a few days; there was no hollow it had been taken from nearby; its shape fits the injuries; no other weapon was found. Each fact is small, and together they make a case. Readers might ask whether “It corresponds with the injuries” is something Holmes could judge so quickly."
+          ],
+          "evidence": [
+            "The grass was growing under it. It had only lain there a few days.",
+            "There is no sign of any other weapon."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q2",
+          "prompt": "Why does Lestrade refuse to look for the man Holmes describes? What does Holmes’s answer, “I have given you the chance,” suggest?",
+          "facilitatorNotes": [
+            "Lestrade calls himself “a practical man” who cannot hunt the country for “a left-handed gentleman with a game-leg”; he fears being laughed at. Holmes has offered him the truth and will now act on his own. The scene shows pride and fear of ridicule blocking an investigation."
+          ],
+          "evidence": [
+            "I really cannot undertake to go about the country looking for a left-handed gentleman with a game-leg. I should become the laughing-stock of Scotland Yard."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q3",
+          "prompt": "Holmes moves from “Cooee” to “ARAT” to “an Australian from Ballarat with a gray cloak.” Which step seems most daring to you, and how does Holmes test it?",
+          "facilitatorNotes": [
+            "“Cooee” as an Australian cry and the father’s Australian past are known facts. Guessing that the son heard only the end of “Ballarat” is the boldest step; Holmes checks it by sending for a map and finding the place-name. Watson calls it “wonderful,” Holmes “obvious”: readers can decide which word fits."
+          ],
+          "evidence": [
+            "That was the word the man uttered, and of which his son only caught the last two syllables.",
+            "We have come now out of mere vagueness to the definite conception of an Australian from Ballarat with a gray cloak."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q4",
+          "prompt": "Explain how Holmes knows the murderer is left-handed and lame. How much of his reasoning comes from Watson’s own observations?",
+          "facilitatorNotes": [
+            "The surgeon’s report, which struck Watson the night before, puts the blow behind and on the left side, which suggests a left-handed man striking from behind. The right footprint was always fainter, so he favoured that leg. Watson had half the evidence but did not take the next step. The cigar details depend on Holmes’s special knowledge of tobacco ash."
+          ],
+          "evidence": [
+            "The blow was struck from immediately behind, and yet was upon the left side. Now, how can that be unless it were by a left-handed man?",
+            "The impression of his right foot was always less distinct than his left."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20",
+      "title": "A confession and a choice: part 8 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Listen to a murderer’s own account and decide what you believe, what you sympathize with, and what you judge.",
+      "focus": "Old Turner tells of his past as a robber and of twenty years of blackmail; Holmes decides what to do with the truth.",
+      "context": "Recap: Holmes deduced that the murderer was an Australian from Ballarat, tall, left-handed and lame, who smoked Indian cigars and wore a gray cloak; as Watson was about to name him, the waiter showed in a visitor. Diabetes could not be treated effectively at the time. The diggings are gold-fields; to stick up a station is to rob a sheep farm; troopers are mounted police, and “emptied four of their saddles” means shot four of them; the swag is the loot. Regent Street is in London. “There, but for the grace of God, goes …” is an old saying: a person watching a criminal led away admits that he might have done the same.",
+      "contentNote": "Turner confesses to an armed robbery in which men were shot and to beating McCarthy to death. He uses an insulting word for a woman and speaks of McCarthy’s family as bad “stock” and “blood.” Holmes chooses to keep his confession secret.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the arrival of John Turner to the end of the story; opens ““Mr. John Turner,” cried the hotel waiter, opening the door of our sitting-room, and…”; closes “…to live happily together, in ignorance of the black cloud which rests upon their past.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+        "continuesTo": null,
+        "blocks": [
+          808,
+          837
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8149297d01887111529d98b243ca4ea1557dfb1e1fd3737494a9341cb673a3a6"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q1",
+          "prompt": "Watson is a doctor. What does he notice at a glance about Turner, and how does it fit what Turner says next?",
+          "facilitatorNotes": [
+            "Turner’s slow limp and bowed shoulders contrast with great strength; his face is ashen and his lips and nostrils are blue, signs of serious illness. Turner confirms it: he has had diabetes for years and may not live a month. His illness shapes everything that follows, including Holmes’s decision."
+          ],
+          "evidence": [
+            "his face was of an ashen white, while his lips and the corners of his nostrils were tinged with a shade of blue",
+            "I have had diabetes for years. My doctor says it is a question whether I shall live a month."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q2",
+          "prompt": "What hold did McCarthy have over Turner, and why did it grow worse as Alice grew up?",
+          "facilitatorNotes": [
+            "McCarthy recognized “Black Jack of Ballarat” and threatened to tell the police about the robbery. Turner gave him land, money and houses. As Alice grew up, McCarthy saw that Turner feared her learning the truth more than he feared the police, and at last demanded her for his son, which Turner would not give."
+          ],
+          "evidence": [
+            "he soon saw I was more afraid of her knowing my past than of the police",
+            "until at last he asked a thing which I could not give. He asked for Alice."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q3",
+          "prompt": "Turner says, “I did it, Mr. Holmes. I would do it again,” and calls his life “a life of martyrdom.” Does his story make you sympathize with him, judge him, or both?",
+          "facilitatorNotes": [
+            "He was blackmailed for twenty years, is dying, and acted to protect his daughter. But he was a highway robber whose gang killed men, he chose to kill McCarthy, and he speaks of McCarthy’s “cursed stock” as if wickedness ran in the blood, though he has nothing against James himself. A good answer holds both sides and quotes him."
+          ],
+          "evidence": [
+            "I did it, Mr. Holmes. I would do it again. Deeply as I have sinned, I have led a life of martyrdom to atone for it.",
+            "I would not have his cursed stock mixed with mine"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q4",
+          "prompt": "Holmes says “it is not for me to judge you” and keeps the confession secret unless James is condemned. Was this the right choice? Consider the last paragraph too.",
+          "facilitatorNotes": [
+            "For: Turner is dying, James is acquitted, and Alice is spared; Holmes is “no official agent” and says he might himself have been tempted. Against: a murder goes unpunished, Holmes decides alone, and James and Alice may marry “in ignorance of the black cloud” over their families. Readers can weigh mercy, truth and the law; Holmes’s own words show he felt the weight of it."
+          ],
+          "evidence": [
+            "Well, it is not for me to judge you",
+            "There, but for the grace of God, goes Sherlock Holmes.",
+            "in ignorance of the black cloud which rests upon their past"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21",
+      "title": "A governess asks for advice: part 1 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow an argument between two friends and decide whether each of them has a point.",
+      "focus": "Holmes complains that Watson’s stories are both too sensational and too trivial, just before a case arrives that looks trivial.",
+      "context": "“The Adventure of the Copper Beeches” is the twelfth and last story in Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892). Dr. Watson narrates, from the rooms at Baker Street he once shared with Holmes. Holmes and Watson mention earlier cases from the same book: the King of Bohemia’s, Mary Sutherland’s (“A Case of Identity”), the man with the twisted lip, the noble bachelor and the blue carbuncle. A governess lived with a family and taught its children at home. Causes célèbres are famous cases; to embellish is to decorate or exaggerate; a compositor set type for printing; Montague Place is a London street.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from the opening, Holmes’s complaint about Watson’s stories through Violet Hunter’s arrival at Baker Street; opens ““To the man who loves art for its own sake,” remarked Sherlock Holmes, tossing aside the…”; closes “…himself, with his lids drooping and his finger tips together, to listen to her story.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+        "blocks": [
+          2343,
+          2364
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84c2585c67dcb8f8f25375b91640378928b037333bb8c0e7016a36a816374398"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q1",
+          "prompt": "Holmes says Watson has turned “a course of lectures into a series of tales.” What does Holmes want the stories to be about, and what does Watson think makes them worth reading?",
+          "facilitatorNotes": [
+            "Holmes wants a record of “severe reasoning from cause to effect”: the logic, not the crime or the color. Watson answers that the methods were “novel and of interest,” and he is hurt. Ask readers which kind of story they would rather read; Doyle lets his own character criticize the very kind of tale we are holding."
+          ],
+          "evidence": [
+            "Crime is common. Logic is rare.",
+            "You have degraded what should have been a course of lectures into a series of tales."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q2",
+          "prompt": "Watson accuses Holmes of “egotism,” and Holmes answers that it is “not selfishness or conceit.” Who is right? Use the paragraph about the foggy morning to explain Holmes’s mood.",
+          "facilitatorNotes": [
+            "Holmes claims to value his art as something “beyond myself.” But Watson shows us a man who has searched the advertisement columns all morning without result and comes out “in no very sweet temper.” Readers can decide that both are partly right: the claim may be sincere, and the bad temper sharpens it."
+          ],
+          "evidence": [
+            "If I claim full justice for my art, it is because it is an impersonal thing—a thing beyond myself.",
+            "he had emerged in no very sweet temper to lecture me upon my literary shortcomings"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q3",
+          "prompt": "Why does Holmes call Miss Hunter’s note his “zero-point”? What hints suggest that the case may be more than it looks?",
+          "facilitatorNotes": [
+            "He thinks his practice has sunk to “recovering lost lead pencils” and advising young ladies; a question about whether to take a job seems the lowest point. Watson reminds him that the blue carbuncle began as “a mere whim.” Miss Hunter herself says she has had “a very strange experience” and has no family to ask, so she is alone."
+          ],
+          "evidence": [
+            "This note I had this morning marks my zero-point, I fancy.",
+            "which appeared to be a mere whim at first, developed into a serious investigation",
+            "as I have no parents or relations of any sort from whom I could ask advice"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q4",
+          "prompt": "What does Watson’s first description of Violet Hunter tell you about her, and how does Holmes respond to her?",
+          "facilitatorNotes": [
+            "She is plainly but neatly dressed, quick and bright, with “the brisk manner of a woman who has had her own way to make in the world”: independent, working, not rich. Holmes, who was grumbling a minute before, is “favorably impressed” and settles down to listen."
+          ],
+          "evidence": [
+            "with the brisk manner of a woman who has had her own way to make in the world",
+            "Holmes was favorably impressed by the manner and speech of his new client"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+      "title": "An offer too good to be true: part 2 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice details that a narrator reports without judging them, and decide which ones are warnings.",
+      "focus": "A generous stranger whose conditions grow stranger with every question.",
+      "context": "Recap: Holmes, in a bad temper about the dullness of his recent cases, received a note from Violet Hunter, a governess who wants advice about a post she has been offered. She has just arrived at Baker Street and begins her story. £ stands for pounds; four pounds a month is about £48 a year. The West End is the fashionable part of London. “Sweating” meant paying workers starvation wages. Halifax, in Nova Scotia, is in Canada; Hampshire is a county in the south of England, and Winchester its chief city. “Faddy” means full of odd fancies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of her interview at Westaway’s agency, through her refusal; opens ““I have been a governess for five years,” said she, “in the family of Colonel Spence…”; closes “…to you, Miss Hunter.’ She struck a gong upon the table, and I was shown out by the page.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-21",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+        "blocks": [
+          2365,
+          2402
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c5ea9bd5d393128bd6d6dbd8a32c39e0ad301e2093ebb591262e1b0e3c475a8"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q1",
+          "prompt": "List what the stout gentleman offers and what he asks in return. At what point does the offer turn from generous to strange?",
+          "facilitatorNotes": [
+            "He offers £100 a year, more than double her old wage, half of it in advance, one small child and “the dearest old country-house.” Then he asks her to obey his wife, wear a dress they give her, sit where she is told, and cut her hair short. Readers may choose different turning points; the delighted story about killing cockroaches is an early odd note."
+          ],
+          "evidence": [
+            "Your salary with me, madam, would commence at £100 a year.",
+            "Or to cut your hair quite short before you come to us?"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q2",
+          "prompt": "Miss Hunter calls him “so fascinating and so thoughtful a man.” Which details in her own description might make a listener trust him less than she did?",
+          "facilitatorNotes": [
+            "He jumps in his chair when she enters, his eyes become “two little shining slits,” a shadow crosses his face when she refuses, and he laughs at a child’s slipper-killing. She herself felt “something unnatural.” The warnings are in her story even while she reports being charmed, which is why Holmes listens so closely."
+          ],
+          "evidence": [
+            "As I came in he gave quite a jump in his chair",
+            "there was something unnatural about the whole transaction",
+            "I could see a shadow pass over his face as I spoke"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q3",
+          "prompt": "He says “I could not ask for anything better” before she has said a word, and he waves away her French, German, music and drawing. What does that suggest he is really choosing her for?",
+          "facilitatorNotes": [
+            "Not her accomplishments: he has decided from her looks alone, and calls her skills “beside the question.” His talk of “the bearing and deportment of a lady” may be a cover. Readers can predict that her appearance matters to his plan; the story has not said why."
+          ],
+          "evidence": [
+            "‘That will do,’ said he; ‘I could not ask for anything better. Capital! capital!’",
+            "‘Tut, tut!’ he cried. ‘This is all quite beside the question."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q4",
+          "prompt": "Was Miss Hunter right to refuse to cut her hair? What does Miss Stoper’s reaction show about the agency?",
+          "facilitatorNotes": [
+            "She refuses an “off-hand” demand on something she is proud of, which shows self-respect, though she is poor and in debt. Miss Stoper is annoyed because she has lost “a handsome commission” and threatens not to help her again: the agency’s interest is its fee, not the governess’s safety. Readers may call the refusal brave or rash."
+          ],
+          "evidence": [
+            "I could not dream of sacrificing it in this off-hand fashion.",
+            "she had lost a handsome commission through my refusal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+      "title": "Too good, and a telegram: part 3 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Compare two explanations of a puzzle, and notice which questions Holmes refuses to answer.",
+      "focus": "Miss Hunter talks herself into the post; Holmes cannot name the danger, only promise to come.",
+      "context": "Recap: At a London agency for governesses, a stout, smiling gentleman offered Violet Hunter £100 a year, far more than her old wage, if she would wear a dress his wife chose, sit where she was told and cut her chestnut hair short. She refused, and the agency’s manager was annoyed. A quarter is three months; a dog-cart is a light two-wheeled carriage; an asylum was a hospital for people judged insane. Bradshaw was the book of railway timetables.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Miss Hunter’s second thoughts and Mr. Rucastle’s letter through Holmes’s advice, the fortnight’s wait and the telegram from Winchester; opens ““Well, Mr. Holmes, when I got back to my lodgings and found little enough in the…”; closes “…postpone my analysis of the acetones, as we may need to be at our best in the morning.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+        "blocks": [
+          2403,
+          2432
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6a2f4af875f4e3594f5c34a6cef86f3915b42a1c959d8b39e4cffb4025c78ca1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q1",
+          "prompt": "In his letter, what has Mr. Rucastle changed, and on what point will he not give way? Why might the hair matter so much?",
+          "facilitatorNotes": [
+            "He raises the salary to £120, explains the dress (“electric blue,” belonging to his daughter Alice, “now in Philadelphia”) and makes the sitting sound harmless, but he stays “firm” about the hair. Paying more rather than give up one condition suggests that condition is the heart of the plan."
+          ],
+          "evidence": [
+            "I am afraid that I must remain firm upon this point",
+            "we have one belonging to my dear daughter Alice (now in Philadelphia)"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q2",
+          "prompt": "How does Miss Hunter persuade herself to change her mind? Find her reasons.",
+          "facilitatorNotes": [
+            "An almost empty cupboard and unpaid bills; the thought that strange people are “at least ready to pay for their eccentricity”; and the question “what use was my hair to me?” Need wins over doubt, and readers can understand why: she has no savings and no family."
+          ],
+          "evidence": [
+            "found little enough in the cupboard, and two or three bills upon the table",
+            "Besides, what use was my hair to me?"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q3",
+          "prompt": "Miss Hunter suggests a mad wife, and Holmes calls this “the most probable” explanation. Why is he still uneasy?",
+          "facilitatorNotes": [
+            "He accepts it only “as matters stand” and reasons from the money: the Rucastles could hire a governess for £40, so £120 means “some strong reason behind.” Pay that is too good is itself evidence. He also says he would not like a sister of his to take the post."
+          ],
+          "evidence": [
+            "That is a possible solution—in fact, as matters stand, it is the most probable one.",
+            "Why should they give you £120 a year, when they could have their pick for £40? There must be some strong reason behind."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q4",
+          "prompt": "“It would cease to be a danger if we could define it.” What does Holmes mean? How does Watson show that the case keeps troubling him during the fortnight?",
+          "facilitatorNotes": [
+            "A danger you can name you can prepare for; the unknown kind is worse. Holmes sits with “knitted brows,” refuses to guess without data, and still mutters that no sister of his should have accepted. The telegram proves his prediction, and he sends Watson to the timetable at once."
+          ],
+          "evidence": [
+            "It would cease to be a danger if we could define it",
+            "“Data! data! data!” he cried, impatiently. “I can’t make bricks without clay.”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+      "title": "Lonely houses and a smiling family: part 4 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh a character’s fair words against the details she reports.",
+      "focus": "Holmes sees danger in a beautiful countryside; Miss Hunter describes a household that is pleasant only on the surface.",
+      "context": "Recap: Violet Hunter took the post at the Copper Beeches, near Winchester, after Mr. Rucastle raised her salary to £120 a year; she cut her hair, and Holmes promised to come if she telegraphed. A fortnight later her telegram called Holmes and Watson to the Black Swan inn at Winchester. Aldershot is a town near the Hampshire border; the dock is where the accused stands in a courtroom. Lord Southerton’s “preserves” are woods kept for hunting; a nonentity is a person who seems to count for nothing.",
+      "contentNote": "Holmes imagines cruelty hidden in lonely country houses; a small boy enjoys hurting animals; a servant drinks heavily.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from the section break and the train to Winchester through Miss Hunter’s account of the house, the family and the servants; opens “* * * * *”; closes “…the nursery and my own room, which are next to each other in one corner of the building.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+        "blocks": [
+          2433,
+          2457
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d549cd5f1f5bfc1fc5d5935b6d4d8276d5a36fe36b9072b8dc7d53709caaeef4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q1",
+          "prompt": "Watson sees beauty in the farmhouses, and Holmes sees “isolation.” Explain Holmes’s reasoning about why crime is easier to hide in the country than in a London alley. Do you agree?",
+          "facilitatorNotes": [
+            "In town, neighbors hear a scream or a blow and complain, and “the whole machinery of justice is ever so close.” In a lonely house, cruelty can go on unseen “year in, year out.” His point is about witnesses and help, not about country people being worse, though calling them “poor ignorant folk” is his own prejudice. Readers may argue that cities hide crime too."
+          ],
+          "evidence": [
+            "The pressure of public opinion can do in the town what the law cannot accomplish.",
+            "It is the five miles of country which makes the danger."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q2",
+          "prompt": "Miss Hunter says she has met with “no actual ill-treatment.” Which details in her account still make the household seem wrong?",
+          "facilitatorNotes": [
+            "The house is “stained and streaked”; Mrs. Rucastle is silent and often in tears with “some secret sorrow”; the daughter is said to have left because she disliked her step-mother; the boy delights in giving pain; Toller is drunk and his master ignores it. She is careful to be fair, but her details pile up."
+          ],
+          "evidence": [
+            "I have met, on the whole, with no actual ill-treatment from Mr. and Mrs. Rucastle",
+            "More than once I have surprised her in tears."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q3",
+          "prompt": "Holmes has “devised seven separate explanations” but tells Watson none of them. Why not? What does Miss Hunter’s first piece of news do to the theory from Baker Street?",
+          "facilitatorNotes": [
+            "He waits for “fresh information” to decide among them; naming one would be guessing. Her news that “Mrs. Rucastle is not mad” removes the explanation that seemed most probable in London, which shows why Holmes would not commit to it."
+          ],
+          "evidence": [
+            "I have devised seven separate explanations, each of which would cover the facts as far as we know them.",
+            "Mrs. Rucastle is not mad."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q4",
+          "prompt": "Miss Hunter would rather not talk about the little boy, “the creature.” Why might Holmes want to hear about him anyway?",
+          "facilitatorNotes": [
+            "Holmes is glad of all details, relevant or not; a child who enjoys giving pain may tell him something about the household that raised him, and the father laughed at it in London. Note that her linking the boy’s large head to his nature reflects an old habit of reading character in looks; readers need not accept it."
+          ],
+          "evidence": [
+            "Giving pain to any creature weaker than himself seems to be his one idea of amusement",
+            "I am glad of all details,” remarked my friend, “whether they seem to you to be relevant or not."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+      "title": "The blue dress and the coil of hair: part 5 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Keep a list of strange events and look for one explanation that could join them.",
+      "focus": "Miss Hunter is made to play a part she does not understand, and she begins to investigate.",
+      "context": "Recap: At the Black Swan, Miss Hunter has begun her account of the Copper Beeches: a stained old house above the Southampton road, a jovial master, a pale, silent wife who weeps in secret, a cruel little boy, and two unpleasant servants, Toller and his wife. A mastiff is a very large guard dog; a groom looks after horses; a yellow-backed novel was a cheap popular book; a répertoire is a stock of pieces a performer can give.",
+      "contentNote": "A huge guard dog is kept hungry and let loose at night against trespassers.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of the blue dress, the man in the road, the mastiff and the hair in the drawer; opens ““For two days after my arrival at the Copper Beeches my life was very quiet; on the…”; closes “…as I felt that I had put myself in the wrong by opening a drawer which they had locked.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+        "blocks": [
+          2458,
+          2477
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9956f21cd70540aa7efe7bd265b69cff86a578bde86a9aeb546f363187c95394"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q1",
+          "prompt": "Describe the “performance” in the drawing-room. What exactly is Miss Hunter told to do, and what are the Rucastles doing meanwhile?",
+          "facilitatorNotes": [
+            "She wears the electric-blue dress, sits close to the central window with her back to it, laughs at Mr. Rucastle’s comic stories and once reads aloud; then she changes and goes to the nursery. He acts the entertainer, while his wife never smiles. The scene seems staged for someone she cannot see."
+          ],
+          "evidence": [
+            "A chair had been placed close to the central window, with its back turned towards it.",
+            "Mrs. Rucastle, however, who has evidently no sense of humor, never so much as smiled"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q2",
+          "prompt": "How does Miss Hunter find out what is behind her, and what does her method show about her?",
+          "facilitatorNotes": [
+            "She hides a piece of broken mirror in her handkerchief and looks while pretending to wipe her eyes: resourceful and observant, the kind of method Holmes admires. She also notices that Mrs. Rucastle has noticed her."
+          ],
+          "evidence": [
+            "I concealed a piece of the glass in my handkerchief",
+            "she had divined that I had a mirror in my hand"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q3",
+          "prompt": "Why might the Rucastles make her wave the man in the road away? Suggest an explanation, and say what further evidence would test it.",
+          "facilitatorNotes": [
+            "One reading: the man must be made to believe something about the woman he sees in the window, perhaps that she is happy and does not want him. Who he is, and whose dress she is wearing, would test it. Holmes will offer his own explanation later; any guess that fits the details is fair now."
+          ],
+          "evidence": [
+            "Kindly turn round and wave him away like that.",
+            "who seemed to be looking in my direction"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q4",
+          "prompt": "The coil of hair in the locked drawer seems “impossible.” What does Miss Hunter do with it, and why does she keep quiet?",
+          "facilitatorNotes": [
+            "She compares it with her own cut hair from her trunk, finds them identical, returns it and says nothing, because she opened a drawer they had locked. Readers can connect it to the dress that had been “worn before” and fitted her perfectly: another woman like her has been here."
+          ],
+          "evidence": [
+            "I laid the two tresses together, and I assure you that they were identical.",
+            "I felt that I had put myself in the wrong by opening a drawer which they had locked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+      "title": "The forbidden wing: part 6 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice the difference between what a character says and what his face shows.",
+      "focus": "Miss Hunter gets into the locked rooms and sees Mr. Rucastle’s true face.",
+      "context": "Recap: In the borrowed blue dress Miss Hunter was made to sit with her back to the window and laugh; with a piece of mirror she saw a man watching from the road, and she was made to wave him away. A hungry mastiff roams the grounds at night, and in a locked drawer she found a coil of hair exactly like her own. A suite is a set of connected rooms; a dark room is where photographs were developed; a wire is a telegram.",
+      "contentNote": "Mr. Rucastle threatens to throw the governess to the savage dog, and she is badly frightened.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of the locked wing and Mr. Rucastle’s threat, to the end of her story; opens ““I am naturally observant, as you may have remarked, Mr. Holmes, and I soon had a pretty…”; closes “…be very glad if you could tell me what it all means, and, above all, what I should do.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+        "blocks": [
+          2478,
+          2499
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d5783ad75ab16f82eeac71cd650e4718ef0985873f122be3313bad863c2308da"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q1",
+          "prompt": "How does Mr. Rucastle explain the shuttered window, and why doesn’t Miss Hunter believe him?",
+          "facilitatorNotes": [
+            "He says he has made a photographer’s dark room. But she has just seen him come through the locked door with his face red and crinkled with anger, and now he is “merry and jovial” again; while he jokes, “there was no jest in his eyes.” The quick change of face is the evidence."
+          ],
+          "evidence": [
+            "He spoke in a jesting tone, but there was no jest in his eyes as he looked at me.",
+            "a look on his face which made him a very different person to the round, jovial man to whom I was accustomed"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q2",
+          "prompt": "Miss Hunter says she wanted to enter the rooms from “a feeling of duty,” not mere curiosity. Do you believe her? Find evidence both ways.",
+          "facilitatorNotes": [
+            "She admits she has her “share” of curiosity, and later that it was “almost as strong as my fears,” strong enough to keep her from leaving. She also felt that “some good might come” of it, and the barred door proves her right. Readers can decide that both motives were real."
+          ],
+          "evidence": [
+            "It was not mere curiosity, though I have my share of that. It was more a feeling of duty",
+            "my curiosity was almost as strong as my fears"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q3",
+          "prompt": "List what she sees and hears in the passage. Which details show that the room is a prison and that someone is inside?",
+          "facilitatorNotes": [
+            "Empty, dirty rooms; a centre door barred on the outside with an iron bed-bar, padlocked and tied, and locked as well; light from a skylight; then steps and a shadow moving beneath the door. A bar on the outside keeps someone in, not out."
+          ],
+          "evidence": [
+            "across the outside of it had been fastened one of the broad bars of an iron bed",
+            "I suddenly heard the sound of steps within the room, and saw a shadow pass backward and forward"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q4",
+          "prompt": "Mr. Rucastle’s smile “hardened into a grin of rage.” How does Doyle build up to that moment, and why is the soothing voice before it frightening too?",
+          "facilitatorNotes": [
+            "He repeats “my dear young lady,” asks gentle questions and keeps smiling, but she notices that he “overdid it.” The sudden threat shows that the kindness was a mask, which makes all his earlier charm, back to the London interview, look false."
+          ],
+          "evidence": [
+            "But his voice was just a little too coaxing. He overdid it.",
+            "‘I’ll throw you to the mastiff.’"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+      "title": "Holmes explains, and the room is empty: part 7 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Check each part of Holmes’s explanation against clues from earlier nights, and notice where he may be wrong.",
+      "focus": "Holmes joins the dress, the hair, the man in the road and the dog into one account, but the prisoner is gone.",
+      "context": "Recap: Miss Hunter crept into the locked wing of the Copper Beeches, found a door barred from the outside, heard steps behind it and fled, straight into Mr. Rucastle, who threatened to throw her to the mastiff. Tonight the Rucastles are going out, and Toller, the groom who alone can handle the dog, is drunk. To personate is to pretend to be someone; a fiancé is the man a woman is engaged to marry; a trap is a small carriage; to be circumspect is to be cautious; eaves are the edges of a roof.",
+      "contentNote": "A young woman has been kept locked in a room; Watson readies his pistol.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Holmes’s questions and explanation at the Black Swan through the empty room and the ladder; opens “Holmes and I had listened spellbound to this extraordinary story. My friend rose now and…”; closes “…the stair. I think, Watson, that it would be as well for you to have your pistol ready.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-28",
+        "blocks": [
+          2500,
+          2527
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c5f009d105d779af08d7207b770a35979dbf998a5b68995f52a20960b4007e48"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q1",
+          "prompt": "Holmes says there is “only one feasible explanation.” Match each part of it to a clue from earlier in the story. Which parts does he only guess at?",
+          "facilitatorNotes": [
+            "Personation: she was chosen for height, figure and hair, which explains the jump in the chair and the insistence on cutting her hair. The daughter’s hair was cut in an illness, hence the coil in the drawer; the dress was Alice’s; the man in the road is her suitor, fooled by the laughter and the wave; the dog keeps him off. Words like “very possibly” and “possibly her fiancé” mark the guesses."
+          ],
+          "evidence": [
+            "You have been brought there to personate some one, and the real person is imprisoned in this chamber.",
+            "You were chosen, doubtless, as resembling her in height, figure, and the color of your hair."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q2",
+          "prompt": "Holmes calls the child’s disposition “the most serious point.” What is his reasoning, and how convincing is it?",
+          "facilitatorNotes": [
+            "He reasons from child to parent: a boy cruel “merely for cruelty’s sake” suggests a cruel father, which bodes evil for the prisoner. It fits what Miss Hunter saw of the smiling father, but as a general rule it is shaky, since children are not simply copies of their parents. Readers can weigh it."
+          ],
+          "evidence": [
+            "I have frequently gained my first real insight into the character of parents by studying their children.",
+            "it bodes evil for the poor girl who is in their power"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q3",
+          "prompt": "What does Holmes ask Miss Hunter to do, and how does he speak of her? What has she done to earn it?",
+          "facilitatorNotes": [
+            "He asks her to lock Mrs. Toller in the wine-cellar, calling her “very brave and sensible” and “a quite exceptional woman.” She noticed, investigated, telegraphed and kept her head. She proves him right: Mrs. Toller is locked in and Toller’s keys are in her hand."
+          ],
+          "evidence": [
+            "You seem to me to have acted all through this matter like a very brave and sensible girl, Miss Hunter.",
+            "Here are his keys, which are the duplicates of Mr. Rucastle’s."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q4",
+          "prompt": "The room is empty. How does Holmes explain it, and could there be another explanation?",
+          "facilitatorNotes": [
+            "He decides Rucastle guessed the plan, came back and took his victim out through the skylight by the ladder. Miss Hunter objects that the ladder was not there when the Rucastles left. Someone else could have set it there, such as the man from the road. Readers who notice this are checking Holmes as he taught Watson to observe."
+          ],
+          "evidence": [
+            "this beauty has guessed Miss Hunter’s intentions, and has carried his victim off",
+            "the ladder was not there when the Rucastles went away"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28",
+      "title": "The mastiff and Mrs. Toller’s story: part 8 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Revise an explanation when a new witness speaks.",
+      "focus": "The trap Mr. Rucastle set for others closes on him, and a servant supplies what Holmes could not know.",
+      "context": "Recap: Holmes explained that Miss Hunter had been hired to impersonate Mr. Rucastle’s daughter Alice, kept locked in the barred room so that the young man watching from the road would give her up. But when Holmes and Watson broke in, the room was empty, the skylight open and a ladder against the eaves, and Holmes decided that Rucastle had carried her off. “Brain-fever” was a name then given to a dangerous illness with high fever. Locus standi is Latin for the right to be somewhere or take part. A special license let a couple marry at once; Mauritius is an island in the Indian Ocean; Walsall is a town in the English Midlands.",
+      "contentNote": "A starving dog mauls a man and Watson shoots it; a father is described as tormenting his daughter into a serious illness and imprisoning her.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Mr. Rucastle’s return to the end of the story; opens “The words were hardly out of his mouth before a man appeared at the door of the room, a…”; closes “…a private school at Walsall, where I believe that she has met with considerable success.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+        "continuesTo": null,
+        "blocks": [
+          2528,
+          2553
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "18572c485b3335b71b244c852211278e122e2fd700239889daece52a60cd6616"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q1",
+          "prompt": "How is Mr. Rucastle caught by his own plan? Connect his end to what he said and did earlier.",
+          "facilitatorNotes": [
+            "He kept the dog half-starved and threatened to throw Miss Hunter to it; now he runs to loose it on the visitors, and the dog, unfed for two days and handled only by Toller, attacks him. The ending is an irony: the danger he made for others falls on him. He lives, but “a broken man.”"
+          ],
+          "evidence": [
+            "It’s not been fed for two days.",
+            "Mr. Rucastle survived, but was always a broken man"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q2",
+          "prompt": "What does Mrs. Toller’s story add to Holmes’s explanation? Which part of his account was wrong?",
+          "facilitatorNotes": [
+            "She gives the motive, money: Alice had rights of her own under a will, and her father wanted her to sign them away before a husband could claim them. She also shows that Mr. Fowler kept Toller drunk and set the ladder, so Alice escaped with him; Holmes was wrong that Rucastle carried her off. Holmes then fills in the rest with her help."
+          ],
+          "evidence": [
+            "He wanted her to sign a paper, so that whether she married or not, he could use her money.",
+            "that a ladder should be ready at the moment when your master had gone out"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q3",
+          "prompt": "Holmes says, “I am sure we owe you an apology, Mrs. Toller.” Why? Is she a villain, a friend, or something in between?",
+          "facilitatorNotes": [
+            "They locked her in the cellar as an enemy, yet she was Alice’s friend and helped her escape. She also took Mr. Fowler’s money (“free-handed”) and served Rucastle for years, and she wants credit if the police come. Readers can call her a mixed character and defend their view from her own words."
+          ],
+          "evidence": [
+            "you’ll remember that I was the one that stood your friend, and that I was Miss Alice’s friend too",
+            "Mr. Fowler was a very kind-spoken, free-handed gentleman"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q4",
+          "prompt": "Read Watson’s last paragraph. What does he think of how Holmes treats Violet Hunter, and what becomes of her? Is it a satisfying ending?",
+          "facilitatorNotes": [
+            "Watson is disappointed that Holmes loses interest once she is no longer “the centre of one of his problems,” which matches the Holmes of the opening, who cares for logic more than people. She becomes head of a private school and succeeds, an independent ending for a woman who began the story nearly penniless. Readers may want more, or think the ending suits her."
+          ],
+          "evidence": [
+            "manifested no further interest in her when once she had ceased to be the centre of one of his problems",
+            "she is now the head of a private school at Walsall, where I believe that she has met with considerable success"
+          ]
+        }
+      ]
+    }
+  ]
+}

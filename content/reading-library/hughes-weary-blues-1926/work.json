@@ -4,7 +4,7 @@
   "author": "Langston Hughes",
   "title": "The Weary Blues",
   "translator": null,
-  "edition": "New York: Alfred A. Knopf, 1926. Project Gutenberg English transcription, eBook 74745. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included.",
+  "edition": "New York: Alfred A. Knopf, 1926. Project Gutenberg English transcription, eBook 74745. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included. “Mother to Son” was checked word by word on 2026-11-18 against the printed page, page [107], in the HathiTrust full-view copy of this edition, mdp.39015003918797 (University of Michigan, Google-digitized; https://hdl.handle.net/2027/mdp.39015003918797, the copy the page image itself names), seen as page 114 of the Wikimedia Commons scan “File:The weary blues - 1926.djvu” (whose description names the sibling copy mdp.39015003918763 of the same catalogue record); one transcription error, also in Project Gutenberg’s HTML, was corrected to the print: “I’se been a-climbin’ on” (transcribed “a-cimbin’”). One existing reading (the Grade 7 school night of the poem) changed.",
   "publicationYear": 1926,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/74745",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/74745/pg74745-images.html",
     "downloadSha256": "d967fc509edaa69278add2fe6c3cac53522e7f340e91ba88658da1a7e8b300d5",
-    "method": "Project Gutenberg 74745 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and Carl Van Vechten's introduction. Kept the author's dedication and acknowledgment, then every section and poem in printed order: section and poem titles as headings (level 2 and 3), each stanza element one stanza with its verse lines, indentation removed; dedication lines and epigraphs as paragraphs; HTML italics as _underscores_. PG's marked corrections (two title readings) are kept as the transcription prints them."
+    "method": "Project Gutenberg 74745 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and Carl Van Vechten's introduction. Kept the author's dedication and acknowledgment, then every section and poem in printed order: section and poem titles as headings (level 2 and 3), each stanza element one stanza with its verse lines, indentation removed; dedication lines and epigraphs as paragraphs; HTML italics as _underscores_. PG's marked corrections (two title readings) are kept as the transcription prints them. The emendation from the 2026-11-18 check of “Mother to Son” against the print (see edition) is applied to the converted text."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 250,
-    "sha256": "34191e930de08968119daaf47ebde4321356aab5444578921577ede61a51821a"
+    "sha256": "30fa85c3275f5d1375e99078d89c3b8ee62cfb643d98d735ed4d89c31026353b"
   }
 }

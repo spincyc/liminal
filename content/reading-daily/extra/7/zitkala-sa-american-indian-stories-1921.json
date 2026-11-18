@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "zitkala-sa-american-indian-stories-1921",
+  "readings": [
+    {
+      "id": "reading-7-zitkala-sa-american-indian-stories-1921-01",
+      "title": "The Soft-Hearted Sioux: a son comes home (part 1 of 2)",
+      "sourceId": "zitkala-sa-american-indian-stories-1921",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a first-person narrator whose judgments of his own people come from an outside education, and weigh both sides of a public quarrel.",
+      "focus": "A young man trained at a mission school returns to preach to his people and is called a traitor.",
+      "context": "Zitkala-Sa (Gertrude Simmons Bonnin, 1876–1938) was a Yankton Dakota writer and campaigner for Native American rights. She published this story in 1901 and collected it in American Indian Stories (1921). The narrator is a young Sioux man. A tepee or wigwam is a cone-shaped tent; a brave is a warrior; a medicine-man is a healer and spiritual leader. “Ate” is Dakota for “father”; “How” is a greeting. Mission schools, run by Christian churches, aimed to replace Native children’s languages and beliefs. The medicine-man’s story of a foreigner who burned a Native man alive recalls Spanish conquerors of the 1500s.",
+      "contentNote": "The narrator’s father is gravely ill; the narrator drives out the healer; the medicine-man recalls colonisers burning a Native man alive.",
+      "excerpt": {
+        "locator": "“The Soft-Hearted Sioux,” sections I–III, from the numeral I. and “Beside the open fire I sat within our tepee” to the end of section III; opens “I.”; closes “Only my father's dwelling was left to mark the fighting-ground.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-zitkala-sa-american-indian-stories-1921-02",
+        "blocks": [
+          321,
+          356
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "14f89030f02ca54b2b30b77326d9d72c7ba059e68847202d2180c6dd0f660283"
+      },
+      "questions": [
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-01-q1",
+          "prompt": "In section I, what does each member of the family expect the narrator to become? How does he respond?",
+          "facilitatorNotes": [
+            "His grandmother wants him to marry, his mother to become a good provider, his father to win a warrior’s name at sixteen as he himself did. The narrator says almost nothing and leaves, “troubled with a fear lest I should disappoint them.” The scene shows a loving family whose hopes weigh on him."
+          ],
+          "evidence": [
+            "My son, it is a great thing for some brave of sixteen winters to do.",
+            "sorely troubled with a fear lest I should disappoint them"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-01-q2",
+          "prompt": "Section II opens nine years later. What has the mission school changed in him? Which words show that he now sees his own people from outside?",
+          "facilitatorNotes": [
+            "He has learned it is wrong to kill and returns with “the white man’s Bible” and “the white man’s tender heart,” in “a foreigner’s dress.” He calls the medicine-man “the sorcerer of the plains” and grieves for his father’s “soul unsaved.” He and his mother weep together but are “far apart in spirit.” Readers should notice that the word “white man’s” keeps reminding us whose ideas these are."
+          ],
+          "evidence": [
+            "With the white man's Bible in my hand, and the white man's tender heart in my breast, I returned to my own people.",
+            "Wearing a foreigner's dress, I walked, a stranger, into my father's village."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-01-q3",
+          "prompt": "The narrator sends the medicine-man away; later the medicine-man calls him a traitor. What is each man’s case against the other, and does the story let either be simply right?",
+          "facilitatorNotes": [
+            "The narrator thinks the healer has ensnared his father’s soul; his father cries that he cannot live without him. The medicine-man charges that the son wears the clothes of the people who burned Natives and cannot hunt to feed his sick father. The narrator calls him “the cunning magician,” yet the people agree with the medicine-man and leave. Zitkala-Sa lets both the son’s sincerity and the community’s judgment be felt."
+          ],
+          "evidence": [
+            "Ha, ha, ha! my son, I can not live without the medicine-man!",
+            "who could not bring venison to renew the life of his sick father?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-zitkala-sa-american-indian-stories-1921-02",
+      "title": "The Soft-Hearted Sioux: winter (part 2 of 2)",
+      "sourceId": "zitkala-sa-american-indian-stories-1921",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Track how a repeated phrase changes its meaning and how a narrator tells an event he cannot fully grasp.",
+      "focus": "Hunger, a killing and a prison cell bring the narrator’s two worlds to a tragic end.",
+      "context": "The narrator, a young Sioux man educated at a Christian mission school, came home to preach. He sent away the medicine-man who was treating his sick father; at his first sermon the medicine-man called him a traitor and led the whole village away, leaving only the narrator’s family. “Ina” is Dakota for “mother”; a buffalo-robe is a blanket of buffalo hide; a paleface is an old term for a white person; the gallows is a frame for hanging a condemned person.",
+      "contentNote": "An old man starves; the narrator kills a white rancher in a struggle over stolen meat and awaits execution by hanging. The period term “paleface” is used.",
+      "excerpt": {
+        "locator": "“The Soft-Hearted Sioux,” sections IV–V, from the numeral IV. and “From a long night at my father's bedside” to the end of the story; opens “IV.”; closes “…and brave, my soul awaits the men to perch me on the gallows for another flight. I go.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-zitkala-sa-american-indian-stories-1921-01",
+        "continuesTo": null,
+        "blocks": [
+          357,
+          380
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0535693b7ba1f09761b3aefa3674f4ff69ef6ddd3aed0b8a131757e29d71670c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-02-q1",
+          "prompt": "The father says, “your soft heart has unfitted you for everything.” What does “soft heart” mean to the father, and what did it mean to the narrator at the mission school?",
+          "facilitatorNotes": [
+            "At school the soft heart was Christian mercy, the refusal to kill. To his starving father it means weakness: a son who will not hunt or take meat. The phrase returns in the howling wind outside the cell, so the accusation follows him to the end."
+          ],
+          "evidence": [
+            "My son, your soft heart has unfitted you for everything!",
+            "Your soft heart! your soft heart will see me die before you bring me food!"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-02-q2",
+          "prompt": "How is the killing narrated? Why might Zitkala-Sa have the narrator discover the knife in his hand rather than describe striking the blow?",
+          "facilitatorNotes": [
+            "The world spins (“the white prairie was sky”), and then he finds the knife bloody and a man at his feet, as if it were “a trick of my senses.” The method suggests shock and the loss of control; it does not erase his responsibility, since he gives himself up. Readers can discuss whether the confusion makes him more or less guilty in their eyes."
+          ],
+          "evidence": [
+            "Now the white prairie was sky, and the stars lay under my feet.",
+            "In my hand I found my long knife dripping with blood."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-02-q3",
+          "prompt": "In the cell the narrator wonders who will meet him after death. What two possibilities does he name, and what does the calm ending suggest about who he has become?",
+          "facilitatorNotes": [
+            "He imagines either the forgiving Jesus or his warrior father welcoming him “as his son,” and fears being “an outcast” from both. He has finally killed, as his father once wished, but for food and in panic, and he faces death “serene and brave,” like a warrior. The title becomes bitterly ironic; readers may differ on whether he finds peace or remains caught between two worlds."
+          ],
+          "evidence": [
+            "Will the loving Jesus grant me pardon and give my soul a soothing sleep? or will my warrior father greet me and receive me as his son?",
+            "Serene and brave, my soul awaits the men to perch me on the gallows for another flight."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-zitkala-sa-american-indian-stories-1921-03",
+      "title": "The Trial Path",
+      "sourceId": "zitkala-sa-american-indian-stories-1921",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Keep track of a story told inside another story, in which the past is told in the present tense.",
+      "focus": "A grandmother remembers how her lover, who had killed his closest friend, faced the tribe’s judgment.",
+      "context": "Zitkala-Sa (Gertrude Simmons Bonnin, 1876–1938) was a Yankton Dakota writer and campaigner for Native American rights. She published this story in 1901 and collected it in American Indian Stories (1921). A young Dakota woman and her grandmother lie awake in their tepee. Smoke-lapels are the flaps at the tepee’s smoke-hole; sweetgrass is a fragrant grass used for bedding and ceremony; thunder-birds are spirit beings of the storm; a crier rode through the village announcing news. “Heyä” means “no”; “Hinnu” is an exclamation of surprise; the ghost-path is the road the dead travel.",
+      "contentNote": "The story recounts a killing between two friends, a public trial in which the killer must ride a wild horse, and a pony killed at its master’s grave.",
+      "excerpt": {
+        "locator": "“The Trial Path,” the whole story; opens “It was an autumn night on the plain. The smoke-lapels of the cone-shaped tepee flapped…”; closes “…star in the night sky beamed compassionately down upon the little tepee on the plain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          382,
+          410
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f91e70b4e1b1551fc4974e28b939342bd92aba4f41129feb924f895fe5f164d3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-03-q1",
+          "prompt": "The grandmother says there were “two” grandfathers. Who are they, and how does Zitkala-Sa show that she has slipped back into the past?",
+          "facilitatorNotes": [
+            "The elder was the murdered man; the younger, his closest friend who killed him, was her lover and became the girl’s grandfather. When she begins to remember, the story moves into the present tense (“I am young again”; “How fast, how loud my heart beats”), so we live the day with her."
+          ],
+          "evidence": [
+            "Listen! I am young again. It is the day of your grandfather's death. The elder one, I mean, for there were two of them.",
+            "How fast, how loud my heart beats as I listen to the messenger's horrible tale!"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-03-q2",
+          "prompt": "Who decides the killer’s punishment, and what does the dead man’s father decide when the trial is over? What kind of justice is this?",
+          "facilitatorNotes": [
+            "The chief gives the choice to the father, who “alone can judge” his loss. He chooses a ride on a wild pony that could kill the rider; when the young man survives, the father takes his hand and calls him “My son!” Some readers will see forgiveness replacing revenge; others will see the trial as a way of letting fate decide. The family’s grief, shown in the mother’s sobs and the sister’s slow hand, is not erased."
+          ],
+          "evidence": [
+            "Let the father of the dead man choose the mode of torture or taking of life.",
+            "he cries, with compassionate voice, 'My son!'"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-03-q3",
+          "prompt": "When the girl asks “Is this true?”, the grandmother answers with the pony Ohiyesa. Why that answer? What does the ending, with the girl asleep, suggest?",
+          "facilitatorNotes": [
+            "The pony that carried him through the trial lived with them for fifteen years and was killed at his grave so it could follow him on the ghost-path: a living proof and a sacred custom. The grandmother wanted to “plant” this tale in the girl’s heart but has been “talking in the dark, unheard.” Readers may see a worry that traditions are being lost, or a gentle comedy of an old woman who talks too long; the watching star suggests something remains."
+          ],
+          "evidence": [
+            "this little winner, Ohiyesa, was a constant member of our family",
+            "I have been talking in the dark, unheard. I did wish the girl would plant in her heart this sacred tale"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-zitkala-sa-american-indian-stories-1921-04",
+      "title": "A Warrior’s Daughter: a first dance (part 1 of 2)",
+      "sourceId": "zitkala-sa-american-indian-stories-1921",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a story that jumps years without warning and shifts between past and present tense.",
+      "focus": "A proud warrior delights in his small daughter; years later he sets her suitor a deadly price.",
+      "context": "Zitkala-Ša (Gertrude Simmons Bonnin, 1876–1938) was a Yankton Dakota writer and campaigner for Native American rights. American Indian Stories (1921), which collects her writing, says this story first appeared in Everybody’s Magazine in 1902. Its people are Dakota (Sioux), living in tepees on the plains. Red-painted smoke lapels, the flaps at a tepee’s smoke-hole, mark the owner’s honours; age is counted in winters. “Hunhe,” “Hunha” and “Howo” are exclamations; the story itself explains “Hähob.” A scalp-lock is a lock of hair taken from a slain enemy as a trophy.",
+      "contentNote": "A man taken captive in war was once kept as a slave; a father demands an enemy’s scalp as the price of his daughter’s hand.",
+      "excerpt": {
+        "locator": "“A Warrior’s Daughter,” from the opening to the young man’s farewell before the war party; opens “In the afternoon shadow of a large tepee, with red-painted smoke lapels, sat a warrior…”; closes “Tusee only nods assent, for mere words are vain.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-zitkala-sa-american-indian-stories-1921-05",
+        "blocks": [
+          412,
+          445
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd3239c2300eb28a0bc7c72f84b5c6f6e641a623e4c78cf8dc9aefb9c5821bbc"
+      },
+      "questions": [
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-04-q1",
+          "prompt": "What has earned Tusee’s father his place of honour, and what does the narrator say is his “great joy”? Where does the narrator gently tease him?",
+          "facilitatorNotes": [
+            "Brave deeds earned him a place in the great circle of tepees, and generosity to the old earned the red smoke lapels. He also boasts: he “prated much” of his fame and “never wearied” of retelling his deeds. Yet his great joy is his eight-year-old daughter, and his eyes soften as she dances. The story lets him be proud and tender at once."
+          ],
+          "evidence": [
+            "He had won by heroic deeds the privilege of staking his wigwam within the great circle of tepees.",
+            "He was also one of the most generous gift givers to the toothless old people.",
+            "his great joy was a wee black-eyed daughter of eight sturdy winters"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-04-q2",
+          "prompt": "Who is the man Tusee calls “uncle”? How did he come to the family, and what does the story suggest by saying “He was made real man again”?",
+          "facilitatorNotes": [
+            "He was captured from an enemy camp by Tusee’s father and kept as a slave; three winters ago he was freed, his hair allowed to grow, and he chose to stay. Short hair marked his captivity; long hair restores his manhood. His loyalty to Tusee, and his teaching her his own language, show the bond is real. Readers may find the casual mention of slavery troubling, and that is worth saying; the story presents it from inside the warrior’s world."
+          ],
+          "evidence": [
+            "From an enemy's camp he was taken captive long years ago by Tusee's father.",
+            "He was made real man again. His hair was allowed to grow.",
+            "However, he himself had chosen to stay in the warrior's family."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-04-q3",
+          "prompt": "The story begins in the past tense, moves into the present (“Tusee is taking her first dancing lesson”), and later jumps ahead without warning. Where does the jump come, and how do you know time has passed?",
+          "facilitatorNotes": [
+            "The paragraph beginning “A loyal daughter” shows Tusee grown: she makes beaded deerskins, has suitors, and is called a “young woman.” Nothing announces the years between. The present tense makes each scene feel like a picture seen now, and the gap asks the reader to notice change instead of being told it."
+          ],
+          "evidence": [
+            "Tusee is taking her first dancing lesson.",
+            "A loyal daughter, she sits within her tepee making beaded deerskins for her father, while he longs to stave off her every suitor as all unworthy of his old heart's pride."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-04-q4",
+          "prompt": "The father says only an enemy’s scalp-lock “will buy Tusee for your wife.” The young man fears him; Tusee says his heart is “really kind.” Who reads him better?",
+          "facilitatorNotes": [
+            "The narrator has already told us he wants to keep every suitor away, which supports the young man’s fear. Tusee sees a test of courage and truth, and she wants peace between “her two loved ones.” Both can be right: the price is a real test in a warrior society and a father’s way of holding on to his daughter. The word “buy” is worth discussing too."
+          ],
+          "evidence": [
+            "Naught but an enemy's scalp-lock, plucked fresh with your own hand, will buy Tusee for your wife.",
+            "My father's heart is really kind. He would know if you are brave and true,",
+            "who wished no ill-will between her two loved ones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-zitkala-sa-american-indian-stories-1921-05",
+      "title": "A Warrior’s Daughter: the rescue (part 2 of 2)",
+      "sourceId": "zitkala-sa-american-indian-stories-1921",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how a story turns the expected roles of warrior and woman around, and judge its violence by its own standards and by yours.",
+      "focus": "The young man is taken captive in the raid, and Tusee goes alone into the enemy camp.",
+      "context": "Recap: Tusee, the daughter of a proud Dakota warrior, has grown up. When the young man who loves her asked her father for her, he answered that only an enemy’s scalp-lock, taken with his own hand, would win her. The young man joins tomorrow’s war party and asks Tusee to wait for his return. A ravine is a deep, narrow valley; a tomahawk is a light axe; the Great Spirit is the sacred power the Dakota pray to. The enemy people are not named. A girdle is a belt.",
+      "contentNote": "A war party attacks a sleeping camp. A bound prisoner is mocked and threatened with a tomahawk; a young woman lures a man away and kills him with her knife.",
+      "excerpt": {
+        "locator": "“A Warrior’s Daughter,” from the war party’s departure at dawn to the end of the story; opens “At early dawn the round camp-ground awakes into song. Men and women sing of bravery and…”; closes “…shoulders. With half-running, triumphant steps she carries him away into the open night.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-zitkala-sa-american-indian-stories-1921-04",
+        "continuesTo": null,
+        "blocks": [
+          446,
+          484
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "547d27f93cc9a0d9e733c19d8a4c63bc3b9c18699579af76aa12103d0f080f23"
+      },
+      "questions": [
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-05-q1",
+          "prompt": "What part do the women play in the war party, and how does Tusee step out of it?",
+          "facilitatorNotes": [
+            "Elderly women follow with food and deerskins, and during the raid they hide in the ravine; when the party flees, each woman packs her pony. Tusee rides among them on her father’s warhorse, but she stays behind alone, unseen, with a long knife. She takes on a warrior’s task the story has so far given to men."
+          ],
+          "evidence": [
+            "brave elderly women follow after their warriors",
+            "The women are hid away in secret places in the long thicketed ravine.",
+            "the war party, unaware of Tusee's absence, steal quietly away"
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-05-q2",
+          "prompt": "Tusee’s prayer asks for two things. What are they, and how does the rest of the story answer each?",
+          "facilitatorNotes": [
+            "She asks for “swift cunning” and for her father’s heart, “strong to slay a foe and mighty to save a friend.” Cunning: the smile that lures the captor and the old woman’s disguise. Slaying: the knife at the bushes. Saving: cutting the cords and carrying her lover. The narrator says outright that the Great Spirit heard her."
+          ],
+          "evidence": [
+            "Give me swift cunning for a weapon this night!",
+            "grant me my warrior-father's heart, strong to slay a foe and mighty to save a friend!",
+            "The Great Spirit heard Tusee's prayer on the hilltop."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-05-q3",
+          "prompt": "How does Zitkala-Ša portray the warrior who captured the young man? How does Tusee use what he is like, and how do you judge her deed?",
+          "facilitatorNotes": [
+            "He sneers in the captive’s face, waves a tomahawk at him, struts with a “high-pointing chin,” and believes a handsome woman wants to praise “a hero.” His vanity draws him into the dark. In the story’s world, killing the man who captured and tormented her lover is a brave act answered by the Great Spirit. Readers may also be uneasy about a killing by deception; both responses can be argued from the text."
+          ],
+          "evidence": [
+            "he carries a high-pointing chin toward the willow railing",
+            "she would speak to a hero",
+            "He gave her a warrior's strong heart to lessen the foe by one."
+          ]
+        },
+        {
+          "id": "reading-7-zitkala-sa-american-indian-stories-1921-05-q4",
+          "prompt": "Her father demanded that the young man take an enemy’s life to prove himself. Who passes that test in the end, and what does the last image say about the title?",
+          "facilitatorNotes": [
+            "Tusee does: she kills the enemy and carries the helpless young man away on her shoulders, the warrior’s strength now hers. The title names her as her father’s daughter, heir to his courage. Some readers will see the ending as a reversal of roles; others as proof that courage in this world belongs to whoever has the warrior’s heart."
+          ],
+          "evidence": [
+            "Tusee lifts him upon her broad shoulders.",
+            "With half-running, triumphant steps she carries him away into the open night."
+          ]
+        }
+      ]
+    }
+  ]
+}
