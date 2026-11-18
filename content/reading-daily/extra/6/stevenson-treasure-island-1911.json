@@ -2232,6 +2232,688 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-31",
+      "title": "Will o’ the Mill, part I — Everything goes downward",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow long, rolling sentences and collect the details that all point one way.",
+      "focus": "A boy in a mountain valley notices that everything he sees is going down towards a world he has never seen, and is seized by longing for it.",
+      "context": "Robert Louis Stevenson published “Will o’ the Mill” in the Cornhill Magazine in 1878, five years before Treasure Island; the 1911 Swanston Edition prints it after the novel. It is a story in three parts about a man who must choose between going out into the world and staying where he is. Will, an orphan, is raised by a miller and his wife in a mill on a mountain road. An eminence is a hilltop; a pass is a way over the mountains; a thoroughfare is a busy road; a tumbril is a cart and regimentals are uniforms; a barouche is a carriage, and the dicky is the servants’ seat on it; a stock is a post or stump; a weir is a low dam; sixscore is 120; solicitations are urgings. Stevenson’s sentences are long and musical, so reading parts aloud helps.",
+      "contentNote": "An army marches past the mill to a war; none of the soldiers return.",
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part I, “The Plain and the Stars,” from the start to Will’s longing for everything that went down the valley; opens “The Mill where Will lived with his adopted parents stood in a falling valley between…”; closes “…brown water in the stream, he felt his heart flow out after it in an ecstasy of longing.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-32",
+        "blocks": [
+          1440,
+          1446
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "99701ae6152881d80411db39fcf36bbb0db28acc61f8749a99e8f3cc9a18dfb6"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-31-q1",
+          "prompt": "What does Will notice about the direction in which things travel past the mill? Find at least three examples.",
+          "facilitatorNotes": [
+            "Carriages (“five-sixths were plunging briskly downwards”), walkers and pedlars, the army, the river, even the wind and the dead leaves all go down the valley. Only the fish keep their heads upstream, which is why Will feels they “stood faithfully by him.”"
+          ],
+          "evidence": [
+            "five-sixths were plunging briskly downwards and only one-sixth crawling up",
+            "they all went downward, fleetly and gaily downward"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-31-q2",
+          "prompt": "The army that marches past never comes back. What does the boy feel as he watches it, and how does this sight feed his question “Whither”?",
+          "facilitatorNotes": [
+            "He feels “weariness, pity, and wonder” at the tired soldiers, and notices that “not a man returned.” Everything that goes down the valley disappears into the unknown. Some readers will feel only mystery here; others will sense that “downward” can also mean towards death."
+          ],
+          "evidence": [
+            "filled him with a sense of weariness, pity, and wonder",
+            "Will saw one thing plainly, that not a man returned."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-31-q3",
+          "prompt": "How does the miller describe the sea? Which parts sound like fact and which like tales he has heard?",
+          "facilitatorNotes": [
+            "Fact: rivers run into a great salt lake, storms raise huge waves, ships come from the Indies. Tale: fish “five times bigger than a bull” (perhaps whales) and a crowned sea serpent. His repeated “they say” shows that he has never seen it either."
+          ],
+          "evidence": [
+            "it is the greatest thing God made",
+            "one old serpent as long as our river and as old as all the world"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-31-q4",
+          "prompt": "Why does Will burst into tears when he first sees the whole plain from the hill-top? Why is the miller disappointed?",
+          "facilitatorNotes": [
+            "The sight is too large for him; an “overmastering emotion” takes his breath away. It may be joy, longing, or the pain of seeing what he cannot reach. The miller meant to give him a treat and does not understand what he has started."
+          ],
+          "evidence": [
+            "An overmastering emotion seized upon the boy, soul and body",
+            "the poor miller, sadly disappointed and perplexed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-32",
+      "title": "Will o’ the Mill, part I — The divine unrest",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow the narrator when he leaves the story to argue an idea, and find how the argument returns to Will.",
+      "focus": "The narrator calls Will’s longing a “divine unrest” that drives explorers and pilgrims, and then turns the mill into an inn where the world comes to Will’s door.",
+      "context": "Recap: Will, raised by the miller in a mountain valley, has noticed that everything on the road and river goes down towards the plain. The miller’s tales and a view of the whole plain from the hill-top have filled him with longing to follow them. Abstruse means hard to understand; “supply and demand” is an idea from economics; the tribes “out of the North and East” are the peoples who moved into the Roman Empire long ago, and the Eternal City is Rome; in Greek myth Icarus flew on wings of wax until he fell; purged means cleansed; jocund means merry; variegated means many-coloured; a publican is an innkeeper; a post-master kept the station where coach horses were changed; an equipage is a carriage with its horses and servants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part I, “The Plain and the Stars,” from the narrator’s reflection on wanderers to Will’s dream of a waiting carriage; opens “We are told by men of science that all the ventures of mariners on the sea, all that…”; closes “…equipage occupied a place in his mind as something to be both feared and hoped for.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-31",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-33",
+        "blocks": [
+          1447,
+          1449
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cbfed508ef2aa08071b2aa4732b4763bea9f7379305d707740962512d3cb86cb"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-32-q1",
+          "prompt": "The narrator argues with “men of science” about why people have always wandered. What explanation does he reject, and what does he put in its place?",
+          "facilitatorNotes": [
+            "He rejects the idea that they moved only for food and trade, “a dull and pitiful explanation.” He says they were pilgrims driven by a “divine unrest” that makes both great achievements and miserable failures. Students can say which explanation they find more convincing, or whether both can be true."
+          ],
+          "evidence": [
+            "a certain natural instinct for cheap rations",
+            "That divine unrest, that old stinging trouble of humanity"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-32-q2",
+          "prompt": "What does the legend of the old man shod with iron suggest about longing?",
+          "facilitatorNotes": [
+            "He has worn out three pairs of iron shoes looking for the Eternal City and has not found it. Longing may never reach its goal, and the searchers keep going anyway. Readers may see a warning for Will, or simply a picture of how strong the urge is."
+          ],
+          "evidence": [
+            "And all this while I have not found the city."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-32-q3",
+          "prompt": "The narrator says Will was “sick as if for home,” then corrects himself: “the figure halts.” Why is homesickness not quite the right comparison?",
+          "facilitatorNotes": [
+            "Homesickness is for a place you have known; Will longs for a life he has never had. So the narrator reaches for a stranger picture: someone not yet born, stretching out his hands towards life. Ask what “many-coloured, many-sounding” adds."
+          ],
+          "evidence": [
+            "I have said he was sick as if for home: the figure halts.",
+            "stretching out his hands lovingly towards many-coloured, many-sounding life"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-32-q4",
+          "prompt": "Will dreams night after night of a carriage waiting to take him to the plain. Why might the dream change from “all jollity” to something “feared and hoped for”?",
+          "facilitatorNotes": [
+            "The longer he waits, the more serious leaving becomes: it would mean leaving everything he knows. Readers can predict whether the carriage will ever come and what it might be; keep the predictions to check later in the story."
+          ],
+          "evidence": [
+            "a splendid equipage waited at the door to carry him down into the plain",
+            "something to be both feared and hoped for"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-33",
+      "title": "Will o’ the Mill, part I — The plain and the stars",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Turn a comparison into an argument: say what the stars are meant to prove.",
+      "focus": "A cheerful traveller answers Will’s longing with a parable of the stars, and Will draws a gloomy conclusion from it.",
+      "context": "Recap: Will, raised in a mill in a mountain valley, has always longed to go down to the cities of the plain. The mill has become a wayside inn, and Will waits on travellers and questions them about the world. Hipped means low-spirited; Arcturus and Aldebaran are bright stars; a parable is a story that teaches by comparison; “the mountain and the mouse” recalls the fable of a mountain that groaned and gave birth to a mouse.",
+      "contentNote": "The traveller says that cities are so hard on the poor that many take their own lives.",
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part I, “The Plain and the Stars,” from the fat young man’s arrival to the end of Part I; opens “One day, when Will was about sixteen, a fat young man arrived at sunset to pass the…”; closes “…philosophically over his nuts? I needn't ask you which of them looked more of a fool.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-32",
+        "continuesTo": null,
+        "blocks": [
+          1450,
+          1464
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "11dccf0dd0ce1c659815675d6993dcc3189ba66e13e557e06b08ca8efd877a6b"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-33-q1",
+          "prompt": "The young man warns that people in the plain are unhappy too. How does Will answer, and what does his answer show he has learned?",
+          "facilitatorNotes": [
+            "He has “used his eyes”: he knows that nature and people live on one another, and that the shepherd carries the lamb home to eat it. He no longer expects a perfect world; he wants to live and see, “let it be good or evil.”"
+          ],
+          "evidence": [
+            "Although I have never been out of this valley, believe me, I have used my eyes.",
+            "the shepherd, who makes so pretty a picture carrying home the lamb, is only carrying it home for dinner"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-33-q2",
+          "prompt": "“Thousands of people live and die like you,” says the young man. Is Will’s reply a good one?",
+          "facilitatorNotes": [
+            "Will says that if thousands would like his life, one of them can have his place. It is quick and fair: contentment that suits others does not suit him. Some readers will side with the traveller, who means that a quiet life can be happy."
+          ],
+          "evidence": [
+            "if there are thousands who would like, why should not one of them have my place?"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-33-q3",
+          "prompt": "Explain the young man’s parable of the stars in your own words. Why does he say a parable is “not the same thing as a reason”?",
+          "facilitatorNotes": [
+            "The stars may hold answers to all our troubles, yet no one can ever reach them: all we can do is admire them. So too, perhaps, with the plain. A parable persuades by a picture rather than by proof, which he admits is “usually vastly more convincing.” Ask whether that is fair."
+          ],
+          "evidence": [
+            "We may climb the highest mountain, and we are no nearer them.",
+            "It is not the same thing as a reason, but usually vastly more convincing."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-33-q4",
+          "prompt": "Will concludes, “We are in a rat-trap.” Which of the two squirrels does the young man think wiser, and do you agree?",
+          "facilitatorNotes": [
+            "The one “sitting philosophically over his nuts”: if you cannot escape the cage, enjoy what you have. Will hears only the trap. Students may admire the calm squirrel or defend the one that keeps turning; the rest of the story tests this advice."
+          ],
+          "evidence": [
+            "We are in a rat-trap.",
+            "another squirrel sitting philosophically over his nuts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-34",
+      "title": "Will o’ the Mill, part II — The parson’s Marjory",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how a character’s way of seeing changes the whole landscape around him.",
+      "focus": "Will, now a grown innkeeper who has never left his valley, falls in love, and feels for the first time that he need not go anywhere.",
+      "context": "Robert Louis Stevenson’s story “Will o’ the Mill” (1878) has three parts. In Part I, “The Plain and the Stars,” Will grew up in a mountain mill and longed to follow the river down to the cities of the plain. A traveller showed him the stars, which no one can reach, and compared restless longing to a squirrel turning in a cage. Part II begins some years later. Inscrutable means hard to read; “six feet three in his stockings” is his height without shoes; a constitution is a person’s health; a parson is a village clergyman and the parsonage his house; a “man of substance” is well-off; cajoled means coaxed; to “rule the roast” is to be in charge; beatitude is deep happiness; a wimple here is a ripple.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part II, “The Parson’s Marjory,” from the start to Will’s thoughts on the hill-top; opens “After some years the old people died, both in one winter, very carefully tended by their…”; closes “…waiting patiently in his own narrow valley, he also had attained the better sunlight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-35",
+        "blocks": [
+          1466,
+          1471
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a2debfdb071c3ad8848cf7a68170ff31eb777b8132ec3510168705629e41206"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-34-q1",
+          "prompt": "People expected Will to sell the mill and go down the river when the old couple died. What does he do instead, and how do the neighbours see him?",
+          "facilitatorNotes": [
+            "He stays, improves the inn and settles down, “a kind, talkative, inscrutable young man.” The neighbours think him “a bit of an oddity” because he questions plain common sense. Ask why the narrator calls his courtship the oddest thing of all."
+          ],
+          "evidence": [
+            "But there was never any sign of such an intention on the part of Will.",
+            "a bit of an oddity"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-34-q2",
+          "prompt": "Gossips say the parson and his daughter chose Will’s inn on purpose. Does the narrator agree?",
+          "facilitatorNotes": [
+            "No: the gossip comes from “ill-wishers,” and Marjory comes “with the most unshaken innocence and unconcern.” The narrator also hints that Marjory may be as steady as Will, which prepares for what follows."
+          ],
+          "evidence": [
+            "among their ill-wishers",
+            "with the most unshaken innocence and unconcern"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-34-q3",
+          "prompt": "When Will looks at Marjory, what happens to the rest of the valley in his eyes?",
+          "facilitatorNotes": [
+            "Everything else goes dull: the trees “inanimate,” the clouds “like dead things,” the mountains “disenchanted.” The landscape that once pointed him towards the plain now fades beside one person. Ask whether this is love, or a new kind of longing."
+          ],
+          "evidence": [
+            "the clouds hung in heaven like dead things",
+            "The whole valley could not compare in looks with this one girl."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-34-q4",
+          "prompt": "On the hill-top above the plain, Will decides that the river and the birds are “empty bustle.” What has he found instead, and how does it answer his boyhood longing?",
+          "facilitatorNotes": [
+            "He thinks he has reached the “better sunlight” without leaving: what he longed to find in the plain has come to him. Readers can decide whether this is wisdom or a new illusion; the next nights test it."
+          ],
+          "evidence": [
+            "he also had attained the better sunlight",
+            "without stirring a foot, waiting patiently in his own narrow valley"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-35",
+      "title": "Will o’ the Mill, part II — Flowers and stars",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a conversation about flowers that is really about something else.",
+      "focus": "Will declares his love and becomes engaged, then talks himself, through an argument about picking flowers, into doubting that he should marry at all.",
+      "context": "Recap: Will, who has never left his mountain valley, now keeps the inn there. The parson and his daughter Marjory are lodging with him while their house is repaired, and Will has fallen deeply in love with her. A declaration is a confession of love; to commit oneself is to make a promise; Madge is a pet name for Marjory; indispensable means necessary; in the fable, a farmer kills the goose that lays golden eggs to get all the gold at once, and loses everything; “even” is evening; populous means crowded.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part II, “The Parson’s Marjory,” from Will’s declaration to his night in the garden; opens “The next day Will made a sort of declaration across the dinner-table, while the parson…”; closes “…in a pretty way?\" And he went off to bed, chuckling to himself: \"If I were only a fool!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-34",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-36",
+        "blocks": [
+          1472,
+          1496
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f9f7739d0be7cbaee0d4f2b5d525f4479d4571641d3e198a0f65815252417925"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-35-q1",
+          "prompt": "How does Will declare his love? What is odd about the way he does it?",
+          "facilitatorNotes": [
+            "He says he does not want to be held to it, “for I may be wrong,” and asks Marjory to shake her head if she disagrees. He speaks almost like a scientist reporting a finding. Her answer, “I think I do,” is just as uncertain, and the parson settles everything in four words."
+          ],
+          "evidence": [
+            "I do not wish to be held as committing myself",
+            "I fancy I must be what they call in love"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-35-q2",
+          "prompt": "After the engagement, Will seems to avoid Marjory. Does he care less for her?",
+          "facilitatorNotes": [
+            "No: “she was never out of Will's mind for an instant,” and the whole world looks new to him. He enjoys thinking of her more than being with her, which the narrator says may have disappointed her. This is the first sign of how he will act."
+          ],
+          "evidence": [
+            "she was never out of Will's mind for an instant",
+            "it seemed as if he avoided her rather than sought her out"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-35-q3",
+          "prompt": "Marjory picks flowers to keep them; Will says she does it “in order to think no more about them.” How does he connect this with his boyhood wish, and what does he suddenly realise?",
+          "facilitatorNotes": [
+            "Going down to the plain would have meant losing the view of it; picking the flower ends the charm. His sudden “By the Lord!” suggests he sees that marrying Marjory might be the same: possessing her would end the wonder. Readers may find the argument wise or chilly."
+          ],
+          "evidence": [
+            "in order to think no more about them",
+            "Because I had a fancy for looking out over the plain, I wished to go down there--where I couldn't look out over it any longer."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-35-q4",
+          "prompt": "That night Will laughs, “If I were only a fool!” What does he mean? Is he wise or foolish here?",
+          "facilitatorNotes": [
+            "He means a fool would simply marry her; he, the thinker, will keep both Marjory and the stars at a distance and admire them. The lifted blind suggests Marjory is watching too, and the reader may suspect that his cleverness is the real foolishness. Both readings can be supported."
+          ],
+          "evidence": [
+            "There she is in her room,\" he thought, \"and there are the stars overhead",
+            "If I were only a fool!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-36",
+      "title": "Will o’ the Mill, part II — Not worth while",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Read two people’s words for what each of them hides.",
+      "focus": "Will tells Marjory that marriage is not worth while; she answers by taking charge, and he discovers that he did not understand her at all.",
+      "context": "Recap: Will declared his love and Marjory accepted him, but in a talk about picking flowers he decided that possessing a thing ends the pleasure of wondering at it. That night he resolved to keep Marjory, like the stars, at a distance. To be disconcerted is to be thrown off balance; “fancy-free” means not in love; “a clean shrift” is an honest confession; dubiety is doubt and perturbation is agitation; inmates here are lodgers; to be put “out of countenance” is to be embarrassed; crestfallen means disappointed; dexterity is skill; perverse means contrary.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part II, “The Parson’s Marjory,” from Will’s announcement in the garden to Marjory’s departure and his confusion; opens “The next morning, pretty early, he saw her once more in the garden, and sought her out.”; closes “…man who has lived among shadows and now meets the sun, he was both pained and delighted.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-35",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-37",
+        "blocks": [
+          1497,
+          1513
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6951d5e0ec30ba4d075d321eee9141f06310f931c5aa2506362737c92a08e65e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-36-q1",
+          "prompt": "How does Will tell Marjory he has changed his mind? Why does she call it an insult?",
+          "facilitatorNotes": [
+            "He announces cheerfully that marriage is “not worth while,” proposes that he visit her “as people go to church,” and then offers to marry her anyway. Offering marriage as a favour he thinks unwise is what insults her."
+          ],
+          "evidence": [
+            "I have made up my mind it's not worth while.",
+            "Do you know that you are insulting me?"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-36-q2",
+          "prompt": "Will asks, “Can a man be more downright or honourable to a woman than I have been?” What is your answer?",
+          "facilitatorNotes": [
+            "He has been honest and has offered her a choice. But he cannot see how his honesty hurts: he notices her tremble, then grows angry when she will not speak. Students may defend him as honest or blame him as blind to her feelings."
+          ],
+          "evidence": [
+            "Can a man be more downright or honourable to a woman than I have been?",
+            "He could see her tremble."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-36-q3",
+          "prompt": "At dinner, Marjory tells her father what happened. What does she change in the story, and why?",
+          "facilitatorNotes": [
+            "She says Will gave up the marriage “at my request,” and stops him from correcting her. Taking the decision as her own protects her pride and shows a strength Will had not suspected. Readers may admire her or think she is hiding her hurt."
+          ],
+          "evidence": [
+            "he has agreed, at my request, to give up all idea of marriage",
+            "to let me explain these matters for myself"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-36-q4",
+          "prompt": "After she leaves, Will is “both pained and delighted.” What has he discovered in Marjory, and why does it trouble him?",
+          "facilitatorNotes": [
+            "A “fine, perverse angel” in her quiet soul: a will as strong as his. It does not fit his “life of artificial calm,” yet he wants it badly. The narrator’s word “artificial” suggests his calm was never as natural as he thought."
+          ],
+          "evidence": [
+            "He thought he recognised a fine, perverse angel in that still soul",
+            "Like a man who has lived among shadows and now meets the sun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-37",
+      "title": "Will o’ the Mill, part II — Will o’ the Mill’s Corner",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Compare what a character says about his feelings with what the narrator shows.",
+      "focus": "Will goes to propose again, lets himself be turned aside, and keeps his distance for years until it is too late.",
+      "context": "Recap: Will told Marjory that marriage was not worth while, and she took charge, telling her father that the decision was hers and leaving the inn. Will was left lonely and confused, admiring her more than ever. To plume oneself is to be proud; tenor is the usual course of thought; a thorn switch is a walking stick; “infirmity of purpose” is weakness of will; to whet the appetite is to sharpen it; “affected” here means was fond of; to moralise is to reflect on right and wrong; fickle means changeable; “fell away in flesh” means grew thin.",
+      "contentNote": "Marjory dies young, a year after her marriage; Will weeps at her bedside.",
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part II, “The Parson’s Marjory,” from Will’s walk down the valley to the end of Part II; opens “As the days went forward he passed from one extreme to another; now pluming himself on…”; closes “…talk in private, and he was present and wept very bitterly while she breathed her last.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-36",
+        "continuesTo": null,
+        "blocks": [
+          1514,
+          1523
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f314efff59e92f6309a2c1b4d5e3b1403604cad6234a40a901ebb049c22f02ae"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-37-q1",
+          "prompt": "Walking down the valley to propose, what answer does Will hope for? Why does his wish keep changing?",
+          "facilitatorNotes": [
+            "He hopes “on the whole” she will refuse, so that he can keep his calm with a clear conscience; then, seeing her roof, he half wants her to accept. He is ashamed of his own “infirmity of purpose.” The man who knew his own mind no longer does."
+          ],
+          "evidence": [
+            "He hoped, on the whole, she would refuse him",
+            "more than half-ashamed of himself for this infirmity of purpose"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-37-q2",
+          "prompt": "Marjory interrupts Will’s “At the same time----” and praises his wisdom. Why might she stop him from finishing?",
+          "facilitatorNotes": [
+            "She may truly agree; she may be protecting her pride after being refused once; or she may be testing him. Will takes her words at face value (“It appears I was right after all”). The narrator does not tell us, and the end of the part makes her words harder to believe."
+          ],
+          "evidence": [
+            "You understood me better than I understood myself",
+            "It appears I was right after all."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-37-q3",
+          "prompt": "Why does Will often walk half-way to the parsonage and then turn back? How does this fit his ideas from earlier in the story?",
+          "facilitatorNotes": [
+            "He rations his pleasure “as if to whet his appetite,” keeping Marjory, like the plain and the stars, a thing to look at from a distance. His favourite corner even shows the spire with a “snatch of plain” behind it. Ask whether this is happiness or avoidance."
+          ],
+          "evidence": [
+            "as if to whet his appetite",
+            "with a triangular snatch of plain by way of background"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-37-q4",
+          "prompt": "When Marjory marries someone else, Will says he has had an escape. Does the narrator believe him? What does the last scene show?",
+          "facilitatorNotes": [
+            "No: “at heart he was reasonably displeased,” moped and grew thin. At her deathbed he “wept very bitterly.” His wise sayings cover a real loss. Some readers will pity Will; others will say he chose this."
+          ],
+          "evidence": [
+            "But at heart he was reasonably displeased",
+            "wept very bitterly while she breathed her last"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-38",
+      "title": "Will o’ the Mill, part III — A night of memories",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice how details from earlier in a story return with new meaning.",
+      "focus": "Will grows old and famous for his wisdom without leaving his valley; one stormy night his whole past seems to come back to him.",
+      "context": "Robert Louis Stevenson’s story “Will o’ the Mill” (1878) has three parts. In Part I, Will grew up in a mountain mill longing to follow the river to the cities of the plain, until a traveller persuaded him that such longing is like a squirrel turning in a cage. In Part II he fell in love with the parson’s daughter, Marjory, but decided that marriage was “not worth while”; for three years he visited her once or twice a week, and then she married someone else and died within a year, sending for him at the end. Part III is called “Death.” An epoch is a marked period of time; sinewy means strong and lean; to meditate is to think deeply; “defiled” here means marched past in a line; custom means customers; an equipage is a carriage with horses; heliotropes are sweet-smelling purple flowers; unmanned means robbed of courage; plumes are feathers.",
+      "contentNote": "This part of the story, titled “Death,” tells of Will’s last night; on it the dead seem to return to him.",
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part III, “Death,” from the start to the stranger crossing the courtyard; opens “Year after year went away into nothing, with great explosions and outcries in the cities…”; closes “…road behind the stranger, and, above that, a few black pine-tops, like so many plumes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-39",
+        "blocks": [
+          1525,
+          1530
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "518990fc15e2b6f85449ec20a87d919fa50dd681856dd470773accabb51a7174"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-38-q1",
+          "prompt": "What happens in the cities of the plain while Will stays in his valley? Why might Stevenson pack it all into one long sentence?",
+          "facilitatorNotes": [
+            "Revolts, battles, new stars named, plays, hospitals: “all the usual turmoil.” The long list rushes past like the river, while the valley changes only with the seasons. The sentence makes the world’s noise and Will’s stillness felt at once."
+          ],
+          "evidence": [
+            "red revolt springing up and being suppressed in blood",
+            "Up in Will's valley only the winds and seasons made an epoch"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-38-q2",
+          "prompt": "Choose one of Will’s sayings and explain it. Do you agree with it?",
+          "facilitatorNotes": [
+            "The dinner saying means that a long life saves its sweetest part for last, or perhaps that it does not; “I am a dead man now” means he no longer wants anything. The candle and the planet repeat his old idea that the unreachable makes near things sweeter. Any reading that explains the comparison is acceptable."
+          ],
+          "evidence": [
+            "There is only one difference between a long life and a good dinner: that, in the dinner, the sweets come last.",
+            "he professed he had lived long enough to admire a candle all the more when he could compare it with a planet"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-38-q3",
+          "prompt": "On the night he cannot sleep, what memories come back? How does Stevenson make them more than memories?",
+          "facilitatorNotes": [
+            "The fat young man, his parents, Marjory: they come back to his “bodily senses.” He hears the dead miller call, smells Marjory’s heliotropes, and sees her window lit and the blind lifted as on the night he shouted to the stars. Ask readers which detail they recognise from earlier nights."
+          ],
+          "evidence": [
+            "revisiting his bodily senses as they do in profound and vivid dreams",
+            "an overpowering sweetness of heliotropes"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-38-q4",
+          "prompt": "Before the stranger even speaks, what tells the reader this is no ordinary night?",
+          "facilitatorNotes": [
+            "The dead miller’s call, the impossible carriage on a dangerous pass at night, the dead seeming to crowd the courtyard, and pine-tops “like so many plumes,” the feathers worn by horses at a funeral. Readers who remember Will’s boyhood dream of a carriage at the door may guess where it will take him."
+          ],
+          "evidence": [
+            "a few black pine-tops, like so many plumes",
+            "the voice of the dead miller calling to him out of the house"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-39",
+      "title": "Will o’ the Mill, part III — The stranger’s carriage",
+      "sourceId": "stevenson-treasure-island-1911",
+      "workTitle": "Will o’ the Mill",
+      "genre": "literary-narrative",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Collect the hints that tell you who a character is before he names himself.",
+      "focus": "A stranger drinks a last bottle with Will and names himself, and the man who would never leave his valley at last goes down to the plain.",
+      "context": "Recap: Will, now seventy-two and famous for his quiet wisdom, has never left his mountain valley. On a stormy night he could not sleep; memories of the dead seemed real to him, he heard a carriage on the road, and a stranger crossed the courtyard towards him. To “tramp on people’s corns” is to offend them; a positive person is sure of his own opinions; a barouche is a carriage; febrile means feverish; a hare’s form is the hollow where it lies hidden; caustic means sharp-tongued; a physician is a doctor.",
+      "contentNote": "Death, as a character, comes for Will, and Will dies at the end of the story.",
+      "excerpt": {
+        "locator": "“Will o’ the Mill,” Part III, “Death,” from the stranger’s greeting to the end of the story; opens “\"Master Will?\" asked the new-comer, in brief military fashion.”; closes “…world rose next morning, sure enough Will o' the Mill had gone at last upon his travels.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-38",
+        "continuesTo": null,
+        "blocks": [
+          1531,
+          1559
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ca44f93287640df4a4866d3c0c4b1cb5c1f66114a1e542f0959396b27e245cc6"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-39-q1",
+          "prompt": "Why can Will not see the stranger’s face? Find two details that hint who he is before he names himself.",
+          "facilitatorNotes": [
+            "Will makes out only “a shadow,” his heart grows cold, and the wine tastes odd. The stranger has crossed “kings and generals and great artists,” says he will take Will in his carriage “before this bottle's empty,” and touches him three times. Ask which hint readers caught first."
+          ],
+          "evidence": [
+            "he could make out little more than a shadow at table with him",
+            "I have crossed the whims, in my time, of kings and generals and great artists"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-39-q2",
+          "prompt": "Will boasts that “the devil himself could hardly root me up,” then says he is “tired enough of it all.” Which statement is truer?",
+          "facilitatorNotes": [
+            "The first is the proud innkeeper; the second bursts out of him “in an explosive, febrile manner,” as if he has been holding it in. Readers may decide that his long contentment covered tiredness, or that both are honest at different depths."
+          ],
+          "evidence": [
+            "I have grown here like an old oak-tree",
+            "God knows I am tired enough of it all"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-39-q3",
+          "prompt": "How is Death in this story different from what you might expect?",
+          "facilitatorNotes": [
+            "He is a doctor who takes away pain and forgives sins, a “natural law,” and he speaks to Will like a father who has been “yearning” for him. Will welcomes him as “the only friend I had to look for.” Some readers find this comforting; others find it sad that Will waited so long for him."
+          ],
+          "evidence": [
+            "I take away all pain and I forgive all sins",
+            "I am a natural law"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-39-q4",
+          "prompt": "The story ends: “Will o' the Mill had gone at last upon his travels.” How does this ending answer the boy who longed for the plain? Was his life well lived?",
+          "facilitatorNotes": [
+            "The wind rushes “towards the plain,” and the carriage he dreamed of has come: he goes down the valley at last, in death. Some readers see a peaceful reward for a wise, quiet life; others see the irony of a man who waited for life until only death came. Ask students to use the whole story."
+          ],
+          "evidence": [
+            "a rushing as of a smooth and steady wind descending towards the plain",
+            "Will o' the Mill had gone at last upon his travels."
+          ]
+        }
+      ]
     }
   ]
 }
