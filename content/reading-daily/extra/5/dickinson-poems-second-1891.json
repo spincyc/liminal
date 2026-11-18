@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "dickinson-poems-second-1891",
+  "readings": [
+    {
+      "id": "reading-5-dickinson-poems-second-1891-01",
+      "title": "A Prayer (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 11,
+        "totalMinutes": 19
+      },
+      "challenge": "Untangle a few tightly packed sentences and follow a small story that turns into a joke at the speaker’s expense.",
+      "focus": "A speaker who took a promise word for word is smiled at by heaven, and draws a sly, rueful lesson about trust.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “A Prayer.” Jehovah is a name for God in the Hebrew Bible; cherubim are angels. To stipulate is to name a condition; “upon this wise” means in this way; extant means still existing. The promise quoted in the sixth stanza echoes Gospel sayings such as “Ask, and it shall be given you.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, “Life,” XIII, “A Prayer,” complete poem; opens “I MEANT to have but modest needs, Such as content, and heaven; Within my income these…”; closes “…With a suspicious air,— As children, swindled for the first, All swindlers be, infer.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          57
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5e00d42f46c1eb7f1fe3aa411830d8ec77ebc347819b1e3e39b8672f75a36d93"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-01-q1",
+          "prompt": "What did the speaker first mean to ask for, and why did she think it was a modest request?",
+          "facilitatorNotes": [
+            "Contentment and heaven, which she thought lay “within my income,” so that she and life would “keep even,” like a careful household budget. Since heaven would include contentment, she decides to ask for heaven alone. Her money words make prayer sound like a sensible bargain."
+          ],
+          "evidence": [
+            "Such as content, and heaven;",
+            "Within my income these could lie,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-01-q2",
+          "prompt": "How do Jehovah, the cherubim and the saints react to her prayer? What do their reactions suggest?",
+          "facilitatorNotes": [
+            "God smiles, the cherubim withdraw, and grave saints creep out to look at her and show “their dimples”: they are trying not to laugh. Readers may decide the amusement is fond, like grown-ups touched by a child’s earnest request, or mocking, which is how the speaker seems to take it."
+          ],
+          "evidence": [
+            "A smile suffused Jehovah's face;",
+            "And showed their dimples, too."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-01-q3",
+          "prompt": "Reread the fifth and sixth stanzas. What does heaven find so funny?",
+          "facilitatorNotes": [
+            "That anyone could still be honest enough to “take the tale for true,” believing that whatever you ask will be given. Even Judgment “twinkled.” Her mistake was taking a promise literally. Some readers think the joke is on her; others think it is on a promise that was never meant to be read that way."
+          ],
+          "evidence": [
+            "As take the tale for true",
+            "And Judgment twinkled, too,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-01-q4",
+          "prompt": "In the last stanza she has “grown shrewder.” Is the lesson she draws a fair one?",
+          "facilitatorNotes": [
+            "She now watches the sky “with a suspicious air,” the way a child cheated once decides everyone is a cheat. Her own comparison admits the suspicion may be an overreaction: one swindle does not prove that all are swindlers. Readers can argue whether the poem laughs at the speaker, at the promise, or at both, and whether it is funny, sad or both."
+          ],
+          "evidence": [
+            "But I, grown shrewder, scan the skies",
+            "As children, swindled for the first,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-02",
+      "title": "Returning (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a short story told almost entirely through small movements of the hands, and infer the fear behind them.",
+      "focus": "A homecoming becomes too frightening to finish: the speaker fears finding that the life left behind is gone.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “Returning.” The speaker comes back after many years away and stops at the door of the old home. Nerve here means courage; a latch is the catch that holds a door shut.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, “Life,” LIII, “Returning,” complete poem; opens “I YEARS had been from home, And now, before the door, I dared not open, lest a face I…”; closes “…As cautiously as glass, And held my ears, and like a thief Fled gasping from the house.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          194,
+          199
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "47642498db4adbcc6259cfa5042c424c7755e2ac8f3882a863f22f490e47c844"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-02-q1",
+          "prompt": "What does the speaker fear will happen if the door is opened?",
+          "facilitatorNotes": [
+            "That a stranger’s face will “stare vacant” and ask what business she has there. Her answer, “just a life I left,” shows the deeper fear: not the stranger but finding that her old life no longer lives in the house."
+          ],
+          "evidence": [
+            "I dared not open, lest a face",
+            "My business,—just a life I left,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-02-q2",
+          "prompt": "List what the speaker does, from reaching the door to leaving. Which words show the fear growing?",
+          "facilitatorNotes": [
+            "She fumbles at her nerve, scans the windows, listens to the silence, laughs a forced laugh, fits her hand to the latch “with trembling care,” lifts her fingers off as if from glass, holds her ears and flees “gasping.” The actions move from hesitation to panic, and she never opens the door."
+          ],
+          "evidence": [
+            "I fumbled at my nerve,",
+            "Fled gasping from the house."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-02-q3",
+          "prompt": "Why is the silence like an ocean that “broke against my ear”?",
+          "facilitatorNotes": [
+            "Silence is the absence of sound, but here it rolls and crashes like waves: nothing has become overwhelming. Fear makes her hear the empty house as loud. Readers may say whether they have ever heard silence like that."
+          ],
+          "evidence": [
+            "The silence like an ocean rolled,",
+            "And broke against my ear."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-02-q4",
+          "prompt": "The speaker has faced “danger and the dead” but runs from a door. Why might a door be more frightening? Is her laugh at herself fair?",
+          "facilitatorNotes": [
+            "Danger can be fought; a changed home cannot be fought or undone, and while the door stays shut, the old life may still be inside. The “wooden laugh” is stiff: she knows the fear looks foolish but cannot laugh it away, and she leaves “like a thief” from her own home. Some readers find the ending sad, others understandable, even wise, a way of keeping the old home whole in memory."
+          ],
+          "evidence": [
+            "I laughed a wooden laugh",
+            "Who danger and the dead had faced,",
+            "And held my ears, and like a thief"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-03",
+      "title": "Hunger (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Read a poem that may be about real food or about anything long wanted, and test both readings against its words.",
+      "focus": "Getting what you have wanted for years can feel strange, and wanting may itself be a way of life that having ends.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “Hunger.” In Dickinson’s New England, dinner was the midday meal, so “My noon had come, to dine” means her time to eat had come at last. “Curious” here means rare or strange; ample means plentiful.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, “Life,” L, “Hunger,” complete poem; opens “I HAD been hungry all the years; My noon had come, to dine; I, trembling, drew the table…”; closes “…so I found That hunger was a way Of persons outside windows, The entering takes away.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          180,
+          184
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f59bbe1a4f356b6cbd2ec0cb931256a6fb6d9cf71b62fa4d8235568d55fecdbf"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-03-q1",
+          "prompt": "Where had the speaker seen such food before, and where was she standing then?",
+          "facilitatorNotes": [
+            "On other people’s tables, through windows, when she was “hungry, lone” and looking at wealth she “could not hope to own.” She was outside looking in."
+          ],
+          "evidence": [
+            "I looked in windows, for the wealth",
+            "I could not hope to own."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-03-q2",
+          "prompt": "What did she share with the birds, and why does the “ample bread” seem unfamiliar?",
+          "facilitatorNotes": [
+            "Crumbs, eaten outdoors “In Nature's dining-room.” She is used to very little, shared; a whole loaf is “so unlike the crumb” that she hardly recognizes it as food for her."
+          ],
+          "evidence": [
+            "'T was so unlike the crumb",
+            "In Nature's dining-room."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-03-q3",
+          "prompt": "Why does plenty hurt her? Explain the comparison with a berry bush.",
+          "facilitatorNotes": [
+            "She feels “ill and odd,” like a wild mountain plant dug up and set by a road: moved out of the place it grew to fit. Something good can still be the wrong place for you. Readers might compare a first day somewhere grand or new."
+          ],
+          "evidence": [
+            "The plenty hurt me, 't was so new,—",
+            "Transplanted to the road."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-03-q4",
+          "prompt": "What does she decide about hunger in the last stanza? Do you think the poem is only about food?",
+          "facilitatorNotes": [
+            "She was no longer hungry; hunger, she finds, belongs to “persons outside windows,” and going in takes it away. Wanting had been part of who she was. Many readers take the poem to be about any long-wanted thing, such as success, love or belonging; others keep to the literal meal. Ask which words work both ways."
+          ],
+          "evidence": [
+            "That hunger was a way",
+            "Of persons outside windows,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-04",
+      "title": "The way I read a letter's this (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a step-by-step routine and work out what all that care shows about the reader’s feelings.",
+      "focus": "A comic ritual of privacy guards a letter whose writer the speaker will not reveal, even to us.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The poem stands in the book’s second part, “Love,” though it never names the letter’s writer. To counteract is to work against; “exorcised” means driven out, as an evil spirit is; to peruse is to read carefully; creeds are the official beliefs of churches. In Dickinson’s day letters were the only way to hear from someone far away.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, “Love,” VI, complete poem; opens “THE way I read a letter's this: 'T is first I lock the door, And push it with my fingers…”; closes “…one that you know! And sigh for lack of heaven,—but not The heaven the creeds bestow.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          244,
+          247
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0ac29186eb50183a62ae5198c10e450ceec2613751f5cec007b0d604fe33d8a8"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-04-q1",
+          "prompt": "List each step the speaker takes before she reads.",
+          "facilitatorNotes": [
+            "She locks the door, pushes it to be sure, goes as far off as she can in case someone knocks, draws the letter out, “picks its lock” (breaks the seal), then glances at wall and floor for a mouse. A long, careful routine for one small letter."
+          ],
+          "evidence": [
+            "'T is first I lock the door,",
+            "And softly pick its lock."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-04-q2",
+          "prompt": "Why check for a mouse? Is the speaker serious or making fun of herself?",
+          "facilitatorNotes": [
+            "A mouse cannot read. Solemn words such as “firm conviction” and “exorcised,” used for a mouse, make the precaution comic. She knows she is being absurd, yet the joke shows how private the letter is: not even a mouse may share it."
+          ],
+          "evidence": [
+            "For firm conviction of a mouse",
+            "Not exorcised before,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-04-q3",
+          "prompt": "Who wrote the letter? What does the dash in “To—no one that you know!” do?",
+          "facilitatorNotes": [
+            "She begins to tell us whom she is “infinite” to, then stops and shuts us out, as she shut the door. The poem keeps the very secret it describes. Readers may guess at a dear friend or someone loved; the poem gives no name."
+          ],
+          "evidence": [
+            "Peruse how infinite I am",
+            "To—no one that you know!"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-04-q4",
+          "prompt": "What is the difference between the heaven she sighs for and “the heaven the creeds bestow”?",
+          "facilitatorNotes": [
+            "The heaven of the churches comes after death; hers seems to be the happiness of being with the letter’s writer, here on earth. She sighs for “lack” of it, so the writer is probably far away. Some readers find it daring to set a person beside heaven; others hear simply how much the letter means to her."
+          ],
+          "evidence": [
+            "And sigh for lack of heaven,—but not",
+            "The heaven the creeds bestow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-05",
+      "title": "At Home (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow the poem from a wide, cold outdoors to one small room, and decide who is on the sofa.",
+      "focus": "A stormy November night makes home feel safe, and the last line shows that what makes it home is a person.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “At Home” and placed it in the book’s second part, “Love.” The eaves are the edges of a roof; blinds here are window shutters; plush is a thick soft cloth; sleet is half-frozen rain. “Thee” is an old word for “you,” used for someone dear.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, “Love,” VIII, “At Home,” complete poem; opens “THE night was wide, and furnished scant With but a single star, That often as a cloud it…”; closes “…task. \"How pleasanter,\" said she Unto the sofa opposite, \"The sleet than May—no thee!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          253,
+          257
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "253f8bab7b0c6a0ade6da28cdfbbcb64ffe0df19da30550ae33f3944c29318fd"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-05-q1",
+          "prompt": "Find three details of the night outside. What kind of night is it?",
+          "facilitatorNotes": [
+            "A single star that “blew out itself for fear” whenever a cloud passed; wind chasing the bush and fretting in the eaves; no squirrel out; one late dog. It is cold, windy and almost empty: a night to stay in."
+          ],
+          "evidence": [
+            "Blew out itself for fear.",
+            "And fretted in the eaves."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-05-q2",
+          "prompt": "How can a dog’s feet sound “like intermittent plush”? What does the comparison let you hear?",
+          "facilitatorNotes": [
+            "Intermittent means stopping and starting; plush is soft thick cloth. The paws pad softly, now and then, down the empty street, a soft sound in a hard night. The poem listens as closely as it looks."
+          ],
+          "evidence": [
+            "A dog's belated feet",
+            "Like intermittent plush were heard"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-05-q3",
+          "prompt": "What does the housewife do indoors, and why does she “shiver for the poor”?",
+          "facilitatorNotes": [
+            "She checks the shutters and draws her rocking-chair closer to the fire. Her own comfort makes her think of people without shelter on such a night; the shiver is sympathy, not cold."
+          ],
+          "evidence": [
+            "And shiver for the poor,",
+            "The housewife's gentle task."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-05-q4",
+          "prompt": "Reread the last two lines. Who is on “the sofa opposite,” and what does she mean?",
+          "facilitatorNotes": [
+            "Most readers think someone she loves sits across from her: she would rather have sleet with him than May without him (“no thee”). A few read the sofa as empty and the words as missing someone. Either way, the poem ends by showing that the warmth of home is a person, not the fire."
+          ],
+          "evidence": [
+            "Unto the sofa opposite,",
+            "\"The sleet than May—no thee!\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-06",
+      "title": "In the Garden (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a poem that moves from plain watching to a dazzling comparison, and find the line where it changes.",
+      "focus": "A bird is first a small, nervous creature eating and drinking, then, in flight, something smoother than oars or swimming butterflies.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “In the Garden.” An angle-worm is an earthworm, the kind anglers use as bait. A seam here is the line a boat cuts in water; plashless means without a splash.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XXIII, “In the Garden,” complete poem; opens “A BIRD came down the walk: He did not know I saw; He bit an angle-worm in halves And ate…”; closes “…Too silver for a seam, Or butterflies, off banks of noon, Leap, plashless, as they swim.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          394,
+          398
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a4072173c9beea7752a924b4f450f65cb42c3810cac49847ea564657472e760e"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-06-q1",
+          "prompt": "What does the bird do before it knows it is watched? Which detail surprises you?",
+          "facilitatorNotes": [
+            "It bites a worm in half and eats it raw, drinks dew from a blade of grass, and hops sideways to let a beetle pass. The worm is blunt and comic (“the fellow”); stepping aside for a beetle is almost polite."
+          ],
+          "evidence": [
+            "He bit an angle-worm in halves",
+            "To let a beetle pass."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-06-q2",
+          "prompt": "How do the bird’s eyes show what it feels? Why “frightened beads”?",
+          "facilitatorNotes": [
+            "They glance quickly everywhere, small, round and shiny like beads, and frightened. “I thought” shows the speaker knows this is her own reading of the bird."
+          ],
+          "evidence": [
+            "They looked like frightened beads, I thought;",
+            "That hurried all abroad,—"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-06-q3",
+          "prompt": "What happens when the speaker offers a crumb? Who is “cautious”?",
+          "facilitatorNotes": [
+            "The bird flies off rather than take it. Because “cautious” ends a line, it can belong to the bird, “Like one in danger,” or to the speaker offering the crumb. Both are careful of each other; ask readers which they choose."
+          ],
+          "evidence": [
+            "Like one in danger; cautious,",
+            "I offered him a crumb,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-06-q4",
+          "prompt": "The bird “rowed him softer home.” Explain the comparisons in the last stanza and why the poem ends with them.",
+          "facilitatorNotes": [
+            "Wings are like oars, but softer than oars dividing the ocean, leaving no seam; or like butterflies leaping off “banks of noon” without a splash. Air becomes water and flying becomes rowing and swimming. The plain garden scene ends in wonder; readers may say whether the ending is more about the bird or about the speaker’s delight."
+          ],
+          "evidence": [
+            "And rowed him softer home",
+            "Leap, plashless, as they swim."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-07",
+      "title": "Old-Fashioned (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 11,
+        "totalMinutes": 19
+      },
+      "challenge": "Tell when the speaker is joking and when she is worried, in a poem that does both at once.",
+      "focus": "A speaker who loves things by their plain names objects, half in fun, to science that measures, classes and maps them, and wonders whether heaven itself will change.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “Old-Fashioned.” Arcturus is one of the brightest stars. Stamens are the pollen-bearing parts of a flower; scientists of Dickinson’s day sorted plants into classes partly by counting them, and collectors pinned butterflies in cabinets. The zenith is the point of the sky straight overhead; a stile is a set of steps over a fence.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XX, “Old-Fashioned,” complete poem; opens “ARCTURUS is his other name,— I'd rather call him star! It's so unkind of science To go…”; closes “…Will lift his little girl,— Old-fashioned, naughty, everything,— Over the stile of pearl!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          380,
+          386
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c7f8cc299b7930aba0b4d756d6745a5a1380f1a93d8d8389b7bef51855dfa53a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-07-q1",
+          "prompt": "What has science done to the star, the flower and the butterfly?",
+          "facilitatorNotes": [
+            "Given the star another name, Arcturus; counted the flower’s stamens and put her “in a class”; pinned the butterfly in a cabinet. Each time, something the speaker knew as a friend becomes a specimen."
+          ],
+          "evidence": [
+            "Computes the stamens in a breath,",
+            "He sits erect in cabinets,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-07-q2",
+          "prompt": "Why call the scientist “A monster with a glass”? Is she serious?",
+          "facilitatorNotes": [
+            "The glass is a magnifying lens; “monster” is a child’s exaggeration for a grown-up who spoils a game, and “so unkind of science” sounds like a playful complaint. Readers can disagree about how much she means it: science is not shown doing harm, only changing how things are seen."
+          ],
+          "evidence": [
+            "A monster with a glass",
+            "It's so unkind of science"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-07-q3",
+          "prompt": "What worries her about heaven in the fourth to sixth stanzas?",
+          "facilitatorNotes": [
+            "Heaven has become “zenith,” a point to be mapped and charted. She wonders whether the kingdom of Heaven has changed and whether its children will be “new-fashioned” and laugh at her. Behind the joke is a real fear that what she was taught to hope for may not survive the new knowledge."
+          ],
+          "evidence": [
+            "Is mapped, and charted too!",
+            "Won't be new-fashioned when I come,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-07-q4",
+          "prompt": "How does she picture herself at the end, and how does that connect with the title?",
+          "facilitatorNotes": [
+            "As a little girl, “Old-fashioned, naughty, everything,” hoping to be lifted over heaven’s gate as over a country fence. She claims being old-fashioned with pride. Ask whether readers side with her or with the scientist, or think one person could love both naming and counting."
+          ],
+          "evidence": [
+            "Old-fashioned, naughty, everything,—",
+            "Over the stile of pearl!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-08",
+      "title": "Going to heaven! (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 11,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a speaker who changes her mind, perhaps more than once, and decide what she finally believes.",
+      "focus": "Talk of heaven is first wonder and gentle teasing, until the last stanza admits doubt and shows why other people’s belief still matters to her.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The book’s fourth part, “Time and Eternity,” gathers poems about death and what may follow it. The poem opens by repeating something just said, “Going to heaven!” Hymns and sermons of Dickinson’s day promised the faithful a white robe and a crown in heaven.",
+      "contentNote": "The speaker thinks of two people she has lost and of the afternoon she “left them in the ground.”",
+      "excerpt": {
+        "locator": "Book IV, “Time and Eternity,” II, complete poem; opens “GOING to heaven! I don't know when, Pray do not ask me how,— Indeed, I'm too astonished…”; closes “…it Whom I have never found Since the mighty autumn afternoon I left them in the ground.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          517,
+          520
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "baf40d4a2c5666c3bfa042bed145d676bf21d76c589463349cdb87642b4a3a21"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-08-q1",
+          "prompt": "How does the speaker react to the words “Going to heaven!” in the first stanza?",
+          "facilitatorNotes": [
+            "She is “too astonished” to say when or how; the idea sounds “dim,” far off and unclear. Yet she says it will happen “As sure as flocks go home at night.” Wonder and certainty sit side by side."
+          ],
+          "evidence": [
+            "Indeed, I'm too astonished",
+            "As sure as flocks go home at night"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-08-q2",
+          "prompt": "What does she ask the listener to do if they arrive first? Why are “robe” and “crown” in quotation marks?",
+          "facilitatorNotes": [
+            "Save her a little place near “the two I lost.” The quotation marks treat robe and crown as other people’s words, the language of hymns and sermons, as though she were half quoting rather than fully believing. She wants only the smallest robe and a bit of crown: the people matter more than the finery."
+          ],
+          "evidence": [
+            "Close to the two I lost!",
+            "The smallest \"robe\" will fit me,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-08-q3",
+          "prompt": "“I'm glad I don't believe it.” What reason does she give, and does it surprise you after the first three stanzas?",
+          "facilitatorNotes": [
+            "Believing would “stop my breath,” and she wants to look longer at “such a curious earth.” This reverses the eager tone of the opening. Some readers think the earlier stanzas were playful all along; others think she truly swings between belief and doubt."
+          ],
+          "evidence": [
+            "I'm glad I don't believe it,",
+            "At such a curious earth!"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-08-q4",
+          "prompt": "Why is she glad that the people she lost did believe it? What do the last lines show about her?",
+          "facilitatorNotes": [
+            "Their faith comforted them; she has not “found” them since the autumn afternoon of their burial. She can doubt for herself and still be glad for them. The plain words “I left them in the ground” show grief beneath the playful tone. Readers may judge whether the poem ends in doubt, in hope, or in both."
+          ],
+          "evidence": [
+            "I am glad they did believe it",
+            "I left them in the ground."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-09",
+      "title": "Memorials (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Untangle the first stanza’s word order, then follow two examples to the feeling they share.",
+      "focus": "After a death, small unfinished things become precious, and grief changes even the act of reading.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “Memorials.” The first stanza means: death makes us notice things our eyes had hurried past, as if (“except” here means “unless”) a person who has died were gently begging us to look. A perished creature is a person who has died; crayon here means drawing and wool means knitting; a thimble protects the finger in sewing.",
+      "contentNote": "A poem of grief: things left behind by people who have died.",
+      "excerpt": {
+        "locator": "Book IV, “Time and Eternity,” XIII, “Memorials,” complete poem; opens “Death sets a thing significant The eye had hurried by, Except a perished creature Entreat…”; closes “…read, I read not, For interrupting tears Obliterate the etchings Too costly for repairs.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          557,
+          561
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "541fd5df1944835270d5bb259bbee2abc852e45c9208b686b2c534cb10eedd37"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-09-q1",
+          "prompt": "What is the first “little workmanship”? What does “This was last her fingers did” tell you?",
+          "facilitatorNotes": [
+            "A drawing or a piece of knitting or needlework, left unfinished; someone says it was the last thing her fingers made. An ordinary object becomes important because it was the last."
+          ],
+          "evidence": [
+            "In crayon or in wool,",
+            "With \"This was last her fingers did,\""
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-09-q2",
+          "prompt": "How does the poem show her growing weaker, without saying she was ill?",
+          "facilitatorNotes": [
+            "The thimble “weighed too heavy,” the “stitches stopped themselves,” and the work was put away on a closet shelf. Death is shown by small things stopping. The stitches seem to stop on their own, as if no one were to blame."
+          ],
+          "evidence": [
+            "The thimble weighed too heavy,",
+            "The stitches stopped themselves,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-09-q3",
+          "prompt": "What is the second example, and how is it different from the first?",
+          "facilitatorNotes": [
+            "A book from a friend, with his pencil marks beside the places he liked. The first is something the dead woman made; the second is a trace of what the friend thought and enjoyed. In both, the hands are now still: “At rest his fingers are.”"
+          ],
+          "evidence": [
+            "Had notched the place that pleased him,—",
+            "At rest his fingers are."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-09-q4",
+          "prompt": "“Now, when I read, I read not.” What does she mean, and why are the marks “Too costly for repairs”?",
+          "facilitatorNotes": [
+            "Tears blur the page, so she cannot read the book; she is reading her friend, not the words. The pencil marks are “etchings” no one can redo, because the person who made them is gone. Some readers find the ending hopeless; others feel the tears show how much the friend still matters."
+          ],
+          "evidence": [
+            "Now, when I read, I read not,",
+            "Too costly for repairs."
+          ]
+        }
+      ]
+    }
+  ]
+}
