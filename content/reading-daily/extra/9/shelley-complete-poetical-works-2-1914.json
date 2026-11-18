@@ -1113,6 +1113,75 @@
     },
     {
       "id": "reading-9-shelley-complete-poetical-works-2-1914-17",
+      "title": "The Two Spirits: An Allegory",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the dialogue aloud with a partner, one voice for each spirit. Then reread the two stanzas after the dots and decide who they seem to prove right.",
+      "focus": "A debate between caution and desire, and two legends that leave the outcome uncertain.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. He wrote this poem in 1820; it was published after his death. An allegory is a story in which characters stand for ideas. The row of dots marks a gap in the manuscript. “Plumed” means feathered; “hoar” means white with frost; a morass is a marsh; “death-dews” are the damp night air once thought to bring fever.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: The Two Spirits: An Allegory (1820), with the gap the edition marks; opens “FIRST SPIRIT: O thou, who plumed with strong desire Wouldst float above the earth,…”; closes “…wild and glittering hair, And when he awakes on the fragrant grass, He finds night day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          674,
+          681
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6cbcca6ee228aac954c8cf229053cf8cbd87863e05ade2f048b5b55587122b95"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q1",
+          "prompt": "What does each spirit stand for? Use their refrains: what changes between “Night is coming!” and “that is day!”?",
+          "facilitatorNotes": [
+            "The First Spirit warns the high-flying “thou” of the shadow, the storm and the coming dark: caution, fear, perhaps reason or mortality. The Second answers that “the lamp of love” within makes “night day.”",
+            "Readers have also seen the pair as the timid and the daring parts of one mind, or the world and the poet. Any reading should account for the refrains."
+          ],
+          "evidence": [
+            "O thou, who plumed with strong desire Wouldst float above the earth, beware!",
+            "Within my heart is the lamp of love, And that is day!"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q2",
+          "prompt": "The First Spirit’s second warning is a storm. How does the Second Spirit answer it, and what does the last line of that stanza add?",
+          "facilitatorNotes": [
+            "The Second will “sail on the flood of the tempest dark” with calm within and light around. It also tells the First Spirit that it will be seen from “thy dull earth” as a moon-like shape, “far away”: the daring spirit leaves the cautious one behind on the ground.",
+            "Some readers hear pride in the reply; others hear hope. Notice that the refrain changes for the first time at the end, from “night day” to “far away.”"
+          ],
+          "evidence": [
+            "I'll sail on the flood of the tempest dark",
+            "Look from thy dull earth, slumber-bound,",
+            "On high, far away."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q3",
+          "prompt": "After the gap, two legends begin “Some say.” What do they tell, and do they show the Second Spirit winning or losing?",
+          "facilitatorNotes": [
+            "In the first, a winged shape flies forever round a frozen pine in the Alps, pursued by a storm that never ends. In the second, a traveller in a marsh at night hears whispers, sees a shape “like his early love,” and wakes to find “night day.”",
+            "The first suggests endless struggle; the second suggests that the vision does transform the night, at least for the one who sees it. The poem leaves us with rumour, not proof, which may be its point."
+          ],
+          "evidence": [
+            "Where one vast pine is frozen to ruin",
+            "And a silver shape like his early love doth pass",
+            "He finds night day."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-18",
       "title": "Death, Liberty and the Tower of Famine: short poems of 1820",
       "sourceId": "shelley-complete-poetical-works-2-1914",
       "genre": "poetry",
@@ -1141,7 +1210,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q1",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q1",
           "prompt": "“Liberty” spends three stanzas on volcanoes, typhoons, lightning and earthquakes before addressing “thy.” How does that order make its point? Why do both tyrants and slaves vanish at the end?",
           "facilitatorNotes": [
             "Every great natural force is outdone: Liberty’s gaze is keener than lightning and makes the sun look like a marsh light. Freedom is pictured as a natural force spreading “from nation to nation.”",
@@ -1154,7 +1223,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q2",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q2",
           "prompt": "“Summer and Winter” pairs two scenes. Where does the poem turn, and what is the effect of saving the beggar for the last line?",
           "facilitatorNotes": [
             "Summer is all rejoicing; winter kills birds and freezes fish. Then comfortable men sit by great fires with their children “and yet feel cold,” and only after that come the homeless. If the comfortable feel cold, the beggar’s suffering is beyond imagining.",
@@ -1166,7 +1235,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q3",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q3",
           "prompt": "In “The Tower of Famine,” how does the tower affect the city around it? Explain the comparison with a spectre among “ladies fair.”",
           "facilitatorNotes": [
             "The temples and palaces are “by its presence dimmed” and seem to withdraw. Like a ghost among beautiful women that takes in their beauty until they turn to marble, the tower drains the life from what surrounds it.",
@@ -1178,7 +1247,7 @@
           ]
         },
         {
-          "id": "reading-9-shelley-complete-poetical-works-2-1914-17-q4",
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-18-q4",
           "prompt": "“Death,” “An Allegory” and the sonnet all face the grave. What do the few who stop at the dark portal learn, and how does the sonnet treat the “curious mind” that wants to know where it goes?",
           "facilitatorNotes": [
             "Most pass the portal carelessly; the curious few learn only that shadows follow them everywhere. The sonnet asks the heart, mind and thoughts what they hope to gain by hurrying toward death, and calls the mind’s guessing about where it came from and where it goes “vainly curious.”",
@@ -1189,6 +1258,85 @@
             "That shadows follow them where'er they go.",
             "Thou vainly curious mind which wouldest guess",
             "Above is death--and we are death."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-19",
+      "title": "Time, flight and memory: short poems of 1821",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 18,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the six poems through, then pick one image of the sea or a storm and one image of something that lasts after it is gone.",
+      "focus": "Time as a devouring sea, lovers who defy a storm, and a famous short lyric on what remains when things are gone.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In 1821 Shelley was living in Pisa. Emilia Viviani was a young Italian woman whom her father kept in a convent there until a marriage could be arranged; Shelley visited her and wrote poems to her. “Madonna” is Italian for “my lady.” The halcyon is the kingfisher, which in Greek legend calmed the sea while it nested. A barb is a swift Arab horse; a hind is a female deer, and her panting for the brooks echoes Psalm 42. A minster is a great church; “trow” means believe; the lee is the side sheltered from the wind; a portress keeps a gate.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Poems Written in 1821: Time, Lines (“Far, far away, O ye”), From the Arabic: An Imitation, To Emilia Viviani, The Fugitives, and To -- (“Music, when soft voices die”), complete as printed; opens “Unfathomable Sea! whose waves are years, Ocean of Time, whose waters of deep woe Are…”; closes “…the beloved's bed; And so thy thoughts, when thou art gone, Love itself shall slumber on.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          812,
+          838
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b20d325e4ead8fa575be471646e96d9e428f41dc9c2fd41b72762c664b9bd882"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q1",
+          "prompt": "In “Time,” what is time compared to, and what details make the comparison frightening? How would you answer the closing question?",
+          "facilitatorNotes": [
+            "Time is a shoreless sea whose waves are years and whose salt is “human tears”; it is a beast “sick of prey, yet howling on for more” that throws its wrecks onto the shore of mortality. No one chooses to sail on it, yet everyone does.",
+            "The question “Who shall put forth on thee” can mean “who would dare?” or “who could avoid it?” Ask students to choose and defend one."
+          ],
+          "evidence": [
+            "Ocean of Time, whose waters of deep woe Are brackish with the salt of human tears!",
+            "Who shall put forth on thee, Unfathomable Sea?"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q2",
+          "prompt": "“Lines” addresses birds of memory and birds of the future. Why does the speaker send away the halcyons, and what do the vultures feed on?",
+          "facilitatorNotes": [
+            "The memories bring a “false spring” to a heart in winter, so their calm only hurts. The vultures nest in the future and will feed on “Dying joys”: the past mocks him and the future preys on him.",
+            "The two stanzas balance exactly, past against future. Some readers find the despair total; others see a speaker who still has the energy to command the birds away."
+          ],
+          "evidence": [
+            "No news of your false spring To my heart's winter bring,",
+            "Dying joys, choked by the dead, Will serve your beaks for prey"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q3",
+          "prompt": "“The Fugitives” tells a story in quick, galloping lines. Who is fleeing, from whom, and how does the rhythm fit the story? Compare the lovers’ question at sea with the question that ends “Time.”",
+          "facilitatorNotes": [
+            "Two lovers escape by boat through a storm, while on shore a shamed bridegroom and a “gray tyrant father” curse them. The short rhyming lines and repeated “Come away!” drive forward like the storm and the flight.",
+            "The lovers ask “Drive we not free O'er the terrible sea, I and thou?”: they put forth gladly on a sea that “Time” makes terrible. Students can decide whether love answers Time’s question or only forgets it."
+          ],
+          "evidence": [
+            "Stands the gray tyrant father,",
+            "And 'Drive we not free O'er the terrible sea, I and thou?'"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-19-q4",
+          "prompt": "“Music, when soft voices die” lists things that live on after they end. What are they, and how does the last couplet apply the pattern to the beloved?",
+          "facilitatorNotes": [
+            "Music lives in memory, scent in the sense it quickens and rose leaves are heaped for a bed. So, when the beloved is gone, love will “slumber on” the beloved’s thoughts. The grammar can also mean that love will sleep on, resting on the memory of those thoughts.",
+            "Compare it with the gift of flowers in “To Emilia Viviani,” which brings love mixed with sadness. Some readers find “Music” consoling; others hear only loss."
+          ],
+          "evidence": [
+            "Music, when soft voices die, Vibrates in the memory--",
+            "And so thy thoughts, when thou art gone, Love itself shall slumber on."
           ]
         }
       ]
