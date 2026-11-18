@@ -454,6 +454,531 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-07",
+      "title": "Cradle-Song",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 12,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear how a lullaby is built, and follow the singer’s journey from far away to the child’s bedside.",
+      "focus": "Three short stanzas carry a dream across spice groves, rice fields and a lotus stream, and each one ends by giving it to the sleepy child.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. A cradle-song is a lullaby. Rice grows in flooded fields; a lotus is a water lily; athwart means across; aglint means sparkling; fire-flies are glowing beetles; the neem is a shady Indian tree with small white flowers; a poppy-bole is the round seed head of a poppy, a flower long linked with sleep, because a sleeping medicine is made from its juice; a caress is a gentle touch.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Cradle-Song,” complete poem; opens “From groves of spice, O'er fields of rice, Athwart the lotus-stream, I bring for you,…”; closes “…light The stars around you gleam; On you I press With soft caress A little lovely dream.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          53
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8102bab08791ae4f5ebd27c51f3b80ffaf034169cd0e64d9d1c3debaae8a1578"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-07-q1",
+          "prompt": "Where has the singer travelled to fetch the dream? Trace the journey in the first stanza.",
+          "facilitatorNotes": [
+            "From groves of spice, over fields of rice, across the lotus-stream: three Indian landscapes, each a short line. The dream comes from far away, still “Aglint with dew” like something gathered at dawn or at night."
+          ],
+          "evidence": [
+            "From groves of spice,",
+            "Athwart the lotus-stream,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-07-q2",
+          "prompt": "Every stanza ends “A little lovely dream.” What changes in the lines before it?",
+          "facilitatorNotes": [
+            "The first stanza is the journey; the second turns to the child (“Sweet, shut your eyes”) and the night outside, with fire-flies and the neem; the third says goodnight under the stars and presses the dream on with a caress. The song moves from far away to the cradle, as a lullaby moves a child toward sleep."
+          ],
+          "evidence": [
+            "Sweet, shut your eyes,",
+            "On you I press"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-07-q3",
+          "prompt": "Why does the singer say “For you I stole” from the poppy? What does the word “stole” add?",
+          "facilitatorNotes": [
+            "Poppies were linked with sleep, so a dream taken from a poppy is a dream that brings sleep. “Stole” makes the singer a gentle thief who takes something precious for the child, which sounds playful and loving. Some readers may find stealing an odd word for a lullaby; ask what other word would have done less."
+          ],
+          "evidence": [
+            "From the poppy-bole",
+            "For you I stole"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-07-q4",
+          "prompt": "Read the poem aloud softly. What in its sound makes it a lullaby?",
+          "facilitatorNotes": [
+            "The lines are very short, the rhymes come close together (spice and rice, you and dew, eyes and fire-flies), and the same last line returns, so the song rocks back and forth like a cradle. Readers can try reading it fast and loud to hear how wrong that sounds."
+          ],
+          "evidence": [
+            "O'er fields of rice,",
+            "With soft caress"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-08",
+      "title": "In the Forest",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 12,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a speaker who talks to her own heart, and trace three steps from mourning to rest to getting up again.",
+      "focus": "The speaker imagines a funeral for her lost hopes in a forest, rests a while, and then rises to face the world with song.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. In Hindu custom the dead are burned on a funeral pyre, a pile of wood, and the ashes scattered. Here the speaker imagines such a funeral for “dreams that are dead”: hopes that will never come true. Mellow means soft and ripe; borne means carried; the throng is the crowd of people in the busy world.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“In the Forest,” complete poem; opens “Here, O my heart, let us burn the dear dreams that are dead, Here in this wood let us…”; closes “…the dreams that remain, We will conquer the sorrow of life with the sorrow of song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          95,
+          97
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4e88a97ae60de062a0f5c531c479d97fedac4ac14bccbe4677318a99d1fcf240"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-08-q1",
+          "prompt": "Whom is the speaker talking to, and what does “let us” suggest?",
+          "facilitatorNotes": [
+            "She talks to “my heart,” as if her heart were a friend who has shared her troubles. “Let us” makes them partners: what they do, they do together. Readers might say it is a way of talking to herself kindly."
+          ],
+          "evidence": [
+            "Here, O my heart, let us burn the dear dreams that are dead,",
+            "We are weary, my heart, we are weary, so long we have borne"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-08-q2",
+          "prompt": "What will they burn, and what is the funeral pyre made of?",
+          "facilitatorNotes": [
+            "The dead dreams, on a pyre of “fallen white petals and leaves that are mellow and red,” lit by the noon sun. It is a soft, beautiful funeral, not a frightening one: even sad endings can be treated with care."
+          ],
+          "evidence": [
+            "Of fallen white petals and leaves that are mellow and red,",
+            "Here let us burn them in noon's flaming torches of fire."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-08-q3",
+          "prompt": "Each stanza takes one step. What are the three steps?",
+          "facilitatorNotes": [
+            "Burn the dead dreams (stanza one); rest and mourn for a while, until evening (stanza two); then rise, gather the dreams that are left and go back into the world (stanza three). Grief is given its time but does not get the last word."
+          ],
+          "evidence": [
+            "for a while let us mourn;",
+            "But soon we must rise, O my heart, we must wander again"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-08-q4",
+          "prompt": "“We will conquer the sorrow of life with the sorrow of song.” How can sorrow defeat sorrow?",
+          "facilitatorNotes": [
+            "A sad song or poem turns pain into something made and shared, so the sorrow is no longer only suffered. Naidu was a poet, so this is her own way of going on. Some readers may think songs cannot really conquer sorrow; others know a sad song that helped them. Both views can use the line."
+          ],
+          "evidence": [
+            "Let us rise, O my heart, let us gather the dreams that remain,",
+            "We will conquer the sorrow of life with the sorrow of song."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-09",
+      "title": "The Queen’s Rival",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a story told in rhyming couplets across three parts, and watch what the refrain about the mirror shows.",
+      "focus": "A queen who has everything asks her king for a rival; seven new brides do not satisfy her, but her small daughter does.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. The story is set in an old Persian court. Gulnaar means pomegranate flower. Agate, porphyry (printed “porphory”), onyx and jade are fine stones; a lapwing is a bird with a curling crest; to gainsay is to argue against; a vizier is a king’s chief minister; mien is the way a person carries herself; meet means fit or suitable; vesper is evening, the hour of evening prayer; “seven new moon tides” means seven new moons, about seven months; a fay is a fairy; a fillet is a band worn round the head; caprice is a sudden whim. Kings of the time could have several wives. The row of points in the second part is printed in the book, to show time passing.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Queen’s Rival,” complete poem in three parts; opens “Queen Gulnaar sat on her ivory bed, Around her countless treasures were spread;”; closes “Queen Gulnaar laughed like a tremulous rose: \"Here is my rival, O King Feroz.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          130,
+          160
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f3a96babc365111ee812196909cab31fc8ae19e2ace6cbf0ee01104afc7d2d5f"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-09-q1",
+          "prompt": "What does Queen Gulnaar have, and why is she still unhappy?",
+          "facilitatorNotes": [
+            "Treasures, jewelled walls, glowing silks and the king’s love, but “I tire of my beauty”: with “none to envy and none gainsay,” nothing challenges her, so nothing has taste (“No savour or salt”). Her problem is boredom, not want."
+          ],
+          "evidence": [
+            "\"I tire of my beauty, I tire of this",
+            "\"With none to envy and none gainsay,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-09-q2",
+          "prompt": "What does King Feroz do about it, and why do the seven brides fail to be rivals?",
+          "facilitatorNotes": [
+            "He sends for seven beautiful brides. But round her bed they shine “Like seven soft gems on a silken thread,” like lamps or petals: ornaments to her beauty, not competitors. She still asks, “Where is my rival?”"
+          ],
+          "evidence": [
+            "To seek seven beautiful brides for me;",
+            "Like seven soft gems on a silken thread,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-09-q3",
+          "prompt": "Find the line about the mirror each time it comes. What does the mirror show about the queen?",
+          "facilitatorNotes": [
+            "“But still she gazed in her mirror and sighed” returns in each part. She keeps looking at herself, and what she sees bores her. The mirror is the sign of a life turned inward. In the end someone takes it away."
+          ],
+          "evidence": [
+            "But still she gazed in her mirror and sighed:",
+            "And still she gazed in her mirror and sighed:"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-09-q4",
+          "prompt": "Who is the rival at last, and why does the queen laugh instead of sigh?",
+          "facilitatorNotes": [
+            "Her two-year-old daughter, who snatches the mirror, puts on her mother’s pearl fillet and kisses her own reflection: a small copy of the queen who will one day be as beautiful. A rival she can love ends her boredom. The sighing “murmuring rose” becomes a laughing “tremulous rose.” Some readers think the child is a rival because people will soon admire her more; others because she takes the queen’s attention off herself."
+          ],
+          "evidence": [
+            "And plucked from her hand the mirror away.",
+            "Queen Gulnaar laughed like a tremulous rose:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-10",
+      "title": "The Indian Gipsy",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 12,
+        "totalMinutes": 17
+      },
+      "challenge": "Sort what the poem shows of a real life from what the poet imagines about it, and judge the comparisons.",
+      "focus": "Naidu admires a wandering herdswoman as free, graceful and as old as time itself.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. Gipsy (gypsy) is an old English word, from “Egyptian,” for wandering peoples; the Roma of Europe, to whom it was usually applied, often find it insulting. Naidu uses it for one of India’s nomadic herding peoples, perhaps the Banjara, whose women wear richly embroidered clothes. “Race” here means a people. Broidered means embroidered; tameless means untamed; lithe and sinuous mean bending and flowing; frugal means careful with little; heifers are young cows; tawny is golden brown; irrevocable means impossible to undo; primal means from the very beginning.",
+      "contentNote": "The title uses “gipsy,” an old outsiders’ name for wandering peoples that many Roma consider a slur.",
+      "excerpt": {
+        "locator": "“The Indian Gipsy,” complete poem; opens “In tattered robes that hoard a glittering trace Of bygone colours, broidered to the knee,…”; closes “…She is twin-born with primal mysteries, And drinks of life at Time's forgotten source.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          166,
+          168
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e7133b91db071226e6552fd24c5a2a4cad017d97a534ed320796e689bac0a9e3"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-10-q1",
+          "prompt": "What do her clothes tell you about her life?",
+          "facilitatorNotes": [
+            "They are “tattered,” but still hold “a glittering trace / Of bygone colours”: once bright and costly, now worn by travel and work. Old splendour and present hardship show in the same robe."
+          ],
+          "evidence": [
+            "In tattered robes that hoard a glittering trace",
+            "Of bygone colours, broidered to the knee,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-10-q2",
+          "prompt": "Which animals is she compared to? What does each comparison praise?",
+          "facilitatorNotes": [
+            "The falcon gives her its “agile grace” and boldness, the tiger its “sinuous majesty”; both are wild, which fits “Tameless.” Night itself comes down “Like a black panther,” so her whole world is wild. Ask readers whether a person would like to be called tameless."
+          ],
+          "evidence": [
+            "Tameless, with the bold falcon's agile grace,",
+            "Like a black panther from the caves of sleep."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-10-q3",
+          "prompt": "What does the second stanza show about her daily work?",
+          "facilitatorNotes": [
+            "With “frugal skill” she manages her simple needs and pens her heifers and sheep before dark, on lonely meadows. It is careful, practical work, the most down-to-earth part of the poem."
+          ],
+          "evidence": [
+            "With frugal skill her simple wants she tends,",
+            "She folds her tawny heifers and her sheep"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-10-q4",
+          "prompt": "The last stanza says she is “twin-born with primal mysteries.” Is that praise fair to her?",
+          "facilitatorNotes": [
+            "Naidu means that history rushes on like a river but this woman lives as people lived at the very beginning, drinking from “Time's forgotten source.” It is admiring. But it also turns a real woman into a symbol who never changes, and we never hear her own voice. Readers can defend the poem’s wonder or question it."
+          ],
+          "evidence": [
+            "She is twin-born with primal mysteries,",
+            "And drinks of life at Time's forgotten source."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-11",
+      "title": "To My Children",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 12,
+        "totalMinutes": 18
+      },
+      "challenge": "Find how each little poem plays on a child’s name, and compare the four wishes.",
+      "focus": "Naidu writes a short blessing for each of her four small children, and her hopes for her country slip in among the hopes for them.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. Naidu had four children, here aged four, three, two and one; ætat is Latin for “aged.” Their names have meanings: Jaya Surya, “sun of victory”; Padmaja, “born of the lotus”; Ranadheera, “brave in battle”; Lilamani, roughly “playful jewel.” Padmaja grew up to work for India’s independence and later governed the state of West Bengal. Lambent means softly glowing; consecration is being set apart for something holy; Lakshmi is the Hindu goddess of fortune, pictured on a lotus; mail is armour; flanks are the sides of an army; Valmiki is the poet of the Ramayana, India’s great epic of heroes; girt means set round; limpid means clear; a coronet is a small crown.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To My Children,” complete poem in four parts; opens “Golden sun of victory, born In my life's unclouded morn, In my lambent sky of love, May…”; closes “…set In love's magic coronet. Living jewel, may you be Laughter-bound and sorrow-free.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          170,
+          177
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e8c656be35b8ba5ac9280828813e6488cb9257ce2e3bee74612b2884d7f3eb9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-11-q1",
+          "prompt": "How does each little poem play on the child’s name?",
+          "facilitatorNotes": [
+            "Jaya Surya is a “Golden sun of victory”; Padmaja is a “Lotus-maiden” whom the lotus-born goddess protects; Ranadheera is a “Little lord of battle” in armour; Lilamani is a “Limpid jewel” who should “Leap and sparkle.” Each blessing grows out of the name."
+          ],
+          "evidence": [
+            "Golden sun of victory, born",
+            "Little lord of battle, hail"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-11-q2",
+          "prompt": "Each part ends “may you be.” List the four wishes. Which is closest to what you would wish a small child?",
+          "facilitatorNotes": [
+            "Sun “of song and liberty”; “Fragrant of all ecstasy”; “Lord of love and chivalry”; “Laughter-bound and sorrow-free.” The last, simple happiness for the baby, is perhaps the most ordinary and the most tender. Readers can choose and explain."
+          ],
+          "evidence": [
+            "Sun of song and liberty.",
+            "Laughter-bound and sorrow-free."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-11-q3",
+          "prompt": "Some wishes are about the children and some are about something bigger. Find the bigger hopes.",
+          "facilitatorNotes": [
+            "The eldest’s glory should serve “my art and to my nation” and be a sun of “liberty”; the two-year-old should fight “In the foremost flanks of right.” In 1905 India was ruled by Britain, and Naidu later became a leader of the struggle for independence: her hopes for her country are already in her children’s blessings. Some readers may think it is a lot to ask of a toddler."
+          ],
+          "evidence": [
+            "To my art and to my nation.",
+            "In the foremost flanks of right,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-11-q4",
+          "prompt": "The youngest is “Severed from the tender night / Of your sheltering mother-mine.” What does this mean?",
+          "facilitatorNotes": [
+            "Lilamani has just been born, separated from the dark, safe inside of her mother. The mother is pictured as a mine, the dark place in the earth where jewels are found, and the baby as the jewel brought out into light. Readers may notice the hyphen joins “mother” and “mine” into one word with two meanings."
+          ],
+          "evidence": [
+            "Severed from the tender night",
+            "Of your sheltering mother-mine,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-12",
+      "title": "To India",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 12,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a poem that speaks to a whole country as a person, and connect its call to the time it was written.",
+      "focus": "Naidu calls on India, pictured as a sleeping mother, to wake from her gloom and lead other peoples toward freedom.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. In 1905 India was ruled by Britain. Naidu later became one of the leaders of the movement for independence, and in 1925 the first Indian woman to preside over its main party, the Indian National Congress. Immemorial means older than anyone can remember; regenerate means reborn; the spheres are the heavens; to beget is to give birth to; fettered means chained; wherefore means why; crescent means growing; wert means were; sovereign means ruling.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To India,” complete poem; opens “O young through all thy immemorial years! Rise, Mother, rise, regenerate from thy gloom,…”; closes “…Waken, O slumbering Mother and be crowned, Who once wert empress of the sovereign Past.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          199,
+          201
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2e1d3bc621c61e47e97e64c4436e66a15554e6096e9e0a0b4a704fe32e0d87b9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-12-q1",
+          "prompt": "What is India called in this poem, and what is she asked to do?",
+          "facilitatorNotes": [
+            "“Mother,” a mother who sleeps in gloom. She is asked to rise, to give birth to new glories, to lead the weeping nations, to “Arise and answer for thy children's sake,” and to be crowned again. Every stanza is a call to wake."
+          ],
+          "evidence": [
+            "Rise, Mother, rise, regenerate from thy gloom,",
+            "Mother, O Mother, wherefore dost thou sleep?"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-12-q2",
+          "prompt": "How can India be called “young” and also have “immemorial years”?",
+          "facilitatorNotes": [
+            "India’s history is older than memory, but the poem says she is still young enough to be reborn, with an “ageless womb” that can bring forth new glories. Old age here is not weakness but a store of strength waiting to wake."
+          ],
+          "evidence": [
+            "O young through all thy immemorial years!",
+            "Beget new glories from thine ageless womb!"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-12-q3",
+          "prompt": "Who might “The nations that in fettered darkness weep” be?",
+          "facilitatorNotes": [
+            "Peoples who are not free, “fettered” as if in chains; in 1905 many countries in Asia and Africa were ruled by European empires. Naidu imagines India leading them “where great mornings break.” Readers may also hear the poem speaking of India’s own chains without naming them."
+          ],
+          "evidence": [
+            "The nations that in fettered darkness weep",
+            "Crave thee to lead them where great mornings break...."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-12-q4",
+          "prompt": "The poem praises India’s Past and Future. What does it say about the present?",
+          "facilitatorNotes": [
+            "The present is sleep and gloom: the once-“empress of the sovereign Past” is “slumbering.” The poem is written to change the present by reminding India of what it was and could be. Ask readers whether a poem can help wake a country; Naidu spent much of her life trying."
+          ],
+          "evidence": [
+            "Waken, O slumbering Mother and be crowned,",
+            "Who once wert empress of the sovereign Past."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-13",
+      "title": "The Royal Tombs of Golconda",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a speaker who imagines the past among ruins, and decide whether time has really been defeated.",
+      "focus": "Among the domed tombs of Golconda’s kings and queens, Naidu hears their battles and laughter, and argues that their fort and their beauty outlive death.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. Golconda, a fortress city on a granite hill near Hyderabad, was the capital of the Qutb Shahi kings from 1518 until the Mughal emperor Aurangzeb took it after a long siege in 1687; it was famous for its diamonds. The royal tombs, great domed buildings, still stand near the ruined fort. Fanes are temples, here the tombs; hoary means grey with age; a tiar is a tiara, a jewelled crown; oblivion is being forgotten; incarnate means given a body; bulbuls are songbirds; renascent means born again.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Royal Tombs of Golconda,” complete poem; opens “I muse among these silent fanes Whose spacious darkness guards your dust; Around me sleep…”; closes “…renascent loves; Your beauty wakens with the spring To kindle these pomegranate groves.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          203,
+          205
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3c9b9ed248398d8eeb74fa88caacf84d100bcf67e02938d83ba59c5d2652f341"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-13-q1",
+          "prompt": "Where is the speaker, and what does she hear there?",
+          "facilitatorNotes": [
+            "She muses among the silent tombs, with old plains around her. Across the wind she seems to hear “The glimmering music of your spears” and “The laughter of your royal brides”: the past comes back as sound in her imagination."
+          ],
+          "evidence": [
+            "I muse among these silent fanes",
+            "The glimmering music of your spears,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-13-q2",
+          "prompt": "How do the kings live on, according to the second stanza?",
+          "facilitatorNotes": [
+            "Through their fort, worn by the hill “like a tiar,” and their strongholds, “Embodied memories” of their family line. Stone buildings keep their names from being forgotten."
+          ],
+          "evidence": [
+            "While yonder hill wears like a tiar",
+            "Embodied memories of your line,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-13-q3",
+          "prompt": "How do the queens live on? Why are they given flowers and birds instead of forts?",
+          "facilitatorNotes": [
+            "Their beauty “wakens with the spring” in pomegranate groves, and bulbuls sing of their loves every year. The kings are remembered by what they built and fought for, the queens by beauty that returns like spring. Readers may notice the poem divides men and women in an old-fashioned way."
+          ],
+          "evidence": [
+            "Each new-born year the bulbuls sing",
+            "To kindle these pomegranate groves."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-13-q4",
+          "prompt": "“Death is in truth the vital seed / Of your imperishable bloom.” How can death be a seed? Has time really failed, as the poem says?",
+          "facilitatorNotes": [
+            "A seed is buried before it grows; the queens’ burial is imagined as the start of a flowering that never dies. The poem twice says time and Fate act “in vain.” Yet the fort is “ruined” and the tombs are silent, so a reader may think time has half won. Both readings can use the poem’s words."
+          ],
+          "evidence": [
+            "Death is in truth the vital seed",
+            "The ruined grandeur of your fort."
+          ]
+        }
+      ]
     }
   ]
 }
