@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "seton-wild-animals-home-1923",
+  "readings": [
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-01",
+      "title": "Wild Animals at Home: the coyote’s joke on Chink (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Decide whether an animal’s behaviour shows a “sense of humour,” or whether that is the writer’s interpretation.",
+      "focus": "A puppy sent to chase a coyote learns a hard lesson, and the joke goes on too long.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. In 1897 he stayed in Yellowstone National Park, where animals were protected from hunting. A picket-pin ground-squirrel sits up straight like a tent peg; to “lay for” someone is to wait to ambush him; tedious means tiresome.",
+      "contentNote": "The dog’s name, Chink, is also an ethnic slur against Chinese people; readers may prefer to say “the dog” when reading aloud. The writer hints that the dog’s owner secretly killed the coyote, although it was protected in the park.",
+      "excerpt": {
+        "locator": "Chapter I, “The Cute Coyote,” the section “The Coyote’s Sense of Humour,” whole; opens “To understand the Coyote fully one must remember that he is simply a wild dog, getting…”; closes “…it, but I have my suspicions, although in those days the Coyote was a protected animal.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          24,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6fbc4c76a35e174e327678be2f355d47a0f9ea7cfae44b8e14775ce52082178e"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-01-q1",
+          "prompt": "Why did Chink chase the coyote, and why does Seton say Chink did not get the sympathy he deserved?",
+          "facilitatorNotes": [
+            "A camper told him to, “in a spirit of mischief.” Chink was only obeying, so the joke was really the camper’s, but everyone laughed at the dog."
+          ],
+          "evidence": [
+            "in a spirit of mischief",
+            "after all he was merely carrying out orders"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-01-q2",
+          "prompt": "How does Seton show that the coyote is faster, even though Chink seems to try harder?",
+          "facilitatorNotes": [
+            "Chink makes magnificent bounds and war-whoops; the coyote slouches along, tail and legs tangling, and still has to slow down so as not to leave the puppy behind."
+          ],
+          "evidence": [
+            "He doesn't seem to work hard but oh! how he does cover the prairie!",
+            "the Coyote obviously had to slack up to keep from running away altogether"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-01-q3",
+          "prompt": "Seton says the coyote “seemed to be cracking a series of good jokes.” Is that what he saw, or how he explains it? What else might explain the chases?",
+          "facilitatorNotes": [
+            "He saw chasing and nipping; “seemed” admits that the joke is his reading of it. The coyote might be playing, warning the dog off, or guarding its feeding place. Readers can weigh which fits best."
+          ],
+          "evidence": [
+            "seemed to be cracking a series of good jokes at Chink's expense",
+            "The Coyote, however, had discovered a new amusement."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-01-q4",
+          "prompt": "What does Seton suspect happened to the coyote, and how does he tell us without saying it?",
+          "facilitatorNotes": [
+            "The master grumbled that “something else would” happen, the coyote vanished, and Seton has “suspicions,” adding that coyotes were protected. He implies the master killed it, and the funny story ends sadly."
+          ],
+          "evidence": [
+            "I'm not supposed to know any thing about it, but I have my suspicions",
+            "in those days the Coyote was a protected animal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-02",
+      "title": "Wild Animals at Home: a lost boy and a steel trap (the badger story, part 1)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow two story lines that the writer will soon bring together.",
+      "focus": "Seton sets up a lost child and a mother badger who has lost everything.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. He says this story was told to him in Winnipeg, Canada, by people who knew the family; it happened in 1871. A Prairie Chicken is a kind of grouse; to barter is to trade; champed means bitten and chewed. Notice how Seton describes the neighbour, Grogan, before telling what he did.",
+      "contentNote": "A man traps two badgers: he clubs the father to death, and the trapped mother chews off a toe to escape, then finds her babies dead.",
+      "excerpt": {
+        "locator": "Chapter VII, “Old Silver-grizzle—The Badger,” the sections “The Story of the Kindly Badger” and “The Evil One,” whole; opens “But the most interesting case, and one which I might hesitate to reproduce but for the…”; closes “…next food, and then at evening she made for an old den she had used the fall before.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-seton-wild-animals-home-1923-03",
+        "blocks": [
+          325,
+          333
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0f3063c5339d515225c8da5c8fee7d14699a16bb643bd18cc62ca1b4637c0b79"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-02-q1",
+          "prompt": "What was unusual about Harry, and how did that habit get him lost?",
+          "facilitatorNotes": [
+            "He copied animals’ voices and movements so exactly that people found it “uncanny.” Following a Prairie Chicken and copying her, he wandered until the house was out of sight."
+          ],
+          "evidence": [
+            "imitating their voices and actions, with an exactness that onlookers sometimes declared to be uncanny",
+            "So he wandered on and on, till the house was hidden from view"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-02-q2",
+          "prompt": "Why did the neighbours give up the search, and why did the parents keep on?",
+          "facilitatorNotes": [
+            "The neighbours decided he had drowned in the river. His parents kept searching and praying “long after all hope seemed dead.”"
+          ],
+          "evidence": [
+            "believing that the child was drowned and carried away by the river",
+            "the parents continued their search even long after all hope seemed dead"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-02-q3",
+          "prompt": "Which words show how Seton judges Grogan, and how he wants readers to see the badgers?",
+          "facilitatorNotes": [
+            "He writes of Grogan’s “vicious cruelty” and “evil indulgence,” and gives the father badger “brave eyes” and a wish for “a fair fight.” He takes sides openly and tells the mother’s suffering from her point of view."
+          ],
+          "evidence": [
+            "because of the man's vicious cruelty to the animals",
+            "The Badger craved only a fair fight"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-02-q4",
+          "prompt": "Why does Seton tell so much about the mother badger before he goes back to Harry? Predict how the two stories will meet.",
+          "facilitatorNotes": [
+            "She has lost her mate and her young and is heading for an old den on the prairie, where Harry is lost. Many readers will guess that she will find him."
+          ],
+          "evidence": [
+            "her babies were dead",
+            "she made for an old den she had used the fall before"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-03",
+      "title": "Wild Animals at Home: two weeks in a badger den (the badger story, part 2)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice how a relationship changes over days, one step at a time.",
+      "focus": "A grieving mother badger feeds and shelters a lost boy, and he begins to live her life.",
+      "context": "Recap: seven-year-old Harry Service wandered away on the prairie near Winnipeg and was lost; neighbours gave up the search, but his parents kept on. Meanwhile a cruel neighbour, Grogan, trapped a pair of badgers: the father was killed, and the mother escaped with a missing toe to find her babies dead. Rose hips are the berries of wild roses; to slake thirst is to drink; to elude is to slip away from.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “Old Silver-grizzle—The Badger,” the section “The Badger That Rescued the Boy,” whole; opens “And little Harry, meanwhile, where was he? That sunny afternoon in June he had wandered…”; closes “…men had passed near by, but the habit of eluding them was now in full possession of him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-seton-wild-animals-home-1923-02",
+        "continuesTo": "reading-4-seton-wild-animals-home-1923-04",
+        "blocks": [
+          335,
+          340
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4f285d7c3b36d3ffe068d67a7281ed9709e8b3a9900d19e438c2d37ec3c6842f"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-03-q1",
+          "prompt": "How does Harry know that this badger has been caught in a trap?",
+          "facilitatorNotes": [
+            "She has five claws on one foot and four on the other, with fresh wounds. The reader knows from the last part which badger this is."
+          ],
+          "evidence": [
+            "the visitor had five claws on one foot and four on the other, with recent wounds"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-03-q2",
+          "prompt": "Trace how the badger behaves toward Harry from the first evening to the end of two weeks.",
+          "facilitatorNotes": [
+            "She snarls and fights, then leaves him the den; she brings meat, sleeps beside him, sets an egg before him unbroken, licks his face; at last they play tag. Each step brings them closer."
+          ],
+          "evidence": [
+            "I scratched the Badger's face and she scratched mine.",
+            "Sometimes they played tag on the prairie"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-03-q3",
+          "prompt": "Why does Harry hide from the men who are searching for him?",
+          "facilitatorNotes": [
+            "The first rider is Grogan, whom he dislikes, so he hides; after that, hiding becomes a habit he cannot break."
+          ],
+          "evidence": [
+            "having once yielded to his shy impulse, he hid again each time",
+            "the habit of eluding them was now in full possession of him"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-03-q4",
+          "prompt": "Seton says the badger’s “heart was yearning for something to love.” Could anyone observe that? Is it convincing?",
+          "facilitatorNotes": [
+            "It is an explanation the parents worked out later from what they knew of her lost young. It fits her care for Harry, but no one can see into a badger’s heart. Readers can decide how far to trust it."
+          ],
+          "evidence": [
+            "this was a mother Badger which had lost her brood and her heart was yearning for something to love"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-04",
+      "title": "Wild Animals at Home: found (the badger story, part 3)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Read a homecoming through all the senses, and notice what finally reaches the boy.",
+      "focus": "Harry is carried home half wild, and his mother’s voice brings him back.",
+      "context": "Recap: lost on the prairie, Harry sheltered in a badger’s den. The mother badger, whose own babies had died, fed him and slept beside him, and for two weeks he lived her life and hid from the searchers. Tow-topped means with very fair, almost white hair; a rebuff is a rejection; menaced means threatened.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “Old Silver-grizzle—The Badger,” the sections “Finding the Lost One,” whole, and “Home Again,” to the boy’s tears; opens “One morning he wandered a little farther in search of water and was alarmed by a horseman…”; closes “…as the veil of a different life was rolled away, and he clung to his mother's bosom.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-seton-wild-animals-home-1923-03",
+        "continuesTo": "reading-4-seton-wild-animals-home-1923-05",
+        "blocks": [
+          342,
+          348
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "13ee6ecaf001a0499cdf5455e82e84f7444ffba413176187be0eb747ad054a84"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-04-q1",
+          "prompt": "What makes the horseman look twice at the den?",
+          "facilitatorNotes": [
+            "He glimpses a whitish thing going down the hole, a strange yellow with none of a badger’s black marks, so he rides up quietly and waits."
+          ],
+          "evidence": [
+            "the peculiar yellow of this and the absence of black marks gave it a strange appearance"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-04-q2",
+          "prompt": "How does Harry act when his cousin, and then his father, try to reach him?",
+          "facilitatorNotes": [
+            "He hisses and snarls, backs away, scratches and holds up his hands like claws. After two weeks he behaves like the badger, showing only “Fear and hate.”"
+          ],
+          "evidence": [
+            "The child hissed and snarled at him like a wild thing",
+            "menaced with hands held claw fashion"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-04-q3",
+          "prompt": "In the long last paragraph, what does Harry hear, smell, see and feel at home? Which brings him back?",
+          "facilitatorNotes": [
+            "The familiar room and pictures, the ticking clock, frying bacon, his sister’s voice, his father, and “above all” his mother’s arms, touch and voice. Seton names the mother first in importance; readers may argue that it is everything together."
+          ],
+          "evidence": [
+            "the clock ticking as of old, and the smell of frying bacon",
+            "above all, his mother's arms about him"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-05",
+      "title": "Wild Animals at Home: “My Badgie!” (the badger story, end)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 6,
+        "totalMinutes": 18
+      },
+      "challenge": "Weigh a writer’s claim that a strange story is true, and notice why he tells it.",
+      "focus": "The badger joins the family, is killed by the same cruel neighbour, and Seton asks readers to protect badgers.",
+      "context": "Recap: after two weeks in a badger’s den, Harry was found by his cousin and carried home snarling like a wild thing, until his mother’s arms and voice brought him back. Oscillated means swung back and forth; delirium is confused dreaming in an illness; extermination means being wiped out. Archbishop Matheson and the others named at the end were well-known people of Winnipeg.",
+      "contentNote": "A neighbour shoots the badger, which dies in the boy’s arms, and the boy falls ill with grief. Seton calls the killer a “halfbreed,” an insulting word for a person of mixed Indigenous and European descent; the slur reflects the writer’s prejudice.",
+      "excerpt": {
+        "locator": "Chapter VII, “Old Silver-grizzle—The Badger,” from the badger at the door through the section “The Human Brute,” whole; opens “But even as she cooed to him, and stroked his brow and won him back again, there was a…”; closes “…you will join with me in loving him, and in seeking to save his race from extermination.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-seton-wild-animals-home-1923-04",
+        "continuesTo": null,
+        "blocks": [
+          349,
+          359
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "90c65e39c6d8a3eb9534639b8965eb21031f213d78189b4c498075a7210d8d84"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-05-q1",
+          "prompt": "Why does Harry’s mother stop the men from shooting the badger at the door?",
+          "facilitatorNotes": [
+            "Harry runs to it crying “My Badgie!” and it purrs and licks his face. She sees it as a family would see a dog that had saved a child from drowning."
+          ],
+          "evidence": [
+            "it was the mother's keener insight that saved it",
+            "as one might save a noble dog that had rescued a child from the water"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-05-q2",
+          "prompt": "Why does Harry say he hates his father at first? Is his reason fair?",
+          "facilitatorNotes": [
+            "He says his father passed him every day without looking. The father did ride past, but never saw him, and Harry himself was hiding. It is a child’s misunderstanding, though his hurt is real."
+          ],
+          "evidence": [
+            "he passed me every day and would not look at me",
+            "the tow-topped head had escaped his eye"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-05-q3",
+          "prompt": "Seton says he would “gladly leave untold” the badger’s death. Why do you think he tells it anyway?",
+          "facilitatorNotes": [
+            "It is part of the true story as he heard it, it shows the cruelty he wants readers to oppose, and it leads to his last plea to save badgers. Some readers may wish he had left it out; others will feel the story needs it."
+          ],
+          "evidence": [
+            "an incident took place that I would gladly leave untold",
+            "in seeking to save his race from extermination"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-05-q4",
+          "prompt": "How does Seton try to convince readers that the story is true, and what does he admit?",
+          "facilitatorNotes": [
+            "He names witnesses in Winnipeg, but admits they “may differ as to the details” and that the mother learned the story slowly, with parts unclear. The witnesses support the outline; the details may have changed in the telling."
+          ],
+          "evidence": [
+            "These witnesses may differ as to the details",
+            "parts of it were far from clear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-06",
+      "title": "Wild Animals at Home: Molly Cottontail’s five photographs (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice how a narrator uses a trick, and ask whose side the story takes.",
+      "focus": "Seton uses a rabbit’s habit of freezing, and his camera, to save her life.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. In 1902 he camped with Sioux families beside the Cheyenne River in Dakota; the boys were hunting rabbits for supper. Rigid means stiff; “rattled” means flustered; drift logs are logs washed up by a river. Cameras then held only a few pictures of film at a time.",
+      "contentNote": "Seton calls the Sioux boys “redskins,” “little savages” and “Injuns,” words that were insulting then and are now. They show the writer’s prejudice; the boys were hunting for food, as their families had long done.",
+      "excerpt": {
+        "locator": "Chapter IX, “The Rabbits and their Habits,” the section “Molly Cottontail, the Clever Freezer,” whole; opens “I have often had occasion to comment on the \"freezing\" of animals. When they are suddenly…”; closes “…log; she was safe in the pile of wood, where so far as I know she lived happy ever after.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          412,
+          421
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "627906c5c40b3406ebf4bcc134f9b20017ece37ce85f337dcf8543016be1d5c0"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-06-q1",
+          "prompt": "What does “freezing” mean, and why is Molly Cottontail especially good at it?",
+          "facilitatorNotes": [
+            "Becoming perfectly stiff when startled until the danger passes. She is nervous, so a sudden sharp noise makes her stop, following the rule “Never rush when you are rattled.”"
+          ],
+          "evidence": [
+            "become perfectly rigid, and remain so until the danger is past",
+            "Never rush when you are rattled."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-06-q2",
+          "prompt": "How does Seton use a whistle and his camera to protect the rabbit?",
+          "facilitatorNotes": [
+            "He asks the boys to wait for a photograph, freezes Molly with a shrill whistle, and does it five times, each time steering her toward the log pile. He hides his real purpose because he thinks the boys would not stop if he simply asked."
+          ],
+          "evidence": [
+            "I knew I could not stop them by saying that",
+            "all the while steering Molly toward a great pile of drift logs"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-06-q3",
+          "prompt": "Seton wanted to save the rabbit; the boys wanted supper. Was his trick fair to them? How do the names he calls them affect your answer?",
+          "facilitatorNotes": [
+            "He decided for them that they “had enough game” and tricked them rather than asking. His insulting names show he did not treat them as equals. Readers may admire his kindness to the rabbit and still question how he treated the boys."
+          ],
+          "evidence": [
+            "I thought they had enough game for supper",
+            "I cannot hold these little savages any longer"
+          ]
+        }
+      ]
+    }
+  ]
+}
