@@ -1094,6 +1094,156 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-16",
+      "title": "The Palm-Tree",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a comparison between a plant and a person, and decide what the poem asks you to feel.",
+      "focus": "A palm-tree growing far from home in a European garden makes a homesick young stranger weep.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Palm-trees grow in hot lands; this one has been planted in a garden in Europe. Araby is Arabia and Afric is Africa; “Indian seas” and “the Indian sun” mean the hot lands and seas of the East; orient means eastern; the laburnum has hanging yellow flowers; a festal evening is a party; mien is how a person looks; crested means wearing a headdress of feathers; cocoas are coconut palms; a conch is a large shell blown like a horn; a patriot loves his country; to gird yourself is to get ready for a fight. Hemans’s note says she found the story in Les Jardins (The Gardens), a long French poem by Jacques Delille.",
+      "contentNote": "The poem describes the young man by the colour of his skin (“dusky mien”) and presents him as an exotic stranger, as European writers of the time often did.",
+      "excerpt": {
+        "locator": "“The Palm-Tree,” the whole poem with Hemans’s note; opens “ It waved not through an eastern sky, Beside a fount of Araby; It was not fann’d by…”; closes “…364: This incident is, I think, recorded by De Lille, in his poem of _Les Jardins_.]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6374,
+          6383
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e855d3ae9c3c5c94cc250275c94d66b8134f940df6d9974a6c67bdb321618fa"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-16-q1",
+          "prompt": "The first stanza tells where the palm did not grow. Why might Hemans begin with the places it is missing?",
+          "facilitatorNotes": [
+            "Naming Arabia, the eastern seas and Africa shows the palm’s true homes first, so we feel how far it is from them. Then the next stanza names its condition: it is “exiled.”"
+          ],
+          "evidence": [
+            "It waved not through an eastern sky,",
+            "But fair the exiled palm-tree grew"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q2",
+          "prompt": "Find the plants around the palm in the garden. Why does it look so “strange” among them?",
+          "facilitatorNotes": [
+            "Laburnum, violets, willow, lime-trees and roses: all European plants. The palm is the only one of its kind, among leaves of “no kindred hue,” that is, no relatives."
+          ],
+          "evidence": [
+            "Midst foliage of no kindred hue;",
+            "To murmur by the desert’s tree,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q3",
+          "prompt": "How is the young man “like the palm-tree”? What does its rustling make him remember?",
+          "facilitatorNotes": [
+            "Both are far from home among strangers. The rustling brings back his island, his mother’s cabin by the coconut palms, his brothers rowing, and the conch sounding along the shore, and he hugs the tree and weeps."
+          ],
+          "evidence": [
+            "A stranger, like the palm-tree, there.",
+            "He clasp’d his country’s tree, and wept!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q4",
+          "prompt": "“Oh! scorn him not!” Why might people at the party scorn him? What does Hemans say his tear has in common with a patriot’s courage?",
+          "facilitatorNotes": [
+            "Some might think a grown man weeping over a tree is childish or strange. Hemans argues that the love of home that makes him cry is the same deep spring that gives patriots and free men the strength to fight and die for their country. Readers can discuss whether homesick tears are a weakness, and whether they have felt that way."
+          ],
+          "evidence": [
+            "Oh! scorn him not! The strength whereby",
+            "The same whence gush’d that childlike tear!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-17",
+      "title": "The Lost Pleiad",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a poem from a small loss to a very large thought, and decide whether its ending comforts or troubles you.",
+      "focus": "One star of the Pleiades has vanished, and the night sky shines on as if nothing were missing.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The Pleiades, or Seven Sisters, are a small cluster of stars you can see on autumn and winter evenings. An old Greek story says there were seven sisters, but most people can see only six stars, so one Pleiad is “lost.” The poem opens with a line by Lord Byron, a famous poet of Hemans’s time. An orb is a heavenly body; to start from your rank is to leave your place in a line; regal means royal; urns of light are the stars, pictured as jars that hold light; myriads are huge numbers; a myrtle spray is a twig of an evergreen shrub; peopled means lived in; to smite is to strike; sceptres riven are kings’ rods broken, that is, kingdoms ended. The “lost” star has not really vanished: astronomers think it is probably one that is too faint for most eyes to see.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Lost Pleiad,” the whole poem; opens “ “Like the lost Pleiad seen no more below.”--Byron.”; closes “…world sinks thus--and yon majestic heaven Shines not the less for that one vanish’d star!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5662,
+          5667
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bd4e33c04a2f16756203a1e3ab1ec69b99ee49cca5b7567cc07001550c9ede3"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-17-q1",
+          "prompt": "What has happened to the lost Pleiad? Find the words that show it once had a place among the others.",
+          "facilitatorNotes": [
+            "It can no longer be seen. Its “sisters of the sky” still keep their places, but it has left its “rank,” like a soldier gone from a line."
+          ],
+          "evidence": [
+            "thy sisters of the sky",
+            "Though from its rank thine orb so long hath started,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q2",
+          "prompt": "Does the night miss the lost star? What do the shepherd and the sailor show?",
+          "facilitatorNotes": [
+            "No. The night still wears her crown, the shepherd still greets the stars, and the sailor still steers by them; “they have not mourn’d for thee.” Nobody has noticed the gap."
+          ],
+          "evidence": [
+            "She wears her crown of old magnificence,",
+            "Unchanged they rise, they have not mourn’d for thee."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q3",
+          "prompt": "In the fourth stanza the speaker wonders whether people lived on the lost star. Why does this question make the loss feel bigger?",
+          "facilitatorNotes": [
+            "If it was a world with its own “glorious race,” then a whole people may have vanished, shaken off as easily as a dew-drop from a twig. The comparison makes something enormous seem tiny and fragile."
+          ],
+          "evidence": [
+            "Even as a dew-drop from the myrtle spray,",
+            "Wert thou not peopled by some glorious race,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q4",
+          "prompt": "What lesson does the speaker draw in the last stanza? Do you find the ending comforting or troubling?",
+          "facilitatorNotes": [
+            "If a whole world can vanish and the heavens shine no less, then human thrones and kings are small, and we should be humble about “what we are.” Some readers find it troubling that nobody would miss us; others find it comforting that the universe goes on, beautiful, whatever happens."
+          ],
+          "evidence": [
+            "Bow’d be our hearts to think on what we are,",
+            "Shines not the less for that one vanish’d star!"
+          ]
+        }
+      ]
     }
   ]
 }
