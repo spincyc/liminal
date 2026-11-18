@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "muir-boyhood-youth-1913",
+  "readings": [
+    {
+      "id": "reading-5-muir-boyhood-youth-1913-01",
+      "title": "My Boyhood and Youth: a field mouse, a faithful dog and a pirate’s bell (Chapter I, first part)",
+      "sourceId": "muir-boyhood-youth-1913",
+      "genre": "memoir",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Sort an old man’s memories into what he remembers himself, what he was told, and what he can no longer recall.",
+      "focus": "Muir’s earliest memories are of wild creatures and of stories about animals and the sea, and he presents his love of wildness as something he was born with.",
+      "context": "John Muir (1838–1914) grew up in Dunbar, a small harbour town on the east coast of Scotland, until his family moved to a Wisconsin farm when he was eleven. He became a naturalist and writer who helped to protect Yosemite and other American wild places as national parks, and he wrote this book in his seventies, looking back more than sixty years. Dunbar Castle is a ruin on the rocks beside the harbour. A haycock is a small heap of hay left in a field to dry. “Llewellyn’s Dog” is an old Welsh legend about a prince and his hound Gelert; the poem Muir calls “The Inchcape Bell” is “The Inchcape Rock” (1802) by the English poet Robert Southey. An abbot is the head of a monastery, and Aberbrothok is an old name for the Scottish town of Arbroath. “Auld lang syne” means long ago.",
+      "contentNote": "Muir retells two sad stories from his school-book: a faithful dog killed by mistake by his own master, and a pirate drowned with his ship. He mentions the “sure sore punishments” he received for running off to the shore and fields.",
+      "excerpt": {
+        "locator": "Chapter I, “A Boyhood in Scotland,” from the first paragraph after the chapter’s list of topics through the stories of the third school-book; opens “When I was a boy in Scotland I was fond of everything that was wild, and all my life I’ve…”; closes “…bell. The story appealed to our love of kind deeds and of wildness and fair play.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2,
+          6
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "554baffa8f3f220f9bf1e772cdab2b1a9d0bddc444cabdbdfb937122d47b92a4"
+      },
+      "questions": [
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-01-q1",
+          "prompt": "What did Johnnie hear in the hay-field when he was about three, and how did he and his grandfather react differently?",
+          "facilitatorNotes": [
+            "He heard “a sharp, prickly, stinging cry”; his grandfather heard only the wind. Johnnie insisted on digging into the hay until they found a mother field mouse with her young. The hunter-and-bear comparison shows how big a small discovery felt to a small boy, and how early his sharp ears and stubbornness showed."
+          ],
+          "evidence": [
+            "He said he heard only the wind",
+            "No hunter could have been more excited on discovering a bear and her cubs in a wilderness den."
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-01-q2",
+          "prompt": "Muir cannot recall the wonders of his first schoolday. What does he remember instead, and what does he know only because someone told him?",
+          "facilitatorNotes": [
+            "He remembers soap in his eyes, the little green bag with his first book blowing “like a flag,” and his pride at moving from book to book. He knows only “as I was told” that his grandfather taught him letters from shop signs. Memory keeps small vivid sensations and feelings, not always the events adults think important. Readers can compare one of their own earliest memories."
+          ],
+          "evidence": [
+            "I am not able to recall any of them",
+            "its blowing back in the sea-wind like a flag",
+            "as I was told"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-01-q3",
+          "prompt": "Why did the story of Gelert make the children cry “over and over,” and what does Muir say it shows about children?",
+          "facilitatorNotes": [
+            "A brave, faithful dog who had saved the child is killed by the master who misjudges him. The children feel the injustice; Muir says the story shows how great a child’s capacity is “for sorrow and sympathy with animals.” He remembers it as if he had been there himself, which shows how deeply a reader can live inside a story. Some readers may connect this with the naturalist he became."
+          ],
+          "evidence": [
+            "We have to look far back to learn how great may be the capacity of a child’s heart for sorrow",
+            "as if I had myself been one of that Welsh hunting-party"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-01-q4",
+          "prompt": "The Inchcape story “appealed to our love of kind deeds and of wildness and fair play.” Find each of the three in the story. How does the “wildness” of the first paragraph fit with “fair play”?",
+          "facilitatorNotes": [
+            "Kind deed: the priest’s warning bell. Wildness: the storm and roaring waves. Fair play: the pirate is wrecked on the very rock whose bell he cut away. In the first paragraph the boys’ wildness runs “as invincible and unstoppable as stars,” in spite of punishments: Muir calls it natural, not wicked. Readers may accept that, or notice that an old man is looking back fondly at disobedience his parents punished."
+          ],
+          "evidence": [
+            "appealed to our love of kind deeds and of wildness and fair play",
+            "as invincible and unstoppable as stars",
+            "In spite of the sure sore punishments that followed like shadows"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-muir-boyhood-youth-1913-02",
+      "title": "My Boyhood and Youth: castle crags, ghosts and scootchers (Chapter I, excerpt)",
+      "sourceId": "muir-boyhood-youth-1913",
+      "genre": "memoir",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 8,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow a dangerous climb move by move, and notice how the old writer’s comments change the way we read the boy’s dare.",
+      "focus": "Castle scrambles, ghost stories and night-time dares show two small boys testing their courage, and a return visit fifty years later measures how bold they were.",
+      "context": "John Muir (1838–1914) grew up in Dunbar, a small harbour town on the east coast of Scotland, until his family moved to a Wisconsin farm when he was eleven. He became a naturalist and writer who helped to protect Yosemite and other American wild places as national parks, and he wrote this book in his seventies, looking back more than sixty years. In 1314 the Scots under Robert the Bruce defeated the English king Edward II at Bannockburn, and Edward escaped by way of Dunbar Castle. Tam o’ Shanter is a poem by Robert Burns in which a farmer’s mare outruns a crowd of witches to the middle of a bridge, because witches cannot cross running water. A window-tax was charged on the number of windows in a house, so some rooms were kept dark. Retorts and flasks are glass vessels for chemistry; slates are roof tiles; the eaves are the lower edge of a roof. In Scots, “gude bairns” are good children, “greet” is cry, “I canna get doon” is “I can’t get down,” and “gee us baith an awfu’ skelping” is “give us both an awful spanking.”",
+      "contentNote": "Two small boys hang by their hands from an upstairs window and climb onto the roof at night, and Muir mentions the spanking they would get if their father heard. A servant frightens the children with stories of hell and of ghosts.",
+      "excerpt": {
+        "locator": "Chapter I, “A Boyhood in Scotland,” from the old Dunbar Castle through the rooftop scootcher and Muir’s visit to the house some fifty years later; opens “One of our best playgrounds was the famous old Dunbar Castle, to which King Edward fled…”; closes “…mountaineering, I found that what I had done in daring boyhood was now beyond my skill.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          20,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8ffeffdc921639d68c66f518d040eec82bdd658e62957fcf35ca834c581fe9b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-02-q1",
+          "prompt": "How did Johnnie expect to escape from hell, and why was he so sure? What does this show about how children handle frightening ideas?",
+          "facilitatorNotes": [
+            "He pictured hell as “a sooty pit with stone walls” like the castle’s, with chinks for fingers and toes, so it became a climbing problem he knew how to solve. The servant’s threat turns into a boast. Muir sums it up: “natural faith casts out fear.” Readers can think of a fear they once shrank by imagining it as something familiar."
+          ],
+          "evidence": [
+            "I always insisted that I could climb out of it",
+            "a sooty pit with stone walls like those of the castle",
+            "natural faith casts out fear"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-02-q2",
+          "prompt": "List the steps of the rooftop scootcher in order. Which detail makes it most frightening to you?",
+          "facilitatorNotes": [
+            "Hanging over the slates by the sill; then by one hand; then by one finger; standing on the sill; creeping up the slates by finger-holds; sitting astride the roof in a howling wind; slipping back down to the sill. Each dare raises the one before, and David copies every step. Readers may choose the single finger, the wind “threatening to blow me off,” or the nightgown blown into a balloon."
+          ],
+          "evidence": [
+            "Then I hung by one finger, being careful not to slip",
+            "while the wind was howling and threatening to blow me off"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-02-q3",
+          "prompt": "Muir says he warned David “with commendable caution.” Was his plan really cautious? What is the old Muir doing with that phrase?",
+          "facilitatorNotes": [
+            "No: the plan was to grab the rain-trough as he fell and dangle there while David ran for father and a ladder. “Commendable caution” (praiseworthy care) is ironic; the old man is smiling at the boy’s idea of safety. Yet the boy did think ahead, and later rescues the crying David calmly. Notice too what frightens David most: being heard by father, not falling."
+          ],
+          "evidence": [
+            "with commendable caution I warned David",
+            "tell him to be quick because I would soon be tired hanging dangling in the wind by my hands",
+            "If you greet, fayther will hear, and gee us baith an awfu’ skelping."
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-02-q4",
+          "prompt": "Fifty years later Muir went back to look at the window. What did he find, and how does it change the story you have just read?",
+          "facilitatorNotes": [
+            "Even after a life of mountaineering, he judged that what he had done as a boy was “now beyond my skill.” The visit proves the danger was real, not a boy’s exaggeration, and it echoes his remark that it “seems now a reasonable wonder” he never fell. Readers may find the story more frightening, more admiring of the boy, or a lesson in how little children sense danger."
+          ],
+          "evidence": [
+            "what I had done in daring boyhood was now beyond my skill",
+            "That I did not fall and finish my rock-scrambling in those adventurous boyhood days seems now a reasonable wonder."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-muir-boyhood-youth-1913-03",
+      "title": "My Boyhood and Youth: cruel and merciful boys (Chapter I, excerpt)",
+      "sourceId": "muir-boyhood-youth-1913",
+      "genre": "memoir",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Test a writer’s general claim against the stories he tells to prove it.",
+      "focus": "Muir admits to cruelty toward cats and remembers grieving over stolen nestlings, to show that boys are both cruel and kind.",
+      "context": "John Muir (1838–1914) grew up in Dunbar, a small harbour town on the east coast of Scotland, until his family moved to a Wisconsin farm when he was eleven. He became a naturalist and writer who helped to protect Yosemite and other American wild places as national parks, and he wrote this book in his seventies, looking back more than sixty years. His father locked the children in the back yard to stop them wandering to the shore and fields. The Scots Greys (Muir writes “Scottish Grays”) were a famous regiment of cavalry soldiers on grey horses. Wild songbirds were often caught and sold to be kept in cages. To “play possum” is to pretend to be dead or badly hurt; sagacious means wise; bereaved means having lost someone you love. In Scots, “a’ the bairns’ hearts” is “all the children’s hearts.”",
+      "contentNote": "Muir tells how he and other boys threw stones at a cat, meaning in the end to kill it, and dropped another cat from an upper window. He mentions enjoying dog-fights and watching pigs killed in a slaughter-house, and a soldier stealing young birds from their nest to sell.",
+      "excerpt": {
+        "locator": "Chapter I, “A Boyhood in Scotland,” from “Boys are often at once cruel and merciful” through the robbing of the robins’ nest; opens “Boys are often at once cruel and merciful, thoughtlessly hard-hearted and tender-hearted,…”; closes “…him that, “a’ the bairns’ hearts were broken over the robbing of the nest in the elm.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          27,
+          30
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7b34010d078ee8e48d1e95c27ae69832997ab5b0e2eb6be34364c1fce6972640"
+      },
+      "questions": [
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-03-q1",
+          "prompt": "How did the old Tom cat outwit the boys? Find the words that show he understood them better than they understood him.",
+          "facilitatorNotes": [
+            "He climbed out of reach, then sat blinking and “played possum,” not even wincing, until the game turned serious; then he leapt over their heads and escaped. Muir gives the cat the last word: “that old fellow knew what characters we were.” The cat reads the boys correctly; they misread him as “mortally wounded.”"
+          ],
+          "evidence": [
+            "he just blinked and played possum",
+            "that old fellow knew what characters we were"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-03-q2",
+          "prompt": "“He must be mortally wounded,” Johnnie said, “and now we must kill him to put him out of pain.” What is wrong with this reasoning, and what does Muir call it, looking back?",
+          "facilitatorNotes": [
+            "It turns an excuse into kindness: the boys had caused the pain and wanted to keep throwing. The old Muir names it plainly, “the savage in us rapidly growing with indulgence,” and mocks it as “cat mercy.” Ask readers whether they have heard a good-sounding reason used to cover an unkind act."
+          ],
+          "evidence": [
+            "the savage in us rapidly growing with indulgence",
+            "All took heartily to this sort of cat mercy"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-03-q3",
+          "prompt": "After dropping the second cat from the window, the boys “never tried the experiment again.” What changed their minds?",
+          "facilitatorNotes": [
+            "Seeing the cat creep away “stunned and frightened, with a swollen black and blue chin” made them pity it. They had wanted to test a saying; the test cost a living creature pain. Muir calls it “a cruel thing” without excuse. Readers may notice that pity came only after the harm, and discuss why."
+          ],
+          "evidence": [
+            "This was a cruel thing for even wild boys to do",
+            "we sincerely pitied the poor fellow when we saw him creeping slowly away"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-03-q4",
+          "prompt": "Muir offers the robins’ nest as “an illustration of the better side of boy nature.” How is the soldier different from the boys? Does the whole passage convince you that boys are “at once cruel and merciful”?",
+          "facilitatorNotes": [
+            "The grown soldier robs the nest for “a few pennies” and beer and rides off “grandly”; the children cry and cannot be comforted. Here the boys are on the birds’ side. The passage does show both sides, as the opening claims. Some readers will add that the boys pitied the robins when someone else did the harm, which makes their own cruelty easier to see; others will point to the cat they also pitied."
+          ],
+          "evidence": [
+            "Boys are often at once cruel and merciful",
+            "caring only for the few pennies the young songbirds would bring and the beer they would buy",
+            "a’ the bairns’ hearts were broken over the robbing of the nest in the elm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-muir-boyhood-youth-1913-04",
+      "title": "My Boyhood and Youth: fighting and flogging at school (Chapter I, excerpt)",
+      "sourceId": "muir-boyhood-youth-1913",
+      "genre": "memoir",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice when a writer means something different from what his words say, and decide what he really thinks.",
+      "focus": "Muir remembers fights the boys loved and beatings they did not, and his mock praise of “thrashing” works as an argument against it.",
+      "context": "John Muir (1838–1914) grew up in Dunbar, a small harbour town on the east coast of Scotland, until his family moved to a Wisconsin farm when he was eleven. He became a naturalist and writer who helped to protect Yosemite and other American wild places as national parks, and he wrote this book in his seventies, looking back more than sixty years. In Scottish schools of the 1840s, teachers beat pupils for mistakes, often with the taws, a leather strap split into tails. The Davel Brae was a hill beside Muir’s first school; at seven or eight he moved to the grammar school, which taught Latin and French. William Wallace and Robert the Bruce led the Scots against English invaders around 1300, and Bannockburn was Bruce’s great victory; Britain was also fighting wars in India at the time. In Scots, a “gude fechter” is a good fighter. Dux is the top pupil of a class; blue bonnets are flat woollen caps; to commit something to memory is to learn it by heart; a stripling is a young boy.",
+      "contentNote": "Muir describes a teacher whipping pupils for every mistake, his father making him learn Bible verses “by heart and by sore flesh,” daily fist fights, and snowball battles with gravel packed into caps.",
+      "excerpt": {
+        "locator": "Chapter I, “A Boyhood in Scotland,” from the daily fist fights through the lessons and whippings of the grammar school; opens “After attaining the manly, belligerent age of five or six years, very few of my…”; closes “…and the memory, and that irritating the skin excited the memory to any required degree.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          31,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e832381abe69c01d6f9a31f030063e7d72109fcda869fd5e4602f323ee3705c3"
+      },
+      "questions": [
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-04-q1",
+          "prompt": "What was the boys’ “highest ambition,” and what came second? Where did those ideas come from?",
+          "facilitatorNotes": [
+            "To be a “gude fechter”; being a good scholar was “a secondary consideration,” though they still wanted to be Dux. The battle stories of Wallace and Bruce, “with which every breath of Scotch air is saturated,” and the plan that they “were all going to be soldiers” fed the fighting. Readers can discuss what heroes children copy today."
+          ],
+          "evidence": [
+            "To be a “gude fechter” was our highest ambition",
+            "To be a good scholar was a secondary consideration"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-04-q2",
+          "prompt": "How did a new pupil begin at the grammar school, and how did Mr. Lyon’s lessons change after the first few days?",
+          "facilitatorNotes": [
+            "He had to fight every boy his own age who challenged him. Mr. Lyon at first “blandly smiled” at mistakes; then “pedagogical weather of the severest kind” set in, and the taws punished “everything short of perfection.” Calling punishment weather makes it sound like a storm the pupils could not escape or control."
+          ],
+          "evidence": [
+            "a new scholar had to meet every one of his age who dared to challenge him",
+            "pedagogical weather of the severest kind quickly set in"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-04-q3",
+          "prompt": "Muir says the Scots had made a “grand, simple, all-sufficing” discovery: that the skin and the memory are closely connected. Does he really believe it? How can you tell?",
+          "facilitatorNotes": [
+            "Mostly not: the grand words are mock praise, like the boy compared to lawyers on “million-dollar cases” and the phrase “by heart and by sore flesh.” Saying it plainly would be: they beat us until we remembered. Yet he also admits he has never concentrated so well since, so some readers will hear a little real respect mixed with the mockery. Ask for the words that tip the balance."
+          ],
+          "evidence": [
+            "the grand, simple, all-sufficing Scotch discovery had been made",
+            "by heart and by sore flesh",
+            "I can’t conceive of anything that would now enable me to concentrate my attention more fully"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-04-q4",
+          "prompt": "By eleven, Muir could recite the whole New Testament “without a single stop.” Was that real learning? Use the passage to argue one side.",
+          "facilitatorNotes": [
+            "For: an enormous feat of memory and attention, and he learned three grammars as well. Against: the grammar was “incomprehensible verb stuff” recited “as if” it were poetry, and no one thought about letting “little brains rest.” Later in the book Muir says he learned arithmetic in Scotland “without understanding any of it.” Both sides can use this passage; ask readers what learning means to them."
+          ],
+          "evidence": [
+            "I could recite the New Testament from the beginning of Matthew to the end of Revelation without a single stop.",
+            "as if all the regular and irregular incomprehensible verb stuff was poetry",
+            "The dangers of cramming and of making scholars study at home instead of letting their little brains rest were never heard of in those days."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-muir-boyhood-youth-1913-05",
+      "title": "My Boyhood and Youth: skylarks and Saturday runaways (Chapter I, end)",
+      "sourceId": "muir-boyhood-youth-1913",
+      "genre": "memoir",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow long, flowing sentences that move the way their subject moves, and weigh what Muir says punishment could and could not do.",
+      "focus": "Skylarks singing out of sight, a caged lark set free and long runs over the hills close the Scottish chapter with Muir’s claim that wildness was his real teacher.",
+      "context": "John Muir (1838–1914) grew up in Dunbar, a small harbour town on the east coast of Scotland, until his family moved to a Wisconsin farm when he was eleven. He became a naturalist and writer who helped to protect Yosemite and other American wild places as national parks, and he wrote this book in his seventies, looking back more than sixty years. His father forbade the boys to wander in the fields and along the shore, but on Saturdays they ran off anyway to hunt for birds’ nests, boasting about how many each one knew. The skylark is a small brown bird of open fields that sings as it climbs high into the sky; “far in the downy cloud” comes from “The Skylark” by the Scottish poet James Hogg. A stitch is a sharp pain in the side from running. The Sabbath is Sunday, which strict Scottish families kept as a holy day of rest; “in cold blood” means calmly, not in anger.",
+      "contentNote": "Muir describes keeping a young lark in a cage, swallowing raw eggs, and the “thrashings” his father gave the boys for coming home late.",
+      "excerpt": {
+        "locator": "Chapter I, “A Boyhood in Scotland,” from the skylarks’ singing to the end of the chapter; opens “The nests, I fear, with the beautiful eggs and young birds, were prized quite as highly…”; closes “…glad wildness. These were my first excursions,—the beginnings of lifelong wanderings.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          54
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "354dc59914e360b824fa22b105c44f7a3ca25bff47732f1b61af8a0291c66bc0"
+      },
+      "questions": [
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-05-q1",
+          "prompt": "Describe the skylark’s flight and song in order, from the nest and back to the nest.",
+          "facilitatorNotes": [
+            "It rises “as straight as if shot up” thirty or forty feet, hovers on beating wings and sings, soars higher again and again until it is out of sight while the song still pours down, then stops and falls “like a bolt” to the nest where its mate sits on the eggs. The order matters: the song outlasts the sight of the bird."
+          ],
+          "evidence": [
+            "as straight as if shot up",
+            "falling like a bolt straight down to his nest"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-05-q2",
+          "prompt": "Read the long sentence that begins “From the grass where the nest was hidden.” How does the sentence behave like the lark? Why might Muir write it that way?",
+          "facilitatorNotes": [
+            "It keeps rising: “then,” “again and again,” “ever higher and higher, soaring and singing,” clause after clause, “overflowing all bounds” like the song. The game of “I see him yet!” repeats the same way until only one boy is left. Muir makes the reader’s breath and attention climb with the bird. Readers can try reading the sentence aloud in one breath."
+          ],
+          "evidence": [
+            "ever higher and higher, soaring and singing until lost to sight",
+            "“I see him yet!” we would cry"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-05-q3",
+          "prompt": "Why did the boys finally set their caged lark free? Which details of the cage make Muir’s point?",
+          "facilitatorNotes": [
+            "In spring the “quivering imprisoned soarer of the heavens” beat its wings as if flying, over a grass sod “a foot or at most two feet square,” under a “miniature sky.” Set beside the larks that sing out of sight, the cage is pitiful. The boys became “conscience-stricken” and took it back to its own meadow. The reward was seeing it fly and sing."
+          ],
+          "evidence": [
+            "the quivering imprisoned soarer of the heavens",
+            "a meadow perhaps a foot or at most two feet square",
+            "At last, conscience-stricken, we carried the beloved prisoner to the meadow west of Dunbar where it was born"
+          ]
+        },
+        {
+          "id": "reading-5-muir-boyhood-youth-1913-05-q4",
+          "prompt": "Punishment, Muir says, had other uses, “but in keeping us at home it was of no use at all.” What was stronger than punishment? Do you see a likeness between the boys and their caged lark?",
+          "facilitatorNotes": [
+            "The “attraction of the fields and woods”: “Wildness was ever sounding in our ears,” and Nature taught “her own lessons.” Boys kept in the yard by their father are like the lark in its cage, and the Saturday runs are their flights: “we were glorious, we were free.” Muir never says this himself, so readers may find the likeness apt or too neat. Some will also see the father’s side: he feared for his sons’ safety."
+          ],
+          "evidence": [
+            "in keeping us at home it was of no use at all",
+            "Kings may be blessed; we were glorious, we were free",
+            "the beginnings of lifelong wanderings"
+          ]
+        }
+      ]
+    }
+  ]
+}
