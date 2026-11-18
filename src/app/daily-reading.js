@@ -15,7 +15,7 @@
   const browseGrade = $("dailyBrowseGrade"), monthGrade = $("dailyMonthGrade");
   const printFooter = $("dailyPrintFooter"), toolbar = $("dailyToolbar"), topNav = $("dailyNavigation");
   let index, request = 0, preservePickerFocus = false, inFlight = null, topNavigation, pendingNavigation = null, shownTitle = null;
-  let packetShown = null, remembered = null;
+  let packetShown = null, remembered = null, shownDate = null, dateTyping = false;
   const more = C.menu("More");
   $("dailyMore").append(more.element);
   // Generate PDF typesets the reading shown, in the packet style
@@ -31,9 +31,13 @@
 
   // ---- Loading ----
   // One main load at a time: a newer choice cancels the download it
-  // supersedes. Supporting files (browse lists, calendars, library records)
-  // are cached promises shared by every view.
-  async function load(path) {
+  // supersedes. `current` is the request the load belongs to: a view that
+  // has itself been superseded (it was still waiting for a calendar, say)
+  // gets an AbortError instead of cancelling the newer view's download.
+  // Supporting files (browse lists, calendars, library records) are cached
+  // promises shared by every view.
+  async function load(path, current) {
+    if (current !== request) throw new DOMException("Superseded", "AbortError");
     if (inFlight) inFlight.abort();
     const controller = inFlight = new AbortController();
     try {
@@ -63,6 +67,7 @@
   // ---- Remembered place (this browser only; never required) ----
   function readRemembered() { try { return D.parseRemembered(window.localStorage.getItem(D.STORAGE_KEY)); } catch (_) { return null; } }
   function saveRemembered(selected) {
+    if (selected.invalid) return; // An unrecognized link never replaces the remembered place.
     remembered = D.remember(remembered, selected);
     try { window.localStorage.setItem(D.STORAGE_KEY, JSON.stringify(remembered)); } catch (_) { /* Private mode or storage off: nothing is remembered. */ }
   }
@@ -141,9 +146,16 @@
     if (!packetShown) return;
     // The adult copy prints the discussion help and "Before you read".
     const toggle = container.querySelector(".daily-help-toggle"), wasOpen = toggle && toggle.getAttribute("aria-expanded") === "true";
+    const before = container.querySelector(".daily-before"), beforeOpen = before && before.open;
     if (toggle && !wasOpen) toggle.click();
+    if (before) before.open = true;
     document.body.classList.add("daily-print-adult");
-    const done = () => { document.body.classList.remove("daily-print-adult"); if (toggle && !wasOpen && toggle.getAttribute("aria-expanded") === "true") toggle.click(); window.removeEventListener("afterprint", done); };
+    const done = () => {
+      document.body.classList.remove("daily-print-adult");
+      if (toggle && !wasOpen && toggle.getAttribute("aria-expanded") === "true") toggle.click();
+      if (before) before.open = beforeOpen;
+      window.removeEventListener("afterprint", done);
+    };
     window.addEventListener("afterprint", done); window.print();
   }
   function download(packet) {
@@ -241,11 +253,15 @@
     const monthLink = $("dailyMonthLink");
     monthLink.hidden = !D.hasCalendar(index, selected.grade);
     monthLink.href = D.monthRoute(selected.grade, today().slice(0, 7));
-    $("dailyPrintLink").href = D.printRoute({ date: today(), grades: [selected.grade] });
+    const lastNight = remembered && remembered.night && remembered.night.grade === selected.grade ? remembered.night : null;
+    $("dailyPrintLink").href = D.hasCalendar(index, selected.grade) ? D.printRoute({ date: today(), grades: [selected.grade] }) :
+      D.printRoute({ week: selected.week || (lastNight ? lastNight.week : 1), day: selected.week ? 1 : lastNight ? lastNight.day : 1, grades: [selected.grade] });
     try {
       const data = await browseData(selected.grade);
       if (current !== request) return;
-      B.show(data, { last: remembered && remembered.night, week: selected.week, focus });
+      // Returning to the year reveals the night just read; the home view and
+      // the grade picker only mark it, leaving focus and scroll alone.
+      B.show(data, { last: remembered && remembered.night, week: selected.week, focus, reveal: focus && !selected.home });
       setTitle([selected.week ? "Week " + selected.week : null, D.gradeLabel(selected.grade) + " nightly readings"]);
       announce((selected.invalid ? "That link was not recognized. Showing " : "Showing ") + D.gradeLabel(selected.grade) + ": " + data.nights.length + " nights.", selected.invalid);
       saveRemembered(selected);
@@ -301,7 +317,7 @@
   function readerToolbar(selected) {
     gradeSelect.value = D.gradeKey(selected.grade);
     if (selected.view === "read") { weekSelect.value = selected.week; daySelect.value = selected.day; }
-    if (selected.view === "date") dateInput.value = selected.date;
+    if (selected.view === "date") { dateInput.value = selected.date; shownDate = selected.date; dateTyping = false; }
   }
 
   // A school night.
@@ -317,7 +333,7 @@
     saveRemembered(selected);
     try {
       // Only the night's week (five nights and their sources), not the grade.
-      const [course, nights] = await Promise.all([load(D.weekFile(selected.grade, selected.week)), browseData(selected.grade).then(data => data.nights).catch(() => null)]);
+      const [course, nights] = await Promise.all([load(D.weekFile(selected.grade, selected.week), current), browseData(selected.grade).then(data => data.nights).catch(() => null)]);
       if (course.schemaVersion !== 1 || course.grade !== selected.grade || course.week !== selected.week || !Array.isArray(course.days) || course.days.length !== 5 ||
         course.days.some(day => day.week !== selected.week) || !Array.isArray(course.sources)) throw new Error("Reading mismatch");
       if (current !== request) return;
@@ -344,9 +360,11 @@
   async function dateView(selected, focus) {
     const current = ++request, movement = takeMovement(), date = selected.date, grade = selected.grade;
     showOnly("date"); readerToolbar(selected); busy(true);
+    // Dates end at 0001-01-01 and 9999-12-31: past either end there is no link.
     const previous = Cal.addDays(date, -1), next = Cal.addDays(date, 1);
-    topNavigationOf({ label: "Calendar days, top", previous: { href: D.dateRoute(grade, previous), label: "Previous day: " + Cal.longDate(previous) },
-      next: { href: D.dateRoute(grade, next), label: "Next day: " + Cal.longDate(next) } });
+    const dayLink = (value, extra) => { const href = D.dateRoute(grade, value); return href ? { href, ...extra } : null; };
+    topNavigationOf({ label: "Calendar days, top", previous: dayLink(previous, { label: "Previous day: " + Cal.longDate(previous) }),
+      next: dayLink(next, { label: "Next day: " + Cal.longDate(next) }) });
     if (movement && movement.top) C.focusNavigation(topNavigation, movement.step);
     const month = date.slice(0, 7), monthLabel = Cal.MONTHS[Number(month.slice(5)) - 1] + " " + month.slice(0, 4);
     crumbs([{ label: D.gradeLabel(grade), href: D.browseRoute(grade) }, { label: monthLabel, href: D.hasCalendar(index, grade) ? D.monthRoute(grade, month) : null }, { label: Cal.longDate(date).replace(/, \d{4}$/, "") }]);
@@ -357,31 +375,35 @@
       // Honest absence: say so, and offer the school year.
       packetShown = null; clearPdf(); menuItems(calendarActions.slice(0, 1)); printFooter.textContent = "";
       const note = R.el("section", undefined, "daily-unavailable");
-      note.append(R.el("h1", "The date calendar for " + D.gradeLabel(grade) + " is not available yet"), R.el("p", "Each level’s calendar appears once it has a reading for every day of three years. Meanwhile, the school year’s 180 nights are ready."));
+      const heading = R.el("h1", "The date calendar for " + D.gradeLabel(grade) + " is not available yet"); heading.tabIndex = -1;
+      note.append(heading, R.el("p", "Each level’s calendar appears once it has a reading for every day of three years. Meanwhile, the school year’s 180 nights are ready."));
       const links = R.el("p"); links.append(R.link("Open the " + D.gradeLabel(grade) + " school year", D.browseRoute(grade)));
       const other = index.grades.filter(course => course.calendar);
       if (other.length) links.append(document.createTextNode(" · "), R.link("Date calendar for " + D.gradeLabel(other[0].grade), D.dateRoute(other[0].grade, date)));
       note.append(links); container.replaceChildren(note);
       setTitle([Cal.longDate(date), D.gradeLabel(grade)]);
       announce("The date calendar for " + D.gradeLabel(grade) + " is not available yet."); busy(false);
+      if (focus) { heading.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: "instant" }); }
       return;
     }
     announce("Opening the reading for " + Cal.longDate(date) + "…");
     try {
-      const calendar = await calendarData(grade), entry = Cal.readingOn(calendar, date);
+      const calendar = await calendarData(grade);
+      if (current !== request) return;
+      const entry = Cal.readingOn(calendar, date);
       if (!entry || !D.validReadingId(grade, entry.id)) throw new Error("No reading for this date");
-      const data = await load(D.readingFile(grade, entry.id));
+      const data = await load(D.readingFile(grade, entry.id), current);
       if (current !== request) return;
       if (data.schemaVersion !== 1 || data.grade !== grade || !data.reading || data.reading.id !== entry.id || !data.source) throw new Error("Reading mismatch");
       const packet = { ...D.studentPacket(grade, data.reading, data.source), date }, run = Cal.runOn(calendar, date);
       const runLinks = run && { part: run.part, of: run.of,
-        from: run.part > 1 ? { label: Cal.shortDate(previous), href: D.dateRoute(grade, previous) } : null,
-        to: run.part < run.of ? { label: Cal.shortDate(next), href: D.dateRoute(grade, next) } : null };
+        from: run.part > 1 ? dayLink(previous, { label: Cal.shortDate(previous) }) : null,
+        to: run.part < run.of ? dayLink(next, { label: Cal.shortDate(next) }) : null };
       const before = R.el("p", undefined, "daily-date-note");
       before.append(R.el("span", Cal.longDate(date), "daily-date-long"), document.createTextNode(" · " + Cal.cycleNote(date) + "."));
       if (entry.week) { before.append(document.createTextNode(" Also the school year’s ")); before.append(R.link(D.nightLabel(entry.week, entry.day), D.route(grade, entry.week, entry.day)), document.createTextNode(".")); }
       const bottom = C.navigation({ label: "Calendar days, bottom", steps: ["previous", "next"],
-        previous: { href: D.dateRoute(grade, previous), text: "‹ " + Cal.shortDate(previous) }, next: { href: D.dateRoute(grade, next), text: Cal.shortDate(next) + " ›" } });
+        previous: dayLink(previous, { text: "‹ " + Cal.shortDate(previous) }), next: dayLink(next, { text: Cal.shortDate(next) + " ›" }) });
       showReading({ grade, reading: data.reading, source: data.source, packet, run: runLinks, current: () => current === request, bottom, before, extraActions: calendarActions,
         print: { meta: D.printMeta(grade, { date }), run: run && { part: run.part, of: run.of } } });
       setTitle([data.reading.title, D.gradeLabel(grade) + ", " + Cal.shortDate(date)]);
@@ -397,13 +419,10 @@
   async function readingView(selected, focus) {
     const current = ++request, grade = selected.grade;
     showOnly("reading"); readerToolbar(selected); busy(true);
-    // A school night has its own place in the year; open it there.
-    const night = /-w(\d\d)-d([1-5])$/.exec(selected.id);
-    if (night) { window.location.replace(D.route(grade, Number(night[1]), Number(night[2]))); return; }
     crumbs([{ label: D.gradeLabel(grade), href: D.browseRoute(grade) }, { label: "Calendar reading" }]);
     announce("Opening this reading…");
     try {
-      const data = await load(D.readingFile(grade, selected.id));
+      const data = await load(D.readingFile(grade, selected.id), current);
       if (current !== request) return;
       if (data.schemaVersion !== 1 || data.grade !== grade || !data.reading || data.reading.id !== selected.id || !data.source) throw new Error("Reading mismatch");
       const excerpt = data.reading.excerpt, step = id => id && D.validReadingId(grade, id) ? { href: D.readingRoute(grade, id) } : null;
@@ -439,7 +458,9 @@
     const grid = $("dailyMonthGrid");
     if (!D.hasCalendar(index, grade)) {
       M.unavailable(grid, grade); $("dailyMonthNote").textContent = "";
-      announce("The date calendar for " + D.gradeLabel(grade) + " is not available yet."); return;
+      announce("The date calendar for " + D.gradeLabel(grade) + " is not available yet.");
+      if (focus) $("dailyMonthHeading").focus();
+      return;
     }
     grid.setAttribute("aria-busy", "true"); announce("Opening " + label + "…");
     try {
@@ -458,6 +479,7 @@
   async function printView(selected, focus) {
     ++request;
     showOnly("print"); crumbs([{ label: "Print a day" }]);
+    announce("Print a day for several levels.");
     setTitle(["Print a day for several levels"]);
     P.show(selected, { index, getJson, today: today(), remembered, announce });
     if (focus) $("dailyPrintHeading").focus();
@@ -472,13 +494,15 @@
     if (selected.view === "date") return dateView(selected, focus);
     if (selected.view === "month") return monthView(selected, focus);
     if (selected.view === "reading") return readingView(selected, focus);
+    // A school night's reading id opens the night (lib decides; the route is never empty).
+    if (selected.redirect) { const target = D.route(selected.grade, selected.week, selected.day); if (target) { window.location.replace(target); return; } }
     return read(selected, focus);
   }
   function go(href) { if (href && window.location.hash !== href) { preservePickerFocus = true; window.location.hash = href; } }
   // Changing grade keeps the place: the same week and day, or the same date.
   function chooseReader(event) {
     const grade = D.gradeFromKey(gradeSelect.value), view = document.body.dataset.readingView;
-    if (view === "date") return go(D.dateRoute(grade, D.validDate(dateInput.value) ? dateInput.value : today()));
+    if (view === "date") return go(D.dateRoute(grade, D.validDate(shownDate) ? shownDate : today()));
     if (view === "reading") return go(D.browseRoute(grade));
     const week = Number(weekSelect.value), day = event && event.target === weekSelect ? 1 : Number(daySelect.value);
     go(D.route(grade, week, day));
@@ -499,8 +523,23 @@
       for (let week = 1; week <= 36; week++) weekSelect.append(option(week, week));
       for (let day = 1; day <= 5; day++) daySelect.append(option(day, day));
       [gradeSelect, weekSelect, daySelect].forEach(select => select.addEventListener("change", chooseReader));
-      dateInput.addEventListener("change", () => { if (D.validDate(dateInput.value)) chooseReader(); });
-      document.querySelector(".daily-filters").addEventListener("submit", event => { event.preventDefault(); chooseReader(); });
+      // The date field opens a date when the picker chooses one, or when a
+      // typed date is committed with Enter or by leaving the field; the
+      // partial years typed on the way (0002, 0020, 0202) open nothing.
+      const commitDate = explicit => {
+        const value = D.dateCommit({ value: dateInput.value, current: shownDate, typing: dateTyping, explicit });
+        if (value) { dateTyping = false; go(D.dateRoute(D.gradeFromKey(gradeSelect.value), value)); }
+      };
+      dateInput.addEventListener("keydown", event => {
+        if (event.key === "Enter") { event.preventDefault(); commitDate(true); }
+        else if (/^(?:\d|Backspace|Delete|ArrowUp|ArrowDown)$/.test(event.key)) dateTyping = true;
+      });
+      dateInput.addEventListener("change", () => commitDate(false));
+      dateInput.addEventListener("blur", () => commitDate(true));
+      document.querySelector(".daily-filters").addEventListener("submit", event => {
+        event.preventDefault();
+        if (document.body.dataset.readingView === "date") commitDate(true); else chooseReader();
+      });
       browseGrade.addEventListener("change", () => go(D.browseRoute(D.gradeFromKey(browseGrade.value))));
       $("dailyBrowseGradeForm").addEventListener("submit", event => event.preventDefault());
       monthGrade.addEventListener("change", () => { const month = /\/month\/(\d{4}-\d{2})$/.exec(window.location.hash); go(D.monthRoute(D.gradeFromKey(monthGrade.value), month ? month[1] : today().slice(0, 7))); });

@@ -75,7 +75,8 @@
 .reader-more { position: relative; }
 .reader-more > summary { display: inline-flex; align-items: center; gap: 4px; min-height: var(--tap); min-width: var(--tap); padding: 4px 8px; cursor: pointer; list-style: none; border-radius: var(--radius-sm); }
 .reader-more > summary::-webkit-details-marker { display: none; }
-.reader-more > summary::after { content: "▾"; font-size: .8em; }
+.reader-more-arrow { font-size: .8em; }
+.reader-more-dots { display: none; font-size: 1.25em; }
 .reader-more > summary:hover { background: var(--color-soft); }
 .reader-more > summary:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
 .reader-more-menu { position: absolute; right: 0; top: 100%; z-index: 20; display: grid; min-width: 16rem; max-width: calc(100vw - 32px); padding: 6px 0; border: 1px solid var(--color-line-strong); border-radius: var(--radius); background: var(--color-surface); box-shadow: var(--shadow-card); }
@@ -96,6 +97,7 @@
 @media (max-width: 360px) {
   .reader-more-word { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .reader-more > summary { justify-content: center; }
-  .reader-more > summary::after { content: "⋯"; font-size: 1.25em; }
+  .reader-more-arrow { display: none; }
+  .reader-more-dots { display: inline; }
 }
 @media print { .reader-more { display: none !important; } }
