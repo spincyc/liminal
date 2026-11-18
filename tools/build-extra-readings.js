@@ -141,6 +141,13 @@ function main(argv) {
     console.log(reading.id.slice(-2), words[i] + "w", reading.time.readingMinutes + "+" + reading.time.discussionMinutes,
       (reading.excerpt.continuesFrom ? "↳ " : "  ") + reading.title);
   });
+  if (!problems.length) {
+    // The same admission the corpus check applies, so a file the check would
+    // refuse is never written.
+    const record = JSON.parse(fs.readFileSync(path.join(ROOT, "content/reading-library", spec.work, "work.json"), "utf8"));
+    try { require("./build-daily-reading").validateExtra({ grade: key, work: spec.work, data: JSON.parse(JSON.stringify(file)) }, new Map([[spec.work, { work: record, blocks }]])); }
+    catch (error) { problems.push(error.message); }
+  }
   for (const problem of problems) console.log("PROBLEM " + problem);
   if (problems.length) { process.exitCode = 1; if (argv.includes("--write")) console.log("Not written."); return; }
   if (argv.includes("--write")) {
