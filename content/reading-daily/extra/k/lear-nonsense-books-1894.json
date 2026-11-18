@@ -258,6 +258,198 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-05",
+      "title": "Mr. and Mrs. Spikky Sparrow",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow two birds who worry about each other, and join in their chirping.",
+      "focus": "Two sparrows, each worried the other will catch cold, fly to London to buy hats and clothes so they can look like people.",
+      "context": "Edward Lear wrote nonsense songs to make children laugh. Sate means sat. Neuralgia is a sharp ache in the head. Genteel means smart and polite; “galloobious” is Lear’s own made-up word for grand. The Monument is a tall stone column in London, and Moses’ was a big London clothes shop. Let the child chirp the “twikky wikky” lines with you.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, “Mr. and Mrs. Spikky Sparrow,” the complete poem (stanzas I–VII); opens “On a little piece of wood Mr. Spikky Sparrow stood: Mrs. Sparrow sate close by, A-making…”; closes “…like other people. Witchy witchy witchy wee, Twikky mikky bikky bee, Zikky sikky tee!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          201,
+          214
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c62a42c15c7b5bff8dbcb9aef671f6b4af91cf3237f73db3b5d30d09667c6d34"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-05-q1",
+          "prompt": "Why is Mrs. Spikky Sparrow worried about her husband?",
+          "facilitatorNotes": [
+            "She heard him cough and sneeze all night, and she thinks it is because he does not wear a hat."
+          ],
+          "evidence": [
+            "I heard you cough, I heard you sneeze;",
+            "Because he does not wear a hat!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-05-q2",
+          "prompt": "What does Mr. Spikky Sparrow think his wife needs?",
+          "facilitatorNotes": [
+            "A bonnet, because he saw her sniffle and her feathers ruffle; then he promises a gown, a sash and slippers too."
+          ],
+          "evidence": [
+            "Ought she not to wear a bonnet?",
+            "There I'll buy you such a gown!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-05-q3",
+          "prompt": "What do the children say when their parents come home dressed up? Why is it funny that the sparrows want to “look like other people”?",
+          "facilitatorNotes": [
+            "They say how beautiful they are. Birds in hats and gowns would look very silly, so the joke is that the sparrows want to look like people. It is also kind: each bird was looking after the other. Children may enjoy either side."
+          ],
+          "evidence": [
+            "How truly beautiful you are!",
+            "We now shall look like other people."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-06",
+      "title": "The Broom, the Shovel, the Poker, and the Tongs",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture ordinary household things acting like people.",
+      "focus": "Four fireside tools go for a drive, two sing silly love songs, two lose patience, and a cup of tea puts all right.",
+      "context": "These are tools kept by a fireplace: a broom sweeps the hearth, a shovel scoops coal, a poker stirs the fire, and tongs pick up coals. Lear dresses them like people out for a drive in a coach. A brooch is a pin worn as jewellery; enrapture means fill with joy; “you don't care about me a pin” means not at all. Join in on “Ding-a-dong!”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, “The Broom, the Shovel, the Poker, and the Tongs,” the complete poem (stanzas I–IV); opens “The Broom and the Shovel, the Poker and Tongs, They all took a drive in the Park; And…”; closes “…little They all became happy again. Ding-a-dong, ding-a-dong! There's an end of my song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          216,
+          223
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9fe9cad8eeb5fb55089bab6da47968d11188047b22a85ea18dc15a3661ae05c7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-06-q1",
+          "prompt": "What is each of the four friends like on the drive?",
+          "facilitatorNotes": [
+            "The Poker sits up straight, the Tongs clatter, the Shovel wears black with a brooch, and the Broom wears blue with a sash. If you have fireplace tools or a broom, look at them together."
+          ],
+          "evidence": [
+            "Mr. Poker he sate quite upright in the coach;",
+            "Mrs. Broom was in blue (with a sash)."
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-06-q2",
+          "prompt": "What does the Poker love about the Shovel? What is the Tongs worried about?",
+          "facilitatorNotes": [
+            "The Poker loves her shiny nose, round head and slender shape; the Tongs fears the Broom does not like him because he is so thin with long legs."
+          ],
+          "evidence": [
+            "Your nose is so shiny, your head is so round,",
+            "Oh! is it because I'm so thin,"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-06-q3",
+          "prompt": "How do the Broom and the Shovel answer the songs? How does everyone become happy again?",
+          "facilitatorNotes": [
+            "They call the songs nonsense and threaten to hit and sweep the singers away; then at home they put on the kettle, and little by little everyone is happy. Ask why a cup of tea might help."
+          ],
+          "evidence": [
+            "What nonsense you're singing to-day!",
+            "They all became happy again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-07",
+      "title": "The Pobble Who Has No Toes",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a nonsense story and notice advice that makes no sense.",
+      "focus": "The Pobble wraps his nose to save his toes, swims the sea, and loses them anyway; his aunt has an answer for everything.",
+      "context": "A Pobble is a creature Edward Lear made up. “Fish fiddle de-dee!” is a nonsense way of saying “Nonsense!” Lavender water is perfume. The Bristol Channel is a wide stretch of sea in Britain. Flannel is soft wool cloth; a porpoise is a small sea animal like a dolphin; forlorn means very sad; a bark is a boat. Runcible is another of Lear’s made-up words.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Laughable Lyrics, “The Pobble Who Has No Toes,” the complete poem (stanzas I–VI); opens “The Pobble who has no toes Had once as many as we; When they said, \"Some day you may lose…”; closes “…said, \"It's a fact the whole world knows, That Pobbles are happier without their toes.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          875,
+          886
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5eced88543538f2e50fe43a39e5af3c8a57501085adfb166b2eafd377b14c173"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q1",
+          "prompt": "What does Aunt Jobiska say will keep the Pobble’s toes safe?",
+          "facilitatorNotes": [
+            "Drinking pink lavender water, and keeping his nose warm in scarlet flannel. Ask what a warm nose has to do with toes: nothing, which is the joke."
+          ],
+          "evidence": [
+            "Lavender water tinged with pink;",
+            "Are safe--provided he minds his nose."
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q2",
+          "prompt": "What happens to the scarlet flannel, and to the Pobble’s toes?",
+          "facilitatorNotes": [
+            "A sea-green Porpoise carries off the flannel, and when the Pobble looks down, all his toes are gone."
+          ],
+          "evidence": [
+            "A sea-green Porpoise carried away",
+            "On perceiving that all his toes were gone!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-07-q3",
+          "prompt": "At the end, Aunt Jobiska says Pobbles are happier without their toes. Do you believe her? Why might she say it?",
+          "facilitatorNotes": [
+            "She may want to cheer him up with a feast, or she may simply be sure of everything, as she was about his nose. Children can decide; nobody in the poem ever finds out who took the toes."
+          ],
+          "evidence": [
+            "Of eggs and buttercups fried with fish;",
+            "That Pobbles are happier without their toes."
+          ]
+        }
+      ]
     }
   ]
 }
