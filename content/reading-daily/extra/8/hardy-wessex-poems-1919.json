@@ -1740,6 +1740,308 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-24",
+      "title": "She, to Him III and IV",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a speaker who is honest about an ugly feeling, and decide whether her argument at the end persuades you.",
+      "focus": "Faithfulness to a lost love, and the jealousy that comes with it.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. He wrote four sonnets called “She, to Him” in 1866, all in the voice of a woman whose lover has left her for someone else; these are the last two. To domicile is to give a home to; the “prime of manhood” are men in their prime; a vane is a weathervane, and to canker is to rust; her “dexterities of hue” are her quick changes of colour, her bloom; to maledict is to curse; amplitudes are fullness; “nigh-regarding” means looking closely; unrecked means unheeded; “in selfish-wise” means selfishly.",
+      "contentNote": "In the fourth sonnet the speaker says that in her jealousy she could “pray her dead,” wishing death on her rival.",
+      "excerpt": {
+        "locator": "She, to Him, sonnets III and IV, each with its date; opens “I WILL be faithful to thee; aye, I will! And Death shall choose me with a wondering eye…”; closes “1866.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          85,
+          94
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "065db9a9ff199ab27da3b29b3bb8e1c4b49713d368f08e7d8cf28d759feacd82"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-24-q1",
+          "prompt": "What does the speaker promise at the start of III, and how does she imagine Death will know she kept it?",
+          "facilitatorNotes": [
+            "To be faithful “aye,” always. Death will wonder he never took her before, since she has been “his by right” since the last good-bye: her real life ended then. Her faithfulness is a kind of living death."
+          ],
+          "evidence": [
+            "I WILL be faithful to thee; aye, I will!",
+            "One his by right ever since that last Good-bye!"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-24-q2",
+          "prompt": "Explain the image of the weathervane. Why is it “Numb,” and why does it rust?",
+          "facilitatorNotes": [
+            "A rusted vane still points to the wind that last blew on it; she still points to the lost lover though everything has moved on. People “of Now,” who live for the future, despise her for keeping memory alive. Readers may admire the constancy or see it as a trap."
+          ],
+          "evidence": [
+            "Numb as a vane that cankers on its point,",
+            "True to the wind that kissed ere canker came;"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-24-q3",
+          "prompt": "In IV she says this love “puts all humanity from me.” What does she feel towards her rival, and does she excuse it?",
+          "facilitatorNotes": [
+            "She curses her and could “pray her dead” for taking a love that would otherwise have fed her own heart. She does not excuse it; she asks whether he can hate her as “an envier.” The honesty about an ugly feeling is the sonnet’s power."
+          ],
+          "evidence": [
+            "I can but maledict her, pray her dead,",
+            "Canst thou then hate me as an envier"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-24-q4",
+          "prompt": "The last lines claim “Love is lovelier / The more it shapes its moan in selfish-wise.” Do you agree? How does the claim fit both sonnets?",
+          "facilitatorNotes": [
+            "She argues that jealous love is truest because it wants him wholly; in III the same selfishness looked like faithfulness. Many readers will disagree; others will hear her bitter self-justification rather than Hardy’s own view."
+          ],
+          "evidence": [
+            "Believe me, Lost One, Love is lovelier",
+            "The more it shapes its moan in selfish-wise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-25",
+      "title": "Valenciennes (1793)",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Read a poem written in a Dorset soldier’s speech, and listen for what the old man says and what he cannot quite say.",
+      "focus": "One month of war that lasts a lifetime.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. The speaker, Corporal Tullidge, an old soldier who also appears in Hardy’s novel The Trumpet-Major (as the subtitle says), remembers the British siege of the French town of Valenciennes in 1793, early in Britain’s long wars with Revolutionary France; the Duke of York commanded the British. Hardy spells his words as he speaks them: ath’art = across; Ninety-dree = ’93; a-topperèn = knocking down; snocks and slats = blows and smacks; therence = from there; fleën = flying; slent = split; anighst = near; en = him; jined = joined; thik = that; quick = alive; zummer = summer; volk = folk; a was = he was; fout = fought; Nick is the Devil; jasper halls are heaven’s jewelled walls. The dates 1878–1897 show Hardy worked at the poem for many years.",
+      "contentNote": "The speaker is wounded in the skull and deafened for life by a shell, and townspeople are killed in the bombardment.",
+      "excerpt": {
+        "locator": "Valenciennes (1793), the whole poem with its subtitle and dates; opens “BY CORP’L TULLIDGE: _see_ “_The Trumpet-Major_” IN MEMORY OF S. C. (PENSIONER). DIED 184–”; closes “1878–1897.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          110,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b96fa971755e990002226b1cf7b99c4b5744fc257bf0613e674aef61b29378d7"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-25-q1",
+          "prompt": "What did the shell do to the corporal? Find the lines that show how it still shapes his life.",
+          "facilitatorNotes": [
+            "It burst by his ears; his skull was patched with a silver clamp; he is stone-deaf and never hears bees or the cuckoo, “But night and day I hear the bombs.” The only sound left to him is the war."
+          ],
+          "evidence": [
+            "And jined en wi’ a zilver clamp",
+            "But night and day I hear the bombs"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-25-q2",
+          "prompt": "Which lines show that the war could be questioned even then? How does the corporal deal with that doubt?",
+          "facilitatorNotes": [
+            "People said the British had no business there, and “harmless townsfolk fell to die.” He reports both, then sets them aside: “that’s not my affair.” Readers may find that loyal, honest, or troubling."
+          ],
+          "evidence": [
+            "’Twas said that we’d no business there",
+            "However, that’s not my affair—",
+            "And harmless townsfolk fell to die"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-25-q3",
+          "prompt": "Every stanza ends with “Valencieën.” What does the refrain do, especially in the last stanza?",
+          "facilitatorNotes": [
+            "It brings every memory back to one place, as the bombs stay in his ears; his life circles round one month. In the last stanza his fear that the Devil might bomb heaven’s walls as they bombed the town mixes a joke with fear and perhaps guilt. Some hear comedy, some a haunted man."
+          ],
+          "evidence": [
+            "Good Lord, if Nick should bomb the walls",
+            "As we did Valencieën!"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-25-q4",
+          "prompt": "“But yet—at times I’m sort o’ glad / I fout at Valencieën.” Why might a man so damaged be glad?",
+          "facilitatorNotes": [
+            "It was the great event of his life, the start of a war whose roar rolled further than anyone dreamed; it gives him a place in history. The hesitant “sort o’” shows mixed feelings. Readers can discuss whether pride and pain can both be true."
+          ],
+          "evidence": [
+            "But yet—at times I’m sort o’ glad",
+            "—Few dreamt how far would roll the roar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-26",
+      "title": "Leipzig (1813)",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 14,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a battle told at second hand, and notice where the teller stops reporting and starts judging.",
+      "focus": "A great battle remembered through a mother’s song.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. Like “Valenciennes,” it imagines a tale told in Casterbridge, Hardy’s name for Dorchester. In October 1813 the allied armies of Austria, Prussia and Sweden, led by Schwarzenberg, Blücher and the Swedish crown prince Bernadotte, defeated Napoleon at Leipzig, a city of the King of Saxony; Ney, Marmont, Bertrand, Victor, Augereau, Poniatowski, Lauriston and Macdonald were Napoleon’s marshals and generals. Hussars are light cavalry; mien is look or bearing; to touse is to shake; prow means valiant; the Middle Sea is the Mediterranean; a trine is a group of three; a gin is a trap; the van is the front of an army; Platz is German for a square; the Elster-Strom is the River Elster; a passing bell is rung for a death.",
+      "contentNote": "The poem describes mass death in battle and soldiers drowning when a bridge is blown up.",
+      "excerpt": {
+        "locator": "Leipzig (1813), the whole poem with its scene; opens “_Scene_: _The Master-tradesmen’s Parlour at the Old Ship Inn_, _Casterbridge_. _Evening_.”; closes “…far scene, And her acting of how the Allies marched in, And her touse of the tambourine!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          173,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0b33bf9be2f926506c6bc5341c04b64540c3ce68b3f405016b02e0f84ff2a0bf"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-26-q1",
+          "prompt": "Who tells the story of the battle, and how did he come to know it? Why might Hardy frame it this way?",
+          "facilitatorNotes": [
+            "Old Norbert, born of a German soldier and a Leipzig girl and raised in Wessex, retells what his mother told him; a street-fiddler’s march brings it back and wets his cheek. The battle reaches us through a song, a mother’s memory and a son’s tears, so history becomes family memory."
+          ],
+          "evidence": [
+            "Of my mother—her voice and mien",
+            "My mother of Leipzig; but he,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-26-q2",
+          "prompt": "Napoleon is “the One” and the allied leaders “the Three.” What does this way of naming do?",
+          "facilitatorNotes": [
+            "It makes the battle feel like legend or fate: one great man against a combined many, beaten “by numbers’ might” because in equal fight none could match him. The poem half admires him, yet his boast that he would “fill / Half Hell” with their soldiers shows his contempt for soldiers’ lives."
+          ],
+          "evidence": [
+            "Combined them to crush One,",
+            "But give me a third of their strength, I’d fill"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-26-q3",
+          "prompt": "Find the stanza about the “Fifty thousand sturdy souls.” What do the old folks’ questions add to the battle story?",
+          "facilitatorNotes": [
+            "The dead were “lotted their shares in a quarrel not theirs”; the old folk ask when men’s swords will become ploughshares, as the Bible promises. The poem steps out of the military account to judge war itself, and the night after brings “A miles-wide pant of pain.”"
+          ],
+          "evidence": [
+            "And were lotted their shares in a quarrel not theirs,",
+            "When will men’s swords to ploughshares turn?"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-26-q4",
+          "prompt": "The blowing-up of the Bridge of Lindenau is the climax. Which images make it terrible, and how does the poem return to the mother at the end?",
+          "facilitatorNotes": [
+            "An “earthen wave” of stones and men, as if a churchyard threw up its dead; currents that “rippled red”; Poniatowski plunging in, never to rise. Then the “passing bell” of an Empire gives way to a girl watching the victors parade, and her tambourine. Some readers find that ending tender, others ironic."
+          ],
+          "evidence": [
+            "Some rebel churchyard crew updrave",
+            "And every current rippled red",
+            "My mother saw these things!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-27",
+      "title": "To a Lady Offended by a Book of the Writer’s",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 16,
+        "totalMinutes": 22
+      },
+      "challenge": "Hear the sharp edge under polite words, and decide what the writer finally cares about more than the lady’s good opinion.",
+      "focus": "A writer losing a reader over a book he will not take back.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. He published it in 1898, after readers and critics had attacked his novels Tess of the d’Urbervilles (1891) and Jude the Obscure (1895) as immoral; the lady is not named. “Upcloses” means closes; flambeaux are torches; an “insidious heave” is a sly push; surcease means to stop; alway means always.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "To a Lady offended by a Book of the Writer’s, the whole sonnet; opens “NOW that my page upcloses, doomed, maybe, Never to press thy cosy cushions more, Or wake…”; closes “…And then in far and feeble visitings, And then surcease. Truth will be truth alway.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          451,
+          453
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "113a18f53b2983aef261ebd797551a80e816af7f2c36ef68e45888d74c30d859"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-27-q1",
+          "prompt": "What has happened between the writer and the lady? Which words show what she used to do with his books?",
+          "facilitatorNotes": [
+            "A book has offended her, and she may never read him again: his page will no longer “press thy cosy cushions” or win her “ready Yeas.” Her support was easy and comfortable."
+          ],
+          "evidence": [
+            "Never to press thy cosy cushions more,",
+            "Or wake thy ready Yeas as heretofore,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-27-q2",
+          "prompt": "How does he expect her opinion of him to change, and whom does he blame?",
+          "facilitatorNotes": [
+            "His “sombre image” will be pushed out by others “less forthright,” as torches banish the evening. He blames her “natural receptivity” (she is easily influenced) and the sly talk of others. The politeness carries a sharp criticism."
+          ],
+          "evidence": [
+            "Knowing thy natural receptivity,",
+            "Of those less forthright, must lose place in thee."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-27-q3",
+          "prompt": "“So be it. I have borne such.” What tone do these short sentences set? Is the writer hurt, scornful, or calm?",
+          "facilitatorNotes": [
+            "Resigned and controlled after the long first sentence: he has suffered this before. Words like “smugger things” let scorn show through. Readers can defend any of the three with evidence."
+          ],
+          "evidence": [
+            "I have borne such.",
+            "And yield their space to shine of smugger things;"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-27-q4",
+          "prompt": "The last lines fade her memory of him step by step. Trace the steps, and explain the effect of the final sentence.",
+          "facilitatorNotes": [
+            "“Fitful gleams,” then “far and feeble visitings,” then nothing, like a light dying. “Truth will be truth alway” is short and firm: whatever she thinks, what he wrote stays true. Some readers find it proud, others dignified."
+          ],
+          "evidence": [
+            "Till I shape to thee but in fitful gleams,",
+            "Truth will be truth alway."
+          ]
+        }
+      ]
     }
   ]
 }
