@@ -5,6 +5,833 @@
   "readings": [
     {
       "id": "reading-3-roberts-kindred-1907-01",
+      "title": "The Lord of the Air, part 1: The watch-tower",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 6,
+        "totalMinutes": 20
+      },
+      "challenge": "Picture a great bird from a close description, and follow one hunt from start to finish.",
+      "focus": "A bald eagle rules the sky over the lakes, hunting with terrible speed to feed his young.",
+      "context": "Charles G. D. Roberts (1860–1943) was a Canadian poet and storyteller who grew up in the backwoods of New Brunswick. In The Kindred of the Wild (1902) he wrote realistic stories of wild animals, imagining their senses and fears while keeping close to how they really live. Several of the stories follow “the Boy,” a farm boy who watches the creatures of the woods. The story is set around the Squatook Lakes in the forests of northern New Brunswick, Canada, near a bald mountain called Sugar Loaf. The bald eagle is a large eagle with a white head and tail. Aerial vicinage means the sky round about; the eagle’s nest is called an eyrie. Pinions are wings; talons are claws; quarry is hunted prey; vitreous means glassy; to spiral is to circle upward; nestlings and eaglets are young eagles still in the nest.",
+      "contentNote": "The eagle kills a duck, and the young eagles are fed on it and on a fish.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” section I, from the beginning to the old birds flying off to forage after feeding the nestlings; opens “The chill glitter of the northern summer sunrise was washing down over the rounded top of…”; closes “…leaving a bloody garniture of bones and feathers upon the threshold of their home.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-roberts-kindred-1907-02",
+        "blocks": [
+          47,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6f64230a01c0d4ba0388e4e0b24d15c41ce92f60099ab65e5643cea35038bbe"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q1",
+          "prompt": "Where is the eagle’s watch-tower, and why is it a good place for him to sit?",
+          "facilitatorNotes": [
+            "The bleached top of a giant pine that juts out from near the peak of Sugar Loaf over the valley. From it he can see the whole wide basin of lakes and forest below."
+          ],
+          "evidence": [
+            "was the watch-tower of the great bald eagle",
+            "thrust out over the vast basin,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q2",
+          "prompt": "Find three details that make the eagle look like a king.",
+          "facilitatorNotes": [
+            "He sits “erect and moveless,” “consciously lord of the air”; his eyes are “unacquainted with fear” with a “savage intensity”; his beak is a “rending hook.” Readers may choose others."
+          ],
+          "evidence": [
+            "consciously lord of the air.",
+            "His eyes, clear, direct, unacquainted with fear,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q3",
+          "prompt": "How does the eagle catch the duck? What does he add when falling alone is not fast enough?",
+          "facilitatorNotes": [
+            "He glides above it, shuts his wings, hardens “like a wedge of steel,” and drops; seeing the duck is too fast, he adds a few fierce wing-strokes that more than double his speed. The duck hears a hiss and is struck before it can look up."
+          ],
+          "evidence": [
+            "his feathers hardened till he was like a wedge of steel,",
+            "Two or three quick, short, fierce thrusts of his pinions, and the speed of his descent was more than doubled."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q4",
+          "prompt": "The nest looks “like a hay-cart load of rubbish.” What is it really like? What does this show about the eagles?",
+          "facilitatorNotes": [
+            "Every stick was chosen and fitted so the nest stands through the wildest storms, and it is locked into a crack in the ledge. The rejected sticks lie below. The eagles are careful builders, not careless ones. Ask what else in the story looks one way and is another."
+          ],
+          "evidence": [
+            "The nest was a seemingly haphazard collection of sticks,",
+            "every stick in the structure had been selected with care,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-02",
+      "title": "The Lord of the Air, part 2: The fish-hawk’s tribute",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 6,
+        "totalMinutes": 20
+      },
+      "challenge": "Work out the unwritten rules between the eagle and the fish-hawk.",
+      "focus": "The eagle takes a share of the fish-hawk’s catch by threat, but never kills it or takes too much.",
+      "context": "Recap: a great bald eagle, the “king,” rules the sky over the Squatook Lakes from a dead pine near the top of a mountain called Sugar Loaf. At dawn he struck down a duck and fed it to his two hungry eaglets, while his mate brought a fish. A fish-hawk, or osprey, is a hawk that dives into water for fish. Tribute is payment a ruler takes from his subjects; a “togue” is a lake trout. A plummet is a weight that drops straight down; annihilation is complete destruction.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Lord of the Air,” section I, from the king’s return to his watch-tower to his killing “only when the need was upon him”; opens “The king—who, though smaller than his mate, was her lord by virtue of superior initiative…”; closes “…them. Untainted by the lust of killing, he killed only when the need was upon him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-01",
+        "continuesTo": "reading-3-roberts-kindred-1907-03",
+        "blocks": [
+          56,
+          65
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2869e0e5c15986500b3db349fd9b8e3d6c6c03332fb8b2e690f9b079821971ce"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q1",
+          "prompt": "How does the eagle watch the fish-hawk without seeming to?",
+          "facilitatorNotes": [
+            "He circles so high that he is “a mere speck in the blue,” seemingly not paying attention; but his head is always stretched earthward and he sees every detail."
+          ],
+          "evidence": [
+            "seemingly oblivious of all that went on below;",
+            "his eyes lost no detail of the fish-hawk’s diligence."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q2",
+          "prompt": "When the eagle dives at the fish-hawk, what does he want? How does he show it?",
+          "facilitatorNotes": [
+            "Not to kill it but to make it drop its fish. He flies over, under and round it, flapping a wing in its face, “yet never striking him.” Finally he rushes with a yelp and open talons, and the threat is enough."
+          ],
+          "evidence": [
+            "But this time he had no slaughterous intent.",
+            "The king was simply indicating, quite unmistakably, his pleasure, which was that the fish should be delivered up."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q3",
+          "prompt": "Why doesn’t the eagle harm the fish-hawk or take all its fish?",
+          "facilitatorNotes": [
+            "The hawk is useful to him; if he took too much it might give up and move away. So it always keeps enough for itself and its young."
+          ],
+          "evidence": [
+            "He had no wish to harm the fish-hawk,",
+            "lest the latter should grow discouraged and remove to freer waters."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q4",
+          "prompt": "Roberts calls the eagle “a right kingly monarch.” Is taking another bird’s fish kingly, or is it bullying? Use the story to decide.",
+          "facilitatorNotes": [
+            "Roberts admires him: he lets the ducks go and kills “only when the need was upon him.” Others may say he is a bully who lives off a hard-working subject, like a king taking taxes. Both readings use the same evidence; ask which word, “king” or “bully,” fits better and why."
+          ],
+          "evidence": [
+            "Being a right kingly monarch, he had no desire to trouble them.",
+            "Untainted by the lust of killing, he killed only when the need was upon him."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-03",
+      "title": "The Lord of the Air, part 3: Fish among the grass",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Watch two careful minds, the eagle’s and the trapper’s, and notice what each one knows.",
+      "focus": "An old trapper sets a patient trap, and the eagle’s suspicion slowly turns to trust.",
+      "context": "Recap: the bald eagle who rules the Squatook Lakes hunts from a dead pine near the peak of Sugar Loaf to feed his two eaglets, and takes part of the fish-hawk’s catch by threats, never killing more than he needs. Roberts calls the trapper “the Indian,” the word of his time for the First Nations people of the region. Suckers are a kind of fish; withe-wood is a bendy shrub; portentous means warning of trouble; caprices are sudden whims; beneficences are kind gifts. Edmundston is a town on the Madawaska River.",
+      "contentNote": "Roberts never gives the trapper a full name or a voice of his own; he is seen from outside, as a crafty figure, in the manner of stories of the time.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” from the end of section I, when the eagle decides to go fishing, through section II to his growing used to the free fish; opens “Having preened himself with some care, polished his great beak on the dry wood of the…”; closes “…as one of those beneficences which the unseen powers bestow without explanation.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-02",
+        "continuesTo": "reading-3-roberts-kindred-1907-04",
+        "blocks": [
+          66,
+          72
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3e719a5785ea16e4a86a9c7642ab30f539fed951ff0485842f7020c9b7673a70"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q1",
+          "prompt": "Why does the old trapper want to catch the eagle? Why must it be alive?",
+          "facilitatorNotes": [
+            "A rich American promised him fifty dollars for a fine eagle, “alive and unhurt.” So he cannot shoot it; he must snare it."
+          ],
+          "evidence": [
+            "had promised him fifty dollars",
+            "if delivered at Edmundston alive and unhurt."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q2",
+          "prompt": "How does the trapper set his first bait? Why the stone in the middle?",
+          "facilitatorNotes": [
+            "Before dawn he scatters fish in a small circle among grass tufts near the shoals, and puts a foot-high stone in the centre, a perfect perch for an eagle eating in a hurry."
+          ],
+          "evidence": [
+            "the Indian had placed a stone about a foot high,",
+            "such as any reasonable eagle would like to perch upon when making a hasty meal."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q3",
+          "prompt": "What makes the eagle suspicious, and how does he test each worry?",
+          "facilitatorNotes": [
+            "The new stone, and a dead fish up in the grass instead of at the water’s edge. He perches on a tree to look, peers into the bushes and scans the shore, and only then goes down."
+          ],
+          "evidence": [
+            "That big stone was something new, and therefore to be suspected.",
+            "that was a singular situation for a dead fish to get itself into."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q4",
+          "prompt": "By the second day the eagle stops wondering where the fish come from. What does Roberts say wild creatures do with a good thing they cannot explain? Is that wise?",
+          "facilitatorNotes": [
+            "They “accept a simple obvious good, however extraordinary,” as a gift from unseen powers. It saves worry, but here it is exactly what the trapper is counting on. Readers may think of a too-good-to-be-true offer in their own lives."
+          ],
+          "evidence": [
+            "His surprise and curiosity as to the source of the supply had died out on the second day.",
+            "The wild creatures quickly learn to accept a simple obvious good,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-04",
+      "title": "The Lord of the Air, part 4: The great net",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow how a trap is built, and track the eagle’s feelings about it step by step.",
+      "focus": "Little by little, the eagle learns to trust the strange net above his feeding-stone.",
+      "context": "Recap: an old trapper has promised to deliver the bald eagle of Sugar Loaf alive for fifty dollars. Each night he scatters fish around a perching-stone on the lake shore, and the eagle, though careful, has come to accept the free meals. A hoop is a ring; plaited means woven; a sapling is a young tree; a scoop-net is a net on a handle. Inexplicable means impossible to explain; inimical means unfriendly; manifestly means plainly.",
+      "contentNote": "Roberts says the trapper “had freed himself from the conservatism of his race,” a sweeping generalization about Native people typical of his time and not a fact about anyone.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” section II, from the making of the scoop-net to the trapper’s grin; opens “By the time the eagle had come to this frame of mind, the old Indian was ready for the…”; closes “…melted back into the woods, and slipped away to resume his fishing at the outlet.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-03",
+        "continuesTo": "reading-3-roberts-kindred-1907-05",
+        "blocks": [
+          73,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "08d00ad74e0308b3b1407a0514681c75c9224419373a0c7cbdc991af5686ac91"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q1",
+          "prompt": "Describe the trap. Why does the trapper think a new idea is needed?",
+          "facilitatorNotes": [
+            "A huge scoop-net on a seven-foot hoop, its handle driven into the sand so the net lies flat above the stone, propped up. No one had caught an eagle in a net, but no one had wanted an eagle alive for fifty dollars either; a new problem needs a new plan."
+          ],
+          "evidence": [
+            "the affair when completed was a monster scoop-net,",
+            "The case was plainly one that called for new ideas,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q2",
+          "prompt": "What does the eagle do when he first sees the net? Who is watching him?",
+          "facilitatorNotes": [
+            "He circles high, then sits for half an hour watching it. Across the lake the trapper, “equally moveless and far more patient,” watches him."
+          ],
+          "evidence": [
+            "He at once checked his flight and began whirling in great circles,",
+            "a dusky figure, equally moveless and far more patient, was watching him in turn"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q3",
+          "prompt": "Find the steps by which the eagle comes to trust the net.",
+          "facilitatorNotes": [
+            "He eats a fish far from it; decides it is not “actively inimical”; perches on its handle; hops in, grabs a fish and hurries out; and the next day perches calmly on the stone under it. Each step is a little braver than the last."
+          ],
+          "evidence": [
+            "he had proved that it was not actively inimical.",
+            "He went under the net without haste or apprehension,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q4",
+          "prompt": "The trapper allows himself only “one instant” of a grin. Why only then? What do you predict, and whom do you hope wins?",
+          "facilitatorNotes": [
+            "His plan is working: the eagle now sits under the net without fear. Readers may predict the net will fall. Some will hope the eagle escapes; others admire the trapper’s skill. Both can point to how patient each one has been."
+          ],
+          "evidence": [
+            "flashed for one instant with a furtive grin.",
+            "he had grown once more utterly confident."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-05",
+      "title": "The Lord of the Air, part 5: The net falls",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 6,
+        "totalMinutes": 20
+      },
+      "challenge": "Notice how the story moves from the capture to everyone the eagle has left behind.",
+      "focus": "The eagle is caught, and his mate and the creatures of the lakes feel his absence.",
+      "context": "Recap: an old trapper, promised fifty dollars for a live eagle, has set a giant scoop-net over the stone where the eagle of Sugar Loaf comes to eat free fish. Little by little the eagle has learned to trust it. Stoic means calm in hardship; alacrity is eagerness; ignominiously means shamefully. Telepathic means passing thoughts without words; a lucifee is a lynx; insatiable means never satisfied; audacious means bold; derision is mockery; vituperative means abusive; usurpation is taking a ruler’s place.",
+      "contentNote": "The mother eagle kills a heron to feed her young.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” from the end of section II, the trapper’s last changes to the net, through section III to the fish-hawk taking the empty perch; opens “The next morning, about an hour before dawn, a ghostly birch canoe slipped up to the…”; closes “…palled upon their whimsical fancies, and they left him in peace to his aping of the king.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-04",
+        "continuesTo": "reading-3-roberts-kindred-1907-06",
+        "blocks": [
+          78,
+          85
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b272507ea84679d85069f533e5500884e2ec013bbcdb335a4e3a27a754295ad2"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-05-q1",
+          "prompt": "How does the trapper change the trap on the last morning? Why the scrap of red flannel?",
+          "facilitatorNotes": [
+            "He ties one cord to the hoop and another to a prop balanced on a flat stone, runs both back to his hiding place, and loosens the handle so the net will fall quickly. The red flannel marks the right cord, “that there might be no mistake at a critical moment.”"
+          ],
+          "evidence": [
+            "To the free end of this second cord he tied a scrap of red flannel,",
+            "that there might be no mistake at a critical moment."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-05-q2",
+          "prompt": "Just before the net falls, the eagle senses danger. What warns him, and why can’t he escape?",
+          "facilitatorNotes": [
+            "He feels “the shadow of a movement,” or some “inward, unaccredited guardian” signals danger. But even his “electric speed” is too slow: the net comes down before he can spring."
+          ],
+          "evidence": [
+            "some inward, unaccredited guardian signalled to him of danger.",
+            "But even that electric speed of his was too slow for this demand."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-05-q3",
+          "prompt": "How does the mother eagle learn something is wrong? What does she do, even though her heart aches?",
+          "facilitatorNotes": [
+            "Her mate has never been away so long, and his pine is empty. She hunts a heron, because “the nestlings must be fed,” and never again hunts on the Squatooks."
+          ],
+          "evidence": [
+            "However her wild heart ached, the nestlings must be fed.",
+            "she came no more to the Squatooks."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-05-q4",
+          "prompt": "With the king gone, what do the crows and the fish-hawk do? What does this show about what the eagle meant to the lakes?",
+          "facilitatorNotes": [
+            "The crows hop on his perch and caw; the fish-hawk fishes in peace and even takes the king’s pine, until the crows mock him away. The king’s absence changes the whole country; readers can decide whether the creatures are glad, frightened, or both."
+          ],
+          "evidence": [
+            "They hopped up and down on the sacred seat, cawing impertinently and excitedly.",
+            "they left him in peace to his aping of the king."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-06",
+      "title": "The Lord of the Air, part 6: The faint blue cloud",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Read a captive’s feelings from what he does and does not do.",
+      "focus": "The chained eagle stares toward his lost mountain and refuses to be tamed.",
+      "context": "Recap: an old trapper netted the bald eagle who ruled the Squatook Lakes and carried him off. His mate now hunts far away to feed their eaglets alone, and the fish-hawk and the crows have taken over his old perch. The eagle has been taken to the town of Edmundston, by the Falls of the Madawaska River. Ignominy is shame; jailers are people who keep prisoners; aversion is strong dislike; ignoble means unworthy. Trophies are skins or heads kept by hunters; the Zambesi is a river in Africa; gyres are spiral flights; illustrious means famous.",
+      "contentNote": "A rich hunter is proud of the skins of lions, tigers and bears he has shot.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” section III, from the eagle chained in Edmundston to his being wrapped in a coat for the new chain; opens “Meanwhile, in the village of Edmundston, in the yard of a house that stood ever enfolded…”; closes “…the great bird being too proud as well as too wise to waste force in a vain struggle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-05",
+        "continuesTo": "reading-3-roberts-kindred-1907-07",
+        "blocks": [
+          86,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "99ae81e55406059bce52c63bda595b419691c54c57911fcef86f30dc63a376da"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-06-q1",
+          "prompt": "What is the “faint blue cloud” the eagle stares at? Why can only he see it?",
+          "facilitatorNotes": [
+            "The summit of Sugar Loaf, his lost realm, far beyond the river and hills. His eyes are far sharper than any human’s. Staring at it hour after hour shows his longing."
+          ],
+          "evidence": [
+            "his own lost realm of Sugar Loaf.",
+            "gaze upon this faint blue cloud of his desire."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-06-q2",
+          "prompt": "How does the eagle behave toward his jailers? Why do they give up trying to tame him?",
+          "facilitatorNotes": [
+            "He eats only when no one is watching, hardens his feathers when they come near, and never struggles uselessly against his chain. Because he shows no fear or wildness to work on, they decide he is “tameless.”"
+          ],
+          "evidence": [
+            "ignoring the food while any one was by,",
+            "they presently gave him up as tameless"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-06-q3",
+          "prompt": "What does the rich American already own? Why does he want this eagle alive?",
+          "facilitatorNotes": [
+            "Skins of lions, tigers and grizzlies, and heads of moose and caribou. He has failed for years to shoot this eagle, and has “come to love” it so much that he wants it alive. Ask whether that is really love."
+          ],
+          "evidence": [
+            "Trophies he had at home in abundance,",
+            "he had come to love so that he coveted him alive."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-06-q4",
+          "prompt": "The American brings a soft leather anklet with silver buckles and a delicate steel chain. Is a finer chain kinder? What would the eagle say?",
+          "facilitatorNotes": [
+            "It may chafe less, but it is still a chain; the engraved plate even names the place of his capture. Many readers will say the eagle wants only his freedom; some may argue the rich man means well. The “glittering thing” already makes the eagle uneasy."
+          ],
+          "evidence": [
+            "a chain of wrought steel links, slender, delicate, and strong.",
+            "a long, glittering thing that jangled and stirred a vague apprehension in his heart."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-07",
+      "title": "The Lord of the Air, part 7: The king returns",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a sudden reversal and then see how the ending echoes the beginning.",
+      "focus": "The eagle seizes one chance, breaks free, and takes back his throne.",
+      "context": "Recap: the bald eagle who ruled the Squatook Lakes was netted by an old trapper and chained in a shed in the town of Edmundston, staring always toward his mountain, Sugar Loaf. The rich American who paid for him has come with a fine leather anklet and a new steel chain, and the eagle has been wrapped in a coat so the chain can be fitted. The countryman says “Them’s the kind as don’t tame”: those are the kind that never tame. Gabe is the trapper. Dexterously means skilfully; a buffet is a blow; garrulous means chattering; sublimity is grandeur.",
+      "contentNote": "The eagle bites a man’s leg to escape.",
+      "excerpt": {
+        "locator": "“The Lord of the Air,” section III, from the stranger’s remark that the eagle seems tame to the end of the story; opens ““Seems pretty tame already,” remarked the stranger, in a tone of satisfaction.”; closes “…seemed to resume some lost sublimity, as the king resumed his throne among the winds.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-06",
+        "continuesTo": null,
+        "blocks": [
+          90,
+          97
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "42646b6fa82dd905a0d5f6b48e681c46746684afe87e137fcac7c3fcd9c77203"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-07-q1",
+          "prompt": "The stranger thinks the eagle “Seems pretty tame already.” What does the countryman answer, and who turns out to be right?",
+          "facilitatorNotes": [
+            "“Them’s the kind as don’t tame”: even after ten years of coaxing he would be as wild as ever. The countryman, who knows the wilderness, is right."
+          ],
+          "evidence": [
+            "“Seems pretty tame already,”",
+            "he’ll be as wild as the day Gabe snared him up on Big Squatook."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-07-q2",
+          "prompt": "How does the eagle escape? Which small accident helps him?",
+          "facilitatorNotes": [
+            "He works his head free, bites the countryman’s leg, the man stiffens, the broken-backed chair collapses, the coat falls open, and the eagle strikes the stranger with his wings and flies. The broken chair is what frees him."
+          ],
+          "evidence": [
+            "and the broken-backed chair gave way under the strain.",
+            "the eagle found himself free."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-07-q3",
+          "prompt": "What changes on the Squatook lakes when the king returns?",
+          "facilitatorNotes": [
+            "The eaglets eat better, the mother hunts “with more joyous heart,” the fish-hawks keep away from his pine, and the crows spread the news to all the creatures."
+          ],
+          "evidence": [
+            "Their wide-winged mother, hunting away on Tuladi, hunted with more joyous heart.",
+            "as the king resumed his throne among the winds."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-07-q4",
+          "prompt": "The fish-hawks are “indignant” about the fish they must give up again. Whose ending is happy, and whose is not? Is it a happy ending overall?",
+          "facilitatorNotes": [
+            "The eagle, his mate and young are glad; the fish-hawks must pay tribute again; the men are left “flushed and foolish.” Most readers will call it happy because the wild bird is free; some will notice that freedom for the king means hard work for his subjects."
+          ],
+          "evidence": [
+            "their hearts were big with indignation over the spoils which they had been forced to deliver up.",
+            "leaving the men to gape after him, flushed and foolish."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-08",
+      "title": "Wild Motherhood, part 1: The march through the snow",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a herd’s night march in order and notice what makes deep snow so dangerous.",
+      "focus": "A moose herd must risk a march through deep snow, and a calf falls into a pit.",
+      "context": "Charles G. D. Roberts (1860–1943) was a Canadian poet and storyteller who grew up in the backwoods of New Brunswick. In The Kindred of the Wild (1902) he wrote realistic stories of wild animals, imagining their senses and fears while keeping close to how they really live. Several of the stories follow “the Boy,” a farm boy who watches the creatures of the woods. In this story Roberts follows three lives through one winter night. A moose-yard is a patch of forest where moose trample the snow in winter and feed on twigs. A bull is a male moose, a cow a female, a calf a young one. Provender is food; palmated antlers are broad and flat like an open hand; a prehensile lip can grasp things; diminutive means small. Spectres are ghosts; a plateau is high, flat land; browsing is nibbling twigs and leaves; a gully or crevice is a narrow ditch; solicitously means anxiously.",
+      "contentNote": "This is a story of hunger and hunting in a hard winter; later parts describe animals being killed.",
+      "excerpt": {
+        "locator": "“Wild Motherhood,” section I, the whole section; opens “The deep snow in the moose-yard was trodden down to the moss, and darkly soiled with many…”; closes “…for an hour, under the white, unfriendly moon. The herd had gone on without them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-roberts-kindred-1907-09",
+        "blocks": [
+          99,
+          103
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e52444b122045f84eec2cf5e1219d02260a93f6d638068b99fe97e5114180830"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-08-q1",
+          "prompt": "Why must the herd leave the moose-yard? Why is the march so dangerous for moose?",
+          "facilitatorNotes": [
+            "The food is nearly gone, so they must move or starve. In deep snow a moose “can neither flee nor fight,” and that is the chance wolves and hunters wait for."
+          ],
+          "evidence": [
+            "The available provender was all but gone,",
+            "In deep snow the moose can neither flee nor fight,",
+            "It was simply take the risk or starve."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-08-q2",
+          "prompt": "How does the great bull lead the herd? Where do the cows and calves walk?",
+          "facilitatorNotes": [
+            "He goes first, muzzle stretched out, antlers laid back so they do not catch on branches, breaking the trail with his strength. The cows follow in “dutiful line,” and the calves come last in the clear trail."
+          ],
+          "evidence": [
+            "the bony array of his antlers laid back level to avoid the hindrance of clinging boughs.",
+            "Behind him, in dutiful line, came the three cows;"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-08-q3",
+          "prompt": "How does the calf end up trapped?",
+          "facilitatorNotes": [
+            "Tempted aside by a juicy thicket, he thinks he is being left behind, springs forward carelessly, and the snow-crusted scrub gives way into a narrow gully, “a natural pitfall.”"
+          ],
+          "evidence": [
+            "tempted a little aside by a thicket of special juiciness and savour,",
+            "a natural pitfall."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-08-q4",
+          "prompt": "Roberts says, “There was nothing she could do.” What does the mother do anyway? Why might he end the part with “The herd had gone on without them”?",
+          "facilitatorNotes": [
+            "She kneels and comforts her calf with her muzzle for an hour, until his knees stop trembling. The last sentence leaves the two alone in the moonlit snow, which is exactly the danger the first paragraphs warned of. Readers may predict what comes next and connect it to the title."
+          ],
+          "evidence": [
+            "There was nothing she could do.",
+            "she reached down her head to nose and comfort him with her sensitive muzzle.",
+            "The herd had gone on without them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-09",
+      "title": "Wild Motherhood, part 2: The gray wolf",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "See the same night from the hunter’s side, and follow how the wolf thinks out his plan.",
+      "focus": "A hungry wolf, hunting for his wounded mate, finds the trapped calf and decides to wait.",
+      "context": "Recap: in a hard winter, a small moose herd left its trampled feeding-ground to march through deep snow by moonlight. A calf slipped into a narrow pit and cannot climb out; his mother stayed with him while the herd went on. Plaster-rock is gypsum, a soft pale rock; famine is great hunger; the wapiti is a large deer, also called the elk. Quarry is hunted prey; furtive means sneaky; sinister means threatening; scrutiny is close looking; to stampede is to scare into running; a taint is a smell; an adversary is an enemy; intrepidity is fearlessness; prudent means careful.",
+      "contentNote": "A wolf caught in a steel trap has gnawed off her own paw; the wolves are starving.",
+      "excerpt": {
+        "locator": "“Wild Motherhood,” section II, the whole section; opens “In the wolf’s cave in the great blue and white wall of plaster-rock, miles back beside…”; closes “…for his hunting, and food would no longer be scarce in the cave of the painted rocks.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-08",
+        "continuesTo": "reading-3-roberts-kindred-1907-10",
+        "blocks": [
+          105,
+          110
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9ee3f07fbeaaa7fa3c1d622b619c67c055f79b94157677ec1ab31a50ef80353c"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-09-q1",
+          "prompt": "Why is there famine in the wolves’ cave?",
+          "facilitatorNotes": [
+            "The she-wolf, about to have pups, lost her paw in a steel trap and cannot hunt; the deer have moved away; her mate hunts alone and can hardly keep them from starving."
+          ],
+          "evidence": [
+            "Caught in a steel trap, she had gnawed off her own paw as the price of freedom.",
+            "her gray mate, hunting alone, was hard put to it to keep starvation from the cave."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-09-q2",
+          "prompt": "What does the wolf’s body do the moment he catches the scent? What does the trail tell him?",
+          "facilitatorNotes": [
+            "He freezes with one foot up, his tail stiffens, his nostrils widen; then he gallops up the wind. The trail tells him there are calves and young cows and that the herd passed nearly an hour ago."
+          ],
+          "evidence": [
+            "He stopped, one foot up, arrested in his stride.",
+            "there were calves and young cows,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-09-q3",
+          "prompt": "Why doesn’t the wolf attack the cow-moose at once?",
+          "facilitatorNotes": [
+            "He is surprised; a mother moose is dangerous even without horns; and above all he cannot risk being hurt, because his mate would then die. Once he works out that the calf is trapped, he knows he only has to wait."
+          ],
+          "evidence": [
+            "a full-grown cow-moose, with the mother fury in her heart, he knew to be a dangerous adversary.",
+            "if he let himself get disabled in this hunting she must perish miserably."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-09-q4",
+          "prompt": "In part 1 we feel for the moose; now Roberts shows the wolf’s side. Whom do you want to succeed, and why? Why might Roberts make us care about both?",
+          "facilitatorNotes": [
+            "Both are parents protecting their families: the cow her calf, the wolf his wounded mate and unborn pups. That makes the title fit more than one animal. Some readers will still side with the calf; others will feel the wolf’s need. Ask for a line that moved them."
+          ],
+          "evidence": [
+            "The cave in the blue and white rocks was depending on his success.",
+            "and around its rim circled the wary mother,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-10",
+      "title": "Wild Motherhood, part 3: The backwoodsman",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Meet a third character and notice how the narrator warns that the three journeys are coming together.",
+      "focus": "A settler, worried for his pale wife and son, goes out by moonlight to bring home fresh meat.",
+      "context": "Recap: on a snowy plateau a cow-moose stands guard over her calf, trapped in a pit, while a hungry gray wolf, whose wounded mate waits in a cave, sits patiently nearby, sure the calf will be his. A backwoodsman is a settler deep in the forest. A trundle-bed is a low bed for a child; homespun cloth is woven at home; moccasins are soft leather shoes; a well-sweep is a long pole for lifting a bucket from a well. Improvidence is failing to plan ahead; inexorableness means nothing can stop it; inscrutable means impossible to read; a tonic is something that gives strength.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Wild Motherhood,” section III, from the beginning to the backwoodsman setting out “all hunter”; opens “That same night, in a cabin of unutterable loneliness some miles to the west of the trail…”; closes “…woodland sign, had a fire in it that would have looked strange to the wife and child.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-09",
+        "continuesTo": "reading-3-roberts-kindred-1907-11",
+        "blocks": [
+          112,
+          118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b232c18d467674b7db3e3d6cd7370050587cc923ff7d3644b5c9e566457b3b0a"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-10-q1",
+          "prompt": "What does the backwoodsman notice when he wakes? What does he decide they need?",
+          "facilitatorNotes": [
+            "His wife’s lips look white and his son’s face pale in the moonlight. He decides they need fresh meat: “They can’t live and thrive on pork an’ molasses, nohow!”"
+          ],
+          "evidence": [
+            "Her lips looked pathetically white",
+            "“It’s fresh meat they want, the both of ’em,”"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-10-q2",
+          "prompt": "How does Roberts show that this rough man is gentle with his family?",
+          "facilitatorNotes": [
+            "His big fingers are “clumsily gentle” in the boy’s curls; he looks long at his wife, casts “one tender look” at them both, and slips out silently so as not to wake them."
+          ],
+          "evidence": [
+            "His big fingers, clumsily gentle, played for a moment with the child’s yellow curls.",
+            "cast one tender look on the sleepers’ faces,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-10-q3",
+          "prompt": "Is the backwoodsman a hunter who enjoys killing? What makes this night different?",
+          "facilitatorNotes": [
+            "No: he is clearing a farm and “cared not to kill for the killing’s sake”; salt pork suits him. Tonight he hunts for his wife and son, and there is a fire in his eye they would not recognize."
+          ],
+          "evidence": [
+            "he cared not to kill for the killing’s sake.",
+            "On this night, he was all hunter,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-10-q4",
+          "prompt": "Reread the paragraph that begins “In the ancient forest.” What is the narrator warning? How are the three stories coming together?",
+          "facilitatorNotes": [
+            "For a long time nothing seems to happen in the forest, “yet all the time the forces are assembling, and at last doom strikes.” The moose, the wolf and now the man are all heading for the same plateau. Readers can predict what “doom” may mean, and for whom."
+          ],
+          "evidence": [
+            "yet all the time the forces are assembling, and at last doom strikes.",
+            "the forces of fate were assembling about that high plateau in the wilderness."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-11",
+      "title": "Wild Motherhood, part 4: Fresh meat",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Judge a character’s choices when the story does not tell you what to think.",
+      "focus": "The hunt ends with two deaths, a family fed, and an orphaned calf saved.",
+      "context": "Recap: a cow-moose guards her calf, trapped in a pit on a snowy plateau, against a patient gray wolf whose wounded mate waits, starving, in a cave. A backwoodsman, worried that his wife and son are pale and weak, has set out by moonlight on snowshoes to bring home fresh meat. To reconnoitre is to scout; a covert is a hiding place; a bounty was money paid for killing an animal thought to be a pest; a pelt is a skin with its fur; veal is the meat of a young animal.",
+      "contentNote": "The backwoodsman shoots the wolf and the mother moose, and both deaths are described. He chews tobacco.",
+      "excerpt": {
+        "locator": "“Wild Motherhood,” section III, from the backwoodsman striking the trail to the end of the story; opens “His long strides carried him swiftly through the glimmering glades. Journeying to the…”; closes “…chin in hand. “I’ll save him for the boy to play with and bring up,” he at last decided.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-10",
+        "continuesTo": null,
+        "blocks": [
+          119,
+          124
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9e3871641b1c631aa0b6fb9a238388defd03a46ee2f925a9ffe0b3307dbb81e4"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-11-q1",
+          "prompt": "How does the backwoodsman understand the whole situation before he can see the calf?",
+          "facilitatorNotes": [
+            "He sees the wolf sitting calmly, the cow backed against the gully, and her quick glance back “at her young one.” From those signs he knows a calf is trapped."
+          ],
+          "evidence": [
+            "He saw the big gray wolf sitting straight up on his haunches,",
+            "though he could not see the calf in its prisoning pit, he understood the whole situation."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-11-q2",
+          "prompt": "Why does he shoot the wolf first?",
+          "facilitatorNotes": [
+            "There is a bounty on wolves and the pelt is worth money; and he knows the cow will not run from the pit while her calf is in it, so she can wait."
+          ],
+          "evidence": [
+            "there was a bounty on wolf-snouts,",
+            "not a broadside of cannon would scare her away from that hole in the rocks so long as the calf was in it."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-11-q3",
+          "prompt": "What does the mother moose do as she dies? What does the wolf’s death take with it?",
+          "facilitatorNotes": [
+            "She falls with her head over the edge of the crevice, and her muzzle touches her calf’s neck. As the wolf dies, “a vision of the cave” fades too: his mate and unborn pups will not be fed. Roberts shows the cost on both sides."
+          ],
+          "evidence": [
+            "Her awkward muzzle touched and twitched against the neck of the frightened calf,",
+            "As the light faded from his fierce eyes, with it faded out a vision of the cave in the painted rocks."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-11-q4",
+          "prompt": "The man changes his mind twice about the calf. What does he decide, and why? Was his night’s hunting right? Use the story to explain.",
+          "facilitatorNotes": [
+            "He draws his knife, puts it away because “he hated butchering,” and decides to save the calf “for the boy to play with and bring up.” Some readers will say he did right to feed his family and spared what he could; others will grieve for the wolves and the cow. The title fits the cow, the she-wolf, and the man’s care for his own family; let readers argue which."
+          ],
+          "evidence": [
+            "But, no; he hated butchering.",
+            "“I’ll save him for the boy to play with and bring up,” he at last decided."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-12",
       "title": "The Boy and Hushwing, part 1: A voice of doom",
       "sourceId": "roberts-kindred-1907",
       "genre": "realistic animal story",
@@ -22,7 +849,7 @@
         "locator": "“The Boy and Hushwing,” from the beginning to the Boy’s first plan, ending “to care for the little owlets in the nest”; opens “A hollow, booming, ominous cry, a great voice of shadowy doom, rang out suddenly and…”; closes “…Hushwing’s yet fiercer and stronger mate to care for the little owlets in the nest.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-3-roberts-kindred-1907-02",
+        "continuesTo": "reading-3-roberts-kindred-1907-13",
         "blocks": [
           176,
           182
@@ -33,7 +860,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-roberts-kindred-1907-01-q1",
+          "id": "reading-3-roberts-kindred-1907-12-q1",
           "prompt": "How do the red squirrel, the grouse and the weasel react to Hushwing’s cry? Why is the Boy not afraid?",
           "facilitatorNotes": [
             "The squirrel goes still, the grouse is afraid even far off, and even the fierce weasel freezes so as not to give himself away. The Boy is not the owl’s prey and knows the sound well; he smiles and decides to hunt the hunter."
@@ -44,7 +871,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-01-q2",
+          "id": "reading-3-roberts-kindred-1907-12-q2",
           "prompt": "Why did the Boy name the owl “Hushwing”? What happens to the pine trunk when Hushwing lands on it?",
           "facilitatorNotes": [
             "Because his flight is ghostly silent. When he lands, the trunk simply looks “about two feet taller”: the owl sits so straight and still that he looks like part of the tree."
@@ -55,7 +882,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-01-q3",
+          "id": "reading-3-roberts-kindred-1907-12-q3",
           "prompt": "The Boy is not sure he heard the hare at all. What does that tell you about the owl’s hearing?",
           "facilitatorNotes": [
             "The snap is so faint the Boy may have imagined it, yet the owl hears it sharply from the far end of the glade and strikes at once. The scene proves the owl hears far better than a keen-eyed boy."
@@ -66,7 +893,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-01-q4",
+          "id": "reading-3-roberts-kindred-1907-12-q4",
           "prompt": "At the end the Boy guesses one thing and plans another. What is each? What does he remember about the owl’s family?",
           "facilitatorNotes": [
             "He guesses that Hushwing has a mate and a nest in the cedar swamp (“likely” shows it is a guess), and plans to catch the old bird to test his skill. He knows the stronger mate would still be there to feed the owlets. Readers can discuss whether that makes the plan fair."
@@ -79,7 +906,7 @@
       ]
     },
     {
-      "id": "reading-3-roberts-kindred-1907-02",
+      "id": "reading-3-roberts-kindred-1907-13",
       "title": "The Boy and Hushwing, part 2: The owl and the panther",
       "sourceId": "roberts-kindred-1907",
       "genre": "realistic animal story",
@@ -96,8 +923,8 @@
       "excerpt": {
         "locator": "“The Boy and Hushwing,” from Hushwing’s return to the nest through the Boy’s reasons for catching him alive; opens “When Hushwing had deposited his prey beside the nest, in readiness for the next meal of…”; closes “…which his father’s library contained could not give him, was what he continually craved.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-3-roberts-kindred-1907-01",
-        "continuesTo": "reading-3-roberts-kindred-1907-03",
+        "continuesFrom": "reading-3-roberts-kindred-1907-12",
+        "continuesTo": "reading-3-roberts-kindred-1907-14",
         "blocks": [
           183,
           187
@@ -108,7 +935,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-roberts-kindred-1907-02-q1",
+          "id": "reading-3-roberts-kindred-1907-13-q1",
           "prompt": "Why has the panther come down from the hills, and what is he planning?",
           "facilitatorNotes": [
             "Hunters camped on his range scattered his game, so he has come for revenge on their flocks: he lies on a willow branch by the pond to kill a young heifer when the cattle come to drink."
@@ -119,7 +946,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-02-q2",
+          "id": "reading-3-roberts-kindred-1907-13-q2",
           "prompt": "Why does Hushwing strike the panther’s head? Did he know what it was?",
           "facilitatorNotes": [
             "No: he had never seen a panther and had no idea of such a beast. Seeing only furry ear-tips moving, he struck, perhaps taking them for a mink. By the time the panther hit back, the owl was gone."
@@ -130,7 +957,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-02-q3",
+          "id": "reading-3-roberts-kindred-1907-13-q3",
           "prompt": "Roberts calls the owl’s ears “living telephone films.” What does that mean? What do the ears catch next?",
           "facilitatorNotes": [
             "Early telephones used a thin sheet that trembled at the tiniest sound; the owl’s ears are just as sensitive. They catch light claws scratching on bark ten paces away, and the red squirrel is caught."
@@ -141,7 +968,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-02-q4",
+          "id": "reading-3-roberts-kindred-1907-13-q4",
           "prompt": "The Boy could easily shoot Hushwing. Why does he want to catch him alive? Are his reasons good ones?",
           "facilitatorNotes": [
             "He does not kill for no reason and takes no side among wild creatures. He wants to test his woodcraft, study the owl up close, perhaps tame him, and learn what his father’s natural-history books cannot teach. Some readers will admire this; others will question taking a parent bird from its nest."
@@ -154,7 +981,7 @@
       ]
     },
     {
-      "id": "reading-3-roberts-kindred-1907-03",
+      "id": "reading-3-roberts-kindred-1907-14",
       "title": "The Boy and Hushwing, part 3: The snare",
       "sourceId": "roberts-kindred-1907",
       "genre": "realistic animal story",
@@ -171,8 +998,8 @@
       "excerpt": {
         "locator": "“The Boy and Hushwing,” from the setting of the snare to Hushwing’s first evening in the loft; opens “On the following afternoon the Boy went early to the neighbourhood of Hushwing’s…”; closes “…Noting his courage, the Boy smiled approval and left him alone to recover his equanimity.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-3-roberts-kindred-1907-02",
-        "continuesTo": "reading-3-roberts-kindred-1907-04",
+        "continuesFrom": "reading-3-roberts-kindred-1907-13",
+        "continuesTo": "reading-3-roberts-kindred-1907-15",
         "blocks": [
           188,
           193
@@ -183,7 +1010,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-roberts-kindred-1907-03-q1",
+          "id": "reading-3-roberts-kindred-1907-14-q1",
           "prompt": "Describe the Boy’s trap step by step. What are the rat and the broken twigs for?",
           "facilitatorNotes": [
             "A noose of rabbit wire held flat in the bushes over a stump; a dead rat fixed on the stump as bait; broken twig-tops tied to a string, so that a tug makes them scratch like a small animal’s claws. Both cords run back to his hiding place."
@@ -194,7 +1021,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-03-q2",
+          "id": "reading-3-roberts-kindred-1907-14-q2",
           "prompt": "Why does the Boy use a sound to bring Hushwing to the trap?",
           "facilitatorNotes": [
             "He has learned that the owl hunts by hearing, as with the hare. The scratching is exactly the kind of tiny sound the owl cannot ignore."
@@ -205,7 +1032,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-03-q3",
+          "id": "reading-3-roberts-kindred-1907-14-q3",
           "prompt": "How does Hushwing behave once he is caught, and in the loft?",
           "facilitatorNotes": [
             "He hisses and snaps to the end; in the loft he flies at the window, gives up, and perches on an old sofa, turning his head to stare straight into the Boy’s eyes without flinching."
@@ -216,7 +1043,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-03-q4",
+          "id": "reading-3-roberts-kindred-1907-14-q4",
           "prompt": "How does Hushwing feel in the loft, and how does the Boy respond to his courage? Whose side are you on?",
           "facilitatorNotes": [
             "Hushwing feels “indignation and despair”; the Boy smiles approval and leaves him alone to calm down. Readers may admire the Boy’s respect, or feel the owl should not be shut up at all."
@@ -229,7 +1056,7 @@
       ]
     },
     {
-      "id": "reading-3-roberts-kindred-1907-04",
+      "id": "reading-3-roberts-kindred-1907-15",
       "title": "The Boy and Hushwing, part 4: A thief in the night",
       "sourceId": "roberts-kindred-1907",
       "genre": "realistic animal story",
@@ -246,7 +1073,7 @@
       "excerpt": {
         "locator": "“The Boy and Hushwing,” from the Boy’s fortnight of watching to the end of the story; opens “The Boy, as days went by, made no progress whatever in his acquaintance with his captive,…”; closes “…shone happily upon the big-headed, ragged-feathered, hungry brood of owlets at his feet.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-3-roberts-kindred-1907-03",
+        "continuesFrom": "reading-3-roberts-kindred-1907-14",
         "continuesTo": null,
         "blocks": [
           194,
@@ -258,7 +1085,7 @@
       },
       "questions": [
         {
-          "id": "reading-3-roberts-kindred-1907-04-q1",
+          "id": "reading-3-roberts-kindred-1907-15-q1",
           "prompt": "How does Hushwing hunt rats in the loft? What does his cry do to them?",
           "facilitatorNotes": [
             "He sits still, sends out his terrifying cry and listens. A frightened rat dashes for cover, and the noise it makes tells the owl where to pounce."
@@ -269,7 +1096,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-04-q2",
+          "id": "reading-3-roberts-kindred-1907-15-q2",
           "prompt": "Why does Hushwing attack the thief? What does the thief think has attacked him?",
           "facilitatorNotes": [
             "Angry and hungry, the owl hears the faint click of the hook and swoops at the bushy, hatless head in the window, a tempting target. The thief thinks a goblin has been sent to punish him for stealing."
@@ -280,7 +1107,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-04-q3",
+          "id": "reading-3-roberts-kindred-1907-15-q3",
           "prompt": "The story calls this Hushwing’s “second mistake.” What was the first?",
           "facilitatorNotes": [
             "Striking the panther’s furry ears, which he took for small prey. Both times he hit something far bigger than he meant to, and both times his surprise attack worked."
@@ -290,7 +1117,7 @@
           ]
         },
         {
-          "id": "reading-3-roberts-kindred-1907-04-q4",
+          "id": "reading-3-roberts-kindred-1907-15-q4",
           "prompt": "How does the Boy feel when Hushwing is gone? What does he decide, and do you agree?",
           "facilitatorNotes": [
             "Disappointed: he had grown fond of the “dauntless” owl. He decides Hushwing has earned his freedom, and his father laughs that the grain will last longer. The last picture, the owl feeding his owlets, suggests where he belongs. Readers may also say the owl was never the Boy’s to keep."
