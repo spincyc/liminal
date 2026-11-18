@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "poe-raven-other-poems-1845",
+  "readings": [
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-01",
+      "title": "Sonnet — To Zante",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Count the repetitions of “How many” and “no more,” and find the line where praise of the island turns into something else.",
+      "focus": "A place transformed by a sound and by memory of loss.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. Zante (Zakynthos) is a Greek island in the Ionian Sea. Poe follows an old belief that its name came from the hyacinth, “the fairest of all flowers.” The closing Italian, “Isola d’oro! Fior di Levante!”, means “Island of gold! Flower of the East!” An accent on “entombéd” marks a pronounced syllable.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Sonnet — To Zante; opens “FAIR isle, that from the fairest of all flowers, Thy gentlest of all gentle names dost…”; closes “…shore, O hyacinthine isle! O purple Zante! “Isola d’oro! Fior di Levante!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          67,
+          67
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "18593cd53688c6f7860d89dc1260b06ac458d619daf90e593bd9f9f9500e2464"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q1",
+          "prompt": "The first eight lines repeat “How many.” What does the island bring back to the speaker, and where does the poem turn?",
+          "facilitatorNotes": [
+            "Memories of “radiant hours,” “departed bliss,” “entombéd hopes,” and “a maiden that is / No more.” The list builds through the octave; at line nine “No more!” turns memory into a curse on the “Accurséd ground.”",
+            "Students may notice that the turn comes exactly where a sonnet’s usually does."
+          ],
+          "evidence": [
+            "How many visions of a maiden that is",
+            "Accurséd ground"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q2",
+          "prompt": "The speaker calls “No more” a “magical sad sound / Transforming all!” How does a sound transform the island?",
+          "facilitatorNotes": [
+            "The island has not changed; only its meaning has. “Fair isle” and “flower-enamelled shore” become cursed because of loss and the word that names it.",
+            "Readers who know “The Raven” and Poe’s essay on its refrain can connect this to his interest in a single sonorous phrase; others can discuss how words colour places they know."
+          ],
+          "evidence": [
+            "No more! alas, that magical sad sound",
+            "Transforming all! Thy charms shall please no more —"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q3",
+          "prompt": "Why end with praise, in English and Italian, after cursing the island? Does the last couplet undo the curse?",
+          "facilitatorNotes": [
+            "“O hyacinthine isle! O purple Zante!” and the sailors’ praise return to admiration, as if the speaker cannot stop loving what he curses.",
+            "Some read the ending as irony, the bright names mocking his grief; others as beauty outlasting loss. Both can be argued from the couplet."
+          ],
+          "evidence": [
+            "O hyacinthine isle! O purple Zante!",
+            "Isola d’oro! Fior di Levante!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-02",
+      "title": "The Conqueror Worm",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Map the theatre: audience, actors, stagehands, plot and ending. Then ask what each part stands for.",
+      "focus": "Human life staged as a play whose hero turns out to be death.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. Poe first printed this poem in 1843 and later placed it in his story “Ligeia,” where a dying woman composes it. “Gala” means festive; “bedight” means dressed; mimes are actors; the “music of the spheres” is the ancient idea that the planets sound in harmony; a “motley” drama is a jumbled show, from a jester’s patchwork costume; a pall is a coffin cloth.",
+      "contentNote": "Death is imagined as a blood-red worm devouring the actors, with “human gore.”",
+      "excerpt": {
+        "locator": "Complete poem: The Conqueror Worm; opens “LO! 'tis a gala night Within the lonesome latter years! An angel throng, bewinged,…”; closes “…unveiling, affirm That the play is the tragedy, “Man,” And its hero the Conqueror Worm.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          91,
+          95
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e62f9c79210aa81e2febb9795d45f3622abe742ced10fb52384df9c789e0a3ca"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-02-q1",
+          "prompt": "Who is in the audience, who are the actors, and who controls the play?",
+          "facilitatorNotes": [
+            "Angels in veils, “drowned in tears,” watch; actors “in the form of God on high” are “Mere puppets”; “vast formless things” shift the scenery. Human beings, made in God’s image, act at the bidding of invisible powers.",
+            "Ask why the audience is already weeping before the play begins."
+          ],
+          "evidence": [
+            "Mere puppets they, who come and go",
+            "At bidding of vast formless things"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-02-q2",
+          "prompt": "What is the plot of the “motley drama”? Why does it return “To the self-same spot”?",
+          "facilitatorNotes": [
+            "A crowd chases a Phantom it never seizes, around a circle, with “much of Madness, and more of Sin.” Human striving is repetitive and futile.",
+            "Students may suggest what the Phantom might be (happiness, meaning, fame); the poem leaves it unnamed, which is part of its effect."
+          ],
+          "evidence": [
+            "With its Phantom chased for evermore,",
+            "And Horror the soul of the plot."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-02-q3",
+          "prompt": "The angels “affirm” the play’s title and hero. What is the poem’s verdict on human life, and is its horror meant seriously?",
+          "facilitatorNotes": [
+            "The tragedy is “Man” and its hero the worm: decay triumphs. The grotesque repetition (“It writhes! — it writhes!”) can be read as sincere despair or as deliberate Gothic theatre.",
+            "The stage frame invites both readings; in “Ligeia” the poem voices a dying woman’s fear, which adds weight to the serious one."
+          ],
+          "evidence": [
+            "That the play is the tragedy, “Man,”",
+            "And its hero the Conqueror Worm."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-03",
+      "title": "The Lake — To ——",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the lake through day and night, then slow down at the stanza that refuses to name a feeling.",
+      "focus": "Terror that is also delight: a young poet’s version of the sublime.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. An early version of this poem dates from Poe’s teens, and the volume places it among his “Poems Written in Youth.” The dedication leaves the person unnamed. A pall is a funeral cloth; “the which” means which. Writers of the period called the mixture of fear and wonder that vast or wild scenes produce “the sublime.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: The Lake — To ——, from Poems Written in Youth; opens “IN spring of youth it was my lot To haunt of the wide earth a spot The which I could not…”; closes “…bring To his lone imagining — Whose solitary soul could make An Eden of that dim lake.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          364,
+          367
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3f91537f9565896dae6864466412003f84d528d67167a989d895e0ada6efdf44"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q1",
+          "prompt": "How does the lake change between day and night? What does the speaker “awake” to?",
+          "facilitatorNotes": [
+            "By day its “loneliness” is lovely, with black rocks and towering pines. When Night throws her pall over it and a “mystic wind” passes, he wakes “To the terror of the lone lake.”",
+            "The place is the same; the hour and the speaker’s response change it."
+          ],
+          "evidence": [
+            "So lovely was the loneliness",
+            "To the terror of the lone lake."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q2",
+          "prompt": "The third stanza insists that the terror “was not fright.” What is it, and why can’t the speaker define it?",
+          "facilitatorNotes": [
+            "A “tremulous delight” that no jewelled mine could bribe him to define, not even Love. Fear and pleasure mix into a feeling without a name.",
+            "Readers may connect it with the sublime or with their own experience of thrilling fear."
+          ],
+          "evidence": [
+            "But a tremulous delight —",
+            "Nor Love — although the Love were thine."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q3",
+          "prompt": "The poem ends with a “poisonous wave” and an “Eden.” How can the lake be both a grave and a paradise?",
+          "facilitatorNotes": [
+            "For a solitary imagination the deadly water is “a fitting grave” and also “An Eden”: imagination turns danger into beauty, and solitude is both comfort and risk.",
+            "Some readers find the ending morbid; others find it a portrait of the artist’s mind. The phrase “him who thence could solace bring” rewards slow rereading."
+          ],
+          "evidence": [
+            "Death was in that poisonous wave,",
+            "An Eden of that dim lake."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-04",
+      "title": "To Helen",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the three stanzas as three pictures of Helen. Read the famous lines about Greece and Rome aloud for their sound.",
+      "focus": "Beauty as a homecoming, and a woman turned into an ideal.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. Poe first published this poem in 1831 and revised it later; he said it was inspired by Jane Stanard, the mother of a school friend, who was kind to him as a boy. Helen of Troy was the great beauty of Greek legend. The “Nicéan barks” are ancient ships whose exact source scholars still debate; Naiads are water nymphs; Psyche, the soul in Greek myth, carried a lamp in the story of Cupid and Psyche.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: To Helen, from Poems Written in Youth; opens “HELEN, thy beauty is to me Like those Nicéan barks of yore, That gently, o'er a perfumed…”; closes “…stand, The agate lamp within thy hand! Ah, Psyche, from the regions which Are Holy-land!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          374,
+          376
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "604c71b33d50da2468515bc788628f06d1323c04afbf9f21ad08d9f2c2a56672"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-04-q1",
+          "prompt": "What is Helen’s beauty compared to in the first stanza, and who is the “weary way-worn wanderer”?",
+          "facilitatorNotes": [
+            "To ancient ships that gently carried a traveller home over a “perfumed sea.” The wanderer is the speaker, whom her beauty brings home.",
+            "Beauty here rescues rather than tempts, unlike the Helen whose beauty started the Trojan War."
+          ],
+          "evidence": [
+            "Like those Nicéan barks of yore,",
+            "The weary way-worn wanderer bore"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-04-q2",
+          "prompt": "What “home” does Helen bring the speaker to in the second stanza? Why is it surprising?",
+          "facilitatorNotes": [
+            "Not a house but “the glory that was Greece, / And the grandeur that was Rome”: classical art and civilization. The speaker’s true country is an ideal of beauty.",
+            "Notice the sound: glory and Greece, grandeur and Rome. Students might ask why the past rather than the present is home."
+          ],
+          "evidence": [
+            "To the glory that was Greece,",
+            "And the grandeur that was Rome."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-04-q3",
+          "prompt": "In the last stanza Helen stands “statue-like” with a lamp and becomes Psyche. How has the woman changed by the end?",
+          "facilitatorNotes": [
+            "From a beautiful person to a statue in a window-niche, then to Psyche, the soul, from “Holy-land.” She becomes a spiritual ideal more than a woman.",
+            "Some readers find this reverent; others notice that she never speaks or acts. Compare Poe’s claim, in “The Philosophy of Composition,” that Beauty is poetry’s province."
+          ],
+          "evidence": [
+            "How statue-like I see thee stand,",
+            "Ah, Psyche, from the regions which"
+          ]
+        }
+      ]
+    }
+  ]
+}
