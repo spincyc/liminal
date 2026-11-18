@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "franklin-autobiography-1922",
+  "readings": [
+    {
+      "id": "reading-9-franklin-autobiography-1922-01",
+      "title": "A plan for moral perfection",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the thirteen precepts slowly and decide which govern conduct and which govern thought. Then treat the little ruled book and the daily schedule as tools of a method.",
+      "focus": "Virtue treated as habit, trained by design and by keeping a record.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He wrote this part at Passy, near Paris, in 1784, while serving as the American minister to France, recalling a project from his years as a young Philadelphia printer around 1730. “Elevation” here means tipsiness; venery is sexual activity. Pythagoras’s Golden Verses are ancient moral maxims. The mottoes come from Joseph Addison’s play Cato, the Roman orator Cicero (his Latin praises philosophy as the guide of life, which seeks out virtues and drives out vices), the Book of Proverbs, and the poet James Thomson.",
+      "contentNote": "The precept for Chastity refers briefly and frankly to sexual conduct.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from the start through his scheme of employment for the day; opens “IT was about this time I conceived the bold and arduous project of arriving at moral…”; closes “Night 10 Sleep. 11 12 1 2 3 4”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-franklin-autobiography-1922-02",
+        "blocks": [
+          188,
+          238
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4d93fe69a430acc441365e6b5c6ed556050aec9f3184a455dfec8db44f5f8a1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q1",
+          "prompt": "Why did Franklin’s first attempt to be faultless fail? What did he conclude about knowing what is right?",
+          "facilitatorNotes": [
+            "While guarding against one fault he was surprised by another; “habit took the advantage of inattention.” He concluded that conviction alone does not prevent slipping: bad habits must be broken and good ones built.",
+            "Some readers find the insight obvious; others think its consequence, a practical method, is the original part. Both can be argued."
+          ],
+          "evidence": [
+            "habit took the advantage of inattention; inclination was sometimes too strong for reason",
+            "the mere speculative conviction that it was our interest to be completely virtuous, was not sufficient to prevent our slipping"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q2",
+          "prompt": "Choose two of the thirteen precepts and restate them in your own words. Does Franklin’s wording make it easier or harder to tell each day whether you kept them?",
+          "facilitatorNotes": [
+            "He chose “more names, with fewer ideas annex’d to each,” so most precepts are concrete enough to check nightly: “Eat not to dullness” sets a test, while “Imitate Jesus and Socrates” is open-ended.",
+            "Readers may notice that the list mixes outward conduct (Order, Frugality) with inner states (Tranquillity, or Sincerity’s “think innocently”). Strong answers connect wording to the black spots in the book."
+          ],
+          "evidence": [
+            "to use rather more names, with fewer ideas annex'd to each, than a few names with more ideas",
+            "Eat not to dullness; drink not to elevation."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q3",
+          "prompt": "How is the order of the virtues part of the plan? Explain one link in his chain and say whether you find it persuasive.",
+          "facilitatorNotes": [
+            "Temperance gives a clear head; Silence helps him learn by listening and break a habit of “prattling, punning, and joking”; Order frees time; Resolution sustains the rest; Frugality and Industry free him from debt, which makes Sincerity and Justice easier.",
+            "Some readers question the economic link, that honesty comes easier with money; others find it realistic about the pressures of debt."
+          ],
+          "evidence": [
+            "as the previous acquisition of some might facilitate the acquisition of certain others, I arrang'd them with that view",
+            "Frugality and Industry freeing me from my remaining debt, and producing affluence and independence, would make more easy the practice of Sincerity and Justice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-02",
+      "title": "The speckled ax, and the trouble with pride",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh what Franklin says the project achieved against what he admits it did not, and notice how his humour handles failure.",
+      "focus": "Partial success, the appearance and the reality of a virtue, and the persistence of pride.",
+      "context": "Recap: As a young printer Franklin set out to “arrive at moral perfection” by practising thirteen virtues, one each week, and marking each day’s faults with black spots in a little ruled book. A journeyman printer works for wages; a master runs his own shop. Foppery is fussy vanity. The Junto was a club of young Philadelphia tradesmen that Franklin founded for discussion. A Quaker is a member of the Religious Society of Friends.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from his use of the method through his remarks on humility and the note “Thus far written at Passy, 1784”; opens “I enter'd upon the execution of this plan for self-examination, and continu'd it with…”; closes “[Thus far written at Passy, 1784.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-franklin-autobiography-1922-01",
+        "continuesTo": "reading-9-franklin-autobiography-1922-03",
+        "blocks": [
+          239,
+          250
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e17ce65922e0c69c9ac2bcbe5826517b2ba68255a013d093cf37e8ce3e69d011"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q1",
+          "prompt": "Retell the story of the speckled ax. What arguments for giving up does “something, that pretended to be reason” suggest to Franklin?",
+          "facilitatorNotes": [
+            "The neighbour tired of turning the grindstone and decided he liked “a speckled ax best.” The pretended reason said that strict perfection might be “foppery in morals,” would invite envy, and that a kind man should keep a few faults to make his friends comfortable.",
+            "The excuses are witty and partly true, which is why they tempt; Franklin calls them reason only in pretence. Students may decide whether any of them is actually sound."
+          ],
+          "evidence": [
+            "but I think I like a speckled ax best",
+            "a benevolent man should allow a few faults in himself, to keep his friends in countenance"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q2",
+          "prompt": "Franklin says he never reached perfection but became “a better and a happier man” for trying. How does the comparison with copying engraved handwriting support this?",
+          "facilitatorNotes": [
+            "Learners who copy a perfect model never match it, but their hand is improved by the effort; the ideal works as a direction rather than a finish line.",
+            "Readers can test this against the rewards he lists for his descendants (health, fortune, reputation, his country’s confidence), which some find complacent and others candid."
+          ],
+          "evidence": [
+            "yet I was, by the endeavour, a better and a happier man than I otherwise should have been if I had not attempted it",
+            "their hand is mended by the endeavour"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q3",
+          "prompt": "Franklin planned to argue that “vicious actions are not hurtful because they are forbidden, but forbidden because they are hurtful.” What is the difference, and why would it suit a book meant for “people in all religions”?",
+          "facilitatorNotes": [
+            "If harm is the reason, morality can be argued from human nature and self-interest without appealing to any one church’s authority, which fits his deliberate avoidance of sectarian doctrines.",
+            "Some readers welcome a practical, inclusive ethic; others worry that grounding virtue in interest, even in making “a poor man’s fortune,” turns goodness into a business strategy."
+          ],
+          "evidence": [
+            "vicious actions are not hurtful because they are forbidden, but forbidden because they are hurtful",
+            "no qualities were so likely to make a poor man's fortune as those of probity and integrity"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q4",
+          "prompt": "Franklin admits more success with the appearance of humility than with its reality. Is the habit he describes honest modesty or a persuasive technique? How does his final sentence on pride complicate your answer?",
+          "facilitatorNotes": [
+            "He banned words such as “certainly” and began replies by granting cases where the other person was right; his views met “less contradiction,” and he credits the habit for his influence despite being “a bad speaker.” It is at least partly strategy.",
+            "The closing joke, that he would “probably be proud of my humility,” concedes the limits of self-mastery and wins the reader’s sympathy. Accept arguments for modesty, technique, or both."
+          ],
+          "evidence": [
+            "I cannot boast of much success in acquiring the reality of this virtue, but I had a good deal with regard to the appearance of it.",
+            "I should probably be proud of my humility"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-03",
+      "title": "A United Party for Virtue",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the 1731 “Observations” as an argument in numbered steps. Then compare the proposed creed and secret society with the scheme of virtues that came before.",
+      "focus": "A young man’s theory of politics as competing interests, and his plan for an organized remedy.",
+      "context": "Recap: Franklin described his thirteen-week method of practising the virtues, admitted that he never mastered Order or overcame pride, and mentioned a “great and extensive project” he never completed. Here he resumes writing in Philadelphia in 1788, after the Revolution, and explains that project from a note he made in 1731, aged twenty-five. A sect is a religious group; the “professors” of a religion are those who profess it; “ingenuous” means candid and open.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from Franklin’s note on resuming at home in 1788 to the end of the chapter; opens “[\"I am now about to write at home, August, 1788, but cannot have the help expected from…”; closes “…divert his attention, makes the execution of that same plan his sole study and business.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-franklin-autobiography-1922-02",
+        "continuesTo": null,
+        "blocks": [
+          251,
+          272
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "71bf267cc28069adb4a1d2d2a97c2bc52f51a20c0bb7378e56e8e3f98b436c11"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q1",
+          "prompt": "Summarize the 1731 “Observations” in two sentences. What does the young Franklin think drives “the great affairs of the world”?",
+          "facilitatorNotes": [
+            "Parties pursue what they take to be their general interest; once they win, members turn to private interests and split, causing more confusion. Few act for their country’s good, and fewer for mankind’s, even when their actions do some good.",
+            "It is a realistic, almost cynical account from someone who would spend his life in parties and public business. Students may test it against politics they know."
+          ],
+          "evidence": [
+            "That the great affairs of the world, the wars, revolutions, etc., are carried on and effected by parties.",
+            "That fewer still, in public affairs, act with a view to the good of mankind."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q2",
+          "prompt": "Franklin says his creed contains “the essentials of every known religion.” What does it include, and what does it leave out?",
+          "facilitatorNotes": [
+            "One God, providence, worship, an immortal soul, reward and punishment, and above all “doing good to man.” It leaves out the doctrines and practices that divide churches.",
+            "Some readers see an inclusive common ground; others see a creed so thin that it mainly serves his practical aims. Both readings are defensible from the list."
+          ],
+          "evidence": [
+            "But that the most acceptable service of God is doing good to man.",
+            "containing, as I thought, the essentials of every known religion"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q3",
+          "prompt": "Why should the Society of the Free and Easy be secret and begin among “young and single men only”? What does its name promise, and what does the final sentence reveal about Franklin’s view of himself?",
+          "facilitatorNotes": [
+            "Secrecy keeps out “improper persons,” and members would advance one another’s business: part moral club, part network. “Free” means free from vice and from debt, which he calls “a species of slavery to his creditors.”",
+            "The last sentence, that one able man with a good plan and single focus “may work great changes,” reads like a summary of his own career. Readers may also notice whom the society excludes."
+          ],
+          "evidence": [
+            "free from debt, which exposes a man to confinement, and a species of slavery to his creditors",
+            "one man of tolerable abilities may work great changes, and accomplish great affairs among mankind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-04",
+      "title": "Braddock’s confidence and defeat",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Franklin’s warning, the general’s reply and the ambush as one argument about judgment. Then notice where the narrator writing in 1788 shows through.",
+      "focus": "Overconfidence, the tact of a warning, and an early crack in colonial faith in British power.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In 1755, early in the war between Britain and France for North America, the British general Edward Braddock marched against Fort Duquesne, a French fort where Pittsburgh now stands; Franklin, a Pennsylvania leader, had found wagons and horses for his army. Regulars are professional soldiers; militia are part-time local soldiers; an ambuscade is an ambush; Niagara and Frontenac were other French forts. Franklin wrote this section in 1788, after the Revolution.",
+      "contentNote": "Battle deaths are reported in numbers, and soldiers plunder settlers. Braddock calls Native warriors “savages,” a slur; Franklin’s “Indians” is the usual term of his time.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter XVI, Braddock’s Expedition, from Franklin’s judgment of the general through Braddock’s last words; opens “This general was, I think, a brave man, and might probably have made a figure as a good…”; closes “…shall better know how to deal with them another time\"; and dy'd in a few minutes after.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          398,
+          403
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e190fe6ea1b5303ec7900bc8cb24c9fb23f4d2d0055a716bea8b03089b60d8b5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q1",
+          "prompt": "What three faults does Franklin find in Braddock, and how does the general’s treatment of George Croghan’s hundred scouts illustrate them?",
+          "facilitatorNotes": [
+            "Too much self-confidence, too high an opinion of regular troops, and too low an opinion of Americans and Indians. He “slighted and neglected” the Native scouts who could have guided him, and they left; then the fire from the woods was his “first intelligence” of the enemy.",
+            "Franklin also grants that Braddock was brave and might have done well “in some European war.” Ask why he opens with that concession."
+          ],
+          "evidence": [
+            "too much self-confidence, too high an opinion of the validity of regular troops, and too mean a one of both Americans and Indians",
+            "which was the first intelligence the general had of an enemy's being near him"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q2",
+          "prompt": "Look at how Franklin voices his warning. Why does he begin “To be sure, sir,” and why does he stop after Braddock’s reply? Do you trust this account, written more than thirty years later?",
+          "facilitatorNotes": [
+            "He flatters before cautioning, gives the vivid image of an army “cut like a thread,” then defers to “a military man in matters of his profession.” The scene makes him both prophet and model of tact, much like the humility he describes practising in Chapter IX.",
+            "Readers may accept it, or suspect that hindsight has polished the memory. The narrator knows the outcome while he tells the conversation."
+          ],
+          "evidence": [
+            "to be cut like a thread into several pieces",
+            "I was conscious of an impropriety in my disputing with a military man in matters of his profession, and said no more"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q3",
+          "prompt": "What larger conclusion does Franklin draw from the defeat and the soldiers’ conduct on the march? How does his comparison with “our French friends in 1781” reveal when he was writing?",
+          "facilitatorNotes": [
+            "The rout gave Americans “the first suspicion” that British regulars were overrated, and their plundering put colonists out of conceit of such defenders. Writing after the Revolution, he sets them beside the French allies who took not “a pig, a chicken, or even an apple.”",
+            "The memoir reads 1755 through the lens of independence. Braddock’s dying “Who would have thought it?” can serve as the epitaph of the overconfidence Franklin described, or as a moment of human surprise that invites some sympathy."
+          ],
+          "evidence": [
+            "This whole transaction gave us Americans the first suspicion that our exalted ideas of the prowess of British regulars had not been well founded.",
+            "Who would have thought it?"
+          ]
+        }
+      ]
+    }
+  ]
+}
