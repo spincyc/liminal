@@ -219,6 +219,80 @@
     },
     {
       "id": "reading-6-dunbar-complete-poems-1922-04",
+      "title": "Ode to Ethiopia",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow the ode from past to present to future, and weigh what it chooses to praise.",
+      "focus": "A young poet tells his people to be proud: of surviving slavery, of their work and voices now, and of the story still to come.",
+      "context": "Paul Laurence Dunbar (1872–1906), the son of parents who had been enslaved, printed this ode in his first book of poems, when he was about twenty. An ode is a formal poem of praise addressed to its subject. As in many writings of his time, Ethiopia stands for Africa and all people of African descent, so “Ethiope’s children” are Black Americans. Swarthy means dark-skinned and fairer means lighter-skinned; senate halls are lawmaking assemblies, where Black men served after the Civil War; blazoned means proudly displayed; the rack was an instrument of torture; chrism is holy oil used in blessing; a lyre is a harp.",
+      "contentNote": "Slavery’s cruelty appears in figurative language (“dear blood all gory,” “the rack”). The poem uses the period words “swarthy” and “fairer” for skin colour.",
+      "excerpt": {
+        "locator": "“Ode to Ethiopia,” complete poem; opens “O Mother Race! to thee I bring This pledge of faith unwavering, This tribute to thy…”; closes “…who from thy root shall spring, And proudly tune their lyres to sing Of Ethiopia's glory.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          105,
+          112
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6f091b97150f4fb18232208963be078bbb4691582007c564eb374eab2ce4b086"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q1",
+          "prompt": "The ode moves through time. Which stanzas look back, which describe the present, and which look ahead?",
+          "facilitatorNotes": [
+            "The first two look back at slavery and the slow growth of freedom; the third and fourth show the present; the fifth to seventh explain why pride is earned; the last turns to the future with “Go on and up!” and the poets still to be born. The shape tells a story of rising."
+          ],
+          "evidence": [
+            "When Slavery crushed thee with its heel,",
+            "Go on and up! Our souls and eyes"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q2",
+          "prompt": "How does the second stanza tell history through the growth of a plant? Why might Dunbar choose a plant rather than, say, a battle?",
+          "facilitatorNotes": [
+            "Even in the sad days a seed of better times was growing; freedom sprang up, put out young leaves and is now in blossom. Growth is slow, living and hard to stop, and the young leaves suggest that freedom is still new. A battle would stress violence; the plant stresses patience and life."
+          ],
+          "evidence": [
+            "But through the land the fruitful seed Of better times was growing.",
+            "The plant of freedom upward sprung,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q3",
+          "prompt": "In the third and fourth stanzas, what are Black Americans shown doing? Why might Dunbar list these things in the 1890s?",
+          "facilitatorNotes": [
+            "Clearing forests, hammering at forges, working the fields, speaking in senate halls, singing hymns: labour, citizenship and faith. Many white Americans then claimed that freed people could not make their own way; the list answers them, and places Black citizens “Beside” their neighbours as equals."
+          ],
+          "evidence": [
+            "Their hammers ring, their forges smoke,--",
+            "Their voices sound through senate halls"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q4",
+          "prompt": "Dunbar says no other race, when free, was “So noble in forgiving.” What might a reader admire in this claim, and what might trouble them?",
+          "facilitatorNotes": [
+            "Admire: the dignity and moral strength it honours, linked to the cross and holy oil of the sixth stanza. Trouble: praising forgiveness can seem to ask the wronged to carry the burden, and “Forgot the past” sits oddly beside an opening that insists on remembering. Accept answers on either side that use the lines."
+          ],
+          "evidence": [
+            "No other race, when free again, Forgot the past and proved them men So noble in forgiving."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-05",
       "title": "Not They Who Soar",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -247,7 +321,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-04-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-05-q1",
           "prompt": "Who are the heroes in this poem, and who are not?",
           "facilitatorNotes": [
             "Those who plod “unhelped” along a rugged way, not those who soar above it. Flight is easy and free; heroism lies in the difficulty."
@@ -258,7 +332,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-04-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-05-q2",
           "prompt": "Which details show the plodders’ hardship, and what might they suggest?",
           "facilitatorNotes": [
             "Backs that have “felt the rod,” bare feet, thorns, hidden boulders, the plough. The rod may suggest whipping, and from Dunbar it may recall slavery; readers can discuss how far the poem invites that reading."
@@ -269,7 +343,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-04-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-05-q3",
           "prompt": "Why do the soarers lose something by missing the toil? Do you agree?",
           "facilitatorNotes": [
             "Those who fly never struggle, so they never earn the right to “smile upon defeated care.” The poem implies hardship gives worth or understanding; some readers will question whether suffering always ennobles."
@@ -282,7 +356,81 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-05",
+      "id": "reading-6-dunbar-complete-poems-1922-06",
+      "title": "Keep A-Pluggin’ Away",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Watch how a refrain works, and decide whether the poem’s advice is as simple as it sounds.",
+      "focus": "A cheerful motto repeated twelve times, with a joke and a hard truth tucked inside it.",
+      "context": "Paul Laurence Dunbar knew about plugging away: after high school he could find no better work than running an elevator in Dayton, Ohio, and he wrote poems between calls and paid to print his first book himself. To plug away is to keep working steadily at something hard. A motto is a short saying to live by; homely means plain and ordinary; to bide one’s time is to wait patiently; to delve is to dig; perseverance is keeping on despite difficulty.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Keep A-Pluggin’ Away,” complete poem; opens “I 've a humble little motto That is homely, though it 's true,-- Keep a-pluggin' away.…”; closes “…king; Time its sure reward will bring; Work and wait unwearying,-- Keep a-pluggin' away.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          280,
+          283
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2552689891ad6732f7e76b7bf1a11380a78986d22d8e10c6dad9cf98aaba77a8"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q1",
+          "prompt": "Count how often the refrain comes. How does the repetition match the advice?",
+          "facilitatorNotes": [
+            "Twelve times, three in every stanza. The poem plugs away itself, steady and stubborn, and the short refrain line after the longer ones lands like a blow of a hammer."
+          ],
+          "evidence": [
+            "I 've a humble little motto That is homely, though it 's true,--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q2",
+          "prompt": "List the troubles the poem expects. Which come from nature, and which from people?",
+          "facilitatorNotes": [
+            "Rising storms, opposing waters, high hills, hard paths, torrents of rain and frowning skies, all pictures of difficulty; and from people, “sneers to swallow.” The poem does not pretend success is easy or quick."
+          ],
+          "evidence": [
+            "If the hills are high before And the paths are hard to climb,",
+            "There 'll be lots of sneers to swallow,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q3",
+          "prompt": "“Delve away beneath the surface, / There is treasure farther down.” What might the treasure be for a toiler, a poet or a priest?",
+          "facilitatorNotes": [
+            "For a worker, skill or reward; for a poet, the true poem under the first rough attempts; for a priest, deeper faith. Digging is slow work no one sees, and the treasure stays hidden until you reach it."
+          ],
+          "evidence": [
+            "Be thou toiler, poet, priest,",
+            "Delve away beneath the surface, There is treasure farther down,--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q4",
+          "prompt": "Read “If you 've got your eye on heaven, / Some bright day you 'll wake up there.” Is this a promise, a joke, or both?",
+          "facilitatorNotes": [
+            "A promise of reward, and also a sly joke: to wake up in heaven you must first die, so the reward may come very late indeed. Some readers hear only faith; others hear a wry smile at how long “Time” can take to pay."
+          ],
+          "evidence": [
+            "If you 've got your eye on heaven, Some bright day you 'll wake up there,--",
+            "Time its sure reward will bring;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-07",
       "title": "The Colored Soldiers",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -311,7 +459,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-05-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-07-q1",
           "prompt": "Who is “you” in the second and third stanzas, and how did “you” first treat the colored soldiers?",
           "facilitatorNotes": [
             "The white North and its army, who scorned Black volunteers and called the war “the white man's,” then called on them when the flag was “drooping low.” The poem speaks to those who rejected and then needed them."
@@ -322,7 +470,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-05-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-07-q2",
           "prompt": "Why does the poem pause on Fort Pillow? How is that stanza different from the others?",
           "facilitatorNotes": [
             "It turns from praise to prayer: mercy on the deeds done there and on victims sent “without a prayer.” It names an atrocity without describing it, and the restraint gives it force."
@@ -333,7 +481,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-05-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-07-q3",
           "prompt": "“Are they more or less to-day?” What is the poem asking, and why ask it about thirty years after the war?",
           "facilitatorNotes": [
             "Whether the nation still treats Black veterans and citizens as comrades and equals. The question challenges readers who praise soldiers’ courage but forget their rights; readers can say what answer the following stanzas imply."
@@ -344,7 +492,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-05-q4",
+          "id": "reading-6-dunbar-complete-poems-1922-07-q4",
           "prompt": "The poem opens by doubting its own voice. Does that modest beginning fit what follows?",
           "facilitatorNotes": [
             "Wishing for the muse and a stronger voice is a traditional modest opening, and the poem then sings the stirring song anyway. Some readers see only a convention, others a real worry about being heard."
@@ -356,7 +504,7 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-06",
+      "id": "reading-6-dunbar-complete-poems-1922-08",
       "title": "Ships That Pass in the Night",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -385,7 +533,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-06-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-08-q1",
           "prompt": "What does the speaker actually see and hear of the ship?",
           "facilitatorNotes": [
             "Only a booming gun and a random gleam of light; the ship itself is never seen. The speaker follows it through faint signs."
@@ -395,7 +543,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-06-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-08-q2",
           "prompt": "What happens when the speaker calls out? Why is that image so painful?",
           "facilitatorNotes": [
             "The voice “falls dead a foot from mine own lips,” and only its ghost reaches the ship. The speaker cannot even be heard; the effort fails almost at once."
@@ -406,7 +554,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-06-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-08-q3",
           "prompt": "What could the “ship of ships” stand for? Support one reading and acknowledge another.",
           "facilitatorNotes": [
             "A lost love, a chance, success, faith or hope; the poem never says. The repeated “passing, passing” at the end of each stanza stresses that it is going and will not return."
@@ -419,7 +567,7 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-07",
+      "id": "reading-6-dunbar-complete-poems-1922-09",
       "title": "When Malindy Sings",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -448,7 +596,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-07-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-09-q1",
           "prompt": "What is the speaker’s complaint about Miss Lucy’s singing?",
           "facilitatorNotes": [
             "She reads “lines an' dots” but lacks the natural voice and the turns and twistings of real singing; practising until she is gray will not help. The speaker sets feeling and gift above notation."
@@ -459,7 +607,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-07-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-09-q2",
           "prompt": "How does the poem show the power of Malindy’s voice without our hearing it?",
           "facilitatorNotes": [
             "By its effects: birds hush and hide, fiddlers and banjo players stop, sinners tremble toward the hymn, listeners cry. Everyone else’s response proves her art."
@@ -470,7 +618,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-07-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-09-q3",
           "prompt": "Who is the expert in this poem? Does the speaker convince you that training cannot compete?",
           "facilitatorNotes": [
             "The speaker claims to know real singing better than the girl with the music book, quietly reversing who usually teaches whom. Readers may still argue that training and natural gift need not be rivals."
@@ -481,7 +629,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-07-q4",
+          "id": "reading-6-dunbar-complete-poems-1922-09-q4",
           "prompt": "In the last stanza the speaker hushes the dog and the child. What does that show about how the poem ends?",
           "facilitatorNotes": [
             "Malindy is singing right now, and the speaker wants silence to listen. The poem ends in the present moment, as if we might hear her too, with the spiritual drifting from valley to hill."
@@ -494,7 +642,7 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-08",
+      "id": "reading-6-dunbar-complete-poems-1922-10",
       "title": "Sympathy",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -523,7 +671,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-08-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-10-q1",
           "prompt": "What does the caged bird sense of the world outside in the first stanza?",
           "facilitatorNotes": [
             "Sun on the slopes, soft wind in the grass, a river like glass, the first bird and bud, a flower’s scent. The beauty of the free world makes the cage sharper."
@@ -533,7 +681,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-08-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-10-q2",
           "prompt": "How do the three refrains differ: what the bird “feels,” why it “beats his wing,” why it “sings”?",
           "facilitatorNotes": [
             "Feeling, then struggle, then song: the speaker moves from sharing the bird’s longing to its useless fight to the meaning of its music. Each stanza claims a deeper knowledge."
@@ -544,7 +692,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-08-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-10-q3",
           "prompt": "Why does the bird sing, according to the last stanza? What would a careless listener assume?",
           "facilitatorNotes": [
             "Not for “joy or glee” but as a prayer and a plea sent up to Heaven. A careless listener hears cheerfulness; the speaker hears suffering beneath it."
@@ -555,7 +703,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-08-q4",
+          "id": "reading-6-dunbar-complete-poems-1922-10-q4",
           "prompt": "The speaker never names his own cage. Why might Dunbar leave it unstated?",
           "facilitatorNotes": [
             "Leaving it open lets the poem speak for many kinds of confinement. Many readers connect it with racial injustice in Dunbar’s America; others with any trapped life. The repeated “I know” insists the knowledge comes from experience."
@@ -567,7 +715,80 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-09",
+      "id": "reading-6-dunbar-complete-poems-1922-11",
+      "title": "Harriet Beecher Stowe",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a sonnet’s argument from a book to a war to freedom, and test its large claims.",
+      "focus": "Dunbar honours the writer whose novel woke the world’s conscience about slavery.",
+      "context": "Harriet Beecher Stowe (1811–1896) wrote Uncle Tom’s Cabin (1852), a novel about enslaved people that sold hundreds of thousands of copies and turned many readers in the North and in Britain against slavery. Paul Laurence Dunbar wrote this sonnet in her honour. A reveille is the bugle call that wakes soldiers; a hovel is a poor hut; complacent means smugly satisfied; transfigured means changed into something finer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Harriet Beecher Stowe,” complete poem; opens “She told the story, and the whole world wept At wrongs and cruelties it had not known But…”; closes “…Prophet and priestess! At one stroke she gave A race to freedom and herself to fame.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          862,
+          862
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a9f9e89e78cb6bce794b7e998ab2f3a022d02df9cdc9c27dfc2e7e33db771b0"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q1",
+          "prompt": "According to the first four lines, what did Stowe do, and how did the world respond?",
+          "facilitatorNotes": [
+            "She told the story of wrongs and cruelties that people “had not known,” and the whole world wept; she woke consciences that had long been asleep. Her only weapon is a voice."
+          ],
+          "evidence": [
+            "She told the story, and the whole world wept",
+            "She spoke to consciences that long had slept:"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q2",
+          "prompt": "Dunbar compares her message to a bugle call and to a sword leaping from its sheath. What do the two images share?",
+          "facilitatorNotes": [
+            "Both are military: one wakes soldiers, the other is a weapon drawn. The book becomes a call to battle, and justice, which had stayed in its sheath, is suddenly in use. The message also reaches everyone, “From heedless hovel to complacent throne.”"
+          ],
+          "evidence": [
+            "Her message, Freedom's clear reveille, swept",
+            "And from its sheath the sword of justice leapt."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q3",
+          "prompt": "What is the “fiery wave” around “two peoples,” and how could both come out “transfigured”?",
+          "facilitatorNotes": [
+            "The Civil War, around Black and white Americans. Black Americans came out free; white Americans, the poem suggests, came out freed from the wrong of slavery. Some readers will ask whether the nation was truly changed, given what followed the war; that doubt is worth hearing."
+          ],
+          "evidence": [
+            "Around two peoples swelled a fiery wave, But both came forth transfigured from the flame."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q4",
+          "prompt": "The last line says that at “one stroke” she gave “A race to freedom and herself to fame.” Is that fair to history? What does Dunbar gain by putting it this way?",
+          "facilitatorNotes": [
+            "It overstates: enslaved people who escaped and resisted, Black abolitionists such as Douglass, and soldiers all won freedom, and no novel did it alone. But a tribute compresses, and the balanced line (freedom for them, fame for her) gives a memorable close. Dunbar honours Douglass and the Black soldiers in other poems."
+          ],
+          "evidence": [
+            "Prophet and priestess! At one stroke she gave A race to freedom and herself to fame."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-12",
       "title": "Little Brown Baby",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -596,7 +817,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-09-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-12-q1",
           "prompt": "Which details show the end of a long, messy, happy day?",
           "facilitatorNotes": [
             "Sand pies, a dirty bib, a mouth sticky with molasses, the call to Maria to wipe his hands. The father notices everything about his son."
@@ -607,7 +828,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-09-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-12-q2",
           "prompt": "Why does the father pretend not to know the baby and offer him to the bogeyman?",
           "facilitatorNotes": [
             "It is a game: the frightened baby hugs him close, and the father “rescues” him. Mock rejection gives the child the pleasure of being claimed again."
@@ -618,7 +839,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-09-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-12-q3",
           "prompt": "What does the father wish in the last lines, and why might he wish it?",
           "facilitatorNotes": [
             "That his son could always know ease and clear skies and stay a child on his breast. The wish hints at a hard world waiting; readers may think of the dangers facing a Black child in Dunbar’s America. The tender ending gives weight to the play."
@@ -631,7 +852,7 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-10",
+      "id": "reading-6-dunbar-complete-poems-1922-13",
       "title": "Douglass",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -660,7 +881,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-10-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-13-q1",
           "prompt": "Why does the speaker say “we have fall'n on evil days,” worse even than Douglass knew?",
           "facilitatorNotes": [
             "Douglass faced slavery, but the speaker sees a new “tempest of dispraise” and quarrelling, with Honor dead at the helm. The claim is startling and asks readers how progress can be lost."
@@ -671,7 +892,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-10-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-13-q2",
           "prompt": "Trace the sea-storm image across the poem.",
           "facilitatorNotes": [
             "A battling tide, a tempest, waves of dissension, a dead pilot, a shivering boat in the dark. The nation, or Dunbar’s people, is a small boat in danger without its guide."
@@ -682,7 +903,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-10-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-13-q3",
           "prompt": "What does the speaker ask of Douglass, and can a dead man give it? What is the poem really doing?",
           "facilitatorNotes": [
             "His voice, his arm, his presence, to comfort them in the dark. He cannot return, so the call expresses grief and need and holds up his example for the living. Readers may hear despair or a summons to new leaders."
@@ -695,7 +916,80 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-11",
+      "id": "reading-6-dunbar-complete-poems-1922-14",
+      "title": "Booker T. Washington",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the turn in a sonnet, and see how the portrait shifts from where a man came from to how he moves.",
+      "focus": "A portrait of a leader, from a cabin door to the prow of a ship.",
+      "context": "Booker T. Washington (1856–1915) was born enslaved in a cabin in Virginia, worked his way to an education, and in 1881 founded Tuskegee Institute in Alabama, a school for Black students; he became the best-known Black American of his day. Paul Laurence Dunbar, who knew him, wrote this sonnet. “He who runs may read” echoes the Bible: something written so plainly that a person running past can read it. A peer is an equal; acclaim is praise; a prow is the front of a ship.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Booker T. Washington,” complete poem; opens “The word is writ that he who runs may read. What is the passing breath of earthly fame?…”; closes “…his hip; With one idea foremost in his mind, Like the keen prow of some on-forging ship.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1526,
+          1526
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a1b9538743b8c438cdda69363592908a31280db58bd88e331f04763fd47ea600"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-14-q1",
+          "prompt": "What does the opening say true glory is, compared with “earthly fame”?",
+          "facilitatorNotes": [
+            "Fame is only a passing breath. Truly living is to “snatch glory from the hands of blame”: to win honour in spite of those who blame or look down on you."
+          ],
+          "evidence": [
+            "What is the passing breath of earthly fame?",
+            "But to snatch glory from the hands of blame--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-14-q2",
+          "prompt": "Lines five to eight tell a life story in four lines. What contrast do they draw?",
+          "facilitatorNotes": [
+            "From a poor Virginia cabin with a “dark and lowly door” to “a peer of princes,” a leader the nation needs. The seed image makes the great man grow from a small beginning."
+          ],
+          "evidence": [
+            "A poor Virginia cabin gave the seed,",
+            "A peer of princes in the world's acclaim,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-14-q3",
+          "prompt": "In the last six lines, who might the “hounds” be, and why does he not turn to look at them?",
+          "facilitatorNotes": [
+            "Critics and enemies: people hostile to a Black leader, and also rivals who disagreed with his methods. He keeps to his single purpose; looking back would slow him. The hunting picture makes him a hunted animal who still runs straight."
+          ],
+          "evidence": [
+            "Straight on he goes, nor turns to look behind Where hot the hounds come baying at his hip;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-14-q4",
+          "prompt": "Why might Dunbar end with a ship’s prow? What does the image say about the kind of strength he admires?",
+          "facilitatorNotes": [
+            "A prow is sharp (“keen”) and cuts forward, leading the whole ship: strength as silent, single-minded purpose. Some readers may ask whether a mind with only “one idea” leaves room for doubt or for other people’s ideas; the poem admires it without asking."
+          ],
+          "evidence": [
+            "With one idea foremost in his mind, Like the keen prow of some on-forging ship."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-15",
       "title": "The Debt",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -724,7 +1018,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-11-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-15-q1",
           "prompt": "Which words belong to borrowing and paying, and how do they shape the poem?",
           "facilitatorNotes": [
             "Debt, pay, bought, loan, interest. A moment of pleasure becomes a purchase on credit, and regret is the repayment."
@@ -735,7 +1029,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-11-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-15-q2",
           "prompt": "Why is the last line so sudden? What does it reveal?",
           "facilitatorNotes": [
             "After calm, even lines, the outburst shows the cost has grown far beyond what the speaker expected: the thing was “slight,” the interest enormous."
@@ -746,7 +1040,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-11-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-15-q3",
           "prompt": "The poem never says what happened on the “riotous day.” Weakness or strength?",
           "facilitatorNotes": [
             "Leaving it out lets the poem fit any rash act and keeps attention on the cost. Some readers want the story; others find that the silence makes the regret belong to everyone."
@@ -758,7 +1052,82 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-12",
+      "id": "reading-6-dunbar-complete-poems-1922-16",
+      "title": "The Haunted Oak",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Work out who speaks each part, and how letting a tree tell the story changes what we feel.",
+      "focus": "An oak that witnessed a lynching tells why it can never grow leaves again.",
+      "context": "Lynching is murder by a mob that takes the law into its own hands. Between the 1880s and the 1930s thousands of Black Americans were lynched, often after a false accusation, and often taken from jail before any trial; the killers were rarely punished. Paul Laurence Dunbar published this ballad in 1900. The oak itself tells most of the story. I trow means I believe; a goad is a spiked stick for driving cattle, and galling means chafing; bedight means dressed up; a throe is a spasm of pain; a ban is a curse.",
+      "contentNote": "A ballad about a lynching: an innocent man is taken from jail by a masked mob that includes a judge, a doctor and a minister, and is hanged from the oak. The hanging is not described in detail, but the poem is grim; adults should be ready to talk about racial violence in American history.",
+      "excerpt": {
+        "locator": "“The Haunted Oak,” complete poem; opens “Pray why are you so bare, so bare, Oh, bough of the old oak-tree; And why, when I go…”; closes “…night stays he; For I feel his curse as a haunted bough, On the trunk of a haunted tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1616,
+          1631
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c1f7576f5a7ee041c90dea81102864c8634d1ba8116647cb72bb789a681c62c2"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-16-q1",
+          "prompt": "Who asks the question in the first stanza, and who answers? Where else do new voices enter?",
+          "facilitatorNotes": [
+            "A passer-by asks why the bough is bare and why it makes him shudder; the oak answers from the second stanza on (“My leaves,” “my veins”). The mob speaks in quotation marks at the jail door. Letting a tree tell it gives the story a witness that cannot be bribed or frightened."
+          ],
+          "evidence": [
+            "Pray why are you so bare, so bare, Oh, bough of the old oak-tree;",
+            "My leaves were green as the best, I trow,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-16-q2",
+          "prompt": "How do the riders get the prisoner out of jail? What does their trick show about them?",
+          "facilitatorNotes": [
+            "They claim to be his friends, come to save him from a mob, when they are the mob. The lie uses the very danger they bring, and the jailer opens the door. Cunning, and cowardly: they come by night and in masks."
+          ],
+          "evidence": [
+            "We are friends of him whom you hold within,",
+            "They have fooled the jailer with lying words,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-16-q3",
+          "prompt": "Who rides with the mob? Why might Dunbar name a judge, a doctor and a minister?",
+          "facilitatorNotes": [
+            "The town’s most respected men, whose work is justice, healing and mercy, are the killers in disguise. The poem accuses a whole community and its law, not a few outlaws. “The old, old crime” was the charge most often made against lynching victims, an accusation of attacking a white woman; the poem insists this man was guiltless."
+          ],
+          "evidence": [
+            "Oh, the judge, he wore a mask of black, And the doctor one of white,",
+            "They 'd charged him with the old, old crime,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-16-q4",
+          "prompt": "At the end, what has happened to the oak, and what happens to the judge? Is this a kind of justice?",
+          "facilitatorNotes": [
+            "The oak is dried and dead, cursed because it bore an innocent man’s death. The judge rides by, goes hunting and lives on, punished only by fear inside him. No court acts, which matches what really happened in most lynchings. Many readers find it unjust that the tree suffers more than the killers, and that may be Dunbar’s point."
+          ],
+          "evidence": [
+            "And never more shall leaves come forth On a bough that bears the ban;",
+            "And ever the judge rides by, rides by, And goes to hunt the deer,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-17",
       "title": "Robert Gould Shaw",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -787,7 +1156,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-12-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-17-q1",
           "prompt": "What life does the poem say Shaw left behind?",
           "facilitatorNotes": [
             "Study among “classic groves,” where wisdom walks calmly, and home, family and comfort. The poem stresses that he chose danger over ease."
@@ -798,7 +1167,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-12-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-17-q2",
           "prompt": "What did Shaw go to do, in the poem’s words, and how does it describe the men he led?",
           "facilitatorNotes": [
             "To lead them “To manhood's home,” to win recognition of their full humanity. “Unlettered and despised” describes how the world saw them, not Dunbar’s own judgment; discuss the difference."
@@ -809,7 +1178,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-12-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-17-q3",
           "prompt": "Why does the last line say they died “in vain”? Does Dunbar want us to accept that?",
           "facilitatorNotes": [
             "The present seems to show that the rights they died for have been lost. The ending may be despair, or a protest meant to shame readers into making the sacrifice count; “the Present teaches” suggests the blame lies with the living."
@@ -821,7 +1190,7 @@
       ]
     },
     {
-      "id": "reading-6-dunbar-complete-poems-1922-13",
+      "id": "reading-6-dunbar-complete-poems-1922-18",
       "title": "Life’s Tragedy",
       "sourceId": "dunbar-complete-poems-1922",
       "genre": "poetry",
@@ -850,7 +1219,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-dunbar-complete-poems-1922-13-q1",
+          "id": "reading-6-dunbar-complete-poems-1922-18-q1",
           "prompt": "Which sorrows does the first stanza name, and how does it set them aside?",
           "facilitatorNotes": [
             "Never singing and never being loved: real griefs, but “deeper griefs than these” are coming. The stanza clears the ground for a surprising claim."
@@ -861,7 +1230,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-13-q2",
+          "id": "reading-6-dunbar-complete-poems-1922-18-q2",
           "prompt": "What does it mean to lose the key “only by a half-tone”? Why might a small miss hurt more?",
           "facilitatorNotes": [
             "Missing perfection by the smallest possible step makes success feel as if it was almost in hand. Readers may compare near misses in music or sport."
@@ -871,7 +1240,7 @@
           ]
         },
         {
-          "id": "reading-6-dunbar-complete-poems-1922-13-q3",
+          "id": "reading-6-dunbar-complete-poems-1922-18-q3",
           "prompt": "Do you agree with the last two lines about how people count their joys?",
           "facilitatorNotes": [
             "The poem says we measure happiness by what kept us from “the perfect thing.” Some readers find this true to regret; others think it is a trap the poem describes rather than recommends."
@@ -879,6 +1248,302 @@
           "evidence": [
             "We count our joys not by the things we have,",
             "But by what kept us from the perfect thing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-19",
+      "title": "Wadin’ in de Crick",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a small adventure stanza by stanza and enjoy the surprise at the end.",
+      "focus": "A hot day, a creek, a tattletale bird and a mother with a stick.",
+      "context": "In this dialect poem by Paul Laurence Dunbar, a child skips school on a hot day to wade in the creek (the “crick”). Mussiful means merciful; hookey (hooky) is skipping school; a jay-b’ud is a blue jay, a noisy bird; a tattlah is a tattletale; wilier boughs are willow branches and elum trees are elms; “yo’ Mastah” here means God; scaihed to def means scared to death; bref is breath.",
+      "contentNote": "A mother comes after her child with a stick, then drops it. Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“Wadin’ in de Crick,” complete poem; opens “Days git wa'm an' wa'mah, School gits mighty dull, Seems lak dese hyeah teachahs Mus'…”; closes “…set down gentle An' she drap huh stick,-- An' fus' t'ing, dey's mammy Wadin' in de crick.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1774,
+          1779
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "949a63c3b6e4b60eeda8f7a641b2ebe7d19b02480e3551f50928db44aff1df77"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-19-q1",
+          "prompt": "What reasons does the speaker give for skipping school? Which part sounds honest, and which sounds like an excuse?",
+          "facilitatorNotes": [
+            "Warm days, dull school, teachers who ought to be merciful, the air itself calling. The speaker also admits that hooky is wrong and “Ain’t no gent’man’s trick.” Owning up first makes the excuses more charming."
+          ],
+          "evidence": [
+            "Hookey's wrong, I know it Ain't no gent'man's trick;",
+            "Seems lak dese hyeah teachahs Mus' feel mussiful."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-19-q2",
+          "prompt": "How do the jay-bird and the trees behave differently? Why does the speaker like the trees better?",
+          "facilitatorNotes": [
+            "The jay is a tattletale who will tell on you; the trees see you too but “don’ chattah,” and their thick trunks are good to hide behind. The speaker gives the creatures personalities, like people in a child’s life."
+          ],
+          "evidence": [
+            "Jay-bu'ds sich a tattlah,",
+            "But de trees don' chattah,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-19-q3",
+          "prompt": "What happens in the last stanza, and why is the ending funny?",
+          "facilitatorNotes": [
+            "Mammy comes flying, out of breath, while the child hides; then she sits down gently, drops the stick, and wades in too. The person who came to punish joins the fun, and the refrain that ended every stanza now belongs to her."
+          ],
+          "evidence": [
+            "But she set down gentle An' she drap huh stick,--",
+            "An' fus' t'ing, dey's mammy Wadin' in de crick."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-19-q4",
+          "prompt": "Read the second stanza aloud. How do the short lines and the dialect make it sound like the creek, or like a child talking?",
+          "facilitatorNotes": [
+            "Short lines with three beats bounce along; dropped letters make the talk quick and easy; “gu’glin’ / Ovah shiny stones” almost gurgles itself. The voice is breathless and eager, like a child already halfway to the water."
+          ],
+          "evidence": [
+            "Dah de watah's gu'glin' Ovah shiny stones,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-20",
+      "title": "The Place Where the Rainbow Ends",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow how the poem changes the meaning of a familiar legend.",
+      "focus": "Where the rainbow really ends, and what treasure waits there.",
+      "context": "Paul Laurence Dunbar plays on the old story that a pot of gold lies buried where a rainbow touches the ground; since a rainbow seems to move as you move, no one can ever reach its end. Arabian legends are tales like the Arabian Nights; coffers are treasure chests; pottage is a thick soup or stew; a scoffer is someone who mocks; “truce to the story” means enough of that story.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Place Where the Rainbow Ends,” complete poem; opens “There's a fabulous story Full of splendor and glory, That Arabian legends transcends; Of…”; closes “…Then truce to the story, Of riches and glory; There's the place where the rainbow ends.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1832,
+          1837
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "714c61a36a01b1a52d0de53694fed1f512881ad19e376410fd169fcfe195e5f5"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-20-q1",
+          "prompt": "Where have people looked for the treasure, according to the middle stanzas, and what has the search cost them?",
+          "facilitatorNotes": [
+            "In battle, and at the gambling table where dice rattle and men swear. They have spent their blood “recklessly” and still found nothing: the hunt for riches leads to war and vice."
+          ],
+          "evidence": [
+            "With the blood we so recklessly spend;",
+            "They have sought it in battle,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-20-q2",
+          "prompt": "What does the speaker mean by finding the place “without motion”?",
+          "facilitatorNotes": [
+            "Not by travelling or chasing, but by staying where he is and being content. Everyone else runs after the rainbow; he lets its end come to him."
+          ],
+          "evidence": [
+            "And I have a notion, To find without motion,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-20-q3",
+          "prompt": "What is in the pot and where is the place, in the last two stanzas? Why might Dunbar turn “pot” into “pottage”?",
+          "facilitatorNotes": [
+            "A pot of stew instead of gold, a cottage instead of a palace, and joy, love and friends as the wealth. The pun brings the legend down to everyday life: the real treasure is ordinary."
+          ],
+          "evidence": [
+            "The pot may hold pottage,",
+            "And I shall find wealth in my friends;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-20-q4",
+          "prompt": "The speaker admits that gold “has a power it lends.” Does that admission make his choice more convincing or less?",
+          "facilitatorNotes": [
+            "More, because he is not naive: he knows what money can do and chooses otherwise. Less, some may say, because it is easy to scorn wealth you do not have, and he expects to be mocked (“spite of the scoffer”). Both views can be argued from the poem."
+          ],
+          "evidence": [
+            "Though gold has a power it lends;",
+            "But spite of the scoffer,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-21",
+      "title": "Limitations",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the single piece of advice behind several different comparisons.",
+      "focus": "Do not pretend to be more than you are: people will find you out.",
+      "context": "In this dialect poem Paul Laurence Dunbar gives advice through homely comparisons. Fe’ means for; a teenchy bit is a tiny bit; victuals (said “vittles”) are food; ’spicious means suspicious; a pint is a small measure and a bar’l (barrel) a large one; idees are ideas. A mockingbird is famous for its many beautiful songs; a crow only caws.",
+      "contentNote": "Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“Limitations,” complete poem; opens “Ef you's only got de powah fe' to blow a little whistle, Keep ermong de people wid de…”; closes “…t'ing in de country dat I evah hyahed-- A crow dot sat a-squawkin', \"I's a mockin'-bird.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1879,
+          1881
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1f788ea6823b1f2e51a134c899071bceecc8cdd7b3fb6accd358d1fd30082c69"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-21-q1",
+          "prompt": "Each stanza compares a person to something small pretending to be big. Name the comparisons, including the last one.",
+          "facilitatorNotes": [
+            "A little whistle squeaking against a great horn; a tiny bit of food called a feast; a half-pint mind claiming to be a barrel; and a crow announcing that it is a mockingbird."
+          ],
+          "evidence": [
+            "A-squeakin' of yo' whistle 'g'inst a gread big ho'n.",
+            "Don' go roun' a-sayin' hit's a bar'l;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-21-q2",
+          "prompt": "What happens, in each stanza, to people who pretend?",
+          "facilitatorNotes": [
+            "Their finest feelings land in a bed of thistles; suspicious neighbours come peering for scraps; people test them, catch the lie and twist their words. Pretending leads to being found out and laughed at."
+          ],
+          "evidence": [
+            "Fe' de folks is mighty 'spicious, an' dey's ap' to come apeerin',",
+            "'Ca'se de people gwine to test you, an' dey'll fin' out you's a-lyin',"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-21-q3",
+          "prompt": "Why is the crow the “wuss t’ing” the speaker ever heard?",
+          "facilitatorNotes": [
+            "Because its own squawk disproves the boast the moment it speaks. Saving the funniest picture for last makes the lesson stick: a pretender gives himself away."
+          ],
+          "evidence": [
+            "A crow dot sat a-squawkin', \"I's a mockin'-bird.\""
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-21-q4",
+          "prompt": "Is the poem telling people to stay small, or to be honest? Could its advice be misused?",
+          "facilitatorNotes": [
+            "Its target is boasting and pretending, not ambition. But “Keep ermong de people wid de whistles” could be heard as “stay in your place,” and people have used such advice to hold others back; Dunbar himself rose far beyond what others expected of him. Good answers separate being honest about your powers from accepting limits others set."
+          ],
+          "evidence": [
+            "Keep ermong de people wid de whistles."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-22",
+      "title": "Equipment",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Listen to a worker speaking to God, and decide whether he is proud, humble, or both.",
+      "focus": "A maker offers his work to the Master who gave him his tools, and asks to be judged fairly.",
+      "context": "Paul Laurence Dunbar died of tuberculosis at thirty-three, after writing poems, stories and novels; many readers praised only his dialect poems, which frustrated him. Here a worker speaks to God. Equipment means the gifts and tools a person is given; wrought is an old past tense of work, meaning made or fashioned; raucous means harsh and loud; railing is scolding or mockery.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Equipment,” complete poem; opens “With what thou gavest me, O Master, I have wrought. Such chances, such abilities, To see…”; closes “…If they are few, is the workmanship true? Try them and weigh me, whate'er be my due!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2116,
+          2118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "478a1ea1039c234c25b0914cc933ee366f184da6403e409925ad8321bd2a863a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-22-q1",
+          "prompt": "Who is the “Master,” and what did he give the speaker?",
+          "facilitatorNotes": [
+            "God, addressed as “O Master” and later “ah God!” He gave chances and abilities, and the first impulse and plan of the work; the speaker could not see where it would end."
+          ],
+          "evidence": [
+            "With what thou gavest me, O Master, I have wrought.",
+            "Thine was the impulse, thine the forming thought."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-22-q2",
+          "prompt": "The speaker says his work was not “hard up striving after glory.” How does he say he worked instead?",
+          "facilitatorNotes": [
+            "Not grabbing at success, winning and losing, or shouting back at the world’s mockery, but “simply and humbly,” like a mason or carpenter working stone and wood, to make things that might seem good to God."
+          ],
+          "evidence": [
+            "Raging me back at the world's raucous railing.",
+            "Simply and humbly from stone and from wood,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-22-q3",
+          "prompt": "“If they are little, ah God! but the cost.” What might the cost be?",
+          "facilitatorNotes": [
+            "Effort, suffering, time, and things given up, “the all that is lost,” which only God knows. Some readers connect this with Dunbar’s short, hard-working life and his wish to be valued for all his work; the poem itself names no details."
+          ],
+          "evidence": [
+            "If they are little, ah God! but the cost,",
+            "Who but thou knowest the all that is lost!"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-22-q4",
+          "prompt": "Why does the poem end with “Try them and weigh me”? Is the speaker proud, humble, or both?",
+          "facilitatorNotes": [
+            "He asks to be judged by how true the workmanship is, not by how big or how many the works are, and he accepts whatever he deserves. Humble about the size of his work, proud of its honesty: good answers find both in the last lines."
+          ],
+          "evidence": [
+            "If they are few, is the workmanship true?",
+            "Try them and weigh me, whate'er be my due!"
           ]
         }
       ]
