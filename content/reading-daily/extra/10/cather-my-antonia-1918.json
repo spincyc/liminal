@@ -898,6 +898,70 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-cather-my-antonia-1918-15",
+      "title": "My Ántonia excerpt: a night at the Cutters’ (Book II, Chapter XV)",
+      "sourceId": "cather-my-antonia-1918",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the danger is prepared, and how Jim reacts afterwards toward the person it was meant for.",
+      "focus": "A predator’s plan foiled by chance, a young man’s shame, and a marriage held together by rage.",
+      "context": "Willa Cather’s My Ántonia (1918) is told by Jim Burden, a New York lawyer remembering his boyhood in Nebraska in the 1880s, where he came as an orphan of ten to live with his grandparents and grew up near Ántonia Shimerda, the daughter of a Bohemian (Czech) immigrant family. Ántonia, now a young woman, works as hired girl for Wick Cutter, the town’s money-lender, who has a bad name for preying on the young women who work for him; she went there against the warning of Mrs. Harling, her former employer. Jim has just finished high school and will soon leave for the state university. Usury notes record loans made at very high interest; a Yale lock is a modern key lock; a whelp is a puppy and a hussy a bold woman, both used as insults; court-plaster is sticking-plaster; arnica is an ointment for bruises; a rake is a man who pursues women; debauchery is sexual immorality.",
+      "contentNote": "Contains a man’s plan to sexually assault a young woman, carried out in the dark against the young man who has taken her place; a violent beating; insults; and a husband’s deliberate cruelty to his wife.",
+      "excerpt": {
+        "locator": "Book II, Chapter XV, the whole chapter, ending Book II; opens “LATE in August the Cutters went to Omaha for a few days, leaving Ántonia in charge of the…”; closes “…The one excitement he really could n’t do without was quarreling with Mrs. Cutter!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          730,
+          752
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "831b0db22a7412cf20b51a3ec8972944ed8093551f20e6f7003cf68fc85604bb"
+      },
+      "questions": [
+        {
+          "id": "reading-10-cather-my-antonia-1918-15-q1",
+          "prompt": "What arrangements does Cutter make before leaving, and why do they make Ántonia uneasy? What does the reader suspect?",
+          "facilitatorNotes": [
+            "He hides the silver and papers under her bed, makes her promise not to sleep away from the house or stay out late, forbids her to have any friend stay with her, and fits a new lock. Ántonia does not like the way he looks at her. A reader who knows Cutter’s history with the Swedish girls suspects that the “valuables” are an excuse to make sure she is alone in that bed."
+          ],
+          "evidence": [
+            "He strictly forbade her to ask any of the girls she knew to stay with her at night.",
+            "She had n’t liked the way he kept coming into the kitchen to instruct her, or the way he looked at her."
+          ]
+        },
+        {
+          "id": "reading-10-cather-my-antonia-1918-15-q2",
+          "prompt": "Afterwards Jim says he “hated her almost as much as I hated Cutter.” Why does he turn against Ántonia, and is his anger fair?",
+          "facilitatorNotes": [
+            "He is humiliated, beaten, afraid of being laughed at by the old men at the drug-store, and feels dirtied by “all this disgustingness.” His anger is not fair: Ántonia was the intended victim, and grandmother says they should be thankful it was Jim and not her. Like Mr. Harling earlier, he blames the woman for a man’s act. The older narrator reports the feeling honestly, without excusing it."
+          ],
+          "evidence": [
+            "I hated her almost as much as I hated Cutter.",
+            "Grandmother kept saying how thankful we ought to be that I had been there instead of Ántonia."
+          ]
+        },
+        {
+          "id": "reading-10-cather-my-antonia-1918-15-q3",
+          "prompt": "Book II ends not with Ántonia or Jim but with Mrs. Cutter’s story and a theory about the Cutters’ marriage. Why might Cather end this way? What is the effect of the comic tone after the violence?",
+          "facilitatorNotes": [
+            "The ticket trick shows that Cutter’s cruelty is planned and that he enjoys outraging his wife; the narrator decides that quarrelling with her is the one excitement he cannot do without. The comedy distances the violence, perhaps as Jim needs to. Some readers find the ending evasive, turning away from what nearly happened to Ántonia; others think it deepens the portrait of a man cruel to both women in his house."
+          ],
+          "evidence": [
+            "But apparently it was part of his fun to outrage her feelings as much as possible.",
+            "The one excitement he really could n’t do without was quarreling with Mrs. Cutter!"
+          ]
+        }
+      ]
     }
   ]
 }

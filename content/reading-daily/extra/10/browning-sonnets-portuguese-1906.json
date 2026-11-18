@@ -1154,6 +1154,70 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-19",
+      "title": "Sonnet XXVII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the images of rescue, and work out who is alive and who is dead in the comparison that closes the poem.",
+      "focus": "Love as a rescue from death, and a claim that love can bring back what death takes.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Ringlets are curls and languid means limp, without energy. Asphodel is the flower that grows, in Greek myth, in the meadows of the dead; “the upper life” is life on earth above. “Love is strong as death” comes from the Bible’s Song of Solomon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXVII; opens “My own Belovëd, who hast lifted me From this drear flat of earth where I was thrown, And,…”; closes “…here, between the good and bad, That Love, as strong as Death, retrieves as well.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          53,
+          53
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ad595799b4f24d08750cd74c1a5795a664aade97159c15c7d0ab7bb237551df"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q1",
+          "prompt": "What has the beloved done for the speaker, according to the first six lines? Find the images of rescue and revival.",
+          "facilitatorNotes": [
+            "He has lifted her from the “drear flat of earth” where she was thrown, breathed life into her limp curls until her forehead “hopefully” shines again, and given a “saving kiss.” The images are of someone raised from the ground, almost from the dead."
+          ],
+          "evidence": [
+            "From this drear flat of earth where I was thrown,",
+            "Before thy saving kiss!  My own, my own,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q2",
+          "prompt": "“And I who looked for only God, found thee!” What did she expect from life before, and what does the line suggest about his place now?",
+          "facilitatorNotes": [
+            "When “the world was gone” she expected nothing but death and God. Finding him instead is described like a religious discovery. Some readers find it daring, the lover put where God was expected; others read him as God’s answer. The plain next line, “I am safe, and strong, and glad,” shows its effect."
+          ],
+          "evidence": [
+            "Who camest to me when the world was gone,",
+            "And I who looked for only God, found thee!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q3",
+          "prompt": "In the sestet she is like a soul among the asphodel looking back on “the upper life.” How does that simile work? How does the last line change the Bible’s “love is strong as death”?",
+          "facilitatorNotes": [
+            "The soul in the meadows of the dead, at peace, looks back on earthly life as “tedious”; she looks back on her old life the same way, from a new state so different it is like another world. Then she goes beyond the Bible: love is not only as strong as death but “retrieves as well,” bringing back what death had nearly taken. Readers may find the simile strange, since it places her among the dead, or apt, since her old life was a kind of death."
+          ],
+          "evidence": [
+            "As one who stands in dewless asphodel,",
+            "That Love, as strong as Death, retrieves as well."
+          ]
+        }
+      ]
     }
   ]
 }
