@@ -69,6 +69,195 @@
     },
     {
       "id": "reading-k-traditional-real-mother-goose-1916-02",
+      "title": "Little Boy Blue",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a problem, a question and a surprising answer in four lines.",
+      "focus": "The animals have wandered off because the boy who should watch them is asleep.",
+      "context": "A horn is an animal’s horn blown to make a loud call. Corn here means a field of grain, where a cow should not be. A haystack is a big pile of dried grass. Read the last line in a whisper.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“LITTLE BOY BLUE,” the complete rhyme; opens “Little Boy Blue, come, blow your horn! The sheep's in the meadow, the cow's in the corn.…”; closes “…corn. Where's the little boy that looks after the sheep? Under the haystack, fast asleep!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1299a5d1c2ee9fb3ae6dcbcc61274794ce4961145fea716c6d70b5981f3ee76"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-02-q1",
+          "prompt": "Where are the sheep and the cow, and where should they be?",
+          "facilitatorNotes": [
+            "The sheep are in the meadow and the cow is in the corn, eating the grain; both should be in their own field. That is why someone needs to blow the horn."
+          ],
+          "evidence": [
+            "The sheep's in the meadow, the cow's in the corn."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-02-q2",
+          "prompt": "Who is supposed to look after the sheep, and where is he?",
+          "facilitatorNotes": [
+            "Little Boy Blue, fast asleep under the haystack."
+          ],
+          "evidence": [
+            "Where's the little boy that looks after the sheep?",
+            "Under the haystack, fast asleep!"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-02-q3",
+          "prompt": "What should he do with his horn? Would you wake him, and how?",
+          "facilitatorNotes": [
+            "Blow it to call the animals back. Children can choose to wake him gently or let him sleep; the rhyme does not say what happens next."
+          ],
+          "evidence": [
+            "Little Boy Blue, come, blow your horn!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-03",
+      "title": "Three Children on the Ice",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a rhyme that is partly a joke and partly a warning.",
+      "focus": "A comic old warning about ice ends with advice to parents that turns back on itself.",
+      "context": "Long ago children slid on frozen ponds in winter. “Upon a summer’s day” is a joke, because ice melts in summer. “The rest they ran away” means the others ran off. “Ten thousand pounds to one penny” means almost certainly. Abroad means out of the house.",
+      "contentNote": "Three children fall through the ice and drown; the rhyme treats it lightly, as a warning.",
+      "excerpt": {
+        "locator": "“THREE CHILDREN ON THE ICE,” the complete rhyme; opens “Three children sliding on the ice Upon a summer's day, As it fell out, they all fell in,…”; closes “…ye, too, who have none, If you would keep them safe abroad Pray keep them safe at home.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          24,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a62875c861363946f35b652e248fb978605b3406435cd80f007e9eec5821f59a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-03-q1",
+          "prompt": "What were the three children doing, and on what kind of day?",
+          "facilitatorNotes": [
+            "Sliding on the ice on a summer’s day. Ask what is silly about that: ice does not stay frozen in summer."
+          ],
+          "evidence": [
+            "Three children sliding on the ice",
+            "Upon a summer's day,"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-03-q2",
+          "prompt": "Where does the rhyme say they should have been instead?",
+          "facilitatorNotes": [
+            "At school, or sliding on dry ground, where they could not fall in."
+          ],
+          "evidence": [
+            "Oh, had these children been at school,",
+            "Or sliding on dry ground,"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-03-q3",
+          "prompt": "The last verse talks to parents. What does it tell them?",
+          "facilitatorNotes": [
+            "To keep their children safe at home if they want them safe outside: a joke, since staying home means not going out at all. It can lead to a real talk about keeping safe near ice and water."
+          ],
+          "evidence": [
+            "If you would keep them safe abroad",
+            "Pray keep them safe at home."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-04",
+      "title": "Going to St. Ives",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen to a riddle carefully enough to catch its trick.",
+      "focus": "A counting riddle piles up sevens, but the answer depends on who was going which way.",
+      "context": "St. Ives is a town in England. A sack is a big bag; kits are kittens. This rhyme is a riddle, so read it twice: once for fun and once to listen for the trick.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“GOING TO ST. IVES,” the complete rhyme; opens “As I was going to St. Ives I met a man with seven wives. Every wife had seven sacks,…”; closes “…Every cat had seven kits. Kits, cats, sacks, and wives, How many were going to St. Ives?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          55,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "556ea0139ac396f0463c6626fecddab7e6c19e67fd60574432117150c0047329"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-04-q1",
+          "prompt": "Who does the speaker meet on the way to St. Ives?",
+          "facilitatorNotes": [
+            "A man with seven wives. Long ago, riddles liked big surprising numbers."
+          ],
+          "evidence": [
+            "I met a man with seven wives."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-04-q2",
+          "prompt": "What is in each sack, and what does each cat have?",
+          "facilitatorNotes": [
+            "Seven cats in every sack, and seven kittens for every cat. Children can hold up seven fingers for each step."
+          ],
+          "evidence": [
+            "Every sack had seven cats,",
+            "Every cat had seven kits."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-04-q3",
+          "prompt": "How many were going to St. Ives? Listen again to the first line before you answer.",
+          "facilitatorNotes": [
+            "The trick answer is one, the speaker, because the others were met coming the other way. Some people answer with a huge number, since the rhyme does not say which way the man was walking; a child who notices that is also listening well."
+          ],
+          "evidence": [
+            "As I was going to St. Ives",
+            "How many were going to St. Ives?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-05",
       "title": "Simple Simon",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -97,7 +286,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-02-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-05-q1",
           "prompt": "Why won’t the pieman let Simon taste a pie?",
           "facilitatorNotes": [
             "Simon has no penny, and the pieman wants to be paid first."
@@ -108,7 +297,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-02-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-05-q2",
           "prompt": "Where does Simon go fishing for a whale?",
           "facilitatorNotes": [
             "In his mother’s pail, which is far too small. Children can show with their arms how big a whale is and how big a pail is."
@@ -119,7 +308,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-02-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-05-q3",
           "prompt": "Which of Simon’s mistakes is the silliest? Tell why.",
           "facilitatorNotes": [
             "Any choice works if the child says what Simon forgot: plums do not grow on thistles, salt will not catch a bird, and water runs out of a sieve. The question asks for a reason, not one right answer."
@@ -132,7 +321,69 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-03",
+      "id": "reading-k-traditional-real-mother-goose-1916-06",
+      "title": "Humpty Dumpty",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out what someone is from what happens to him.",
+      "focus": "A rhyme that began as a riddle: something that falls and can never be put back together.",
+      "context": "The rhyme never says what Humpty Dumpty is. Long ago it was a riddle, and its answer was an egg, which is why pictures show him that way. The King’s men are his soldiers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“HUMPTY DUMPTY,” the complete rhyme; opens “Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall; All the King's horses, and…”; closes “…All the King's horses, and all the King's men Cannot put Humpty Dumpty together again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          195,
+          195
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fef6d41e84734c7b5a14092492014baffdae8d454e8ef620fa74bc37b8a3a883"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-06-q1",
+          "prompt": "Where was Humpty Dumpty sitting, and what happened?",
+          "facilitatorNotes": [
+            "On a wall, and he had a great fall."
+          ],
+          "evidence": [
+            "Humpty Dumpty sat on a wall,",
+            "Humpty Dumpty had a great fall;"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-06-q2",
+          "prompt": "Who came to help him?",
+          "facilitatorNotes": [
+            "All the King’s horses and all the King’s men. Ask whether horses could really help."
+          ],
+          "evidence": [
+            "All the King's horses, and all the King's men"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-06-q3",
+          "prompt": "Why can’t they put him together again? What do you think Humpty Dumpty is?",
+          "facilitatorNotes": [
+            "He has broken, and nobody can mend him. An egg fits the clue, since a cracked egg cannot be put back; children may suggest other breakable things, which is how riddles work."
+          ],
+          "evidence": [
+            "Cannot put Humpty Dumpty together again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-07",
       "title": "Old Mother Hubbard",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -161,7 +412,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-03-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-07-q1",
           "prompt": "Why does the poor dog get no bone at the start?",
           "facilitatorNotes": [
             "The cupboard is bare. The whole rhyme grows out of that empty cupboard."
@@ -172,7 +423,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-03-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-07-q2",
           "prompt": "Choose one shop Mother Hubbard visits. What is the dog doing when she comes back?",
           "facilitatorNotes": [
             "Any matching pair counts, such as the barber’s and dancing a jig, or the cobbler’s and reading the news. Children can act out the dog’s trick."
@@ -183,7 +434,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-03-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-07-q3",
           "prompt": "How do the dame and the dog say goodbye, and what is funny about the dog’s answer?",
           "facilitatorNotes": [
             "She curtsies and he bows, and she says “Your servant,” a polite greeting. He answers “Bow-wow”: after behaving like a person all through the rhyme, he still talks like a dog."
@@ -196,7 +447,197 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-04",
+      "id": "reading-k-traditional-real-mother-goose-1916-08",
+      "title": "Jack and Jill",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a short story to its second verse, which many people never hear.",
+      "focus": "A tumble down the hill is followed by an old-fashioned cure.",
+      "context": "A pail is a bucket. Jack’s crown is the top of his head, and so is his nob. To caper is to skip. Dame Dob is an old woman; long ago, vinegar and brown paper were put on bumps to soothe them.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“JACK AND JILL,” the complete rhyme (two verses); opens “Jack and Jill went up the hill, To fetch a pail of water; Jack fell down, and broke his…”; closes “…as he could caper, To old Dame Dob, who patched his nob With vinegar and brown paper.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          256,
+          257
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2f56d2511d62cee24a9a50e474ff98a4291424f1081a873e67c2d1560f993a2e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-08-q1",
+          "prompt": "Why did Jack and Jill go up the hill?",
+          "facilitatorNotes": [
+            "To fetch a pail of water. Long ago many families carried their water from a well or spring."
+          ],
+          "evidence": [
+            "To fetch a pail of water;"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-08-q2",
+          "prompt": "What happened to Jack, and then to Jill?",
+          "facilitatorNotes": [
+            "Jack fell down and hurt his head, and Jill came tumbling after him."
+          ],
+          "evidence": [
+            "Jack fell down, and broke his crown,",
+            "And Jill came tumbling after."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-08-q3",
+          "prompt": "How did Dame Dob fix Jack’s head? What might we use today?",
+          "facilitatorNotes": [
+            "She patched it with vinegar and brown paper. Today we might use ice, a plaster or a doctor. The second verse makes the story end happily, since Jack trots off quickly."
+          ],
+          "evidence": [
+            "As fast as he could caper,",
+            "With vinegar and brown paper."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-09",
+      "title": "The Cat and the Fiddle",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Enjoy nonsense: things that could never happen.",
+      "focus": "A rhyme of impossible pictures, with a little dog laughing at them just as listeners do.",
+      "context": "A fiddle is a violin. “Hey, diddle, diddle” is nonsense sound to start the fun. Sport means fun or a game. Read it with a bounce, and let the child join the last line.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“THE CAT AND THE FIDDLE,” the complete rhyme (“Hey, diddle, diddle!”); opens “Hey, diddle, diddle! The cat and the fiddle, The cow jumped over the moon; The little dog…”; closes “…the moon; The little dog laughed To see such sport, And the dish ran away with the spoon.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          319,
+          319
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a4ec788643d4ec51ebbcaef30b21995e3f60bd50e5a255217f72e6ef4b587874"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-09-q1",
+          "prompt": "What does the cow do?",
+          "facilitatorNotes": [
+            "Jumps over the moon. Children can show how high that is."
+          ],
+          "evidence": [
+            "The cow jumped over the moon;"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-09-q2",
+          "prompt": "Why does the little dog laugh?",
+          "facilitatorNotes": [
+            "Because it is such fun to watch. The dog laughs at the silliness, just as we do."
+          ],
+          "evidence": [
+            "The little dog laughed",
+            "To see such sport,"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-09-q3",
+          "prompt": "Which things in the rhyme could never really happen? Which one is the silliest?",
+          "facilitatorNotes": [
+            "A cat with a fiddle, a cow over the moon, a laughing dog, a dish running away with a spoon. Any choice is right if the child can say why it is silly."
+          ],
+          "evidence": [
+            "The cat and the fiddle,",
+            "And the dish ran away with the spoon."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-10",
+      "title": "Sing a Song of Sixpence",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Keep track of who is where in a royal household.",
+      "focus": "A surprising pie starts a rhyme that visits the king, the queen and the maid, and ends with a peck.",
+      "context": "A sixpence was a small coin; rye is a grain; four-and-twenty means twenty-four. Dainty means special and good to eat. A counting-house is a room for counting money; a parlor is a sitting room.",
+      "contentNote": "A blackbird snaps off the maid’s nose; old rhymes like this one enjoy a sudden comic ending.",
+      "excerpt": {
+        "locator": "“SING A SONG OF SIXPENCE,” the complete rhyme; opens “Sing a song of sixpence, A pocket full of rye; Four-and-twenty blackbirds Baked in a pie!”; closes “…the garden, Hanging out the clothes; When down came a blackbird And snapped off her nose.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          337,
+          340
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c707c94b757ec695191d360bdf304b69bb513e2a0e0ba2521c9c180194395e8"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-10-q1",
+          "prompt": "What was baked in the pie, and what happened when it was opened?",
+          "facilitatorNotes": [
+            "Twenty-four blackbirds, and they began to sing. Ask whether that is a real recipe; it is a royal surprise."
+          ],
+          "evidence": [
+            "Four-and-twenty blackbirds",
+            "The birds began to sing;"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-10-q2",
+          "prompt": "Where are the king, the queen and the maid, and what is each one doing?",
+          "facilitatorNotes": [
+            "The king counts money in his counting-house, the queen eats bread and honey in the parlor, and the maid hangs out the clothes in the garden."
+          ],
+          "evidence": [
+            "The king was in his counting-house,",
+            "Eating bread and honey."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-10-q3",
+          "prompt": "What happens to the maid at the end? Why might a blackbird do that?",
+          "facilitatorNotes": [
+            "A blackbird swoops down and snaps off her nose. Perhaps it is one of the pie birds, cross at being baked; the rhyme does not say, so children can guess."
+          ],
+          "evidence": [
+            "When down came a blackbird",
+            "And snapped off her nose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-11",
       "title": "The House That Jack Built",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -225,7 +666,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-04-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-11-q1",
           "prompt": "What does the cow with the crumpled horn do to the dog?",
           "facilitatorNotes": [
             "She tosses it, flinging it up with her horns. Children can show a gentle toss with their hands."
@@ -236,7 +677,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-04-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-11-q2",
           "prompt": "Who is added last of all, and what does he do?",
           "facilitatorNotes": [
             "The farmer sowing the corn, who keeps the cock that crowed in the morn. Ask how far back the chain goes from him: all the way to the house."
@@ -247,7 +688,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-04-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-11-q3",
           "prompt": "Every verse ends with the same line. Why do you think the rhyme keeps going back to the house?",
           "facilitatorNotes": [
             "Everything in the chain happens in or near Jack’s house, so it always ends where it began. A child who notices that every verse gets longer has found the other half of the pattern."
@@ -259,7 +700,7 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-05",
+      "id": "reading-k-traditional-real-mother-goose-1916-12",
       "title": "I Saw a Ship A-Sailing",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -288,7 +729,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-05-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-12-q1",
           "prompt": "Who is the ship full of pretty things for?",
           "facilitatorNotes": [
             "“For thee”: for you, the listener. Ask how it feels to be the one the ship is coming for."
@@ -298,7 +739,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-05-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-12-q2",
           "prompt": "What are the sails and masts made of?",
           "facilitatorNotes": [
             "Silk sails and golden masts, far finer than any real ship’s."
@@ -309,7 +750,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-05-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-12-q3",
           "prompt": "Who are the sailors and who is the captain? How can you tell this is a make-believe ship?",
           "facilitatorNotes": [
             "Twenty-four white mice and a duck who says “Quack! Quack!” Animal sailors, silk sails and golden masts all show it is make-believe; any one of these is good evidence."
@@ -322,7 +763,70 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-06",
+      "id": "reading-k-traditional-real-mother-goose-1916-13",
+      "title": "Old King Cole",
+      "sourceId": "traditional-real-mother-goose-1916",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a list of three, and a song inside a song.",
+      "focus": "A cheerful king calls for his comforts and his music, and the rhyme says no one can match him.",
+      "context": "A merry old soul is a cheerful old person. His pipe was for smoking and his bowl held a drink. Fiddlers play fiddles, or violins. Rare means wonderful. Let the child sing the fiddlers’ line.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“OLD KING COLE,” the complete rhyme; opens “Old King Cole Was a merry old soul, And a merry old soul was he; He called for his pipe,…”; closes “…fiddlers. Oh, there's none so rare As can compare With King Cole and his fiddlers three.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          460,
+          460
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "22fc03ec1ca8ff5d18efbc9061ec4a8f2b7c8ec35da4fdedc0f5ea34034cab97"
+      },
+      "questions": [
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-13-q1",
+          "prompt": "What three things does King Cole call for?",
+          "facilitatorNotes": [
+            "His pipe, his bowl and his three fiddlers."
+          ],
+          "evidence": [
+            "He called for his pipe,",
+            "And he called for his fiddlers three!"
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-13-q2",
+          "prompt": "What sound do the fiddles make?",
+          "facilitatorNotes": [
+            "“Twee tweedle dee, tweedle dee.” Children can hum or sing it."
+          ],
+          "evidence": [
+            "\"Twee tweedle dee, tweedle dee,\" went the fiddlers."
+          ]
+        },
+        {
+          "id": "reading-k-traditional-real-mother-goose-1916-13-q3",
+          "prompt": "What kind of king is Old King Cole? Which words tell you?",
+          "facilitatorNotes": [
+            "A merry, cheerful one who loves music; the rhyme says nobody can compare with him and his fiddlers. Children may say he is jolly, happy or musical."
+          ],
+          "evidence": [
+            "Was a merry old soul,",
+            "With King Cole and his fiddlers three."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-traditional-real-mother-goose-1916-14",
       "title": "For Want of a Nail",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -351,7 +855,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-06-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-14-q1",
           "prompt": "What was lost first, and why?",
           "facilitatorNotes": [
             "The horse’s shoe, because a nail was missing."
@@ -361,7 +865,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-06-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-14-q2",
           "prompt": "What is lost at the very end? Count the steps to get there.",
           "facilitatorNotes": [
             "The kingdom. The steps run shoe, horse, rider, battle, kingdom: five losses from one nail."
@@ -371,7 +875,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-06-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-14-q3",
           "prompt": "What could someone learn from this rhyme?",
           "facilitatorNotes": [
             "That small things can matter a great deal, so they are worth taking care of. Children may say it in their own words or give an example from life, kept separate from the rhyme."
@@ -383,7 +887,7 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-07",
+      "id": "reading-k-traditional-real-mother-goose-1916-15",
       "title": "London Bridge",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -412,7 +916,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-07-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-15-q1",
           "prompt": "What is wrong with London Bridge at the start?",
           "facilitatorNotes": [
             "It is broken down, so the song asks how to build it up again."
@@ -423,7 +927,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-07-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-15-q2",
           "prompt": "Why won’t silver and gold do? Why won’t iron and steel?",
           "facilitatorNotes": [
             "Silver and gold will be stolen; iron and steel will bend and bow. Each material has its own problem."
@@ -434,7 +938,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-07-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-15-q3",
           "prompt": "What do they build with at last, and how long will it last?",
           "facilitatorNotes": [
             "Stone so strong, which will last for ages. Ask whether the child agrees that stone is best and why; another idea is fair if it is kept separate from the rhyme."
@@ -447,7 +951,7 @@
       ]
     },
     {
-      "id": "reading-k-traditional-real-mother-goose-1916-08",
+      "id": "reading-k-traditional-real-mother-goose-1916-16",
       "title": "The Death and Burial of Poor Cock Robin",
       "sourceId": "traditional-real-mother-goose-1916",
       "genre": "poetry",
@@ -476,7 +980,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-08-q1",
+          "id": "reading-k-traditional-real-mother-goose-1916-16-q1",
           "prompt": "Who killed Cock Robin, and with what?",
           "facilitatorNotes": [
             "The sparrow, with his little bow and arrow."
@@ -487,7 +991,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-08-q2",
+          "id": "reading-k-traditional-real-mother-goose-1916-16-q2",
           "prompt": "Pick a creature. What job does it do, and what word rhymes with its name?",
           "facilitatorNotes": [
             "For example, the owl digs the grave “with my spade and trowel,” and the bull tolls the bell “because I can pull.” Let the child hear each name and its rhyme."
@@ -498,7 +1002,7 @@
           ]
         },
         {
-          "id": "reading-k-traditional-real-mother-goose-1916-08-q3",
+          "id": "reading-k-traditional-real-mother-goose-1916-16-q3",
           "prompt": "How do the birds feel when the bell tolls? How can you tell?",
           "facilitatorNotes": [
             "Sad: they fall sighing and sobbing, and the dove mourns for her love. Ask whether the sparrow is sorry too; the rhyme does not say, so any answer is a guess."
