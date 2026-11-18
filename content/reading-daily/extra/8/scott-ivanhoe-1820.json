@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "scott-ivanhoe-1820",
+  "readings": [
+    {
+      "id": "reading-8-scott-ivanhoe-1820-01",
+      "title": "Ivanhoe: The Palmer and the Lady Rowena (Chapter VI, part 1)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice what the Palmer refuses and what he accepts, and listen for what his answers leave out.",
+      "focus": "A conversation in which both speakers hide their feelings.",
+      "context": "Ivanhoe (1820), by the Scottish novelist Sir Walter Scott (1771–1832), is a historical romance set in England in 1194, when King Richard the Lion-Heart, coming home from the Crusade, has been held prisoner abroad and his brother Prince John hopes to keep his throne; Saxon families such as Cedric’s still resent the Norman lords who conquered England in 1066. This chapter is headed “CHAPTER VII.” in the first edition, which repeats that number; later editions call it Chapter VI. A stranger dressed as a Palmer, a pilgrim back from the Holy Land, is spending the night at Rotherwood, the hall of the Saxon Cedric, where at supper he defended the absent Knight of Ivanhoe against the Templar Brian de Bois-Guilbert. Cedric has disowned his son Wilfred of Ivanhoe, and plans to marry his ward, the Lady Rowena, to the Saxon prince Athelstane. The motto comes from Shakespeare’s The Merchant of Venice. Mead is a drink made from honey; curfew was the evening bell; a solere is an upper chamber; benison is blessing; a genuflection is a bow on one knee; a pennon is a small flag; a tourney is a tournament; Cœur-de-Lion is King Richard.",
+      "contentNote": "This historical novel imagines twelfth-century England through nineteenth-century assumptions. Its national, religious, racial and class generalizations are perspectives to examine, not reliable descriptions of whole peoples. Historical insults appear in the original text.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the sixth chapter (printed “CHAPTER VII.”), from its motto to the Palmer’s leaving Rowena’s room; opens “To buy his favour I extend this friendship: If he will take it, so; if not, adieu; And,…”; closes “…accepted the boon with another low reverence, and followed Edwina out of the apartment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-scott-ivanhoe-1820-02",
+        "blocks": [
+          275,
+          293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d4581c62be5390c7fb9f941b351d666e0c07e00a2e04e46e93099d8850c5bd9e"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-01-q1",
+          "prompt": "The Palmer refuses the servants’ invitation to drink and talk, but obeys Rowena’s summons. What reason does he give for refusing, and what might his real reasons be?",
+          "facilitatorNotes": [
+            "He claims a vow never to speak in the kitchen of matters forbidden in the hall: Cedric has banned talk of Ivanhoe, and he will not gossip behind his host’s back. Yet he follows Rowena’s maid “without answer or remonstrance.” Readers may suspect a personal interest in Rowena; the offended cup-bearer lodges him next to Isaac as a punishment."
+          ],
+          "evidence": [
+            "an obligation never to speak in the kitchen on matters which were prohibited in the hall",
+            "he obeyed it without answer or remonstrance"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-01-q2",
+          "prompt": "How does Scott describe Rowena’s room? What is the point of “let not modern beauty envy the magnificence of a Saxon princess”?",
+          "facilitatorNotes": [
+            "Silk hangings worked with gold and silver, purple curtains, an ivory footstool, four silver candelabra; but the walls are so full of cracks that the hangings shake and the flames blow sideways. There is magnificence without comfort, and “being unknown, it was unmissed.” Scott speaks directly to his 1820 readers, warning them not to romanticise the past."
+          ],
+          "evidence": [
+            "Yet let not modern beauty envy the magnificence of a Saxon princess.",
+            "but of comfort there was little, and, being unknown, it was unmissed"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-01-q3",
+          "prompt": "Rowena finds it hard to say the name “Ivanhoe.” What shows her feelings, and why must she ask a stranger about him?",
+          "facilitatorNotes": [
+            "She pauses, speaks “with a sort of effort,” sighs, and asks whether illness has spoiled his strength and looks. In Cedric’s hall the name is banned, so of all those who care for him she alone dares to ask. She also fears what he will find if Athelstane wins the tournament."
+          ],
+          "evidence": [
+            "the name of Ivanhoe, in the halls where by nature and kindred it should have sounded most acceptably",
+            "Had disease laid her hand heavy up on his strength and comeliness?"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-01-q4",
+          "prompt": "The Palmer answers “with a troubled voice” and says he hardly knows Ivanhoe. What clues suggest he knows more than he says?",
+          "facilitatorNotes": [
+            "He wishes he knew Ivanhoe better “since you, lady, are interested in his fate”; yet he knows his route home, his command of French, and that he was “darker … and thinner” than when he came from Cyprus, while claiming never to have approached him. Readers may begin to guess who the Palmer is; Scott lets us suspect more than Rowena does."
+          ],
+          "evidence": [
+            "answered the Palmer, with a troubled voice",
+            "but I approached not his presence, because he is unknown to me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-02",
+      "title": "Ivanhoe: A Warning before Dawn (Chapter VI, part 2)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Compare what the Palmer says about Isaac with how he treats him, and follow Isaac from terror to suspicion to hope.",
+      "focus": "A rescue offered with contempt, and a victim who has learned to distrust help.",
+      "context": "Recap: the Palmer, a mysterious pilgrim staying the night at Cedric’s hall of Rotherwood, has told the Lady Rowena what little he says he knows of the banished Knight of Ivanhoe. Isaac of York, a Jewish moneylender, has also been given shelter; at supper the Templar Brian de Bois-Guilbert and his Saracen (Muslim) slaves showed open hatred of him. St Dunstan was an English saint; matins are morning prayers; to be “abstracted” is to be stolen; a Musselman is a Muslim; Philip de Malvoisin and Reginald Front-de-Bœuf are Norman barons; the rack was an instrument of torture; Isaac recalls the Bible’s account of captives of Rabbah put under saws and axes; Lazarus is the beggar in Jesus’s parable; an Ishmaelite here is a Muslim; to “gird up our loins” is to make ready for a journey.",
+      "contentNote": "Servants insult Isaac in antisemitic terms, Isaac dreams of torture, and the Palmer’s help is mixed with contempt. Scott shows these prejudices to expose them, but his narration also shares some of its age’s stereotypes; they are perspectives to examine, not descriptions of a people.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the sixth chapter (printed “CHAPTER VII.”), from the cells of the household to Isaac’s decision to flee; opens “In the anti-room he found his attendant Anwold, who, taking the torch from the hand of…”; closes “…urgency of his companion; \"but I must secure the means of leaving this place—follow me.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-01",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-03",
+        "blocks": [
+          294,
+          315
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fc2e124c5f322db9485ce08496818523a66161ff27da4739072a0a1edccb9bad"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-02-q1",
+          "prompt": "What do Anwold’s words about Isaac show about the household? How does the Palmer answer him?",
+          "facilitatorNotes": [
+            "Isaac “kennels” like a dog, and his cell will need scraping before a Christian can use it; the Palmer is lodged between the Jew and the swineherd as a slight. He replies that a Jew’s company “can hardly spread contamination through an oaken partition”: a dry rebuke, though it still plays with the idea of contamination."
+          ],
+          "evidence": [
+            "kennels in the cell next your holiness",
+            "the company, even of a Jew, can hardly spread contamination through an oaken partition"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-02-q2",
+          "prompt": "What is Isaac dreaming, and why does Scott show the dream before the Palmer speaks?",
+          "facilitatorNotes": [
+            "He sleeps with his clothes arranged around him against theft and cries out that he is poor and that torturers’ irons could get nothing from him. The dream shows the fear of torture for money that Jews of the time lived with, and it makes the Palmer’s news a nightmare come true: “the dream is not dreamed for nought.”"
+          ],
+          "evidence": [
+            "should your irons wrench my limbs asunder, I could not gratify you!",
+            "the dream is not dreamed for nought"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-02-q3",
+          "prompt": "What has the Palmer overheard, and how could he understand it? What does this suggest about him?",
+          "facilitatorNotes": [
+            "The Templar ordered his slaves, in “the Saracen language,” to seize Isaac on the road and carry him to a Norman baron’s castle, where he could be squeezed for money. The Palmer understands that language, which suggests long years in the East and more than a simple pilgrim’s past."
+          ],
+          "evidence": [
+            "in the Saracen language, which I well understand",
+            "to seize upon him when at a convenient distance from the mansion"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-02-q4",
+          "prompt": "The Palmer views Isaac’s terror “with a compassion in which contempt was largely mingled,” and pulls away from his touch “as if there were contamination.” How does this fit with what he said to Anwold? What do you make of his help?",
+          "facilitatorNotes": [
+            "Last night he mocked the idea of contamination; now he acts it out. He helps sincerely and admits the Jews’ persecution (“you have cause for your terror”), yet shares his age’s prejudice. Isaac, for his part, expects that help must be bought: “there is but one road to the favour of a Christian.” Readers may see Scott showing that even a good knight of 1194 is not free of prejudice, or may think the narrator half shares it."
+          ],
+          "evidence": [
+            "with a compassion in which contempt was largely mingled",
+            "The Pilgrim extricated himself, as if there were contamination in the touch.",
+            "there is but one road to the favour of a Christian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-03",
+      "title": "Ivanhoe: Out by the Postern (Chapter VI, part 3)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Work out what a whispered word must have been from its effects, and separate Scott’s history from his generalizations.",
+      "focus": "Judging from appearances, and the narrator stepping outside the story.",
+      "context": "Recap: at dawn the Palmer has warned Isaac of York that the Templar’s Saracen slaves mean to seize him on the road and carry him to a Norman baron’s castle, to be tortured for money; terrified and suspicious, Isaac has agreed to flee with him. Gurth is Cedric’s swineherd and Wamba his jester, both born serfs. A postern is a back gate; Eumæus is the loyal swineherd of Homer’s Odyssey; a pallet is a straw bed; a gammon is a ham; anon means soon; “I trow” means I believe; a palisade is a fence of stakes and a wicket a small gate in it; buckram is stiff cloth; a gaberdine is a long loose coat; “en croupe” means behind the saddle; certes means certainly; an ambuscade is an ambush; the Jews’ Exchequer was a royal court for taxing England’s Jews; bills of exchange are written orders to pay money in another place.",
+      "contentNote": "In a digression Scott describes the persecution and torture of England’s medieval Jews, including King John’s having a Jew’s teeth pulled out one a day. He condemns the persecution, yet also repeats stereotypes of Jewish “avarice” and “obstinacy”; these are his generalizations, to be examined, not accepted.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the sixth chapter (printed “CHAPTER VII.”), from the waking of Gurth to the narrator’s account of the Jews of the period; opens “He led the way to the adjoining cell, which, as the reader is apprised, was occupied by…”; closes “…obstinate, uncomplying, and skilful in evading the dangers to which they were exposed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-02",
+        "continuesTo": "reading-8-scott-ivanhoe-1820-04",
+        "blocks": [
+          316,
+          338
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "327ae8540373379bfce72d55b4d2c1628ba93aeb831a086a40e22597170a733e"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-03-q1",
+          "prompt": "Gurth refuses the Palmer until he hears a whisper. What changes, and what might the Palmer have said?",
+          "facilitatorNotes": [
+            "Gurth is offended by the commanding tone and insists no guest leaves by stealth. A few words in Saxon make him start “as if electrified”; he hurries to obey, fetches the mules and kisses the Palmer’s hand “with the utmost possible veneration.” The Palmer must have told him something about himself; Scott withholds the words, and readers may guess."
+          ],
+          "evidence": [
+            "Gurth started up as if electrified.",
+            "who kissed it with the utmost possible veneration"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-03-q2",
+          "prompt": "What does Wamba suspect, and how does Gurth’s reply, “thou arguest from appearances, and the wisest of us can do no more,” apply to the whole chapter?",
+          "facilitatorNotes": [
+            "Wamba jokes that palmers must learn something “more potent” than prayer, and guesses the Palmer is a Norman. Gurth praises him for reasoning from appearances, which is all anyone can do. Everyone here judges by appearances: the servants’ contempt, Isaac’s suspicion, the Palmer’s disguise."
+          ],
+          "evidence": [
+            "Something more potent than that",
+            "though thou arguest from appearances, and the wisest of us can do no more"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-03-q3",
+          "prompt": "What does Isaac do with the blue bag, and how does Scott seem to want readers to take it?",
+          "facilitatorNotes": [
+            "He mutters that it holds “only a change of raiment” and hides it under his coat: the reader infers money. The comedy plays on the stereotype of the secretive Jew, but the next paragraphs explain why a hunted man hides his means. Readers can discuss whether the joke is at Isaac’s expense."
+          ],
+          "evidence": [
+            "a change of raiment—only a change of raiment",
+            "so disposing the skirts of his gaberdine as to conceal completely from observation the burthen"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-03-q4",
+          "prompt": "In the long paragraphs on the Jews of this period, Scott steps out of the story. What does he condemn, and where does his own description fall into stereotype?",
+          "facilitatorNotes": [
+            "He condemns an “unintermitting, general, and relentless persecution”: every people of England united in hating them, kings and nobles torturing them for money, a court made to plunder them. Yet he explains their survival by “the love of gain” and speaks of “the obstinacy and avarice of the Jews,” giving a whole people traits. Readers should separate his historical sympathy from his generalizations; it also explains why Isaac’s suspicion of the Palmer “might have been indeed pardoned.”"
+          ],
+          "evidence": [
+            "who were the object of such an unintermitting, general, and relentless persecution",
+            "The obstinacy and avarice of the Jews"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-scott-ivanhoe-1820-04",
+      "title": "Ivanhoe: The Parting at Sheffield (Chapter VI, part 4)",
+      "sourceId": "scott-ivanhoe-1820",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Track how each man reads the other, and who finally gives more.",
+      "focus": "Suspicion turning into a wary trust; a stereotype voiced and then overturned.",
+      "context": "Recap: the Palmer, a mysterious pilgrim, has led Isaac of York out of Cedric’s hall at dawn to save him from the Templar’s plan to kidnap him, and they are riding hard through the forest; Scott has paused to describe how cruelly medieval England persecuted its Jews. Pharaoh’s chariots lost their wheels in the Red Sea in Exodus; succour is help; to requite is to repay; Sheffield is a town in Yorkshire; gyves are shackles, and “in thy danger” means in debt to you; the Holy Sepulchre is the tomb of Jesus in Jerusalem; Milan harnesses are suits of armour made in Milan; the rod of Moses worked miracles; colic is a painful stomach cramp; “usage money” is interest; a hurley-burley is an uproar; gramercy means thank you.",
+      "contentNote": "The Palmer repeats the stereotype that Jews “give nothing for nothing,” and Scott plays Isaac’s struggle for comedy; Isaac’s generosity in the scene works against the stereotype.",
+      "excerpt": {
+        "locator": "Ivanhoe (Edinburgh, 1820), Volume I, the sixth chapter (printed “CHAPTER VII.”), from the decayed oak to the end of the chapter; opens “When the travellers had pushed on at a rapid rate through many devious paths, the Palmer…”; closes “They parted, and took different roads for the town of Sheffield.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-scott-ivanhoe-1820-03",
+        "continuesTo": null,
+        "blocks": [
+          339,
+          366
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8e1134a9f49194ac2a46cedb9235923875e615065b7a1ac88687518ddf21523c"
+      },
+      "questions": [
+        {
+          "id": "reading-8-scott-ivanhoe-1820-04-q1",
+          "prompt": "Why does the Palmer want to part from Isaac, and why does he agree to go as far as Sheffield? What does his reasoning show?",
+          "facilitatorNotes": [
+            "It “beseems not” a pilgrim and a Jew to travel together; yet protecting a Jew against a Saracen “can scarce be accounted unworthy of a Christian.” He finds a reason in religious rank that lets him help: he protects Isaac while keeping his distance."
+          ],
+          "evidence": [
+            "for it beseems not men of my character and thine to travel together",
+            "since to protect a Jew against a Saracen, can scarce be accounted unworthy of a Christian"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-04-q2",
+          "prompt": "How does Isaac guess what the Palmer most wants? What has he noticed?",
+          "facilitatorNotes": [
+            "Words that showed “like sparks from flint … the metal within,” and a knight’s gold chain and spurs glimpsed under the gown when the Palmer leaned over his bed. Isaac is a sharp observer. The startled Palmer answers with a joke: searching Isaac’s clothes would reveal secrets too. Each man hides a treasure."
+          ],
+          "evidence": [
+            "in the bosom of that Palmer's gown, is hidden a knight's chain and spurs of gold",
+            "Were thy garments searched by as curious an eye, Isaac"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-04-q3",
+          "prompt": "What does Isaac offer, and how does the Palmer test him? Who comes out better?",
+          "facilitatorNotes": [
+            "A letter in Hebrew to a kinsman at Leicester who will lend the best horse and armour for the tournament. The Palmer points out that a loser’s arms are forfeit and says “those of thy tribe give nothing for nothing.” Isaac squirms comically, but “his better feelings predominated”: he waives damage and interest and worries about the young man’s life. His generosity overturns the stereotype, though Scott plays his struggle for laughs."
+          ],
+          "evidence": [
+            "his better feelings predominated over those which were most familiar to him",
+            "but for the sake of thine own life and limbs"
+          ]
+        },
+        {
+          "id": "reading-8-scott-ivanhoe-1820-04-q4",
+          "prompt": "Compare the Palmer’s request about Isaac’s debtors with Isaac’s last warning. What does each man think of the other at the end?",
+          "facilitatorNotes": [
+            "The Palmer asks him to spare some Christian debtor “the gyves and the dungeon,” assuming Isaac is a hard creditor; Isaac’s parting words show real care for the Palmer himself. The Palmer smiles and promises to repay the courtesy. Mutual suspicion has become a wary trust; readers can judge how far the Palmer has changed."
+          ],
+          "evidence": [
+            "spare the gyves and the dungeon to some unhappy Christian who stands in thy danger",
+            "Gramercy for thy caution"
+          ]
+        }
+      ]
+    }
+  ]
+}
