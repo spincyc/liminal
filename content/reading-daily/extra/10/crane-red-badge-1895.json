@@ -269,6 +269,456 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-05",
+      "title": "The Red Badge of Courage: morning, and a changed friend (Chapter XIV)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch how Henry measures the change in his friend, and what his own words show about whether he has changed.",
+      "focus": "Wilson’s new modesty set against Henry’s need to score a point, on the morning of the second day.",
+      "context": "Stephen Crane’s The Red Badge of Courage (1895) follows Henry Fleming, called “the youth,” a Union volunteer, through two days of a Civil War battle. Recap: on the first day Henry ran from the second Confederate charge. Wandering behind the lines, he watched his friend Jim Conklin die, and was then struck on the head by a fleeing Union soldier. Back at his regiment’s fire that night he let everyone believe the wound came from a bullet, and his friend Wilson, once “the loud soldier,” nursed him and gave him his own blanket. A charnel place is a house for the dead; “the rebs” are the Confederates; “the hull kit-an'-boodle” means the whole lot; pacific means peace-making.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications.",
+      "excerpt": {
+        "locator": "Chapter XIV, the whole chapter; opens “When the youth awoke it seemed to him that he had been asleep for a thousand years, and…”; closes “\"So?\" said the youth.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-crane-red-badge-1895-06",
+        "blocks": [
+          618,
+          661
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "21ee3361ac11a03359277e94de60a56db67110db0d0084e4f4df760c7e42708e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-05-q1",
+          "prompt": "Waking, Henry takes the sleeping men for corpses, then decides the picture is “a mere prophecy.” What does the opening suggest about the day to come, and about the state of Henry’s mind?",
+          "facilitatorNotes": [
+            "The dawn light gives the men “corpselike hues,” and the narrator’s word “prophecy” warns that many of these sleepers will be dead by evening. It also shows a mind still disordered by the blow and the night before: for an instant he believes he is “in the house of the dead.” Readers can decide whether the prophecy is Henry’s or the narrator’s."
+          ],
+          "evidence": [
+            "He believed for an instant that he was in the house of the dead",
+            "He saw that this somber picture was not a fact of the present, but a mere prophecy."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-05-q2",
+          "prompt": "List the changes Henry notices in Wilson. When Henry reminds him of his old boasting, how does Wilson answer, and what does the reminder show about Henry?",
+          "facilitatorNotes": [
+            "Wilson no longer measures “his personal prowess,” is not stung by small words, and has “a fine reliance.” Henry’s jab about licking “the hull kit-an'-boodle” is the kind of point-scoring Wilson has given up, and Wilson simply agrees (“perhaps I would”). Henry is left “disconcerted” and backs away. The exchange suggests that Henry still lives by comparison with others, as Wilson used to."
+          ],
+          "evidence": [
+            "He was no more a loud young soldier. There was about him now a fine reliance.",
+            "\"Well, perhaps I would,\" he decided at last. He stared humbly at the fire."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-05-q3",
+          "prompt": "Henry mentions Jim Conklin’s death only when “a sudden thought came to him” in the middle of an argument. What does the timing of the news suggest about Henry, and about how war treats a death?",
+          "facilitatorNotes": [
+            "He has carried the memory all night but produces it as a point in a dispute about who saw more of the fight. Some readers will see callousness; others, shock that has not yet let the death become real. Wilson’s short reply (“poor cuss!”) and the immediate quarrel at the next fire show how quickly the camp moves on."
+          ],
+          "evidence": [
+            "Then a sudden thought came to him. \"Oh! Jim Conklin's dead.\"",
+            "Jim Conklin. . . . poor cuss!"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-05-q4",
+          "prompt": "The chapter ends with Wilson’s remark that the lost men came back from “wanderin' around in th' woods... Jest like you done,” and Henry’s one word, “So?” What might Henry be thinking, and why might Crane end the chapter here?",
+          "facilitatorNotes": [
+            "Wilson innocently gives Henry cover: so many men drifted back that one more absence means nothing. But “Jest like you done” puts Henry beside men who were “fightin' with other reg'ments,” which he was not. His “So?” is guarded: relief, caution and guilt are all possible, and Crane leaves the reader to supply them."
+          ],
+          "evidence": [
+            "They'd been scattered all over, wanderin' around in th' woods, fightin' with other reg'ments, an' everything. Jest like you done.",
+            "\"So?\" said the youth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-06",
+      "title": "The Red Badge of Courage: the packet of letters (Chapter XV)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate what Henry believes about himself from what the narrator lets you see, sentence by sentence.",
+      "focus": "A secret kept as a weapon, and a self-image rebuilt because no one found out.",
+      "context": "Recap: on the second morning Henry, whose comrades believe his head wound came from a bullet, found his friend Wilson changed from a braggart into a quiet peacemaker. Before the first battle Wilson, sure he would be killed, gave Henry a packet of letters in a yellow envelope to send to his family. “Order arms” is a position with the rifle butt on the ground; lugubrious means mournful; laurels are a traditional crown of honour; to rail is to complain bitterly. The “young lady at the seminary” is a girl at the school where Henry said goodbye to his schoolmates before leaving home.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications.",
+      "excerpt": {
+        "locator": "Chapter XV, the whole chapter; opens “The regiment was standing at order arms at the side of a lane, waiting for the command to…”; closes “…ones doing brave deeds on the field of battle without risk of life would be destroyed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-05",
+        "continuesTo": "reading-10-crane-red-badge-1895-07",
+        "blocks": [
+          663,
+          691
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d1c51c94ac34d515a014cf174f10793ce4c3fe098d6354dd0b5ba52e0793a4f4"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-06-q1",
+          "prompt": "Why does Henry decide not to mention the packet, and what does he think he gains by keeping it?",
+          "facilitatorNotes": [
+            "The packet records Wilson’s fear in his own hand, so it is “a small weapon” Henry can use if Wilson ever asks what Henry did yesterday. Holding back is not kindness but strategy: “He was master.” Ask what it means that Henry’s first thought about a friend’s confession is how to use it."
+          ],
+          "evidence": [
+            "He now rejoiced in the possession of a small weapon with which he could prostrate his comrade at the first signs of a cross-examination.",
+            "He was master."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-06-q2",
+          "prompt": "“He had performed his mistakes in the dark, so he was still a man.” What idea of manhood is Henry working from? How does the narrator’s wording show what he thinks of it?",
+          "facilitatorNotes": [
+            "For Henry, what no one saw does not count: manhood is reputation. The narrator lets him speak in grand terms (“the chosen of gods and doomed to greatness”) and then deflates him with phrases like “fled with discretion and dignity,” which no one could say seriously. Some readers find Henry contemptible here; others find him painfully ordinary."
+          ],
+          "evidence": [
+            "He had performed his mistakes in the dark, so he was still a man.",
+            "As for himself, he had fled with discretion and dignity."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-06-q3",
+          "prompt": "When Wilson asks for the letters back, Henry gives them up and “took unto himself considerable credit.” Was his silence generous? Compare who feels shame in this scene with who has more to be ashamed of.",
+          "facilitatorNotes": [
+            "He stayed silent only because he “could conjure nothing of sufficient point.” Wilson blushes over a moment of fear that he confessed honestly, while Henry, who ran and lied, feels himself “an individual of extraordinary virtues.” Crane’s irony is plain, but a reader may note that Henry did, in the end, spare his friend."
+          ],
+          "evidence": [
+            "He could conjure nothing of sufficient point.",
+            "he was an individual of extraordinary virtues"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-06-q4",
+          "prompt": "Henry decides that only “the doomed and the damned” complain about the universe, then imagines telling war stories at home. How do these two thoughts belong together?",
+          "facilitatorNotes": [
+            "Both come from comfort: with “a full stomach and the respect of his fellows,” he sees no reason to question anything, and the same complacency lets him picture himself as “the central figure in blazing scenes.” A day earlier he raged at the universe; now he feels secure because his secret is safe. Readers can judge whether any of this confidence has been earned."
+          ],
+          "evidence": [
+            "Let the unfortunates rail; the others may play marbles.",
+            "He saw his gaping audience picturing him as the central figure in blazing scenes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-07",
+      "title": "The Red Badge of Courage: blaming the general (Chapter XVI)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow an argument about who is to blame for defeat, and notice which remarks make Henry go quiet.",
+      "focus": "Retreat, rumour and complaint: talk fills the time before the next attack.",
+      "context": "Recap: Henry, whose comrades think his head wound came from a bullet, returned his friend Wilson’s packet of letters without a word and congratulated himself on his generosity; he now feels sure no one will discover that he ran. The regiment moves up to the front. A rifle pit is a shallow trench; skirmishers and pickets are soldiers posted ahead of the main line; the Rappahannock is a river in Virginia; a lunkhead is a blockhead; “from pillar to post” means pushed from place to place; “chin music” is idle talk.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications.",
+      "excerpt": {
+        "locator": "Chapter XVI, the whole chapter; opens “A sputtering of musketry was always to be heard. Later, the cannon had entered the…”; closes “…stood awaiting the shock. Some shrank and flinched. They stood as men tied to stakes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-06",
+        "continuesTo": null,
+        "blocks": [
+          693,
+          730
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9fc22b53e2deba7205da89914f8fe7df3b1d004b17942ee54bb8f27d68256299"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-07-q1",
+          "prompt": "Henry wants to joke “All quiet on the Rappahannock,” but cannot finish the sentence. How does Crane use sound in the opening paragraphs, and what happens to the rumours when the guns stop?",
+          "facilitatorNotes": [
+            "The guns are “engaged in a stupendous wrangle,” so loud that “it became impossible to make a sentence heard”; the joke itself, a newspaper phrase for a quiet front, is defeated by the noise it mocks. When the guns stop, rumours fly “like birds,” but black ones that flap “near to the ground,” and the men read omens in them. The soundscape carries the regiment’s mood."
+          ],
+          "evidence": [
+            "It became impossible to make a sentence heard.",
+            "they were now for the most part black creatures who flapped their wings drearily near to the ground"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-07-q2",
+          "prompt": "Henry blames the general; Wilson blames luck. Whose explanation is better supported, and why does Henry feel “secretly dumfounded” at his own words?",
+          "facilitatorNotes": [
+            "Henry argues that if the regiment fights “like the devil” and still loses, the general must be at fault; Wilson, “in a weary tone,” allows that the general “did th' best he knowed.” Neither has evidence, but Henry’s argument depends on a “we” that includes himself, and he knows he did not fight. Readers may decide whether Wilson’s modesty or Henry’s anger is closer to the truth."
+          ],
+          "evidence": [
+            "\"Well, don't we fight like the devil? Don't we do all that men can?\" demanded the youth loudly.",
+            "He was secretly dumfounded at this sentiment when it came from his lips."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-07-q3",
+          "prompt": "Why does the sarcastic man’s remark reduce Henry to “an abject pulp,” though the man means nothing by it? How is Henry’s new modesty different from Wilson’s?",
+          "facilitatorNotes": [
+            "“Mebbe yeh think yeh fit th' hull battle” touches the real secret by chance. Henry goes quiet out of fear of exposure: he becomes “suddenly a modest person” in order not to be noticed. Wilson’s modesty in Chapter XIV came from knowing himself better; Henry’s is protective camouflage."
+          ],
+          "evidence": [
+            "Mebbe yeh think yeh fit th' hull battle yestirday, Fleming",
+            "He became suddenly a modest person."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-07-q4",
+          "prompt": "The lieutenant tells the men to stop arguing, then adds one more complaint of his own. What is funny about his outburst, and how does the last paragraph change the tone?",
+          "facilitatorNotes": [
+            "He orders silence while venting “his inward dissatisfaction” himself, and his parting line about “too much chin music” is more chin music. Then the comedy stops: exhausted men wait for the attack “as men tied to stakes,” an image of helpless victims rather than heroes. The shift prepares for the fury of the next chapter."
+          ],
+          "evidence": [
+            "There's too much chin music an' too little fightin' in this war, anyhow",
+            "They stood as men tied to stakes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-08",
+      "title": "The Red Badge of Courage: a war devil (Chapter XVII)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Trace how Henry’s grievance becomes rage, and how others see him when the fighting stops.",
+      "focus": "Courage without thought: Henry fights like an animal and then decides he is a hero.",
+      "context": "Stephen Crane’s The Red Badge of Courage (1895) follows Henry Fleming, called “the youth,” a Union volunteer, through two days of a Civil War battle. Recap: Henry ran from his first battle and returned with a head wound that his comrades believe came from a bullet. On the second morning his regiment was pulled back through the woods while he complained bitterly about the generals; now the Confederates attack again. To be “at bay” is to be cornered and forced to turn and fight; a ramrod pushes the charge down a rifle barrel; a “piler men” is a pile of men.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. The chapter describes Henry’s fantasies of cruelty and revenge, and the soldiers chant an old rhyme approving the beating of dogs and women; both are presented as the bravado of exhausted men, not endorsed.",
+      "excerpt": {
+        "locator": "Chapter XVII, the whole chapter; opens “This advance of the enemy had seemed to the youth like a ruthless hunting. He began to…”; closes “…smoldering ruins, went up toward the sun now bright and gay in the blue, enameled sky.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-crane-red-badge-1895-09",
+        "blocks": [
+          732,
+          765
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c51e78cfa2ba6e1a0c5f54a0f5b5f5881282ee7ba8c9c272faab373c8cc04b17"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-08-q1",
+          "prompt": "At the start of the chapter, why does the enemy’s attack make Henry furious rather than afraid? Trace the steps of his reasoning.",
+          "facilitatorNotes": [
+            "He feels he has “earned opportunities for contemplative repose” after yesterday’s “adventures” (his flight, renamed), so the attack seems a personal insult. Yesterday he hated the universe; today he hates the enemy “with the same great hatred.” Some readers will see the first real courage in this; others will see wounded pride finding a new target."
+          ],
+          "evidence": [
+            "For to-day he felt that he had earned opportunities for contemplative repose.",
+            "He was not going to be badgered of his life, like a kitten chased by boys, he said."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-08-q2",
+          "prompt": "Find the animal comparisons in the fighting. What do they suggest about the kind of courage Henry shows here?",
+          "facilitatorNotes": [
+            "A “cur-like snarl,” animals “tossed for a death struggle into a dark pit,” a line that writhes “like a snake stepped upon,” and Henry going forward “like a dog.” His bravery is instinct, not choice: he does not know he is standing and keeps firing when there is nothing to shoot at. Crane neither glorifies it nor dismisses it."
+          ],
+          "evidence": [
+            "his teeth set in a cur-like snarl",
+            "To the youth the fighters resembled animals tossed for a death struggle into a dark pit."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-08-q3",
+          "prompt": "“He had slept and, awakening, found himself a knight.” How does Henry interpret what has happened? Which words suggest the narrator is less impressed than Henry is?",
+          "facilitatorNotes": [
+            "Henry first sees that he was “a barbarian, a beast,” then quickly turns this into heroism. The narrator’s “no doubt” and “what he called a hero” keep a distance, and a comrade has just called him an “infernal fool.” The men look at him “as a war devil,” which is awe mixed with alarm. Readers may still credit Henry with real courage, earned without his knowing it."
+          ],
+          "evidence": [
+            "He had been a tremendous figure, no doubt.",
+            "and he was now what he called a hero"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-08-q4",
+          "prompt": "The men celebrate with an old rhyme and a joke about sweeping up the dead, and the chapter closes on smoke “as from smoldering ruins” under a “gay” sky. How do these endings pull against each other?",
+          "facilitatorNotes": [
+            "The rhyme claims that beating improves things, and the men apply it to their battered regiment; the dustpan joke reduces the enemy dead to sweepings. The final image sets ruin against a bright, indifferent sky, as nature in this novel often ignores the fighting. The men’s cheer and the narrator’s image do not agree, and readers can decide which has the last word."
+          ],
+          "evidence": [
+            "Th' more yeh beat 'em, th' better they be!",
+            "A cloud of dark smoke, as from smoldering ruins, went up toward the sun now bright and gay in the blue, enameled sky."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-09",
+      "title": "The Red Badge of Courage: “mule drivers” (Chapter XVIII)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Listen to two officers talk about Henry’s regiment, and judge what Henry learns from overhearing them.",
+      "focus": "Seen from above, a regiment is a tool; Henry discovers that he is insignificant.",
+      "context": "Recap: in the morning’s fighting Henry, who ran on the first day, fought in a blind fury and was hailed by his lieutenant as a “wild cat”; he decided he was a hero. Jimmie Rogers is the soldier Wilson stopped from fighting that morning. A division is a large body of several brigades, each made up of regiments; a cavalcade is a group of riders. Mule drivers drove the army’s supply wagons and were thought of as rough labourers, not soldiers.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. A soldier shot through the body screams and curses his comrades.",
+      "excerpt": {
+        "locator": "Chapter XVIII, the whole chapter; opens “The ragged line had respite for some minutes, but during its pause the struggle in the…”; closes “…assent when a shaggy man near them said in a meek voice: \"We'll git swallowed.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-08",
+        "continuesTo": "reading-10-crane-red-badge-1895-10",
+        "blocks": [
+          767,
+          801
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4299dfbdfc40ea51104d09d803b0fbca163fbcadd91ca11bb60063e43110a233"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-09-q1",
+          "prompt": "Why do the men hesitate before going to Jimmie Rogers, and how does he answer their hesitation? Why might Crane give his wound so little space?",
+          "facilitatorNotes": [
+            "They stop “as if they feared to go near,” as if death might be catching, and Rogers answers with “a tremendous, fantastic contempt.” The next paragraph moves straight on to the search for water: in battle one man’s agony has no room, even when it is the man whose quarrel Wilson settled that morning. Readers may find the brevity cold or truthful."
+          ],
+          "evidence": [
+            "When their eyes first encountered him there was a sudden halt, as if they feared to go near.",
+            "he damned them in shrieked sentences"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-09-q2",
+          "prompt": "How do the general and the officer talk about sending the regiment forward? Find the words that show their tone.",
+          "facilitatorNotes": [
+            "The general speaks “coolly, as if he were criticising his clothes,” and the officer chooses the regiment because it is the one he “can spare.” The general’s last remark is sober but unmoved, and the officer smiles. Readers can consider whether a commander could think any other way and still do his job."
+          ],
+          "evidence": [
+            "spoke coolly, as if he were criticising his clothes",
+            "I don't believe many of your mule drivers will get back."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-09-q3",
+          "prompt": "“New eyes were given to him.” What does Henry learn from the overheard order? Is it the same lesson Wilson seems to have learned in Chapter XIV?",
+          "facilitatorNotes": [
+            "He learns he is “very insignificant”: the regiment is a broom to sweep some part of the woods. Wilson’s humility seemed to grow from within; Henry’s is handed to him from outside, and he finds it only “strange.” Some readers will say both men are learning the same truth by different roads; others, that Henry has not yet accepted it."
+          ],
+          "evidence": [
+            "New eyes were given to him.",
+            "The officer spoke of the regiment as if he referred to a broom."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-09-q4",
+          "prompt": "Why don’t Henry and Wilson tell the others what they heard? What does their nod at “We'll git swallowed” show about them now?",
+          "facilitatorNotes": [
+            "Telling would only frighten the men, and the secret is also a kind of private knowledge, “an ironical secret.” Their nod shows a new steadiness: they will go forward knowing the odds, with “no hesitation in each other's faces.” Readers may argue that the men deserved to know."
+          ],
+          "evidence": [
+            "It was an ironical secret.",
+            "they nodded a mute and unprotesting assent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-10",
+      "title": "The Red Badge of Courage: the charge and the flag (Chapter XIX)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a charge that starts, stalls and starts again, and notice what moves the men each time.",
+      "focus": "A frenzy that forgets the self, and a flag that becomes an idol and then a dead man’s burden.",
+      "context": "Recap: fetching water, Henry and Wilson overheard their division’s general choose their regiment for a charge because its men “fight like a lot 'a mule drivers,” and say that few would come back; they kept it to themselves. The colors are a regiment’s flag, carried by a color sergeant; men rally to it, and losing it disgraces a regiment. A battery is a group of cannon; imprecations are curses.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. Men are killed and maimed in the charge, a dead soldier’s body is pulled from the flag he carried, and the narrator compares the shouting men to “tortured savages,” a dated and demeaning image.",
+      "excerpt": {
+        "locator": "Chapter XIX, the whole chapter; opens “The youth stared at the land in front of him. Its foliages now seemed to veil powers and…”; closes “…high, and the curved hand fell with heavy protest on the friend's unheeding shoulder.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-09",
+        "continuesTo": null,
+        "blocks": [
+          803,
+          835
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cd1eb3caa73a851c858e25bdb1806fd1e0a08d1565f96da6c281e71af718c08e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-10-q1",
+          "prompt": "In the open field Henry seems to see “everything.” What does he see clearly, and what can he never explain afterward?",
+          "facilitatorNotes": [
+            "Every blade of grass, the bark of the trees, men falling “to queer, heaped-up corpses”: his mind takes “a mechanical but firm impression.” What it cannot record is his own motive: everything was explained to him later “save why he himself was there.” Ask why such sharp seeing goes with so little understanding."
+          ],
+          "evidence": [
+            "It seemed to the youth that he saw everything.",
+            "save why he himself was there"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-10-q2",
+          "prompt": "The narrator calls the frenzy of the charge “a temporary but sublime absence of selfishness.” Is this praise? How does the next paragraph test it?",
+          "facilitatorNotes": [
+            "For Henry, whose every thought has been about himself, losing the self is a real change, and “sublime” is strong. But it is also “delirium,” “moblike and barbaric,” and it lasts only while breath does: then the men “returned to caution” and “were become men again.” Readers can argue whether selflessness in a crowd is admirable or simply blind."
+          ],
+          "evidence": [
+            "It is a temporary but sublime absence of selfishness.",
+            "They were become men again."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-10-q3",
+          "prompt": "When the charge stalls, what gets the regiment moving: the lieutenant’s curses, Wilson’s shot, or Henry’s anger at the lieutenant? Trace the chain.",
+          "facilitatorNotes": [
+            "The lieutenant’s cursing does not move them; Wilson’s “angry shot” wakes them to their weapons; and at the second halt Henry, furious at being grabbed, answers “Come on yerself, then” and runs out before the colors. Each push comes from anger rather than principle. The narrator’s comparison of the three to “tortured savages” makes the scene look wild rather than noble."
+          ],
+          "evidence": [
+            "This action awakened the men.",
+            "The private felt a sudden unspeakable indignation against his officer."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-10-q4",
+          "prompt": "How does Henry see the flag as he runs? Why does Crane follow this vision at once with the struggle over the color sergeant’s body?",
+          "facilitatorNotes": [
+            "The flag becomes a goddess and a woman, beautiful and unhurtable, almost “a saver of lives.” Then the man carrying it is shot, and the corpse seems to tug “in ludicrous and awful ways” for the flag. Idealism meets bodily fact; the dead hand that falls on Wilson’s shoulder reads like a last protest. Readers can decide whether the vision is foolish or what makes the charge possible."
+          ],
+          "evidence": [
+            "It was a goddess, radiant, that bended its form with an imperious gesture to him.",
+            "the corpse would not relinquish its trust"
+          ]
+        }
+      ]
     }
   ]
 }
