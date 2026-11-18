@@ -496,6 +496,334 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-08",
+      "title": "Lamia, Part I: Hermes and the serpent",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the long verse paragraphs for the story first, then reread the description of the serpent and the transformation slowly, line by line.",
+      "focus": "Keats makes his heroine beautiful and dangerous at once and refuses to say which she is.",
+      "context": "John Keats (1795–1821) published Lamia as the first poem of his 1820 volume, the last book of his short life. The story comes from Robert Burton’s Anatomy of Melancholy (1621), which Keats printed as a note at the end of the poem. In Greek legend a lamia is a female monster, sometimes part serpent, who preys on young men. Hermes, messenger of the gods, has winged heels and a staff twined with snakes (the caduceus) that works magic; Jove rules Olympus. Oberon is king of the fairies of English folklore; nymphs, satyrs, dryads, fauns and tritons are nature spirits of Greek myth; a pard is a leopard; Proserpine was carried off from Sicily to the underworld. Keats writes in rhyming couplets, with occasional three-line rhymes and long lines.",
+      "contentNote": "Sensual description of lovers, including Hermes’s pursuit of a nymph who is at first afraid; a painful transformation.",
+      "excerpt": {
+        "locator": "Lamia, Part I, from the opening through the description of Lamia as a newly made woman; opens “Upon a time, before the faery broods Drove Nymph and Satyr from the prosperous woods,…”; closes “…days a lovely graduate, still unshent, And kept his rosy terms in idle languishment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-09",
+        "blocks": [
+          3,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "266468dd0eaa809d2ef394dab7fa8f7bd5467fecef362dd0f04d50418d6eda19"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q1",
+          "prompt": "How does Keats describe the serpent? Choose three of the comparisons and say what impression their mixture creates.",
+          "facilitatorNotes": [
+            "She is “Striped like a zebra, freckled like a pard, / Eyed like a peacock,” with silver moons and a woman’s mouth: dazzling, exotic and unsettling all at once. The pile of comparisons makes her impossible to picture as one thing.",
+            "The narrator then offers three identities, a punished elf, a demon’s mistress, or “the demon’s self,” without choosing. That uncertainty is the poem’s central question."
+          ],
+          "evidence": [
+            "Striped like a zebra, freckled like a pard, Eyed like a peacock, and all crimson barr'd;",
+            "She seem'd, at once, some penanced lady elf, Some demon's mistress, or the demon's self."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q2",
+          "prompt": "What bargain do Hermes and the serpent make? What does each want, and who seems to hold the power?",
+          "facilitatorNotes": [
+            "Hermes wants to see the invisible nymph; the serpent wants “A woman's shape” to reach a youth of Corinth. She makes him swear twice before she speaks, and only she can lift the spell on the nymph, so the god is the one who begs.",
+            "Her claim, “I was a woman,” is never confirmed. Her kindness in hiding the nymph from unwanted lovers may be real, or it may be her bargaining piece; students can argue either."
+          ],
+          "evidence": [
+            "I was a woman, let me have once more A woman's shape, and charming as before.",
+            "Thou shalt behold her, Hermes, thou alone, If thou wilt, as thou swearest, grant my boon!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q3",
+          "prompt": "Compare the union of Hermes and the nymph with the serpent’s transformation. How does Keats make one gentle and the other violent?",
+          "facilitatorNotes": [
+            "The lovers are described in flower images, and the passage ends “Nor grew they pale, as mortal lovers do.” The serpent’s change is foam, fire and lava, until “Nothing but pain and ugliness were left,” before she vanishes calling “Lycius!”",
+            "The line about mortal lovers sets up a question for the rest of the poem: what happens to love that is not immortal?"
+          ],
+          "evidence": [
+            "Nor grew they pale, as mortal lovers do.",
+            "And, as the lava ravishes the mead,",
+            "Nothing but pain and ugliness were left."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q4",
+          "prompt": "The new Lamia is “Not one hour old, yet of sciential brain / To unperplex bliss from its neighbour pain.” What does the narrator say she knows, and why might that knowledge be both attractive and troubling?",
+          "facilitatorNotes": [
+            "She is innocent (“A virgin purest lipp'd”) and yet expert in love, able to separate pleasure from the pain that usually comes with it. That promises a perfect love, but also suggests a skill that no one an hour old could honestly have.",
+            "Ask whether “Ah, happy Lycius!” is sincere or ironic. Both readings are possible at this point, and the poem will test them."
+          ],
+          "evidence": [
+            "Not one hour old, yet of sciential brain To unperplex bliss from its neighbour pain;",
+            "A virgin purest lipp'd, yet in the lore Of love deep learned to the red heart's core:",
+            "Ah, happy Lycius!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-09",
+      "title": "Lamia, Part I: the road to Corinth",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Keep track of who knows what: Lamia has planned a meeting that Lycius believes is chance.",
+      "focus": "Lamia wins Lycius by putting off the goddess and “playing woman’s part,” and the first sight of his teacher casts a shadow.",
+      "context": "Recap: Hermes, searching Crete for a hidden nymph, met a dazzling serpent with a woman’s voice. In exchange for showing him the nymph, she asked him to give her back a woman’s shape, saying she loved a youth of Corinth; after a painful transformation she vanished calling “Lycius!” She now waits as a beautiful woman beside the road from Cenchreas, Corinth’s port. In Greek myth Orpheus lost his wife Eurydice by looking back at her as he led her from the underworld; a Pleiad is one of seven star sisters; Pyrrha and her husband remade humankind after the flood from stones. Apollonius of Tyana was a philosopher and wonder-worker of the first century.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Lamia, Part I, from “Why this fair creature chose so fairily” to the end of Part I; opens “Why this fair creature chose so fairily By the wayside to linger, we shall see; But first…”; closes “…humour many a heart to leave them thus, Shut from the busy world of more incredulous.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-08",
+        "continuesTo": "reading-9-keats-poems-1820-1909-10",
+        "blocks": [
+          9,
+          12
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "734f2efcd3ba84e14a6a7e72307a182225eac08dc96bfeb8730a222c2bf30f28"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q1",
+          "prompt": "How did Lamia first see Lycius, while she was still a serpent? Why does Keats tell us this before the meeting?",
+          "facilitatorNotes": [
+            "Her spirit wandered in dreams, and in Corinth she saw him winning a chariot race and fell in love. She knows he will come this way, so the meeting is her design, though the narrator calls his solitary walk “some freakful chance.”",
+            "The reader watches Lycius walk into a plan he cannot see, which makes the scene suspenseful rather than simply romantic."
+          ],
+          "evidence": [
+            "She saw the young Corinthian Lycius Charioting foremost in the envious race,",
+            "For by some freakful chance he made retire From his companions"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q2",
+          "prompt": "Lycius looks back “Orpheus-like at an Eurydice.” What does the comparison suggest, given how the story of Orpheus ends?",
+          "facilitatorNotes": [
+            "Orpheus lost Eurydice for ever by looking back. The image makes Lycius’s first glance at Lamia a sign of loss to come, and his own words, “Even as thou vanishest so I shall die,” already fear it.",
+            "Some readers take the comparison only as a sign of how intensely he looks. Both readings use the same line."
+          ],
+          "evidence": [
+            "But Orpheus-like at an Eurydice;",
+            "Even as thou vanishest so I shall die."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q3",
+          "prompt": "Lamia first speaks as a goddess who cannot stay on earth, then “threw the goddess off.” Why does she change her approach, and what does the narrator think of it?",
+          "facilitatorNotes": [
+            "She judges “aright” that Lycius “could not love in half a fright,” so she tells him she is a woman with ordinary blood who has seen him in Corinth. The narrator praises “a real woman” over fairies and goddesses, though Lamia is only “playing woman's part.”",
+            "The praise is ironic, since she is not a real woman, or else it is the narrator joining in her pretence. Students can argue which; her story about living in Corinth is also hard to check."
+          ],
+          "evidence": [
+            "Thus gentle Lamia judg'd, and judg'd aright, That Lycius could not love in half a fright,",
+            "So threw the goddess off, and won his heart More pleasantly by playing woman's part,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q4",
+          "prompt": "Lycius hides his face from Apollonius and calls him “The ghost of folly haunting my sweet dreams.” What do Lamia’s reaction and the last lines of Part I suggest about what is coming?",
+          "facilitatorNotes": [
+            "Lamia trembles and her palm turns to “dew”; Lycius hides from the man he calls his “trusty guide.” The narrator then says only the duty of telling “what woe afterwards befel” keeps him from leaving the lovers happy, so the reader knows the story will end badly.",
+            "Notice too that the miles to Corinth shrink “by a spell” that “blinded Lycius” never suspects. Ask how much of his happiness depends on not seeing."
+          ],
+          "evidence": [
+            "'Tis Apollonius sage, my trusty guide And good instructor; but to-night he seems The ghost of folly haunting my sweet dreams.",
+            "While hurried Lamia trembled",
+            "For truth's sake, what woe afterwards befel,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-10",
+      "title": "Lamia, Part II: the wedding plan",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a quarrel between lovers through speeches and the narrator’s comments, and notice when the narrator speaks to a character directly.",
+      "focus": "Lycius’s wish to show off his bride turns love into possession, and Lamia must build a splendid hall for a wedding she dreads.",
+      "context": "Recap: Lamia, a serpent changed by Hermes into a beautiful woman, met the young Corinthian Lycius on the road, enchanted him, and led him to a palace in Corinth that no one had noticed before. On the way Lycius hid his face from his old teacher, the philosopher Apollonius, and Lamia trembled at the sight of him. Part II begins some time later. “Empery” is rule; a passing bell is rung for someone dying; a “paramour” is a lover; a “sophist” is a clever, sometimes deceptive, arguer.",
+      "contentNote": "Lycius takes pleasure in Lamia’s distress and overrides her pleas; the poem calls his passion “cruel” and says she “lov'd the tyranny.”",
+      "excerpt": {
+        "locator": "Lamia, Part II, from the opening through Apollonius’s arrival at the wedding; opens “Love in a hut, with water and a crust, Is--Love, forgive us!--cinders, ashes, dust; Love…”; closes “…With reconciling words and courteous mien Turning into sweet milk the sophist's spleen.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-09",
+        "continuesTo": "reading-9-keats-poems-1820-1909-11",
+        "blocks": [
+          14,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d57b4153c0827bee602ecdf08e776ad7d471d2d7a59ecb2f6a8898f97f517bd"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q1",
+          "prompt": "The opening lines offer a “moral” about love in a hut and love in a palace. What is it, and does the narrator trust it?",
+          "facilitatorNotes": [
+            "Love in poverty turns to “cinders, ashes, dust,” and love in luxury may be a worse torment. The narrator calls this “a doubtful tale” and says the lovers’ bliss was “too short” to test it.",
+            "Ask why a poem would offer a moral and doubt it in the same breath. The playful tone keeps the reader from settling on an easy lesson."
+          ],
+          "evidence": [
+            "Love in a hut, with water and a crust, Is--Love, forgive us!--cinders, ashes, dust;",
+            "That is a doubtful tale from faery land,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q2",
+          "prompt": "What breaks the lovers’ calm, and why does Lamia take it so hard? Explain “but a moment's thought is passion's passing bell.”",
+          "facilitatorNotes": [
+            "A sound of trumpets from the city leaves “a thought” in Lycius’s head, the first since he entered the palace. A passing bell tolls for the dying, so Lamia hears his thinking as the death of the enchantment that holds him.",
+            "The line connects thought with danger to Lamia, which the end of the poem will develop."
+          ],
+          "evidence": [
+            "came a thrill Of trumpets--Lycius started--the sounds fled, But left a thought, a buzzing in his head.",
+            "That but a moment's thought is passion's passing bell."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q3",
+          "prompt": "Why does Lycius want a public wedding, and how does the poem judge his insistence when Lamia weeps?",
+          "facilitatorNotes": [
+            "He wants to show his “prize” so that other men are “confounded and abash'd” and his foes “choke.” When she begs him to change his mind, he becomes “Perverse” and takes “delight / Luxurious in her sorrows”; the narrator calls his passion “cruel grown.”",
+            "The poem says Lamia “lov'd the tyranny,” which many readers find troubling. Discuss whether the narrator is describing her feelings, excusing his, or exposing a possessive kind of love."
+          ],
+          "evidence": [
+            "What mortal hath a prize, that other men May be confounded and abash'd withal,",
+            "he took delight Luxurious in her sorrows, soft and new.",
+            "His passion, cruel grown, took on a hue"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q4",
+          "prompt": "Lamia has “no friends” and asks only that Apollonius be kept away. How does she prepare for the wedding, and what do “pale contented sort of discontent” and “dreadful guests” suggest about her feelings?",
+          "facilitatorNotes": [
+            "Invisible servants with a “noise of wings” build a hall of carved cedar and lamps; she approves it all, then shuts it up “close, hush'd and still.” She is satisfied with her work and miserable about its purpose, and to her the guests are invaders of her solitude.",
+            "The narrator’s cry “O senseless Lycius! Madman!” and Apollonius’s knowing laugh both point the same way: the public wedding will expose her."
+          ],
+          "evidence": [
+            "In pale contented sort of discontent,",
+            "When dreadful guests would come to spoil her solitude.",
+            "O senseless Lycius! Madman!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-11",
+      "title": "Lamia, Part II: the banquet and the philosopher’s eye",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the climax twice: once for what happens, once for sound and silence. Then compare the poem’s ending with Burton’s version of the story in the note.",
+      "focus": "Philosophy exposes an illusion and kills a man; the narrator’s attack on “cold philosophy” leaves readers to decide who is to blame.",
+      "context": "Recap: Lycius has insisted on a public wedding to show off his mysterious bride. Lamia, who has no family, begged him not to invite his old teacher Apollonius, and filled her palace with an enchanted banquet hall. The guests marvel at a palace they never saw in a street they know; Apollonius came uninvited, laughing as if a puzzle were solved. Ceres is goddess of grain and Bacchus of wine; a thyrsus is Bacchus’s staff; willow and adder’s tongue are plants of grief and of snakes; “perceant” means piercing. The note quotes Robert Burton’s Anatomy of Melancholy (1621), which gave Keats the story.",
+      "contentNote": "A man dies at his wedding feast; enslaved servants attend the banquet, as in the ancient setting.",
+      "excerpt": {
+        "locator": "Lamia, Part II, from the banquet-room to the end of the poem, with the passage from Burton that Keats printed as its note; opens “Of wealthy lustre was the banquet-room, Fill'd with pervading brilliance and perfume:…”; closes “Burton's 'Anatomy of Melancholy.' _Part_ 3. _Sect._ 2 _Memb._ 1. _Subs._ 1.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-10",
+        "continuesTo": null,
+        "blocks": [
+          19,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81fb3166d7f8f4dd316002f02b1ed2ca9e75ae054c5f5fc055eb2d5e3ed93852"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q1",
+          "prompt": "Why does the splendour seem “No more so strange” to the guests as the feast goes on? What does that suggest about how people stop questioning what should puzzle them?",
+          "facilitatorNotes": [
+            "At first they wonder “Whence all this mighty cost and blaze of wealth could spring,” but once the wine “has done its rosy deed” even Lamia and the impossible hall seem ordinary. Pleasure dulls curiosity.",
+            "Apollonius is the one guest who stays sober in this sense, which prepares his role."
+          ],
+          "evidence": [
+            "wondering Whence all this mighty cost and blaze of wealth could spring.",
+            "Now, when the wine has done its rosy deed,",
+            "No more so strange;"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q2",
+          "prompt": "The narrator stops the story to hand out wreaths and to attack “cold philosophy.” What does he say philosophy does to a rainbow, and is he on Lamia’s side?",
+          "facilitatorNotes": [
+            "Philosophy, which in Keats’s day included natural science, puts the rainbow “In the dull catalogue of common things”: it will “clip an Angel's wings” and “Unweave a rainbow,” as it is about to unmake Lamia. The narrator mourns the loss of wonder.",
+            "Yet in the story Apollonius uncovers a real deception that has kept his pupil enchanted. Readers can argue that the narrator’s sympathy and the plot pull in different directions, or that both mourn something that had to be lost."
+          ],
+          "evidence": [
+            "Do not all charms fly At the mere touch of cold philosophy?",
+            "Philosophy will clip an Angel's wings,",
+            "Unweave a rainbow, as it erewhile made The tender-person'd Lamia melt into a shade."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q3",
+          "prompt": "Trace the change in the hall after Apollonius fixes his eye on the bride. How does Keats use sound and silence?",
+          "facilitatorNotes": [
+            "Lamia’s hand turns icy, then hot; she does not answer; the music and talk fade “By faint degrees” until “A deadly silence step by step increased.” Lycius’s shriek and its echo are the only sounds, until the sophist’s quiet, contemptuous “Fool!”",
+            "Students may notice that the loud revelry of the earlier stanzas makes the silence more frightening."
+          ],
+          "evidence": [
+            "By faint degrees, voice, lute, and pleasure ceased; A deadly silence step by step increased,",
+            "\"Lamia!\" he shriek'd; and nothing but the shriek With its sad echo did the silence break."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q4",
+          "prompt": "Apollonius says he has preserved Lycius “from every ill.” Is he a rescuer or a destroyer? Compare the poem’s ending with Burton’s account in the note.",
+          "facilitatorNotes": [
+            "In Burton, the young man is saved from an illusion: when Lamia is found out she weeps and the house vanishes, and nothing is said of his death. Keats adds that Lycius dies that night, so the truth that frees him also kills him.",
+            "Some readers blame Apollonius’s cruelty (“Keen, cruel, perceant”); others blame Lamia’s deception or Lycius’s pride in showing her off. Keats’s change to his source is the best evidence for what he wanted readers to feel."
+          ],
+          "evidence": [
+            "from every ill Of life have I preserv'd thee to this day, And shall I see thee made a serpent's prey?",
+            "And Lycius' arms were empty of delight, As were his limbs of life, from that same night.",
+            "When she saw herself descried, she wept, and desired Apollonius to be silent, but he would not be moved"
+          ]
+        }
+      ]
     }
   ]
 }
