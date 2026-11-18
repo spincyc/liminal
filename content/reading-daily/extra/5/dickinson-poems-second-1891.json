@@ -678,6 +678,688 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-10",
+      "title": "The Robin (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a poem built on one repeated line, and notice what changes from stanza to stanza.",
+      "focus": "The robin is first a noisy messenger of spring, then a flood of song, and last a silent teacher on her nest.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Robin.” The American robin, a large thrush with an orange-red breast, is one of the first birds to come back and sing in a New England spring, often before dawn. Express reports are urgent messages; cherubic means like a cherub, a plump little angel; certainty is being sure; sanctity is holiness.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” VI, “The Robin,” complete poem; opens “THE robin is the one That interrupts the morn With hurried, few, express reports When…”; closes “…one That speechless from her nest Submits that home and certainty And sanctity are best.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          312,
+          314
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a8d0b65686e65db1b41b5e755125ee537181f1f197b3e76098dd13ab709c7d85"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-10-q1",
+          "prompt": "Each stanza begins “The robin is the one.” What is the robin “the one” to do each time?",
+          "facilitatorNotes": [
+            "To interrupt the morning in early March, to overflow the noon in April, and to show from her nest that home is best. The poem moves from morning to noon and from March to April, and from song to silence."
+          ],
+          "evidence": [
+            "That interrupts the morn",
+            "That overflows the noon",
+            "That speechless from her nest"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-10-q2",
+          "prompt": "What do the robin’s first songs sound like? Why might the poem call them “reports”?",
+          "facilitatorNotes": [
+            "Short and urgent: “hurried, few, express,” like news brought by a messenger who cannot stop. The news is that spring is coming, though March has barely begun. “Interrupts” suggests the songs break into a quiet, sleepy morning; some readers will hear a little annoyance at being woken, others only delight."
+          ],
+          "evidence": [
+            "With hurried, few, express reports",
+            "When March is scarcely on."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-10-q3",
+          "prompt": "How can a bird “overflow the noon”? What might “cherubic quantity” mean?",
+          "facilitatorNotes": [
+            "By April there is so much robin song that it spills over the whole middle of the day, like water over the brim of a cup. “Cherubic quantity” could be the amount of song, or the round, plump robin herself, like a chubby angel; the phrase holds both."
+          ],
+          "evidence": [
+            "With her cherubic quantity,",
+            "An April but begun."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-10-q4",
+          "prompt": "In the last stanza the robin says nothing. How does she teach that home is best without speaking?",
+          "facilitatorNotes": [
+            "By sitting quietly on her nest: her example says what her songs never did. The noisy first stanzas make her silence stand out. Some readers think the lesson is the speaker’s own feeling read into the bird; Dickinson herself rarely left her family home."
+          ],
+          "evidence": [
+            "Submits that home and certainty",
+            "And sanctity are best."
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-11",
+      "title": "The Butterfly’s Day (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 12,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a comparison that runs through a whole poem, and decide what the poem thinks of an idle day.",
+      "focus": "A butterfly goes out like a fine lady for an aimless summer afternoon, while bees and haymakers work, until sunset puts out them all.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Butterfly’s Day.” A cocoon is the case in which a caterpillar changes; “repairing” means going; miscellaneous enterprise is business of every sort; a parasol is a lady’s sunshade, here the butterfly’s wings; contracting means closing up; phantom means ghostly; circumference here means circling; a tropic show is a brilliant display from hot countries; zealous means eager; to disdain is to look down on; extinguished means put out, like a light.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” VII, “The Butterfly’s Day,” complete poem; opens “FROM cocoon forth a butterfly As lady from her door Emerged—a summer afternoon— Repairing…”; closes “…tide, And men that made the hay, And afternoon, and butterfly, Extinguished in its sea.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          316,
+          321
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "47a638b5c3cb39021c5230daac2390455d81945387f80b241353cf477474cd84"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-11-q1",
+          "prompt": "The butterfly comes out “As lady from her door.” Find other words that keep up the picture of a lady.",
+          "facilitatorNotes": [
+            "She goes “Repairing everywhere” as a lady goes visiting; her wings are a “pretty parasol”; she meets “parties” like guests at a garden party; she and her friends are an “audience” looking down on the workers. The whole poem dresses the butterfly as a lady of leisure."
+          ],
+          "evidence": [
+            "As lady from her door",
+            "Her pretty parasol was seen"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-11-q2",
+          "prompt": "Where does the butterfly go, and what is she trying to do?",
+          "facilitatorNotes": [
+            "Nowhere in particular: “Without design, that I could trace.” She visits the clover, closes her wings over a hayfield, struggles against a cloud, and joins other butterflies circling “To Nowhere.” Her business is understood only by the clovers."
+          ],
+          "evidence": [
+            "Without design, that I could trace,",
+            "To Nowhere seemed to go"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-11-q3",
+          "prompt": "Who is working in this poem, and who is idle? Does the poem admire the butterfly or make fun of her?",
+          "facilitatorNotes": [
+            "The bee, the flower and the haymakers work; the butterflies are an “audience of idleness” that disdains them. The tone is playful: the poem enjoys her beauty and her aimlessness but smiles at her airs. Readers can argue either way from “purposeless circumference” and “tropic show.”"
+          ],
+          "evidence": [
+            "This audience of idleness",
+            "In purposeless circumference,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-11-q4",
+          "prompt": "What happens at sundown? Why are the haymakers put out along with the butterfly?",
+          "facilitatorNotes": [
+            "Evening comes like a tide and puts out the men, the afternoon and the butterfly together, as the sea puts out a flame. Workers and idlers end the day the same way. Some readers hear only the close of a summer day; others hear a hint of death, because “extinguished” is so final."
+          ],
+          "evidence": [
+            "Till sundown crept, a steady tide,",
+            "Extinguished in its sea."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-12",
+      "title": "The Bluebird (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Picture the bird from a few surprising words, and decide whom his song is for.",
+      "focus": "A weather-worn bluebird arrives before anyone expects spring and sings for the joy of it on a bare tree.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Bluebird.” The eastern bluebird is one of the first birds back in a New England spring, often while the trees are still bare; the male is bright blue above with a rusty-brown breast. A surmise is a guess; inspiriting means cheering; habiliments are clothes; indigo is deep blue; specimens are samples; discretion is good judgement; seraphic means like a seraph, a shining angel.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” VIII, “The Bluebird,” complete poem; opens “BEFORE you thought of spring, Except as a surmise, You see, God bless his suddenness, A…”; closes “…superior tree Without a single leaf, And shouts for joy to nobody But his seraphic self!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          323,
+          324
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f7f9ba4bfb493f603dd7ab595487f9603f143f1c194222c62ae7dfe07becaca2"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-12-q1",
+          "prompt": "When does the bluebird come, and how does the speaker feel about it?",
+          "facilitatorNotes": [
+            "Before you have really thought of spring, when it is only a guess. He appears suddenly, and she is delighted: “God bless his suddenness.”"
+          ],
+          "evidence": [
+            "BEFORE you thought of spring,",
+            "You see, God bless his suddenness,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-12-q2",
+          "prompt": "Describe the bird’s clothes. Why might he be “A little weather-worn”?",
+          "facilitatorNotes": [
+            "He wears “habiliments / Of indigo and brown,” blue and rusty brown, bright enough to cheer anyone. He is a little worn because he has flown a long way north and arrived while the weather is still rough, like a traveller in a dusty coat."
+          ],
+          "evidence": [
+            "A little weather-worn,",
+            "Of indigo and brown."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-12-q3",
+          "prompt": "“With specimens of song, / As if for you to choose.” What is the bird doing, and why might it sound like choosing?",
+          "facilitatorNotes": [
+            "He sings short phrases with pauses between them, “gay delays,” as a shopkeeper might lay out samples for a customer to pick from. The bluebird’s song really is a few soft, separate notes."
+          ],
+          "evidence": [
+            "With specimens of song,",
+            "With gay delays he goes"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-12-q4",
+          "prompt": "He “shouts for joy to nobody / But his seraphic self!” Was the song for us after all?",
+          "facilitatorNotes": [
+            "The first stanza imagined the song offered for us to choose; the end admits he sings for himself, on a tree without a leaf, with no audience needed. Some readers find that joyful, joy for its own sake; others feel a little shut out, or think the speaker is laughing at herself for thinking it was meant for her."
+          ],
+          "evidence": [
+            "As if for you to choose,",
+            "And shouts for joy to nobody"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-13",
+      "title": "The Humming-Bird (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 12,
+        "totalMinutes": 16
+      },
+      "challenge": "Read a poem that never names its subject, and work out how it shows something too fast to see.",
+      "focus": "In eight lines a hummingbird flashes past, ruffles the flowers and is gone, perhaps all the way to Africa.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The poem has no title of its own; the 1891 editors called it “The Humming-Bird.” The ruby-throated hummingbird is the only hummingbird common in the eastern United States: its wings beat so fast they blur and hum, its back shines green, and the male’s throat is red. Evanescence means vanishing quickly; resonance is a ringing or humming sound; cochineal is a deep red dye; Tunis is a city in North Africa, far across the ocean.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XV, “The Humming-Bird,” complete poem; opens “A ROUTE of evanescence With a revolving wheel; A resonance of emerald, A rush of…”; closes “…bush Adjusts its tumbled head,— The mail from Tunis, probably, An easy morning's ride.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          360,
+          360
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1726cdcbcf069967def50a425d7d7c77876d40de34487b1b86e4565b0424626a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-13-q1",
+          "prompt": "Imagine reading the poem without its title. Which details would let you guess the bird?",
+          "facilitatorNotes": [
+            "The “revolving wheel” of blurred wings, the hum (“resonance”), the green (“emerald”) and red (“cochineal”), the flowers left shaking, and the speed. The poem names colours and sounds, not a bird, because that is all the eye catches."
+          ],
+          "evidence": [
+            "With a revolving wheel;",
+            "A resonance of emerald,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-13-q2",
+          "prompt": "What is “A route of evanescence”? Why might the poem begin there?",
+          "facilitatorNotes": [
+            "A path of vanishing: you see only the line where something has been, not the thing itself. By the time you notice a hummingbird it is already gone, so the poem starts with its track."
+          ],
+          "evidence": [
+            "A ROUTE of evanescence",
+            "A rush of cochineal;"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-13-q3",
+          "prompt": "What do the flowers do after the bird has gone? What does “tumbled” tell you?",
+          "facilitatorNotes": [
+            "Each blossom “Adjusts its tumbled head,” like someone smoothing their hair after a gust of wind. The bird was there long enough to knock them about, and the flowers prove it."
+          ],
+          "evidence": [
+            "And every blossom on the bush",
+            "Adjusts its tumbled head,—"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-13-q4",
+          "prompt": "“The mail from Tunis, probably, / An easy morning’s ride.” Is the speaker serious?",
+          "facilitatorNotes": [
+            "It is a deadpan joke: the bird is so fast it might be a mail rider who left Africa this morning and finds the trip easy. “Probably” makes it funnier. There is a grain of truth, since hummingbirds really do migrate thousands of miles. Some readers take the bird to be bringing news, like a letter; that reading fits too."
+          ],
+          "evidence": [
+            "The mail from Tunis, probably,",
+            "An easy morning's ride."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-14",
+      "title": "The Rat (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a joke that treats an animal as a lodger, and notice how the poem’s shape fits its subject.",
+      "focus": "The rat lives in our house rent-free, outwits us, and has as much right to be there as nature itself.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Rat.” A tenant rents a home from a landlord. Concise means short and to the point; to repudiate is to refuse to accept; an obligation is a duty, here paying rent; to balk is to block; to sound is to find something out, and to circumvent is to get round it; reticent means silent and secretive; a decree is an official order; equilibrium is balance, here the balance of nature.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XXXV, “The Rat,” complete poem; opens “The rat is the concisest tenant. He pays no rent,— Repudiates the obligation, On schemes…”; closes “Neither decree Prohibits him, Lawful as Equilibrium.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          440,
+          442
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "03644f5507081b9f6a21e25feb75260ac744c9f8d59c4ff21a6e53bc7db934ab"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-14-q1",
+          "prompt": "The rat is called a “tenant.” What kind of tenant is he?",
+          "facilitatorNotes": [
+            "The worst kind for a landlord: he “pays no rent” and refuses even to admit he owes it, busy with his own plans. “Concisest” makes him the smallest, quietest, most tucked-away lodger in the house."
+          ],
+          "evidence": [
+            "The rat is the concisest tenant.",
+            "He pays no rent,—"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-14-q2",
+          "prompt": "What do people try to do about the rat, and how does it go?",
+          "facilitatorNotes": [
+            "They try to find him out and get round him, but he blocks their cleverness (“Balking our wit”). They can hate him, but hate cannot reach a creature that never shows himself or says a word."
+          ],
+          "evidence": [
+            "Balking our wit",
+            "Hate cannot harm"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-14-q3",
+          "prompt": "Look at the lengths of the lines as the poem goes on. How does the shape suit a rat?",
+          "facilitatorNotes": [
+            "The lines grow shorter and shorter until the last stanza is almost nothing, “Lawful as / Equilibrium.” The poem itself is concise, slipping away like the rat into a small hole."
+          ],
+          "evidence": [
+            "Neither decree",
+            "Lawful as"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-14-q4",
+          "prompt": "The rat is “Lawful as / Equilibrium.” What is the poem saying about his right to be there? Do you agree?",
+          "facilitatorNotes": [
+            "No human order forbids him; he belongs to the balance of nature, which needs no one’s permission. The poem half admires him. Readers who have dealt with rats, or know they can spread disease, may disagree; others may enjoy the joke that the landlord has no say."
+          ],
+          "evidence": [
+            "Prohibits him,",
+            "Equilibrium."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-15",
+      "title": "A Thunder-Storm (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a storm step by step, and notice how almost everything in it behaves like a living creature.",
+      "focus": "Wind, leaves, dust, thunder and lightning act out a summer storm until the rain breaks like a flood and just misses the speaker’s home.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “A Thunder-Storm.” A menace is a threat; livid means bluish-grey, or furious; dams hold back water; to quarter is to split into pieces, as lightning can split a tree.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XXXVII, “A Thunder-Storm,” complete poem; opens “THE wind begun to rock the grass With threatening tunes and low,— He flung a menace at…”; closes “…The waters wrecked the sky, But overlooked my father's house, Just quartering a tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          448,
+          452
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "eed6b9104dd953976ddc433d9322f76b7ebffa62321eb076bc4e99b4ca3b0712"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-15-q1",
+          "prompt": "Put the storm in order. What happens first, what next, and what last?",
+          "facilitatorNotes": [
+            "The wind rocks the grass and threatens; leaves fly and dust blows; wagons hurry, thunder rolls, lightning flashes; birds and cattle take shelter; one giant drop falls, then the downpour; the storm passes over the house and splits a tree."
+          ],
+          "evidence": [
+            "THE wind begun to rock the grass",
+            "There came one drop of giant rain,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-15-q2",
+          "prompt": "“The dust did scoop itself like hands / And throw away the road.” What else in the poem acts like a living thing?",
+          "facilitatorNotes": [
+            "The wind flings threats, the leaves unhook themselves, the lightning has a beak and a claw like a bird of prey, the birds “put up the bars” like people locking doors, and unseen hands hold the dams. Nature becomes a crowd of creatures acting out the storm."
+          ],
+          "evidence": [
+            "The leaves unhooked themselves from trees",
+            "The lightning showed a yellow beak,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-15-q3",
+          "prompt": "How can thunder hurry slowly?",
+          "facilitatorNotes": [
+            "Thunder rolls on in a long, slow rumble, yet the storm is coming on fast; the phrase holds both. Some readers hear the slow thunder against the hurrying wagons in the line before."
+          ],
+          "evidence": [
+            "The wagons quickened on the streets,",
+            "The thunder hurried slow;"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-15-q4",
+          "prompt": "The storm “overlooked my father's house, / Just quartering a tree.” How does the speaker feel at the end?",
+          "facilitatorNotes": [
+            "Relieved: the house was spared. But “Just” is an understatement, since a tree split in four is a frightening near miss. “Overlooked” can mean passed over and also looked down on. Readers may hear calm, or fear held in."
+          ],
+          "evidence": [
+            "But overlooked my father's house,",
+            "Just quartering a tree."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-16",
+      "title": "November (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 12,
+        "totalMinutes": 17
+      },
+      "challenge": "Find the season the poem describes, and notice how it talks back to other poets.",
+      "focus": "Dickinson writes about the plain grey days between autumn’s colour and the first snow, which other poets leave out.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “November.” Prosaic means plain and ordinary, the opposite of poetic; incisive means sharp, cutting; ascetic means bare and self-denying, like a hermit. William Cullen Bryant was a famous American poet who wrote about autumn and the goldenrod, a yellow wildflower; James Thomson, a Scottish poet, wrote about harvest sheaves, bundles of cut grain. Valves are things that open and shut; mesmeric means hypnotising.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” XLIX, “November,” complete poem; opens “BESIDES the autumn poets sing, A few prosaic days A little this side of the snow And that…”; closes “…remain, My sentiments to share. Grant me, O Lord, a sunny mind, Thy windy will to bear!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          495,
+          498
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8f1def8779488a1afacb0c932059ec94f5509f37264dd8957df52f7bc4c82d66"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-16-q1",
+          "prompt": "Exactly when in the year is this? Find the lines that place it.",
+          "facilitatorNotes": [
+            "After the autumn that poets sing about and before the snow: “A little this side of the snow / And that side of the haze,” the soft haze of an autumn warm spell. That is November."
+          ],
+          "evidence": [
+            "A little this side of the snow",
+            "And that side of the haze."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-16-q2",
+          "prompt": "Why does the poem mention Mr. Bryant’s goldenrod and Mr. Thomson’s sheaves?",
+          "facilitatorNotes": [
+            "Other poets wrote about autumn’s beauty, the yellow flowers and the harvest; those are gone now. She chooses the “prosaic” days nobody writes about. Calling the poets “Mr.” is gently teasing, as if they were neighbours."
+          ],
+          "evidence": [
+            "BESIDES the autumn poets sing,",
+            "Gone Mr. Bryant's golden-rod,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-16-q3",
+          "prompt": "What has gone still or closed in the third stanza? Who might the “elves” be?",
+          "facilitatorNotes": [
+            "The busy brook is quiet, perhaps freezing; spicy things, perhaps seed pods or buds, are sealed shut; and soft fingers put “many elves” to sleep. The elves could be insects, small animals going into winter sleep, or flowers, or fairy-folk: the poem leaves it open."
+          ],
+          "evidence": [
+            "Still is the bustle in the brook,",
+            "Mesmeric fingers softly touch"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-16-q4",
+          "prompt": "The poem ends with a prayer. What does she ask for, and why might November need it?",
+          "facilitatorNotes": [
+            "Only a squirrel may stay to share her feelings, so the days are lonely and bare. She asks God for a “sunny mind” to bear his “windy will”: both the cold winds and whatever else he sends. Some readers hear a joke in “windy”; others a serious wish for courage."
+          ],
+          "evidence": [
+            "Perhaps a squirrel may remain,",
+            "Thy windy will to bear!"
+          ]
+        }
+      ],
+      "months": [
+        11
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-17",
+      "title": "The Blue Jay (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 12,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a portrait that makes a bird both a soldier and a neighbour, and weigh the argument at the end.",
+      "focus": "The bold blue jay plays in the snow while the sky frowns, and the speaker protests that heaven should not leave him out.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Blue Jay.” The blue jay is a loud, crested blue bird that stays all through the New England winter. A brigadier is an army officer; civic means public-spirited; felicity is happiness; to censure is to scold; temerity is reckless boldness; pompous means self-important; nutriment is food; pungent means sharp-smelling; evergreens keep their needles all winter; a larder is a food store; terse means short and sharp; a tonic is a medicine that perks you up. Immortality is life after death; in Dickinson’s time people argued over whether animals had any.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book III, “Nature,” LI, “The Blue Jay,” complete poem; opens “NO brigadier throughout the year So civic as the jay. A neighbor and a warrior too, With…”; closes “…a tonic, His future a dispute; Unfair an immortality That leaves this neighbor out.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          506,
+          511
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "88fdb3d4060afe9f2a05be2136f002839b5794c7f9bb7d4386ea1207dcfbb64c"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-17-q1",
+          "prompt": "The jay is “A neighbor and a warrior too.” Which words make him a soldier, and which a neighbour?",
+          "facilitatorNotes": [
+            "Soldier: brigadier, warrior, “daring head,” a “militant” larder. Neighbour: “civic,” “neighbor,” “brother of the universe,” friendly with the snow. He is a bold soldier who is also good company."
+          ],
+          "evidence": [
+            "NO brigadier throughout the year",
+            "A neighbor and a warrior too,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-17-q2",
+          "prompt": "What does the jay do on a harsh February day? How is he different from the people in the poem?",
+          "facilitatorNotes": [
+            "He chases the scolding winds and is never blown away; he plays with the snow. The winds “censure us”: people shrink from the weather that the jay enjoys."
+          ],
+          "evidence": [
+            "Pursuing winds that censure us",
+            "I've often seen them play"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-17-q3",
+          "prompt": "Why does the speaker feel an apology is due to the sky?",
+          "facilitatorNotes": [
+            "The sky frowns pompously, but its frown only feeds the boldness of the jay and the snow, like a stern teacher whose frown makes cheeky children worse. The speaker jokingly feels sorry for the insulted sky."
+          ],
+          "evidence": [
+            "I felt apology were due",
+            "Whose pompous frown was nutriment"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-17-q4",
+          "prompt": "“Unfair an immortality / That leaves this neighbor out.” What is the speaker arguing? Do you agree?",
+          "facilitatorNotes": [
+            "If heaven is only for people, it would be unfair, since a creature so full of life and character deserves a place too. Readers may agree, disagree, or think she says it half as a joke and half in earnest; the line “His future a dispute” shows that the question was argued in her day."
+          ],
+          "evidence": [
+            "His future a dispute;",
+            "That leaves this neighbor out."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-dickinson-poems-second-1891-18",
+      "title": "The Oriole (1891 text)",
+      "sourceId": "dickinson-poems-second-1891",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 12,
+        "totalMinutes": 19
+      },
+      "challenge": "Collect the many names the poem gives one bird, and follow its jokes about gold and treasure.",
+      "focus": "The golden oriole is a thief, a cheat and a glorious singer, and the speaker finds in an apple tree the treasure heroes sailed the world to seek.",
+      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Oriole.” The Baltimore oriole is a brilliant orange-and-black songbird that comes north in May and feeds on fruit and nectar in orchards. In Greek myth King Midas turned everything he touched to gold, and Jason sailed with heroes to win the Golden Fleece. A prodigal spends wildly; to disavow is to deny; badinage is teasing talk; an alighting mine is a gold mine coming down to land; a dissembler is a pretender; an epicure loves fine food; betimes means at times; an oratorio is a great work of music for voices; attar is perfume made from flowers; decamping means leaving in a hurry; Burma (spelt “Burmah”) was famous for rubies and golden temples; bards are poets; an emolument is a payment or treasure.",
+      "contentNote": "The poem calls the bird “The Jesuit of orchards,” using an old prejudice that treated Jesuits, members of a Catholic religious order, as cunning deceivers.",
+      "excerpt": {
+        "locator": "Book III, “Nature,” XIII, “The Oriole,” complete poem; opens “ONE of the ones that Midas touched, Who failed to touch us all, Was that confiding…”; closes “…if there were a Jason, Tradition suffer me Behold his lost emolument Upon the apple-tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          344,
+          350
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "40079bf191e3524f19410c1d2be40020e0baa889a0a9318de13cc619473fd0a9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-dickinson-poems-second-1891-18-q1",
+          "prompt": "“One of the ones that Midas touched” tells you the oriole’s colour. Find other gold and glitter in the poem.",
+          "facilitatorNotes": [
+            "He is “So dazzling, we mistake him / For an alighting mine”; he has “The splendor of a Burmah”; he is “The meteor of birds”; and at the end he is the Golden Fleece itself, on the apple tree. Gold runs through the whole poem."
+          ],
+          "evidence": [
+            "ONE of the ones that Midas touched,",
+            "For an alighting mine."
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-18-q2",
+          "prompt": "Stanza three gives the bird six names. Which are praise and which are blame? Why both?",
+          "facilitatorNotes": [
+            "Dissembler, epicure and thief are blame, pleader nearly so; oratorio and “ecstasy in chief” are praise. He steals fruit and nectar and sings gloriously, so he “cheats as he enchants.” The poem cannot decide whether to scold or applaud him, and enjoys not deciding."
+          ],
+          "evidence": [
+            "A pleader, a dissembler,",
+            "He cheats as he enchants"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-18-q3",
+          "prompt": "“The Jesuit of orchards” uses a group of real people as a word for a sly cheat. What does the speaker mean, and is it fair to use people that way?",
+          "facilitatorNotes": [
+            "She means a charming trickster who wins you over while he robs you. The word comes from an old Protestant prejudice against the Jesuits, a Catholic order. Readers should see that it is a stereotype: judging a whole group by a label is unfair, and we would not use the word this way now. Some may suggest a better word of their own."
+          ],
+          "evidence": [
+            "The Jesuit of orchards,"
+          ]
+        },
+        {
+          "id": "reading-5-dickinson-poems-second-1891-18-q4",
+          "prompt": "The speaker never believed Jason went after a golden fleece. If there were a Jason, where would his treasure be? What is the joke?",
+          "facilitatorNotes": [
+            "On the apple tree: the oriole is the golden fleece, a treasure in a country orchard that no hero needed to sail for. The “rural man, / With thoughts that make for peace” finds wonders at home instead of in war and adventure. Some readers hear the humble speaker as teasing the old heroes; others as quietly boasting."
+          ],
+          "evidence": [
+            "But then I am a rural man,",
+            "Upon the apple-tree."
+          ]
+        }
+      ]
     }
   ]
 }
