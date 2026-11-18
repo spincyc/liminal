@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/49008/pg49008-images.html",
     "downloadSha256": "f7f76f8f8355a117c6316733facb3884041438fcb8ecb5922f430047eb96bb83",
-    "method": "Project Gutenberg HTML (pglaf mirror of ebook 49008, pg49008-images.html). Kept four spans of the volume in order: from the HAMLET. heading to the first NOTES. heading, from The Tragicall Historie of HAMLET Prince of Denmarke. to KING LEAR., from KING LEAR. to the following NOTES. heading, and from OTHELLO. to the following NOTES. heading. Removed page numbers, line numbers, footnote anchors and the footnote divisions; play titles became level-1 headings, Dramatis Personae and act titles level-2 and scene titles level-3 headings; centred stage directions and Dramatis Personae lines became paragraphs; each stanza division (one speech) became a stanza block with a line per HTML line break; runs of ASCII whitespace collapsed to one space (no-break spaces kept), emphasis and small capitals flattened; the three plain-text note references removed and 'O villain' printed for the transcription's digit zero, as the edition note states. On 2026-11-18 blocks 2216 (“them dost evil” to “thou dost evil”) and 2257 (a space restored after “fine word,”) were corrected after collating King Lear, Act I, against the page images of IA shakespeareworks08claruoft."
+    "method": "Project Gutenberg HTML (pglaf mirror of ebook 49008, pg49008-images.html). Kept four spans of the volume in order: from the HAMLET. heading to the first NOTES. heading, from The Tragicall Historie of HAMLET Prince of Denmarke. to KING LEAR., from KING LEAR. to the following NOTES. heading, and from OTHELLO. to the following NOTES. heading. Removed page numbers, line numbers, footnote anchors and the footnote divisions; play titles became level-1 headings, Dramatis Personae and act titles level-2 and scene titles level-3 headings; centred stage directions and Dramatis Personae lines became paragraphs; each stanza division (one speech) became a stanza block with a line per HTML line break; runs of ASCII whitespace collapsed to one space (no-break spaces kept), emphasis and small capitals flattened; the three plain-text note references removed and 'O villain' printed for the transcription's digit zero, as the edition note states. On 2026-11-18 blocks 2216 (“them dost evil” to “thou dost evil”) and 2257 (a space restored after “fine word,”) were corrected after collating King Lear, Act I, against the page images of IA shakespeareworks08claruoft. On 2026-11-18 seven of the editors' lettered textual notes that the first conversion had kept as paragraphs after the Dramatis Personae ([A] and [B] for Hamlet, [C] for King Lear, [D] to [G] for Othello) were removed as part of the omitted apparatus."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 4774,
-    "sha256": "b701f601ad9e55d9653270514363cf9f98d6f6c94f38ef8306eeb84f0aa6ef4e"
+    "blocks": 4767,
+    "sha256": "b450af730e758dfd3495ea12eea9102f3d7e43152837cb378146c9530aa21ba7"
   }
 }
