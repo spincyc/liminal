@@ -932,6 +932,81 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-morley-insect-folk-1903-14",
+      "title": "The Insect Folk — The Horned Corydalus: A Monster in the Brook",
+      "sourceId": "morley-insect-folk-1903",
+      "genre": "informational",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow an insect through a complete change of form, and decide whether it is a beauty or a monster.",
+      "focus": "The children hunt under brook stones for the big dobson larva and learn how it turns into a winged insect.",
+      "context": "Margaret Warner Morley’s The Insect Folk (1903) is written as a teacher talking with a group of children (Nell, May, John, Ned, Mollie and others) while they look at real insects. Its science is more than a hundred years old. The dobson, or hellgrammite, is the larva of the dobsonfly, which Morley calls the horned corydalus. An order is a large group of insects. The thorax is the middle part of an insect’s body, which carries the legs and wings; the abdomen is the rear part; rudimentary means not fully formed; segments are sections; to moult is to shed the skin; to bid defiance is to stand up against; metamorphosis is a great change of form; formidable means frightening. Scientists today would say the larva does have a thorax: the first three segments, which carry its legs.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Horned Corydalus,” from the opening through the female corydalus; opens “No more bugs, if you please.”; closes “Now here she is--a fit mate for her formidable-looking companion.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1669,
+          1712
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9d8b19c7e4fbfa6daa86fe99eab1bc3d334e85abfb986ee5dc2a710acae4f5c0"
+      },
+      "questions": [
+        {
+          "id": "reading-4-morley-insect-folk-1903-14-q1",
+          "prompt": "Where and how do the children hunt for the dobson? What happens to Nell?",
+          "facilitatorNotes": [
+            "They turn over stones at the edge of a brook; Nell slips and tumbles in, but the teacher says the sun will dry her and she may still find one."
+          ],
+          "evidence": [
+            "we have to turn over the stones along the edge of the brook until we find what we are after.",
+            "She has tumbled into the brook."
+          ]
+        },
+        {
+          "id": "reading-4-morley-insect-folk-1903-14-q2",
+          "prompt": "How does the dobson larva stay put in swift water, and why does it hide under stones?",
+          "facilitatorNotes": [
+            "It hooks the two pairs of hooks at its tail round a stone or stick like anchors. It hides because fish love to eat it and fishermen hunt it for bait."
+          ],
+          "evidence": [
+            "Those two pairs of hooks at the tip of its body are its anchors.",
+            "fishes are very fond of dobsons, and that is why they hide away."
+          ]
+        },
+        {
+          "id": "reading-4-morley-insect-folk-1903-14-q3",
+          "prompt": "How is the dobson’s growing up different from that of the other insects the class has studied?",
+          "facilitatorNotes": [
+            "The others changed a little at each moult. The dobson crawls into the bank still a larva, lies still for about a month as a pupa, and comes out a winged adult: a complete change."
+          ],
+          "evidence": [
+            "All of our other insect friends have changed gradually from larval to adult form.",
+            "Although so still and apparently lifeless, yet it lives."
+          ]
+        },
+        {
+          "id": "reading-4-morley-insect-folk-1903-14-q4",
+          "prompt": "“A beauty? or a monster? That is just as you feel about it.” Which is it for you? What does the male’s big jaw teach about judging by looks?",
+          "facilitatorNotes": [
+            "Readers may choose either and give reasons. The male’s long curved jaws look dangerous, but the female, with smaller jaws, is the real biter, so appearances can mislead."
+          ],
+          "evidence": [
+            "That is just as you feel about it.",
+            "the creature's appearance is worse than its bite"
+          ]
+        }
+      ]
     }
   ]
 }
