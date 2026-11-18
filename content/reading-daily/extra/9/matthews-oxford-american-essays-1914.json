@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "matthews-oxford-american-essays-1914",
+  "readings": [
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-01",
+      "title": "The Ephemera: An Emblem of Human Life",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Benjamin Franklin",
+      "workTitle": "The Ephemera",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Enjoy the joke first, then reread the old fly’s speech as a serious meditation. Decide where satire ends and self-portrait begins.",
+      "focus": "A comic fable that shrinks a lifetime to a few hours to test what ambition, politics and fame are worth.",
+      "context": "Franklin wrote this playful letter, a “bagatelle” or trifle, while he was the American envoy in France, for his friend and neighbour Madame Brillon, a gifted musician who lived in Passy, near Paris. He wrote it in 1778, when he was over seventy. An ephemera is a mayfly, an insect that lives as an adult for about a day. The Moulin Joly was a garden estate on an island in the Seine. The two “musicians,” a cousin and a moscheto, are gnats standing for rival composers whose admirers were quarrelling in Paris. “Art is long, and life is short” translates an ancient proverb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Ephemera: An Emblem of Human Life, by Benjamin Franklin in The Oxford Book of American Essays (1914), complete letter; opens “You may remember, my dear friend, that when we lately spent that happy day in the…”; closes “…ephemeræ, and now and then a kind smile and a tune from the ever amiable _Brillante_.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4,
+          6
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6fc1959249275a4b2ce60f7a9ad7b8a8c4e037f08bf445e830728fa4194615da"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q1",
+          "prompt": "How does Franklin set up the joke in his first paragraph? Which details make the flies’ world a miniature of human society?",
+          "facilitatorNotes": [
+            "He claims to “understand all the inferior animal tongues,” hears the flies quarrelling over foreign musicians, and praises their government because they have no grievance but music. They behave “as if they had been sure of living a month.”",
+            "The fable flatters Madame Brillon’s world of music while teasing people who spend brief lives on fashionable disputes, Franklin perhaps among them."
+          ],
+          "evidence": [
+            "You know I understand all the inferior animal tongues.",
+            "as regardless of the shortness of life as if they had been sure of living a month"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q2",
+          "prompt": "The old ephemera has lived “four hundred and twenty minutes.” Which of his laments could a human being make, and what makes them comic or sad in a fly’s mouth?",
+          "facilitatorNotes": [
+            "He mourns the friends of his youth, his toil gathering honey-dew, his political struggles, the slowness of philosophy, and the emptiness of a famous name after death. Shrinking a life to hours makes ambition look absurd.",
+            "The laments are also Franklin’s own: he was an aged statesman and scientist far from home. Readers may hear satire, a self-portrait, or both, and his question “what can laws do without morals?” is not only a joke."
+          ],
+          "evidence": [
+            "Alas! art is long, and life is short!",
+            "But what will fame be to an ephemera who no longer exists?"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q3",
+          "prompt": "What “solid pleasures” remain to the old ephemera at the end? How does the ending change the purpose of the piece?",
+          "facilitatorNotes": [
+            "Not fame or politics but a life “spent in meaning well,” good conversation, and a tune from “Brillante,” a compliment to Madame Brillon. The meditation on vanity turns into a gallant letter.",
+            "Some readers find the ending a graceful answer to the fly’s despair; others think the compliment lightly sidesteps the hard question he has raised."
+          ],
+          "evidence": [
+            "the reflection of a long life spent in meaning well",
+            "and now and then a kind smile and a tune from the ever amiable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-02",
+      "title": "The Whistle",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Benjamin Franklin",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 18,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow how a childhood story becomes a saying and then a test applied to six kinds of people. Ask whether every example fits the rule equally well.",
+      "focus": "A parable about the “false estimates” people make of the value of things.",
+      "context": "Franklin wrote this playful letter, a “bagatelle” or trifle, while he was the American envoy in France, for his friend and neighbour Madame Brillon, a gifted musician who lived in Passy, near Paris. This letter dates from 1779; Madame Brillon had written to him about her idea of Paradise. Coppers are copper coins. Levees were morning receptions held by kings and great men; equipages are carriages with horses and servants. Franklin does not explain “the apples of King John,” which seems to be a private joke; read it as a temptation he hopes never to be offered.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Whistle, by Benjamin Franklin in The Oxford Book of American Essays (1914), complete letter; opens “I received my dear friend's two letters, one for Wednesday and one for Saturday. This is…”; closes “…my dear friend, and believe me ever yours very sincerely and with unalterable affection.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          24
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "edec2957108eed1f202de359053cc09e2e87a0f7a1b27b7f5b410f2424f21dd1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q1",
+          "prompt": "Retell the childhood story in a sentence. What made the seven-year-old unhappy: the whistle, the price, or the laughter?",
+          "facilitatorNotes": [
+            "He gave all his coppers for a whistle worth a quarter of that; his family pointed out what else he could have bought and laughed until he cried. The pain came from comparing what he had with what he might have had.",
+            "Some students will argue that without the laughter he would have been content, which raises the question of who decides what a thing is worth."
+          ],
+          "evidence": [
+            "told me I had given four times as much for it as it was worth",
+            "and laughed at me so much for my folly, that I cried with vexation"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q2",
+          "prompt": "Franklin applies the lesson to six kinds of people. Which example seems strongest to you, and which most questionable? Consider especially the “beautiful sweet-tempered girl.”",
+          "facilitatorNotes": [
+            "The courtier, the politician, the miser, the pleasure-seeker, the spendthrift and the unhappily married girl each trade something valuable for something less. The repeated pattern builds the rule by accumulation.",
+            "The last example treats a woman’s marriage as her bargain, though in Franklin’s day she often had little choice; readers may find it unfair, or simply a sign of the period. Accept any judgment grounded in the examples."
+          ],
+          "evidence": [
+            "When I see a beautiful sweet-tempered girl married to an ill-natured brute of a husband",
+            "If I knew a miser, who gave up every kind of comfortable living"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q3",
+          "prompt": "Why does Franklin end by admitting that he too might “ruin” himself? Does the admission weaken or strengthen his argument?",
+          "facilitatorNotes": [
+            "After “all this wisdom of which I am boasting,” he confesses that some temptations are irresistible and asks for “charity” toward the unhappy. The lecture becomes a shared weakness, keeping the letter’s affectionate tone.",
+            "Some readers find the humility persuasive; others see a witty escape from his own rule. The letter’s audience, a close friend, helps explain the choice."
+          ],
+          "evidence": [
+            "Yet I ought to have charity for these unhappy people",
+            "with all this wisdom of which I am boasting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-03",
+      "title": "The Philosophy of Composition: beginning with the end",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Restate Poe’s method in your own words before judging it. Then test his argument about length one step at a time.",
+      "focus": "A writer’s claim that a poem can be built like a mathematical problem, starting from its intended effect.",
+      "context": "Edgar Allan Poe published “The Raven” in 1845 and this essay in Graham’s Magazine in 1846, claiming to show step by step how the poem was made. Many readers doubt that it was composed as coolly as he says, so the essay is both criticism and performance. Reading “The Raven” first (a Grade 9 school night in Week 12) helps. Charles Dickens and William Godwin were English novelists. A dénouement is the final unravelling of a plot; histrio is Latin for actor; a desideratum is something needed; modus operandi means method of working; ceteris paribus, other things being equal.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the start through the length of “The Raven”; opens “CHARLES DICKENS, in a note now lying before me, alluding to an examination I once made of…”; closes “…intended poem--a length of about one hundred lines. It is, in fact, a hundred and eight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-04",
+        "blocks": [
+          271,
+          282
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8aa7067433468aefc72458d36f254af01513655ed33705c53c8c47ab14e040ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q1",
+          "prompt": "What is the “radical error” Poe finds in the usual way of constructing a story, and what does he do instead?",
+          "facilitatorNotes": [
+            "Most writers begin with a thesis or a striking event and fill the “crevices” as they go. Poe begins with an effect on the reader, then chooses incidents and tone to produce it, with the ending always in view.",
+            "Students may find this a useful method or an incomplete account of how writing happens; either view can be argued from the paragraph."
+          ],
+          "evidence": [
+            "There is a radical error, I think, in the usual mode of constructing a story.",
+            "I prefer commencing with the consideration of an effect."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q2",
+          "prompt": "Why, according to Poe, do most writers hide how they work? What does his long list of theatre properties suggest about writing?",
+          "facilitatorNotes": [
+            "Vanity: they prefer to seem inspired by “a species of fine frenzy.” The wheels, scene-shifting tackle and red paint make the poet an actor staging an illusion, and Poe offers to show the machinery.",
+            "Some readers notice the irony that his own essay may be just as staged, a performance of cool control instead of frenzy."
+          ],
+          "evidence": [
+            "Most writers--poets in especial--prefer having it understood that they compose by a species of fine frenzy",
+            "the tackle for scene-shifting"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q3",
+          "prompt": "Poe claims the poem proceeded “with the precision and rigid consequence of a mathematical problem,” beginning with its length. Is his reasoning about length convincing?",
+          "facilitatorNotes": [
+            "He argues that unity of impression needs a single sitting and that intense excitement is brief, so a long poem is “merely a succession of brief ones,” and half of Paradise Lost is prose. Then he arrives at about a hundred lines, in fact a hundred and eight.",
+            "Readers can test the premise that poetic effect must be brief, and many find the exact figure a little comic. Note his exception for prose such as Robinson Crusoe."
+          ],
+          "evidence": [
+            "with the precision and rigid consequence of a mathematical problem",
+            "What we term a long poem is, in fact, merely a succession of brief ones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-04",
+      "title": "The Philosophy of Composition: Beauty, melancholy and “Nevermore”",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the chain of decisions (tone, refrain, word, speaker, subject, climax) and at each link ask whether the choice was really forced, as Poe claims.",
+      "focus": "Poe’s theory of Beauty and his account of “Nevermore” as a product of design.",
+      "context": "Recap: Poe argued that a writer should begin with the ending and with the effect he wants, and promised to show that “The Raven” was built like a mathematical problem, starting from a length of about a hundred lines. A refrain, or burden, is a repeated line or word; nonchalance is casual unconcern; Aidenn is Poe’s version of Eden, meaning paradise.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from Poe’s choice of effect through his account of composing the climactic stanza first; opens “My next thought concerned the choice of an impression, or effect, to be conveyed: and…”; closes “…have purposely enfeebled them, so as not to interfere with the climacteric effect.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-03",
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-05",
+        "blocks": [
+          283,
+          294
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e8a77de2701d7a2b42b8f54b86784f4063606163ce8b5efd27f0a24f563a7441"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q1",
+          "prompt": "Poe separates Beauty from Truth and Passion. What does each satisfy, and why does he think poetry belongs to Beauty?",
+          "facilitatorNotes": [
+            "Beauty is “an effect,” an elevation of the soul; Truth satisfies the intellect and demands precision; Passion excites the heart and demands homeliness. Truth and Passion are “far more readily attainable in prose,” so they may enter a poem only as subordinate contrasts, like discords in music.",
+            "Students can test the theory against poems they know that argue a case or express anger."
+          ],
+          "evidence": [
+            "Beauty is the sole legitimate province of the poem",
+            "far more readily attainable in prose"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q2",
+          "prompt": "How does Poe arrive at the word “Nevermore,” and then at a raven? Which step looks most like logic and which most like taste?",
+          "facilitatorNotes": [
+            "A varied refrain must be brief, so a single word; sonorous, so a long o with r; melancholy, so “Nevermore.” A reasoning person would not repeat it, so a non-reasoning creature: first a parrot, then a raven, more “in keeping” with the tone.",
+            "The sound argument sounds technical, while raven over parrot is plainly taste. Readers may also doubt that “Nevermore” really came first to mind."
+          ],
+          "evidence": [
+            "In fact, it was the very first which presented itself.",
+            "a parrot, in the first instance, suggested itself, but was superseded forthwith by a Raven"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q3",
+          "prompt": "Poe calls the death of a beautiful woman “unquestionably, the most poetical topic in the world.” How does he reach this conclusion, and what does the reasoning leave out?",
+          "facilitatorNotes": [
+            "Melancholy is the proper tone; death is the most melancholy topic; it is most poetical when joined to Beauty; so a beautiful woman’s death, mourned by her lover. The woman exists only as the occasion of someone else’s feeling.",
+            "Many readers challenge the word “unquestionably”; others defend it as a description of a long tradition of elegy. Notice too that he began writing “at the end.”"
+          ],
+          "evidence": [
+            "the death, then, of a beautiful woman is, unquestionably, the most poetical topic in the world",
+            "at the end, where all works of art should begin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-05",
+      "title": "The Philosophy of Composition: a chamber, a storm and an emblem",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 13,
+        "totalMinutes": 29
+      },
+      "challenge": "Match each claim about setting, contrast and ending with the lines Poe quotes. Decide where his explanation stops describing mechanics and starts interpreting meaning.",
+      "focus": "Frame, contrast and “suggestiveness”: how a plain narrative becomes an emblem.",
+      "context": "Recap: Poe has traced “The Raven” from its chosen effect, a melancholy Beauty, through the refrain “Nevermore,” the raven as a speaker without reason, and a bereaved lover; he wrote the climactic stanza first. Trochaic verse uses feet of a stressed syllable followed by an unstressed one; octameter has eight feet; catalectic means a syllable short. Pallas Athena was the Greek goddess of wisdom. The “transcendentalists” were New England writers such as Emerson, whose work Poe disliked.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the remarks on versification to the end; opens “And here I may as well say a few words of the versification. My first object (as usual)…”; closes “…soul _from out that shadow_ that lies floating on the floor Shall be lifted--nevermore.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-04",
+        "continuesTo": null,
+        "blocks": [
+          295,
+          315
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "72d2a38152f55074b968514773c089736d9937bad931f7d690a128dda2359425"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q1",
+          "prompt": "Why does Poe insist on “a close circumscription of space”? How do the storm and the marble bust serve the same principle?",
+          "facilitatorNotes": [
+            "A small room works like “a frame to a picture,” concentrating attention. The storm outside contrasts with the stillness within, and white marble with black plumage; Pallas suits a scholar and sounds well. Each choice is justified by effect, not realism.",
+            "Students may ask whether readers actually notice such contrasts, or feel them without noticing, which is what Poe would claim."
+          ],
+          "evidence": [
+            "it has the force of a frame to a picture",
+            "for the effect of contrast between the marble and the plumage"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q2",
+          "prompt": "Poe says that, read as a simple narrative, the poem never oversteps “the limits of the real.” What keeps the student asking questions when he can guess the answer?",
+          "facilitatorNotes": [
+            "An escaped tame raven seeks shelter from a storm and repeats its one learned word. The student “guesses the state of the case” but keeps asking, driven by superstition and “the human thirst for self-torture,” to enjoy “the luxury of sorrow.”",
+            "This psychological claim is one of the essay’s most interesting; students may compare it with their own reading of the poem or with grief they have observed."
+          ],
+          "evidence": [
+            "the human thirst for self-torture",
+            "so far there has been no overstepping of the limits of the real"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q3",
+          "prompt": "What does Poe mean by “suggestiveness,” and why does he save the poem’s first metaphor for the end? Do you accept his statement of what the Raven stands for?",
+          "facilitatorNotes": [
+            "A bare narrative has “hardness or nakedness”; it needs an “undercurrent, however indefinite, of meaning,” though not so much that meaning becomes the upper current, his jab at the transcendentalists. “From out my heart” turns readers toward a moral, and the last stanza makes the Raven an emblem of mournful and never-ending remembrance.",
+            "Students may accept the label or argue that the poem suggests more than any label, which is the indefinite undercurrent Poe himself praises."
+          ],
+          "evidence": [
+            "some undercurrent, however indefinite, of meaning",
+            "the first metaphorical expression in the poem"
+          ]
+        }
+      ]
+    }
+  ]
+}
