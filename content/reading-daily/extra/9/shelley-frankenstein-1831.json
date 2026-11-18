@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "shelley-frankenstein-1831",
+  "readings": [
+    {
+      "id": "reading-9-shelley-frankenstein-1831-01",
+      "title": "Frankenstein, Chapter VI: a letter from Geneva",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 15,
+        "totalMinutes": 26
+      },
+      "challenge": "Read Elizabeth’s letter as a portrait of the home Victor has neglected. Notice what she chooses to tell, what she cannot know, and why Justine’s history sits at its centre.",
+      "focus": "A cheerful letter whose details gain weight from what the reader already knows.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. After the creature awoke and disappeared (Chapter V), Victor fell into a nervous fever lasting months. His friend Henry Clerval nursed him in Ingolstadt and now hands him a letter from Elizabeth Lavenza, the cousin raised with him as a sister. Ariosto was an Italian Renaissance poet and Angelica the heroine of his Orlando Furioso. Geneva was then an independent republic, which explains Elizabeth’s remarks on its “republican institutions.”",
+      "contentNote": "Elizabeth recounts a mother’s cruelty to her daughter and the deaths of several children.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VI, from the start through Victor’s reply to Elizabeth’s letter; opens “Clerval then put the following letter into my hands. It was from my own Elizabeth:--”; closes “…commenced, and proceeded regularly. In another fortnight I was able to leave my chamber.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-02",
+        "blocks": [
+          201,
+          215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cbd25094a7e88406fdb0b122012c5f981a76ec4929f46a96acec517b3496dd44"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-01-q1",
+          "prompt": "What does Elizabeth assume about Victor’s illness and his silence? How does the reader’s knowledge change the meaning of her worry?",
+          "facilitatorNotes": [
+            "She imagines “some mercenary old nurse” and begs for one word in his own hand, believing illness alone keeps him silent. The reader knows the fever followed the creation and the creature’s escape, so this loving letter reaches a man with a secret.",
+            "Students may also notice her frustration that she could not make the journey herself, a hint of how little freedom of movement she has."
+          ],
+          "evidence": [
+            "yet one word from you, dear Victor, is necessary to calm our apprehensions",
+            "how often have I regretted not being able to perform it myself!"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-01-q2",
+          "prompt": "Elizabeth insists that a servant in Geneva “does not mean the same thing as a servant in France and England.” How does this claim shape the way she presents Justine?",
+          "facilitatorNotes": [
+            "She credits Geneva’s institutions with narrowing the distance between classes, so that service need not mean “ignorance.” That frames Justine as almost a daughter of the house, educated and loved.",
+            "Readers may still see the limits of the ideal: Justine “learned the duties of a servant” and is praised above all for gratitude and for imitating her protectress. Both the ideal and its limits are in the letter."
+          ],
+          "evidence": [
+            "A servant in Geneva does not mean the same thing as a servant in France and England.",
+            "she paid the greatest attention to every gesture of my aunt"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-01-q3",
+          "prompt": "Elizabeth says the lake and mountains “never change” and that the household is “regulated by the same immutable laws.” Why might Shelley give her this belief at this point in the novel?",
+          "facilitatorNotes": [
+            "She describes a stable, contented world: William’s dimples, the town’s weddings, a placid home. Victor has just broken one of nature’s laws, and what he made is loose in the world, so her confidence in permanence prepares for loss.",
+            "Even without knowing what follows, readers can notice that the letter itself records deaths, cruelty and change, which quietly contradicts her claim."
+          ],
+          "evidence": [
+            "I think our placid home, and our contented hearts are regulated by the same immutable laws",
+            "Little alteration, except the growth of our dear children, has taken place since you left us."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-02",
+      "title": "Frankenstein, Chapter VI: professors, languages and a spring walk",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 15,
+        "totalMinutes": 26
+      },
+      "challenge": "Compare the two professors’ praise and its effect on Victor. Then trace the language of healing in the last paragraphs and ask what Clerval supplies that study did not.",
+      "focus": "Concealment and recovery: Victor keeps his secret while friendship and nature restore him.",
+      "context": "Recap: Elizabeth’s letter from Geneva described a placid home, the history of Justine Moritz, a servant raised almost as a daughter of the family, and the youngest brother, William; Victor wrote back at once. M. Waldman and M. Krempe are the Ingolstadt professors who first directed his studies in natural philosophy (science). Cornelius Agrippa is the Renaissance occult writer Victor read as a boy. “Orientalists” were European scholars of Persian, Arabic and Sanskrit writing.",
+      "contentNote": "Victor’s praise of “oriental” literature as sensuous and unlike the “manly” classics repeats a European stereotype of his period.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VI, from Victor’s recovery to the end of the chapter; opens “One of my first duties on my recovery was to introduce Clerval to the several professors…”; closes “…own spirits were high, and I bounded along with feelings of unbridled joy and hilarity.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-01",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-03",
+        "blocks": [
+          216,
+          224
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "05d5a977e14aa337138b9b0e2103c03ed3cf4bdb2900eb723e1aecb2213ef02e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-02-q1",
+          "prompt": "Why is Waldman’s kind praise “torture” to Victor? What does Clerval do, and what does Victor fail to do?",
+          "facilitatorNotes": [
+            "Each compliment on his progress recalls the creation; Victor imagines the professor laying out instruments for “a slow and cruel death.” Clerval notices and changes the subject, but Victor never confides, fearing that telling would fix the memory more deeply.",
+            "Secrecy here is a choice, and its consequences will grow. Some readers sympathize with a man protecting himself; others see the first step of a dangerous silence."
+          ],
+          "evidence": [
+            "He meant to please, and he tormented me.",
+            "yet I could never persuade myself to confide to him that event"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-02-q2",
+          "prompt": "How does Victor describe what he gains from the “orientalists,” and why does he turn to them now?",
+          "facilitatorNotes": [
+            "He wants “to fly from reflection,” reads only “to understand their meaning,” and finds their melancholy “soothing.” Study has become escape rather than inquiry, the reverse of his earlier ambition.",
+            "His closing contrast with the “manly and heroical poetry of Greece and Rome” reveals period stereotypes. Students can ask whether he is describing the literature or his own need for comfort."
+          ],
+          "evidence": [
+            "now that I wished to fly from reflection, and hated my former studies",
+            "How different from the manly and heroical poetry of Greece and Rome!"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-02-q3",
+          "prompt": "“A selfish pursuit had cramped and narrowed me.” What has Clerval restored, according to Victor? Does the chapter’s happy ending feel secure?",
+          "facilitatorNotes": [
+            "Clerval brings back the love of nature, “the cheerful faces of children,” and social feeling. Victor’s sudden address in the second person (“Excellent friend!”) speaks to someone absent from the telling, a hint that the narrator knows more than the moment shows.",
+            "Some readers find the recovery real; others hear precariousness in “unbridled joy” and in the “invincible burden” of thoughts he had to throw off."
+          ],
+          "evidence": [
+            "A selfish pursuit had cramped and narrowed me, until your gentleness and affection warmed and opened my senses",
+            "I bounded along with feelings of unbridled joy and hilarity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-03",
+      "title": "Frankenstein, Chapter VII: a father’s letter and the road home",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the father’s letter for the way it tries to manage grief. Then follow Victor’s changing pace on the journey and the moment his narration looks ahead.",
+      "focus": "News of a murder, and a narrator who foreshadows his own future.",
+      "context": "Recap: Recovering in Ingolstadt with Clerval’s help, Victor felt happy again and was about to return home to Geneva for the first time in nearly six years. A miniature is a small portrait, often worn in a locket. Plainpalais is open ground outside Geneva’s walls; Lausanne lies on the same lake. “The palaces of nature” quotes Byron’s Childe Harold’s Pilgrimage.",
+      "contentNote": "A young child is found murdered (strangled); the discovery is described briefly.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VII, from Alphonse Frankenstein’s letter through Victor’s approach to Geneva; opens “On my return, I found the following letter from my father:--”; closes “…dreaded, I did not conceive the hundredth part of the anguish I was destined to endure.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-02",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-04",
+        "blocks": [
+          226,
+          252
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8cf0187d60a9dbe66019ed7d4fa36fe933ef08ee866f069d53a25302d8d072b5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-03-q1",
+          "prompt": "Alphonse calls a short note “a cruel kindness.” How does he try to prepare Victor, and does it work?",
+          "facilitatorNotes": [
+            "He refuses to hide the news in a brief note, admits that preparation is impossible, and even predicts that Victor’s eye is already skimming ahead. Then “William is dead!” breaks in.",
+            "Readers may see a loving father imagining his reader’s experience, or a letter whose delay only sharpens dread. Both readings use the same lines."
+          ],
+          "evidence": [
+            "But that would be a cruel kindness, and I dare not do it.",
+            "even now your eye skims over the page"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-03-q2",
+          "prompt": "Why does Elizabeth blame herself for William’s death? What does the father ask Victor to bring home instead of vengeance?",
+          "facilitatorNotes": [
+            "She had let William wear the miniature of Victor’s mother, which seems to have tempted the murderer. Alphonse asks for “peace and gentleness” that will heal rather than fester.",
+            "The innocent blame themselves in this novel while the one with real responsibility stays silent; students can watch for the pattern."
+          ],
+          "evidence": [
+            "O God! I have murdered my darling child!",
+            "not brooding thoughts of vengeance against the assassin, but with feelings of peace and gentleness"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-03-q3",
+          "prompt": "Victor writes, “Alas! I prophesied truly.” What does this sentence reveal about when and how he is telling his story?",
+          "facilitatorNotes": [
+            "He narrates from a later time, knowing the outcome; his dark forecast erred only in falling short of “the hundredth part” of what followed. Foreshadowing builds dread and reminds us that Victor shapes the account.",
+            "Some readers find it effective suspense; others find it self-dramatizing. Compare his question to the mountains, whether they “prognosticate peace” or mock him."
+          ],
+          "evidence": [
+            "Alas! I prophesied truly, and failed only in one single circumstance",
+            "Is this to prognosticate peace, or to mock at my unhappiness?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-04",
+      "title": "Frankenstein, Chapter VII: the figure in the storm",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate what Victor sees in the lightning from what he concludes. Then weigh his reasons for silence as the household tells him who has been accused.",
+      "focus": "Certainty without proof, and a silence that lets an innocent person stand trial.",
+      "context": "Recap: Victor’s father wrote that William, Victor’s young brother, had been found strangled near Geneva and that a miniature portrait of their dead mother he was wearing had disappeared. Victor hurried home, dreading the return. Secheron and Belrive lie on the lake shore; Mont Salêve is a steep mountain just south of the city. Justine Moritz is the servant raised in the Frankenstein household.",
+      "contentNote": "A child’s murder is discussed, and a young woman is accused of it. The creature is described in terms of hideous deformity.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VII, from Victor’s night arrival outside Geneva to the end of the chapter; opens “It was completely dark when I arrived in the environs of Geneva; the gates of the town…”; closes “…laws, and the activity with which I shall prevent the slightest shadow of partiality.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-03",
+        "continuesTo": null,
+        "blocks": [
+          253,
+          277
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f3d57efd1c9617d566f7577d1f48ae30fd606b5416c5402d3a53bfb00c00fd6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-04-q1",
+          "prompt": "What does Victor actually see in the storm, and how quickly does he move from seeing to certainty?",
+          "facilitatorNotes": [
+            "A figure, lit for an instant, of gigantic stature, later climbing Mont Salêve. From a single question he becomes convinced, because “the mere presence of the idea was an irresistible proof.”",
+            "Readers may believe him and still notice that he reasons from the strength of a feeling, which is how the town will reason about Justine."
+          ],
+          "evidence": [
+            "The mere presence of the idea was an irresistible proof of the fact.",
+            "No sooner did that idea cross my imagination, than I became convinced of its truth"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-04-q2",
+          "prompt": "List Victor’s reasons for staying silent at dawn. Which concern the creature and which protect Victor himself?",
+          "facilitatorNotes": [
+            "His story would sound like “the ravings of insanity”; his earlier fever would lend it “an air of delirium”; nobody could catch a being that scales the Salêve. Each reason is practical, and each also spares him confessing what he did.",
+            "Students may debate whether fear of disbelief excuses silence, especially once he learns that someone else has been accused."
+          ],
+          "evidence": [
+            "I should have looked upon it as the ravings of insanity",
+            "These reflections determined me, and I resolved to remain silent."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-04-q3",
+          "prompt": "Victor tells his family that Justine is innocent but not how he knows. What does he rely on instead, and what does that reveal?",
+          "facilitatorNotes": [
+            "He trusts that no circumstantial evidence could convict her, and his father urges reliance on “the justice of our laws.” Victor privately calls the creature “the living monument of presumption and rash ignorance,” blaming himself in thought while staying silent in speech.",
+            "Some readers see moral cowardice; others an honest belief that the truth would not be credited. Keep both in view for the trial."
+          ],
+          "evidence": [
+            "I had no fear, therefore, that any circumstantial evidence could be brought forward strong enough to convict her.",
+            "the living monument of presumption and rash ignorance which I had let loose upon the world"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-05",
+      "title": "Frankenstein, Chapter VIII: the trial of Justine Moritz",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Sort the evidence against Justine into facts and interpretations. Notice how her manner, the character witnesses and the crowd shape the verdict as much as the evidence does.",
+      "focus": "Circumstantial evidence, public feeling, and a narrator who knows the truth and does not speak.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. Victor’s little brother William has been strangled near Geneva. In a storm Victor glimpsed the creature near the spot and is sure it is the murderer, but he has told no one. Justine Moritz, a young servant raised in the family, has been arrested because the miniature portrait William was wearing was found in her pocket. The judges vote by ballot; black ballots mean guilty.",
+      "contentNote": "A young woman is tried for a child’s murder and condemned to death.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VIII, from the opening of the trial through Victor’s report of the verdict to Elizabeth; opens “We passed a few sad hours, until eleven o'clock, when the trial was to commence. My…”; closes “…ten innocent should suffer, than that one guilty should escape. But she has confessed.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-06",
+        "blocks": [
+          279,
+          293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0153f5290a32387b6607af3145e55ea9e0eadfc56c23c525b67bc0ccb5de074b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-05-q1",
+          "prompt": "List the facts the court hears against Justine. Which of them could also fit her own explanation?",
+          "facilitatorNotes": [
+            "She was out all night, seen near the spot, gave a confused answer, fell into hysterics at the body, and had the picture in her pocket. Her account of the aunt at Chêne, the shut gates and the barn explains everything except the picture.",
+            "Most of the “facts” are actions that innocence could also produce; the picture alone is unexplained. Ask what kind of evidence would be needed to explain it."
+          ],
+          "evidence": [
+            "Several strange facts combined against her",
+            "Concerning the picture she could give no account."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-05-q2",
+          "prompt": "Why does Elizabeth’s testimony win a “murmur of approbation” and yet harm Justine?",
+          "facilitatorNotes": [
+            "The crowd admires Elizabeth’s generosity but turns on Justine for “the blackest ingratitude”: the kinder her benefactors, the worse her supposed crime appears. Character evidence backfires.",
+            "Elizabeth’s courage in speaking against “the cowardice of her pretended friends” also contrasts with Victor’s silence, which readers may note without the narrator saying so."
+          ],
+          "evidence": [
+            "but it was excited by her generous interference, and not in favour of poor Justine",
+            "when I see a fellow-creature about to perish through the cowardice of her pretended friends"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-05-q3",
+          "prompt": "Victor claims that “The tortures of the accused did not equal mine.” How do you judge this claim?",
+          "facilitatorNotes": [
+            "He sets his remorse against the suffering of a woman facing execution and finds his own greater because she is “sustained by innocence.” Many readers find this self-centred, since he alone could have spoken.",
+            "Others see a sincere portrait of guilt. His defence, that a confession would be taken for “the ravings of a madman,” is in the text; students can test whether it holds."
+          ],
+          "evidence": [
+            "The tortures of the accused did not equal mine",
+            "such a declaration would have been considered as the ravings of a madman"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-05-q4",
+          "prompt": "Victor tells Elizabeth that “all judges had rather that ten innocent should suffer, than that one guilty should escape.” A familiar legal principle says the reverse. Why might Shelley have him invert it?",
+          "facilitatorNotes": [
+            "The usual maxim holds that it is better for ten guilty people to escape than for one innocent to suffer. Victor’s bitter reversal condemns this court, yet the officer had just said the judges dislike convicting on circumstantial evidence alone.",
+            "The irony runs both ways: the one man who could have supplied the truth blames the institution. Readers may defend his anger or call it deflection."
+          ],
+          "evidence": [
+            "all judges had rather that ten innocent should suffer, than that one guilty should escape",
+            "none of our judges like to condemn a criminal upon circumstantial evidence, be it ever so decisive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-06",
+      "title": "Frankenstein, Chapter VIII: the prison and the scaffold",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 15,
+        "totalMinutes": 26
+      },
+      "challenge": "Listen to how Justine explains her confession, then compare the consolations she, Elizabeth and Victor find, or fail to find.",
+      "focus": "Coercion, innocence and remorse, and Victor’s guilt turned into an address to his family.",
+      "context": "Recap: At Justine’s trial the evidence was circumstantial, but the picture in her pocket, the crowd’s indignation and her own distress weighed against her, and Elizabeth spoke for her character. The ballots were all black, and Victor learned that Justine had confessed. A confessor is the priest who hears a person’s confession; excommunication is expulsion from the Church; absolution is the forgiveness of sins granted after confession.",
+      "contentNote": "Justine describes being pressured by her confessor into a false confession, and she is executed. Victor’s remorse is expressed in violent images.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter VIII, from Elizabeth’s response to the confession to the end of the chapter; opens “This was a dire blow to poor Elizabeth, who had relied with firmness upon Justine's…”; closes “…upon the graves of William and Justine, the first hapless victims to my unhallowed arts.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-05",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-07",
+        "blocks": [
+          294,
+          311
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d1e9a688d14c78fae75977414cdf3c085f5edd4545a34538634a13b624f1994"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-06-q1",
+          "prompt": "Why did Justine confess to a crime she did not commit?",
+          "facilitatorNotes": [
+            "Her confessor “threatened excommunication and hell fire,” and with no one to support her she “almost began to think” herself the monster he described. She confessed to obtain absolution, and the lie became a new burden.",
+            "The scene shows how isolation and authority can produce false testimony, which undercuts the satisfaction the officer took in her confession."
+          ],
+          "evidence": [
+            "I did confess; but I confessed a lie.",
+            "he threatened and menaced, until I almost began to think that I was the monster that he said I was"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-06-q2",
+          "prompt": "Elizabeth says nothing could shake her faith in Justine “but your own confession.” What does this reveal about the kinds of evidence each character trusts?",
+          "facilitatorNotes": [
+            "Elizabeth trusted character over circumstance but yielded to a confession; Victor never credited the confession because he knows the truth; the court trusted circumstance and was confirmed by the confession. Each kind of evidence fails someone here.",
+            "Students might ask what Elizabeth could reasonably have believed, given what she knew."
+          ],
+          "evidence": [
+            "nothing can shake my confidence in you for a moment, but your own confession",
+            "he is more convinced of your innocence than I was"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-06-q3",
+          "prompt": "At the end Victor turns from narration to a direct address: “Ye weep, unhappy ones.” What is the effect of this outburst, and of his calling himself “the true murderer”?",
+          "facilitatorNotes": [
+            "He speaks to his family as if they were present, prophesies more funerals, and names himself in the third person (“Frankenstein, your son”), at once mourner and cause. “The true murderer” accepts responsibility in feeling while he still withholds it in fact.",
+            "Some readers find the rhetoric moving; others find it self-absorbed, since Justine’s death becomes an occasion for his anguish."
+          ],
+          "evidence": [
+            "But I, the true murderer, felt the never-dying worm alive in my bosom",
+            "Ye weep, unhappy ones; but these are not your last tears!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-07",
+      "title": "Frankenstein, Chapter IX: remorse, and the valley of Chamounix",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow how Victor’s grief resists each kind of comfort, from his father’s reasoning to Elizabeth’s love and the lake at night. Then notice how the Alpine landscape works on him differently.",
+      "focus": "Remorse that cannot be shared, and the sublime as a temporary relief.",
+      "context": "Recap: Justine Moritz was executed for William’s murder after a coerced confession, and Victor, sure that the creature he made was the killer, said nothing. The family has withdrawn to its lakeside house at Belrive. Chamounix (now Chamonix) is an Alpine valley below Mont Blanc; the Arve is its river; aiguilles are needle-like peaks. Writers of the period called a landscape “sublime” when its scale and power produced awe mixed with fear.",
+      "contentNote": "Victor describes being tempted to drown himself, and his wish to kill the creature.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter IX, complete; opens “Nothing is more painful to the human mind, than, after the feelings have been worked up…”; closes “…my pillow, sleep crept over me; I felt it as it came, and blest the giver of oblivion.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-06",
+        "continuesTo": null,
+        "blocks": [
+          313,
+          328
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "806d4285086c6e911445f5d80e12e8a8e3b757d40466b132ead48c289be3af36"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-07-q1",
+          "prompt": "Victor’s father argues that “immoderate grief” fails a duty to the living. Why does Victor call the advice good but “totally inapplicable”?",
+          "facilitatorNotes": [
+            "Alphonse assumes ordinary grief; Victor’s is mixed with remorse and terror, which the advice cannot reach because his father does not know the truth. The secret makes every comfort miss.",
+            "Some students will find the father’s view of grief as a social duty wise; others will find it cold. Either can be argued from his words."
+          ],
+          "evidence": [
+            "This advice, although good, was totally inapplicable to my case",
+            "is it not a duty to the survivors, that we should refrain from augmenting their unhappiness by an appearance of immoderate grief?"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-07-q2",
+          "prompt": "How has Justine’s death changed Elizabeth’s view of the world? What does she say about the murderer that wounds Victor?",
+          "facilitatorNotes": [
+            "Injustice once seemed like “tales of ancient days”; now “misery has come home,” and falsehood can “look so like the truth.” She imagines the murderer free “and perhaps respected,” words that fit Victor more closely than she knows.",
+            "Her sudden vision of “men” as “monsters” also touches the novel’s larger question of who deserves that word."
+          ],
+          "evidence": [
+            "when falsehood can look so like the truth, who can assure themselves of certain happiness?",
+            "he walks about the world free, and perhaps respected"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-07-q3",
+          "prompt": "How does the landscape of the Arve valley affect Victor? Find a moment when it consoles him and a moment when the consolation fails.",
+          "facilitatorNotes": [
+            "The mountains speak “of a power mighty as Omnipotence,” and he ceases to fear; “maternal nature bade me weep no more.” Then “the kindly influence ceased to act,” and he throws himself on the grass in despair.",
+            "The sublime gives him a scale beyond his “ephemeral, because human, sorrows,” but only for moments. Readers can compare this with the tempting stillness of the lake at night."
+          ],
+          "evidence": [
+            "I ceased to fear, or to bend before any being less almighty than that which had created and ruled the elements",
+            "Then again the kindly influence ceased to act"
+          ]
+        }
+      ]
+    }
+  ]
+}
