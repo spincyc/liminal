@@ -59,7 +59,7 @@
   function model(location, data = {}) {
     const page = String(location.pathname || "index.html").split("/").pop() || "index.html";
     const parts = String(location.hash || "").replace(/^#/, "").split("/");
-    let area = null, track = "common-core-math", key = "k", week = "1", course = null;
+    let area = null, track = "common-core-math", key = "k", week = "1", course = null, readingGrade = null;
     if (["curriculum.html", "weeks.html", "high-school.html", "courses.html", "lessons.html"].includes(page)) area = "courses";
     if (["daily-reading.html", "reading-level.html", "library.html"].includes(page)) area = "readings";
     if (["practice.html", "learn.html", "print.html"].includes(page)) area = "prep";
@@ -93,13 +93,18 @@
       if (context.trackId) { track = context.trackId; key = gradeKey(context.grade); }
     }
     else if (page === "daily-reading.html") {
-      // #browse/<grade>[/<week>], #<grade>/<week>/<day>, and the grade's date,
-      // month and reading routes (#<grade>/date/..., /month/..., /reading/...).
-      const browse = parts[0] === "browse", requested = browse ? parts.length <= 3 ? parts[1] : null : parts[0];
-      key = READING_GRADE.test(requested) ? requested : "k";
+      // #browse/<grade>[/<week>], #<grade>/<week>/<day>, the grade's date,
+      // month and reading routes (#<grade>/date/..., /month/..., /reading/...)
+      // and #print/.../<grade>,<grade>: the first grade. Without a grade in
+      // the address the page shows the remembered grade (data.readingGrade).
+      const browse = parts[0] === "browse", print = parts[0] === "print";
+      const requested = browse ? parts.length <= 3 ? parts[1] : null : print ? (parts[parts[1] === "date" ? 3 : parts[1] === "night" ? 4 : 1] || "").split(",")[0] : parts[0];
+      readingGrade = READING_GRADE.test(requested) ? requested : null;
+      key = readingGrade || (READING_GRADE.test(data.readingGrade) ? data.readingGrade : "k");
       if (browse && parts.length === 3 && READING_GRADE.test(parts[1]) && WEEK.test(parts[2])) week = parts[2];
       if (READING_GRADE.test(parts[0]) && parts.length === 3 && WEEK.test(parts[1]) && /^[1-5]$/.test(parts[2])) week = parts[1];
     }
+    if (["reading-level.html", "library.html"].includes(page) && READING_GRADE.test(data.readingGrade)) key = data.readingGrade;
     if (track === "common-core-reading") area = "readings";
     if (track === "ap") { area = "ap"; course = key; }
 
@@ -110,7 +115,7 @@
       const mathTrack = track === "common-core-reading" ? "common-core-math" : track;
       primary.find(item => item.id === "courses").href += "#" + mathTrack + "/" + key;
     }
-    if (gradeContext && READING_GRADE.test(key)) {
+    if (gradeContext && READING_GRADE.test(key) && !(page === "daily-reading.html" && !readingGrade)) {
       primary.find(item => item.id === "readings").href += page === "weeks.html" && area === "readings" ? "#" + key + "/" + week + "/1" : "#browse/" + key;
     }
 
@@ -132,7 +137,7 @@
       // reader's remembered grade.
       const dailyHref = page === "weeks.html" || readingNight ?
         "daily-reading.html#" + key + "/" + week + "/" + (readingNight ? parts[2] : "1") :
-        ["reading-level.html", "library.html"].includes(page) ? "daily-reading.html" : "daily-reading.html#browse/" + key;
+        ["reading-level.html", "library.html"].includes(page) || page === "daily-reading.html" && !readingGrade ? "daily-reading.html" : "daily-reading.html#browse/" + key;
       // One vocabulary (docs/daily-reading.md): Nightly readings, Library,
       // Reading level, Year plans, Weekly lessons.
       secondary = [
@@ -154,5 +159,14 @@
     return { area, homeCurrent: page === "index.html" ? "page" : null, primary, secondary,
       secondaryLabel: area === "readings" ? "Reading resources" : "Course resources" };
   }
-  return { PRIMARY, model, gradeKey, trackLabel, moduleAt, lessonRoute, lessonContext, legacyLessonHref };
+  // The grade key a browser remembers for Nightly readings (localStorage
+  // "liminal:readings:v1", untrusted), or null.
+  function rememberedReadingGrade(raw) {
+    let state = null;
+    try { state = JSON.parse(raw); } catch (_) { return null; }
+    const grade = state && typeof state === "object" && state.version === 1 ? state.grade : null;
+    if (!Number.isInteger(grade) || grade < 0 || grade > 16) return null;
+    return grade === 0 ? "k" : grade <= 12 ? String(grade) : "a" + (grade - 12);
+  }
+  return { PRIMARY, model, rememberedReadingGrade, gradeKey, trackLabel, moduleAt, lessonRoute, lessonContext, legacyLessonHref };
 });
