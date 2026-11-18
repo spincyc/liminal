@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "hughes-weary-blues-1926",
+  "readings": [
+    {
+      "id": "reading-7-hughes-weary-blues-1926-01",
+      "title": "Proem",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a pattern that leaps across thousands of years in each stanza.",
+      "focus": "A speaker who claims the whole history of Black people, its labour, its music and its suffering, as his own.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. A proem is an introduction; this poem opens the book. Caesar ruled ancient Rome; the Woolworth Building in New York was the world’s tallest when finished in 1913; sorrow songs are spirituals; ragtime was an early form of jazz piano. In the Congo Free State, ruled by the Belgian king around 1900, workers’ hands were cut off as punishment.",
+      "contentNote": "The poem uses “Negro,” the respectful term of its time, as a proud self-description. It refers to slavery, the mutilation of Congolese workers under Belgian rule, and lynching.",
+      "excerpt": {
+        "locator": "“Proem,” the opening poem of the book; opens “I am a Negro: Black as the night is black, Black like the depths of my Africa.”; closes “I am a Negro: Black as the night is black, Black like the depths of my Africa.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4,
+          9
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f7117c19f7966f89e5164db84f3b1563c9bd2b5ec88dbc35620acb3a9b212a3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-01-q1",
+          "prompt": "In each middle stanza, the speaker jumps from a distant past to the recent present. Trace the jump in two stanzas.",
+          "facilitatorNotes": [
+            "Caesar’s door-steps lead to George Washington’s boots; the pyramids to the Woolworth Building; Africa to Georgia and spirituals to ragtime; the Congo to Texas. Each stanza joins the ancient world to the speaker’s own America, so the history never feels finished."
+          ],
+          "evidence": [
+            "Under my hand the pyramids arose.\nI made mortar for the Woolworth Building."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-01-q2",
+          "prompt": "Two roles name what was done to the speaker and two name what he made. Why include both?",
+          "facilitatorNotes": [
+            "As slave and victim he suffers; as worker and singer he builds pyramids and skyscrapers and creates music the whole country loves. Putting them side by side refuses to let the history be only suffering or only triumph. Readers can discuss which line hits hardest and why “now” in the lynching line matters."
+          ],
+          "evidence": [
+            "I made ragtime.",
+            "They lynch me now in Texas."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-01-q3",
+          "prompt": "The first stanza returns as the last. How has its meaning changed after the middle of the poem?",
+          "facilitatorNotes": [
+            "At first it is a plain statement of identity; after the list of labour, art and suffering it sounds like a proud claim to all of that history. “My Africa” claims a homeland the speaker may never have seen. Some readers hear defiance, others sorrow; both are supported by the repeated, steady lines."
+          ],
+          "evidence": [
+            "Black as the night is black,\nBlack like the depths of my Africa."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-02",
+      "title": "Jazzonia",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how small changes in repeated lines shift a poem’s mood.",
+      "focus": "A night in a Harlem nightclub turns into a question about beauty, boldness and judgment.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Jazz was new and thrilling in 1920s Harlem; a cabaret is a nightclub with music and dancing; “jazzers” are jazz musicians. In the Bible, Eve is the first woman, blamed for the loss of the garden of Eden; Cleopatra was a famously beautiful queen of ancient Egypt. Hughes made up the title.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Jazzonia,” the whole poem; opens “Oh, silver tree! Oh, shining rivers of the soul!”; closes “In a whirling cabaret Six long-headed jazzers play.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          14,
+          19
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "923570a34189ac3c72160ec1be94a32380de2bb5495e9f372b6a8d0584666858"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-02-q1",
+          "prompt": "The poem alternates two kinds of stanza. What are they, and what changes each time the short refrain returns?",
+          "facilitatorNotes": [
+            "Cabaret stanzas show the musicians and the dancer; refrain stanzas call out to a tree and “rivers of the soul.” The adjectives shift each time: silver, singing, shining tree; shining, then silver rivers. The words swap places like dancers changing partners, so the refrain itself seems to move to the music."
+          ],
+          "evidence": [
+            "Oh, silver tree!\nOh, shining rivers of the soul!",
+            "Oh, shining tree!\nOh, silver rivers of the soul!"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-02-q2",
+          "prompt": "Why does the speaker ask about Eve and Cleopatra after describing the dancing girl?",
+          "facilitatorNotes": [
+            "The dancer’s eyes are “bold,” a word that could condemn her. By asking whether Eve’s eyes were “just a bit too bold,” the speaker links the dancer to the most famous women in history and questions the old habit of blaming a woman’s boldness. The poem only asks; readers can decide whether it admires the dancer or simply wonders."
+          ],
+          "evidence": [
+            "Were Eve’s eyes\nIn the first garden\nJust a bit too bold?"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-02-q3",
+          "prompt": "The last two lines repeat the second stanza with one change. What is the change, and how does it affect the ending?",
+          "facilitatorNotes": [
+            "“Harlem cabaret” becomes “whirling cabaret.” The place has dissolved into motion; the poem ends in the middle of the music, without a conclusion, as if the dance goes on after we leave."
+          ],
+          "evidence": [
+            "In a whirling cabaret\nSix long-headed jazzers play."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-03",
+      "title": "Cross",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Find several meanings in a one-word title and explain how a simple ballad form carries a hard question.",
+      "focus": "A speaker with a white father and a Black mother forgives both and wonders where he belongs.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. In the America of the 1920s, segregation laws and customs kept white and Black people apart, and children of mixed families were often accepted by neither.",
+      "contentNote": "The speaker once cursed both parents and wished his mother “in hell.” The poem describes the racial inequality of the time.",
+      "excerpt": {
+        "locator": "“Cross,” the whole poem; opens “My old man’s a white old man And my old mother’s black. If ever I cursed my white old man…”; closes “…My ma died in a shack. I wonder where I’m gonna die, Being neither white nor black?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "87798fbfc1df1f7380ae0fafc0d01c789cd444d14e5843b427226b7a6a24fd98"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-03-q1",
+          "prompt": "In the first two stanzas, what does the speaker take back? What might have made him curse his parents in the first place?",
+          "facilitatorNotes": [
+            "He takes back curses against his white father and an “evil wish” against his Black mother. Perhaps he blamed each for the position he was born into; now he wishes both well. The poem does not explain the anger, so readers can suggest reasons from the last stanza."
+          ],
+          "evidence": [
+            "If ever I cursed my white old man\nI take my curses back."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-03-q2",
+          "prompt": "What does the contrast in the third stanza show about the parents’ lives?",
+          "facilitatorNotes": [
+            "The father dies in a “fine big house,” the mother in a “shack”: two people joined in one family lived on opposite sides of a racial and economic line. The plain, rhyming statement makes the injustice sound like a simple fact of the world, which is part of its force."
+          ],
+          "evidence": [
+            "My old man died in a fine big house.\nMy ma died in a shack."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-03-q3",
+          "prompt": "The title “Cross” can mean several things. Which meanings fit the poem?",
+          "facilitatorNotes": [
+            "A cross can be a mixture of two kinds, a burden to carry, a crossing point, or anger (“cross”). All fit: the speaker is of mixed parentage, carries the burden of belonging to neither side, stands where two worlds cross, and has felt rage. The final question is left unanswered."
+          ],
+          "evidence": [
+            "I wonder where I’m gonna die,\nBeing neither white nor black?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-04",
+      "title": "Water Front Streets",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out where beauty is located in a poem that says a place is not beautiful.",
+      "focus": "Harbour streets that send dreamers out to sea.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. In 1923 and 1924 Hughes worked as a sailor on cargo ships to West Africa and to Europe; this poem opens the book’s section of sea poems. A water-front is the part of a town beside a harbour.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Water Front Streets,” the poem that opens the section of the same name; opens “The spring is not so beautiful there,— But dream ships sail away To where the spring is…”; closes “…there,— But lads put out to sea Who carry beauties in their hearts And dreams, like me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          159,
+          160
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "92af6169dd6ee4122b68df7b6daf5be890b3e9a58e7bda09e1e6bd11efb494b4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-04-q1",
+          "prompt": "Both stanzas begin with the same line. What place is “there,” and what does each stanza set against it?",
+          "facilitatorNotes": [
+            "“There” is the water-front streets of the title. Against their plainness the first stanza sets “dream ships” sailing to a gay life; the second sets young men going to sea. The repetition admits the streets are ugly before turning to what leaves them."
+          ],
+          "evidence": [
+            "The spring is not so beautiful there,—"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-04-q2",
+          "prompt": "Where is beauty to be found in this poem, if not in the place itself?",
+          "facilitatorNotes": [
+            "In the hearts and dreams of the young sailors, and in the distant places the ships sail toward. The lads “carry” beauty with them, so it travels instead of belonging to a spot. Readers may see hope or restless longing, or both."
+          ],
+          "evidence": [
+            "Who carry beauties in their hearts\nAnd dreams, like me."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-04-q3",
+          "prompt": "What do the last two words, “like me,” add to the poem?",
+          "facilitatorNotes": [
+            "They reveal that the speaker is one of the lads, not an onlooker. The general description becomes personal, and the poem’s longing becomes the speaker’s own. Knowing Hughes went to sea at twenty-one adds a biographical echo, though the poem works without it."
+          ],
+          "evidence": [
+            "And dreams, like me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-05",
+      "title": "Death of an Old Seaman",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how rhyme and rhythm shape the way a poem speaks about death.",
+      "focus": "A dead sailor’s spirit asks not to be mourned, because he has gone home to the sea.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. This poem is one of the sea poems Hughes wrote after working as a sailor in 1923 and 1924. To “strew” flowers is to scatter them.",
+      "contentNote": "The poem describes a burial and a voice from the dead.",
+      "excerpt": {
+        "locator": "“Death of an Old Seaman,” the whole poem; opens “We buried him high on a windy hill, But his soul went out to sea. I know, for I heard,…”; closes “…gone back to the wind and wave. Do not, do not weep for me, For I am happy with my sea.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          185,
+          186
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "438917b0174b985ccba22cb7071db613e4aeb1b9decf526d0618ef0086c92da5"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-05-q1",
+          "prompt": "Where was the old seaman buried, and where does the speaker say his soul has gone?",
+          "facilitatorNotes": [
+            "His body is “high on a windy hill,” on land, but his soul “went out to sea.” The speaker claims to have heard the soul speak “when all was still,” which sets up the second stanza as the dead man’s own words."
+          ],
+          "evidence": [
+            "We buried him high on a windy hill,\nBut his soul went out to sea."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-05-q2",
+          "prompt": "What three customs of mourning does the seaman refuse, and what reason does he give?",
+          "facilitatorNotes": [
+            "No tombstone, no flowers, no weeping: he does not “make my bed” in the grave. The customs honour the place where the body lies, and he is not there. Readers can discuss whether the refusal comforts the living or leaves them with nothing to do."
+          ],
+          "evidence": [
+            "Put no tombstone at my head,\nFor here I do not make my bed."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-05-q3",
+          "prompt": "The poem is built of rhyming pairs of lines with a steady beat, like a sea song. How does the sound suit what the seaman says?",
+          "facilitatorNotes": [
+            "The regular, swinging rhythm sounds like waves and like a sailors’ song, so the dead man speaks in the sea’s own music. The word “back” in “gone back” makes death a return home. The tone is calm and even happy, though some readers may hear sadness under the cheer."
+          ],
+          "evidence": [
+            "I’ve gone back to the wind and wave.",
+            "For I am happy with my sea."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-06",
+      "title": "Lament for Dark Peoples",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Identify a collective speaker and explain an extended image that judges a whole idea.",
+      "focus": "A voice for conquered peoples calls the modern world a “circus of civilization.”",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. A lament is a poem of mourning. Around 1900, people from Africa, Asia and the Americas were sometimes displayed to paying crowds at fairs and even in zoos.",
+      "contentNote": "The poem uses the period term “red man” for Native Americans and pictures Africa as jungle. It describes conquest and captivity.",
+      "excerpt": {
+        "locator": "“Lament for Dark Peoples,” the whole poem; opens “I was a red man one time, But the white men came. I was a black man, too, But the white…”; closes “…circus of civilization. Now I herd with the many— Caged in the circus of civilization.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          221,
+          223
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bfc9efdbc2bdcb751d3dbe892538c2dace5a172360ead5a18624710dc8683925"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-06-q1",
+          "prompt": "The speaker says, “I was a red man one time” and “I was a black man, too.” Who is speaking?",
+          "facilitatorNotes": [
+            "Not one person but a voice for peoples conquered by white colonisers: Native Americans and Africans. Hughes uses “I” for a people, as he does elsewhere in the book. The repeated “But the white men came” makes the same history happen to both."
+          ],
+          "evidence": [
+            "I was a red man one time,\nBut the white men came."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-06-q2",
+          "prompt": "Why does the speaker say he lost his “trees” and his “silver moons” rather than his land or his freedom?",
+          "facilitatorNotes": [
+            "The concrete words make the loss personal and sensory: not property but a whole way of living close to forests and night skies. Readers may also notice that the poem’s picture of “jungles” draws on the period’s images of Africa, which Hughes both uses and mourns."
+          ],
+          "evidence": [
+            "I lost my trees.\nI lost my silver moons."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-06-q3",
+          "prompt": "What does “the circus of civilization” say about how conquered peoples were treated, and about civilization itself?",
+          "facilitatorNotes": [
+            "Caged and displayed like circus animals, they become entertainment for others, perhaps recalling real exhibitions of people at fairs. Calling civilization a circus mocks its claim to be superior. “Herd with the many” suggests losing one’s identity in a crowd. Readers can decide whether the ending is bitter, sorrowful or both."
+          ],
+          "evidence": [
+            "Now they’ve caged me\nIn the circus of civilization."
+          ]
+        }
+      ]
+    }
+  ]
+}
