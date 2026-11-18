@@ -5,6 +5,73 @@
   "readings": [
     {
       "id": "reading-9-poe-raven-other-poems-1845-01",
+      "title": "Poe’s dedication and preface to The Raven and Other Poems",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "literary prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 21,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the short preface twice: once for what Poe says about his poems, once for how he wants readers to see him. Weigh each modest phrase against its context.",
+      "focus": "A poet’s complaint about careless reprinting, a show of modesty, and a famous claim about passion.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. In Poe’s time newspapers and magazines freely reprinted poems, often altering them, and authors were rarely paid for reprints. Poe dedicated the book to the English poet Elizabeth Barrett (later Elizabeth Barrett Browning), whose poem “A Drama of Exile” had just appeared. The next year he published “The Philosophy of Composition,” an essay claiming he wrote “The Raven” step by step, “with the precision and rigid consequence of a mathematical problem.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Raven and Other Poems (1845), Poe’s dedication and preface, complete; opens “TO THE NOBLEST OF HER SEX — TO THE AUTHOR OF “THE DRAMA OF EXILE” — TO MISS ELIZABETH…”; closes “E. A. P”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1,
+          4
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5c9070eb3b642f68bf6b641b17c6a7468bf4008ee95da6209c36cd0bc7a6a40a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q1",
+          "prompt": "What is Poe complaining about when he speaks of the “improvements” his poems suffered while going “the rounds of the press”? What tone does the word “improvements” carry?",
+          "facilitatorNotes": [
+            "Editors reprinting his poems had changed them, and he wants them to circulate “as I wrote it.” “Improvements” is sarcastic: the changes made the poems worse, and “redemption” makes his book a rescue.",
+            "Students may connect this with any edition’s duty to print an author’s exact words, which is why the text of this volume is given as it was printed in 1845."
+          ],
+          "evidence": [
+            "chiefly with a view to their redemption from the many improvements to which they have been subjected",
+            "I am naturally anxious that it should circulate as I wrote it."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q2",
+          "prompt": "Poe calls the poems “trifles” and says nothing in the book is of “much value.” Should readers believe him?",
+          "facilitatorNotes": [
+            "Modesty was a convention of prefaces, and a low claim protects a writer from critics. Poe also blames “Events not to be controlled” (poverty and the need to earn a living by journalism) for keeping him from serious poetry.",
+            "Yet the volume contains “The Raven,” already famous. Students may read the modesty as sincere frustration, as a pose, or as both."
+          ],
+          "evidence": [
+            "I think nothing in this volume of much value to the public, or very creditable to myself",
+            "Events not to be controlled have prevented me from making, at any time, any serious effort"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-01-q3",
+          "prompt": "“With me poetry has been not a purpose, but a passion.” What does Poe mean, and how does the claim sit beside his later account of writing “The Raven” like a mathematical problem?",
+          "facilitatorNotes": [
+            "He means he writes poetry from devotion, not for “the paltry compensations” of money or the “more paltry commendations” of praise. The essay of the next year describes calculated method, not passion.",
+            "Both statements may be partly performances. Some readers think a poet can feel passion and still build with precision; others think Poe was shaping his public image in different directions for different audiences."
+          ],
+          "evidence": [
+            "With me poetry has been not a purpose, but a passion",
+            "with an eye to the paltry compensations, or the more paltry commendations, of mankind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-02",
       "title": "Sonnet — To Zante",
       "sourceId": "poe-raven-other-poems-1845",
       "genre": "poetry",
@@ -33,7 +100,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-poe-raven-other-poems-1845-01-q1",
+          "id": "reading-9-poe-raven-other-poems-1845-02-q1",
           "prompt": "The first eight lines repeat “How many.” What does the island bring back to the speaker, and where does the poem turn?",
           "facilitatorNotes": [
             "Memories of “radiant hours,” “departed bliss,” “entombéd hopes,” and “a maiden that is / No more.” The list builds through the octave; at line nine “No more!” turns memory into a curse on the “Accurséd ground.”",
@@ -45,7 +112,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-01-q2",
+          "id": "reading-9-poe-raven-other-poems-1845-02-q2",
           "prompt": "The speaker calls “No more” a “magical sad sound / Transforming all!” How does a sound transform the island?",
           "facilitatorNotes": [
             "The island has not changed; only its meaning has. “Fair isle” and “flower-enamelled shore” become cursed because of loss and the word that names it.",
@@ -57,7 +124,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-01-q3",
+          "id": "reading-9-poe-raven-other-poems-1845-02-q3",
           "prompt": "Why end with praise, in English and Italian, after cursing the island? Does the last couplet undo the curse?",
           "facilitatorNotes": [
             "“O hyacinthine isle! O purple Zante!” and the sailors’ praise return to admiration, as if the speaker cannot stop loving what he curses.",
@@ -71,7 +138,74 @@
       ]
     },
     {
-      "id": "reading-9-poe-raven-other-poems-1845-02",
+      "id": "reading-9-poe-raven-other-poems-1845-03",
+      "title": "Sonnet — Silence",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Count the lines and mark the rhymes. Then sort the details into the two kinds of Silence the poem describes.",
+      "focus": "Two silences, one consoling and one terrifying, in a sonnet that will not keep to fourteen lines.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. A sonnet usually has fourteen lines; this one has fifteen. “Incorporate” here means without a body; “corporate” means having a body. “Evinced” means shown. “No More” echoes the refrain of “The Raven,” published in the same volume.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Sonnet — Silence; opens “THERE are some qualities — some incorporate things, That have a double life, which thus…”; closes “…That haunteth the lone regions where hath trod No foot of man,) commend thyself to God!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          89,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aec123fe56a58ba8516080e2894eb9b64d996ee61798959ee1f68eadd2ef79a6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q1",
+          "prompt": "The poem says some things have “a double life.” What are the two Silences, and where does each live?",
+          "facilitatorNotes": [
+            "One is “the corporate Silence,” bodily and harmless, found in “lonely places, Newly with grass o’ergrown,” such as graves where human memories linger. The other is his “shadow,” a “nameless elf” haunting regions where no human foot has trodden.",
+            "The pairs in the opening (matter and light, sea and shore, body and soul) prepare for the split. Students may see the second Silence as death without memory, the void, or pure absence."
+          ],
+          "evidence": [
+            "There is a two-fold Silence — sea and shore — Body and soul.",
+            "That haunteth the lone regions where hath trod No foot of man"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q2",
+          "prompt": "Why is the first Silence “terrorless,” and why might its name be “No More”?",
+          "facilitatorNotes": [
+            "“Solemn graces” and “human memories and tearful lore” make it bearable: a silence surrounded by remembrance. “No More” names loss itself, the fact that someone is gone, which can be mourned.",
+            "Readers who know “The Raven” may hear its refrain; here the phrase is almost comforting, compared with the silence that has no human story at all."
+          ],
+          "evidence": [
+            "Some human memories and tearful lore, Render him terrorless: his name's “No More.”",
+            "No power hath he of evil in himself"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-03-q3",
+          "prompt": "The poem has fifteen lines and ends with “commend thyself to God!” Why might Poe have broken the sonnet’s usual shape?",
+          "facilitatorNotes": [
+            "The extra line comes where the poem moves from the familiar Silence to the one beyond human places; the form overflows just as the subject goes beyond what is known. The final command turns description into warning.",
+            "Other readers think Poe was simply experimenting, or careless. Ask students to support whichever reading they choose with the rhymes and line count."
+          ],
+          "evidence": [
+            "But should some urgent fate (untimely lot!) Bring thee to meet his shadow",
+            "commend thyself to God!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-04",
       "title": "The Conqueror Worm",
       "sourceId": "poe-raven-other-poems-1845",
       "genre": "poetry",
@@ -100,7 +234,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-poe-raven-other-poems-1845-02-q1",
+          "id": "reading-9-poe-raven-other-poems-1845-04-q1",
           "prompt": "Who is in the audience, who are the actors, and who controls the play?",
           "facilitatorNotes": [
             "Angels in veils, “drowned in tears,” watch; actors “in the form of God on high” are “Mere puppets”; “vast formless things” shift the scenery. Human beings, made in God’s image, act at the bidding of invisible powers.",
@@ -112,7 +246,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-02-q2",
+          "id": "reading-9-poe-raven-other-poems-1845-04-q2",
           "prompt": "What is the plot of the “motley drama”? Why does it return “To the self-same spot”?",
           "facilitatorNotes": [
             "A crowd chases a Phantom it never seizes, around a circle, with “much of Madness, and more of Sin.” Human striving is repetitive and futile.",
@@ -124,7 +258,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-02-q3",
+          "id": "reading-9-poe-raven-other-poems-1845-04-q3",
           "prompt": "The angels “affirm” the play’s title and hero. What is the poem’s verdict on human life, and is its horror meant seriously?",
           "facilitatorNotes": [
             "The tragedy is “Man” and its hero the worm: decay triumphs. The grotesque repetition (“It writhes! — it writhes!”) can be read as sincere despair or as deliberate Gothic theatre.",
@@ -138,7 +272,145 @@
       ]
     },
     {
-      "id": "reading-9-poe-raven-other-poems-1845-03",
+      "id": "reading-9-poe-raven-other-poems-1845-05",
+      "title": "Tamerlane",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Identify the speaker and listener from the first stanza, then follow the story he tells out of order. Mark each place where he chooses between love and ambition.",
+      "focus": "A dying conqueror’s confession that winning the world cost him the one thing he loved.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. It belongs to the section of this volume Poe called “Poems Written in Youth.” It was the title poem of his first book (1827), published when he was eighteen, and he revised it heavily before this 1845 text. The historical Timur, or Tamerlane (1336–1405), was a Central Asian conqueror whose capital was Samarkand. Poe invents his boyhood love. The “father” addressed is a priest hearing his confession; to “shrive” is to absolve. The Taglay are mountains; the “Siroc” is a hot desert wind; Eblis is the devil in Islamic tradition; a diadem is a crown.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Tamerlane; opens “KIND solace in a dying hour! Such, father, is not (now) my theme — I will not madly deem…”; closes “…revels there, Till growing bold, he laughed and leapt In the tangles of Love's very hair?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          324,
+          345
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "02f020e02b30471f94dbddf8729f7025086a78d8a5d13480bdb0105717116b7f"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-05-q1",
+          "prompt": "Who is speaking, to whom, and what does the speaker refuse to accept from his listener?",
+          "facilitatorNotes": [
+            "The dying Tamerlane speaks to a priest (“father,” “old man”), but refuses absolution: no “power Of Earth” can “shrive” him. He wants instead to tell “the secret of a spirit Bow’d from its wild pride into shame.”",
+            "The poem is a dramatic monologue: we hear only one side. Students may notice how proud he remains even while confessing pride."
+          ],
+          "evidence": [
+            "I will not madly deem that power Of Earth may shrive me of the sin",
+            "I would not call thee fool, old man, But such is not a gift of thine.",
+            "Know thou the secret of a spirit Bow'd from its wild pride into shame."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-05-q2",
+          "prompt": "What did Tamerlane give up for ambition? Find the moment when he says farewell to love.",
+          "facilitatorNotes": [
+            "The girl he grew up with in the mountains, whose “quiet eye” asked no reasons. On the mountain top he spoke to her of “power and pride” only “mystically,” then chose the throne: “Farewell! for I have won the Earth!”",
+            "He asks the priest, “have you known The passion, father? You have not,” as if ambition were a passion beyond ordinary understanding. Readers may decide whether he still admires his choice."
+          ],
+          "evidence": [
+            "I was ambitious — have you known The passion, father? You have not",
+            "Farewell! for I have won the Earth!"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-05-q3",
+          "prompt": "When he returns home, why does Tamerlane call his suffering worse than Hell’s? How does the poem’s last question leave his confession?",
+          "facilitatorNotes": [
+            "“All had flown who made it so”: the girl is gone, and his conquests mean nothing. He dares Hell to show “a deeper wo.” The images of sunset and the chilly moon, “A portrait taken after death,” make victory a kind of decline.",
+            "The poem ends with a question, how Ambition crept “Unseen” into Love’s grove, not with repentance or an answer. Students may read it as true remorse, as self-pity, or as a man still unable to see his own choice."
+          ],
+          "evidence": [
+            "I reach'd my home — my home no more — For all had flown who made it so.",
+            "O, I defy thee, Hell, to show On beds of fire that burn below, An humbler heart — a deeper wo.",
+            "How was it that Ambition crept, Unseen, amid the revels there"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-06",
+      "title": "Fairy-Land",
+      "sourceId": "poe-raven-other-poems-1845",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the poem aloud and listen for the moment the dreamy voice turns comic. Then explain the strange explanation it gives at the end.",
+      "focus": "A dream landscape described with wonder and with a straight-faced joke.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. Like “Tamerlane,” it belongs to the section Poe called “Poems Written in Youth,” early work he reprinted at the end of the volume. “Videlicet” is Latin for “namely”; “atomies” are tiny particles; a “moon-dial” is a sundial read by moonlight. An albatross is a huge seabird.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Fairy-Land; opens “DIM vales — and shadowy floods — And cloudy-looking woods, Whose forms we can't discover…”; closes “…down again (Never-contented things!) Have brought a specimen Upon their quivering wings.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          355,
+          355
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5849fab837847d619829cc20fdec7b08cefad35b2d589c6150ecaf52bf3e04bb"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-06-q1",
+          "prompt": "Describe what the moons do in this land. Which lines are dreamlike, and which are comic?",
+          "facilitatorNotes": [
+            "Huge moons wax and wane “Again — again — again,” changing places and putting out the starlight; one settles over everything like drapery. Then the speaker comments drily that using a moon as a tent is “extravagant,” and his simile gives up: “Like —— almost any thing.”",
+            "The mixture of wonder and deadpan humour is the poem’s particular tone. Some readers think Poe is mocking dreamy poetry itself."
+          ],
+          "evidence": [
+            "Huge moons there wax and wane — Again — again — again —",
+            "Videlicet a tent — Which I think extravagant",
+            "Like —— almost any thing — Or a yellow Albatross."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-06-q2",
+          "prompt": "“And buries them up quite In a labyrinth of light.” What is unusual about this image of sleep?",
+          "facilitatorNotes": [
+            "Light usually wakes sleepers; here a moon’s light covers them like a blanket, and their sleep is deep with “passion.” The words “buries” and “labyrinth” add a hint of danger or entrapment to the comfort.",
+            "Students may connect the image with the poem’s opening, where tears and mist hide everything: a world where seeing clearly is impossible."
+          ],
+          "evidence": [
+            "And buries them up quite In a labyrinth of light",
+            "And then, how deep! — O, deep! Is the passion of their sleep."
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-06-q3",
+          "prompt": "The ending explains what happens to the used moon. What might the butterflies, “Never-contented things,” stand for?",
+          "facilitatorNotes": [
+            "The moon breaks into a shower of particles, and earthly butterflies that “seek the skies” bring back a “specimen” on their wings: a fanciful explanation of the shimmer on a butterfly’s wing. They may stand for dreamers or poets who reach for the ideal and return with only a trace of it.",
+            "“Never-contented” can be read as sympathy or gentle mockery. Accept other readings grounded in the lines."
+          ],
+          "evidence": [
+            "Of Earth, who seek the skies, And so come down again",
+            "(Never-contented things!)",
+            "Have brought a specimen Upon their quivering wings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-07",
       "title": "The Lake — To ——",
       "sourceId": "poe-raven-other-poems-1845",
       "genre": "poetry",
@@ -167,7 +439,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-poe-raven-other-poems-1845-03-q1",
+          "id": "reading-9-poe-raven-other-poems-1845-07-q1",
           "prompt": "How does the lake change between day and night? What does the speaker “awake” to?",
           "facilitatorNotes": [
             "By day its “loneliness” is lovely, with black rocks and towering pines. When Night throws her pall over it and a “mystic wind” passes, he wakes “To the terror of the lone lake.”",
@@ -179,7 +451,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-03-q2",
+          "id": "reading-9-poe-raven-other-poems-1845-07-q2",
           "prompt": "The third stanza insists that the terror “was not fright.” What is it, and why can’t the speaker define it?",
           "facilitatorNotes": [
             "A “tremulous delight” that no jewelled mine could bribe him to define, not even Love. Fear and pleasure mix into a feeling without a name.",
@@ -191,7 +463,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-03-q3",
+          "id": "reading-9-poe-raven-other-poems-1845-07-q3",
           "prompt": "The poem ends with a “poisonous wave” and an “Eden.” How can the lake be both a grave and a paradise?",
           "facilitatorNotes": [
             "For a solitary imagination the deadly water is “a fitting grave” and also “An Eden”: imagination turns danger into beauty, and solitude is both comfort and risk.",
@@ -205,7 +477,76 @@
       ]
     },
     {
-      "id": "reading-9-poe-raven-other-poems-1845-04",
+      "id": "reading-9-poe-raven-other-poems-1845-08",
+      "title": "Song (“I saw thee on thy bridal day”)",
+      "sourceId": "poe-raven-other-poems-1845",
+      "workTitle": "Song",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Compare the first and last stanzas word by word. Then decide what the speaker hopes the blush means.",
+      "focus": "A watcher at a wedding, and the small changes that reveal who he is.",
+      "context": "Edgar Allan Poe (1809–1849) collected these poems in The Raven and Other Poems (New York, 1845), the edition used here. This early poem is often connected with Sarah Elmira Royster, Poe’s teenage sweetheart in Richmond, who married another man while he was away. “Maiden shame” means a young bride’s modesty.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Song (“I saw thee on thy bridal day”); opens “I SAW thee on thy bridal day — When a burning blush came o'er thee, Though happiness…”; closes “…would come o'er thee, Though happiness around thee lay, The world all love before thee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          369,
+          372
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "781a884c60f224629c59ba378ce28c18c610245d191e7a4e48f83aff1a4a4004"
+      },
+      "questions": [
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-08-q1",
+          "prompt": "The first and last stanzas are nearly the same. What words change, and what does the change reveal about the speaker?",
+          "facilitatorNotes": [
+            "“I saw thee on thy bridal day” becomes “Who saw thee on that bridal day,” completing the sentence about “him, alas!” in the stanza before. The speaker turns out to be someone hurt by the wedding, now speaking of himself as “him”; “thy” becomes the more distant “that.”",
+            "Ask why he might step back into the third person: shame, distance, or the habit of a ballad refrain."
+          ],
+          "evidence": [
+            "I SAW thee on thy bridal day —",
+            "In the breast of him, alas!",
+            "Who saw thee on that bridal day,"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-08-q2",
+          "prompt": "The speaker offers an explanation of the bride’s blush. What explanation “well may pass,” and what does he seem to suspect?",
+          "facilitatorNotes": [
+            "The acceptable explanation is “maiden shame,” a bride’s modesty. The word “perhaps” and the phrase “As such it well may pass” suggest he suspects, or hopes, another cause: regret, or memory of him.",
+            "Poe leaves the blush unexplained. Students should note that the poem tells us only what the watcher sees and wants."
+          ],
+          "evidence": [
+            "That blush, perhaps, was maiden shame — As such it well may pass —",
+            "Though its glow hath raised a fiercer flame"
+          ]
+        },
+        {
+          "id": "reading-9-poe-raven-other-poems-1845-08-q3",
+          "prompt": "“Was all on Earth my aching sight Of Loveliness could see.” What does this line show about the speaker, and how does it sit beside “Though happiness around thee lay”?",
+          "facilitatorNotes": [
+            "For him she is the only beauty in the world, and seeing her hurts (“aching sight”). The surrounding happiness and “The world all love before thee” belong to her and the wedding, not to him.",
+            "The contrast between her bright future and his ache is the poem’s whole situation. Some readers find him moving; others find him possessive."
+          ],
+          "evidence": [
+            "Was all on Earth my aching sight Of Loveliness could see.",
+            "Though happiness around thee lay, The world all love before thee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-poe-raven-other-poems-1845-09",
       "title": "To Helen",
       "sourceId": "poe-raven-other-poems-1845",
       "genre": "poetry",
@@ -234,7 +575,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-poe-raven-other-poems-1845-04-q1",
+          "id": "reading-9-poe-raven-other-poems-1845-09-q1",
           "prompt": "What is Helen’s beauty compared to in the first stanza, and who is the “weary way-worn wanderer”?",
           "facilitatorNotes": [
             "To ancient ships that gently carried a traveller home over a “perfumed sea.” The wanderer is the speaker, whom her beauty brings home.",
@@ -246,7 +587,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-04-q2",
+          "id": "reading-9-poe-raven-other-poems-1845-09-q2",
           "prompt": "What “home” does Helen bring the speaker to in the second stanza? Why is it surprising?",
           "facilitatorNotes": [
             "Not a house but “the glory that was Greece, / And the grandeur that was Rome”: classical art and civilization. The speaker’s true country is an ideal of beauty.",
@@ -258,7 +599,7 @@
           ]
         },
         {
-          "id": "reading-9-poe-raven-other-poems-1845-04-q3",
+          "id": "reading-9-poe-raven-other-poems-1845-09-q3",
           "prompt": "In the last stanza Helen stands “statue-like” with a lamp and becomes Psyche. How has the woman changed by the end?",
           "facilitatorNotes": [
             "From a beautiful person to a statue in a window-niche, then to Psyche, the soul, from “Holy-land.” She becomes a spiritual ideal more than a woman.",
