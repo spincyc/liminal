@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "allingham-rhymes-young-folk-1887",
+  "readings": [
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-01",
+      "title": "The Fairies",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear where the fairies live and what they do to people who cross them.",
+      "focus": "The fairies of the Irish hills are tiny and lovely, but also strange and a little dangerous.",
+      "context": "William Allingham was an Irish poet, and this is his best-known poem. A glen is a narrow valley; rushes are tall grasses that grow by water. Columbkill, Slieveleague and Rosses are places in Ireland; the Northern Lights are coloured lights in the night sky. People once believed fairies could carry children away.",
+      "contentNote": "The fairies steal a girl named Bridget; when she comes back after seven years her friends are gone, and the poem says she died of sorrow.",
+      "excerpt": {
+        "locator": "“The Fairies,” the complete poem; opens “UP the airy mountain, Down the rushy glen, We daren't go a-hunting For fear of little…”; closes “…folk, good folk, Trooping all together; Green jacket, red cap, And white owl's feather!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef691672bff5d6785300bb87f303f9c7658c43d75a5c6d984c8c4352b4820ea1"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-01-q1",
+          "prompt": "What do the little men wear?",
+          "facilitatorNotes": [
+            "Green jackets, red caps and white owl’s feathers. Children can point to or draw the colours."
+          ],
+          "evidence": [
+            "Green jacket, red cap,",
+            "And white owl's feather!"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-01-q2",
+          "prompt": "Where do some of the fairies live, and what do they eat?",
+          "facilitatorNotes": [
+            "Some live by the rocky shore and eat crispy pancakes of yellow sea-foam; others live in the reeds of a mountain lake, with frogs for watch-dogs."
+          ],
+          "evidence": [
+            "They live on crispy pancakes",
+            "With frogs for their watch-dogs,"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-01-q3",
+          "prompt": "Why do the speakers say they daren’t go hunting? Are the fairies kind or not?",
+          "facilitatorNotes": [
+            "They fear the little men, who stole Bridget and who put thorns in the bed of anyone who digs up their trees. Yet the fairies are also tiny, merry and beautiful; children may say both, which is how the poem feels."
+          ],
+          "evidence": [
+            "For fear of little men;",
+            "He shall find their sharpest thorns"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-02",
+      "title": "Robin Redbreast",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the year turn from the end of summer toward winter.",
+      "focus": "When other birds fall silent or fly away, the robin stays to sing, and the speaker worries how he will manage in winter.",
+      "context": "In Britain the robin, a small brown bird with a red breast, stays all winter and sings in autumn. Hosts means crowds; russet is reddish brown; welaway means alas; “pinching times” are cold, hungry times. The bright trees are like “Indian Princes” in rich, jewelled clothes, and turn to “Ghosts” when they are bare.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Robin Redbreast,” the complete poem; opens “GOOD-BYE, good-bye to Summer! For Summer's nearly done; The garden smiling faintly, Cool…”; closes “…Robin Redbreast, O Robin dear, And a crumb of bread for Robin, His little heart to cheer.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9722afd6dcd8c80dfeb24c04c4907a8633548046ad631c919d1328911dd4ca80"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-02-q1",
+          "prompt": "Which birds are gone or silent, and which bird is still here?",
+          "facilitatorNotes": [
+            "The thrushes are silent and the swallows have flown, but Robin is here in his brown coat."
+          ],
+          "evidence": [
+            "Our Swallows flown away,--",
+            "But Robin's here, in coat of brown,"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-02-q2",
+          "prompt": "What colours are the falling leaves?",
+          "facilitatorNotes": [
+            "Bright yellow, red and orange."
+          ],
+          "evidence": [
+            "Bright yellow, red, and orange,",
+            "The leaves come down in hosts;"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-02-q3",
+          "prompt": "What does the speaker want to give Robin at the end, and why?",
+          "facilitatorNotes": [
+            "A crumb of bread to cheer his little heart, because winter is dark and frosty and food is hard to find. Children may suggest other ways to help birds in winter, kept separate from the poem."
+          ],
+          "evidence": [
+            "Where can poor Robin go?",
+            "And a crumb of bread for Robin,"
+          ]
+        }
+      ],
+      "months": [
+        9,
+        10,
+        11
+      ]
+    }
+  ]
+}

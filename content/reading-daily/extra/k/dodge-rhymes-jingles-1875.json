@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "dodge-rhymes-jingles-1875",
+  "readings": [
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-01",
+      "title": "Song of the Ducks",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Count ducks in a picture you can only hear, then find the surprise duck.",
+      "focus": "A counting game about ducks turns out to be about the child on the speaker’s lap.",
+      "context": "Mary Mapes Dodge wrote this poem to go with a picture of ducks; we have only the words, so the child can imagine or draw the ducks. Trim means neat; to linger is to stay a while. Point with a finger as you read, as the poem asks.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Song of the Ducks,” the complete poem; opens “ONE little black duck, one little gray, Six little white ducks, running out to play; One…”; closes “…One lazy black duck, taking quite a nap; One little precious duck, here on mamma's lap!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          123,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1e534d714ed5f0f0abf014b86af97eec801a776b6302c191ddf9e26f6ec86f69"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-01-q1",
+          "prompt": "How many baby ducks is the white lady-duck taking for a swim?",
+          "facilitatorNotes": [
+            "Eight little baby ducks."
+          ],
+          "evidence": [
+            "Eight little baby ducks, bound for a swim!"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-01-q2",
+          "prompt": "Find two ducks that are doing something different from the rest.",
+          "facilitatorNotes": [
+            "One holds up its wings, one makes water-rings, one runs from the water, one swims off alone, one stands on a stone. Children can act one out."
+          ],
+          "evidence": [
+            "One little bobbing duck, making water-rings,",
+            "One very brave duck, swimming off alone,"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-01-q3",
+          "prompt": "Who is the “other duck,” the nicest duck of all? How do you know?",
+          "facilitatorNotes": [
+            "The child being read to: this duck has no feathers and a sweet small mouth, jumps on the speaker’s knee, cannot swim, and ends up on mamma’s lap. Let the child enjoy finding out it is them."
+          ],
+          "evidence": [
+            "He hasn't any feathers, and his mouth is sweet and small;",
+            "One little precious duck, here on mamma's lap!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-02",
+      "title": "That’s What We’d Do",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Imagine being an owl and follow the plan step by step.",
+      "focus": "Two friends picture what they would do together if they were owls in the moonlight.",
+      "context": "This poem plays “let’s pretend.” A bough is a branch; “beyond a doubt” means certainly. Owls come out when the moon is up. Read it to the child as “you,” with yourself as “I,” and wink when the poem winks.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“That's What We'd Do,” the complete poem; opens “IF you were an owl, And I were an owl, And this were a tree, And the moon came out, I…”; closes “…Why, you'd sing to me, And I'd sing to you; That's what we'd do, When the moon came out.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          127,
+          128
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2622822effdb6e29890da32b05ad3cab171e4d8cb011b2e4a4cc8002c2625221"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-02-q1",
+          "prompt": "What has to happen before the two owls do anything?",
+          "facilitatorNotes": [
+            "They must be owls in a tree, and the moon must come out."
+          ],
+          "evidence": [
+            "And this were a tree,",
+            "And the moon came out,"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-02-q2",
+          "prompt": "What would the two owls do on the bough?",
+          "facilitatorNotes": [
+            "Stand there together and wink at each other, and later sing to each other. Children can wink back."
+          ],
+          "evidence": [
+            "You'd wink at me,",
+            "And I'd wink at you;"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-02-q3",
+          "prompt": "Why do you think the speaker wants to be an owl together with “you”?",
+          "facilitatorNotes": [
+            "The speaker wants to be close and share everything: standing together, a rose, winking and singing. It shows friendship or love. A child who says the speaker just likes owls can be asked why it is “we two.”"
+          ],
+          "evidence": [
+            "We would stand, we two,",
+            "I'd give you a rose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-03",
+      "title": "Out of the Shell",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a newly hatched duckling speak for itself.",
+      "focus": "A brand-new duckling complains about its egg as if it had been a poor, cramped little house.",
+      "context": "The duckling has just hatched from its egg. “A duck of a bird” is a joke, because “duck” was also a word for a darling. Mean here means poor and shabby; a cramp is a tight squeeze; “thought me a spoon” means thought me silly. Read in a small, cross, proud voice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Out of the Shell,” the complete poem; opens “WELL, I'm out, after all! And I'll say, on my word, That's a pretty mean house For a duck…”; closes “…and dad May have thought me a spoon, But they'll not get me back In that thing very soon.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          636,
+          638
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "72aba1d7fddeb62de89e4252a10e0d09b3d0ed8a4dd67751aafe9db9c94bbec6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q1",
+          "prompt": "What does the duckling call its eggshell?",
+          "facilitatorNotes": [
+            "A pretty mean house: too small and poor for such a fine bird."
+          ],
+          "evidence": [
+            "That's a pretty mean house"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q2",
+          "prompt": "What was it like inside the shell?",
+          "facilitatorNotes": [
+            "The duckling could not stand up or sit down and lay squeezed from toes to head. Children can curl up small to show it."
+          ],
+          "evidence": [
+            "Why, I couldn't stand up,",
+            "But I lay in a cramp"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q3",
+          "prompt": "Will the duckling ever go back into its shell? Why is that funny?",
+          "facilitatorNotes": [
+            "“Not very soon,” it says, as if it might choose to; of course it never can. The joke is that it talks as if it had a choice."
+          ],
+          "evidence": [
+            "But they'll not get me back",
+            "In that thing very soon."
+          ]
+        }
+      ]
+    }
+  ]
+}

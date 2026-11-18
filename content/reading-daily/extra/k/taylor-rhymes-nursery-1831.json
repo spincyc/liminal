@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "taylor-rhymes-nursery-1831",
+  "readings": [
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-01",
+      "title": "The Cow",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a child thank a cow and then give her advice.",
+      "focus": "The child thanks the cow for her milk and tells her where to eat, so the milk will stay sweet.",
+      "context": "Ann and Jane Taylor wrote these rhymes for young children about two hundred years ago. Hemlock is a poisonous weed; rank means growing thick and coarse. Cowslips are yellow wildflowers; to dine is to eat dinner.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Cow,” the complete poem; opens “Thank you, pretty cow, that made Pleasant milk to soak my bread, Ev’ry day, and ev’ry…”; closes “…bubbling water flows, Where the grass is fresh and fine, Pretty cow, go there and dine.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9570154fa0505366ba606d5e902d37ecd179a6fa2ab865c30c06e1c260fab990"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-01-q1",
+          "prompt": "Why does the child thank the cow?",
+          "facilitatorNotes": [
+            "For the milk that soaks the child’s bread, every day and every night."
+          ],
+          "evidence": [
+            "Thank you, pretty cow, that made",
+            "Pleasant milk to soak my bread,"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-01-q2",
+          "prompt": "What should the cow not eat, and what should she eat instead?",
+          "facilitatorNotes": [
+            "Not the hemlock on the weedy bank, but the yellow cowslips, which will make her milk sweet."
+          ],
+          "evidence": [
+            "Do not chew the hemlock rank,",
+            "But the yellow cowslips eat,"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-01-q3",
+          "prompt": "Describe the place where the child tells the cow to go and dine. Why might a good meadow make good milk?",
+          "facilitatorNotes": [
+            "Where violets grow, water bubbles and the grass is fresh and fine. A child who connects good food with good milk is following the poem’s idea."
+          ],
+          "evidence": [
+            "Where the bubbling water flows,",
+            "Pretty cow, go there and dine."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-02",
+      "title": "The Sparrows",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a child try to make friends with shy birds.",
+      "focus": "A child promises the nest-building sparrows that she only wants to watch them, never to cage them.",
+      "context": "Sparrows are small brown birds that build untidy nests. A jenneting tree is an early apple tree. “Dick” was a pet name for a bird. Read gently, as if not to frighten the birds away.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Sparrows,” the complete poem; opens “Hop about, pretty sparrows, and pick up the hay, And the twigs, and the wool, and the…”; closes “…be! Then come, pretty bird, while I quietly stand At the foot of the jenneting tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          22,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "04ac5faf615d98cf85fa39bade53a592a97142b621726a1892b30f8c8d1649cb"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-02-q1",
+          "prompt": "What are the sparrows picking up, and why?",
+          "facilitatorNotes": [
+            "Hay, twigs, wool and moss to build their nest, their “house.”"
+          ],
+          "evidence": [
+            "Hop about, pretty sparrows, and pick up the hay,",
+            "How you gather the twigs for your house;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-02-q2",
+          "prompt": "What does the child promise not to do?",
+          "facilitatorNotes": [
+            "Not to catch them and fasten them in a cage, where they would hop all day on a stick or flutter in a rage."
+          ],
+          "evidence": [
+            "I don’t mean to catch you, you dear little Dick,",
+            "And fasten you up in a cage;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-02-q3",
+          "prompt": "What would make the child happiest? Do you think the sparrows will come?",
+          "facilitatorNotes": [
+            "If a sparrow would eat a crumb from her hand. The poem does not say whether one comes; children can guess, perhaps saying she must stand very still."
+          ],
+          "evidence": [
+            "Oh dear, if you’d eat a crumb out of my hand,",
+            "Then come, pretty bird, while I quietly stand"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-03",
+      "title": "A Wasp and a Bee",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a conversation and the lesson drawn from it at the end.",
+      "focus": "A handsome wasp asks why people prefer the plain bee, and the bee says the trouble is the wasp’s sting.",
+      "context": "Wasps and bees are both striped insects that can sting, and bees make honey. Elegant means graceful; homely means plain; ill-natured means unkind; fair means good-looking. The last verse speaks to people, not to insects.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Wasp and a Bee,” the complete poem (the initials printed after it omitted); opens “A wasp met a bee that was just buzzing by, And he said, little cousin, can you tell me…”; closes “…the wasp, if ill-natured they are, They will never be loved, if they’re ever so fair.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          415,
+          420
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "48da9448dacc3cd089773402741baaeedc2a9dbae0981db430830027e4d9ea0e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q1",
+          "prompt": "What is the wasp proud of?",
+          "facilitatorNotes": [
+            "Its shining gold-yellow back and its elegant shape."
+          ],
+          "evidence": [
+            "My back shines as bright and as yellow as gold,"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q2",
+          "prompt": "Why does the bee say people do not love the wasp?",
+          "facilitatorNotes": [
+            "Because of its sting and the mischief it does, not because of its looks."
+          ],
+          "evidence": [
+            "They cannot put up with, and that is your sting."
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q3",
+          "prompt": "The last verse turns the story into a lesson for people. What is the lesson?",
+          "facilitatorNotes": [
+            "Unkind people will not be loved however good-looking they are: kindness matters more than looks. Some children will point out that bees can sting too, a fair point the poem does not answer."
+          ],
+          "evidence": [
+            "Because, like the wasp, if ill-natured they are,",
+            "They will never be loved, if they’re ever so fair."
+          ]
+        }
+      ]
+    }
+  ]
+}

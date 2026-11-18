@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "coleridge-pretty-lessons-1853",
+  "readings": [
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-01",
+      "title": "The Months",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the year go round, one month at a time.",
+      "focus": "Each month brings its own weather, flowers, animals or treats, from January snow to Christmas in December.",
+      "context": "Sara Coleridge wrote this poem to help her son learn the months, and it became famous on its own. Dams are mother sheep; gilliflowers are sweet-smelling flowers; sheaves of corn are bundles of cut grain, and the harvest home is the end of harvest; a pheasant is a large bird; sportsmen here are hunters. These are English seasons, and your months may look different.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Months,” the complete poem; opens “JANUARY brings the snow, Makes our feet and fingers glow.”; closes “Chill December brings the sleet, Blazing fire, and Christmas treat.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8991aad8cdb677ddaaa2a98ca2ef651fd15bc6c9c1f69b5a398e778e74524ab7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q1",
+          "prompt": "What does January bring, and what does it do to our feet and fingers?",
+          "facilitatorNotes": [
+            "Snow, which makes feet and fingers glow with cold."
+          ],
+          "evidence": [
+            "JANUARY brings the snow,",
+            "Makes our feet and fingers glow."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q2",
+          "prompt": "Which month brings lambs, and which brings roses?",
+          "facilitatorNotes": [
+            "May brings lambs; June brings tulips, lilies and roses. Children can find their birthday month and hear what the poem gives it."
+          ],
+          "evidence": [
+            "May brings flocks of pretty lambs,",
+            "June brings tulips, lilies, roses,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q3",
+          "prompt": "Which month in the poem is most like this month where you live, and which is least like it?",
+          "facilitatorNotes": [
+            "Answers depend on where the family lives; ask for the poem’s line and one difference. This helps children notice that a poem describes one place and its seasons."
+          ],
+          "evidence": [
+            "Dull November brings the blast,",
+            "Chill December brings the sleet,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-02",
+      "title": "The Suspicious Cock and Hen",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow how one unkind remark sets off a farmyard uproar.",
+      "focus": "The cock and hen accuse an innocent cat and so give her the very idea they feared.",
+      "context": "Suspicious means quick to think someone is up to no good. Intent means plan; in a trice means in an instant; dame means wife. Clacking, gobbling and quacking are farmyard noises, so make them as you read. The last verse gives the poem’s lesson.",
+      "contentNote": "The cat seizes a chick, and the old woman threatens to beat the noisy animals.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Suspicious Cock and Hen,” the complete poem; opens “A COCK and a Hen Stepp’d out of their pen, And quickly beginning to chat, Said Cock to…”; closes “…return; And making a noise In birds, beasts, and boys, It is but a silly concern.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          30
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a42502841afb96e2c5d26ebe9b477b212d25d2e8e489d2efff5ee4621b3cf4e1"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q1",
+          "prompt": "What does the cock think the cat is up to?",
+          "facilitatorNotes": [
+            "Prowling about to steal their chickens."
+          ],
+          "evidence": [
+            "Pray look at that ugly old cat.",
+            "To steal our sweet Chickens away;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q2",
+          "prompt": "What was the cat really doing, and what gave her the idea of taking a chick?",
+          "facilitatorNotes": [
+            "She was only catching mice; the hen’s silly words put the idea of seizing a chick into her head."
+          ],
+          "evidence": [
+            "But merely on catching of Mice;",
+            "First put in her head"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q3",
+          "prompt": "The poem says “ill-natured speech provokes an ill-natured return.” What does that mean in this story?",
+          "facilitatorNotes": [
+            "The hen spoke unkindly to the cat, and the cat answered by doing the very thing she was accused of; then everyone’s noise made it worse. Children may say “be kind and kindness comes back”; ask whether the cat was right to grab the chick, since in the end she gives it up."
+          ],
+          "evidence": [
+            "That ill-natured speech",
+            "Provokes an ill-natured return;"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "greenaway-under-window-1880",
+  "readings": [
+    {
+      "id": "reading-k-greenaway-under-window-1880-01",
+      "title": "Higgledy, piggledy! see how they run!",
+      "sourceId": "greenaway-under-window-1880",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen to questions that never get an answer.",
+      "focus": "Everyone is running and a bell is ringing, but nobody knows why, which makes the rhyme exciting.",
+      "context": "Kate Greenaway wrote and drew Under the Window; here we have her words without the pictures. Higgledy-piggledy means all in a jumble, and “hopperty, popperty” is made up for its sound. Read the questions breathlessly, as if you really want to know.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “Higgledy, piggledy! see how they run!”, complete (two stanzas); opens “HIGGLEDY, piggledy! see how they run! Hopperty, popperty! what is the fun? Has the sun or…”; closes “…bell! The rats and the mice even scamper away; Who can say what may not happen to-day?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          42,
+          43
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4bc183f4a079d6cfa83c073f6a5cb7c8a9d76eef7248e210407f728a2fd492ab"
+      },
+      "questions": [
+        {
+          "id": "reading-k-greenaway-under-window-1880-01-q1",
+          "prompt": "Who is running about in the rhyme?",
+          "facilitatorNotes": [
+            "Everyone, in a jumble; even the rats and mice scamper away."
+          ],
+          "evidence": [
+            "HIGGLEDY, piggledy! see how they run!",
+            "The rats and the mice even scamper away;"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-01-q2",
+          "prompt": "What wild guess does the speaker make about what has happened?",
+          "facilitatorNotes": [
+            "That the sun or the moon has tumbled into the sea."
+          ],
+          "evidence": [
+            "Has the sun or the moon tumbled into the sea?"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-01-q3",
+          "prompt": "Do we ever find out what is happening? What do you think it could be?",
+          "facilitatorNotes": [
+            "No: the speaker cannot tell, and the rhyme ends with another question. Children can invent a reason, such as a fire, a fair or a wedding bell, as long as they call it their own idea."
+          ],
+          "evidence": [
+            "Higgledy, piggledy! how can I tell?",
+            "Who can say what may not happen to-day?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-greenaway-under-window-1880-02",
+      "title": "This little fat Goblin",
+      "sourceId": "greenaway-under-window-1880",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear both the farmer’s side and the goblin’s side.",
+      "focus": "A cheeky goblin keeps stealing cabbages and laughs that the farmer will never catch him.",
+      "context": "A goblin is a mischievous make-believe creature. A notable sinner is a well-known wrongdoer; a rogue is a rascal. Read the farmer sadly and the goblin with a laugh.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “This little fat Goblin,” complete (four stanzas); opens “THIS little fat Goblin, A notable sinner, Stole cabbages daily, For breakfast and dinner.”; closes “…fat Goblin, He never need sorrow; He stole three to-day, And he’ll steal more to-morrow.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          60,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d7a79769a092fe2c5870e47eb95edb8ccaffffe9734cd00f9bf1fcd4b0c49f3f"
+      },
+      "questions": [
+        {
+          "id": "reading-k-greenaway-under-window-1880-02-q1",
+          "prompt": "What does the goblin steal, and how often?",
+          "facilitatorNotes": [
+            "Cabbages, every day, for breakfast and dinner."
+          ],
+          "evidence": [
+            "Stole cabbages daily,",
+            "For breakfast and dinner."
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-02-q2",
+          "prompt": "How does the farmer feel about the stolen cabbages?",
+          "facilitatorNotes": [
+            "Sorry and upset; he cries out that the rogue has been there again."
+          ],
+          "evidence": [
+            "The Farmer looked sorry;",
+            "He cried, and with pain,"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-02-q3",
+          "prompt": "Why is the goblin not worried? Do you think he should be?",
+          "facilitatorNotes": [
+            "He laughs that the farmer would have to run far to catch him, and plans to steal more tomorrow. Children may say he should stop because stealing is wrong, or enjoy his cheek; ask what the farmer might try next."
+          ],
+          "evidence": [
+            "He’ll have to run far.”",
+            "And he’ll steal more to-morrow."
+          ]
+        }
+      ]
+    }
+  ]
+}
