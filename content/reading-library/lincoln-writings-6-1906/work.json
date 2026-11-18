@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "lincoln-writings-6-1906",
+  "author": "Abraham Lincoln",
+  "title": "Proclamation for Thanksgiving, October 3, 1863 (The Writings of Abraham Lincoln, Volume Six, 1862–1863)",
+  "translator": null,
+  "edition": "The Writings of Abraham Lincoln, edited by Arthur Brooks Lapsley, Volume Six, 1862–1863, New York and London: G. P. Putnam’s Sons, The Knickerbocker Press, 1906 (copyright 1906), pages 432–435. Text from Project Gutenberg eBook 2658 (The Papers and Writings of Abraham Lincoln, Volume 6: 1862–1863, Constitutional Edition, produced by David Widger), collated word by word in November 2026, whole, against the OCR text of the Internet Archive scan writingsofabraha06linc_0 of the 1906 Putnam volume. The transcription departs from the print in this document, and the print’s readings are adopted throughout: “OF THE UNITED STATES OF AMERICA” (the transcription drops the second “OF”), “severity, which”, “foreign states, peace”, “military conflict, while”, “peaceful industry to the national defense”, “or the ship. The axe”, “as well of iron and coal”, the signature “Abraham Lincoln.” for “A. LINCOLN.”, and “By the President.” on its own line before “William H. Seward, Secretary of State.” Small capitals in the title, the address line and the two names are given as capitals; the “[Seal].” notation set beside the dateline, running heads, page numbers and line-end hyphens are not represented.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://archive.org/details/writingsofabraha06linc_0",
+  "textUrl": "https://www.gutenberg.org/cache/epub/2658/pg2658.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "A presidential proclamation of 1863, reprinted in a volume whose scanned title and copyright pages read New York and London: G. P. Putnam’s Sons, 1906, “Copyright, 1906”. Works published in the United States before 1931 are in the US public domain as of 2026; no editorial matter from the volume is reproduced. Project Gutenberg eBook 2658 is labelled public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/writingsofabraha06linc_0"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/2658/pg2658.txt",
+    "downloadSha256": "553834fea8b4d54245c62b8dcc74ff1edeccc6d8e3fe338d7bf3a5cdd0f25769",
+    "method": "Project Gutenberg plain text (eBook 2658, CRLF normalised to LF) from the PG mirror; a scratch Python script took the lines from the heading PROCLAMATION FOR THANKSGIVING, OCTOBER 3, 1863. to the next document (TELEGRAM TO GENERAL J. M. SCHOFIELD), made the heading a level-1 heading and every other paragraph a paragraph block with wraps and runs of spaces joined, and substituted the print’s readings listed in edition, splitting the transcription’s “By the President: WILLIAM H. SEWARD, Secretary of State” into the print’s two lines."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only the Proclamation for Thanksgiving of October 3, 1863, the one document of this volume that a nightly reading uses; the volume’s other letters, speeches, telegrams and proclamations are not held.",
+    "collated": [
+      [
+        0,
+        10
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 11,
+    "sha256": "02089abafe30522253b77ec63cb312697666de1d2afae8be4365ed2e5032fa3d"
+  }
+}
