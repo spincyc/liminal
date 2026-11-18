@@ -4,10 +4,13 @@
 const test = require("node:test"), assert = require("node:assert/strict");
 const D = require("../src/lib/daily-reading"), Cal = require("../src/lib/reading-calendar"), Lib = require("../src/lib/reading-library"), LL = require("../src/lib/reading-level");
 
-const index = { grades: [{ grade: 0, calendar: true }, { grade: 3, calendar: false }, { grade: 5, calendar: true }] };
+const ALL = [true, true, true], NONE = [false, false, false];
+const index = { grades: [{ grade: 0, calendar: true, calendarYears: ALL }, { grade: 3, calendar: false, calendarYears: NONE }, { grade: 5, calendar: true, calendarYears: ALL }] };
+// The calendar as it first goes live: only Year 2 (2027, 2030, …) written.
+const year2 = { grades: [{ grade: 0, calendar: true, calendarYears: [false, true, false] }, { grade: 5, calendar: true, calendarYears: [false, true, false] }, { grade: 13, calendar: false, calendarYears: NONE }] };
 
 test("routes cover the year, nights, dates, months, readings and the day print", () => {
-  const opts = { grade: 5, today: "2026-11-17" };
+  const opts = { grade: 5, today: "2026-11-17", isWritten: Cal.isWritten };
   assert.deepEqual(D.view(index, "", opts), { view: "browse", course: index.grades[2], grade: 5, week: null, home: true, invalid: false });
   assert.equal(D.view(index, "#browse/5/12", opts).week, 12);
   for (const hash of ["#browse/5/37", "#browse/5/x", "#browse/9", "#browse/5/12/1"]) assert.equal(D.view(index, hash, opts).invalid, true, hash);
@@ -86,26 +89,28 @@ test("remembered places are parsed as untrusted data and updated by the views", 
 test("Tonight offers the plan's night, the next school night and today's date reading, or the start of the year", () => {
   const state = { version: 1, grade: 5, night: { grade: 5, week: 3, day: 5 }, date: null };
   const nights = [{ week: 3, day: 5, title: "Five" }, { week: 4, day: 1, title: "Six" }];
-  const entries = D.tonight({ index, state, planNight: { level: 0, week: 10, day: 1, date: "2026-11-17" }, today: "2026-11-17", nights });
+  const entries = D.tonight({ index, state, planNight: { level: 0, week: 10, day: 1, date: "2026-11-17" }, today: "2026-11-17", nights, isWritten: Cal.isWritten });
   assert.deepEqual(entries.map(entry => entry.kind), ["plan", "continue", "date"]);
   assert.equal(entries[0].label, "Tonight in your plan: Kindergarten, Week 10, Day 1"); assert.equal(entries[0].href, "#k/10/1");
   assert.equal(entries[1].title, "Five"); assert.deepEqual(entries[1].next, { label: "Next: Week 4, Day 1", href: "#5/4/1", title: "Six" });
   assert.equal(entries[2].href, "#5/date/2026-11-17");
   // Without a calendar, the date entry is left out; a first visit starts the school year.
-  assert.deepEqual(D.tonight({ index, state: { ...state, grade: 3 }, today: "2026-11-17" }).map(entry => entry.kind), ["continue"]);
-  assert.deepEqual(D.tonight({ index: { grades: [{ grade: 3, calendar: false }] }, today: "2026-11-17" }),
+  assert.deepEqual(D.tonight({ index, state: { ...state, grade: 3 }, today: "2026-11-17", isWritten: Cal.isWritten }).map(entry => entry.kind), ["continue"]);
+  assert.deepEqual(D.tonight({ index: { grades: [{ grade: 3, calendar: false }] }, today: "2026-11-17", isWritten: Cal.isWritten }),
     [{ kind: "start", grade: 3, label: "Start the Grade 3 school year: Week 1, Day 1", href: "#3/1/1" }]);
-  assert.equal(D.tonight({ index, today: "2026-11-17", planNight: { level: 9, week: 1, day: 1 } })[0].kind, "date");
-  assert.equal(D.tonight({ index, state: { ...state, night: { grade: 5, week: 36, day: 5 } }, today: "2026-11-17" })[0].next, null);
+  assert.equal(D.tonight({ index, today: "2026-11-17", planNight: { level: 9, week: 1, day: 1 }, isWritten: Cal.isWritten })[0].kind, "date");
+  assert.equal(D.tonight({ index, state: { ...state, night: { grade: 5, week: 36, day: 5 } }, today: "2026-11-17", isWritten: Cal.isWritten })[0].next, null);
+  // Without the calendar's isWritten, no date counts as having a reading.
+  assert.deepEqual(D.tonight({ index, state, today: "2026-11-17" }).map(entry => entry.kind), ["continue"]);
 });
 
 test("the day print says what each level prints, or why it cannot", () => {
-  const plan = D.printPlan(index, { date: "2026-11-17", grades: [0, 3, 9], formatDate: () => "Tue, Nov 17" });
+  const plan = D.printPlan(index, { date: "2026-11-17", grades: [0, 3, 9], formatDate: () => "Tue, Nov 17", isWritten: Cal.isWritten });
   assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false]]);
   assert.equal(plan[0].footer, "Kindergarten · Tue, Nov 17"); assert.match(plan[1].reason, /Grade 3 is not available yet/);
   assert.equal(D.printPlan(index, { week: 3, day: 2, grades: [3] })[0].footer, "Grade 3 · Week 3 · Day 2");
   assert.equal(D.printPlan(index, { grades: [3] })[0].available, false);
-  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5] })[0].footer, "Grade 5 · Tuesday 17 November 2026");
+  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5], isWritten: Cal.isWritten })[0].footer, "Grade 5 · Tuesday 17 November 2026");
   assert.equal(D.printMeta(0, { date: "2028-02-29" }), "Kindergarten · Tuesday 29 February 2028");
   assert.equal(D.printMeta(5, { week: 3, day: 2 }), "Grade 5 · Week 3 · Day 2");
   assert.equal(D.printMeta(5), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(5, { date: "2026-02-30" }), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(99), null);
@@ -236,7 +241,7 @@ test("unrecognized routes fall back to the remembered grade, and school-night id
 });
 
 test("a print link without a day opens today's date only when a chosen level has a calendar", () => {
-  const opts = { grade: 3, today: "2026-11-17" };
+  const opts = { grade: 3, today: "2026-11-17", isWritten: Cal.isWritten };
   assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, week: 1, day: 1, grades: [], invalid: false });
   assert.equal(D.view(index, "#print", { ...opts, grade: 5 }).date, "2026-11-17");
   assert.equal(D.view(index, "#print/3", opts).week, 1);
@@ -266,4 +271,31 @@ test("a typed date opens only when complete and committed; the picker's choice o
   assert.equal(D.dateCommit({ value: "2026-11-17", current: "2026-11-17", explicit: true }), null);
   assert.equal(D.dateCommit({ value: "", current: "2026-11-17", explicit: true }), null);
   assert.equal(D.dateCommit({ value: "2027-02-29", explicit: true }), null);
+});
+
+test("a level whose calendar has not reached today's year offers no date reading for today", () => {
+  const is = Cal.isWritten;
+  assert.equal(D.calendarHas(year2, 5, "2026-11-18", is), false); assert.equal(D.calendarHas(year2, 5, "2027-11-18", is), true);
+  assert.equal(D.calendarHas(year2, 13, "2027-11-18", is), false); assert.equal(D.calendarHas(year2, 5, "2027-02-29", is), false);
+  assert.equal(D.calendarHas(year2, 5, "2027-11-18"), false, "no isWritten, no reading");
+  assert.deepEqual(D.calendarYearsOf(year2, [5, 13]), [false, true, false]); assert.deepEqual(D.calendarYearsOf(year2, [13]), NONE);
+  // Tonight: no date entry in 2026; a first visit starts the school year, as for a level with no calendar.
+  const state = { version: 1, grade: 5, night: { grade: 5, week: 3, day: 5 }, date: null };
+  assert.deepEqual(D.tonight({ index: year2, state, today: "2026-11-18", isWritten: is }).map(entry => entry.kind), ["continue"]);
+  assert.deepEqual(D.tonight({ index: year2, state: { version: 1, grade: 5, night: null, date: null }, today: "2026-11-18", isWritten: is }),
+    [{ kind: "start", grade: 5, label: "Start the Grade 5 school year: Week 1, Day 1", href: "#5/1/1" }]);
+  assert.equal(D.tonight({ index: year2, state, today: "2027-03-04", isWritten: is }).at(-1).href, "#5/date/2027-03-04");
+  // The day print says the year is not written; a written date prints.
+  const plan = D.printPlan(year2, { date: "2026-11-18", grades: [0, 5, 13], isWritten: is });
+  assert.deepEqual(plan.map(item => [item.grade, item.available, !!item.unwritten]), [[0, false, true], [5, false, true], [13, false, false]]);
+  assert.equal(plan[0].reason, "Readings for dates in 2026 are not written yet.");
+  assert.match(plan[2].reason, /Advanced 1 is not available yet/);
+  assert.equal(D.printPlan(year2, { date: "2027-01-01", grades: [5], isWritten: is })[0].footer, "Grade 5 · Friday 1 January 2027");
+  // A print link without a day opens today only when today has a reading; otherwise the first school night.
+  const opts = { grade: 5, today: "2026-11-18", isWritten: is };
+  assert.deepEqual(["date", "week", "day"].map(key => D.view(year2, "#print", opts)[key]), [null, 1, 1]);
+  assert.equal(D.view(year2, "#print/k,5", { ...opts, today: "2027-11-18" }).date, "2027-11-18");
+  // A chosen date stays chosen, written or not; the print view says what it can print.
+  assert.equal(D.view(year2, "#print/date/2026-12-25/5", opts).date, "2026-12-25");
+  assert.equal(D.notWritten("0099-12-31"), "Readings for dates in 99 are not written yet.");
 });

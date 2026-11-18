@@ -13,6 +13,9 @@
   const weekSelect = $("dailyPrintWeek"), daySelect = $("dailyPrintDay"), levels = $("dailyPrintLevels"), preview = $("dailyPrintPreview");
   const browserButton = $("dailyPrintBrowser"), note = $("dailyPrintNote"), pages = $("dailyPrintPages");
   const T = window.LiminalReadingTeX, A = window.LiminalPdfAction;
+  // A date in a cycle year not written yet: where the readings are, with a
+  // button to choose that date instead.
+  const advice = R.el("div", undefined, "daily-print-advice"); advice.hidden = true;
   let ctx = null, ready = false, loaded = [], version = 0, pdf = null;
 
   // The PDF control replaces the placeholder button; its status line follows the actions.
@@ -39,6 +42,7 @@
       label.append(box, document.createTextNode(" " + D.gradeLabel(course.grade) + (mixed && !course.calendar ? " (school year only)" : "")));
       levels.append(label);
     });
+    preview.after(advice);
     form.addEventListener("change", changed);
     form.addEventListener("submit", event => event.preventDefault());
     pdf = setupPdf();
@@ -85,7 +89,7 @@
     return { ...item, reading: day, source, run: run && { part: run.part, of: run.of }, packet: D.studentReading(course, chosen.week, chosen.day) };
   }
   async function update(chosen) {
-    const mine = ++version, plan = D.printPlan(ctx.index, chosen), canPdf = engine();
+    const mine = ++version, plan = D.printPlan(ctx.index, { ...chosen, isWritten: Cal.isWritten }), canPdf = engine();
     if (pdf) pdf.cancel();
     const pdfButton = $("dailyPrintPdf");
     preview.setAttribute("aria-busy", "true"); pdfButton.disabled = browserButton.disabled = true;
@@ -102,6 +106,7 @@
       return li;
     }) : [R.el("li", "Choose at least one level.", "daily-print-item is-unavailable")]));
     preview.setAttribute("aria-busy", "false");
+    showAdvice(results.some(item => item.unwritten) ? Cal.unwritten(D.calendarYearsOf(ctx.index, chosen.grades), chosen.date) : null);
     $("dailyPrintIntro").textContent = canPdf ? "One PDF in which each level starts on a fresh sheet, so two-sided printing never puts two levels on one sheet of paper." :
       "Every chosen level’s reading for one day, each starting on a new page.";
     pdfButton.disabled = !canPdf || !loaded.length; browserButton.disabled = !loaded.length;
@@ -109,6 +114,17 @@
       "Printing from this browser starts each level on a new page; on a two-sided printer a level can share a sheet with the one before it.";
   }
 
+  function showAdvice(missing) {
+    advice.hidden = !missing;
+    if (!missing) { advice.replaceChildren(); return; }
+    const actions = R.el("div", undefined, "daily-print-actions");
+    missing.dates.forEach(date => {
+      const use = R.el("button", "Use " + Cal.longDate(date)); use.type = "button";
+      use.addEventListener("click", () => { byDate.checked = true; dateInput.value = date; changed(); dateInput.focus(); });
+      actions.append(use);
+    });
+    advice.replaceChildren(R.el("p", missing.text), actions);
+  }
   function entries() { return loaded.map(item => ({ day: item.reading, source: item.source, meta: item.footer, run: item.run })); }
   // Browser printing: every level's student copy, each starting a new page.
   function printHere() {
