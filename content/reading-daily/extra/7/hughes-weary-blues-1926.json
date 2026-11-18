@@ -1190,6 +1190,453 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-20",
+      "title": "Cabaret",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Weigh what “they say” against what one listener hears.",
+      "focus": "A question about whether happy music can hide sorrow.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. A cabaret is a nightclub with music and dancing; the jazz-band plays the new music of the 1920s; gay here means merry; wan means pale and tired.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Cabaret,” the whole poem; opens “Does a jazz-band ever sob? They say a jazz-band’s gay. Yet as the vulgar dancers whirled…”; closes “…wan night wore away, One said she heard the jazz-band sob When the little dawn was grey.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          29,
+          30
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f3a13ad7b87f3e5ed8fa76d3340de36e462783b6aeb73d933e89d584b2346e39"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-20-q1",
+          "prompt": "What do people say about a jazz-band, and what does one listener hear instead?",
+          "facilitatorNotes": [
+            "“They say” it is merry; “one said” she heard it sob at dawn. The poem sets common opinion against one person’s experience, and leaves us to decide which to trust."
+          ],
+          "evidence": [
+            "They say a jazz-band’s gay.",
+            "One said she heard the jazz-band sob"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-20-q2",
+          "prompt": "Why might the sob be heard “when the little dawn was grey,” not earlier in the night? Look at how the night is described.",
+          "facilitatorNotes": [
+            "The “wan night wore away” while the dancers whirled: by dawn the excitement is spent and tiredness shows. Sorrow that the noise covered can be heard when the night ends."
+          ],
+          "evidence": [
+            "And the wan night wore away,",
+            "When the little dawn was grey."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-20-q3",
+          "prompt": "The poem opens with a question and never answers it directly. What answer does it suggest? Who calls the dancers “vulgar”?",
+          "facilitatorNotes": [
+            "It suggests that under the gaiety there is grief, as in the blues. But “one said” is a single witness, so readers can disagree. “Vulgar” may be the speaker’s judgment or the way respectable people saw the cabarets; ask what the word adds."
+          ],
+          "evidence": [
+            "Does a jazz-band ever sob?",
+            "Yet as the vulgar dancers whirled"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-21",
+      "title": "Fantasy in Purple",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a poem built like a piece of music, instrument by instrument.",
+      "focus": "A speaker imagines the music he wants at his death, and keeps one note of sunlight.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. A fantasy is an imagined scene; purple is a colour of royalty and of mourning. In a tragedy the hero dies. A choir is a group of singers; to whir is to make a soft, rapid humming sound.",
+      "contentNote": "The speaker imagines his own death.",
+      "excerpt": {
+        "locator": "“Fantasy in Purple,” the whole poem; opens “Beat the drums of tragedy for me. Beat the drums of tragedy and death. And let the choir…”; closes “…slow, But blow one blaring trumpet note of sun To go with me to the darkness where I go.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          78,
+          80
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ac373d12e72347a49469095f877b7502507fd553a0a91b196005806da7a253ec"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-21-q1",
+          "prompt": "What does the speaker ask for? List the instruments and what each should do.",
+          "facilitatorNotes": [
+            "Drums of “tragedy and death,” a choir singing a “stormy song,” white violins whirring “thin and slow,” and one “blaring trumpet note of sun.” He is planning his death like a composer planning a piece."
+          ],
+          "evidence": [
+            "Beat the drums of tragedy for me.",
+            "And let the white violins whir thin and slow,"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-21-q2",
+          "prompt": "Why does the speaker want the music to “drown the rattle” of his dying breath?",
+          "facilitatorNotes": [
+            "He wants his death to be grand and stormy, not small and pitiful; the music covers the body’s weakness, and perhaps fear. Readers may hear defiance, pride, fear or all three."
+          ],
+          "evidence": [
+            "And let the choir sing a stormy song",
+            "To drown the rattle of my dying breath."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-21-q3",
+          "prompt": "The trumpet note is “of sun,” and the last lines grow shorter. What changes at the end of the poem?",
+          "facilitatorNotes": [
+            "Among drums and darkness there is one bright, loud note: hope, joy or defiance, taken along into “the darkness.” The short last lines slow down like footsteps going away. Readers can decide whether the ending is bleak, brave or hopeful, and point to words."
+          ],
+          "evidence": [
+            "But blow one blaring trumpet note of sun",
+            "To go with me to the darkness where I go."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-22",
+      "title": "Sea Calm and Caribbean Sunset",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare two tiny poems that look at the sea in unexpected ways.",
+      "focus": "Calm water that feels wrong, and a sunset painted as blood.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. In the early 1920s Hughes worked as a sailor on ships to Africa and Europe. The Caribbean is the sea of the West Indian islands. A hemorrhage is a sudden burst of bleeding.",
+      "contentNote": "“Caribbean Sunset” compares the sunset to God coughing blood.",
+      "excerpt": {
+        "locator": "“Sea Calm” and “Caribbean Sunset,” two whole poems printed together among the book’s sea poems; opens “How still, How strangely still The water is today. It is not good For water To be so…”; closes “…Blood coughed across the sky, Staining the dark sea red, That is sunset in the Caribbean.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          170,
+          173
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "74e5cacd2608d80df14e0ba33a77c08f64d6c439623b9b8f786b6ef53db8c303"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-22-q1",
+          "prompt": "In “Sea Calm,” why does the speaker say such stillness is “not good”? What might a sailor know about calm water?",
+          "facilitatorNotes": [
+            "Strange calm can come before a storm, and a ship without wind cannot move; “strangely still” sounds uneasy, as if something is waiting. Readers may also hear a warning about a person who has gone too quiet."
+          ],
+          "evidence": [
+            "How strangely still",
+            "It is not good For water To be so still that way."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-22-q2",
+          "prompt": "“Caribbean Sunset” is one sentence of four lines. What is shocking about its comparison?",
+          "facilitatorNotes": [
+            "The red sky is God having a hemorrhage, “blood coughed across the sky,” staining the sea. A sacred figure and a violent illness turn a beautiful, postcard sight into something frightening."
+          ],
+          "evidence": [
+            "God having a hemorrhage,",
+            "Blood coughed across the sky,"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-22-q3",
+          "prompt": "Put the two poems side by side. How does each make something usually peaceful or lovely feel uneasy?",
+          "facilitatorNotes": [
+            "Calm water, usually restful, feels like a threat; a sunset, usually beautiful, looks like sickness. Both suggest a sailor’s sense that the sea is never only pretty. Readers can say which poem works better for them and why."
+          ],
+          "evidence": [
+            "To be so still that way.",
+            "That is sunset in the Caribbean."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-23",
+      "title": "Sea Charm",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out the difference between knowing something and feeling its charm.",
+      "focus": "People who live by the sea know its power and danger, but not its spell.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. A charm can be a magic spell or a strong attraction. “They know / But that” means they know only that.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Sea Charm,” the whole poem; opens “Sea charm The sea’s own children Do not understand. They know But that the sea is strong…”; closes “…But that sea wind is sweet Like God’s breath, And that the sea holds A wide, deep death.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          182,
+          183
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "48db9657769e90433c07e44d57e6fa4140bc2bd9109ed89fcc53d3939c7f0f91"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-23-q1",
+          "prompt": "Who might “the sea’s own children” be, and what do they not understand?",
+          "facilitatorNotes": [
+            "People born and living by the sea: fishermen, sailors, island families. They do not understand the sea’s “charm,” its spell, perhaps because it is simply their life and work."
+          ],
+          "evidence": [
+            "The sea’s own children Do not understand."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-23-q2",
+          "prompt": "List the three things the sea’s children do know. What do the comparisons with God add?",
+          "facilitatorNotes": [
+            "The sea is strong “like God’s hand,” its wind sweet “like God’s breath,” and it holds “a wide, deep death.” The sea has godlike power to give and to take away; they know it as people know something they must respect."
+          ],
+          "evidence": [
+            "But that the sea is strong Like God’s hand.",
+            "And that the sea holds A wide, deep death."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-23-q3",
+          "prompt": "Why might people who live by the sea not feel its charm, when a visitor might? Is the speaker one of the sea’s children?",
+          "facilitatorNotes": [
+            "Familiarity and danger: they know what it costs. A visitor can feel enchanted. The speaker seems to stand between, seeing the charm and also knowing the death. Readers can decide where he stands."
+          ],
+          "evidence": [
+            "Sea charm The sea’s own children",
+            "They know But that sea wind is sweet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-24",
+      "title": "Mexican Market Woman",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how a short portrait moves from the present to the past.",
+      "focus": "An old woman selling in the market, and the life she carries with her.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. As a young man Hughes spent time in Mexico, where his father lived. Wares are goods for sale; “day in, day round” means every single day.",
+      "contentNote": "The speaker calls the old woman a “hag,” a harsh word.",
+      "excerpt": {
+        "locator": "“Mexican Market Woman,” the whole poem; opens “This ancient hag Who sits upon the ground Selling her scanty wares Day in, day round, Has…”; closes “…day round, Has known high wind-swept mountains, And the sun has made Her skin so brown.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          202,
+          203
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fc472ad0a8710d0220614cbf19d14f2dcb84bb5f4ed9f8d6573a9a69315c5683"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-24-q1",
+          "prompt": "What do the first four lines tell us about the woman’s life now?",
+          "facilitatorNotes": [
+            "She is very old, sits on the ground, has little to sell, and does it every day without change: a life of poverty and routine."
+          ],
+          "evidence": [
+            "Selling her scanty wares",
+            "Day in, day round,"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-24-q2",
+          "prompt": "The poem turns to what she “has known.” What does that past add to the picture?",
+          "facilitatorNotes": [
+            "High, wind-swept mountains and years of sun that browned her skin: a life of distance, weather and endurance. The market ground is not her whole story."
+          ],
+          "evidence": [
+            "Has known high wind-swept mountains,",
+            "And the sun has made Her skin so brown."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-24-q3",
+          "prompt": "The poem begins “This ancient hag.” Does the rest of the poem agree with that harsh word, or quietly argue with it?",
+          "facilitatorNotes": [
+            "“Hag” may be how passers-by see her; the second half gives her a history and dignity, and her brown skin is the work of the sun, not ugliness. Other readers may think Hughes uses the word plainly, as an honest description. Both views need the text."
+          ],
+          "evidence": [
+            "This ancient hag",
+            "Who sits upon the ground"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-25",
+      "title": "Disillusion",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Decide whom the speaker is talking to, and whether he means what he says.",
+      "focus": "A speaker who wants to forget the city that has given him both joy and pain.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Disillusion is the feeling that comes when a hope or belief turns out to be false. Mirth is laughter and merriment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Disillusion,” the whole poem; opens “I would be simple again, Simple and clean Like the earth, Like the rain, Nor ever know,…”; closes “…pain. Be kind to me, Oh, great dark city. Let me forget. I will not come To you again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          232,
+          233
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1f0372b87f6d1108306dc3eebc4fff23c827ac2fa561778c8404087c48cd3968"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-25-q1",
+          "prompt": "What does the speaker wish to be again, and what does he wish he had never known?",
+          "facilitatorNotes": [
+            "“Simple and clean,” like earth and rain; he wishes he had never known Harlem’s “wild laughter” or its “salt tears.” He wants back an innocence that experience has taken away."
+          ],
+          "evidence": [
+            "I would be simple again,",
+            "The wild laughter Of your mirth Nor the salt tears Of your pain."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-25-q2",
+          "prompt": "He asks the city to “be kind” and says he will not come again. Is he talking to a place, or to something more like a person? What does that suggest?",
+          "facilitatorNotes": [
+            "He speaks to the “great dark city” as if it were a powerful person who could hurt or release him. Asking it to let him forget suggests it still has a hold on him. Readers may doubt that he will keep his promise."
+          ],
+          "evidence": [
+            "Be kind to me, Oh, great dark city.",
+            "I will not come To you again."
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-25-q3",
+          "prompt": "Harlem gives him both laughter and tears. Why does he want to forget both, not only the pain?",
+          "facilitatorNotes": [
+            "Knowing both is what has made him no longer “simple”; experience itself, joy included, ended his innocence. The title names what he has lost: an illusion, a hopeful picture of the city or of himself."
+          ],
+          "evidence": [
+            "Nor ever know, Dark Harlem,",
+            "Simple and clean Like the earth, Like the rain,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-hughes-weary-blues-1926-26",
+      "title": "Danse Africaine",
+      "sourceId": "hughes-weary-blues-1926",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear how sound and repetition make a poem move like a drum.",
+      "focus": "A dance poem whose beat is meant to be felt as much as read.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Danse africaine is French for “African dance.” Tom-toms are drums beaten with the hands.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Danse Africaine,” the whole poem; opens “The low beating of the tom-toms, The slow beating of the tom-toms. Low ... slow Slow ...…”; closes “…beat, And the tom-toms beat, And the low beating of the tom-toms Stirs your blood.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          234,
+          235
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b9933422fb0a572066ede394b717e46fc13ffe56aef2001c5a230eb6b3b97e80"
+      },
+      "questions": [
+        {
+          "id": "reading-7-hughes-weary-blues-1926-26-q1",
+          "prompt": "Read the poem aloud. Which words and sounds imitate the drum?",
+          "facilitatorNotes": [
+            "The repeated “low beating” and “slow beating,” the swapped pair “Low ... slow / Slow ... low,” and the doubled line “And the tom-toms beat.” The pauses (...) are like gaps between beats."
+          ],
+          "evidence": [
+            "Low ... slow Slow ... low—",
+            "And the tom-toms beat, And the tom-toms beat,"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-26-q2",
+          "prompt": "Where does the poem speak straight to the reader? What effect do “your blood” and “Dance!” have?",
+          "facilitatorNotes": [
+            "“Stirs your blood” and the one-word command “Dance!” pull the reader in, as if the drum is working on us too. The poem does not just describe a dance; it tries to start one."
+          ],
+          "evidence": [
+            "Stirs your blood.",
+            "Dance!"
+          ]
+        },
+        {
+          "id": "reading-7-hughes-weary-blues-1926-26-q3",
+          "prompt": "How is the dancer described, and why compare her to “a wisp of smoke around the fire”? Look at the poem’s shape too.",
+          "facilitatorNotes": [
+            "A “night-veiled girl” whirls softly into a circle of light; like smoke she is light, curling and hard to hold. The drum lines come at the start and the end, with the dancer in the middle, so the poem itself makes a circle around her. Readers may find other patterns."
+          ],
+          "evidence": [
+            "A night-veiled girl Whirls softly into a Circle of light.",
+            "Like a wisp of smoke around the fire—"
+          ]
+        }
+      ]
     }
   ]
 }

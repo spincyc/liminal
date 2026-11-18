@@ -1043,6 +1043,455 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-17",
+      "title": "Brown Boy to Brown Girl",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow one long, carefully built sentence through a sonnet.",
+      "focus": "A young man’s certainty that his and his love’s life is larger than the place they live in.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. The poem is a sonnet, fourteen rhymed lines, spoken by a young man to a young woman and printed inside quotation marks as one speech. Its subtitle, “Remembrance on a hill,” names its setting. To belie is to show something to be false; enamoured means in love; to confine is to shut in; “forebear” in the last line is an old spelling of forbear, to hold back.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Brown Boy to Brown Girl,” the whole poem with its subtitle and dedication; opens “(_Remembrance on a hill_) (_For Yolande_)”; closes “…I held your hand this way upon a hill, And felt my heart forebear, my pulse grow still.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          30,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "34d91de67a7d481f4d53a60c6507a465ce30d8b6c1fee3cfe63f7b3e1a3abe5e"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-17-q1",
+          "prompt": "The speaker says “As surely as …” three times. What is he so sure of?",
+          "facilitatorNotes": [
+            "That “these alien skies” do not measure or confine their whole life: the two of them belong to something larger than this place and time. The three “as surely as” clauses stack up the certainty before the main statement arrives."
+          ],
+          "evidence": [
+            "AS surely as I hold your hand in mine,",
+            "Do not our whole life measure and confine."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-17-q2",
+          "prompt": "What does the sun do in lines 2–4? How does the image praise the girl’s hair?",
+          "facilitatorNotes": [
+            "The sun is “enamoured” of her hair: it only pretends to set while it lingers in its “glossy shine.” Her crinkled hair is so beautiful that the sun will not leave it, and the hair’s shine gives the sun’s pretence away. The poem makes crinkled hair the thing the sun adores; readers can say why that choice matters."
+          ],
+          "evidence": [
+            "The enamoured sun pretending that he dies",
+            "While still he loiters in its glossy shine,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-17-q3",
+          "prompt": "The last six lines remember “a land of scarlet suns.” Where and when might that be, and how does the memory join the two lovers?",
+          "facilitatorNotes": [
+            "It was “before the hurricane” and “long before this pain,” perhaps an ancestral Africa before slavery, perhaps a dreamlike earlier life; the skies here are “alien.” The present gesture, holding hands on a hill, repeats one from that time, so their love seems older than they are. Readers can propose other readings from the words."
+          ],
+          "evidence": [
+            "No less, once in a land of scarlet suns",
+            "I held your hand this way upon a hill,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-18",
+      "title": "A Brown Girl Dead",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear the mixture of tenderness and bitterness in a short, simple poem.",
+      "focus": "A poor family’s love and pride at a young girl’s funeral.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A Madonna is a picture or statue of Mary, the mother of Jesus. To pawn something is to leave it with a moneylender in return for cash; to “lay out” the dead is to prepare a body for its funeral.",
+      "contentNote": "The poem describes a dead girl laid out for her funeral.",
+      "excerpt": {
+        "locator": "“A Brown Girl Dead,” the whole poem; opens “WITH two white roses on her breasts, White candles at head and feet, Dark Madonna of the…”; closes “…To lay her out in white; She’d be so proud she’d dance and sing To see herself tonight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          33,
+          35
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a698b1c12a9484db01b5c26d2d92c516229802307f106309b4ce48bd9c689bed"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-18-q1",
+          "prompt": "Describe the scene in the first stanza. Which details make the girl look holy?",
+          "facilitatorNotes": [
+            "White roses, white candles at her head and feet, and the phrase “Dark Madonna of the grave”: she is pictured like a saint’s image in a church. “Lord Death has found her sweet” makes Death a suitor who has chosen her."
+          ],
+          "evidence": [
+            "White candles at head and feet,",
+            "Dark Madonna of the grave she rests;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-18-q2",
+          "prompt": "What did her mother give up, and what does that tell us about the family?",
+          "facilitatorNotes": [
+            "She pawned her wedding ring to dress her daughter in white for burial. The family is poor, and love and pride make the mother give up her most precious possession."
+          ],
+          "evidence": [
+            "Her mother pawned her wedding ring",
+            "To lay her out in white;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-18-q3",
+          "prompt": "The last two lines imagine the girl seeing herself. Is the ending sweet, sad or bitter?",
+          "facilitatorNotes": [
+            "She would be so proud of her finery that she would “dance and sing”: tender, but also bitter, since only in death can she have such things, and she cannot enjoy them. Readers may feel all three and should point to the words that move them."
+          ],
+          "evidence": [
+            "She’d be so proud she’d dance and sing",
+            "To see herself tonight."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-19",
+      "title": "Three epitaphs: a grandmother, a cynic, a singer",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare three very short poems and the three attitudes to death they show.",
+      "focus": "A grandmother’s faith, a cynic’s bleak joke and a singer silenced at the height of her song.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. An epitaph is a short verse written for a gravestone. Cullen’s section “Epitaphs” gives one to each of many kinds of people; these three stand together in it. A creed is a belief; a cynic believes people act only from selfish motives; to atone is to make up for a wrong; to clog is to block.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "From “Epitaphs”: “For My Grandmother,” “For a Cynic” and “For a Singer,” three whole epitaphs printed together; opens “THIS lovely flower fell to seed; Work gently, sun and rain; She held it as her dying…”; closes “…clogged this flute At its highest note; Song sleeps here mute In this breathless throat.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          155,
+          160
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "51e43e145230e6a406d0f6ecc101dc04ed0ef1082a66fb3c154884b99dad278a"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-19-q1",
+          "prompt": "In “For My Grandmother,” the grandmother is a flower that “fell to seed.” What did she believe, and how does the epitaph treat her death?",
+          "facilitatorNotes": [
+            "She believed she would “grow again,” a faith in rising after death. The poet asks sun and rain to “work gently,” like a gardener tending a seed. Death becomes planting, not an ending."
+          ],
+          "evidence": [
+            "THIS lovely flower fell to seed;",
+            "She held it as her dying creed"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-19-q2",
+          "prompt": "Explain the cynic’s view of life, line by line. Why might the poem rhyme the same two sounds all the way through?",
+          "facilitatorNotes": [
+            "Birth is a crime everyone commits; life is time to make up for it; death is the price. The tight crime/time/rhyme and commit/it/it rhymes snap shut like a closed case, which suits a closed, bleak mind. The title tells us whose view this is; readers can say whether the poet seems to share it."
+          ],
+          "evidence": [
+            "BIRTH is a crime All men commit;",
+            "Death ends the rhyme As the price for it."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-19-q3",
+          "prompt": "“For a Singer” is only sixteen words long. How does it use the singer’s own instrument to describe death? Which of the three epitaphs is kindest?",
+          "facilitatorNotes": [
+            "Death “clogged this flute / At its highest note”: the singer died at the peak of the singer’s powers, and song now sleeps in a “breathless throat,” since singing needs breath. Readers may call the grandmother’s epitaph kindest, or the singer’s, and should say why."
+          ],
+          "evidence": [
+            "DEATH clogged this flute At its highest note;",
+            "Song sleeps here mute In this breathless throat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-20",
+      "title": "If You Should Go",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Unpack two comparisons that describe how a love might end.",
+      "focus": "A speaker asks that a love, if it ends, leave as gently as daylight.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. The poem comes from “For Love’s Sake,” the section of love poems in Color.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“If You Should Go,” the whole poem; opens “LOVE, leave me like the light, The gently passing day; We would not know, but for the…”; closes “…done, should leave no trace That it has lived, except a gleam Across the dreamer’s face.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          215,
+          217
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d0baff8a6c1f357d6d9ed6800b6ca29363d0abcdc10d974f443be34dbde3ea95"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-20-q1",
+          "prompt": "How does the speaker want his love to leave? Find the two comparisons.",
+          "facilitatorNotes": [
+            "Like the light of a day that passes so gently we do not notice it go, and quietly like a dream that leaves no trace. Both ask for an ending without noise or bitterness."
+          ],
+          "evidence": [
+            "LOVE, leave me like the light,",
+            "Go quietly; a dream,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-20-q2",
+          "prompt": "“We would not know, but for the night, / When it has slipped away.” What does this say about how we notice what we lose?",
+          "facilitatorNotes": [
+            "We only notice the daylight has gone when it is dark: we feel a loss afterwards, not while it happens. The speaker asks for gentleness, but the comparison admits that the night will come and the loss will be felt."
+          ],
+          "evidence": [
+            "We would not know, but for the night,",
+            "When it has slipped away."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-20-q3",
+          "prompt": "The dream should leave “no trace … except a gleam.” Is the speaker asking to forget the love, or to keep something of it?",
+          "facilitatorNotes": [
+            "No trace that it ever lived, except a gleam across the dreamer’s face, perhaps a glow of remembered happiness: the speaker wants to keep the good of it. The title begins with “If,” so the love has not ended yet. Readers may find the wish brave, sad or unrealistic."
+          ],
+          "evidence": [
+            "When done, should leave no trace",
+            "That it has lived, except a gleam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-21",
+      "title": "Caprice",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare what a character plans to do with what she does.",
+      "focus": "A woman who resolves to send a man away, and then cannot.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A caprice is a sudden, unpredictable change of mind. “Body and baggage” means completely, with everything he owns; gay here means merry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Caprice,” the whole poem; opens ““I ’LL tell him, when he comes,” she said, “Body and baggage, to go, Though the night be…”; closes “…and his lips apart, She flipped a light hair from his coat, And sobbed against his heart.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          226,
+          228
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b2325aeba3b2df876aba8dcb4a0cbd00f4ef765154a81d2725f5eb2c676fc76e"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-21-q1",
+          "prompt": "What does the woman plan to tell the man when he comes? How determined does she sound?",
+          "facilitatorNotes": [
+            "To go, “body and baggage,” even into a night darker than her hair and over frozen ground: she means to turn him out for good, whatever the weather."
+          ],
+          "evidence": [
+            "I ’LL tell him, when he comes,” she said,",
+            "Though the night be darker than my hair,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-21-q2",
+          "prompt": "What does she actually do when he comes? What might the “light hair” on his coat mean?",
+          "facilitatorNotes": [
+            "She brushes a hair from his coat and sobs against his heart. The gesture may be simply tender, tidying him; but a light hair on the coat of a woman with very dark hair may hint at the very reason she was angry. Readers can argue either reading from the words."
+          ],
+          "evidence": [
+            "She flipped a light hair from his coat,",
+            "And sobbed against his heart."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-21-q3",
+          "prompt": "Is the title fair to her? Is this a “caprice,” or something deeper?",
+          "facilitatorNotes": [
+            "“Caprice” calls it a whim, but her sobbing suggests feeling stronger than anger or pride. The two stanzas mirror each other, plan and action. Readers may see weakness, love, or both, and may ask whose word “caprice” is."
+          ],
+          "evidence": [
+            "But when he came with his gay black head",
+            "Thrown back, and his lips apart,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-22",
+      "title": "Bread and Wine",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow two symbols through a poem and explain how the last line joins them.",
+      "focus": "Hard daily work, and the love that makes it bearable.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. “Give us this day our daily bread” is a line of the Lord’s Prayer; bread and wine are also shared in the Christian service of Holy Communion. Tenuous means thin and delicate.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Bread and Wine,” the whole poem; opens “FROM death of star to new star’s birth, This ache of limb, this throb of head, This…”; closes “…mine, Strength from your lips for one more fight: Bread’s not so dry when dipped in wine.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          232,
+          234
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ee37b242bf09b74421d740b2f769ff9c298764e6d2a90da73ccb6237ab95b027"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-22-q1",
+          "prompt": "According to the first stanza, what are we really praying for when we ask for “daily bread”? List what it includes.",
+          "facilitatorNotes": [
+            "The aching limbs, the throbbing head, the “sweaty shop,” the smell of earth, from the “death of star” at dawn to the “new star’s birth” at nightfall: the whole hard working day. Daily bread means the labour it takes to earn it."
+          ],
+          "evidence": [
+            "FROM death of star to new star’s birth,",
+            "This ache of limb, this throb of head,",
+            "For this we pray, “Give daily bread.”"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-22-q2",
+          "prompt": "What is the “wine” of the second stanza?",
+          "facilitatorNotes": [
+            "The night, made “tenuous with dreams,” the touch of “soft brown hands,” and strength from a loved one’s lips “for one more fight”: love and rest after work."
+          ],
+          "evidence": [
+            "Then tenuous with dreams the night,",
+            "The feel of soft brown hands in mine,",
+            "Strength from your lips for one more fight:"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-22-q3",
+          "prompt": "“Bread’s not so dry when dipped in wine.” How does the last line sum up the poem? Why might Cullen choose bread and wine?",
+          "facilitatorNotes": [
+            "Work is dry bread; love is the wine that softens it. Because bread and wine are also sacred in church, the choice makes both labour and love seem holy. Readers can debate whether love is the reward for work or the strength to keep working."
+          ],
+          "evidence": [
+            "Bread’s not so dry when dipped in wine."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-23",
+      "title": "She of the Dancing Feet Sings",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear a speaker’s voice and decide how serious she is.",
+      "focus": "A dancer explains why heaven would not suit her.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. The whole poem is the dancer’s own song. Seraphs and cherubim are kinds of angels; “faery” means fairy. In Christian tradition some angels fell from heaven for their pride.",
+      "contentNote": "A dancer playfully says that heaven would not suit her and that the fallen angels in hell would understand her.",
+      "excerpt": {
+        "locator": "“She of the Dancing Feet Sings,” the whole poem with its dedication; opens “(_To Ottie Graham_)”; closes “…smile to see my face, And understand, because they fell From that all-perfect place.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          245,
+          250
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0f81e4c238aa8844f4ba3f37dce64eac6b7d8de5f4134b34daf5e316858cb399"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-23-q1",
+          "prompt": "Why does the dancer think she would not “thrive” in heaven?",
+          "facilitatorNotes": [
+            "Dancing would be a sin there, no man would love her face or hold her, and the proud angels would not stoop to sing her tunes. She values dance, love and music above perfection."
+          ],
+          "evidence": [
+            "Where dancing would be sin,",
+            "With not a man to love my face,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-23-q2",
+          "prompt": "How does she describe herself in the first stanza? What does the comparison suggest?",
+          "facilitatorNotes": [
+            "Her limbs are like apple boughs swaying in gusty rain-wind: dancing is as natural to her as a tree moving in weather. It is part of what she is, not a hobby."
+          ],
+          "evidence": [
+            "And limbs like apple boughs that sway",
+            "When the gusty rain winds beat?"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-23-q3",
+          "prompt": "Why would the “wistful angels down in hell” understand her? Is the poem rebellious, sad or playful?",
+          "facilitatorNotes": [
+            "They fell from “that all-perfect place” and know that perfection does not suit everyone; “wistful” makes them gently sad, not wicked. Her song is a playful, daring challenge to a heaven without joy; some readers will also hear sadness. Ask for words that support each view."
+          ],
+          "evidence": [
+            "The wistful angels down in hell",
+            "And understand, because they fell"
+          ]
+        }
+      ]
     }
   ]
 }
