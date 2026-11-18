@@ -1901,6 +1901,76 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-27",
+      "title": "Dirge for the Year",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 19,
+        "totalMinutes": 25
+      },
+      "challenge": "In each stanza, mark who is told to weep and who to smile. Then decide which voice the poem finally takes.",
+      "focus": "A funeral song for the old year that keeps hinting the year is only asleep.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. Shelley dated this poem January 1, 1821; it was published after his death. A dirge is a song of mourning, and its mourners here are the Hours, the children of the Year. A corse is a corpse; a shroud is the cloth wrapped round a body for burial; a sexton digs graves and keeps the churchyard; a bier is the stand on which a coffin is carried. It is read on New Year’s Day, the day the poem is dated.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Dirge for the Year (dated January 1, 1821); opens “Orphan Hours, the Year is dead, Come and sigh, come and weep! Merry Hours, smile instead,…”; closes “…doth howl and rave, And April weeps--but, O ye Hours! Follow with May's fairest flowers.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          801,
+          805
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b6955153bad7b525c3b9d6d218ff67d76fe905af6f701fbf8318038c88d92625"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-27-q1",
+          "prompt": "The first stanza calls on two kinds of Hours. What does each say about the Year, and which does the stanza itself seem to believe?",
+          "facilitatorNotes": [
+            "The “Orphan Hours” are told the Year is dead and should weep; the “Merry Hours” are told to smile, because the Year “is but asleep.” The sleeping Year smiles, “Mocking your untimely weeping”: the grief is premature.",
+            "Yet the poem is still called a dirge, and the next stanza calls for wailing. Students may say the poem holds both views at once, as the turn of a year does."
+          ],
+          "evidence": [
+            "Orphan Hours, the Year is dead,",
+            "For the Year is but asleep.",
+            "Mocking your untimely weeping."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-27-q2",
+          "prompt": "Stanzas two and three are each built on a comparison about rocking. What is rocked, and by what? How does the second comparison answer the first?",
+          "facilitatorNotes": [
+            "In the second stanza White Winter rocks the “death-cold Year” as an earthquake rocks a corpse in its coffin, a violent and deathly motion. In the third, “the breath of these rude days” rocks the Year as wind rocks a baby’s cradle hung in a tree, and the Hours are promised that she will rise again.",
+            "The same motion is read twice, first as death and then as nursing. Some readers find the coffin image too grotesque for the comfort that follows; others think the shock is the point, since winter looks like death and is not."
+          ],
+          "evidence": [
+            "As an earthquake rocks a corse",
+            "The tree-swung cradle of a child,",
+            "she will arise With new love within her eyes."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-27-q3",
+          "prompt": "The last stanza turns the months into a funeral procession. Why does it stop at April and May? Does the poem end by mourning the old year or by welcoming the new?",
+          "facilitatorNotes": [
+            "January is the sexton at the grave, February carries the bier, March howls and April weeps; then the Hours are told to follow “with May's fairest flowers.” Funeral flowers become the flowers of spring, so the procession leads out of winter.",
+            "A defensible reading: on New Year’s Day the poem treats the year’s death and its rebirth as one event. Others will say the Year never actually rises in the poem, so hope stays a promise and the last scene is still a grave."
+          ],
+          "evidence": [
+            "January gray is here, Like a sexton by her grave;",
+            "Follow with May's fairest flowers."
+          ]
+        }
+      ],
+      "holiday": "new-year"
     }
   ]
 }

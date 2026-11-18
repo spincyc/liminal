@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "henry-four-million-1906",
+  "author": "O. Henry",
+  "title": "The Four Million",
+  "translator": null,
+  "edition": "Project Gutenberg #2776 transcription (revised by Joseph E. Loewenstein; print exemplar not identified) of The Four Million by O. Henry (William Sydney Porter), first published New York: McClure, Phillips & Co., 1906. The author’s prefatory note, missing from the transcription, is supplied from the 1906 first edition (Internet Archive fourmillionstori00henr_0, Columbia University Libraries); it is set in italics there and is marked so here; the printed contents list is omitted. Curly quotation marks, apostrophes, dashes and underscore italics are kept as transcribed. For a Grade 9 calendar reading, “The Gift of the Magi” was collated word by word against the same 1906 scan (printed pages 16–25) on 2026-11-18 and the first edition’s readings adopted: “Tomorrow” to “To-morrow”, “a habit for saying” to “a habit of saying”, “sold because” to “sold it because”, “labor” to “labour”, “with sudden serious sweetness” to “with a sudden serious sweetness”, “worshipped long” to “worshipped for long”, and two paragraph breaks restored to the page (before “The “Dillingham” had been flung” instead of before “introduced to you as Della”, and after “Down rippled the brown cascade.”). Elsewhere the transcription is reproduced as transcribed.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/2776",
+  "textUrl": "https://www.gutenberg.org/cache/epub/2776/pg2776.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "First published in the United States in April 1906 by McClure, Phillips & Co. (its copyright page: copyright 1906 by McClure, Phillips & Co.; the stories copyright 1903–1905 in periodicals), before 1931, so its US copyright term has expired. Project Gutenberg lists this ebook as public domain in the USA; the transcription adds no new authorship, and no introduction, notes or illustrations are reproduced.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/fourmillionstori00henr_0"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/2776/pg2776.txt",
+    "downloadSha256": "6bb719852f2f0eb33db25613124d2d3c522dd3b879c187667ab31072bb2fb48d",
+    "method": "Project Gutenberg plain text (eBook 2776, UTF-8) from the PG mirror. Removed the PG header and footer, the title lines, the contents list and the [Illustration] marker; each story title line became a level-2 heading under a level-1 book title, in the printed order of the 25 stories; blank-line separated paragraphs were joined with single spaces at line ends. Added the prefatory note from the 1906 scan as a paragraph before the first story. Applied the collation of “The Gift of the Magi” recorded in the edition (six words, two paragraph breaks) to that story’s blocks."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        1,
+        1
+      ],
+      [
+        65,
+        110
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 1139,
+    "sha256": "45368c77282cb23b3e7ebc965cdb29c858403137766875ae1e0fcc670b8abfaa"
+  }
+}
