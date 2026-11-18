@@ -1533,6 +1533,79 @@
     },
     {
       "id": "reading-1-milne-when-we-were-very-young-1925-23",
+      "title": "Teddy Bear",
+      "sourceId": "milne-when-we-were-very-young-1925",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow Teddy’s worry from the first stanza to the last, and notice how it changes.",
+      "focus": "A tubby bear finds a fat king nicknamed “The Handsome,” and stops wishing to be thin.",
+      "context": "From A. A. Milne’s When We Were Very Young (1924), poems written for and about his small son, Christopher Robin. Teddy is Christopher Robin’s teddy bear, Mr. Edward Bear. Tubby and stout mean fat, and adiposity is a long word for fatness. An ottoman is a low padded seat whose lid opens for storing things. To envy is to wish you had what someone else has. France had many kings called Louis, so the bear calls this one “King Louis So and So.” A lattice window has small panes, and a misgiving is a worry.",
+      "contentNote": "The poem jokes fondly about being fat; it ends with Teddy proud of his shape, not ashamed of it.",
+      "excerpt": {
+        "locator": "“Teddy Bear,” the whole poem; opens “A bear, however hard he tries, Grows tubby without exercise. Our Teddy Bear is short and…”; closes “…he is far from slim? No, just the other way about— He’s proud of being short and stout.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          191,
+          204
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9236c608b442f361a0d59d7b5d0f991b6d9221a897fecd8bba9c3fdac5399165"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-23-q1",
+          "prompt": "What is Teddy worried about at the start, and how does he get his exercise?",
+          "facilitatorNotes": [
+            "That he is “rather stout.” His only exercise is falling off the ottoman, and he hasn’t the energy to climb back."
+          ],
+          "evidence": [
+            "By falling off the ottoman",
+            "The fact that he was rather stout."
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-23-q2",
+          "prompt": "What does Teddy find in the old picture-book, and why does it make him so happy?",
+          "facilitatorNotes": [
+            "A fat king nicknamed “The Handsome.” If a fat man can be called handsome, so can a fat bear."
+          ],
+          "evidence": [
+            "Might yet be named “The Handsome Cub!”"
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-23-q3",
+          "prompt": "The plump man who picks Teddy up says he is the King of France. Do you believe him? Why might he say so?",
+          "facilitatorNotes": [
+            "He has “a twinkling eye,” so he may be playing along kindly with a bear, or with the child who owns him; some children will believe him completely, and the poem lets them. Either way Teddy feels proud."
+          ],
+          "evidence": [
+            "A plump man with a twinkling eye",
+            "The other answered, “I am that,”"
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-23-q4",
+          "prompt": "The last stanza begins with the same four lines as the first. What is different about how it ends?",
+          "facilitatorNotes": [
+            "At the start Teddy worries about being stout; at the end he is proud of being short and stout. The same opening makes the change stand out."
+          ],
+          "evidence": [
+            "He’s proud of being short and stout."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-when-we-were-very-young-1925-24",
       "title": "Bad Sir Brian Botany",
       "sourceId": "milne-when-we-were-very-young-1925",
       "genre": "poetry",
@@ -1561,7 +1634,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-23-q1",
+          "id": "reading-1-milne-when-we-were-very-young-1925-24-q1",
           "prompt": "What does Sir Brian do to the villagers? On which days?",
           "facilitatorNotes": [
             "Blips them on the head with his battleaxe on Wednesdays and Saturdays, and kicks them into the pond on Tuesdays and Fridays."
@@ -1572,7 +1645,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-23-q2",
+          "id": "reading-1-milne-when-we-were-very-young-1925-24-q2",
           "prompt": "What changes the morning he can’t find his battleaxe?",
           "facilitatorNotes": [
             "Without it the villagers are not afraid. They crowd round him, make fun of him, and then do to him what he did to them."
@@ -1582,7 +1655,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-23-q3",
+          "id": "reading-1-milne-when-we-were-very-young-1925-24-q3",
           "prompt": "Listen to the chorus: first “I am Sir Brian!”, then “You are Sir Brian?”, then “I am Sir Brian? Oh, no!” What does the change show?",
           "facilitatorNotes": [
             "First he boasts; then the villagers mock him; at last he no longer wants to be Sir Brian at all. The same words tell how he has changed."
@@ -1593,7 +1666,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-23-q4",
+          "id": "reading-1-milne-when-we-were-very-young-1925-24-q4",
           "prompt": "Was it right for the villagers to treat Sir Brian the way he treated them?",
           "facilitatorNotes": [
             "He learned his lesson and changed; but they became bullies too for a day. Many children will cheer; others will say two wrongs don’t make a right. Both deserve a hearing."
@@ -1606,7 +1679,7 @@
       ]
     },
     {
-      "id": "reading-1-milne-when-we-were-very-young-1925-24",
+      "id": "reading-1-milne-when-we-were-very-young-1925-25",
       "title": "In the Fashion",
       "sourceId": "milne-when-we-were-very-young-1925",
       "genre": "poetry",
@@ -1635,7 +1708,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-24-q1",
+          "id": "reading-1-milne-when-we-were-very-young-1925-25-q1",
           "prompt": "Which animals have tails? Who doesn’t?",
           "facilitatorNotes": [
             "A lion, an elephant, a whale, a crocodile and a quail; the child has none."
@@ -1645,7 +1718,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-24-q2",
+          "id": "reading-1-milne-when-we-were-very-young-1925-25-q2",
           "prompt": "How would the child get a tail? What would happen then?",
           "facilitatorNotes": [
             "Buy one with sixpence at a shop and try it on; then all the animals would come round to see."
@@ -1655,7 +1728,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-24-q3",
+          "id": "reading-1-milne-when-we-were-very-young-1925-25-q3",
           "prompt": "At the end the child says, “You’ve all got tails like me!” Why turn it round that way?",
           "facilitatorNotes": [
             "Now the child is not the odd one out but the one everyone matches. It is a funny way to show how much the child wants to belong. Some children will just enjoy the joke; that is a good reading too."
@@ -1667,7 +1740,80 @@
       ]
     },
     {
-      "id": "reading-1-milne-when-we-were-very-young-1925-25",
+      "id": "reading-1-milne-when-we-were-very-young-1925-26",
+      "title": "The Alchemist; Growing Up",
+      "sourceId": "milne-when-we-were-very-young-1925",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for what the child in each poem is longing for.",
+      "focus": "One child longs to meet a mysterious old man; another longs for someone to come out and play.",
+      "context": "From A. A. Milne’s When We Were Very Young (1924), poems written for and about his small son, Christopher Robin. An alchemist, long ago, was someone who tried to turn ordinary metal into gold. A tortoiseshell cat is patched brown, black and orange. A wide-awake is a soft felt hat with a wide brim; Milne’s footnote, marked ¹, jokes about the name. A nursery fender is a low metal guard in front of a fireplace, and tongs are for picking up coal. In “Growing Up,” knickers are short trousers that fasten below the knee, braces are straps that hold trousers up, and a grace is a short thank-you prayer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Alchemist,” the whole poem with Milne’s footnote, and “Growing Up,” the whole poem; opens “There lives an old man at the top of the street And the end of his beard reaches down to…”; closes “…you, God, for my nice braces I can tie my new brown laces.” Who’s coming out with me?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          220,
+          227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e9085efebc11e4911af2ca7806dbfb18ca8bdb30520a19d7218fc8e4df986aa"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-26-q1",
+          "prompt": "What makes the old man at the top of the street sound so exciting?",
+          "facilitatorNotes": [
+            "His beard reaches his feet, he talks all day to his cat, and he sits up at night working on a spell. The child has only heard about him: he “sounds” exciting."
+          ],
+          "evidence": [
+            "And the end of his beard reaches down to his feet,",
+            "I think that he sounds so exciting;"
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-26-q2",
+          "prompt": "Has the old man’s spell ever worked? How can you tell?",
+          "facilitatorNotes": [
+            "Not yet: he “hasn’t got hold of it quite,” so he works at it night after night. Some children will think it will work one day; the poem leaves it open."
+          ],
+          "evidence": [
+            "But some how he hasn’t got hold of it quite,"
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-26-q3",
+          "prompt": "Look at the little note at the bottom. Why does the old man wear a “wide-awake” hat, according to Milne?",
+          "facilitatorNotes": [
+            "So as not to go to sleep: Milne pretends the hat does what its name says. It is a joke on words."
+          ],
+          "evidence": [
+            "So as not to go to sleep."
+          ]
+        },
+        {
+          "id": "reading-1-milne-when-we-were-very-young-1925-26-q4",
+          "prompt": "In “Growing Up,” what makes the child feel grown up? Which line comes back in every stanza, and why?",
+          "facilitatorNotes": [
+            "Grown-up laces, knickers and braces, and tying his own laces. “Who’s coming out with me?” comes back each time, like a child calling for someone to play."
+          ],
+          "evidence": [
+            "I can tie my new brown laces.",
+            "Who’s coming out with me?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-when-we-were-very-young-1925-27",
       "title": "If I Were King; Vespers",
       "sourceId": "milne-when-we-were-very-young-1925",
       "genre": "poetry",
@@ -1696,7 +1842,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-25-q1",
+          "id": "reading-1-milne-when-we-were-very-young-1925-27-q1",
           "prompt": "What would the child do as King of Spain, France or Greece? Are these big kingly things?",
           "facilitatorNotes": [
             "Take off his hat in the rain, not brush his hair for aunts, push things off the mantelpiece. They are small things grown-ups do not allow, which is the joke."
@@ -1707,7 +1853,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-25-q2",
+          "id": "reading-1-milne-when-we-were-very-young-1925-27-q2",
           "prompt": "In “Vespers,” what does Christopher Robin think about while he is praying?",
           "facilitatorNotes": [
             "His bath, Nanny’s blue dressing-gown, his own dressing-gown with a hood and hiding in it, and trying to remember what else to say."
@@ -1718,7 +1864,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-25-q3",
+          "id": "reading-1-milne-when-we-were-very-young-1925-27-q3",
           "prompt": "What is the last thing he remembers to pray? Why might it have taken him so long?",
           "facilitatorNotes": [
             "“God bless Me.” Children may say he was busy thinking about other things, or that it is funny he forgot himself last."
@@ -1728,7 +1874,7 @@
           ]
         },
         {
-          "id": "reading-1-milne-when-we-were-very-young-1925-25-q4",
+          "id": "reading-1-milne-when-we-were-very-young-1925-27-q4",
           "prompt": "The first and last stanzas of “Vespers” say “Hush! Hush! Whisper who dares!” Who is speaking those lines, and why do they whisper?",
           "facilitatorNotes": [
             "A grown-up watching, not wanting to disturb him. Inside, the poem lets us hear his wandering thoughts, while the grown-up sees only a quiet, praying child. Some children will say it is the poet, or us; any watcher who loves him fits."

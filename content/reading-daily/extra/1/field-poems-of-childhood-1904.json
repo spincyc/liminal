@@ -805,6 +805,78 @@
     },
     {
       "id": "reading-1-field-poems-of-childhood-1904-12",
+      "title": "“Booh!”",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice who is telling this poem, and how the baby’s feelings about the game change.",
+      "focus": "A father’s peekaboo game frightens his baby at first and then becomes their favourite fun.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. A father is speaking about his baby son. “Booh!” is how Field spells “boo!” A monarch is a king, and despotic means bossy, like a king who must be obeyed. “Do it all aden” is the baby’s way of saying “again.” A progenitor is a parent. To rue is to be sorry about something.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Booh!,” the whole poem; opens “On afternoons, when baby boy has had a splendid nap, And sits, like any monarch on his…”; closes “…I am sure that we shall rue The time when we are both too old to play the game of “Booh!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          304,
+          307
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1eb8a05b54ddfbed2151177134efc1695cbb0a5be899f2e2fc88901c6a462c08"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-12-q1",
+          "prompt": "How does the father play the game? Act it out with a handkerchief or your hands.",
+          "facilitatorNotes": [
+            "He hides his face, moves quietly about, then suddenly shows his face and says “Booh!”"
+          ],
+          "evidence": [
+            "Then, with a cry, I suddenly expose my face to view,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-12-q2",
+          "prompt": "What did the baby do when the father first began? What does he do now?",
+          "facilitatorNotes": [
+            "At first he stared and his lip came out as if to cry, and mamma and the nurse called it a cruel shame; now he laughs and kicks his heels. He learned that the game is fun."
+          ],
+          "evidence": [
+            "And then his under lip came out and farther out it came,",
+            "But laugh and kick his little heels when I say “Booh!”"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-12-q3",
+          "prompt": "The father calls the baby a king on a throne. What order does the baby give him?",
+          "facilitatorNotes": [
+            "“Do it all aden!” A tiny baby bosses his father, and the father happily obeys. Ask why that is funny."
+          ],
+          "evidence": [
+            "In shrill, despotic treble bids me “do it all aden!”"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-12-q4",
+          "prompt": "Why does the father say they will be sorry when they are “both too old” for the game? Who is having more fun?",
+          "facilitatorNotes": [
+            "He knows the baby will grow up and the game will end, so he treasures it now. Many children will say both are having fun; some will say the father, who calls it “oh, such fun!”"
+          ],
+          "evidence": [
+            "The time when we are both too old to play the game of “Booh!”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-13",
       "title": "The Night Wind",
       "sourceId": "field-poems-of-childhood-1904",
       "genre": "poetry",
@@ -833,7 +905,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-field-poems-of-childhood-1904-12-q1",
+          "id": "reading-1-field-poems-of-childhood-1904-13-q1",
           "prompt": "What does the night wind say? Let’s say it together, long and low.",
           "facilitatorNotes": [
             "“Yoooooooo!” three times at the end of each stanza."
@@ -843,7 +915,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-12-q2",
+          "id": "reading-1-field-poems-of-childhood-1904-13-q2",
           "prompt": "What did the speaker’s mother tell him the wind meant?",
           "facilitatorNotes": [
             "That somebody had been bad."
@@ -853,7 +925,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-12-q3",
+          "id": "reading-1-field-poems-of-childhood-1904-13-q3",
           "prompt": "Snug in bed, he wonders “what boy she meant.” Do you think he knew?",
           "facilitatorNotes": [
             "Probably himself: he had been sent to bed. The joke is that he pretends not to know."
@@ -863,7 +935,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-12-q4",
+          "id": "reading-1-field-poems-of-childhood-1904-13-q4",
           "prompt": "The speaker says he is “quite a model now.” Do you believe him? Is the wind really telling who is naughty?",
           "facilitatorNotes": [
             "He is teasing; a grown-up winking at a child. Some children will half believe the wind; let them say why. The real wind sounds the same for everyone."
@@ -876,7 +948,7 @@
       ]
     },
     {
-      "id": "reading-1-field-poems-of-childhood-1904-13",
+      "id": "reading-1-field-poems-of-childhood-1904-14",
       "title": "The Duel",
       "sourceId": "field-poems-of-childhood-1904",
       "genre": "poetry",
@@ -905,7 +977,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-field-poems-of-childhood-1904-13-q1",
+          "id": "reading-1-field-poems-of-childhood-1904-14-q1",
           "prompt": "Who sat on the table, and who watched them?",
           "facilitatorNotes": [
             "The gingham dog and the calico cat sat side by side; the old Dutch clock and the Chinese plate watched."
@@ -915,7 +987,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-13-q2",
+          "id": "reading-1-field-poems-of-childhood-1904-14-q2",
           "prompt": "What did the clock and the plate do while the dog and cat fought?",
           "facilitatorNotes": [
             "The clock put its hands over its face; the plate looked blue and wailed."
@@ -926,7 +998,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-13-q3",
+          "id": "reading-1-field-poems-of-childhood-1904-14-q3",
           "prompt": "What happened to the dog and the cat? Could it really happen?",
           "facilitatorNotes": [
             "The poem says they ate each other up; nothing was left. It cannot happen, which is the joke."
@@ -936,7 +1008,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-13-q4",
+          "id": "reading-1-field-poems-of-childhood-1904-14-q4",
           "prompt": "The storyteller keeps saying he wasn’t there and was only told. Why does he keep saying so?",
           "facilitatorNotes": [
             "It makes the tall tale sound serious and true, and lets him off if we don’t believe it. Some children will say it is because the clock and plate saw everything; both are fair."
@@ -949,7 +1021,227 @@
       ]
     },
     {
-      "id": "reading-1-field-poems-of-childhood-1904-14",
+      "id": "reading-1-field-poems-of-childhood-1904-15",
+      "title": "Good-Children Street",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen for the line that comes back, and picture each thing the children are doing.",
+      "focus": "A grown-up thinks of a street full of children at play, and the thought cheers him whatever happens.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Fondly means lovingly. To frolic and scamper is to play and run about. Fleet means fast. A legion is a big army, and plumes are feathers worn on hats. Asthmatic’ly shrill means squeaky and wheezy. A jubilee is a big celebration. Toil and vexation are hard work and worry, and poverty is being poor.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Good-Children Street,” the whole poem; opens “There’s a dear little home in Good-Children street— My heart turneth fondly to-day Where…”; closes “…maketh life ever joyous and sweet: There’s a dear little home in Good-Children street.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          370,
+          377
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8f93988629594cec58678a52959aabd22c4c337ea3b710a5e696662d9f90af0e"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-15-q1",
+          "prompt": "What toys do the children of Good-Children street play with? Find as many as you can.",
+          "facilitatorNotes": [
+            "Dollies, tin tops, drums, guns painted red, swords, caps, plumes, a stick-horse and banners."
+          ],
+          "evidence": [
+            "With dollies and tin tops and drums,",
+            "On a stick-horse that prances and snorts!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-15-q2",
+          "prompt": "What is wrong with Odette’s dolly? Why does the poet say she is “ill”?",
+          "facilitatorNotes": [
+            "She has lost an eye and her feet, and her voice squeaks. The poet pretends a worn-out toy is a sick person, as children do in play."
+          ],
+          "evidence": [
+            "For one of her blue china eyes has dropped out",
+            "she is minus her feet"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-15-q3",
+          "prompt": "Which line comes back, and what does it say about the children’s days?",
+          "facilitatorNotes": [
+            "“Oh, days they are golden and days they are fleet”: happy days that go by fast, until bedtime comes too soon."
+          ],
+          "evidence": [
+            "Oh, days they are golden and days they are fleet"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-15-q4",
+          "prompt": "The speaker is grown up and may be poor and worried. Why does thinking of Good-Children street make his life sweet?",
+          "facilitatorNotes": [
+            "Thinking of a happy home full of playing children cheers him whatever his troubles. Some children will think he lived there as a boy, others that he is a father there now; the poem lets both fit."
+          ],
+          "evidence": [
+            "This thought maketh life ever joyous and sweet:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-16",
+      "title": "The Bottle Tree",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Work out who is speaking, and what the speaker wants more than anything.",
+      "focus": "A hungry baby dreams of a magic tree that grows bottles of milk.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Winkyway land is a dreamland Field made up. “Heigh-ho” is a happy cry, like “hooray.” To bloom is to flower, and -eth is an old ending, so “bloometh” means blooms. A berth is a bed on a ship. As much as you list means as much as you like. Colic is a baby’s tummy-ache. A repast is a meal. To expand is to get bigger, and fain means gladly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Bottle Tree,” the whole poem; opens “A bottle tree bloometh in Winkyway land— Heigh-ho for a bottle, I say! A snug little…”; closes “…away, For I hunger and thirst for that precious repast— Heigh-ho for a bottle, I say!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          425,
+          427
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ea908dd93a1a457faf547ed22fc7832e43b0d086b2569333a20961ba098fa6d0"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-16-q1",
+          "prompt": "Who is talking in this poem? What clues tell you?",
+          "facilitatorNotes": [
+            "A baby: it wants a bottle, a cradle and cuddling, and talks of colic and dimpled hands."
+          ],
+          "evidence": [
+            "Heigh-ho for a bottle, I say!",
+            "And cuddle me snug in my cradle away,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-16-q2",
+          "prompt": "What is special about the Bottle Tree?",
+          "facilitatorNotes": [
+            "It grows bottles of milk for fruit, by night and by day, and babies may take as many as they like with no tummy-ache."
+          ],
+          "evidence": [
+            "You take of that fruit as much as you list,",
+            "A bottle of milk that is creamy and white!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-16-q3",
+          "prompt": "The baby says it would like to understand one trick of the fruit. What is the trick, and why is that funny?",
+          "facilitatorNotes": [
+            "The fruit makes babies’ bellies grow big. Of course they grow big from drinking all that milk; the baby has not worked out the plain answer."
+          ],
+          "evidence": [
+            "Makes bellies of Bottle-Tree babies expand—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-16-q4",
+          "prompt": "Which lines come back in both stanzas? How do they sound like a baby asking?",
+          "facilitatorNotes": [
+            "“So cuddle me close…” and “Heigh-ho for a bottle, I say!” They repeat the way a hungry baby keeps asking. Children may chant them together."
+          ],
+          "evidence": [
+            "So cuddle me close, and cuddle me fast,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-17",
+      "title": "The Bench-Legged Fyce",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 8,
+        "totalMinutes": 13
+      },
+      "challenge": "Listen past the old country talk to picture the dog, and find the bravest thing he did.",
+      "focus": "A grown man remembers the funny, loyal little dog of his boyhood.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. The speaker talks the way country people in Missouri once did: “dorg” is dog, “wuz” is was, “hed” is had, “yaller” is yellow, “nary” is not one, “thar” is there, “medder” is meadow, and “vittles” are food. A fyce (say “fice”) is a small mixed-breed dog; bench-legged means with short, bowed legs. Sooner was his nickname: he would sooner sleep than anything. Chronic repose means resting all the time, and a forte is something you are good at. St. Joe is St. Joseph, a town in Missouri. A dude is a dressed-up fellow, and courting is visiting a girl one hopes to marry. To demur is to object, chaff is teasing, and valor is bravery.",
+      "contentNote": "The dog fights the country dogs and tears a visitor’s suit, and the children pull his fur and twist his tail; he never minds. The country speech is written as it sounded.",
+      "excerpt": {
+        "locator": "“The Bench-Legged Fyce,” the whole poem; opens “Speakin’ of dorgs, my bench-legged fyce Hed most o’ the virtues, an’ nary a vice. Some…”; closes “…of the loyalty, valor, an’ truth Of the friendships that hallow the season of youth!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          435,
+          443
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a3d6dcb7c6be951c6bc6ce977d8f62e1945b41d939aa77c07aa966d9fd53860"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-17-q1",
+          "prompt": "What did the fyce look like? Find two funny details.",
+          "facilitatorNotes": [
+            "Long in the body, yellow, with a long curling tail; legs so crooked that he was as tall sitting as standing; and when he didn’t wag his tail, the tail wagged him."
+          ],
+          "evidence": [
+            "When he didn’t wag it, why, the tail it wagged him!",
+            "Wuz as tall settin’ down as he wuz standin’ up!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-17-q2",
+          "prompt": "Why did some folks call him Sooner? Was he really lazy?",
+          "facilitatorNotes": [
+            "He would sooner rest than anything; but when roused he could not be beaten, and he was boss of all the country dogs. Both things are true of him."
+          ],
+          "evidence": [
+            "From his predisposition to chronic repose;",
+            "By common consent he wuz boss in St. Joe,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-17-q3",
+          "prompt": "How did the fyce treat the children, and what did he do when the Hobart boy fell through the ice?",
+          "facilitatorNotes": [
+            "He let them pull his fur and twist his tail and seemed to laugh, and he dragged the Hobart boy ashore. Ask which matters more to the speaker, the fun or the rescue."
+          ],
+          "evidence": [
+            "He wuz good to us kids",
+            "He wuz drug clean ashore by that bench-legged fyce!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-17-q4",
+          "prompt": "The speaker is old now. Why does he say every boy should have a pup?",
+          "facilitatorNotes": [
+            "A dog’s friendship is one of the best memories of growing up; he still loves to think of his. Some children will talk about a pet of their own; others may say any true friend counts."
+          ],
+          "evidence": [
+            "With no friendship subsistin’ ’tween him an’ a pup!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-18",
       "title": "Little Miss Brag",
       "sourceId": "field-poems-of-childhood-1904",
       "genre": "poetry",
@@ -978,7 +1270,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-field-poems-of-childhood-1904-14-q1",
+          "id": "reading-1-field-poems-of-childhood-1904-18-q1",
           "prompt": "What does the rich little lady have? What does Miss Brag have?",
           "facilitatorNotes": [
             "The rich girl has white dresses, many beautiful dolls and a carriage with footmen. Miss Brag has a faded gingham dress, a raggedy home-made doll and a moonlit attic room."
@@ -989,7 +1281,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-14-q2",
+          "id": "reading-1-field-poems-of-childhood-1904-18-q2",
           "prompt": "Why might the raggedy doll be better than the beautiful dolls?",
           "facilitatorNotes": [
             "Nothing can hurt it: wet, heat, tumbles or dirt. You can really play with it."
@@ -999,7 +1291,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-14-q3",
+          "id": "reading-1-field-poems-of-childhood-1904-18-q3",
           "prompt": "What does the rich girl wish her mother and father would do?",
           "facilitatorNotes": [
             "Push her around the park and sing to her like Miss Brag’s parents. She has servants but wishes for time with them."
@@ -1009,7 +1301,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-14-q4",
+          "id": "reading-1-field-poems-of-childhood-1904-18-q4",
           "prompt": "The last stanza says Miss Brag may sigh sometimes. Why does the poet love her bragging?",
           "facilitatorNotes": [
             "She may wish for nice things too, but she praises what she has, and that is a kind of courage. Some children will say she brags too much; the poem lets us decide."
@@ -1022,7 +1314,7 @@
       ]
     },
     {
-      "id": "reading-1-field-poems-of-childhood-1904-15",
+      "id": "reading-1-field-poems-of-childhood-1904-19",
       "title": "Shuffle-Shoon and Amber-Locks",
       "sourceId": "field-poems-of-childhood-1904",
       "genre": "poetry",
@@ -1051,7 +1343,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-field-poems-of-childhood-1904-15-q1",
+          "id": "reading-1-field-poems-of-childhood-1904-19-q1",
           "prompt": "Who is Shuffle-Shoon and who is Amber-Locks? How do their names help?",
           "facilitatorNotes": [
             "Shuffle-Shoon is old and gray and shuffles; Amber-Locks is a little child with golden hair."
@@ -1061,7 +1353,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-15-q2",
+          "id": "reading-1-field-poems-of-childhood-1904-19-q2",
           "prompt": "What castle will the child build when he grows up?",
           "facilitatorNotes": [
             "One with a broad gateway, a vine, a soldier guard and a tower so high folks will wonder."
@@ -1071,7 +1363,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-15-q3",
+          "id": "reading-1-field-poems-of-childhood-1904-19-q3",
           "prompt": "What does the old man mean when he says the years have levelled what he built?",
           "facilitatorNotes": [
             "He also had big plans when young, and they did not all come true; time knocked them down like blocks. Children may say he means real buildings; ask whether that fits “dead hopes.”"
@@ -1081,7 +1373,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-15-q4",
+          "id": "reading-1-field-poems-of-childhood-1904-19-q4",
           "prompt": "One talks of the Long Ago, one of the By and By. Why do they play so happily together?",
           "facilitatorNotes": [
             "Each enjoys building; the old man enjoys the child’s hopes, and the child has a friend. Accept answers from the last stanza."
@@ -1093,7 +1385,143 @@
       ]
     },
     {
-      "id": "reading-1-field-poems-of-childhood-1904-16",
+      "id": "reading-1-field-poems-of-childhood-1904-20",
+      "title": "Little-Oh-Dear",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for what is strange about this garden.",
+      "focus": "A father makes a make-believe garden for his little girl, and her love keeps it summer in his heart.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Little-Oh-Dear is a pet name for a small girl. Posies are flowers, and gaudy means very bright. Queer means odd. A trellis is a frame for plants to climb. To make obeisance is to bow, and reverent cheer is a respectful welcome. To smite is to strike: the echo strikes the father’s heart. To wither is to dry up and die.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Little-Oh-Dear,” the whole poem; opens “See, what a wonderful garden is here, Planted and trimmed for my Little-Oh-Dear! Posies…”; closes “…oh, it is always the summer-time here With that song of “I love you,” my Little-Oh-Dear!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          484,
+          488
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "878812ce06e760fcdc5b82eab8b3d96d9ef70096141d0ef102fa30763fb859d4"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-20-q1",
+          "prompt": "What is strange about the flowers in this garden?",
+          "facilitatorNotes": [
+            "Marigolds are white and buttercups blue, the grass is brown, a cactus climbs a trellis and a tree is lavender: everything is the wrong colour or in the wrong place. It may be a play garden of toys, paper or paint."
+          ],
+          "evidence": [
+            "Marigolds white and buttercups blue,",
+            "Posies so gaudy and grass of such brown—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-20-q2",
+          "prompt": "What does the silver-bird sing, and who answers it?",
+          "facilitatorNotes": [
+            "“I love you,” all day long, and Little-Oh-Dear echoes it back."
+          ],
+          "evidence": [
+            "“I love you—I love you!” the happy day long;—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-20-q3",
+          "prompt": "The father says the garden may wither and the bird fly away. Why doesn’t he mind?",
+          "facilitatorNotes": [
+            "Her love is what matters to him: she walks “in my heart,” where it is always summer. Some children will say the garden matters too, because he made it for her."
+          ],
+          "evidence": [
+            "But what careth my little precious, or I?",
+            "And, oh, it is always the summer-time here"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-21",
+      "title": "The Doll’s Wooing",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for the two words the French doll can say, and how they fit every part of the story.",
+      "focus": "A worn-out soldier doll falls in love with a talking doll who only ever says “Mamma!”",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Some dolls of Field’s time had a squeaker inside that said “Mamma!” when pressed. Tricked out means dressed up, and tresses are long hair. Accosted means spoken to. Stockinet is a stretchy knitted cloth; frowzy and bleared mean messy and worn; regimentals are a soldier’s uniform. To woo is to court someone you hope to marry, and plaintive means sad-sounding. Feminine means like a girl or woman, masculine like a boy or man. Vouchsafed means gave. Blue-blooded means from a noble family.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Doll’s Wooing,” the whole poem; opens “The little French doll was a dear little doll Tricked out in the sweetest of dresses; Her…”; closes “…ago, as I journeyed that way, I’m sure that I heard a wee baby voice say: “Mamma! mamma!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          513,
+          517
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d1e285e60c5fe9656fb438c030e89841d8c89d931ed7d9b00b0b248b34e9fa3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-21-q1",
+          "prompt": "How are the two dolls different?",
+          "facilitatorNotes": [
+            "She is a dear French doll in the sweetest dresses, with blue eyes and dark hair; he is a stockinet soldier with one arm and one leg in a torn yellow uniform."
+          ],
+          "evidence": [
+            "Tricked out in the sweetest of dresses;",
+            "The stockinet doll, with one arm and one leg,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-21-q2",
+          "prompt": "What is the only thing the French doll ever says, and why?",
+          "facilitatorNotes": [
+            "“Mamma! mamma!” She is a talking doll that says just that whenever anyone speaks to her. The poem pretends it is her good manners."
+          ],
+          "evidence": [
+            "That whenever accosted her little mouth said:"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-21-q3",
+          "prompt": "Who is the dolls’ “mother,” and why can she make no objection to the wedding?",
+          "facilitatorNotes": [
+            "A little girl of five. The poet jokes that a stockinet doll is not “blue-blooded,” but she has no real objection; the fun is a child playing at grown-up worries."
+          ],
+          "evidence": [
+            "Her mother—a sweet little lady of five—",
+            "She really could make no objection!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-21-q4",
+          "prompt": "At the end the poet hears a wee baby voice say “Mamma! mamma!” What does he want us to imagine?",
+          "facilitatorNotes": [
+            "That the dolls have a baby doll of their own, which says “Mamma!” too. Some children will say it is just the French doll again; the poem lets us wonder."
+          ],
+          "evidence": [
+            "I’m sure that I heard a wee baby voice say:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-22",
       "title": "Seein’ Things",
       "sourceId": "field-poems-of-childhood-1904",
       "genre": "poetry",
@@ -1122,7 +1550,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-field-poems-of-childhood-1904-16-q1",
+          "id": "reading-1-field-poems-of-childhood-1904-22-q1",
           "prompt": "What does the boy say he is not afraid of? What does he hate?",
           "facilitatorNotes": [
             "Snakes, toads, bugs, worms and mice; he hates going to bed, because he sees things at night."
@@ -1132,7 +1560,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-16-q2",
+          "id": "reading-1-field-poems-of-childhood-1904-22-q2",
           "prompt": "What are the “things” like? Where are they?",
           "facilitatorNotes": [
             "In the corner, by the door, in the middle of the floor; creeping silently, black or white."
@@ -1142,7 +1570,7 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-16-q3",
+          "id": "reading-1-field-poems-of-childhood-1904-22-q3",
           "prompt": "When does he see things most? What does he think makes them come?",
           "facilitatorNotes": [
             "“Almost alluz when I’m bad,” as after the fight. He thinks being naughty brings them, though they may come from worry."
@@ -1152,13 +1580,86 @@
           ]
         },
         {
-          "id": "reading-1-field-poems-of-childhood-1904-16-q4",
+          "id": "reading-1-field-poems-of-childhood-1904-22-q4",
           "prompt": "He says girls get more scared than boys, but he hides his head and holds his breath. Is he as brave as he says?",
           "facilitatorNotes": [
             "Not quite: he is scared too. Boys and girls can both be brave and both be scared. Some children will defend him; ask for the words that show how he really feels."
           ],
           "evidence": [
             "Bein’ I’m a boy, I duck my head an’ hold my breath;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-23",
+      "title": "“Fiddle-Dee-Dee”",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen to how grand the little soldier sounds, and then to the last two lines.",
+      "focus": "A four-year-old “soldier” fires his toy gun at a whistling bird and is sure he has won.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Provoking means annoying. Hard by means close by. Iteration is saying something over and over, and “repented him sore” here means it bothered him badly. “I prithee” means “please.” St. Didy and “By my Bottle” are made-up baby oaths, like a knight’s. Truculent means fierce. The stock is the wooden end of a gun and the barrel its tube; to draw a bead is to aim. A quietus is something that makes a thing quiet for ever. “Right well have you wrought” means “you have done very well.”",
+      "contentNote": "A small boy fires a toy gun at a bird. The bird is not hurt and goes on whistling.",
+      "excerpt": {
+        "locator": "“Fiddle-Dee-Dee,” the whole poem; opens “There once was a bird that lived up in a tree, And all he could whistle was…”; closes “…kissed the dear boy. [The bird in the tree Continued to whistle his “Fiddle-dee-dee”!]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          534,
+          539
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "32ee90bdac1f4455e3d0271147d72182c2a3bae2be5cb46922cabd8ab0c3951f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-23-q1",
+          "prompt": "What is the bird’s song, and why does it bother the little soldier?",
+          "facilitatorNotes": [
+            "Only “Fiddle-dee-dee,” over and over all summer; he finds it annoying and unmusical."
+          ],
+          "evidence": [
+            "And all he could whistle was “Fiddle-dee-dee”—",
+            "A very provoking, unmusical song"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-23-q2",
+          "prompt": "What is the soldier’s gun made of? Could it hurt anyone?",
+          "facilitatorNotes": [
+            "A pine stock and a tin barrel, and the bang comes out where a bullet would go in: it is a toy. The poet says it is just the weapon for this kind of battle."
+          ],
+          "evidence": [
+            "The stock was of pine and the barrel of tin,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-23-q3",
+          "prompt": "How do the boy and his mother talk about what he did?",
+          "facilitatorNotes": [
+            "Like a knight and a queen in an old story: “I prithee,” “the deed must be done,” “Right well have you wrought.” The grand words make a play-game sound like a great adventure, and the mother plays along."
+          ],
+          "evidence": [
+            "For, by our St. Didy! the deed must be done",
+            "Right well have you wrought with your little red gun!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-23-q4",
+          "prompt": "Look at the last two lines, in brackets. Who is right, the boy or the bird?",
+          "facilitatorNotes": [
+            "The bird: it keeps whistling, so the boy stopped nothing. The poet quietly tells the reader what the boy and his mother do not say. Some children will be glad the bird is safe; others will laugh at the boy."
+          ],
+          "evidence": [
+            "Continued to whistle his “Fiddle-dee-dee”!]"
           ]
         }
       ]
