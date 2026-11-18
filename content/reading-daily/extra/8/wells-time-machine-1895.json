@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "wells-time-machine-1895",
+  "readings": [
+    {
+      "id": "reading-8-wells-time-machine-1895-01",
+      "title": "The Time Machine — excerpt: Objections at the fireside",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a quick debate and decide which objections the Time Traveller actually answers.",
+      "focus": "Argument, analogy and joking as ways of meeting a strange idea.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. After dinner, the Time Traveller has argued that time is a fourth dimension, like length, breadth and thickness. Apart from Filby, the guests are named by their roles: the Medical Man, the Psychologist, the Very Young Man; the narrator is one of them. The Battle of Hastings (1066) is a famous date in English history; the Little-go was an entrance examination in Greek at Cambridge; an anachronism is something out of its proper time.",
+      "contentNote": "The Time Traveller contrasts “a savage” with “a civilized man,” a period way of ranking peoples.",
+      "excerpt": {
+        "locator": "Chapter I, “Introduction,” from the Medical Man’s objection to the end of the chapter; opens “\"But,\" said the Medical Man, staring hard at a coal in the fire, \"if Time is really only…”; closes “…he had finished his preface the Time Traveller came back, and Filby's anecdote collapsed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          22,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8a1ac346b2cfc3310db1f48941f3fdd7742aeff2a28aff54332eb958ee6e9a84"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-01-q1",
+          "prompt": "How does the Time Traveller answer the claim that we move freely in space but not in time? Is his comparison with moving up and down convincing?",
+          "facilitatorNotes": [
+            "He argues that movement in space is limited too: gravity held people down until balloons. Perhaps a machine could do for time what the balloon did for height. The analogy is clever, but it assumes that our fixed place in time is a limit like gravity rather than a different kind of thing. Readers may differ."
+          ],
+          "evidence": [
+            "But how about up and down? Gravitation limits us there.",
+            "He can go up against gravitation in a balloon"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-01-q2",
+          "prompt": "“We are always getting away from the present moment.” What does he mean, and how does he use memory as evidence?",
+          "facilitatorNotes": [
+            "Our minds travel along time at a steady speed from cradle to grave, and a vivid memory is a brief “jump back.” He turns ordinary experience into support for his idea; readers may object that remembering is a metaphor for travel, not travel itself."
+          ],
+          "evidence": [
+            "We are always getting away from the present moment.",
+            "I jump back for a moment."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-01-q3",
+          "prompt": "Filby says, “You can show black is white by argument, but you will never convince me.” What kind of objection is this, and how does the Time Traveller respond?",
+          "facilitatorNotes": [
+            "Filby refuses to argue at all and rests on common sense. The Time Traveller stops arguing and promises “experimental verification”: if reason will not persuade, evidence must."
+          ],
+          "evidence": [
+            "You can show black is white by argument",
+            "But I have experimental verification"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-01-q4",
+          "prompt": "The guests imagine uses for time travel: checking history, hearing Homer, getting rich, finding a communist society. What do their ideas show about them, and about the mood of the evening?",
+          "facilitatorNotes": [
+            "Each imagines what interests him, and their jokes and doubts (“it’s all humbug”) make the talk a game. That playful mood helps explain why no one takes the inventor seriously."
+          ],
+          "evidence": [
+            "One might invest all one's money, leave it to accumulate at interest, and hurry on ahead!",
+            "though it's all humbug, you know"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-02",
+      "title": "The Time Machine — excerpt: Too clever to be believed",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh the narrator’s explanation of why no one believed the inventor, then read a scene through what the narrator notices first.",
+      "focus": "Whether we believe a claim can depend on who makes it as much as on the evidence.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. A week earlier, after dinner, the Time Traveller made a small model machine vanish from a table and said he was building a full-sized one. The narrator was one of the guests. Richmond is a suburb of London; the Linnæan is the Linnean Society, a scientific club; Tübingen is a German university town.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “The Machine,” from the visit to the laboratory, through Chapter III, “The Time Traveller Returns,” to his appearance at the dinner table; opens “\"Would you like to see the Time Machine itself?\" asked the Time Traveller. And therewith,…”; closes “…as I have seen in footsore tramps. We stared at him in silence, expecting him to speak.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-wells-time-machine-1895-03",
+        "blocks": [
+          78,
+          90
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8fa9a3d129c2df26bfb40ad81afd60ebaf2118750c5ceebbef5cce0c5775175b"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-02-q1",
+          "prompt": "The Medical Man asks whether the machine is “a trick—like that ghost you showed us last Christmas.” How does the Time Traveller’s past make his claim harder to believe?",
+          "facilitatorNotes": [
+            "He has staged tricks before, so even his solemn “I was never more serious in my life” sounds like part of a show. Filby’s solemn wink shows that the guests share the joke."
+          ],
+          "evidence": [
+            "Or is this a trick—like that ghost you showed us last Christmas?",
+            "he winked at me solemnly"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-02-q2",
+          "prompt": "The narrator calls the Time Traveller “too clever to be believed.” Explain his reasoning, including the comparison to “eggshell china.”",
+          "facilitatorNotes": [
+            "People trust those whose motives they can see (“a pork-butcher could understand Filby”). A whimsical genius might make serious people look foolish, so trusting him is like putting fragile china in a nursery. Belief rests on predictability, not only on evidence. Readers may find this fair or unfair."
+          ],
+          "evidence": [
+            "the Time Traveller was one of those men who are too clever to be believed",
+            "like furnishing a nursery with eggshell china",
+            "It is a mistake to do things too easily."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-02-q3",
+          "prompt": "How does the narrator describe the Time Traveller in the doorway? Which details suggest more than a delay?",
+          "facilitatorNotes": [
+            "Dusty clothes smeared with green, hair that seems greyer, a cut already half-healed, a tramp’s limp. A half-healed cut takes days, so the details hint that more time has passed for him than for his guests."
+          ],
+          "evidence": [
+            "his chin had a brown cut on it—a cut half-healed",
+            "He walked with just such a limp as I have seen in footsore tramps."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-02-q4",
+          "prompt": "The Psychologist is explaining away last week’s demonstration when the door opens. Why is the timing effective?",
+          "facilitatorNotes": [
+            "A dull, skeptical account is interrupted by the evidence itself walking in. The irony makes the skeptics look foolish before the Time Traveller says a word."
+          ],
+          "evidence": [
+            "volunteered a wooden account",
+            "the door from the corridor opened slowly and without noise"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-03",
+      "title": "The Time Machine — excerpt: A story without interruptions",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Compare how different listeners react to the same strange sight, and consider why the narrator stresses what readers cannot see.",
+      "focus": "Skeptics, witnesses and the setting of a story that “will sound like lying.”",
+      "context": "Recap: a week after showing his guests a model time machine and then the full-sized one, the Time Traveller has appeared late at his own dinner, filthy, limping and haggard. A crossing-sweeper earned pennies by sweeping a path across a muddy street, and the “Amateur Cadger” is a joke about begging; “Nebuchadnezzar phases” recalls the Babylonian king who, in the Bible, went mad and ate grass. Lord Rosebery was the British prime minister in 1894–95; peptone is a digestible protein. “Blank, Dash and Chose” are the narrator’s stand-ins for names.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter III, “The Time Traveller Returns,” from his silent arrival at the table to the start of his story; opens “He said not a word, but came painfully to the table, and made a motion towards the wine.…”; closes “…other. After a time we ceased to do that, and looked only at the Time Traveller's face.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-wells-time-machine-1895-02",
+        "continuesTo": null,
+        "blocks": [
+          91,
+          106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d93a275d4c70ef31cf97f53113ff1bb4f0cae3ffd153b3326221eeb4c3d75df3"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-03-q1",
+          "prompt": "The Editor thinks “in headlines.” How do the Editor and the Journalist respond to the Time Traveller’s state, and what does the narrator think of them?",
+          "facilitatorNotes": [
+            "They turn him into imaginary news stories and jokes about clothes-brushes in the future. The narrator calls their ridicule “easy work” and describes them as a new, irreverent kind of journalist, which suggests he finds their mockery shallow."
+          ],
+          "evidence": [
+            "thinking (after his wont) in headlines",
+            "joined the Editor in the easy work of heaping ridicule on the whole thing"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-03-q2",
+          "prompt": "What does the narrator notice that he thinks no one else noticed? Why might Wells give this detail to him alone?",
+          "facilitatorNotes": [
+            "The bloody socks and the lameness. Private evidence makes the narrator a careful witness and prepares the reader to take the story seriously, while the others laugh."
+          ],
+          "evidence": [
+            "He had nothing on them but a pair of tattered, blood-stained socks.",
+            "I don't think any one else had noticed his lameness."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-03-q3",
+          "prompt": "Why does the Time Traveller insist on eating first, and on “no interruptions”? What do these demands suggest about the story to come?",
+          "facilitatorNotes": [
+            "He is starving for meat and exhausted, and he asks for a hearing rather than a debate. He admits it “will sound like lying” and insists it is true. Unlike the arguments of the first evening, this will be testimony."
+          ],
+          "evidence": [
+            "I can't argue to-night.",
+            "Most of it will sound like lying. So be it! It's true—every word of it, all the same."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-03-q4",
+          "prompt": "In the last paragraph the narrator confesses “my own inadequacy.” Why tell readers what they cannot see?",
+          "facilitatorNotes": [
+            "He presents what follows as a written record of a spoken story, and the “white, sincere face” vouches for the speaker. Some readers find this frame makes the tale more believable; others notice that it also reminds us we have only the narrator’s word."
+          ],
+          "evidence": [
+            "you cannot see the speaker's white, sincere face in the bright circle of the little lamp",
+            "In writing it down I feel with only too much keenness the inadequacy of pen and ink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-04",
+      "title": "The Time Machine — excerpt: A fruit dinner in the great hall",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Separate what the Time Traveller sees in the hall from the judgments he quickly makes about its people.",
+      "focus": "First impressions of a future that is splendid and broken at once.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. Telling his story, the Time Traveller has arrived in the year 802,701, where small, graceful people laugh, hang flowers on him and lead him toward a vast building. He had expected a grave and intellectual future humanity. Hypertrophied means overgrown; frugivorous means fruit-eating; the Ichthyosaurus was a prehistoric sea reptile.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “In the Golden Age,” from the great building’s entry to the first language lessons; opens “\"The building had a huge entry, and was altogether of colossal dimensions. I was…”; closes “…they were before long, for I never met people more indolent or more easily fatigued.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-wells-time-machine-1895-05",
+        "blocks": [
+          129,
+          135
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6f88bfb05dd63ea8d8301c990827b53d306050100926b8917c72295b459d9bc4"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-04-q1",
+          "prompt": "What signs of decay does the Time Traveller notice in the hall, and how do they sit beside its richness?",
+          "facilitatorNotes": [
+            "Broken windows, dusty curtains, a fractured table and a floor worn into channels, yet the whole is “rich and picturesque.” Grandeur from the past and neglect in the present exist together."
+          ],
+          "evidence": [
+            "the thing that struck me most was its dilapidated look",
+            "Nevertheless, the general effect was extremely rich and picturesque."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-04-q2",
+          "prompt": "What does the worn floor tell him, and why does it matter that he says “as I judged”?",
+          "facilitatorNotes": [
+            "Countless feet over a long time. He cannot see past generations, only their traces, and he marks this as inference."
+          ],
+          "evidence": [
+            "as I judged by the going to and fro of past generations"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-04-q3",
+          "prompt": "“I felt like a school-master amidst children.” What does the comparison reveal about how he sees these people? Is it fair?",
+          "facilitatorNotes": [
+            "Their quick tiredness and laughter seem childish to him. But they also find him “grotesque” and laugh at his attempts, so they have their own view of him. His sense of superiority may limit what he understands."
+          ],
+          "evidence": [
+            "I felt like a school-master amidst children",
+            "I never met people more indolent or more easily fatigued",
+            "looking grotesque enough"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-04-q4",
+          "prompt": "He says he understood the fruits and flowers only “later.” What does this tell us about how he is telling the story?",
+          "facilitatorNotes": [
+            "He knows more now than he did then, and he holds it back. The hint creates suspense and reminds us that this is a story told after the events."
+          ],
+          "evidence": [
+            "but later I began to perceive their import",
+            "However, I am telling you of my fruit dinner in the distant future now."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-05",
+      "title": "The Time Machine — excerpt: No small houses",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Track how quickly a few observations become a theory, and find the places where the narrator warns us.",
+      "focus": "A traveller reads a whole society from its buildings and clothes.",
+      "context": "Recap: the Time Traveller has eaten fruit with the little people of 802,701 in a great, half-ruined hall and begun to learn their language, though they tire quickly. “Situate” means situated; the Thames is London’s river; a cupola is a small dome.",
+      "contentNote": "The Time Traveller speculates about the sexes, the family and child-bearing in late-Victorian terms; he calls it his own speculation and later finds it short of the truth.",
+      "excerpt": {
+        "locator": "Chapter VI, “The Sunset of Mankind,” from his hosts’ lack of interest to his climb to the crest; opens “\"A queer thing I soon discovered about my little hosts, and that was their lack of…”; closes “…first time. With a strange sense of freedom and adventure I pushed on up to the crest.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-wells-time-machine-1895-04",
+        "continuesTo": null,
+        "blocks": [
+          137,
+          144
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c269656d2327f5a63038153c6f7c7fd9ae4c50525cfdab26914c81f95fb46129"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-05-q1",
+          "prompt": "What “queer thing” does he discover about his hosts? How does his own behaviour soon match theirs?",
+          "facilitatorNotes": [
+            "They lose interest quickly, like children with a new toy, and he soon comes “to disregard these little people” in turn. Each side finds the other briefly interesting and then ignores it."
+          ],
+          "evidence": [
+            "their lack of interest",
+            "It is odd, too, how speedily I came to disregard these little people."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-05-q2",
+          "prompt": "He sees no small houses and concludes, in one word, “Communism.” What evidence leads him there, and how much does it actually show?",
+          "facilitatorNotes": [
+            "Only palace-like buildings remain; the house and cottage are gone. He leaps from buildings to a whole social system. The evidence fits his guess, but it could fit other explanations too."
+          ],
+          "evidence": [
+            "Apparently, the single house, and possibly even the household, had vanished."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-05-q3",
+          "prompt": "How does he explain why the sexes look alike? Which words show he is building a theory rather than reporting a fact?",
+          "facilitatorNotes": [
+            "He argues that strength, softness and the family were “militant necessities” of a violent age, no longer needed in a safe one. Words such as “I judged” and “what one would expect,” and his reminder that this was “my speculation,” mark it as theory. Readers can examine the period assumptions behind it."
+          ],
+          "evidence": [
+            "mere militant necessities of an age of physical force",
+            "This, I must remind you, was my speculation at the time."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-05-q4",
+          "prompt": "Twice he mentions something and sets it aside: a ruin where something will happen “at a later date,” and a well he thinks about “in a transitory way.” Why plant these details now?",
+          "facilitatorNotes": [
+            "Wells lays clues the narrator already knows matter. The well, dismissed in passing, invites the careful reader to wonder."
+          ],
+          "evidence": [
+            "It was here that I was destined, at a later date, to have a very strange experience",
+            "I thought in a transitory way of the oddness of wells still existing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-06",
+      "title": "The Time Machine — excerpt: The machine is gone",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a man’s reasoning as panic overwhelms it, and notice which conclusions he still manages to draw.",
+      "focus": "Loss strips away the Time Traveller’s confidence, and fear becomes a clue.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. In 802,701 the Time Traveller has spent his first day among the small, gentle, idle people of the future and, from a hilltop at sunset, decided that humanity has grown weak through comfort. He left his machine on a lawn near a huge White Sphinx. Gibbous means more than half full; “leprous” here means pale and blotched, as from the disease leprosy; malachite is a green stone.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “A Sudden Shock,” from the rising of the moon to his waking near the sphinx; opens “\"As I stood there musing over this too perfect triumph of man, the full moon, yellow and…”; closes “…day, and a couple of sparrows were hopping round me on the turf within reach of my arm.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          157,
+          165
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7357cdad5a52dc51f1a0cb3169cc7090649f3edc7ac55cf9516f2cca1d41bdbb"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-06-q1",
+          "prompt": "“Can you imagine what I felt as this conviction came home to me? But you cannot.” Why does he speak directly to his listeners here?",
+          "facilitatorNotes": [
+            "He is telling the story aloud, and he admits that words fail. The short exclamation that follows, “The Time Machine was gone!”, delivers the shock with no explanation at all."
+          ],
+          "evidence": [
+            "Can you imagine what I felt as this conviction came home to me? But you cannot."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-06-q2",
+          "prompt": "How does the sphinx look by moonlight? What does its smile seem to say?",
+          "facilitatorNotes": [
+            "White, shining and “leprous,” it seems to mock him. The statue becomes a watcher connected with the loss, as if it knew something."
+          ],
+          "evidence": [
+            "It seemed to smile in mockery of my dismay.",
+            "white, shining, leprous"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-06-q3",
+          "prompt": "Even in his frenzy he works out that the machine “had moved, and was hid, only in space.” Why does this conclusion frighten him more than it reassures him?",
+          "facilitatorNotes": [
+            "The removed levers mean no one could send it through time, so someone carried it away. Because he thinks the little people too weak, he must imagine “some hitherto unsuspected power.” Reason narrows the mystery and reveals a hidden threat."
+          ],
+          "evidence": [
+            "the sense of some hitherto unsuspected power",
+            "It had moved, and was hid, only in space."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-06-q4",
+          "prompt": "How does he describe himself among the sleepers, and what does he realize about their fear?",
+          "facilitatorNotes": [
+            "He is “bawling like an angry child,” the opposite of his calm explorer self. He sees that he is stirring up fear he believed they had forgotten, and their terror suggests it is not forgotten at all."
+          ],
+          "evidence": [
+            "bawling like an angry child",
+            "in trying to revive the sensation of fear"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-06-q5",
+          "prompt": "The episode ends with sparrows hopping “within reach of my arm.” Why end the night on this quiet image?",
+          "facilitatorNotes": [
+            "Morning calm follows the frenzy. Birds unafraid of a man suggest how gentle this world seems by day, which is part of its puzzle."
+          ],
+          "evidence": [
+            "a couple of sparrows were hopping round me on the turf within reach of my arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-07",
+      "title": "The Time Machine — excerpt: A beast in a trap",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 14,
+        "totalMinutes": 24
+      },
+      "challenge": "Track how a theory is revised when new evidence arrives, and notice the one fact the narrator cannot yet place.",
+      "focus": "The comfortable explanation collapses, and the Time Traveller’s fear changes shape.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. In 802,701 the Time Traveller has learned that the gentle surface people, the Eloi, share the world with the Morlocks, pale creatures who live in tunnels below and come up in the dark. He has just climbed down one of their wells, seen their machines and some meat, and barely escaped. Weena is a small Eloi woman he saved from drowning. The “Carlovignan” (Carolingian) kings were Frankish rulers whose last descendants were remembered as powerless figureheads; Nemesis is the goddess of retribution.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter X, “When the Night Came,” from “Now, indeed, I seemed in a worse case than before” to his resolve to make arms and a refuge; opens “\"Now, indeed, I seemed in a worse case than before. Hitherto, except during my night's…”; closes “…from them. I shuddered with horror to think how they must already have examined me.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          214,
+          216
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d297049584c9fa7c54efd684ab7c94be2e30d5662e7d702ea0a36c4071f1d1e"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-07-q1",
+          "prompt": "He once felt like “a man ... who had fallen into a pit”; now he feels “like a beast in a trap.” What is the difference?",
+          "facilitatorNotes": [
+            "A pit is a problem to climb out of; a trap means an enemy who set it and will come. The danger now has a will behind it."
+          ],
+          "evidence": [
+            "Now I felt like a beast in a trap, whose enemy would come upon him soon."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-07-q2",
+          "prompt": "What is his new theory of the Eloi and the Morlocks, and what does he think has been reversed?",
+          "facilitatorNotes": [
+            "Once the Eloi were the aristocracy and the Morlocks their servants; now the Eloi hold the earth only “on sufferance,” and the servants are gaining the upper hand. Words such as “I inferred” show that this is still reasoning, not proof."
+          ],
+          "evidence": [
+            "The Eloi, like the Carlovignan kings, had decayed to a mere beautiful futility.",
+            "But, clearly, the old order was already in part reversed."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-07-q3",
+          "prompt": "“Man had thrust his brother man out of the ease and the sunshine.” Who is to blame for the Morlocks, according to this sentence?",
+          "facilitatorNotes": [
+            "The privileged humans of the past, who pushed the workers underground. The word “brother” makes it a moral story, not only a biological one: the wrong comes back on the people who did it."
+          ],
+          "evidence": [
+            "man had thrust his brother man out of the ease and the sunshine",
+            "And now that brother was coming back—changed!"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-07-q4",
+          "prompt": "The memory of the meat arrives “almost like a question from outside.” Why might Wells let the idea come this way and leave it unexplained?",
+          "facilitatorNotes": [
+            "The mind resists a horrible inference, and the reader is left in suspense, perhaps guessing before the narrator does."
+          ],
+          "evidence": [
+            "coming in almost like a question from outside",
+            "I had a vague sense of something familiar, but I could not tell what it was at the time."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-07-q5",
+          "prompt": "He claims to come from “this ripe prime of the human race, when Fear does not paralyze.” How far do you trust this boast?",
+          "facilitatorNotes": [
+            "He has just admitted his “night’s anguish” over the lost machine, so the boast sounds proud and a little ironic. Some readers take it as courage he needs; others as the overconfidence of his age."
+          ],
+          "evidence": [
+            "this ripe prime of the human race, when Fear does not paralyze and mystery has lost its terrors",
+            "except during my night's anguish at the loss of the Time Machine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-08",
+      "title": "The Time Machine — excerpt: Fatted cattle",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Watch a narrator try out several attitudes toward a horror, and decide which one he finally holds.",
+      "focus": "The meaning of the meat, and the limits of a “scientific spirit.”",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. In 802,701 the gentle Eloi live above ground and the Morlocks, pale and hostile, below, coming up in the dark. Below, the Time Traveller saw meat he could not identify. He and Weena, a small Eloi woman who follows him, have just spent a frightened night on a hill. A rill is a small stream; Thomas Carlyle was a Victorian writer known for scorn of idle aristocrats.",
+      "contentNote": "The passage makes clear that the Morlocks eat the Eloi; the cannibalism is stated, not described.",
+      "excerpt": {
+        "locator": "Chapter X, “When the Night Came,” from the morning walk with Weena to his plans for a refuge; opens “\"I awakened Weena, and we went down into the wood, now green and pleasant instead of…”; closes “…my mind I pursued our way towards the building which my fancy had chosen as our dwelling.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          226,
+          228
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b5ea564f45bc751197040da11167cd52b030160f9f51b9f36cf10dad27dca1e8"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-08-q1",
+          "prompt": "What does the Time Traveller now understand about the meat? Where does a sentence break off, and why?",
+          "facilitatorNotes": [
+            "The Morlocks eat the Eloi. The sentence about “these inhuman sons of men” stops in a dash because he cannot finish the thought."
+          ],
+          "evidence": [
+            "And so these inhuman sons of men———!",
+            "His prejudice against human flesh is no deep-seated instinct."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-08-q2",
+          "prompt": "He tries to look at it “in a scientific spirit.” What arguments does he use to calm himself, and what interrupts them?",
+          "facilitatorNotes": [
+            "The Morlocks are as remote from us as our own cannibal ancestors, and the Eloi lack the intelligence to suffer from knowing; “Why should I trouble myself?” Then Weena dances beside him, and the detachment collapses."
+          ],
+          "evidence": [
+            "I tried to look at the thing in a scientific spirit.",
+            "And there was Weena dancing at my side!"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-08-q3",
+          "prompt": "Why does he try to see the horror as “a rigorous punishment of human selfishness,” and why does that attitude fail?",
+          "facilitatorNotes": [
+            "Seeing it as justice would make it bearable: those who lived on others’ labour are now eaten. But the Eloi still look too human, so sympathy wins and he shares their fear."
+          ],
+          "evidence": [
+            "a rigorous punishment of human selfishness",
+            "the Eloi had kept too much of the human form not to claim my sympathy"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-08-q4",
+          "prompt": "His plans include fire, a battering-ram, and taking Weena “to our own time.” What do they suggest about his state of mind?",
+          "facilitatorNotes": [
+            "He turns from horror to action. Fire is his best weapon, and his wish to save Weena shows real attachment. Some readers also notice overconfidence: he assumes the Morlocks cannot have moved the machine far."
+          ],
+          "evidence": [
+            "for nothing, I knew, would be more efficient against these Morlocks",
+            "Weena I had resolved to bring with me to our own time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-09",
+      "title": "The Time Machine — excerpt: A mace from a lever",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how a scientist’s absorption is broken, and judge the feeling that replaces it.",
+      "focus": "Curiosity gives way to fear, and fear to a wish to kill.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. The Time Traveller and Weena, the small Eloi woman who follows him, are exploring the Palace of Green Porcelain, a ruined museum where he hopes to find weapons against the Morlocks, the pale creatures who live underground and hunt in the dark. The [1] marks a note printed at the end of the chapter: “It may be, of course, that the floor did not slope, but that the museum was built into the side of a hill.—Ed.” The “area” of a London house is a sunken yard below the street; a signal-box holds the levers that work railway signals.",
+      "contentNote": "The narrator describes a strong wish to kill.",
+      "excerpt": {
+        "locator": "Chapter XI, “The Palace of Green Porcelain,” from Weena’s sudden fear to his restraint at the gallery’s dark end; opens “\"Suddenly Weena came very close to my side. So suddenly that she startled me. Had it not…”; closes “…restrained me from going straight down the gallery and killing the brutes I heard.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          236,
+          237
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "366ae4ade099e0d088f7e1e90e830db97b67d9755dbf832e6e59d1f862ce5214"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-09-q1",
+          "prompt": "Who notices the danger first, and how does the Time Traveller explain his own failure to notice it?",
+          "facilitatorNotes": [
+            "Weena does. He was absorbed in the machines and calls his study an “academic examination,” blaming himself for losing track of time and light."
+          ],
+          "evidence": [
+            "Had it not been for her I do not think I should have noticed that the floor of the gallery sloped at all.",
+            "I felt that I was wasting my time in this academic examination of machinery."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-09-q2",
+          "prompt": "What signs tell him the Morlocks are near? List them in the order he notices them.",
+          "facilitatorNotes": [
+            "The fading light, dust less thick and less even, small narrow footprints, and finally a pattering like the noises in the well. Each sign is closer and more certain than the last."
+          ],
+          "evidence": [
+            "it appeared to be broken by a number of small narrow footprints",
+            "I heard a peculiar pattering"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-09-q3",
+          "prompt": "“Very inhuman, you may think, to want to go killing one’s own descendants!” How does he defend the wish, and are you persuaded?",
+          "facilitatorNotes": [
+            "He says he cannot feel any humanity in them, and only Weena and fear for his machine hold him back, not any principle. Some readers sympathize, given what the Morlocks do; others notice the irony that calling them inhuman frees him to act inhumanly."
+          ],
+          "evidence": [
+            "But it was impossible, somehow, to feel any humanity in the things.",
+            "if I began to slake my thirst for murder my Time Machine might suffer"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-09-q4",
+          "prompt": "He leaves Weena alone in the aisle to break off the lever, and she whimpers. What does this small moment show about their relationship?",
+          "facilitatorNotes": [
+            "She depends on him completely, and he acts on sudden ideas, sometimes forgetting her. He rejoins her armed, ready to protect her and eager to fight."
+          ],
+          "evidence": [
+            "Suddenly Weena, deserted in the central aisle, began to whimper.",
+            "a mace in my hand more than sufficient"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-10",
+      "title": "The Time Machine — excerpt: The dream of the human intellect",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a general argument about intelligence and test it against the story’s events.",
+      "focus": "The Time Traveller’s final explanation of the future, offered with a warning that it may be wrong.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. After a night of fire and fighting in which he lost Weena, the small Eloi woman who had followed him, the Time Traveller returns to the hilltop seat where, on his first evening in 802,701, he worked out a confident theory of the future. The Eloi live above ground; the Morlocks, below, run the machines and feed on the Eloi. He has found some matches in his pocket and carries a crowbar.",
+      "contentNote": "The passage refers to Weena’s loss and to the Morlocks eating the Eloi, without describing either.",
+      "excerpt": {
+        "locator": "Chapter XIII, “The Trap of the White Sphinx,” from the return to the seat of yellow metal to his walk down toward the sphinx; opens “\"About eight or nine in the morning I came to the same seat of yellow metal from which I…”; closes “…I had my crowbar in one hand, and the other hand played with the matches in my pocket.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          264,
+          269
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9fb7af89f32832b442f4018d1d4ecbf2ad157843c5aad0db425a788c2e19a700"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-10-q1",
+          "prompt": "He laughs “bitterly” at his first evening’s conclusions. What has changed in how he sees the same view?",
+          "facilitatorNotes": [
+            "The beauty is the same, but now he knows what it hides: the cupolas are “blots,” and the Eloi live like cattle, with the same end. Pleasantness has become a warning."
+          ],
+          "evidence": [
+            "could not refrain from laughing bitterly at my confidence",
+            "Very pleasant was their day, as pleasant as the day of the cattle in the field."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-10-q2",
+          "prompt": "“It had committed suicide.” How can the human intellect kill itself, according to his argument?",
+          "facilitatorNotes": [
+            "By achieving comfort and security, it removed the need for intelligence, which exists only to meet change and danger. Success destroyed what made success possible."
+          ],
+          "evidence": [
+            "It had set itself steadfastly towards comfort and ease",
+            "There is no intelligence where there is no change and no need of change."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-10-q3",
+          "prompt": "Why does he think the Morlocks kept more initiative than the Eloi? Is the reasoning convincing?",
+          "facilitatorNotes": [
+            "Machines need “some little thought outside habit,” and hunger returned first below. The idea fits what he has seen, but it rests on “probably” and inference, so readers can test it rather than accept it."
+          ],
+          "evidence": [
+            "which, however perfect, still needs some little thought outside habit",
+            "Mother Necessity, who had been staved off for a few thousand years, came back again, and she began below."
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-10-q4",
+          "prompt": "He ends: “It may be as wrong an explanation as mortal wit could invent.” Why offer a theory and then undercut it?",
+          "facilitatorNotes": [
+            "His first theory, made on this same seat, proved wrong, and he has learned caution. He gives the explanation as his best reading, not as certainty, and leaves listeners and readers to judge."
+          ],
+          "evidence": [
+            "It may be as wrong an explanation as mortal wit could invent.",
+            "It is how the thing shaped itself to me, and as that I give it to you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-11",
+      "title": "The Time Machine — excerpt: The beach at the end of the world",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Picture a slow change in the sky described step by step, and the sudden danger that interrupts it.",
+      "focus": "The far future as a dying earth, seen through scientific detail and horror.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. Escaping the Morlocks, who had trapped him inside the White Sphinx, the Time Traveller threw his machine’s lever without looking and is now rushing forward in time. “Tidal drag” is the slowing of a planet’s spin by the pull of another body: Wells imagines the earth coming to rest with one face always to the sun, as the moon always shows one face to the earth. Astronomers now describe the sun’s future differently; Wells used the science of his day. Palps are feelers around an animal’s mouth; carters drove carts with long whips.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “The Further Vision,” from the sickness of time travelling to the crabs crawling among the green weed; opens “\"I have already told you of the sickness and confusion that comes with time travelling.…”; closes “…crawling here and there, in the sombre light, among the foliated sheets of intense green.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          279,
+          284
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "99f9d32352bbcb13cfe1f2c8ac936da1ed4220c3ae0a9abddd15a9999d9a145f"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-11-q1",
+          "prompt": "How does the Time Traveller learn that the earth has changed? Which clues in the sky does he read?",
+          "facilitatorNotes": [
+            "The dials show enormous speed; day and night slow down; the sun stops setting and grows large and red; the moon vanishes. He concludes that the earth has stopped turning relative to the sun."
+          ],
+          "evidence": [
+            "the sun had ceased to set—it simply rose and fell in the west, and grew ever broader and more red",
+            "The earth had come to rest with one face to the sun"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-11-q2",
+          "prompt": "Colour fills the description of the beach. Choose two colours and say what mood they create.",
+          "facilitatorNotes": [
+            "Inky black, deep red, scarlet, intense green and pink salt make an unnatural palette. Beauty and menace mix; readers may choose different colours and moods if the text supports them."
+          ],
+          "evidence": [
+            "Overhead it was a deep Indian red and starless",
+            "a thick incrustation of salt—pink under the lurid sky"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-11-q3",
+          "prompt": "“Can you imagine a crab as large as yonder table?” Why does he point to an object in the room as he describes the monster?",
+          "facilitatorNotes": [
+            "He is speaking to his dinner guests, and the table gives an exact, homely scale. The comfortable present is set right beside the horror of the future."
+          ],
+          "evidence": [
+            "Can you imagine a crab as large as yonder table"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-11-q4",
+          "prompt": "He escapes by moving a month into the future, yet the crabs are still there. What does this suggest about life in this world?",
+          "facilitatorNotes": [
+            "Change has become so slow that a month makes no difference. The dying earth has settled into a long, stagnant decline."
+          ],
+          "evidence": [
+            "I had placed a month between myself and these monsters. But I was still on the same beach",
+            "Dozens of them seemed to be crawling here and there"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-11-q5",
+          "prompt": "The sea still moves with “a gentle breathing.” Is anything hopeful in this scene, or is it only a reminder of loss?",
+          "facilitatorNotes": [
+            "The sea is “still moving and living,” and plants cover the rocks; but the swell is oily, and there is no wind. Readers can argue either way, or that Wells means the faint life to make the desolation sharper."
+          ],
+          "evidence": [
+            "showed that the eternal sea was still moving and living",
+            "Only a slight oily swell rose and fell like a gentle breathing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wells-time-machine-1895-12",
+      "title": "The Time Machine — excerpt: So I came back",
+      "sourceId": "wells-time-machine-1895",
+      "genre": "science fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice the small proofs offered at the end of a long story, and decide what they prove.",
+      "focus": "Homecoming, and evidence that the journey was not a dream.",
+      "context": "The Time Machine (1895) by H. G. Wells is told by a regular dinner guest of an English inventor known only as the Time Traveller, who claims to have travelled to the year 802,701 and beyond. After seeing the earth’s far future, a beach under a dying red sun, the Time Traveller has climbed back on his machine, sick and faint. He is finishing his story to his dinner guests on the evening of his return. Mrs. Watchett is his housekeeper; Hillyer seems to be a servant; the Pall Mall Gazette was a London evening newspaper.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, “The Time Traveller’s Return,” the whole chapter; opens “\"So I came back. For a long time I must have been insensible upon the machine. The…”; closes “…door on you. You know the rest. I washed, and dined, and now I am telling you the story.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          292,
+          296
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4945923ac475e9170b60206f9f57bbc689e551eeb7d8d7fa4948b44cb97829f4"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wells-time-machine-1895-12-q1",
+          "prompt": "How does the journey home reverse the journey out? Find details that run backward.",
+          "facilitatorNotes": [
+            "The sun turns golden and the sky blue, the dial hands spin back, and Mrs. Watchett glides “back foremost” across the room. Wells shows reversal through small, almost comic details."
+          ],
+          "evidence": [
+            "The hands spun backward upon the dials.",
+            "she glided quietly up the laboratory, back foremost"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-12-q2",
+          "prompt": "He says the whole thing might have been a dream. What evidence does he give that it was not?",
+          "facilitatorNotes": [
+            "The machine left from one corner and returned in the other, a distance that matches the way from the lawn to the sphinx’s pedestal, where the Morlocks hid it. Readers may notice that only he can measure this proof."
+          ],
+          "evidence": [
+            "It had come to rest again in the north-west, against the wall where you saw it.",
+            "And yet, not exactly!"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-12-q3",
+          "prompt": "Why might the first things he notices at home be a newspaper, a clock and “good wholesome meat”?",
+          "facilitatorNotes": [
+            "They confirm the date and hour and return him to ordinary appetites. Meat also contrasts with the Eloi’s fruit and with the horror of what the Morlocks ate."
+          ],
+          "evidence": [
+            "I saw the Pall Mall Gazette on the table by the door.",
+            "Then I sniffed good wholesome meat"
+          ]
+        },
+        {
+          "id": "reading-8-wells-time-machine-1895-12-q4",
+          "prompt": "His story ends: “You know the rest.” How does this sentence change the listeners’ role?",
+          "facilitatorNotes": [
+            "The tale has reached the evening they themselves saw, so they become witnesses of its last part. Now they must decide what to believe."
+          ],
+          "evidence": [
+            "You know the rest. I washed, and dined, and now I am telling you the story."
+          ]
+        }
+      ]
+    }
+  ]
+}
