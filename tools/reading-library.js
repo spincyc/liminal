@@ -6,18 +6,27 @@
 //   node tools/reading-library.js seal <work-id>...          recompute work.text from text.jsonl
 //   node tools/reading-library.js align <grade-key> [--write] [--source <old-source-id>]
 //   node tools/reading-library.js gutenberg <file.txt> <out.jsonl>   rough prose conversion to refine by hand
-//   node tools/reading-library.js remap <work-id> <map> [--old <text.jsonl>] [--write]
+//   node tools/reading-library.js remap <work-id> <map> [--old <text.jsonl>] [--grow] [--write]
+//   node tools/reading-library.js rehash <work-id> [--write]
+//
+// rehash follows a correction made in place (same blocks, changed words): it
+// recomputes the text hash of every school night and calendar reading citing
+// the work and lists those whose text changed, so their context, questions
+// and evidence quotes can be checked against the corrected wording.
 //
 // remap re-cites a work after blocks were removed or split in its text (a
 // collation restores a paragraph break; later apparatus is taken out). <map>
 // says, in order, what became of every old block, as comma-separated parts:
 // "a-b=n" old a..b are now n.. (unchanged text), "a-b=-" removed, "k=n..m"
-// old block k was split into new n..m, and "a-=n" for the rest. The old text
+// old block k was split into new n..m, "a~b=n" old a..b were joined into new
+// block n (one printed paragraph), "+k" k new blocks inserted here (a
+// restored passage), and "a-=n" for the rest. The old text
 // is the committed one (git HEAD) unless --old names a file. Every school
 // night and calendar reading citing the work, and its scope.collated, are
 // shifted and their text hashes recomputed; a citation that touches a removed
-// block, or starts or ends inside a split block at a character offset, is
-// refused for a hand fix. Old blocks must keep their text (up to spacing):
+// block, starts or ends inside a split block at a character offset, or starts
+// or ends partway through joined blocks, is refused for a hand fix, and so is one that would now take in inserted
+// blocks, unless --grow says it should. Old blocks must keep their text (up to spacing):
 // make wording corrections separately. With --write the files are rewritten;
 // then seal the work and run the checks. Locators are not touched: their
 // block numbers, where they have any, refer to the original extraction.
@@ -136,11 +145,48 @@ function gutenberg(input, output) {
   console.log("Wrote " + blocks.length + " blocks to " + output + " (review headings, verse and notes by hand).");
 }
 
+// Every grade file and calendar-reading file that may cite a work: calls
+// visit(file, readings) for each and returns the parsed files by path.
+function citingFiles(id, visit) {
+  const daily = path.join(ROOT, "content/reading-daily"), data = new Map();
+  for (const name of fs.readdirSync(daily)) if (/^(k|\d+|a\d)\.json$/.test(name)) { const file = path.join(daily, name), raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.days || []); }
+  const extra = path.join(daily, "extra");
+  if (fs.existsSync(extra)) for (const key of fs.readdirSync(extra)) { const file = path.join(extra, key, id + ".json"); if (fs.existsSync(file)) { const raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.readings); } }
+  return data;
+}
+function rehash(id, { write = false } = {}) {
+  const blocks = L.parseText(fs.readFileSync(path.join(DIRECTORY, id, "text.jsonl"), "utf8"), id), changed = [], files = new Set();
+  const data = citingFiles(id, (file, list) => {
+    for (const reading of list) {
+      if (reading.sourceId !== id || !reading.excerpt || !Array.isArray(reading.excerpt.blocks)) continue;
+      const hash = textHash({ blocks: L.resolveRange(blocks, reading.excerpt, reading.id) });
+      if (hash !== reading.excerpt.textHash) { reading.excerpt.textHash = hash; changed.push(reading.id); files.add(file); }
+    }
+  });
+  console.log(changed.length ? "CHANGED " + changed.join(" ") + ": check their context, questions and evidence against the corrected text" : "No reading of " + id + " changed.");
+  if (write) for (const file of files) fs.writeFileSync(file, JSON.stringify(data.get(file), null, 2) + "\n");
+  return { changed };
+}
 // Parse a remap description into a function old index -> {new: [first, last]} or null (removed).
 function parseMap(text, oldCount, newCount) {
-  const parts = text.split(",").map(part => part.trim()).filter(Boolean), table = new Map();
+  const parts = text.split(",").map(part => part.trim()).filter(Boolean), table = new Map(), inserted = new Set();
   let expect = 0, lastNew = -1;
   for (const part of parts) {
+    const add = part.match(/^\+(\d+)$/);
+    if (add) {
+      if (!Number(add[1])) throw new Error("remap: an insertion adds at least one block: " + part);
+      for (let k = 0; k < Number(add[1]); k++) inserted.add(++lastNew);
+      continue;
+    }
+    const join = part.match(/^(\d+)~(\d+)=(\d+)$/);
+    if (join) {
+      const a = Number(join[1]), b = Number(join[2]), n = Number(join[3]);
+      if (a !== expect || b <= a || b >= oldCount) throw new Error("remap: a join names two or more old blocks continuing at " + expect + ": " + part);
+      if (n !== lastNew + 1) throw new Error("remap: new blocks must follow on at " + (lastNew + 1) + " in " + part);
+      for (let i = a; i <= b; i++) table.set(i, { first: n, last: n, split: false, joined: [a, b] });
+      lastNew = n; expect = b + 1;
+      continue;
+    }
     const m = part.match(/^(\d+)(?:-(\d*))?=(?:(-)|(\d+)(?:\.\.(\d+))?)$/);
     if (!m) throw new Error("remap: cannot read part " + JSON.stringify(part));
     const a = Number(m[1]), b = m[2] === undefined ? a : m[2] === "" ? oldCount - 1 : Number(m[2]);
@@ -161,44 +207,48 @@ function parseMap(text, oldCount, newCount) {
   }
   if (expect !== oldCount) throw new Error("remap: the map stops at old block " + expect + " of " + oldCount);
   if (newCount !== undefined && lastNew !== newCount - 1) throw new Error("remap: the map ends at new block " + lastNew + " but the new text has " + newCount);
+  table.inserted = inserted;
   return table;
 }
 // Shift one excerpt; returns a reason string when it needs a hand fix.
-function remapExcerpt(excerpt, table) {
+function remapExcerpt(excerpt, table, { grow = false } = {}) {
   const [first, last] = excerpt.blocks, a = table.get(first), b = table.get(last);
   for (let i = first; i <= last; i++) if (table.get(i) === null) return "cites removed block " + i;
   if (a.split && excerpt.startChar != null) return "starts inside split block " + first;
   if (b.split && excerpt.endChar != null) return "ends inside split block " + last;
+  if (a.joined && first !== a.joined[0]) return "starts partway through joined blocks " + a.joined.join("–");
+  if (b.joined && (last !== b.joined[1] || excerpt.endChar != null)) return "ends partway through joined blocks " + b.joined.join("–");
+  const taken = [...(table.inserted || [])].filter(n => a.first < n && n < b.last);
+  if (taken.length && !grow) return "would take in inserted blocks " + taken[0] + (taken.length > 1 ? "–" + taken[taken.length - 1] : "") + " (pass --grow if it should)";
   excerpt.blocks = [a.first, b.last];
   return null;
 }
-function remap(id, mapText, { write = false, old = null } = {}) {
+function remap(id, mapText, { write = false, old = null, grow = false } = {}) {
   const folder = path.join(DIRECTORY, id), spaced = text => text.replace(/\s+/g, " ").trim();
   const before = L.parseText(old ? fs.readFileSync(old, "utf8") : require("node:child_process").execFileSync("git", ["show", "HEAD:./" + path.relative(ROOT, path.join(folder, "text.jsonl"))], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28 }), id);
   const after = L.parseText(fs.readFileSync(path.join(folder, "text.jsonl"), "utf8"), id);
   const table = parseMap(mapText, before.length, after.length);
   for (const [i, to] of table) {
-    if (!to) continue;
+    if (!to || (to.joined && i !== to.joined[0])) continue;
+    const old = to.joined ? before.slice(to.joined[0], to.joined[1] + 1) : [before[i]], label = to.joined ? to.joined.join("–") : String(i);
     const joined = spaced(after.slice(to.first, to.last + 1).map(block => block.text).join(" "));
-    if (joined !== spaced(before[i].text)) throw new Error("remap: old block " + i + " does not match new " + to.first + (to.last > to.first ? ".." + to.last : "") + "; make text changes separately");
+    if (joined !== spaced(old.map(block => block.text).join(" "))) throw new Error("remap: old block " + label + " does not match new " + to.first + (to.last > to.first ? ".." + to.last : "") + "; make text changes separately");
   }
-  const problems = [], files = [];
-  const visit = (file, list) => {
+  const problems = [], files = [], grown = [];
+  const data = citingFiles(id, (file, list) => {
     let touched = false;
     for (const reading of list) {
       if (reading.sourceId !== id || !reading.excerpt || !Array.isArray(reading.excerpt.blocks)) continue;
-      const reason = remapExcerpt(reading.excerpt, table);
+      const reason = remapExcerpt(reading.excerpt, table, { grow });
       if (reason) { problems.push(reading.id + " " + reason); continue; }
       // A split block now joins as separate paragraphs, so the hash moves with it.
       reading.excerpt.textHash = textHash({ blocks: L.resolveRange(after, reading.excerpt, reading.id) });
+      const [a, b] = reading.excerpt.blocks;
+      if ([...table.inserted].some(n => a < n && n < b)) grown.push(reading.id);
       touched = true;
     }
     if (touched) files.push(file);
-  };
-  const daily = path.join(ROOT, "content/reading-daily"), data = new Map();
-  for (const name of fs.readdirSync(daily)) if (/^(k|\d+|a\d)\.json$/.test(name)) { const file = path.join(daily, name), raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.days || []); }
-  const extra = path.join(daily, "extra");
-  if (fs.existsSync(extra)) for (const key of fs.readdirSync(extra)) { const file = path.join(extra, key, id + ".json"); if (fs.existsSync(file)) { const raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.readings); } }
+  });
   const workFile = path.join(folder, "work.json"), work = JSON.parse(fs.readFileSync(workFile, "utf8"));
   if (work.scope.collated) {
     const ranges = [];
@@ -210,13 +260,14 @@ function remap(id, mapText, { write = false, old = null } = {}) {
     work.scope.collated = merged;
   }
   for (const problem of problems) console.log("PROBLEM " + problem);
+  if (grown.length) console.log("GREW " + grown.join(" ") + ": review their time, context and questions for the restored text");
   console.log(files.length + " files cite " + id + (work.scope.collated ? "; scope.collated becomes " + JSON.stringify(work.scope.collated) : ""));
   if (write && !problems.length) {
     for (const file of files) fs.writeFileSync(file, JSON.stringify(data.get(file), null, 2) + "\n");
     fs.writeFileSync(workFile, JSON.stringify(work, null, 2) + "\n");
     console.log("Rewritten. Now: node tools/reading-library.js seal " + id + " and the checks.");
   }
-  return { problems, files };
+  return { problems, files, grown };
 }
 
 if (require.main === module) {
@@ -232,10 +283,13 @@ if (require.main === module) {
     } else if (command === "remap") {
       const at = args.indexOf("--old");
       if (args.length < 2) throw new Error("remap needs <work-id> <map>");
-      const { problems } = remap(args[0], args[1], { write: args.includes("--write"), old: at === -1 ? null : args[at + 1] });
+      const { problems } = remap(args[0], args[1], { write: args.includes("--write"), grow: args.includes("--grow"), old: at === -1 ? null : args[at + 1] });
       if (problems.length) process.exitCode = 2;
+    } else if (command === "rehash") {
+      if (args.length < 1) throw new Error("rehash needs <work-id>");
+      rehash(args[0], { write: args.includes("--write") });
     } else if (command === "gutenberg") { if (args.length !== 2) throw new Error("gutenberg needs <file.txt> <out.jsonl>"); gutenberg(args[0], args[1]); }
-    else throw new Error("usage: reading-library.js check | seal <id>... | align <grade-key> [--write] [--source <id>] | remap <work-id> <map> [--old <file>] [--write] | gutenberg <in> <out>");
+    else throw new Error("usage: reading-library.js check | seal <id>... | align <grade-key> [--write] [--source <id>] | remap <work-id> <map> [--old <file>] [--grow] [--write] | rehash <work-id> [--write] | gutenberg <in> <out>");
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
-module.exports = { seal, locate, align, gutenberg, parseMap, remapExcerpt, remap };
+module.exports = { seal, locate, align, gutenberg, parseMap, remapExcerpt, remap, rehash };
