@@ -988,9 +988,7 @@
           ]
         }
       ],
-      "months": [
-        12
-      ]
+      "holiday": "christmas"
     },
     {
       "id": "reading-8-coleridge-complete-poetical-works-1-1912-14",
@@ -1625,6 +1623,81 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-coleridge-complete-poetical-works-1-1912-23",
+      "title": "Easter Holidays",
+      "sourceId": "coleridge-complete-poetical-works-1-1912",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a schoolboy’s holiday poem as it turns from a day of noisy fun to a lesson about lasting happiness, and judge whether the turn works.",
+      "focus": "Easter crowds race to a spring fair, and a fourteen-year-old poet asks what kind of joy can last beyond the holiday.",
+      "context": "Samuel Taylor Coleridge (1772–1834) wrote this poem in 1787, at fourteen, while he was a pupil at Christ’s Hospital, a charity school in London; it stands first in his collected poems. At Easter, Londoners crowded to the holiday fair at Greenwich, downriver on the Thames, by coach and by boat. Festal means festive; feather’d songsters are birds; to confess is to show or acknowledge; the stages are stagecoaches, “breaking” under their loads; a lay is a song; jocund means merry; smarts are pains; variegated means varied; tide here means season. It is read on Easter Sunday.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Easter Holidays, the whole poem (verses 1–6) with its date; opens “Hail! festal Easter that dost bring Approach of sweetly-smiling spring, When Nature's…”; closes “1787.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          0,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b16b81cb8d5fb8e4fe9bfbb229244a5b3f0c967c54773b95fe622775399df3ad"
+      },
+      "questions": [
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-23-q1",
+          "prompt": "What signs of Easter and spring fill the first three verses, and how do the young holiday-makers spend the day?",
+          "facilitatorNotes": [
+            "Green fields, singing birds and animals feeling “the power of love”; youths crowding the coaches to Greenwich, rowing on the Thames, singing, dancing and shouting until evening. The church festival is joined to the season of spring, and the day is all motion and noise."
+          ],
+          "evidence": [
+            "Hail! festal Easter that dost bring",
+            "Now youths the breaking stages load"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-23-q2",
+          "prompt": "Where does the poem turn, and what do the joyful young people not think about? Why might a fourteen-year-old write this turn?",
+          "facilitatorNotes": [
+            "At the fourth verse: “But little think their joyous hearts / Of dire Misfortune’s varied smarts,” the sorrows everyone is “born to know.” A moral turn like this was a habit of eighteenth-century verse, so the schoolboy may be imitating the poems he studied; some readers also hear a boy watching the holiday from outside, already aware that it will end."
+          ],
+          "evidence": [
+            "But little think their joyous hearts",
+            "Which all mankind are born to know"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-23-q3",
+          "prompt": "According to the last two verses, who can stay cheerful “In raging storms or calm serene”? What is the poem’s idea of lasting happiness?",
+          "facilitatorNotes": [
+            "The one who keeps to “Wisdom’s paths” with a firm Virtue that will not weep at misfortune; he finds “Heav’n-born Content.” Happiness that depends on circumstances, like a holiday, ends with the evening; contentment that comes from character does not."
+          ],
+          "evidence": [
+            "Yet he who Wisdom's paths shall keep",
+            "Heav'n-born Content he still shall find"
+          ]
+        },
+        {
+          "id": "reading-8-coleridge-complete-poetical-works-1-1912-23-q4",
+          "prompt": "The poem ends “Like Easter all the year.” How has the meaning of Easter changed between the first line and the last? Is the ending convincing?",
+          "facilitatorNotes": [
+            "At first Easter is a spring holiday of outings and noise; at the end it stands for an inward joy that can last every day, perhaps touched by the Christian hope the feast celebrates. Some readers find the moral tacked on, and a Virtue that “scorns to weep” rather cold; others admire a young poet trying to make one day’s pleasure last. Strong answers judge the ending against the turn in the fourth verse."
+          ],
+          "evidence": [
+            "Like Easter all the year."
+          ]
+        }
+      ],
+      "holiday": "easter"
     }
   ]
 }

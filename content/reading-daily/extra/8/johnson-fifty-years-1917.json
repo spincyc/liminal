@@ -16,7 +16,7 @@
       },
       "challenge": "Follow a long public poem as it shifts between celebration, argument, admission and hope.",
       "focus": "A claim to full American citizenship, made on the fiftieth anniversary of emancipation.",
-      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. The title poem first appeared on 1 January 1913, fifty years after Lincoln’s Emancipation Proclamation took effect. Ken is range of sight; kraals are enclosed villages in southern Africa; Crispus Attucks, a man of African and Native descent, was killed in the Boston Massacre of 1770; William Lloyd Garrison and Wendell Phillips were abolitionist speakers; John Brown led a raid against slavery in 1859; the editor Elijah Lovejoy was killed by a pro-slavery mob in 1837. “Daezd” is printed for “dazed.”",
+      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. The title poem first appeared on 1 January 1913, fifty years after Lincoln’s Emancipation Proclamation took effect. Ken is range of sight; kraals are enclosed villages in southern Africa; Crispus Attucks, a man of African and Native descent, was killed in the Boston Massacre of 1770; William Lloyd Garrison and Wendell Phillips were abolitionist speakers; John Brown led a raid against slavery in 1859; the editor Elijah Lovejoy was killed by a pro-slavery mob in 1837. “Daezd” is printed for “dazed.” Though written for an anniversary of emancipation, it is read on Independence Day for its claim that the nation belongs to all who helped build it.",
       "contentNote": "The poem recalls slavery and racial violence, and uses period language about Africa and about immigrants.",
       "excerpt": {
         "locator": "Fifty Years (1863–1913), the whole poem; opens “1863-1913”; closes “…of thousands fought, For which so many freely died, God cannot let it come to naught.”.",
@@ -88,9 +88,7 @@
           ]
         }
       ],
-      "months": [
-        1
-      ]
+      "holiday": "independence-day"
     },
     {
       "id": "reading-8-johnson-fifty-years-1917-02",
@@ -255,7 +253,7 @@
       },
       "challenge": "Read a short ballad of a soldier’s death and find the argument hidden in its praise.",
       "focus": "Honour for a Black soldier whom his country despised.",
-      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. On 1 July 1898, in the Spanish–American War, American troops stormed San Juan Hill in Cuba. Among them was the Tenth Cavalry, a Black regiment, the “sable Tenth” (sable means black). A color sergeant carries the regiment’s flag; a guidon is a small cavalry flag; to “present arms” is to salute with a weapon.",
+      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. On 1 July 1898, in the Spanish–American War, American troops stormed San Juan Hill in Cuba. Among them was the Tenth Cavalry, a Black regiment, the “sable Tenth” (sable means black). A color sergeant carries the regiment’s flag; a guidon is a small cavalry flag; to “present arms” is to salute with a weapon. It is read on Memorial Day, the day for honouring those who died in the nation’s wars.",
       "contentNote": "A soldier dies of his wounds in battle.",
       "excerpt": {
         "locator": "The Color Sergeant (On an Incident at the Battle of San Juan Hill), the whole poem; opens “(_On an Incident at the Battle of San Juan Hill_)”; closes “…a grim-like beauty; Despised of men for his humble race, Yet true, in death, to his duty.”.",
@@ -314,7 +312,8 @@
             "But, still, in a grim-like beauty"
           ]
         }
-      ]
+      ],
+      "holiday": "memorial-day"
     },
     {
       "id": "reading-8-johnson-fifty-years-1917-05",
@@ -858,10 +857,7 @@
           ]
         }
       ],
-      "months": [
-        12,
-        1
-      ]
+      "holiday": "new-year"
     },
     {
       "id": "reading-8-johnson-fifty-years-1917-12",
@@ -1238,7 +1234,7 @@
       },
       "challenge": "Enjoy a comic ballad’s bouncing rhythm, and find the lesson under the joke.",
       "focus": "A miser’s gold, a ghost and a town that empties.",
-      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. A deacon is an officer of a church; a miser hoards money; phosphorescent means glowing; “for let” means for rent.",
+      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. A deacon is an officer of a church; a miser hoards money; phosphorescent means glowing; “for let” means for rent. It is read at Halloween.",
       "contentNote": null,
       "excerpt": {
         "locator": "The Ghost of Deacon Brown, the whole poem; opens “In a backwoods town Lived Deacon Brown, And he was a miser old; He would trust no bank,…”; closes “And the town is now for let, But the ghost is digging yet.”.",
@@ -1298,81 +1294,8 @@
             "But the ghost is digging yet."
           ]
         }
-      ]
-    },
-    {
-      "id": "reading-8-johnson-fifty-years-1917-18",
-      "title": "Five Love Lyrics",
-      "sourceId": "johnson-fifty-years-1917",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 6,
-        "discussionMinutes": 16,
-        "totalMinutes": 22
-      },
-      "challenge": "Compare five short love poems, and notice how each finds a different image for the same feeling.",
-      "focus": "Love seen through the times of day, a pair of eyes, a rose and a bee, a safe harbour and a goddess’s garland.",
-      "context": "James Weldon Johnson (1871–1938), a Black American poet, lawyer, diplomat and civil-rights leader who wrote the words of “Lift Every Voice and Sing,” published Fifty Years and Other Poems in 1917. These five lyrics stand together in the book. To swoon is to faint; a blight is a withering; “glamouring” means enchanting; a “quested goal” is the goal of a search; a haven is a safe harbour; Venus is the Roman goddess of love; “embowered” means sheltered by leafy branches; a garden close is an enclosed garden.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "Morning, Noon and Night; Her Eyes Twin Pools; The Awakening; Beauty That Is Never Old; Venus in a Garden; the five poems whole; opens “When morning shows her first faint flush, I think of the tender blush That crept so…”; closes “…that for love had bled; And the goddess made a garland Gathered from the roses red.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          236,
-          252
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "a873607ca86b9090eee7cc685392f7d627fca146ba957d4f4482e3bdb41d98ed"
-      },
-      "questions": [
-        {
-          "id": "reading-8-johnson-fifty-years-1917-18-q1",
-          "prompt": "In “Morning, Noon and Night,” what memory does each time of day bring back? Why does the poem end in darkness?",
-          "facilitatorNotes": [
-            "Morning’s flush recalls her first blush, noon’s roses her hair and embrace, night her tear-dimmed eyes asking him to stay “Although your lips sent me away.” The love story runs from dawn to its end, so the last night is dark."
-          ],
-          "evidence": [
-            "Their mute entreaty that I stay,",
-            "And dark--so dark becomes the night."
-          ]
-        },
-        {
-          "id": "reading-8-johnson-fifty-years-1917-18-q2",
-          "prompt": "What warning is hidden in “Her Eyes Twin Pools”?",
-          "facilitatorNotes": [
-            "The eyes are beautiful pools of “mystic light,” but a man who bends to gaze may “plunge, and lose his soul.” Love’s pull is also a danger; readers may think of the old story of Narcissus or simply of losing oneself."
-          ],
-          "evidence": [
-            "A man might plunge, and lose his soul."
-          ]
-        },
-        {
-          "id": "reading-8-johnson-fifty-years-1917-18-q3",
-          "prompt": "In “The Awakening” the speaker dreams of being a rose and the beloved a bee. What does the speaker understand only at the end?",
-          "facilitatorNotes": [
-            "The rose waited and grew without knowing why; when the bee comes, “then I knew / That I had waited there for you.” Love gives meaning, after the fact, to a lonely life."
-          ],
-          "evidence": [
-            "Just why I waited there and grew.",
-            "That I had waited there for you."
-          ]
-        },
-        {
-          "id": "reading-8-johnson-fifty-years-1917-18-q4",
-          "prompt": "Compare “Beauty That Is Never Old” with “Venus in a Garden.” Which beauty lasts, and why does Venus choose the red roses?",
-          "facilitatorNotes": [
-            "In the first, the beauty in the beloved’s loving eyes is a haven that never ages; Venus chooses red roses because they took their colour “From the hearts that for love had bled.” One poem finds love a comfort, the other a cost; readers may prefer either."
-          ],
-          "evidence": [
-            "The only beauty that is never old.",
-            "From the hearts that for love had bled;"
-          ]
-        }
-      ]
+      ],
+      "holiday": "halloween"
     }
   ]
 }
