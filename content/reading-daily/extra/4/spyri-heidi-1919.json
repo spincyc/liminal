@@ -494,6 +494,456 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-08",
+      "title": "Heidi: a turtle and a basket of kittens (Chapter VIII, first part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 9,
+        "totalMinutes": 16
+      },
+      "challenge": "Enjoy a comic scene, and notice how each character reacts to the same surprise.",
+      "focus": "A street-boy with a barrel-organ and a basket of kittens turn the morning lessons upside down.",
+      "context": "Heidi (1880–81) is by the Swiss writer Johanna Spyri; this English translation by Elisabeth P. Stork appeared in 1915. Eight-year-old Heidi has been taken from her grandfather’s hut on a Swiss mountain to Frankfurt, a big city in Germany, to keep company with Clara Sesemann, a rich girl who cannot walk and is pushed about in a rolling-chair. Miss Rottenmeier is the strict housekeeper, Sebastian the butler and Tinette a maid; Clara calls her tutor “Mr. Candidate.” Miss Rottenmeier insists on Heidi’s full name, Adelheid. The day before, Heidi slipped out to look for the mountains from a church tower. A street-boy showed her the way, and she promised him money that Clara would pay; the old tower-keeper offered her as many kittens as she had room for. A barrel-organ plays tunes when its handle is turned; an urchin is a ragged child; “cunning” here means sweet and lively.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Great Disturbances in the Sesemann House,” from the opening until Clara asks Miss Rottenmeier to wait for her father; opens “A short time after the tutor had arrived next morning, the door-bell rang so violently…”; closes “…and the lady often felt discouraged, though nothing remarkable happened for a few days.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-spyri-heidi-1919-09",
+        "blocks": [
+          426,
+          451
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd113140d2e3afc42fdd604030b25d52d73d0ac6a5299e70c1912f41d406ad11"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-08-q1",
+          "prompt": "How does the street-boy convince Sebastian that he has met someone from this house? Why does Sebastian chuckle?",
+          "facilitatorNotes": [
+            "He describes curly hair, black eyes and a funny way of talking. Sebastian knows Clara never goes out, so he realizes the boy means Heidi, “the little Miss,” and guesses there will be fun."
+          ],
+          "evidence": [
+            "She has curly hair, black eyes and talks in a funny way.",
+            "\"Oh,\" Sebastian chuckled to himself, \"that was the little Miss.\""
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-08-q2",
+          "prompt": "Sebastian “had seen everything behind the door.” Whose side is he on, and how can you tell?",
+          "facilitatorNotes": [
+            "He lets the boy in, enjoys the “great scene,” and pays him forty pennies from Clara and forty more for playing. He seems to enjoy Miss Rottenmeier’s fright and to like the children. Readers might also say he is simply kind to a poor boy."
+          ],
+          "evidence": [
+            "for he had seen everything behind the door, and a great scene it had been!",
+            "It was well done, my boy."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-08-q3",
+          "prompt": "Find two signs that Clara enjoys the disturbances. Why might a day like this matter so much to her?",
+          "facilitatorNotes": [
+            "She is delighted by the interruption, begs to peep into the basket and calls out at the kittens. She cannot walk and her lessons are dull, so a morning with no time for yawning is a treat."
+          ],
+          "evidence": [
+            "Clara, delighted at his interruption",
+            "No time had been found for yawning that day, either!"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-08-q4",
+          "prompt": "Why doesn’t the cellar frighten Heidi? Why might Clara ask Miss Rottenmeier to wait for Papa?",
+          "facilitatorNotes": [
+            "Her grandfather’s cellar held milk and cheese and no rats. Clara may hope her father will be gentler, or she may just want to save her friend; readers can decide."
+          ],
+          "evidence": [
+            "A cellar held no terrors for Heidi",
+            "you must wait till Papa comes home, and then he can punish Heidi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-09",
+      "title": "Heidi: the bread in the wardrobe (Chapter VIII, end)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a character’s feelings when the grown-ups around her cannot understand them.",
+      "focus": "Heidi tries to go home, is scolded, and loses the rolls she has saved for the grandmother.",
+      "context": "Recap: a street-boy’s barrel-organ, a turtle and a basket of kittens have turned the Sesemann house upside down, and Miss Rottenmeier wanted to shut Heidi in the cellar until Clara asked her to wait for Mr. Sesemann, Clara’s father. On the mountain Heidi often visited the blind grandmother of Peter the goatherd. The black bread there is too hard for the old woman, so Heidi has been saving soft white rolls to take her. Snowhopper and Thistlefinch are goats in Peter’s herd. Heidi’s aunt, who brought her to Frankfurt, told her she could go back if she wished. A vagabond is a homeless wanderer; a wardrobe is a cupboard for clothes.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Great Disturbances in the Sesemann House,” from Heidi’s evenings with Clara to the end of the chapter; opens “Clara, on the contrary, enjoyed her companion's society, for she always did funny things.…”; closes “…and wrapping it in a handkerchief, she hid it in the furthest corner of her wardrobe.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-08",
+        "continuesTo": "reading-4-spyri-heidi-1919-10",
+        "blocks": [
+          452,
+          478
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "23a1a8dfc35f5673c2e67921424e3ff88f423fdd35041a4f58c0b66de396c3ff"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-09-q1",
+          "prompt": "What does Heidi take when she sets off for home? What do her choices tell you?",
+          "facilitatorNotes": [
+            "Only the bread, wrapped in her red shawl, and her old straw hat. She means to keep her promise to the grandmother; she wants nothing from the rich house."
+          ],
+          "evidence": [
+            "In a great hurry she packed the bread in the red shawl, and putting on her old straw hat, started off."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-09-q2",
+          "prompt": "Miss Rottenmeier asks about food, service and a fine room; Heidi answers with Snowhopper, the grandmother and the sunset. Why do they seem to be talking about different things?",
+          "facilitatorNotes": [
+            "Miss Rottenmeier thinks a child should be grateful for comfort and money; Heidi is longing for the creatures and people she loves and for the mountains. Miss Rottenmeier hears only nonsense and calls her crazy; the reader hears homesickness."
+          ],
+          "evidence": [
+            "Have you ever before had such food, service and such a room?",
+            "I must see the sun again when he says good-night to the mountains",
+            "For mercy's sake, the child is crazy!"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-09-q3",
+          "prompt": "How does Sebastian help Heidi? Find two things he says or does.",
+          "facilitatorNotes": [
+            "He cheers her on the stairs and promises to show her the kittens; later he rescues her straw hat and hides it in her bed, after trying to signal to her at supper."
+          ],
+          "evidence": [
+            "Don't give in! Don't be so sad!",
+            "So Sebastian had saved it for her and had tried to tell her!"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-09-q4",
+          "prompt": "Clara says the stale rolls “were not fit to eat.” Is she right? Why do they matter so much to Heidi?",
+          "facilitatorNotes": [
+            "Clara is practical and kind, and promises fresher rolls. For Heidi the rolls are a promise to the blind grandmother and a link with home, so losing them hurts more than losing bread. Both girls are right in their own way."
+          ],
+          "evidence": [
+            "Those were not fit to eat, Heidi.",
+            "Oh, they were for grandmother!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-10",
+      "title": "Heidi: Mr. Sesemann comes home (Chapter IX)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Compare what different people say about the same child, and decide whom to believe.",
+      "focus": "Clara’s father hears Miss Rottenmeier’s complaints and makes up his own mind about Heidi.",
+      "context": "Recap: Heidi’s first weeks in Frankfurt have been full of trouble. A barrel-organ, a turtle and a basket of kittens upset the lessons; when Heidi tried to go home, Miss Rottenmeier called her ungrateful and thought her mind was wrong; and the rolls Heidi had saved for the blind grandmother on the mountain were thrown away. Mr. Sesemann, Clara’s father, is often away on business in Paris. Long-winded means talking far too long; a pendant hangs from a chain; peculiarities are odd habits.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Master of the House Hears of Strange Doings,” the whole chapter; opens “A few days afterwards there was great excitement in the Sesemann residence, for the…”; closes “…Rottenmeier's disapproval, who thought that the child was not entitled to this intimacy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-09",
+        "continuesTo": null,
+        "blocks": [
+          480,
+          513
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1c1ad4ffb16a79cd445385aab383dc2222e34d401d9a023790d51998ee6935f5"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-10-q1",
+          "prompt": "Miss Rottenmeier hoped Heidi would go through life “hardly touching the earth.” How does Mr. Sesemann answer, and what does his joke show about him?",
+          "facilitatorNotes": [
+            "He says even Swiss children are made to touch the earth, or they would need wings. He gently mocks her fancy idea; he is good-humoured and sensible."
+          ],
+          "evidence": [
+            "hardly touching the earth",
+            "otherwise they would have to have wings"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-10-q2",
+          "prompt": "Mr. Sesemann asks the tutor and then Clara about Heidi. Why does he learn more from Clara?",
+          "facilitatorNotes": [
+            "The tutor talks at great length without answering; Clara tells what actually happened and explains Heidi’s speeches, and her father laughs. A child who lives with Heidi turns out to be the best witness."
+          ],
+          "evidence": [
+            "had to listen to very long-winded explanations of the child's character",
+            "Clara now began to relate to her father all the incidents with the kittens and the turtle"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-10-q3",
+          "prompt": "Why does Mr. Sesemann send Heidi for a glass of water? What does she do, and what does it show about her?",
+          "facilitatorNotes": [
+            "He wants her out of the room so he can ask Clara privately. Heidi takes him at his word and walks past two crowded fountains to a third, where she meets a gentleman. It shows how independent and determined she is, and how little she knows of city ways; readers may think it brave or risky."
+          ],
+          "evidence": [
+            "get me--get me a glass of water",
+            "I had to go down another street and there I got it."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-10-q4",
+          "prompt": "Mr. Sesemann orders that Heidi’s “peculiarities must not be punished.” Will things be better for Heidi now? What clues point each way?",
+          "facilitatorNotes": [
+            "He is on her side and his mother is coming to help. But he stays only two weeks, Miss Rottenmeier is not pleased, and nobody has noticed how homesick Heidi is. Readers can argue either way."
+          ],
+          "evidence": [
+            "Her peculiarities must not be punished.",
+            "but she was not very much pleased at the prospect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-11",
+      "title": "Heidi: the book and the forbidden tears (Chapter XI)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Use a chapter title to weigh what a character gains against what she loses.",
+      "focus": "Heidi learns to read and sew, but grows sadder and more silent.",
+      "context": "Heidi (1880–81) is by the Swiss writer Johanna Spyri; this English translation by Elisabeth P. Stork appeared in 1915. Heidi has been taken from her grandfather’s hut in the Swiss Alps to Frankfurt, a city in Germany, as a companion for Clara Sesemann, who cannot walk. Clara’s kind grandmother, Mrs. Sesemann, has come to stay. She gave Heidi a book of pictures and stories, helped her learn to read at last, and told her she could tell her sorrow to God, so Heidi prayed to go home. The grandmother Heidi weeps for here is a different one: the blind grandmother of Peter the goatherd, whom Heidi visited on the mountain and promised to bring soft rolls. Miss Rottenmeier is the strict housekeeper; Adelheid is Heidi’s full name. To confide is to tell someone a secret; an affliction is a suffering.",
+      "contentNote": "The chapter is about Christian prayer, and the story treats Mrs. Sesemann’s teaching as true. Heidi weeps over a story of a grandmother’s death, and grows thin and pale with homesickness.",
+      "excerpt": {
+        "locator": "Chapter XI, “Heidi Gains in Some Respects and Loses in Others,” the whole chapter; opens “The grandmama sent for Heidi every day after dinner, while Clara was resting and Miss…”; closes “…would remain, eating her heart away with longing, till Clara would call for her to come.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-spyri-heidi-1919-12",
+        "blocks": [
+          560,
+          580
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f280189839dfc574d7a7033a442ca339ab79dcce59b11affff93a86d9caf56a"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-11-q1",
+          "prompt": "What does Heidi gain in this chapter, and what does she lose?",
+          "facilitatorNotes": [
+            "She gains sewing, reading and the stories, and the comfort of trusting in God again. She loses her cheerfulness, her appetite, her health and even the freedom to cry."
+          ],
+          "evidence": [
+            "Unconsciously Heidi had learned to sew",
+            "her eyes never sparkled merrily as before"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-11-q2",
+          "prompt": "Why has Heidi stopped praying, and how does Mrs. Sesemann answer her?",
+          "facilitatorNotes": [
+            "Heidi thinks God cannot hear everyone in Frankfurt and has not granted her wish. Mrs. Sesemann says God knows better than we do what we need and will answer in time. Students may hold different beliefs; keep the talk on each character’s reasons and on how the answer changes Heidi."
+          ],
+          "evidence": [
+            "if all the people in Frankfurt pray every night, He cannot listen to them all",
+            "He gives us something much better"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-11-q3",
+          "prompt": "Why does a story about a grandmother’s death upset Heidi so much?",
+          "facilitatorNotes": [
+            "Whatever she reads seems real to her, so she believes Peter’s grandmother has died without ever getting a roll, and she fears her grandfather may die while she is far away."
+          ],
+          "evidence": [
+            "Whatever Heidi read always seemed real to her",
+            "and she never got one single roll!"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-11-q4",
+          "prompt": "After Miss Rottenmeier’s threat, “Heidi never cried again.” Did the threat solve anything? What does the last paragraph show?",
+          "facilitatorNotes": [
+            "It only hid the sadness. Heidi makes strange faces to hold back sobs, cries quietly at night, stops eating and covers her eyes against the sunshine on the wall. Most readers will see that the threat made things worse."
+          ],
+          "evidence": [
+            "After that Heidi never cried again",
+            "eating her heart away with longing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-12",
+      "title": "Heidi: a ghost in the house (Chapter XII, first part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Sort a mystery’s facts from the guesses people make about them.",
+      "focus": "Every morning the front door is found open, and the household believes a ghost is walking.",
+      "context": "Recap: Clara’s grandmother has gone home. Heidi, forbidden by Miss Rottenmeier to cry, has grown thin, pale and silent with longing for her grandfather and the mountains. Mr. Sesemann, Clara’s father, is away on business in Paris. John is another of the servants; Tinette is a maid. Liquor is strong drink; to despatch something is to get rid of it quickly; a person’s constitution is their general health; venerable ancestors are respected forefathers; expiating means making up for a wrong. Dr. Classen is the old doctor Heidi met at the fountain.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, “The Sesemann House Is Haunted,” from the opening until Mr. Sesemann explains his suspicions to the doctor; opens “For several days Miss Rottenmeier had been wandering silently about the house. When she…”; closes “…of thieves, who, after intimidating the people, would surely rob his house by and by.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-11",
+        "continuesTo": "reading-4-spyri-heidi-1919-13",
+        "blocks": [
+          582,
+          600
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "240d3dcf89647a84cce743d2fae9a67808deeee748fae8e330fa926fc3da41ab"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-12-q1",
+          "prompt": "What are the facts of the mystery? List what the servants find every morning and what John says he saw.",
+          "facilitatorNotes": [
+            "The front door is wide open even with double locks, yet nothing is missing; John says he saw a white form go up the stairs. Everything else is fear and guessing."
+          ],
+          "evidence": [
+            "they found the front door wide open",
+            "but nothing was missing",
+            "a white form was on the stairs"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-12-q2",
+          "prompt": "How does the fear spread through the house? Find two people it reaches.",
+          "facilitatorNotes": [
+            "Miss Rottenmeier glances behind her and takes Tinette everywhere; the servants go in pairs; the cook mutters; Sebastian shivers though he saw nothing; Clara will not stay alone. The story frightens people more than anything they have seen."
+          ],
+          "evidence": [
+            "none of the servants dared to go anywhere alone",
+            "Clara, at the uncanny tale, immediately exclaimed that she would not stay alone another moment"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-12-q3",
+          "prompt": "Why does Mr. Sesemann ignore the first letter but come home after the second?",
+          "facilitatorNotes": [
+            "The first is all about Miss Rottenmeier’s own fright, so he jokes and suggests his mother. The second warns that the fright could harm Clara’s health, and he comes for his daughter’s sake. Readers may notice that Miss Rottenmeier learns how to get her way."
+          ],
+          "evidence": [
+            "Miss Rottenmeier was offended with the tone of the letter",
+            "the excitement might have serious effects on his daughter's delicate constitution"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-12-q4",
+          "prompt": "Heidi “did not know what ghosts were” and stays calm. Why might the author mention her just here?",
+          "facilitatorNotes": [
+            "It sets her apart from the frightened household, and an alert reader may wonder about the one person nobody suspects. Others may take it simply as a sign of her innocence. Either reading is fair before the ending."
+          ],
+          "evidence": [
+            "while Heidi, who did not know what ghosts were, was perfectly unmoved"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-13",
+      "title": "Heidi: the doctor’s prescription (Chapter XII, end)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a doctor’s questions uncover the truth, and judge what he decides.",
+      "focus": "The ghost is caught, and the doctor finds out what is really wrong with Heidi.",
+      "context": "Recap: every morning the Sesemanns’ front door has been found open, and the servants believe a white ghost walks at night. Mr. Sesemann has come home from Paris and asked his old friend Dr. Classen to sit up with him to catch it. A candelabrum (plural candelabra) holds several candles. A sleep-walker gets up and moves about while still asleep. A prescription is a doctor’s order for treatment; bracing mountain air is fresh and strengthening. “Threshhold” is how this printing spells threshold.",
+      "contentNote": "The two men carry loaded revolvers to meet the “ghost.” The doctor finds Heidi so homesick that she has become ill.",
+      "excerpt": {
+        "locator": "Chapter XII, “The Sesemann House Is Haunted,” from the night watch to the end of the chapter; opens “With these explanations they entered the room where the two servants had watched before.…”; closes “…his leave, for the morning had already come and the sun was shining in through the door.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-12",
+        "continuesTo": null,
+        "blocks": [
+          601,
+          638
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3d93cf677818accff614b9de2d6dc466c8aed1a7d7381c2480ceb0a875294437"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-13-q1",
+          "prompt": "How does the author build suspense before the ghost appears?",
+          "facilitatorNotes": [
+            "The men wait until one o’clock in total quiet; the doctor raises a finger; the bar, the key and the door move one after another; then a still white form stands in the moonlight."
+          ],
+          "evidence": [
+            "Suddenly the doctor raised his finger.",
+            "the bar was unfastened, the key was turned, and the door flew open"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-13-q2",
+          "prompt": "Which of the doctor’s questions finally makes Heidi cry, and why that one?",
+          "facilitatorNotes": [
+            "“But wasn't it a little lonely there?” She answers that it was beautiful and then breaks down: the memory of home, the fright of the night and all her held-back sorrow come out together."
+          ],
+          "evidence": [
+            "\"But wasn't it a little lonely there?\"",
+            "all the restrained sorrow overpowered the child"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-13-q3",
+          "prompt": "Heidi says “Oh yes” when asked whether she likes it in Frankfurt. Is she telling the truth? Why might she answer that way?",
+          "facilitatorNotes": [
+            "Her “faint, uncertain” voice says no. She has been called ungrateful and forbidden to cry, so she has learned to hide her feelings. Some readers may think she also does not want to hurt Clara."
+          ],
+          "evidence": [
+            "\"Oh yes,\" was the faint, uncertain reply.",
+            "Oh no, I must never do that, for Miss Rottenmeier has forbidden it."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-13-q4",
+          "prompt": "Why does Mr. Sesemann refuse at first to send Heidi home, and what changes his mind?",
+          "facilitatorNotes": [
+            "He is ashamed to send back a sick child who came to him healthy and wants her cured first. The doctor says no medicine can cure homesickness and that she may never get well in the city. Readers may discuss whether he cares more about Heidi or about how it looks."
+          ],
+          "evidence": [
+            "when she has come in good health?",
+            "We cannot cure her with powders and pills."
+          ]
+        }
+      ]
     }
   ]
 }
