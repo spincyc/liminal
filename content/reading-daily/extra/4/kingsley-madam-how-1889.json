@@ -605,6 +605,82 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-09",
+      "title": "Madam How and Lady Why: the cocoa-nut crab (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow how a bare new island fills with life, and decide whether an animal can think.",
+      "focus": "Waves pile coral into an island, living things arrive one by one, and a giant crab learns to open coconuts.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Here he answers a child’s question about how a coral island is made. A smith’s forge is a blacksmith’s workshop; mortar is the paste that hardens between bricks; cocoons protect insects as they change; a proboscis is a long sucking tube, like a butterfly’s; luxurious means fond of comfort; a quart is about a litre. In Aesop’s fable, a stork serves a fox dinner in a long-necked jar he cannot reach into. Kingsley’s idea that island animals slowly change to fit their homes is evolution, which Darwin had described. The coconut crab, or robber crab, is the largest land crab. Scientists have since seen it climb trees, and an adult would drown in the sea: it moistens its gills with water but does not swim; only the mothers go to the sea, to let their eggs hatch.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Coral-Reef,” from how the coral rises above the water through the history of the cocoa-nut crab; opens “But how does the coral ever rise above the surface of the water and turn into hard stone?”; closes “…I do: then I shall be inclined to say that that person does not think nor reason either.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          450,
+          452
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73a2c823eab66f5ae63c991d8ecafd0812598007141df2cc28236834677c9ffe"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q1",
+          "prompt": "How does a reef become an island that rises above the sea?",
+          "facilitatorNotes": [
+            "The polyps cannot build above high tide, but the surf piles up broken coral like a beach and hammers it together; then the lime hardens like mortar into a low island."
+          ],
+          "evidence": [
+            "the surf which beats upon them piles up their broken fragments",
+            "the whole mass sets and becomes hard, as you may see mortar set"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q2",
+          "prompt": "In what order does life arrive on the new island? Which animals can never get there, and why?",
+          "facilitatorNotes": [
+            "Sea-birds first, then floating seeds such as coconuts, then drifting trees carrying seeds and insect eggs, then storm-blown land birds. There are no four-footed beasts, snakes, lizards or frogs, because they cannot cross the sea."
+          ],
+          "evidence": [
+            "Then sea-birds come to it, and rest and build;",
+            "nor any animals that cannot cross the sea."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q3",
+          "prompt": "How does the cocoa-nut crab get its dinner out of a coconut? Why does Kingsley mention the fox and the stork?",
+          "facilitatorNotes": [
+            "It tears off the husk from the end with the three eye-holes, hammers through an eye-hole with its claw, then turns round and scoops out the meat with its slender hind pincers. Like the fox facing the stork’s jar, it can see the food but cannot reach it, until it solves the problem."
+          ],
+          "evidence": [
+            "he hammers through one of them with the point of his heavy claw.",
+            "He is as far off from his dinner as the fox was",
+            "puts in a pair of his hind pincers"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q4",
+          "prompt": "Kingsley says that anyone who thinks the crab acts only by instinct does not think either. Do you agree that the crab thinks?",
+          "facilitatorNotes": [
+            "He argues that knowing which end to open, turning round to use the hind legs and lining a burrow with fibre look like reasoning, though not in words. Others may say the crab is born knowing how to do these things. A fair answer weighs both and notices that Kingsley is teasing his opponents."
+          ],
+          "evidence": [
+            "does not think and reason, just as you and I think and reason, though of course not in words",
+            "he lines them with a quantity of cocoa-nut fibre"
+          ]
+        }
+      ]
     }
   ]
 }
