@@ -396,6 +396,963 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-06",
+      "title": "King Lear — Edmund’s wound (II.1)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Count the lies Edmund tells in this scene, and notice who believes each one.",
+      "focus": "A staged attack, a father’s instant verdict, and a new master for the villain.",
+      "context": "This run begins Act II of King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Recap of Act I: Lear divided Britain between Goneril, wife of the Duke of Albany, and Regan, wife of the Duke of Cornwall; he disowned his youngest daughter, Cordelia, who has gone to France as its queen, and banished the Earl of Kent, who has come back to serve him in disguise. Goneril has turned against her father’s hundred knights, and Lear has left her house in a rage to go to Regan. Meanwhile Edmund, the Earl of Gloucester’s son born outside marriage, has used a forged letter to convince his father that Edgar, the legitimate elder son, means to kill him, and has warned Edgar to keep out of their father’s sight. Ear-kissing arguments are whispered rumours; a queasy question is a delicate matter; parricides are murderers of fathers; gasted means frightened; pight means determined; curst means angry; unpossessing means unable to inherit; faith’d means believed; character is handwriting; capable means able to inherit; bewray means reveal; poise means weight.",
+      "contentNote": "Edmund cuts his own arm to fake an attack, and Gloucester calls for his son’s death.",
+      "excerpt": {
+        "locator": "King Lear, Act II, scene I, the whole scene; opens “Enter Edmund and Curan, meeting.”; closes “Glou. I serve you, madam: Your graces are right welcome. [Flourish. Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-07",
+        "blocks": [
+          2486,
+          2539
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f62d334a601b76a93630c22529584b3d6d4c7e4de4a3797b371ec6c6b164acf5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-06-q1",
+          "prompt": "Trace Edmund’s trick on Edgar, from the first warning to the drawn swords. What does it depend on Edgar not doing?",
+          "facilitatorNotes": [
+            "He invents danger from Cornwall, asks questions Edgar cannot answer except “not a word,” then stages a fight and cuts his own arm so that the blood will “beget opinion.” It all depends on Edgar trusting him and acting at once: Edgar never stops to ask what he is accused of. Edmund’s mention of drunkards who “do more than this in sport” shows how lightly he takes the wound."
+          ],
+          "evidence": [
+            "Have you not spoken 'gainst the Duke of Cornwall?",
+            "In cunning I must draw my sword upon you:",
+            "Some blood drawn on me would beget opinion"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-06-q2",
+          "prompt": "Edmund tells Gloucester that Edgar called him an “unpossessing bastard” whose word no one would believe. Why invent this speech, and what does it reveal about Edmund?",
+          "facilitatorNotes": [
+            "The invented speech defeats Edgar’s future denial in advance: anything Edgar says can now be “turned” into proof. It also voices Edmund’s own grievance, the contempt he feels the world has for him. Gloucester disowns Edgar (“I never got him”) and calls Edmund his “Loyal and natural boy”; “natural” means both loving and illegitimate, an irony Gloucester does not hear."
+          ],
+          "evidence": [
+            "'Thou unpossessing bastard! dost thou think,",
+            "Would he deny his letter? I never got him.",
+            "Loyal and natural boy, I'll work the means To make thee capable."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-06-q3",
+          "prompt": "How does Regan connect Edgar with her father’s knights, and why is that link useful to her?",
+          "facilitatorNotes": [
+            "She asks whether Edgar was “companion with the riotous knights,” and Edmund lies that he was. The link turns Gloucester’s grief into a case against Lear’s train and gives Regan a reason, prepared by Goneril’s letter, not to receive them. Two plots, Edmund’s and the sisters’, meet here for the first time."
+          ],
+          "evidence": [
+            "Was he not companion with the riotous knights That tend upon my father?",
+            "Yes, madam, he was of that consort.",
+            "That if they come to sojourn at my house, I'll not be there."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-06-q4",
+          "prompt": "Cornwall takes Edmund into his service, and Edmund answers, “I shall serve you, sir, Truly, however else.” How can that reply be heard two ways, and what has Edmund gained by the end of the scene?",
+          "facilitatorNotes": [
+            "On the surface it means he will be true whatever his other failings; to an audience that knows him, it can mean he will be faithful in nothing else. Some productions play it straight, as modest gratitude. Either way he has gained his father’s promise of the land, a powerful patron who needs “natures of such deep trust,” and a name for loyalty."
+          ],
+          "evidence": [
+            "Natures of such deep trust we shall much need:",
+            "I shall serve you, sir, Truly, however else."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-07",
+      "title": "King Lear — the king’s messenger in the stocks (II.2–3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 13,
+        "totalMinutes": 30
+      },
+      "challenge": "Notice how each speaker defines plainness and honesty, and who is punished for them.",
+      "focus": "A loyal servant humiliated, and a son who survives by becoming nothing.",
+      "context": "Recap: Edmund has made his brother Edgar a hunted outlaw by staging an attack, and Cornwall and Regan, arriving at Gloucester’s castle in the night, have taken Edmund into their service. Both Lear and Goneril have sent letters to Regan: Lear’s by the Earl of Kent, who serves him in disguise and who in Act I tripped and beat Goneril’s steward Oswald for insolence to the king, and Goneril’s by Oswald himself. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Lipsbury pinfold is a pound for stray animals; broken meats are leftovers; three-suited and worsted-stocking mark a servant’s allowance; action-taking means going to law instead of fighting; superserviceable means officious; finical means fussy; addition means title; cullionly means base; carbonado means slash like meat for grilling; zed, the letter Z, was thought unnecessary; unbolted means coarse; a jakes is a privy; Sarum plain is Salisbury Plain and Camelot King Arthur’s court; Ajax is a Greek warrior, here a braggart; the stocks lock an offender’s legs in a wooden frame; the common saw (proverb) is about leaving heaven’s blessing for the warm sun, going from good to worse; Bedlam beggars were madmen from the Bethlehem Hospital in London, who begged; pelting means paltry; bans are curses.",
+      "contentNote": "Kent hurls coarse insults at Oswald and beats him; Edgar describes beggars who drive pins and nails into their own arms.",
+      "excerpt": {
+        "locator": "King Lear, Act II, scenes II and III, the whole of both; opens “Enter Kent and Oswald, severally.”; closes “…their charity. Poor Turlygod! poor Tom! That's something yet: Edgar I nothing am. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-06",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-08",
+        "blocks": [
+          2540,
+          2614
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "036fa06b9745793ffc0943dc39e9c611f21f9d645045c9a4483a4dc6ea34938b"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-07-q1",
+          "prompt": "Read Kent’s list of insults aloud. What picture of Oswald does it build, and what does it show about what Kent values?",
+          "facilitatorNotes": [
+            "It piles up social and moral contempt: a servant living on leftovers who dresses like a gentleman, a mirror-gazer, a fawner who would be “a bawd in way of good service.” Kent values loyal, honest service and despises service that is only obedience; Oswald takes “vanity the puppet’s part” against Lear. Readers may also find Kent’s fury excessive: it hands Cornwall his excuse."
+          ],
+          "evidence": [
+            "an eater of broken meats;",
+            "a whoreson, glass-gazing, superserviceable, finical rogue;",
+            "take vanity the puppet's part against the royalty of her father:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-07-q2",
+          "prompt": "Cornwall says that Kent’s bluntness is itself a pose. Is he right? Weigh his speech against what you know of Kent.",
+          "facilitatorNotes": [
+            "Cornwall’s point is shrewd in general: a man praised for plainness may “affect A saucy roughness” and hide “more craft.” And Kent is in disguise, playing a part. But his roughness serves loyalty, while Cornwall’s polish serves cruelty. Kent’s parody of courtly speech (“Under the allowance of your great aspect”) shows he can speak the other way and chooses not to."
+          ],
+          "evidence": [
+            "he cannot flatter, he,— An honest mind and plain,—he must speak truth!",
+            "Harbour more craft and more corrupter ends",
+            "Under the allowance of your great aspect,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-07-q3",
+          "prompt": "Why does putting Kent in the stocks matter so much to Gloucester and to Kent? What is Regan doing when she lengthens the sentence?",
+          "facilitatorNotes": [
+            "The stocks are for the “basest and contemned’st wretches”; to stock the king’s messenger is to insult the king. Kent says so, and Gloucester warns that the king “must take it ill.” Regan raises the punishment deliberately (“all night too”) and answers Kent’s “your father’s dog” with “being his knave, I will”: the contempt is aimed at her father."
+          ],
+          "evidence": [
+            "Stocking his messenger.",
+            "Till noon! till night, my lord, and all night too.",
+            "Sir, being his knave, I will."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-07-q4",
+          "prompt": "In scene III Edgar decides what to become. What is his plan, and how does “Edgar I nothing am” echo earlier uses of “nothing” in the play?",
+          "facilitatorNotes": [
+            "He will take “the basest and most poorest shape,” a near-naked Bedlam beggar, grimed and knotted. “Nothing” recalls Cordelia’s answer, Lear’s “Nothing will come of nothing,” and Edmund’s “Nothing, my lord.” For Edgar, ceasing to be Edgar is the only way to survive, and “poor Tom” is “something yet.” Kent’s line in the stocks, “Nothing almost sees miracles But misery,” suggests that the dispossessed may see more."
+          ],
+          "evidence": [
+            "To take the basest and most poorest shape",
+            "That's something yet: Edgar I nothing am.",
+            "Nothing almost sees miracles But misery:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-08",
+      "title": "King Lear — the messenger found (II.4)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch Lear move between rage and self-control, and mark each place where he stops himself.",
+      "focus": "A king refusing to believe what he sees, and the Fool’s lesson about following power.",
+      "context": "Recap: Lear has left Goneril, who demanded he cut his train of knights, and rides to find Regan. His disguised servant (Kent), sent ahead with letters, met Goneril’s steward Oswald at Gloucester’s castle, drew on him and beat him, and Cornwall and Regan put him in the stocks for the night. Edgar, outlawed on Edmund’s lies, has resolved to hide as a mad beggar, Poor Tom. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Remove means change of residence; nether-stocks are stockings; upon respect means against the respect owed a king; meiny is household; dolours puns on griefs and dollars; the mother and Hysterica passio name a choking sensation thought to rise from the womb or belly; fetches are pretexts; remotion is removal; practice is trickery; the cockney is a squeamish cook; knapped means rapped.",
+      "contentNote": "The Fool calls Fortune “that arrant whore.”",
+      "excerpt": {
+        "locator": "King Lear, Act II, scene IV, from Lear’s arrival to the re-entry of Gloucester with Cornwall and Regan; opens “Enter Lear, Fool, and Gentleman.”; closes “…wantons, down!' 'Twas her brother that, in pure kindness to his horse, buttered his hay.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-07",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-09",
+        "blocks": [
+          2615,
+          2656
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c5a1dd98522eb206f003d33b77ed3ca32b6ab3d6089b90dbc265759da876dfee"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-08-q1",
+          "prompt": "The exchange “No.” “Yes.” “No, I say.” “I say, yea.” is almost comic. Why slow the scene down this way, and what does it show about Lear?",
+          "facilitatorNotes": [
+            "Lear cannot let the fact in: the repetition shows denial working against evidence, and the oaths by Jupiter and Juno inflate it. When he does take it in, he calls it “worse than murder” because it is an outrage “upon respect,” an insult to his place. He still feels it first as a king."
+          ],
+          "evidence": [
+            "No, no, they would not.",
+            "They durst not do't; They could not, would not do't; 'tis worse than murder,",
+            "To do upon respect such violent outrage:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-08-q2",
+          "prompt": "The Fool sings that fathers “that wear rags Do make their children blind.” What is he telling Lear, and is he being cruel?",
+          "facilitatorNotes": [
+            "Children’s love follows money: a father who has given everything away is no longer “seen.” It is the logic of the love test turned against Lear. The jest is harsh but honest, and the Fool is one of the few who stays (“the fool will stay”). Readers may disagree about whether his teasing helps Lear or wounds him."
+          ],
+          "evidence": [
+            "Fathers that wear rags Do make their children blind;",
+            "But fathers that bear bags Shall see their children kind."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-08-q3",
+          "prompt": "Explain the Fool’s advice to Kent about the great wheel running down a hill. Who in the play has let go, and who has not?",
+          "facilitatorNotes": [
+            "The wheel is fortune: a prudent man lets go of a falling master and catches hold of a rising one. Oswald, Cornwall and the sisters have let go; Kent and the Fool have not. The song reverses wisdom and folly: “The knave turns fool that runs away; The fool no knave.” Loyalty is foolish by the world’s reckoning and right by the play’s."
+          ],
+          "evidence": [
+            "Let go thy hold when a great wheel runs down a hill, lest it break thy neck with following it;",
+            "But I will tarry; the fool will stay,",
+            "The knave turns fool that runs away; The fool no knave, perdy."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-08-q4",
+          "prompt": "When Gloucester reports that Cornwall and Regan will not come out, Lear explodes and then argues himself into patience. Trace the swing. What makes him lose control again?",
+          "facilitatorNotes": [
+            "After “Vengeance! plague! death! confusion!” he reasons that the duke may be ill and that sickness makes us “not ourselves”: a moment of real self-command. The sight of Kent in the stocks ends it, because it proves the refusal is deliberate, “practice only.” His body registers the strain: “my rising heart.” Some readers hear the first signs of the madness he will fear by the end of the scene."
+          ],
+          "evidence": [
+            "may be he is not well:",
+            "we are not ourselves When nature being oppress'd commands the mind To suffer with the body:",
+            "O me, my heart, my rising heart! But down!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-09",
+      "title": "King Lear — “O, reason not the need” (II.4)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 12,
+        "totalMinutes": 30
+      },
+      "challenge": "Keep a tally of how many knights Lear is allowed, and notice what happens to his speech as the number falls.",
+      "focus": "Two daughters bargaining a father down, and what a person needs beyond need.",
+      "context": "Recap: At Gloucester’s castle Lear has found his messenger (Kent in disguise) in the stocks, and Cornwall and Regan at first refused to see him. He has struggled to keep his temper, telling himself the duke may be unwell. Goneril had demanded that he cut his hundred knights by half, and he left her for Regan. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Sepulchring means entombing; naught means wicked; scant means cut short; confine means boundary; taking airs are infecting vapours; tender-hefted means gently framed; sizes are allowances; approves means confirms; easy-borrow'd means easily assumed; a sumpter is a pack-horse; a carbuncle is a boil; embossed means swollen; depositaries are trustees; superfluous means having more than is needed; flaws are fragments.",
+      "contentNote": "Lear curses his daughters in violent physical terms, and an old man is shut out in a storm.",
+      "excerpt": {
+        "locator": "King Lear, Act II, scene IV, from the re-entry of Gloucester with Cornwall and Regan to the end of the act; opens “Re-enter Gloucester, with Cornwall, Regan, and Servants.”; closes “…my lord; 'tis a wild night: My Regan counsels well: come out o' the storm. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-08",
+        "continuesTo": null,
+        "blocks": [
+          2657,
+          2725
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "623783db643e926dcf6220b1e4853968b56aefcf8c71a50943c904cd7ebf06c6"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-09-q1",
+          "prompt": "Lear kneels and acts out a plea to Goneril: “Dear daughter, I confess that I am old.” What is he mocking, and why does Regan call it “unsightly tricks”?",
+          "facilitatorNotes": [
+            "He mocks what Regan is asking: that a father beg his child for “raiment, bed and food.” To Regan it is theatre. But the parody is also painfully true, since he is old and now depends on them, and the kneeling father is an image the play will return to. An audience may laugh and wince at once."
+          ],
+          "evidence": [
+            "'Dear daughter, I confess that I am old;",
+            "Age is unnecessary: on my knees I beg",
+            "Good sir, no more; these are unsightly tricks:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-09-q2",
+          "prompt": "Follow the numbers: a hundred, fifty, five and twenty, ten, five, one. How do the sisters work together, and what does Lear’s “thou art twice her love” reveal?",
+          "facilitatorNotes": [
+            "They bid against him in turn, each offer undercutting the last, an auction run backwards. Regan’s “And in good time you gave it” answers “I gave you all.” Lear still measures love by quantity, exactly as in the love test of the first scene: fifty knights means twice the love of twenty-five."
+          ],
+          "evidence": [
+            "To bring but five and twenty: to no more Will I give place or notice.",
+            "And in good time you gave it.",
+            "Thy fifty yet doth double five and twenty, And thou art twice her love."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-09-q3",
+          "prompt": "Explain “O, reason not the need.” What does Lear argue about people and beasts, and what happens to his speech after “But for true need”?",
+          "facilitatorNotes": [
+            "Even beggars own something more than they need; allow only bare need and “Man’s life’s as cheap as beast’s.” Regan’s fine clothes do not keep her warm, so she too lives by more than need. The knights stand for his dignity, not his comfort. Then the argument breaks off, he prays for patience, and his threats lose their content (“I will do such things,— What they are, yet I know not”). He refuses “women’s weapons, water-drops” and ends fearing madness. Readers may weigh whether this is a truth about human dignity or a king defending privilege."
+          ],
+          "evidence": [
+            "Allow not nature more than nature needs, Man's life's as cheap as beast's:",
+            "Why, nature needs not what thou gorgeous wear'st,",
+            "That all the world shall—I will do such things,—",
+            "O fool, I shall go mad!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-09-q4",
+          "prompt": "Regan says that “to wilful men The injuries that they themselves procure Must be their schoolmasters.” Is there truth in it? Why is it still monstrous here?",
+          "facilitatorNotes": [
+            "Lear’s own rashness did begin his ruin, so the maxim is not false. But it is spoken to justify shutting an old man out in a storm where “for many miles about There’s scarce a bush,” and Cornwall’s “come out o’ the storm” closes the door on him. A lesson becomes a pretext for cruelty."
+          ],
+          "evidence": [
+            "The injuries that they themselves procure Must be their schoolmasters.",
+            "for many miles about There's scarce a bush.",
+            "Shut up your doors, my lord; 'tis a wild night:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-10",
+      "title": "King Lear — the storm (III.1–3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "Compare the storm as the Gentleman, Lear and Kent each describe it.",
+      "focus": "A king defying the weather, a kingdom splitting, and a son who sells his father.",
+      "context": "This run begins Act III of King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Recap: Goneril and Regan, together at Gloucester’s castle, have bargained their father’s hundred knights down to none. Lear rushed out into a rising storm, swearing revenge, followed by the Fool and by Kent, his banished counsellor, who serves him in disguise; Regan had the doors shut against him. Edmund, Gloucester’s son born outside marriage, has framed his legitimate brother Edgar, who now hides as a mad beggar, and Cornwall has taken Edmund into his service. Out-scorn means outdo in scorn; cub-drawn means sucked dry by her cubs; unbonneted means bareheaded; snuffs and packings are quarrels and plots; furnishings are outward signs; out-wall is outward appearance; cataracts are floodgates; hurricanoes are waterspouts; the cocks are weathercocks; vaunt-couriers are forerunners; germins are seeds; subscription is obedience; pother is uproar; simular means pretended; continents are what contains; summoners are officers who call offenders to a church court; Merlin is King Arthur’s prophet.",
+      "contentNote": "The Fool’s songs and prophecy are bawdy; Lear calls down destruction on the world.",
+      "excerpt": {
+        "locator": "King Lear, Act III, scenes I to III; opens “Storm still. Enter Kent and a Gentleman, meeting.”; closes “…which my father loses; no less than all: The younger rises when the old doth fall. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-11",
+        "blocks": [
+          2727,
+          2765
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fa0e612f444f6661d3af634a19c8784b51ea1294763a5f52256b4a2307d49638"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-10-q1",
+          "prompt": "What does Kent tell the Gentleman about the kingdom, and why does he send him to Dover?",
+          "facilitatorNotes": [
+            "Albany and Cornwall are divided, though “mutual cunning” hides it; French spies serve in their houses; a French force has secretly landed. The Gentleman is to report Lear’s sufferings at Dover and show Cordelia a ring. The kingdom divided in the first scene is now splitting further and opening to invasion, and Cordelia, unseen since Act I, is coming back into the story."
+          ],
+          "evidence": [
+            "There is division, Although as yet the face of it be cover'd With mutual cunning, 'twixt Albany and Cornwall;",
+            "from France there comes a power Into this scatter'd kingdom;",
+            "If you shall see Cordelia,—"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-10-q2",
+          "prompt": "In “Blow, winds, and crack your cheeks!” what does Lear order the storm to do? Why does he want destruction on such a scale?",
+          "facilitatorNotes": [
+            "Flood the steeples, scorch his head, flatten “the thick rotundity o’ the world,” and crack “nature’s moulds” so that no more “ingrateful man” can be made. Ingratitude has poisoned the bond of parent and child, so he wants generation itself ended. He gives orders like a king to elements no king commands; then, in the same scene, he calls himself their “slave.”"
+          ],
+          "evidence": [
+            "Smite flat the thick rotundity o' the world!",
+            "Crack nature's moulds, all germins spill at once That make ingrateful man!",
+            "here I stand, your slave, A poor, infirm, weak and despised old man:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-10-q3",
+          "prompt": "“I am a man More sinn’d against than sinning.” Then, a few lines on: “how dost, my boy? art cold?” What changes in Lear between these lines?",
+          "facilitatorNotes": [
+            "He first summons hidden criminals to tremble and places himself among the wronged; readers can debate whether that is fair, given his own part in his ruin. Then, for the first time, he thinks of someone else’s suffering, the Fool’s cold, and sees that need makes “vile things precious”: straw becomes valuable. It is a new kind of attention, just as he feels his “wits begin to turn.”"
+          ],
+          "evidence": [
+            "I am a man More sinn'd against than sinning.",
+            "how dost, my boy? art cold?",
+            "The art of our necessities is strange, That can make vile things precious."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-10-q4",
+          "prompt": "In scene III Gloucester trusts Edmund with his secret. What does Edmund decide, and how does his closing couplet sum up his outlook?",
+          "facilitatorNotes": [
+            "Gloucester tells him of a dangerous letter and his plan to relieve the king, and asks him to cover for him. Edmund will tell the duke at once: his father’s loss will be his gain, “no less than all.” “The younger rises when the old doth fall” turns the play’s conflict of generations into a rule of nature, as he sees nature. Gloucester’s “pray you, be careful” makes the irony sharp."
+          ],
+          "evidence": [
+            "This courtesy, forbid thee, shall the duke Instantly know,",
+            "The younger rises when the old doth fall."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-11",
+      "title": "King Lear — “unaccommodated man” (III.4)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 13,
+        "totalMinutes": 30
+      },
+      "challenge": "Notice what Lear notices for the first time in this scene.",
+      "focus": "Poverty, nakedness and madness, real and feigned, before a hovel.",
+      "context": "Recap: Shut out by his daughters, Lear has raged at the storm with only the Fool, until Kent, still in disguise, found him and led him toward a hovel. Lear feels his wits beginning to turn. Gloucester has told Edmund that a French force has landed and that he will secretly help the king; Edmund means to betray him to Cornwall. Edgar, Gloucester’s outlawed elder son, is hiding as Poor Tom, a mad beggar. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Physic is medicine; superflux is surplus; four-inched bridges are very narrow ones; star-blasting is harm from the stars; taking is infection; pendulous means hanging; the pelican was said to feed its young on its own blood; plackets are slits in petticoats; sophisticated means adulterated; lendings are borrowed things, here his clothes; the web and the pin is cataract of the eye; Saint Withold was called on against nightmares; aroint thee means be gone; a tithing is a parish district; Modo, Mahu, Smulkin and Flibbertigibbet are devils’ names; Theban and Athenian both mean philosopher; Child Rowland is a young knight of an old ballad.",
+      "contentNote": "Edgar, feigning madness, speaks of lust, brothels and devils, and of knives and halters laid out to tempt him to suicide; Lear tears off his clothes. The scene shows madness in the terms of its time.",
+      "excerpt": {
+        "locator": "King Lear, Act III, scene IV, the whole scene; opens “Enter Lear, Kent, and Fool.”; closes “…His word was still 'Fie, foh, and fum, I smell the blood of a British man.' [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-10",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-12",
+        "blocks": [
+          2766,
+          2835
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "730f6a7c7a2c536843d78c1ed2156244d7a0a42d22c05820640f668330902ae1"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-11-q1",
+          "prompt": "Before entering the hovel, Lear prays for “Poor naked wretches.” What has he realised, and what does “Take physic, pomp” prescribe?",
+          "facilitatorNotes": [
+            "As king he gave the poor little thought (“I have ta’en Too little care of this!”). Now that he shares their exposure, he prescribes a cure for the powerful: feel what wretches feel and “shake the superflux” to them. Justice becomes human work that would “show the heavens more just.” Compare his argument about need in Act II: there he defended a king’s surplus; here he would give it away."
+          ],
+          "evidence": [
+            "O, I have ta'en Too little care of this!",
+            "Take physic, pomp; Expose thyself to feel what wretches feel,",
+            "That thou mayst shake the superflux to them And show the heavens more just."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-11-q2",
+          "prompt": "Lear asks Poor Tom, “Hast thou given all to thy two daughters?” Why does every sufferer look to him like himself? How does Kent’s reply land?",
+          "facilitatorNotes": [
+            "His mind is fixed on one cause: nothing could bring a man so low “but his unkind daughters.” Kent’s plain fact, “He hath no daughters, sir,” meets “Death, traitor!”; reason no longer reaches him. The audience knows Tom’s story is the reverse, a son wronged by his father. “Pelican daughters” makes the children feed on the parent’s blood."
+          ],
+          "evidence": [
+            "Hast thou given all to thy two daughters?",
+            "He hath no daughters, sir.",
+            "'twas this flesh begot Those pelican daughters."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-11-q3",
+          "prompt": "“Is man no more than this?” What does Lear conclude from looking at Tom, and why does he tear off his clothes?",
+          "facilitatorNotes": [
+            "Clothes, leather and perfume are borrowed from worm, beast, sheep and cat; Tom owes nothing and is “the thing itself.” Lear wants to be that truth and strips off his “lendings.” It is madness and insight at once; the Fool deflates it (“a naughty night to swim in”). Readers may see a discovery of shared humanity or a man coming apart, or both."
+          ],
+          "evidence": [
+            "Thou owest the worm no silk, the beast no hide, the sheep no wool, the cat no perfume.",
+            "unaccommodated man is no more but such a poor, bare, forked animal as thou art.",
+            "Off, off, you lendings!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-11-q4",
+          "prompt": "Gloucester tells the king’s companions about the son who “sought my life.” Why is this painful to watch, and what does it add to the scene?",
+          "facilitatorNotes": [
+            "Edgar stands beside him, unrecognised, and hears his father say he loved him above all, and believes he tried to kill him. Gloucester’s “Our flesh and blood is grown so vile” aims at Lear’s daughters and at Edgar alike. Two fathers deceived about their children now share one hovel, and the son who could end the deception cannot speak."
+          ],
+          "evidence": [
+            "I had a son, Now outlaw'd from my blood; he sought my life,",
+            "I loved him, friend, No father his son dearer:",
+            "Our flesh and blood is grown so vile, my lord, That it doth hate what gets it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-12",
+      "title": "King Lear — the trial in the farmhouse (III.5–6)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Ask in each scene who judges, who is accused, and who is actually guilty.",
+      "focus": "Justice mocked: a son made earl for informing, and a king trying his daughters before a beggar and a fool.",
+      "context": "Recap: On the heath Lear met Poor Tom (Edgar in disguise, though no one knows it), stripped off his clothes and fixed on the beggar as his philosopher. Gloucester came with a torch, against Cornwall’s order, to lead the king to shelter. Edmund meanwhile meant to tell Cornwall about his father’s letter from France and his help to the king. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Censured means judged; a provoking merit is a deserving that provoked Edgar; approves means proves; an intelligent party is an informer; persever means persevere; Frateretto and Hopdance are devils; a yeoman is a landowning commoner below a gentleman; a justicer is a judge; the bourn is a stream; “I took you for a joint-stool” was a joking apology for overlooking someone; anatomize means dissect; a brach is a bitch hound, a lym a bloodhound, a trundle-tail a curly-tailed dog; balm’d means soothed; sinews here are nerves; bewray means reveal; repeals means calls back.",
+      "contentNote": "The scene shows madness, real and feigned, in the terms of its time; the Fool jokes about a whore’s oath.",
+      "excerpt": {
+        "locator": "King Lear, Act III, scenes V and VI, the whole of both; opens “Enter Cornwall and Edmund.”; closes “…reconciles thee. What will hap more to-night, safe 'scape the king! Lurk, lurk. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-11",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-13",
+        "blocks": [
+          2836,
+          2890
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3d3fa4f6d50e6656fd87a83677836116ff2b88690cb39801d1fcb71abb9afb12"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-12-q1",
+          "prompt": "In scene V, how does Edmund perform reluctance to betray his father, and what does his aside reveal?",
+          "facilitatorNotes": [
+            "He laments that he “must repent to be just” and claims a sore conflict between loyalty and “blood,” while his aside plans to find his father with the king and so “stuff his suspicion.” Cornwall pays him at once with the earldom, “True or false,” and promises to be “a dearer father.” Edmund trades a father for a patron, and Cornwall does not care whether the charge is true."
+          ],
+          "evidence": [
+            "How malicious is my fortune, that I must repent to be just!",
+            "True or false, it hath made thee earl of Gloucester.",
+            "thou shalt find a dearer father in my love."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-12-q2",
+          "prompt": "Lear holds a trial in the farmhouse. Who are the judges, who are the accused, and what is the charge? Why is the scene both comic and terrible?",
+          "facilitatorNotes": [
+            "The judges are a beggar (“robed man of justice”), the Fool and the disguised Kent; Goneril, a joint-stool, is charged with kicking “the poor king her father,” and Regan escapes. The Fool’s joint-stool joke is funny; the grievance under it is real, and Lear’s cry “Corruption in the place!” turns on justice itself. The first scene was also a kind of trial, held by a king in his right mind."
+          ],
+          "evidence": [
+            "Thou robed man of justice take thy place;",
+            "she kicked the poor king her father.",
+            "Cry you mercy, I took you for a joint-stool."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-12-q3",
+          "prompt": "“Is there any cause in nature that makes these hard hearts?” In what sense is this a real question, and how has the play answered it so far?",
+          "facilitatorNotes": [
+            "Lear asks for Regan to be dissected, as if cruelty were an organ that could be found. The play has offered answers without settling them: Gloucester blamed eclipses and stars; Edmund called nature his goddess and his choices his own; Regan and Goneril have given reasons of household management. Readers can argue whether cruelty here is nature, choice or circumstance."
+          ],
+          "evidence": [
+            "Then let them anatomize Regan; see what breeds about her heart.",
+            "Is there any cause in nature that makes these hard hearts?"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-12-q4",
+          "prompt": "Edgar steps outside his disguise twice, in an aside and in the closing speech. What do these moments show about him?",
+          "facilitatorNotes": [
+            "The aside shows pity strong enough to threaten his act: “My tears begin to take his part.” The rhymed soliloquy finds his pain lighter when he sees the king suffering the same way, “He childed as I father’d!”, and resolves to reveal himself when his name is cleared. Some readers find the couplets too neat after the chaos of the trial; others hear a man steadying himself."
+          ],
+          "evidence": [
+            "My tears begin to take his part so much, They'll mar my counterfeiting.",
+            "When we our betters see bearing our woes, We scarcely think our miseries our foes.",
+            "He childed as I father'd!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-13",
+      "title": "King Lear — Gloucester’s eyes (III.7)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 17,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice who speaks of eyes and seeing before the blinding, and who tries to stop it.",
+      "focus": "Cruelty in the form of justice, and the servant who says no.",
+      "context": "Recap: Edmund has shown Cornwall the letter proving that his father, the Earl of Gloucester, knew of the French landing, and Cornwall has made Edmund Earl of Gloucester in his place. Gloucester, having overheard a plot against the king’s life, has sent Lear in a litter toward Dover, where the French have landed. Goneril is still at Gloucester’s castle with her sister. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Corn. Cornwall, Osw. Oswald, Cur. Curan, a courtier, Gent. Gentleman, Serv. Servant). Festinate means speedy; questrists are seekers; to pass upon his life is to sentence him to death; corky means withered; quicken means come to life; guessingly set down means written without certain knowledge; the course is a round of bear-baiting, in which dogs were set on a bear tied to a stake; stelled means starry; holp means helped; subscribed means yielded; flax and whites of eggs were dressings for wounds.",
+      "contentNote": "Gloucester is bound, has his beard plucked and is blinded on stage, and a servant is killed. The violence is explicit and deliberate.",
+      "excerpt": {
+        "locator": "King Lear, Act III, scene VII, the whole scene; opens “Enter Cornwall, Regan, Goneril, Edmund, and Servants.”; closes “[Exeunt severally.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-12",
+        "continuesTo": null,
+        "blocks": [
+          2891,
+          2956
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "146ad39db387bc8b49d7dce0d97a4676aa8d013f19c4748b9b10cd8132d7357e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-13-q1",
+          "prompt": "Cornwall admits that he cannot sentence Gloucester to death “Without the form of justice.” What does he do instead, and what are his questions to Gloucester worth?",
+          "facilitatorNotes": [
+            "His power will “do a courtesy to our wrath”: revenge with the look of authority. The questioning is a sham trial, since “we know the truth,” and Gloucester names it with the image of a bear tied to the stake. Set beside Lear’s mad trial in the farmhouse, it shows a court in its right mind with no justice in it."
+          ],
+          "evidence": [
+            "Though well we may not pass upon his life Without the form of justice,",
+            "Shall do a courtesy to our wrath, which men May blame but not control.",
+            "I am tied to the stake, and I must stand the course."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-13-q2",
+          "prompt": "Why does Gloucester say he sent the king to Dover? Look at the language of seeing in his answer, and at what follows it.",
+          "facilitatorNotes": [
+            "He would not watch Regan’s “cruel nails Pluck out his poor old eyes,” words that recall Goneril’s “Pluck out his eyes” at the start of the scene. He ends, “I shall see The winged vengeance,” and Cornwall answers, “See’t shalt thou never.” The punishment takes his words literally. It is a horror built out of the play’s language of sight since “See better, Lear.”"
+          ],
+          "evidence": [
+            "Pluck out his eyes.",
+            "Because I would not see thy cruel nails Pluck out his poor old eyes,",
+            "but I shall see The winged vengeance overtake such children.",
+            "See't shalt thou never."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-13-q3",
+          "prompt": "The First Servant turns on his master: “better service have I never done you Than now to bid you hold.” What idea of service does he hold, and who else in the play shares it?",
+          "facilitatorNotes": [
+            "True service can mean refusing a master’s order, as Kent refused Lear in the first scene; it is the opposite of Oswald’s obedience. Regan’s outrage, “A peasant stand up thus!”, shows that rank matters more to her than the deed. He dies, but he wounds Cornwall: the first resistance anyone offers the new rulers."
+          ],
+          "evidence": [
+            "But better service have I never done you Than now to bid you hold.",
+            "A peasant stand up thus!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-13-q4",
+          "prompt": "Gloucester learns the truth about his sons only when he is blind. Why might the play arrange it so? What do the servants add at the end?",
+          "facilitatorNotes": [
+            "He calls on Edmund to avenge him and learns from Regan that Edmund betrayed him; at once he understands that “Edgar was abused.” Sight of the truth comes with the loss of his eyes, the play’s cruellest paradox. Regan sends him out to “smell His way to Dover.” The servants’ plain kindness, flax and egg whites, and their judgement on Regan, give the scene its only decency, and it comes from the lowest people on stage."
+          ],
+          "evidence": [
+            "O my follies! Then Edgar was abused.",
+            "let him smell His way to Dover.",
+            "I'll fetch some flax and whites of eggs To apply to his bleeding face."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-14",
+      "title": "Othello — Iago in the street (I.1)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 13,
+        "totalMinutes": 30
+      },
+      "challenge": "Othello is talked about for a whole scene before he appears. Collect what the speakers call him.",
+      "focus": "A grievance, a secret marriage, and a man who says “I am not what I am.”",
+      "context": "This run begins Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Rod. Roderigo, Bra. Brabantio, Oth. Othello, Cas. Cassio, Des. Desdemona, Sen. Senator, Off. Officer, Sail. Sailor, Mess. Messenger). Othello is a Moor, a Black African general in the service of the republic of Venice. Iago is his ensign (ancient); Roderigo is a rich Venetian who wants to marry Desdemona, daughter of the senator Brabantio. The play opens at night in a Venice street, in the middle of an argument. Off-capp’d means took off their caps; a bombast circumstance is padded, roundabout talk; nonsuits means rejects the suit of; arithmetician and counter-caster sneer at Cassio as a bookkeeper; theoric is theory; toged consuls are senators in gowns; be-lee’d and calm’d means robbed of wind; “his Moorship” mocks “his worship”; affined means bound; cashier’d means dismissed; peculiar means private; compliment extern is outward show; daws are jackdaws; tupping means mounting; gennets are Spanish horses and germans kinsmen; odd-even means about midnight; extravagant means wandering; a grange is a lonely farmhouse; the Sagittary is an inn.",
+      "contentNote": "Iago and Roderigo describe Othello with racist slurs and crude sexual images of his marriage.",
+      "excerpt": {
+        "locator": "Othello, Act I, scene I, the whole scene; opens “Enter Roderigo and Iago.”; closes “…some special officers of night. On, good Roderigo; I'll deserve your pains. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-15",
+        "blocks": [
+          3450,
+          3498
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "55b6e2f66e84b0e1edbb3c7b0791fd711cb602b28d0bca218fe27ac66b3b75ca"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q1",
+          "prompt": "What is Iago’s complaint against Othello, as he tells it to Roderigo? How much of it can you trust?",
+          "facilitatorNotes": [
+            "He was passed over for lieutenant in favour of Michael Cassio, a bookish Florentine who “never set a squadron in the field,” though Iago’s worth was proved “At Rhodes, at Cyprus.” Promotion goes “by letter and affection.” The grievance sounds real; but he tells it to a man whose purse he uses, and the sneers (“arithmetician,” “his Moorship’s ancient”) colour it. Readers may disagree about whether this is his true motive."
+          ],
+          "evidence": [
+            "Forsooth, a great arithmetician,",
+            "Preferment goes by letter and affection,",
+            "And I—God bless the mark!—his Moorship's ancient."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q2",
+          "prompt": "Iago describes two kinds of servant and says which he is. What does “I am not what I am” mean here?",
+          "facilitatorNotes": [
+            "Some servants dote on their “obsequious bondage” and are discarded when old; others keep their “hearts attending on themselves” behind a show of duty, and he is one of those. To wear his heart upon his sleeve would be to give it to the daws. “I am not what I am” makes concealment his very identity: the face he shows is never the self beneath."
+          ],
+          "evidence": [
+            "I follow him to serve my turn upon him:",
+            "Were I the Moor, I would not be Iago:",
+            "I am not what I am."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q3",
+          "prompt": "How do Iago and Roderigo wake Brabantio? Look at the images Iago uses for the marriage, and why he chooses them.",
+          "facilitatorNotes": [
+            "They shout “thieves!”, putting the daughter among the “bags.” Iago then uses animal images, the black ram and the white ewe, the Barbary horse, the beast with two backs, meant to stir disgust and a father’s fear about grandchildren. He shouts from the dark and lets Roderigo give his name. The racism is Iago’s instrument, and he knows his audience."
+          ],
+          "evidence": [
+            "Look to your house, your daughter and your bags!",
+            "an old black ram Is tupping your white ewe.",
+            "you'll have your daughter covered with a Barbary horse;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q4",
+          "prompt": "Iago leaves before Brabantio comes down. What reasons does he give, and what do they tell you about how he works?",
+          "facilitatorNotes": [
+            "Venice needs Othello for the Cyprus wars (“Another of his fathom they have none”), so Iago must not be seen against him; he will “show out a flag and sign of love.” He works through others, keeps his own hands clean, and understands the politics better than Roderigo. Brabantio’s “This accident is not unlike my dream” shows a father already half ready to believe."
+          ],
+          "evidence": [
+            "It seems not meet, nor wholesome to my place, To be produced",
+            "Another of his fathom they have none To lead their business:",
+            "I must show out a flag and sign of love, Which is indeed but sign."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-15",
+      "title": "Othello — “Keep up your bright swords” (I.2–3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 13,
+        "totalMinutes": 30
+      },
+      "challenge": "Compare how Othello and Brabantio behave when the swords are drawn.",
+      "focus": "Othello’s first appearance, a night of two summonses, and a city at war.",
+      "context": "Recap: At night in Venice, Iago, who resents Othello for making Michael Cassio his lieutenant, has helped Roderigo, a rejected suitor, wake the senator Brabantio with the news that his daughter Desdemona has eloped with Othello. Iago then slipped away to join Othello at the Sagittary inn, while Brabantio gathered armed men. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Rod. Roderigo, Bra. Brabantio, Oth. Othello, Cas. Cassio, Des. Desdemona, Sen. Senator, Off. Officer, Sail. Sailor, Mess. Messenger). Yerk’d means stabbed; the magnifico is Brabantio, a grandee; potential means powerful; cable means scope; the signiory is the Venetian government; siege is rank; demerits are merits; unbonneted means as an equal, without doffing his cap; circumscription is restraint; Janus is the two-faced Roman god; a carack is a great merchant ship; attach means arrest; arts inhibited are forbidden practices; composition is consistency; the aim reports means estimates are given; a pageant is a show; brace means readiness for defence; the Ottomites are the Ottoman Turks; Rhodes and Cyprus are Mediterranean islands; engluts means swallows; mountebanks are quacks.",
+      "contentNote": "Brabantio describes Othello in racist terms and accuses him of witchcraft and of drugging his daughter.",
+      "excerpt": {
+        "locator": "Othello, Act I, scene II, and scene III to Brabantio’s charge before the Duke; opens “Enter Othello, Iago, and Attendants with torches.”; closes “Bra. Nothing, but this is so.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-14",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-16",
+        "blocks": [
+          3499,
+          3572
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "07c237cbe9bf5e14a37e25c25cb5e6011cf03bc8b0306c1697ab0c5fd82bb6bf"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q1",
+          "prompt": "Iago warns Othello of Brabantio’s power. How does Othello answer, and what does the answer show about him?",
+          "facilitatorNotes": [
+            "He is calm: his services “Shall out-tongue his complaints,” he comes of royal blood though he will not boast of it, and he gave up his “unhoused free condition” only for love of Desdemona. Some readers hear dignity and self-knowledge; others hear a pride that is sure the world will see him as he sees himself. Iago’s claim that he lacks “iniquity” is the scene’s first irony."
+          ],
+          "evidence": [
+            "Let him do his spite: My services, which I have done the signiory, Shall out-tongue his complaints.",
+            "I fetch my life and being From men of royal siege,",
+            "I would not my unhoused free condition Put into circumscription and confine For the sea's worth."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q2",
+          "prompt": "“Not I; I must be found.” Why does Othello refuse to hide? What is Iago’s oath “By Janus” doing in the same exchange?",
+          "facilitatorNotes": [
+            "Othello trusts that his “parts,” “title” and “perfect soul” will show him as he is: for him appearance and truth agree. Iago swears by a two-faced god. The play will test Othello’s belief that a man is seen rightly, and Iago is the man who is not."
+          ],
+          "evidence": [
+            "Not I; I must be found:",
+            "My parts, my title and my perfect soul, Shall manifest me rightly.",
+            "By Janus, I think no."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q3",
+          "prompt": "“Keep up your bright swords, for the dew will rust them.” What is the tone of this line, and how does Brabantio’s long speech answer it?",
+          "facilitatorNotes": [
+            "It is commanding, almost amused authority: the fight ends without one. Brabantio answers with law and with the claim that only magic or drugs could explain his daughter running to “the sooty bosom Of such a thing as thou”; prejudice is presented as common sense, “palpable to thinking.” Othello’s reply asks only where he must go to answer."
+          ],
+          "evidence": [
+            "Keep up your bright swords, for the dew will rust them.",
+            "Run from her guardage to the sooty bosom Of such a thing as thou, to fear, not to delight.",
+            "'Tis probable, and palpable to thinking."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q4",
+          "prompt": "The council opens with confused reports of the Turkish fleet. How do the senators reason their way to the truth, and why show this before Brabantio’s case is heard?",
+          "facilitatorNotes": [
+            "The numbers differ, but every report confirms a fleet; the turn toward Rhodes is judged “a pageant To keep us in false gaze.” They reason from probability and interest, a model for judging Brabantio’s charge, and a warning that shows can be staged to mislead. The Duke’s promise of the law “though our proper son Stood in your action” meets its test when the accused turns out to be the general the state needs."
+          ],
+          "evidence": [
+            "'tis a pageant To keep us in false gaze.",
+            "Valiant Othello, we must straight employ you Against the general enemy Ottoman.",
+            "yea, though our proper son Stood in your action."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-16",
+      "title": "Othello — “This only is the witchcraft I have used” (I.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Listen for who gets to tell the story of this marriage, and in what words.",
+      "focus": "A love story told to the Senate, a daughter’s divided duty, and a father’s warning.",
+      "context": "Recap: Othello has married Desdemona, the senator Brabantio’s daughter, in secret. Brabantio, roused by Iago and Roderigo, tried to arrest him for bewitching her, but both men were called that night to the Senate, which needs Othello to defend Cyprus against a Turkish fleet. Before the Duke, Brabantio has accused Othello of winning her with spells and drugs. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Rod. Roderigo, Bra. Brabantio, Oth. Othello, Cas. Cassio, Des. Desdemona, Sen. Senator, Off. Officer, Sail. Sailor, Mess. Messenger). Pith is strength; broil is battle; round means plain; motion is impulse; overt test is open proof; thin habits are flimsy appearances; modern seeming is commonplace likelihood; portance is conduct; antres are caves; the Anthropophagi are man-eaters; dilate means relate in full; intentively means attentively; hint is opportunity; education is upbringing; get means beget; a sentence is a maxim; a grise is a step; agnize means acknowledge; exhibition is allowance; besort is fitting company; quality is nature; a moth of peace is an idler at home; defunct means spent; seel means sew shut, as falconers did a hawk’s eyes; speculative and officed instruments are the eyes and faculties; indign means unworthy; estimation is reputation; delighted means delightful.",
+      "contentNote": "The Duke’s compliment and Brabantio’s speeches rest on the assumption that blackness is ugly or unnatural.",
+      "excerpt": {
+        "locator": "Othello, Act I, scene III, from Othello’s defence to his exit with Desdemona; opens “Oth. Most potent, grave, and reverend signiors, My very noble and approved good masters,…”; closes “[Exeunt Othello and Desdemona.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-15",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-17",
+        "blocks": [
+          3573,
+          3611
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ce7bf6c32ff0d22a7d0e9bbc5b477f83356fc9ac4f025c27f3d8b7fd2d93133f"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q1",
+          "prompt": "Othello says, “Rude am I in my speech.” Is he? Look at how his defence is built.",
+          "facilitatorNotes": [
+            "The disclaimer is itself rhetoric: a modest frame, then a long, rhythmic tale of “moving accidents,” then the turn to Desdemona’s response, and a closing antithesis that answers the charge of witchcraft. Most readers find him a masterly speaker; some note that he is most fluent when the story is his own life."
+          ],
+          "evidence": [
+            "Rude am I in my speech, And little blest with the soft phrase of peace;",
+            "I will a round unvarnish'd tale deliver",
+            "She loved me for the dangers I had pass'd, And I loved her that she did pity them."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q2",
+          "prompt": "According to Othello, how did the courtship happen, and who took the first steps? How does that Desdemona compare with her father’s picture of her?",
+          "facilitatorNotes": [
+            "Brabantio invited him; Desdemona listened with “a greedy ear,” wished heaven had made her such a man, and hinted that a friend who could tell his story would win her. She made the first move. Her father’s “maiden never bold,” who would fear to look on Othello, is a daughter he did not know."
+          ],
+          "evidence": [
+            "She'ld come again, and with a greedy ear Devour up my discourse:",
+            "And that would woo her. Upon this hint I spake:",
+            "A maiden never bold; Of spirit so still and quiet that her motion Blush'd at herself;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q3",
+          "prompt": "How does Desdemona answer “Where most you owe obedience?”, and how does she argue to go to Cyprus? What do her two speeches show about her?",
+          "facilitatorNotes": [
+            "She names “a divided duty” and claims for her husband what her mother gave Brabantio: a precedent from his own marriage that he cannot refuse. Before the Duke she says she loved Othello for his mind (“I saw Othello’s visage in his mind”) and will not be left behind as “a moth of peace,” without “The rites for which I love him.” She is direct, reasoned and open about wanting her marriage; readers often compare Cordelia’s answer about a husband’s share of love."
+          ],
+          "evidence": [
+            "I do perceive here a divided duty:",
+            "And so much duty as my mother show'd To you, preferring you before her father,",
+            "I saw Othello's visage in his mind,",
+            "The rites for which I love him are bereft me,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q4",
+          "prompt": "The Duke tells Brabantio that Othello is “far more fair than black”; Brabantio tells Othello, “She has deceived her father, and may thee.” What do these parting lines assume, and why might they matter later?",
+          "facilitatorNotes": [
+            "The Duke’s praise works by equating black with bad and fair with good: a compliment made of prejudice. Brabantio plants a suspicion that a daughter who deceived could deceive a husband. Othello answers “My life upon her faith!”, and then entrusts his wife to “Honest Iago.” The phrase that should reassure is the one an audience now dreads."
+          ],
+          "evidence": [
+            "Your son-in-law is far more fair than black.",
+            "Look to her, Moor, if thou hast eyes to see: She has deceived her father, and may thee.",
+            "My life upon her faith! Honest Iago,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-17",
+      "title": "Othello — “Put money in thy purse” (I.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Count how often Iago says “money” and “purse,” and ask whose purse it is.",
+      "focus": "Iago’s philosophy of the will, and a plan made aloud.",
+      "context": "Recap: Before the Senate, Othello told how Desdemona came to love him; she defended her choice and asked to go with him to Cyprus, where the Turkish fleet is heading. The Duke agreed and ordered Othello to sail that night, leaving Desdemona to follow in the care of his ensign, Iago, and Brabantio warned that she has deceived her father and may deceive her husband. Roderigo, who hoped to marry her, is left alone with Iago. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Rod. Roderigo, Bra. Brabantio, Oth. Othello, Cas. Cassio, Des. Desdemona, Sen. Senator, Off. Officer, Sail. Sailor, Mess. Messenger). Incontinently means at once; a guinea-hen is slang for a woman of easy virtue; fond means foolish; hyssop and thyme are herbs; corrigible means correcting; poise means balance; unbitted means unbridled; a sect or scion is a cutting; perdurable means lasting; defeat thy favour means disguise your face; sequestration is separation; coloquintida is a bitter purge; supersubtle means over-refined; conjunctive means joined; traverse is a drill command, march; a snipe is a fool; office here is a husband’s place in bed; plume up means glorify; dispose is manner.",
+      "contentNote": "Iago speaks of women, sex and Moors with contempt and racist generalisation, and repeats a rumour that his wife slept with Othello.",
+      "excerpt": {
+        "locator": "Othello, Act I, scene III, from Roderigo’s despair to the end of the act; opens “Rod. Iago!”; closes “…engender'd. Hell and night Must bring this monstrous birth to the world's light. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-16",
+        "continuesTo": null,
+        "blocks": [
+          3612,
+          3633
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b568417d2b1952651d9ac038e0c063b7937ccf8a50e2f64d08e94a7e452bd110"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q1",
+          "prompt": "“Our bodies are gardens; to the which our wills are gardeners.” What does Iago believe about human nature? Is any of it a view you could share?",
+          "facilitatorNotes": [
+            "The will governs the self; reason cools “our raging motions”; love is only “a lust of the blood and a permission of the will.” It sounds like self-mastery and responsibility, and many readers find the gardening image persuasive. In his hands it makes love contemptible and everyone else a plant to be managed. Edmund’s scorn for those who blame the stars is a close cousin."
+          ],
+          "evidence": [
+            "Virtue! a fig! 'tis in ourselves that we are thus or thus.",
+            "Our bodies are gardens; to the which our wills are gardeners:",
+            "It is merely a lust of the blood and a permission of the will."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q2",
+          "prompt": "Why does Iago keep repeating “put money in thy purse”? What is he really saying to Roderigo, and about Othello and Desdemona?",
+          "facilitatorNotes": [
+            "The refrain hammers home one practical instruction, which serves Iago: Roderigo’s money will pass through his hands (“Thus do I ever make my fool my purse”). Around it he predicts the marriage’s failure in racist and misogynist terms (“These Moors are changeable,” “She must change for youth”), offered as worldly wisdom. The repetition also makes the speech comic, and the comedy makes it more dangerous."
+          ],
+          "evidence": [
+            "Put money in thy purse; follow thou the wars;",
+            "These Moors are changeable in their wills:",
+            "Thus do I ever make my fool my purse;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q3",
+          "prompt": "In the closing soliloquy Iago gives reasons for hating Othello. What are they, and how firmly does he hold them?",
+          "facilitatorNotes": [
+            "“I hate the Moor” comes first, with no reason; then a rumour that Othello has slept with his wife, which he admits he does not know to be true but will act on “as if for surety.” With the lost lieutenancy of the first scene, his motives multiply and shift. Readers have long debated whether they are causes or excuses for a hatred that comes first."
+          ],
+          "evidence": [
+            "I hate the Moor;",
+            "I know not if't be true; But I for mere suspicion in that kind Will do as if for surety.",
+            "To get his place, and to plume up my will In double knavery—"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q4",
+          "prompt": "“The Moor is of a free and open nature, That thinks men honest that but seem to be so.” Why is this compliment the heart of Iago’s plan? Notice the image he chooses as the plan takes shape.",
+          "facilitatorNotes": [
+            "Othello’s virtues, trust and openness, are the weakness Iago will use, as Edmund used his brother’s “foolish honesty.” The plan is born during the speech (“I have ’t. It is engender’d”), and Iago imagines it as a monstrous birth delivered by hell and night: he knows exactly what he is making."
+          ],
+          "evidence": [
+            "The Moor is of a free and open nature, That thinks men honest that but seem to be so;",
+            "I have 't. It is engender'd. Hell and night Must bring this monstrous birth to the world's light."
+          ]
+        }
+      ]
     }
   ]
 }
