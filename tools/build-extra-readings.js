@@ -32,7 +32,7 @@
 //       note: "…",                  // optional contentNote (default null)
 //       genre, mode,                // optional overrides of defaults.genre / defaults.readingMode
 //       complete: true,             // optional excerpt.isCompleteWork (default false)
-//       author, workTitle, months,  // optional, copied as given
+//       author, workTitle, months, holiday,  // optional, copied as given
 //       q: [ [prompt, [facilitator notes], [evidence quotes]], ... ]
 //     } ]
 //   };
@@ -106,6 +106,7 @@ function buildReadings(spec, blocks) {
         questions: (r.q || []).map(([prompt, facilitatorNotes, evidence], k) => ({ id: id + "-q" + (k + 1), prompt, facilitatorNotes, evidence })),
       });
       if (r.months !== undefined) reading.months = r.months;
+      if (r.holiday !== undefined) reading.holiday = r.holiday;
       if (reading.questions.length < 3) problems.push(id + ": fewer than three questions");
       const text = normalizedText(resolved.map(block => block.text).join("\n\n"));
       for (const question of reading.questions) for (const quote of question.evidence) {

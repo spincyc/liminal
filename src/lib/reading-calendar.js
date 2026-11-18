@@ -1,23 +1,31 @@
-/* The date calendar for daily reading: any calendar date opens a level's
-   reading, and a level's reading for a date does not repeat for three years.
+/* The date calendar for daily reading: any date of any year opens a level's
+   reading. Ten holidays keep readings of their own (New Year's Day, Easter,
+   Memorial Day, Independence Day, Labor Day, Columbus Day, Halloween,
+   Veterans Day, Thanksgiving and Christmas), February 29 has its own reading
+   for leap years, and the other 355 days of every year read one sequence in
+   order, so the calendar fits any year without being tied to one.
 
-   Three cycle years of 366 slots each (slot 60 is February 29, used only
-   in leap years) hold 1,098 distinct readings per level. Every level shares
-   one set of spans, so a story that runs over several days in one level
-   starts and ends with the spans of every other level. Pure functions,
-   loadable in Node and the browser. docs/daily-reading.md is the contract. */
+   Fixed-date days (New Year's Day, February 29, July 4, Halloween, Veterans
+   Day, Christmas) always fall after the same number of sequence days, so the
+   shared spans always break there. A moveable holiday (Easter, Memorial Day,
+   Labor Day, Columbus Day, Thanksgiving) falls at a different place each
+   year: when it lands inside a continued story, the story pauses for the
+   holiday and goes on the next day.
+
+   A level may have several reading sets of 366 readings; years take them in
+   turn from 2026. Every level shares one set of spans per set. Pure
+   functions, loadable in Node and the browser. docs/daily-reading.md is the
+   contract. */
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.LiminalReadingCalendar = api;
 })(typeof window === "object" ? window : globalThis, function () {
   "use strict";
-  const EPOCH = 2026, CYCLE = 3, SLOTS = 366, LEAP_SLOT = 60, MAX_SPAN = 21;
+  const EPOCH = 2026, REGULAR = 355, SET_SIZE = 366, MAX_SPAN = 21;
   const MONTH_DAYS = Object.freeze([31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]);
   const MONTHS = Object.freeze(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]);
   function isLeap(year) { return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0); }
-  // Cycle year 1, 2 or 3; 2026 is Year 1.
-  function cycleYear(year) { return ((year - EPOCH) % CYCLE + CYCLE) % CYCLE + 1; }
   function parseDate(value) {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || ""));
     if (!match) return null;
@@ -26,29 +34,6 @@
     return { year, month, day };
   }
   function formatDate({ year, month, day }) { return String(year).padStart(4, "0") + "-" + String(month).padStart(2, "0") + "-" + String(day).padStart(2, "0"); }
-  // 1-based slot of a month and day in the 366-slot year.
-  function slotOf(month, day) {
-    let slot = day;
-    for (let m = 1; m < month; m++) slot += MONTH_DAYS[m - 1];
-    return slot;
-  }
-  function monthDayOf(slot) {
-    if (!Number.isInteger(slot) || slot < 1 || slot > SLOTS) return null;
-    let rest = slot;
-    for (let m = 1; m <= 12; m++) { if (rest <= MONTH_DAYS[m - 1]) return { month: m, day: rest }; rest -= MONTH_DAYS[m - 1]; }
-    return null;
-  }
-  // Where a date sits: its cycle year and slot.
-  function place(value) {
-    const date = typeof value === "string" ? parseDate(value) : value;
-    if (!date) return null;
-    return { date: formatDate(date), year: date.year, cycle: cycleYear(date.year), slot: slotOf(date.month, date.day) };
-  }
-  function dateOf(year, slot) {
-    const md = monthDayOf(slot);
-    if (!md || (slot === LEAP_SLOT && !isLeap(year))) return null;
-    return formatDate({ year, ...md });
-  }
   // A Date at UTC midnight of a parsed date. setUTCFullYear, because
   // Date.UTC reads years 0-99 as 1900-1999.
   function utc({ year, month, day }) { const date = new Date(0); date.setUTCFullYear(year, month - 1, day); return date; }
@@ -71,190 +56,226 @@
     if (!date) return "";
     return utc(date).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
   }
-  // The reading id for a date in one level's calendar ({ years: [[366 ids] x3] }).
-  function readingOn(calendar, value) {
-    const where = place(value);
-    if (!where || !calendar || !Array.isArray(calendar.years)) return null;
-    const year = calendar.years[where.cycle - 1];
-    return year && year[where.slot - 1] || null;
+  // 0-based day of the year, and back.
+  function dayIndex({ year, month, day }) {
+    let index = day - 1;
+    for (let m = 1; m < month; m++) index += m === 2 && !isLeap(year) ? 28 : MONTH_DAYS[m - 1];
+    return index;
   }
-  // Which cycle years are written: [bool x 3], from a level's calendar or the
-  // spans ({ years }, a year not written being null) or from the index's
-  // calendarYears ([bool x 3]).
-  function writtenYears(source) {
-    const years = Array.isArray(source) ? source : source && Array.isArray(source.years) ? source.years : [];
-    return Array.from({ length: CYCLE }, (_, y) => years[y] === true || Array.isArray(years[y]));
-  }
-  // Whether the date calendar has readings for a date (or a year): whether
-  // its cycle year is written.
-  function isWritten(written, value) {
-    const year = typeof value === "number" ? value : (parseDate(value) || {}).year;
-    return Number.isInteger(year) && year >= 1 && year <= 9999 && writtenYears(written)[cycleYear(year) - 1];
-  }
-  // The dates with readings nearest a date. A written date is its own; for
-  // one in a year not written yet, the last day of the closest written year
-  // before it and the first day of the closest after it (null past 0001 or
-  // 9999), and the nearer of the two (the later on a tie). Null when the
-  // date is invalid or nothing is written.
-  function nearestWritten(written, value) {
-    const date = parseDate(value), years = writtenYears(written);
-    if (!date || !years.some(Boolean)) return null;
-    const here = formatDate(date), on = year => years[cycleYear(year) - 1];
-    if (on(date.year)) return { before: here, after: here, nearest: here };
-    let before = null, after = null;
-    for (let year = date.year - 1; !before && year >= Math.max(1, date.year - CYCLE); year--) if (on(year)) before = formatDate({ year, month: 12, day: 31 });
-    for (let year = date.year + 1; !after && year <= Math.min(9999, date.year + CYCLE); year++) if (on(year)) after = formatDate({ year, month: 1, day: 1 });
-    const gap = (from, to) => Math.round((utc(parseDate(to)) - utc(parseDate(from))) / 86400000);
-    const nearest = !before ? after : !after ? before : gap(before, here) < gap(here, after) ? before : after;
-    return nearest ? { before, after, nearest } : null;
-  }
-  // The first date with readings from 2026, the calendar's first year, on.
-  function firstWritten(written) {
-    const years = writtenYears(written);
-    for (let year = EPOCH; year < EPOCH + CYCLE; year++) if (years[cycleYear(year) - 1]) return formatDate({ year, month: 1, day: 1 });
+  function dateOfIndex(year, index) {
+    let rest = index;
+    for (let month = 1; month <= 12; month++) {
+      const days = month === 2 && !isLeap(year) ? 28 : MONTH_DAYS[month - 1];
+      if (rest < days) return formatDate({ year, month, day: rest + 1 });
+      rest -= days;
+    }
     return null;
   }
-  // What to say for a date whose cycle year is not written yet, and where to
-  // go instead (docs/daily-reading.md, "Date"). Before the first written
-  // year from 2026 on, the calendar begins there; otherwise the nearest date
-  // with a reading is named, and the next one too when the nearest is
-  // earlier. `dates` are those dates in order, the first the one to offer
-  // first. Null for a written or invalid date, or when nothing is written.
-  function unwritten(written, value) {
-    const date = parseDate(value), near = nearestWritten(written, value);
-    if (!date || !near || near.nearest === formatDate(date)) return null;
-    const start = firstWritten(written), begins = start && date.year >= EPOCH && formatDate(date) < start ? start : null;
-    const dates = begins ? [begins] : near.nearest === near.before && near.after ? [near.before, near.after] : [near.nearest];
-    const where = begins ? "It begins on " + longDate(begins) + "."
-      : dates.length > 1 ? "The nearest date with a reading is " + longDate(dates[0]) + ", and the next is " + longDate(dates[1]) + "."
-      : (near.nearest === near.after ? "The next date with a reading is " : "The nearest date with a reading is ") + longDate(near.nearest) + ".";
-    return { year: date.year, heading: "Readings for dates in " + date.year + " are not written yet",
-      text: "The date calendar is being written one year at a time. " + where, dates, begins };
+
+  // ---- Holidays ----
+  function weekdayOf(year, month, day) { return utc({ year, month, day }).getUTCDay(); } // 0 is Sunday
+  function nthWeekday(year, month, weekday, n) { return 1 + (weekday - weekdayOf(year, month, 1) + 7) % 7 + 7 * (n - 1); }
+  function lastWeekday(year, month, weekday) { const days = MONTH_DAYS[month - 1]; return days - (weekdayOf(year, month, days) - weekday + 7) % 7; }
+  // Western Easter for a Gregorian year (the anonymous computus of Meeus,
+  // Jones and Butcher): [month, day].
+  function easter(year) {
+    const a = year % 19, b = Math.floor(year / 100), c = year % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3);
+    const h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const n = h + l - 7 * m + 114;
+    return [Math.floor(n / 31), n % 31 + 1];
   }
-  // Where the date calendar opens on `today`: today when its year is
-  // written, otherwise where the calendar begins or the nearest date with a
-  // reading. Null when nothing is written.
-  function opening(written, today) {
-    if (isWritten(written, today)) return formatDate(parseDate(today));
-    const note = unwritten(written, today);
-    return note ? note.dates[0] : null;
+  // In date order. `fixed` holidays fall on the same date every year.
+  const HOLIDAYS = Object.freeze([
+    { key: "new-year", name: "New Year’s Day", fixed: true, rule: () => [1, 1] },
+    { key: "easter", name: "Easter", fixed: false, rule: easter },
+    { key: "memorial-day", name: "Memorial Day", fixed: false, rule: year => [5, lastWeekday(year, 5, 1)] },
+    { key: "independence-day", name: "Independence Day", fixed: true, rule: () => [7, 4] },
+    { key: "labor-day", name: "Labor Day", fixed: false, rule: year => [9, nthWeekday(year, 9, 1, 1)] },
+    { key: "columbus-day", name: "Columbus Day", fixed: false, rule: year => [10, nthWeekday(year, 10, 1, 2)] },
+    { key: "halloween", name: "Halloween", fixed: true, rule: () => [10, 31] },
+    { key: "veterans-day", name: "Veterans Day", fixed: true, rule: () => [11, 11] },
+    { key: "thanksgiving", name: "Thanksgiving", fixed: false, rule: year => [11, nthWeekday(year, 11, 4, 4)] },
+    { key: "christmas", name: "Christmas", fixed: true, rule: () => [12, 25] },
+  ].map(item => Object.freeze(item)));
+  const HOLIDAY_KEYS = Object.freeze(HOLIDAYS.map(item => item.key));
+  function holidayName(key) { const item = HOLIDAYS.find(entry => entry.key === key); return item ? item.name : ""; }
+  // A year's holidays in date order: { key, name, date }.
+  function holidays(year) {
+    if (!Number.isInteger(year) || year < 1 || year > 9999) return [];
+    return HOLIDAYS.map(({ key, name, rule }) => { const [month, day] = rule(year); return { key, name, date: formatDate({ year, month, day }) }; });
   }
-  // Spans as [first slot, last slot] per cycle year from their lengths.
+  function holidayOn(value) {
+    const date = parseDate(value);
+    if (!date) return null;
+    const here = formatDate(date);
+    return holidays(date.year).find(item => item.date === here) || null;
+  }
+  // The days outside the sequence in a year (its holidays and any
+  // February 29), as sorted day indexes.
+  function setAside(year) {
+    const out = holidays(year).map(item => dayIndex(parseDate(item.date)));
+    if (isLeap(year)) out.push(59);
+    return out.sort((a, b) => a - b);
+  }
+
+  // ---- Where a date sits ----
+  // Its year's set (0-based, of `count` sets) and what it reads: a holiday's
+  // own reading, February 29's, or the sequence day `position` (0-354).
+  // `before` counts the sequence days before it in its year.
+  function setOf(year, count = 1) { return count >= 1 ? ((year - EPOCH) % count + count) % count : 0; }
+  function place(value, count = 1) {
+    const date = parseDate(value);
+    if (!date) return null;
+    const index = dayIndex(date), aside = setAside(date.year), before = index - aside.filter(n => n < index).length;
+    const base = { date: formatDate(date), year: date.year, set: setOf(date.year, count), before };
+    const holiday = holidays(date.year).find(item => item.date === base.date);
+    if (holiday) return { ...base, kind: "holiday", key: holiday.key, name: holiday.name };
+    if (date.month === 2 && date.day === 29) return { ...base, kind: "leap" };
+    return { ...base, kind: "sequence", position: before };
+  }
+  // The date of a sequence day in a year.
+  function dateAt(year, position) {
+    if (!Number.isInteger(year) || year < 1 || year > 9999 || !Number.isInteger(position) || position < 0 || position >= REGULAR) return null;
+    let index = position;
+    for (const n of setAside(year)) if (n <= index) index++;
+    return dateOfIndex(year, index);
+  }
+  // Fixed-date days fall after the same number of sequence days every year,
+  // so the shared spans always break there.
+  const BREAKS = Object.freeze([...new Set([...HOLIDAYS.filter(item => item.fixed).map(item => place(holidays(2000).find(entry => entry.key === item.key).date).before),
+    place("2000-02-29").before])].sort((a, b) => a - b));
+
+  // ---- A level's calendar ----
+  // { sets: [{ sequence: [355], anchors: { <holiday key>: … }, leap }] },
+  // ids in the source files and entries ({ id, title, continuesFrom,
+  // continuesTo, … }) in the built ones.
+  function setFor(calendar, year) {
+    const sets = calendar && Array.isArray(calendar.sets) ? calendar.sets : [];
+    return sets.length ? sets[setOf(year, sets.length)] || null : null;
+  }
+  function setCount(calendar) { return calendar && Array.isArray(calendar.sets) ? calendar.sets.length : 0; }
+  function readingOn(calendar, value) {
+    const where = place(value), set = where && setFor(calendar, where.year);
+    if (!set) return null;
+    const entry = where.kind === "holiday" ? set.anchors && set.anchors[where.key] : where.kind === "leap" ? set.leap : Array.isArray(set.sequence) ? set.sequence[where.position] : null;
+    return entry || null;
+  }
+  const idOf = entry => entry && typeof entry === "object" ? entry.id : entry;
+
+  // ---- Spans: { schemaVersion: 2, sets: [[lengths]] }, shared by every level ----
+  // [first, last] sequence positions per span.
   function spanRanges(lengths) {
-    let next = 1;
-    return lengths.map(length => { const range = [next, next + length - 1]; next += length; return range; });
+    let next = 0;
+    return (lengths || []).map(length => { const range = [next, next + length - 1]; next += length; return range; });
   }
-  function spanAt(spans, cycle, slot) {
-    const ranges = spanRanges((spans && spans.years && spans.years[cycle - 1]) || []);
-    return ranges.find(([first, last]) => first <= slot && slot <= last) || null;
+  function spanAt(spans, set, position) {
+    const lengths = spans && Array.isArray(spans.sets) ? spans.sets[set] : null;
+    return spanRanges(lengths).find(([first, last]) => first <= position && position <= last) || null;
   }
-  // The dates in a given calendar year whose readings belong to one span:
-  // a multi-day story's days, the same for every level.
+  // The dates in a date's year whose readings belong to its span (a holiday
+  // or February 29 is a span of its own).
   function spanDates(spans, value) {
-    const where = place(value);
+    const where = place(value, spans && Array.isArray(spans.sets) ? spans.sets.length : 1);
     if (!where) return [];
-    const range = spanAt(spans, where.cycle, where.slot);
+    if (where.kind !== "sequence") return [where.date];
+    const range = spanAt(spans, where.set, where.position);
     if (!range) return [];
     const out = [];
-    for (let slot = range[0]; slot <= range[1]; slot++) { const date = dateOf(where.year, slot); if (date) out.push(date); }
+    for (let position = range[0]; position <= range[1]; position++) out.push(dateAt(where.year, position));
     return out;
   }
   // Structural check of the shared spans; tools add the readings' checks.
-  // The calendar is written a cycle year at a time: a year not written yet
-  // is null, in the spans and in every level's calendar alike.
   function checkSpans(spans) {
-    if (!spans || spans.schemaVersion !== 1 || !Array.isArray(spans.years) || spans.years.length !== CYCLE) throw new Error("Calendar spans: expected three cycle years");
-    if (spans.years.every(lengths => lengths === null)) throw new Error("Calendar spans: no cycle year is written");
-    spans.years.forEach((lengths, y) => {
-      if (lengths === null) return;
-      const where = "Calendar spans year " + (y + 1);
+    if (!spans || spans.schemaVersion !== 2 || !Array.isArray(spans.sets) || !spans.sets.length) throw new Error("Calendar spans: expected schema version 2 with at least one reading set");
+    spans.sets.forEach((lengths, s) => {
+      const where = "Calendar spans set " + (s + 1);
       if (!Array.isArray(lengths) || !lengths.every(n => Number.isInteger(n) && n >= 1 && n <= MAX_SPAN)) throw new Error(where + ": span lengths must be 1-" + MAX_SPAN);
-      if (lengths.reduce((a, b) => a + b, 0) !== SLOTS) throw new Error(where + ": spans must cover 366 slots");
-      const leap = spanRanges(lengths).find(([first, last]) => first <= LEAP_SLOT && LEAP_SLOT <= last);
-      if (!leap || leap[0] !== LEAP_SLOT || leap[1] !== LEAP_SLOT) throw new Error(where + ": February 29 must be a one-day span");
+      if (lengths.reduce((a, b) => a + b, 0) !== REGULAR) throw new Error(where + ": spans must cover the " + REGULAR + " sequence days");
+      const starts = new Set(spanRanges(lengths).map(([first]) => first));
+      for (const position of BREAKS) if (!starts.has(position)) throw new Error(where + ": a span must start after sequence day " + position + " (a fixed-date holiday or February 29 falls there)");
     });
     return spans;
   }
-  // ---- Browsing a level's calendar (build output: entries with an id and
-  // continuesFrom/continuesTo flags, docs/daily-reading.md) ----
-  // The year this date's reading comes round again: three years on, or for
-  // February 29 the next leap year in the same cycle year.
-  function returnYear(value) {
-    const date = parseDate(value);
-    if (!date) return null;
-    for (let year = date.year + CYCLE; ; year += CYCLE) if (!(date.month === 2 && date.day === 29) || isLeap(year)) return year;
-  }
-  // A date's place in the cycle. Given the written years, it promises a
-  // return only for a written date (whose return year, the same cycle year,
-  // is written too).
-  function cycleNote(value, written) {
-    const where = place(value);
-    if (!where) return "";
-    if (written !== undefined && !isWritten(written, value)) return "Year " + where.cycle + " of " + CYCLE + " · not written yet";
-    return "Year " + where.cycle + " of " + CYCLE + " · this date’s reading returns in " + returnYear(value);
-  }
-  // The note under a month's heading; empty for a month not written yet,
-  // whose page says so instead.
-  function monthNote(month, written) {
-    const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
-    if (!match || !isWritten(written, Number(match[1]))) return "";
-    return "Cycle year " + cycleYear(Number(match[1])) + " of " + CYCLE + ". Each date’s reading returns three years later.";
-  }
-  // A continued run around a date: the part, the length, and the run's first
-  // and last dates. Runs sit on consecutive dates inside one span, so walking
-  // the neighbouring days finds them. Null for a reading that stands alone.
+
+  // ---- Browsing a level's calendar (built entries) ----
+  // A continued run around a date: the part, the length, the run's first and
+  // last dates, and the dates of the parts either side (null at its ends).
+  // A run stays inside one span of the sequence; a moveable holiday inside
+  // it pauses it for a day. Null for a reading that stands alone.
   function runOn(calendar, value) {
-    const entry = readingOn(calendar, value);
-    if (!entry || typeof entry !== "object" || !(entry.continuesFrom || entry.continuesTo)) return null;
-    let first = value, last = value, part = 1, guard = 0;
-    while (guard++ < MAX_SPAN) { const before = readingOn(calendar, addDays(first, -1)); if (!(readingOn(calendar, first).continuesFrom && before && before.continuesTo)) break; first = addDays(first, -1); part++; }
-    guard = 0;
-    while (guard++ < MAX_SPAN) { const after = readingOn(calendar, addDays(last, 1)); if (!(readingOn(calendar, last).continuesTo && after && after.continuesFrom)) break; last = addDays(last, 1); }
-    let of = 1;
-    for (let date = first; date !== last; date = addDays(date, 1)) of++;
-    return { part, of, first, last };
+    const where = place(value), set = where && setFor(calendar, where.year);
+    if (!set || where.kind !== "sequence" || !Array.isArray(set.sequence)) return null;
+    const list = set.sequence, at = list[where.position];
+    if (!at || typeof at !== "object" || !(at.continuesFrom || at.continuesTo)) return null;
+    let first = where.position, last = where.position;
+    while (first > 0 && list[first].continuesFrom && list[first - 1] && list[first - 1].continuesTo) first--;
+    while (last < list.length - 1 && list[last].continuesTo && list[last + 1] && list[last + 1].continuesFrom) last++;
+    const part = where.position - first + 1, of = last - first + 1;
+    return { part, of, first: dateAt(where.year, first), last: dateAt(where.year, last),
+      previous: part > 1 ? dateAt(where.year, where.position - 1) : null, next: part < of ? dateAt(where.year, where.position + 1) : null };
   }
-  // The next date, on or after `from`, when a reading id falls: the
-  // calendar repeats every three years, so this searches at most three
-  // (twelve for February 29) calendar years.
+  // The next date, on or after `from`, when a reading id falls.
   function nextDateOf(calendar, id, from) {
-    const start = parseDate(from);
-    if (!start || !calendar || !Array.isArray(calendar.years)) return null;
-    for (let cycle = 0; cycle < calendar.years.length; cycle++) {
-      if (!Array.isArray(calendar.years[cycle])) continue;
-      const slot = calendar.years[cycle].findIndex(entry => (entry && typeof entry === "object" ? entry.id : entry) === id) + 1;
-      if (!slot) continue;
-      for (let year = start.year; year < start.year + 4 * CYCLE + 1; year++) {
-        if (cycleYear(year) !== cycle + 1) continue;
-        const date = dateOf(year, slot);
-        if (date && date >= formatDate(start)) return date;
+    const start = parseDate(from), count = setCount(calendar);
+    if (!start || !count) return null;
+    const begin = formatDate(start);
+    for (let s = 0; s < count; s++) {
+      const set = calendar.sets[s];
+      if (!set) continue;
+      const position = Array.isArray(set.sequence) ? set.sequence.findIndex(entry => idOf(entry) === id) : -1;
+      const key = set.anchors ? HOLIDAY_KEYS.find(k => idOf(set.anchors[k]) === id) : null, leap = idOf(set.leap) === id;
+      if (position < 0 && !key && !leap) continue;
+      // February 29 can be eight years away, and a set comes round every `count` years.
+      for (let year = start.year; year <= Math.min(9999, start.year + 8 * count + 8); year++) {
+        if (setOf(year, count) !== s) continue;
+        const date = position >= 0 ? dateAt(year, position) : key ? holidays(year).find(item => item.key === key).date : isLeap(year) ? formatDate({ year, month: 2, day: 29 }) : null;
+        if (date && date >= begin) return date;
       }
     }
     return null;
   }
+  // When a date's reading comes round again, as a phrase for the date view:
+  // "Christmas · this reading returns on Saturday, December 25, 2027".
+  function dayNote(calendar, value) {
+    const where = place(value, setCount(calendar) || 1), entry = readingOn(calendar, value);
+    if (!where || !entry) return "";
+    const next = nextDateOf(calendar, idOf(entry), addDays(where.date, 1));
+    return [where.kind === "holiday" ? where.name : where.kind === "leap" ? "February 29" : null,
+      next ? "this reading returns on " + longDate(next) : null].filter(Boolean).join(" · ");
+  }
+  // The note under a month's heading.
+  function monthNote(month, calendar) {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(month || "")), count = setCount(calendar);
+    if (!match || !count) return "";
+    const year = Number(match[1]), names = holidays(year).filter(item => Number(item.date.slice(5, 7)) === Number(match[2])).map(item => item.name);
+    const round = count === 1 ? "Each day’s reading comes round again next year, on or near the same date"
+      : "Reading set " + (setOf(year, count) + 1) + " of " + count + ". Each day’s reading comes round again " + count + " years later, on or near the same date";
+    return round + "; holidays keep readings of their own" + (names.length ? " (" + names.join(", ") + " this month)" : "") + ".";
+  }
   // A month of a level's calendar as weeks of seven cells (Sunday first;
   // null pads the first and last week). Each cell holds its date, the entry,
-  // where it sits in a continued run (single, start, middle, end) and
-  // whether a shared span starts there, so a multi-day story shows as one bar
-  // and every level's fresh starts line up.
+  // where it sits in a continued run (single, start, middle, end), whether a
+  // shared span starts there (every level begins something new), and the
+  // holiday on that date, if any.
   function monthGrid(calendar, spans, month) {
     const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
     if (!match) return null;
     const year = Number(match[1]), m = Number(match[2]);
-    if (m < 1 || m > 12) return null;
-    const days = m === 2 && !isLeap(year) ? 28 : MONTH_DAYS[m - 1], cycle = cycleYear(year);
-    const starts = new Set(spanRanges((spans && spans.years && spans.years[cycle - 1]) || []).map(([first]) => first));
+    if (year < 1 || m < 1 || m > 12) return null;
+    const count = setCount(calendar) || 1, set = setOf(year, count), days = m === 2 && !isLeap(year) ? 28 : MONTH_DAYS[m - 1];
+    const starts = new Set(spanRanges(spans && Array.isArray(spans.sets) ? spans.sets[set] : []).map(([first]) => first));
     const cells = [];
     for (let d = 1; d <= days; d++) {
-      const date = formatDate({ year, month: m, day: d }), entry = readingOn(calendar, date), slot = slotOf(m, d);
+      const date = formatDate({ year, month: m, day: d }), where = place(date, count), entry = readingOn(calendar, date);
       const from = !!(entry && entry.continuesFrom), to = !!(entry && entry.continuesTo);
-      cells.push({ date, day: d, entry: entry || null, run: from && to ? "middle" : from ? "end" : to ? "start" : "single", spanStart: starts.has(slot) });
+      cells.push({ date, day: d, entry: entry || null, run: from && to ? "middle" : from ? "end" : to ? "start" : "single",
+        spanStart: where.kind === "sequence" && starts.has(where.position), holiday: where.kind === "holiday" ? { key: where.key, name: where.name } : null, leap: where.kind === "leap" });
     }
     const lead = utc({ year, month: m, day: 1 }).getUTCDay(), padded = [...Array(lead).fill(null), ...cells];
     while (padded.length % 7) padded.push(null);
     const weeks = [];
     for (let i = 0; i < padded.length; i += 7) weeks.push(padded.slice(i, i + 7));
-    return { year, month: m, label: MONTHS[m - 1] + " " + year, cycle, weeks };
+    return { year, month: m, label: MONTHS[m - 1] + " " + year, set: set + 1, sets: count, weeks };
   }
   // "January 2027" for "2027-01".
   function monthLabel(month) {
@@ -268,7 +289,7 @@
     if (index < 12 || index >= 10000 * 12) return null;
     return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
   }
-  return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, writtenYears, isWritten, nearestWritten, firstWritten, unwritten, opening,
-    parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
-    longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans, returnYear, cycleNote, monthNote, runOn, nextDateOf, monthGrid, monthLabel, addMonths };
+  return { EPOCH, REGULAR, SET_SIZE, MAX_SPAN, MONTH_DAYS, MONTHS, HOLIDAYS, HOLIDAY_KEYS, BREAKS, isLeap, parseDate, formatDate, addDays, today, longDate, shortDate,
+    easter, holidays, holidayOn, holidayName, setOf, place, dateAt, setCount, readingOn, spanRanges, spanAt, spanDates, checkSpans,
+    runOn, nextDateOf, dayNote, monthNote, monthGrid, monthLabel, addMonths };
 });

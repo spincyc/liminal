@@ -179,6 +179,8 @@ function validateExtra(file, library = new Map()) {
     assert(reading.id === expected && reading.sourceId === raw.work, "reading id or source does not follow its file at " + expected);
     assert(!Object.hasOwn(reading, "week") && !Object.hasOwn(reading, "day"), "calendar readings have no school week/day at " + expected);
     assert(Array.isArray(reading.excerpt && reading.excerpt.blocks) || (reading.excerpt && reading.excerpt.inlineReason), "a calendar reading cites a library range at " + expected);
+    if (Object.hasOwn(reading, "holiday")) assert(C.HOLIDAY_KEYS.includes(reading.holiday) && !reading.excerpt.continuesFrom && !reading.excerpt.continuesTo,
+      "holiday must name one of " + C.HOLIDAY_KEYS.join(", ") + ", on a reading that stands alone, at " + expected);
     if (Object.hasOwn(reading, "months")) assert(Array.isArray(reading.months) && reading.months.length >= 1 && reading.months.every(m => Number.isInteger(m) && m >= 1 && m <= 12) && new Set(reading.months).size === reading.months.length, "months must list distinct months 1-12 at " + expected);
     assert(!ids.has(reading.id), "duplicate ID " + reading.id); ids.add(reading.id);
     validateReading(reading, { grade, sources, ids, hashes, selections, previous: readings[index - 1], next: readings[index + 1] });
@@ -251,46 +253,54 @@ function coveredBlocks(reading, id, work, cache) {
   return cache.get(id).filter(item => whole.includes(item.text)).map(item => item.index);
 }
 
-// The date calendar (docs/daily-reading.md): calendar/spans.json, shared by
-// every level, and calendar/<grade-key>.json with a level's three cycle
-// years of 366 reading ids. A level may be absent until it is complete.
-// The calendar is written a cycle year at a time (owner direction,
-// 2026-11-17): a year not yet written is null in the spans and in every
-// level's calendar. Written years never repeat a reading, and once all three
-// are written every reading of the level is placed exactly once.
-function validateCalendar(spans, calendars, readingsByGrade) {
+// The date calendar (docs/daily-reading.md, "Date calendar"):
+// calendar/spans.json, shared by every level, and calendar/<grade-key>.json
+// with a level's reading sets. Each set names the ten holidays' readings,
+// February 29's and the 355-day sequence; a reading appears at most once in
+// all of a level's sets, and with `complete` every reading is placed.
+function validateCalendar(spans, calendars, readingsByGrade, { complete = false } = {}) {
   if (!calendars.length) return;
   C.checkSpans(spans);
-  const written = spans.years.map(lengths => lengths !== null);
   for (const calendar of calendars) {
     const where = "calendar " + calendar.key;
     record(calendar.data, where);
     const grade = D.gradeFromKey(calendar.key), data = calendar.data, readings = readingsByGrade.get(grade);
-    assert(data.schemaVersion === 1 && data.grade === grade, "schema version or grade does not match its path at " + where);
+    assert(data.schemaVersion === 2 && data.grade === grade, "schema version or grade does not match its path at " + where);
     assert(readings, "no readings for " + where);
-    assert(Array.isArray(data.years) && data.years.length === C.CYCLE && data.years.every((year, y) => written[y] ? Array.isArray(year) && year.length === C.SLOTS : year === null),
-      "each cycle year is 366 slots when the spans write it and null when they do not, at " + where);
-    const placed = data.years.filter(Boolean).flat();
-    unique(placed, where + " (a reading placed twice)");
-    assert(placed.every(id => readings.has(id)), "a slot names a reading this level does not have at " + where);
-    if (written.every(Boolean)) assert(placed.length === readings.size, where + " places " + placed.length + " of the level's " + readings.size + " readings; every reading must be placed exactly once");
-    data.years.forEach((ids, y) => {
-      if (!ids) return;
+    assert(Array.isArray(data.sets) && data.sets.length === spans.sets.length, "a level's calendar has one entry per reading set of the spans at " + where);
+    const placed = [];
+    data.sets.forEach((set, s) => {
+      const at = where + " set " + (s + 1);
+      record(set, at); record(set.anchors, at + ".anchors");
+      assert(Object.keys(set).sort().join() === "anchors,leap,sequence", "a set has anchors, leap and sequence only at " + at);
+      assert(Object.keys(set.anchors).sort().join() === [...C.HOLIDAY_KEYS].sort().join(), "a set names one reading for each holiday (" + C.HOLIDAY_KEYS.join(", ") + ") at " + at);
+      assert(Array.isArray(set.sequence) && set.sequence.length === C.REGULAR, "a set's sequence has " + C.REGULAR + " readings at " + at);
+      const alone = [...C.HOLIDAY_KEYS.map(key => [set.anchors[key], key]), [set.leap, null]];
+      placed.push(...alone.map(([id]) => id), ...set.sequence);
+      assert([...alone.map(([id]) => id), ...set.sequence].every(id => readings.has(id)), "a set names a reading this level does not have at " + at);
+      for (const [id, key] of alone) {
+        const reading = readings.get(id);
+        assert(!reading.excerpt.continuesFrom && !reading.excerpt.continuesTo, "a holiday's or February 29's reading stands alone at " + at + " (" + id + ")");
+        assert(!reading.holiday || reading.holiday === key, "a reading for " + C.holidayName(reading.holiday) + " is placed only on that holiday at " + at + " (" + id + ")");
+      }
       const spanOf = new Map();
-      C.spanRanges(spans.years[y]).forEach(([first, last], n) => { for (let slot = first; slot <= last; slot++) spanOf.set(slot, n); });
-      ids.forEach((id, i) => {
-        const reading = readings.get(id), slot = i + 1;
-        if (reading.excerpt.continuesTo) assert(ids[i + 1] === reading.excerpt.continuesTo && spanOf.get(slot + 1) === spanOf.get(slot),
-          "a continuous run must stay on consecutive days inside one shared span at " + where + " year " + (y + 1) + " slot " + slot + " (" + id + ")");
-        if (reading.excerpt.continuesFrom) assert(ids[i - 1] === reading.excerpt.continuesFrom && spanOf.get(slot - 1) === spanOf.get(slot),
-          "a continuous run must start inside its span at " + where + " year " + (y + 1) + " slot " + slot + " (" + id + ")");
+      C.spanRanges(spans.sets[s]).forEach(([first, last], n) => { for (let position = first; position <= last; position++) spanOf.set(position, n); });
+      set.sequence.forEach((id, i) => {
+        const reading = readings.get(id);
+        assert(!reading.holiday, "a reading for " + C.holidayName(reading.holiday) + " is placed only on that holiday at " + at + " (" + id + ")");
+        if (reading.excerpt.continuesTo) assert(set.sequence[i + 1] === reading.excerpt.continuesTo && spanOf.get(i + 1) === spanOf.get(i),
+          "a continuous run must stay on consecutive sequence days inside one shared span at " + at + " day " + i + " (" + id + ")");
+        if (reading.excerpt.continuesFrom) assert(set.sequence[i - 1] === reading.excerpt.continuesFrom && spanOf.get(i - 1) === spanOf.get(i),
+          "a continuous run must start inside its span at " + at + " day " + i + " (" + id + ")");
       });
     });
+    unique(placed, where + " (a reading placed twice)");
+    if (complete) assert(placed.length === readings.size, where + " places " + placed.length + " of the level's " + readings.size + " readings; every reading must be placed exactly once (node tools/layout-reading-calendar.js)");
   }
 }
 
 function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
-function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily"), libraryDirectory, library: given, complete = false, completeAdvanced = false, completeCalendar = false } = {}) {
+function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily"), libraryDirectory, library: given, complete = false, completeAdvanced = false, completeCalendar = false, checkCalendar = true } = {}) {
   const library = given || loadLibrary(libraryDirectory ? { directory: libraryDirectory } : {});
   const courses = [], extraFiles = [], calendarFiles = [];
   let spans = null;
@@ -324,16 +334,16 @@ function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily")
   validateCorpus(courses, { complete, completeAdvanced, extras, library });
   const readingsByGrade = new Map(courses.map(course => [course.grade, new Map(course.days.map(day => [day.id, day]))]));
   for (const extra of extras) for (const reading of extra.readings) readingsByGrade.get(extra.grade).set(reading.id, reading);
-  if (calendarFiles.length) assert(spans, "calendar files need calendar/spans.json");
-  validateCalendar(spans, calendarFiles, readingsByGrade);
   const calendars = new Map(calendarFiles.map(file => [D.gradeFromKey(file.key), file.data]));
-  // The spans are shared, so a written year is written for every K–12 level.
+  // The layout tool reads the calendar as it stands, to lay it out afresh.
+  if (!checkCalendar) return { courses, extras, calendars, spans, library, readingsByGrade };
+  if (calendarFiles.length) assert(spans, "calendar files need calendar/spans.json");
+  validateCalendar(spans, calendarFiles, readingsByGrade, { complete: complete || completeCalendar });
+  // The spans are shared, so every K–12 level has a calendar or none does.
   const schoolLevels = courses.filter(course => !D.isAdvanced(course.grade));
-  if (calendars.size) assert(schoolLevels.every(course => calendars.has(course.grade)), "the shared calendar needs a calendar file for every grade K–12");
-  if (completeCalendar) assert(schoolLevels.every(course => calendars.has(course.grade) && C.writtenYears(calendars.get(course.grade)).every(Boolean)), "complete calendar requires all three cycle years for every grade K–12");
+  if (calendars.size || completeCalendar) assert(schoolLevels.every(course => calendars.has(course.grade)), "the shared calendar needs a calendar file for every grade K–12");
   const index = { schemaVersion: 1, grades: courses.map(course => ({ grade: course.grade, title: course.title, nights: course.days.length,
     readings: readingsByGrade.get(course.grade).size, calendar: calendars.has(course.grade),
-    calendarYears: C.writtenYears(calendars.get(course.grade)),
     file: "content/reading-daily/" + D.gradeKey(course.grade) + ".json" })) };
   return { index, courses, extras, calendars, spans, library, readingsByGrade };
 }
@@ -385,9 +395,11 @@ function build(options = {}) {
       const entry = id => { const reading = readings.get(id), source = sources.find(item => item.id === reading.sourceId), credit = D.selectionCredit(reading, source);
         return { id, title: reading.title, author: credit.author, work: credit.workTitle || source.title, minutes: reading.time.totalMinutes,
           mode: reading.readingMode, genre: reading.genre, continuesFrom: !!reading.excerpt.continuesFrom, continuesTo: !!reading.excerpt.continuesTo,
+          ...(reading.holiday ? { holiday: reading.holiday } : {}),
           ...(reading.week ? { week: reading.week, day: reading.day } : {}) }; };
       fs.writeFileSync(path.join(directory, "calendar", D.gradeKey(grade) + ".json"),
-        JSON.stringify({ schemaVersion: 1, grade, years: calendar.years.map(ids => ids && ids.map(entry)) }) + "\n");
+        JSON.stringify({ schemaVersion: 2, grade, sets: calendar.sets.map(set => ({ anchors: Object.fromEntries(C.HOLIDAY_KEYS.map(key => [key, entry(set.anchors[key])])),
+          leap: entry(set.leap), sequence: set.sequence.map(entry) })) }) + "\n");
     }
   }
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify(index) + "\n");

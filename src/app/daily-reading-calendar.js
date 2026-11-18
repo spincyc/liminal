@@ -27,20 +27,21 @@
     const list = R.el("ol", undefined, "daily-cal-grid");
     model.weeks.flat().forEach((cell, i) => {
       if (!cell) { const pad = R.el("li", undefined, "daily-cal-pad"); pad.setAttribute("aria-hidden", "true"); list.append(pad); return; }
-      const item = R.el("li", undefined, "daily-cal-cell daily-run-" + cell.run + (cell.spanStart ? " daily-span-start" : "") + (cell.date === today ? " is-today" : ""));
+      const item = R.el("li", undefined, "daily-cal-cell daily-run-" + cell.run + (cell.spanStart ? " daily-span-start" : "") + (cell.holiday ? " is-holiday" : "") + (cell.date === today ? " is-today" : ""));
       const link = R.link("", D.dateRoute(grade, cell.date));
       const weekday = WEEKDAYS[i % 7], run = cell.run === "single" ? null : runs.get(cell.date) || Cal.runOn(calendar, cell.date);
       const short = R.el("span", weekday.slice(0, 3) + " ", "daily-cal-weekday"); short.setAttribute("aria-hidden", "true");
       const number = R.el("span", undefined, "daily-cal-date"); number.append(short, document.createTextNode(String(cell.day)));
       link.append(R.el("span", weekday + ", " + Cal.MONTHS[model.month - 1] + " ", "daily-sr"), number);
       if (cell.date === today) link.append(R.el("span", " (today)", "daily-sr"));
+      if (cell.holiday) link.append(R.el("span", cell.holiday.name, "daily-cal-holiday"));
       link.append(R.el("span", cell.entry ? cell.entry.title : "No reading", "daily-cal-title"));
       if (run) link.append(R.el("span", "Part " + run.part + " of " + run.of, "daily-cal-part"));
       if (cell.entry && cell.entry.week) link.append(R.el("span", "School " + D.nightLabel(cell.entry.week, cell.entry.day).replace("Week ", "week ").replace("Day ", "day "), "daily-cal-school"));
       if (cell.date === today) link.setAttribute("aria-current", "date");
       item.append(link); list.append(item);
     });
-    const legend = R.el("p", "A bar joins the days of one continued story. A mark on a day’s top edge starts a new span: on those days every level begins something new.", "daily-cal-legend");
+    const legend = R.el("p", "A bar joins the days of one continued story; a holiday has a reading of its own, and a story it falls in goes on the next day. A mark on a day’s top edge starts a new span: on those days every level begins something new.", "daily-cal-legend");
     grid.replaceChildren(legend, head, list);
   }
   // A level without a calendar has no months to step through: the month
@@ -48,35 +49,15 @@
   function unavailable(grid, grade) {
     document.getElementById("dailyMonthNavigation").replaceChildren(); monthNav = null;
     const note = R.el("section", undefined, "daily-unavailable");
-    note.append(R.el("p", "The date calendar for " + D.gradeLabel(grade) + " is not available yet. " + WRITTEN_BY_YEAR));
+    note.append(R.el("p", "The date calendar for " + D.gradeLabel(grade) + " is not available yet. " + NOT_YET));
     note.append(links([{ label: "Open the " + D.gradeLabel(grade) + " school year", href: D.browseRoute(grade) }]));
     grid.replaceChildren(note);
   }
-  const WRITTEN_BY_YEAR = "The date calendar is written one year at a time, and a level’s calendar appears with its first written year.";
+  const NOT_YET = "A level’s date calendar appears once the level has a full year of readings.";
   function links(items) {
     const list = R.el("ul", undefined, "daily-unavailable-links");
     items.forEach(item => { const li = R.el("li"); li.append(R.link(item.label, item.href)); list.append(li); });
     return list;
   }
-  // A date or month whose cycle year is not written yet (`note` from
-  // lib/reading-calendar.js unwritten): what is missing, why, and links to
-  // the nearest dates (or their months) with readings and to the school
-  // year, so the view is never empty.
-  function notice(grade, note, { month = false, heading = "h1" } = {}) {
-    const section = R.el("section", undefined, "daily-unavailable daily-unwritten"), title = R.el(heading, note.heading);
-    if (heading === "h1") title.tabIndex = -1;
-    section.append(title, R.el("p", note.text));
-    section.append(links([...note.dates.map(date => month
-      ? { label: "Open " + Cal.monthLabel(date.slice(0, 7)), href: D.monthRoute(grade, date.slice(0, 7)) }
-      : { label: "Open " + Cal.longDate(date), href: D.dateRoute(grade, date) }),
-    { label: "Open the " + D.gradeLabel(grade) + " school year", href: D.browseRoute(grade) }]));
-    return section;
-  }
-  // A month in a year not written yet keeps its month navigation, so the
-  // months either side stay one step away.
-  function unwritten(grid, { grade, month, note }) {
-    navigation(grade, month);
-    grid.replaceChildren(notice(grade, note, { month: true, heading: "h2" }));
-  }
-  window.LiminalDailyReadingCalendar = { show, unavailable, unwritten, notice, links, WRITTEN_BY_YEAR };
+  window.LiminalDailyReadingCalendar = { show, unavailable, links, NOT_YET };
 })();

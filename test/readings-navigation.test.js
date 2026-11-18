@@ -4,13 +4,10 @@
 const test = require("node:test"), assert = require("node:assert/strict");
 const D = require("../src/lib/daily-reading"), Cal = require("../src/lib/reading-calendar"), Lib = require("../src/lib/reading-library"), LL = require("../src/lib/reading-level");
 
-const ALL = [true, true, true], NONE = [false, false, false];
-const index = { grades: [{ grade: 0, calendar: true, calendarYears: ALL }, { grade: 3, calendar: false, calendarYears: NONE }, { grade: 5, calendar: true, calendarYears: ALL }] };
-// The calendar as it first goes live: only Year 2 (2027, 2030, …) written.
-const year2 = { grades: [{ grade: 0, calendar: true, calendarYears: [false, true, false] }, { grade: 5, calendar: true, calendarYears: [false, true, false] }, { grade: 13, calendar: false, calendarYears: NONE }] };
+const index = { grades: [{ grade: 0, calendar: true }, { grade: 3, calendar: false }, { grade: 5, calendar: true }] };
 
 test("routes cover the year, nights, dates, months, readings and the day print", () => {
-  const opts = { grade: 5, today: "2026-11-17", isWritten: Cal.isWritten };
+  const opts = { grade: 5, today: "2026-11-17" };
   assert.deepEqual(D.view(index, "", opts), { view: "browse", course: index.grades[2], grade: 5, week: null, home: true, invalid: false });
   assert.equal(D.view(index, "#browse/5/12", opts).week, 12);
   for (const hash of ["#browse/5/37", "#browse/5/x", "#browse/9", "#browse/5/12/1"]) assert.equal(D.view(index, hash, opts).invalid, true, hash);
@@ -89,28 +86,26 @@ test("remembered places are parsed as untrusted data and updated by the views", 
 test("Tonight offers the plan's night, the next school night and today's date reading, or the start of the year", () => {
   const state = { version: 1, grade: 5, night: { grade: 5, week: 3, day: 5 }, date: null };
   const nights = [{ week: 3, day: 5, title: "Five" }, { week: 4, day: 1, title: "Six" }];
-  const entries = D.tonight({ index, state, planNight: { level: 0, week: 10, day: 1, date: "2026-11-17" }, today: "2026-11-17", nights, isWritten: Cal.isWritten });
+  const entries = D.tonight({ index, state, planNight: { level: 0, week: 10, day: 1, date: "2026-11-17" }, today: "2026-11-17", nights });
   assert.deepEqual(entries.map(entry => entry.kind), ["plan", "continue", "date"]);
   assert.equal(entries[0].label, "Tonight in your plan: Kindergarten, Week 10, Day 1"); assert.equal(entries[0].href, "#k/10/1");
   assert.equal(entries[1].title, "Five"); assert.deepEqual(entries[1].next, { label: "Next: Week 4, Day 1", href: "#5/4/1", title: "Six" });
   assert.equal(entries[2].href, "#5/date/2026-11-17");
   // Without a calendar, the date entry is left out; a first visit starts the school year.
-  assert.deepEqual(D.tonight({ index, state: { ...state, grade: 3 }, today: "2026-11-17", isWritten: Cal.isWritten }).map(entry => entry.kind), ["continue"]);
-  assert.deepEqual(D.tonight({ index: { grades: [{ grade: 3, calendar: false }] }, today: "2026-11-17", isWritten: Cal.isWritten }),
+  assert.deepEqual(D.tonight({ index, state: { ...state, grade: 3 }, today: "2026-11-17" }).map(entry => entry.kind), ["continue"]);
+  assert.deepEqual(D.tonight({ index: { grades: [{ grade: 3, calendar: false }] }, today: "2026-11-17" }),
     [{ kind: "start", grade: 3, label: "Start the Grade 3 school year: Week 1, Day 1", href: "#3/1/1" }]);
-  assert.equal(D.tonight({ index, today: "2026-11-17", planNight: { level: 9, week: 1, day: 1 }, isWritten: Cal.isWritten })[0].kind, "date");
-  assert.equal(D.tonight({ index, state: { ...state, night: { grade: 5, week: 36, day: 5 } }, today: "2026-11-17", isWritten: Cal.isWritten })[0].next, null);
-  // Without the calendar's isWritten, no date counts as having a reading.
-  assert.deepEqual(D.tonight({ index, state, today: "2026-11-17" }).map(entry => entry.kind), ["continue"]);
+  assert.equal(D.tonight({ index, today: "2026-11-17", planNight: { level: 9, week: 1, day: 1 } })[0].kind, "date");
+  assert.equal(D.tonight({ index, state: { ...state, night: { grade: 5, week: 36, day: 5 } }, today: "2026-11-17" })[0].next, null);
 });
 
 test("the day print says what each level prints, or why it cannot", () => {
-  const plan = D.printPlan(index, { date: "2026-11-17", grades: [0, 3, 9], formatDate: () => "Tue, Nov 17", isWritten: Cal.isWritten });
+  const plan = D.printPlan(index, { date: "2026-11-17", grades: [0, 3, 9], formatDate: () => "Tue, Nov 17" });
   assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false]]);
   assert.equal(plan[0].footer, "Kindergarten · Tue, Nov 17"); assert.match(plan[1].reason, /Grade 3 is not available yet/);
   assert.equal(D.printPlan(index, { week: 3, day: 2, grades: [3] })[0].footer, "Grade 3 · Week 3 · Day 2");
   assert.equal(D.printPlan(index, { grades: [3] })[0].available, false);
-  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5], isWritten: Cal.isWritten })[0].footer, "Grade 5 · Tuesday 17 November 2026");
+  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5] })[0].footer, "Grade 5 · Tuesday 17 November 2026");
   assert.equal(D.printMeta(0, { date: "2028-02-29" }), "Kindergarten · Tuesday 29 February 2028");
   assert.equal(D.printMeta(5, { week: 3, day: 2 }), "Grade 5 · Week 3 · Day 2");
   assert.equal(D.printMeta(5), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(5, { date: "2026-02-30" }), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(99), null);
@@ -133,33 +128,35 @@ test("a week's summary lists its works once, in order, with its minutes", () => 
   assert.deepEqual(D.weekSummary(nights, 5), { works: [], minutes: 0, span: null });
 });
 
-// A small calendar: ids by slot, entries with continuation flags.
+// A small calendar of built entries: one set, with a three-day run on
+// November 15-17, 2026.
 function calendar() {
-  const years = [1, 2, 3].map(cycle => Array.from({ length: Cal.SLOTS }, (_, i) => ({ id: "r" + cycle + "-" + (i + 1), continuesFrom: false, continuesTo: false })));
-  // A three-day run at slots 320-322 (Nov 15-17) of cycle year 1.
-  years[0][319].continuesTo = true; years[0][320].continuesFrom = years[0][320].continuesTo = true; years[0][321].continuesFrom = true;
-  years[0][320].week = 4; years[0][320].day = 2;
-  return { schemaVersion: 1, grade: 5, years };
+  const entry = id => ({ id, continuesFrom: false, continuesTo: false });
+  const set = { sequence: Array.from({ length: Cal.REGULAR }, (_, i) => entry("r-" + i)), anchors: Object.fromEntries(Cal.HOLIDAY_KEYS.map(key => [key, entry("r-" + key)])), leap: entry("r-leap") };
+  const at = Cal.place("2026-11-15").position;
+  set.sequence[at].continuesTo = true; set.sequence[at + 1].continuesFrom = set.sequence[at + 1].continuesTo = true; set.sequence[at + 2].continuesFrom = true;
+  set.sequence[at + 1].week = 4; set.sequence[at + 1].day = 2;
+  return { schemaVersion: 2, grade: 5, sets: [set] };
 }
 
-test("calendar browsing: return years, runs, next dates and month grids", () => {
-  assert.equal(Cal.returnYear("2026-11-17"), 2029); assert.equal(Cal.returnYear("2028-02-29"), 2040); assert.equal(Cal.returnYear("bad"), null);
-  assert.equal(Cal.cycleNote("2027-01-01"), "Year 2 of 3 · this date’s reading returns in 2030");
-  const cal = calendar();
-  assert.deepEqual(Cal.runOn(cal, "2026-11-16"), { part: 2, of: 3, first: "2026-11-15", last: "2026-11-17" });
+test("calendar browsing: runs, next dates and month grids", () => {
+  const cal = calendar(), at = Cal.place("2026-11-15").position;
+  assert.deepEqual(Cal.runOn(cal, "2026-11-16"), { part: 2, of: 3, first: "2026-11-15", last: "2026-11-17", previous: "2026-11-15", next: "2026-11-17" });
   assert.equal(Cal.runOn(cal, "2026-11-18"), null);
-  assert.equal(Cal.nextDateOf(cal, "r1-321", "2026-11-17"), "2029-11-16");
-  assert.equal(Cal.nextDateOf(cal, "r1-321", "2026-11-16"), "2026-11-16");
-  assert.equal(Cal.nextDateOf(cal, "r3-60", "2026-01-01"), "2028-02-29");
+  assert.equal(Cal.nextDateOf(cal, "r-" + (at + 2), "2026-11-18"), Cal.dateAt(2027, at + 2));
+  assert.equal(Cal.nextDateOf(cal, "r-" + (at + 2), "2026-11-16"), "2026-11-17");
+  assert.equal(Cal.nextDateOf(cal, "r-thanksgiving", "2026-11-27"), "2027-11-25");
+  assert.equal(Cal.nextDateOf(cal, "r-leap", "2026-01-01"), "2028-02-29");
   assert.equal(Cal.nextDateOf(cal, "missing", "2026-01-01"), null);
-  const spans = { schemaVersion: 1, years: [[319, 3, 44], [366], [366]] };
+  const spans = { schemaVersion: 2, sets: [[at, 3, Cal.REGULAR - at - 3]] };
   const grid = Cal.monthGrid(cal, spans, "2026-11");
-  assert.equal(grid.label, "November 2026"); assert.equal(grid.cycle, 1);
+  assert.equal(grid.label, "November 2026"); assert.equal(grid.set, 1);
   assert.equal(grid.weeks[0].findIndex(Boolean), 0); // November 1, 2026 is a Sunday.
   const cells = grid.weeks.flat().filter(Boolean);
   assert.equal(cells.length, 30);
   assert.deepEqual(cells.slice(13, 18).map(cell => cell.run), ["single", "start", "middle", "end", "single"]);
   assert.deepEqual(cells.filter(cell => cell.spanStart).map(cell => cell.day), [15, 18]);
+  assert.deepEqual(cells.filter(cell => cell.holiday).map(cell => [cell.day, cell.holiday.name, cell.entry.id]), [[11, "Veterans Day", "r-veterans-day"], [26, "Thanksgiving", "r-thanksgiving"]]);
   assert.equal(Cal.monthGrid(cal, spans, "2027-02").weeks.flat().filter(Boolean).length, 28);
   assert.equal(Cal.monthGrid(cal, spans, "2026-13"), null);
   assert.equal(Cal.addMonths("2026-12", 1), "2027-01"); assert.equal(Cal.addMonths("2026-01", -1), "2025-12");
@@ -241,7 +238,7 @@ test("unrecognized routes fall back to the remembered grade, and school-night id
 });
 
 test("a print link without a day opens today's date only when a chosen level has a calendar", () => {
-  const opts = { grade: 3, today: "2026-11-17", isWritten: Cal.isWritten };
+  const opts = { grade: 3, today: "2026-11-17" };
   assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, week: 1, day: 1, grades: [], invalid: false });
   assert.equal(D.view(index, "#print", { ...opts, grade: 5 }).date, "2026-11-17");
   assert.equal(D.view(index, "#print/3", opts).week, 1);
@@ -261,7 +258,7 @@ test("dates run from 0001-01-01 to 9999-12-31 in both libraries, with no step pa
   assert.equal(Cal.longDate("0099-12-31"), "Thursday, December 31, 99");
   assert.equal(D.dateRoute(5, "0099-12-31"), "#5/date/0099-12-31"); assert.equal(D.dateRoute(5, null), "");
   assert.equal(Cal.addMonths("9999-12", 1), null); assert.equal(Cal.addMonths("0001-01", -1), null); assert.equal(Cal.addMonths("0001-01", 1), "0001-02");
-  assert.equal(Cal.monthGrid({ years: [[], [], []] }, null, "0050-03").weeks.flat().filter(Boolean).length, 31);
+  assert.equal(Cal.monthGrid({ sets: [] }, null, "0050-03").weeks.flat().filter(Boolean).length, 31);
 });
 
 test("a typed date opens only when complete and committed; the picker's choice opens at once", () => {
@@ -273,29 +270,12 @@ test("a typed date opens only when complete and committed; the picker's choice o
   assert.equal(D.dateCommit({ value: "2027-02-29", explicit: true }), null);
 });
 
-test("a level whose calendar has not reached today's year offers no date reading for today", () => {
-  const is = Cal.isWritten;
-  assert.equal(D.calendarHas(year2, 5, "2026-11-18", is), false); assert.equal(D.calendarHas(year2, 5, "2027-11-18", is), true);
-  assert.equal(D.calendarHas(year2, 13, "2027-11-18", is), false); assert.equal(D.calendarHas(year2, 5, "2027-02-29", is), false);
-  assert.equal(D.calendarHas(year2, 5, "2027-11-18"), false, "no isWritten, no reading");
-  assert.deepEqual(D.calendarYearsOf(year2, [5, 13]), [false, true, false]); assert.deepEqual(D.calendarYearsOf(year2, [13]), NONE);
-  // Tonight: no date entry in 2026; a first visit starts the school year, as for a level with no calendar.
-  const state = { version: 1, grade: 5, night: { grade: 5, week: 3, day: 5 }, date: null };
-  assert.deepEqual(D.tonight({ index: year2, state, today: "2026-11-18", isWritten: is }).map(entry => entry.kind), ["continue"]);
-  assert.deepEqual(D.tonight({ index: year2, state: { version: 1, grade: 5, night: null, date: null }, today: "2026-11-18", isWritten: is }),
-    [{ kind: "start", grade: 5, label: "Start the Grade 5 school year: Week 1, Day 1", href: "#5/1/1" }]);
-  assert.equal(D.tonight({ index: year2, state, today: "2027-03-04", isWritten: is }).at(-1).href, "#5/date/2027-03-04");
-  // The day print says the year is not written; a written date prints.
-  const plan = D.printPlan(year2, { date: "2026-11-18", grades: [0, 5, 13], isWritten: is });
-  assert.deepEqual(plan.map(item => [item.grade, item.available, !!item.unwritten]), [[0, false, true], [5, false, true], [13, false, false]]);
-  assert.equal(plan[0].reason, "Readings for dates in 2026 are not written yet.");
-  assert.match(plan[2].reason, /Advanced 1 is not available yet/);
-  assert.equal(D.printPlan(year2, { date: "2027-01-01", grades: [5], isWritten: is })[0].footer, "Grade 5 · Friday 1 January 2027");
-  // A print link without a day opens today only when today has a reading; otherwise the first school night.
-  const opts = { grade: 5, today: "2026-11-18", isWritten: is };
-  assert.deepEqual(["date", "week", "day"].map(key => D.view(year2, "#print", opts)[key]), [null, 1, 1]);
-  assert.equal(D.view(year2, "#print/k,5", { ...opts, today: "2027-11-18" }).date, "2027-11-18");
-  // A chosen date stays chosen, written or not; the print view says what it can print.
-  assert.equal(D.view(year2, "#print/date/2026-12-25/5", opts).date, "2026-12-25");
-  assert.equal(D.notWritten("0099-12-31"), "Readings for dates in 99 are not written yet.");
+test("a level with a calendar has a reading for every date of any year", () => {
+  assert.equal(D.calendarHas(index, 5, "2026-11-18"), true); assert.equal(D.calendarHas(index, 5, "1066-10-14"), true);
+  assert.equal(D.calendarHas(index, 5, "9999-12-31"), true); assert.equal(D.calendarHas(index, 3, "2026-11-18"), false);
+  assert.equal(D.calendarHas(index, 5, "2027-02-29"), false); assert.equal(D.calendarHas(index, 13, "2026-11-18"), false);
+  const plan = D.printPlan(index, { date: "1999-12-25", grades: [0, 3, 5] });
+  assert.deepEqual(plan.map(item => [item.grade, item.available]), [[0, true], [3, false], [5, true]]);
+  assert.equal(plan[2].footer, "Grade 5 · Saturday 25 December 1999");
 });
+

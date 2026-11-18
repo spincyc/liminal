@@ -124,8 +124,7 @@
   //   #<grade>/reading/<id>        any one reading by its id
   //   #print[/date/<YYYY-MM-DD> | /night/<week>/<day>][/<grade>,<grade>...]
   // `options.grade` is the remembered grade for an empty hash; `options.today`
-  // is the date a date route without a valid date falls back to;
-  // `options.isWritten` is reading-calendar's (see calendarHas).
+  // is the date a date route without a valid date falls back to.
   const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/, ISO_MONTH = /^\d{4}-(?:0[1-9]|1[0-2])$/;
   // A real calendar date, years 0001-9999 (the same rule as
   // reading-calendar's parseDate). setUTCFullYear, because Date.UTC reads
@@ -148,7 +147,7 @@
   function view(index, hash, options = {}) {
     const raw = String(hash || "").replace(/^#/, ""), parts = raw.split("/"), grades = index && index.grades || [];
     const fallback = gradeAt(index, options.grade) || grades[0] || null, today = validDate(options.today) ? options.today : null;
-    const anyToday = list => list.some(grade => calendarHas(index, grade, today, options.isWritten));
+    const anyToday = list => list.some(grade => calendarHas(index, grade, today));
     const at = course => ({ course, grade: course ? course.grade : null });
     if (!raw) return { view: "browse", ...at(fallback), week: null, home: true, invalid: false };
     if (parts[0] === "browse") {
@@ -207,23 +206,9 @@
   function calendarFile(grade) { return validGrade(grade) ? "content/reading-daily/calendar/" + gradeKey(grade) + ".json" : ""; }
   const SPANS_FILE = "content/reading-daily/calendar/spans.json";
   function hasCalendar(index, grade) { const course = gradeAt(index, grade); return !!(course && course.calendar); }
-  // Whether a level's date calendar has a reading for a date: the level has
-  // a calendar and the date's cycle year is among its written years (the
-  // index's calendarYears; the calendar is written a year at a time).
-  // `isWritten` is reading-calendar's, passed in because pages that load
-  // this library need not load that one; without it no date counts.
-  function calendarHas(index, grade, date, isWritten) {
-    const course = gradeAt(index, grade);
-    return !!(course && course.calendar && validDate(date) && typeof isWritten === "function" && isWritten(course.calendarYears, date));
-  }
-  // The cycle years written for any of these levels ([bool x 3]; every
-  // K–12 level shares them), for naming the nearest date with readings.
-  function calendarYearsOf(index, grades) {
-    const levels = (grades || []).map(grade => gradeAt(index, grade)).filter(course => course && course.calendar && Array.isArray(course.calendarYears));
-    return [0, 1, 2].map(y => levels.some(course => course.calendarYears[y] === true));
-  }
-  // A date's year as people write it, for "Readings for dates in 2026 …".
-  function notWritten(date) { return "Readings for dates in " + Number(String(date).slice(0, 4)) + " are not written yet."; }
+  // Whether a level's date calendar has a reading for a date: every date of
+  // years 0001-9999 has one once the level has a calendar.
+  function calendarHas(index, grade, date) { return hasCalendar(index, grade) && validDate(date); }
   // A school night's place, as people say it.
   function nightLabel(week, day) { return validDay(week, day) ? "Week " + week + ", Day " + day : ""; }
   // Tab and history titles: the most specific part first, then the grade.
@@ -271,9 +256,9 @@
   // The Tonight card: where to continue the school year, the plan's night for
   // today (when the reading-level plan has one), and today's date reading.
   // `planNight` is { level, week, day, date } or null; `nights` are the
-  // remembered grade's browse nights, for titles; `isWritten` as for
-  // calendarHas. Every entry links to a reading that exists.
-  function tonight({ index, state = null, planNight = null, today, nights = null, isWritten = null } = {}) {
+  // remembered grade's browse nights, for titles. Every entry links to a
+  // reading that exists.
+  function tonight({ index, state = null, planNight = null, today, nights = null } = {}) {
     const entries = [], title = (grade, week, day) => {
       const night = state && state.night && grade === state.night.grade && (nights || []).find(item => item.week === week && item.day === day);
       return night ? night.title : null;
@@ -290,17 +275,15 @@
         next: next && { label: "Next: " + nightLabel(next.week, next.day), href: next.href, title: title(next.grade, next.week, next.day) } });
     }
     const grade = state && gradeAt(index, state.grade) ? state.grade : (index && index.grades && index.grades[0] || {}).grade;
-    // Today's date reading; a level without one (no calendar, or today's
-    // year not written yet) offers the start of its school year instead,
-    // unless the card already has a place.
-    if (validGrade(grade) && calendarHas(index, grade, today, isWritten)) entries.push({ kind: "date", grade, label: "Today’s reading: " + gradeLabel(grade), href: dateRoute(grade, today) });
+    // Today's date reading; a level without a calendar offers the start of
+    // its school year instead, unless the card already has a place.
+    if (validGrade(grade) && calendarHas(index, grade, today)) entries.push({ kind: "date", grade, label: "Today’s reading: " + gradeLabel(grade), href: dateRoute(grade, today) });
     else if (validGrade(grade) && !entries.length) entries.push({ kind: "start", grade, label: "Start the " + gradeLabel(grade) + " school year: " + nightLabel(1, 1), href: route(grade, 1, 1) });
     return entries;
   }
   // The multi-level day print: what each chosen level prints for a date or a
   // school night, and the footer that names it. A level without a date
-  // calendar, or whose calendar has not reached the date's year, cannot
-  // print a date; it says so instead of printing nothing.
+  // calendar cannot print a date; it says so instead of printing nothing.
   // `formatDate` names a date in the footer (reading-calendar's shortDate in
   // the browser); footers follow the packets' "Grade 5 · Week 3 · Day 2".
   // Printed footers. A school night's matches reading-tex's schoolMeta
@@ -322,13 +305,11 @@
     if (validDay(week, day)) return gradeLabel(grade) + " · Week " + week + " · Day " + day;
     return gradeLabel(grade) + " · Calendar reading";
   }
-  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = null, isWritten = null } = {}) {
+  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = null } = {}) {
     return grades.filter(grade => gradeAt(index, grade)).map(grade => {
       if (validDate(date)) return !hasCalendar(index, grade)
         ? { grade, label: gradeLabel(grade), available: false, reason: "The date calendar for " + gradeLabel(grade) + " is not available yet." }
-        : !calendarHas(index, grade, date, isWritten)
-          ? { grade, label: gradeLabel(grade), available: false, unwritten: true, reason: notWritten(date) }
-          : { grade, label: gradeLabel(grade), available: true, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(date) : printMeta(grade, { date }) };
+        : { grade, label: gradeLabel(grade), available: true, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(date) : printMeta(grade, { date }) };
       return validDay(week, day)
         ? { grade, label: gradeLabel(grade), available: true, footer: printMeta(grade, { week, day }) }
         : { grade, label: gradeLabel(grade), available: false, reason: "Choose a date or a school night." };
@@ -435,7 +416,7 @@
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
     navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
     MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
-    readingFile, calendarFile, SPANS_FILE, hasCalendar, calendarHas, calendarYearsOf, notWritten, nightLabel, documentTitle, beforeYouRead, continuation,
+    readingFile, calendarFile, SPANS_FILE, hasCalendar, calendarHas, nightLabel, documentTitle, beforeYouRead, continuation,
     STORAGE_KEY, parseRemembered, remember, tonight, dateCommit, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
     genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };
 });

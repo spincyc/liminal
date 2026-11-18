@@ -73,42 +73,63 @@ Printed packets use one fixed two-column style, specified in
 ## Date calendar
 
 Families who do not follow the 36-week school schedule can open the reading
-for a calendar date. Each level's calendar has three cycle years of 366
-days (`src/lib/reading-calendar.js`): 2026 is Year 1, 2027 Year 2, 2028 Year 3,
-2029 Year 1 again, and February 29 has its own reading, used only in leap
-years. So a level holds 1,098 distinct readings, and its reading for a date
-does not repeat for three years (owner request, 2026-11-17). The 180 school
-nights are among them; the rest are calendar readings.
+for any calendar date, in any year (owner direction, 2026-11-18: the calendar
+is not tied to one year). A level's **reading set** is 366 readings
+(`src/lib/reading-calendar.js`):
 
-All levels share one set of spans (owner direction, 2026-11-17). A run of
-continued readings stays on consecutive days inside one span, so when one level
-reads a story over seven days, another may read four days and then three, or
-five days and two single readings, and every level starts something new on the
-same day. February 29 is always a one-day span, and no run crosses the end of
-a cycle year. `content/reading-daily/calendar/spans.json` holds the spans and
-`calendar/<grade-key>.json` a level's three years of reading IDs.
+- one for each of ten holidays: New Year's Day, Easter, Memorial Day,
+  Independence Day, Labor Day, Columbus Day, Halloween, Veterans Day,
+  Thanksgiving and Christmas (`HOLIDAYS`; Easter by the Gregorian computus,
+  the Monday and Thursday holidays by their US rules);
+- one for February 29, read only in leap years;
+- a **sequence** of 355 readings for the other days, read in order from
+  January 2 to December 31 with the holidays and February 29 set aside.
 
-The calendar is written one cycle year at a time (owner direction,
-2026-11-17): Year 2 (2027) first, then Year 3 (2028), then Year 1 (2029), so
-the site can serve dates as each year's readings are finished. A year not yet
-written is `null` in the spans and in every level's calendar; a written year
-is written for every K–12 level at once, because the spans are shared. The
-index gives each level `calendarYears` (`[false, true, false]` while only
-Year 2 is written), and the site never offers a date in a year not written
-yet as if it had a reading (see "Date" below). The
-written years never repeat a reading, and once all three are written every
-reading of a level is placed exactly once. `node tools/layout-reading-calendar.js`
-reports how many unplaced readings each level has; once every K–12 level has
-at least 366 (exactly as many as the remaining days, for the last year),
-`node tools/layout-reading-calendar.js --write --years 2` writes that year and
-keeps the years already written exactly as they are. Within a level a story's
-runs follow one another in reading order, a story begun in an earlier year
-comes first, single readings from different works alternate, and a reading
-with `months` lands in one of those months when it can. Short runs and single
+Every year has exactly 355 such days, so the same sequence fills any year,
+and no reading repeats within a year. The 180 school nights are among a
+level's readings; the rest are calendar readings. A level may have several
+sets: years take them in turn from 2026 (`setOf`), so with one set every
+year reads it, and with three a date's reading returns three years later.
+For now each level has one set (owner direction, 2026-11-18: no more than
+366 readings per level yet).
+
+All levels share one set of spans per reading set (owner direction,
+2026-11-17). A run of continued readings stays on consecutive sequence days
+inside one span, so when one level reads a story over seven days, another may
+read four days and then three, or five days and two single readings, and every
+level starts something new on the same day. The fixed-date days (New Year's
+Day, February 29, July 4, Halloween, Veterans Day, Christmas) always fall after
+the same number of sequence days (`BREAKS`), so a span always ends there. The
+moveable holidays (Easter, Memorial Day, Labor Day, Columbus Day,
+Thanksgiving) fall at a different place each year; when one lands inside a
+continued story, the story pauses for the holiday and goes on the next day
+(about one to two pauses a year per level). A holiday's reading and February
+29's stand alone (no `continuesFrom` or `continuesTo`).
+
+A calendar reading may carry `holiday` (one of the keys in `HOLIDAYS`, such
+as `"christmas"`) when it is written for that day; it is then read only on
+that holiday, and a level has at most one per holiday in each set. A holiday
+without a tagged reading reads a stand-in single reading, seasonal to its
+month when the level has one, until a fitting reading is written. To add a
+holiday reading within the 366, write it and retire one of the level's
+weakest calendar readings in the same change (owner direction, 2026-11-18).
+
+`content/reading-daily/calendar/spans.json` holds the spans
+(`{ "schemaVersion": 2, "sets": [[lengths…]] }`, each set's lengths summing
+to 355) and `calendar/<grade-key>.json` a level's sets
+(`{ "schemaVersion": 2, "grade", "sets": [{ "anchors": { "<holiday>": id },
+"leap": id, "sequence": [355 ids] }] }`). Every reading of a level is placed
+exactly once (`--complete`). `node tools/layout-reading-calendar.js` lays out
+every set afresh and reports; `--write` writes it. Each set keeps the readings
+it has, readings in no set fill the first set short of 366 (whole runs only),
+and a new set takes exactly 366 more per level. Within a level a story's runs
+follow one another in reading order (a story begun in an earlier set comes
+first), single readings from different works alternate, and a reading with
+`months` lands in one of those months when it can. Short runs and single
 nights give the shared spans room: a level made only of long runs can leave
 another level without the single readings a span needs. The check validates
-the committed files rather than recomputing them; regenerate only deliberately,
-because a new layout moves readings to different dates.
+the committed files rather than recomputing them; regenerate only
+deliberately, because a new layout moves readings to different dates.
 
 Calendar readings live in `content/reading-daily/extra/<grade-key>/<work-id>.json`:
 
@@ -119,7 +140,8 @@ Calendar readings live in `content/reading-daily/extra/<grade-key>/<work-id>.jso
 A calendar reading has every field of a school night except `week` and `day`;
 its ID is `reading-<grade-key>-<work-id>-<nn>` in reading order, it cites a
 range of its library work ([reading library](reading-library.md)), and it may
-carry `months` (1–12) when the text is genuinely seasonal. Continued readings
+carry `months` (1–12) when the text is genuinely seasonal, and `holiday` when
+it is written for a holiday (see above). Continued readings
 link neighbours in the file, at most ten nights in one run. Every rule of this
 document applies to them unchanged: authentic text, the grade's time budget,
 three or more original text-specific questions with notes and exact evidence,
@@ -183,8 +205,8 @@ with a box per night.
 **Tonight.** Above the year, a card offers up to three places: tonight's night
 in a saved [reading-level plan](reading-level.md) (loaded only when a plan
 exists), the last night opened and the one after it, and today's date reading
-when the level's calendar has today's year written; on a first visit without
-one, the level's first night. The page
+when the level has a calendar; on a first visit without one, the level's
+first night. The page
 remembers the grade, the last night and the last date in `localStorage`
 (`liminal:readings:v1`, parsed as untrusted data and ignored when storage is
 unavailable); nothing leaves the browser.
@@ -214,29 +236,23 @@ the grade and week; from each Common Core reading unit of the year plan, the
 nightly readings for its weeks; and from each weekly reading lesson, that
 week's nights.
 
-**Date.** The reader shows the date's reading with the date, the cycle year
-("Year 2 of 3 · this date's reading returns in 2030") and, when the reading is
-also a school night, a link to it. Previous and Next move a day; More offers
-Today, the month and the day print. A level without a calendar says so and
-links to its school year. A date in a cycle year not written yet says so
-("Readings for dates in 2026 are not written yet") and links to the school
-year and to the nearest dates with readings, from `unwritten` in
-`src/lib/reading-calendar.js`: where the calendar begins (1 January 2027
-while only Year 2 is written), or the nearest date and, when that is
-earlier, the next one. The cycle note promises a return only for a written
-date. **Month** shows a level's month as seven columns on
-wide screens and a list of days on phones. A bar joins the days of one
-continued story, and a mark starts each shared span, the days on which every
-level begins something new. A month in a year not written yet keeps its
-month navigation and says the same as the date, linking to months. The
-Year view's calendar link opens at this month, or, while this year is not
-written, at the month the calendar begins ("Date calendar: January 2027").
+**Date.** The reader shows the date's reading with the date, the holiday's
+name on a holiday, when the reading returns ("Christmas · this reading returns
+on Saturday, December 25, 2027", from `dayNote`) and, when the reading is also
+a school night, a link to it. Previous and Next move a day; a continued
+reading's part links skip a holiday that pauses it. More offers Today, the
+month and the day print. A level without a calendar says so and links to its
+school year. **Month** shows a level's month as seven columns on wide screens
+and a list of days on phones. A bar joins the days of one continued story, a
+mark starts each shared span (the days on which every level begins something
+new), and a holiday shows its name with an accent rule. The note under the
+heading says when readings return and names the month's holidays. The Year
+view's calendar link opens at this month.
 
 **Print a day.** Choose a calendar date or a school night and any levels; the
-preview lists what each level prints, or why it cannot. For a date in a year
-not written yet it says so and offers the nearest dates with readings, each
-a button that chooses it. A print link without a day opens today's date only
-when a chosen level has a reading for today, otherwise a school night. **Make one PDF**
+preview lists what each level prints, or why it cannot (a level without a
+date calendar). A print link without a day opens today's date when a chosen
+level has a calendar, otherwise a school night. **Make one PDF**
 typesets a single document (`LiminalReadingTeX.dayTeX`) in which every level
 starts on a fresh sheet; footers name a school night by week and day and a
 calendar reading by its date. Without the typesetter the button is disabled
@@ -273,9 +289,8 @@ grade's overview and progression; about 17–100 KB instead of a 0.5–2 MB
 grade file). A newer choice cancels a download it supersedes. The complete
 grade files are still built and remain the canonical download.
 A date, a reading by ID and the day print load the level's calendar
-(`calendar/<grade-key>.json`, about 265 KB, only for levels the index marks
-`calendar: true`; a date and the day print, only for a date in a year the
-level's `calendarYears` marks written) and one reading, `readings/<grade-key>/<reading-id>.json`
+(`calendar/<grade-key>.json`, about 100 KB, only for levels the index marks
+`calendar: true`) and one reading, `readings/<grade-key>/<reading-id>.json`
 (the reading and its source). The library loads its index, then per work its
 `meta.json` and one text chunk at a time.
 `tools/smoke-static.js` compares every browse and week file with its source,

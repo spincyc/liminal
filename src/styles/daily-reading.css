@@ -173,6 +173,9 @@
 .daily-cal-weekday { display: none; color: var(--color-muted); font-weight: 400; font-size: .75rem; }
 .daily-cal-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; font: .8125rem/1.3 var(--font-serif); overflow-wrap: anywhere; }
 .daily-cal-part, .daily-cal-school { color: var(--color-muted); font-size: .6875rem; }
+/* A holiday keeps a reading of its own: its name, and an accent rule on top. */
+.daily-cal-holiday { font-size: .6875rem; font-weight: 600; letter-spacing: .02em; }
+.daily-cal-cell.is-holiday { box-shadow: inset 0 3px 0 var(--color-accent); }
 .daily-cal-cell.is-today a { background: var(--color-accent-soft); }
 .daily-cal-cell.is-today .daily-cal-date { text-decoration: underline; text-underline-offset: 3px; }
 /* A span starts: a rule on the cell's top edge, the same day in every level. */
@@ -202,8 +205,6 @@
 .daily-page .daily-primary[hidden] { display: none; }
 .daily-page :is(button):disabled { opacity: .6; cursor: default; }
 .daily-print-note { margin-top: 10px; color: var(--color-muted); font-size: .875rem; }
-.daily-print-advice { margin-top: 12px; padding: 10px 14px 12px; border-left: 3px solid var(--color-accent); background: var(--color-surface); }
-.daily-print-advice .daily-print-actions { margin-top: 8px; }
 
 @media (max-width: 640px) {
   .daily-page .page-width { width: calc(100% - 32px); }
