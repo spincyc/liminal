@@ -10,8 +10,9 @@
 
   function navigation(grade, month) {
     const previous = Cal.addMonths(month, -1), next = Cal.addMonths(month, 1), name = value => Cal.MONTHS[Number(value.slice(5)) - 1] + " " + value.slice(0, 4);
-    monthNav = C.navigation({ label: "Months", compact: true, steps: ["previous", "next"],
-      previous: { href: D.monthRoute(grade, previous), label: "Previous month: " + name(previous) }, next: { href: D.monthRoute(grade, next), label: "Next month: " + name(next) } }, monthNav);
+    // Months end at 0001-01 and 9999-12: past either end there is no link.
+    const step = (value, word) => { const href = value && D.monthRoute(grade, value); return href ? { href, label: word + " month: " + name(value) } : null; };
+    monthNav = C.navigation({ label: "Months", compact: true, steps: ["previous", "next"], previous: step(previous, "Previous"), next: step(next, "Next") }, monthNav);
     const holder = document.getElementById("dailyMonthNavigation");
     if (!monthNav.parentElement) holder.append(monthNav);
     let today = holder.querySelector(".daily-today");
@@ -42,7 +43,10 @@
     const legend = R.el("p", "A bar joins the days of one continued story. A mark on a day’s top edge starts a new span: on those days every level begins something new.", "daily-cal-legend");
     grid.replaceChildren(legend, head, list);
   }
+  // A level without a calendar has no months to step through: the month
+  // navigation of the level shown before goes too.
   function unavailable(grid, grade) {
+    document.getElementById("dailyMonthNavigation").replaceChildren(); monthNav = null;
     const note = R.el("section", undefined, "daily-unavailable");
     note.append(R.el("p", "The date calendar for " + D.gradeLabel(grade) + " is not available yet."));
     const links = R.el("p"); links.append(R.link("Open the " + D.gradeLabel(grade) + " school year", D.browseRoute(grade))); note.append(links);

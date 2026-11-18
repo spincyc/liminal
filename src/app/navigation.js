@@ -12,7 +12,11 @@
     else anchor.removeAttribute("aria-current");
   }
   function render() {
-    const model = navigation.model(window.location, { weeklyIndex: window.LIMINAL_WEEKLY_INDEX, highSchool: window.LIMINAL_HIGH_SCHOOL, lessonModules: window.LIMINAL_LESSON_MODULES });
+    // Readings pages without a grade in the address show the grade this
+    // browser remembers; storage may be unavailable.
+    let readingGrade = null;
+    try { readingGrade = navigation.rememberedReadingGrade(window.localStorage.getItem("liminal:readings:v1")); } catch (_) { readingGrade = null; }
+    const model = navigation.model(window.location, { weeklyIndex: window.LIMINAL_WEEKLY_INDEX, highSchool: window.LIMINAL_HIGH_SCHOOL, lessonModules: window.LIMINAL_LESSON_MODULES, readingGrade });
     model.primary.forEach(item => updateLink(header.querySelector('[data-lm-primary="' + item.id + '"]'), item));
     const nav = header.querySelector(".lm-subnav");
     nav.hidden = !model.secondary.length;

@@ -75,7 +75,11 @@
   // disclosure, closed by Escape, an outside click, or choosing an item.
   function menu(label, className = "reader-more") {
     const details = element("details", undefined, className), summary = element("summary"), panel = element("div", undefined, "reader-more-menu");
-    summary.append(element("span", label, "reader-more-word"));
+    // The arrow and the narrow-screen ⋯ are decoration: the summary's
+    // accessible name is the label alone.
+    const arrow = element("span", "▾", "reader-more-arrow"), dots = element("span", "⋯", "reader-more-dots");
+    arrow.setAttribute("aria-hidden", "true"); dots.setAttribute("aria-hidden", "true");
+    summary.append(element("span", label, "reader-more-word"), arrow, dots);
     details.append(summary, panel);
     document.addEventListener("click", event => { if (details.open && !details.contains(event.target)) details.open = false; });
     details.addEventListener("keydown", event => { if (event.key === "Escape" && details.open) { details.open = false; summary.focus(); } });
