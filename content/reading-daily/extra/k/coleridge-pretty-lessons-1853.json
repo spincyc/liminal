@@ -200,6 +200,70 @@
     },
     {
       "id": "reading-k-coleridge-pretty-lessons-1853-04",
+      "title": "Monkeys Without Tails",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for clues about who the “monkeys” really are.",
+      "focus": "Two mischievous “monkeys” poke other people’s things down a crack in the floor, and the last lines tell us they are children.",
+      "context": "Sara Coleridge wrote these Pretty Lessons in Verse for her own children; Herbert was her son. To pry is to poke about; Goody Keeper is a made-up name for the woman looking after them; daws are jackdaws, noisy birds; a chink, crevice or crack is a narrow gap; a pencil-case was then a metal holder for a pencil; ivory letters were letter shapes for learning to read; counters are play tokens; half-pence were coins; their betters are the grown-ups. Do not say who the monkeys are until the end.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “Monkeys Without Tails,” the complete poem; opens “THERE were two little Monkeys, who lived up on high, They loved into crannies and corners…”; closes “…Monkeys of whom this odd story I tell Were two silly children whom Herbert knows well!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          120,
+          122
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a1e3e1ebf80b0e2339f56a2a7f0ad349e32a6ff5a9b4f6efae212dfdb8229833"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q1",
+          "prompt": "What do the two monkeys like to do when Goody Keeper turns her back?",
+          "facilitatorNotes": [
+            "Poke about in every corner, looking for a hole or a crack."
+          ],
+          "evidence": [
+            "They loved into crannies and corners to pry;",
+            "Whene’er Goody Keeper was turning her back,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q2",
+          "prompt": "What do they poke down the crack in the floor? Why is that a problem?",
+          "facilitatorNotes": [
+            "Their toys, a pencil-case, letters, grown-ups’ fine things, counters and coins. The crack is so deep that nothing that goes in is ever seen again."
+          ],
+          "evidence": [
+            "So deep that what enter’d it ne’er was seen more,",
+            "When counters, and pennies, and half-pence roll’d in!"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q3",
+          "prompt": "Who are the “monkeys” really? What clues did you notice before the end?",
+          "facilitatorNotes": [
+            "Two silly children whom Herbert knows well, perhaps Herbert himself and his sister. Clues: they have a keeper, a pencil-case and letters, they chatter, and they have no tails. Some children will have guessed early; others will be surprised, which is the fun."
+          ],
+          "evidence": [
+            "But then they had never a tail in the world.",
+            "Were two silly children whom Herbert knows well!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-05",
       "title": "Signs of Rain",
       "sourceId": "coleridge-pretty-lessons-1853",
       "genre": "poetry",
@@ -228,7 +292,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-coleridge-pretty-lessons-1853-04-q1",
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q1",
           "prompt": "Why is the Thrush singing loudly after being silent so long?",
           "facilitatorNotes": [
             "He thinks a shower is coming, and after rain there will be worms and slugs for him to eat."
@@ -239,7 +303,7 @@
           ]
         },
         {
-          "id": "reading-k-coleridge-pretty-lessons-1853-04-q2",
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q2",
           "prompt": "Which other animals seem to know the weather is changing?",
           "facilitatorNotes": [
             "The swan brushes the water with her wing, the woodpecker drums, the deer go up the little hill, the swallows dart about, and the rooks chatter."
@@ -250,7 +314,7 @@
           ]
         },
         {
-          "id": "reading-k-coleridge-pretty-lessons-1853-04-q3",
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q3",
           "prompt": "What are the Rooks talking about, the poem says? Could birds really know when rain is coming?",
           "facilitatorNotes": [
             "The same thing as everyone else: the change in the weather. The poem imagines them discussing it. Birds do often behave differently before a storm, which is why people watched them; children can say what they have noticed."
@@ -258,6 +322,70 @@
           "evidence": [
             "The Rooks are discussing the very same matter—",
             "While homeward returning how loudly they chatter!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-06",
+      "title": "The Seasons",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear each season described twice, once gloomy and once glad.",
+      "focus": "Every season has a hard side and a happy side, and the poem gives each its turn.",
+      "context": "Sara Coleridge wrote these Pretty Lessons in Verse for her own children. A blast is a strong wind; hop-poles are tall bare poles for climbing plants; a social season is a time for being together; variable means changeable; a zephyr is a soft breeze; garlands on the thorn are blossom on the hawthorn; joyance is joy; sultry means hot and sticky; laburnum is a tree whose hanging yellow flowers are its golden tresses; bowers are shady places; melancholy means sad; relics are what is left; luxuriant means rich and plentiful; to glad is to gladden.",
+      "contentNote": "The last lines speak to pheasants that “must fall for our delight”: in autumn people shot pheasants to eat.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Seasons,” the complete poem; opens “WINTER is a dreary time; Then we hear the howling blast, Then the trees are bare as…”; closes “…our sight, Fruits grow ripe; and, glittering pheasants, You must fall for our delight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          258,
+          265
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6e98c74d3d842e4200e4a74baf731f4e81157e76c5cafecf5e6434f97b8177d"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q1",
+          "prompt": "What makes winter dreary, and what makes it a happy time?",
+          "facilitatorNotes": [
+            "Dreary: howling wind, bare trees, rain and hail. Happy: everyone gathers round the fire with books, pictures, fun and feasting."
+          ],
+          "evidence": [
+            "Then the trees are bare as hop-poles,",
+            "Then we gather round the fire;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q2",
+          "prompt": "What makes spring “sweet and merry”?",
+          "facilitatorNotes": [
+            "Blossom on the hawthorn, birds singing in the woods, and lambs and colts being born."
+          ],
+          "evidence": [
+            "Fills the groves with songs of joyance,",
+            "Then the lamb and colt are born."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q3",
+          "prompt": "Every season gets a sad verse and a happy verse. Which season do you like best, and what would you put in its happy verse?",
+          "facilitatorNotes": [
+            "Any season, with a reason. The poem’s pattern shows that even a favourite season has a hard side and even a gloomy one has something to enjoy; children can make up a line of their own."
+          ],
+          "evidence": [
+            "Summer’s a delightful season;",
+            "Autumn time is melancholy;"
           ]
         }
       ]

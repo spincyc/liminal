@@ -196,6 +196,133 @@
     },
     {
       "id": "reading-k-greenaway-under-window-1880-04",
+      "title": "“Shall I sing?” says the Lark",
+      "sourceId": "greenaway-under-window-1880",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear four questions, then the answer given to each.",
+      "focus": "A lark, a flower, the sun and a shower each ask whether to do their work, and only the shower is sent away.",
+      "context": "Kate Greenaway wrote and drew Under the Window; here we have her words without the pictures. A lark is a small bird that sings high in the sky; a shower is a short fall of rain. Read the four questions in four different voices, then let the child help answer them in the second verse.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “‘Shall I sing?’ says the Lark,”, complete (two stanzas); opens ““SHALL I sing?” says the Lark, “Shall I bloom?” says the Flower; “Shall I come?” says the…”; closes “…pretty Bird, Roses, bloom for an hour; Shine on, dearest Sun, Go away, naughty Shower!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef54cace70c3279db133913925614f47d1b8e037c92029b35543b6305e2499ef"
+      },
+      "questions": [
+        {
+          "id": "reading-k-greenaway-under-window-1880-04-q1",
+          "prompt": "Who asks a question in the first verse, and what does each one ask?",
+          "facilitatorNotes": [
+            "The Lark asks whether to sing, the Flower whether to bloom, the Sun whether to come out, and the Shower whether it should come instead."
+          ],
+          "evidence": [
+            "says the Lark,",
+            "“Shall I bloom?” says the Flower;"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-04-q2",
+          "prompt": "Which one is told to go away? What is it called?",
+          "facilitatorNotes": [
+            "The Shower, called a “naughty Shower.”"
+          ],
+          "evidence": [
+            "Go away, naughty Shower!"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-04-q3",
+          "prompt": "Why might the speaker want the sun and not the rain? Is the shower really naughty?",
+          "facilitatorNotes": [
+            "The speaker wants a fine day for birdsong and roses. But flowers need rain to grow, so the shower helps the roses the speaker loves. Some children will side with the speaker, some with the rain."
+          ],
+          "evidence": [
+            "Roses, bloom for an hour;",
+            "Shine on, dearest Sun,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-greenaway-under-window-1880-05",
+      "title": "The twelve Miss Pelicoes",
+      "sourceId": "greenaway-under-window-1880",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for the joke in a poem that praises twelve girls for very ordinary things.",
+      "focus": "The poem tells us, very seriously, that the Miss Pelicoes ate dinner, could talk and were polite, and then admits it has nothing more to say.",
+      "context": "Kate Greenaway wrote and drew Under the Window; here we have her words without the pictures. Pigtail plaits are braids; to excel in each accomplishment means to be very good at the skills girls were taught then, such as music and dancing; learning the globes meant learning geography from globes of the earth and the sky; Job is a man in the Bible famous for his patience. Read it in a very serious voice; that is part of the joke.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “The twelve Miss Pelicoes”, complete (nine stanzas); opens “THE twelve Miss Pelicoes Were twelve sweet little girls; Some wore their hair in pigtail…”; closes “…I wish ye a good day;— About these twelve Miss Pelicoes I’ve nothing more to say.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          84,
+          92
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e55a62c5f108ee54f1513875e01670600f9fc7c6695133c2182c11629eb177a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-greenaway-under-window-1880-05-q1",
+          "prompt": "How many Miss Pelicoes are there, and how do they wear their hair?",
+          "facilitatorNotes": [
+            "Twelve; some wear braids and some wear curls."
+          ],
+          "evidence": [
+            "Were twelve sweet little girls;",
+            "Some wore their hair in pigtail plaits,"
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-05-q2",
+          "prompt": "The poem tells us they had dinner every day and could all talk. Is that surprising? Why does the poem tell us?",
+          "facilitatorNotes": [
+            "No, almost everyone does. That is the joke: the poem talks about ordinary things as if they were wonderful. Children may enjoy adding their own “amazing” ordinary facts about themselves."
+          ],
+          "evidence": [
+            "A not uncommon thing at all,",
+            "That all of them could talk."
+          ]
+        },
+        {
+          "id": "reading-k-greenaway-under-window-1880-05-q3",
+          "prompt": "They were taught “To do the things they didn’t like.” Does the poet think that was a good thing? Why does the poem end with “nothing more to say”?",
+          "facilitatorNotes": [
+            "The poet seems to tease: girls taught only to be good and polite have nothing interesting left to tell about. Some children will say learning to do what you ought is good; others will say the Pelicoes sound dull. Both can use the last stanzas."
+          ],
+          "evidence": [
+            "To do the things they didn’t like,",
+            "I’ve nothing more to say."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-greenaway-under-window-1880-06",
       "title": "Prince Finikin and his mamma",
       "sourceId": "greenaway-under-window-1880",
       "genre": "poetry",
@@ -224,7 +351,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-greenaway-under-window-1880-04-q1",
+          "id": "reading-k-greenaway-under-window-1880-06-q1",
           "prompt": "What are Prince Finikin and his mamma doing when they see Dolly?",
           "facilitatorNotes": [
             "Sitting and sipping their tea."
@@ -234,7 +361,7 @@
           ]
         },
         {
-          "id": "reading-k-greenaway-under-window-1880-04-q2",
+          "id": "reading-k-greenaway-under-window-1880-06-q2",
           "prompt": "Why does the Prince think Dolly is strange? Why might she not speak?",
           "facilitatorNotes": [
             "He is sure she cannot be from their town, and because she says nothing he decides she has no voice. She might be shy, or surprised by a rude prince; the poem lets us guess."
@@ -245,7 +372,7 @@
           ]
         },
         {
-          "id": "reading-k-greenaway-under-window-1880-04-q3",
+          "id": "reading-k-greenaway-under-window-1880-06-q3",
           "prompt": "Whose idea is it to give Dolly tea, and who takes the praise? What do you think of the Prince?",
           "facilitatorNotes": [
             "His mamma has the idea; the Prince pours the tea and gives currant-pie, then calls himself a kind prince. Children may say he is boastful, or that he did do something kind; both can point to the last line."
