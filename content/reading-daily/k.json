@@ -203,8 +203,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          123,
-          123
+          125,
+          125
         ],
         "startChar": null,
         "endChar": null,
@@ -1233,8 +1233,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          151,
-          152
+          153,
+          154
         ],
         "startChar": null,
         "endChar": null,
@@ -1929,8 +1929,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          130,
-          131
+          132,
+          133
         ],
         "startChar": null,
         "endChar": null,
@@ -2055,8 +2055,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          161,
-          162
+          163,
+          164
         ],
         "startChar": null,
         "endChar": null,
@@ -3503,17 +3503,17 @@
       "context": "Court cards are the picture cards in a pack. Read both references to shaking the table.",
       "contentNote": null,
       "excerpt": {
-        "locator": "A house of cards; begins “A house of cards\nIs neat and small”; ends “Shake the table!\nThat’s the fun.”.",
+        "locator": "A house of cards; begins “A house of cards\nIs neat and small:”; ends “Shake the table!\nThat’s the fun.”.",
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          185,
-          186
+          187,
+          188
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "68903795ff9121fa94311538e91d4851c5c6ba6f261a0cd56f674425aa4da0a2"
+        "textHash": "a2cec80879877785445aa3e4091a43eecaea9da15fb6eada950a6349f987df18"
       },
       "questions": [
         {
@@ -3823,8 +3823,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          189,
-          190
+          191,
+          192
         ],
         "startChar": null,
         "endChar": null,
@@ -4705,8 +4705,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          166,
-          166
+          168,
+          168
         ],
         "startChar": null,
         "endChar": null,
@@ -5086,11 +5086,11 @@
         "continuesTo": null,
         "blocks": [
           64,
-          64
+          65
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "8a9dd5ee18704790451580258d949a670b1a4200cb76a6305374d7cb2159904f"
+        "textHash": "de7336939d977ba34955213d5ef82bc14b700cf71d95b0dea95b3e52d6bbe4e7"
       },
       "questions": [
         {
@@ -9378,8 +9378,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          91,
-          92
+          93,
+          94
         ],
         "startChar": null,
         "endChar": null,
@@ -9630,8 +9630,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          159,
-          160
+          161,
+          162
         ],
         "startChar": null,
         "endChar": null,
@@ -10134,12 +10134,12 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          104,
-          104
+          106,
+          106
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "934d27263a46f319790a12d7c141dcc65b36e40841a23c8c39700b3c1bd84d9c"
+        "textHash": "8eab5085e772dff88b740d8efd780c2394e691afac54d9f18bcc555f847a80d9"
       },
       "questions": [
         {
@@ -10514,12 +10514,12 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          90,
-          90
+          92,
+          92
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "867e050c7a0f7ad678b7202e79e774efdf6211955315b9575966f87a5636152c"
+        "textHash": "eaf153af41692d3c33f95f531997792373cdb2ae9eb3adfad04d243a30eada7e"
       },
       "questions": [
         {
@@ -10897,7 +10897,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "fd87d66d87b5e33fc5153792c8100487b64db56cb28eb6cfa065eb06e880d9ef"
+        "textHash": "e8729a57a9b8381c8373778520753aee6388e6add8476d87b80637f0b616d7ea"
       },
       "questions": [
         {

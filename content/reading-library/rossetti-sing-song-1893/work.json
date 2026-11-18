@@ -4,7 +4,7 @@
   "author": "Christina Rossetti",
   "title": "Sing-Song: A Nursery Rhyme Book",
   "translator": null,
-  "edition": "London: Macmillan and Co., 1893, with illustrations by Arthur Hughes omitted. Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds every rhyme of the book in printed order as untitled stanzas, as the book prints them; the title page and the contents (an index of first lines) are omitted.",
+  "edition": "London: Macmillan and Co., 1893, with illustrations by Arthur Hughes omitted. Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds every rhyme of the book in printed order as untitled stanzas, as the book prints them; the title page and the contents (an index of first lines) are omitted. On 2026-11-18 every rhyme read by Kindergarten, school nights and calendar readings (blocks 5–6, 8, 10–11, 28–30, 34–36, 38–48, 52, 54–55, 60, 64, 66–85, 87–92, 94–98, 100–102, 104, 115–116, 123, 130–131, 151–154, 159–162, 166, 182, 185–186, 189–190, 196–197 and 205–206), was collated with the Library of Congress copy of this 1893 edition (Internet Archive singsongnurseryr00ros, “New and enlarged edition”, London and New York: Macmillan), its OCR compared word by word after whitespace normalisation and, because the Gutenberg text repeats that OCR’s misreadings (“barlev”, “Jives”), every line also read against the page images; thirteen differences in ten blocks were adopted from the print (listed under acquisition), changing four school nights and five calendar readings, and the other rhymes follow Project Gutenberg 76703 as transcribed.",
   "publicationYear": 1893,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/76703",
@@ -20,14 +20,120 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/76703/pg76703.txt",
     "downloadSha256": "878c65ec43a4519f6b6053052ed9016f844ef6fbf8881b52b35b8180f6c73c9e",
-    "method": "Project Gutenberg plain text (pg76703.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page and the first-line contents omitted; every blank-line separated group from the first rhyme (“Angels at the foot,”) to the last became one stanza, line breaks kept and no leading indentation present. The rhymes are untitled in the book, so the work has no headings. Typographic quotes and dashes kept as transcribed. Every Kindergarten night from this book was located block for block."
+    "method": "Project Gutenberg plain text (pg76703.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page and the first-line contents omitted; every blank-line separated group from the first rhyme (“Angels at the foot,”) to the last became one stanza, line breaks kept and no leading indentation present. The rhymes are untitled in the book, so the work has no headings. Typographic quotes and dashes kept as transcribed. Every Kindergarten night from this book was located block for block. Thirteen corrections from the 2026-11-18 collation with the 1893 scan (Internet Archive singsongnurseryr00ros), each decided on the page image: “before the morn;” (block 5), “Spring blossoms and youth:” (block 52), “pass by you;” (block 60), “1 and 1 are 2—” (block 66), “no mouth there;” and “thumb or finger;” (block 90) and “neat and small:” (block 185) take the print’s punctuation where Gutenberg has none; “Bluff seafaring men” (block 70) drops Gutenberg’s full stop, which the print does not have; in “What is pink?” (block 88) “barley” replaces “barlev”, “What is yellow?” has the print’s question mark where Gutenberg has a colon, and “the grass is green,” its comma where Gutenberg has a full stop; “The city mouse lives” (block 94) replaces “Jives”; and “hold the cat,” (block 104) has the print’s comma where Gutenberg has a full stop. The printed stanza breaks in If a pig wore a wig and Mother shake the cherry-tree, which the transcription had run together, were restored on 2026-11-18 (each is now two stanza blocks)."
   },
   "scope": {
     "complete": true,
-    "note": null
+    "note": null,
+    "collated": [
+      [
+        5,
+        6
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        28,
+        30
+      ],
+      [
+        34,
+        36
+      ],
+      [
+        38,
+        48
+      ],
+      [
+        52,
+        52
+      ],
+      [
+        54,
+        55
+      ],
+      [
+        60,
+        60
+      ],
+      [
+        64,
+        65
+      ],
+      [
+        67,
+        86
+      ],
+      [
+        88,
+        94
+      ],
+      [
+        96,
+        100
+      ],
+      [
+        102,
+        104
+      ],
+      [
+        106,
+        106
+      ],
+      [
+        117,
+        118
+      ],
+      [
+        125,
+        125
+      ],
+      [
+        132,
+        133
+      ],
+      [
+        153,
+        156
+      ],
+      [
+        161,
+        164
+      ],
+      [
+        168,
+        168
+      ],
+      [
+        184,
+        184
+      ],
+      [
+        187,
+        188
+      ],
+      [
+        191,
+        192
+      ],
+      [
+        198,
+        199
+      ],
+      [
+        207,
+        208
+      ]
+    ]
   },
   "text": {
-    "blocks": 215,
-    "sha256": "c5a267b23dfcc0225668dd1eb7a6a7a5f7285d548c3a20e46c30e28465552557"
+    "blocks": 217,
+    "sha256": "2a5d2fcdd64ed8cff24c55a29438fae7e68145de2ed751c8192530f948fcbf9b"
   }
 }

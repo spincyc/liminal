@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "coleridge-pretty-lessons-1853",
+  "readings": [
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-01",
+      "title": "The Months",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the year go round, one month at a time.",
+      "focus": "Each month brings its own weather, flowers, animals or treats, from January snow to Christmas in December.",
+      "context": "Sara Coleridge wrote this poem to help her son learn the months, and it became famous on its own. Dams are mother sheep; gilliflowers are sweet-smelling flowers; sheaves of corn are bundles of cut grain, and the harvest home is the end of harvest; a pheasant is a large bird; sportsmen here are hunters. These are English seasons, and your months may look different.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Months,” the complete poem; opens “JANUARY brings the snow, Makes our feet and fingers glow.”; closes “Chill December brings the sleet, Blazing fire, and Christmas treat.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8991aad8cdb677ddaaa2a98ca2ef651fd15bc6c9c1f69b5a398e778e74524ab7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q1",
+          "prompt": "What does January bring, and what does it do to our feet and fingers?",
+          "facilitatorNotes": [
+            "Snow, which makes feet and fingers glow with cold."
+          ],
+          "evidence": [
+            "JANUARY brings the snow,",
+            "Makes our feet and fingers glow."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q2",
+          "prompt": "Which month brings lambs, and which brings roses?",
+          "facilitatorNotes": [
+            "May brings lambs; June brings tulips, lilies and roses. Children can find their birthday month and hear what the poem gives it."
+          ],
+          "evidence": [
+            "May brings flocks of pretty lambs,",
+            "June brings tulips, lilies, roses,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-01-q3",
+          "prompt": "Which month in the poem is most like this month where you live, and which is least like it?",
+          "facilitatorNotes": [
+            "Answers depend on where the family lives; ask for the poem’s line and one difference. This helps children notice that a poem describes one place and its seasons."
+          ],
+          "evidence": [
+            "Dull November brings the blast,",
+            "Chill December brings the sleet,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-02",
+      "title": "The Suspicious Cock and Hen",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow how one unkind remark sets off a farmyard uproar.",
+      "focus": "The cock and hen accuse an innocent cat and so give her the very idea they feared.",
+      "context": "Suspicious means quick to think someone is up to no good. Intent means plan; in a trice means in an instant; dame means wife. Clacking, gobbling and quacking are farmyard noises, so make them as you read. The last verse gives the poem’s lesson.",
+      "contentNote": "The cat seizes a chick, and the old woman threatens to beat the noisy animals.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Suspicious Cock and Hen,” the complete poem; opens “A COCK and a Hen Stepp’d out of their pen, And quickly beginning to chat, Said Cock to…”; closes “…return; And making a noise In birds, beasts, and boys, It is but a silly concern.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          30
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a42502841afb96e2c5d26ebe9b477b212d25d2e8e489d2efff5ee4621b3cf4e1"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q1",
+          "prompt": "What does the cock think the cat is up to?",
+          "facilitatorNotes": [
+            "Prowling about to steal their chickens."
+          ],
+          "evidence": [
+            "Pray look at that ugly old cat.",
+            "To steal our sweet Chickens away;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q2",
+          "prompt": "What was the cat really doing, and what gave her the idea of taking a chick?",
+          "facilitatorNotes": [
+            "She was only catching mice; the hen’s silly words put the idea of seizing a chick into her head."
+          ],
+          "evidence": [
+            "But merely on catching of Mice;",
+            "First put in her head"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-02-q3",
+          "prompt": "The poem says “ill-natured speech provokes an ill-natured return.” What does that mean in this story?",
+          "facilitatorNotes": [
+            "The hen spoke unkindly to the cat, and the cat answered by doing the very thing she was accused of; then everyone’s noise made it worse. Children may say “be kind and kindness comes back”; ask whether the cat was right to grab the chick, since in the end she gives it up."
+          ],
+          "evidence": [
+            "That ill-natured speech",
+            "Provokes an ill-natured return;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-03",
+      "title": "The Nightingale",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear two different ideas about the same bird’s song.",
+      "focus": "Poets call the nightingale’s song sad, but this poem says she is merry, and sad only when she loses her nest.",
+      "context": "A nightingale is a small brown bird that comes to England in spring and sings at night. Poets called her Philomel, a name from an old sad story. To vow and to aver both mean to say firmly; her pipe is her song; keen regret is sharp sorrow. Storks and starlings are other birds.",
+      "contentNote": "The last verse speaks of boys robbing the bird’s nest.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Nightingale,” the complete poem; opens “IN April comes the Nightingale, That sings when day’s departed; The poets call her…”; closes “…Stork or Starling; What mother would not weep and cry _To lose_ her precious darling.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          95,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "efe89d0ed42a79fad797ab61391928ba00dfb1b4eb4e34b59295b8422778ad74"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q1",
+          "prompt": "When does the Nightingale sing?",
+          "facilitatorNotes": [
+            "When the day has gone, at night. She comes in April."
+          ],
+          "evidence": [
+            "That sings when day’s departed;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q2",
+          "prompt": "What do the poets say about her song, and what does this poem say instead?",
+          "facilitatorNotes": [
+            "The poets say she is broken-hearted and her song sounds like sorrow; this poem says she is merry, with a clear and thrilling song and no worries."
+          ],
+          "evidence": [
+            "And vow she’s broken-hearted.",
+            "No, ’tis the merry Nightingale,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-03-q3",
+          "prompt": "When does the Nightingale really grieve? Do you think she is right to?",
+          "facilitatorNotes": [
+            "When boys have robbed her nest, as any mother bird would. Children may say anyone would be sad to lose her babies; the poem asks the listener to be kind to nests."
+          ],
+          "evidence": [
+            "She grieves when boys have robb’d her nest,",
+            "What mother would not weep and cry"
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-04",
+      "title": "Monkeys Without Tails",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for clues about who the “monkeys” really are.",
+      "focus": "Two mischievous “monkeys” poke other people’s things down a crack in the floor, and the last lines tell us they are children.",
+      "context": "Sara Coleridge wrote these Pretty Lessons in Verse for her own children; Herbert was her son. To pry is to poke about; Goody Keeper is a made-up name for the woman looking after them; daws are jackdaws, noisy birds; a chink, crevice or crack is a narrow gap; a pencil-case was then a metal holder for a pencil; ivory letters were letter shapes for learning to read; counters are play tokens; half-pence were coins; their betters are the grown-ups. Do not say who the monkeys are until the end.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “Monkeys Without Tails,” the complete poem; opens “THERE were two little Monkeys, who lived up on high, They loved into crannies and corners…”; closes “…Monkeys of whom this odd story I tell Were two silly children whom Herbert knows well!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          120,
+          122
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a1e3e1ebf80b0e2339f56a2a7f0ad349e32a6ff5a9b4f6efae212dfdb8229833"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q1",
+          "prompt": "What do the two monkeys like to do when Goody Keeper turns her back?",
+          "facilitatorNotes": [
+            "Poke about in every corner, looking for a hole or a crack."
+          ],
+          "evidence": [
+            "They loved into crannies and corners to pry;",
+            "Whene’er Goody Keeper was turning her back,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q2",
+          "prompt": "What do they poke down the crack in the floor? Why is that a problem?",
+          "facilitatorNotes": [
+            "Their toys, a pencil-case, letters, grown-ups’ fine things, counters and coins. The crack is so deep that nothing that goes in is ever seen again."
+          ],
+          "evidence": [
+            "So deep that what enter’d it ne’er was seen more,",
+            "When counters, and pennies, and half-pence roll’d in!"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-04-q3",
+          "prompt": "Who are the “monkeys” really? What clues did you notice before the end?",
+          "facilitatorNotes": [
+            "Two silly children whom Herbert knows well, perhaps Herbert himself and his sister. Clues: they have a keeper, a pencil-case and letters, they chatter, and they have no tails. Some children will have guessed early; others will be surprised, which is the fun."
+          ],
+          "evidence": [
+            "But then they had never a tail in the world.",
+            "Were two silly children whom Herbert knows well!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-05",
+      "title": "Signs of Rain",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Collect the clues that rain is coming.",
+      "focus": "Birds and animals all seem to know the weather is changing, each showing it in its own way.",
+      "context": "Long ago country people watched animals to guess the weather. A thrush is a songbird; to devour is to eat up. A hillock is a small hill; trooping means going in a group. Rooks are big black birds, like crows, that live together and chatter. Next time clouds gather, watch the birds together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pretty Lessons, “Signs of Rain,” the complete poem; opens “THE Thrush has been silent for many a long day, But now he sings loudly, and what does he…”; closes “…are discussing the very same matter— While homeward returning how loudly they chatter!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          124,
+          126
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "eca723da49bc5d853ea3930d1a93ab4dc902b5f3d110fb0587f44266ba00d8b0"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q1",
+          "prompt": "Why is the Thrush singing loudly after being silent so long?",
+          "facilitatorNotes": [
+            "He thinks a shower is coming, and after rain there will be worms and slugs for him to eat."
+          ],
+          "evidence": [
+            "He says that he thinks there will soon be a shower,",
+            "And he shall have earth-worms and slugs to devour."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q2",
+          "prompt": "Which other animals seem to know the weather is changing?",
+          "facilitatorNotes": [
+            "The swan brushes the water with her wing, the woodpecker drums, the deer go up the little hill, the swallows dart about, and the rooks chatter."
+          ],
+          "evidence": [
+            "The Woodpecker drums, though she lately was drooping;",
+            "The Swallows are darting and wheeling about,"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-05-q3",
+          "prompt": "What are the Rooks talking about, the poem says? Could birds really know when rain is coming?",
+          "facilitatorNotes": [
+            "The same thing as everyone else: the change in the weather. The poem imagines them discussing it. Birds do often behave differently before a storm, which is why people watched them; children can say what they have noticed."
+          ],
+          "evidence": [
+            "The Rooks are discussing the very same matter—",
+            "While homeward returning how loudly they chatter!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-coleridge-pretty-lessons-1853-06",
+      "title": "The Seasons",
+      "sourceId": "coleridge-pretty-lessons-1853",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear each season described twice, once gloomy and once glad.",
+      "focus": "Every season has a hard side and a happy side, and the poem gives each its turn.",
+      "context": "Sara Coleridge wrote these Pretty Lessons in Verse for her own children. A blast is a strong wind; hop-poles are tall bare poles for climbing plants; a social season is a time for being together; variable means changeable; a zephyr is a soft breeze; garlands on the thorn are blossom on the hawthorn; joyance is joy; sultry means hot and sticky; laburnum is a tree whose hanging yellow flowers are its golden tresses; bowers are shady places; melancholy means sad; relics are what is left; luxuriant means rich and plentiful; to glad is to gladden.",
+      "contentNote": "The last lines speak to pheasants that “must fall for our delight”: in autumn people shot pheasants to eat.",
+      "excerpt": {
+        "locator": "Pretty Lessons, “The Seasons,” the complete poem; opens “WINTER is a dreary time; Then we hear the howling blast, Then the trees are bare as…”; closes “…our sight, Fruits grow ripe; and, glittering pheasants, You must fall for our delight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          258,
+          265
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6e98c74d3d842e4200e4a74baf731f4e81157e76c5cafecf5e6434f97b8177d"
+      },
+      "questions": [
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q1",
+          "prompt": "What makes winter dreary, and what makes it a happy time?",
+          "facilitatorNotes": [
+            "Dreary: howling wind, bare trees, rain and hail. Happy: everyone gathers round the fire with books, pictures, fun and feasting."
+          ],
+          "evidence": [
+            "Then the trees are bare as hop-poles,",
+            "Then we gather round the fire;"
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q2",
+          "prompt": "What makes spring “sweet and merry”?",
+          "facilitatorNotes": [
+            "Blossom on the hawthorn, birds singing in the woods, and lambs and colts being born."
+          ],
+          "evidence": [
+            "Fills the groves with songs of joyance,",
+            "Then the lamb and colt are born."
+          ]
+        },
+        {
+          "id": "reading-k-coleridge-pretty-lessons-1853-06-q3",
+          "prompt": "Every season gets a sad verse and a happy verse. Which season do you like best, and what would you put in its happy verse?",
+          "facilitatorNotes": [
+            "Any season, with a reason. The poem’s pattern shows that even a favourite season has a hard side and even a gloomy one has something to enjoy; children can make up a line of their own."
+          ],
+          "evidence": [
+            "Summer’s a delightful season;",
+            "Autumn time is melancholy;"
+          ]
+        }
+      ]
+    }
+  ]
+}
