@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "brown-saints-and-friendly-beasts-1900",
+  "readings": [
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-01",
+      "title": "Saint Bridget and the King’s Wolf — Part 1: The tame wolf",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice what the countryman fails to look at before he shoots.",
+      "focus": "One hasty mistake and a hot-tempered King put a foolish man in terrible danger.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Saint Bridget is a much-loved saint of Ireland who lived about fifteen hundred years ago. A chamberlain is a king’s chief servant; a dungeon is a dark prison underground; a cell is a small, plain room where a holy person lives.",
+      "contentNote": "A hunter shoots the King’s tame wolf dead with an arrow, and the angry King orders that the man be put to death the next day.",
+      "excerpt": {
+        "locator": "“Saint Bridget and the King’s Wolf,” from the start to the founding of Kildare; opens “EVERY one has heard of Bridget, the little girl saint of Ireland. Her name is almost as…”; closes “…a palace and a park there. And it was in this park that the King's wolf had been killed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-02",
+        "blocks": [
+          5,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3c4df888049769f3ad141dd10ee8ad9b3be00206f36054a4a8cabdbb0be8bef3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q1",
+          "prompt": "How did the King’s tame wolf get into trouble?",
+          "facilitatorNotes": [
+            "He climbed over the high park wall and wandered far from home, frisky because it was his first time out."
+          ],
+          "evidence": [
+            "But one morning he got over the high wall which surrounded the park"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q2",
+          "prompt": "What should the countryman have noticed before he shot? Why didn’t he?",
+          "facilitatorNotes": [
+            "The King’s mark on the wolf’s ear. He was thinking of the gold piece and didn’t stop to think or look closely."
+          ],
+          "evidence": [
+            "without stopping to think about it or to look closely at the wolf, who had the King's mark upon his ear"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q3",
+          "prompt": "The countryman calls himself “the valiant hunter.” Is he? What does the storyteller think of him?",
+          "facilitatorNotes": [
+            "Valiant means brave, but he only shot a tame animal by mistake. The storyteller calls him silly and vain. Some children may feel sorry for him; his mistake was foolish, not wicked."
+          ],
+          "evidence": [
+            "Open to the valiant hunter who has shot a wolf for the King",
+            "too vain of his great deed"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q4",
+          "prompt": "Why does the story stop to tell how a village grew up around Bridget’s little hut?",
+          "facilitatorNotes": [
+            "It shows how much people loved her, and it puts her home right beside the King’s park, close to the trouble. Ask the child to guess what she will do."
+          ],
+          "evidence": [
+            "We will live here, too, where Saint Bridget is."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-02",
+      "title": "Saint Bridget and the King’s Wolf — Part 2: A better wolf",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice how Bridget asks the King, and why her plan works on him.",
+      "focus": "A gift that suits a vain King saves a man’s life, and the lesson is to value friendly creatures.",
+      "context": "Recap: a silly countryman shot the King of Ireland’s tame wolf by mistake, and the hot-tempered King threw him into a dungeon to be put to death. Little Saint Bridget, whose home at Kildare is close to the King’s park, has heard what happened. A chariot is a carriage pulled by horses; bogs of peat are soft, wet ground; “Sire” is a way of speaking to a king; “Sirrah” is an old, rude way of addressing a man.",
+      "contentNote": "In the legend a wild wolf leaps into Bridget’s chariot and is gentle at once; real wild wolves should never be approached. Bridget scolds the man harshly, calling him “Sirrah Stupid.”",
+      "excerpt": {
+        "locator": "“Saint Bridget and the King’s Wolf,” from Bridget hearing of the man’s trouble to the end of the legend; opens “Now Bridget knew the man who had shot the wolf, and when she heard into what terrible…”; closes “…and Bridget came often to see him, so that he had no time to grow homesick or lonesome.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-01",
+        "continuesTo": null,
+        "blocks": [
+          22,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b9bf93863fc9853d9d31abc1cb6b74e36dc07985395fc27d5289d92cb796e8f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q1",
+          "prompt": "How is the white wolf different from the King’s old wolf?",
+          "facilitatorNotes": [
+            "He is wild and has never been touched by a person, yet he lies at Bridget’s feet like a dog. He is also white, and there is no other white wolf in the land."
+          ],
+          "evidence": [
+            "He was no tame wolf, but a wild one, who had never before felt a human being's hand upon him."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q2",
+          "prompt": "How does Bridget show the King that the wolf is tame?",
+          "facilitatorNotes": [
+            "She pulls his ears and puts her hand in his mouth, and he does not snarl or bite."
+          ],
+          "evidence": [
+            "I can put my little hand into his great red mouth, and he will not bite"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q3",
+          "prompt": "Why does the King agree to let the man go? Find more than one reason.",
+          "facilitatorNotes": [
+            "He likes the look of the wolf, he likes Bridget’s eyes, he enjoys her story, and he is vain enough to want a beast no one else has."
+          ],
+          "evidence": [
+            "For he was a vain man, and it pleased him mightily",
+            "he was wonderfully pleased with Saint Bridget's story, also"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q4",
+          "prompt": "Bridget says it is better for two wicked wolves to escape than for one kind beast to be killed. What does she mean? Is she fair to the man?",
+          "facilitatorNotes": [
+            "Think before you kill; friendly creatures are precious. Some children will say the man deserved her scolding; others that calling him “Stupid” is unkind after she saved him. Both can be argued."
+          ],
+          "evidence": [
+            "it is better that two wicked wolves escape than that one kind beast be killed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-03",
+      "title": "Saint Keneth of the Gulls — Part 1: The land-fish",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "See the baby through the gull’s eyes before the story tells us who he is.",
+      "focus": "Wild seabirds are kinder to a lost baby than his own mother was.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Saint Keneth was a holy man of Wales. Gulls are seabirds that catch fish; talons are claws. The gulls call the baby a “land-fish” because they have never seen a human baby out on the sea.",
+      "contentNote": "A baby has been set adrift alone on the sea by his cruel mother. In the legend the gulls rescue him.",
+      "excerpt": {
+        "locator": "“Saint Keneth of the Gulls,” from the start to the story of Keneth’s mother; opens “ONCE upon a time, more than a thousand years ago, a great white sea-gull was circling…”; closes “…she would have been if she could have called him \"Son!\" But that was many years later.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-04",
+        "blocks": [
+          74,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "767f321e84343b3bc3bcccd22d4963fa8fd133bf416e037a5171a8a4e2521ae6"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q1",
+          "prompt": "What does the White Gull think he sees at first, and what does he really find?",
+          "facilitatorNotes": [
+            "He hopes for a fish dinner, then sees “a land-fish” with yellow seaweed on its head: a baby with yellow hair in a floating basket."
+          ],
+          "evidence": [
+            "smooth land-fishes with yellow seaweed growing on its head"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q2",
+          "prompt": "Why do the mother gulls decide the baby must be saved?",
+          "facilitatorNotes": [
+            "His cry sounds like their own word “Cree-e-e,” so they say he speaks their language. Ask the child to make both sounds."
+          ],
+          "evidence": [
+            "He talks our language, he must be saved."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q3",
+          "prompt": "How do the gulls make the baby a soft bed, and what does it cost them?",
+          "facilitatorNotes": [
+            "They pull the soft feathers from their own breasts, though they lay their own eggs on bare rock."
+          ],
+          "evidence": [
+            "they pulled the downy feathers from their breasts"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q4",
+          "prompt": "The storyteller says this “goes to show that birds are sometimes kinder than human folk.” Do you agree, from this part?",
+          "facilitatorNotes": [
+            "The gulls save the baby his own mother sent away. Some children will add that many people are kind too; the word “sometimes” leaves room for that."
+          ],
+          "evidence": [
+            "And it goes to show that birds are sometimes kinder than human folk."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-04",
+      "title": "Saint Keneth of the Gulls — Part 2: Carried home again",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Keep track of who loves Keneth and how each one shows it.",
+      "focus": "Keneth’s wild family of gulls and a deer is the family he chooses.",
+      "context": "Recap: a baby set adrift on the sea by his mother was rescued by a flock of gulls, who carried him in his purple cloth to a rocky ledge above the sea and made him a nest of their own feathers. The baby is Keneth, who will grow up to be a saint. A doe is a female deer. A moor is open, wild land. The Gower peninsula is a stretch of coast in Wales. To revere is to honour deeply.",
+      "contentNote": "A shepherd carries the baby away, and the gulls swoop into his cottage to take him back. Keneth grows up lame, with one leg shorter than the other.",
+      "excerpt": {
+        "locator": "“Saint Keneth of the Gulls,” from the gulls finding food for Keneth to the end of the legend; opens “Now when the gulls had made Keneth this comfortable nest, they next wondered what they…”; closes “…all the wild creatures of shore and forest, who did their kindly best to make him happy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-03",
+        "continuesTo": null,
+        "blocks": [
+          90,
+          105
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "299dc68b7faf10545db71078b5ed8e0d557ae9a8563c06a1ef6eef0777b2e622"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q1",
+          "prompt": "Who feeds baby Keneth, and how did that happen?",
+          "facilitatorNotes": [
+            "A mother Deer, whom the White Gull asked to come; she leaves her own little ones to feed him with her milk and wash him with her tongue."
+          ],
+          "evidence": [
+            "So Keneth found a new mother who loved him far better than his own had done"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q2",
+          "prompt": "The Shepherd takes Keneth home for his wife. Is the Shepherd a bad man?",
+          "facilitatorNotes": [
+            "Not really: his wife has no child, and he thinks he has found a treasure. But Keneth wants his own home and cries for it. Children may weigh this differently."
+          ],
+          "evidence": [
+            "I will take him home to my wife, who has no child of her own."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q3",
+          "prompt": "How do the gulls learn that Keneth is in danger, and who leads them to him?",
+          "facilitatorNotes": [
+            "A breeze carries his cry out over the water, and the Deer guides them to the cottage. Each friend does the part it can."
+          ],
+          "evidence": [
+            "a messenger breeze carried the baby voice out over the water",
+            "Guide us to the place, mother Deer."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q4",
+          "prompt": "Keneth grows up lame. How does the story say he felt about it?",
+          "facilitatorNotes": [
+            "It troubled him very little; he was happy, full of singing and kind words, and the gulls were kind to him."
+          ],
+          "evidence": [
+            "But this troubled Keneth very little, and the gulls were kind."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-05",
+      "title": "Saint Werburgh and Her Goose — Part 1: Grayking and the Steward",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Compare how Saint Werburgh looks at the geese and how Master Hugh looks at them.",
+      "focus": "Two people watch the same geese: one sees friends, the other sees a pie.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Saint Werburgh was an English princess who lived about thirteen hundred years ago. A convent is a home where nuns, women who give their lives to God, live and work; an Abbess is the woman in charge of it, and her cell is her small, plain room. A Steward looks after the money and the farm. Wild geese fly in a V shape, with a leader at the point. Surly and gruffly mean grumpy and rough. “Nay” means no.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Saint Werburgh & Her Goose,” from the start to the Abbess promising that the geese shall be punished; opens “SAINT WERBURGH was a King's daughter, a real princess, and very beautiful. But unlike…”; closes “…did not want to punish them, especially Grayking. But she knew that she must do her duty.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-06",
+        "blocks": [
+          140,
+          155
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7824e718f67ffdd869b1aa4a0c7eb6ba01631f13f6074a0653c7796b3176fd4a"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-05-q1",
+          "prompt": "What kind of princess is Werburgh? How is she different from princesses in fairy tales?",
+          "facilitatorNotes": [
+            "She does not care about princes, pretty clothes or jewels; she wants to do good, help people and grow wise."
+          ],
+          "evidence": [
+            "she cared nothing at all about princes or pretty clothes or jewels"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-05-q2",
+          "prompt": "Why is Grayking Werburgh’s favourite goose? What does she enjoy about watching the geese?",
+          "facilitatorNotes": [
+            "He is the biggest, the leader at the point of the V, and chooses where they eat. She loves watching them waddle and feed the babies."
+          ],
+          "evidence": [
+            "He was the leader and formed the point of the V"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-05-q3",
+          "prompt": "When Master Hugh sees the geese, what does he think? What does that tell you about him?",
+          "facilitatorNotes": [
+            "“What a fine goose pie they would make!” He sees only food, not living creatures."
+          ],
+          "evidence": [
+            "What a fine goose pie they would make!",
+            "Oh, how I wish I had you in my frying-pan!"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-05-q4",
+          "prompt": "Werburgh does not want to punish the geese. Why does she promise to?",
+          "facilitatorNotes": [
+            "They really did steal Hugh’s corn, and she thinks punishing wrong-doing is her duty, even with her friends. Some children will say the geese were only hungry because the worms were gone; that is true too."
+          ],
+          "evidence": [
+            "But she knew that she must do her duty.",
+            "So Grayking and his followers found it hard to get breakfast enough."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-06",
+      "title": "Saint Werburgh and Her Goose — Part 2: Grayking is gone",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 5,
+        "totalMinutes": 13
+      },
+      "challenge": "Watch the geese’s faces and listen to the sound of the flock, before and after.",
+      "focus": "The geese are sorry and forgiven, but the morning they go free their leader has vanished.",
+      "context": "Recap: Saint Werburgh, a princess who became the Abbess, the head of a convent, loves a flock of wild geese and their leader, Grayking. Master Hugh, the convent’s grumpy Steward, says the geese ate his corn and wants them punished; he would love to eat Grayking in a pie. A pen is a fenced place for animals. Reproachfully means in a way that shows you are disappointed. Prodigious means huge.",
+      "contentNote": "Saint Werburgh shakes the geese and whips them lightly as a punishment, and shuts them in a pen for a night. The Steward takes Grayking away.",
+      "excerpt": {
+        "locator": "“Saint Werburgh & Her Goose,” from the Abbess calling the geese to the pen to her promise to question the Steward; opens “When she had put on her cloak and hood she went out into the courtyard behind the convent…”; closes “…\"and if he is guilty I will punish him and make him bring Grayking back to you.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-05",
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-07",
+        "blocks": [
+          156,
+          165
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c95c5f16973d445c32aeb8ee9138de4008dbec0cebe868d9de39587d17b4b58d"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-06-q1",
+          "prompt": "How does Werburgh call the geese? What do they do when they come?",
+          "facilitatorNotes": [
+            "She makes a cry like the geese themselves. They come waddling bashfully, with drooping heads, and stand in a line."
+          ],
+          "evidence": [
+            "Saint Werburgh made a strange cry, like the voice of the geese themselves"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-06-q2",
+          "prompt": "Why do the geese have tears in their eyes? Is it because she hurt them?",
+          "facilitatorNotes": [
+            "No: she hardly ruffled their feathers. They are sorry to have made her sad, because they see she loves them. Talk about whether a punishment is needed when someone is already sorry."
+          ],
+          "evidence": [
+            "because they were sorry to have pained the beautiful Saint"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-06-q3",
+          "prompt": "What does Grayking promise in his heart? How does Werburgh know?",
+          "facilitatorNotes": [
+            "That he and his flock will never steal again, however hungry. She can read the thought in his heart."
+          ],
+          "evidence": [
+            "in his heart he promised that neither he nor his followers should ever again steal anything"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-06-q4",
+          "prompt": "How do the geese fly in without Grayking? What has happened?",
+          "facilitatorNotes": [
+            "All unevenly, not in their trim V, and with no leader; they say the Steward stole him. Werburgh starts to see that Hugh deceived her."
+          ],
+          "evidence": [
+            "not in the usual trim V, but all unevenly and without a leader",
+            "Grayking is stolen by the wicked Steward."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-07",
+      "title": "Saint Werburgh and Her Goose — Part 3: Grayking, arise",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Listen to Master Hugh’s excuses, and to what Saint Werburgh says he ought to have done.",
+      "focus": "The greedy Steward is found out and taught a new way to love animals, and the Saint brings Grayking back.",
+      "context": "Recap: Saint Werburgh, the Abbess of a convent, punished her friends the wild geese for eating Master Hugh’s corn, and told Hugh, the Steward, to feed them and set them free. But when they came back, their leader Grayking was gone, and they said the Steward had stolen him. “Ay” means yes, and quoth means said. Confessed means owned up. A wicket gate is a small gate. Gluttonous means greedy for food.",
+      "contentNote": "The Steward has killed Grayking and eaten him in a pie; he brings back the bones, fearing that the King might have him baked into a pie for the hounds. In the legend the Saint brings the goose back to life.",
+      "excerpt": {
+        "locator": "“Saint Werburgh & Her Goose,” from Master Hugh being questioned to the end; opens “The geese flew away feeling somewhat comforted, and Saint Werburgh sent speedily for…”; closes “…goose of himself if so he might see her again, with all her feathered friends about her.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-06",
+        "continuesTo": null,
+        "blocks": [
+          166,
+          187
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ff5c1c1f561ac75a92d3d9f1758d2ae0b3622f9d44f8e254b051f4065ff552b7"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-07-q1",
+          "prompt": "What excuses does Master Hugh give? Which one is a lie?",
+          "facilitatorNotes": [
+            "First that he does not know, then that a fox stole the goose, then that he did not know she loved it. The fox is a lie; Werburgh says the only fox has black hair and a red, fat face."
+          ],
+          "evidence": [
+            "A fox must have stolen it,",
+            "Ay, a fox with black hair and a red, fat face,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-07-q2",
+          "prompt": "Hugh says he loved Grayking “too well—in a pie.” What does Werburgh want him to learn instead?",
+          "facilitatorNotes": [
+            "To see the beauty of a live creature, not only food; he must study the creatures around the convent and never eat meat again."
+          ],
+          "evidence": [
+            "Can you not see the beauty of a dear little live creature till it is dead and fit only for your table?"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-07-q3",
+          "prompt": "Hugh’s punishment is like the geese’s. How?",
+          "facilitatorNotes": [
+            "He too is shut in the pen, and has porridge to eat, just as the geese did. In the end he learns to love the birds."
+          ],
+          "evidence": [
+            "you shall be confined for two days and two nights in the pen where I kept the geese"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-07-q4",
+          "prompt": "How do you feel about the ending, when Grayking comes back to life? Why might the storyteller add a joke about telling how it felt to be a pie?",
+          "facilitatorNotes": [
+            "Relieved and surprised; it is a wonder of the legend. The joke keeps a sad moment funny and gentle. Some children may find the bones sad; that is a fair feeling to share."
+          ],
+          "evidence": [
+            "Grayking, arise,",
+            "how it felt to be made into pie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-08",
+      "title": "The Ballad of Saint Athracta’s Stags",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Follow the trouble from the King’s order to the snapped chains, and watch how Athracta answers each part of it.",
+      "focus": "A cruel king’s order is answered with kindness, and wild stags do what the old horses cannot.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. This one is a ballad, a story told in rhyming verse. Athracta was an Irish holy woman who lived about fifteen hundred years ago. A lough (say “lock”) is an Irish lake. Pilgrims are travellers on a holy journey. Chargers are war-horses, and a tourney or tournament is a contest of knights. Stags are male deer, and antlers their branching horns. Serfs were poor people who had to work for a lord. A decree is a king’s order, and tardy means slow. “Maidens twain” means two young women. To fell timber is to chop down trees. Nags are old, tired horses. A yoke is the wooden bar that joins animals to a load, and a behest is a wish or order. A realm is a kingdom, and a refuge is a safe place.",
+      "contentNote": "The two women’s hands bleed from chopping wood for the King.",
+      "excerpt": {
+        "locator": "“The Ballad of Saint Athracta’s Stags,” the whole poem; opens “ATHRACTA was a maiden fair, A Prince's daughter she; Down to her feet fell golden hair, A…”; closes “…with the ancient nags, Lived out their days in pleasant ways Athracta's faithful Stags.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          188,
+          228
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1c79a00cf90f2549d2dde527c2c15a342bb1fdcbc88857ffa349e1d04f5b5ac"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-08-q1",
+          "prompt": "Why did Athracta build her hut where seven roads crossed?",
+          "facilitatorNotes": [
+            "So she could give rest to pilgrims caught out at night and food to hungry strangers. Her home is a shelter for anyone who passes."
+          ],
+          "evidence": [
+            "To pilgrims by the night waylaid,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-08-q2",
+          "prompt": "What does the King of Connaught order, and what does Athracta ask him?",
+          "facilitatorNotes": [
+            "Everyone, men and maidens, must help build his fort. She asks to be let off, since they are only two women; he sternly refuses."
+          ],
+          "evidence": [
+            "My serfs must build a fort for me,",
+            "Ye maids must do your part."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-08-q3",
+          "prompt": "Why do Athracta’s eyes fill with tears when she sees the horses?",
+          "facilitatorNotes": [
+            "The old horses, long retired from war, strain weakly at the heavy load; she pities them more than her own bleeding hands."
+          ],
+          "evidence": [
+            "Alack! poor broken things,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-08-q4",
+          "prompt": "When the chains snap, what does Athracta use instead? Why does the King bow his head when he sees it?",
+          "facilitatorNotes": [
+            "Strands of her own golden hair. He sees that she has a greater power than his law: wild stags obey her out of love, not fear. Some children will say he is ashamed of his cruelty, as the ballad says; others that he is simply amazed. Both fit."
+          ],
+          "evidence": [
+            "Upon the ropes of hair.",
+            "She hath a greater power than law,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-09",
+      "title": "Saint Kentigern and the Robin — Part 1: The fire on the hearth",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Count the boys’ tricks, and notice why each one fails.",
+      "focus": "Jealous schoolboys try again and again to get the best pupil into trouble, and the dead fire answers his breath.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Kentigern (KEN-tee-gurn) became a saint of Scotland and lived about fourteen hundred years ago; Saint Servan was his teacher. A scholar is a pupil who studies, and Latin is the old language the boys learned. Off the pitch means singing out of tune. To be jealous is to feel angry that someone else has what you want. Disgrace is shame and trouble. A hearth is the stone floor of a fireplace, and to kindle is to light. A taper is a thin candle, and a candelabra holds many candles.",
+      "contentNote": "The other boys tease Kentigern and secretly put out the fire so that he will be punished.",
+      "excerpt": {
+        "locator": "“Saint Kentigern & the Robin,” from the start to the boys finding the fire burning in the morning; opens “ONCE upon a time Saint Servan kept a school near Glasgow in Scotland, and many boys, big…”; closes “…to pass, and when he was known far and wide as a Saint even wiser than Servan his master.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-10",
+        "blocks": [
+          229,
+          237
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "871331efd6e269b859a13f1b9fa6b835aac2fc5b4db5f47b5bf4833f28648586"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-09-q1",
+          "prompt": "Why are the other boys jealous of Kentigern?",
+          "facilitatorNotes": [
+            "He is one of the smallest but the best at everything, and Saint Servan loves him best."
+          ],
+          "evidence": [
+            "Kentigern was one of the smallest boys in the school, and yet he stood at the head of all his classes."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-09-q2",
+          "prompt": "The boys try three tricks before the fire. What are they, and why does each one fail?",
+          "facilitatorNotes": [
+            "Laughing while he recites (his answers are always ready); teasing him to make him lose his temper (he is too good-natured); coaxing him into mischief (he loves his master too well). Each time “they had to give this up.”"
+          ],
+          "evidence": [
+            "so they had to give this up"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-09-q3",
+          "prompt": "Why would letting the fire go out be such a serious thing at the school?",
+          "facilitatorNotes": [
+            "There were no matches, lighting a fire by rubbing sticks was slow and hard, and the fire cooked breakfast, warmed the rooms and lit the chapel candles."
+          ],
+          "evidence": [
+            "Matches had not been invented in the year 600"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-09-q4",
+          "prompt": "Kentigern lights the fire again and says “never a word” to the boys. Why doesn’t he tell on them?",
+          "facilitatorNotes": [
+            "He does not want revenge, and he cannot prove what they did. Some children will think he should have told; others that keeping quiet was kinder. The boys find out how it happened only “long, long afterwards.”"
+          ],
+          "evidence": [
+            "said never a word to the sleeping boys who had tried to make mischief for him"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-10",
+      "title": "Saint Kentigern and the Robin — Part 2: Saint Servan’s Robin",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice who tells the truth and who tells a “horrid story,” and how Kentigern shows which is which.",
+      "focus": "The boys’ cruellest trick is undone by a prayer, and the Robin’s song tells the truth.",
+      "context": "Recap: the other boys at Saint Servan’s school were jealous of Kentigern, the smallest and best pupil. They put out the fire he was meant to keep burning, but when he blew on the ashes the whole fireplace burst into flame. A chorister is a choir singer. A falsehood is a lie. The culprits are the ones who did the wrong. A carol is a joyful song.",
+      "contentNote": "The boys kill Saint Servan’s pet robin and pull off its head, then blame Kentigern; in the legend the robin comes back to life.",
+      "excerpt": {
+        "locator": "“Saint Kentigern & the Robin,” from the boys’ second plan to the end; opens “But meanwhile the boys hated him more than ever, when they saw how much better Saint…”; closes “…kind and respectful to a boy over whom some kind Power seemed to keep special charge.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-09",
+        "continuesTo": null,
+        "blocks": [
+          238,
+          255
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1f34219520b140dd0f4437e9579df96c755ee9e7fc7e42ca01451ff215b2a64f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-10-q1",
+          "prompt": "Who was the Robin, and what did he do when Saint Servan sang?",
+          "facilitatorNotes": [
+            "Saint Servan’s pet Robin Redbreast, who ate from his hand and perched on his shoulder, flapping and twittering as if joining the songs."
+          ],
+          "evidence": [
+            "twittering as if he were trying to join in the songs of praise"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-10-q2",
+          "prompt": "What lie do the boys tell? Why is this trick even crueller than the fire?",
+          "facilitatorNotes": [
+            "That Kentigern killed the Robin; some even say they saw him do it. It is crueller because an innocent little bird is killed and Saint Servan is made sad."
+          ],
+          "evidence": [
+            "Look at your Robin whom Kentigern has killed!",
+            "it would cost the life of an innocent little creature"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-10-q3",
+          "prompt": "How does Kentigern feel when he is blamed? How can you tell?",
+          "facilitatorNotes": [
+            "First pale and tearful with sorrow for the bird, then red-cheeked with flashing eyes when the boys accuse him: hurt, and then angry. Ask what his face shows before he says anything."
+          ],
+          "evidence": [
+            "Kentigern turned quite pale with surprise and sorrow",
+            "his cheeks grew red and his eyes flashed"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-10-q4",
+          "prompt": "Why do the guilty boys put their fingers in their ears when the Robin sings?",
+          "facilitatorNotes": [
+            "It feels to them as if the song tells everyone the truth about their jealousy and cruelty. Some children will say the Robin really is telling; others that the boys’ own guilt makes them hear it. Both readings fit “as if.”"
+          ],
+          "evidence": [
+            "as if it told the truth about their jealousy and their cruelty and their falsehood"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-11",
+      "title": "The Ballad of Saint Felix",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Listen for how Saint Felix answers the Captain truthfully and still escapes.",
+      "focus": "An old bishop hides from soldiers, and a little spider’s web saves him.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. This one is a ballad, a story told in rhyming verse. Saint Felix was a bishop, a leader of the Christians, in Nola, a town in Italy, about seventeen hundred years ago, when a Roman emperor was having Christians killed. A pilgrim travels on a holy journey; sandal-shoon are sandals, and a staff is a walking stick. “In sooth” means truly. Forspent means worn out. A cleft is a crack. A dame is a woman.",
+      "contentNote": "Soldiers hunt the old bishop to kill him and threaten to cut off his head; he escapes unhurt. The poem calls the emperor “heathen,” an old word for someone outside the Christian faith.",
+      "excerpt": {
+        "locator": "“The Ballad of Saint Felix,” the whole poem; opens “IT was in sunny Italy Where skies are blue and fair, Where little birds sing all the day,…”; closes “…Saint Felix left his well. What welcome of his folk he had There are no words to tell!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          295,
+          324
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad0fec386596e204a276f1918dba7f2cc41faed5c330eef01cff565fb318cfab"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-11-q1",
+          "prompt": "How does Saint Felix disguise himself, and why?",
+          "facilitatorNotes": [
+            "He takes off his bishop’s robe and dresses as a pilgrim with hat, staff and sandals, so that no one will guess who he is."
+          ],
+          "evidence": [
+            "And donned a Pilgrim's dress,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-11-q2",
+          "prompt": "The Captain asks whether he has met Felix, and Felix says he has not. Is that true?",
+          "facilitatorNotes": [
+            "Yes: nobody can meet himself. He tells the truth in a way that hides who he is. Some children will call it a trick; the ballad says plainly that he spoke the truth."
+          ],
+          "evidence": [
+            "But he had spoken truth,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-11-q3",
+          "prompt": "How does the spider help, and why do the soldiers believe no one has gone through the hole?",
+          "facilitatorNotes": [
+            "She spins a thick web across the gap he crept through; a strong web looks as if nobody had passed for many days."
+          ],
+          "evidence": [
+            "No one has passed this spider's web",
+            "For many and many a day,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-11-q4",
+          "prompt": "Who else helps Saint Felix while he hides in the well? Why must she come “stealthily”?",
+          "facilitatorNotes": [
+            "A Christian woman who brings him bread every day for months; she must come secretly so the spies cannot follow her. His helpers are a tiny spider and an ordinary woman."
+          ],
+          "evidence": [
+            "All stealthily to bring him bread,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-12",
+      "title": "The Ballad of Saint Giles and the Deer",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Watch what Saint Giles does when the hunt bursts in, and what it costs him.",
+      "focus": "A hermit takes the arrow meant for his friend the Deer, and wins over the King who was hunting her.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. This one is a ballad, a story told in rhyming verse. Saint Giles was a hermit, a holy man who lived alone, in France about thirteen hundred years ago; his cell is his home in a cave. Mottled means spotted. “I wis” means surely. A rout is a noisy crowd, and the quarry is the animal being hunted. Hounds bay when they bark on a hunt. A swound is a faint. Ruthful means full of pity. A leech is an old word for a doctor, and a pallet is a straw bed. Pagan is an old word the poem uses for someone who was not a Christian. A liege is someone who serves a king.",
+      "contentNote": "Hunting dogs chase the Deer, and an archer’s arrow wounds Saint Giles; he bleeds and faints, and the King nurses him back to health.",
+      "excerpt": {
+        "locator": "“The Ballad of Saint Giles and the Deer,” the whole poem; opens “ALL in the forest far away Where no one ever came, There dwelt a good man, old and gray,—…”; closes “…of everything Giles with his friendly Deer could dwell Liege to a Christian King.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          481,
+          516
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65a88aeba73f96546520d715699cbaa3595aa5c90ca81e789ab2bf63ebba4021"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-12-q1",
+          "prompt": "How do Saint Giles and the Deer look after each other?",
+          "facilitatorNotes": [
+            "She gives him milk and comes when he calls; he is her friend and keeps her safe. They are a “gentle, loving pair.”"
+          ],
+          "evidence": [
+            "She gave him milk, his simple fare,"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-12-q2",
+          "prompt": "What sounds break the forest silence, and how do they make Saint Giles feel?",
+          "facilitatorNotes": [
+            "A silver horn, halloos and whistles, galloping horses and baying hounds: a hunt. His heart sinks, because he does not love men who hunt to kill."
+          ],
+          "evidence": [
+            "The bloody bay of hounds,",
+            "But at the noise his kind heart fell"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-12-q3",
+          "prompt": "What does Saint Giles do when the archer shoots? What does he mean by “My life for hers”?",
+          "facilitatorNotes": [
+            "He throws out his arm and takes the arrow himself. He means he will give his life to save hers. Ask how brave that was."
+          ],
+          "evidence": [
+            "Saint Giles threw out his arm,",
+            "My life for hers, dost understand?"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-12-q4",
+          "prompt": "How does the King change after he finds Saint Giles? What changed him?",
+          "facilitatorNotes": [
+            "He nurses Giles himself, listens to him, becomes a Christian, and protects the Deer. Giles’s brave kindness won his heart; some children will say the King was kind underneath once he understood."
+          ],
+          "evidence": [
+            "Played nurse until the wound began",
+            "For good Saint Giles had won his heart"
+          ]
+        }
+      ]
+    }
+  ]
+}

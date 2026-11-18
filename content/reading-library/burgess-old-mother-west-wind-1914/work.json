@@ -4,7 +4,7 @@
   "author": "Thornton W. Burgess",
   "title": "Old Mother West Wind",
   "translator": null,
-  "edition": "Boston: Little, Brown, and Company, Illustrated Edition, September 1914. Primary dated Library of Congress copy: https://archive.org/details/oldmotherwestwin00burg_1. The PG 2557 print exemplar is unidentified; every selected excerpt was collated against this 1914 witness, and its wording, spelling and paragraph divisions adopted where they differ. The complete selected narrative pages 41–46, 69–74, 97–101, 115–120 were visually inspected. Decorative initials and small capitals use ordinary text characters; line-end hyphenation is joined; apostrophes are typographic Unicode characters. No illustrations or captions are supplied. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities. Punctuation was corrected to the witness at pp. 42–44 (2026-10-08); elsewhere it was compared at OCR-flagged points. Library text: the whole Project Gutenberg 2557 transcription (textUrl) with typographic apostrophes and single quotation marks and with chapter headings set as number and title on two lines, as the 1914 witness prints them; the nine selected excerpts (Chapter V, and Chapters VIII, XI, XIII and their neighbouring passages, as cited) stand in their collated 1914 form, including its paragraph divisions, spellings such as \"wilful\" and the small capitals of chapter openings. Text outside the selected excerpts follows PG 2557 and was not collated with the witness.",
+  "edition": "Boston: Little, Brown, and Company, Illustrated Edition, September 1914. Primary dated Library of Congress copy: https://archive.org/details/oldmotherwestwin00burg_1. The PG 2557 print exemplar is unidentified; every selected excerpt was collated against this 1914 witness, and its wording, spelling and paragraph divisions adopted where they differ. The complete selected narrative pages 41–46, 69–74, 97–101, 115–120 were visually inspected. Decorative initials and small capitals use ordinary text characters; line-end hyphenation is joined; apostrophes are typographic Unicode characters. No illustrations or captions are supplied. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities. Punctuation was corrected to the witness at pp. 42–44 (2026-10-08); elsewhere it was compared at OCR-flagged points. Library text: the whole Project Gutenberg 2557 transcription (textUrl) with typographic apostrophes and single quotation marks and with chapter headings set as number and title on two lines, as the 1914 witness prints them; the nine selected excerpts (Chapter V, and Chapters VIII, XI, XIII and their neighbouring passages, as cited) stand in their collated 1914 form, including its paragraph divisions, spellings such as \"wilful\" and the small capitals of chapter openings. Text outside the selected excerpts follows PG 2557 and was not collated with the witness. On 2026-11-18 Chapters I–IV, IX, X, XII and XIV–XVI and the headings of Chapters V and XIII (pp. 3–38, 41, 77–94, 105–112, 115, 123–148) were collated word by word with the same 1914 witness, its OCR compared after whitespace normalisation and every difference decided on the page image, and its readings adopted: chapter-opening small capitals, added, dropped and changed words (such as “play” for “lay”, “which”, “when”, “that’s what Old Mother West Wind called it”, “But he couldn’t see around the Big Rock.”), the heading “THE TALE OF TOMMY TROUT WHO DIDN’T MIND”, punctuation, italic emphasis as plain text, and one more paragraph division in Chapter XVI; five Grade 1 calendar readings changed and no school night.",
   "publicationYear": 1914,
   "translationYear": null,
   "url": "https://archive.org/details/oldmotherwestwin00burg_1",
@@ -20,32 +20,24 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/2557/pg2557-images.html",
     "downloadSha256": "4128763cbfb706017e70e558a0bb5b409fee201d2cb448dcc8ba2373cc24c492",
-    "method": "Downloaded Project Gutenberg HTML pg2557-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title and author headings and the contents. Kept: the dedication (its preformatted lines joined into one paragraph) and all sixteen chapters. Whole-text normalisation: every straight single quotation mark becomes a typographic one (’ for apostrophes and closing quotes; ‘ for the four quotation openers ‘Ah!, ‘Oh!, ‘Because and ‘Chug-a-rum); each \"CHAPTER N TITLE\" heading becomes \"N\" and \"TITLE\" on two lines. Then the library blocks covering each of the nine selected excerpts are replaced by the excerpt's own blocks, which hold the selected text as collated with the dated 1914 Little, Brown witness (archive.org oldmotherwestwin00burg_1); each excerpt begins and ends on a transcription paragraph boundary, checked word for word."
+    "method": "Downloaded Project Gutenberg HTML pg2557-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title and author headings and the contents. Kept: the dedication (its preformatted lines joined into one paragraph) and all sixteen chapters. Whole-text normalisation: every straight single quotation mark becomes a typographic one (’ for apostrophes and closing quotes; ‘ for the four quotation openers ‘Ah!, ‘Oh!, ‘Because and ‘Chug-a-rum); each \"CHAPTER N TITLE\" heading becomes \"N\" and \"TITLE\" on two lines. Then the library blocks covering each of the nine selected excerpts are replaced by the excerpt's own blocks, which hold the selected text as collated with the dated 1914 Little, Brown witness (archive.org oldmotherwestwin00burg_1); each excerpt begins and ends on a transcription paragraph boundary, checked word for word. On 2026-11-18 the blocks of Chapters I–IV, IX, X, XII and XIV–XVI were corrected in place to their collated 1914 readings, and the paragraph of Chapter XVI ending “and then he said:” was divided where the witness divides it, so blocks after it moved down by one."
   },
   "scope": {
     "complete": true,
     "note": null,
     "collated": [
       [
-        104,
+        2,
         122
       ],
       [
         194,
-        223
-      ],
-      [
-        277,
-        292
-      ],
-      [
-        340,
-        369
+        442
       ]
     ]
   },
   "text": {
-    "blocks": 442,
-    "sha256": "55f40d753f717a9e16a4e335336c588c5f69a2bc86bdae7b7216995d805cebf6"
+    "blocks": 443,
+    "sha256": "89cddea6a46146d41d7108a0edf33b40fcd4f4ff4b7de16e75347cf195643eb8"
   }
 }
