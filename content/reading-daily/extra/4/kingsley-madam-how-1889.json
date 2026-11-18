@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "kingsley-madam-how-1889",
+  "readings": [
+    {
+      "id": "reading-4-kingsley-madam-how-1889-01",
+      "title": "Madam How and Lady Why: an earthquake in the night (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a writer from a funny experience, to a guess about its cause, to a serious thought.",
+      "focus": "Kingsley is shaken awake by an earthquake in the mountains and tries to work out what caused it.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Earlier he asked a riddle: what has the rattling lid of a kettle to do with the land near his home being lifted out of an ancient sea? The Pyrenees are mountains between France and Spain; a torrent is a rushing stream; box is an evergreen shrub; hepaticas and gentians are mountain flowers. The maid’s French means “Oh, it was only an earthquake; we have one here every six weeks.” Riven means torn open. Kingsley thought most earthquakes were caused by steam underground. Scientists now know that most happen when huge slabs of the earth’s outer layer, called plates, slip suddenly; steam and hot water cause only some small quakes near volcanoes and hot springs.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Earthquakes,” from the answer to the kettle riddle through Kingsley’s serious thoughts in the Pyrenees; opens “The answer to the riddle, I believe, is--Steam has done both. The lid of the kettle…”; closes “…to say with the wise man of old, \"It is of the Lord's mercies that we are not consumed.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          92,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "292ad77ceabddfd5f486283667118ec2bc12b957e486b435e4bd9ebeaf9dc4af"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q1",
+          "prompt": "What did Kingsley dream, and how does he explain the way such a dream can happen?",
+          "facilitatorNotes": [
+            "He dreamed that English travellers below were fighting and broke their bed with a crash. He says a noise can start a long dream that takes no time at all, because the same noise wakes you at the end."
+          ],
+          "evidence": [
+            "they had quarrelled and fought, and broke their bed down with a tremendous crash",
+            "the very same noise which begins the dream, wakes you at the end of it"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q2",
+          "prompt": "Why would no one in the village admit hearing the noise? Why does Kingsley keep the village’s name a secret?",
+          "facilitatorNotes": [
+            "They feared visitors would stay away if they knew about earthquakes every six weeks. Kingsley protects them because they were kind to him, though readers might ask whether visitors deserved to know."
+          ],
+          "evidence": [
+            "afraid to let out that they had earthquakes every six weeks, for fear of frightening visitors away",
+            "because they were really very good people, and very kind to me, I shall not tell you what the name of the place is"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q3",
+          "prompt": "What clues led Kingsley to blame steam, and how sure is he? How does his idea compare with what scientists know now?",
+          "facilitatorNotes": [
+            "Hot springs came out exactly where the granite had cracked the limestone, so he pictured a cracked boiler lid like the kettle’s. He says he is not sure. Today most earthquakes are explained by moving plates, but his careful use of clues and his admission of doubt are still good science."
+          ],
+          "evidence": [
+            "they came out of the rock just where the limestone and the granite joined",
+            "though I am not so conceited as to say I am sure"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q4",
+          "prompt": "Kingsley first laughed at the earthquake. Why did he stop joking?",
+          "facilitatorNotes": [
+            "He realized that a little more force could have destroyed the village, as has happened in many places, and he gave thanks that it had not. Readers can discuss whether laughing first was natural."
+          ],
+          "evidence": [
+            "it would have been no laughing matter then",
+            "I was in no humour to jest any more"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-02",
+      "title": "Madam How and Lady Why: Pliny and the buried cities (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Judge a brave man’s choices, and a writer’s judgments of people long dead.",
+      "focus": "In A.D. 79 Vesuvius erupts, a Roman admiral sails toward it, and three cities are buried.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Vesuvius is a volcano beside the Bay of Naples in Italy. Pliny the Elder was a Roman admiral and writer; his nephew, Pliny the Younger, described his death in letters that still survive. A cutter is a small boat; pumice is light, bubbly volcanic rock; brimstone is sulphur; the Nether Pit means the underworld; a martyr is someone who dies for a cause. The Crystal Palace was a great exhibition hall in London. The printed text has “wells” for “walls.” Scientists now know that volcanoes form where melted rock rises from deep in the earth, often along the edges of its moving plates.",
+      "contentNote": "Pliny dies in the eruption, and many people are buried in the cities. Kingsley calls the cities’ people wicked and thoughtless, a judgment readers may question.",
+      "excerpt": {
+        "locator": "Chapter III, “Volcanos,” from Vesuvius in Roman times through the new cone; opens “For what happened to that same Mount Vesuvius nearly 1800 years ago, in the old Roman…”; closes “…its sending out smoke and stones from its crater, and streams of lava from its sides.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          132,
+          135
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e8620715e4d17a222718975d1dc6100b7007afe53f9d969030edfacb4548b1e"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q1",
+          "prompt": "Why did no one fear Vesuvius before A.D. 79, even though there were signs?",
+          "facilitatorNotes": [
+            "Its crater was overgrown with bushes and wild vines and full of boars and deer, and it had never harmed anyone; the smoking fields nearby seemed harmless too."
+          ],
+          "evidence": [
+            "As for the mountain's being a burning mountain, who ever thought of that?",
+            "It had never harmed any one, and how could it harm them?"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q2",
+          "prompt": "Why did Pliny sail toward the mountain instead of away from it?",
+          "facilitatorNotes": [
+            "For two reasons: it was his duty to help people in danger, and as a man of science he wanted to study the strange cloud."
+          ],
+          "evidence": [
+            "if people were in danger, it was his duty to help them",
+            "he must see this strange cloud"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q3",
+          "prompt": "Pliny told his friend the flames were only burning villages, then slept soundly. Was that brave, kind or foolish?",
+          "facilitatorNotes": [
+            "Perhaps all three: he calmed his frightened friend and showed courage, but the delay nearly trapped them. Kingsley calls him a martyr to duty and science; readers may weigh the risk differently."
+          ],
+          "evidence": [
+            "Pliny persuaded his friend that they were only fires in some villages from which the peasants had fled",
+            "a martyr to duty and to the love of science"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q4",
+          "prompt": "Kingsley calls the people of the cities “wicked” and “thoughtless, luckless.” Does he give evidence for those words? Why might he use them?",
+          "facilitatorNotes": [
+            "He gives no evidence of wickedness; “thoughtless” may mean that they lived happily without worrying about the mountain. As a clergyman he may be warning his readers. Many readers will find it unfair to blame people who could not have known."
+          ],
+          "evidence": [
+            "(I am afraid) as wicked, as people ever were on earth",
+            "what sort of life these thoughtless, luckless people lived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-03",
+      "title": "Madam How and Lady Why: the golden river of fire (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Compare different explanations of the same event, and notice the writer’s own beliefs.",
+      "focus": "Kingsley describes how lava flows, and how gas once stopped a lava stream at a town wall.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. In this chapter he explains that rock from volcanoes, over ages, ends up in the food we eat. Slag and cinders are the rough waste left after melting; the Black Country was an English iron-making district; the Sandwich Islands are now Hawaii; Mount Etna is a volcano in Sicily, and Catania a city below it; St. Agatha is Catania’s patron saint; a battering-ram is a heavy beam for knocking down walls; herbage means grass and plants.",
+      "contentNote": "Kingsley, a Protestant clergyman, calls the Catholic people of Catania “ignorant” for praying to their saint, a judgment that shows the religious prejudice of his time.",
+      "excerpt": {
+        "locator": "Chapter IV, “The Transformations of a Grain of Soil,” from the Scottish saying about whinstones through the fish killed by lava; opens “Now I know that the Scotch have a saying, \"That you cannot make broth out of whinstones\"…”; closes “…and volcanos during the last few years. But we have not time to tell about everything.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          166,
+          171
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c7cf07e53f1f7eb4a0e1b9e917a61f140dc117033f17b7f73356ea9b6ef63c7"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q1",
+          "prompt": "What does the Scottish saying about whinstones mean, and why does Kingsley say it is wrong?",
+          "facilitatorNotes": [
+            "It means you cannot get anything useful out of something useless. Kingsley says that over ages lava breaks down into soil, plants and food, so it does end up in Scottish broth and even in our blood."
+          ],
+          "evidence": [
+            "That you cannot make broth out of whinstones",
+            "can put into your veins things which were spouted up red-hot by volcanos"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q2",
+          "prompt": "Find three surprising things a lava stream does. Which surprises you most?",
+          "facilitatorNotes": [
+            "Stones float on it like corks; it can turn a waterfall into a fire-fall; steam from trees can keep it from touching them, leaving round holes. Readers will choose differently."
+          ],
+          "evidence": [
+            "great stones (if you throw them on it) float on the top",
+            "turning what had been a water-fall into a fire-fall",
+            "a round hole is left in the middle of the lava where the tree was"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q3",
+          "prompt": "Why did the lava stop at the wall of Catania? Compare the townspeople’s explanation, the learned men’s and Kingsley’s own.",
+          "facilitatorNotes": [
+            "The townspeople credited St. Agatha; the learned men found that gas jets blew the lava back from the wall until it cooled. Kingsley accepts the natural cause but still thanks God, working through nature’s laws. Readers may notice that he scorns one religious explanation while giving another."
+          ],
+          "evidence": [
+            "All the inhabitants said, of course, that St. Agatha had done it",
+            "it actually blew itself back from the wall",
+            "simply Him who can preserve, just as He can destroy"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q4",
+          "prompt": "How does Kingsley use lava to explain fossil fish found twisted in heaps? Is his reasoning convincing?",
+          "facilitatorNotes": [
+            "Lava and poisonous gases kill fish suddenly in the sea, so fish found twisted as if they died violently may have died that way. It is a reasonable guess from evidence, but he does not show that it is the only cause."
+          ],
+          "evidence": [
+            "twisted (as I have seen them) as if they had died suddenly and violently"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-04",
+      "title": "Madam How and Lady Why: what good is a volcano? (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Look past first appearances, and test the comparisons a writer uses to explain.",
+      "focus": "Kingsley argues that destructive lava and ash become the richest soil in the world.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. In the passage before, he described lava streams that burn and bury everything in their path. Lucerne is alfalfa, a crop for animals; Madeira is an island in the Atlantic; obsidian is natural black volcanic glass; the Lothians are farmland round Edinburgh; potash, magnesia and silicates are minerals plants need; carbonic acid gas is carbon dioxide; to silt is to spread fine soil. Skaptar Jokull is a volcano in Iceland. His main point, that volcanic soils are often very rich, is still accepted.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “The Transformations of a Grain of Soil,” from the question of what use lava can be through the ashes carried from Iceland; opens “And now you will ask me, with more astonishment than ever, what possible use can there be…”; closes “…over the north of Scotland, and even into Holland, hundreds of miles to the south.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          172,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "67a547492e3d9b4b1b18c888b26f052405fe71c6cdc340d1dc3cc5ccc7f28758"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q1",
+          "prompt": "How does cooled lava look, and what saying does Kingsley use to warn against judging it by its looks?",
+          "facilitatorNotes": [
+            "It looks like a river of rough black blocks, the most hideous and useless thing you could see. He quotes Jesus’ saying, “judge not according to the appearance,” and applies it to nature."
+          ],
+          "evidence": [
+            "you would think it the most hideous and the most useless thing you ever saw",
+            "judge not according to the appearance, but to judge righteous judgment"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q2",
+          "prompt": "What evidence does Kingsley give that lava streams are “not such very bad neighbours”?",
+          "facilitatorNotes": [
+            "What he has seen: farms, crops and vineyards right at the edges of lava streams. What he has heard: that volcanic soils are the richest in the world, as on Madeira, where thin soil over lava grew famous grapes."
+          ],
+          "evidence": [
+            "happy homesteads, rich crops, hemp and flax",
+            "are generally the richest soils in the world"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q3",
+          "prompt": "Kingsley calls rain Madam How’s “water-spade.” What does the rain do to lava, and how long does it take?",
+          "facilitatorNotes": [
+            "It wears the lava down bit by bit and spreads it over the land as rich soil, century after century and age after age."
+          ],
+          "evidence": [
+            "that delicate little water-spade of hers, which we call rain",
+            "century after century, and age after age, she digs the lava stream down, atom by atom"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q4",
+          "prompt": "Kingsley compares Madam How to a chemist and to a rough workwoman. Choose one comparison: what does it help you see, and what does it leave out?",
+          "facilitatorNotes": [
+            "The chemist shows rocks being melted and mixed into useful substances; the rough workwoman shows that eruptions are violent, while the slow giving-away is gentle. Both make nature seem to plan, which a scientist might not accept. Readers may choose either."
+          ],
+          "evidence": [
+            "Madam How works continually like a chemist in his laboratory",
+            "if Madam How has been a rough and hasty workwoman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-05",
+      "title": "Madam How and Lady Why: the fairy tale of the Ice Age (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Tell what Kingsley knew from evidence apart from what he guessed, and test the name he gives his history.",
+      "focus": "Kingsley tells the history of Ice Age Britain as a fairy tale in chapters.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. The Ice Age ended about 12,000 years ago. Scratlings are goblins of old folk tales; Norfolk is a county in eastern England; buck-bean and horn-wort are water plants; Larmer’s and Heath pond were near his home; the Lena is a river in Siberia; a carcase is a dead body; boulder-clay is clay full of stones. The lines of poetry come from Coleridge’s “The Rime of the Ancient Mariner.” Science has changed since he wrote: scientists now think the boulder-clay, and the sea shells high on the mountains, were mostly pushed there by great sheets of ice rather than left when the land sank under the sea, and that hippopotamuses lived in Britain during a warm period rather than visiting in summer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “The True Fairy Tale,” from the start of the tale through the return of the beasts; opens “And now I will tell you a fairy tale: to make you understand it at all I must put it in…”; closes “…lion (I cannot say which), as large as the largest Bengal tiger now to be seen in India.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          222,
+          227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a510b849e868431e699f61a193b1a4bb09a1438683ec2cc79ecb5a62d1b39334"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q1",
+          "prompt": "Which animals in the first part of the tale are familiar, and which are strange? Why does Kingsley begin with the familiar ones?",
+          "facilitatorNotes": [
+            "Deer, beavers and water-rats are familiar; woolly elephants and rhinoceroses and hippopotamuses are strange. Starting with the familiar makes the land seem real before he says, “now begins the fairy tale.”"
+          ],
+          "evidence": [
+            "There were honest little water-rats too",
+            "there wandered about great herds of elephants and rhinoceroses"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q2",
+          "prompt": "How could hippopotamuses, hyenas and elephants have reached England?",
+          "facilitatorNotes": [
+            "Over land that is now sea: Italy and Sicily were joined to Africa, Gibraltar may have been joined to Spain, and there was no English Channel."
+          ],
+          "evidence": [
+            "were joined to the coast of Africa",
+            "for there was no British Channel then to stop them"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q3",
+          "prompt": "What evidence does Kingsley give that the land was drowned under icy sea? How do scientists read that evidence now?",
+          "facilitatorNotes": [
+            "Arctic shells high on mountainsides, and boulders too big for anything but icebergs to carry. Scientists now think great ice sheets moved most of them. His reasoning from clues was sound even though the explanation has changed."
+          ],
+          "evidence": [
+            "beds of shells belonging to the Arctic regions nearly two thousand feet high upon the mountain side",
+            "blocks of stone so enormous, that nothing but an iceberg could have carried them"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q4",
+          "prompt": "Why does Kingsley call this true history a “fairy tale”? Is that a good name for it?",
+          "facilitatorNotes": [
+            "It is as strange as any fairy tale, he tells it in chapters, and he promises it will explain how people came to believe in fairies. Some readers may say the name makes facts sound made up; others that it makes them more exciting."
+          ],
+          "evidence": [
+            "I call it a fairy tale, because it is so strange",
+            "And this is the first chapter of my fairy tale."
+          ]
+        }
+      ]
+    }
+  ]
+}
