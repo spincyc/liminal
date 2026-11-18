@@ -595,6 +595,163 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-09",
+      "title": "Robinson Crusoe: a planter in the Brasils",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the business story step by step, and mark each place where the old narrator stops to judge his younger self.",
+      "focus": "Crusoe prospers by careful advice and trade, finds himself in the very “middle station” his father recommended, and cannot rest in it.",
+      "context": "Daniel Defoe published Robinson Crusoe in 1719, presenting it as the true memoir of a sailor; this is an 1808 edition. Crusoe tells his story as an old man. Recap: captured by a Moorish pirate from Sallee and enslaved, Crusoe escaped in a boat with a boy, Xury, and was picked up off Africa by a Portuguese captain, who treated him generously and bought Xury from him. In the 1650s Brazil was a Portuguese colony whose sugar and tobacco plantations were worked by enslaved Africans. An ingenio (Crusoe spells it “ingeino”) is a sugar plantation with its mill; a procuration is a written authority to act for someone; a servant “under bond” worked for a fixed number of years. Crusoe had left part of his money in London with the widow of an English captain.",
+      "contentNote": "Crusoe regrets selling Xury because he needs labour, and he buys an enslaved African as one of his first purchases; the narrator treats this as ordinary business.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from Crusoe’s settling in Brazil through his reflection that he will cast himself into “the deepest gulf of human misery”; opens “I had not been long here, but being recommended to the house of a good honest man like…”; closes “…fell into, or perhaps could be consistent with life and a state of health in the world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          76,
+          88
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "80f4927767547444d68edc9af8ed6b79066b09e5c65a40563aa3071e611a2e57"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-09-q1",
+          "prompt": "What does the Portuguese captain advise about Crusoe’s money in London, and why is it good advice?",
+          "facilitatorNotes": [
+            "Send for only half, “one hundred pounds sterling,” and “let the hazard be run for the first”: if it arrives, send for the rest; if it is lost, half remains. He also adds tools Crusoe was “too young in my business to think of.”",
+            "The captain plans for “changes and disasters”; Crusoe does not. Ask readers to hold this caution against the decision Crusoe makes at the end of the passage."
+          ],
+          "evidence": [
+            "since human affairs are all subject to changes and disasters",
+            "let the hazard be run for the first"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-09-q2",
+          "prompt": "Crusoe now says he “had done wrong in parting with my boy Xury.” Why does he think so, and what does that reason leave out?",
+          "facilitatorNotes": [
+            "He needs help on the plantation; Xury’s labour is what he misses. He says nothing here about Xury’s own wishes or freedom.",
+            "The narrator judges his younger self often, but not on this point. Readers can notice the limits of his moral vision without the novel pointing them out, and can compare how differently he spoke of Xury on the voyage."
+          ],
+          "evidence": [
+            "now I found, more than before, I had done wrong in parting with my boy Xury"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-09-q3",
+          "prompt": "Crusoe used to say he lived “just like a man cast away upon some desolate island.” What does the older narrator do with that complaint?",
+          "facilitatorNotes": [
+            "He calls it “just” that the “truly solitary life” he complained of should later become his real lot. Heaven, he suggests, may make people “exchange” their state for a worse one to teach them their “former felicity.”",
+            "This is dramatic irony and a lesson in Providence at once. Students can ask whether the punishment fits a careless remark, or whether the narrator is reading his life backwards for a pattern."
+          ],
+          "evidence": [
+            "I lived just like a man cast away upon some desolate island, that had nobody there but himself",
+            "that the truly solitary life I reflected on in, an island of mere desolation should be my lot"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-09-q4",
+          "prompt": "Crusoe has reached “the very middle station” his father recommended. Why is he not content, and how does he explain his restlessness?",
+          "facilitatorNotes": [
+            "He could have done the same “in England among my friends.” As he grows richer his head fills with “projects and undertakings beyond my reach,” “a rash and immoderate desire of rising faster than the nature of the thing admitted.”",
+            "He calls himself “the wilful agent of all my own miseries.” Some readers accept his self-judgment; others see a man who is simply ambitious, and a narrator who sees it all as sin only afterwards."
+          ],
+          "evidence": [
+            "I was coming into the very middle station, or upper degree of low life, which my father advised me to before",
+            "a rash and immoderate desire of rising faster than the nature of the thing admitted",
+            "I was still to be the wilful agent of all my own miseries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-10",
+      "title": "Robinson Crusoe: the voyage of 1650 and the wreck",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Trace the ship’s course and the two storms, then slow down for the landing: read it as a set of separate waves, each one a new problem.",
+      "focus": "A voyage begun on an ominous anniversary ends in shipwreck; Crusoe alone reaches land, and compares himself to a condemned man reprieved.",
+      "context": "Daniel Defoe published Robinson Crusoe in 1719, presenting it as the true memoir of a sailor; this is an 1808 edition. Recap: Crusoe has prospered for four years as a tobacco planter in Brazil. Fellow planters short of labour asked him to sail as supercargo (the officer who manages the trading) on a secret voyage to Guinea in West Africa, to buy enslaved Africans and land them privately on their plantations; he agreed, made a will, and named the Portuguese captain who once rescued him as his heir. Hull is the English port he left against his parents’ wishes. “The line” is the equator; calenture is a tropical fever; the Amazones and Oronoque are the Amazon and Orinoco rivers; Barbadoes was an English colony in the Caribbean. Den wild zee is Dutch for “the wild sea”; a coup-de-grace is a finishing blow; to “let him blood” was a medical practice of opening a vein.",
+      "contentNote": "The voyage’s purpose is to buy enslaved people; sailors die of fever and drown in the storm and the wreck.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from Crusoe’s going on board for Guinea through his reaching the shore alive; opens “But I was hurried on, and obeyed blindly the dictates of my fancy rather than my reason:…”; closes “For sudden joys, like griefs, confound at first.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          95,
+          112
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9b8653ca5a24ffa88916b0593deae40027229af1ac35360fa19044e2f4bc5a53"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-10-q1",
+          "prompt": "Why does the narrator point out that he sailed on “the same day eight years” after leaving home? What pattern does he see?",
+          "facilitatorNotes": [
+            "He reads his life as a repeated act of disobedience: he went “to act the rebel to their authority, and the fool to my own interest,” and now repeats it. The date becomes a sign of Providence.",
+            "Readers may find the coincidence meaningful within the book’s religious frame, or see a narrator arranging his memories to fit a lesson."
+          ],
+          "evidence": [
+            "being the same day eight years that I went from my father and mother at Hull, in order to act the rebel to their authority, and the fool to my own interest"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-10-q2",
+          "prompt": "What cargo does the ship carry, and what was it for? For what does Crusoe blame himself in going, and what does he not blame himself for?",
+          "facilitatorNotes": [
+            "Beads, glass, “little looking-glasses,” knives and hatchets, “such toys as were fit for our trade with the Negroes”: goods to exchange for enslaved people. He blames himself for obeying “fancy rather than my reason” and leaving a prosperous plantation.",
+            "He never questions the trade itself. Some readers note that the wreck punishes the voyage in the story’s scheme of Providence; others answer that the narrator still describes it only as a bad business decision. Ask students what each reading rests on."
+          ],
+          "evidence": [
+            "such toys as were fit for our trade with the Negroes",
+            "But I was hurried on, and obeyed blindly the dictates of my fancy rather than my reason"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-10-q3",
+          "prompt": "How does Defoe make the passage through the surf feel real? Choose two details and explain what each shows about Crusoe’s mind in danger.",
+          "facilitatorNotes": [
+            "He describes method as well as terror: to “hold my breath, and raise myself upon the water,” fear that the wave will “carry me back again,” clinging to a rock until the wave abates. Numbers (“twenty or thirty foot deep,” “not two seconds”) give precision.",
+            "Even half-drowned, Crusoe thinks practically, the quality that will keep him alive on the island. The sea is “as furious as an enemy,” so the struggle also reads as a fight."
+          ],
+          "evidence": [
+            "my business was to hold my breath, and raise myself upon the water, if I could",
+            "I resolved to hold fast by a piece of the rock, and so to hold my breath, if possible, till the wave went back"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-10-q4",
+          "prompt": "Crusoe ends by comparing himself to “a malefactor” reprieved at the gallows. Why is that comparison fitting, and what does the closing line add?",
+          "facilitatorNotes": [
+            "He has told his life as a story of rebellion deserving punishment, so being saved feels like a pardon he did not earn. The reprieve is so sudden that it could overwhelm the man, as the surgeon’s presence suggests.",
+            "“For sudden joys, like griefs, confound at first” prepares for his confusion in the next pages."
+          ],
+          "evidence": [
+            "when a malefactor, who has the halter about his neck, is tied up, and just going to be turned off, and has a reprieve brought to him",
+            "For sudden joys, like griefs, confound at first."
+          ]
+        }
+      ]
     }
   ]
 }
