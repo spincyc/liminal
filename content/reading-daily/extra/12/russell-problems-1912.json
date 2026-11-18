@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "russell-problems-1912",
+  "readings": [
+    {
+      "id": "reading-12-russell-problems-1912-01",
+      "title": "The Problems of Philosophy, XIV: Hegel and the hooks of reality",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Restate a philosopher’s system fairly before following the objection that undoes it.",
+      "focus": "Whether pure reasoning can prove what the universe as a whole must be.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. Earlier chapters distinguished knowledge by acquaintance, direct awareness of things such as one’s own sense-data, from knowledge of truths about things. A priori reasoning proceeds without appeal to experience; metaphysics asks what reality as a whole is like. G. W. F. Hegel was an influential German philosopher.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “The Limits of Philosophical Knowledge,” from the opening through the conclusion about Hegel’s system; opens “In all that we have said hitherto concerning philosophy, we have scarcely touched on many…”; closes “…out by the whole examination of human knowledge which has occupied our previous chapters.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          280,
+          285
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73a748b564d2e8a00607f573fcf092c758e8485b81f4495b382682bc06fc896d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-01-q1",
+          "prompt": "What hope does Russell call “vain,” and why does he admit it has inspired so many philosophers?",
+          "facilitatorNotes": [
+            "The hope of proving by a priori reasoning religious dogmas, the rationality of the universe, the unreality of matter or of evil. He grants it has been the “chief inspiration” of lifelong study, which makes his denial a serious claim about the limits of the subject, not a dismissal of its motives."
+          ],
+          "evidence": [
+            "the hope of finding reason to believe such theses as these has been the chief inspiration of many life-long students of philosophy",
+            "This hope, I believe, is vain."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q2",
+          "prompt": "How do the anatomist and the hooks illustrate Hegel’s method as Russell presents it?",
+          "facilitatorNotes": [
+            "As an anatomist infers a whole animal from one bone, the metaphysician claims to infer the whole of reality from any piece, because each piece is incomplete and “grapples” to the next. The images make the method vivid; ask whether Russell’s summary seems fair, since he admits he cannot do Hegel justice."
+          ],
+          "evidence": [
+            "Just as a comparative anatomist, from a single bone, sees what kind of animal the whole must have been",
+            "Every apparently separate piece of reality has, as it were, hooks which grapple it to the next piece"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q3",
+          "prompt": "Where exactly does Russell find the confusion, and what does the toothache example show?",
+          "facilitatorNotes": [
+            "The system assumes that a thing’s “nature” includes all truths about its relations, so knowing a thing requires knowing everything. Russell separates acquaintance with a thing from knowledge of truths about it: one can be fully acquainted with a toothache without knowing what the dentist knows of its cause. So having relations does not make those relations logically necessary."
+          ],
+          "evidence": [
+            "I may be acquainted, for example, with my toothache",
+            "Thus the fact that a thing has relations does not prove that its relations are logically necessary."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-01-q4",
+          "prompt": "Russell calls Hegel’s conception “sublime” and his own conclusion “disappointing.” Why include both words?",
+          "facilitatorNotes": [
+            "He concedes the emotional appeal of a harmonious universe while insisting the argument fails, leaving “piecemeal investigation.” Calling the result disappointing to some but in harmony with science shows he is weighing appeal against warrant, the distinction the chapter teaches. Readers may judge whether piecemeal knowledge is a loss or a strength."
+          ],
+          "evidence": [
+            "In this conception, there is undeniably something sublime",
+            "Thus we are left to the piecemeal investigation of the world"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-russell-problems-1912-02",
+      "title": "The Problems of Philosophy, XV: the practical man and the uncertain residue",
+      "sourceId": "russell-problems-1912",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how Russell answers an objection by redefining what kind of value is at stake.",
+      "focus": "Why a subject without settled answers may still be worth studying.",
+      "context": "Bertrand Russell wrote The Problems of Philosophy (1912) as a short introduction for general readers. This last chapter asks why philosophy should be studied at all after so many problems have been left unsolved. Newton’s main work was titled Mathematical Principles of Natural Philosophy; a fortuitous concourse of atoms is a chance collection of particles.",
+      "contentNote": "Russell argues that religious beliefs cannot be proved by philosophy. This is a claim about proof to be examined, not a judgment of any reader’s faith.",
+      "excerpt": {
+        "locator": "Chapter XV, “The Value of Philosophy,” from the opening through the renunciation of philosophical proofs of religious belief; opens “Having now come to the end of our brief and very incomplete review of the problems of…”; closes “…supposed body of definitely ascertainable knowledge to be acquired by those who study it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          297,
+          302
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "16c26688b17708bda0d610a6f62aecd00eafd6a46e86827b62f196587013ceb2"
+      },
+      "questions": [
+        {
+          "id": "reading-12-russell-problems-1912-02-q1",
+          "prompt": "How does Russell distinguish the usefulness of physical science from whatever value philosophy has?",
+          "facilitatorNotes": [
+            "Science benefits countless people who know nothing of it, through inventions; philosophy can benefit others only indirectly, through its effect on those who study it. So its value must be sought in the lives of its students, not in products."
+          ],
+          "evidence": [
+            "Physical science, through the medium of inventions, is useful to innumerable people who are wholly ignorant of it",
+            "it must be only indirectly, through its effects upon the lives of those who study it"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q2",
+          "prompt": "Who is the “practical” man, and why does Russell put the word in quotation marks?",
+          "facilitatorNotes": [
+            "He recognizes only material needs and forgets the mind’s need for food. The quotation marks signal that Russell thinks the label is misapplied: a society with no poverty or disease would still need the goods of the mind."
+          ],
+          "evidence": [
+            "who recognises only material needs, who realises that men must have food for the body, but is oblivious of the necessity of providing food for the mind"
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q3",
+          "prompt": "Russell gives two explanations of philosophy’s lack of definite results. How do they differ?",
+          "facilitatorNotes": [
+            "First, subjects leave philosophy once they can be answered, as astronomy and psychology did, so its uncertainty is partly “more apparent than real.” Second, some of the deepest questions may be insoluble to human intellect. The second admits a real limit that the first does not explain away."
+          ],
+          "evidence": [
+            "the uncertainty of philosophy is more apparent than real",
+            "This is, however, only a part of the truth concerning the uncertainty of philosophy."
+          ]
+        },
+        {
+          "id": "reading-12-russell-problems-1912-02-q4",
+          "prompt": "If philosophy cannot prove answers to its great questions, what does Russell say it still does?",
+          "facilitatorNotes": [
+            "It continues to consider them, makes us aware of their importance, examines approaches, and keeps alive speculative interest that narrow, definite knowledge tends to kill. Readers can debate whether this is enough to justify study, especially in light of his refusal to count proofs of religious beliefs among its results."
+          ],
+          "evidence": [
+            "to keep alive that speculative interest in the universe which is apt to be killed by confining ourselves to definitely ascertainable knowledge",
+            "we shall be compelled to renounce the hope of finding philosophical proofs of religious beliefs"
+          ]
+        }
+      ]
+    }
+  ]
+}
