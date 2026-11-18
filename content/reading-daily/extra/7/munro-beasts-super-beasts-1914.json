@@ -590,6 +590,92 @@
     },
     {
       "id": "reading-7-munro-beasts-super-beasts-1914-10",
+      "title": "The Seventh Pullet",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a small lie as it grows, and notice how the story turns its own joke against the liar.",
+      "focus": "A dull commuter takes a friend’s advice to invent something interesting; the inventions work until something true happens.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Blenkinthrope travels to work in London by train each morning with the same group of men. A pullet is a young hen; Minorcas and Houdans are breeds of chicken. A brevet is an honorary rank. Baron Munchausen is the hero of a famous book of impossible tall tales, so a “Munchausen” is a teller of tall tales. The Bois is a large park in Paris; a legation is a small embassy; a swordstick is a walking stick with a hidden blade. Nemesis was the Greek goddess of punishment for pride. Patience is the British name for solitaire, the card game for one player. “Lee” is a Scots way of saying “lie.” The halfpenny dailies were cheap popular newspapers.",
+      "contentNote": "A woman dies suddenly of shock, and the story treats her death, and her husband’s wish to see it in the papers, as dark comedy. An invented story describes a stabbing.",
+      "excerpt": {
+        "locator": "“The Seventh Pullet,” the whole story; opens ““It’s not the daily grind that I complain of,” said Blenkinthrope resentfully; “it’s the…”; closes “…as the man who was once spoken about and pointed out as the owner of the Seventh Pullet.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          503,
+          548
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f112b7715296ef8863dfdc3c6d600fe267815f0d256c716fcb8dd28624d03abd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-10-q1",
+          "prompt": "Why does Gorworth say no one cares about the potato? What does he think people want to hear, and why?",
+          "facilitatorNotes": [
+            "He says the other commuters lead lives as dull as Blenkinthrope’s and want something “startling, dramatic, piquant” that they can repeat with “personal pride.” His lobster example is a joke, but his point is serious: people like to borrow excitement. The rest of the story tests his advice."
+          ],
+          "evidence": [
+            "The fault is with the potato, not with us,",
+            "Tell them something startling, dramatic, piquant that has happened to yourself or to someone in your family, and you will capture their interest at once."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-10-q2",
+          "prompt": "Blenkinthrope says he would “rather stick to fact.” How does the narrator show his resistance wearing away before and while he tells the lie?",
+          "facilitatorNotes": [
+            "That night his mind adds “little details and improvements”; on the train he speaks “in a voice which he hardly recognised as his own,” then adds a bedridden witness and the chicken breeds, the kind of detail that makes a lie convincing. The narrator calls a fib about chickens “depravity,” a mock-solemn word that makes the moment funny."
+          ],
+          "evidence": [
+            "Unconsciously all sorts of little details and improvements began to suggest themselves.",
+            "how safe and easy depravity can seem once one has the courage to begin"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-10-q3",
+          "prompt": "When Gorworth again says “Invent something,” Blenkinthrope answers “Yes, but what?” What has changed in him, according to the narrator?",
+          "facilitatorNotes": [
+            "He no longer asks whether to lie, only what lie to tell; the narrator describes this in grave, philosophical language (“the ethical standpoint”) for comic effect. Students can also look at the lady from Scotland who answers with a similar story: once other people join in, the lie starts to feel respectable."
+          ],
+          "evidence": [
+            "The ready affirmative coupled with the question betrayed a significant shifting of the ethical standpoint.",
+            "Somehow a lie seems so much less reprehensible when one can call it a lee."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-10-q4",
+          "prompt": "Why is the story of the aunt in Paris a mistake, when the pullet story worked?",
+          "facilitatorNotes": [
+            "The pullet story was small and possible. The Paris story drags in a legation, champagne and a murder, and his aunts all live around London. From then on his companions treat him as a Munchausen and encourage him for fun, so he has an audience but no belief. Gorworth had warned him."
+          ],
+          "evidence": [
+            "it ceased from that moment to command any acceptance as a record of current events",
+            "He had several aunts, but they were all geographically distributed over Greater London."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-10-q5",
+          "prompt": "When his wife dies, what is Blenkinthrope’s first thought, and why does no one print his story? Is the ending funny, sad or both?",
+          "facilitatorNotes": [
+            "He thinks of headlines, and he himself showed her the winning move. Because he is known as a romancer, his one true sensation is dismissed; like the boy who cried wolf, he is not believed when it matters. Readers may find his reaction chilling, the punishment neat, or both; the story ends with him back among beetroots and canaries."
+          ],
+          "evidence": [
+            "Something sensational and real had at last come into his life; no longer was it a grey, colourless record.",
+            "But in both cases his reputation as a romancer stood fatally in the way of the fulfilment of his ambitions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-11",
       "title": "The Blind Spot",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -618,7 +704,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-10-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-11-q1",
           "prompt": "Sir Lulworth refuses to talk about the funeral or “business” until after the bird. What does the lunch conversation tell you about what he values?",
           "facilitatorNotes": [
             "He thinks it disrespectful to the lunch, not only to the dead, to mix them, and he once claimed “clear soup” mattered more than “a clear conscience.” It sounds like harmless wit at first. By the end the joke has become his actual choice. Some readers will find him charming here; it is worth asking whether they still do at the end."
@@ -629,7 +715,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-10-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-11-q2",
           "prompt": "How does Sir Lulworth argue that Sebastien could not have killed the Canon? Which of his arguments does the letter destroy?",
           "facilitatorNotes": [
             "He says Sebastien had nothing to gain and much to lose, and that the inquest found no quarrel between them. The letter supplies the missing quarrel (thrown coffee and an insult), a threat to kill, and Sebastien following the Canon in the Italian Garden, where the body was found. The case against Sebastien now has motive and opportunity."
@@ -641,7 +727,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-10-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-11-q3",
           "prompt": "“Tell me your longitude and I’ll know what latitude to allow you.” Explain the pun. What does it show about how Sir Lulworth judges people?",
           "facilitatorNotes": [
             "Longitude is where you come from; latitude also means freedom or allowance. He excuses Sebastien’s violence because he is “a southerner,” a stereotype about hot tempers. It is clever wordplay that lets him wave away nearly killing a gardener’s boy. Readers can discuss whether the story shares his prejudice or exposes it."
@@ -652,7 +738,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-10-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-11-q4",
           "prompt": "Whose “blind spot” does the title mean? Is the last line a joke, a confession, or both?",
           "facilitatorNotes": [
             "One reading: Sir Lulworth’s moral blind spot, where a great cook outweighs a murder. Another: Egbert’s, since he never imagined how his uncle would react; or the inquest’s, which missed the letter. The last line is witty and appalling at once: he knowingly protects a probable murderer for his cooking. Some readers notice that Sir Lulworth burns the letter without a moment’s doubt, as if he had suspected all along."
@@ -665,7 +751,7 @@
       ]
     },
     {
-      "id": "reading-7-munro-beasts-super-beasts-1914-11",
+      "id": "reading-7-munro-beasts-super-beasts-1914-12",
       "title": "The Feast of Nemesis",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -694,7 +780,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-11-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-12-q1",
           "prompt": "What is Mrs. Thackenbury’s complaint about Christmas presents? What does her list of “people who must not be left out” give away?",
           "facilitatorNotes": [
             "She resents the effort and the monotonous thank-you letters. Her list shows that her gifts are duties: “in the majority of cases I hadn’t thought about the recipients at all,” though every letter thanks her for thinking of them. Clovis builds his whole argument on this admission."
@@ -704,7 +790,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-11-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-12-q2",
           "prompt": "Why, according to Clovis, would a day of revenge be less “perfunctory” than Christmas? Is there any truth inside the joke?",
           "facilitatorNotes": [
             "Christmas forces “gushing” goodwill toward people we hardly like; dislike, by contrast, is sincere, so acting on it would never be routine. The joke exposes how insincere much polite kindness is. It is still a joke: readers can say what the satire hits and what it conveniently ignores, the actual cruelty."
@@ -716,7 +802,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-11-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-12-q3",
           "prompt": "Follow Mrs. Thackenbury’s objections from “I should feel rather a worm” to “His mother would be my enemy for life.” How do they change, and where does the narrator tell us she is being won over?",
           "facilitatorNotes": [
             "Her first objection is moral; the later ones are only practical (they might guess; he might be stung to death; his mother would hate her). Meanwhile her protest sounds “a bit forced,” she is silently making a guest list, and she names a victim herself. Clovis wins without her ever agreeing out loud."
@@ -728,7 +814,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-11-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-12-q4",
           "prompt": "How does the last line return the story to its beginning? Why is it a fitting end for Clovis?",
           "facilitatorNotes": [
             "Mrs. Thackenbury began by complaining that there were too many remembrance days; Clovis ends by finding a benefit in making an enemy: one less Christmas greeting. He turns every objection into an advantage, and the circle shows the story was always about the burden of polite obligations."
@@ -741,7 +827,7 @@
       ]
     },
     {
-      "id": "reading-7-munro-beasts-super-beasts-1914-12",
+      "id": "reading-7-munro-beasts-super-beasts-1914-13",
       "title": "The Dreamer",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -770,7 +856,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-12-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-13-q1",
           "prompt": "Cyprian has “the eyes of a poet or a house agent.” What is the joke? Reread the description: what does it hint about the ending?",
           "facilitatorNotes": [
             "Both see qualities in ordinary things that others miss, the poet for beauty, the house agent to make a sale. The narrator’s “or” deflates the dreamer into a salesman. By the end Cyprian is literally selling things, and his “dream look” deepens as he does."
@@ -780,7 +866,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-12-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-13-q2",
           "prompt": "“I’m not a bargain hunter, but I like to go where bargains are.” How does Mrs. Chemping actually shop? Find two places where she ends with something she did not set out to buy.",
           "facilitatorNotes": [
             "She looks at napkins and leaves, handles decanters and salad bowls and buys seven chrysanthemum vases nobody uses, asks for mauve paper and chooses blue. She buys whatever is cheap. The narrator reports it all with a straight face, which is the joke."
@@ -792,7 +878,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-12-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-13-q3",
           "prompt": "Why does Cyprian say he left his hat at home, and why does he leave the parcels in the cloak-room? Did he plan what happens?",
           "facilitatorNotes": [
             "His reasons sound fussy and innocent, but without a hat he looks like a shop assistant, as his aunt herself realises, and without parcels his hands are free. The narrator’s “Perhaps it had,” and Cyprian being “neither startled nor embarrassed,” suggest it has happened before. Readers can argue for a plan or for a boy seizing a chance; the text hints but never says."
@@ -804,7 +890,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-12-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-13-q4",
           "prompt": "Is Cyprian a dreamer, a thief, or something else? Why might the story end with him selling prayer books to a Canon?",
           "facilitatorNotes": [
             "He takes the store’s goods and the customers’ money, which is theft, though the story never shows him keeping it. Or he is playing a game for its own sake. Selling devotional books to a clergyman adds a last irony to the “dream look.” The title is ironic either way: the dreamer is the most practical person in the shop."
@@ -817,7 +903,7 @@
       ]
     },
     {
-      "id": "reading-7-munro-beasts-super-beasts-1914-13",
+      "id": "reading-7-munro-beasts-super-beasts-1914-14",
       "title": "The Forbidden Buzzards",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -846,7 +932,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-13-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-14-q1",
           "prompt": "What does Hugo want from Clovis, and why can Clovis not simply keep Lanner busy himself?",
           "facilitatorNotes": [
             "Hugo wants Lanner kept away from Betty Coulterneb so that he can propose. Clovis offended Lanner by suggesting his “latest” story was so old a king had told it, so he must work “in a roundabout, impersonal manner,” through the hostess."
@@ -858,7 +944,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-13-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-14-q2",
           "prompt": "“Clovis believed that if a lie was worth telling it was worth telling well.” What makes his lie convincing to Mrs. Olston? Is there anything troubling about it?",
           "facilitatorNotes": [
             "Specific, checkable-sounding detail (the volume of Dresser on hawks and buzzards in Lanner’s luggage), a fear she already has (her husband’s birds), and a foreign story too vivid to doubt. It is troubling because it slanders an innocent man with a violent crime and blames it on others; readers can weigh that against the comedy."
@@ -870,7 +956,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-13-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-14-q3",
           "prompt": "What is funny about the list of things Lanner is shown? Look for what each sight is missing.",
           "facilitatorNotes": [
             "Each attraction is an absence: celery that may grow later, hives with no bees, a mound where the Danes may once have camped, a cottage whose old woman is dead. The anticlimaxes pile up until Lanner flees to town."
@@ -882,7 +968,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-13-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-14-q4",
           "prompt": "Clovis’s plan works: Lanner leaves. So who wins? What does the last sentence do to the whole story?",
           "facilitatorNotes": [
             "Nobody: Hugo never proposes, Lanner was never a danger to the birds, and the buzzards, guarded against an invented threat, are shot by a hairdresser. The flat final sentence makes all the scheming pointless. Readers may find it funny, bleak, or both."
@@ -895,7 +981,7 @@
       ]
     },
     {
-      "id": "reading-7-munro-beasts-super-beasts-1914-14",
+      "id": "reading-7-munro-beasts-super-beasts-1914-15",
       "title": "The Stake",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -924,7 +1010,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-14-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-15-q1",
           "prompt": "Before we hear about Ronnie, Mrs. Attray describes her own card-playing and Eleanor mentions the car. What do these details suggest about Mrs. Attray?",
           "facilitatorNotes": [
             "She excuses her own small gambling as hardly playing, and her car is always “out of order” when Eleanor wants a lift. She is not quite as straightforward as she believes, and Eleanor’s dry remark shows that others notice."
@@ -935,7 +1021,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-14-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-15-q2",
           "prompt": "What has Mrs. Attray done to stop Ronnie gambling? Why does she feel “firm and farseeing,” and what has she not foreseen?",
           "facilitatorNotes": [
             "She stopped his allowance, paid his church money by subscription and his tips by postal order, locked up his overcoat and counted the pheasants. She has removed everything he could sell or spend, but not something he could lend: the household itself."
@@ -947,7 +1033,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-14-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-15-q3",
           "prompt": "Which clues before Pellin’s explanation point to what Ronnie has done?",
           "facilitatorNotes": [
             "Lunch is late, which never happens; Mrs. Attray has been out all morning; the food is dreadful; and even the carefree Ronald looks depressed when he tastes it, because he knows why. Eleanor, who cares about meals, notices first."
@@ -959,7 +1045,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-14-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-15-q4",
           "prompt": "Is Ronnie sorry? What does the final bet, and the last line, tell you about him?",
           "facilitatorNotes": [
             "No: he blames “rotten luck” and immediately bets again, on Eleanor refusing him as a croquet partner, which is safe now that she has eaten his mother’s worst lunch. The only bet he wins is about how much people dislike him. Readers may also note how the story treats the cook as property to be wagered."
@@ -972,7 +1058,180 @@
       ]
     },
     {
-      "id": "reading-7-munro-beasts-super-beasts-1914-15",
+      "id": "reading-7-munro-beasts-super-beasts-1914-16",
+      "title": "Clovis on Parental Responsibilities",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Track an argument in which one speaker wins every exchange by refusing to argue fairly, and decide whether he deserves to win.",
+      "focus": "A proud mother wants to talk about her children; Clovis talks her out of the room.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Clovis Sangrail, a young man who appears in many of his stories, enjoys deflating people he finds pompous. The youthful David is the shepherd boy of the Bible, a favourite subject for painters. Auction bridge is a card game played in partnerships; draughts is the British name for checkers, and halma is another board game. Penal servitude is imprisonment with hard labour. The Turf means horse racing and betting on it; the Stock Exchange is where shares are bought and sold. Petrol is gasoline.",
+      "contentNote": "Clovis jokes about being beaten as a child and about a baby dying.",
+      "excerpt": {
+        "locator": "“Clovis on Parental Responsibilities,” the whole story; opens “Marion Eggelby sat talking to Clovis on the only subject that she ever willingly talked…”; closes ““I’ll take care that you never shall!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          934,
+          957
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3496ea7cb051cb3c0754a5f95fbdc5354f552faafe8998c478e8174f9617f8b9"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-16-q1",
+          "prompt": "Mrs. Eggelby says Eric reminds her of a famous picture of the youthful David. How does Clovis turn this compliment into a reason to dislike Eric?",
+          "facilitatorNotes": [
+            "He takes her figure of speech literally, as if Eric would keep reminding people of the picture during a game of bridge, and says that would be “simply maddening.” The joke sets the pattern for the conversation: Clovis answers what she says, not what she means."
+          ],
+          "evidence": [
+            "That would be sufficient to set me against him, if I saw much of him,",
+            "It would be simply maddening."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-16-q2",
+          "prompt": "What is wrong with Clovis’s proof that bridge is safer for children than draughts?",
+          "facilitatorNotes": [
+            "A chaplain’s memory of “at least two” draughts-players among criminals proves nothing about what makes people criminals. Clovis surely knows this; he is teasing her disapproval of card games. Students can name the trick: a couple of examples presented as if they showed a cause."
+          ],
+          "evidence": [
+            "there was not a single bridge-player. On the other hand, he knew at least two expert draughts-players among them"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-16-q3",
+          "prompt": "“That shows that you were nervous as to how they would turn out.” How does Clovis twist Mrs. Eggelby’s words each time she defends herself?",
+          "facilitatorNotes": [
+            "She says her boys were carefully brought up; he says that shows she feared for them. She says forgotten facts are unimportant; he says forgetting them proves they are important. He reverses every statement, and his claim to have forgotten the difference between right and wrong is designed to shock a woman so sure of it."
+          ],
+          "evidence": [
+            "They have been most carefully brought up, I can assure you that.",
+            "there is some difference, you know, but I’ve forgotten what it is",
+            "The fact that we’ve both forgotten them proves that they are important,"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-16-q4",
+          "prompt": "Mrs. Eggelby says she and Mrs. Shrubley “move in very different circles.” How does Clovis play on her words, and what does his answer suggest about Hildegarde Shrubley?",
+          "facilitatorNotes": [
+            "He takes “circle” literally: Hildegarde does not go round in a circle but lives “a non-stop run,” preferably at someone else’s expense. Her husbands’ reputations and her lobster recipes hint at a fast, unrespectable life that Clovis praises mainly to scandalise his listener."
+          ],
+          "evidence": [
+            "No one who knows Hildegarde could possibly accuse her of moving in a circle,",
+            "her view of life seems to be a non-stop run with an inexhaustible supply of petrol"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-16-q5",
+          "prompt": "At the end Clovis says he has “so enjoyed our little talk about Eric.” Has there been one? How might the last line explain the title?",
+          "facilitatorNotes": [
+            "There has been almost no talk about Eric; Clovis steered away from the children from the start, and he may have been trying to get rid of her. Her silent vow is the one moment of “parental responsibility” in the story: she will protect Eric from Clovis. Readers can decide whether her boasting earned his rudeness."
+          ],
+          "evidence": [
+            "I have so enjoyed our little talk about Eric,",
+            "I’ll take care that you never shall!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-17",
+      "title": "A Defensive Diamond",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Watch one talker defeat another with his own weapon, and look at how a tall tale is built to sound believable.",
+      "focus": "Trapped by the club bore, Treddleford answers each of his stories with a wilder one.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Treddleford and Amblecope belong to the same London club, where members read, dine and talk. Treddleford is reading a book of poems, The Golden Journey to Samarkand (1913), by James Elroy Flecker, set in the old cities of the Middle East and Central Asia; the line printed on its own near the end is quoted from it. The Grand Prix is a famous horse race in Paris; Country Life is a magazine. A bag is the number of birds shot; a runner is a wounded bird that escapes on foot; the guns are the people shooting. A Government Whip keeps a party’s members of Parliament in line, and a by-election is held when one dies. A dogcart is a light carriage and a cob a sturdy horse. Carl Hagenbeck was a famous German dealer in wild animals. Precedence is the right to go first.",
+      "contentNote": "Treddleford’s made-up stories include an elderly woman firing carelessly at other guests and a governess frightened into weeks of illness, both told as jokes.",
+      "excerpt": {
+        "locator": "“A Defensive Diamond,” the whole story; opens “Treddleford sat in an easeful arm-chair in front of a slumberous fire, with a volume of…”; closes “…I take precedence,” he said coldly; “you are merely the club Bore; I am the club Liar.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1102,
+          1120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81538bc88137dc836aeb04834d44666645c668dc0b09e71662fe10faa5900d2c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-17-q1",
+          "prompt": "How does the narrator make Amblecope’s arrival sound like an attack or an illness? Find the words that do it.",
+          "facilitatorNotes": [
+            "Annoyance is an “icy breath”; Amblecope’s mouth is “mobilised” like an army; he is an “intruder” who is “armed” with a magazine; Treddleford’s “season of immunity” is ending. The exaggeration is the joke: a man who talks too much is treated as an invading force."
+          ],
+          "evidence": [
+            "an icy breath of imminent annoyance seemed to creep between the book and himself",
+            "the mouth ready mobilised for conversational openings",
+            "Now his season of immunity was coming to an end."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-17-q2",
+          "prompt": "How does Treddleford stop Amblecope the first time, and what does that reveal about the kind of person Amblecope is?",
+          "facilitatorNotes": [
+            "He threatens to tell a “long and complicated story.” That is the one thing Amblecope cannot stand, because he only enjoys stories told by himself. Treddleford has found the weak point, and he goes on to use it with every topic Amblecope raises."
+          ],
+          "evidence": [
+            "I can’t explain why without going into a long and complicated story.",
+            "long and complicated stories that were not told by himself were abominable in his eyes"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-17-q3",
+          "prompt": "Each of Treddleford’s stories ends with an impossible twist. Pick one and explain how he makes it sound believable before the twist.",
+          "facilitatorNotes": [
+            "He names respectable relatives (an aunt who owns most of Lincolnshire and is vice-president of the YWCA, a bishop), precise places (the Exe near Ugworthy) and small practical details, then saves the impossible part, such as the blotting-paper soaking up a pool, for the last sentence. Authority and detail are the liar’s tools."
+          ],
+          "evidence": [
+            "she is local vice-president of the Young Women’s Christian Association",
+            "The van-load consisted of blotting-paper, and every drop of water in that pool had been sucked up into the mass of spilt cargo."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-17-q4",
+          "prompt": "Watch Amblecope’s replies as the stories go on. What is happening to him, and why can’t he simply call Treddleford a liar?",
+          "facilitatorNotes": [
+            "He snaps a doubt about the pheasant, then falls silent, then speaks in a “tired and dispirited voice” and finally moves away. To accuse a fellow member of lying would be rude in a club, and Treddleford keeps seizing his topics, so the bore is bored into retreat."
+          ],
+          "evidence": [
+            "Rather a long run for a wounded pheasant,",
+            "remarked in a rather tired and dispirited voice"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-17-q5",
+          "prompt": "“You are merely the club Bore; I am the club Liar.” Why does Treddleford feel a “new-born pride”? Is lying a fair defence against a bore? What might the title mean?",
+          "facilitatorNotes": [
+            "He claims that a liar ranks above a bore, perhaps because a liar is at least entertaining. Some readers will cheer; others may notice that his lies made a joke of real-sounding injuries. A diamond can only be cut by another diamond, and the old saying “diamond cut diamond” describes a contest between two equally hard opponents; the title may suggest that Treddleford survives by becoming harder than the bore."
+          ],
+          "evidence": [
+            "a new-born pride was surging in Treddleford’s breast and he waved him back",
+            "you are merely the club Bore; I am the club Liar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-18",
       "title": "The Elk",
       "sourceId": "munro-beasts-super-beasts-1914",
       "genre": "short-story",
@@ -1001,7 +1260,7 @@
       },
       "questions": [
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-15-q1",
+          "id": "reading-7-munro-beasts-super-beasts-1914-18-q1",
           "prompt": "How does Teresa use her fortune? Why does that make Bertie the “centre of interest” for so many mothers?",
           "facilitatorNotes": [
             "Bertie will inherit, so marrying him means marrying the estate; but Teresa enjoys her “powers of selection and rejection” and blocks any girl who gets ahead. Bertie will marry whoever she approves. Marriage here is a contest over property, run by an old woman who likes power."
@@ -1012,7 +1271,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-15-q2",
+          "id": "reading-7-munro-beasts-super-beasts-1914-18-q2",
           "prompt": "Mrs. Yonelet thinks the rescue is a “trump-card.” How does Teresa defeat it without arguing?",
           "facilitatorNotes": [
             "She talks of sugar and muffins, wonders about a mate for the elk, then calmly lists earlier rescues: Sybil, Mirabel Hicks and the gardener’s boy. A “fated” rescue becomes an ordinary event in country life, and Mrs. Yonelet’s drama falls flat."
@@ -1024,7 +1283,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-15-q3",
+          "id": "reading-7-munro-beasts-super-beasts-1914-18-q3",
           "prompt": "Why does the vicar’s wife think Teresa means Bertie to marry the German governess? Does the ending prove her right?",
           "facilitatorNotes": [
             "The governess is the most combative person in the county after Teresa, and installing her would make everyone uncomfortable after Teresa’s death, a pleasure Teresa would enjoy in advance. The story never confirms it, but Mrs. Yonelet believes it, and the ending says the elk “permanently thwarted” Teresa’s plans, which strongly suggests the guess was right."
@@ -1035,7 +1294,7 @@
           ]
         },
         {
-          "id": "reading-7-munro-beasts-super-beasts-1914-15-q4",
+          "id": "reading-7-munro-beasts-super-beasts-1914-18-q4",
           "prompt": "An elk kills a woman, and the story ends happily. How does Saki make the death comic, and are you comfortable laughing?",
           "facilitatorNotes": [
             "The narrator reports it in one flat sentence, credits the elk with a “fit of exceptional moroseness,” and gives it the last laugh over Teresa. Dora decorates its horns every Christmas, grateful that it brought her and Bertie together, “which, of course, was true.” Readers may enjoy the dark irony or feel the governess is mocked even in death; both reactions deserve a hearing."
@@ -1044,6 +1303,264 @@
             "In a fit of exceptional moroseness it had killed the Bickelbys’ German governess.",
             "It was a fearsome beast,",
             "Which, of course, was true."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-19",
+      "title": "The Name-Day",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a timid man into the adventure he never wanted, and decide how much his companion knew all along.",
+      "focus": "A snowstorm strands an English clerk in a railway carriage in a forest with one peasant woman, five blood-sausages and, perhaps, wolves.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Abbleway, an English clerk, works in Vienna, then the capital of the empire of Austria-Hungary, which reached south to the Adriatic Sea. Fiume (now Rijeka, in Croatia) was its port, and Agram is the old German name for Zagreb. Styria and Croatia were provinces of the empire; Croats, Serbs and Bosniaks speak Slavonic (Slavic) languages, while Magyars (Hungarians) speak a very different one. Heller and kronen were Austrian money; a hundred heller made one krone. A name-day is the feast of the saint a person is named after, celebrated like a birthday in many Catholic and Orthodox countries. Carlists were rebels in Spanish politics. “Straitly” means strictly; rapine is plunder.",
+      "contentNote": "The woman says wolves ate her aunt. The opening uses “Mad Mullah,” a dismissive British nickname of the time for a Muslim leader in Somaliland who fought the British.",
+      "excerpt": {
+        "locator": "“The Name-Day,” the whole story; opens “Adventures, according to the proverb, are to the adventurous. Quite as often they are to…”; closes “…Abbleway did not have the opportunity for finding out whether Karl was really avaricious.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1196,
+          1235
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0290f161322a85d411babab55e1d641d003742753cd97098e98f95c3da0e2e11"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-19-q1",
+          "prompt": "The story begins by correcting a proverb. What sort of man is Abbleway, and what is the only “hazardous undertaking” of his first years in Vienna?",
+          "facilitatorNotes": [
+            "He avoids every risk; he would surrender the road to a mad dog. His one adventure is falling “placidly in love” and getting engaged, which the narrator mockingly calls hazardous. The opening tells us adventure will come to him whether he likes it or not."
+          ],
+          "evidence": [
+            "Adventures, according to the proverb, are to the adventurous.",
+            "If a mad dog or a Mad Mullah had come his way he would have surrendered the way without hesitation."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-19-q2",
+          "prompt": "Look at the clouds “like cotton-wool that has been kept over long in a shop window” and the engine that goes on “merrily.” How do these details shape the scene?",
+          "facilitatorNotes": [
+            "The simile makes the sky grey, grubby and stale rather than beautiful. The engine, made to sound cheerful, leaves the carriage behind without a care. Abbleway then speaks “dramatically” to himself about wolves: the narrator shows him casting himself as the hero of a thriller."
+          ],
+          "evidence": [
+            "the skies were heavy with clouds that looked like cotton-wool that has been kept over long in a shop window",
+            "The engine had made a mighty plunge through the drift and had gone merrily forward"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-19-q3",
+          "prompt": "How does the woman price her food, and is she being unfair?",
+          "facilitatorNotes": [
+            "Sausages that cost twenty-five heller in town now cost four kronen, sixteen times as much, because there are no others to get; she keeps the ham back for her name-day. Some readers will call it greed in an emergency, others plain good business; the narrator’s “relentless logic” and “emergency tariff” suggest amused respect as well as alarm."
+          ],
+          "evidence": [
+            "In a railway accident things become very dear,",
+            "because there aren’t any others to get"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-19-q4",
+          "prompt": "The woman says the wolves may eat Abbleway but not her, because it is her saint’s day. Why does the narrator call her calm “provoking”? Did she know about the dogs all along?",
+          "facilitatorNotes": [
+            "Her calm annoys Abbleway because it seems to leave him alone in danger. At the end she says the inn was there and she did not want to take him to it, so she knew more than she said. Whether she recognised the “wolves” as her cousin’s dogs is left open; her faith in the saint and her local knowledge may both be at work."
+          ],
+          "evidence": [
+            "said the woman with provoking calm",
+            "I knew it was there, but I did not want to take you there; he is always grasping with strangers."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-19-q5",
+          "prompt": "“He was not prepared to be the witness of a miracle.” How does the ending make fun of Abbleway, and who turns out to be the real adventurer?",
+          "facilitatorNotes": [
+            "He is “scandalised” by a miracle as he would be by any breach of English order, and the “hundreds” of wolves are two playful dogs. The woman walks out into the snow while he hides his face. His only real loss is eleven kronen, and even his last question, about Karl, goes unanswered when the relief engine arrives."
+          ],
+          "evidence": [
+            "he was not prepared to be the witness of a miracle",
+            "Abbleway did not have the opportunity for finding out whether Karl was really avaricious."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-20",
+      "title": "The Philanthropist and the Happy Cat",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Look closely at the reasons a character gives herself for a kind act, and at how the last line reframes the whole story.",
+      "focus": "A contented wife sets out to give a theatre ticket to a lonely young worker, and finds that her kindness is not wanted.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Chelsea is a fashionable district of London; a snuggery is a small, cosy private room. The Haymarket is a London theatre; the upper circle and the gallery are its cheaper seats. An A.B.C. shop was one of a chain of cheap tea-shops run by the Aerated Bread Company. A philanthropist is someone who does good for others, usually by giving money; in the story of Cinderella, a Fairy Godmother grants wishes. “Sepoy and Sahib” is an adventure story about the Indian rebellion of 1857, when Indian soldiers (sepoys) in the British army rose against British rule; Hindostan is an old name for India.",
+      "contentNote": "In describing the young man, the narrator contrasts English shyness with “the blatant complacency of the Latin or Semite,” a prejudiced stereotype of the time about southern Europeans and Jews. A cat kills a sparrow.",
+      "excerpt": {
+        "locator": "“The Philanthropist and the Happy Cat,” the whole story; opens “Jocantha Bessbury was in the mood to be serenely and graciously happy. Her world was a…”; closes “But then he had killed his sparrow.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1312,
+          1323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bab73f0e99f26f0cc737f54df3e906cea9f0b4df3e5dabb0e63a5eecd09466d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-20-q1",
+          "prompt": "Jocantha says only Attab is as contented as she is. How does she describe the cat, and what does the description hint about the story to come?",
+          "facilitatorNotes": [
+            "Attab is soft and sleepy all day, then goes out with “a red glint in his eyes” to kill a sparrow. His peace depends on a hunt. The story will follow Jocantha on a hunt of her own, and the last line comes back to the cat."
+          ],
+          "evidence": [
+            "a dreamer whose philosophy is sleep and let sleep; and then, as evening draws on, he goes out into the garden with a red glint in his eyes and slays a drowsy sparrow"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-20-q2",
+          "prompt": "Why does Jocantha decide to give away a theatre ticket? Look at the reasons she gives herself. Is this generosity?",
+          "facilitatorNotes": [
+            "She pities workers with dull lives, but she also thinks the good deed will add to her own pleasure at the theatre, and she plans a small lie to explain the gift. She knows nothing about the lives she pities. Students can discuss whether a selfish motive spoils a kind act."
+          ],
+          "evidence": [
+            "it would add a good deal to her sense of enjoyment at the theatre that night",
+            "She could explain matters by saying that she was unable to use the tickets herself"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-20-q3",
+          "prompt": "How does Jocantha’s plan change once Bertie arrives? What does the narrator mean by “which of course was accident”?",
+          "facilitatorNotes": [
+            "She drops the plain girl, imagines Bertie’s dreary future, pities him, and plans more tickets and Sunday tea in Chelsea. The narrator’s “of course” is ironic: it is no accident that he is her type. The charity has become an attraction she will not admit to herself."
+          ],
+          "evidence": [
+            "Jocantha made up her mind that he would improve on acquaintance, and that Gregory would like him",
+            "he was exactly the type that Jocantha admired, which of course was accident"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-20-q4",
+          "prompt": "What does Jocantha do to catch Bertie’s eye, and why does she fail?",
+          "facilitatorNotes": [
+            "She argues about a blameless muffin, asks loudly about trains, talks to the kitten and upsets a milk-jug. He never looks up because he is lost in his adventure book. The life she pitied as empty is full for him; his imagination has given him what she meant to give."
+          ],
+          "evidence": [
+            "she upset a milk-jug and swore at it daintily",
+            "who was some thousands of miles away in the baking plains of Hindostan"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-20-q5",
+          "prompt": "“But then he had killed his sparrow.” How does the last line explain Jocantha’s bad mood, and what does it suggest about her philanthropy?",
+          "facilitatorNotes": [
+            "Her house now looks “dull and over-furnished,” and she expects Gregory and the play to bore her. Like the cat, she went out hunting, and unlike the cat she came home with nothing. The comparison suggests her kindness was really a hunt for excitement and admiration. Readers can discuss whether that judgement is fair to her."
+          ],
+          "evidence": [
+            "which struck her for the first time as looking dull and over-furnished",
+            "But then he had killed his sparrow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-munro-beasts-super-beasts-1914-21",
+      "title": "On Approval",
+      "sourceId": "munro-beasts-super-beasts-1914",
+      "genre": "short-story",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Watch a group of would-be art lovers try to decide whether a painter is a genius, and notice what they use to decide.",
+      "focus": "The regulars of a Soho restaurant cannot tell whether a German peasant’s strange paintings are worth buying, until they think someone rich has bought one.",
+      "context": "Saki was the pen name of H. H. Munro (1870–1916), a British writer of short satirical stories; Beasts and Super-Beasts (1914) was the last collection published in his lifetime. Soho is a London district of cheap foreign restaurants, popular with artists; a Bohemian is an artist or writer who lives an unconventional life. Pomerania was a farming region on Germany’s Baltic coast, and Stolpmünde one of its ports; Dantzig is now Gdańsk, in Poland. Ten shillings was half a pound, a fair sum then; “seven and fourpence” is seven shillings and four pence. To entertain “an angel unawares,” a phrase from the Bible, is to meet someone great without knowing it. The Romanoffs were Russia’s royal family; Sousa was an American composer of marches. Goods bought “on approval” may be taken home and paid for only if the buyer decides to keep them.",
+      "contentNote": "The narrator sums up the painter with a class stereotype (“Once a peasant, always a peasant”), and his German accent is spelled out for comedy. A car kills a herd of pigs.",
+      "excerpt": {
+        "locator": "“On Approval,” the whole story; opens “Of all the genuine Bohemians who strayed from time to time into the would-be Bohemian…”; closes “…as Sledonti with some of the frequenters of the Nuremberg Restaurant, Owl Street, Soho.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1325,
+          1356
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1ae1adca987dd547afcbbb5880cc6eda6bf7fc6a8da6b7dde07bbe765faa0fdc"
+      },
+      "questions": [
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-21-q1",
+          "prompt": "What question troubles the regulars of the Nuremberg about Knopfschrank, and why are they afraid to answer it?",
+          "facilitatorNotes": [
+            "They cannot tell whether he is a genius or a young man who only thinks he can paint. They once snubbed Sledonti, who became famous, so they fear snubbing “an angel unawares” again and will not trust their own judgement."
+          ],
+          "evidence": [
+            "whether this goose-boy migrant was really a soul-driven genius, spreading his wings to the light, or merely an enterprising young man who fancied he could paint",
+            "the ever-imminent danger of entertaining, and snubbing, an angel unawares"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-21-q2",
+          "prompt": "Describe Knopfschrank’s pictures. Do they sound like the work of a genius, a madman or neither?",
+          "facilitatorNotes": [
+            "Each shows a famous London place fallen into ruin, empty of people and roamed by escaped zoo animals: giraffes in Trafalgar Square, hyenas asleep in Euston Station. They can sound haunting or ridiculous. Mrs. Nougat-Jones objects that sand-grouse don’t roost, which may miss the point. The story never says whether they are good."
+          ],
+          "evidence": [
+            "fallen into decay and denuded of its human population, in the place of which there roamed a wild fauna",
+            "it didn’t in the least convey the Albert Memorial to me"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-21-q3",
+          "prompt": "Sylvia Strubble says money should not matter, then says a dealer’s bid would tell them what to think. What does this show about how the regulars judge art?",
+          "facilitatorNotes": [
+            "They want someone else’s approval before they commit, and a price is the approval they trust most. Their claim to look past “the commercial aspect” is contradicted in the same sentence. The title can be read this way: they will only take the art “on approval.”"
+          ],
+          "evidence": [
+            "One mustn’t pay too much attention to the commercial aspect of the case, of course",
+            "we should know better how to place the man and his work"
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-21-q4",
+          "prompt": "When Mrs. Nougat-Jones suggests a lower price, how does Knopfschrank react? What does the narrator’s comment “Once a peasant, always a peasant” suggest, and do you accept it?",
+          "facilitatorNotes": [
+            "He haggles at once, alert and hard-mouthed, and is disappointed when she does not bargain further. The narrator explains this by his class, a stereotype readers should question; it also shows that he understands bargaining better than the artistic regulars do."
+          ],
+          "evidence": [
+            "Once a peasant, always a peasant.",
+            "He had evidently expected her to offer seven and fourpence."
+          ]
+        },
+        {
+          "id": "reading-7-munro-beasts-super-beasts-1914-21-q5",
+          "prompt": "Why do the two women rush to buy sketches at the banquet, and how does the truth turn the joke on them?",
+          "facilitatorNotes": [
+            "They misread the American flag and the anthem as proof he sold his masterpiece, and buy quickly before he can raise his prices: as investments, not because they love the work. Sylvia even claims she “always believed in him.” The American only ran over his family’s pigs. They have bought only because they think someone else approved, and he burns his big picture and leaves, so they will never know whether they missed a genius."
+          ],
+          "evidence": [
+            "Let’s buy some of his sketches, quick, before we are supposed to know that he’s famous; otherwise he’ll be doubling the prices.",
+            "I always believed in him, you know.",
+            "God be thanked for rich Americans, who are always in a hurry to get somewhere else."
           ]
         }
       ]
