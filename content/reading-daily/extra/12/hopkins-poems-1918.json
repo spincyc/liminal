@@ -258,6 +258,196 @@
     },
     {
       "id": "reading-12-hopkins-poems-1918-05",
+      "title": "Henry Purcell",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Use the poet’s own prose summary to unlock a sonnet whose syntax is compressed almost to code.",
+      "focus": "What music reveals about the one who made it, beyond the feelings it expresses.",
+      "context": "Henry Purcell (1659–1695) was the greatest English composer of his century. Hopkins, a Catholic priest, prints his own argument above the poem in italics. Purcell was a member of the Church of England, which Hopkins’s church counted as heresy; the opening wishes him well in spite of that “outward sentence.” To nursle is to nurse; sakes here are a thing’s distinguishing marks; wuthering is a northern word for the roar of wind. The grave accents in “forgèd” and “plumèd” mean the -ed is sounded.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Henry Purcell (poem 21), with Hopkins’s italic prose argument; complete individual work; opens “_The poet wishes well to the divine genius of Purcell and praises him that, whereas other…”; closes “…scatter a colossal smile Off him, but meaning motion fans fresh our wits with wonder.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          181,
+          185
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "df69407c1fb2bcdfb5f60fcf11ed972cab1d0a1563dd10396dfc00a4ffd2badf"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-05-q1",
+          "prompt": "The prose argument says Purcell uttered something “beyond” the moods of man’s mind. Which line of the second stanza says the same thing in verse?",
+          "facilitatorNotes": [
+            "“It is the forgèd feature finds me; it is the rehearsal Of own, of abrupt self”: not mood, meaning, fire or fear, but the forged, individual shape of a self. Ask students to compare the prose (“the very make and species of man”) with the verse, which speaks of one man’s “abrupt self” as well as man in general."
+          ],
+          "evidence": [
+            "Not mood in him nor meaning, proud fire or sacred fear,",
+            "It is the forgèd feature finds me; it is the rehearsal Of own, of abrupt self there so thrusts on, so throngs the ear."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-05-q2",
+          "prompt": "What does the first stanza wish for Purcell, and why does it mention “a heresy”?",
+          "facilitatorNotes": [
+            "“Have fair fallen” is a wish that all has gone well with him since his death. The speaker hopes the outward verdict that lays him low, listed among heretics, has been reversed. The stanza joins admiration with a Catholic’s worry about an Anglican’s salvation; some readers find the wish generous, others find the worry itself intrusive."
+          ],
+          "evidence": [
+            "HAVE fair fallen, O fair, fair have fallen, so dear To me",
+            "with the reversal Of the outward sentence low lays him, listed to a heresy, here."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-05-q3",
+          "prompt": "Explain the stormfowl comparison. What does the bird mean to do, and what does it show without meaning to?",
+          "facilitatorNotes": [
+            "The great seabird means only to move: its “meaning motion” lifts and fans the air. In doing so it happens to show the “quaint moonmarks” under its wings. So the music means to move the listener, and incidentally reveals the composer’s self. The speaker can be lifted by the music and still “have an eye” to those marks; readers can decide whether that is the fullest way to listen or a distraction from it."
+          ],
+          "evidence": [
+            "only I'll Have an eye to the sakes of him, quaint moonmarks, to his pelted plumage under Wings",
+            "but meaning motion fans fresh our wits with wonder."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-06",
+      "title": "Peace",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a speaker who argues with the thing he wants, and notice how his idea of it changes.",
+      "focus": "Peace imagined first as a visiting bird and finally as work.",
+      "context": "A wooddove is a wood pigeon, a bird that coos. To reave is to rob; in lieu means in place of. Hopkins’s grave accent in “Peacè” asks for the word to be drawn out into two syllables.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Peace (poem 22); complete individual work; opens “WHEN will you ever, Peace, wild wooddove, shy wings shut, Your round me roaming end, and…”; closes “…does house He comes with work to do, he does not come to coo, He comes to brood and sit.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          187,
+          188
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8852ab722f46ebfad9d812c62b8bd3b1aaffe4b43a87369d83749feb7492e604"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-06-q1",
+          "prompt": "What is the speaker’s complaint about Peace in the first part of the poem? Find the pun that sums it up.",
+          "facilitatorNotes": [
+            "Peace comes only sometimes and then leaves, like a wild dove that roams round him and will not settle. “That piecemeal peace is poor peace”: peace that comes in pieces is no peace, since it allows the alarms and wars that end it."
+          ],
+          "evidence": [
+            "Your round me roaming end, and under be my boughs?",
+            "That piecemeal peace is poor peace."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-06-q2",
+          "prompt": "Read aloud “When, when, Peacè, will you, Peace?” What does the accent do to the voice of the line?",
+          "facilitatorNotes": [
+            "Stretching the word into two syllables makes it a call, almost a coaxing, as one might call a bird. The line repeats “when” and “Peace” as if pleading; the next words, “I'll not play hypocrite,” admit the speaker will not pretend he is content."
+          ],
+          "evidence": [
+            "When, when, Peacè, will you, Peace? I'll not play hypocrite"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-06-q3",
+          "prompt": "What does the Lord leave in place of Peace, and how does the last sentence change what Peace means?",
+          "facilitatorNotes": [
+            "He leaves Patience, “That plumes to Peace thereafter”: patience grows feathers and becomes peace. When Peace does come it is not idle: it comes “to brood and sit,” as a bird sits on eggs. Peace becomes something that hatches work rather than rest. Some readers find this a satisfying redefinition; others hear the speaker settling for less than he asked."
+          ],
+          "evidence": [
+            "And so he does leave Patience exquisite, That plumes to Peace thereafter.",
+            "He comes with work to do, he does not come to coo, He comes to brood and sit."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-07",
+      "title": "Andromeda",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Read a myth as an allegory without forcing a single meaning onto every figure.",
+      "focus": "Rescue delayed, and patience under threat.",
+      "context": "In Greek myth Andromeda is chained to a sea rock as food for a monster; the hero Perseus flies to her on winged sandals and kills it, armed with the Gorgon Medusa’s head, which turns enemies to stone. Hopkins’s title makes her “Time’s Andromeda,” a figure who lasts through history; many readers take her to be the Church, and Perseus Christ. Barebill is a coinage for a naked blade.",
+      "contentNote": "The myth’s threat of violence and the word “lewd” suggest sexual menace.",
+      "excerpt": {
+        "locator": "Andromeda (poem 25); complete individual work; opens “Now Time's Andromeda on this rock rude, With not her either beauty's equal or Her…”; closes “…to alight disarming, no one dreams, With Gorgon's gear and barebill, thongs and fangs.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          207,
+          208
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6e7ece6dfe732988cfc9392e1453a550e82de5e52c059084e668b3fb97c255df"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-07-q1",
+          "prompt": "How is this Andromeda different from the one in the myth? Look at “Time's Andromeda” and “Time past she has been attempted.”",
+          "facilitatorNotes": [
+            "She is not one princess on one day but a figure attacked again and again through time by “many blows and banes.” The repetition prepares the reader for an allegory in which the rock and the monster stand for recurring dangers."
+          ],
+          "evidence": [
+            "Now Time's Andromeda on this rock rude,",
+            "Time past she has been attempted and pursued By many blows and banes"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-07-q2",
+          "prompt": "What is new about the beast now coming “from West”? Does the poem tell us what it stands for?",
+          "facilitatorNotes": [
+            "It is wilder than all before, “more Rife in her wrongs, more lawless, and more lewd.” The poem does not name it. Readers have proposed modern unbelief or the political and religious upheavals of Hopkins’s century; any answer should admit that the sonnet leaves the identification open."
+          ],
+          "evidence": [
+            "but now hears roar A wilder beast from West than all were, more Rife in her wrongs, more lawless, and more lewd."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-07-q3",
+          "prompt": "Why does Perseus hang in the air instead of rescuing her at once? What does the accent in “tó her extremes” stress?",
+          "facilitatorNotes": [
+            "The sestet asks whether he will leave her “tó her extremes”; the stress falls on the giving-up. He “treads a time” and hangs his thoughts on her while her patience, broken into pangs, rises. The rescue comes when “no one dreams,” fully armed. One reading: the delay tests and grows her patience. Another: the poem admits how long faith may wait and does not fully justify it."
+          ],
+          "evidence": [
+            "Her Perseus linger and leave her tó her extremes?",
+            "All while her patience, morselled into pangs, Mounts; then to alight disarming, no one dreams"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-08",
       "title": "The Candle Indoors",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -286,7 +476,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-05-q1",
+          "id": "reading-12-hopkins-poems-1918-08-q1",
           "prompt": "What does the speaker wonder about the person working by the candle, and why does not knowing make him want more?",
           "facilitatorNotes": [
             "He wonders what task and what fingers are at work and hopes the unseen Jessy or Jack is glorifying God there. Because he cannot know, his wish grows “the eagerer”: the lack of an answer feeds his desire for one."
@@ -297,7 +487,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-05-q2",
+          "id": "reading-12-hopkins-poems-1918-08-q2",
           "prompt": "Who is addressed in the sestet, and what does “Come you indoors, come home” ask of him?",
           "facilitatorNotes": [
             "The speaker turns on himself. Instead of wishing a stranger well, he is told to mend his own fading fire and tend the candle in his own heart, where he is master and nothing hinders him. The outdoor watcher is called inward."
@@ -308,7 +498,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-05-q3",
+          "id": "reading-12-hopkins-poems-1918-08-q3",
           "prompt": "Does the sestet condemn the octave’s interest in the stranger, or complete it?",
           "facilitatorNotes": [
             "The questions call him “beam-blind” and possibly a “liar,” suggesting that concern for others can hide neglect of oneself. Yet the octave’s wish was generous, and the sestet keeps its image of a candle. A strong answer can argue that the poem corrects the order of concern rather than rejecting concern."
@@ -321,7 +511,71 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-06",
+      "id": "reading-12-hopkins-poems-1918-09",
+      "title": "The Handsome Heart: at a Gracious Answer",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Find the small event behind the poem, then follow how the speaker turns it into a prayer.",
+      "focus": "A child’s graceful answer as a sign of character.",
+      "context": "The speaker is a priest (“Father”) who offers a boy a present. Carriers are carrier pigeons, released far from home to fly back. Self-instressed is Hopkins’s word for something that acts from its own inner energy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Handsome Heart: at a Gracious Answer (poem 27); complete individual work; opens “'BUT tell me, child, your choice; what shall I buy You?'--'Father, what you buy me I like…”; closes “…... O on that path you pace Run all your race, O brace sterner that strain!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          213,
+          216
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f82363a3289c61e1069c5ba5dd03a9205e3c7685d4e5b39f4c2be447772eded5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-09-q1",
+          "prompt": "What does the speaker ask, and what does the boy answer? Why is the answer “gracious”?",
+          "facilitatorNotes": [
+            "He asks what the boy would like him to buy. The boy says he likes best whatever the Father chooses, and keeps to that reply even when pressed. The answer gives the choice back as a compliment, which is why the title calls it gracious."
+          ],
+          "evidence": [
+            "'BUT tell me, child, your choice; what shall I buy You?'--'Father, what you buy me I like best.'",
+            "He swung to his first poised purport of reply."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-09-q2",
+          "prompt": "How does the carrier-pigeon comparison explain where the answer came from?",
+          "facilitatorNotes": [
+            "A released pigeon needs no teaching to find home; once its hood is off, “homing nature knows the rest.” So the heart falls to its own “fine function” as if it had been taught for ten years. The speaker credits nature, or grace working through nature, not training; readers may ask whether a ten-year-old’s politeness could also be learned."
+          ],
+          "evidence": [
+            "What the heart is! which, like carriers let fly-- Doff darkness, homing nature knows the rest--",
+            "Falls light as ten years long taught how to and why."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-09-q3",
+          "prompt": "Why does the poem end with a wish rather than a gift? What do the broken phrases (“. . .”, “Only ...”) suggest?",
+          "facilitatorNotes": [
+            "The speaker asks what boon could be bought for a boy already given grace, and finds only one: that he keep running his race and brace himself harder for the strain. The hesitations show him searching for words, and perhaps a fear that grace in a child may not last. Some readers hear tenderness; others hear a priest’s anxiety."
+          ],
+          "evidence": [
+            "Of heaven what boon to buy you, boy, or gain Not granted?",
+            "Only ... O on that path you pace Run all your race, O brace sterner that strain!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-10",
       "title": "Felix Randal",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -350,7 +604,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-06-q1",
+          "id": "reading-12-hopkins-poems-1918-10-q1",
           "prompt": "How does the opening line sound when the priest hears of the death? What does “my duty all ended” add?",
           "facilitatorNotes": [
             "The question “O he is dead then?” sounds half surprised, half resigned, and the phrase about duty is almost official. The rest of the stanza then recalls the decline in physical detail, so the professional tone gives way to closer feeling."
@@ -361,7 +615,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-06-q2",
+          "id": "reading-12-hopkins-poems-1918-10-q2",
           "prompt": "“This seeing the sick endears them to us, us too it endears.” Explain the two directions of this line.",
           "facilitatorNotes": [
             "Visiting the sick makes them dear to the visitor, and it makes the visitor dear to them. The repetition turns the line back on itself to show mutual attachment. The next line confirms it: the priest’s words comforted Felix, and Felix’s tears touched the priest."
@@ -372,7 +626,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-06-q3",
+          "id": "reading-12-hopkins-poems-1918-10-q3",
           "prompt": "Why might the poem end with the forge and the horse’s “sandal” rather than with the death?",
           "facilitatorNotes": [
             "The last lines leap back to the boisterous years when Felix was powerful among his peers, a future he never foresaw would end in a sickbed. Calling the horseshoe a “bright and battering sandal” gives his trade dignity. The ending can be read as consolation, as irony about strength, or as both."
@@ -385,7 +639,7 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-07",
+      "id": "reading-12-hopkins-poems-1918-11",
       "title": "Spelt from Sibyl’s Leaves",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -414,7 +668,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-07-q1",
+          "id": "reading-12-hopkins-poems-1918-11-q1",
           "prompt": "How do the adjectives in the first two lines make evening “strain” toward night?",
           "facilitatorNotes": [
             "The words grow longer and vaster, from earnest and earthless to stupendous, then night becomes womb-of-all, home-of-all, hearse-of-all. The sequence moves from birth through dwelling to burial, so night is made to hold the whole of life."
@@ -425,7 +679,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-07-q2",
+          "id": "reading-12-hopkins-poems-1918-11-q2",
           "prompt": "What happens to the earth’s “dapple” as night comes on?",
           "facilitatorNotes": [
             "Earth’s variety unbinds: its dapple is at an end, things are “throughther” and “self ín self steepèd and páshed,” forgetting and dismembering themselves. The poem undoes the dappled abundance Hopkins praises elsewhere, making distinctness blur into darkness."
@@ -436,7 +690,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-07-q3",
+          "id": "reading-12-hopkins-poems-1918-11-q3",
           "prompt": "What lesson does the heart read in the evening, and why is a world of only “black, white; right, wrong” frightening?",
           "facilitatorNotes": [
             "Life’s “skéined stained véined varíety” is wound onto two spools, so only right and wrong remain to be reckoned. The final image is a rack where thoughts grind against thoughts. Readers may take the poem as a vision of final judgment, of a mind tormented by moral scrupulousness, or of both."
@@ -447,7 +701,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-07-q4",
+          "id": "reading-12-hopkins-poems-1918-11-q4",
           "prompt": "Read aloud “Óur évening is over us; óur night | whélms, whélms, ánd will end us,” giving the marked syllables full stress. Which marked words would you not normally stress, and what does stressing them do?",
           "facilitatorNotes": [
             "“Óur” and “ánd” are words a reader would slide over. Stressing “Óur” insists that this evening and night belong to us, not only to the landscape; stressing “ánd” makes the ending a further blow after the night has whelmed twice. The doubled “whélms, whélms” lands like waves. Some readers hear the marks as dread made audible; others hear a preacher’s insistence. Either way the marks turn a description of dusk into a warning addressed to the reader."
@@ -459,7 +713,7 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-08",
+      "id": "reading-12-hopkins-poems-1918-12",
       "title": "Inversnaid",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -488,7 +742,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-08-q1",
+          "id": "reading-12-hopkins-poems-1918-12-q1",
           "prompt": "Which sounds in the first stanza imitate the stream’s rush?",
           "facilitatorNotes": [
             "Rolling r-sounds and heavy stresses in “rollrock highroad roaring down,” and the internal rhyme of “comb” and “foam,” make the water tumble. The stanza slows at “low to the lake falls home,” where the stream ends its run."
@@ -499,7 +753,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-08-q2",
+          "id": "reading-12-hopkins-poems-1918-12-q2",
           "prompt": "Why might a poem of delight include a pool that “rounds and rounds Despair to drowning”?",
           "facilitatorNotes": [
             "The dark pool brings a threat into the scene: its whirl could drown despair, or could drown a person in despair. Wildness here is not only pretty; it includes darkness and danger, which the last stanza still wants kept."
@@ -509,7 +763,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-08-q3",
+          "id": "reading-12-hopkins-poems-1918-12-q3",
           "prompt": "How does the final stanza argue for wildness, and what do its repetitions add?",
           "facilitatorNotes": [
             "It asks what the world would be without wet and wildness, then pleads twice that they be left. The reversed pairing “wet and of wildness” and “wildness and wet” sounds like an insistent refrain. The last line blesses weeds as well as wilderness, refusing to keep only the attractive parts."
@@ -522,7 +776,327 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-09",
+      "id": "reading-12-hopkins-poems-1918-13",
+      "title": "As kingfishers catch fire",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Turn a row of examples into one principle, then follow how the sestet goes beyond it.",
+      "focus": "Each thing’s action as the expression of its self, and the human self as the place where Christ acts.",
+      "context": "A kingfisher’s blue and orange feathers flash in sunlight. The accents are Hopkins’s stress marks; give the marked syllables full weight. “Justices” turns the noun justice into a verb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled sonnet beginning “As kingfishers catch fire” (poem 34); complete individual work; opens “As kingfishers catch fire, dragonflies dráw fláme; As tumbled over rim in roundy wells…”; closes “…in limbs, and lovely in eyes not his To the Father through the features of men's faces.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          238,
+          239
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "764f49344e6119aac4cf62d42eb3689893eadd719bc0ed900684385a92d2dda7"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-13-q1",
+          "prompt": "What do the kingfisher, the dragonfly, the stones, the string and the bell have in common?",
+          "facilitatorNotes": [
+            "Each, when it acts, gives out its own nature: the bird flashes fire, the stone dropped into a well rings, the plucked string and swung bell “fling out broad” their names. The octave sums this up: each thing “Selves,” and its action says “Whát I do is me.”"
+          ],
+          "evidence": [
+            "As kingfishers catch fire, dragonflies dráw fláme;",
+            "Each mortal thing does one thing and the same: Deals out that being indoors each one dwells; Selves--goes itself"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-13-q2",
+          "prompt": "The sestet opens “Í say móre.” What more does it say about human beings?",
+          "facilitatorNotes": [
+            "People also act out what they are, but the just man “justices”: being just is something he does. His keeping grace makes all his acts graceful, and he acts in God’s sight what he is in God’s sight. Ask why the speaker marks “Í” and “móre” for stress: the turn insists that this is the speaker’s further claim, not merely more examples."
+          ],
+          "evidence": [
+            "Í say móre: the just man justices;",
+            "Acts in God's eye what in God's eye he is--"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-13-q3",
+          "prompt": "“Christ plays in ten thousand places.” Does this ending make each person more fully themselves or less?",
+          "facilitatorNotes": [
+            "The just man is “Chríst”: Christ appears to the Father in the limbs and faces of many people, “in eyes not his.” One reading: a person’s truest self is the Christ-likeness grace makes in them. Another: the individuality the octave praised is absorbed into one figure. The word “plays” suggests freedom and delight, which supports the first reading but does not settle the question."
+          ],
+          "evidence": [
+            "Chríst--for Christ plays in ten thousand places, Lovely in limbs, and lovely in eyes not his To the Father through the features of men's faces."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-14",
+      "title": "Ribblesdale",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an address to the earth that turns into a judgment on human beings.",
+      "focus": "The earth’s mute appeal, and man as the voice that fails it.",
+      "context": "Ribblesdale is the valley of the River Ribble in Lancashire, near the Jesuit college where Hopkins taught. Louchèd is his word for slouching or sunk low; the grave accents in “leavès” and “louchèd” mark sounded syllables. To reave is to plunder; to reck is to heed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ribblesdale (poem 35); complete individual work; opens “EARTH, sweet Earth, sweet landscape, with leavès throng And louchèd low grass, heaven…”; closes “…none reck of world after, this bids wear Earth brows of such care, care and dear concern.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          241,
+          243
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d419ac050151ad0d0f85a7052da0890ee428e45bec4af65ded48fb2c2e1ee0fb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-14-q1",
+          "prompt": "What can the Earth do, and what can it not do, according to the first two stanzas? Why is its plea still “strong”?",
+          "facilitatorNotes": [
+            "It has no tongue to plead and no heart to feel; it “canst but only be.” But it does that well and long, and its plea is strong with God, who made the dale and makes the river flow. Its mere being is its appeal."
+          ],
+          "evidence": [
+            "heaven that dost appeal To, with no tongue to plead, no heart to feel;",
+            "Thou canst but be, but that thou well dost; strong Thy plea with him who dealt, nay does now deal"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-14-q2",
+          "prompt": "What role does the sestet give to human beings?",
+          "facilitatorNotes": [
+            "Man is supposed to be the Earth’s eye, tongue and heart: the creature who sees, speaks and feels on its behalf. The question form (“where Else, but in dear and dogged man?”) makes the role seem obvious, which sharpens the failure that follows."
+          ],
+          "evidence": [
+            "And what is Earth's eye, tongue, or heart else, where Else, but in dear and dogged man?"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-14-q3",
+          "prompt": "Why does the Earth wear “brows of such care”? What could “world after” mean?",
+          "facilitatorNotes": [
+            "Man is bound to his own “selfbent,” plundering the world bare without thrift. “World after” may mean the world left to later generations, or the next world, which the selfish no longer heed; both readings fit, and the poem may want both. Students might connect the first reading to present environmental concerns, while noting that Hopkins’s frame is religious."
+          ],
+          "evidence": [
+            "To his own selfbent so bound, so tied to his turn, To thriftless reave both our rich round world bare And none reck of world after",
+            "this bids wear Earth brows of such care, care and dear concern."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-15",
+      "title": "The Leaden Echo and the Golden Echo",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Read a long song aloud and hear how echo, repetition and rhythm carry an argument.",
+      "focus": "Losing beauty to age, and the claim that beauty given up is kept.",
+      "context": "Hopkins wrote this as a song for a chorus of girls in St. Winefred’s Well, a verse play about a Welsh saint that he never finished. It is meant to be heard: read it aloud. The accents are his stress marks. A brooch or braid might hold beauty in place; ruck means crease; the mould is earth; fashed means troubled and cogged means cheated. The line about every hair being numbered recalls the Gospel saying that the hairs of your head are all numbered.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Leaden Echo and the Golden Echo (Maidens' song from St. Winefred's Well) (poem 36); complete individual work; opens “THE LEADEN ECHO”; closes “…high as that! We follow, now we follow.-- Yonder, yes yonder, yonder, Yonder.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          245,
+          248
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d7098a6be9eefcb314f251d35336759b8a14795f47a7857cbe7ece1d2dcff11"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-15-q1",
+          "prompt": "What is the Leaden Echo looking for, and how does its sound enact its answer?",
+          "facilitatorNotes": [
+            "It wants a “bow or brooch or braid or brace” to keep beauty from age. The lists, the repeated “none,” and the long final run of “despair” make the voice sink into a dead echo. The advice “Be beginning to despair” is bleakly practical: since nothing can be done, start despairing early."
+          ],
+          "evidence": [
+            "How to kéep--is there ány any, is there none such, nowhere known some, bow or brooch or braid or brace, láce, latch or catch or key to keep Back beauty",
+            "Be beginning to despair, to despair, Despair, despair, despair, despair."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-15-q2",
+          "prompt": "How does the Golden Echo’s first word answer the Leaden Echo’s last? What does the accent in “There ís one” add?",
+          "facilitatorNotes": [
+            "“Spare!” is the echo of “despair”: the last syllable heard back, but turned into a command or a cry of hope. “There ís one,” stressed on the verb, contradicts “there's none” head-on: a key does exist. The poem lets an echo, which can only repeat, change the meaning of what it repeats."
+          ],
+          "evidence": [
+            "Spare! There ís one, yes I have one (Hush there!);"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-15-q3",
+          "prompt": "What is the “key” the Golden Echo offers, and where is beauty finally said to be kept? Is the answer persuasive?",
+          "facilitatorNotes": [
+            "Give beauty back to God, early and freely, “long before death”; then nothing is lost, not a hair, and what is given up grows like seed sown in earth, a hundredfold. Asked where it is kept, the voices can only say “Yonder,” and follow. Some readers find the ending a joyful ascent; others notice that the place is pointed at, never shown, and that the poem asks for trust rather than proof."
+          ],
+          "evidence": [
+            "Give beauty back, beauty, beauty, beauty, back to God, beauty's self and beauty's giver.",
+            "When the thing we freely fórfeit is kept with fonder a care",
+            "Where kept? Do but tell us where kept, where.-- Yonder."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-16",
+      "title": "To what serves Mortal Beauty?",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an argument about looking at beautiful people, through a historical example and a rule of conduct.",
+      "focus": "Beauty as dangerous and useful, and how one ought to meet it.",
+      "context": "The vertical strokes mark the pause in each long line. The middle of the poem retells a story about Pope Gregory the Great: seeing fair-haired boys from England for sale in a Roman slave market, he was told they were Angles and answered that they looked like angels; he later sent missionaries to convert the English (597). Block means a carved idol; the grave accent in “gleanèd” marks a sounded syllable.",
+      "contentNote": "The Gregory story turns on children sold as slaves after a war.",
+      "excerpt": {
+        "locator": "To what serves Mortal Beauty? (poem 38); complete individual work; opens “To what serves mortal beauty |--dangerous; does set danc- ing blood--the O-seal-that-so |…”; closes “…leave, let that alone. Yea, wish that though, wish all, | God's better beauty, grace.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          253,
+          253
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "be7c252d1796cfda11ff73489eac88bd73599ef634c439e0a29e39417bc31c05"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-16-q1",
+          "prompt": "The title asks a question. What is the poem’s first answer, and what does it admit before answering?",
+          "facilitatorNotes": [
+            "It admits beauty is “dangerous” because it sets the blood dancing. Then it says what beauty does: it “keeps warm Men's wits to the things that are,” keeping attention alive to real things. A single glance may do more than a long stare."
+          ],
+          "evidence": [
+            "To what serves mortal beauty |--dangerous; does set danc- ing blood",
+            "keeps warm Men's wits to the things that are;",
+            "where a glance Master more may than gaze"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-16-q2",
+          "prompt": "How does the story of Gregory support the argument?",
+          "facilitatorNotes": [
+            "The boys’ beauty caught a father’s attention, and from that glance came the conversion of a whole nation: “God to a nation dealt that day's dear chance.” Beauty served something larger than itself. Students should notice that the boys were captives; the poem passes over their suffering to make its point, which readers may find troubling."
+          ],
+          "evidence": [
+            "Those lovely lads once, wet-fresh | windfalls of war's storm,",
+            "But God to a nation | dealt that day's dear chance."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-16-q3",
+          "prompt": "What does the poem say to do when you meet beauty? Is “Merely meet it” easy advice?",
+          "facilitatorNotes": [
+            "Love what is worthiest, and the worthiest thing in the world is human selves. Meet beauty, own it as heaven’s gift, then “leave, let that alone,” and wish the person God’s better beauty, grace. The advice asks for appreciation without possession. Some readers find it wise; others find the turn from enjoyment to self-denial abrupt."
+          ],
+          "evidence": [
+            "World's loveliest--men's selves. Self | flashes off frame and face.",
+            "What do then? how meet beauty? | Merely meet it; own, Home at heart, heaven's sweet gift; | then leave, let that alone."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-17",
+      "title": "The Soldier",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Test the speaker’s explanation of a common feeling before following his turn to Christ.",
+      "focus": "Why we honour soldiers, and what kind of deed the poem thinks deserves honour.",
+      "context": "Redcoats were British soldiers and tars were sailors. The accents are Hopkins’s stress marks. Fain means gladly; sterling means genuine, like silver of guaranteed purity. To “handle a rope” is sailors’ work.",
+      "contentNote": "The poem idealizes Victorian military service.",
+      "excerpt": {
+        "locator": "(The Soldier) (poem 39), the editor’s bracketed title; complete individual work; opens “YES. Whý do we áll, seeing of a soldier, bless him? bless Our redcoats, our tars? Both…”; closes “…So God-made-flesh does too: Were I come o'er again' cries Christ 'it should be this'.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          255,
+          256
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb082d04bf7004c0bda3429ca94ceab15f7fa4a8e5e7326153eec16b0d963343"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-17-q1",
+          "prompt": "The speaker admits that most soldiers are “frail clay, nay but foul clay.” Why, then, does he say we bless them?",
+          "facilitatorNotes": [
+            "The heart, proud of the calling, guesses, hopes and pretends that the men must be as manly as their trade. It reasons from the uniform to the man. The speaker presents this as a kind of willing make-believe, not a judgment based on the soldiers themselves."
+          ],
+          "evidence": [
+            "Both these being, the greater part, But frail clay, nay but foul clay.",
+            "the heart, Since, proud, it calls the calling manly, gives a guess That, hopes that, makesbelieve, the men must be no less"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-17-q2",
+          "prompt": "Look at the verbs in “It fancies, feigns, deems, dears the artist after his art.” What happens in that list?",
+          "facilitatorNotes": [
+            "The heart moves from imagining, to pretending, to judging, to loving: “dears” turns the adjective into a verb. The artist is valued for the art, the soldier for soldiering. The list shows a feeling turning step by step into a belief."
+          ],
+          "evidence": [
+            "It fancies, feigns, deems, dears the artist after his art;",
+            "And fain will find as sterling all as all is smart"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-17-q3",
+          "prompt": "In the sestet Christ kisses not a soldier but “some mán” who does “all that man can do.” Does the poem still praise soldiers?",
+          "facilitatorNotes": [
+            "Christ is called a soldier who knows war, but the deed he greets is any human doing everything a person can: “O Christ-done deed!” The sestet may honour soldiers by measuring them against Christ, or may move the honour from the uniform to any whole-hearted act. Readers can argue either, using the shift from “soldier” to “some mán.”"
+          ],
+          "evidence": [
+            "Mark Christ our King. He knows war, served this soldiering through;",
+            "séeing somewhére some mán do all that man can do",
+            "'O Christ-done deed! So God-made-flesh does too: Were I come o'er again' cries Christ 'it should be this'."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-18",
       "title": "No worst, there is none",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -551,7 +1125,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-09-q1",
+          "id": "reading-12-hopkins-poems-1918-18-q1",
           "prompt": "What does “No worst, there is none” claim about grief, and how does the second line explain it?",
           "facilitatorNotes": [
             "There is no lowest point: each pang, taught by earlier pangs, wrings more wildly. Suffering does not reach a floor but escalates by learning from itself."
@@ -561,7 +1135,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-09-q2",
+          "id": "reading-12-hopkins-poems-1918-18-q2",
           "prompt": "“O the mind, mind has mountains.” Who, according to the speaker, may think lightly of these cliffs?",
           "facilitatorNotes": [
             "Only someone who has never hung there. The image makes mental suffering into a landscape of sheer, unmeasured drops, and the line rebukes those who dismiss what they have not experienced."
@@ -571,7 +1145,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-09-q3",
+          "id": "reading-12-hopkins-poems-1918-18-q3",
           "prompt": "What comfort does the final sentence offer, and why does the speaker call himself “Wretch”?",
           "facilitatorNotes": [
             "He creeps under the only shelter available in a whirlwind: the fact that all life ends in death and each day in sleep. It is a minimal comfort, consolation by ending rather than relief. The self-address “Wretch” shows contempt and pity for himself at once; readers may debate whether the close is resignation or endurance."
@@ -583,7 +1157,198 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-10",
+      "id": "reading-12-hopkins-poems-1918-19",
+      "title": "Tom's Garland: upon the Unemployed",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Untangle Hopkins’s most compressed syntax by finding three groups of people: the worker, the ruler and the unemployed.",
+      "focus": "A society imagined as one body, and those left outside it.",
+      "context": "Hopkins once admitted to a friend that this sonnet, with its added short lines, needed explaining. Tom is a navvy, a labourer digging roads or railways; his “garland” is the steel hobnails on his boots, and his “fallowbootfellow” is a mate shod like him. Rockfire is the sparks his pick strikes. The poem pictures the commonweal (the nation) as a body with a lordly head and a labouring foot. Lacklevel means unequal; mammocks means breaks to pieces; undenizened means without a place as a citizen.",
+      "contentNote": "The poem’s view of labourers carries Victorian class assumptions.",
+      "excerpt": {
+        "locator": "Tom's Garland: upon the Unemployed (poem 42); complete individual work; opens “TOM--garlanded with squat and surly steel Tom; then Tom's fallowbootfellow piles pick By…”; closes “…by Despair, bred Hangdog dull; by Rage, Manwolf, worse; and their packs infest the age.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          264,
+          264
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bac68f14791e23ed994199ca563d8e047e873bb7e00506db475ec8d4cb0a7db"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-19-q1",
+          "prompt": "What kind of man is Tom, and how does the speaker describe his state of mind?",
+          "facilitatorNotes": [
+            "He is strong, rarely sick, “Heart-at-ease,” content with his meal and his bed; he walks through “Thousands of thorns, thoughts” as if his boots made him proof against them. The portrait admires his toughness while implying he does not think much. Students can ask whether that is respect or condescension."
+          ],
+          "evidence": [
+            "Tom Heart-at-ease, Tom Navvy: he is all for his meal Sure, 's bed now.",
+            "that treads through, prickproof, thick Thousands of thorns, thoughts"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-19-q2",
+          "prompt": "What does “Commonweal Little I reck ho! lacklevel in, if all had bread” say about inequality?",
+          "facilitatorNotes": [
+            "The voice says it would care little that the commonwealth is unequal, if everyone had bread. Head and foot each have their honour: the ruler with “heaven's lights” round him, the labourer as the “mighty foot.” The speaker accepts hierarchy so long as every part has a place and food; readers may question that bargain."
+          ],
+          "evidence": [
+            "Little I reck ho! lacklevel in, if all had bread:",
+            "What! Country is honour enough in all us--lordly head, With heaven's lights high hung round, or, mother-ground That mammocks, mighty foot."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-19-q3",
+          "prompt": "Who are the unemployed in this picture, and what does the speaker fear they become?",
+          "facilitatorNotes": [
+            "They have neither the head’s “rare gold” nor the foot’s “bold steel”: neither mind nor strength is put to use, and they are “Undenizened,” with no place in the world’s weal. Despair breeds the cringing Hangdog; rage breeds the Manwolf, a werewolf; their packs “infest the age.” The poem pities their exclusion but also fears them, and readers should weigh both."
+          ],
+          "evidence": [
+            "Undenizened, beyond bound Of earth's glory, earth's ease, all; no one, nowhere, In wide the world's weal",
+            "This, by Despair, bred Hangdog dull; by Rage, Manwolf, worse; and their packs infest the age."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-20",
+      "title": "Harry Ploughman",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Build a picture of a body at work from a catalogue of compressed images.",
+      "focus": "The beauty and discipline of physical labour.",
+      "context": "A ploughman guides a horse-drawn plough that cuts and turns the soil into furrows. A hurdle is a woven fence panel; flue is fine down or hair; thews are muscles; a beechbole is the trunk of a beech. Churl is an old word for a farm labourer. Cragiron is Hopkins’s word for the iron blade of the plough, and furls are the curls of turned earth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Harry Ploughman (poem 43); complete individual work; opens “HARD as hurdle arms, with a broth of goldish flue Breathed round; the rack of ribs; the…”; closes “…With, along them, cragiron under and cold furls-- With-a-fountain's shining-shot furls.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          266,
+          267
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cbd0e1eed9839fc3a240d8b59e2a77a8d01e4351214ee18f620b1cf1a9564f78"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-20-q1",
+          "prompt": "Follow the first stanza’s list of body parts. What image makes them one working whole?",
+          "facilitatorNotes": [
+            "Arms, ribs, flank, thigh, knee and shank are named one by one, then “By a grey eye's heed steered well, one crew, fall to.” The limbs are a ship’s crew under the eye’s command; at a “roll-call” each takes its rank and does its own task."
+          ],
+          "evidence": [
+            "By a grey eye's heed steered well, one crew, fall to;",
+            "finds his, as at a roll- call, rank And features, in flesh, what deed he each must do"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-20-q2",
+          "prompt": "What happens to Harry’s body when he “leans to it”?",
+          "facilitatorNotes": [
+            "Back, elbow and “liquid waist” all yield to the heaving plough; his cheek reddens and the wind laces his hair. The rhythm of the lines moves like the effort itself. The stiff catalogue of the first stanza becomes motion."
+          ],
+          "evidence": [
+            "He leans to it, Harry bends, look. Back, elbow, and liquid waist In him, all quail to the wallowing o' the plough"
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-20-q3",
+          "prompt": "What is “Churlsgrace,” and why might Hopkins have made such a word?",
+          "facilitatorNotes": [
+            "Grace belonging to a labourer, “child of Amansstrength.” Grace is usually linked with the well-bred; joining it to “churl” claims beauty for a farmworker’s strength. The last lines show the earth turning off the plough like water from a fountain. Some readers see a celebration of work; others note that Harry is admired as a body and never speaks."
+          ],
+          "evidence": [
+            "Churlsgrace, too, child of Amansstrength, how it hangs or hurls Them",
+            "With-a-fountain's shining-shot furls."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-21",
+      "title": "To seem the stranger lies my lot",
+      "sourceId": "hopkins-poems-1918",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Map the speaker’s three separations and notice how the last one differs.",
+      "focus": "Exile from family, country and finally from being heard.",
+      "context": "Hopkins, an Englishman, became a Catholic as a young man, which divided him from his Anglican family; he spent his last years teaching in Dublin. The fourth line recalls Christ’s saying that he came to bring “not peace, but a sword” that would divide families. The accent in “thírd” is Hopkins’s stress mark. A ban is a prohibition; to be at a remove is to be one step further away.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled sonnet beginning “To seem the stranger lies my lot” (poem 44); complete individual work; opens “To seem the stranger lies my lot, my life Among strangers. Father and mother dear,…”; closes “…or hell's spell thwarts. This to hoard unheard, Heard unheeded, leaves me a lonely began.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          269,
+          270
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6720f63b0a4e294341ade5fb9f1fde412a09fc7f279bc5e6754cab7b86715301"
+      },
+      "questions": [
+        {
+          "id": "reading-12-hopkins-poems-1918-21-q1",
+          "prompt": "Name the three “removes” the speaker describes. What separates him at each?",
+          "facilitatorNotes": [
+            "From family: they are “in Christ not near,” divided by religion. From England: the country he loves would not listen to him if he pleaded, and he does not plead. From home altogether: he is in Ireland, “at a thírd Remove.” Each step takes him further from those who might hear him."
+          ],
+          "evidence": [
+            "Father and mother dear, Brothers and sisters are in Christ not near",
+            "I am in Ireland now; now I am at a thírd Remove."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-21-q2",
+          "prompt": "Why is England called “wife To my creating thought”? Why can he not plead with her?",
+          "facilitatorNotes": [
+            "England is what his imagination loves and serves, as a husband a wife. But she would not hear him, and he does not plead: as a priest and a convert he stands outside the national life he cares about. He wearies of being idle except where wars are “rife.” The hyphen in “wear- y” splits the word across the line, which some readers hear as the weariness itself."
+          ],
+          "evidence": [
+            "England, whose honour O all my heart woos, wife To my creating thought, would neither hear Me, were I pleading, plead nor do I",
+            "I wear- y of idle a being but by where wars are rife."
+          ]
+        },
+        {
+          "id": "reading-12-hopkins-poems-1918-21-q3",
+          "prompt": "“Not but in all removes I can Kind love both give and get.” What, then, is the real loss in the sestet, and what is “a lonely began”?",
+          "facilitatorNotes": [
+            "He can still give and receive kindness. What is thwarted is his “wisest” word: what his heart makes is barred by heaven or spoiled by hell, unheard or unheeded. “Began” used as a noun makes him a beginning that never goes further. Readers may connect this to Hopkins’s poems, unpublished in his lifetime, but the sonnet itself speaks only of words that go unheard."
+          ],
+          "evidence": [
+            "Not but in all removes I can Kind love both give and get.",
+            "This to hoard unheard, Heard unheeded, leaves me a lonely began."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-hopkins-poems-1918-22",
       "title": "I wake and feel the fell of dark",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -612,7 +1377,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-10-q1",
+          "id": "reading-12-hopkins-poems-1918-22-q1",
           "prompt": "How does the speaker turn a single night into something much longer?",
           "facilitatorNotes": [
             "The diaeresis in “hoürs” makes the repeated word two syllables, so the line itself lengthens the hours as it names them. Then he explains that where he says hours he means years, and life. The night becomes a figure for his whole existence, and the coming “light’s delay” extends it further."
@@ -623,7 +1388,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-10-q2",
+          "id": "reading-12-hopkins-poems-1918-22-q2",
           "prompt": "What does the image of “dead letters” say about prayer?",
           "facilitatorNotes": [
             "Dead letters are undeliverable mail. His cries are sent to “dearest him,” who lives, but far away; they do not seem to arrive. The image is intimate and administrative at once, which makes the absence feel ordinary as well as painful."
@@ -633,7 +1398,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-10-q3",
+          "id": "reading-12-hopkins-poems-1918-22-q3",
           "prompt": "“My taste was me.” How does the sestet make the speaker both the sufferer and the cause of suffering, and what does the last comparison add?",
           "facilitatorNotes": [
             "God’s decree makes him taste bitterness, but the bitterness is his own self: bones, flesh and blood are the curse, and his spirit is the yeast souring its own dough. He then compares himself with the lost, whose punishment is to be their own sweating selves, “but worse.” The final qualification keeps a distinction between him and the damned even as it nearly erases it."
@@ -646,7 +1411,7 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-11",
+      "id": "reading-12-hopkins-poems-1918-23",
       "title": "That Nature is a Heraclitean Fire and of the comfort of the Resurrection",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -675,7 +1440,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-11-q1",
+          "id": "reading-12-hopkins-poems-1918-23-q1",
           "prompt": "How does the first half show nature as a fire that is always burning and changing?",
           "facilitatorNotes": [
             "Clouds “flaunt forth, then chevy on,” wind wrestles the earth bare, ooze dries to dough, crust and dust: everything is in motion and transformation. The summary “nature's bonfire burns on” gathers these into Heraclitus’s image of fire."
@@ -686,7 +1451,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-11-q2",
+          "id": "reading-12-hopkins-poems-1918-23-q2",
           "prompt": "Why is the fate of “Man” more troubling to the speaker than the vanishing of tracks in the mud?",
           "facilitatorNotes": [
             "Man is nature’s “clearest-selvèd spark,” the most individual of her products, yet his mark on mind disappears as fast as footprints. Death blots out the “Manshape” and time levels all; the poem cries out in pity and indignation at that loss of individuality."
@@ -697,7 +1462,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-11-q3",
+          "id": "reading-12-hopkins-poems-1918-23-q3",
           "prompt": "How does the ending stage the change from “Jack, joke, poor potsherd” to “immortal diamond”? Is the turn earned or abrupt?",
           "facilitatorNotes": [
             "“Enough!” breaks off the lament; the Resurrection arrives as a clarion and beacon. The final list piles up worthless, breakable things and then repeats “immortal diamond,” as if the transformation happens in the repetition. Some readers find the leap deliberately sudden, like a flash at a trumpet crash; others find it an assertion of faith rather than an argument."
@@ -710,7 +1475,7 @@
       ]
     },
     {
-      "id": "reading-12-hopkins-poems-1918-12",
+      "id": "reading-12-hopkins-poems-1918-24",
       "title": "Thou art indeed just, Lord",
       "sourceId": "hopkins-poems-1918",
       "genre": "poetry",
@@ -739,7 +1504,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-hopkins-poems-1918-12-q1",
+          "id": "reading-12-hopkins-poems-1918-24-q1",
           "prompt": "How does the speaker address God as if in a court case?",
           "facilitatorNotes": [
             "He grants God is just “if I contend,” then insists that his own plea is also just, addressing God as “sir.” The legal words contend and plead frame a respectful but direct challenge."
@@ -749,7 +1514,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-12-q2",
+          "id": "reading-12-hopkins-poems-1918-24-q2",
           "prompt": "What does the speaker see in the spring banks and nesting birds, and what does he call himself in contrast?",
           "facilitatorNotes": [
             "Banks and thickets leaf thickly, wind shakes fresh chervil, birds build; he cannot build. Hopkins marks “leavèd” and “lacèd” to be sounded in full, slowing the line to look. He calls himself “Time's eunuch,” unable to breed a single lasting work. Nature’s fertility sharpens his sense of barrenness."
@@ -760,7 +1525,7 @@
           ]
         },
         {
-          "id": "reading-12-hopkins-poems-1918-12-q3",
+          "id": "reading-12-hopkins-poems-1918-24-q3",
           "prompt": "How does the final line change the poem’s stance after the complaint?",
           "facilitatorNotes": [
             "After asking why the wicked thrive, he does not resolve the question; he asks the “lord of life” to send rain to his roots. The complaint becomes a petition, using the nature imagery he has just envied. Readers can debate whether the close is trust, persistence or quiet exhaustion."
