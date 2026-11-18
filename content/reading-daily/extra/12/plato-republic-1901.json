@@ -275,6 +275,322 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-05",
+      "title": "The Republic, Book I: the interest of the stronger",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Track how Thrasymachus’ definition changes each time Socrates presses it.",
+      "focus": "Whether justice is anything more than the rules the powerful make for their own advantage.",
+      "context": "Plato’s Republic is narrated by Socrates, who is at a gathering in the house of Cephalus at the Piraeus, the port of Athens. He and Polemarchus, Cephalus’ son, have just rejected the saying that justice means helping friends and harming enemies. Thrasymachus, a sophist or paid teacher of speaking, has burst in on them, accused Socrates of hiding behind irony, and forbidden the usual answers about justice. Glaucon is Plato’s brother; Cleitophon is on Thrasymachus’ side. A pancratiast fought in an ancient sport combining boxing and wrestling; an informer here is someone who brings malicious charges on technicalities.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book I, from Socrates’ claim to know nothing through Thrasymachus’ claim that a ruler, as ruler, never errs; opens “Why, my good friend, I said, how can anyone answer who knows, and says that he knows,…”; closes “…therefore, as I said at first and now repeat, justice is the interest of the stronger.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          210,
+          251
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd3615acfa357d2c904cff17dc1fb0907314a0cb1b3fa72c936383382b2a007e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-05-q1",
+          "prompt": "Socrates says he knows “just nothing,” and Thrasymachus says he refuses to teach and never says thank you. Who has the better of this exchange? What does each think a teacher owes the listeners?",
+          "facilitatorNotes": [
+            "Socrates says the one who claims knowledge should speak; Thrasymachus hears irony and ingratitude, and expects to be paid, as sophists were. Socrates offers praise instead of money. Thrasymachus is plainly eager to show off his answer, which weakens his complaint; but many readers think his charge that Socrates never commits himself has force."
+          ],
+          "evidence": [
+            "how can anyone answer who knows, and says that he knows, just nothing;",
+            "Thrasymachus, as anyone might see, was in reality eager to speak;",
+            "he refuses to teach himself, and goes about learning of others, to whom he never even says, Thank you.",
+            "Money I have none, and therefore I pay in praise,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q2",
+          "prompt": "State Thrasymachus’ definition and the argument he gives for it. Is he saying what justice is, or only what people in power call justice?",
+          "facilitatorNotes": [
+            "Every government makes laws in its own interest, calls obedience to them justice, and punishes those who break them; since governments have power, justice everywhere is the interest of the stronger. Read as description, it says laws serve rulers; read as definition, it says there is nothing more to justice than that. The ambiguity is worth pressing: the rest of the Republic answers the second claim."
+          ],
+          "evidence": [
+            "I proclaim that justice is nothing else than the interest of the stronger.",
+            "these laws, which are made by them for their own interests, are the justice which they deliver to their subjects,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q3",
+          "prompt": "How does Socrates use the admission that rulers make mistakes? Why does Thrasymachus refuse Cleitophon’s rescue, that justice is what the stronger thinks is his interest?",
+          "facilitatorNotes": [
+            "If rulers can err, they may command what harms them, and obeying is still justice, so justice serves the injury of the stronger as much as his interest. Cleitophon’s version would avoid this, but Thrasymachus rejects it: he cares about real advantage, not opinion, and will not call a man who is mistaken the stronger. He is a realist about power, not a relativist."
+          ],
+          "evidence": [
+            "Have we not admitted that the rulers may be mistaken about their own interest in what they command,",
+            "he meant by the interest of the stronger what the stronger thought to be his interest",
+            "Do you suppose that I call him who is mistaken the stronger at the time when he is mistaken?"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-05-q4",
+          "prompt": "Thrasymachus answers that a ruler “in so far as he is a ruler” never errs, as a physician never errs as a physician. Is this a clever escape or a trap he sets for himself?",
+          "facilitatorNotes": [
+            "It saves the definition by talking about an ideal ruler who exists only “in the strict sense.” But it also makes ruling a skill like medicine, and a physician’s skill is defined by what it does for the patient. Socrates goes on to argue that every skill serves its subject, so that ruling, as a skill, serves the ruled. Students can see the move coming before reading on."
+          ],
+          "evidence": [
+            "they none of them err unless their skill fails them, and then they cease to be skilled artists.",
+            "we should say that the ruler, in so far as he is a ruler, is unerring,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-06",
+      "title": "The Republic, Book III: the royal lie",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 16,
+        "totalMinutes": 29
+      },
+      "challenge": "Separate what the tale says from what it is meant to do, and ask who is supposed to believe it.",
+      "focus": "Whether a city can be held together by a story its founders know to be false.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. They are designing an imagined city in order to see justice on a large scale. Its guardians, after a long education and trials of character, are now divided into rulers and auxiliaries, the soldiers who support them. Earlier Socrates allowed that rulers, like doctors, might use falsehood for the good of the city. Husbandmen are farmers; dross is worthless metal. The bracketed [41] marks one of Jowett’s notes, which the library prints after the end of Book III.",
+      "contentNote": "Socrates proposes a deliberate falsehood to hold a ranked society together and speaks of guarding “the purity of the race”; here “race” means the citizens’ stock, sorted by their metals. Students can judge the proposal openly.",
+      "excerpt": {
+        "locator": "Book III, from the “needful falsehoods” to the end of the book; opens “How then may we devise one of those needful falsehoods of which we lately spoke—just one…”; closes “Yes, said Glaucon.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1344,
+          1371
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bf6e0ac97b14c1d9cc0de5c1b5dd6b0a4183117336481d9ab8669f2ab806db18"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-06-q1",
+          "prompt": "Why does Socrates hesitate before telling the tale? Who is meant to believe it, and in what order, and what does Glaucon think its chances are?",
+          "facilitatorNotes": [
+            "He calls it an “audacious fiction,” and Glaucon agrees he should be ashamed. It goes first to the rulers, then the soldiers, then the people, and is meant to deceive the rulers too “if that be possible,” so it is not simply a trick played by rulers on the ruled. Glaucon says no one now living would believe it, only later generations: founding stories work by being inherited."
+          ],
+          "evidence": [
+            "just one royal lie which may deceive the rulers, if that be possible, and at any rate the rest of the city?",
+            "first to the rulers, then to the soldiers, and lastly to the people.",
+            "but their sons may be made to believe in the tale, and their sons’ sons, and posterity after them."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q2",
+          "prompt": "The tale has two parts. What does each part teach the citizens, and how do the two work together?",
+          "facilitatorNotes": [
+            "The first makes the earth their mother and every citizen a brother, so they owe the land defence and each other loyalty. The second says God mixed different metals into them, so they are born to different ranks. Together they say: brothers, but unequal. Socrates claims the belief will make them care more for the city and for one another."
+          ],
+          "evidence": [
+            "her citizens they are to regard as children of the earth and their own brothers.",
+            "you are brothers, yet God has framed you differently.",
+            "the fostering of such a belief will make them care more for the city and for one another."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q3",
+          "prompt": "The tale lets children move up or down from their parents’ class. Does that make the order fairer, or only easier to accept?",
+          "facilitatorNotes": [
+            "Rank follows a person’s nature, not birth: a golden child of iron parents rises, and rulers must not spare their own children. That is fairer than inherited caste. But the rulers judge the metals, and the lie asks everyone to accept the judgment without being told why. Some students will see an early version of merit; others will see control."
+          ],
+          "evidence": [
+            "a golden parent will sometimes have a silver son, or a silver parent a golden son.",
+            "the eye of the ruler must not be pitiful toward the child",
+            "when a man of brass or iron guards the State, it will be destroyed."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-06-q4",
+          "prompt": "Why may the guardians own no property and never touch gold or silver? What danger is Socrates guarding against, and how does the myth help?",
+          "facilitatorNotes": [
+            "The soldiers are stronger than the citizens; like watch-dogs, they could turn into wolves. With homes and money of their own they would become householders and then tyrants, at war with the people they guard. The myth gives them a reason to accept poverty: they already have divine gold within. Students may ask whether any real rulers could live this way."
+          ],
+          "evidence": [
+            "would be a foul and monstrous thing in a shepherd?",
+            "the diviner metal is within them, and they have therefore no need of the dross which is current among men,",
+            "enemies and tyrants instead of allies of the other citizens;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-07",
+      "title": "The Republic, Book VIII: the strong wine of freedom",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 18,
+        "totalMinutes": 28
+      },
+      "challenge": "Mark each sign of excessive liberty Socrates lists, and decide which are satire and which are serious argument.",
+      "focus": "The claim that democracy, pursuing its own good without limit, prepares the way for tyranny.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. In Book VIII he describes how the ideal city would decline through four worse kinds of government, each matched by a kind of person: rule by the ambitious, rule by the rich (oligarchy), democracy, and tyranny. He has just described the democratic man, who treats all his desires as equal and calls that freedom. A metic was a resident foreigner in a Greek city, free but not a citizen; Aeschylus was an Athenian tragic poet.",
+      "contentNote": "Socrates counts the freedom of slaves and the equality of women and men among democracy’s excesses. The passage assumes the slavery and the subordination of women usual in Greek cities, although in Book V he argued that women could be guardians.",
+      "excerpt": {
+        "locator": "Book VIII, from “Last of all comes the most beautiful of all” through tyranny’s origin in democracy; opens “Last of all comes the most beautiful of all, man and State alike, tyranny and the tyrant;…”; closes “As we might expect.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3554,
+          3593
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "328729f6ae2c62a29a9bef1b80fffa028214bb4b2f4b802a30c70decf3b47f62"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-07-q1",
+          "prompt": "Socrates says each kind of state is ruined by an insatiable desire for its own good. What was oligarchy’s good, what is democracy’s, and how does the parallel shape his argument?",
+          "facilitatorNotes": [
+            "Oligarchy pursued wealth and was ruined by money-getting; democracy pursues freedom and neglects everything else for it. The parallel turns a description into something like a law: each regime is destroyed by its own principle pushed to excess. Students can ask whether freedom is really a good of the same kind as wealth."
+          ],
+          "evidence": [
+            "The good which oligarchy proposed to itself and the means by which it was maintained was excess of wealth",
+            "Freedom, I replied; which, as they tell you in a democracy, is the glory of the State",
+            "the insatiable desire of this and the neglect of other things introduce the change in democracy, which occasions a demand for tyranny."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q2",
+          "prompt": "What does the image of evil cup-bearers and the strong wine of freedom say about the leaders such a democracy rewards?",
+          "facilitatorNotes": [
+            "Leaders who pour freedom freely are praised; those who limit it are punished as “cursed oligarchs,” and citizens who obey are mocked as slaves who hug their chains. The people come to want leaders who flatter them, which is how the tyrant will rise."
+          ],
+          "evidence": [
+            "has evil cup-bearers presiding over the feast, and has drunk too deeply of the strong wine of freedom,",
+            "she calls them to account and punishes them, and says that they are cursed oligarchs.",
+            "she would have subjects who are like rulers, and rulers who are like subjects:"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q3",
+          "prompt": "The list of excesses runs from fathers and sons through teachers, slaves and women to horses and dogs. Which examples are satire, and which make a serious point? What does the list show about Socrates’ idea of authority?",
+          "facilitatorNotes": [
+            "The animals are comic exaggeration, and Glaucon jokes about his country walks. Teachers who flatter pupils and old men who copy the young are recognizable. The slaves and women show that Socrates takes hierarchy to be natural, which modern readers reject. The serious charge comes at the end: citizens resent every touch of authority and stop caring for the laws."
+          ],
+          "evidence": [
+            "the master fears and flatters his scholars, and the scholars despise their masters and tutors;",
+            "the she-dogs, as the proverb says, are as good as their she-mistresses,",
+            "they chafe impatiently at the least touch of authority,",
+            "they will have no one over them."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-07-q4",
+          "prompt": "“The excess of liberty, whether in States or individuals, seems only to pass into excess of slavery.” Why does Socrates think so? Is his principle that excess breeds reaction a law or a metaphor? Test it against a case you know.",
+          "facilitatorNotes": [
+            "Too much of anything produces its opposite, in seasons, plants, bodies and governments; a people that will accept no authority invites a strongman who promises order. The support is analogy, not proof. Students may name democracies that became dictatorships, or long-lived ones that did not, and ask what made the difference."
+          ],
+          "evidence": [
+            "the excessive increase of anything often causes a reaction in the opposite direction;",
+            "The excess of liberty, whether in States or individuals, seems only to pass into excess of slavery.",
+            "And so tyranny naturally arises out of democracy,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-08",
+      "title": "The Republic, Book X: the choice of lives",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice who chooses well and who chooses badly, and what the difference has to do with philosophy rather than luck.",
+      "focus": "Responsibility for the life one chooses, and why Plato ends a work on justice with a myth.",
+      "context": "Plato’s Republic is narrated by Socrates, here talking with Glaucon. Having argued that justice is better than injustice for its own sake, he ends with a tale: Er, a soldier killed in battle, came back to life on his funeral pyre and told what he had seen among the dead. Souls returning from a thousand years of reward or punishment come before the three Fates, daughters of Necessity: Lachesis, Clotho and Atropos. A genius here is a guardian spirit. Orpheus, Thamyras, Ajax, Agamemnon, Atalanta, Epeus, Thersites and Odysseus are figures from Greek myth and Homer. The bracketed [9] marks one of Jowett’s notes, which the library prints after the end of Book X.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book X, the Myth of Er from the souls’ arrival before Lachesis to the end of the dialogue; opens “When Er and the spirits arrived, their duty was to go at once to Lachesis; but first of…”; closes “…in this life and in the pilgrimage of a thousand years which we have been describing.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4455,
+          4458
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c18165af1336ccb0ab5d3eaa44c3e91414525d6a0ac13b99950b2e769316b09e"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-08-q1",
+          "prompt": "“The responsibility is with the chooser—God is justified.” What does the prophet mean, and how does the lottery fit with it? Is the order of choosing unfair?",
+          "facilitatorNotes": [
+            "The lots fix only the order of choosing; there are more lives than souls, and even the last comer can choose a good life. So the blame for a bad life belongs to the soul, not the gods. Chance still narrows the options, which some students will call unfair; Odysseus, choosing last, shows it need not decide the outcome."
+          ],
+          "evidence": [
+            "Your genius will not be allotted to you, but you will choose your genius;",
+            "the responsibility is with the chooser—God is justified.",
+            "Even for the last comer, if he chooses wisely and will live diligently, there is appointed a happy and not undesirable existence."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q2",
+          "prompt": "Why does the first soul, which came from heaven, choose the greatest tyranny? What is the difference between virtue “of habit only” and philosophy?",
+          "facilitatorNotes": [
+            "He chooses in a moment, darkened by folly, and then blames chance and the gods. His goodness came from living in a well-ordered state and was never tested, while souls who had suffered on earth chose slowly. Philosophy is understanding why the just life is better, which survives a change of circumstances; habit does not."
+          ],
+          "evidence": [
+            "his virtue was a matter of habit only, and he had no philosophy.",
+            "instead of throwing the blame of his misfortune on himself, he accused chance and the gods,",
+            "having themselves suffered and seen others suffer, were not in a hurry to choose."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q3",
+          "prompt": "Most souls choose by “their experience of a previous life.” Pick two of the figures and explain what their choices show. Why is the spectacle “sad and laughable and strange”?",
+          "facilitatorNotes": [
+            "Orpheus, killed by women, refuses to be born of a woman; Ajax and Agamemnon flee human nature because of their sufferings; Atalanta cannot resist fame; Thersites the jester becomes a monkey. Most choices react to old wounds or appetites instead of asking what will make the soul just. Odysseus is the exception: cured of ambition, he gladly takes the quiet private life everyone else ignored."
+          ],
+          "evidence": [
+            "for the choice of the souls was in most cases based on their experience of a previous life.",
+            "Now the recollection of former toils had disenchanted him of ambition,",
+            "he would have done the same had his lot been first instead of last,"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-08-q4",
+          "prompt": "By what test, Socrates says, should we judge a life? Why do you think Plato ends the Republic with a myth rather than an argument?",
+          "facilitatorNotes": [
+            "A life is better if it makes the soul more just and worse if it makes it more unjust; all else is to be disregarded, and the mean preferred to extremes. A myth makes the stakes vivid and memorable and reaches readers whom argument does not. Some readers think the rewards after death weaken the claim that justice is worth choosing for itself; others see the tale as a picture of the choices made in every life."
+          ],
+          "evidence": [
+            "giving the name of evil to the life which will make his soul more unjust, and good to the life which will make his soul more just;",
+            "let him know how to choose the mean and avoid the extremes on either side,",
+            "the tale has been saved and has not perished, and will save us if we are obedient to the word spoken;"
+          ]
+        }
+      ]
     }
   ]
 }
