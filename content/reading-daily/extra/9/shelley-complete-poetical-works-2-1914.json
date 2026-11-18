@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "shelley-complete-poetical-works-2-1914",
+  "readings": [
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-01",
+      "title": "Mutability",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Name what each of the four stanzas compares human life to or lists. Then read the final line twice and decide whether it comforts or unsettles.",
+      "focus": "A short lyric about constant change, and a last line that is also a paradox.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. He published this poem in 1816, when he was twenty-three. The “forgotten lyres” are wind harps, stringed instruments set in a window to sound when the breeze passes. Mutability means changeableness. Mary Shelley later had Victor Frankenstein quote the last two stanzas in Chapter X of Frankenstein, as he climbs toward the glacier at Montanvert.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Mutability (1816); opens “We are as clouds that veil the midnight moon; How restlessly they speed, and gleam, and…”; closes “…is free: Man's yesterday may ne'er be like his morrow; Nought may endure but Mutability.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          29,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd13d61e5c279d41b96872715fa91146002c47bc034ecae37567104fd4a76730"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-01-q1",
+          "prompt": "The first two stanzas compare “we” to clouds and to forgotten lyres. What does each comparison suggest about human beings?",
+          "facilitatorNotes": [
+            "Clouds speed, gleam and quiver, briefly “radiantly” bright, then are “lost for ever” in the night: life is short and bright. The wind harps answer every “varying blast” differently and never repeat a mood: we are played on by whatever moves us.",
+            "Some readers see the first simile as about death and the second about inconstant feeling; others see both as about lack of control."
+          ],
+          "evidence": [
+            "We are as clouds that veil the midnight moon;",
+            "To whose frail frame no second motion brings"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-01-q2",
+          "prompt": "Look at the dashes in the third stanza. What can spoil rest and waking, and why are such small things so powerful?",
+          "facilitatorNotes": [
+            "A single dream “has power to poison sleep”; “One wandering thought pollutes the day.” The dashes break each line like the interruptions they describe. The stanza then lists every mental activity, feeling, reasoning, laughing, weeping, as equally subject to change.",
+            "Students may recognize the experience; the poem’s point is that no state of mind is secure."
+          ],
+          "evidence": [
+            "We rest.--A dream has power to poison sleep;",
+            "We rise.--One wandering thought pollutes the day;"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-01-q3",
+          "prompt": "“It is the same!” What is the same, and is the last line hopeful or bleak?",
+          "facilitatorNotes": [
+            "Joy and sorrow alike depart freely, and no day repeats another. The final line is a paradox: the only permanent thing is change itself.",
+            "If sorrow too must pass, the line can console; if joy cannot last, it is bleak. Both readings fit; Victor Frankenstein, quoting it, hears the bleak one."
+          ],
+          "evidence": [
+            "It is the same!--For, be it joy or sorrow,",
+            "Nought may endure but Mutability."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-02",
+      "title": "Feelings of a Republican on the Fall of Bonaparte",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the sonnet’s two moments: the speaker’s old hatred, then what he learns “Too late.” Underline the abstract nouns that act like people.",
+      "focus": "A radical’s discovery that a fallen tyrant was not liberty’s worst enemy.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. Napoleon Bonaparte rose from the French Revolution to crown himself emperor in 1804. After his defeat and exile in 1814–1815, the victorious powers restored France’s Bourbon kings and other old monarchies across Europe. A republican, here, is someone who opposes rule by kings. Shelley published the sonnet in 1816. “Like thou” means like you.",
+      "contentNote": "The last line names religion (“bloody Faith”) among Virtue’s enemies.",
+      "excerpt": {
+        "locator": "Complete sonnet: Feelings of a Republican on the Fall of Bonaparte (1816); opens “I hated thee, fallen tyrant! I did groan To think that a most unambitious slave, Like…”; closes “…Than Force or Fraud: old Custom, legal Crime, And bloody Faith the foulest birth of Time.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          60,
+          60
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e61e3d54cd23c361496557ea1e7b0136d10cda9ef3f952c5d2b754e4e18bea63"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q1",
+          "prompt": "Napoleon was famous for ambition. Why does the speaker call him “a most unambitious slave”?",
+          "facilitatorNotes": [
+            "He might have built a lasting throne in the cause of liberty, but chose instead “A frail and bloody pomp,” so his ambition was too small. As a slave, he served passions: the poem calls him “minister” to Massacre, Treason, Slavery and Lust.",
+            "The paradox overturns the usual picture of Napoleon. Some students may find it unfair; ask what the speaker thinks real ambition would have been."
+          ],
+          "evidence": [
+            "To think that a most unambitious slave,",
+            "A frail and bloody pomp which Time has swept"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q2",
+          "prompt": "What did the speaker once pray for, and what does he learn “Too late”?",
+          "facilitatorNotes": [
+            "He prayed that the vices Napoleon served would smother him. Now that Napoleon and France “are in the dust,” he sees that Virtue has “a more eternal foe” than force or fraud: the old order that returned after Napoleon fell.",
+            "The turn comes in the middle of a line, not at a neat break, as if the realization interrupts him."
+          ],
+          "evidence": [
+            "Too late, since thou and France are in the dust,",
+            "That Virtue owns a more eternal foe"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-02-q3",
+          "prompt": "Why might “old Custom, legal Crime, / And bloody Faith” be harder to defeat than a single tyrant? Do you agree with the speaker?",
+          "facilitatorNotes": [
+            "A tyrant can be overthrown; custom feels natural, crime made legal looks like justice, and violence done in religion’s name claims sacred authority. Such enemies are everywhere and seldom recognized.",
+            "Readers may challenge the attack on faith, or ask whether Shelley excuses Napoleon. If students have read “Ozymandias,” they can compare how the two poems treat a fallen ruler and Time."
+          ],
+          "evidence": [
+            "Than Force or Fraud: old Custom, legal Crime,",
+            "And bloody Faith the foulest birth of Time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-03",
+      "title": "Stanzas Written in Dejection, near Naples",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Mark the point where the bright noon scene turns inward. Then compare the speaker in the last stanza with “this sweet day.”",
+      "focus": "A beautiful, peaceful scene that sharpens the loneliness of the one who sees it.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. He wrote this poem near Naples in December 1818, ill and grieving the death of his infant daughter Clara three months earlier; it was published after his death, in 1824. “Nor… nor” means neither… nor; the “sage” is a philosopher who found contentment in thought.",
+      "contentNote": "The speaker, despairing, imagines dying peacefully by the sea.",
+      "excerpt": {
+        "locator": "Complete poem: Stanzas Written in Dejection, near Naples (December 1818); opens “The sun is warm, the sky is clear, The waves are dancing fast and bright, Blue isles and…”; closes “…Shall on its stainless glory set, Will linger, though enjoyed, like joy in memory yet.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          282,
+          286
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "68da34e2f847623a239dedafb06a8e28709d4d280b962953ff26e92f73a495ba"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q1",
+          "prompt": "The first two stanzas describe a bright noon by the sea. Where does the first sign of sadness appear?",
+          "facilitatorNotes": [
+            "Even in stanza one the city’s voice is soft “like Solitude’s.” In stanza two the speaker sits “upon the sands alone,” and the stanza ends on the wish that someone could share his feeling. The beauty is real; what is missing is company.",
+            "Students may choose different lines, which is fine if they can show a change of tone."
+          ],
+          "evidence": [
+            "I sit upon the sands alone,--",
+            "How sweet! did any heart now share in my emotion."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q2",
+          "prompt": "The third stanza is a list of things the speaker lacks. How does it compare him with “Others,” and do you hear honest grief or self-pity?",
+          "facilitatorNotes": [
+            "He has neither hope, health, peace, content, fame, power, love nor leisure; others “call life pleasure,” but his cup has been “dealt in another measure.” The piled “nor” answers the abundance of the first stanzas.",
+            "Some readers find the complaint self-pitying; others hear depression described exactly. In the last stanza the speaker himself calls it an “untimely moan,” so the poem shares the doubt."
+          ],
+          "evidence": [
+            "Alas! I have nor hope nor health,",
+            "To me that cup has been dealt in another measure."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-03-q3",
+          "prompt": "In the last two stanzas, why is despair now “mild”? How does the speaker think he will be remembered, compared with the day?",
+          "facilitatorNotes": [
+            "The calm air and water soften despair, so he imagines death coming “like sleep” as the sea breathes over him. He expects people to “regret” him only briefly, since he is one “Whom men love not,” while this lovely day will “linger” in memory as joy does.",
+            "The ending ranks him below a single afternoon. Readers may find that the poem’s beauty undercuts its despair, or that the calm makes the despair more serious."
+          ],
+          "evidence": [
+            "Yet now despair itself is mild,",
+            "Will linger, though enjoyed, like joy in memory yet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-04",
+      "title": "Song to the Men of England",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Read aloud for the hammering rhythm. Then put stanzas five and six side by side, and decide what the last two stanzas are telling the workers to do.",
+      "focus": "A protest song that turns workers’ own labour into an argument against their masters.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In August 1819, at St Peter’s Field in Manchester, mounted soldiers charged a peaceful crowd gathered to demand parliamentary reform, killing about fifteen people and injuring hundreds; the massacre was mockingly named “Peterloo.” Shelley, living in Italy, wrote a burst of political poems on hearing the news. This song was not published until 1839, after his death. “Wherefore” means why; drones are male bees that do no work in the hive; a scourge is a whip; to temper steel is to harden it; a winding-sheet is a burial shroud; a sepulchre is a tomb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Song to the Men of England (1819); opens “Men of England, wherefore plough For the lords who lay ye low? Wherefore weave with toil…”; closes “…and build your tomb, And weave your winding-sheet, till fair England be your sepulchre.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          375,
+          382
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "74b910be70e82252a006cf289ea684bb77d20bf83d0b926c1d6553d1028e3aae"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q1",
+          "prompt": "The workers are “Bees of England,” the lords “drones.” What does the metaphor argue about who works and who lives off work?",
+          "facilitatorNotes": [
+            "In a hive the workers gather and the drones consume, so the lords are idle, “ungrateful” dependents, not providers. Calling them “stingless” suggests they have no power of their own: the weapons, chains and whips that hold the workers down were forged by the workers.",
+            "Students may ask whether the picture is fair to every landowner; the song deliberately simplifies to rouse."
+          ],
+          "evidence": [
+            "Those ungrateful drones who would",
+            "That these stingless drones may spoil"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q2",
+          "prompt": "Compare stanza five with stanza six. What changes when the same verbs return?",
+          "facilitatorNotes": [
+            "Stanza five states the injustice in four parallel lines: you sow, another reaps. Stanza six repeats the verbs as commands with a condition: sow, but let no tyrant reap. The last line, “Forge arms,--in your defence to bear,” is the most dangerous.",
+            "Is it a call to armed revolt or to self-defence? The text leaves room for both. In another poem of the same year, The Mask of Anarchy, Shelley urged nonviolent resistance."
+          ],
+          "evidence": [
+            "The seed ye sow, another reaps;",
+            "Forge arms,--in your defence to bear."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-04-q3",
+          "prompt": "The song ends by telling the workers to “Shrink to your cellars” and dig their own graves. Why end with these commands instead of a call to rise up?",
+          "facilitatorNotes": [
+            "The commands are bitter irony: if you keep obeying, your plough and loom will make your grave, and England your tomb. The shock is meant to provoke the opposite of what it says.",
+            "Some readers hear despair at the workers’ passivity; others hear a deliberate goad. The changed tone of “Why shake the chains ye wrought?” supports discussing both."
+          ],
+          "evidence": [
+            "The steel ye tempered glance on ye.",
+            "England be your sepulchre."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-05",
+      "title": "Sonnet: England in 1819",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Find the subject and main verb of this one-sentence sonnet. Then take each item of the list in turn and ask what it accuses.",
+      "focus": "A furious inventory of a nation’s institutions, ending on a doubtful hope.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In August 1819, at St Peter’s Field in Manchester, mounted soldiers charged a peaceful crowd gathered to demand parliamentary reform, killing about fifteen people and injuring hundreds; the massacre was mockingly named “Peterloo.” Shelley, living in Italy, wrote a burst of political poems on hearing the news. The king, George III, had been blind and insane for years and died in 1820; his sons, including the Prince Regent, were notorious for debt and scandal. “Liberticide” means the killing of liberty; “sanguine” means bloody; a “book sealed” is a closed book that cannot be read; the “Senate” is Parliament. Shelley wrote in 1819 that the sonnet could not be printed then; it appeared in 1839.",
+      "contentNote": "The sonnet refers to the killing of protesters (“starved and stabbed”).",
+      "excerpt": {
+        "locator": "Complete sonnet: England in 1819; opens “An old, mad, blind, despised, and dying king,-- Princes, the dregs of their dull race,…”; closes “…Are graves from which a glorious Phantom may Burst, to illumine our tempestuous day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          403,
+          403
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "144ef10a0acc728acf93d19c19e67b915a9243f2690b437ec7a5e05bcf3b5bbc"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q1",
+          "prompt": "The whole sonnet is one sentence. Where is its main verb, and what is the effect of waiting so long for it?",
+          "facilitatorNotes": [
+            "The subject is a list of twelve lines: king, princes, rulers, people, army, laws, religion, Senate. The verb “Are” arrives only in line thirteen. The heaped nouns without action make England feel stalled and suffocating until the final lines.",
+            "Some students will notice the unusual rhyme pattern too: the sonnet ends with a couplet but does not follow either familiar form."
+          ],
+          "evidence": [
+            "An old, mad, blind, despised, and dying king,--",
+            "Are graves from which a glorious Phantom may"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q2",
+          "prompt": "Choose two items from the list and explain the image Shelley uses for each. What is he accusing them of?",
+          "facilitatorNotes": [
+            "The princes are “mud from a muddy spring,” so corruption is inherited; rulers “leech-like” cling to a fainting country; laws are “Golden and sanguine,” bought with money and enforced with blood; religion is “Christless, Godless.” “A people starved and stabbed” points to Peterloo.",
+            "Strong answers connect the image to what it implies about power, not just restate it."
+          ],
+          "evidence": [
+            "But leech-like to their fainting country cling,",
+            "Golden and sanguine laws which tempt and slay;"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-05-q3",
+          "prompt": "Everything in the list is called a grave. What might the “glorious Phantom” be, and how certain is the hope?",
+          "facilitatorNotes": [
+            "The institutions are dead things from which something new might rise, like a resurrection: liberty, reform or revolution. The word “may” and the ghostly “Phantom” keep the hope uncertain, and the “tempestuous day” hints that the change could be violent.",
+            "Some readers find the ending a burst of hope after despair; others find it vague. The line break after “may” is worth discussing."
+          ],
+          "evidence": [
+            "Are graves from which a glorious Phantom may",
+            "Burst, to illumine our tempestuous day."
+          ]
+        }
+      ]
+    }
+  ]
+}
