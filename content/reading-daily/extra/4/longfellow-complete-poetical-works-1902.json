@@ -349,9 +349,7 @@
           ]
         }
       ],
-      "months": [
-        4
-      ]
+      "holiday": "independence-day"
     },
     {
       "id": "reading-4-longfellow-complete-poetical-works-1902-06",
@@ -491,9 +489,7 @@
           ]
         }
       ],
-      "months": [
-        12
-      ]
+      "holiday": "christmas"
     },
     {
       "id": "reading-4-longfellow-complete-poetical-works-1902-08",
@@ -1166,7 +1162,8 @@
             "And the people who saw this marvel"
           ]
         }
-      ]
+      ],
+      "holiday": "halloween"
     },
     {
       "id": "reading-4-longfellow-complete-poetical-works-1902-17",
@@ -1622,7 +1619,8 @@
             "Never here, forever there,"
           ]
         }
-      ]
+      ],
+      "holiday": "new-year"
     },
     {
       "id": "reading-4-longfellow-complete-poetical-works-1902-23",
