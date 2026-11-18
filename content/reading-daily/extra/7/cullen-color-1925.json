@@ -326,6 +326,407 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-06",
+      "title": "Atlantic City Waiter",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Find the mask in a poem and what shows through it, and question the poem’s explanation.",
+      "focus": "A waiter whose grace and hidden pride the diners cannot stop watching.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. Atlantic City is a seaside resort in New Jersey, known then for its grand hotels. Viands are fine foods; dexterous means skilful; artifice is deliberate pretence; acquiescent means quietly accepting; a cask is a barrel.",
+      "contentNote": "The poem traces the waiter’s grace to “ten thousand years on jungle clues,” an idea about race that many readers now question.",
+      "excerpt": {
+        "locator": "“Atlantic City Waiter,” the whole poem; opens “WITH subtle poise he grips his tray Of delicate things to eat; Choice viands to their…”; closes “…Of bland gentility, The jungle flames like a copper cask Set where the sun strikes free.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          54
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc91f8b7d35cae4356b285c2152a077bbd6174d85c689160d7864bc88fbcb690"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-06-q1",
+          "prompt": "What do the ladies watch, and how does Cullen describe the waiter’s movement?",
+          "facilitatorNotes": [
+            "They stop with food halfway to their mouths to watch his feet, which “carve” paths through the crowded room. He is skilful and poised; the diners, not the waiter, are the ones distracted."
+          ],
+          "evidence": [
+            "Choice viands to their mouths half way, The ladies watch his feet",
+            "Go carving dexterous avenues Through sly intricacies;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-06-q2",
+          "prompt": "“For him to be humble who is proud / Needs colder artifice.” What is the waiter hiding, and does the hiding work?",
+          "facilitatorNotes": [
+            "He is proud but must act humble for his customers, and that takes cold, deliberate pretence. He gives up “half his pride,” yet “In vain”: his real self still blazes through the “mask / Of bland gentility.”"
+          ],
+          "evidence": [
+            "For him to be humble who is proud Needs colder artifice;",
+            "Though half his pride is disavowed, In vain the sacrifice.",
+            "Sheer through his acquiescent mask"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-06-q3",
+          "prompt": "Twice the poem uses “jungle” to explain the waiter. What is Cullen claiming, and do you accept it?",
+          "facilitatorNotes": [
+            "He credits the waiter’s grace and fire to a long African past, meaning it as pride. But it rests on a stereotype: that Black people’s talents are inherited and “primitive” rather than skill and character. The closing image, a copper cask flashing in the sun, is striking either way. Readers can admire the image and still question the idea."
+          ],
+          "evidence": [
+            "Ten thousand years on jungle clues Alone shaped feet like these.",
+            "The jungle flames like a copper cask Set where the sun strikes free."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-07",
+      "title": "Two Who Crossed a Line (She Crosses)",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Read a community’s feelings through the voice that tells the story.",
+      "focus": "A light-skinned woman leaves to live as white, and one day returns.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. “Crossing the line,” or passing, meant that a light-skinned person of Black ancestry lived as white, often cutting off family and friends, to escape segregation. The book prints two poems under this title; this first one is about a woman. A shade can mean a ghost, or the shadow of someone’s former self.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Two Who Crossed a Line,” the first of the two poems under that title, “She Crosses”; opens “(_She Crosses_)”; closes “…no word asked, gave none; Only the silence in her face Said seats were dear in the sun.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          82
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3f94a1ec76e152f0d25d4080008357cfce0a9c8c8c7d90f2bc430e6c6421638b"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-07-q1",
+          "prompt": "Why does she cross the line? What does the poem suggest about what she wanted and what stopped her?",
+          "facilitatorNotes": [
+            "She craved a certain “air,” perhaps freedom and opportunity, but where she stood it was spoiled; it was “too much to bear.” She “braved / Her gods,” defying her community’s loyalties. The poem does not say exactly what the “smell of pine” means, so readers can suggest readings (the South, the poverty of her surroundings, danger)."
+          ],
+          "evidence": [
+            "FROM where she stood the air she craved Smote with the smell of pine;",
+            "It was too much to bear; she braved Her gods and crossed the line."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-07-q2",
+          "prompt": "Who is “we”? How do their feelings about her change?",
+          "facilitatorNotes": [
+            "Her own people, the community she left. First they are hurt, then envious, then they forget her name. Each stage shows a different way of coping with someone who has left you behind."
+          ],
+          "evidence": [
+            "And we were hurt to see her go,",
+            "We envied her a while,",
+            "Then we forgot her name,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-07-q3",
+          "prompt": "When she comes back, what has happened to her? What does her silence say?",
+          "facilitatorNotes": [
+            "She returns calm but “Sorrow-proud and sorrow-wise,” with “trouble” at her breast: life on the other side has hurt her. She asks nothing and explains nothing. Her face says “seats were dear in the sun”: a place in the white world cost her dearly (“dear” means both expensive and precious). Readers can infer what happened; the poem refuses to tell."
+          ],
+          "evidence": [
+            "With trouble sucking at her breast,",
+            "Only the silence in her face Said seats were dear in the sun."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-08",
+      "title": "Pagan Prayer",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Hear a challenge inside a prayer.",
+      "focus": "A doubter prays for his people’s faith, and questions God.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A pagan here means someone outside the Christian faith. Land left “fallow” is left unplanted for a season; credulity is readiness to believe; “turn the other cheek” is Christ’s teaching not to strike back; plaints are laments; to “compass” is to win over.",
+      "contentNote": "The speaker asks whether his people are God’s “bastard kin,” children shut out of the family.",
+      "excerpt": {
+        "locator": "“Pagan Prayer,” the whole poem; opens “NOT for myself I make this prayer, But for this race of mine That stretches forth from…”; closes “…Retrieve my race again; So shall you compass this black sheep, This pagan heart. Amen.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "59ceb10c342bae4b7e12196cd881c0f61b65e267f4d17618836f8ab6d78f3924"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-08-q1",
+          "prompt": "For whom does the speaker pray? How is he different from them?",
+          "facilitatorNotes": [
+            "Not for himself but for his race. They are humble believers who turn the other cheek; he is restless, doubting, and pays “debts in kind.” “Bless their credulity” can be read as tender or as faintly mocking; readers can decide."
+          ],
+          "evidence": [
+            "NOT for myself I make this prayer, But for this race of mine",
+            "But these are humble and believe; Bless their credulity."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-08-q2",
+          "prompt": "“Our Father, God; our Brother, Christ, / Or are we bastard kin.” What accusation does this question make?",
+          "facilitatorNotes": [
+            "If God is Father and Christ is Brother, why are Black people’s prayers unheard and the doors “barred from within”? The speaker asks whether they are treated as illegitimate children. The prayer turns into a challenge to God, and to Christians who teach the words but do not live them."
+          ],
+          "evidence": [
+            "Their kinship seems a little thing Who sorrow all the day.",
+            "Or are we bastard kin, That to our plaints your ears are closed,"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-08-q3",
+          "prompt": "What bargain does the last stanza offer? Is the poem finally an act of faith or of defiance?",
+          "facilitatorNotes": [
+            "If God “retrieves” his race, God will win back this “black sheep” as well; the phrase plays on the family stray and on his colour. It is a prayer, so in one sense faithful, but it sets terms. Readers may argue for faith, defiance, or both."
+          ],
+          "evidence": [
+            "Retrieve my race again; So shall you compass this black sheep, This pagan heart. Amen."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-09",
+      "title": "To My Fairer Brethren",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Explain a complaint made in the language of sport and games.",
+      "focus": "A speaker who must win three times over to be believed.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. “Fairer” here means lighter-skinned, and “brethren” means brothers. “Treble” means three times; to catch someone “on the hip” is to have him at a disadvantage. Wreaths of laurel were once prizes for poets and athletes; “rakishly” means at a jaunty angle.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To My Fairer Brethren,” the whole poem; opens “THOUGH I score you with my best, Treble circumstance Must confirm the verdict, lest It be…”; closes “…my wreaths a bit Rakishly and proud, I have bought my right to it; Let it be allowed.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          113,
+          115
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e456252e7bb7c4fa52d2940570f5146df3b1e70c2e4309b0f6c827f057c2e4b9"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-09-q1",
+          "prompt": "What must the speaker do for his win to be accepted? Put the first two stanzas in your own words.",
+          "facilitatorNotes": [
+            "Beating his white rivals once is not enough; it would be called luck. He needs “treble circumstance” to prove it, and matching them is “insufficient”: he must beat them decisively. It describes a double standard: a Black achiever has to be far better to be counted equal."
+          ],
+          "evidence": [
+            "THOUGH I score you with my best, Treble circumstance Must confirm the verdict, lest It be laid to chance.",
+            "Insufficient that I match you Every coin you flip;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-09-q2",
+          "prompt": "Why does he feel entitled to wear his wreaths “Rakishly and proud”? Would you call it arrogance?",
+          "facilitatorNotes": [
+            "He has paid more for each prize than anyone else, so he has “bought” the right to enjoy it. Critics might call it arrogance; he answers in advance that his pride is earned. Readers can weigh whether pride is fair when the contest was not."
+          ],
+          "evidence": [
+            "Should I wear my wreaths a bit Rakishly and proud, I have bought my right to it;"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-09-q3",
+          "prompt": "He calls his rivals “brethren” and ends “Let it be allowed.” What tone does he take with them?",
+          "facilitatorNotes": [
+            "Polite on the surface, even brotherly, but sharp underneath. “Let it be allowed” can be a request or a quiet demand. The short, neat stanzas make the complaint sound controlled, which makes it harder to dismiss."
+          ],
+          "evidence": [
+            "Let it be allowed.",
+            "Your demand is that I catch you Squarely on the hip."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-10",
+      "title": "The Shroud of Color",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 12,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a long dream-vision stage by stage and explain what finally changes the speaker’s mind.",
+      "focus": "A young man in despair over his colour is shown visions until he chooses to live.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. A shroud is the cloth wrapped round a body for burial. In the Bible, Joseph’s father gives him a coat of many colours, and God provides a ram caught in a bush so that Abraham need not sacrifice his son. Lucifer is the angel who rebelled against God and fell; Gabriel, Michael and Raphael are archangels. To incarnadine is to stain red; a chimera is a wild fancy; an abattoir is a slaughterhouse; a recreant is a coward. The poem is dedicated to Llewellyn Ransom.",
+      "contentNote": "The speaker, crushed by racism, begs God to let him die; visions of struggle, war in heaven and his people’s suffering in slavery bring him to choose life.",
+      "excerpt": {
+        "locator": "“The Shroud of Color,” the whole poem with its dedication; opens “(_For Llewellyn Ransom_)”; closes “…though the tears for joy would run, My sight was clear; I looked and saw the rising sun.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          125,
+          142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "047cfb42ba7c5e0c3fb7048057459afc2645317c96cd72f91987a8dfb72035b1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-10-q1",
+          "prompt": "In his opening speech, why does the speaker want to die? What has he loved, and why does he think death would protect it?",
+          "facilitatorNotes": [
+            "Being dark, he is “as dirt / Beneath my brother’s heel,” and every simple joy is spoiled. He has loved beauty and dreams, “a many-colored coat of dreams.” Now that he sees the truth about how men treat him, he fears it will destroy those dreams, so he would rather die and keep them pure."
+          ],
+          "evidence": [
+            "Lord, being dark, forewilled to that despair My color shrouds me in, I am as dirt Beneath my brother’s heel;",
+            "Who wore a many-colored coat of dreams,",
+            "To dream still pure all that I loved, and die."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-10-q2",
+          "prompt": "What does each early vision show him: the struggling seed and rose, then men fighting, then the war in heaven? Why does he still resist?",
+          "facilitatorNotes": [
+            "Everything alive struggles to live; even a rose seems to call him “Coward!” Men fight their way up a ladder; even God wins only at a cost, and Lucifer falls clutching stars. He answers that others can fight, since their “flesh is fair,” and asks “Am I a god?” He still believes his colour excuses him from the fight."
+          ],
+          "evidence": [
+            "There was no thing alive save only I That held life in contempt and longed to die.",
+            "And no thing died that did not give A testimony that it longed to live.",
+            "Well, let them fight;",
+            "A star’s a star although it burns in hell."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-10-q3",
+          "prompt": "What finally changes his mind?",
+          "facilitatorNotes": [
+            "The music of his own people: first joyful, then the cry of slavery, yet with “faith in man” running through it. He realises that “being dark, and living through the pain / Of it, is courage more than angels have.” He is persuaded not by “fairer men” or by faith alone but by his own people’s endurance, and his private grief merges into theirs."
+          ],
+          "evidence": [
+            "How being dark, and living through the pain Of it, is courage more than angels have.",
+            "Lord, I will live persuaded by mine own.",
+            "My spirit has come home, that sailed the doubtful seas."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-10-q4",
+          "prompt": "Compare the opening “Lord, being dark” with the ending. How has his feeling about his colour and his dreams changed? Is the turn convincing?",
+          "facilitatorNotes": [
+            "At first his colour is a shroud; at the end he is “Glad of the blood in my smallest vein,” keeps a “loyal dream,” and vows to “match” it to truth. He sees clearly and the sun is rising. Some readers find the turn earned by the vision of his people; others may find it sudden. Either view should cite the poem."
+          ],
+          "evidence": [
+            "Glad of the blood in my smallest vein,",
+            "Oh, I will match you yet,",
+            "My sight was clear; I looked and saw the rising sun."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-cullen-color-1925-11",
+      "title": "To John Keats, Poet. At Spring Time",
+      "sourceId": "cullen-color-1925",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a poem addressed to a poet who died a hundred years before it was written.",
+      "focus": "Spring overwhelms a young poet, who finds a dead poet alive in it.",
+      "context": "Countee Cullen (1903–1946) grew up in Harlem and published Color, his first book of poems, in 1925, while still a student at New York University. John Keats (1795–1821) was an English poet of beauty who died of tuberculosis at twenty-five. The poem is dedicated to the writer Carl Van Vechten; the note at its end, printed in the book, dates it “Spring, 1924.” A tocsin is an alarm bell; “The Vision Splendid” is a phrase from Wordsworth for the glory a child sees in the world; to “keep revel” is to celebrate.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“To John Keats, Poet. At Spring Time,” the whole poem with its dedication and the book’s note; opens “(_For Carl Van Vechten_)”; closes “[Footnote A: Spring, 1924]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          292,
+          297
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b8b82905a067f19a208ca7fdcc2f9ec9c3d107f99c669b000750356b97cfbc74"
+      },
+      "questions": [
+        {
+          "id": "reading-7-cullen-color-1925-11-q1",
+          "prompt": "Why can the speaker not “hold my peace”? What does spring do to him?",
+          "facilitatorNotes": [
+            "This spring is the most beautiful he has known, and he must speak. He is “helpless” in it, like a newborn lamb on unsteady legs, and everything that slept is awake. The repeated opening line shows a feeling that will not stay quiet."
+          ],
+          "evidence": [
+            "There never was a spring like this;",
+            "I am as helpless in the toil Of Spring as any lamb that bleats"
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-11-q2",
+          "prompt": "Where does the speaker find John Keats now?",
+          "facilitatorNotes": [
+            "In nature: Keats’s will pulses up the sap of a maple, his voice is in its leaves, his fingers “work as grass” on “the broad sweet page of the earth.” His body has become earth, and the earth is now his poem. So “John Keats still writes poetry.”"
+          ],
+          "evidence": [
+            "Is pulsing up some tremulous Sap road of a maple tree,",
+            "Of the night on the broad sweet page of the earth.",
+            "Know John Keats still writes poetry."
+          ]
+        },
+        {
+          "id": "reading-7-cullen-color-1925-11-q3",
+          "prompt": "The poem ends with people finding the speaker strange. Why does he not mind? What does the poem suggest about poets speaking to each other across time and difference?",
+          "facilitatorNotes": [
+            "They see only a young man deranged by spring; he knows he has company. A young Black poet in Harlem claims an English poet of a century before as a fellow reveller: beauty and poetry belong to anyone who loves them. Readers might debate whether this is an escape from the world of his other poems or a claim to the whole tradition of poetry."
+          ],
+          "evidence": [
+            "Folks seeing me must think it strange That merely spring should so derange My mind.",
+            "John Keats, keep revel with me, too."
+          ]
+        }
+      ]
     }
   ]
 }
