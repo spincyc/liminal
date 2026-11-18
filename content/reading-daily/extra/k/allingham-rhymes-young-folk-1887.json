@@ -330,6 +330,134 @@
     },
     {
       "id": "reading-k-allingham-rhymes-young-folk-1887-06",
+      "title": "Here and There",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Answer a question with the chorus each time it comes, and hear where each child is supposed to be.",
+      "focus": "A singing game sends each child far away in a verse, and the chorus brings every one of them straight back.",
+      "context": "A chorus is a part that everyone sings together; in this song for children, someone asks where a child is, and the others answer. The book prints music for the first verse; the adult can simply read it. A lay is a song; afloat means out on the water; Nubia is a part of Africa along the river Nile. “Ad infinitum” at the end is Latin for “without end.” Read each “Where's…?” verse as a question, then let the child join in the chorus “No, here she is!” or “No, here he is!”",
+      "contentNote": "One verse pictures a boy in China with “a long pig-tail” who “Perpetually drinks tea”: men in China then wore their hair in a long braid by law, and the verse shows China as English children's books of the time imagined it.",
+      "excerpt": {
+        "locator": "“Here and There (A Juvenile Chorus),” the complete poem; the first verse and chorus are the words printed under its tune; opens “(A JUVENILE CHORUS.)”; closes “[AD INFINITUM.]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          56,
+          74
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4836e2393fcde93baaf89e321f6623251316fe99a9bb470d79649cc14d6a2c32"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q1",
+          "prompt": "Where is Gerald supposed to be, and where is Evey? Which place would you least like to be?",
+          "facilitatorNotes": [
+            "Gerald is out in the snow in the cold wind; Evey is lost in the fog, and people go to find her with a dog. Any choice with a reason counts: the cold, the fog, Henry’s tossing boat, or Johnny up a palm-tree with a lion below."
+          ],
+          "evidence": [
+            "He's out in the snow;",
+            "She's lost in the fog;"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q2",
+          "prompt": "What does the chorus answer every time? Who could be singing it?",
+          "facilitatorNotes": [
+            "“No, here she is! here she is!”: the child is not far away at all, but here, happy, and singing. The singers are the other children in the game, calling each named child back into the song."
+          ],
+          "evidence": [
+            "No, here she is! here she is!",
+            "To join in our lay!"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q3",
+          "prompt": "The song ends “ad infinitum,” without end. How could it keep going, and why might the poet leave it that way?",
+          "facilitatorNotes": [
+            "Anyone could sing a new verse with a new name and a new faraway place, and the chorus would bring that child back too. A child may make up a verse about themselves. Some will say the game ends when the children are tired; that also fits a song meant to be played."
+          ],
+          "evidence": [
+            "[AD INFINITUM.]",
+            "She has flown to the bright moon--"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-07",
+      "title": "The Lepracaun; or, Fairy Shoemaker",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the shoemaker’s tapping songs inside the poem and follow how the speaker tries to catch him.",
+      "focus": "A tiny fairy with a hidden fortune is nearly caught, and escapes by a trick.",
+      "context": "William Allingham grew up in Ireland, where old stories tell of the lepracaun (now usually spelled leprechaun), a little fairy shoemaker with hidden gold who must give it up if someone catches him. A rath is the grassy mound of a very old fort; a span is the width of a spread hand, so he is about as tall as a ruler. A made man is a person rich for life. Crocks are pots; cormorants are seabirds; buskins and brogues are boots and shoes. Snuff is a powder people once sniffed, which made them sneeze. Read the shoemaker’s songs in a quick, tapping voice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Lepracaun; or, Fairy Shoemaker,” the complete poem in three parts (Allingham’s two notes after it are not read); opens “LITTLE Cowboy, what have you heard, Up on the lonely rath's green mound? Only the…”; closes “…a whimsical grace, Pouf! he flung the dust in my face, And, while I sneezed, Was gone!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          100
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "83e65ece43d255783f8d2987acdb063fc9e79c52a8386cd93d2856a93c7d2bba"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q1",
+          "prompt": "What sounds tell the cowboy that the Lepracaun is busy under the hill? Tap them out.",
+          "facilitatorNotes": [
+            "His hammer and his song: “Tip-tap, rip-rap,” “Tick-a-tack-too,” the “Busy click of an Elfin hammer.” Children can tap a table as the adult rereads the song."
+          ],
+          "evidence": [
+            "Tip-tap, rip-rap,",
+            "Busy click of an Elfin hammer,"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q2",
+          "prompt": "Why does the poem tell the cowboy to grab the shoemaker?",
+          "facilitatorNotes": [
+            "Whoever catches him becomes rich: he has nine-and-ninety pots of gold hidden away, and the cowboy could ride in a carriage instead of sleeping in the hay."
+          ],
+          "evidence": [
+            "Get him in sight, hold him tight,",
+            "Nine-and-ninety treasure-crocks"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q3",
+          "prompt": "The speaker says, “The rogue was mine.” How does the Lepracaun get away? Was that clever, unfair, or both?",
+          "facilitatorNotes": [
+            "He politely offers his snuff-box, flings the dust in the speaker’s face, and is gone while the speaker sneezes. Many children will call it clever; some will say it was a mean trick. Both can point out that the speaker was trying to catch him for his gold."
+          ],
+          "evidence": [
+            "The rogue was mine, beyond a doubt.",
+            "Pouf! he flung the dust in my face,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-08",
       "title": "A Swing Song",
       "sourceId": "allingham-rhymes-young-folk-1887",
       "genre": "poetry",
@@ -358,7 +486,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q1",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-08-q1",
           "prompt": "What does the child on the swing pretend to be? What is the throne?",
           "facilitatorNotes": [
             "A King; the swing seat is the throne. Ask how a swing might make someone feel like a king."
@@ -368,7 +496,7 @@
           ]
         },
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q2",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-08-q2",
           "prompt": "Name some places the swinger imagines flying to.",
           "facilitatorNotes": [
             "Through the sky like a bird, over the mountain and the sea, to London Town, over the sunset and the moon, and from star to star. Any of these is right; children may add their own."
@@ -379,7 +507,7 @@
           ]
         },
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-06-q3",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-08-q3",
           "prompt": "How do the words of the last part show the swing slowing down?",
           "facilitatorNotes": [
             "“Low, low,” the toe sweeping the daisies, and “slow” said again and again with longer and longer dashes, until one last “slow.” The words stretch out the way the swing’s swings get shorter. Children may say the flying was pretend all along."
@@ -392,7 +520,135 @@
       ]
     },
     {
-      "id": "reading-k-allingham-rhymes-young-folk-1887-07",
+      "id": "reading-k-allingham-rhymes-young-folk-1887-09",
+      "title": "Down on the Shore",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture the same seashore on a sunny day and on a stormy one.",
+      "focus": "Two parts that begin with almost the same line show how weather changes a place and the people who live there.",
+      "context": "Read the first part gently and the second part louder, like the wind. The strand is the beach; sapphire is a deep blue jewel; a gale is a strong wind, here a good one for sailing. Beset means surrounded; the steep is a cliff; a curlew is a shore bird with a long curved beak; sea-wrack is seaweed; shoals are shallow places hidden under the water; din is loud noise; hearkening means listening.",
+      "contentNote": "In the stormy part a ship breaks up on hidden shoals and a sailor’s wife sits listening to the storm until she cries; no one is shown hurt.",
+      "excerpt": {
+        "locator": "“Down on the Shore,” the complete poem in two parts; opens “DOWN on the shore, on the sunny shore! Where the salt smell cheers the land; Where the…”; closes “…sad within, Hearkening the wind and the water's roar, Till at last her tears begin.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          123,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "707fd261e12870dbe1a277db32821edd5a1d0cf39ec3a98817e6097ec14bda8e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-09-q1",
+          "prompt": "On the sunny shore, what are the children doing, and what are the fishermen doing?",
+          "facilitatorNotes": [
+            "The children wade in the pools and run from the froth; the fishermen are asleep beside their nets, and the waves sing their lullaby."
+          ],
+          "evidence": [
+            "Where the children wade in the shallow pools,",
+            "And asleep, hard by, the fishermen lie,"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-09-q2",
+          "prompt": "The stormy sea is “growling,” and its waves jump “Like wolves.” Show how that sea would sound and move.",
+          "facilitatorNotes": [
+            "Children can growl and leap. The poet makes the sea sound like a wild animal attacking, very different from the “hushing wave” of the first part."
+          ],
+          "evidence": [
+            "Beset by a growling sea,",
+            "Like wolves up a traveller's tree:"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-09-q3",
+          "prompt": "Why do you think the sailor’s wife begins to cry at the end?",
+          "facilitatorNotes": [
+            "She is listening to the wind and the roaring water and is afraid for her husband, who may be out at sea. The poem does not say where he is; children may also say she saw the wrecked ship, which the poem shows just before."
+          ],
+          "evidence": [
+            "With a sailor's wife sitting sad within,",
+            "Till at last her tears begin."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-10",
+      "title": "Riding",
+      "sourceId": "allingham-rhymes-young-folk-1887",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how three riders move, and how two of them speak to the third in a narrow lane.",
+      "focus": "An angry order gets nowhere, and a friendly word makes room for everyone.",
+      "context": "His Lordship and Her Ladyship are a rich lord and lady. A steed is a fine horse; fleetly means fast; bonny means pretty. A turf-cadger goes from house to house selling turf, dried earth that people burned in the fire; his ass, or donkey, carries it in creels, big baskets. Neddy is a pet name for a donkey; “Ax pardon” is his way of saying “Ask pardon,” excuse me. Read the Lord crossly and the Lady sweetly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Riding,” the complete poem; opens “HIS Lordship's Steed Of a noble breed Is trotting it fleetly, fleetly, Her Ladyship's…”; closes “…and all, Jolting and bumping, Shouting and thumping, Creels and all, creels and all.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          144,
+          150
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e25cca0e539bc6ef45fc0e8d6cc199f065098c1ee2ffdb8f949a5fce67c88f62"
+      },
+      "questions": [
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-10-q1",
+          "prompt": "How do the Lord’s horse and the Lady’s pony move? How does the Cadger ride? Show both.",
+          "facilitatorNotes": [
+            "The horse trots fleetly and the pony canters neatly; the Cadger bumps and thumps along, heels and all. Children can trot smoothly, then bounce."
+          ],
+          "evidence": [
+            "Is trotting it fleetly, fleetly,",
+            "Man on him bumping,"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-10-q2",
+          "prompt": "What does the Lord say to the Cadger, and what does the Cadger say back?",
+          "facilitatorNotes": [
+            "The Lord says angrily, “Fellow, get out of the way!” The Cadger answers boldly that the lane is his way too."
+          ],
+          "evidence": [
+            "Fellow, get out of the way!",
+            "This way is _my_ way too!"
+          ]
+        },
+        {
+          "id": "reading-k-allingham-rhymes-young-folk-1887-10-q3",
+          "prompt": "The Cadger would not move for the Lord, but he moves for the Lady. Why?",
+          "facilitatorNotes": [
+            "She agrees with him kindly, “My Friend, that's perfectly true,” and he answers her kindness by pulling his donkey into the hedge and touching his hat. Some children may say he would have moved anyway, or that he moved because she was a lady; the poem shows the change coming right after her friendly words."
+          ],
+          "evidence": [
+            "My Friend, that's perfectly true.",
+            "And touch'd his old hat to the Lady."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-allingham-rhymes-young-folk-1887-11",
       "title": "Tom Cricket",
       "sourceId": "allingham-rhymes-young-folk-1887",
       "genre": "poetry",
@@ -421,7 +677,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q1",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q1",
           "prompt": "Why do the Cockroaches call to Tom Cricket?",
           "facilitatorNotes": [
             "They want to have a ball, a dance, and they want his fiddle music."
@@ -432,7 +688,7 @@
           ]
         },
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q2",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q2",
           "prompt": "Tom asks for a piece of potato. Why won’t Jack Cockroach fetch it, and why won’t Tom come down?",
           "facilitatorNotes": [
             "Jack thinks Tom is proud and wants to eat alone; Tom says he is too slim to mix in the crowd. Children may decide Tom is shy, small, or a little proud; the poem lets either side speak."
@@ -443,7 +699,7 @@
           ]
         },
         {
-          "id": "reading-k-allingham-rhymes-young-folk-1887-07-q3",
+          "id": "reading-k-allingham-rhymes-young-folk-1887-11-q3",
           "prompt": "What do the Cockroaches plan to do to Tom, and what stops them?",
           "facilitatorNotes": [
             "They want to fill his hole with soot, but the Cook and the Scullion come in and they all run away. Tom ends safe in his hole, so the cross cockroaches lose."
