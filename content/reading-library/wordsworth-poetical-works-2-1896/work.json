@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/12145/pg12145-images.html",
     "downloadSha256": "9239c068f13f49bdbc58a76e1eea37032c04830b07afbf722e6ad7c57aeed908",
-    "method": "Project Gutenberg 12145 HTML from the PG mirror aleph.pglaf.org. For each poem in the volume's order: the poem title (h2, footnote letters removed) as a level-2 heading, then the text column of every table whose header row names a text column, joined row by row; br marks a verse line (HTML wrapping and indentation inside a line collapsed to single spaces), blank lines divide stanzas, stanza numerals (from a stanza column or enlarged numerals in the text) and bold part titles (Prologue, Part the First...) are level-3 headings, and year and group titles (1799, Poems on the Naming of Places...) are level-1 headings. Removed the PG header and footer, Knight's contents, notes and commentary, the Fenwick (I. F.) notes, the variant, footnote and line-number columns, footnotes, navigation links and the composed/published date lines; italics are not marked. Three bracketed note numbers printed inside verse lines are kept as transcribed."
+    "method": "Project Gutenberg 12145 HTML from the PG mirror aleph.pglaf.org. For each poem in the volume's order: the poem title (h2, footnote letters removed) as a level-2 heading, then the text column of every table whose header row names a text column, joined row by row; br marks a verse line (HTML wrapping and indentation inside a line collapsed to single spaces), blank lines divide stanzas, stanza numerals (from a stanza column or enlarged numerals in the text) and bold part titles (Prologue, Part the First...) are level-3 headings, and year and group titles (1799, Poems on the Naming of Places...) are level-1 headings. Removed the PG header and footer, Knight's contents, notes and commentary, the Fenwick (I. F.) notes, the variant, footnote and line-number columns, footnotes, navigation links and the composed/published date lines; italics are not marked. The four bracketed note numbers printed in verse lines (blocks 638, 915, 1031 and 1085), which point to Knight’s footnotes, were removed on 2026-11-18, since the notes they refer to are not held."
   },
   "scope": {
     "complete": false,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 1334,
-    "sha256": "74eec7cde51b6e357a09de1980c34f344f40a50cca975417577752ae0c175f72"
+    "sha256": "edb12a64f12709a6fa5bff543fe4417ad0a1edd03dbd814e322839757f87815a"
   }
 }
