@@ -1441,6 +1441,242 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-20",
+      "title": "Lord Loudoun, always on horseback",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Franklin never calls Loudoun a fool. Collect the evidence he lets other people supply, and decide what verdict it adds up to.",
+      "focus": "A portrait of an indecisive commander built from anecdotes, a messenger’s joke and a contrast with a modest predecessor.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In 1757 the Pennsylvania Assembly sent Franklin to London to argue its case against the colony’s proprietors, the Penn family, who would not let their estates be taxed for defence. Lord Loudoun was the British commander-in-chief in America during the war with France. A packet (packet-boat) carried mail and passengers across the Atlantic; sea-stores were food a passenger brought for the voyage; an embargo forbade ships to leave port; entre nous is French for “between ourselves”; an escritoire is a writing desk. Louisburg was a French fortress in Nova Scotia; Sandy Hook is at the entrance to New York harbour. William Shirley, governor of Massachusetts, had commanded the British forces in America before Loudoun.",
+      "contentNote": "Franklin calls the Native allies of the French “savages” and mentions the massacre of a surrendered garrison.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from Lord Loudoun’s arrival in Philadelphia through Franklin’s unpaid accounts; opens “I had agreed with Captain Morris, of the packet at New York, for my passage, and my…”; closes “…employments. As to my balance, I am not paid it to this day, of which more hereafter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          442,
+          452
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f8710d6b63ed35aa2a7291f2ba189beca350dd9c54370bae3d856519159b44ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q1",
+          "prompt": "How does Franklin lose his first passage and gain nothing for his work as peacemaker?",
+          "facilitatorNotes": [
+            "While he negotiates between the governor and the Assembly at Loudoun’s request, the packet sails with his sea-stores, and “all the credit of obtaining the accommodation” goes to Loudoun. The Assembly gives way only under protest, “thro’ force.”",
+            "The episode introduces Loudoun as a man who takes credit and spends other people’s time. Ask how Franklin’s dry phrase “my only recompense was his lordship’s thanks” sets the tone."
+          ],
+          "evidence": [
+            "my only recompense was his lordship's thanks for my service, all the credit of obtaining the accommodation falling to his share"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q2",
+          "prompt": "Explain Innis’s joke that Loudoun is “like St. George on the signs.” Why does Franklin let a messenger deliver the judgment?",
+          "facilitatorNotes": [
+            "Inn signs showed St. George on a rearing horse that never moves: Loudoun is always at his desk “pen in hand,” but no letter ever goes out. The joke is funnier and more damning than a direct accusation.",
+            "Franklin adds that the prime minister, Pitt, later gave the same reason for removing him. Letting others speak makes Franklin seem fair while the evidence piles up."
+          ],
+          "evidence": [
+            "he is like St. George on the signs, always on horseback, and never rides on",
+            "whoever waited on him found him always at his desk, pen in hand"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q3",
+          "prompt": "What were the costs of Loudoun’s indecision, according to Franklin? Which are proven and which are rumours?",
+          "facilitatorNotes": [
+            "Packets held for months, merchants’ insurance and letters delayed, an army taken to Halifax for “sham attacks upon sham forts” and back, Fort George lost, a Carolina fleet ruined by shipworm during the embargo.",
+            "He marks one charge as uncertain: that Loudoun shared contractors’ profits was “said, perhaps from suspicion only.” Ask why it matters that he flags this, and whether the rest of the evidence needs it."
+          ],
+          "evidence": [
+            "sham attacks upon sham forts",
+            "in whose profits, it was said, perhaps from suspicion only, he had a share"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q4",
+          "prompt": "What does Shirley’s remark about the “low seat” show, and why does Franklin place it just after his judgment of Loudoun?",
+          "facilitatorNotes": [
+            "Superseded by Loudoun, Shirley is given a low chair at the dinner and says, “I find a low seat the easiest.” He is gracious and relieved, not proud; Franklin has just praised him as “sensible and sagacious.”",
+            "The contrast flatters Shirley and condemns Loudoun without another word. Then Loudoun’s sneer that every army supplier “finds means … to fill his own pockets” shows how he judges others. Ask how Franklin answers it."
+          ],
+          "evidence": [
+            "\"No matter,\" says he, \"Mr. Franklin, I find a low seat the easiest.\"",
+            "every one concerned in supplying the army finds means, in the doing it, to fill his own pockets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-21",
+      "title": "The voyage to England, a lighthouse and Lord Granville",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch how Franklin turns each event into a general observation, then read the Granville conversation for the two opposite ideas of law it sets side by side.",
+      "focus": "Practical experiments at sea, a near-wreck that makes Franklin a friend of lighthouses, and a first warning of the quarrel between Britain and its colonies.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Recap: in 1757 Franklin sailed from New York as the Pennsylvania Assembly’s agent in London, after long delays caused by the British commander Lord Loudoun. Britain was at war with France, so French privateers (armed private ships) hunted merchant ships near the English Channel. A knot is a speed of one nautical mile an hour, measured by throwing a knotted “log-line” over the stern; to “wear” a ship is to turn it with the wind behind. The Scilly Isles lie off Cornwall; Sir Cloudesley Shovel’s fleet was wrecked there in 1707; Falmouth is a Cornish port. Lord Granville was President of the King’s Council. In 1765 Parliament passed the Stamp Act, taxing the colonies directly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from the packet’s slow sailing through Franklin’s conversation with Lord Granville; opens “Our captain of the packet had boasted much, before we sailed, of the swiftness of his…”; closes “…that point of sovereignty to the king only that they might reserve it for themselves.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          453,
+          461
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f3a32f22b9979badcac11f8c760137aa6b3017df4396b3b9020c00643f94b51a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q1",
+          "prompt": "How is the mystery of the slow ship solved, and what general lesson does Franklin draw from the wager about speed?",
+          "facilitatorNotes": [
+            "Moving all forty people aft speeds her up, so the water casks are moved back and she becomes “the best sailer in the fleet.” From the thirteen-knot wager he draws a general point: no one can tell how a new ship will sail, partly because one man builds, another rigs and a third loads her, and none knows what the others know.",
+            "He proposes “a set of experiments” and says, “This is an age of experiments.” Ask how this fits with what students know of Franklin the scientist."
+          ],
+          "evidence": [
+            "which prov'd clearly what our captain suspected, that she was loaded too much by the head",
+            "This is an age of experiments, and I think a set accurately made and combin'd would be of great use."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q2",
+          "prompt": "What nearly wrecks the ship, and who saves it? What does Franklin resolve afterwards?",
+          "facilitatorNotes": [
+            "A strong current probably carries them off course in the night; the bow watchman answers “Ay, ay” perhaps “mechanically” and misses a light; Captain Kennedy, not the sleeping captain, orders the dangerous turn. Franklin resolves to encourage lighthouses in America.",
+            "Notice the human error in the watchman’s automatic reply, and Franklin’s habit of turning danger into a public project."
+          ],
+          "evidence": [
+            "they sometimes answering, as is said, mechanically",
+            "This deliverance impressed me strongly with the utility of lighthouses"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q3",
+          "prompt": "Describe the arrival at Falmouth. Why does Franklin compare the lifting fog to a theatre curtain?",
+          "facilitatorNotes": [
+            "The fog rises “like the curtain at a play-house,” revealing the town, ships and fields all at once, after weeks of “a vacant ocean” and the fear of war.",
+            "It is one of the few purely pictorial moments in the book. Ask what the image adds: a sense of a new scene beginning, as Franklin’s London years do."
+          ],
+          "evidence": [
+            "seem'd to be lifted up from the water like the curtain at a play-house"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q4",
+          "prompt": "Lord Granville says “the king is the Legislator of the Colonies.” What does Franklin answer, and why does he write the conversation down that night?",
+          "facilitatorNotes": [
+            "Franklin holds that colonial laws are made by the assemblies with the king’s assent, and that the king cannot make laws for them without theirs. Granville calls this “totally mistaken.” Alarmed about the court’s views, Franklin records it at once.",
+            "The paragraph ends by looking forward to 1765, when Parliament claimed the same power for itself. Ask readers how this conversation foreshadows the American Revolution, and whose idea of the constitution seems stronger from the text alone."
+          ],
+          "evidence": [
+            "for the king is the Legislator of the Colonies",
+            "so neither could he make a law for them without theirs",
+            "they had refus'd that point of sovereignty to the king only that they might reserve it for themselves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-22",
+      "title": "The proprietaries, Lord Mansfield and the unfinished end",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 18,
+        "totalMinutes": 27
+      },
+      "challenge": "Read for tone: find every place where Franklin’s politeness carries an insult. Then think about what it means that the book simply stops.",
+      "focus": "Franklin’s negotiation with the Penn family over taxing their estates, a quiet bargain struck in a side room, and the last page of an unfinished book.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Recap: Franklin was in London as the Pennsylvania Assembly’s agent, sent to settle the quarrel with the colony’s proprietors, Thomas and Richard Penn, the sons of the founder William Penn, who would not let their vast estates be taxed for the colony’s defence. Colonial laws could be cancelled by the king in Council, the committee of royal advisers that heard such appeals. The Attorney-General and Solicitor-General were the Crown’s chief lawyers; Lord Mansfield was one of the most powerful judges in England. Viva voce is Latin for “by word of mouth.” The province had printed paper money to pay for the war, so cancelling the tax that backed it would have made the notes worthless. Franklin never finished the Autobiography; the last part was written shortly before his death in 1790.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from the meeting with the Penns to the point where the book breaks off; opens “After some days, Dr. Fothergill having spoken to the proprietaries, they agreed to a…”; closes “…at court, despis'd the threats and they were never put in execution.... [unfinished]”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          463,
+          467
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "68de56550d9d9bf9a7b2e7cfa1efe69a24257b9750f143e23c6a5f815a06057a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q1",
+          "prompt": "Franklin says the meeting began with “mutual declarations of disposition to reasonable accommodations.” How does the rest of his sentence undercut this?",
+          "facilitatorNotes": [
+            "He adds that “each party had its own ideas of what should be meant by reasonable.” The polite words hid complete disagreement, and the next sentences show the two sides “very wide” apart.",
+            "It is a dry joke about diplomatic language that readers will recognize from modern politics. Ask for a present-day example of a word both sides use with opposite meanings."
+          ],
+          "evidence": [
+            "I suppose each party had its own ideas of what should be meant by reasonable",
+            "We now appeared very wide, and so far from each other in our opinions as to discourage all hope of agreement."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q2",
+          "prompt": "Why does Franklin refuse to negotiate with the lawyer Paris? What does the complaint about “want of formality” turn out to mean?",
+          "facilitatorNotes": [
+            "Paris was “a proud, angry man” who hated Franklin for criticising his papers, so Franklin would deal only with the Penns themselves. The “rudeness” was probably that Franklin left out their “assum’d titles” of “True and Absolute Proprietaries.”",
+            "The Penns’ message asked for “some person of candour,” “intimating thereby that I was not such.” Ask how Franklin answers the insult: not directly, but by showing how small the complaint was. The word “assum’d” is his own quiet insult."
+          ],
+          "evidence": [
+            "He was a proud, angry man",
+            "my not having address'd the paper to them with their assum'd titles of True and Absolute Proprietaries of the Province of Pennsylvania",
+            "intimating thereby that I was not such"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q3",
+          "prompt": "What did each side argue at the hearing, and how did Lord Mansfield settle it?",
+          "facilitatorNotes": [
+            "The Penns said the people would use the tax to ruin them; Franklin’s side said the assessors were honest men under oath, and that cancelling the law would make the paper money worthless. Mansfield took Franklin aside and asked whether he would promise in writing that the estate would not be harmed; Franklin said “None at all,” and the law was allowed to pass.",
+            "A deal in a side room decided what the formal pleading could not. The Assembly’s later committee, which included friends of the Penns, found the tax assessed “with perfect equity,” which vindicates Franklin’s promise."
+          ],
+          "evidence": [
+            "you can have little objection to enter into an engagement to assure that point",
+            "they found the tax had been assess'd with perfect equity"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q4",
+          "prompt": "The book breaks off with Governor Denny dismissed by the Penns and unafraid of their threats. Is this a fitting last scene? What would you have wanted Franklin to write next?",
+          "facilitatorNotes": [
+            "Denny passed the tax law and was “turn’d out with threats,” but he “despis’d the threats and they were never put in execution”: power in London shields him from the proprietors. The quarrel between colonists and a distant authority is left unresolved.",
+            "Some readers find the ending abrupt and accidental; others see it pointing ahead, since Franklin’s remarks to Granville already looked forward to the break with Britain. Accept answers that name the Revolution, his scientific fame or his diplomacy in France as the missing chapters."
+          ],
+          "evidence": [
+            "despis'd the threats and they were never put in execution"
+          ]
+        }
+      ]
     }
   ]
 }
