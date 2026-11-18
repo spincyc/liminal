@@ -1440,6 +1440,306 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-20",
+      "title": "Ditty (E. L. G.)",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a refrain through five stanzas, and notice where the love song admits a doubt.",
+      "focus": "Love as something only the lover can see, and the part chance plays in it.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. E. L. G. are the initials of Emma Lavinia Gifford, whom Hardy met in 1870, the date printed at the end, while he was working as an architect in a remote part of Cornwall; they married in 1874. A ditty is a simple song. A knap is a small hill; the firstling is the first-born lamb or calf of the season; to browse is to graze on leaves; a fabric here is a building; fellow-wights are fellow men; to descry is to make out; a legend here is an inscription; “by rote” means by heart; nought means nothing, of no importance; bond-servants are slaves; errant means wandering; to out-skirt a place is to pass round its edge.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ditty (E. L. G.), the whole poem with its date; opens “BENEATH a knap where flown Nestlings play, Within walls of weathered stone, Far away From…”; closes “1870.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          101
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "06b7cea7f0cfc66a5b67081add6459040606af6f165ac5b5f791f7147bead030"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-20-q1",
+          "prompt": "Each stanza ends “Where she dwells.” What kind of place is it, according to the first stanza?",
+          "facilitatorNotes": [
+            "Remote and old: under a small hill, weathered stone walls, nestlings and young animals, far from rows of formal houses, where “no man barters, no man sells.” It stands outside the world of trade and show."
+          ],
+          "evidence": [
+            "From the files of formal houses,",
+            "No man barters, no man sells"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-20-q2",
+          "prompt": "What does the speaker see written on the house that his neighbours cannot? What does this suggest about love?",
+          "facilitatorNotes": [
+            "“Here is she!” seems written everywhere, for him alone; to others the building shows no such inscription. Love changes what a person sees: the place is special only through her."
+          ],
+          "evidence": [
+            "Seems written everywhere",
+            "No such lucid legend tells"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-20-q3",
+          "prompt": "Stanza IV admits something uncomfortable. What is the “smart severe,” and what makes it “severer”?",
+          "facilitatorNotes": [
+            "The sting is the thought that, had he never wandered near her, he might have loved someone else as truly and never missed her. Worse, she is “nought,” no one important, outside her own valley, just as he is. Some readers find this unromantic; others find it more honest than most love songs."
+          ],
+          "evidence": [
+            "To feel I might have kissed—",
+            "In the thought that she is nought,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-20-q4",
+          "prompt": "How does the last stanza answer stanza IV’s doubt? Is the final exclamation convincing?",
+          "facilitatorNotes": [
+            "We are all “bond-servants of Chance”: he found her only because his wandering path did not skirt that spot. Yet he still calls it the spot “That no spot on earth excels.” Knowing his love came by chance, he chooses it anyway. Readers may hear triumph, or a bittersweet note under it."
+          ],
+          "evidence": [
+            "What bond-servants of Chance",
+            "That no spot on earth excels,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-21",
+      "title": "The Casterbridge Captains",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Watch a survivor’s view of his own success change in eight short stanzas.",
+      "focus": "Chance, survival and the glory given to the dead.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. The heading names a place and year, the Khyber Pass, 1842: in the First Anglo-Afghan War a British army retreating from Kabul was almost wiped out, and other British forces fought through the Khyber Pass between Afghanistan and India. Casterbridge is Hardy’s name for Dorchester, his home town; the subtitle calls the poem a local “tradition” and names the three captains only by initials. “Of yore” means from long ago; laurels are a victor’s wreath; an aisle is part of a church; “untrumped of fame” means not yet famous; pupilage is being a schoolboy; “unweeting” means unaware; “stayed” here means stopped, killed; “sphered” means surrounded; transcendent means rising above the ordinary; an urn holds a dead person’s ashes, here standing for a grave; twain means two.",
+      "contentNote": "Two young officers die in a colonial war; the poem does not describe the fighting.",
+      "excerpt": {
+        "locator": "The Casterbridge Captains (Khyber Pass, 1842), the whole poem with its subtitle; opens “A TRADITION OF J. B. L—, T. G. B—, AND J. L—.”; closes “…longer lit his brain; Transcendence rayed the distant urn Where slept the fallen twain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          327,
+          334
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a66342f6f73d14ae22ee1e1e7d7cd3384cc13ebd8e96e63dae28203f6692309f"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-21-q1",
+          "prompt": "What did the three do as boys, and what does the surviving captain find when he comes home?",
+          "facilitatorNotes": [
+            "As pupils they sat in the old church aisle and each carved his name. He finds the names still there, “of equal size,” though their fates have been unequal since: two dead, one honoured."
+          ],
+          "evidence": [
+            "The names, rough-hewn, of equal size,",
+            "Stood on the panel still;"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-21-q2",
+          "prompt": "“’Twas theirs to aim, / Mine was it to fulfil!” What does he mean? Does it sound like a boast or like grief?",
+          "facilitatorNotes": [
+            "They aimed at glory; he lived to achieve it, and wears “The laurels all had earned.” It could be proud (he alone completed the task) or humble (he finished what they began, so the honour is theirs too)."
+          ],
+          "evidence": [
+            "The laurels all had earned.",
+            "Mine was it to fulfil!"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-21-q3",
+          "prompt": "Why does the preacher’s text, “Who saves his life shall lose it,” strike him, though the preacher does not know he is there?",
+          "facilitatorNotes": [
+            "It is a saying of Jesus. The survivor has, literally, saved his life; the words suggest he may have lost something the dead have kept. The coincidence turns an ordinary sermon into a judgment, and he looks at the names again."
+          ],
+          "evidence": [
+            "Unweeting he his listener, who",
+            "Looked at the names again."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-21-q4",
+          "prompt": "By the end, who has the “Transcendent triumph”? Do you agree with the captain’s change of mind?",
+          "facilitatorNotes": [
+            "He sees that only “the chance of war” divided them, and that death gave the others a “majesty / Which living failed to give”; his own triumph no longer lights his mind. Some readers agree that sacrifice ennobles; others hear survivor’s guilt, or a poem quietly questioning how the dead are glorified."
+          ],
+          "evidence": [
+            "’Twas but the chance of war:",
+            "Transcendence rayed the distant urn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-22",
+      "title": "To Outer Nature",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Unpack a very short poem of rare words and quick rhymes, and hear the sadness under its light sound.",
+      "focus": "Growing up as losing a belief that the world was made to delight us.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. Outer Nature is the natural world outside the mind. Hardy packs this poem with unusual words: “omen-scouting” means looking for signs; to expound is to explain; an endowment is a gift; “irisèd” means rainbow-coloured, after Iris, the Greek goddess of the rainbow; an embowment is an arch, like a bower; meetness is fitness or rightness; sempiternal means everlasting; vernal means of spring; hodiernal means of today. The short lines rhyme in pairs, many with two-syllable rhymes.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "To Outer Nature, the whole poem; opens “SHOW thee as I thought thee When I early sought thee, Omen-scouting, All undoubting Love…”; closes “…Thou and I? Our vernal Brightness keeping, Time outleaping; Passed the hodiernal!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          427,
+          432
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ff55748f82766cd8fa55e1c905b48daa16cb4a41adcc2d8ab139957f8491c70"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-22-q1",
+          "prompt": "What did the speaker once believe about nature, according to the first two stanzas?",
+          "facilitatorNotes": [
+            "When young, “All undoubting,” he believed love alone had made nature, for his pleasure, as a way of “expounding / And resounding / Glad things”: a world designed to be kind and full of meaning for him."
+          ],
+          "evidence": [
+            "All undoubting",
+            "Wrought thee for my pleasure,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-22-q2",
+          "prompt": "What has time done to his view? Find the lines that state the change.",
+          "facilitatorNotes": [
+            "Time “forbids with scorning” any re-adorning; he sees things “Cease to be things / They were in my morning.” The change is in how he sees as much as in nature itself, and he wishes for “but a moment” of the old gift."
+          ],
+          "evidence": [
+            "Time forbids with scorning—",
+            "Cease to be things They were in my morning."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-22-q3",
+          "prompt": "How do the poem’s sounds, short lines and two-syllable rhymes, fit or clash with what it says?",
+          "facilitatorNotes": [
+            "The quick, songlike, almost playful sound carries a sad idea. It may echo the glad young voice the speaker has lost, so the form itself remembers his “morning”; or the cleverness may show a man keeping his grief at a distance."
+          ],
+          "evidence": [
+            "When I early sought thee,",
+            "Radiance, meetness,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-22-q4",
+          "prompt": "The last stanza asks, “Why not sempiternal / Thou and I?” Is this a real question? How do you read the final line?",
+          "facilitatorNotes": [
+            "He wishes that nature and he could have stayed forever young and bright, “Time outleaping.” The last line probably continues the wish, having passed beyond the merely daily, though it can also be heard as a sigh that the day is over. Either way the learned, Latin word ends the poem coolly, far from springtime."
+          ],
+          "evidence": [
+            "Why not sempiternal",
+            "Passed the hodiernal!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-23",
+      "title": "The Slow Nature",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Judge a character’s reaction to terrible news, then revise the judgment when the poem ends.",
+      "focus": "Quick feeling and slow feeling: how grief can be misread.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. The subtitle calls this “An Incident of Froom Valley”: the Froom, or Frome, is the river through Hardy’s home county of Dorset, and Egdon is his name for the heath beside it. The date 1894 is printed at the end. A barton is a farmyard; a goodman is a husband; “th’lt” is “thou wilt,” you will; unwontedly means unusually; a dresser is a kitchen cupboard with shelves; sedge is a grassy plant of wet ground; a hussif is a housewife; a fortnight is two weeks; to pine is to waste away with grief.",
+      "contentNote": "A man is killed by a bull, and his widow dies of grief two weeks later.",
+      "excerpt": {
+        "locator": "The Slow Nature (An Incident of Froom Valley), the whole poem with its date; opens ““THY husband—poor, poor Heart!—is dead— Dead, out by Moreford Rise; A bull escaped the…”; closes “1894.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          480,
+          488
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4604fe8fb489c050b10faa6b583749946a36b8e2b75e6ec490a52bcdf2f26710"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-23-q1",
+          "prompt": "Why does Mistress Damon not believe the news at first? What finally convinces her?",
+          "facilitatorNotes": [
+            "Kit Twink is the village joker who has fooled her for years, so she laughs. His words do not convince her; his face does, “unwontedly sad,” and she reads the truth there."
+          ],
+          "evidence": [
+            "And ever hast thou fooled me!",
+            "So unwontedly sad was the merry man’s face—"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-23-q2",
+          "prompt": "What does she do in the moments after she believes it? What do the details of the stanza beginning “She laid a hand on the dresser-ledge” show?",
+          "facilitatorNotes": [
+            "She steadies herself, looks far off across the heath, and stands; we hear only the wind in the sedge and the river. Hardy shows shock through stillness and the sounds outside her, not through words."
+          ],
+          "evidence": [
+            "She laid a hand on the dresser-ledge,",
+            "And the rippling Froom; till she cried:"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-23-q3",
+          "prompt": "Her first cry is about her unmade bed. Why might a new widow think of that? How does Kit judge it?",
+          "facilitatorNotes": [
+            "Kit is “amazed” that she thinks first of her untidy room. Readers may see shock seizing on something small and manageable, or her dread of neighbours’ judgment when they carry the body up her stairs; the mind cannot yet hold the loss itself. Kit takes it for shallowness."
+          ],
+          "evidence": [
+            "‘What a slovenly hussif!’ it will be said,",
+            "Thought first of her unkempt room."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-23-q4",
+          "prompt": "What does the title mean? How does the last stanza reverse our first impressions of both characters?",
+          "facilitatorNotes": [
+            "Her nature is slow: grief arrives late but goes deep, and within a fortnight she stops eating and pines away. Kit, who looked so moved, soon laughs again “in his ancient way.” The quick show of feeling was shallow; the slow one was real. Readers may debate whether Hardy blames Kit or simply observes."
+          ],
+          "evidence": [
+            "But a fortnight thence she could take no food,",
+            "And laughed in his ancient way."
+          ]
+        }
+      ]
     }
   ]
 }
