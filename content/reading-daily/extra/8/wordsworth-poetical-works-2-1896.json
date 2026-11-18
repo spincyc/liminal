@@ -1604,6 +1604,683 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-23",
+      "title": "The Farmer of Tilsbury Vale",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Decide what the speaker wants you to think of Adam, and notice how he heads off a harsher judgment.",
+      "focus": "A countryman who has done wrong, and the country that stays in his heart in the city.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. Old Adam is a ruined farmer who has fled his debts to London. Corn-land is grain-land and lea is grassland; a wight is a fellow; pelf is money; “I ween” means I think; to demur is to hesitate; to hie is to hurry. Covent Garden was London’s great fruit and flower market, the Haymarket a street where hay was sold from waggons, Smithfield the cattle market, and the Strand a busy street.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Farmer of Tilsbury Vale, the whole poem; opens “'Tis not for the unfeeling, the falsely refined, The squeamish in taste, and the narrow…”; closes “…that thy grave, wheresoever it be, Will hear the wind sigh through the leaves of a tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          541,
+          563
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4f3cb6c119f6cefd99bfd5768519d0143f8022ea2f8dda628d9ce29c31032270"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-23-q1",
+          "prompt": "The first stanza says who the poem is not for. Why would Wordsworth begin by warning off “the narrow of mind”?",
+          "facilitatorNotes": [
+            "Because Adam has done something a narrow judge would condemn, and the speaker wants readers ready to look past it. The warning makes sympathy a test of the reader."
+          ],
+          "evidence": [
+            "'Tis not for the unfeeling, the falsely refined,",
+            "That I sing of old Adam, the pride of old men."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-23-q2",
+          "prompt": "What exactly did Adam do wrong? How does the speaker describe it, and how does he excuse it?",
+          "facilitatorNotes": [
+            "He borrowed from all his neighbours, paid back what he could, kept something back, and left without a word. The speaker admits the “sin and the shame” but says Adam did it “all in the ease of his heart,” without scheming. Readers may find the excuse generous or too easy: the neighbours still lost their money."
+          ],
+          "evidence": [
+            "Turned his back on the country—and off like a bird.",
+            "In him it was scarcely a business of art,"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-23-q3",
+          "prompt": "How has London changed Adam? Find the details that make him seem young again.",
+          "facilitatorNotes": [
+            "Poverty forces him into every trade, yet he seems “ten birthdays younger”; his fingers are busy as bees; the city surprises him like a stranger, and he trembles “like a maiden of twenty.” Need makes him alert, and his feeling for nature makes everything new."
+          ],
+          "evidence": [
+            "He seems ten birthdays younger, is green and is stout;",
+            "Full ten times a day takes his heart by surprise."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-23-q4",
+          "prompt": "In the last stanzas Adam visits the hay-waggons and Smithfield. What does he find there, and what does the closing wish for his grave add?",
+          "facilitatorNotes": [
+            "He smells the hay, thinks of the fields he mowed, breathes the cows’ breath, and his heart is “in Tilsbury Vale.” The city keeps scraps of the country that feed his memory. The final wish gives him in death a blade of grass and a tree, the country he left. Some readers find it tender; others notice that the poem never returns him home."
+          ],
+          "evidence": [
+            "And his heart all the while is in Tilsbury Vale.",
+            "May one blade of grass spring over thy head;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-24",
+      "title": "Alice Fell; or, Poverty",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a night journey told by a traveller, and notice how much grief a small object can carry.",
+      "focus": "A child’s loss that looks small to everyone but her.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. A post-boy drives hired horses; a chaise is a light travelling carriage; the nave is the hub of a wheel; Durham is a city in the north of England; duffil (duffel) is a thick woollen cloth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Alice Fell; or, Poverty, the whole poem; opens “The post-boy drove with fierce career, For threatening clouds the moon had drowned; When,…”; closes “…as man can sell!\" Proud creature was she the next day, The little orphan, Alice Fell!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          917,
+          931
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1989aafe6cbfc1bdc516c9893d2c74a58a35da8da8a4563d6aa6ddfecb031505"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-24-q1",
+          "prompt": "How does the speaker discover Alice? Why does Wordsworth make him hear the sound several times before he finds her?",
+          "facilitatorNotes": [
+            "The cry seems to follow the chaise, stops when they stop, returns when they drive on. The repetition builds a mystery and shows that the speaker keeps listening when the post-boy would drive on."
+          ],
+          "evidence": [
+            "It seemed to follow with the chaise,",
+            "The cry, I bade him halt again."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-24-q2",
+          "prompt": "What is the cloak like, and why does Alice weep so bitterly over it?",
+          "facilitatorNotes": [
+            "It is “a miserable rag,” like a scarecrow’s. For an orphan it may be nearly all she owns, and losing it is losing her only protection; the speaker says her grief seemed endless, as if she had lost “her only friend.”"
+          ],
+          "evidence": [
+            "A weather-beaten rag as e'er",
+            "As if she had lost her only friend"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-24-q3",
+          "prompt": "Alice says only a few things. What does she choose to tell the speaker, and what does that suggest about her?",
+          "facilitatorNotes": [
+            "“My cloak!”, “Look here!”, “To Durham”, then her name and that she is “fatherless and motherless,” and that she belongs to Durham. She checks herself in her distress to answer properly: a child used to looking after herself."
+          ],
+          "evidence": [
+            "I'm fatherless and motherless.",
+            "She checked herself in her distress,"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-24-q4",
+          "prompt": "The poem’s other title is “Poverty,” but it ends with a proud girl in a new cloak. Is this a happy ending?",
+          "facilitatorNotes": [
+            "One gift solves one night’s grief: Alice is “Proud creature” the next day. But she is still an orphan walking lonely roads, and the speaker leaves her at the inn. Some readers find the ending warm; others find it shows how little charity can change."
+          ],
+          "evidence": [
+            "To buy a new cloak for the old.",
+            "Proud creature was she the next day,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-25",
+      "title": "Beggars, and its Sequel",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Compare a poem of first impressions with the poem the poet wrote later about the same people.",
+      "focus": "Begging, lying and beauty, and a later wish that children met by chance came to no harm.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. “Egyptian” was the old word for the Romani people (once called Gypsies), wrongly thought to come from Egypt; the Amazons were warrior women of Greek legend; an alms or a boon is a gift to a beggar; a weed here is a wild plant; a suppliant is someone begging; Aurora is the goddess of the dawn, whose chariot (car) flowers go before; “dædal” means skilfully made; a bane is a curse.",
+      "contentNote": "The speaker describes a Romani woman as exotic and “a weed of glorious feature,” and assumes the begging is a trick; these are an English traveller’s period views.",
+      "excerpt": {
+        "locator": "Beggars and Sequel to the Foregoing, both poems whole; opens “She had a tall man's height or more; Her face from summer's noontide heat No bonnet…”; closes “…of deadly injury? Destined, whate'er their earthly doom, For mercy and immortal bloom?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          933,
+          943
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "87cba4c0810322d87861d5487d0beb28b6741754efcf7ac2584205ca52d45900"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-25-q1",
+          "prompt": "How does the speaker describe the woman? Which details make her seem more like a queen than a beggar?",
+          "facilitatorNotes": [
+            "She is very tall, haughty, in a long flowing mantle and a snow-white cap, fit to lead Amazons; he gives her money because she “was beautiful to see.” He also doubts her story at once, calling such woes impossible in England."
+          ],
+          "evidence": [
+            "fit person for a Queen",
+            "Such woes, I knew, could never be;"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-25-q2",
+          "prompt": "What happens when the boys say their mother is dead? Who do you believe, and why?",
+          "facilitatorNotes": [
+            "The speaker scolds them for lying; they show no shame and run off to play. The boys’ face matches the woman’s, so he is probably right, but the poem never proves it; some readers think the speaker’s certainty is itself worth questioning."
+          ],
+          "evidence": [
+            "That cannot be,\" one answered—\"she is dead:\"",
+            "I looked reproof—they saw—but neither hung his head."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-25-q3",
+          "prompt": "In “Beggars,” how do the boys at play look to the speaker before they beg? What two pictures of them does the poem hold together?",
+          "facilitatorNotes": [
+            "Chasing a butterfly with flowers in their hats, they seem fit for the finest tasks, like spirits of the dawn; a moment later they beg with “a plaintive whine.” The poem keeps both: free, joyful children and practised beggars."
+          ],
+          "evidence": [
+            "Chasing a crimson butterfly;",
+            "Each ready with a plaintive whine!"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-25-q4",
+          "prompt": "The Sequel asks “Where are they now?” What does the speaker hope for the boys, and why does he admit his faith may “deceive”?",
+          "facilitatorNotes": [
+            "He cannot know (“all is dark between!”); he hopes the spirits of beauty and the care of heaven kept them from “deadly injury.” He admits that his happy faith on a spring day may not match their real lives, so he turns it into a prayer. Readers may find the hope moving, or think it avoids asking what poverty did to them."
+          ],
+          "evidence": [
+            "I ask—but all is dark between!",
+            "Or, if such faith must needs deceive—"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-26",
+      "title": "Four Sonnets of September 1802",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Read four sonnets as a sequence, and trace how the speaker’s feeling about his country changes from the first to the last.",
+      "focus": "Coming home: joy, pity, fear and disappointment in one month.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. In August 1802, during a short peace between Britain and France, Wordsworth and his sister spent a month at Calais; these sonnets were written as they came home. France had just ordered people of African descent out of the country. A sonnet has fourteen lines; Kent is the county around Dover; to “mock the Outcast” is to make her state seem cruelly ironic; rapine is plunder; “the good old cause” was a name for the cause of the English republicans of the 1640s and 1650s; “drest for show” means made only for display.",
+      "contentNote": "The second sonnet calls a Black woman expelled from France “a white-robed Negro” and speaks of her “tropic fire,” period words and images; the poem’s sympathy is for “this afflicted Race.”",
+      "excerpt": {
+        "locator": "Composed in the Valley near Dover, on the Day of Landing; September 1, 1802; September, 1802, near Dover; Written in London, September, 1802; the four sonnets whole; opens “Here, on our native soil, we breathe once more. The cock that crows, the smoke that…”; closes “…Is gone; our peace, our fearful innocence, And pure religion breathing household laws.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1089,
+          1095
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0260e7f9faf573b48d0cd6e8c4785e3d7c9ec8294fb9fd788e7faf7dd0c1c2c7"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-26-q1",
+          "prompt": "In the first sonnet, what sights and sounds make the speaker feel he is home? Why are they such ordinary things?",
+          "facilitatorNotes": [
+            "A cock crowing, curling smoke, bells, boys in white-sleeved shirts playing, waves on chalk: “All, all are English.” Home is felt in ordinary sounds and sights rather than great buildings; their plainness is why they move him."
+          ],
+          "evidence": [
+            "The cock that crows, the smoke that curls, that sound",
+            "All, all are English."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-26-q2",
+          "prompt": "What does the speaker notice about the woman in “September 1, 1802,” and what does he ask at the end?",
+          "facilitatorNotes": [
+            "She is finely dressed but downcast, silent, “destitute … of hope or aim,” yet her eyes keep their fire; her rich clothes only “mock the Outcast.” He calls on Heaven and Earth to feel for her people. Students may notice that he observes her closely but never speaks with her, and may discuss his period words."
+          ],
+          "evidence": [
+            "Yet downcast as a woman fearing blame;",
+            "And feel, thou Earth, for this afflicted Race!"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-26-q3",
+          "prompt": "In “near Dover,” why does the narrow Channel frighten the speaker? What does he finally say protects a nation?",
+          "facilitatorNotes": [
+            "France looks “frightful” near, and the strip of water seems weak; yet winds and waters are “nothing” in themselves. Only virtue and wisdom keep nations great and free. The sonnet turns from physical defence to moral defence."
+          ],
+          "evidence": [
+            "The coast of France—the coast of France how near!",
+            "Only, the Nations shall be great and free."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-26-q4",
+          "prompt": "How does the last sonnet’s judgment of England differ from the joy of the first? Which line states the change most sharply?",
+          "facilitatorNotes": [
+            "Now England worships wealth and show: “The wealthiest man among us is the best,” and “Plain living and high thinking are no more.” The homecoming joy has turned to disappointment with his own people. Readers may see the sequence moving from love of the land to criticism of the nation, both from the same patriotism."
+          ],
+          "evidence": [
+            "The wealthiest man among us is the best:",
+            "Plain living and high thinking are no more:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-27",
+      "title": "Three Sonnets on English Liberty (1802)",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow an argument across three sonnets, and notice where the speaker turns to answer his own doubts.",
+      "focus": "Pride in a free country, and the fear of losing what made it great.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. He wrote these sonnets in 1802, when Britain and France had made a short peace after years of war and France was ruled by Napoleon. Sidney, Marvell, Harrington and Vane were seventeenth-century English writers and statesmen who argued for liberty, friends or allies of the poet John Milton; a code is a body of laws; the quoted phrase “with pomp of waters, unwithstood” is from an older English poet; salutary bands are healthy restraints; a ledger is an account book; a bulwark is a defensive wall; unfilial means not as a child should be.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Great men have been among us; hands that penned”; “It is not to be thought of that the Flood”; “When I have borne in memory what has tamed”; the three sonnets whole; opens “Great men have been among us; hands that penned And tongues that uttered wisdom—better…”; closes “…now and then, Among the many movements of his mind, Felt for thee as a lover or a child!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1099,
+          1103
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0708d7819964be257f9a3b1ed25b69dba9c9f5ecaf52ae88cb233426cd443c65"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-27-q1",
+          "prompt": "In the first sonnet, what did the “great men” of England have that France now lacks?",
+          "facilitatorNotes": [
+            "They both wrote wisdom and acted on it: “moralists could act and comprehend,” and they knew that real strength bends only in “magnanimous meekness.” France has “Perpetual emptiness! unceasing change!” with no great book or guiding spirit. Students may question whether the comparison is fair to France."
+          ],
+          "evidence": [
+            "These moralists could act and comprehend:",
+            "Perpetual emptiness! unceasing change!"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-27-q2",
+          "prompt": "The second sonnet compares British freedom to a river. Follow the image: where has the flood come from, and what end does the speaker refuse to imagine?",
+          "facilitatorNotes": [
+            "It has flowed “from dark antiquity” to the open sea of the world’s praise; it is unthinkable that it should die “in bogs and sands.” The image makes liberty something inherited and moving, which could still be lost."
+          ],
+          "evidence": [
+            "Of British freedom, which, to the open sea",
+            "Should perish; and to evil and to good"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-27-q3",
+          "prompt": "“We must be free or die, who speak the tongue / That Shakespeare spake.” What claim is the speaker making about language and freedom?",
+          "facilitatorNotes": [
+            "That those who share Shakespeare’s language and Milton’s faith inherit a duty to be free. It is a proud, even boastful claim; readers can discuss whether a language can carry a political inheritance."
+          ],
+          "evidence": [
+            "We must be free or die, who speak the tongue",
+            "Which Milton held."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-27-q4",
+          "prompt": "In the third sonnet the speaker admits “fears unnamed” for his country. What are they, and why is he ashamed of them?",
+          "facilitatorNotes": [
+            "He fears that England, like other nations, will “change swords for ledgers,” trading honour for money. Thinking of England as “a bulwark for the cause of men,” he is ashamed to have doubted. The last lines excuse a poet who loves his country “as a lover or a child.” Some readers find the ending touching; others notice the fears of “Written in London” are not answered."
+          ],
+          "evidence": [
+            "When men change swords for ledgers, and desert",
+            "Felt for thee as a lover or a child!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-28",
+      "title": "Yew-Trees",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Read one long sentence-filled verse paragraph slowly, and track how real trees turn into a temple for imagined figures.",
+      "focus": "Trees older than history, and the shapes the imagination finds in their shade.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. Lorton Vale and Borrowdale are valleys in the Lake District, and Glaramara is a mountain there. Yew wood made the English longbow; Umfraville and Percy were families of the northern lords who fought the Scots, and Crécy (1346), Poitiers (1356) and Agincourt (Azincour, 1415) were English victories in France won largely by archers. Inveterately convolved means stubbornly twisted; umbrage is shade; sable is black.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Yew-Trees, the whole poem; opens “There is a Yew-tree, pride of Lorton Vale, Which to this day stands single, in the midst…”; closes “…repose To lie, and listen to the mountain flood Murmuring from Glaramara's inmost caves.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1147,
+          1147
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ff2cbfa07561673bb9db6f738607be9c8ffe67dbdd5b54f3d02ea89198d62250"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-28-q1",
+          "prompt": "What history does the single Yew-tree of Lorton Vale call up? Why does the speaker call it “Produced too slowly ever to decay”?",
+          "facilitatorNotes": [
+            "It may have supplied bows for the border wars and for Agincourt, Crécy and Poitiers: centuries of fighting. Its slow growth seems to make it nearly immortal, outlasting the armies it armed."
+          ],
+          "evidence": [
+            "Not loth to furnish weapons for the bands",
+            "Produced too slowly ever to decay;"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-28-q2",
+          "prompt": "How does Wordsworth make the four Borrowdale yews look alive? Pick the words that make their trunks seem to move.",
+          "facilitatorNotes": [
+            "“Intertwisted fibres serpentine / Up-coiling, and inveterately convolved”: snake-like, coiling, twisting words. The sounds are as tangled as the trunks."
+          ],
+          "evidence": [
+            "Of intertwisted fibres serpentine",
+            "Up-coiling, and inveterately convolved;"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-28-q3",
+          "prompt": "Who are the “ghostly Shapes” that meet beneath the yews, and why might they gather there?",
+          "facilitatorNotes": [
+            "Fear, trembling Hope, Silence, Foresight, Death the Skeleton and Time the Shadow: the great powers of human life. The dark, ancient, red-floored grove feels like “a natural temple,” so the imagination peoples it with figures as old as the trees."
+          ],
+          "evidence": [
+            "ghostly Shapes",
+            "Death the Skeleton"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-28-q4",
+          "prompt": "The berries are “unrejoicing” and the decorations look “as if for festal purpose.” What mood does the poem end in, and how does the last line change it?",
+          "facilitatorNotes": [
+            "The grove is decked as for a feast but nothing rejoices; the Shapes may hold “United worship” or simply lie and listen. The final sound of the stream from Glaramara’s caves softens the gloom into stillness. Readers may find the ending awe-struck, calm, or eerie."
+          ],
+          "evidence": [
+            "With unrejoicing berries",
+            "Murmuring from Glaramara's inmost caves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-29",
+      "title": "At the Grave of Burns, and Thoughts the Day Following",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Compare two poems written a day apart about the same visit, and notice how the speaker’s mood changes.",
+      "focus": "Grief for a poet who taught him how verse can rise from humble life.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. Robert Burns, the Scottish poet who wrote in the language of country people, died in 1796 at Dumfries, where Wordsworth and his sister visited his grave on their 1803 tour of Scotland; the quoted words “glinted” and “poor Inhabitant below” are Burns’s own. Criffel is a hill in Scotland that can be seen from Skiddaw, a mountain in England; gowans are daisies; the Nith is the river at Dumfries; “The Vision” is a poem in which Burns imagines the Muse crowning him with holly; a lay is a song; “misdeem” means misjudge; leaven here is a souring influence.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "At the Grave of Burns, 1803, and Thoughts suggested the Day following, on the Banks of Nith, both poems whole; opens “I shiver, Spirit fierce and bold, At thought of what I now behold: As vapours breathed…”; closes “…the purest share With all that live?— The best of what we do and are, Just God, forgive!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1158,
+          1183
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5ca80e0332b4a687e630eaced6855de9a6f7e3b726dae990a44020d64a401fb8"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-29-q1",
+          "prompt": "Why does the speaker “shiver” at the grave? How does he try to master his feeling in the third stanza?",
+          "facilitatorNotes": [
+            "The grave chills him like vapour from a dungeon; he feels Burns is near but cannot appear. Then he orders dark thoughts “away” and resolves to pay his tribute “with chastened feelings.” The poem moves from shock to controlled mourning."
+          ],
+          "evidence": [
+            "I shiver, Spirit fierce and bold,",
+            "With chastened feelings would I pay"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-29-q2",
+          "prompt": "What does the speaker say Burns taught him when he was young?",
+          "facilitatorNotes": [
+            "“How Verse may build a princely throne / On humble truth”: that poetry can be great while dealing with ordinary, humble lives. Readers who know Wordsworth’s own poems of farmers, beggars and shepherds can see the debt."
+          ],
+          "evidence": [
+            "How Verse may build a princely throne",
+            "On humble truth."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-29-q3",
+          "prompt": "“Neighbours we were, and loving friends / We might have been.” What regret is the speaker expressing?",
+          "facilitatorNotes": [
+            "They lived within sight of each other’s mountains yet never met; he imagines the talk they might have had. He adds that friends can be joined “even by contraries,” different as they were. The regret is for a friendship that never happened."
+          ],
+          "evidence": [
+            "Neighbours we were, and loving friends",
+            "May even by contraries be joined"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-29-q4",
+          "prompt": "The second poem admits Burns was “Too frail to keep the lofty vow.” How does the speaker deal with Burns’s faults, and what does the final prayer ask?",
+          "facilitatorNotes": [
+            "He does not deny them but leaves “each unquiet theme” to gentler judgment, remembers Burns’s best moments, and prays that his sins be forgiven. Then he widens the prayer to everyone: “The best of what we do and are, / Just God, forgive!” Some readers find the ending humble; others notice it changes a judgment of Burns into a confession for all."
+          ],
+          "evidence": [
+            "Too frail to keep the lofty vow",
+            "The best of what we do and are,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-30",
+      "title": "Rob Roy’s Grave",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 14,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate the outlaw’s own words from the poet’s comments, and decide how far the poet agrees with him.",
+      "focus": "An outlaw’s law of strength, praised and questioned at his grave.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. Rob Roy MacGregor (1671–1734) was a Highland cattle-drover and outlaw, a Scottish Robin Hood; Walter Scott later named a novel after him. A stave is a verse of a song; statutes are written laws; polity is organized government; factors manage estates for landlords, and lairds are Scottish landowners; “rights of chase” are hunting rights; “France would have had her present Boast” points to Napoleon, then the most powerful man in Europe; Loch Veol (Voil) and Loch Lomond are lakes of Rob Roy’s country; braes are hillsides.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Rob Roy’s Grave, the whole poem; opens “A famous man is Robin Hood, The English ballad-singer's joy! And Scotland has a thief as…”; closes “…attest the same; The proud heart flashing through the eyes, At sound of Rob Roy's name.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1214,
+          1243
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ee6ec35a97f210ba19190996dbac261c70abb0a90ad463ff1645a54a314a93ff"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-30-q1",
+          "prompt": "What does Rob Roy say about books and laws? What does he put in their place?",
+          "facilitatorNotes": [
+            "“Burn all the statutes”: laws stir people up against each other. He trusts the plain rule he finds “graven on my heart.” Students may find the idea attractive or dangerous."
+          ],
+          "evidence": [
+            "Burn all the statutes and their shelves:",
+            "These find I graven on my heart:"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-30-q2",
+          "prompt": "What is “the good old rule” Rob Roy learns from the creatures? Is it as peaceful as he claims?",
+          "facilitatorNotes": [
+            "“That they should take, who have the power, / And they should keep who can.” He says it ends strife because everyone knows his place, but it is simply the rule of the strong. The poet calls him “wise as brave,” yet the rule is a plain justification of theft, and readers can hear irony."
+          ],
+          "evidence": [
+            "That they should take, who have the power,",
+            "And they should keep who can."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-30-q3",
+          "prompt": "The speaker imagines Rob Roy born in the present age, and then cries “Oh! say not so; compare them not.” Whom has he nearly compared Rob Roy to, and why does he take it back?",
+          "facilitatorNotes": [
+            "To the conqueror of the day, “France … her present Boast,” Napoleon, who makes kingdoms “shift about, like clouds.” He takes it back because Rob Roy loved “The liberty of man,” while the conqueror does not. The turn shows the speaker separating a local outlaw from an empire-builder."
+          ],
+          "evidence": [
+            "Kingdoms shall shift about, like clouds,",
+            "The liberty of man."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-30-q4",
+          "prompt": "How do the last stanzas finally judge Rob Roy? What evidence does the poet offer?",
+          "facilitatorNotes": [
+            "He was “the poor man’s stay,” giving his strength to the oppressed, and herdsmen still sigh and faces still flash “At sound of Rob Roy’s name.” The evidence is the memory of ordinary people, not historical record; some readers find that convincing, others think the legend flatters an outlaw."
+          ],
+          "evidence": [
+            "For thou wert still the poor man's stay,",
+            "At sound of Rob Roy's name."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-wordsworth-poetical-works-2-1896-31",
+      "title": "The Blind Highland Boy",
+      "sourceId": "wordsworth-poetical-works-2-1896",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a story told to small children, and notice how the teller manages fear and joy at the same time.",
+      "focus": "A blind boy’s voyage, his mother’s terror, and what the rescue costs him.",
+      "context": "William Wordsworth (1770–1850) wrote the poems in this volume between 1798 and 1803; from 1799 he lived with his sister Dorothy at Grasmere in the English Lake District. The poem comes from his 1803 tour of the Scottish Highlands. Kirk is church; Loch Leven here is an arm of the sea in the western Highlands, so the tide runs in and out of it; rills are streams; Amphitrite is a sea-goddess of Greek myth, drawn by dolphins; a coracle is a small round boat; Vaga is the River Wye; “I ween” means I think; a fowler hunts birds; Grasmere is the lake by Wordsworth’s home; Gaelic is the old language of the Highlands; “gratulating” means rejoicing; “amain” means with all her strength; to chastise is to punish. A stray apostrophe before “The house” in the stanza where the boy finds the shell is in the edition’s text.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Blind Highland Boy, the whole poem; opens “Now we are tired of boisterous joy, Have romped enough, my little Boy! Jane hangs her…”; closes “…long the story will repeat Of the blind Boy's adventurous feat, And how he was preserved.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1266,
+          1315
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9963aa73417b316115885eb043567435ca3df7ae0ec2ffd421b8c04d7ef97ce3"
+      },
+      "questions": [
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-31-q1",
+          "prompt": "Who is telling this story, and to whom? How does the opening change the way the adventure is told?",
+          "facilitatorNotes": [
+            "A grown-up tells it to children who have been romping (“my little Boy,” Jane on his breast). So danger comes with reassurance (“mark me well,” “Ye soon shall know”), and the tale can be frightening without being cruel. Some readers think the frame softens the boy’s loss."
+          ],
+          "evidence": [
+            "Now we are tired of boisterous joy,",
+            "And, as I promised, I will tell"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-31-q2",
+          "prompt": "What does the boy love about the loch, and why is it dangerous for him? Find lines that show both.",
+          "facilitatorNotes": [
+            "The tide brings ships, tales and “the bustle of the mariners,” but he “must never handle sail.” The same tide that brings the ships “sucked, and sucked him in.”"
+          ],
+          "evidence": [
+            "The shouting, and the jolly cheers;",
+            "For He must never handle sail;",
+            "And sucked, and sucked him in."
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-31-q3",
+          "prompt": "While everyone ashore shrieks, the poem says “It is the triumph of his joy!” Why does the speaker ask us to “let him go his way”?",
+          "facilitatorNotes": [
+            "For the boy this is the bravest moment of his life; the speaker trusts that angels guard “the forlorn unfortunate.” The poem holds two views at once, terror on shore and joy in the shell; readers can debate whether celebrating the danger is right."
+          ],
+          "evidence": [
+            "It is the triumph of his joy!",
+            "And let him, let him go his way,"
+          ]
+        },
+        {
+          "id": "reading-8-wordsworth-poetical-works-2-1896-31-q4",
+          "prompt": "When the rescuers reach him, the boy cries “Keep away.” What does he lose at the moment he is saved, and how does the poem end?",
+          "facilitatorNotes": [
+            "All his dreams, “that inward light,” vanish like a magic palace: rescue ends his freedom, “a heavy, bitter loss.” The crowd and his mother rejoice, and he is “pleased and reconciled” to the shore. Some readers find the ending peaceful; others find it quietly sad."
+          ],
+          "evidence": [
+            "And leave me to myself!",
+            "'twas a heartfelt cross",
+            "Yet he was pleased and reconciled"
+          ]
+        }
+      ]
     }
   ]
 }
