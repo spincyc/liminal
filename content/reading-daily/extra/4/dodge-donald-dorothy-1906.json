@@ -889,6 +889,166 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-dodge-donald-dorothy-1906-13",
+      "title": "Donald and Dorothy: Jack answers questions (Chapter XI)",
+      "sourceId": "dodge-donald-dorothy-1906",
+      "genre": "literary fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice how a character can answer every question and still give nothing away.",
+      "focus": "A sly visitor questions Jack about the shipwreck, and the old sailor turns every question back on him until one memory breaks through.",
+      "context": "Donald and Dorothy (1883) is by Mary Mapes Dodge, author of Hans Brinker and editor of St. Nicholas, a famous magazine for children. Fourteen-year-old twins Donald and Dorothy Reed (“the D’s”) live at Lakewood with their Uncle George. Their father died in England, and their mother was lost at sea when they were six weeks old; the babies were saved from the shipwreck by Jack, who now works for the family. Liddy (Lydia) is the housekeeper and Nero the old dog. Fourteen years ago the twins and their mother sailed for America on the same ship as Kate Robertson, who was brought up as Uncle George’s sister, with her husband and their own baby girl. There were three babies on board; Jack saved two. In the last chapter a visitor, Eben Slade, came to see Uncle George (Mr. Reed). Slade is Kate’s real brother, a man who once ran away from the family that adopted him; he says he wants what “ought to be coming to” him, and asked to question the man who saw the wreck. Jack calls Mr. Reed “the Capt’n.” A tar is a sailor; a cove is a fellow; the fo’castle (forecastle) is where a ship’s crew live, and the cabins are for passengers; a stewardess looks after passengers; boxing the compass means naming all its points in order; a ship’s log is its diary; to be stove in is to have a hole smashed in; land lubbers are clumsy landsmen. A skulker sneaks about to avoid work; deference is respectful obedience; to conciliate is to win someone over.",
+      "contentNote": "Jack remembers the night of the wreck, when a mother screamed for her baby and most of the people on board drowned. He longs to give Slade a beating. His sailor’s speech is spelled the way he talks.",
+      "excerpt": {
+        "locator": "Chapter XI, “Jack,” the whole chapter; opens “JACK and Nero entered the library, where Mr. Reed and Eben Slade sat waiting.”; closes “…remarked to himself, while Mr. George rose and bade his visitor a stiff \"good-evening.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          467,
+          509
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5611ab6879e8486d2e247ea9d88f20d3f2eb0046b6d96502612dadeda615dec6"
+      },
+      "questions": [
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-13-q1",
+          "prompt": "Slade asks how Jack saved the twins. How does Jack manage to answer without telling him anything? Find two replies.",
+          "facilitatorNotes": [
+            "He answers the words of each question but not its meaning: he saved them “Mostly by tryin’,” there “warn’t any beginning,” the wreck “did itself,” and he could not see because he had forgotten his spectacles. His jokes are a way of refusing."
+          ],
+          "evidence": [
+            "\"Mostly by tryin', your honor,\" replied Jack, sullenly.",
+            "besides, I'd forgot my specs."
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-13-q2",
+          "prompt": "Why does Jack dislike Slade from the start? Is his rudeness fair?",
+          "facilitatorNotes": [
+            "He has seen Slade sneaking about the grounds like a spy, and Slade talks down to him and threatens him. Jack is loyal to Mr. Reed and suspects Slade wants to harm the family. Readers may think he goes too far, but he softens whenever Mr. Reed signals him to answer."
+          ],
+          "evidence": [
+            "He had despised the fellow as a \"skulker,\" from the moment he had seen him sneaking about the grounds like a spy",
+            "Mr. Reed's expressive nod compelled him to reply"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-13-q3",
+          "prompt": "Jack says no one could tell one baby from another in the dark. Why does this matter so much to Slade, and to the twins?",
+          "facilitatorNotes": [
+            "If nobody can be sure which two babies were saved, then one of the “twins” might really be Kate Robertson’s daughter, and Slade might claim her. That is the mystery at the centre of the book. Readers can predict which twin it might be, and what it would mean for the family."
+          ],
+          "evidence": [
+            "It's hard seein' any diff'rence between young babbies in broad sunlight and a smooth sea",
+            "let alone knowin' which babby belonged to which mother"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-13-q4",
+          "prompt": "When Slade asks about the mother, Jack stops joking. What does he remember, and why might the memory be hard for him?",
+          "facilitatorNotes": [
+            "A mother screaming for her baby as she was lowered into the boat, and then quiet; the dark, the shouting, the sinking ship; only about twenty people survived. His jokes may have been a way to keep from feeling this, and from letting Slade see it."
+          ],
+          "evidence": [
+            "by the way the poor soul screamed for it, when they were letting her and the rest down into the boat",
+            "Out of all that shipload, barely twenty men and wimmen ever saw the sun rise again"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-13-q5",
+          "prompt": "Jack studies Mr. Reed’s face “as in times past he had studied the sky to learn the weather.” What does this comparison show about the two men?",
+          "facilitatorNotes": [
+            "Jack reads his master’s face as carefully as a sailor watches for storms: Mr. Reed is like the captain whose orders he obeys. The comparison suits a sailor, and it also shows his loyalty: Mr. Reed’s stern look stops him from thrashing Slade."
+          ],
+          "evidence": [
+            "very much as in times past he had studied the sky to learn the weather"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-dodge-donald-dorothy-1906-14",
+      "title": "Donald and Dorothy: The Sunset (Chapter XXV)",
+      "sourceId": "dodge-donald-dorothy-1906",
+      "genre": "literary fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Read a scene where you know a secret that one character does not, and notice how it changes every cheerful word.",
+      "focus": "Donald asks Uncle George whether Dorry is really his sister, and Dorry, knowing nothing, chatters about twin clouds drifting apart.",
+      "context": "Donald and Dorothy (1883) is by Mary Mapes Dodge, author of Hans Brinker and editor of St. Nicholas, a famous magazine for children. Fourteen-year-old twins Donald and Dorothy Reed (“the D’s”) live at Lakewood with their Uncle George. Their father died in England, and their mother was lost at sea when they were six weeks old; the babies were saved from the shipwreck by Jack, who now works for the family. Liddy (Lydia) is the housekeeper and Nero the old dog. Fourteen years ago the twins sailed with their mother on the same ship as Kate Robertson, who was brought up as Uncle George’s sister, and her own baby girl; there were three babies on board, and Jack saved two. In the chapter before this one, a scheming man named Eben Slade, Kate’s real brother, told Donald that Dorry “is no more your sister than she is mine”: he says she is his niece, Kate’s child, and that he means to take her West. Jack arrived and thrashed him, and Donald has hurried home and burst into Uncle George’s study. Dorry knows nothing about it. A piazza is a porch; doleful means sad; a courtesy is a curtsy; Josie Manning is Dorry’s friend; Michael McSwiver is the Mannings’ coachman; the G-B-C girls belong to a botany club that collects plants; lichens are crusty growths on rocks and trees; a rockaway is a light carriage; Watch is the twins’ new dog, and Kassy the housemaid.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XXV, “The Sunset,” the whole chapter; opens “FOR an instant Mr. Reed was too astonished to speak.”; closes “…by half-past nine o'clock, do not expect him. Wait; I'll escort you to the carriage.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1309,
+          1345
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e6c01f0eac601e08433498aaabd08594396b7b9c6f1426a2a68e5590879bf9de"
+      },
+      "questions": [
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-14-q1",
+          "prompt": "Donald asks, “Is Dorothy Reed my sister?” What does Uncle George answer, and why is the answer so painful?",
+          "facilitatorNotes": [
+            "He hopes and trusts she is, but admits he does not know. After the wreck no one could tell the babies apart, so he cannot be sure. For Donald, hope and doubt arrive together."
+          ],
+          "evidence": [
+            "It seemed to him that he caught the words, \"She is.\"",
+            "I do not know, myself!"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-14-q2",
+          "prompt": "Dorry describes the sunset clouds. Why are her words so hard for Donald and Uncle George to hear? What might the chapter title stand for?",
+          "facilitatorNotes": [
+            "She sees two small “twin” clouds drifting farther and farther apart, and her uncle’s cloud breaking up: exactly what they fear will happen to the family. She means it as play; the reader and the two of them hear it as a warning. The sunset may stand for the end of their untroubled days."
+          ],
+          "evidence": [
+            "they're twins, Don, like ourselves",
+            "Now they are separating--farther and farther apart"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-14-q3",
+          "prompt": "What has Dorry “found out for certain”? How does this feel to read, knowing what Donald knows?",
+          "facilitatorNotes": [
+            "That she has the dearest brother a girl ever had and the best uncle in the country. The one thing she is sure of is the very thing now in doubt. One defensible answer: it is true in the way that matters most, because growing up loving each other has made them brother and sister whoever their parents were. Others may feel only how sad it is."
+          ],
+          "evidence": [
+            "I've the very dearest brother ever a girl had",
+            "the best uncle in the whole United States"
+          ]
+        },
+        {
+          "id": "reading-4-dodge-donald-dorothy-1906-14-q4",
+          "prompt": "Why does Uncle George agree so quickly to let Dorry go to Josie’s? What does Dorry notice that the others hope she will not?",
+          "facilitatorNotes": [
+            "He wants her out of the house so that he can talk with Donald and hide their distress. Dorry is surprised by his “willing consent” and sees that he looks tired, and offers to stay. She senses something is wrong even though she cannot guess what."
+          ],
+          "evidence": [
+            "To her surprise, Mr. Reed gave a willing consent.",
+            "\"But you look tired, Uncle, dear. Suppose I don't go, this time.\""
+          ]
+        }
+      ]
     }
   ]
 }
