@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "lazarus-poems-1-1889",
+  "readings": [
+    {
+      "id": "reading-9-lazarus-poems-1-1889-01",
+      "title": "Echoes",
+      "sourceId": "lazarus-poems-1-1889",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Separate the octave (first eight lines) from the sestet (last six). Restate what the speaker says she cannot do, then what she offers instead.",
+      "focus": "A woman poet’s sonnet about the limits placed on her voice, and the value of a different kind of song.",
+      "context": "Emma Lazarus (1849–1887), a New York poet best known for “The New Colossus,” wrote these poems in the 1870s and 1880s; the text is from the Poems published after her death (1889). “Late-born” means born in a late age, after the great poets; lays are songs; to cope is to compete; to misprize is to undervalue. Where this printing shows a gap instead of an apostrophe, the text keeps the gap: read “Muse s” as Muse’s and “O erbrowed” as o’erbrowed, overhung.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete sonnet: Echoes; The Poems of Emma Lazarus, vol. I (1889); opens “Late-born and woman-souled I dare not hope, The freshness of the elder lays, the might Of…”; closes “…word, Misprize thou not these echoes that belong To one in love with solitude and song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          364,
+          365
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "071437f0bf0a81da32cf74903014dd1c6e008256d84987b3b78aa3d34552e697"
+      },
+      "questions": [
+        {
+          "id": "reading-9-lazarus-poems-1-1889-01-q1",
+          "prompt": "In the first eight lines, what does the speaker say she cannot write, and why?",
+          "facilitatorNotes": [
+            "Not the freshness of “the elder lays,” nor the “manly, modern passion” of war poetry with its “dangers, wounds, and triumphs.” She is “Late-born and woman-souled,” “veiled and screened by womanhood.”",
+            "The octave lists the limits her era placed on a woman poet, or claims to accept them; notice how forcefully it describes the very subjects it says she cannot treat."
+          ],
+          "evidence": [
+            "Who veiled and screened by womanhood must grope",
+            "The dangers, wounds, and triumphs of the fight;"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-01-q2",
+          "prompt": "What image does the sestet offer instead of the “full-stringed lyre”? What kind of poetry is an echo?",
+          "facilitatorNotes": [
+            "A wild voice in a lake-floored cave, “Answering at once from heaven and earth and wave” and lending “elf-music” to the harshest word. An echo repeats and transforms; it needs solitude and a listener who has sought it.",
+            "Her poetry is presented not as lesser but as different: strange, private, magical. Some readers still hear a smaller claim than the lyre’s."
+          ],
+          "evidence": [
+            "Answering at once from heaven and earth and wave,",
+            "Lending elf-music to thy harshest word,"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-01-q3",
+          "prompt": "Is “Echoes” a modest apology or a quiet defiance? Consider the command “Misprize thou not.”",
+          "facilitatorNotes": [
+            "The octave seems to accept exclusion; the sestet turns to the reader with an imperative and claims value for “these echoes.” The turn at line nine is the evidence.",
+            "Both humility and defiance are defensible, and many readers hear both at once."
+          ],
+          "evidence": [
+            "Misprize thou not these echoes that belong",
+            "To one in love with solitude and song."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-lazarus-poems-1-1889-02",
+      "title": "Venus of the Louvre",
+      "sourceId": "lazarus-poems-1-1889",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the octave as a description of a statue and the sestet as a memory. Ask why the poem moves from the goddess to the man at her feet.",
+      "focus": "Greek beauty and Jewish grief held together in one place and one poet’s memory.",
+      "context": "Emma Lazarus (1849–1887), a New York poet best known for “The New Colossus,” wrote these poems in the 1870s and 1880s; the text is from the Poems published after her death (1889). The Venus de Milo, an ancient Greek statue of the goddess of love that has lost both arms, stands in the Louvre in Paris. The German Jewish poet Heinrich Heine (1797–1856), whom Lazarus translated, wrote that on his last walk outdoors in 1848, before years confined to bed, he collapsed weeping at the statue’s feet. Venus was said to be born from sea-foam and to ride a chariot drawn by doves. Hellas is Greece; Hebraic means Jewish.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete sonnet: Venus of the Louvre; The Poems of Emma Lazarus, vol. I (1889); opens “Down the long hall she glistens like a star, The foam-born mother of Love, transfixed to…”; closes “…While mourns one ardent heart, one poet-brain, For vanished Hellas and Hebraic pain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          371,
+          372
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c3872042998fd098b4fcbf6f92f6cd1c68412fa64116ef77634be0baf4b57e26"
+      },
+      "questions": [
+        {
+          "id": "reading-9-lazarus-poems-1-1889-02-q1",
+          "prompt": "How does the octave describe the statue? Explain the paradox of “maimed but could not mar.”",
+          "facilitatorNotes": [
+            "She glistens “like a star,” is “transfixed to stone” yet “breathing on”; time broke her but did not spoil her beauty. Damage and perfection, stone and life, coexist.",
+            "The near-rhyme of maimed and mar binds the contradiction into one line."
+          ],
+          "evidence": [
+            "Time’s brutal hand hath maimed but could not mar.",
+            "Yet none the less immortal, breathing on."
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-02-q2",
+          "prompt": "At the turn, what else does the speaker see “at her feet”? Why does she name Heine as “a pale, death-stricken Jew”?",
+          "facilitatorNotes": [
+            "She sees Heine sobbing “farewell to love,” as if the past were still present: “Here still he weeps anew.” Naming him a Jew prepares the closing “Hebraic pain” and connects him with Lazarus, a Jewish American poet who translated him.",
+            "The statue becomes a place of memory and grief, not only of beauty."
+          ],
+          "evidence": [
+            "But at her feet a pale, death-stricken Jew,",
+            "Here Heine wept! Here still he weeps anew,"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-02-q3",
+          "prompt": "The last line sets “vanished Hellas” beside “Hebraic pain.” What two inheritances does the sonnet hold together, and who keeps Heine’s shadow from moving?",
+          "facilitatorNotes": [
+            "Greek beauty and Jewish suffering, traditions often set against each other; Heine felt both. The “one ardent heart, one poet-brain” who mourns is most likely the speaker herself.",
+            "Readers may connect the line to Lazarus’s later writing on Jewish history, but the sonnet’s logic is enough: while someone feels both losses, his grief remains."
+          ],
+          "evidence": [
+            "While mourns one ardent heart, one poet-brain,",
+            "For vanished Hellas and Hebraic pain."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-lazarus-poems-1-1889-03",
+      "title": "The Cranes of Ibycus",
+      "sourceId": "lazarus-poems-1-1889",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Track the two worlds of the sonnet, the city on a November day and the world of the book, and find the line where each becomes the more real.",
+      "focus": "The private ecstasy of reading, and a coincidence that feels like a message from dead poets.",
+      "context": "Emma Lazarus (1849–1887), a New York poet best known for “The New Colossus,” wrote these poems in the 1870s and 1880s; the text is from the Poems published after her death (1889). In a Greek legend retold by the German poet Friedrich Schiller, the poet Ibycus was murdered by robbers as cranes flew overhead; later, in a crowded theatre, cranes passed again and one murderer cried out, betraying the crime. Faust and Helen are lovers in the second part of Goethe’s Faust, where a medieval scholar is united with Helen of Troy. A screed is a long piece of writing.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete sonnet: The Cranes of Ibycus; The Poems of Emma Lazarus, vol. I (1889); opens “There was a man who watched the river flow Past the huge town, one gray November day.…”; closes “…Lo—a black line of birds in wavering thread Bore him the greetings of the deathless dead!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          409,
+          410
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7cf396bc76cc5d9232fa30b58a0f5fa568a8188625d9ccb16953194aec95cc61"
+      },
+      "questions": [
+        {
+          "id": "reading-9-lazarus-poems-1-1889-03-q1",
+          "prompt": "Where is the man physically, and where is he in his mind? Find the line that separates the two worlds.",
+          "facilitatorNotes": [
+            "By a river in a “huge town” on a “gray November day,” with boys at play; in his mind he walks “in an April land / With Faust and Helen.” The real city becomes “Shadowy as a dream,” so reading reverses which world feels real.",
+            "Students might notice that the sonnet itself shifts at the same point."
+          ],
+          "evidence": [
+            "For he was walking in an April land",
+            "Was the prose-world, the river and the town."
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-03-q2",
+          "prompt": "What happens when he closes the book? Why might the poet call real birds “the greetings of the deathless dead”?",
+          "facilitatorNotes": [
+            "A black line of birds appears as if the cranes had flown out of the page. The legend of birds that brought justice for a murdered poet becomes a reader’s moment of joy; the “deathless dead” are poets whose work lives on in readers.",
+            "Some find the ending uplifting; others notice its strangeness, since in the legend cranes accompanied a murder."
+          ],
+          "evidence": [
+            "He closed the page, he lifted up his eyes,",
+            "Bore him the greetings of the deathless dead!"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-03-q3",
+          "prompt": "The boys watch him “Murmuring half-loud.” How does the poem handle the gap between how a reader looks from outside and what he feels inside?",
+          "facilitatorNotes": [
+            "To the boys he is an odd sight; to himself he is under “enchanted skies.” The sonnet begins with a detached “There was a man” and ends inside his vision.",
+            "It celebrates absorption in a book while admitting that it looks absurd. Students can test it against their own reading."
+          ],
+          "evidence": [
+            "The boys made merry as they saw him go,",
+            "Wild joy possessed him; through enchanted skies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-lazarus-poems-1-1889-04",
+      "title": "Youth and Death; Age and Death",
+      "sourceId": "lazarus-poems-1-1889",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 16,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the two poems one after the other, then side by side. Mark the words for Death in each and the words that return with a changed meaning.",
+      "focus": "The same figure, Death, seen from youth and from old age.",
+      "context": "Emma Lazarus (1849–1887), a New York poet best known for “The New Colossus,” wrote these poems in the 1870s and 1880s; the text is from the Poems published after her death (1889). Lazarus printed these two short poems as a pair. In both, Death is addressed as a person. “Twixt” means between; a beck is a beckoning gesture; a couch is a bed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Two complete companion poems, Youth and Death and Age and Death; The Poems of Emma Lazarus, vol. I (1889); opens “What hast thou done to this dear friend of mine, Thou cold, white, silent Stranger? From…”; closes “…all these years my couch thou didst prepare. Thou art supreme Love—kiss me—I am thine!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          422,
+          425
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "936b467bd3ea1a2da5f1af0ed782cc60303667b72b9e9cbb3ff7e533f89fa548"
+      },
+      "questions": [
+        {
+          "id": "reading-9-lazarus-poems-1-1889-04-q1",
+          "prompt": "How does the speaker of “Youth and Death” address Death? List the names and questions.",
+          "facilitatorNotes": [
+            "Death is a “cold, white, silent Stranger,” asked to “Teach me who thou art,” what “secret door” let it in, what power can overmaster love. The speaker “never saw thee till this sudden hour.”",
+            "A young person meeting death for the first time demands explanations that never come; the poem ends on a question."
+          ],
+          "evidence": [
+            "Thou cold, white, silent Stranger?",
+            "I never saw thee till this sudden hour."
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-04-q2",
+          "prompt": "In “Age and Death,” how has Death changed? Which words from the first poem return with new meaning?",
+          "facilitatorNotes": [
+            "Now Death is a “kind, white, long-familiar friend” with “Mild eyes of blessing.” “White” returns, but “cold” and “Stranger” become “kind” and “friend.” In the first poem Death overmasters “Love’s own power”; in the second, Death is “supreme Love.”",
+            "The pairing makes a single figure look entirely different depending on who is looking."
+          ],
+          "evidence": [
+            "Come closer, kind, white, long-familiar friend,",
+            "Thou art supreme Love—kiss me—I am thine!"
+          ]
+        },
+        {
+          "id": "reading-9-lazarus-poems-1-1889-04-q3",
+          "prompt": "Why might the old speaker welcome Death? Do the poems together offer comfort, disturbance, or both?",
+          "facilitatorNotes": [
+            "Having lost so many, the old speaker finds “Thy world is peopled for me; this world’s bare.” The pair suggests that attitudes to death change with experience.",
+            "Some readers find the final embrace consoling; others find the surrender unsettling. Both responses can cite the last line."
+          ],
+          "evidence": [
+            "Thy world is peopled for me; this world’s bare.",
+            "Life has grown strange and cold, but thou dost bend"
+          ]
+        }
+      ]
+    }
+  ]
+}
