@@ -5,6 +5,81 @@
   "readings": [
     {
       "id": "reading-6-gaskell-cranford-1904-01",
+      "title": "Cranford, chapter II — Major Gordon",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Find the kindness hidden inside a character’s sternness, and the old story hidden inside a surprise visit.",
+      "focus": "Left alone and poor after two funerals, Miss Jessie Brown is visited by the man she refused years ago, and the strict Miss Jenkyns turns matchmaker.",
+      "context": "Cranford, first published in parts in 1851–53, is Elizabeth Gaskell’s portrait of a small English town ruled by genteel ladies with little money and many rules. The narrator, Mary Smith, often stays with the Jenkyns sisters: stern Miss Jenkyns (Deborah), who admires the eighteenth-century writer Dr Johnson and his magazine the Rambler, and gentle Miss Matty (Matilda). Captain Brown, a retired army officer, came to Cranford with his two daughters; he shocked the ladies by admitting he was poor, then won them over by his kindness. He was killed by a train while saving a child, reading Pickwick Papers by “Boz” (Charles Dickens), a book Miss Jenkyns despised; his invalid elder daughter, Mary, died soon after. This reading begins after her funeral. Wherewithal means money; arrowroot is a light food for invalids; a dragoon is a cavalry soldier; a “fell disease” is a deadly one; Galignani’s was an English newspaper printed in Paris; “Old Poz” is a children’s play that Miss Jenkyns confuses with Boz; A Christmas Carol is by Dickens.",
+      "contentNote": "The chapter follows two deaths, and recalls the long suffering of Miss Jessie’s sister.",
+      "excerpt": {
+        "locator": "Chapter II, “The Captain,” from Miss Jessie’s stay with Miss Jenkyns to the end of the chapter; opens “After this second funeral, Miss Jenkyns insisted that Miss Jessie should come to stay…”; closes “…get a good long spell at the “Christmas Carol,” which Miss Matty had left on the table.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          82,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0f61b1fbfa031911a410cea3b6edcd05423f13bbd3fae07c094a05c574550bea"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-01-q1",
+          "prompt": "Miss Jessie offers to sew, nurse, keep house or work in a shop. Why is Miss Jenkyns so angry, and how does she show kindness at the same moment?",
+          "facilitatorNotes": [
+            "To Miss Jenkyns, a captain’s daughter must not take paid work: it would be beneath her “rank.” Yet she brings arrowroot and stands over Jessie “like a dragoon” until she eats it. Her care comes out as command."
+          ],
+          "evidence": [
+            "some people having no idea of their rank as a captain’s daughter",
+            "stood over her like a dragoon until the last spoonful was finished"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-01-q2",
+          "prompt": "Why did Miss Jessie refuse Major Gordon years ago? Why did he decide she was cold-hearted?",
+          "facilitatorNotes": [
+            "She had to nurse her dying sister and comfort her father, and would not promise to marry him later. He took her refusal to pledge herself as coldness and went abroad angry. The truth was the opposite: she gave up her own happiness for her family."
+          ],
+          "evidence": [
+            "the obstacle was the fell disease which was, even then, too surely threatening her sister",
+            "believing that she was a cold-hearted person whom he would do well to forget"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-01-q3",
+          "prompt": "“The most proper place in the world for his arm to be in.” Why is this answer such a shock to Miss Matty?",
+          "facilitatorNotes": [
+            "Miss Jenkyns has always been “a model of feminine decorum,” strict about every rule; now she approves of a man’s arm round a lady’s waist and tells Matty to mind her own business. Matty gets “a double shock”: the embrace and her sister’s reply. Readers may enjoy seeing the rule-keeper bend a rule for love."
+          ],
+          "evidence": [
+            "The most proper place in the world for his arm to be in.",
+            "with a double shock she left the room"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-01-q4",
+          "prompt": "Years later Miss Jenkyns, old and changed, praises the Rambler while Flora reads A Christmas Carol. What is the joke, and why is it also a little sad?",
+          "facilitatorNotes": [
+            "She still calls Johnson “improving” and mocks “Mr Boz,” the author Captain Brown loved, but the child cannot read Johnson and happily reads Dickens instead. The quarrel of Chapter I is lost; Miss Jenkyns even mixes up the names. Her strong mind has weakened, and the scene is tender as well as funny."
+          ],
+          "evidence": [
+            "the most improving reading for Flora",
+            "Flora to get a good long spell at the “Christmas Carol,”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-02",
       "title": "Cranford, chapter VII — An invitation with apologies",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -22,7 +97,7 @@
         "locator": "Chapter VII, “Visiting,” from the start through Miss Betty Barker’s leave-taking; opens “ONE morning, as Miss Matty and I sat at our work—it was before twelve o’clock, and Miss…”; closes “…that time—half-past six.” And with a swimming curtsey Miss Betty Barker took her leave.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-6-gaskell-cranford-1904-02",
+        "continuesTo": "reading-6-gaskell-cranford-1904-03",
         "blocks": [
           297,
           310
@@ -33,7 +108,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-01-q1",
+          "id": "reading-6-gaskell-cranford-1904-02-q1",
           "prompt": "Why does Miss Matty own two caps, and what goes wrong with them this morning?",
           "facilitatorNotes": [
             "She wears out Deborah’s old yellow-ribboned cap in private and puts on a copy of Mrs Jamieson’s when she expects to be seen; in her hurry she returns with one on top of the other. Thrift and appearances collide, and nobody notices."
@@ -44,7 +119,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-01-q2",
+          "id": "reading-6-gaskell-cranford-1904-02-q2",
           "prompt": "Miss Barkers would not sell to anyone “without a pedigree.” How does Mary judge them for it?",
           "facilitatorNotes": [
             "Mostly gently: they are truthful, “self-denying, good people” who carry food to the poor, and they only copy their betters in snubbing the class just below. Mary laughs at the snobbery without denying their goodness."
@@ -55,7 +130,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-01-q3",
+          "id": "reading-6-gaskell-cranford-1904-02-q3",
           "prompt": "Miss Betty apologizes at length for her “presumption.” Why does Mary build it up and then deflate it?",
           "facilitatorNotes": [
             "The apologies make Mary imagine something scandalous, but the crime is only inviting her sister’s former mistress, Mrs Jamieson. The comedy shows how large a small social step feels to Miss Betty; readers may find the tone mocking, affectionate or both."
@@ -66,7 +141,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-01-q4",
+          "id": "reading-6-gaskell-cranford-1904-02-q4",
           "prompt": "What does Miss Betty’s refusal to invite Mrs Fitz-Adam show about how rank works in Cranford?",
           "facilitatorNotes": [
             "She draws “a line somewhere” to please Mrs Jamieson. A woman whose own trade makes her doubtful company excludes another to prove she understands rank, so the ladder holds because each person pushes someone else below."
@@ -79,7 +154,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-02",
+      "id": "reading-6-gaskell-cranford-1904-03",
       "title": "Cranford, chapter VII — Should Mrs Fitz-Adam be called upon?",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -96,8 +171,8 @@
       "excerpt": {
         "locator": "Chapter VII, “Visiting,” from Miss Pole’s call through the history of Mrs Fitz-Adam; opens “My prophetic soul foretold a visit that afternoon from Miss Pole, who usually came to…”; closes “…muscle of her face, no more than if she had not seen her. Still Mrs Fitz-Adam persevered.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-01",
-        "continuesTo": "reading-6-gaskell-cranford-1904-03",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-02",
+        "continuesTo": "reading-6-gaskell-cranford-1904-04",
         "blocks": [
           311,
           320
@@ -108,7 +183,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-02-q1",
+          "id": "reading-6-gaskell-cranford-1904-03-q1",
           "prompt": "Why do the ladies dislike the name Hoggins, and how does Miss Jenkyns’s joke show it?",
           "facilitatorNotes": [
             "It sounds coarse, too close to “hog,” and changing it to Piggins “would not be much better.” The judgment rests on the sound of a name, not on anyone’s character."
@@ -119,7 +194,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-02-q2",
+          "id": "reading-6-gaskell-cranford-1904-03-q2",
           "prompt": "What argument finally persuades Cranford to call on Mrs Fitz-Adam?",
           "facilitatorNotes": [
             "Miss Pole’s practical one: with so many elderly spinsters and childless widows, the ladies must relax or have “no society at all.” Mary adds that the strict code partly died with Miss Jenkyns, and Matty thinks it would be cruel to disappoint the newcomer."
@@ -131,7 +206,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-02-q3",
+          "id": "reading-6-gaskell-cranford-1904-03-q3",
           "prompt": "How reliable is Mrs Forrester’s history of names beginning with “Fitz”?",
           "facilitatorNotes": [
             "She mixes a real royal example with guesses and a cousin who married a widow for her “two little ffs.” Her reasoning is charmingly confused, treating spelling as proof of good blood."
@@ -142,7 +217,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-02-q4",
+          "id": "reading-6-gaskell-cranford-1904-03-q4",
           "prompt": "Who behaves better at the parties, Mrs Fitz-Adam or Mrs Jamieson? Use the curtsey scene.",
           "facilitatorNotes": [
             "Mrs Jamieson shows “how honourable she was” by never seeing Mrs Fitz-Adam, who keeps curtseying low and perseveres. Mary’s irony suggests the snub is the ruder act, though some readers may call Mrs Fitz-Adam’s persistence social climbing."
@@ -155,7 +230,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-03",
+      "id": "reading-6-gaskell-cranford-1904-04",
       "title": "Cranford, chapter VII — Tea, cards and cherry-brandy",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -172,7 +247,7 @@
       "excerpt": {
         "locator": "Chapter VII, “Visiting,” from the ladies’ arrival at Miss Barker’s to the end of the chapter; opens “The spring evenings were getting bright and long when three or four ladies in calashes…”; closes “…her former occupation, and wished us to forget it, would have been much more pressing.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-02",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-03",
         "continuesTo": null,
         "blocks": [
           321,
@@ -184,7 +259,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-03-q1",
+          "id": "reading-6-gaskell-cranford-1904-04-q1",
           "prompt": "What do the guests overhear before the door opens, and how does Miss Barker behave once they are upstairs?",
           "facilitatorNotes": [
             "She whispers to Peggy to wait for a cough while she washes her hands, then sits as if nothing had happened. The guests politely pretend not to have heard, so everyone keeps up the performance."
@@ -195,7 +270,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-03-q2",
+          "id": "reading-6-gaskell-cranford-1904-04-q2",
           "prompt": "Mrs Jamieson says she never serves seed-cake. Why does she eat three large pieces here?",
           "facilitatorNotes": [
             "Mary calls it kindness to spare Miss Barker’s feelings, but the comparison to a cow undercuts the dignity, and she may simply be hungry. Both readings use the text."
@@ -206,7 +281,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-03-q3",
+          "id": "reading-6-gaskell-cranford-1904-04-q3",
           "prompt": "How does Miss Barker turn Mrs Jamieson’s falling asleep into a compliment?",
           "facilitatorNotes": [
             "She whispers that it shows how completely at home Mrs Jamieson feels, and wishes her sister had lived to see it. Her pride turns an embarrassment into a triumph, which is funny and touching at once."
@@ -217,7 +292,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-03-q4",
+          "id": "reading-6-gaskell-cranford-1904-04-q4",
           "prompt": "“Oh, gentility! … can you endure this last shock?” What does the supper reveal about the ladies’ rules?",
           "facilitatorNotes": [
             "Gentility “never ate suppers in general” yet is very hungry on special occasions, and the ladies cough to prove they are not used to strong drink. The rules partly cover economy and appearances, and they loosen when someone else is paying; the cherry-brandy even loosens Mrs Jamieson’s news."
@@ -230,7 +305,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-04",
+      "id": "reading-6-gaskell-cranford-1904-05",
       "title": "Cranford, chapter VIII — How to address a lady",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -248,7 +323,7 @@
         "locator": "Chapter VIII, “Your Ladyship,” from the start through Martha’s report from church; opens “EARLY the next morning—directly after twelve—Miss Pole made her appearance at Miss…”; closes ““Lady—as Mrs Deacon.””.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-6-gaskell-cranford-1904-05",
+        "continuesTo": "reading-6-gaskell-cranford-1904-06",
         "blocks": [
           339,
           360
@@ -259,7 +334,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-04-q1",
+          "id": "reading-6-gaskell-cranford-1904-05-q1",
           "prompt": "Why does Miss Pole come to Miss Matty, and why can Matty not help?",
           "facilitatorNotes": [
             "She wants to know whether to say “your ladyship” or “my lady.” Matty cannot remember how Lady Arley was addressed and says Deborah would have known at once; the town’s authority on rules is gone."
@@ -270,7 +345,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-04-q2",
+          "id": "reading-6-gaskell-cranford-1904-05-q2",
           "prompt": "How do Miss Matty and Mary respond differently to Mrs Jamieson’s “very unpolite errand”?",
           "facilitatorNotes": [
             "Mary grows indignant; Matty is slow to understand, then receives the snub with quiet dignity and leaves Mrs Jamieson the more flustered. Gentle manners prove steadier than rank."
@@ -281,7 +356,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-04-q3",
+          "id": "reading-6-gaskell-cranford-1904-05-q3",
           "prompt": "What secret gives Mrs Jamieson’s message its sting for Miss Pole?",
           "facilitatorNotes": [
             "She has already ordered a new cap to meet Lady Glenmire. Her sudden discovery that Lady Glenmire is “but the widow of a Scotch baron” sounds like scorn but comes from disappointment and hurt pride."
@@ -292,7 +367,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-04-q4",
+          "id": "reading-6-gaskell-cranford-1904-05-q4",
           "prompt": "Why are the ladies willing to learn about Lady Glenmire from Martha, and what does Martha’s comparison suggest?",
           "facilitatorNotes": [
             "A servant’s staring cannot count as a compliment, so they can satisfy their curiosity and still seem not to care. Martha’s comparison with the innkeeper’s wife is “not respectful,” yet it hints that Lady Glenmire is lively and ordinary."
@@ -305,7 +380,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-05",
+      "id": "reading-6-gaskell-cranford-1904-06",
       "title": "Cranford, chapter VIII — Forgive, forget and a new cap",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -322,8 +397,8 @@
       "excerpt": {
         "locator": "Chapter VIII, “Your Ladyship,” from Mrs Jamieson’s invitation through the arrival at her house; opens “Another Sunday passed away, and we still averted our eyes from Mrs Jamieson and her…”; closes “…sympathy. Not a muscle of that wooden face had relaxed; and we were grave in an instant.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-04",
-        "continuesTo": "reading-6-gaskell-cranford-1904-06",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-05",
+        "continuesTo": "reading-6-gaskell-cranford-1904-07",
         "blocks": [
           361,
           379
@@ -334,7 +409,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-05-q1",
+          "id": "reading-6-gaskell-cranford-1904-06-q1",
           "prompt": "Why does Miss Matty’s planned excuse trouble her conscience?",
           "facilitatorNotes": [
             "Tuesday is her evening for turning the week’s letters into candle-lighters, which feels too small to call a previous engagement, so she invites Miss Pole to make it a real one. Her honesty is exact even about small excuses."
@@ -345,7 +420,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-05-q2",
+          "id": "reading-6-gaskell-cranford-1904-06-q2",
           "prompt": "How does Miss Pole explain her change of mind, and what does Mary suggest is the real reason?",
           "facilitatorNotes": [
             "She says that staying away would let Mrs Jamieson think she had given offence, and she preaches “Forgive and forget”; Mary notes the smart new cap she wants to show. Matty’s innocent reply catches her out without meaning to."
@@ -356,7 +431,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-05-q3",
+          "id": "reading-6-gaskell-cranford-1904-06-q3",
           "prompt": "What does the comparison to ostriches say about how Cranford ladies dress?",
           "facilitatorNotes": [
             "They spend on new caps and ignore everything below them: old gowns and collars and crowds of brooches. The image is comic but fond; thrift and display live side by side."
@@ -367,7 +442,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-05-q4",
+          "id": "reading-6-gaskell-cranford-1904-06-q4",
           "prompt": "Why is Mr Mulliner so frightening to the ladies, and what makes Miss Pole’s whisper brave?",
           "facilitatorNotes": [
             "A servant who acts like a superior, he reads the shared newspaper first and looks “like a sulky cockatoo” even at his best. Questioning him is daring only in a town where a manservant can awe ladies; readers may find the courage comic or real."
@@ -380,7 +455,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-06",
+      "id": "reading-6-gaskell-cranford-1904-07",
       "title": "Cranford, chapter VIII — Tea with “my lady”",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -397,8 +472,8 @@
       "excerpt": {
         "locator": "Chapter VIII, “Your Ladyship,” from Mrs Jamieson’s drawing-room through the card-playing; opens “Mrs Jamieson’s drawing-room was cheerful; the evening sun came streaming into it, and the…”; closes “…the great Cranford Parliament on the subject of the proper mode of addressing a peeress.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-05",
-        "continuesTo": "reading-6-gaskell-cranford-1904-07",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-06",
+        "continuesTo": "reading-6-gaskell-cranford-1904-08",
         "blocks": [
           380,
           392
@@ -409,7 +484,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-06-q1",
+          "id": "reading-6-gaskell-cranford-1904-07-q1",
           "prompt": "What does the description of the drawing-room suggest about comfort in Mrs Jamieson’s house?",
           "facilitatorNotes": [
             "Straight, square furniture in rows against the walls, chair-backs that do not invite ease, a reading table holding a Bible, a Peerage and a Prayer-Book, and a circle round the fire like Stonehenge. The room serves display, not guests."
@@ -420,7 +495,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-06-q2",
+          "id": "reading-6-gaskell-cranford-1904-07-q2",
           "prompt": "Why does Miss Pole’s question about the Court fall flat, and what does Lady Glenmire’s answer reveal?",
           "facilitatorNotes": [
             "Miss Pole chose a topic to suit a peeress, but Lady Glenmire has never been to Court and hopes instead for a common interest in Edinburgh. The ladies’ idea of rank does not fit the real woman."
@@ -431,7 +506,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-06-q3",
+          "id": "reading-6-gaskell-cranford-1904-07-q3",
           "prompt": "How do the sugar and the cream show Mrs Jamieson’s priorities?",
           "facilitatorNotes": [
             "The lumps of sugar are tiny, and the dog gets the cream while the guests get milk and are asked to admire him. The guests feel insulted by her economy with them and her indulgence of Carlo."
@@ -442,7 +517,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-06-q4",
+          "id": "reading-6-gaskell-cranford-1904-07-q4",
           "prompt": "What finally makes the ladies “better acquainted” with Lady Glenmire, and what does that suggest about rank?",
           "facilitatorNotes": [
             "Her ringing the bell, wanting more bread and butter, and playing cards well; a shared want does what talk of the Court could not, and Miss Pole forgets to say “your ladyship.” Readers may see Lady Glenmire as truly unpretentious or as a guest making the best of a dull visit."
@@ -456,7 +531,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-07",
+      "id": "reading-6-gaskell-cranford-1904-08",
       "title": "Cranford, chapter VIII — The lace and the cat",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -473,7 +548,7 @@
       "excerpt": {
         "locator": "Chapter VIII, “Your Ladyship,” from Mrs Forrester’s story of her lace to the end of the chapter; opens “As a proof of how thoroughly we had forgotten that we were in the presence of one who…”; closes “…night, so refined and delicate were our perceptions after drinking tea with “my lady.””.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-06",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-07",
         "continuesTo": null,
         "blocks": [
           393,
@@ -485,7 +560,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-07-q1",
+          "id": "reading-6-gaskell-cranford-1904-08-q1",
           "prompt": "Why does Mrs Forrester wash the lace herself?",
           "facilitatorNotes": [
             "It is old lace that cannot be bought now, “the sole relic of better days,” and she trusts it to no one, not even her “maid,” who is really a charity-school girl. The grand word for a small household shows the same pride as the lace."
@@ -496,7 +571,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-07-q2",
+          "id": "reading-6-gaskell-cranford-1904-08-q2",
           "prompt": "How do Mrs Forrester’s feelings toward the cat change as she tells the story?",
           "facilitatorNotes": [
             "Pity, then anger and a slap, then outrage at its purring, then such relief she “could have kissed her.” The swings, told with ladylike apologies, make the story funny; some readers may find her treatment of the cat comic, others a little hard."
@@ -507,7 +582,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-07-q3",
+          "id": "reading-6-gaskell-cranford-1904-08-q3",
           "prompt": "Why do the young men in the surgery laugh, and why does Mrs Forrester not see anything odd?",
           "facilitatorNotes": [
             "Borrowing the doctor’s top-boot seems absurd to them; to her it is simply the tool for holding a cat. Genteel poverty has made her practical and inventive."
@@ -518,7 +593,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-07-q4",
+          "id": "reading-6-gaskell-cranford-1904-08-q4",
           "prompt": "Why does Mary call the telling of this story “a proof”? Include Miss Matty’s answer about astronomy in your thinking.",
           "facilitatorNotes": [
             "An undignified household story belongs among close friends, so telling it to a peeress shows the ladies have forgotten their awe. Matty’s honest confusion of astronomy and astrology ends the evening in the same easy, unguarded spirit."
@@ -532,7 +607,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-08",
+      "id": "reading-6-gaskell-cranford-1904-09",
       "title": "Cranford, chapter IX — A conjuror is coming",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -550,7 +625,7 @@
         "locator": "Chapter IX, “Signor Brunoni,” from the start to the borrowing of the Encyclopædia; opens “SOON after the events of which I gave an account in my last paper, I was summoned home by…”; closes “…it thankfully, and said Betty should take it home when she came with the lantern.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-6-gaskell-cranford-1904-09",
+        "continuesTo": "reading-6-gaskell-cranford-1904-10",
         "blocks": [
           402,
           413
@@ -561,7 +636,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-08-q1",
+          "id": "reading-6-gaskell-cranford-1904-09-q1",
           "prompt": "Mary calls Miss Matty’s letter “a very mysterious letter.” What can she work out from it, and what does its jumbled style show about Matty?",
           "facilitatorNotes": [
             "A visit, a new cap, a hope that turbans are in fashion, and, only in the P.S., the reason: a conjuror is coming. The run-on sentences, “like written words on blotting-paper,” show how excited and flustered she is, and how much the cap matters to her, though she says she is “too old to care about dress.”"
@@ -572,7 +647,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-08-q2",
+          "id": "reading-6-gaskell-cranford-1904-09-q2",
           "prompt": "Miss Matty says, “what is dress, that we should care anything about it?” How does Gaskell let us see both her disappointment and her good manners?",
           "facilitatorNotes": [
             "She follows Mary upstairs “ostensibly to poke the fire” but really to look for the turban, then thanks her kindly while listing what she would have liked. Later Mary overhears her blaming “the Drumble shops.” Mary, who chose the plain cap on purpose, would rather be blamed. Readers can enjoy the comedy and still feel for Matty."
@@ -583,7 +658,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-08-q3",
+          "id": "reading-6-gaskell-cranford-1904-09-q3",
           "prompt": "Reread Miss Pole’s story about the Assembly Room. What puzzling thing does she report without noticing that it is puzzling? And what does the business of the glove show about her?",
           "facilitatorNotes": [
             "She meets the conjuror on the stairs, then sees “the very same gentleman” coming from the inner part of the room, where there is no entrance; one man cannot easily be in both places, a clue a careful reader may store away. The glove that was “safe in my muff all the time” suggests she went back out of curiosity and found an excuse, as she often does."
@@ -594,7 +669,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-08-q4",
+          "id": "reading-6-gaskell-cranford-1904-09-q4",
           "prompt": "How do Miss Pole, Mrs Forrester and Miss Matty differ about magic? Does Gaskell make Miss Pole’s “scientific” reading look sensible or comic?",
           "facilitatorNotes": [
             "Miss Pole is sceptical, Mrs Forrester believes “everything,” and Matty agrees with whoever spoke last, though she tries to be as sensible as her late sister. Miss Pole’s doubt is reasonable, but her reading of A, B and the “third finger” is gibberish to everyone, and it spoils the card game. Students may say she is right in principle and absurd in practice."
@@ -607,7 +682,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-09",
+      "id": "reading-6-gaskell-cranford-1904-10",
       "title": "Cranford, chapter IX — The Grand Turk",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -624,7 +699,7 @@
       "excerpt": {
         "locator": "Chapter IX, “Signor Brunoni,” from the evening of the performance to the end of the chapter; opens “The next evening we were all in a little gentle flutter at the idea of the gaiety before…”; closes “…in convincing us that we had been cheated, and had not seen Signor Brunoni after all.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-08",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-09",
         "continuesTo": null,
         "blocks": [
           414,
@@ -636,7 +711,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-09-q1",
+          "id": "reading-6-gaskell-cranford-1904-10-q1",
           "prompt": "Miss Matty and Mary sit in the dark for an hour and a half before walking twenty yards. What does this tell you about the evening, and about Cranford?",
           "facilitatorNotes": [
             "It is a great event in a quiet life, and they will not risk being late; sitting without candles also saves money. Mary records it gently, with the exclamation “And we had only twenty yards to go!” Readers may find it funny, touching, or both."
@@ -647,7 +722,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-09-q2",
+          "id": "reading-6-gaskell-cranford-1904-10-q2",
           "prompt": "What does Mary mean when she says that “a mouldy odour of aristocracy lingered” in the Assembly Room? How do the ladies behave there?",
           "facilitatorNotes": [
             "The room is shabby and faded, but memories of grand balls hang about it, and the ladies walk “mincingly” as if fine people were watching, when only two boys with toffee are there. They sit apart from the shopkeepers and will not turn round because it is “not the thing.” Mary admires their dignity and laughs at it at once."
@@ -658,7 +733,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-09-q3",
+          "id": "reading-6-gaskell-cranford-1904-10-q3",
           "prompt": "Miss Matty’s only comment on the magnificent performer is “You see, my dear, turbans are worn.” Why is that funny, and what does it show?",
           "facilitatorNotes": [
             "Everyone else is watching the conjuror, but Matty has been thinking about her cap all along; the turban proves she was right. She says it “in a kind, mild, sorrowful tone,” without reproaching Mary directly. The joke is gentle, not cruel."
@@ -669,7 +744,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-09-q4",
+          "id": "reading-6-gaskell-cranford-1904-10-q4",
           "prompt": "Miss Matty asks Mary to see whether the rector is there. Why, and is Mary’s answer quite honest?",
           "facilitatorNotes": [
             "Matty fears the tricks might be “not quite” right; if the clergyman is present the show must be approved by the Church. The rector is grinning among laughing schoolboys, so Mary tells her “the Church was smiling approval”: true in a way, and kind, though the rector came to treat the boys, not to approve magic. Students can judge the white lie."
@@ -680,7 +755,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-09-q5",
+          "id": "reading-6-gaskell-cranford-1904-10-q5",
           "prompt": "Miss Pole insists that the Grand Turk “had not seen Signor Brunoni after all.” Could she be right? What earlier clue might support her?",
           "facilitatorNotes": [
             "The bearded performer does not look like the clean-shaven man she met, and she saw “the very same gentleman” in two places at the inn. She may be right that there are two men, though she uses it to argue they were cheated. Later chapters reveal the answer, so accept reasoned guesses."
@@ -693,7 +768,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-10",
+      "id": "reading-6-gaskell-cranford-1904-11",
       "title": "Cranford, chapter X — Locks, pokers and rumours",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -711,7 +786,7 @@
         "locator": "Chapter X, “The Panic,” from the start to the night Miss Pole stays at Miss Matty’s; opens “I THINK a series of circumstances dated from Signor Brunoni’s visit to Cranford, which…”; closes “…Pole had carried off her plate, and thus have a double motive for attacking our house.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-6-gaskell-cranford-1904-11",
+        "continuesTo": "reading-6-gaskell-cranford-1904-12",
         "blocks": [
           430,
           441
@@ -722,7 +797,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-10-q1",
+          "id": "reading-6-gaskell-cranford-1904-11-q1",
           "prompt": "Describe Miss Matty’s nightly “expedition” round the house. What makes it comic, and what real fear lies underneath?",
           "facilitatorNotes": [
             "Three women march with a poker, a hearth-brush and a shovel, frighten themselves with their own clatter and lock themselves in; the rounds get earlier until Matty goes to bed at seven “to get the night over the sooner.” The comedy is affectionate: the fear is real for women living alone."
@@ -733,7 +808,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-10-q2",
+          "id": "reading-6-gaskell-cranford-1904-11-q2",
           "prompt": "Follow Mrs Forrester’s reasoning from “strangers” to “a French spy.” Which steps are guesses, and what is her evidence about turbans?",
           "facilitatorNotes": [
             "Each “if” turns a possibility into a certainty: Cranford people are too respectable to steal, so strangers; strangers, so foreigners; foreigners, so the French. Her proof that the French wear turbans is a picture of a French writer in one. The narrator lets the reasoning expose itself, while noting that the ladies “looked up to her opinion.”"
@@ -744,7 +819,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-10-q3",
+          "id": "reading-6-gaskell-cranford-1904-11-q3",
           "prompt": "Why are the ladies so sure that “the robberies could never have been committed by any Cranford person”?",
           "facilitatorNotes": [
             "The town “piqued itself” on being honest and genteel, so a theft by a neighbour would stain its character; blaming strangers protects its pride. Students may connect this with how people often explain bad news by blaming outsiders."
@@ -755,7 +830,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-10-q4",
+          "id": "reading-6-gaskell-cranford-1904-11-q4",
           "prompt": "Miss Pole is suspicious because the beggar-woman asked for “the mistress” even though a man’s hat hung in the hall. What does she conclude, and what other explanation is there?",
           "facilitatorNotes": [
             "She takes it as proof of a plot. The hat is her own trick (Mr Hoggins’s old hat), so the woman may simply have known who lived there, or have been as hungry as she said. Gaskell lets readers notice what Miss Pole will not: the woman spoke of starving children."
@@ -766,7 +841,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-10-q5",
+          "id": "reading-6-gaskell-cranford-1904-11-q5",
           "prompt": "Mary compares Miss Pole and Miss Matty swapping horror stories to a nightingale and a musician competing “till poor Philomel dropped down dead.” What is the joke?",
           "facilitatorNotes": [
             "Each lady tries to outdo the other, as if telling the most dreadful story were a contest, and they frighten themselves (and Mary) half to death. Miss Pole’s relish shows in how she dwells on the blood. Readers may see this as how fear feeds itself."
@@ -779,7 +854,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-11",
+      "id": "reading-6-gaskell-cranford-1904-12",
       "title": "Cranford, chapter X — Carlo, Mr Mulliner and Mr Hoggins",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -796,8 +871,8 @@
       "excerpt": {
         "locator": "Chapter X, “The Panic,” from the morning after Miss Pole’s visit to her quarrel with Mr Hoggins’s account; opens “But until Lady Glenmire came to call next day we heard of nothing unusual. The kitchen…”; closes “…clothes, who came spying about my house, with the story about the starving children.””.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-10",
-        "continuesTo": "reading-6-gaskell-cranford-1904-12",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-11",
+        "continuesTo": "reading-6-gaskell-cranford-1904-13",
         "blocks": [
           442,
           455
@@ -808,7 +883,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-11-q1",
+          "id": "reading-6-gaskell-cranford-1904-12-q1",
           "prompt": "Mr Mulliner offers to fight the robbers. Where is he when he says so, and how does Lady Glenmire show that his offer is worthless?",
           "facilitatorNotes": [
             "He has locked himself in his third-storey room (“for fear of draughts”) and calls out of the window. She points out that robbers would pass the ladies’ rooms and everything worth stealing before reaching him; only very quarrelsome thieves would climb to the garret to fight. The comedy is in the gap between his brave words and his locked door."
@@ -819,7 +894,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-11-q2",
+          "id": "reading-6-gaskell-cranford-1904-12-q2",
           "prompt": "The narrator gives three possible causes of Carlo’s death. What are they, and which seems most likely to you? Why does the town prefer the others?",
           "facilitatorNotes": [
             "Fear, revenge by poison, or apoplexy “brought on by too much feeding and too little exercise.” The last, which the narrator assigns to “the more uneducated people,” is probably the true one, which makes the label ironic. The others fit the exciting robbery story, and soon the ladies even suspect the conjuror."
@@ -830,7 +905,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-11-q3",
+          "id": "reading-6-gaskell-cranford-1904-12-q3",
           "prompt": "How does Miss Pole’s description of the “murderous gang” change each time she tells it? What does this show about rumour?",
           "facilitatorNotes": [
             "The tall man becomes gigantic, the short one grows a hump and a squint, the woman becomes a man in disguise with a beard. Mary notices that “every time she went over the story some fresh trait of villainy was added.” Each telling makes her more of a heroine. Students can connect this to how stories grow when repeated."
@@ -841,7 +916,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-11-q4",
+          "id": "reading-6-gaskell-cranford-1904-12-q4",
           "prompt": "Mr Hoggins says he was not robbed, and that a neck of mutton was probably taken by the cat. Why won’t Miss Pole believe him, and who do you think is right?",
           "facilitatorNotes": [
             "She has already decided that a man is “too much of a man to own that he was robbed,” so his denial only proves her case to her. His explanation is ordinary and fits the facts; hers fits her story. Her speech about how men “wish to be considered Samson and Solomon” describes her own wish never to be wrong, which the chorus of ladies does not notice."
@@ -854,7 +929,7 @@
       ]
     },
     {
-      "id": "reading-6-gaskell-cranford-1904-12",
+      "id": "reading-6-gaskell-cranford-1904-13",
       "title": "Cranford, chapter X — Through Darkness Lane",
       "sourceId": "gaskell-cranford-1904",
       "genre": "literary-narrative",
@@ -871,7 +946,7 @@
       "excerpt": {
         "locator": "Chapter X, “The Panic,” from Mrs Forrester’s invitation to the end of the chapter; opens “After we had duly condemned the want of candour which Mr Hoggins had evinced, and abused…”; closes “…easy till the getting-up came, when there might have been some difficulty in extrication.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-6-gaskell-cranford-1904-11",
+        "continuesFrom": "reading-6-gaskell-cranford-1904-12",
         "continuesTo": null,
         "blocks": [
           456,
@@ -883,7 +958,7 @@
       },
       "questions": [
         {
-          "id": "reading-6-gaskell-cranford-1904-12-q1",
+          "id": "reading-6-gaskell-cranford-1904-13-q1",
           "prompt": "Why do the ladies go to Mrs Forrester’s party although they are frightened of the roads?",
           "facilitatorNotes": [
             "It is the anniversary of her wedding, they have gone for many years, and staying away would leave her alone with memories of a “not very happy or fortunate life.” They “nail their colours to the mast”: loyalty wins over fear. The military phrase makes their courage both comic and real."
@@ -894,7 +969,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-12-q2",
+          "id": "reading-6-gaskell-cranford-1904-13-q2",
           "prompt": "What is Miss Matty’s “ingenious contrivance,” and what does it show about her life and character?",
           "facilitatorNotes": [
             "She rolls a child’s penny ball under the bed every night; if it does not come out, she will ring and call for “John and Harry,” men-servants she does not have. The plan is clever, childlike and a little sad; it also recalls Deborah, who disapproved of her flying leap into bed."
@@ -905,7 +980,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-12-q3",
+          "id": "reading-6-gaskell-cranford-1904-13-q3",
           "prompt": "Mrs Forrester gives a borrowed boy her husband’s sword. How does Mary’s question expose the danger, and what does Mrs Forrester’s answer show about her?",
           "facilitatorNotes": [
             "Mary points out he might run the maid Jenny through by mistake; Mrs Forrester replies he sleeps too soundly to wake. The answer is absurd as a defence plan, but she also feeds him well because he is “half-starved at home,” so the scene shows her kindness as much as her muddle."
@@ -916,7 +991,7 @@
           ]
         },
         {
-          "id": "reading-6-gaskell-cranford-1904-12-q4",
+          "id": "reading-6-gaskell-cranford-1904-13-q4",
           "prompt": "At the corner, Miss Pole asks the chairmen to take Miss Matty round by Headingley Causeway “and she is not very strong.” What is Miss Pole really afraid of, and how does the narrator let us see it?",
           "facilitatorNotes": [
             "The ghost in Darkness Lane. She has just clutched Mary, begging “Don’t leave me!”, so her concern for Matty’s bones is an excuse, offered “with tremulous dignity.” Matty, inside the chair, begs to hurry on. The last sentence pretends to praise Miss Pole’s “kind purpose” while noting the deep mud: Gaskell’s irony is gentle but clear."
@@ -924,6 +999,455 @@
           "evidence": [
             "She had breath for nothing beyond an imploring “Don’t leave me!”",
             "which certainly answered Miss Pole’s kind purpose of saving Miss Matty’s bones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-14",
+      "title": "Cranford, chapter XI — The conjuror at the Rising Sun",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Watch how a town’s fear changes into kindness, and look for the reason the narrator gives.",
+      "focus": "The mysterious conjuror whom Cranford suspected of leading a gang of robbers turns out to be a sick, poor man, and the town rushes to help him.",
+      "context": "Cranford, first published in parts in 1851–53, is Elizabeth Gaskell’s portrait of a small English town ruled by genteel ladies, mostly unmarried or widowed, who have little money and many rules. The narrator, Mary Smith, a young woman from the manufacturing town of Drumble, often stays with Miss Matty Jenkyns, the gentle younger daughter of the late rector. Matty’s strict elder sister, Miss Jenkyns (Deborah), who kept the town’s code of manners, has died, and Matty has told Mary the sad story of their brother Peter, who ran away to sea long ago. A conjuror calling himself Signor Brunoni gave a performance in Cranford in a Turkish costume. Soon after, rumours of a “murderous gang” of robbers frightened the whole town; Miss Pole decided that the surgeon, Mr Hoggins, had been robbed and was hiding it; and Mrs Forrester, terrified of a headless ghost in Darkness Lane, had to be walked home the long way, by Headingley Causeway. Lady Glenmire, the cheerful widowed sister-in-law of the grand Mrs Jamieson, is minding Mrs Jamieson’s house while she is away. A mountebank is a travelling showman; a spring-cart is a light cart; to languish is to stay weak and ill; Queen Adelaide and the Duke of Wellington were famous people of the time; Lord Chesterfield wrote letters teaching good manners; a dictum is a firm judgment; a receipt is a recipe; Sir Walter Tyrrell was said to have shot King William Rufus in 1100, and Sir James Tyrrell to have murdered the princes in the Tower.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, “Samuel Brown,” from the start to Jenny’s red flannel cross; opens “THE next morning I met Lady Glenmire and Miss Pole setting out on a long walk to find…”; closes “…she had sewn two pieces of red flannel in the shape of a cross on her inner garment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-gaskell-cranford-1904-15",
+        "blocks": [
+          473,
+          479
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "32c8acfe38ab0b0405a29680488b95e81d49086eb8b9c4eee1f3b351fdfceeda"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-14-q1",
+          "prompt": "How does Miss Pole’s opinion of the strangers at the Rising Sun change? What changes it?",
+          "facilitatorNotes": [
+            "She is suspicious when she hears that the brother went off with the cart and box, but the wife’s “honest, worn, bronzed face” and her tears convert her. She swings to belief as strongly as she doubted: Miss Pole does nothing by halves."
+          ],
+          "evidence": [
+            "Miss Pole had begun to have her suspicions at this point",
+            "Miss Pole came round with a swing to as vehement a belief in the sorrowful tale as she had been sceptical before"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-14-q2",
+          "prompt": "The conjuror’s real name is Samuel Brown, but Mary says “we preferred calling him ‘the Signor’; it sounded so much better.” What does this tell you about Cranford?",
+          "facilitatorNotes": [
+            "The ladies prefer a little romance and grandeur to plain fact, even about a man they now know is poor and ordinary. Mary includes herself in the “we,” smiling at her own taste for it."
+          ],
+          "evidence": [
+            "to the last we preferred calling him “the Signor”; it sounded so much better"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-14-q3",
+          "prompt": "How do the ladies feel about Mr Hoggins as a surgeon, and as a man?",
+          "facilitatorNotes": [
+            "As a surgeon they are proud of him and trust his word completely; as a gentleman they “shake our heads” at his manners and even his name. The joke about not wanting the Royal Family to have him shows they value him for their own sake. Keep this in mind for the next chapter."
+          ],
+          "evidence": [
+            "As a surgeon we were proud of him; but as a man—or rather, I should say, as a gentleman—we could only shake our heads",
+            "we all regarded his dictum in the signor’s case as infallible"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-14-q4",
+          "prompt": "“Somehow we all forgot to be afraid.” Why does the panic melt away? Do you accept Mary’s explanation?",
+          "facilitatorNotes": [
+            "Mary thinks that seeing the marvellous conjuror unable to manage “a shying horse” made him ordinary, and so made the ladies feel “ourselves again.” Being busy with kindness may also have helped. Jenny’s red flannel cross shows that not everyone’s fear vanished at once."
+          ],
+          "evidence": [
+            "had not sufficient every-day gifts to manage a shying horse, made us feel as if we were ourselves again",
+            "melted away into thin air on his second coming"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-15",
+      "title": "Cranford, chapter XI — Miss Matty’s two columns",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice what a character says, what she stops herself from saying, and what the narrator already knows.",
+      "focus": "The robbers turn out to have stolen only apples and eggs, Miss Pole warns against marriage, and Miss Matty, by firelight, speaks of the life she expected and did not have.",
+      "context": "Recap: the conjuror Signor Brunoni, whom Cranford had suspected of leading a gang of robbers, turned out to be Samuel Brown, a poor showman badly hurt when his cart broke down. Lady Glenmire, Miss Pole and the other ladies have brought him to lodgings in Cranford under Mr Hoggins the surgeon, and his wife and small daughter, Phœbe, are with him. Worsted is wool yarn; credulous means too ready to believe; “vamped-up” means patched together; “her ladyship” and “my lady” are polite ways of speaking of a lady with a title; an archdeacon is a senior clergyman, and his charges are formal addresses to the clergy. Long ago Miss Matty loved Mr Holbrook, a farmer whom her family thought beneath her; Mary met him not long before he died, and knows the story.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, “Samuel Brown,” from Miss Matty’s rainbow ball to Mary’s thoughts on the Browns’ marriage; opens “I found Miss Matty covering her penny ball—the ball that she used to roll under her…”; closes “…were their joys, if they only passed through each other, or through the little Phœbe.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-14",
+        "continuesTo": "reading-6-gaskell-cranford-1904-16",
+        "blocks": [
+          480,
+          488
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dd004cb7431b452f0391823abfea722b636b0d457e44ba2a201dd445c546de7d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-15-q1",
+          "prompt": "Lady Glenmire says the only crimes she knows of are some stolen apples and eggs. Why can’t the ladies admit that this was all?",
+          "facilitatorNotes": [
+            "To admit it would be to admit that the whole panic came from almost nothing. Miss Pole answers with her list of mysterious men and footprints, and Lady Glenmire blushes as she doubts the robbery of Mr Hoggins. Pride keeps the gang alive in memory."
+          ],
+          "evidence": [
+            "we could not acknowledge that we had only had this small foundation for all our panic",
+            "two little boys had stolen some apples from Farmer Benson’s orchard"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-15-q2",
+          "prompt": "Miss Pole says that marriage makes people “credulous.” What is funny, and perhaps unfair, about her argument?",
+          "facilitatorNotes": [
+            "She, who believed every rumour about the gang, accuses married women of believing too easily, and even suggests that getting married shows credulity. Gaskell lets her contradict herself without comment. Some readers will also hear real hurt or pride in her scorn."
+          ],
+          "evidence": [
+            "she thought it argued great natural credulity in a woman if she could not keep herself from being married",
+            "she had always been on her guard against believing too much of what men said"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-15-q3",
+          "prompt": "Miss Matty describes the diary in two columns that her father made the girls keep. Why would it be “a sad way of telling their lives”? What does her dream add?",
+          "facilitatorNotes": [
+            "One column holds what you expect, the other what happens; for Matty the two never matched. She hoped to keep a house and have children; she dreams of a little girl who “never grows older.” Mary does not speak because she knows about Mr Holbrook, the man Matty refused."
+          ],
+          "evidence": [
+            "only so very different to what I expected",
+            "she never grows older, though I have dreamt about her for many years"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-15-q4",
+          "prompt": "Miss Matty ends by telling Mary not to be frightened from marriage, because “a little credulity helps one on through life.” How does this answer Miss Pole?",
+          "facilitatorNotes": [
+            "Miss Pole sees credulity as weakness; Matty sees a little trust as making life smoother than “always doubting.” Matty’s gentle view comes from regret, not from inexperience. Readers can decide which lady is wiser, or whether each is partly right."
+          ],
+          "evidence": [
+            "a little credulity helps one on through life very smoothly—better than always doubting and doubting",
+            "only don’t be frightened by Miss Pole from being married"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-16",
+      "title": "Cranford, chapter XI — Mrs Brown’s journey",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Listen to a long spoken story in a different voice, and catch the one detail in it that matters most to the narrator.",
+      "focus": "The conjuror’s wife tells how she carried her only surviving child across India, and a name in her story sets Mary thinking about Miss Matty’s lost brother.",
+      "context": "Recap: the conjuror, Samuel Brown, is recovering in Cranford with his wife and their little girl, Phœbe; the town has forgotten its fears in helping them. Miss Matty has confided to Mary her lost hopes of marriage and children. Long ago Matty’s brother Peter ran away to sea after a cruel punishment and was last heard of in India; Matty still hopes he is alive. In the 1800s a soldier’s wife could follow her husband’s regiment abroad only if she drew a lucky lot; a sergeant is a soldier of middle rank; a pice is a small Indian coin; a station was a post where British officials lived; Calcutta is now Kolkata; idolatry means worshipping idols; a discharge is leave to quit the army; “on his own hook” means on his own; Aga is a title of rank; Chunderabaddad is a place-name Gaskell invented.",
+      "contentNote": "Mrs Brown has lost six children to illness in India, and she uses words of her time for the people of India, such as “natives.”",
+      "excerpt": {
+        "locator": "Chapter XI, “Samuel Brown,” from Mrs Brown’s account of the twin brothers to the end of the chapter; opens “The signora told me, one day, a good deal about their lives up to this period. It began…”; closes “…of Great Lama of Thibet. Miss Matty thought he was alive. I would make further inquiry.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-15",
+        "continuesTo": "reading-6-gaskell-cranford-1904-17",
+        "blocks": [
+          489,
+          498
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8cd95c189136827decc47c8eb44ad09c31ab92ac49e166555c8873bb6c7f0f1a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-16-q1",
+          "prompt": "Mrs Brown insists that no one should mistake Thomas for her husband. What evidence does she give, and what does it show about her?",
+          "facilitatorNotes": [
+            "Thomas “clumps up his hand like a fist” in the ball trick and knows nothing of “the proper sit of a turban.” She is proud of her husband’s art and loyal to him, and her complaint is half comic, since the likeness is useful to them."
+          ],
+          "evidence": [
+            "Thomas just clumps up his hand like a fist",
+            "knows nothing of the proper sit of a turban"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-16-q2",
+          "prompt": "Why did Mrs Brown leave her husband and set out alone across India with her baby?",
+          "facilitatorNotes": [
+            "After six children died she feared she would go mad if this one died too, and she believed the baby could live only in England. She felt “as if Death was following me.” Ask readers what the walk cost her and what kept her going."
+          ],
+          "evidence": [
+            "if this baby dies too, I shall go mad",
+            "it seemed to me as if Death was following me to take my baby away from me"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-16-q3",
+          "prompt": "Who helps her on the way? How does she think about help from people whose language and religion are not her own?",
+          "facilitatorNotes": [
+            "Villagers bring rice, milk and flowers, though no one can understand anyone else; an officer’s wife gives her a picture of the Virgin and Child; a kind Englishman takes her in. She thanks God in a Hindu temple because any place where people have prayed in joy or agony seems sacred to her, though she worries it “might be idolatry.”"
+          ],
+          "evidence": [
+            "they saw my baby on my breast, and they came out to me, and brought me rice and milk",
+            "where others had prayed before to their God, in their joy or in their agony, was of itself a sacred place"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-16-q4",
+          "prompt": "What makes Mary wonder whether the Aga Jenkyns could be Peter? How strong is the evidence so far?",
+          "facilitatorNotes": [
+            "Only the name and the place: India, where Peter was last heard of. Mary admits the reports conflict (some say he is dead, some that he is the Great Lama of Tibet). She decides to “make further inquiry” rather than leap to a conclusion, which is the right response to weak evidence."
+          ],
+          "evidence": [
+            "that good, kind Aga Jenkyns took us in",
+            "could the Aga Jenkyns be the lost Peter?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-17",
+      "title": "Cranford, chapter XII — Questions about Peter, and astonishing news",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow two kinds of comedy: a conversation that will not stay on its subject, and a piece of news that nobody can quite say aloud.",
+      "focus": "Mary tries to gather facts about Peter and gets only digressions; then Miss Pole bursts in with the news that Lady Glenmire is to marry Mr Hoggins.",
+      "context": "Recap: the conjuror’s wife, Mrs Brown, told Mary how a kind “Aga Jenkyns” saved her baby in India, and Mary began to wonder whether he might be Miss Matty’s brother Peter, who ran away to sea long ago. Discretion is keeping quiet; a bug-bear is something dreaded; a pièce de résistance is the main dish at a meal; Lalla Rookh is a popular poem with a veiled prophet in it; Rowland’s Kalydor was a skin lotion; Peruvian bonds and joint-stock banks are investments; carnivorous animals eat meat and graminivorous ones grass; Wombwell’s was a travelling menagerie; “surveying mankind from China to Peru” is a line from a poem by Samuel Johnson; a prognostic is a warning sign; calling-time is the hour for polite visits; chintz is printed cotton; “Tibbie Fowler” is a Scottish song about a rich woman whom every man would court.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, “Engaged to be Married,” from the start to Miss Matty’s defence of Mr Hoggins; opens “WAS the “poor Peter” of Cranford the Aga Jenkyns of Chunderabaddad, or was he not? As…”; closes “…and very pleasant-looking,” said Miss Matty, “and very good-tempered and kind-hearted.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-16",
+        "continuesTo": "reading-6-gaskell-cranford-1904-18",
+        "blocks": [
+          500,
+          519
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "374ef80d9f8776f53b66dbb177f92388fc9ddbd1836048792ec6f030a6f33670"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-17-q1",
+          "prompt": "Why does Mary decide to keep her suspicion about the Aga to herself?",
+          "facilitatorNotes": [
+            "She is tired of being called indiscreet and wants for once to be “a model of prudence”: she will collect evidence and take it to her father. Ask whether this is a good plan, and why she might not want to raise Miss Matty’s hopes."
+          ],
+          "evidence": [
+            "Indiscretion was my bug-bear fault",
+            "I would collect evidence and carry it home to lay before my father"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-17-q2",
+          "prompt": "Mary asks a simple question about when Peter was last heard of. What does she actually learn, and how do the ladies date it?",
+          "facilitatorNotes": [
+            "Only that he was in India, “or that neighbourhood.” They date it by a muslin gown, a menagerie elephant and a line of poetry, and by geography that works only if you turn the globe the right way. The ladies remember by things and feelings, not by years."
+          ],
+          "evidence": [
+            "The only fact I gained from this conversation was that certainly Peter had last been heard of in India",
+            "in the year when Miss Pole had bought her Indian muslin gown"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-17-q3",
+          "prompt": "When Miss Pole knocks early, Miss Matty and Mary are caught in their old clothes. What do they do, and what does this show about Cranford gentility?",
+          "facilitatorNotes": [
+            "They pretend they were not rushing to change and become extra genteel in manner to cover their darned caps. Gentility in Cranford is partly a polite performance that everyone agrees not to see through."
+          ],
+          "evidence": [
+            "So we threw our gentility with double force into our manners",
+            "we did not like to have it supposed that we had any old clothes"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-17-q4",
+          "prompt": "How did Miss Pole make sure the news was true, and how do the ladies react to it?",
+          "facilitatorNotes": [
+            "She went to Mrs Fitz-Adam, Mr Hoggins’s sister, on the excuse of borrowing a cookery-book, and dropped a hint. The ladies cry “Madness!”, and Miss Pole is shocked that a lady’s marriage was discussed in a shop. Only Miss Matty wonders whether they are being unjust, and speaks up for Mr Hoggins."
+          ],
+          "evidence": [
+            "I went straight to Mrs Fitz-Adam, to borrow a cookery-book which I knew she had",
+            "Perhaps we are doing her injustice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-18",
+      "title": "Cranford, chapter XII — New boots and new bonnets",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what the narrator reports, what she guesses, and what she gently laughs at.",
+      "focus": "Cranford refuses to approve the engagement until Mrs Jamieson returns, while the engaged couple quietly bloom and the unmarried ladies buy new clothes.",
+      "context": "Recap: Mary failed to get clear facts about Miss Matty’s lost brother Peter from the ladies’ wandering talk. Then Miss Pole brought astonishing news: Lady Glenmire, the titled widow minding Mrs Jamieson’s house, is to marry Mr Hoggins, the surgeon whose manners Cranford thinks vulgar. An establishment here is a household with a steady income; a mésalliance is a marriage to someone of lower rank; followers are young men courting servant-girls; tabooed means forbidden; chloride of lime is a disinfectant; inert means sluggish and pompous means self-important; Mrs Forrester’s “Order” is the aristocracy, to which she is related; tacit means unspoken; merinoes and beavers are woollen cloths; top-boots are tall riding boots; a liege lady is one to whom loyalty is owed; it was said that the Queen of Spain was not supposed to have legs, since no one might mention them; a man-milliner sells hats; to winnow is to sift.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XII, “Engaged to be Married,” from Miss Pole’s joke about the surgery to the end of the chapter; opens ““She has married for an establishment, that’s it. I suppose she takes the surgery with…”; closes “…which I had winnowed out of the conversation of Miss Pole and Mrs Forrester.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-gaskell-cranford-1904-17",
+        "continuesTo": null,
+        "blocks": [
+          520,
+          526
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5b21b4ae226b4f8992a41e8801d65394334ae7909021fee9031f43b4154529cd"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-18-q1",
+          "prompt": "Miss Pole jokes that Lady Glenmire “takes the surgery with it.” Why does Miss Pole grow less grim after making the joke?",
+          "facilitatorNotes": [
+            "Mary says that people who make a clever, sharp remark often soften once they have made it: the joke lets off the anger. It is a small piece of human observation, typical of Gaskell. Readers may know the feeling."
+          ],
+          "evidence": [
+            "she takes the surgery with it",
+            "like many people who think they have made a severe and sarcastic speech, which yet is clever of its kind, she began to relax"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-18-q2",
+          "prompt": "The ladies like Lady Glenmire much better than Mrs Jamieson. Why might they still obey Mrs Jamieson and refuse to visit the married couple?",
+          "facilitatorNotes": [
+            "They have “acknowledged the sway” of Mrs Jamieson so long that disobeying feels like “disloyalty.” Habit and rank outweigh liking. Ask whether readers think they will hold out."
+          ],
+          "evidence": [
+            "We all liked Lady Glenmire the best.",
+            "it seemed like a kind of disloyalty now even to meditate disobedience"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-18-q3",
+          "prompt": "After the engagement, Miss Matty and Miss Pole think much more about bonnets and gowns. What reason does Mary suggest, and what other reason does she offer at once?",
+          "facilitatorNotes": [
+            "She suspects the unmarried ladies are saying, without words, “We also are spinsters”: still in the running. Then she offers the warm March weather instead. The second reason lets her joke and then politely take it back."
+          ],
+          "evidence": [
+            "We also are spinsters.",
+            "But it might be the spring weather"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-18-q4",
+          "prompt": "No one congratulates Lady Glenmire and Mr Hoggins. How does Mary show the reader that they are happy anyway?",
+          "facilitatorNotes": [
+            "Lady Glenmire looks young again, her eyes dwelling on everything “with a lingering light”; Mr Hoggins creaks up the church aisle in brand-new top-boots after twenty-five years in one patched pair. The details are funny and tender at once."
+          ],
+          "evidence": [
+            "her eyes dwelt on all things with a lingering light",
+            "creaked up the middle aisle at church in a brand-new pair of top-boots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-gaskell-cranford-1904-19",
+      "title": "Cranford, chapter XV — Miss Matty’s shop",
+      "sourceId": "gaskell-cranford-1904",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice how the narrator gently laughs at the people she loves, and at herself.",
+      "focus": "A year after losing her money, Miss Matty keeps a little tea shop, gives away more than she sells, and welcomes Martha’s baby.",
+      "context": "Cranford, first published in parts in 1851–53, is Elizabeth Gaskell’s portrait of a small English town ruled by genteel ladies with little money and many rules. The narrator, Mary Smith, lives in the busy manufacturing town of Drumble and often stays with gentle Miss Matty Jenkyns. When Miss Matty’s bank failed she lost almost all her income; her friends secretly helped with her rent, and she opened a shop in her parlour selling tea. Her loyal servant Martha married her sweetheart, Jem Hearn, so that they could stay and look after her. Mary also secretly wrote to an “Aga Jenkyns” in India, hoping he might be Miss Matty’s long-lost brother Peter. Lady Glenmire, a titled lady, married Mr Hoggins, the town surgeon, which the grand Mrs Jamieson thought a disgrace. Hieroglyphics here means Martha’s hard-to-read handwriting; a confinement is the time of giving birth; the Old Hundredth is a hymn tune; comfits are sugared sweets; a make-weight is an extra piece added to make up the weight; remunerative means profitable; to espouse a side is to take it.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, “A Happy Return,” from Mary’s quarterly visits to the Jamieson and Hoggins feud; opens “I went over from Drumble once a quarter at least to settle the accounts, and see after…”; closes “…in order that Cranford might see how she would act under the perplexing circumstances.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          650,
+          656
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "799cd57ccd4283a7a2d40eccf22cd8653439aa618cc4c73a8bfe79e8a62c7917"
+      },
+      "questions": [
+        {
+          "id": "reading-6-gaskell-cranford-1904-19-q1",
+          "prompt": "Why is Martha afraid to tell Miss Matty about the baby? Why is Mary sure she need not be?",
+          "facilitatorNotes": [
+            "Martha fears Miss Matty will disapprove and will feel neglected while Martha cares for the baby. Mary knows Miss Matty’s kindness and is sure of forgiveness, and she is right. She then jokes that being right runs in the family, since her father “is scarcely ever wrong.”"
+          ],
+          "evidence": [
+            "I’m afraid she won’t approve of it",
+            "But I was right. I think that must be an hereditary quality"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-19-q2",
+          "prompt": "Mary stands outside the shop and listens to Miss Matty. What does the humming tell her?",
+          "facilitatorNotes": [
+            "That Miss Matty is content. Mary admits it is hardly singing, a “tuneless yet sweet humming,” but the steady sound in the May morning tells her more than words could. Ask readers how she knows the tune at all."
+          ],
+          "evidence": [
+            "I call it singing, but I dare say a musician would not use that word",
+            "the quiet continuous sound told of content"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-19-q3",
+          "prompt": "How does Miss Matty sell almond-comfits, and how does Mary try to change her habit? Does it work?",
+          "facilitatorNotes": [
+            "She adds a fifth comfit because “The little things like it so much!”, which turns every sale into a loss. Mary uses Matty’s own fear of unwholesome food against her (“a feather out of her own plumage”), so Matty gives free lozenges instead, still at a loss. Mary laughs at her own cleverness failing."
+          ],
+          "evidence": [
+            "The little things like it so much!",
+            "winged my shaft with a feather out of her own plumage"
+          ]
+        },
+        {
+          "id": "reading-6-gaskell-cranford-1904-19-q4",
+          "prompt": "Mary calls the quarrel between Mrs Jamieson and the Hogginses a feud “when only one side cared much about it.” Who is at fault? What do you make of Miss Pole’s wish?",
+          "facilitatorNotes": [
+            "Mrs Jamieson, who treats their happiness as “an insult” and refuses every friendly approach. Miss Pole’s impatience for someone in Mrs Jamieson’s house to fall ill so she must send for Mr Hoggins is comic and not very kind; Gaskell lets the reader enjoy it and notice it."
+          ],
+          "evidence": [
+            "Mrs Jamieson considered their very happiness an insult to the Glenmire family",
+            "Miss Pole grew quite impatient for some indisposition or accident to befall Mrs Jamieson"
           ]
         }
       ]
