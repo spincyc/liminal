@@ -1036,6 +1036,650 @@
     },
     {
       "id": "reading-12-shakespeare-works-viii-1866-14",
+      "title": "King Lear — “As flies to wanton boys” (IV.1–2)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Compare what Edgar and Gloucester each say about the gods and about the worst that can happen.",
+      "focus": "A blinded father led by the son he wronged, and a husband who at last sees his wife.",
+      "context": "This run begins Act IV of King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Recap: Cornwall and Regan have put out Gloucester’s eyes for helping the king, and Cornwall was wounded by a servant who tried to stop them; in the same moment Gloucester learned that his son Edmund had betrayed him and that Edgar, whom he disowned, was innocent. Regan sent him out to “smell His way to Dover,” where the French army of Lear’s youngest daughter, Cordelia, has landed. Edgar still hides in the disguise of Poor Tom, a mad beggar; Goneril has gone home with Edmund to her husband, Albany. Contemn'd means despised; esperance, hope; 'parel, apparel; the five fiends are devils’ names Edgar borrows for his part, and mopping and mowing is grimacing; slaves your ordinance, makes heaven’s law serve his pleasure; the distaff is a spinning staff, a woman’s tool; “worth the whistle” recalls the proverb of a dog not worth whistling for; head-lugg'd, dragged by the head; milk-liver'd, cowardly; mew, coop up; justicers, judges; nether, earthly; tart, sour.",
+      "contentNote": "Gloucester’s bleeding eyes are described; Albany threatens to tear his wife’s flesh, and Goneril and Edmund plan to be rid of him.",
+      "excerpt": {
+        "locator": "King Lear, Act IV, scenes I and II; opens “Enter Edgar.”; closes “…And to revenge thine eyes. Come hither, friend: Tell me what more thou know'st. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-15",
+        "blocks": [
+          2956,
+          3027
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ae7086b3d83b325a0febeb3337981cc4482adbe35f5c3e9ef93c93404c1b08d3"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q1",
+          "prompt": "Edgar begins by saying that the lowest place has nothing left to fear. What does the sight of his blinded father do to that idea, and what does he conclude instead?",
+          "facilitatorNotes": [
+            "At first being “worst” means living in hope, since any change must be upward. Seeing Gloucester, he finds he is “worse than e'er I was,” and concludes that as long as one can still say “This is the worst,” it is not. Anyone able to name the bottom has not reached it; the rest of the play keeps proving him right. Some readers find the line bleak; others notice that it also means a person who can still speak can still endure."
+          ],
+          "evidence": [
+            "To be worst, The lowest and most dejected thing of fortune, Stands still in esperance, lives not in fear:",
+            "the worst is not So long as we can say 'This is the worst.'"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q2",
+          "prompt": "Set Gloucester’s “As flies to wanton boys” beside “I stumbled when I saw.” What different accounts of suffering do the two speeches give?",
+          "facilitatorNotes": [
+            "The first makes the gods careless or cruel children who kill for fun; human pain has no meaning. The second finds the fault in himself: when he had eyes he did not see, and losing them may teach him, since our “defects” can “Prove our commodities.” The scene holds both views without choosing; students can argue which one the rest of Act IV supports."
+          ],
+          "evidence": [
+            "As flies to wanton boys, are we to the gods; They kill us for their sport.",
+            "I stumbled when I saw:",
+            "Our means secure us, and our mere defects Prove our commodities."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q3",
+          "prompt": "Gloucester gives the beggar his purse and asks the heavens to “deal so still.” What does he now understand about rich and poor?",
+          "facilitatorNotes": [
+            "The rich man who has more than he needs will “not see Because he doth not feel”; suffering would teach him, and then “distribution should undo excess.” Gloucester learns this only by being made poor and blind, as Lear learned it in the storm. The purse is also payment for leading him to the cliff where he means to die, so the generous thought comes from despair."
+          ],
+          "evidence": [
+            "That slaves your ordinance, that will not see Because he doth not feel, feel your power quickly;",
+            "So distribution should undo excess And each man have enough."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-14-q4",
+          "prompt": "Oswald says of Albany, “never man so changed,” and Goneril calls him “a moral fool.” What has changed in him, and is she right?",
+          "facilitatorNotes": [
+            "He now names the sisters’ crime (“Tigers, not daughters”) and warns that unless heaven intervenes “Humanity must perforce prey on itself.” Goneril sees only a coward who preaches while France invades. His last words, a vow “to revenge thine eyes,” move from judgement toward action. Readers may see him as weak, as the first sign of order returning, or as both."
+          ],
+          "evidence": [
+            "Madam, within; but never man so changed.",
+            "Humanity must perforce prey on itself, Like monsters of the deep.",
+            "Whiles thou, a moral fool, sit'st still and criest 'Alack, why does he so?'",
+            "And to revenge thine eyes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-15",
+      "title": "King Lear — Cordelia’s tears (IV.3–5)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the report of Cordelia with what she says herself, then watch Regan work on a servant.",
+      "focus": "A daughter who weeps and fights for love, and two sisters already rivals for Edmund.",
+      "context": "Recap: Edgar, still disguised as Poor Tom, has met his blinded father and agreed to lead him to a cliff at Dover. At Albany’s palace Goneril sent Edmund back to Regan’s army with a favour and a kiss; Albany, now against his wife, learned that Cornwall has died of the wound the servant gave him and that Edmund betrayed his father. Kent, Lear’s banished counsellor, serves the king in disguise and has sent word to Cordelia. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Trill'd means trickled; smilets, little smiles; one self mate and mate, one and the same husband and wife; elbows, jostles; casualties, chances; fumiter, furrow-weeds, bur-docks, hemlock, cuckoo-flowers and darnel are weeds of the fields; a century is a company of a hundred soldiers; simples are healing herbs; aidant and remediate, helpful and healing; important, pleading; blown, puffed up; œillades, amorous glances; of her bosom, in her confidence; nighted, darkened; descry, discover; preferment, promotion.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "King Lear, Act IV, scenes III to V; opens “Enter Kent and a Gentleman.”; closes “Reg. Fare thee well. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-14",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-16",
+        "blocks": [
+          3029,
+          3079
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c977cb0ecb2cb0004865d68d0b777d44c47abc1d42a280510d79493412a00ee7"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q1",
+          "prompt": "The Gentleman describes Cordelia reading the letters as “a queen Over her passion.” How does his description shape your idea of her before she appears?",
+          "facilitatorNotes": [
+            "Her grief is strong but governed: “patience and sorrow strove,” smiles and tears come together, and when she breaks out she leaves “To deal with grief alone.” The pictures of sunshine and rain and of pearls dropping from diamonds make her almost a painting. Some readers find the language too ornate, a saint’s portrait; others find it true to the daughter who in Act I would not perform her love in words."
+          ],
+          "evidence": [
+            "it seem'd she was a queen Over her passion, who most rebel-like Sought to be king o'er her.",
+            "Sunshine and rain at once:",
+            "To deal with grief alone."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q2",
+          "prompt": "Kent says “It is the stars... govern our conditions.” What is he trying to explain, and does the rest of his talk with the Gentleman support it?",
+          "facilitatorNotes": [
+            "He cannot see how the same parents could make Cordelia and her sisters, so he blames the stars, the view Edmund mocked in Act I. Yet when he explains why Lear will not see Cordelia, he gives a human cause, “A sovereign shame.” The scene invokes fate and then shows character at work; students may decide which explanation the play trusts."
+          ],
+          "evidence": [
+            "It is the stars, The stars above us, govern our conditions;",
+            "A sovereign shame so elbows him:",
+            "burning shame Detains him from Cordelia."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q3",
+          "prompt": "Cordelia insists “No blown ambition doth our arms incite.” Why does she need to say this, and who might doubt her?",
+          "facilitatorNotes": [
+            "She leads a French army into Britain; to the British it is an invasion, as Albany will say. She claims a private motive, “love, dear love, and our aged father's right,” and now says aloud the love she would not declare in Act I. Her list of weeds in Lear’s crown, “idle weeds” growing in “sustaining corn,” pictures his mind overgrown yet still among things that feed."
+          ],
+          "evidence": [
+            "No blown ambition doth our arms incite, But love, dear love, and our aged father's right:",
+            "It is thy business that I go about;",
+            "Darnel, and all the idle weeds that grow In our sustaining corn."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-15-q4",
+          "prompt": "In scene V Regan questions Oswald about a letter. What does she want, how does she try to get it, and what does the scene reveal?",
+          "facilitatorNotes": [
+            "She wants to read Goneril’s letter to Edmund; she flatters (“I'll love thee much”), then tells Oswald she is a widow and so more “convenient” for Edmund. The sisters are now rivals. She also regrets letting Gloucester live and sets a price on him. Oswald’s refusal shows a servant loyal to his mistress’s vices, as the play will call him."
+          ],
+          "evidence": [
+            "Let me unseal the letter.",
+            "And more convenient is he for my hand Than for your lady's:",
+            "It was great ignorance, Gloucester's eyes being out, To let him live:",
+            "Preferment falls on him that cuts him off."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-16",
+      "title": "King Lear — the cliff at Dover (IV.6)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 18,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the scene twice: once as Gloucester lives it, once as Edgar stages it.",
+      "focus": "A son who saves his father from suicide by deceiving him.",
+      "context": "Recap: Edgar, disguised as the mad beggar Poor Tom, promised to lead his blinded father to the brink of a cliff at Dover, where Gloucester means to end his life; Gloucester still does not know who his guide is. Cordelia has landed at Dover with a French army, and the mad Lear wanders near her camp. Regan has promised a reward to whoever kills Gloucester. Edgar has now changed into a peasant’s clothes. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Choughs are jackdaws; samphire is a cliff plant gathered for pickling; a bark is a ship and her cock its small boat; the snuff is the burnt end of a candle wick; conceit means imagination; bourn, boundary; a-height, on high; whelk'd, twisted; the clearest gods, the purest and most glorious.",
+      "contentNote": "Gloucester attempts suicide; the fall is staged, but his despair is real.",
+      "excerpt": {
+        "locator": "King Lear, Act IV, scene VI, from the opening to Edgar’s “Bear free and patient thoughts”; opens “Enter Gloucester, and Edgar dressed like a peasant.”; closes “Edg. Bear free and patient thoughts. But who comes here?”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-15",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-17",
+        "blocks": [
+          3081,
+          3111
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81ec0c70c4d5d1d5f97576364c8a562f889b89decdb515b496ff47e8f334476b"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q1",
+          "prompt": "Gloucester notices that the ground is even and that his guide’s voice has changed. How does Edgar meet these doubts, and what does the exchange do for an audience?",
+          "facilitatorNotes": [
+            "He contradicts each one: the ground is “Horrible steep,” Gloucester’s other senses are failing, and he is changed only “in my garments,” which is true in a way, since he is Edgar underneath. On a bare stage the audience sees no cliff either, so the play makes us aware of the illusion at the very moment it builds one."
+          ],
+          "evidence": [
+            "Methinks the ground is even.",
+            "Horrible steep.",
+            "You're much deceived: in nothing am I changed But in my garments."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q2",
+          "prompt": "How does Edgar make the height felt with words alone? Look at the sizes he gives things and at how his speech ends.",
+          "facilitatorNotes": [
+            "Everything shrinks in sequence: birds to beetles, the samphire gatherer to the size of his head, fishermen to mice, a ship to its small boat and the boat to a buoy; even the surf cannot be heard. The eye travels down and out, and the speech ends in vertigo. The description is so convincing that readers half believe the cliff themselves."
+          ],
+          "evidence": [
+            "The crows and choughs that wing the midway air Show scarce so gross as beetles:",
+            "Appear like mice;",
+            "Lest my brain turn and the deficient sight Topple down headlong."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q3",
+          "prompt": "Edgar says, “Why I do trifle thus with his despair Is done to cure it.” Is his trick kind, cruel, or both?",
+          "facilitatorNotes": [
+            "He means to persuade his father that the gods saved him (“Thy life's a miracle”) so that he will choose to live, and it works: Gloucester vows to bear affliction. But it is a deception practised on a man at prayer, and it delays the truth Gloucester most needs, who his guide is. Some readers admire the care; others find Edgar theatrical, even controlling."
+          ],
+          "evidence": [
+            "Why I do trifle thus with his despair Is done to cure it.",
+            "Thy life's a miracle.",
+            "henceforth I'll bear Affliction till it do cry out itself 'Enough, enough,' and die."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-16-q4",
+          "prompt": "How has Gloucester’s idea of the gods changed between his prayer before the fall and his last speech here? What is it built on?",
+          "facilitatorNotes": [
+            "Before the fall he would end his life rather than “quarrel” with wills he cannot oppose. Afterwards he accepts that the “clearest gods” preserved him and that the urge to die came from a fiend. Endurance replaces despair, but the fiend is Edgar’s invention. Students can ask whether a faith reached through a fiction is less true, or whether the fiction only made room for a truth."
+          ],
+          "evidence": [
+            "To quarrel with your great opposeless wills,",
+            "Think that the clearest gods, who make them honours Of men's impossibilities, have preserved thee.",
+            "'The fiend, the fiend:' he led me to that place."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-17",
+      "title": "King Lear — “Reason in madness” (IV.6)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Follow Lear’s mad talk for its hidden argument: find what he says about power, justice and seeing.",
+      "focus": "The mad king and the blind earl meet, and see the world more clearly than before.",
+      "context": "Recap: Edgar, in disguise, has led his blinded father to what he said was the edge of the Dover cliff; Gloucester leapt, fell only to the ground, was persuaded that the gods saved him, and has resolved to bear his suffering. He still does not know his guide. Lear has escaped from the people Cordelia sent to find him and wanders crowned with wild flowers. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Coining means making money, a king’s right; press-money, a recruit’s pay; a crow-keeper, a scarecrow; a clothier's yard, the length of an arrow; brown bills, soldiers’ halberds; the clout, the centre of a target; the word, a password; luxury, lust; a fitchew is a polecat and a soiled horse one fed on fresh grass; civet, a perfume; squiny, squint; handy-dandy, a children’s game of guessing which hand holds something; a beadle, a parish officer who whipped offenders; a cozener, a cheat; able, vouch for; a politician, a schemer; a block may be a hat or a mounting-block; a man of salt, all tears; smug, spruce; descry, sight; pregnant, ready; benison, blessing.",
+      "contentNote": "Lear’s madness turns to disgust at sex and at women’s bodies, and ends in a cry to kill; he speaks of a woman whipped as a whore.",
+      "excerpt": {
+        "locator": "King Lear, Act IV, scene VI, from Lear’s entrance to Edgar’s offer to lead Gloucester to shelter; opens “Enter Lear, fantastically dressed with wild flowers.”; closes “Glou. Hearty thanks: The bounty and the benison of heaven To boot, and boot!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-16",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-18",
+        "blocks": [
+          3112,
+          3164
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ccda85f7eceea8bd3d647c417748827cc4c403c0c2aa631d9e0e6f8f7dee32a"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q1",
+          "prompt": "“Ay, every inch a king”: what does Lear do with his kingship in the lines that follow? Is he more or less a king here than in Act I?",
+          "facilitatorNotes": [
+            "He pardons an imaginary adulterer, reasoning that Gloucester’s bastard son was kinder to his father than Lear’s lawful daughters were to him, and plays judge and recruiting captain. His power is imaginary, but his judgement is sharper than when he ruled. The line can be played as pathos, a man in weeds claiming a crown, or as a truth: he is at last a king in insight."
+          ],
+          "evidence": [
+            "Ay, every inch a king:",
+            "for Gloucester's bastard son Was kinder to his father than my daughters Got 'tween the lawful sheets."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q2",
+          "prompt": "What did the storm teach Lear about the people who flattered him and about himself?",
+          "facilitatorNotes": [
+            "The flatterers agreed with everything; the rain and thunder would not obey him, and that showed him the lie. He is “not ague-proof”: a king’s body catches cold like anyone’s. When Gloucester asks to kiss his hand, Lear wipes it because it “smells of mortality.” Royalty no longer hides the body."
+          ],
+          "evidence": [
+            "They flattered me like a dog,",
+            "they told me I was every thing; 'tis a lie, I am not ague-proof.",
+            "Let me wipe it first; it smells of mortality."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q3",
+          "prompt": "“A man may see how this world goes with no eyes.” What does Lear teach the blind Gloucester about justice? Is his argument mad?",
+          "facilitatorNotes": [
+            "Judge and thief could change places without anyone telling them apart; a dog in office is obeyed; the beadle lusts after the woman he whips; rags show small sins while robes hide great ones; if all are guilty, “None does offend.” Gloucester answers that he sees it “feelingly,” through suffering. The argument is sane and even radical; Edgar names the paradox: “Reason in madness!”"
+          ],
+          "evidence": [
+            "change places, and, handy-dandy, which is the justice, which is the thief?",
+            "Through tatter'd clothes small vices do appear; Robes and furr'd gowns hide all.",
+            "I see it feelingly.",
+            "O, matter and impertinency mix'd! Reason in madness!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-17-q4",
+          "prompt": "Lear preaches that “we came crying hither,” then imagines killing his sons-in-law and runs from Cordelia’s men. What does the turn tell you about his state, and what does the Gentleman add?",
+          "facilitatorNotes": [
+            "The sermon is wise: birth is crying at entering “this great stage of fools.” But patience gives way at once to revenge, and when rescue comes he thinks himself taken prisoner, “The natural fool of fortune.” He cannot yet receive help. The Gentleman’s line about the one daughter who “redeems nature” prepares the reunion the audience is waiting for."
+          ],
+          "evidence": [
+            "Thou must be patient; we came crying hither:",
+            "When we are born, we cry that we are come To this great stage of fools.",
+            "I am even The natural fool of fortune.",
+            "Thou hast one daughter, Who redeems nature from the general curse Which twain have brought her to."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-18",
+      "title": "King Lear — “a very foolish fond old man” (IV.6–7)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice how each person in these scenes is recognised, or fails to be: by voice, by letter, by face.",
+      "focus": "A servant’s death, a plot exposed, and a father and daughter reunited.",
+      "context": "Recap: At Dover the mad Lear met the blinded Gloucester and preached to him about justice before running from the people Cordelia sent to find him. Edgar, still unknown to his father, has offered to lead Gloucester to shelter. Regan gave Oswald, Goneril’s steward, a message for Edmund and promised a reward to whoever kills Gloucester. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Edgar puts on the speech of a West Country peasant: chill and chud are I will and I would; che vor ye, I warn you; zwaggered, bullied; costard, head; ballow, cudgel; foins, thrusts. A deathsman is an executioner; gentle wax, the letter’s seal; undistinguish'd space, boundless reach; rake up, bury; the death-practised duke, Albany, whose death is plotted; ingenious, conscious; distract, mad. Scene VII opens, as its heading sets it, with Lear asleep on a bed while soft music plays. Weeds are clothes; made intent, plan; child-changed, changed by his children; a perdu, a sentry in the most exposed post; fond, foolish; even o'er, piece together; arbitrement, decision; point and period, aim and end.",
+      "contentNote": "Edgar kills Oswald in a fight; Goneril’s letter invites her lover to murder her husband.",
+      "excerpt": {
+        "locator": "King Lear, Act IV, from Oswald’s entrance in scene VI to the end of scene VII; opens “Enter Oswald.”; closes “…period will be throughly wrought, Or well or ill, as this day's battle's fought. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-17",
+        "continuesTo": null,
+        "blocks": [
+          3165,
+          3227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a7e59aee7f65f6e369fd4de491f596555de3668fddce14169d40be3b11107172"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-18-q1",
+          "prompt": "When Oswald comes to kill Gloucester, Edgar speaks as a peasant. What does the fight show about Oswald, and what is Edgar’s verdict on him?",
+          "facilitatorNotes": [
+            "Oswald sneers at the “bold peasant” and “dunghill” and is beaten by a man with a cudgel. Dying, he asks his killer to bury him and to deliver his mistress’s letters: loyal to the end, to a bad cause. Edgar’s epitaph, “a serviceable villain,” sums up a servant who did whatever he was told. Students might ask whether that loyalty earns any pity."
+          ],
+          "evidence": [
+            "Wherefore, bold peasant, Darest thou support a publish'd traitor?",
+            "Chill pick your teeth, zir:",
+            "a serviceable villain, As duteous to the vices of thy mistress As badness would desire."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-18-q2",
+          "prompt": "What does Goneril’s letter ask of Edmund, and what does Edgar mean to do with it?",
+          "facilitatorNotes": [
+            "She reminds Edmund of their vows and asks him to kill Albany (“cut him off”) and take his place; she signs herself his “wife, so I would say.” Edgar buries Oswald and keeps the letter to show Albany “in the mature time.” The paper becomes the evidence that brings Edmund down in Act V."
+          ],
+          "evidence": [
+            "You have many opportunities to cut him off:",
+            "'Your—wife, so I would say—affectionate servant,",
+            "With this ungracious paper strike the sight Of the death-practised duke:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-18-q3",
+          "prompt": "Gloucester envies the king his madness. Why, and do the scenes you have read support him?",
+          "facilitatorNotes": [
+            "Madness would sever “my thoughts... from my griefs”; sanity keeps him upright and aware of every sorrow. Yet Lear’s madness has not freed him from pain: he called himself “cut to the brains,” and waking he is bound “Upon a wheel of fire.” Some readers find Gloucester’s wish understandable; others think the play shows no escape either way."
+          ],
+          "evidence": [
+            "Better I were distract: So should my thoughts be sever'd from my griefs,",
+            "how stiff is my vile sense, That I stand up, and have ingenious feeling Of my huge sorrows!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-18-q4",
+          "prompt": "Trace the steps by which Lear wakes to recognise Cordelia. What does each step show, and what is her answer to his guilt?",
+          "facilitatorNotes": [
+            "He thinks himself dragged from the grave and her a soul in bliss; he doubts his own hands; he admits he is “a very foolish fond old man” before he dares name “my child Cordelia.” He expects poison because she has “some cause.” Her “No cause, no cause” forgives without argument, as her “Nothing” in Act I refused to argue for love. He kneels and she forbids it; he ends asking to “forget and forgive.”"
+          ],
+          "evidence": [
+            "You do me wrong to take me out o' the grave:",
+            "I am a very foolish fond old man,",
+            "You have some cause, they have not.",
+            "No cause, no cause.",
+            "Pray you now, forget and forgive: I am old and foolish."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-19",
+      "title": "King Lear — “Ripeness is all” (V.1–3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice which speeches are made in public and which aside, and what each speaker hides.",
+      "focus": "Two sisters jealous over one man, a battle fought in a stage direction, and a king who wants only a prison with his daughter.",
+      "context": "This run begins Act V of King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Recap: Lear, mad, was found near Dover by Cordelia’s people; he woke to music in her tent and knew her, asking her to forget and forgive. Edgar, still in disguise, has killed Goneril’s steward Oswald and found on him Goneril’s letter urging Edmund to murder her husband, Albany. Regan, now Cornwall’s widow, wants Edmund for herself. Edmund leads the British forces against the French army that Cordelia brought. Conjunct and bosom'd mean joined and intimate; forfended, forbidden; be-met, met; bolds, encourages; the ancient of war, the experienced officers; avouched, asserted; o'erlook, read over; taking off, killing; to censure is to judge; God's spies are watchers sent by God; packs and sects, factions; a brand, a torch; foxes were smoked out of their holes; the good-years, some evil power; fell, skin.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "King Lear, Act V, scenes I and II and the opening of scene III, to Lear and Cordelia led away to prison; opens “Enter, with drum and colours, Edmund, Regan, Gentlemen, and Soldiers.”; closes “…shall make us weep: we'll see 'em starve first. Come. [Exeunt Lear and Cordelia, guarded.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-20",
+        "blocks": [
+          3230,
+          3284
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "904df37f036fbf5bdb3337a11407ce8acb3039834d3cf027c51cb6af8e706ceb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-19-q1",
+          "prompt": "“Which of them shall I take? Both? one? or neither?” What does Edmund’s soliloquy show about how he sees the sisters, Albany and the prisoners?",
+          "facilitatorNotes": [
+            "People are pieces in a game: each sister is jealous “as the stung Are of the adder,” Albany is useful for the battle and then Goneril can kill him, and the mercy Albany intends for Lear and Cordelia will never be carried out. His last line makes his own position the only value. The soliloquy prepares the order he will give in the next scene."
+          ],
+          "evidence": [
+            "To both these sisters have I sworn my love;",
+            "Let her who would be rid of him devise His speedy taking off.",
+            "Shall never see his pardon; for my state Stands on me to defend, not to debate."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-19-q2",
+          "prompt": "Albany says he fights because France invades, not to oppose the king. Why does he draw this line, and what does it say about his position?",
+          "facilitatorNotes": [
+            "He will defend the country but admits that Lear and others have “just and heavy causes” for opposing them; he is honest about the dilemma (“Where I could not be honest, I never yet was valiant”). It is the stance of a decent man on the wrong side. Regan’s “Why is this reason'd?” shows how little patience the others have for scruple."
+          ],
+          "evidence": [
+            "It toucheth us, as France invades our land, Not bolds the king,",
+            "Where I could not be honest, I never yet was valiant:",
+            "Why is this reason'd?"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-19-q3",
+          "prompt": "The battle passes in a stage direction between two short speeches of Edgar’s. Why might the play give it so little space? What does “Ripeness is all” answer?",
+          "facilitatorNotes": [
+            "The play cares about the result, “King Lear hath lost,” not the fighting. Gloucester falls back into despair, “a man may rot even here,” and Edgar answers that we must endure our dying as our birth; readiness, not choosing the hour, is what matters. Gloucester’s “And that's true too” can be heard as consent, or as a tired man agreeing to keep walking."
+          ],
+          "evidence": [
+            "King Lear hath lost, he and his daughter ta'en:",
+            "No farther, sir; a man may rot even here.",
+            "Men must endure Their going hence, even as their coming hither: Ripeness is all:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-19-q4",
+          "prompt": "Cordelia wants to face her sisters; Lear answers “No, no, no, no!” What life does he imagine for them in prison? Is it a vision of happiness, or of escape?",
+          "facilitatorNotes": [
+            "They will sing like caged birds, he will kneel to her for forgiveness, they will watch the court’s rises and falls from outside “As if we were God's spies.” It is a picture of love freed from power. But he ignores her wish and the danger: Edmund says only “Take them away.” Readers differ on whether the speech is Lear’s wisdom or a last illusion."
+          ],
+          "evidence": [
+            "Shall we not see these daughters and these sisters?",
+            "We two alone will sing like birds i' the cage:",
+            "When thou dost ask me blessing, I'll kneel down And ask of thee forgiveness:",
+            "As if we were God's spies:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-20",
+      "title": "King Lear — the third sound of the trumpet (V.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow Edmund’s fall through the forms of law and knighthood: arrest, challenge, combat, confession.",
+      "focus": "A secret order, a public combat, and the stories brothers finally tell each other.",
+      "context": "Recap: The French army has lost; Lear and Cordelia are Edmund’s prisoners, and Lear has told her they will live in prison like birds in a cage. Before the battle a disguised stranger gave Albany Goneril’s letter urging Edmund to kill her husband, and promised to bring a champion if the herald called. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Write happy means call yourself fortunate; retention, custody; impress'd lances, the spears of conscripted men; immediacy, direct authority; compeers, equals; a-squint, cross-eyed; stomach, anger; let-alone, the power to forbid; half-blooded, noble on one side only; attaint, accusation; sub-contracted, promised again; bans, banns of marriage; an interlude, a farce; medicine, here poison; lists, the ground of a combat; canker-bit, eaten by grubs; maugre, despite; fire-new, brand-new; toad-spotted, venomous; say, trace; practice, trickery; cozen'd, cheated; the wheel is Fortune’s; rings, eye sockets; flaw'd, cracked; puissant, strong; tranced, senseless.",
+      "contentNote": "Edmund gives a secret order to kill; Goneril has poisoned her sister; Edgar tells how his father died.",
+      "excerpt": {
+        "locator": "King Lear, Act V, scene III, from Edmund’s order to the captain to Edgar’s naming of Kent; opens “Edm. Come hither, captain; hark. Take thou this note: go follow them to prison: One step…”; closes “…Kent; who in disguise Follow'd his enemy king, and did him service Improper for a slave.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-19",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-21",
+        "blocks": [
+          3285,
+          3353
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4cd9e7f2d1cb2593ce2b72dd5e883e77b81da4c7b9b994bb97b37f4a7c2069a0"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-20-q1",
+          "prompt": "The captain says, “If it be man's work, I'll do't.” What is the work, and what argument has Edmund used to win him?",
+          "facilitatorNotes": [
+            "The written note, we learn later, orders the deaths of Lear and Cordelia. Edmund promises “noble fortunes” and teaches that “men Are as the time is”: tenderness does not suit a soldier. The captain’s grim joke defines man’s work as whatever a horse cannot do; murder becomes a job. The scene sets the clock running on everything that follows."
+          ],
+          "evidence": [
+            "men Are as the time is: to be tender-minded Does not become a sword:",
+            "I cannot draw a cart, nor eat dried oats; If it be man's work, I'll do't."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-20-q2",
+          "prompt": "In the quarrel over Edmund, how do Regan and Goneril give themselves away, and how does Albany answer them?",
+          "facilitatorNotes": [
+            "Regan publicly makes Edmund her “lord and master,” giving him her soldiers, prisoners and lands; Goneril mocks her and, aside, reveals that she has poisoned her (“I'll ne'er trust medicine”). Albany arrests Edmund and answers Regan’s claim with dry sarcasm: his wife is already promised, so any suitor must court him. The scene is close to black comedy, as Goneril’s “An interlude!” admits."
+          ],
+          "evidence": [
+            "Witness the world, that I create thee here My lord and master.",
+            "If not, I'll ne'er trust medicine.",
+            "If you will marry, make your loves to me; My lady is bespoke."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-20-q3",
+          "prompt": "Edgar answers the herald, “my name is lost.” Why does he fight without a name, and what choice does Edmund make that he did not have to?",
+          "facilitatorNotes": [
+            "Edmund’s lies took his name; he must win it back by proving the charge with his sword. By the rules of knighthood Edmund could refuse an unnamed challenger, but pride makes him “disdain and spurn” that safety, and Goneril protests the “practice” too late. The trial by combat assumes that the right will win; the play lets it, this once."
+          ],
+          "evidence": [
+            "Know, my name is lost; By treason's tooth bare-gnawn and canker-bit:",
+            "What safe and nicely I might well delay By rule of knighthood, I disdain and spurn:",
+            "By the law of arms thou wast not bound to answer An unknown opposite;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-20-q4",
+          "prompt": "Edgar says “The gods are just,” and Edmund answers “The wheel is come full circle.” Do these explanations satisfy you? Weigh them against Edgar’s account of his father’s death.",
+          "facilitatorNotes": [
+            "Edgar sees a pattern of vice punished in kind: Gloucester’s adultery cost him his eyes. Many readers find the justice harsh beyond measure. Edmund’s image is Fortune’s wheel, which turns by chance, not desert. Edgar’s tale then complicates both: he calls his concealment a fault, and his father died when told the truth, his heart bursting “smilingly” between joy and grief."
+          ],
+          "evidence": [
+            "The gods are just, and of our pleasant vices Make instruments to plague us:",
+            "The wheel is come full circle; I am here.",
+            "Never—O fault!—reveal'd myself unto him,",
+            "'Twixt two extremes of passion, joy and grief, Burst smilingly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-21",
+      "title": "King Lear — “Never, never, never” (V.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "King Lear",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 17,
+        "totalMinutes": 29
+      },
+      "challenge": "Read slowly, marking each moment when hope is raised and taken away.",
+      "focus": "Deaths reported and seen, a reprieve sent too late, and the last words of a king.",
+      "context": "Recap: Edgar, at last named, has defeated his brother Edmund in single combat; Edmund has confessed, and Edgar has told how their father died of joy and grief when Edgar revealed himself. Goneril, exposed by her letter, has rushed out; she had poisoned Regan out of jealousy over Edmund. Before the combat Edmund secretly sent a captain with a written order about his prisoners, Lear and Cordelia. Kent, Lear’s counsellor, has served the king in disguise under another name since his banishment. King Lear, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Glou. Gloucester, Edm. Edmund, Edg. Edgar, Gon. Goneril, Reg. Regan, Cor. Cordelia, Alb. Albany, Osw. Oswald, Gent. Gentleman, Doct. Doctor, Mess. Messenger, Capt. Captain, Her. Herald). Fordid and fordone mean destroyed; the promised end is the end of the world; image, likeness; fall and cease, let the heavens fall and all things end; a falchion is a curved sword; crosses, troubles; first of difference and decay, the first change in Lear’s fortune; bootless, useless; boot, reward; poor fool, a term of tenderness; the rack, an instrument of torture; gored, wounded.",
+      "contentNote": "Cordelia is hanged and Lear carries in her body; Goneril has killed herself after poisoning her sister; Lear dies on stage.",
+      "excerpt": {
+        "locator": "King Lear, Act V, scene III, from the bloody knife to the end of the play; opens “Enter a Gentleman, with a bloody knife.”; closes “[Exeunt, with a dead march.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-20",
+        "continuesTo": null,
+        "blocks": [
+          3354,
+          3420
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c998942beb7855c0e2b2405681281fbd9e69434487884f4486c68c1f26f78da"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-21-q1",
+          "prompt": "Albany cries “Great thing of us forgot!” What has been forgotten, and what fills the stage while it is?",
+          "facilitatorNotes": [
+            "Lear and Cordelia, under Edmund’s order. The bodies of Goneril and Regan, Edmund’s boast that he “was beloved,” and Albany’s talk of heaven’s judgement take the time that would have saved them. Edmund’s late wish to do “some good... Despite of mine own nature” comes too late. The delay is the play’s cruellest piece of construction."
+          ],
+          "evidence": [
+            "Great thing of us forgot!",
+            "Yet Edmund was beloved:",
+            "some good I mean to do, Despite of mine own nature."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-21-q2",
+          "prompt": "When Lear enters with Cordelia in his arms, Kent asks, “Is this the promised end?” and Edgar, “Or image of that horror?” What are they comparing the sight to, and why might the play invite the comparison?",
+          "facilitatorNotes": [
+            "To the end of the world, the Last Judgement. The play is set in pagan Britain, but the words reach for the largest horror their hearers know. The father carrying his dead child feels like the end of everything; Lear’s “men of stones” accuses everyone who can still stand dry-eyed."
+          ],
+          "evidence": [
+            "Is this the promised end?",
+            "Or image of that horror?",
+            "Howl, howl, howl, howl! O, you are men of stones:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-21-q3",
+          "prompt": "Lear tests three times whether Cordelia lives: the looking-glass, the feather, her lips. What does the pattern do, and does he die believing she lives?",
+          "facilitatorNotes": [
+            "Each test raises hope and drops it; between them comes “Never” five times, a line of pure loss. His last words point at her lips, as though he sees breath. Some readers believe he dies in a joyful illusion, as Gloucester’s heart burst between joy and grief; others hear only despair. The text allows both, and the choice changes the ending."
+          ],
+          "evidence": [
+            "Lend me a looking-glass;",
+            "This feather stirs; she lives.",
+            "Never, never, never, never, never!",
+            "Look on her, look, her lips, Look there, look there!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-21-q4",
+          "prompt": "Albany begins to set things right, rewards and punishments, and breaks off at “O, see, see!” Kent refuses to rule. What does the ending say about whether this world can be set right? (This edition gives the last speech to Albany; others give it to Edgar.)",
+          "facilitatorNotes": [
+            "Albany’s speech of justice is cut off by Lear’s grief; Kent will follow his master in death. The final lines refuse formal comfort: “Speak what we feel, not what we ought to say” recalls Cordelia’s honesty in the first scene, where saying what one ought began the disaster. Readers can argue whether the play ends with some order restored or with nothing that answers the loss."
+          ],
+          "evidence": [
+            "All friends shall taste The wages of their virtue, and all foes The cup of their deservings. O, see, see!",
+            "I have a journey, sir, shortly to go; My master calls me, I must not say no.",
+            "Speak what we feel, not what we ought to say."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-22",
       "title": "Othello — Iago in the street (I.1)",
       "sourceId": "shakespeare-works-viii-1866",
       "workTitle": "Othello",
@@ -1054,7 +1698,7 @@
         "locator": "Othello, Act I, scene I, the whole scene; opens “Enter Roderigo and Iago.”; closes “…some special officers of night. On, good Roderigo; I'll deserve your pains. [Exeunt.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-12-shakespeare-works-viii-1866-15",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-23",
         "blocks": [
           3443,
           3491
@@ -1065,7 +1709,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-shakespeare-works-viii-1866-14-q1",
+          "id": "reading-12-shakespeare-works-viii-1866-22-q1",
           "prompt": "What is Iago’s complaint against Othello, as he tells it to Roderigo? How much of it can you trust?",
           "facilitatorNotes": [
             "He was passed over for lieutenant in favour of Michael Cassio, a bookish Florentine who “never set a squadron in the field,” though Iago’s worth was proved “At Rhodes, at Cyprus.” Promotion goes “by letter and affection.” The grievance sounds real; but he tells it to a man whose purse he uses, and the sneers (“arithmetician,” “his Moorship’s ancient”) colour it. Readers may disagree about whether this is his true motive."
@@ -1077,7 +1721,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-14-q2",
+          "id": "reading-12-shakespeare-works-viii-1866-22-q2",
           "prompt": "Iago describes two kinds of servant and says which he is. What does “I am not what I am” mean here?",
           "facilitatorNotes": [
             "Some servants dote on their “obsequious bondage” and are discarded when old; others keep their “hearts attending on themselves” behind a show of duty, and he is one of those. To wear his heart upon his sleeve would be to give it to the daws. “I am not what I am” makes concealment his very identity: the face he shows is never the self beneath."
@@ -1089,7 +1733,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-14-q3",
+          "id": "reading-12-shakespeare-works-viii-1866-22-q3",
           "prompt": "How do Iago and Roderigo wake Brabantio? Look at the images Iago uses for the marriage, and why he chooses them.",
           "facilitatorNotes": [
             "They shout “thieves!”, putting the daughter among the “bags.” Iago then uses animal images, the black ram and the white ewe, the Barbary horse, the beast with two backs, meant to stir disgust and a father’s fear about grandchildren. He shouts from the dark and lets Roderigo give his name. The racism is Iago’s instrument, and he knows his audience."
@@ -1101,7 +1745,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-14-q4",
+          "id": "reading-12-shakespeare-works-viii-1866-22-q4",
           "prompt": "Iago leaves before Brabantio comes down. What reasons does he give, and what do they tell you about how he works?",
           "facilitatorNotes": [
             "Venice needs Othello for the Cyprus wars (“Another of his fathom they have none”), so Iago must not be seen against him; he will “show out a flag and sign of love.” He works through others, keeps his own hands clean, and understands the politics better than Roderigo. Brabantio’s “This accident is not unlike my dream” shows a father already half ready to believe."
@@ -1115,7 +1759,7 @@
       ]
     },
     {
-      "id": "reading-12-shakespeare-works-viii-1866-15",
+      "id": "reading-12-shakespeare-works-viii-1866-23",
       "title": "Othello — “Keep up your bright swords” (I.2–3)",
       "sourceId": "shakespeare-works-viii-1866",
       "workTitle": "Othello",
@@ -1133,8 +1777,8 @@
       "excerpt": {
         "locator": "Othello, Act I, scene II, and scene III to Brabantio’s charge before the Duke; opens “Enter Othello, Iago, and Attendants with torches.”; closes “Bra. Nothing, but this is so.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-12-shakespeare-works-viii-1866-14",
-        "continuesTo": "reading-12-shakespeare-works-viii-1866-16",
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-22",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-24",
         "blocks": [
           3492,
           3565
@@ -1145,7 +1789,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-shakespeare-works-viii-1866-15-q1",
+          "id": "reading-12-shakespeare-works-viii-1866-23-q1",
           "prompt": "Iago warns Othello of Brabantio’s power. How does Othello answer, and what does the answer show about him?",
           "facilitatorNotes": [
             "He is calm: his services “Shall out-tongue his complaints,” he comes of royal blood though he will not boast of it, and he gave up his “unhoused free condition” only for love of Desdemona. Some readers hear dignity and self-knowledge; others hear a pride that is sure the world will see him as he sees himself. Iago’s claim that he lacks “iniquity” is the scene’s first irony."
@@ -1157,7 +1801,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-15-q2",
+          "id": "reading-12-shakespeare-works-viii-1866-23-q2",
           "prompt": "“Not I; I must be found.” Why does Othello refuse to hide? What is Iago’s oath “By Janus” doing in the same exchange?",
           "facilitatorNotes": [
             "Othello trusts that his “parts,” “title” and “perfect soul” will show him as he is: for him appearance and truth agree. Iago swears by a two-faced god. The play will test Othello’s belief that a man is seen rightly, and Iago is the man who is not."
@@ -1169,7 +1813,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-15-q3",
+          "id": "reading-12-shakespeare-works-viii-1866-23-q3",
           "prompt": "“Keep up your bright swords, for the dew will rust them.” What is the tone of this line, and how does Brabantio’s long speech answer it?",
           "facilitatorNotes": [
             "It is commanding, almost amused authority: the fight ends without one. Brabantio answers with law and with the claim that only magic or drugs could explain his daughter running to “the sooty bosom Of such a thing as thou”; prejudice is presented as common sense, “palpable to thinking.” Othello’s reply asks only where he must go to answer."
@@ -1181,7 +1825,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-15-q4",
+          "id": "reading-12-shakespeare-works-viii-1866-23-q4",
           "prompt": "The council opens with confused reports of the Turkish fleet. How do the senators reason their way to the truth, and why show this before Brabantio’s case is heard?",
           "facilitatorNotes": [
             "The numbers differ, but every report confirms a fleet; the turn toward Rhodes is judged “a pageant To keep us in false gaze.” They reason from probability and interest, a model for judging Brabantio’s charge, and a warning that shows can be staged to mislead. The Duke’s promise of the law “though our proper son Stood in your action” meets its test when the accused turns out to be the general the state needs."
@@ -1195,7 +1839,7 @@
       ]
     },
     {
-      "id": "reading-12-shakespeare-works-viii-1866-16",
+      "id": "reading-12-shakespeare-works-viii-1866-24",
       "title": "Othello — “This only is the witchcraft I have used” (I.3)",
       "sourceId": "shakespeare-works-viii-1866",
       "workTitle": "Othello",
@@ -1213,8 +1857,8 @@
       "excerpt": {
         "locator": "Othello, Act I, scene III, from Othello’s defence to his exit with Desdemona; opens “Oth. Most potent, grave, and reverend signiors, My very noble and approved good masters,…”; closes “[Exeunt Othello and Desdemona.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-12-shakespeare-works-viii-1866-15",
-        "continuesTo": "reading-12-shakespeare-works-viii-1866-17",
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-23",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-25",
         "blocks": [
           3566,
           3604
@@ -1225,7 +1869,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-shakespeare-works-viii-1866-16-q1",
+          "id": "reading-12-shakespeare-works-viii-1866-24-q1",
           "prompt": "Othello says, “Rude am I in my speech.” Is he? Look at how his defence is built.",
           "facilitatorNotes": [
             "The disclaimer is itself rhetoric: a modest frame, then a long, rhythmic tale of “moving accidents,” then the turn to Desdemona’s response, and a closing antithesis that answers the charge of witchcraft. Most readers find him a masterly speaker; some note that he is most fluent when the story is his own life."
@@ -1237,7 +1881,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-16-q2",
+          "id": "reading-12-shakespeare-works-viii-1866-24-q2",
           "prompt": "According to Othello, how did the courtship happen, and who took the first steps? How does that Desdemona compare with her father’s picture of her?",
           "facilitatorNotes": [
             "Brabantio invited him; Desdemona listened with “a greedy ear,” wished heaven had made her such a man, and hinted that a friend who could tell his story would win her. She made the first move. Her father’s “maiden never bold,” who would fear to look on Othello, is a daughter he did not know."
@@ -1249,7 +1893,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-16-q3",
+          "id": "reading-12-shakespeare-works-viii-1866-24-q3",
           "prompt": "How does Desdemona answer “Where most you owe obedience?”, and how does she argue to go to Cyprus? What do her two speeches show about her?",
           "facilitatorNotes": [
             "She names “a divided duty” and claims for her husband what her mother gave Brabantio: a precedent from his own marriage that he cannot refuse. Before the Duke she says she loved Othello for his mind (“I saw Othello’s visage in his mind”) and will not be left behind as “a moth of peace,” without “The rites for which I love him.” She is direct, reasoned and open about wanting her marriage; readers often compare Cordelia’s answer about a husband’s share of love."
@@ -1262,7 +1906,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-16-q4",
+          "id": "reading-12-shakespeare-works-viii-1866-24-q4",
           "prompt": "The Duke tells Brabantio that Othello is “far more fair than black”; Brabantio tells Othello, “She has deceived her father, and may thee.” What do these parting lines assume, and why might they matter later?",
           "facilitatorNotes": [
             "The Duke’s praise works by equating black with bad and fair with good: a compliment made of prejudice. Brabantio plants a suspicion that a daughter who deceived could deceive a husband. Othello answers “My life upon her faith!”, and then entrusts his wife to “Honest Iago.” The phrase that should reassure is the one an audience now dreads."
@@ -1276,7 +1920,7 @@
       ]
     },
     {
-      "id": "reading-12-shakespeare-works-viii-1866-17",
+      "id": "reading-12-shakespeare-works-viii-1866-25",
       "title": "Othello — “Put money in thy purse” (I.3)",
       "sourceId": "shakespeare-works-viii-1866",
       "workTitle": "Othello",
@@ -1294,7 +1938,7 @@
       "excerpt": {
         "locator": "Othello, Act I, scene III, from Roderigo’s despair to the end of the act; opens “Rod. Iago!”; closes “…engender'd. Hell and night Must bring this monstrous birth to the world's light. [Exit.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-12-shakespeare-works-viii-1866-16",
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-24",
         "continuesTo": null,
         "blocks": [
           3605,
@@ -1306,7 +1950,7 @@
       },
       "questions": [
         {
-          "id": "reading-12-shakespeare-works-viii-1866-17-q1",
+          "id": "reading-12-shakespeare-works-viii-1866-25-q1",
           "prompt": "“Our bodies are gardens; to the which our wills are gardeners.” What does Iago believe about human nature? Is any of it a view you could share?",
           "facilitatorNotes": [
             "The will governs the self; reason cools “our raging motions”; love is only “a lust of the blood and a permission of the will.” It sounds like self-mastery and responsibility, and many readers find the gardening image persuasive. In his hands it makes love contemptible and everyone else a plant to be managed. Edmund’s scorn for those who blame the stars is a close cousin."
@@ -1318,7 +1962,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-17-q2",
+          "id": "reading-12-shakespeare-works-viii-1866-25-q2",
           "prompt": "Why does Iago keep repeating “put money in thy purse”? What is he really saying to Roderigo, and about Othello and Desdemona?",
           "facilitatorNotes": [
             "The refrain hammers home one practical instruction, which serves Iago: Roderigo’s money will pass through his hands (“Thus do I ever make my fool my purse”). Around it he predicts the marriage’s failure in racist and misogynist terms (“These Moors are changeable,” “She must change for youth”), offered as worldly wisdom. The repetition also makes the speech comic, and the comedy makes it more dangerous."
@@ -1330,7 +1974,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-17-q3",
+          "id": "reading-12-shakespeare-works-viii-1866-25-q3",
           "prompt": "In the closing soliloquy Iago gives reasons for hating Othello. What are they, and how firmly does he hold them?",
           "facilitatorNotes": [
             "“I hate the Moor” comes first, with no reason; then a rumour that Othello has slept with his wife, which he admits he does not know to be true but will act on “as if for surety.” With the lost lieutenancy of the first scene, his motives multiply and shift. Readers have long debated whether they are causes or excuses for a hatred that comes first."
@@ -1342,7 +1986,7 @@
           ]
         },
         {
-          "id": "reading-12-shakespeare-works-viii-1866-17-q4",
+          "id": "reading-12-shakespeare-works-viii-1866-25-q4",
           "prompt": "“The Moor is of a free and open nature, That thinks men honest that but seem to be so.” Why is this compliment the heart of Iago’s plan? Notice the image he chooses as the plan takes shape.",
           "facilitatorNotes": [
             "Othello’s virtues, trust and openness, are the weakness Iago will use, as Edmund used his brother’s “foolish honesty.” The plan is born during the speech (“I have ’t. It is engender’d”), and Iago imagines it as a monstrous birth delivered by hell and night: he knows exactly what he is making."
@@ -1350,6 +1994,755 @@
           "evidence": [
             "The Moor is of a free and open nature, That thinks men honest that but seem to be so;",
             "I have 't. It is engender'd. Hell and night Must bring this monstrous birth to the world's light."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-26",
+      "title": "Othello — the storm and the quay (II.1)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Watch how each person waits for Othello, and what Iago does with the waiting.",
+      "focus": "A storm that wrecks an enemy fleet, a wife who lands before her husband, and Iago’s wit.",
+      "context": "This run begins Act II of Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Recap: In Venice, Desdemona, a senator’s daughter, has married Othello, a Moor and general of the Venetian army, against her father’s will; the Senate, needing Othello against a Turkish fleet bound for Cyprus, upheld the marriage and sent him to the island, with Desdemona following in the care of his ensign, Iago. Iago hates Othello, who made Michael Cassio his lieutenant over him, and has promised the foolish Roderigo, who wants Desdemona, that he will win her; at the end of Act I he resolved to make Othello believe Cassio too familiar with his wife. A high-wrought flood is a heaving sea; the mortise, the joints of a ship’s timbers; segregation, scattering; the burning bear and the guards of the pole are stars near the Pole Star; enchafed, angry; a Veronesa, a ship from Verona; paragons, surpasses; the ingener, the artist; gutter'd, furrowed; ensteep'd, under water; ancient, ensign or standard-bearer; a se'nnight, a week; birdlime from frize, sticky glue from rough cloth; the cod's head for the salmon's tail, something worthless for something good; small beer, trifles; liberal, free-spoken; gyve, fetter; clyster-pipes, enema tubes.",
+      "contentNote": "Iago’s rhymes are crude about women and sex, and one plays on “black” and “white” in a play about a Black general.",
+      "excerpt": {
+        "locator": "Othello, Act II, scene I, from the opening to Othello’s arrival; opens “Enter Montano and two Gentlemen.”; closes “Cas. Lo, where he comes!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-27",
+        "blocks": [
+          3629,
+          3704
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "95880fa0f70db6c33bbf9abc4aed0ab3014a605d3775cba0981f4caa03b23a63"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-26-q1",
+          "prompt": "The men on the shore cannot see the sea for the storm. How do they describe it, and what has it done?",
+          "facilitatorNotes": [
+            "Waves seem to “pelt the clouds” and throw water on the stars; no ship could hold together. Then the news: the Turkish fleet is wrecked and “our wars are done.” The enemy the play set out to fight is gone in the first scene of Act II, which leaves the danger to come from inside the Venetian camp."
+          ],
+          "evidence": [
+            "The chidden billow seems to pelt the clouds;",
+            "News, lads! our wars are done."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-26-q2",
+          "prompt": "Cassio says the seas, “As having sense of beauty,” let Desdemona pass. What do his speeches about her show about him, and how could they be misread?",
+          "facilitatorNotes": [
+            "He idealizes her as “divine,” “our great captain's captain,” and asks the men of Cyprus to kneel to her; he kisses Emilia and explains it as “breeding.” It is courtly worship, the manners of a gentleman. To a watcher looking for desire, every flourish is material."
+          ],
+          "evidence": [
+            "As having sense of beauty, do omit Their mortal natures, letting go safely by The divine Desdemona.",
+            "She that I spake of, our great captain's captain,",
+            "'tis my breeding That gives me this bold show of courtesy."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-26-q3",
+          "prompt": "Desdemona asks Iago to praise women while she waits. Why does she play the game, and what does his praise of the perfect woman come to?",
+          "facilitatorNotes": [
+            "She is anxious for Othello and says so: “I am not merry,” she is only hiding it. Iago’s rhymes make every kind of woman sexual or foolish, and his ideal woman ends “To suckle fools and chronicle small beer.” Desdemona calls the ending “lame and impotent” and holds her own; Iago, “nothing if not critical,” cannot imagine a woman worth praise."
+          ],
+          "evidence": [
+            "I am not merry; but I do beguile The thing I am by seeming otherwise.",
+            "For I am nothing if not critical.",
+            "To suckle fools and chronicle small beer.",
+            "O most lame and impotent conclusion!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-26-q4",
+          "prompt": "Aside, Iago says, “with as little a web as this will I ensnare as great a fly as Cassio.” What is the web, and what does it tell you about his method?",
+          "facilitatorNotes": [
+            "The web is gesture: Cassio takes Desdemona’s palm, whispers, kisses his own fingers. Iago does not invent the actions; he waits to interpret them. His method is to turn courtesy into evidence by telling the story of it later."
+          ],
+          "evidence": [
+            "He takes her by the palm:",
+            "with as little a web as this will I ensnare as great a fly as Cassio."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-27",
+      "title": "Othello — “If it were now to die” (II.1–2)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Set Othello’s joy beside Iago’s two persuasions: of Roderigo, and of himself.",
+      "focus": "A happiness so complete it frightens its owner, and a plotter who changes his reasons as he goes.",
+      "context": "Recap: On the quay at Cyprus, after a storm that wrecked the Turkish fleet, Cassio, Othello’s lieutenant, welcomed Desdemona ashore, and Iago, Othello’s ensign, entertained her with mocking verses about women while they waited; aside he vowed to snare Cassio with the courtesy he showed her. Roderigo, a rich Venetian who wants Desdemona and pays Iago to help him, has come too. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Coffers are chests; the master, the ship’s captain; the court of guard, the guardhouse; favour, looks; heave the gorge, retch; pregnant, obvious; conscionable, conscientious; salt, lustful; slipper, slippery; fig's-end and pudding are scornful nonsense; an index, a table of contents; incorporate, bodily; qualification, appeasement; prefer, advance; diet, feed; trash, hold back, as a hound; on the hip, at a disadvantage; rank garb, coarse fashion; mere perdition, utter destruction; offices, the kitchens and storerooms.",
+      "contentNote": "Iago calls Othello “the devil” whom Desdemona will tire of, and talks of lust in crude terms.",
+      "excerpt": {
+        "locator": "Othello, Act II, from Othello’s arrival in scene I to the end of scene II; opens “Enter Othello and Attendants.”; closes “…have told eleven. Heaven bless the isle of Cyprus and our noble general Othello! [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-26",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-28",
+        "blocks": [
+          3705,
+          3729
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c93d95ffc4e73139071161a9023f55af0b38bda70bc995d3eb4b3d6e6d106cb"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-27-q1",
+          "prompt": "Othello greets Desdemona: “If it were now to die, 'Twere now to be most happy.” Why does his joy make him think of death? How does Desdemona answer?",
+          "facilitatorNotes": [
+            "His content is “so absolute” that nothing in the unknown future could equal it; if happiness has peaked, the rest can only fall. The audience hears a foreboding he does not. Desdemona prays instead that their love will “increase” as their days grow: love as something that goes on, not a summit."
+          ],
+          "evidence": [
+            "If it were now to die, 'Twere now to be most happy;",
+            "My soul hath her content so absolute That not another comfort like to this Succeeds in unknown fate.",
+            "But that our loves and comforts should increase, Even as our days do grow!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-27-q2",
+          "prompt": "Iago, aside, hears the lovers as music. What does he promise to do to it, and why add “As honest as I am”?",
+          "facilitatorNotes": [
+            "He will loosen the pegs that hold the strings in tune, so the harmony goes flat. “Honest” is the word others use of him and he uses of himself as a private joke; the audience is let into it, which makes us uneasy partners in the plot."
+          ],
+          "evidence": [
+            "O, you are well tuned now! But I'll set down the pegs that make this music, As honest as I am."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-27-q3",
+          "prompt": "How does Iago persuade Roderigo that Desdemona loves Cassio? Separate what he states as fact from what he argues as likely.",
+          "facilitatorNotes": [
+            "He asserts it flatly (“directly in love with him”), then argues from probability: her eye “must be fed,” Othello lacks youth and beauty and is called “the devil,” Cassio has everything Othello lacks. The only evidence is the hand Roderigo saw her take, which Roderigo took for courtesy and Iago renames “Lechery.” The racism of the argument is part of its force with Roderigo."
+          ],
+          "evidence": [
+            "Desdemona is directly in love with him.",
+            "what delight shall she have to look on the devil?",
+            "Yes, that I did; but that was but courtesy.",
+            "Lechery, by this hand;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-27-q4",
+          "prompt": "In his soliloquy Iago gives several reasons for his plot. List them. Does he believe them, and what does the last couplet say about his plan?",
+          "facilitatorNotes": [
+            "He suspects Othello, and Cassio too, with his wife; he says he loves Desdemona partly to feed his revenge; he wants to be “even'd with him, wife for wife,” or failing that to make Othello mad with jealousy. In the middle he admits Othello is “constant, loving, noble.” The reasons multiply rather than convince; many readers find him searching for motives he does not need. The couplet admits the plan is “yet confused” and will take shape only in action."
+          ],
+          "evidence": [
+            "Is of a constant, loving, noble nature;",
+            "For that I do suspect the lusty Moor Hath leap'd into my seat:",
+            "For I fear Cassio with my night-cap too;",
+            "'Tis here, but yet confused: Knavery's plain face is never seen till used."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-28",
+      "title": "Othello — the watch (II.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Track who drinks, who pours, and who stays sober.",
+      "focus": "Iago arranges a drunken brawl on the first night of peace.",
+      "context": "Recap: The Turkish fleet has been destroyed, and Othello, safe in Cyprus, has proclaimed a night of feasting for the victory and for his marriage. Iago has persuaded Roderigo that Desdemona loves Cassio and set him to provoke Cassio, who commands the watch tonight, into a fight; alone, he has given himself a tangle of reasons for revenge on Othello and Cassio both. Montano governed Cyprus before Othello came. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). A stop is a restraint; cast, dismissed; a parley, a trumpet call to talks; a stoup, a jug; craftily qualified, secretly watered; innovation, upheaval; pottle-deep, to the bottom of a two-quart pot; a rouse, a full cup; a canakin, a small can; Almain, German; lown, lout; equinox, equal counterpart; the horologe a double set, the clock round twice; ingraft, ingrained; a wicker bottle, a bottle cased in wicker; the mazzard, the head; Diablo, the devil.",
+      "contentNote": "Drunkenness and a sword fight in which Montano is wounded; Iago’s talk about Desdemona is sexual.",
+      "excerpt": {
+        "locator": "Othello, Act II, scene III, from the opening to Iago’s “You will be shamed for ever”; opens “Enter Othello, Desdemona, Cassio, and Attendants.”; closes “…ho! The town will rise: God's will, lieutenant, hold; You will be shamed for ever.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-27",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-29",
+        "blocks": [
+          3731,
+          3797
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c7dd38b9f7469779fae5adcf06e6f6993d71c8278f0020cc3124eebf26f29df"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-28-q1",
+          "prompt": "Iago tries to get Cassio to talk about Desdemona as a sexual object. How does Cassio answer each suggestion?",
+          "facilitatorNotes": [
+            "Iago calls her “sport for Jove,” “full of game,” her eye a call to provocation; Cassio answers with “exquisite,” “fresh and delicate,” “right modest,” “perfection.” He will not take the bait, though he concedes the eye is “inviting.” The exchange shows Cassio’s decency and Iago testing for a weakness."
+          ],
+          "evidence": [
+            "And, I'll warrant her, full of game.",
+            "An inviting eye; and yet methinks right modest.",
+            "She is indeed perfection."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-28-q2",
+          "prompt": "Cassio knows he has “very poor and unhappy brains for drinking.” Why does he drink anyway, and what does this show about how Iago works?",
+          "facilitatorNotes": [
+            "Courtesy: the Cyprus gallants want to toast Othello, and Iago presses “but one cup.” Cassio agrees though “it dislikes me.” Iago uses a weakness Cassio has just confessed, and he has prepared the room with Roderigo and three drunken islanders, all on the watch."
+          ],
+          "evidence": [
+            "I have very poor and unhappy brains for drinking:",
+            "I'll do't; but it dislikes me.",
+            "If I can fasten but one cup upon him,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-28-q3",
+          "prompt": "“I am not drunk now; I can stand well enough.” How does the play make drunkenness comic, and what does Cassio’s drunken theology reveal?",
+          "facilitatorNotes": [
+            "He insists on his sobriety by naming his hands, and decides that in heaven “the lieutenant is to be saved before the ancient.” It is funny, and it is also rank speaking through wine, the very order of precedence that Iago resents. The laughter comes just before the fight."
+          ],
+          "evidence": [
+            "the lieutenant is to be saved before the ancient.",
+            "this is my right hand, and this is my left."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-28-q4",
+          "prompt": "After Cassio leaves, Iago tells Montano that drink is Cassio’s nightly habit. Why tell Montano, and why refuse to tell Othello himself?",
+          "facilitatorNotes": [
+            "He builds a false reputation: drink is “evermore the prologue to his sleep.” Montano suggests warning Othello; Iago declines because he loves Cassio, so he appears loyal while others accuse. Then he directs the brawl: Roderigo is sent to “cry a mutiny,” and the bell wakes the town."
+          ],
+          "evidence": [
+            "'Tis evermore the prologue to his sleep:",
+            "I do love Cassio well, and would do much To cure him of this evil:",
+            "Away, I say; go out, and cry a mutiny."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-29",
+      "title": "Othello — “never more be officer of mine” (II.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Watch Othello judge the brawl: what he asks, whom he believes, and what he decides.",
+      "focus": "A general’s judgement, built on the account of the one man who planned the fight.",
+      "context": "Recap: On the night of celebration in Cyprus, Iago got Cassio, Othello’s lieutenant and commander of the watch, drunk, and set Roderigo to provoke him. Cassio chased Roderigo in, and when Montano, the former governor of the island, tried to stop him, they fought; Montano is wounded. Iago sent Roderigo off to raise the alarm, and the town bell is ringing. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). The Ottomites are the Ottoman Turks; carve for, indulge; propriety, proper calm; in quarter, at peace; peevish odds, silly quarrel; unlace, undo; censure, judgement; collied, darkened; approved, proved guilty; partially affined, biased by friendship; leagued in office, bound by rank; mince, play down.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Othello, Act II, scene III, from Othello’s entrance to his exit with Desdemona; opens “Re-enter Othello and Attendants.”; closes “[Exeunt all but Iago and Cassio.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-28",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-30",
+        "blocks": [
+          3798,
+          3818
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5bc42abd97e914abf65a99d4a908c9f0fa1c1c80c4d4ddfe6e3a7ab243b439d4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-29-q1",
+          "prompt": "Othello’s first speech asks “Are we turn'd Turks?” What standard is he holding his men to, and what does he fear?",
+          "facilitatorNotes": [
+            "The storm did to the Turks what the Venetians are now doing to themselves; he calls the brawl “barbarous” and appeals to “Christian shame.” He fears for a town still at war and “brimful of fear,” where a bell at night means invasion. It is the speech of a commander first, before a husband."
+          ],
+          "evidence": [
+            "Are we turn'd Turks, and to ourselves do that Which heaven hath forbid the Ottomites?",
+            "What! in a town of war, Yet wild, the people's hearts brimful of fear,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-29-q2",
+          "prompt": "“My blood begins my safer guides to rule.” What is happening to Othello as he speaks, and why does it matter?",
+          "facilitatorNotes": [
+            "Anger is darkening his judgement, and he says so; he threatens that whoever caused this will lose him even if they were twins. He keeps control, but this is the first time the play shows his passion pressing on his reason. Iago now knows where to press."
+          ],
+          "evidence": [
+            "My blood begins my safer guides to rule, And passion, having my best judgement collied, Assays to lead the way:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-29-q3",
+          "prompt": "Read Iago’s account of the fight closely. Is anything in it false? How does it hurt Cassio while seeming to defend him?",
+          "facilitatorNotes": [
+            "Most of the facts are true; what is false is the silence about his own part. He says he would rather lose his tongue than harm Cassio, then tells exactly what condemns him, adding that Cassio swore as he never had “till to-night.” “The best sometimes forget” admits the guilt it excuses. Othello thanks him for “mincing” it."
+          ],
+          "evidence": [
+            "I had rather have this tongue cut from my mouth Than it should do offence to Michael Cassio;",
+            "But men are men; the best sometimes forget:",
+            "Thy honesty and love doth mince this matter, Making it light to Cassio."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-29-q4",
+          "prompt": "“Cassio, I love thee; But never more be officer of mine.” Is the judgement just? Why “I'll make thee an example” when Desdemona appears?",
+          "facilitatorNotes": [
+            "Discipline seems to require it: the officer of the watch caused a riot in a frightened garrison town. But Othello judges without hearing Cassio, who cannot speak, and on Iago’s word alone. Desdemona, woken by the noise, makes the offence personal and public. Readers can defend the sentence as a general’s duty or see it as the first rash act the plot depends on."
+          ],
+          "evidence": [
+            "Cassio, I love thee; But never more be officer of mine.",
+            "Look, if my gentle love be not raised up! I'll make thee an example.",
+            "I pray you, pardon me; I cannot speak."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-30",
+      "title": "Othello — “Reputation, reputation, reputation!” (II.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 16,
+        "totalMinutes": 28
+      },
+      "challenge": "Compare what Iago tells Cassio, what he tells himself, and what he tells Roderigo.",
+      "focus": "Iago’s good advice, and the plan hidden inside it.",
+      "context": "Recap: Othello broke up the drunken brawl on the watch, heard Iago’s account of it, and dismissed Cassio from his post as lieutenant: “never more be officer of mine.” Iago and Cassio are left alone. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Imposition means something put on from outside; cast in his mood, dismissed in anger; speak parrot, babble; fustian, bombast; Hydra, the many-headed monster of Greek myth; denotement, observing; splinter, bind with splints; lay, wager; probal, probable; enfetter'd, chained; function, powers; repeals, calls back; pitch, black tar; fills up the cry, adds to the noise of the pack; cashier'd, dismissed; jump, at the exact moment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Othello, Act II, scene III, from Iago and Cassio alone to the end of the act; opens “Iago. What, are you hurt, lieutenant?”; closes “…Soliciting his wife: ay, that's the way; Dull not device by coldness and delay. [Exit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-29",
+        "continuesTo": null,
+        "blocks": [
+          3819,
+          3845
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "adc51dae82129314dd76e2465dbdef669e987cde69ed03553d42108be143123d"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-30-q1",
+          "prompt": "Cassio cries that he has lost “the immortal part of myself.” What does reputation mean to him, and how does Iago answer?",
+          "facilitatorNotes": [
+            "For Cassio a good name is the soul; without it what is left is “bestial.” Iago calls reputation “an idle and most false imposition,” won and lost without merit, and tells him a bodily wound would make more sense. The advice sounds sensible and comforting. Hold on to it: Iago will say something very different about good name to Othello."
+          ],
+          "evidence": [
+            "I have lost the immortal part of myself, and what remains is bestial.",
+            "Reputation is an idle and most false imposition; oft got without merit and lost without deserving:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-30-q2",
+          "prompt": "Cassio says men “put an enemy in their mouths to steal away their brains.” Whom or what does he blame, and is he fair to himself?",
+          "facilitatorNotes": [
+            "He blames wine as a devil, then a second devil, wrath, and ends despising himself. Iago calls him “too severe a moraler.” He did try to refuse the drink; he also drew his sword on a man who tried to stop him. Students can weigh how much is his fault and how much Iago’s."
+          ],
+          "evidence": [
+            "O God, that men should put an enemy in their mouths to steal away their brains!",
+            "It hath pleased the devil drunkenness to give place to the devil wrath:"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-30-q3",
+          "prompt": "Iago’s advice is to ask Desdemona to plead for him. Why is it good advice, and what makes it dangerous?",
+          "facilitatorNotes": [
+            "It is the natural route: “Our general's wife is now the general,” and she is too kind to refuse. Iago even asks the audience how he can be called a villain for it. The danger is in how her pleading will be presented to Othello: as lust. He says it himself: devils first “suggest... with heavenly shows.”"
+          ],
+          "evidence": [
+            "Our general's wife is now the general.",
+            "she holds it a vice in her goodness not to do more than she is requested:",
+            "And what's he then that says I play the villain?"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-30-q4",
+          "prompt": "“So will I turn her virtue into pitch.” How does Iago plan to use each person’s goodness against them? What do his words to Roderigo add?",
+          "facilitatorNotes": [
+            "Cassio’s sincere suit, Desdemona’s kindness and Othello’s love will each become a strand of the net. He calls it “Divinity of hell”: he enjoys the paradox of evil working through good. To Roderigo he preaches patience and wit, “not by witchcraft,” and then fixes the next steps: Emilia will plead for Cassio, and Othello will be brought in at the right moment."
+          ],
+          "evidence": [
+            "So will I turn her virtue into pitch; And out of her own goodness make the net That shall enmesh them all.",
+            "Divinity of hell!",
+            "Thou know'st we work by wit and not by witchcraft,",
+            "And bring him jump when he may Cassio find Soliciting his wife:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-31",
+      "title": "Othello — Cassio’s suit (III.1–3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 15,
+        "totalMinutes": 29
+      },
+      "challenge": "Notice how often people praise Iago’s honesty, and what Iago says at the moment Cassio leaves.",
+      "focus": "A kind wife keeps her promise to a friend, and the first seed of doubt is sown.",
+      "context": "This run begins Act III of Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Recap: Iago got Cassio drunk on watch and drew him into a brawl, and Othello dismissed him as his lieutenant. Iago then advised Cassio to ask Desdemona to plead for him, and resolved in secret to tell Othello that she pleads out of lust for Cassio. The Clown’s jokes are bawdy puns (a “tale” and a “tail”). Quillets are quibbles; a Florentine, a man of Florence, as Cassio is; affinity, family connections; the front, the forelock (a chance seized as it comes); the works, the fortifications; strangeness, coolness; politic, for policy’s sake; supplied, filled by another; watch him tame, keep him awake as a hawk is tamed; a shrift, a confessional; mammering, hesitating; peculiar, personal; poise, weight; wretch, here a word of tenderness.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Othello, Act III, scenes I and II and the opening of scene III, to Othello’s “Chaos is come again”; opens “Enter Cassio and some Musicians.”; closes “…catch my soul, But I do love thee! and when I love thee not, Chaos is come again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-32",
+        "blocks": [
+          3848,
+          3925
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8c9ae72567fe96500c79d696dc37328bb4137ce79b9ab411dc23f35c43b4e1ea"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-31-q1",
+          "prompt": "Cassio calls Iago the kindest and most honest of men, and Desdemona calls him “an honest fellow.” What does the play gain by having so many characters praise him?",
+          "facilitatorNotes": [
+            "Dramatic irony: the audience knows what everyone else does not, and each compliment tightens the trap. “Honest” also meant plain, unpolished, a soldier’s virtue; Iago has made a reputation of it. By now the word is his most effective weapon."
+          ],
+          "evidence": [
+            "I never knew A Florentine more kind and honest.",
+            "O, that's an honest fellow."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-31-q2",
+          "prompt": "Desdemona promises: “His bed shall seem a school, his board a shrift.” What does her promise show about her and about her marriage?",
+          "facilitatorNotes": [
+            "She is loyal, energetic and witty; she will keep a friend’s cause “To the last article.” She is confident enough of Othello’s love to tease and pester him. The same persistence is exactly what Iago needs: a wife who pleads too hard for another man."
+          ],
+          "evidence": [
+            "If I do vow a friendship, I'll perform it To the last article:",
+            "His bed shall seem a school, his board a shrift;",
+            "For thy solicitor shall rather die Than give thy cause away."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-31-q3",
+          "prompt": "Iago says only “Ha! I like not that” and “Nothing, my lord: or if—I know not what.” How can so little do so much?",
+          "facilitatorNotes": [
+            "An unfinished sentence makes Othello finish it himself. Cassio leaves because he feels “ill at ease” in his disgrace; Iago calls it stealing away “guilty-like.” He offers no accusation that could be checked, only a tone."
+          ],
+          "evidence": [
+            "Ha! I like not that.",
+            "Nothing, my lord: or if—I know not what.",
+            "That he would steal away so guilty-like, Seeing you coming.",
+            "Madam, not now: I am very ill at ease,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-31-q4",
+          "prompt": "Desdemona presses for a time: “to-morrow night; or Tuesday morn.” Is she charming, insistent, or both? What does Othello’s last speech reveal?",
+          "facilitatorNotes": [
+            "She teases, counts the days, and says the request is no favour at all; he gives way, “I will deny thee nothing.” Both readings are fair. Left alone he calls her “Excellent wretch” in tenderness and says that if he ever stops loving her “Chaos is come again”: his love is the order of his world, and he has already imagined losing it."
+          ],
+          "evidence": [
+            "Why then to-morrow night; or Tuesday morn;",
+            "I will deny thee nothing:",
+            "Excellent wretch! Perdition catch my soul, But I do love thee! and when I love thee not, Chaos is come again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-32",
+      "title": "Othello — the green-eyed monster (III.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Count Iago’s refusals to speak; for each, ask what it makes Othello believe.",
+      "focus": "Temptation by echo, hint and warning: Iago makes Othello beg for the poison.",
+      "context": "Recap: Desdemona has promised Cassio to plead for his place and has pressed Othello to receive him; Othello granted it and asked to be left alone. As Cassio left her, Iago murmured “I like not that.” Othello, alone with Iago, has just said that if he ever stops loving Desdemona “Chaos is come again.” Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). A conceit is an idea; close delations, secret accusations; leets and law-days, sittings of local courts; fineless, boundless; exsufflicate and blown, puffed up; secure, overconfident; self-bounty, natural generosity; seel, sew shut, as a falconer did a hawk’s eyes; clime, country; complexion, colouring; in position, in my argument; strain his entertainment, urge his return; haggard, a wild hawk; jesses, the straps on a hawk’s legs; chamberers, gallants; the forked plague, the horns said to grow on a deceived husband; quicken, are born.",
+      "contentNote": "Iago and then Othello treat Othello’s Blackness and age as reasons a Venetian wife might stray; the racism is Iago’s, and Othello begins to take it into himself.",
+      "excerpt": {
+        "locator": "Othello, Act III, scene III, from Iago’s “My noble lord” to Othello’s “I'll not believe 't”; opens “Iago. My noble lord,—”; closes “If she be false, O, then heaven mocks itself! I'll not believe 't.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-31",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-33",
+        "blocks": [
+          3926,
+          3985
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ce1520c81c97414f65801239924ac7de7bb041e368c09ecb50aa9a69b9d18747"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-32-q1",
+          "prompt": "Iago answers with echoes: “Indeed!” “Honest, my lord!” “Think, my lord!” What does Othello notice, and how does he read the hesitation?",
+          "facilitatorNotes": [
+            "He hears the echo as a sign of “some monster” too hideous to show. Because he believes Iago honest, hesitation in such a man must be a secret accusation “working from the heart.” Iago’s reputation turns his silences into evidence."
+          ],
+          "evidence": [
+            "By heaven, he echoes me, As if there were some monster in his thought Too hideous to be shown.",
+            "For such things in a false disloyal knave Are tricks of custom; but in a man that's just They're close delations,"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-32-q2",
+          "prompt": "“Good name in man and woman... Is the immediate jewel of their souls.” Set this beside what Iago told Cassio about reputation. What does the contrast show?",
+          "facilitatorNotes": [
+            "To Cassio, reputation was “an idle and most false imposition”; to Othello it is the soul’s jewel. Iago’s beliefs change with his listener. The purse lines are ironic too: he has been emptying Roderigo’s purse all along, and he is about to steal a good name."
+          ],
+          "evidence": [
+            "Good name in man and woman, dear my lord, Is the immediate jewel of their souls:",
+            "Who steals my purse steals trash;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-32-q3",
+          "prompt": "Why would a man trying to make Othello jealous warn him against jealousy?",
+          "facilitatorNotes": [
+            "Naming the feeling plants it; warning against it makes Iago seem disinterested and wise. His picture of the man “Who dotes, yet doubts” describes the state he is about to produce. The “green-eyed monster” that mocks the meat it feeds on is jealousy devouring the love it lives on."
+          ],
+          "evidence": [
+            "O, beware, my lord, of jealousy; It is the green-eyed monster, which doth mock The meat it feeds on:",
+            "Who dotes, yet doubts, suspects, yet strongly loves!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-32-q4",
+          "prompt": "Othello says “she had eyes, and chose me” and “I'll see before I doubt.” How does Iago turn Othello’s own argument against him?",
+          "facilitatorNotes": [
+            "Othello rests on proof and on her free choice. Iago answers that her choice already showed she could deceive: “She did deceive her father, marrying you.” He adds that Venetian wives hide their pranks, “our country disposition,” which the foreign general cannot know. What proved her love now proves her capacity to lie."
+          ],
+          "evidence": [
+            "For she had eyes, and chose me.",
+            "I'll see before I doubt; when I doubt, prove;",
+            "She did deceive her father, marrying you;",
+            "I know our country disposition well;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-32-q5",
+          "prompt": "Alone, Othello says “Haply, for I am black.” Which reasons does he give for losing her, and where did they come from? Does his last line undo them?",
+          "facilitatorNotes": [
+            "His Blackness, his lack of a courtier’s soft talk, his age: Iago has just called her choice of a man not of her own “clime, complexion and degree” unnatural. Othello takes the slur into his own mouth. Then he sees Desdemona and cannot believe it: if she is false, heaven mocks itself. For the moment love still wins; the reasons remain."
+          ],
+          "evidence": [
+            "Haply, for I am black And have not those soft parts of conversation That chamberers have,",
+            "Not to affect many proposed matches Of her own clime, complexion and degree,",
+            "If she be false, O, then heaven mocks itself! I'll not believe 't."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-33",
+      "title": "Othello — the handkerchief and the vow (III.3)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 11,
+        "totalMinutes": 30
+      },
+      "challenge": "Follow the handkerchief from hand to hand, and watch Othello’s demand for proof become a vow without it.",
+      "focus": "A dropped napkin, a farewell to war, and a sacred vow of revenge.",
+      "context": "Recap: Iago, pretending reluctance, has led Othello to suspect that Desdemona and Cassio are lovers: by echoing and hinting, by warning him against jealousy, by reminding him that she deceived her father, and by calling her marriage to a Black foreigner unnatural. Alone, Othello began to believe it and then, seeing her, refused to: “I'll not believe 't.” Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Watching means staying awake; the work ta'en out, the embroidery copied; fantasy, whim; acknown, aware; mandragora, a sleeping drug; owedst, owned; pioners, the lowest soldiers, diggers; quality, rank; circumstance, ceremony; mortal engines, cannon; probation, proof; Dian, Diana, goddess of chastity; topp'd, mounted; bolster, share a pillow; prime and salt, lustful; in pride, in heat; imputation, inference; a foregone conclusion, something already done; aspics, asps, poisonous snakes; fraught, cargo; the Pontic sea is the Black Sea, which flows one way into the Propontic and the Hellespont; capable, all-embracing; clip, surround; remorse, an act of pity.",
+      "contentNote": "Othello and Iago imagine Desdemona’s supposed adultery in crude sexual and animal images, and swear to kill Cassio and her.",
+      "excerpt": {
+        "locator": "Othello, Act III, scene III, from Desdemona’s return to the end of the scene; opens “Des. How now, my dear Othello! Your dinner, and the generous islanders By you invited, do…”; closes “Iago. I am your own for ever. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-32",
+        "continuesTo": "reading-12-shakespeare-works-viii-1866-34",
+        "blocks": [
+          3986,
+          4058
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9a0c3f5f96bd2e983df181e0c07a86690ee1038f4452f225f202539d9d1cd67f"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-33-q1",
+          "prompt": "The handkerchief goes from Othello to the floor to Emilia to Iago. At each step, who knows what? Why does Emilia hand it over?",
+          "facilitatorNotes": [
+            "Othello pushes it away without looking; Desdemona does not see it fall. Emilia knows exactly what it is, “her first remembrance from the Moor,” and that her mistress will “run mad” without it, yet gives it to please a husband who has asked her a hundred times to steal it. Iago snatches it and tells her to forget it. Her divided loyalty is the hinge of the plot."
+          ],
+          "evidence": [
+            "This was her first remembrance from the Moor:",
+            "I nothing but to please his fantasy.",
+            "poor lady, she'll run mad When she shall lack it."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-33-q2",
+          "prompt": "“Trifles light as air Are to the jealous confirmations strong As proofs of holy writ.” What does Iago understand about jealousy, and is Othello already the man he describes?",
+          "facilitatorNotes": [
+            "Jealousy finds proof in anything; suspicion is a poison that tastes of nothing at first and then burns like sulphur. Othello returns already changed: “Ha! ha! false to me?” The line “I'll not believe 't” lasted only as long as Desdemona was in the room."
+          ],
+          "evidence": [
+            "Trifles light as air Are to the jealous confirmations strong As proofs of holy writ:",
+            "The Moor already changes with my poison:",
+            "Ha! ha! false to me?"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-33-q3",
+          "prompt": "Why does Othello bid farewell to the “plumed troop” and the “big wars” when he believes he has lost Desdemona?",
+          "facilitatorNotes": [
+            "His love and his soldier’s life are bound together: she loved him for his dangers, and his greatness was what he offered her. Without her, war loses its glory and he loses himself: “Othello's occupation's gone!” Some readers hear grand self-pity; others a man whose whole identity is collapsing at once."
+          ],
+          "evidence": [
+            "O, now for ever Farewell the tranquil mind! farewell content!",
+            "Pride, pomp and circumstance of glorious war!",
+            "Farewell! Othello's occupation's gone!"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-33-q4",
+          "prompt": "Othello demands “the ocular proof.” What does Iago give him instead, and why does Othello accept it?",
+          "facilitatorNotes": [
+            "Iago says the sight is impossible and offers “imputation and strong circumstances”: a dream he says Cassio spoke in his sleep, and a lie that he saw Cassio wipe his beard with the handkerchief. Othello, who swore to see before he doubted, calls the dream “a foregone conclusion” and says “Now do I see 'tis true” having seen nothing. Hearing has replaced sight."
+          ],
+          "evidence": [
+            "give me the ocular proof;",
+            "Nay, this was but his dream.",
+            "But this denoted a foregone conclusion:",
+            "Now do I see 'tis true."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-33-q5",
+          "prompt": "The scene ends with both men kneeling. What does each swear, and what does “Now art thou my lieutenant” mean at this moment?",
+          "facilitatorNotes": [
+            "Othello vows a revenge that, like the current of the Black Sea, will never turn back; Iago gives his “wit, hands, heart” to Othello’s service. The kneeling and the heavens called to witness make it a kind of marriage service. Iago gains the post he wanted from the first scene, and his “I am your own for ever” sounds like a lover’s vow."
+          ],
+          "evidence": [
+            "Even so my bloody thoughts, with violent pace, Shall ne'er look back, ne'er ebb to humble love,",
+            "Now art thou my lieutenant.",
+            "I am your own for ever."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-shakespeare-works-viii-1866-34",
+      "title": "Othello — “The handkerchief!” (III.4)",
+      "sourceId": "shakespeare-works-viii-1866",
+      "workTitle": "Othello",
+      "genre": "drama",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Compare two conversations about a handkerchief: one between husband and wife, one between Cassio and Bianca.",
+      "focus": "Othello tests Desdemona; she, innocent, answers a different question.",
+      "context": "Recap: Iago has persuaded Othello that Desdemona is Cassio’s lover, offering a dream he says Cassio spoke in his sleep and a lie that he saw Cassio wipe his beard with the strawberry-spotted handkerchief that was Othello’s first gift to her. Emilia found the handkerchief after Desdemona dropped it and gave it to Iago, who means to leave it in Cassio’s lodging. Othello and Iago have sworn revenge on their knees, and Othello has made Iago his lieutenant. Bianca, who appears at the end, is Cassio’s mistress in Cyprus. Othello, the Moor of Venice, in the Cambridge edition of 1866. Speech prefixes are abbreviated (Mon. Montano, Gent. Gentleman, Cas. Cassio, Des. or Desd. Desdemona, Emil. Emilia, Rod. Roderigo, Oth. Othello, Her. Herald, Clo. Clown, Mus. Musician, Bian. Bianca). Lies means both lodges and tells lies; catechize, question; crusadoes, Portuguese gold coins; humours, moods; a sequester, a separation; castigation, discipline; heraldry, the language of coats of arms; chuck, a pet name; a salt and sorry rheum, a running cold; an Egyptian, a gypsy fortune-teller; a charmer, a sorceress; a sibyl, a prophetess; compasses, yearly rounds; mummy, a drug made from embalmed bodies; startingly, abruptly; advocation, pleading; the blank, the centre of a target; unhatch'd practice, a plot not yet carried out; puddled, muddied; indues, brings; suborn'd, bribed; continuate, uninterrupted; woman'd, with a woman; circumstanced, ruled by circumstance.",
+      "contentNote": "Othello hints that his wife’s hand shows lust; Emilia speaks bitterly of men who use women as food.",
+      "excerpt": {
+        "locator": "Othello, Act III, scene IV, the whole scene; opens “Enter Desdemona, Emilia, and Clown.”; closes “Bian. 'Tis very good; I must be circumstanced. [Exeunt.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-shakespeare-works-viii-1866-33",
+        "continuesTo": null,
+        "blocks": [
+          4060,
+          4160
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cc68994963b70d9bfe703c2b42e8c7707b28cfbc5aea8c101027a38b3b0a46a4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-34-q1",
+          "prompt": "Othello takes Desdemona’s hand and calls it moist, hot, liberal, frank. What is he really saying, and what does she hear?",
+          "facilitatorNotes": [
+            "A moist hand was a sign of desire; he prescribes fasting and prayer for the “young and sweating devil” in it, and says that hands are given now without hearts. She hears praise of generosity, answers that the hand gave him her heart, and moves on to her promise about Cassio. They are having two different conversations."
+          ],
+          "evidence": [
+            "Hot, hot, and moist: this hand of yours requires A sequester from liberty,",
+            "For 'twas that hand that gave away my heart.",
+            "But our new heraldry is hands, not hearts."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-34-q2",
+          "prompt": "Othello tells the history of the handkerchief. What powers does he give it? Does it matter whether the story is true?",
+          "facilitatorNotes": [
+            "A charmer gave it to his mother to keep his father’s love; a prophetess sewed it, the silk was hallowed, the dye made from maidens’ hearts; losing it is “perdition.” The story makes the object stand for fidelity itself, so its loss means the loss of love. Readers differ on whether Othello believes it or tells it to frighten her; either way it works on her, and on him."
+          ],
+          "evidence": [
+            "That handkerchief Did an Egyptian to my mother give;",
+            "there's magic in the web of it:",
+            "To lose't or give't away were such perdition As nothing else could match."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-34-q3",
+          "prompt": "Desdemona says “It is not lost” and then talks of Cassio. Why does she say it, and why could her timing hardly be worse?",
+          "facilitatorNotes": [
+            "Frightened by the story and his tone, she tells a small untruth and decides he is evading her suit: “a trick.” So she pleads for Cassio at the very moment he demands the token, and the exchange alternates his “The handkerchief!” with her praise of Cassio. To Othello it confirms everything Iago said."
+          ],
+          "evidence": [
+            "It is not lost; but what an if it were?",
+            "This is a trick to put me from my suit:",
+            "I pray, talk me of Cassio."
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-34-q4",
+          "prompt": "Emilia says jealousy is “a monster Begot upon itself.” What does she know that she does not say? How does Desdemona explain Othello’s anger?",
+          "facilitatorNotes": [
+            "Emilia knows where the handkerchief went and keeps silent; her bitterness about men, “all but stomachs,” sounds like her own marriage. Her point is that jealousy needs no cause. Desdemona blames affairs of state and then herself, an “unhandsome warrior” who accused him unfairly. Her generosity to him is touching and, given what the audience knows, painful."
+          ],
+          "evidence": [
+            "They are all but stomachs and we all but food;",
+            "But jealous souls will not be answer'd so; They are not ever jealous for the cause, But jealous for they are jealous:",
+            "I was, unhandsome warrior as I am, Arraigning his unkindness with my soul;"
+          ]
+        },
+        {
+          "id": "reading-12-shakespeare-works-viii-1866-34-q5",
+          "prompt": "The scene ends with Cassio giving the handkerchief to Bianca. How does their quarrel echo the main plot?",
+          "facilitatorNotes": [
+            "Bianca, too, reads the token as a sign of another love; Cassio, who found it in his room where Iago planted it, wants the embroidery copied, as Emilia did. He does not want the general to see him with a woman. Jealousy repeats in a lower key, and the handkerchief moves one step closer to where Iago needs it."
+          ],
+          "evidence": [
+            "This is some token from a newer friend:",
+            "I know not, sweet: I found it in my chamber.",
+            "To have him see me woman'd."
           ]
         }
       ]
