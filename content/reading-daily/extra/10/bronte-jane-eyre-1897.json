@@ -1285,6 +1285,381 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-20",
+      "title": "Jane Eyre excerpt: charades (Chapter XVIII, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Work out the charade from its three scenes, then ask what each scene might mean beyond the game.",
+      "focus": "A parlour game stages a wedding, a betrothal gift and a prison, and Jane stops watching the stage to watch the audience.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane, eighteen, is governess at Thornfield Hall to Adèle, the young French ward of its master, Mr. Rochester, and she has admitted to herself that she loves him, though rank and money divide them. He has filled the house with guests, among them the proud, beautiful Blanche Ingram, whom everyone expects him to marry. In charades, one team acts out a word syllable by syllable and then whole, for the other team to guess. Abigails are ladies’ maids; sacques and lappets are old-fashioned gowns and lace trimmings. In Genesis, Eliezer, Abraham’s servant, finds a bride for his master’s son at a well and gives her bracelets; “Paynim” means pagan, and “a victim of the bowstring” means one strangled at an eastern court.",
+      "contentNote": "Lady Ingram calls Jane “too stupid” within her hearing; the charade costumes Rochester as an “Eastern emir” with “Paynim features,” the period’s exotic picture of the East.",
+      "excerpt": {
+        "locator": "Chapter XVIII, from the opening through the charade of “Bridewell” and the other party’s turn; opens “Merry days were these at Thornfield Hall; and busy days too: how different from the first…”; closes “…something even of the feeling roused by the spectacle returns in memory at this moment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-21",
+        "blocks": [
+          1530,
+          1553
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fd45aeb9339a3729bc5871129089707be3399f09bfc46f71c06464e6358ebf7e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-20-q1",
+          "prompt": "Why does Jane decline to play, and what does Lady Ingram’s remark show about how the guests see her?",
+          "facilitatorNotes": [
+            "Rochester asks; she shakes her head; he does not insist, which she “rather feared he would have done” (feared, or hoped?). Lady Ingram vetoes her aloud as “too stupid,” speaking of the governess in the third person within earshot, as if she were furniture. Ask how Jane’s flat reporting of the insult affects a reader."
+          ],
+          "evidence": [
+            "He did not insist, which I rather feared he would have done",
+            "she looks too stupid for any game of the sort"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-20-q2",
+          "prompt": "The three scenes spell “Bride,” “well” and “Bridewell,” the name of a London prison. What does each scene show, and why might Brontë give Rochester these parts?",
+          "facilitatorNotes": [
+            "A wedding in dumb show with Blanche as bride; a man at a well giving a woman jewels, as a servant chooses a bride for his master; Rochester alone in fetters, begrimed and scowling. Marriage and imprisonment are joined in one word. Readers may see only a game, or a hint that Rochester feels a marriage as a chain; ask them to hold the question open."
+          ],
+          "evidence": [
+            "it was easy to recognise the pantomime of a marriage",
+            "to his wrists were attached fetters"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-20-q3",
+          "prompt": "What does Blanche admire in Rochester’s last character, and how does he answer her?",
+          "facilitatorNotes": [
+            "She liked him best as the convict: he would have made “a gallant gentleman-highwayman,” and she ranks the highwayman, the Italian bandit and the Levantine pirate as heroes, admiring danger at a safe distance. Rochester replies with a joke, “remember you are my wife,” and she giggles and colours. His tone may be flirting, teasing or testing; readers can argue which."
+          ],
+          "evidence": [
+            "Nothing could be more becoming to your complexion than that ruffian’s rouge.",
+            "remember you are my wife; we were married an hour since, in the presence of all these witnesses"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-20-q4",
+          "prompt": "In the last paragraph Jane stops watching the actors. What does she watch instead, and how does the older Jane telling the story describe the memory?",
+          "facilitatorNotes": [
+            "She watches the semicircle: Rochester and Blanche whispering, Blanche’s curls brushing his cheek. She no longer remembers the other party’s word, but she switches into the present tense (“I see … I hear”), and “something even of the feeling” returns as she writes. The pain is still alive years later. Ask why Brontë lets the narrator admit this."
+          ],
+          "evidence": [
+            "my eyes, erewhile fixed on the arch, were now irresistibly attracted to the semicircle of chairs",
+            "something even of the feeling roused by the spectacle returns in memory at this moment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-21",
+      "title": "Jane Eyre excerpt: she could not charm him (Chapter XVIII, second part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Jane’s argument that she is not jealous, and test it against her own descriptions of Blanche and of Rochester.",
+      "focus": "Jane’s strangest pain: watching a rival fail, and knowing how she herself might succeed.",
+      "context": "Recap: at the guests’ charades Rochester and Blanche Ingram acted a wedding, a betrothal at a well and a prisoner in Bridewell; afterwards he joked to Blanche, “remember you are my wife,” and Jane found she could watch only the two of them. Contumelious means insulting; meretricious means showily false; Millcote is the nearby town; a post-chaise is a hired travelling carriage. Adèle’s French means “There’s Mr. Rochester coming back!” Mesrour is Rochester’s horse and Pilot his dog.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVIII, from “I have told you, reader, that I had learnt to love Mr. Rochester” through the stranger’s arrival; opens “I have told you, reader, that I had learnt to love Mr. Rochester: I could not unlove him…”; closes “…well cut, but the life looking out of it was a tame, vacant life—at least so I thought.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-20",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-22",
+        "blocks": [
+          1554,
+          1572
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "64e8eb7fa0873fab4f64d04136e741afa716193fbe933eaa804c642c867e1fb2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-21-q1",
+          "prompt": "Jane says she is not jealous, because Blanche is “too inferior to excite the feeling.” What faults does she list? Is she a fair judge?",
+          "facilitatorNotes": [
+            "Showy but not genuine, a poor mind and barren heart, no opinions of her own, phrases repeated from books, no sympathy or pity, and spite toward little Adèle. The treatment of Adèle is evidence anyone could see; much else is Jane’s judgment of an inner life. Jane is hardly a neutral witness. Readers can decide how much to trust her."
+          ],
+          "evidence": [
+            "She was very showy, but she was not genuine",
+            "she used to repeat sounding phrases from books"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-21-q2",
+          "prompt": "What exactly is the point where “the nerve was touched”? Why is it worse for Jane than if Blanche had won Rochester’s heart?",
+          "facilitatorNotes": [
+            "Blanche “could not charm him”: Rochester is marrying without love. If Blanche were good, Jane would admire her and be quiet; if she had won him, Jane would “have died to them.” Instead she watches Blanche fail while seeing “how she might have succeeded,” which keeps her in “ceaseless excitation and ruthless restraint.” Ask why hope can hurt more than despair."
+          ],
+          "evidence": [
+            "_she could not charm him_",
+            "to witness _this_, was to be at once under ceaseless excitation and ruthless restraint"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-21-q3",
+          "prompt": "How does Jane account for Rochester’s plan to marry for “interest and connections”? Does her reasoning convince you?",
+          "facilitatorNotes": [
+            "She declines to blame either party: “All their class held these principles,” and there must be reasons she cannot fathom, “otherwise I felt sure all the world would act as I wished to act.” The sentence concedes in words while making her own view sound plainly better. Readers may hear honest humility, or quiet satire of marriages made for rank."
+          ],
+          "evidence": [
+            "All their class held these principles",
+            "otherwise I felt sure all the world would act as I wished to act"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-21-q4",
+          "prompt": "Jane admits she now “saw no bad” in Rochester. What does she still glimpse in his eye, and how has her response changed? How does the stranger’s arrival fit?",
+          "facilitatorNotes": [
+            "A look she cannot name (“sinister or a sorrowful, a designing or a desponding”) that once made her shrink as from volcanic ground; now she longs “to dare” it, and envies Blanche who may one day “look into the abyss.” Then a man from Rochester’s past arrives, with a “tame, vacant” eye and an accent “not altogether English.” The chapter puts Jane’s new blindness to faults beside the first stranger from that abyss."
+          ],
+          "evidence": [
+            "Now I saw no bad.",
+            "Instead of wishing to shun, I longed only to dare—to divine it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-22",
+      "title": "Jane Eyre excerpt: Mr. Mason, and a gipsy in the library (Chapter XVIII, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare how Jane reads the stranger’s face with how other young ladies read it, then watch a household react to a fortune-teller.",
+      "focus": "A stranger from Rochester’s past, and a fortune-teller who unsettles everyone she sees.",
+      "context": "Recap: Jane has decided that Rochester will marry Blanche Ingram for rank and connections, not love, and that Blanche cannot charm him, which pains Jane more than jealousy would. With Rochester away at Millcote, a stranger arrived by post-chaise, claiming to be his old and intimate friend. Girandoles are branched candlesticks; a surtout is an overcoat; Spanish Town was then the capital of Jamaica, a British colony in the West Indies. The stocks were a wooden frame in which offenders were locked for public shame; “Mother Bunch” was a stock name for a fortune-teller; a tinkler is a tinker or vagrant; a beldame is an old hag and a Sibyl a prophetess; vinaigrettes are little boxes of smelling-salts.",
+      "contentNote": "Servants and guests speak of a “gipsy” with the period’s contempt for Romani travellers (“a low impostor,” “almost as black as a crock,” “hag”), and a magistrate threatens her with the stocks.",
+      "excerpt": {
+        "locator": "Chapter XVIII, from Mr. Mason after dinner to the end of the chapter; opens “The sound of the dressing-bell dispersed the party. It was not till after dinner that I…”; closes “…I am not in the least afraid.” Nor was I; but I was a good deal interested and excited.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-21",
+        "continuesTo": null,
+        "blocks": [
+          1573,
+          1631
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f5ae37f7fb3fe840bb36ba6086b620705755d26bef522d9c9eef08a158d93b07"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-22-q1",
+          "prompt": "How does Jane read Mr. Mason’s face, and how do Louisa and Mary read it? What does the difference show?",
+          "facilitatorNotes": [
+            "Jane sees no power, firmness, thought or command: “a sleek gander” beside Rochester’s “fierce falcon.” Louisa and Mary see “a beautiful man” with a “sweet-tempered forehead” and placid eye. The same smooth features read as charm or as emptiness; Jane values force. Readers may also question her habit of judging character from faces, which the novel often endorses."
+          ],
+          "evidence": [
+            "between a sleek gander and a fierce falcon",
+            "And what a sweet-tempered forehead he has!"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-22-q2",
+          "prompt": "What does Jane learn about where Mason comes from, and why does it surprise her?",
+          "facilitatorNotes": [
+            "Jamaica, Kingston and Spanish Town: he first met Rochester in the West Indies, though Jane had thought his travels were bounded by Europe. Mason’s sallow face, his chilliness and his odd accent mark him as from “some hot country.” Rochester has a past Jane knows nothing of, and an old friend who arrives unannounced."
+          ],
+          "evidence": [
+            "Jamaica, Kingston, Spanish Town, indicated the West Indies",
+            "till now I had never heard a hint given of visits to more distant shores"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-22-q3",
+          "prompt": "How do different members of the party respond to the fortune-teller at the door? What does Blanche’s response reveal?",
+          "facilitatorNotes": [
+            "The magistrate threatens the stocks; Colonel Dent sees sport; Lady Ingram calls her “a low impostor”; the young people cry “excellent sport.” Blanche overrules her mother (“I must have my will”), returns claiming boredom with “hackneyed” palmistry, then sits half an hour without turning a page. Her words and her face do not match, and Jane notices."
+          ],
+          "evidence": [
+            "I recollect all you can suggest; and I must have my will",
+            "during all that time she never turned a page"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-22-q4",
+          "prompt": "The fortune-teller will see only “the young, and single.” What does she seem to be after, and why might Jane be “not in the least afraid”?",
+          "facilitatorNotes": [
+            "She refuses men and married women, tells the girls about their childhoods and whispers the names of the people they like: her subject is love and marriage, and she knows a great deal about the household. Jane goes from curiosity, calm and interested. Ask who in the house might know such things, and whether a reader should be suspicious."
+          ],
+          "evidence": [
+            "any ladies either, except the young, and single",
+            "I am not in the least afraid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-23",
+      "title": "Jane Eyre excerpt: the gipsy reads Jane (Chapter XIX, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a duel of words in which each speaker tries to make the other confess, and notice who gives away more.",
+      "focus": "A fortune-teller who reasons rather than predicts, and a governess who answers every probe with a parry.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: while Mr. Rochester was away, his guests at Thornfield were visited by a gipsy fortune-teller who would see only the young, single ladies, one at a time, in the library. Blanche Ingram came back sullen; three other girls came back half-scared, saying she knew all about them. Now Jane, the governess, who loves Rochester and expects him to marry Blanche, has been sent for. Grace Poole is the servant Jane believes set fire to Rochester’s bed one night. “Nichered” means sniggered; to cross a palm with silver is to pay a fortune-teller; diablerie is devilry; “blackaviced” means dark-faced; a rent-roll is the income from an estate; “dished” means done for.",
+      "contentNote": "The fortune-teller is presented through period stereotypes of a Romani (“gipsy”) woman: dark-faced, pipe-smoking, telling fortunes for silver.",
+      "excerpt": {
+        "locator": "Chapter XIX, from the opening through the gipsy’s talk of Miss Ingram and the Rochester estate; opens “The library looked tranquil enough as I entered it, and the Sibyl—if Sibyl she were—was…”; closes “…suitor to look out: if another comes, with a longer or clearer rent-roll,—he’s dished—””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-24",
+        "blocks": [
+          1633,
+          1707
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "24aeb9c4909e513d3ac7436c5a4fce86ba44917640fd39abfaac7037f7c5c580"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-23-q1",
+          "prompt": "“Why don’t you tremble?” “I’m not cold.” How does Jane answer the gipsy’s first challenges, and how does the gipsy turn her answers around?",
+          "facilitatorNotes": [
+            "Short, literal, unimpressed replies, after warning that she has “no faith.” The gipsy then turns Jane’s own words: cold because alone, sick because love keeps away, silly because she will not move toward it. It is reasoning about Jane’s life, not prophecy. Ask which of the three charges hits home."
+          ],
+          "evidence": [
+            "I’m not silly.",
+            "You are cold, because you are alone"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-23-q2",
+          "prompt": "Jane says this could be said of almost anyone in her position. How does the gipsy answer, and what is she hinting?",
+          "facilitatorNotes": [
+            "The gipsy asks Jane to “find me another precisely placed as you are”: Jane is “very near happiness,” the materials ready, wanting only “a movement to combine them.” The riddle points at someone in the house who might return her feeling. Jane’s “I don’t understand enigmas” is a parry; she has every reason not to understand."
+          ],
+          "evidence": [
+            "very near happiness; yes, within reach of it",
+            "I don’t understand enigmas."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-23-q3",
+          "prompt": "Why does the name “Mrs. Poole” bring Jane to her feet?",
+          "facilitatorNotes": [
+            "Jane suspects Grace Poole of the fire in Rochester’s room and the strange laughter in the house; hearing the name from a stranger makes the gipsy seem to know secrets, “diablerie” after all. The gipsy calls Grace “a safe hand” and “close and quiet,” an odd recommendation. Readers can note that Jane’s fear is about Grace, not about the fortune-teller."
+          ],
+          "evidence": [
+            "I started to my feet when I heard the name.",
+            "there is diablerie in the business after all, then!"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-23-q4",
+          "prompt": "The gipsy presses Jane about Mr. Rochester and Miss Ingram. What does Jane refuse to say, and what does the gipsy give away by saying too much?",
+          "facilitatorNotes": [
+            "Jane deflects (“He is not at home”), falls silent when asked what she “detected,” and says she came “to inquire, not to confess.” The gipsy knows Rochester’s habits, calls him a “blackaviced suitor,” says Blanche loves at least “his purse,” and admits telling her something that made her “wondrous grave.” Why would a wandering fortune-teller care so much? Readers may begin to suspect."
+          ],
+          "evidence": [
+            "I came here to inquire, not to confess",
+            "if not his person, at least his purse"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-24",
+      "title": "Jane Eyre excerpt: the gipsy unmasked, and a name from the West Indies (Chapter XIX, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Reread the reading of Jane’s face once you know who spoke it, and weigh Jane’s judgment of the trick.",
+      "focus": "Rochester’s disguise reveals more of him than of Jane, and one name turns him white.",
+      "context": "Recap: in the library the gipsy read Jane’s life back to her: alone, close to happiness if she would reach for it, and watching Rochester and Blanche Ingram, whom the gipsy says he will marry, though Blanche may love his purse more than him. Jane insisted she came for her own fortune. A guest arrived while Rochester was away: Mr. Mason, from Jamaica in the West Indies, who says he is an old friend. The “still small voice” after wind, earthquake and fire comes from the Bible (1 Kings 19); “Off, ye lendings!” is King Lear’s cry as he tears off his clothes; a ministrant spirit is a ministering angel.",
+      "contentNote": "Rochester has disguised himself as a “gipsy” woman, playing the period’s stereotype.",
+      "excerpt": {
+        "locator": "Chapter XIX, from Jane’s “I came to hear my own” to the end of the chapter; opens ““But, mother, I did not come to hear Mr. Rochester’s fortune: I came to hear my own; and…”; closes “He spoke cheerfully: the gay tones set my heart at ease. I was soon asleep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-23",
+        "continuesTo": null,
+        "blocks": [
+          1708,
+          1778
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8a197212a45e4a5f6f60a4d8e687b17671773035e75c4f1e5176bb69ddb87aa8"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-24-q1",
+          "prompt": "The fortune-teller reads Jane’s eye, mouth and brow. What does the forehead “say,” and why is it the one “enemy to a fortunate issue”?",
+          "facilitatorNotes": [
+            "“I can live alone, if self-respect, and circumstances require”; “I need not sell my soul to buy bliss”; reason holds the reins and conscience has the casting vote. Jane will not take happiness at a price she cannot afford, and that, the speaker sees, may stand in the way. Ask whether this is a fair portrait of the Jane readers know."
+          ],
+          "evidence": [
+            "I need not sell my soul to buy bliss.",
+            "but judgment shall still have the last word in every argument"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-24-q2",
+          "prompt": "Then the speaker says, “I have formed my plans—right plans I deem them.” Whose plans are these, and what nearly slips out before “That will do”?",
+          "facilitatorNotes": [
+            "The voice is now Rochester’s own: he wants “to foster, not to blight,” his harvest “in smiles, in endearments, in sweet—” and he stops, calling it “exquisite delirium.” He has governed himself “thoroughly,” but “further might try me beyond my strength.” He has nearly declared himself. Readers can debate what “right plans” means for a man about to marry Blanche."
+          ],
+          "evidence": [
+            "my harvest must be in smiles, in endearments, in sweet—That will do.",
+            "but further might try me beyond my strength"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-24-q3",
+          "prompt": "Jane tells Rochester “it was not right.” What was he after, and had Jane been on her guard?",
+          "facilitatorNotes": [
+            "He was “trying to draw me out—or in”: to learn her feelings while hiding his. Jane had suspected a masquerade from the feigned voice and hidden face, but her mind ran on Grace Poole: “I had never thought of Mr. Rochester.” She concludes she was “very correct,” and congratulates herself. Readers can weigh how unfair the trick was, from an employer to a governess."
+          ],
+          "evidence": [
+            "you have been talking nonsense to make me talk nonsense",
+            "I had never thought of Mr. Rochester."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-24-q4",
+          "prompt": "“Mason!—the West Indies!” How does Rochester react, and what does he ask Jane? What do her answers show?",
+          "facilitatorNotes": [
+            "He grips her wrist, turns “whiter than ashes,” repeats the words like an automaton, and wishes for “a quiet island with only you” away from “hideous recollections.” He asks whether she would stay if everyone shunned him. She would, but only for a friend “who deserved my adherence”: her loyalty is warm but conditional. The cheerful voice at bedtime eases her, and perhaps should not."
+          ],
+          "evidence": [
+            "Jane, I’ve got a blow; I’ve got a blow, Jane!",
+            "I could dare it for the sake of any friend who deserved my adherence; as you, I am sure, do."
+          ]
+        }
+      ]
     }
   ]
 }
