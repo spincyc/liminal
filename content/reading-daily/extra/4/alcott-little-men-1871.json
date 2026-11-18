@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "alcott-little-men-1871",
+  "readings": [
+    {
+      "id": "reading-4-alcott-little-men-1871-01",
+      "title": "Little Men: Nat’s first lessons (Chapter IV, first part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Find the different kinds of help that change a boy’s life, and decide which matters most.",
+      "focus": "Nat is far behind at school, but Plumfield finds many ways for him to grow.",
+      "context": "Little Men (1871) is by Louisa May Alcott, the author of Little Women. Jo March, now Mrs. Bhaer, and her husband, the German Professor Bhaer, run Plumfield, a school and home for boys. Nat Blake, a twelve-year-old orphan who used to play the fiddle in the streets for a living, has just arrived, sent by their friend Mr. Laurence (Laurie). A copy-book is for practising handwriting; the Bay of Biscay is a sea off France and Spain; a patron is a supporter; a turning-lathe is a machine for shaping wood; Edgeworth’s Tales are stories by Maria Edgeworth.",
+      "contentNote": "Nat says his father’s beatings taught him to keep his temper.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from the opening through Mr. Bhaer’s words on giving a boy a trade; opens “WHEN Nat went into school on Monday morning, he quaked inwardly, for now he thought he…”; closes “…it for poetry or ploughing, it shall be cultivated and made useful to them if possible.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-alcott-little-men-1871-02",
+        "blocks": [
+          282,
+          299
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a7fc79e81fda515eb4dca11fc9147c50ffeb77788052647557bd523602ef87b7"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q1",
+          "prompt": "How does Mr. Bhaer keep Nat from being embarrassed on his first school day?",
+          "facilitatorNotes": [
+            "He seats him in the deep window with his back to the class, and Franz hears his lessons there, so no one sees his blots or hears his mistakes."
+          ],
+          "evidence": [
+            "where he could turn his back on the others",
+            "so no one could hear his blunders"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q2",
+          "prompt": "Nat thinks he knows nothing. What does Mr. Bhaer say he knows, and what is “best of all”?",
+          "facilitatorNotes": [
+            "He can keep his temper and play the violin, which none of the other boys can do; best of all, he truly wants to learn, which is “half the battle.”"
+          ],
+          "evidence": [
+            "you really care to learn something, and that is half the battle",
+            "you can play the violin, and not one of the lads can"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q3",
+          "prompt": "Mrs. Bhaer says, “This is the crop I like best.” What does she mean?",
+          "facilitatorNotes": [
+            "Nat himself: his thin cheeks are filling out and his bent shoulders straightening, as if he were growing like the beans in his garden. The joke shows that she cares more about the boy than about the vegetables."
+          ],
+          "evidence": [
+            "This is the crop I like best",
+            "the bent shoulders that were slowly straightening up"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q4",
+          "prompt": "Why do the Bhaers encourage the boys to be “in business”?",
+          "facilitatorNotes": [
+            "Most of the boys are poor and will have to make their own way; Mr. Bhaer believes work is wholesome and that a trade makes a boy independent. Readers may compare the boys’ businesses and decide which seems most useful."
+          ],
+          "evidence": [
+            "most of them were poor, and knowing that they would have their own way to make by and by",
+            "Give a boy a trade, and he is independent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-02",
+      "title": "Little Men: fiddling for money, and a fault (Chapter IV, second part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice how a character’s past explains a fault without excusing it.",
+      "focus": "Nat earns money with his fiddle, but he has a habit of telling lies.",
+      "context": "Recap: at Plumfield, Nat has begun lessons, worked in his garden, learned to read with Demi’s help, and seen the boys earn money with their own skills. Nicolo was the man Nat used to fiddle for in the streets; Beth was Mrs. Jo’s sister, who died young. Docile means gentle and easy to teach; Nuremburg, as this printing spells it, is the German city of Nuremberg. The 1871 printing once calls Mrs. Jo “Mrs. Joe.”",
+      "contentNote": "Mr. Bhaer tells how, when he was a boy, his grandmother cut his tongue with scissors as a punishment for lying.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from Nat’s request to play at a picnic until Mr. Bhaer proposes a new kind of punishment; opens “So when Nat came running to him one day to ask with an excited face—”; closes “\"How?\" asked Nat, startled at the idea.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-01",
+        "continuesTo": "reading-4-alcott-little-men-1871-03",
+        "blocks": [
+          300,
+          320
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73deb1b63fe52c2701195ed9ef3f0b14aa97d378bc435f49b9c3d4e5c827f953"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q1",
+          "prompt": "Why does Nat like fiddling at picnics better than fiddling in the street?",
+          "facilitatorNotes": [
+            "Now he keeps all the money and has a good time too; in the street he got none of it. He also brings treats home for Daisy and little Ted."
+          ],
+          "evidence": [
+            "for then I got none of the money, and now I have it all, and a good time besides",
+            "whom he never forgot"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q2",
+          "prompt": "What reasons does Nat give for telling lies? Do they explain his fault, or excuse it?",
+          "facilitatorNotes": [
+            "He lied out of fear of his father and Nicolo, and now sometimes because the boys laugh at him. The narrator says fear made the habit stronger, but still insists “a lie is a lie.” Readers can see why he lies without thinking it right."
+          ],
+          "evidence": [
+            "I used to tell 'em because I was afraid of father and Nicolo",
+            "a lie is a lie"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q3",
+          "prompt": "The narrator sorts lies into black, gray and white. Does she think white lies are all right?",
+          "facilitatorNotes": [
+            "No: even polite untruths are “not right, and everybody knows it,” though she admits everyone tells them. Readers may disagree about small polite fibs; the text gives her firm view."
+          ],
+          "evidence": [
+            "Not very black ones, seldom getting deeper than gray, and often the mildest of white fibs",
+            "it is not right, and everybody knows it"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q4",
+          "prompt": "Mr. Bhaer says that the next time Nat lies, “you shall punish me.” Why might he think this will work better than punishing Nat?",
+          "facilitatorNotes": [
+            "Nat loves him and would hate to hurt him, so the fear of causing pain may guard his tongue better than fear for himself. Readers can predict what will happen next."
+          ],
+          "evidence": [
+            "when you tell a lie I will not punish you, but you shall punish me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-03",
+      "title": "Little Men: six strokes (Chapter IV, end)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Watch a scene through a spying boy’s eyes, and decide what each character learns.",
+      "focus": "Mr. Bhaer makes Nat strike his hand, and the punishment teaches more than a beating would.",
+      "context": "Recap: Nat sometimes tells lies out of old fear, and Mr. Bhaer has said that the next time he lies, Nat must punish him instead. To ferule is to strike a pupil’s hand with a ruler, once a common school punishment. Bübchen is German for “little boy”; a settee is a bench; hills of corn are mounds where corn is planted.",
+      "contentNote": "The teacher makes the boy strike his hand six times with a ruler, turning round the beatings pupils then received.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from Mr. Bhaer’s explanation of the punishment to the end of the chapter; opens “\"You shall ferule me in the good old-fashioned way; I seldom do it myself, but it may…”; closes “…hand he never touched without remembering that it had willingly borne pain for his sake.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-02",
+        "continuesTo": null,
+        "blocks": [
+          321,
+          356
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "983db7bb24b0c4ee17cc8bca4db44a7d9a7b18b41ff6093b212b64c96969190a"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q1",
+          "prompt": "Tommy watches through the window. How do his thoughts change as he watches?",
+          "facilitatorNotes": [
+            "He expects Nat to be feruled and wishes he had not told; then he is so astonished to see Mr. Bhaer hand Nat the rule that he nearly falls down the bank."
+          ],
+          "evidence": [
+            "Wish I hadn't told",
+            "Tommy was so staggered by this last speech"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q2",
+          "prompt": "Why does striking Mr. Bhaer hurt Nat more than being struck would? Find words that show it.",
+          "facilitatorNotes": [
+            "Each stroke “hurt the giver more”; Nat throws the rule away and sobs over the hand he has hit. His love for Mr. Bhaer makes the punishment unbearable."
+          ],
+          "evidence": [
+            "yet hurt the giver more",
+            "hugging the kind hand in both his own"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q3",
+          "prompt": "Emil once had to do the same. What does his story add, and what do the boys decide afterwards?",
+          "facilitatorNotes": [
+            "Emil meant to enjoy it, but after one blow he remembered all his uncle had done for him and could not go on. The boys agree not to speak of it and leave Nat alone; Daisy keeps him company."
+          ],
+          "evidence": [
+            "every thing he had ever done for me came into my head all at once somehow",
+            "so don't let's say a word about it"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q4",
+          "prompt": "Was Mr. Bhaer’s method a good way to teach truthfulness? What might someone say against it?",
+          "facilitatorNotes": [
+            "It worked: Nat never touched that hand again without remembering. Some readers may still feel it was hard on Nat to make him cause pain, or that guilt is a heavy teacher. Both views can use the scene."
+          ],
+          "evidence": [
+            "whose kind hand he never touched without remembering that it had willingly borne pain for his sake",
+            "\"Isn't that enough?\" he asked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-04",
+      "title": "Little Men: Mrs. Jo’s new idea (Chapter VII, first part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Weigh the reasons adults give for a plan, and notice whom each reason is meant to help.",
+      "focus": "Mrs. Jo wants a lively girl at the boys’ school, and the talk turns to a boy they could not keep.",
+      "context": "Little Men (1871) is by Louisa May Alcott, the author of Little Women. Jo March, now Mrs. Bhaer, and her husband Fritz, the German Professor Bhaer, run Plumfield, a school and home for boys. Daisy, also called Posy, is Mrs. Jo’s niece and the only girl there; Teddy and Rob are the Bhaers’ little sons. Dan, a rough, older boy, held a secret night party of beer, cigars and cards that ended in a fire in the boys’ room; he was sent to a farm in the country, and has since run away. Droll means amusing; tricksy means full of tricks; to labour under a delusion is to believe something untrue; a firebrand is a burning stick, or a person who stirs up trouble; Bettyish means prim and fussy.",
+      "contentNote": "The Bhaers call Nan a “little gypsy,” meaning a wild, wandering child; “Gypsy” is an outsiders’ name for the Romani people that many find offensive.",
+      "excerpt": {
+        "locator": "Chapter VII, “Naughty Nan,” from the opening until Mr. Bhaer agrees to “a dozen Nans”; opens “\"FRITZ, I've got a new idea,\" cried Mrs. Bhaer, as she met her husband one day after…”; closes “…who had room in his fatherly heart for all the naughty neglected children in the world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-alcott-little-men-1871-05",
+        "blocks": [
+          705,
+          726
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "591c415cb1d4646517e7ac70e79031f7212a2bc5f994d7c4f7bc12f885b3f707"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-04-q1",
+          "prompt": "What reasons does Mrs. Jo give for bringing a girl to Plumfield? Whom is each reason meant to help?",
+          "facilitatorNotes": [
+            "Daisy needs a companion and is being spoilt by the boys; the boys need gentler manners; and Nan, running wild since her mother died, needs a school. One plan is meant to help three sides at once. Many schools of the time kept boys and girls apart, so Mrs. Jo is arguing for something unusual."
+          ],
+          "evidence": [
+            "Daisy needs a companion, and the boys would be all the better for another girl among them",
+            "we believe in bringing up little men and women together"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-04-q2",
+          "prompt": "Why does Mrs. Jo feel “a great sympathy for Nan”? How does her own childhood change the way she sees a “naughty” child?",
+          "facilitatorNotes": [
+            "She was a naughty child herself (readers of Little Women know her as wild Jo March), so she sees Nan’s spirits as energy to be directed, not wickedness to be stamped out."
+          ],
+          "evidence": [
+            "because I was such a naughty child myself that I know all about it",
+            "what is now a tricksy midget would soon become a busy happy child"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-04-q3",
+          "prompt": "“Half the science of teaching is knowing how much children do for one another.” What does Mrs. Jo mean? Can you think of a time it was true for you?",
+          "facilitatorNotes": [
+            "Children change each other without meaning to: Nan will stir up prim Daisy, and Daisy may calm Nan. A teacher’s skill is partly in choosing which children to put together. Readers can give their own examples, or argue that some mixes go wrong."
+          ],
+          "evidence": [
+            "the two will help each other without knowing it",
+            "half the science of teaching is knowing how much children do for one another, and when to mix them"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-04-q4",
+          "prompt": "Mr. Bhaer hopes Nan won’t be “another firebrand.” What does the talk about Dan show about the Bhaers?",
+          "facilitatorNotes": [
+            "They are still unsure they were right to send him away. Mrs. Jo cannot forgive herself, Mr. Bhaer defends the decision but admits doubt, and little Teddy keeps watching for his friend. They are adults willing to wonder whether they made a mistake."
+          ],
+          "evidence": [
+            "My poor Dan! I never can quite forgive myself for letting him go",
+            "I thought it safer to remove the firebrand, for a time at least"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-05",
+      "title": "Little Men: grasping the nettle (Chapter VII, second part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Tell the difference between courage and showing off, using a character who has plenty of both.",
+      "focus": "Nan accepts every dare the boys offer, wins their respect, and gets a lesson at supper.",
+      "context": "Recap: Mrs. Jo has persuaded her husband to let ten-year-old Annie Harding, known as Naughty Nan, come to Plumfield, to be a companion for Daisy and to soften the boys’ manners. Tommy Bangs is the most mischievous boy; Stuffy is greedy and easily annoyed; Jack is a little superior; Demi, Daisy’s solemn twin, is called the Deacon; Emil, who loves the sea, is the Commodore. A carry-all is a light carriage; a baby house is a doll’s house; larks are pranks; nettles are plants with stinging hairs; “pooring” is Daisy’s word for petting and saying “poor thing”; Madge Wildfire is a wild girl in an old novel; a battledore and shuttle-cock were an early form of badminton.",
+      "contentNote": "The boys dare Nan to hurt herself, and she does: she grabs stinging nettles and runs head first into the barn. Tommy shakes Stuffy roughly in her defence.",
+      "excerpt": {
+        "locator": "Chapter VII, “Naughty Nan,” from Nan’s arrival until her first bedtime; opens “When Mrs. Bhaer returned from her drive that afternoon, before she could unpack the load…”; closes “\"When my battledore and shuttle-cock comes, I'll let you all play with 'em.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-04",
+        "continuesTo": "reading-4-alcott-little-men-1871-06",
+        "blocks": [
+          727,
+          782
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6196207828d6d9be379d112c554b8d8d4d0510b10343b4665254ce850c666531"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-05-q1",
+          "prompt": "Before Nan does anything brave, what do you learn about her from small details?",
+          "facilitatorNotes": [
+            "She skips out shouting, has lost track of her doll “with most unmaternal carelessness,” pulled hairs from a horse’s tail to make Daisy a ring, swings her hat until the string breaks and leaves it on the grass, and wants the boys and the barn, not the nursery. She is generous, restless and careless."
+          ],
+          "evidence": [
+            "with most unmaternal carelessness",
+            "swinging her hat by one string till it broke, when she left it to its fate on the grass"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-05-q2",
+          "prompt": "“Grasped the nettle” is a saying that means facing a difficulty boldly. Why does Alcott put it in quotation marks? Is Nan brave, foolish, or both?",
+          "facilitatorNotes": [
+            "It is a joke: Nan does the saying literally. Holding the nettle takes real courage; running head first into the barn just to prove she will not cry is foolish, and later Nan herself begins to think so."
+          ],
+          "evidence": [
+            "Nan instantly \"grasped the nettle,\" pulled it up",
+            "she might have shown her courage in some wiser way"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-05-q3",
+          "prompt": "The boys are “quick to acknowledge courage even in one of the weaker sex.” What did they expect of girls? How does Nan answer when Demi defends her?",
+          "facilitatorNotes": [
+            "They expected girls to be weak and tearful; Jack thinks she runs well “for a girl.” When Demi says it is mean to hurt a little girl, Nan refuses his protection: she is not a little girl. Readers can decide whether the narrator is gently laughing at the boys."
+          ],
+          "evidence": [
+            "quick to acknowledge courage even in one of the weaker sex",
+            "I ain't a little girl, I'm older than you and Daisy"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-05-q4",
+          "prompt": "Mrs. Jo says, “Kindness in looks and words and ways is true politeness.” How do the boys and Nan show that they took her words in?",
+          "facilitatorNotes": [
+            "The boys say “please” and “thank you” with unusual elegance; Nan does not tickle Demi and plays “I spy” with the boys she said she hated; Stuffy shares his candy-ball, perhaps as a silent apology; Nan offers to share her battledore."
+          ],
+          "evidence": [
+            "Kindness in looks and words and ways is true politeness",
+            "Stuffy was observed to offer her frequent sucks of his candy-ball"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-06",
+      "title": "Little Men: the band-box and “Giddy gaddy” (Chapter VII, end)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Sort a long list of a character’s deeds, and decide what they add up to.",
+      "focus": "Nan fetches her own luggage from the station, and her pranks, kindness and courage soon win over the whole school.",
+      "context": "Recap: Ten-year-old Nan has arrived at Plumfield to stay. On her first day she took every dare the boys offered, nettles and all, and at supper Mrs. Jo spoke to them all about kindness and manners. Nan’s box of belongings was to come by train. A band-box is a light round box for hats or collars; to pelt is to run fast; hasty-pudding is a cornmeal porridge; a poser is a hard question; Franz is Mr. Bhaer’s nephew; Silas is the hired man; a shingle is a thin wooden roof tile; the conscience book is where Mrs. Bhaer writes how each child has behaved; recompense means reward.",
+      "contentNote": "One of Nan’s games dresses a doll as an “Indian chief” who “tomahawked” the other dolls, a stereotype of Native Americans common in Alcott’s time. Some boys torment kittens, which later die. Mrs. Bhaer again calls Nan a “little gypsy.”",
+      "excerpt": {
+        "locator": "Chapter VII, “Naughty Nan,” from Nan’s second morning to the end of the chapter; opens “Her first remark in the morning was, \"Has my box come?\" and when told that it would…”; closes “…warmth of love and care, the best climate for young hearts and souls all the world over.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-05",
+        "continuesTo": null,
+        "blocks": [
+          783,
+          807
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dcc713f04262b184871391a5826f33580f07906b194cbcc6596d824594aa78c4"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-06-q1",
+          "prompt": "Nan walks a mile to fetch her box alone. How do Mrs. Bhaer and Mr. Bhaer each react? Whose reaction do you agree with?",
+          "facilitatorNotes": [
+            "Mrs. Bhaer is anxious, begins to doubt her plan, and makes Nan promise not to run off again. Mr. Bhaer laughs at Nan’s coolness and is “too much amused to be angry,” though he suggests a private lecture. Both are fair: she was clever and brave, and she could also have been lost or hurt."
+          ],
+          "evidence": [
+            "beginning to think that her new idea might be rather a hard one to carry out",
+            "too much amused to be angry at the young lady's exploit"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-06-q2",
+          "prompt": "“Papa tells me not to put off doing things, so I don't.” Why does Mr. Bhaer call this “rather a poser”?",
+          "facilitatorNotes": [
+            "Nan is following a good rule her father taught her, so it is hard to scold her without seeming to scold the rule. A poser is a puzzling question; the trouble is that she obeyed the rule without judging when it fit."
+          ],
+          "evidence": [
+            "only papa tells me not to put off doing things, so I don't",
+            "That is rather a poser"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-06-q3",
+          "prompt": "Sort Nan’s deeds in the long paragraph: which are kind, which are dangerous, which are just funny? What do they add up to?",
+          "facilitatorNotes": [
+            "Kind: giving her shoes to a beggar child and her coral necklace to save four kittens, then nursing them. Dangerous: the turpentine fire-ship, riding the cross pig, any dare at all. Funny: the turkey-cock wagon and the painted doll. Together they show a generous, fearless girl who seldom thinks about consequences."
+          ],
+          "evidence": [
+            "She gave her coral necklace for four unhappy kittens",
+            "Whatever the boys dared her to do she instantly attempted, no matter how dangerous it might be"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-06-q4",
+          "prompt": "The chapter ends by calling Nan a garden “full of sweet flowers, half hidden by the weeds.” What are the flowers and the weeds? Are all of Nan’s wild ways weeds?",
+          "facilitatorNotes": [
+            "The flowers are her generosity, warm heart, quick wits and courage; the weeds are her carelessness and rashness. The Bhaers cultivate her with schoolwork, praise and the conscience book, not prizes. Some readers will argue that her boldness is a flower too: she shows the boys that girls can do most things as well, “and some things better.”"
+          ],
+          "evidence": [
+            "this little garden was full of sweet flowers, half hidden by the weeds",
+            "Nan showed them that girls could do most things as well as boys, and some things better"
+          ]
+        }
+      ]
+    }
+  ]
+}

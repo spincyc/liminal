@@ -1,0 +1,1249 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "hemans-poems-1875",
+  "readings": [
+    {
+      "id": "reading-4-hemans-poems-1875-01",
+      "title": "Casabianca",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear how repeated calls build tension, and weigh what a poem praises.",
+      "focus": "A boy obeys his father to the end on a burning ship.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Generations of schoolchildren learned this poem by heart. It tells a true event of the Battle of the Nile (1798), when the British fleet fought the French: the French flagship, L’Orient, caught fire and blew up. Hemans’s own note follows the poem. The shrouds are the ropes that hold a mast; a pennon is a flag; the helm steers the ship.",
+      "contentNote": "A boy dies when his burning ship explodes in battle.",
+      "excerpt": {
+        "locator": "“Casabianca,” the whole poem with Hemans’s note; opens “ The boy stood on the burning deck Whence all but he had fled; The flame that lit the…”; closes “…and perished in the explosion of the vessel, when the flames had reached the powder.]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5548,
+          5558
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e6df659175e4d6723a6a96adb85722107b7d0bea23609eb3fc466b63ec0ceae"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-01-q1",
+          "prompt": "Why does the boy stay on the burning deck?",
+          "facilitatorNotes": [
+            "He will not leave without his father’s order, but his father lies dying below and cannot hear him or answer."
+          ],
+          "evidence": [
+            "That father, faint in death below,",
+            "His voice no longer heard."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-01-q2",
+          "prompt": "The boy calls three times. How do his calls change, and what answers him?",
+          "facilitatorNotes": [
+            "He asks whether his task is done, then whether he may go, then “must I stay?” The questions grow more urgent, and only the guns and the flames reply."
+          ],
+          "evidence": [
+            "And but the booming shots replied,",
+            "And shouted but once more aloud,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-01-q3",
+          "prompt": "Is Hemans praising the boy’s choice, mourning it, or both? What do you think of his choice?",
+          "facilitatorNotes": [
+            "She calls him heroic and “faithful,” the noblest thing lost in the battle; she also shows a child dying while he waits for an order that cannot come. Readers may admire his loyalty, or feel the duty asked of him was wrong. Both views fit the poem."
+          ],
+          "evidence": [
+            "Was that young faithful heart!",
+            "In still yet brave despair;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-01-q4",
+          "prompt": "What does Hemans’s note tell you that the poem does not?",
+          "facilitatorNotes": [
+            "The boy’s name and age, the battle, that the guns had been abandoned, and that he died when the fire reached the gunpowder. The note turns the poem’s nameless scene into history."
+          ],
+          "evidence": [
+            "a boy about thirteen years old",
+            "perished in the explosion of the vessel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-02",
+      "title": "The Landing of the Pilgrim Fathers in New England",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a poem describes people by what they were not, and ask whose story it leaves out.",
+      "focus": "Hemans pictures the Pilgrims arriving in a winter storm, seeking freedom to worship.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. She never visited America, but this poem of the 1820s about the Pilgrims, English Puritans who crossed on the Mayflower and landed at Plymouth, Massachusetts, in December 1620, became a favourite at American Thanksgiving. It opens with an epigraph, a quotation from the American poet William Cullen Bryant. A bark is a ship; hoary means grey-haired; desert here means wild and unsettled; a shrine is a holy place; trode means walked.",
+      "contentNote": "The epigraph praises another “race” filling the land, and the poem calls the coast a “desert gloom” that the Pilgrims found “unstain’d,” leaving out the Wampanoag and other Native peoples who already lived there.",
+      "excerpt": {
+        "locator": "“The Landing of the Pilgrim Fathers in New England,” the whole poem with its epigraph; opens “ “Look now abroad! Another race has fill’d Those populous borders--wide the wood recedes,…”; closes “…they trode. They have left unstain’d what there they found-- Freedom to worship God.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6333,
+          6343
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f4fdac37d1ddfd970078dcacf37887662dfe8f949a88e16c3c0653c4fbeef876"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-02-q1",
+          "prompt": "The poem describes the Pilgrims by saying what they were not. Find two “Not as …” comparisons. What do they rule out?",
+          "facilitatorNotes": [
+            "They did not come as conquerors with drums and trumpets, or as fugitives in silence and fear. Instead they arrived singing hymns in the storm."
+          ],
+          "evidence": [
+            "Not as the conqueror comes,",
+            "With their hymns of lofty cheer."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-02-q2",
+          "prompt": "According to the last two stanzas, what did the Pilgrims seek, and what did they not seek?",
+          "facilitatorNotes": [
+            "Not jewels, the wealth of the seas or the spoils of war, but “a faith’s pure shrine”: the freedom to worship God as they chose."
+          ],
+          "evidence": [
+            "They sought a faith’s pure shrine!",
+            "Freedom to worship God."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-02-q3",
+          "prompt": "Hemans says the Pilgrims left “unstain’d what there they found.” Does the poem leave anyone out? How does that change your reading?",
+          "facilitatorNotes": [
+            "People already lived on that coast, and the epigraph’s “Another race has fill’d” hints at one people replacing another. The poem’s praise of freedom is sincere but tells only the settlers’ side. Readers can admire the Pilgrims’ courage and still question the picture."
+          ],
+          "evidence": [
+            "They have left unstain’d what there they found",
+            "Another race has fill’d"
+          ]
+        }
+      ],
+      "months": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-03",
+      "title": "The Sunbeam",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a poem that speaks to a thing as if it were a person, and collect where it goes.",
+      "focus": "A sunbeam visits the grand and the humble alike, and Hemans compares it with faith.",
+      "context": "In this poem Hemans speaks straight to a sunbeam, as if it could hear. A billow is a wave; arcades are rows of arches, here the arching trees; a cot is a cottage; a lattice is a criss-cross window; the waste is wild, empty land.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Sunbeam,” the whole poem; opens “ Thou art no lingerer in monarch’s hall-- A joy thou art, and a wealth to all! A bearer…”; closes “…thing is like thee to mortals given, The faith touching all things with hues of heaven!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6385,
+          6393
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "61cc2a7300b7946cf41352291f9d2b3f9c991f988e76c440befd0a119f1cad9a"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-03-q1",
+          "prompt": "Name four places the sunbeam goes. What does it change in each?",
+          "facilitatorNotes": [
+            "It lights the sea and its ships, makes forest leaves glint like fireflies, turns mountain mist into a “crown” of flame, brightens a sad cottage, gilds old church tombs and rests on a poor grave. Each place is changed by light."
+          ],
+          "evidence": [
+            "And gladden’d the sailor like words from home.",
+            "A crown and a mantle of living flame."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-03-q2",
+          "prompt": "“Thou art no lingerer in monarch’s hall.” Why does the poem stress the poor and sad places the sunbeam visits?",
+          "facilitatorNotes": [
+            "The sunbeam is “a wealth to all”: it does not stay with kings but shines on the peasant’s cottage, ruins and “the humblest grave.” Its gift is for everyone."
+          ],
+          "evidence": [
+            "A joy thou art, and a wealth to all!",
+            "And thou turnest not from the humblest grave,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-03-q3",
+          "prompt": "In the last stanza, what does Hemans say is like the sunbeam? Does the comparison work for you?",
+          "facilitatorNotes": [
+            "Faith, which touches everything “with hues of heaven,” changing how the world looks, as sunlight does. Readers may suggest other things that change how the world looks, such as hope or love."
+          ],
+          "evidence": [
+            "The faith touching all things with hues of heaven!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-04",
+      "title": "The Child’s First Grief",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Work out who is speaking in each part of a poem told in voices.",
+      "focus": "A small boy asks for his brother, and learns he will not come back.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. She had five sons and wrote often about childhood and loss. This poem is a conversation: a little boy speaks, an adult answers, and the boy speaks again. Glancing means flashing; a glade is an open space in a wood.",
+      "contentNote": "A young child learns that his brother has died.",
+      "excerpt": {
+        "locator": "“The Child’s First Grief,” the whole poem; opens “ Oh! call my brother back to me! I cannot play alone; The summer comes with flower and…”; closes “…our wanderings o’er? Oh! while my brother with me play’d, _Would I had loved him more_!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          7598,
+          7604
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1dc447bf00f48a2043cbb1330264fab507af6aec3adfea7dececf628bdb374dc"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-04-q1",
+          "prompt": "How can you tell where the speaker changes? Who speaks in each part?",
+          "facilitatorNotes": [
+            "The boy speaks in the first three stanzas, an adult in the next two (“fair child,” “my boy”), and the boy again at the end. Quotation marks and the way each speaker addresses the other show the change."
+          ],
+          "evidence": [
+            "He would not hear thy voice, fair child!",
+            "Go--thou must play alone, my boy!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-04-q2",
+          "prompt": "Why does the boy talk about the butterfly, the flowers and the vine?",
+          "facilitatorNotes": [
+            "They are the things he and his brother enjoyed together. Summer is full of them, but he no longer cares to chase or tend them, which shows his grief through ordinary things before he knows the truth."
+          ],
+          "evidence": [
+            "I care not now to chase its flight--",
+            "the flowers we sow’d"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-04-q3",
+          "prompt": "The poem ends “Would I had loved him more!” Why does the boy say this? Is it fair to himself?",
+          "facilitatorNotes": [
+            "Grief often brings regret, and he wishes he had been kinder. Nothing in the poem says he was unloving, so readers may feel he is too hard on himself, while recognising the feeling as real."
+          ],
+          "evidence": [
+            "Would I had loved him more",
+            "Oh! while my brother with me play’d,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-05",
+      "title": "The Thunder-Storm",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Find where a poem turns from describing to persuading.",
+      "focus": "A speaker describes a storm’s stillness and noise, then tells a child not to be afraid.",
+      "context": "From Hemans’s Hymns for Childhood, written early in her life; a hymn is a religious song or poem of praise. Gossamer is fine spider silk floating in the air; a lime here is a linden tree; a bower is a shady shelter of plants; pinions are wings.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Hymns for Childhood, “The Thunder-Storm,” the whole poem; opens “ Deep, fiery clouds o’ercast the sky, Dead stillness reigns in air; There is not e’en a…”; closes “…darts should cast; Why should we tremble, e’en to die, And be with _Him_ at last?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8068,
+          8077
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e704a1cd8ef644c913a582d8b29d582f100b247541b99bc12c6d483f7bb03783"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-05-q1",
+          "prompt": "How does the poem make the quiet before the storm feel strange?",
+          "facilitatorNotes": [
+            "There is “dead stillness,” not even a breeze to lift a thread of silk; the birds stop singing; noon seems as deep as midnight. The calm feels like a warning."
+          ],
+          "evidence": [
+            "Dead stillness reigns in air;",
+            "Seems as at midnight deep:"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-05-q2",
+          "prompt": "Where does the poem turn from describing the storm to talking to a child? What is the speaker’s argument?",
+          "facilitatorNotes": [
+            "At “Yet fear not, shrink not thou, my child!” The speaker argues that God is everywhere, in cities, on the ocean, in the woods, so there is nowhere the child could be alone."
+          ],
+          "evidence": [
+            "Yet fear not, shrink not thou, my child!",
+            "Thou couldst not reach a spot, where He"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-05-q3",
+          "prompt": "The last stanza asks, “Why should we tremble, e’en to die?” Would this comfort a child frightened of thunder? What else might help?",
+          "facilitatorNotes": [
+            "The speaker’s comfort is faith that even death means being with God. Some readers find that strong; others feel a frightened child also needs shelter, a hand to hold, or to know how storms work. Discuss it without requiring agreement."
+          ],
+          "evidence": [
+            "Why should we tremble, e’en to die,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-06",
+      "title": "The Northern Spring",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow an analogy that moves from nature to belief.",
+      "focus": "A sudden Arctic spring becomes a picture of new life after death.",
+      "context": "From Hemans’s Hymns for Childhood, written early in her life; a hymn is a religious song or poem of praise. Lapland is the far north of Norway, Sweden and Finland, where winter is long and spring arrives suddenly. Verdure is fresh green growth; founts are springs; the Redeemer is Jesus; “put on immortality” is a phrase from the Bible meaning to live for ever.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Hymns for Childhood, “The Northern Spring,” the whole poem (without the editor’s note that follows); opens “ When the soft breath of Spring goes forth Far o’er the mountains of the North, How soon…”; closes “…the soul shall soar, Exulting, to that blest abode Where tears of sorrow never flow’d.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8106,
+          8111
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8e8f964a4bb9a48c8037397d4534bbca3c43519647e10369d3089d7a71fd655"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-06-q1",
+          "prompt": "What changes when spring reaches the North? Find three.",
+          "facilitatorNotes": [
+            "The snow glows with bloom, the plains turn green, the streams break free, the reindeer stop digging for moss, the pines put out new green and roses bloom by the lakes."
+          ],
+          "evidence": [
+            "With life, and bloom, and beauty glow!",
+            "Fringed tenderly with living green;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-06-q2",
+          "prompt": "The fourth stanza begins “Thus.” What two things is the poem comparing?",
+          "facilitatorNotes": [
+            "The sudden thaw after a long winter, and the dead waking to new life at the Redeemer’s call. “Thus” tells the reader that the first half was a picture of the second."
+          ],
+          "evidence": [
+            "Thus shall the blest Redeemer’s voice",
+            "His power to life shall wake the dead,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-06-q3",
+          "prompt": "Ice is “chains” and the tomb has “fetters.” Why use prison words in both halves of the poem?",
+          "facilitatorNotes": [
+            "Winter and death are both pictured as captivity, and spring and new life as release. The shared words hold the comparison together. Readers can say whether it convinces them."
+          ],
+          "evidence": [
+            "Then break the streams from icy chains;",
+            "And the cold fetters of the tomb,"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-07",
+      "title": "The Sun",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 11,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow a poem that praises something and then turns to something greater.",
+      "focus": "A morning hymn praises the sun, then imagines its end and names a light that never fades.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Hemans wrote a set of Hymns for Childhood. An orb is a globe; exulting means rejoicing; a choral lay is a song sung by many voices; hues are colours; to suffuse is to spread colour through something; riven means torn apart. “Let there be light” are God’s words in the creation story at the start of the Bible; “the Sun of Righteousness” is a Bible phrase that Christians use for God or Christ. Astronomers say the real sun will burn out, but not for about five billion years.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Hymns for Childhood, “The Sun,” the whole poem; opens “ The Sun comes forth: each mountain-height Glows with a tinge of rosy light, And flowers…”; closes “…For ever bright, for ever pure, Alone unchanging shall endure, The Sun of Righteousness!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8030,
+          8033
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e53e2b1809feb32f4dc3c2a8d99964dc0ea7ca203faac73d6d7ab1bd52de25b0"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-07-q1",
+          "prompt": "What happens when the Sun “comes forth” in the first stanza? Name three things.",
+          "facilitatorNotes": [
+            "The mountain tops glow pink, the flowers open their dewy leaves, light floods the sky, and the sea reflects a golden sky."
+          ],
+          "evidence": [
+            "Glows with a tinge of rosy light,",
+            "Their dewy leaves unfold;",
+            "And ocean’s breast gives back a sky"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-07-q2",
+          "prompt": "The second stanza says nature takes its colours from the sun. What small examples does Hemans give?",
+          "facilitatorNotes": [
+            "The shine of an insect’s wing and the fire inside a diamond. Choosing tiny things shows how the sun reaches everything, great and small."
+          ],
+          "evidence": [
+            "From thee all nature draws her hues,",
+            "Thy beams the insect’s wing suffuse,",
+            "And in the diamond burn."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-07-q3",
+          "prompt": "The third stanza begins “Yet must thou fade!” Why would a poem praising the sun say that it must fall?",
+          "facilitatorNotes": [
+            "To show that even the sun, the brightest thing we know, does not last for ever, so that the last stanza can name something that does. The turn makes the ending stronger."
+          ],
+          "evidence": [
+            "Yet must thou fade!",
+            "O Sun! must fall at last;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-07-q4",
+          "prompt": "The poem ends with a different “Sun.” What is the “Sun of Righteousness,” and why use the same word?",
+          "facilitatorNotes": [
+            "It means God, who made the light and, in the poem’s belief, alone never changes. Using “Sun” again links the two: the real sun becomes a picture of something greater. Readers who do not share the belief can still notice how the word changes meaning."
+          ],
+          "evidence": [
+            "“Let there be light,”--and there was light,",
+            "Alone unchanging shall endure,",
+            "The Sun of Righteousness!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-08",
+      "title": "The Ocean",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 11,
+        "totalMinutes": 15
+      },
+      "challenge": "Collect the wonders of the sea, and follow how the poem reasons from them.",
+      "focus": "A sailor who has seen the sea’s wonders is asked to tell of them, and the poem praises their maker.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The epigraph comes from Psalm 107 in the Bible. Venturous barks are daring small ships; the northern light is the aurora; the main is the open sea; a citadel is a fortress and a fane a temple; fraught with peril means full of danger. Coral reefs are built by tiny animals called polyps, which Hemans calls insects. The “sea-fires” are the glow of tiny living things in the water that make their own light.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Hymns for Childhood, “The Ocean,” the whole poem with its epigraph; opens “ “They that go down to the sea in ships, that do business in great waters; these see the…”; closes “…praise to Thee, Whose word can rouse the tempest’s might, Or still the raging sea!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8057,
+          8066
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "325a1f0dec5918b04fdcf658ccc8c4b296cde641c447915b9526e0f9bf7a95c3"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-08-q1",
+          "prompt": "The sailor has seen many wonders. Name three.",
+          "facilitatorNotes": [
+            "A roaring whirlpool, icebergs, coral rocks, and sea-fires that light the ocean at night, as well as the northern lights and tropical skies."
+          ],
+          "evidence": [
+            "Go! ask him of the whirlpool’s roar,",
+            "Of icebergs, floating o’er the main,",
+            "Of sea-fires, which at dead of night"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-08-q2",
+          "prompt": "Choose one wonder. What does Hemans compare it to, and does the comparison help you see or hear it?",
+          "facilitatorNotes": [
+            "The whirlpool roars like an army’s chariots; the icebergs look like a fortress or a temple; the glowing sea looks like a starry sky. Readers can judge which picture works best."
+          ],
+          "evidence": [
+            "An army’s chariot-wheels;",
+            "Like glittering citadel or fane,",
+            "As heaven with many a star."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-08-q3",
+          "prompt": "What is surprising about the coral rocks?",
+          "facilitatorNotes": [
+            "Huge, dangerous reefs that rise from the sea floor are built little by little by tiny creatures. Hemans says an insect; scientists say coral polyps, but the surprise is the same."
+          ],
+          "evidence": [
+            "And, fraught with peril, daily grow,",
+            "Form’d by an insect’s power;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-08-q4",
+          "prompt": "Read the last two stanzas. If the sea is so great, what does the poet say its maker must be?",
+          "facilitatorNotes": [
+            "She reasons that if the sea is too strong for any human to control, the God who keeps it within its shores must be even greater, so heaven and earth should praise him. Readers can follow the argument whether or not they share her belief."
+          ],
+          "evidence": [
+            "If glorious be that awful deep",
+            "No human power can bind,",
+            "Within its bounds confined!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-09",
+      "title": "The Birds",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Take a trip round the world through a poem, then notice where the poem stops travelling.",
+      "focus": "The poem visits birds in every land and ends with the plainest birds of all.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The epigraph comes from the Gospel of Luke; a farthing was a tiny coin. Plumage means feathers; a throng is a crowd; hostile means unfriendly; a swain is a country lad; the chamois is a nimble mountain animal of the Alps; Afric is Africa; the condor is a huge vulture of the Andes in South America; the Orient is the East; the bird of paradise is a brilliantly feathered bird of New Guinea; balm is a sweet smell; pendant means hanging; drest means dressed.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Hymns for Childhood, “The Birds,” the whole poem with its epigraph and Hemans’s note; opens “ Tribes of the air! whose favour’d race May wander through the realms of space, Free…”; closes “[Footnote 407: The Italians call all singing-birds, _birds of the gentle beak_.]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8080,
+          8089
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "933a881137b28a5b2b341f8c469c7caaf02885e1915ea5956a6898950fb7dcf6"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-09-q1",
+          "prompt": "Make a quick world tour. Name three birds in the poem and where each lives.",
+          "facilitatorNotes": [
+            "The eagle in the high Alps, sea birds on rocks above the waves, the ostrich in the African desert, the swan on northern rivers, the condor in the Andes, the bird of paradise in the East."
+          ],
+          "evidence": [
+            "The ostrich haunts the desert-sands,",
+            "The condor, where the Andes tower,",
+            "The mountain-eagle seeks;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-09-q2",
+          "prompt": "Hemans does not name the birds that weave hanging nests or wear rainbow colours. Which birds might she mean, and how can you tell?",
+          "facilitatorNotes": [
+            "Weaver birds, which weave nests that hang from branches, and hummingbirds of the Americas, the “Western wilds.” The clues are the places and what the birds do."
+          ],
+          "evidence": [
+            "Weave soft their pendant nest;",
+            "Some, deep in Western wilds, display",
+            "In rainbow colours drest."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-09-q3",
+          "prompt": "After all the splendid birds, the poem turns to birds with no song, no eagle feathers and no bright colours. Why end with them?",
+          "facilitatorNotes": [
+            "They connect to the epigraph about sparrows, cheap birds that God does not forget. The point is that the plainest creatures are cared for too."
+          ],
+          "evidence": [
+            "Others no varied song may pour,",
+            "The least of these, and well provides"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-09-q4",
+          "prompt": "In the last stanza the poem speaks to “thee,” the child reading. What does it want the child to feel?",
+          "facilitatorNotes": [
+            "Safe and trusting: if God cares for every bird, he will care for the child, even in pain or sorrow. Some readers may find this comforting; others may want to talk about times when trusting is hard."
+          ],
+          "evidence": [
+            "Will not His aid extend to _thee_?",
+            "Know what He wills is best!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-10",
+      "title": "The Homes of England",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 11,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice how repeating a phrase builds a picture, and ask what the picture leaves out.",
+      "focus": "Stanza by stanza, the poet praises the great houses and the cottages of England.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. This poem was so famous that later writers poked fun at its first line. The epigraph comes from Marmion, a long poem by Walter Scott. Ancestral trees were planted by a family’s ancestors; greensward is lawn; a hearth is a fireplace; ruddy means reddish; bowers are shady garden nooks; the Sabbath is the weekly day of rest and worship; a hamlet is a small village and its fane its church; “hearts of native proof” are brave hearts born in the land; sod is turf.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Homes of England,” the whole poem with its epigraph; opens “ “Where’s the coward that would not dare To fight for such a land?” Marmion.”; closes “…the flowery sod, Where first the child’s glad spirit loves Its country and its God!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6101,
+          6106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e4f19bd2132f4c9ddec18c2aaa7f55225de28129cc084d34ae47e12597eb136"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-10-q1",
+          "prompt": "Each stanza begins with a different word for the homes. List them. What does each stanza show?",
+          "facilitatorNotes": [
+            "Stately: great houses with deer parks; merry: families singing and telling stories by the fire; blessed: quiet Sundays and church bells; cottage: small homes in villages; free, fair: homes to be guarded."
+          ],
+          "evidence": [
+            "The stately homes of England!",
+            "The merry homes of England!",
+            "The cottage homes of England!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-10-q2",
+          "prompt": "What happens in the “merry homes” at night?",
+          "facilitatorNotes": [
+            "Families gather round the fire with loving looks; women sing, children’s stories are told, and someone reads aloud from a great book of the past."
+          ],
+          "evidence": [
+            "Around their hearths by night,",
+            "There woman’s voice flows forth in song,",
+            "Or childhood’s tale is told,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-10-q3",
+          "prompt": "The poem shows rich and poor homes as equally happy and safe. Do you believe it? What might it leave out?",
+          "facilitatorNotes": [
+            "It is an ideal picture: in Hemans’s time many poor English families lived in hunger and hardship, and there were no servants, workers or quarrels in the poem. Some readers will enjoy the picture anyway; others will want the missing homes."
+          ],
+          "evidence": [
+            "And fearless there the lowly sleep,",
+            "Long, long, in hut and hall,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-10-q4",
+          "prompt": "The epigraph asks who would not fight for such a land, and the last stanza wants hearts “To guard each hallow’d wall!” What is the poem trying to make readers feel?",
+          "facilitatorNotes": [
+            "Love of home and country so strong that they would defend it. Readers can discuss whether love of home and love of country are the same thing."
+          ],
+          "evidence": [
+            "To fight for such a land?",
+            "To guard each hallow’d wall!",
+            "Its country and its God!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-11",
+      "title": "The Better Land",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 11,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow a conversation in which one speaker keeps guessing and the other keeps saying no.",
+      "focus": "A child asks his mother where the “better land” is, guessing one beautiful place after another.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Radiant means shining; the myrtle is an evergreen shrub; a date is the sweet fruit of a palm tree; rubies, diamonds and pearls are gems. “Eye hath not seen . . . ear hath not heard” echoes a verse in the Bible. Bloom here means flower; fadeless means never fading; the tomb is the grave.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief. The mother tells her child that the better land lies beyond death.",
+      "excerpt": {
+        "locator": "“The Better Land,” the whole poem; opens “ “I hear thee speak of the better land, Thou call’st its children a happy band; Mother!…”; closes “…bloom, For beyond the clouds, and beyond the tomb, It is there, it is there, my child!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          7130,
+          7133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d3053c07321cb1aefed73932116fd0472950fad22290d2c483a6f026492ea8ee"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-11-q1",
+          "prompt": "Who speaks in the first three stanzas, and who answers? How can you tell?",
+          "facilitatorNotes": [
+            "The child asks, calling “Mother!” and “sweet mother!”; the mother answers each guess with the same line. The quotation marks and the dashes show the change of speaker."
+          ],
+          "evidence": [
+            "Mother! oh, where is that radiant shore?",
+            "Not there, not there, my child!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-11-q2",
+          "prompt": "What places does the child imagine? What do they have in common?",
+          "facilitatorNotes": [
+            "Orange groves with fireflies, palm islands with bright birds, and rivers of gold where gems shine. They are warm, faraway and rich, the most beautiful places a child might hear of in stories."
+          ],
+          "evidence": [
+            "Is it where the feathery palm-trees rise,",
+            "Where the rivers wander o’er sands of gold?--"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-11-q3",
+          "prompt": "How does the mother describe the better land? Why does she say what it is not?",
+          "facilitatorNotes": [
+            "No eye has seen it, no ear heard it, no dream can picture it, and sorrow and death cannot enter. Something beyond all the child’s pictures can only be described by saying it is more than any of them."
+          ],
+          "evidence": [
+            "Eye hath not seen it, my gentle boy!",
+            "Sorrow and death may not enter there:"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-11-q4",
+          "prompt": "Where is the better land, according to the last lines? How might the child feel at the answer?",
+          "facilitatorNotes": [
+            "Beyond the clouds and beyond the grave: it is heaven. The child already asks to “weep no more,” so perhaps someone has died; the answer may comfort him, or make him sad that it is so far. Readers may disagree."
+          ],
+          "evidence": [
+            "Shall we not seek it, and weep no more?",
+            "For beyond the clouds, and beyond the tomb,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-12",
+      "title": "The Voice of Spring",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Find the place where a poem turns, and explain why the speaker’s mood changes.",
+      "focus": "Spring speaks, joyfully announcing her return across the world, until she sees that the people greeting her have lost someone.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Here Spring herself is the speaker. Fanes are temples; the larch’s tassels are its hanging flowers; Hesperian means western; sparry caves glitter with crystals; a lyre is a small harp. “Ye have strewn the dust on the sunny brow” means you have buried someone young.",
+      "contentNote": "The second half of the poem mourns young people who have died since the last spring.",
+      "excerpt": {
+        "locator": "“The Voice of Spring,” the whole poem; opens “ I come, I come! ye have call’d me long-- I come o’er the mountains with light and song!…”; closes “…Death midst the blooms of the morn may dwell, I tarry no longer--farewell, farewell!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3246,
+          3256
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad90fa37277682dc694ec5553b55ed87ae6312fe6179219cf9770cdd68077044"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-12-q1",
+          "prompt": "Spring says, “Ye may trace my step.” Find three signs of her coming in the first five stanzas.",
+          "facilitatorNotes": [
+            "Winds that tell of violets, “primrose-stars” in the grass, opening leaves, chestnut flowers, the larch’s tassels, the swan’s cry, and streams set free from ice. Each sign is something you could see or hear."
+          ],
+          "evidence": [
+            "By the primrose-stars in the shadowy grass,",
+            "From the streams and founts I have loosed the chain,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q2",
+          "prompt": "In the second stanza Spring says it is not for her “To speak of the ruin or the tomb!” Why might Hemans put that line so early?",
+          "facilitatorNotes": [
+            "It mentions death only to push it away, so it quietly prepares for the turn later in the poem. The reader may remember it when Spring is forced to speak of a tomb after all."
+          ],
+          "evidence": [
+            "But it is not for me, in my hour of bloom,",
+            "To speak of the ruin or the tomb!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q3",
+          "prompt": "Where does the poem turn? What does Spring notice about the people?",
+          "facilitatorNotes": [
+            "“But ye!” Their smiles are dimmed, and some of the bright faces she saw last year are missing. She works out that they have “look’d on death.”"
+          ],
+          "evidence": [
+            "But ye!--ye are changed since ye met me last!",
+            "Ye have look’d on death since ye met me last!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q4",
+          "prompt": "How does Spring comfort the mourners, and why can she not stay with them?",
+          "facilitatorNotes": [
+            "She knows “a land where there falls no blight,” where she will find the young people again: an image of heaven from Hemans’s Christian faith. But spring always passes, so she says farewell. Some readers find the ending comforting; others feel its sadness more."
+          ],
+          "evidence": [
+            "But I know of a land where there falls no blight--",
+            "I tarry no longer--farewell, farewell!"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-13",
+      "title": "The Treasures of the Deep",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a list that grows, stanza by stanza, toward the thing that matters most.",
+      "focus": "A speaker asks the sea what it hides, lets it keep its pearls and gold, and demands back the dead.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The poem speaks to the sea, which it calls “the main.” Unreck’d of means unnoticed; argosies are great merchant ships; revelry is noisy feasting; board and hearth are the dinner table and the fireside; festal means of a feast. A note in this edition says the poem first appeared inside a longer poem of Hemans’s.",
+      "contentNote": "The poem mourns people drowned at sea.",
+      "excerpt": {
+        "locator": "“The Treasures of the Deep,” the whole poem; opens “ What hidest thou in thy treasure caves and cells, Thou hollow-sounding and mysterious…”; closes “…dead! Earth shall reclaim her precious things from thee!-- Restore the dead, thou sea!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5432,
+          5437
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d14950d8e0ce3ebaf04df2634155f6e48d42bfba0c7d5ee51da04465bb16ee7d"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-13-q1",
+          "prompt": "What does the sea hide? Put its treasures in the order the poem names them.",
+          "facilitatorNotes": [
+            "Pearls and shells; gold and jewels from sunken ships; drowned cities; brave men killed in battle; and the people missed at home. The list moves from things, to places, to people."
+          ],
+          "evidence": [
+            "Pale glistening pearls, and rainbow-colour’d shells",
+            "Above the cities of a world gone by!",
+            "Give back the true and brave!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q2",
+          "prompt": "“Yet more, the depths have more!” Why does Hemans repeat this line?",
+          "facilitatorNotes": [
+            "Each time it takes us deeper, toward something more precious, like a diver going further down. The repetition builds suspense about what lies at the bottom."
+          ],
+          "evidence": [
+            "Yet more, the depths have more!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q3",
+          "prompt": "What does the speaker let the sea keep, and what does she demand back? Why the difference?",
+          "facilitatorNotes": [
+            "It may keep its riches, its spoils and its drowned towers; it must give back the brave and the loved. Wealth does not matter to her; the people do."
+          ],
+          "evidence": [
+            "Keep, keep thy riches, melancholy sea!",
+            "Restore the dead, thou sea!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q4",
+          "prompt": "In the last stanza the sea “must” hear a voice saying “Restore the dead!” Whose voice could it be? What does the speaker believe will happen?",
+          "facilitatorNotes": [
+            "It may be God’s voice at the end of the world, echoing a Bible verse in which the sea gives up its dead, or the voice of everyone who mourns. The speaker is sure the earth will take back its “precious things.” Readers need not share the belief to see its force."
+          ],
+          "evidence": [
+            "Yet must thou hear a voice--Restore the dead!",
+            "Earth shall reclaim her precious things from thee!--"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-14",
+      "title": "Bring Flowers",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a repeated command through six scenes, and notice how the meaning of the same gift changes.",
+      "focus": "Flowers fit a feast, a victory, a prison, a wedding, a funeral and a prayer, and mean something different at each.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Each stanza begins with the same command and names a new occasion. A festal board is a table set for a feast; to wreath is to wind round; a conqueror is a victorious general; a captive is a prisoner; languid means weak and tired; a bier holds a coffin; a shrine is a holy place.",
+      "contentNote": "One stanza is for the funeral of someone who died young.",
+      "excerpt": {
+        "locator": "“Bring Flowers,” the whole poem; opens “ Bring flowers, young flowers, for the festal board, To wreath the cup ere the wine is…”; closes “…dust through the wintry hours, They break forth in glory. Bring flowers, bright flowers!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5442,
+          5447
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d7cde1b785111e2463fde19c2db50b21122a95e394134a5e6ab9d449976e0bca"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-14-q1",
+          "prompt": "List the six places the flowers are brought. Which two seem most different from each other?",
+          "facilitatorNotes": [
+            "A feast, a conqueror’s path, a prisoner’s cell, a bride, a coffin, and a shrine. A wedding and a funeral sit side by side; so do a feast and a prison. The same gift serves joy and grief."
+          ],
+          "evidence": [
+            "Bring flowers to the captive’s lonely cell!",
+            "Bring flowers, pale flowers, o’er the bier to shed,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q2",
+          "prompt": "Look at the conqueror’s stanza. Is Hemans really praising him? Find details that make you doubt it.",
+          "facilitatorNotes": [
+            "He has shaken thrones in “stormy wrath,” crushed the vines, and left the turf red with blood. The flowers are brought only “to die” under his chariot, like the vines. It reads more like a quiet accusation than praise."
+          ],
+          "evidence": [
+            "The vines lie crush’d in his chariot’s track,",
+            "Bring flowers to die in the conqueror’s way!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q3",
+          "prompt": "What can flowers give the prisoner that nothing else in his cell can?",
+          "facilitatorNotes": [
+            "News of the outside world: the woods, free streams, the sky he cannot see, and memories of his youth. For him they mean freedom."
+          ],
+          "evidence": [
+            "They have tales of the joyous woods to tell--",
+            "And the bright world shut from his languid eye;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q4",
+          "prompt": "The word before “flowers” keeps changing: young, wild, fresh, pale, bright. Why does each stanza get its own word? Which stanza gets none?",
+          "facilitatorNotes": [
+            "Young for the feast, wild for the prisoner who longs for freedom, fresh for the bride, pale for the dead, bright for the last stanza, where flowers that “sleep in dust” all winter “break forth in glory,” a sign of hope that Hemans links with prayer. The conqueror’s flowers get no kind word at all."
+          ],
+          "evidence": [
+            "Bring ye flowers, pale flowers!",
+            "They break forth in glory. Bring flowers, bright flowers!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-15",
+      "title": "The Graves of a Household",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Picture where each child lies buried, and connect the places to the history of Hemans’s time.",
+      "focus": "Brothers and a sister who grew up together lie buried in four far-apart places, and the poem asks what love can hope for.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. In her time British families sent sons to the colonies, the navy and the wars, and the sick to warmer countries. The forest of the West is North America, and “the Indian” is a Native American. “A blood-red field of Spain” recalls the Peninsular War (1808–1814) against Napoleon’s armies; to wrap your colours round your breast is to die holding your regiment’s flag. The myrtle is an evergreen shrub of southern Europe.",
+      "contentNote": "All four children have died; one son was killed in battle.",
+      "excerpt": {
+        "locator": "“The Graves of a Household,” the whole poem; opens “ They grew in beauty side by side, They fill’d one home with glee;-- Their graves are…”; closes “…with song the hearth!-- Alas, for love! if _thou_ wert all, And naught beyond, O Earth!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6443,
+          6449
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2627c5b4685efbdf33dc8e74cd36228ad8c900c67d13f7cd07437a9c47701eea"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-15-q1",
+          "prompt": "Where does each of the four lie buried? What might have taken each one so far from home?",
+          "facilitatorNotes": [
+            "One in the American forest, perhaps a settler or traveller; one at sea, a sailor; one in Spain, a soldier killed in battle; the daughter in Italy, where she “faded,” perhaps sent south for her health."
+          ],
+          "evidence": [
+            "One, midst the forest of the West,",
+            "On a blood-red field of Spain."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q2",
+          "prompt": "The poem shows the children together and then apart. Which words make the contrast?",
+          "facilitatorNotes": [
+            "Together: “side by side,” “one home,” the same mother, the same green tree, “one parent knee.” Apart: graves “sever’d far and wide, / By mount, and stream, and sea.” The second stanza’s mother bending over each bed makes the distance hurt more."
+          ],
+          "evidence": [
+            "They grew in beauty side by side,",
+            "Their graves are sever’d far and wide,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q3",
+          "prompt": "Why might the sailor’s grave seem the saddest?",
+          "facilitatorNotes": [
+            "He was “the loved of all,” yet no one can stand by his grave and weep, because it is somewhere under the sea. There is no place to visit."
+          ],
+          "evidence": [
+            "He lies where pearls lie deep;",
+            "O’er his low bed may weep."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q4",
+          "prompt": "What do the last lines mean: “Alas, for love! if thou wert all, / And naught beyond, O Earth!”?",
+          "facilitatorNotes": [
+            "If this earth were everything, love would end only in loss; the speaker hopes for something beyond, where the family meets again. Readers can say what they think of that hope and how the poem made them feel."
+          ],
+          "evidence": [
+            "They that with smiles lit up the hall,",
+            "And naught beyond, O Earth!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-16",
+      "title": "The Palm-Tree",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a comparison between a plant and a person, and decide what the poem asks you to feel.",
+      "focus": "A palm-tree growing far from home in a European garden makes a homesick young stranger weep.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Palm-trees grow in hot lands; this one has been planted in a garden in Europe. Araby is Arabia and Afric is Africa; “Indian seas” and “the Indian sun” mean the hot lands and seas of the East; orient means eastern; the laburnum has hanging yellow flowers; a festal evening is a party; mien is how a person looks; crested means wearing a headdress of feathers; cocoas are coconut palms; a conch is a large shell blown like a horn; a patriot loves his country; to gird yourself is to get ready for a fight. Hemans’s note says she found the story in Les Jardins (The Gardens), a long French poem by Jacques Delille.",
+      "contentNote": "The poem describes the young man by the colour of his skin (“dusky mien”) and presents him as an exotic stranger, as European writers of the time often did.",
+      "excerpt": {
+        "locator": "“The Palm-Tree,” the whole poem with Hemans’s note; opens “ It waved not through an eastern sky, Beside a fount of Araby; It was not fann’d by…”; closes “…364: This incident is, I think, recorded by De Lille, in his poem of _Les Jardins_.]”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6368,
+          6377
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e855d3ae9c3c5c94cc250275c94d66b8134f940df6d9974a6c67bdb321618fa"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-16-q1",
+          "prompt": "The first stanza tells where the palm did not grow. Why might Hemans begin with the places it is missing?",
+          "facilitatorNotes": [
+            "Naming Arabia, the eastern seas and Africa shows the palm’s true homes first, so we feel how far it is from them. Then the next stanza names its condition: it is “exiled.”"
+          ],
+          "evidence": [
+            "It waved not through an eastern sky,",
+            "But fair the exiled palm-tree grew"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q2",
+          "prompt": "Find the plants around the palm in the garden. Why does it look so “strange” among them?",
+          "facilitatorNotes": [
+            "Laburnum, violets, willow, lime-trees and roses: all European plants. The palm is the only one of its kind, among leaves of “no kindred hue,” that is, no relatives."
+          ],
+          "evidence": [
+            "Midst foliage of no kindred hue;",
+            "To murmur by the desert’s tree,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q3",
+          "prompt": "How is the young man “like the palm-tree”? What does its rustling make him remember?",
+          "facilitatorNotes": [
+            "Both are far from home among strangers. The rustling brings back his island, his mother’s cabin by the coconut palms, his brothers rowing, and the conch sounding along the shore, and he hugs the tree and weeps."
+          ],
+          "evidence": [
+            "A stranger, like the palm-tree, there.",
+            "He clasp’d his country’s tree, and wept!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-16-q4",
+          "prompt": "“Oh! scorn him not!” Why might people at the party scorn him? What does Hemans say his tear has in common with a patriot’s courage?",
+          "facilitatorNotes": [
+            "Some might think a grown man weeping over a tree is childish or strange. Hemans argues that the love of home that makes him cry is the same deep spring that gives patriots and free men the strength to fight and die for their country. Readers can discuss whether homesick tears are a weakness, and whether they have felt that way."
+          ],
+          "evidence": [
+            "Oh! scorn him not! The strength whereby",
+            "The same whence gush’d that childlike tear!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-17",
+      "title": "The Lost Pleiad",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a poem from a small loss to a very large thought, and decide whether its ending comforts or troubles you.",
+      "focus": "One star of the Pleiades has vanished, and the night sky shines on as if nothing were missing.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The Pleiades, or Seven Sisters, are a small cluster of stars you can see on autumn and winter evenings. An old Greek story says there were seven sisters, but most people can see only six stars, so one Pleiad is “lost.” The poem opens with a line by Lord Byron, a famous poet of Hemans’s time. An orb is a heavenly body; to start from your rank is to leave your place in a line; regal means royal; urns of light are the stars, pictured as jars that hold light; myriads are huge numbers; a myrtle spray is a twig of an evergreen shrub; peopled means lived in; to smite is to strike; sceptres riven are kings’ rods broken, that is, kingdoms ended. The “lost” star has not really vanished: astronomers think it is probably one that is too faint for most eyes to see.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Lost Pleiad,” the whole poem; opens “ “Like the lost Pleiad seen no more below.”--Byron.”; closes “…world sinks thus--and yon majestic heaven Shines not the less for that one vanish’d star!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5656,
+          5661
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bd4e33c04a2f16756203a1e3ab1ec69b99ee49cca5b7567cc07001550c9ede3"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-17-q1",
+          "prompt": "What has happened to the lost Pleiad? Find the words that show it once had a place among the others.",
+          "facilitatorNotes": [
+            "It can no longer be seen. Its “sisters of the sky” still keep their places, but it has left its “rank,” like a soldier gone from a line."
+          ],
+          "evidence": [
+            "thy sisters of the sky",
+            "Though from its rank thine orb so long hath started,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q2",
+          "prompt": "Does the night miss the lost star? What do the shepherd and the sailor show?",
+          "facilitatorNotes": [
+            "No. The night still wears her crown, the shepherd still greets the stars, and the sailor still steers by them; “they have not mourn’d for thee.” Nobody has noticed the gap."
+          ],
+          "evidence": [
+            "She wears her crown of old magnificence,",
+            "Unchanged they rise, they have not mourn’d for thee."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q3",
+          "prompt": "In the fourth stanza the speaker wonders whether people lived on the lost star. Why does this question make the loss feel bigger?",
+          "facilitatorNotes": [
+            "If it was a world with its own “glorious race,” then a whole people may have vanished, shaken off as easily as a dew-drop from a twig. The comparison makes something enormous seem tiny and fragile."
+          ],
+          "evidence": [
+            "Even as a dew-drop from the myrtle spray,",
+            "Wert thou not peopled by some glorious race,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-17-q4",
+          "prompt": "What lesson does the speaker draw in the last stanza? Do you find the ending comforting or troubling?",
+          "facilitatorNotes": [
+            "If a whole world can vanish and the heavens shine no less, then human thrones and kings are small, and we should be humble about “what we are.” Some readers find it troubling that nobody would miss us; others find it comforting that the universe goes on, beautiful, whatever happens."
+          ],
+          "evidence": [
+            "Bow’d be our hearts to think on what we are,",
+            "Shines not the less for that one vanish’d star!"
+          ]
+        }
+      ]
+    }
+  ]
+}

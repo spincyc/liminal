@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "kingsley-madam-how-1889",
+  "readings": [
+    {
+      "id": "reading-4-kingsley-madam-how-1889-01",
+      "title": "Madam How and Lady Why: an earthquake in the night (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a writer from a funny experience, to a guess about its cause, to a serious thought.",
+      "focus": "Kingsley is shaken awake by an earthquake in the mountains and tries to work out what caused it.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Earlier he asked a riddle: what has the rattling lid of a kettle to do with the land near his home being lifted out of an ancient sea? The Pyrenees are mountains between France and Spain; a torrent is a rushing stream; box is an evergreen shrub; hepaticas and gentians are mountain flowers. The maid’s French means “Oh, it was only an earthquake; we have one here every six weeks.” Riven means torn open. Kingsley thought most earthquakes were caused by steam underground. Scientists now know that most happen when huge slabs of the earth’s outer layer, called plates, slip suddenly; steam and hot water cause only some small quakes near volcanoes and hot springs.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Earthquakes,” from the answer to the kettle riddle through Kingsley’s serious thoughts in the Pyrenees; opens “The answer to the riddle, I believe, is--Steam has done both. The lid of the kettle…”; closes “…to say with the wise man of old, \"It is of the Lord's mercies that we are not consumed.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          92,
+          98
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "292ad77ceabddfd5f486283667118ec2bc12b957e486b435e4bd9ebeaf9dc4af"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q1",
+          "prompt": "What did Kingsley dream, and how does he explain the way such a dream can happen?",
+          "facilitatorNotes": [
+            "He dreamed that English travellers below were fighting and broke their bed with a crash. He says a noise can start a long dream that takes no time at all, because the same noise wakes you at the end."
+          ],
+          "evidence": [
+            "they had quarrelled and fought, and broke their bed down with a tremendous crash",
+            "the very same noise which begins the dream, wakes you at the end of it"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q2",
+          "prompt": "Why would no one in the village admit hearing the noise? Why does Kingsley keep the village’s name a secret?",
+          "facilitatorNotes": [
+            "They feared visitors would stay away if they knew about earthquakes every six weeks. Kingsley protects them because they were kind to him, though readers might ask whether visitors deserved to know."
+          ],
+          "evidence": [
+            "afraid to let out that they had earthquakes every six weeks, for fear of frightening visitors away",
+            "because they were really very good people, and very kind to me, I shall not tell you what the name of the place is"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q3",
+          "prompt": "What clues led Kingsley to blame steam, and how sure is he? How does his idea compare with what scientists know now?",
+          "facilitatorNotes": [
+            "Hot springs came out exactly where the granite had cracked the limestone, so he pictured a cracked boiler lid like the kettle’s. He says he is not sure. Today most earthquakes are explained by moving plates, but his careful use of clues and his admission of doubt are still good science."
+          ],
+          "evidence": [
+            "they came out of the rock just where the limestone and the granite joined",
+            "though I am not so conceited as to say I am sure"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-01-q4",
+          "prompt": "Kingsley first laughed at the earthquake. Why did he stop joking?",
+          "facilitatorNotes": [
+            "He realized that a little more force could have destroyed the village, as has happened in many places, and he gave thanks that it had not. Readers can discuss whether laughing first was natural."
+          ],
+          "evidence": [
+            "it would have been no laughing matter then",
+            "I was in no humour to jest any more"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-02",
+      "title": "Madam How and Lady Why: Pliny and the buried cities (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Judge a brave man’s choices, and a writer’s judgments of people long dead.",
+      "focus": "In A.D. 79 Vesuvius erupts, a Roman admiral sails toward it, and three cities are buried.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Vesuvius is a volcano beside the Bay of Naples in Italy. Pliny the Elder was a Roman admiral and writer; his nephew, Pliny the Younger, described his death in letters that still survive. A cutter is a small boat; pumice is light, bubbly volcanic rock; brimstone is sulphur; the Nether Pit means the underworld; a martyr is someone who dies for a cause. The Crystal Palace was a great exhibition hall in London. The printed text has “wells” for “walls.” Scientists now know that volcanoes form where melted rock rises from deep in the earth, often along the edges of its moving plates.",
+      "contentNote": "Pliny dies in the eruption, and many people are buried in the cities. Kingsley calls the cities’ people wicked and thoughtless, a judgment readers may question.",
+      "excerpt": {
+        "locator": "Chapter III, “Volcanos,” from Vesuvius in Roman times through the new cone; opens “For what happened to that same Mount Vesuvius nearly 1800 years ago, in the old Roman…”; closes “…its sending out smoke and stones from its crater, and streams of lava from its sides.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          132,
+          135
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e8620715e4d17a222718975d1dc6100b7007afe53f9d969030edfacb4548b1e"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q1",
+          "prompt": "Why did no one fear Vesuvius before A.D. 79, even though there were signs?",
+          "facilitatorNotes": [
+            "Its crater was overgrown with bushes and wild vines and full of boars and deer, and it had never harmed anyone; the smoking fields nearby seemed harmless too."
+          ],
+          "evidence": [
+            "As for the mountain's being a burning mountain, who ever thought of that?",
+            "It had never harmed any one, and how could it harm them?"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q2",
+          "prompt": "Why did Pliny sail toward the mountain instead of away from it?",
+          "facilitatorNotes": [
+            "For two reasons: it was his duty to help people in danger, and as a man of science he wanted to study the strange cloud."
+          ],
+          "evidence": [
+            "if people were in danger, it was his duty to help them",
+            "he must see this strange cloud"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q3",
+          "prompt": "Pliny told his friend the flames were only burning villages, then slept soundly. Was that brave, kind or foolish?",
+          "facilitatorNotes": [
+            "Perhaps all three: he calmed his frightened friend and showed courage, but the delay nearly trapped them. Kingsley calls him a martyr to duty and science; readers may weigh the risk differently."
+          ],
+          "evidence": [
+            "Pliny persuaded his friend that they were only fires in some villages from which the peasants had fled",
+            "a martyr to duty and to the love of science"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-02-q4",
+          "prompt": "Kingsley calls the people of the cities “wicked” and “thoughtless, luckless.” Does he give evidence for those words? Why might he use them?",
+          "facilitatorNotes": [
+            "He gives no evidence of wickedness; “thoughtless” may mean that they lived happily without worrying about the mountain. As a clergyman he may be warning his readers. Many readers will find it unfair to blame people who could not have known."
+          ],
+          "evidence": [
+            "(I am afraid) as wicked, as people ever were on earth",
+            "what sort of life these thoughtless, luckless people lived"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-03",
+      "title": "Madam How and Lady Why: the golden river of fire (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Compare different explanations of the same event, and notice the writer’s own beliefs.",
+      "focus": "Kingsley describes how lava flows, and how gas once stopped a lava stream at a town wall.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. In this chapter he explains that rock from volcanoes, over ages, ends up in the food we eat. Slag and cinders are the rough waste left after melting; the Black Country was an English iron-making district; the Sandwich Islands are now Hawaii; Mount Etna is a volcano in Sicily, and Catania a city below it; St. Agatha is Catania’s patron saint; a battering-ram is a heavy beam for knocking down walls; herbage means grass and plants.",
+      "contentNote": "Kingsley, a Protestant clergyman, calls the Catholic people of Catania “ignorant” for praying to their saint, a judgment that shows the religious prejudice of his time.",
+      "excerpt": {
+        "locator": "Chapter IV, “The Transformations of a Grain of Soil,” from the Scottish saying about whinstones through the fish killed by lava; opens “Now I know that the Scotch have a saying, \"That you cannot make broth out of whinstones\"…”; closes “…and volcanos during the last few years. But we have not time to tell about everything.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          166,
+          171
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c7cf07e53f1f7eb4a0e1b9e917a61f140dc117033f17b7f73356ea9b6ef63c7"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q1",
+          "prompt": "What does the Scottish saying about whinstones mean, and why does Kingsley say it is wrong?",
+          "facilitatorNotes": [
+            "It means you cannot get anything useful out of something useless. Kingsley says that over ages lava breaks down into soil, plants and food, so it does end up in Scottish broth and even in our blood."
+          ],
+          "evidence": [
+            "That you cannot make broth out of whinstones",
+            "can put into your veins things which were spouted up red-hot by volcanos"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q2",
+          "prompt": "Find three surprising things a lava stream does. Which surprises you most?",
+          "facilitatorNotes": [
+            "Stones float on it like corks; it can turn a waterfall into a fire-fall; steam from trees can keep it from touching them, leaving round holes. Readers will choose differently."
+          ],
+          "evidence": [
+            "great stones (if you throw them on it) float on the top",
+            "turning what had been a water-fall into a fire-fall",
+            "a round hole is left in the middle of the lava where the tree was"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q3",
+          "prompt": "Why did the lava stop at the wall of Catania? Compare the townspeople’s explanation, the learned men’s and Kingsley’s own.",
+          "facilitatorNotes": [
+            "The townspeople credited St. Agatha; the learned men found that gas jets blew the lava back from the wall until it cooled. Kingsley accepts the natural cause but still thanks God, working through nature’s laws. Readers may notice that he scorns one religious explanation while giving another."
+          ],
+          "evidence": [
+            "All the inhabitants said, of course, that St. Agatha had done it",
+            "it actually blew itself back from the wall",
+            "simply Him who can preserve, just as He can destroy"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-03-q4",
+          "prompt": "How does Kingsley use lava to explain fossil fish found twisted in heaps? Is his reasoning convincing?",
+          "facilitatorNotes": [
+            "Lava and poisonous gases kill fish suddenly in the sea, so fish found twisted as if they died violently may have died that way. It is a reasonable guess from evidence, but he does not show that it is the only cause."
+          ],
+          "evidence": [
+            "twisted (as I have seen them) as if they had died suddenly and violently"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-04",
+      "title": "Madam How and Lady Why: what good is a volcano? (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Look past first appearances, and test the comparisons a writer uses to explain.",
+      "focus": "Kingsley argues that destructive lava and ash become the richest soil in the world.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. In the passage before, he described lava streams that burn and bury everything in their path. Lucerne is alfalfa, a crop for animals; Madeira is an island in the Atlantic; obsidian is natural black volcanic glass; the Lothians are farmland round Edinburgh; potash, magnesia and silicates are minerals plants need; carbonic acid gas is carbon dioxide; to silt is to spread fine soil. Skaptar Jokull is a volcano in Iceland. His main point, that volcanic soils are often very rich, is still accepted.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “The Transformations of a Grain of Soil,” from the question of what use lava can be through the ashes carried from Iceland; opens “And now you will ask me, with more astonishment than ever, what possible use can there be…”; closes “…over the north of Scotland, and even into Holland, hundreds of miles to the south.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          172,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "67a547492e3d9b4b1b18c888b26f052405fe71c6cdc340d1dc3cc5ccc7f28758"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q1",
+          "prompt": "How does cooled lava look, and what saying does Kingsley use to warn against judging it by its looks?",
+          "facilitatorNotes": [
+            "It looks like a river of rough black blocks, the most hideous and useless thing you could see. He quotes Jesus’ saying, “judge not according to the appearance,” and applies it to nature."
+          ],
+          "evidence": [
+            "you would think it the most hideous and the most useless thing you ever saw",
+            "judge not according to the appearance, but to judge righteous judgment"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q2",
+          "prompt": "What evidence does Kingsley give that lava streams are “not such very bad neighbours”?",
+          "facilitatorNotes": [
+            "What he has seen: farms, crops and vineyards right at the edges of lava streams. What he has heard: that volcanic soils are the richest in the world, as on Madeira, where thin soil over lava grew famous grapes."
+          ],
+          "evidence": [
+            "happy homesteads, rich crops, hemp and flax",
+            "are generally the richest soils in the world"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q3",
+          "prompt": "Kingsley calls rain Madam How’s “water-spade.” What does the rain do to lava, and how long does it take?",
+          "facilitatorNotes": [
+            "It wears the lava down bit by bit and spreads it over the land as rich soil, century after century and age after age."
+          ],
+          "evidence": [
+            "that delicate little water-spade of hers, which we call rain",
+            "century after century, and age after age, she digs the lava stream down, atom by atom"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-04-q4",
+          "prompt": "Kingsley compares Madam How to a chemist and to a rough workwoman. Choose one comparison: what does it help you see, and what does it leave out?",
+          "facilitatorNotes": [
+            "The chemist shows rocks being melted and mixed into useful substances; the rough workwoman shows that eruptions are violent, while the slow giving-away is gentle. Both make nature seem to plan, which a scientist might not accept. Readers may choose either."
+          ],
+          "evidence": [
+            "Madam How works continually like a chemist in his laboratory",
+            "if Madam How has been a rough and hasty workwoman"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-05",
+      "title": "Madam How and Lady Why: the fairy tale of the Ice Age (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Tell what Kingsley knew from evidence apart from what he guessed, and test the name he gives his history.",
+      "focus": "Kingsley tells the history of Ice Age Britain as a fairy tale in chapters.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. The Ice Age ended about 12,000 years ago. Scratlings are goblins of old folk tales; Norfolk is a county in eastern England; buck-bean and horn-wort are water plants; Larmer’s and Heath pond were near his home; the Lena is a river in Siberia; a carcase is a dead body; boulder-clay is clay full of stones. The lines of poetry come from Coleridge’s “The Rime of the Ancient Mariner.” Science has changed since he wrote: scientists now think the boulder-clay, and the sea shells high on the mountains, were mostly pushed there by great sheets of ice rather than left when the land sank under the sea, and that hippopotamuses lived in Britain during a warm period rather than visiting in summer.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “The True Fairy Tale,” from the start of the tale through the return of the beasts; opens “And now I will tell you a fairy tale: to make you understand it at all I must put it in…”; closes “…lion (I cannot say which), as large as the largest Bengal tiger now to be seen in India.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          222,
+          227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a510b849e868431e699f61a193b1a4bb09a1438683ec2cc79ecb5a62d1b39334"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q1",
+          "prompt": "Which animals in the first part of the tale are familiar, and which are strange? Why does Kingsley begin with the familiar ones?",
+          "facilitatorNotes": [
+            "Deer, beavers and water-rats are familiar; woolly elephants and rhinoceroses and hippopotamuses are strange. Starting with the familiar makes the land seem real before he says, “now begins the fairy tale.”"
+          ],
+          "evidence": [
+            "There were honest little water-rats too",
+            "there wandered about great herds of elephants and rhinoceroses"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q2",
+          "prompt": "How could hippopotamuses, hyenas and elephants have reached England?",
+          "facilitatorNotes": [
+            "Over land that is now sea: Italy and Sicily were joined to Africa, Gibraltar may have been joined to Spain, and there was no English Channel."
+          ],
+          "evidence": [
+            "were joined to the coast of Africa",
+            "for there was no British Channel then to stop them"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q3",
+          "prompt": "What evidence does Kingsley give that the land was drowned under icy sea? How do scientists read that evidence now?",
+          "facilitatorNotes": [
+            "Arctic shells high on mountainsides, and boulders too big for anything but icebergs to carry. Scientists now think great ice sheets moved most of them. His reasoning from clues was sound even though the explanation has changed."
+          ],
+          "evidence": [
+            "beds of shells belonging to the Arctic regions nearly two thousand feet high upon the mountain side",
+            "blocks of stone so enormous, that nothing but an iceberg could have carried them"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-05-q4",
+          "prompt": "Why does Kingsley call this true history a “fairy tale”? Is that a good name for it?",
+          "facilitatorNotes": [
+            "It is as strange as any fairy tale, he tells it in chapters, and he promises it will explain how people came to believe in fairies. Some readers may say the name makes facts sound made up; others that it makes them more exciting."
+          ],
+          "evidence": [
+            "I call it a fairy tale, because it is so strange",
+            "And this is the first chapter of my fairy tale."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-06",
+      "title": "Madam How and Lady Why: a stone full of star-fish (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow how a puzzling fossil is identified, one wrong guess at a time.",
+      "focus": "A child looks at a stone full of strange coiled shapes and learns they were animals that grew like plants.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Here he talks with a child about a piece of limestone. Dudley in Staffordshire is an English town where limestone full of fossils was dug; a fossil is the remains of a living thing turned to stone; petrified means turned to stone; Medusa, in Greek myth, had snakes for hair; Edward Forbes wrote a book on British starfish with little drawings called vignettes; corallines are stony seaweeds. The stalked star-fish are now called sea lilies, or crinoids, and they really are cousins of starfish; coral polypes are now spelled polyps. Kingsley says the “atoms” of your finger are alive; scientists now say the body is made of tiny living cells. A microcosm is a little world.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Coral-Reef,” from the opening through Madam How’s Book of Kind; opens “Now you want to know what I meant when I talked of a bit of lime going out to sea, and…”; closes “…a few words, not knowing, and of course not daring to guess, what wonder may come next.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          389,
+          416
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ddfb9930ef2a44c8abf54edbd88e366a5eb79b04cc8fce6c9079295b44c8095"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-06-q1",
+          "prompt": "What does the child first think the coiled things in the stone are? What are they really?",
+          "facilitatorNotes": [
+            "First snakes, like Medusa’s hair, then a stone flower on a jointed stalk. They are fossil star-fish that grew on stalks. Each guess compares the new thing with something the child already knows."
+          ],
+          "evidence": [
+            "like the snakes in Medusa's hair in the picture?",
+            "Is it a petrified plant or flower?",
+            "The creature most akin to it which you ever saw is a star-fish."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-06-q2",
+          "prompt": "How does the teacher show that a star-fish can grow on a stalk?",
+          "facilitatorNotes": [
+            "The feather-star grows a tiny stalk when young and later breaks free to swim; some star-fish in other seas keep their stalks all their lives, as this fossil did."
+          ],
+          "evidence": [
+            "This very feather-star, soon after it is born, grows a tiny stalk,",
+            "several star-fish still who grow on stalks all their lives"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-06-q3",
+          "prompt": "Kingsley asks you to imagine a hawthorn bush whose every blossom is alive. What is he trying to explain?",
+          "facilitatorNotes": [
+            "Corals and similar creatures grow from one root, branch after branch, with hundreds of tiny animals on each branch, each with its own mouth, arms and stomach. So the whole thing is “at once one creature and many creatures.”"
+          ],
+          "evidence": [
+            "every blossom on that bush a separate living thing",
+            "the whole creation is at once one creature and many creatures."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-06-q4",
+          "prompt": "Why does Kingsley say your finger is just as wonderful? Do you agree with his rule about the world outside you and inside you?",
+          "facilitatorNotes": [
+            "When a cut heals, the finger grows new skin, so it too must be made of living parts. He says every wonder outside us has a match inside us. Readers can test the rule with their own examples."
+          ],
+          "evidence": [
+            "And what is healing but growing again?",
+            "there is nothing wonderful in the world outside you but has its counterpart of something just as wonderful"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-07",
+      "title": "Madam How and Lady Why: no silliness in not knowing (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Decide what makes a wrong guess sensible or silly.",
+      "focus": "The child asks whether people who believe odd things about animals are silly, and the teacher says no.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Here he talks with a child about mistakes. Encrinites and Crinoids are scientific names for the stalked star-fish, from a Greek word for lily; slowworms are harmless legless lizards and adders poisonous snakes; dormice are small animals that sleep all winter. Swallows really do fly from Britain to Africa each autumn. At Whitby, a seaside town in Yorkshire, people told a legend that St. Hilda turned the snakes into stone, and some carved snake heads on the fossils to sell. An Ammonite is the fossil shell of an extinct sea animal related to squid; a smock-frock was a farm worker’s loose shirt.",
+      "contentNote": "Kingsley calls some peoples “savages” and part of Africa “Negroland,” insulting words that Europeans of his time used.",
+      "excerpt": {
+        "locator": "Chapter IX, “The Coral-Reef,” from the child’s question about being silly through old John ploughing; opens “Then do you think me silly for fancying that a fossil star-fish was a flower?”; closes “…many folks can do who fancy themselves a whole world wiser than John in the smock-frock.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          418,
+          435
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6451612eea944ef4d4bd2c74108d304036ac391981a92f9104e2852cb5187020"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-07-q1",
+          "prompt": "Why does the teacher say the child was not silly to think the fossil was a flower?",
+          "facilitatorNotes": [
+            "You can only guess about new things by comparing them with things you have seen, and the child had seen flowers, snakes and backbones. Even learned men made mistake after mistake about corals."
+          ],
+          "evidence": [
+            "There is no silliness in not knowing what you cannot know.",
+            "by comparing them with old things, which you have seen before"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-07-q2",
+          "prompt": "Why does he call the village boys’ guess, that swallows sleep at the bottom of the pond, “a very fair one”?",
+          "facilitatorNotes": [
+            "They know bats and dormice sleep all winter, they see swallows dipping near the water, and the truth, that young swallows find their own way to Africa, sounds even harder to believe."
+          ],
+          "evidence": [
+            "That is much more wonderful than that the swallows should sleep in the pond.",
+            "So their guess is really a very fair one"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-07-q3",
+          "prompt": "A boy laughed at his nurse for believing that ammonites were stone snakes. What does the teacher think the boy deserved, and why?",
+          "facilitatorNotes": [
+            "A box on the ears: the nurse knew many more important things, such as how to nurse him and teach him to obey and tell the truth, and she only believed what her town had believed for centuries."
+          ],
+          "evidence": [
+            "Then he was very lucky that she did not box his ears",
+            "And no one can be blamed for thinking as his forefathers did, unless he has cause to know better."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-07-q4",
+          "prompt": "What condition does the teacher set for teaching the child? Does Kingsley follow his own rule all the way?",
+          "facilitatorNotes": [
+            "The child must not laugh at or despise people like old John, who know other things: farming, judging people, keeping their tempers, paying their debts. Readers may notice that Kingsley himself uses scornful words for other peoples, so he does not fully keep the rule he teaches."
+          ],
+          "evidence": [
+            "I will only teach you on condition that you do not laugh at, or despise,",
+            "And yet he can plough and sow, and reap and mow,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-08",
+      "title": "Madam How and Lady Why: Mr. Darwin’s ring-islands (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Picture a living coral reef, then follow how a scientist solved a riddle about it.",
+      "focus": "The teacher describes a coral reef he has never seen and explains Charles Darwin’s idea about ring-shaped islands.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Darwin, Wallace, Jukes and Gosse were naturalists who wrote about their travels and discoveries; Lucas Barrett was a young geologist drowned in 1862 while exploring a reef. Madrepores and brain-stones are kinds of coral; polypes are polyps; the trade-wind is a steady ocean wind; a lagoon is still, shallow water inside a reef; a fathom is about two metres. The reef off north-east Australia is the Great Barrier Reef, now measured at over 2,000 kilometres. Darwin’s answer about atolls is still accepted: drilling in the 1950s found coral more than a kilometre thick on top of an old volcano. But there was no sunken continent in the Pacific; the islands were separate volcanoes that slowly sank.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Coral-Reef,” from the exquisite shapes and glorious colours through Darwin’s answer to the riddle of the ring-islands; opens “Oh, but I want to hear about the exquisite shapes and glorious colours.”; closes “…but deep sea, and coral-reefs which mark the mountain ranges of that sunken world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          436,
+          449
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e801344a614c4a748c4bd5316df230b478e4cb9b49c96b07a9261e620d8b3ad"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-08-q1",
+          "prompt": "Kingsley has never seen a living coral reef. How can he describe one?",
+          "facilitatorNotes": [
+            "From the books of naturalists who have, and by reasoning from the corals alive today to the old ones in the stone: from the children he guesses at the ancestors."
+          ],
+          "evidence": [
+            "I have never seen them; though I trust to see them ere I die.",
+            "from the beauty of the children we can guess at the beauty of their ancestors"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-08-q2",
+          "prompt": "Describe the living reef in your own words. What turns shells and coral into mud?",
+          "facilitatorNotes": [
+            "Coral covered in jelly with a polyp peeping from every pore, in brilliant colours, with anemones, starfish, crabs and fish. Parrot-fish bite the coral and bigger fish crunch up shellfish, grinding them into soft mud."
+          ],
+          "evidence": [
+            "parrot-fish who browse on the live coral with their beak-like teeth",
+            "turning shells and corals into fine soft mud"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-08-q3",
+          "prompt": "What happens to the corals when the surf pounds them? Is Kingsley’s comparison with “brave and good men” a good one?",
+          "facilitatorNotes": [
+            "The outer corals grow strongest where the waves beat, because the fresh sea-water brings the most lime to build with, and their wall shelters calm water inside. Readers can decide whether creatures can be “brave”; the comparison helps us remember that trouble makes them stronger."
+          ],
+          "evidence": [
+            "like brave and good men, the more trouble they suffer the stronger they are.",
+            "inside of which, in water still as glass,"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-08-q4",
+          "prompt": "Explain Darwin’s answer to the ring-island riddle in your own words. Why was it clever?",
+          "facilitatorNotes": [
+            "A volcanic island has a coral reef around its shore. The island slowly sinks, but the corals keep building upward to stay near the surface. When the island has vanished, a ring of reef is left round the lagoon. It explained why reefs rise from deep water though coral only grows in shallow water."
+          ],
+          "evidence": [
+            "the corals would not build except in shallow water",
+            "Suppose one of those beautiful South Sea Islands",
+            "What must be left but a ring of coral reef"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-09",
+      "title": "Madam How and Lady Why: the cocoa-nut crab (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow how a bare new island fills with life, and decide whether an animal can think.",
+      "focus": "Waves pile coral into an island, living things arrive one by one, and a giant crab learns to open coconuts.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Here he answers a child’s question about how a coral island is made. A smith’s forge is a blacksmith’s workshop; mortar is the paste that hardens between bricks; cocoons protect insects as they change; a proboscis is a long sucking tube, like a butterfly’s; luxurious means fond of comfort; a quart is about a litre. In Aesop’s fable, a stork serves a fox dinner in a long-necked jar he cannot reach into. Kingsley’s idea that island animals slowly change to fit their homes is evolution, which Darwin had described. The coconut crab, or robber crab, is the largest land crab. Scientists have since seen it climb trees, and an adult would drown in the sea: it moistens its gills with water but does not swim; only the mothers go to the sea, to let their eggs hatch.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IX, “The Coral-Reef,” from how the coral rises above the water through the history of the cocoa-nut crab; opens “But how does the coral ever rise above the surface of the water and turn into hard stone?”; closes “…I do: then I shall be inclined to say that that person does not think nor reason either.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          450,
+          452
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73a2c823eab66f5ae63c991d8ecafd0812598007141df2cc28236834677c9ffe"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q1",
+          "prompt": "How does a reef become an island that rises above the sea?",
+          "facilitatorNotes": [
+            "The polyps cannot build above high tide, but the surf piles up broken coral like a beach and hammers it together; then the lime hardens like mortar into a low island."
+          ],
+          "evidence": [
+            "the surf which beats upon them piles up their broken fragments",
+            "the whole mass sets and becomes hard, as you may see mortar set"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q2",
+          "prompt": "In what order does life arrive on the new island? Which animals can never get there, and why?",
+          "facilitatorNotes": [
+            "Sea-birds first, then floating seeds such as coconuts, then drifting trees carrying seeds and insect eggs, then storm-blown land birds. There are no four-footed beasts, snakes, lizards or frogs, because they cannot cross the sea."
+          ],
+          "evidence": [
+            "Then sea-birds come to it, and rest and build;",
+            "nor any animals that cannot cross the sea."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q3",
+          "prompt": "How does the cocoa-nut crab get its dinner out of a coconut? Why does Kingsley mention the fox and the stork?",
+          "facilitatorNotes": [
+            "It tears off the husk from the end with the three eye-holes, hammers through an eye-hole with its claw, then turns round and scoops out the meat with its slender hind pincers. Like the fox facing the stork’s jar, it can see the food but cannot reach it, until it solves the problem."
+          ],
+          "evidence": [
+            "he hammers through one of them with the point of his heavy claw.",
+            "He is as far off from his dinner as the fox was",
+            "puts in a pair of his hind pincers"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-09-q4",
+          "prompt": "Kingsley says that anyone who thinks the crab acts only by instinct does not think either. Do you agree that the crab thinks?",
+          "facilitatorNotes": [
+            "He argues that knowing which end to open, turning round to use the hind legs and lining a burrow with fibre look like reasoning, though not in words. Others may say the crab is born knowing how to do these things. A fair answer weighs both and notices that Kingsley is teasing his opponents."
+          ],
+          "evidence": [
+            "does not think and reason, just as you and I think and reason, though of course not in words",
+            "he lines them with a quantity of cocoa-nut fibre"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-10",
+      "title": "Madam How and Lady Why: two giant grandsons (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Work out what the characters in a fable stand for, and decide in what sense a made-up story can be true.",
+      "focus": "Kingsley tells the history of science as a fable about two giant brothers, one who takes things apart and one who puts them together.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. The child has asked what chalk is made of. Before answering, Kingsley tells a fable. In his view of history, people for many centuries built grand explanations of the world out of guesses and punished those who questioned them, until careful testing and experiment won out in the 1500s and 1600s; historians today think the real story was more complicated. Rational means able to reason; conceit is too high an opinion of yourself; tyrannous means cruel and bullying; a sham is a fake; to wax is to grow; a weather-glass is a barometer, whose hand falls when bad weather is coming; the laws of the Medes and Persians are, in an old saying, laws that can never change; a hue and cry is a noisy chase.",
+      "contentNote": "The fable mentions people being “tortured, burnt, or murdered” for disagreeing.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Madam How’s Two Grandsons,” from the question about chalk to the end of the story of the two giants; opens “You want to know, then, what chalk is? I suppose you mean what chalk is made of?”; closes “…deal of good it will do him. And that is the end of my story, and a true story it is.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          299,
+          311
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d375ee48b6c60b7a8b44a131484433be3b62bf7ecf64d287dc3128ad793ef27e"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-10-q1",
+          "prompt": "What work does Lady Why give each grandson? What goes wrong when Synthesis will not wait for his brother?",
+          "facilitatorNotes": [
+            "Analysis takes things to pieces to find out how they are made (Science); Synthesis puts pieces together into something new (Art). Synthesis snatches the work away before it is a quarter done, so everything he builds is wrong: watches, ships and houses that do not work."
+          ],
+          "evidence": [
+            "Analysis was to take to pieces everything he found, and find out how it was made.",
+            "His watches would not keep time, his soldiers would not fight, his ships would not sail"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-10-q2",
+          "prompt": "“If the hand of his weather-glass went down, he nailed it up to insure a fine day.” What does this picture mean? Can you think of a way people still do this?",
+          "facilitatorNotes": [
+            "Nailing the needle cannot stop the rain; it only hides the warning. It stands for refusing evidence you do not like, and Synthesis even punishes people who tell the truth. Readers can think of everyday versions, such as ignoring a bad test result or blaming the person who brings bad news."
+          ],
+          "evidence": [
+            "If the hand of his weather-glass went down, he nailed it up to insure a fine day",
+            "the more willing to deceive himself"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-10-q3",
+          "prompt": "Kingsley says his story about giants is “every word of it true.” How can a fable be true?",
+          "facilitatorNotes": [
+            "It is not true that giants exist, but it can be true about how people have thought and behaved: guessing before testing, and later learning to test. That kind of story is called an allegory. Readers can find the turning point, when ordinary people and scholars start hiding Analysis and taking his side."
+          ],
+          "evidence": [
+            "which is every word of it true",
+            "folks had grown so disgusted with Synthesis that they began to take the part of Analysis"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-10-q4",
+          "prompt": "At the end, Analysis is in danger of being “spoilt by too much prosperity,” and Synthesis will one day rise again. What is Kingsley warning about? Do you agree that the brothers need each other?",
+          "facilitatorNotes": [
+            "Science, now winning, could grow proud just as Synthesis did; and art and imagination still matter. Kingsley hopes the brothers will become friends and do “nobler and more beautiful work” together. Readers might give examples of inventions or artworks that needed both careful study and imagination."
+          ],
+          "evidence": [
+            "he will rise up again some day, to make good friends with his brother Analysis",
+            "he is in danger of being spoilt by too much prosperity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-11",
+      "title": "Madam How and Lady Why: chalk at the bottom of the sea (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow the clues scientists used, and check a writer’s arithmetic for yourself.",
+      "focus": "Chalk turns out to be made of countless tiny shells, and the same kind of mud is still forming on the floor of the Atlantic.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Chalk is the soft white rock of the downs, the rolling hills of southern England. Organisms are living things; atomies are tiny creatures; the Dentalina and Globigerina are kinds of foraminifera, and the book shows drawings of them. A fathom is six feet. The electric cable was the first telegraph cable under the Atlantic, laid in the 1850s and 1860s. Cachalots are sperm whales. The [1] after a quotation marks Kingsley’s footnote, printed at the end of the book, naming the scientists he quotes. Scientists now know that foraminifera are single-celled living things, neither animals nor plants, and that most chalk is made of even tinier plates from single-celled algae, mixed with foraminifera shells. The chalk of the downs formed between about 100 and 66 million years ago, and the Atlantic mud is not a continuation of it.",
+      "contentNote": "The chapter ends with lines of poetry about people drowned at sea.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Madam How’s Two Grandsons,” from the secret of what chalk is made of to the end of the chapter; opens “But now--and this is a secret which you would never find out for yourself, at least…”; closes “…dead.' Earth shall reclaim her precious things from thee. Give back the dead, thou Sea!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          367,
+          387
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "224cab86f2beebbd52ba0f029a5f4aad1543cecf8e257eb468a70d177603d820"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-11-q1",
+          "prompt": "What does Kingsley say most of a lump of chalk is made of? How does he help you imagine how small and how many these things are?",
+          "facilitatorNotes": [
+            "The shells of tiny creatures called foraminifera: perhaps forty thousand in a bit of chalk an inch each way, enough to make whole hills and part of the Great Pyramid. (Scientists now think tiny algae plates make up even more of it.)"
+          ],
+          "evidence": [
+            "there may be, it is said, forty thousand of them in a bit of chalk an inch every way",
+            "Part of the building stone of the Great Pyramid in Egypt is composed, I am told, entirely of them."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-11-q2",
+          "prompt": "How did scientists work out that chalk was laid down at the bottom of a deep, still sea? Follow the clues in order.",
+          "facilitatorNotes": [
+            "There are sea-shells in chalk; creatures like these live in seas today; and their delicate shells are not ground to paste, so the water must have been very still, which means very deep. Each step is a reason, not a guess."
+          ],
+          "evidence": [
+            "because there are sea-shells in it",
+            "The water in which they settled must have been quite still"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-11-q3",
+          "prompt": "Do Kingsley’s sum. How many inches are there in 1300 feet? If chalk grew an inch a year, how many years would 1300 feet take? What if it grew a tenth of an inch?",
+          "facilitatorNotes": [
+            "1300 × 12 = 15,600 inches: 15,600 years at an inch a year, 156,000 years at a tenth. Kingsley wants the child to feel how long the earth has existed. Chalk actually grew far more slowly, so it took millions of years."
+          ],
+          "evidence": [
+            "How many inches are there in 1300 feet?",
+            "if it grew a tenth of an inch a year, or even a whole inch"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-11-q4",
+          "prompt": "What are the “sadder fossils” Kingsley expects in the new chalk? Why might a science lesson end with a poem?",
+          "facilitatorNotes": [
+            "The bodies of people lost at sea, along with whale bones and shipwrecks. The poem adds feeling to the facts: the ocean floor is not only a science laboratory but a grave. The lines come, slightly changed, from Felicia Hemans’s “The Treasures of the Deep”; readers who know that poem can compare."
+          ],
+          "evidence": [
+            "And sadder fossils yet, my child, will be scattered on those white plains",
+            "Give back the dead, thou Sea!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-kingsley-madam-how-1889-12",
+      "title": "Madam How and Lady Why: if the land were left alone (excerpt)",
+      "sourceId": "kingsley-madam-how-1889",
+      "genre": "historical nature essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Predict what would happen to a place over hundreds of years, using evidence you could see today.",
+      "focus": "If people left the fields, the wild would come back, and the trees would fight a slow war until each kind held the ground that suits it.",
+      "context": "Charles Kingsley (1819–1875) was an English clergyman, novelist and naturalist who also wrote The Water-Babies. Madam How and Lady Why (1870) is a set of talks with a child about the earth: “Madam How” is his name for the way nature works, and “Lady Why” for the purposes he believed God gives it. He wrote about 150 years ago, and some of his science has since been corrected. Kingsley and the child stand by the boundary between his farm’s field and the wild moor beyond it. Ling is heather; gorse, furze and needle-whin are prickly shrubs; brows are the tops of slopes and bottoms the low ground; leas are pastures; tillage is ploughing; Henry the Eighth was king of England from 1509 to 1547; withies are willows; grips are small ditches; beech mast is beech nuts. “The struggle for existence” and “competition of species” are phrases from Charles Darwin’s On the Origin of Species (1859), which Kingsley admired.",
+      "contentNote": "The passage describes living things killing and starving one another. It ends with Kingsley’s Christian trust that God (Lady Why) guides nature; discuss his reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Chapter X, “Field and Wild,” from the moor as a pattern of old England to Kingsley’s answer, “I know it, my child”; opens “That moor is a pattern bit left to show what the greater part of this land was like for…”; closes “…be of use somehow, somewhere, somewhen, in the long ages which are to come hereafter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          589,
+          603
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a45cb35983630d87fe4e7e6a151ba65acd9d1198e83aef18f4591bcdc7351127"
+      },
+      "questions": [
+        {
+          "id": "reading-4-kingsley-madam-how-1889-12-q1",
+          "prompt": "What did this land look like before farming, according to Kingsley? Why does he call it “sadder, damper, poorer”?",
+          "facilitatorNotes": [
+            "Heath, heather, gorse and bramble on the moors, woods in the valleys, coarse grass, few bright flowers and no green fields. Far fewer people and animals could live on it: for one then, a hundred now."
+          ],
+          "evidence": [
+            "a far sadder, damper, poorer land than now",
+            "For one man or one cow or sheep which could have lived on it then, a hundred can live now."
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-12-q2",
+          "prompt": "How can Kingsley tell that the wood above was once a ploughed field? What has come back since?",
+          "facilitatorNotes": [
+            "Its grass ridges and furrows still show the old ploughing. Oak, beech, holly and bramble have grown back, and even the cow-wheat, which only grows in ancient woods. The land itself keeps a record that a careful observer can read."
+          ],
+          "evidence": [
+            "you can still see the grass ridges and furrows which show that it was once ploughed and sown by man",
+            "which only grows in ancient woods, has found its way back again"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-12-q3",
+          "prompt": "If people left the pasture, how would the trees “fight”? Describe or sketch how the war would end along the hillside.",
+          "facilitatorNotes": [
+            "The bigger trees shade the smaller ones and starve their roots, and their seedlings cannot sprout in the dark. Beeches would hold the dry slope, oaks would push down into wetter ground, and alders and willows would keep the streamside: three bands of forest."
+          ],
+          "evidence": [
+            "the larger and stronger would kill the weaker and smaller by simply overshadowing their tops, and starving their roots",
+            "a forest of beech and oak, lower down a forest of oak and alder, and along the stream-side alders and willows only"
+          ]
+        },
+        {
+          "id": "reading-4-kingsley-madam-how-1889-12-q4",
+          "prompt": "The child says, “But that is very hard.” How does Kingsley answer? Do you agree that nature rewards each thing “exactly according to its deserts”?",
+          "facilitatorNotes": [
+            "He agrees it is hard, calls nature clumsy and sometimes cruel without meaning it, and trusts that Lady Why guides the struggle toward something better. One defensible answer: surviving is not the same as deserving, since a seedling in the shade did nothing wrong. Others may find comfort in Kingsley’s trust."
+          ],
+          "evidence": [
+            "rewards it exactly according to its deserts",
+            "we must trust that she guides this great war between living things"
+          ]
+        }
+      ]
+    }
+  ]
+}
