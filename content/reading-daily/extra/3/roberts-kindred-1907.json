@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "roberts-kindred-1907",
+  "readings": [
+    {
+      "id": "reading-3-roberts-kindred-1907-01",
+      "title": "The Boy and Hushwing, part 1: A voice of doom",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Compare how different creatures hear the same sound, and separate what the Boy sees from what he guesses.",
+      "focus": "A farm boy, unafraid of the owl that terrifies the forest, watches it hunt and decides to catch it.",
+      "context": "Charles G. D. Roberts (1860–1943) was a Canadian poet and storyteller who grew up in the backwoods of New Brunswick. In The Kindred of the Wild (1902) he wrote realistic stories of wild animals, imagining their senses and fears while keeping close to how they really live. Several of the stories follow “the Boy,” a farm boy who watches the creatures of the woods. Hushwing is a great horned owl, a large owl with feather tufts like horns. Dusk is the dim time after sunset; a glade is an open space in a forest; a covert is a hiding place; talons are claws; to winnow is to beat the air with wings; a marauder is a raider.",
+      "contentNote": "The owl kills a hare, and the weasel is described as a cruel hunter.",
+      "excerpt": {
+        "locator": "“The Boy and Hushwing,” from the beginning to the Boy’s first plan, ending “to care for the little owlets in the nest”; opens “A hollow, booming, ominous cry, a great voice of shadowy doom, rang out suddenly and…”; closes “…Hushwing’s yet fiercer and stronger mate to care for the little owlets in the nest.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-roberts-kindred-1907-02",
+        "blocks": [
+          176,
+          182
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d4a15549879e7f937400214bdb83832c3ad8d0a37e0044d7ee7a3b1547cd63ab"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q1",
+          "prompt": "How do the red squirrel, the grouse and the weasel react to Hushwing’s cry? Why is the Boy not afraid?",
+          "facilitatorNotes": [
+            "The squirrel goes still, the grouse is afraid even far off, and even the fierce weasel freezes so as not to give himself away. The Boy is not the owl’s prey and knows the sound well; he smiles and decides to hunt the hunter."
+          ],
+          "evidence": [
+            "But not vague was the fear which shook the soul of the red squirrel",
+            "the sound brought no terror."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q2",
+          "prompt": "Why did the Boy name the owl “Hushwing”? What happens to the pine trunk when Hushwing lands on it?",
+          "facilitatorNotes": [
+            "Because his flight is ghostly silent. When he lands, the trunk simply looks “about two feet taller”: the owl sits so straight and still that he looks like part of the tree."
+          ],
+          "evidence": [
+            "for the ghostly silence of his flight",
+            "the pine trunk looked about two feet taller in the Boy’s eyes."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q3",
+          "prompt": "The Boy is not sure he heard the hare at all. What does that tell you about the owl’s hearing?",
+          "facilitatorNotes": [
+            "The snap is so faint the Boy may have imagined it, yet the owl hears it sharply from the far end of the glade and strikes at once. The scene proves the owl hears far better than a keen-eyed boy."
+          ],
+          "evidence": [
+            "so faint that he was hardly sure whether he heard or imagined it;",
+            "to the wonderfully wide and sensitive drum of the owl’s ear it sounded sharply"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-01-q4",
+          "prompt": "At the end the Boy guesses one thing and plans another. What is each? What does he remember about the owl’s family?",
+          "facilitatorNotes": [
+            "He guesses that Hushwing has a mate and a nest in the cedar swamp (“likely” shows it is a guess), and plans to catch the old bird to test his skill. He knows the stronger mate would still be there to feed the owlets. Readers can discuss whether that makes the plan fair."
+          ],
+          "evidence": [
+            "He’s got a mate and a nest ’way back in the cedar swamp, likely,",
+            "there would remain Hushwing’s yet fiercer and stronger mate to care for the little owlets in the nest."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-02",
+      "title": "The Boy and Hushwing, part 2: The owl and the panther",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 7,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow two hunters who cross paths by accident, and weigh the Boy’s reasons.",
+      "focus": "Hushwing strikes a panther by mistake, and the Boy explains why he wants the owl alive.",
+      "context": "Recap: at dusk the Boy watched Hushwing, a great horned owl, sit as still as the dead pine trunk he perched on, then swoop on a hare the Boy could hardly hear. The Boy guessed the owl had a nest in the cedar swamp and began planning to catch him. The adult reads this denser part aloud. A panther is a cougar or mountain lion; its fastnesses are safe hiding places; a heifer is a young cow; an assailant is an attacker; wanton slaughter is killing for no reason; a partisan takes one side; furtive means secret and shy.",
+      "contentNote": "A panther plans to kill a calf; the owl kills a red squirrel. The Boy calls the weasel a “murderous” killer.",
+      "excerpt": {
+        "locator": "“The Boy and Hushwing,” from Hushwing’s return to the nest through the Boy’s reasons for catching him alive; opens “When Hushwing had deposited his prey beside the nest, in readiness for the next meal of…”; closes “…which his father’s library contained could not give him, was what he continually craved.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-01",
+        "continuesTo": "reading-3-roberts-kindred-1907-03",
+        "blocks": [
+          183,
+          187
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7cb073c2df6b5d5a92b11b18da58647c41ed78a8b7a75caf4569583330c48add"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q1",
+          "prompt": "Why has the panther come down from the hills, and what is he planning?",
+          "facilitatorNotes": [
+            "Hunters camped on his range scattered his game, so he has come for revenge on their flocks: he lies on a willow branch by the pond to kill a young heifer when the cattle come to drink."
+          ],
+          "evidence": [
+            "a camp of hunters on his range had troubled him seriously and scattered his game.",
+            "I will kill me a yearling heifer."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q2",
+          "prompt": "Why does Hushwing strike the panther’s head? Did he know what it was?",
+          "facilitatorNotes": [
+            "No: he had never seen a panther and had no idea of such a beast. Seeing only furry ear-tips moving, he struck, perhaps taking them for a mink. By the time the panther hit back, the owl was gone."
+          ],
+          "evidence": [
+            "He had never seen a panther, and he had nothing in his brain-furnishing to fit so formidable a beast.",
+            "thinking perhaps to strike a mink"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q3",
+          "prompt": "Roberts calls the owl’s ears “living telephone films.” What does that mean? What do the ears catch next?",
+          "facilitatorNotes": [
+            "Early telephones used a thin sheet that trembled at the tiniest sound; the owl’s ears are just as sensitive. They catch light claws scratching on bark ten paces away, and the red squirrel is caught."
+          ],
+          "evidence": [
+            "those living telephone films which served him for ears,",
+            "caught the scratching of light claws on the dry bark of a hemlock"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-02-q4",
+          "prompt": "The Boy could easily shoot Hushwing. Why does he want to catch him alive? Are his reasons good ones?",
+          "facilitatorNotes": [
+            "He does not kill for no reason and takes no side among wild creatures. He wants to test his woodcraft, study the owl up close, perhaps tame him, and learn what his father’s natural-history books cannot teach. Some readers will admire this; others will question taking a parent bird from its nest."
+          ],
+          "evidence": [
+            "wanton slaughter was not his object,",
+            "knowledge such as the text-books on natural history which his father’s library contained could not give him,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-03",
+      "title": "The Boy and Hushwing, part 3: The snare",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 7,
+        "totalMinutes": 20
+      },
+      "challenge": "Follow a trap step by step, then notice how the story shows the captive’s feelings.",
+      "focus": "The Boy uses what he has learned about the owl to catch him, and finds a captive that will not give in.",
+      "context": "Recap: the Boy, a farm boy who loves to watch wild animals, wants to catch Hushwing, a great horned owl, alive, to test his woodcraft and study him closely. He has watched the owl sit on a dead pine trunk at dusk and swoop on prey he hears from far away. A snare is a noose that traps an animal; chores are small daily jobs; a hired man was a paid farm worker; pinions are wings; homespun is rough home-woven cloth; a loft is a room under a roof; equanimity is calm.",
+      "contentNote": "The Boy uses a dead rat as bait and traps the owl with a wire noose.",
+      "excerpt": {
+        "locator": "“The Boy and Hushwing,” from the setting of the snare to Hushwing’s first evening in the loft; opens “On the following afternoon the Boy went early to the neighbourhood of Hushwing’s…”; closes “…Noting his courage, the Boy smiled approval and left him alone to recover his equanimity.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-02",
+        "continuesTo": "reading-3-roberts-kindred-1907-04",
+        "blocks": [
+          188,
+          193
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0538bc1f77e795b0567595d387254323da7ffe35f846c40a4ad6a8896579e1a9"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q1",
+          "prompt": "Describe the Boy’s trap step by step. What are the rat and the broken twigs for?",
+          "facilitatorNotes": [
+            "A noose of rabbit wire held flat in the bushes over a stump; a dead rat fixed on the stump as bait; broken twig-tops tied to a string, so that a tug makes them scratch like a small animal’s claws. Both cords run back to his hiding place."
+          ],
+          "evidence": [
+            "he fixed a snare of rabbit wire.",
+            "he smiled with satisfaction to hear the broken twigs scratch seductively on the stump, like the claws of a small animal."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q2",
+          "prompt": "Why does the Boy use a sound to bring Hushwing to the trap?",
+          "facilitatorNotes": [
+            "He has learned that the owl hunts by hearing, as with the hare. The scratching is exactly the kind of tiny sound the owl cannot ignore."
+          ],
+          "evidence": [
+            "Instantly the Boy pulled his string;",
+            "Hushwing heard it."
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q3",
+          "prompt": "How does Hushwing behave once he is caught, and in the loft?",
+          "facilitatorNotes": [
+            "He hisses and snaps to the end; in the loft he flies at the window, gives up, and perches on an old sofa, turning his head to stare straight into the Boy’s eyes without flinching."
+          ],
+          "evidence": [
+            "Courageous to the last, he hissed fiercely and snapped his sharp beak in defiance;",
+            "met those of his captor with an unflinching directness"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-03-q4",
+          "prompt": "How does Hushwing feel in the loft, and how does the Boy respond to his courage? Whose side are you on?",
+          "facilitatorNotes": [
+            "Hushwing feels “indignation and despair”; the Boy smiles approval and leaves him alone to calm down. Readers may admire the Boy’s respect, or feel the owl should not be shut up at all."
+          ],
+          "evidence": [
+            "His heart swelled with indignation and despair;",
+            "Noting his courage, the Boy smiled approval and left him alone to recover his equanimity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-roberts-kindred-1907-04",
+      "title": "The Boy and Hushwing, part 4: A thief in the night",
+      "sourceId": "roberts-kindred-1907",
+      "genre": "realistic animal story",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a surprise from two points of view, the thief’s and the owl’s.",
+      "focus": "The untameable owl frightens off a grain thief and wins his freedom.",
+      "context": "Recap: the Boy caught Hushwing, a great horned owl, in a wire snare and shut him in the loft above the wood-shed, where the oat-bins are full of rats. The owl will not be tamed and hisses whenever the Boy comes near. Earlier, out hunting, Hushwing once struck a panther’s ears by mistake. A fortnight is two weeks; assiduously means carefully and steadily; a squatter lived on land that was not his; a hobgoblin is a mischievous spirit; a shanty is a rough hut; irreconcilable means never won over.",
+      "contentNote": "The owl kills rats and a mink, and gashes a thief’s scalp.",
+      "excerpt": {
+        "locator": "“The Boy and Hushwing,” from the Boy’s fortnight of watching to the end of the story; opens “The Boy, as days went by, made no progress whatever in his acquaintance with his captive,…”; closes “…shone happily upon the big-headed, ragged-feathered, hungry brood of owlets at his feet.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-roberts-kindred-1907-03",
+        "continuesTo": null,
+        "blocks": [
+          194,
+          201
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c3bfc2955d14ca0af30c3d16edbf2f89c081d20c12c3219d6cc0f433b16da6cc"
+      },
+      "questions": [
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q1",
+          "prompt": "How does Hushwing hunt rats in the loft? What does his cry do to them?",
+          "facilitatorNotes": [
+            "He sits still, sends out his terrifying cry and listens. A frightened rat dashes for cover, and the noise it makes tells the owl where to pounce."
+          ],
+          "evidence": [
+            "Then suddenly he would send forth his terrifying cry,—and listen.",
+            "Startled out of all common sense by that voice of doom at his ear,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q2",
+          "prompt": "Why does Hushwing attack the thief? What does the thief think has attacked him?",
+          "facilitatorNotes": [
+            "Angry and hungry, the owl hears the faint click of the hook and swoops at the bushy, hatless head in the window, a tempting target. The thief thinks a goblin has been sent to punish him for stealing."
+          ],
+          "evidence": [
+            "the marvellous ear of Hushwing heard it.",
+            "It was rather some kind of a grossly inconsistent hobgoblin that he thought of,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q3",
+          "prompt": "The story calls this Hushwing’s “second mistake.” What was the first?",
+          "facilitatorNotes": [
+            "Striking the panther’s furry ears, which he took for small prey. Both times he hit something far bigger than he meant to, and both times his surprise attack worked."
+          ],
+          "evidence": [
+            "he did not wait to investigate this second mistake of his,"
+          ]
+        },
+        {
+          "id": "reading-3-roberts-kindred-1907-04-q4",
+          "prompt": "How does the Boy feel when Hushwing is gone? What does he decide, and do you agree?",
+          "facilitatorNotes": [
+            "Disappointed: he had grown fond of the “dauntless” owl. He decides Hushwing has earned his freedom, and his father laughs that the grain will last longer. The last picture, the owl feeding his owlets, suggests where he belongs. Readers may also say the owl was never the Boy’s to keep."
+          ],
+          "evidence": [
+            "He had grown very fond of his big, irreconcilable, dauntless captive.",
+            "Hushwing has earned his freedom."
+          ]
+        }
+      ]
+    }
+  ]
+}
