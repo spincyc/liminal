@@ -863,6 +863,225 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-13",
+      "title": "Dust under the Rug — Part 1: Twelve little dwarfs",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 5,
+        "totalMinutes": 13
+      },
+      "challenge": "Watch what Minnie does when she finds the messy little house, before she knows whose it is.",
+      "focus": "A girl sets out to earn money for her sick mother and becomes housekeeper to twelve dwarfs.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Diligently means carefully and hard. “As neat as a new pin” means very neat. A carpenter’s rule is a folding measuring stick, about two feet long. Dwarfs here are tiny fairy-tale people who keep gold inside a mountain. To sup is to eat supper. A mortal is an ordinary person, not a fairy, and a maiden is a girl. To prove faithful is to show you can be trusted.",
+      "contentNote": "The girls’ father has died, their mother falls ill, and Minnie walks alone through the forest at nightfall to find work. The story calls her sister lame, an old word for someone who cannot walk easily.",
+      "excerpt": {
+        "locator": "“Dust under the Rug,” from the start of the story, after the motto for the mother, to the last day of the fairy housekeeper’s holiday; opens “There was once a mother, who had two little daughters; and, as her husband was dead and…”; closes “…every day Minnie worked faithfully until the last day of the fairy housekeeper's holiday.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-14",
+        "blocks": [
+          601,
+          622
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "02e0f33b1ce9d7021a9836da8cdc21394ddf0185bb0ebb7cc66a1ab0cf13b8f3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-13-q1",
+          "prompt": "Why does Minnie leave home, and why does her sister stay behind?",
+          "facilitatorNotes": [
+            "Their mother is sick, it is winter, and they need food, so Minnie goes to find work. Her sister cannot walk easily, so she sews at home."
+          ],
+          "evidence": [
+            "I must go out to find work, before the food gives out."
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-13-q2",
+          "prompt": "What does Minnie find in the little house, and what does she do before anyone comes home?",
+          "facilitatorNotes": [
+            "Twelve tumbled beds, twelve dirty plates and a floor so dusty you could draw on it. She warms her hands and then tidies everything."
+          ],
+          "evidence": [
+            "the floor of the room so dusty that I am sure you could have drawn a picture on it",
+            "this will never do!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-13-q3",
+          "prompt": "How do the dwarfs talk? Say one of their rhymes together.",
+          "facilitatorNotes": [
+            "All together, and in rhyme. Children can join in: “Now isn’t this a sweet surprise? We really can’t believe our eyes!”"
+          ],
+          "evidence": [
+            "for they always spoke together and in rhyme"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-13-q4",
+          "prompt": "What do the dwarfs ask Minnie, and what do they promise? Why do you think they choose her?",
+          "facilitatorNotes": [
+            "To stay through their fairy housekeeper’s holiday; if she proves faithful and good, they will reward her. They have seen her clean their house without being asked and wash up after supper."
+          ],
+          "evidence": [
+            "Dear mortal maiden will you stay",
+            "And if you faithful prove, and good,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-14",
+      "title": "Dust under the Rug — Part 2: The little voice",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen to what the stars say and what the little voice says, and notice which one Minnie cannot bear.",
+      "focus": "Minnie skips one hidden job, and her own heart will not let her rest until it is done.",
+      "context": "Recap: Minnie went out to earn money for her sick mother and her sister, and found a tiny, untidy house in the forest that belonged to twelve dwarfs who keep gold in the mountain. She made it clean and bright, and they asked her to keep house faithfully until their fairy housekeeper came back from her holiday. In winter, frost makes pictures on window panes. Pinnacles are the pointed tops of towers. A groat was a small old coin worth very little. A duty is a job you ought to do.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Dust under the Rug,” from the picture on the window pane to the end of the story; opens “That morning, as Minnie looked out of the window to watch the dwarfs go to their work,…”; closes “…never forgot their lesson, to do her work faithfully; and she always swept under the rug.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-13",
+        "continuesTo": null,
+        "blocks": [
+          623,
+          639
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "166a1b0856bbc4cde2b45770609a45895db254515afa0d5f3fc1ea42feb0b8a1"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-14-q1",
+          "prompt": "What makes Minnie late with her work on the last day?",
+          "facilitatorNotes": [
+            "A beautiful frost picture of fairy palaces on the window; she gazes at it until the clock strikes twelve."
+          ],
+          "evidence": [
+            "she forgot that there was work to be done, until the cuckoo clock on the mantel struck twelve"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-14-q2",
+          "prompt": "What does Minnie tell herself when she skips sweeping under the rug? Is she right?",
+          "facilitatorNotes": [
+            "That dust nobody can see does not matter. The story says it does, because she knows it is there. Some children will say it is only a little dust; let them argue it."
+          ],
+          "evidence": [
+            "After all, it is nothing for dust to be where it can't be seen!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-14-q3",
+          "prompt": "The stars and the little voice in Minnie’s heart take turns. What does each one say, and why can’t Minnie bear it?",
+          "facilitatorNotes": [
+            "The stars praise her as faithful and good; the voice says “Dust under the rug!” She knows the praise is not quite true, which makes her feel worse. Read the turns aloud in two voices."
+          ],
+          "evidence": [
+            "There is the little girl who is so faithful and good",
+            "Dust under the rug! dust under the rug!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-14-q4",
+          "prompt": "What would Minnie have earned if she had left the rug unturned? What do the dwarfs want her to remember?",
+          "facilitatorNotes": [
+            "Only a groat instead of twelve gold pieces. Even the smallest job done well brings joy. Some children will notice that she is rewarded for going back and finishing, not for being perfect."
+          ],
+          "evidence": [
+            "A groat was all you would have earned.",
+            "That in the smallest duty done"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-15",
+      "title": "The King’s Birthday",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Follow Carl from the country to the city and into the church, and notice how he looks after himself.",
+      "focus": "A little boy lost in the king’s birthday crowd finds a gentler King in a church window.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Brindle means brown with darker streaks, and a mooley cow is one without horns. A steeple is a church’s tall, pointed tower. To trudge is to walk on and on when tired. Pillars are tall posts that hold up a roof. The windows like picture books are stained glass, pictures made of coloured glass. The Good Man with a lamb in His arms is Jesus, shown as the Good Shepherd, and in the Christmas story Mary is His mother.",
+      "contentNote": "Carl is separated from his mother in a crowd and is lost and alone for hours before she finds him.",
+      "excerpt": {
+        "locator": "“The King’s Birthday,” the whole story without the motto for the mother printed before it; opens “Little Carl and his mother came from their home in the country one sweet summer day,…”; closes “And in all the joy of the king's birth day, there was no joy so great as theirs.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          664,
+          689
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc0b2c8801e5edf0e702196080dfa318874e8012be019e3f5c2abbf41fe02a12"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-15-q1",
+          "prompt": "Why does Carl bring flowers to the city, and what happens to them?",
+          "facilitatorNotes": [
+            "To throw before the king. They are trampled under the horses’ feet and the king does not care: the first sad moment of the day."
+          ],
+          "evidence": [
+            "they were trampled under the horses' feet and the king didn't care"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-15-q2",
+          "prompt": "How does Carl get lost, and what does he do when he is alone?",
+          "facilitatorNotes": [
+            "Tired, his hot little hand slips from his mother’s and the crowd carries him away. He cries, then remembers it is the king’s birthday, wipes his tears and walks on. Talk about what a lost child should do today, such as staying put or asking a safe grown-up."
+          ],
+          "evidence": [
+            "his little hot hand slipped from his mother's and he was carried away in the crowd",
+            "so he wiped the tears away as he trudged along"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-15-q3",
+          "prompt": "Carl sees two kings that day. How are they different?",
+          "facilitatorNotes": [
+            "The king on the gray horse rides by and does not notice the flowers; the Good Man in the window has a loving face and holds a lamb, and in Carl’s dream carries him to his mother. The story seems to say the second is the truer king. Some children will simply prefer the horse and the parade."
+          ],
+          "evidence": [
+            "a dear, gentle Man, with a loving face, and He had a lamb in His arms"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-15-q4",
+          "prompt": "What does Carl dream, and how does the dream come true?",
+          "facilitatorNotes": [
+            "That a king with the Good Man’s face carries him to his mother; he wakes to hear his mother praying for him and runs to her. Some children will say the prayer was answered; others that his mother searched until she found him. Both can be held."
+          ],
+          "evidence": [
+            "who was carrying Carl in His arms instead of a lamb, and was taking him to his mother",
+            "Mother! mother! here am I!"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1527,6 +1527,150 @@
     },
     {
       "id": "reading-1-holbrook-book-of-nature-myths-1902-22",
+      "title": "The Story of the First Moles",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice how the rich man and his son plan to cheat, and whose voice answers last.",
+      "focus": "A trick to steal a poor man’s field is turned back on the tricksters.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. To sow is to plant seed. Northern and southern mean the north half and the south half. Boastfully means in a bragging way. The spirit of the fields is a magical being who watches over the land. Moles are small furry animals that dig tunnels and live underground, and seldom come out into daylight.",
+      "contentNote": "A rich man and his son try to steal a poor man’s field, and a spirit punishes them by turning them into moles that must live in the dark.",
+      "excerpt": {
+        "locator": "“The Story of the First Moles,” the whole story; opens “A rich man and a poor man once owned a field together. The rich man owned the northern…”; closes “…the story of the first moles, and this is why the mole never comes to the light of day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          460,
+          471
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "59f82b44b44f4bdaa6445f17922c67ab9fcba434d49c53396081441297fd4582"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q1",
+          "prompt": "What happened to the seed in each half of the field?",
+          "facilitatorNotes": [
+            "The poor man’s seed in the southern half sprang up; the rich man’s seed in the northern half all died."
+          ],
+          "evidence": [
+            "the seed in the poor man's half of the field sprang up and put forth leaves"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q2",
+          "prompt": "What trick do the rich man and his son plan?",
+          "facilitatorNotes": [
+            "The son hides in the hole where the bushes were pulled up and answers his father’s question as if the ground itself were speaking."
+          ],
+          "evidence": [
+            "the son hid in the hole where their roots had been",
+            "This is the ground of the rich man"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q3",
+          "prompt": "The people hear a voice from the hole. Then whose voice is heard, and what does it say?",
+          "facilitatorNotes": [
+            "The real spirit of the fields, who says the southern half is the poor man’s and gives him the northern half too. A pretend voice of the land is answered by the true one."
+          ],
+          "evidence": [
+            "It was that of the spirit of the fields"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q4",
+          "prompt": "Why does it fit that the cheats become moles?",
+          "facilitatorNotes": [
+            "They hid in a dark hole to tell a lie, so now they must hide in the dark for ever. Some children may say the son only did what his father allowed; ask whether both deserved it."
+          ],
+          "evidence": [
+            "shall hide in the darkness as long as they live"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-23",
+      "title": "The Story of the First Ants",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Listen for the words the man says by accident, and why each one happens to fit.",
+      "focus": "A man who pretends to have a magic nose is saved again and again by lucky words.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. Smoked flesh is meat dried in smoke. A marvel is something amazing, and a magician someone who does magic. Dire means terrible. A pearl is a precious round white gem. A god, in old stories, is a powerful being who lives in the sky. One sentence reads “your head will he lost,” a misprint for “will be lost.”",
+      "contentNote": "The king and the queen each threaten to cut off the man’s head; he escapes both times.",
+      "excerpt": {
+        "locator": "“The Story of the First Ants,” the whole story; opens “\"This jar is full of smoked flesh,\" said one voice.”; closes “…fell from the hand of this man who was thrown up into the sky to live among the gods.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          472,
+          494
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ecdf37e34dff57dc4e953caac3d7cd010c1654228d881c33a54010c32b22e176"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q1",
+          "prompt": "How did the man really know what was in the jars?",
+          "facilitatorNotes": [
+            "He overheard his mother and sister naming them; he had no special sense of smell. He wanted to trick them back."
+          ],
+          "evidence": [
+            "These are the words that a villager coming home from his work heard his mother and his sister say."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q2",
+          "prompt": "How does the man find the king’s pearl without even trying?",
+          "facilitatorNotes": [
+            "Wailing in the forest, he says “sharp sorrow” and “dire trouble,” and two thieves named Sharp and Dire think he has found them out, so they hand him the pearl."
+          ],
+          "evidence": [
+            "My name is Sharp, and that man behind the tree is named Dire"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q3",
+          "prompt": "What has the queen hidden in the box, and how does the man guess it?",
+          "facilitatorNotes": [
+            "A cat in a bag. Terrified, he mutters an old saying about himself, “The bagged cat soon dies,” and it happens to be exactly right."
+          ],
+          "evidence": [
+            "The bagged cat soon dies."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q4",
+          "prompt": "The man wishes no one would ever talk of his sense of smell again. Was his trick worth it? Why does the story end with ants?",
+          "facilitatorNotes": [
+            "No: a small trick grew into great danger, and in the end the people throw him into the sky. The story says ants got their keen noses from the earth in his hand. Some children will think he was simply lucky; others that the lie followed him everywhere."
+          ],
+          "evidence": [
+            "Oh, how I wish I had not tried to play tricks",
+            "Ants have a wonderful sense of smell"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-24",
       "title": "Why the Aspen Leaves Tremble",
       "sourceId": "holbrook-book-of-nature-myths-1902",
       "genre": "literary myth",
@@ -1555,7 +1699,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q1",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q1",
           "prompt": "What do the reeds whisper about the aspen? Do they know anything bad about it?",
           "facilitatorNotes": [
             "That the queen bee never brings her swarm to the aspen, so she must have a reason. They know nothing; they only guess that something wicked happened."
@@ -1565,7 +1709,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q2",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q2",
           "prompt": "What advice does the willow give the aspen? Why is it good advice?",
           "facilitatorNotes": [
             "Not to care what the reeds say, because they are chatterers who always say unkind things. It might have kept the aspen out of trouble."
@@ -1575,7 +1719,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q3",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q3",
           "prompt": "What does the aspen shout back? Who hears it?",
           "facilitatorNotes": [
             "That the reeds are lazy whisperers and that it despises them, the queen bee and her honey. The reeds carry every word to the queen bee."
@@ -1585,7 +1729,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-22-q4",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q4",
           "prompt": "The queen bee says she “was going to” bring her swarm to the aspen. What does that tell you about the reeds’ gossip?",
           "facilitatorNotes": [
             "The gossip was wrong all along; the angry words, not anything the aspen had done, made her its enemy. Some children will blame the reeds most, others the aspen; both can be argued."
@@ -1597,7 +1741,7 @@
       ]
     },
     {
-      "id": "reading-1-holbrook-book-of-nature-myths-1902-23",
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-25",
       "title": "Why the Juniper Has Berries",
       "sourceId": "holbrook-book-of-nature-myths-1902",
       "genre": "literary myth",
@@ -1626,7 +1770,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q1",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q1",
           "prompt": "What are the three cranberry sisters afraid of?",
           "facilitatorNotes": [
             "Hoots the bear. Even the women in the wigwam are afraid while the men are away hunting."
@@ -1636,7 +1780,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q2",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q2",
           "prompt": "Where does each sister decide to hide, and what is each one’s reason?",
           "facilitatorNotes": [
             "Red stays in the moss of their own meadow, thinking home is best; white hides in the hominy because it is white like her; green goes to her friend the juniper."
@@ -1648,7 +1792,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q3",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q3",
           "prompt": "The white cranberry chose a place the same colour as herself. Why didn’t that keep her safe?",
           "facilitatorNotes": [
             "The bear was not looking for her at all: he wanted the hominy and ate it all up. A place where you cannot be seen can still be a dangerous place to be."
@@ -1658,7 +1802,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-23-q4",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q4",
           "prompt": "Why do you think the green cranberry was the one who was saved?",
           "facilitatorNotes": [
             "She went to a friend and hid in thick branches. Some children will say she was simply lucky; others that she was the only one who asked for help. The ending rewards the friendship: she never leaves the tree."
@@ -1670,7 +1814,7 @@
       ]
     },
     {
-      "id": "reading-1-holbrook-book-of-nature-myths-1902-24",
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-26",
       "title": "Why the Sea Is Salt",
       "sourceId": "holbrook-book-of-nature-myths-1902",
       "genre": "literary myth",
@@ -1699,7 +1843,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q1",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q1",
           "prompt": "What does King Frothi first ask the millstones to grind, and why does it sound good?",
           "facilitatorNotes": [
             "Gold and happiness and rest for his people; even the women call them good wishes."
@@ -1709,7 +1853,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q2",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q2",
           "prompt": "How does the gold change the king?",
           "facilitatorNotes": [
             "He cannot bear to let it out of his sight and makes the women grind faster, letting them rest only as long as it takes to say “Frothi.” He wished rest for his people but gives none to the grinders."
@@ -1719,7 +1863,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q3",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q3",
           "prompt": "What does the warrior who becomes king do that is just like Frothi?",
           "facilitatorNotes": [
             "He too refuses them rest, and makes them grind salt even if the ship sinks."
@@ -1729,7 +1873,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-24-q4",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q4",
           "prompt": "Why are the millstones still grinding today? Is it a fair ending?",
           "facilitatorNotes": [
             "No one is left to tell them to stop. The cruel warrior sinks with his ship. Some children will feel sorry for the tired women, whom the story does not mention again; ask what they think became of them."
@@ -1741,7 +1885,7 @@
       ]
     },
     {
-      "id": "reading-1-holbrook-book-of-nature-myths-1902-25",
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-27",
       "title": "How Summer Came to the Earth, Part I",
       "sourceId": "holbrook-book-of-nature-myths-1902",
       "genre": "literary myth",
@@ -1759,18 +1903,18 @@
         "locator": "“How Summer Came to the Earth,” Part I, the whole part; opens “There was once a boy on the earth who was old enough to have a bow and arrows, but who…”; closes “…the fisher thoughtfully. \"It is not easy to get summer, but I will find it if I can.\"”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-1-holbrook-book-of-nature-myths-1902-26",
+        "continuesTo": "reading-1-holbrook-book-of-nature-myths-1902-28",
         "blocks": [
-          769,
+          768,
           780
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "131117bbe8ec573926c4bf720a8055135f803f11b869e546c92d51e915399f89"
+        "textHash": "b1ac14c5f91558300d32d1e6e6d8e3c8e993003a4b9b5964c6c2d577541635d0"
       },
       "questions": [
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q1",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-27-q1",
           "prompt": "What has the boy never seen, and why not?",
           "facilitatorNotes": [
             "Leaves, grass, summer itself: there has never been a summer on the earth, only ice and snow."
@@ -1780,7 +1924,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q2",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-27-q2",
           "prompt": "What is the only warmth the boy knows?",
           "facilitatorNotes": [
             "The fire in the wigwam; he wishes he could carry it about with him."
@@ -1790,7 +1934,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q3",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-27-q3",
           "prompt": "The squirrel says an idea is better than a fire. What does he mean?",
           "facilitatorNotes": [
             "You can take an idea anywhere, but a fire stays at home. He is also teasing, boasting that a squirrel has ideas twice as often as a boy."
@@ -1800,7 +1944,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-25-q4",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-27-q4",
           "prompt": "What does the squirrel tell the boy to do, and what happens when he does it?",
           "facilitatorNotes": [
             "Go home and cry for summer. He cries so hard that his tears make a frozen river out of the door, and his father promises to try. Some children will say crying to get something is not fair; here the father understands how cold his son is."
@@ -1813,7 +1957,7 @@
       ]
     },
     {
-      "id": "reading-1-holbrook-book-of-nature-myths-1902-26",
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-28",
       "title": "How Summer Came to the Earth, Part II",
       "sourceId": "holbrook-book-of-nature-myths-1902",
       "genre": "literary myth",
@@ -1830,19 +1974,19 @@
       "excerpt": {
         "locator": "“How Summer Came to the Earth,” Part II, the whole part, to the end of the story; opens “The fisher made a great feast for the animals that he thought could help him to find…”; closes “…in the stars, and they say, \"That is the good fisher who gave us the beautiful summer.\"”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-1-holbrook-book-of-nature-myths-1902-25",
+        "continuesFrom": "reading-1-holbrook-book-of-nature-myths-1902-27",
         "continuesTo": null,
         "blocks": [
-          781,
+          782,
           792
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "4ec95f2749a4fb173d1019e12acf208159806d6e5b119931b2129e5f7124ee89"
+        "textHash": "ed23e726aedd8f48fb6c30f01041374a28bbedce5316a011c1b0dfaba03ea5c1"
       },
       "questions": [
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q1",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-28-q1",
           "prompt": "Which animals help the fisher, and what does the badger say they must do?",
           "facilitatorNotes": [
             "The otter, the lynx, the badger and the wolverine. The badger says summer is at the summit, where the sky rests: they must climb and take it."
@@ -1852,7 +1996,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q2",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-28-q2",
           "prompt": "Why does the wolverine keep trying after the others have failed?",
           "facilitatorNotes": [
             "He will not climb so far for nothing; and the fisher keeps thinking of his crying boy. Each has his own reason not to give up."
@@ -1862,7 +2006,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q3",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-28-q3",
           "prompt": "What comes down through the hole in the floor of the heavens?",
           "facilitatorNotes": [
             "Warm air, singing birds, and all kinds of flowers, hurrying because they knew about the boy."
@@ -1872,7 +2016,7 @@
           ]
         },
         {
-          "id": "reading-1-holbrook-book-of-nature-myths-1902-26-q4",
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-28-q4",
           "prompt": "The earth gets summer for half of every year. Is that a happy ending for the boy?",
           "facilitatorNotes": [
             "Yes and no: the earth has summer, but his father can never come home and becomes a fish in the stars. Some children will find it sad; others will say people remember him as the good fisher. Accept both."
