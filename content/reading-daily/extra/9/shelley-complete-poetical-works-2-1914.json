@@ -1340,6 +1340,88 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-shelley-complete-poetical-works-2-1914-20",
+      "title": "Delight, change and Napoleon: more poems of 1821",
+      "sourceId": "shelley-complete-poetical-works-2-1914",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 18,
+        "totalMinutes": 27
+      },
+      "challenge": "Two of these poems are about inner feelings and two about power. Read all four, then find one idea that links an inner poem to a political one.",
+      "focus": "A plea to the Spirit of Delight, a lament for everything that passes, Earth’s scornful answer to a dead conqueror, and a sonnet on ruling oneself.",
+      "context": "Percy Bysshe Shelley (1792–1822) was an English poet and political radical; the text is the Oxford edition of his poems edited by Thomas Hutchinson. In 1821 Shelley was living in Pisa. Napoleon Bonaparte, the French emperor who conquered much of Europe, died in exile on the island of St Helena in May 1821. This volume has an earlier, different poem also called “Mutability.” A ditty is a simple song and a “merry measure” a lively rhythm; “quick” means living; a knell is the bell tolled for a death, and “knolled” means tolled.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Poems Written in 1821: Song (“Rarely, rarely, comest thou”), Mutability (“The flower that smiles to-day”), Lines Written on Hearing the News of the Death of Napoleon, and Sonnet: Political Greatness, complete; opens “Rarely, rarely, comest thou, Spirit of Delight! Wherefore hast thou left me now Many a…”; closes “…throne On vanquished will, quelling the anarchy Of hopes and fears, being himself alone.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          839,
+          859
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9ff3bb9646dca02c8b6c3392a9d3f64ca76d4481a904fc8cf726844e041979cc"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q1",
+          "prompt": "In “Song,” why does the Spirit of Delight stay away, and how does the speaker try to win it back? What is clever about the plan in the fourth stanza?",
+          "facilitatorNotes": [
+            "Delight avoids sorrow and comes only to “those who need thee not.” So the speaker sets his sad song “To a merry measure,” hoping to attract delight with pleasure, not pity.",
+            "The poem does what it describes: its rhythm is light and quick although its subject is loss. Some readers find the ending hopeful; others notice it is still a request, not an arrival."
+          ],
+          "evidence": [
+            "Spirit false! thou hast forgot All but those who need thee not.",
+            "Let me set my mournful ditty To a merry measure;",
+            "Thou wilt never come for pity, Thou wilt come for pleasure;"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q2",
+          "prompt": "“Mutability” says that we “Survive” our joys. Why is surviving them presented as a misfortune? What is the advice of the last stanza?",
+          "facilitatorNotes": [
+            "Flowers, delight, virtue, friendship and love all pass, but we live on after them, left with nothing we can call ours. The last stanza says to enjoy the bright hours like a dream, knowing we will “wake to weep.”",
+            "Compare it with “Song”: both lose delight, but “Song” still pleads for its return, while “Mutability” expects nothing. Students can decide which mood they find more honest."
+          ],
+          "evidence": [
+            "But we, though soon they fall, Survive their joy, and all Which ours we call.",
+            "Dream thou--and from thy sleep Then wake to weep."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q3",
+          "prompt": "In the Napoleon poem, the speaker is shocked that Earth goes on. How does Earth answer, and what is her final judgment on Napoleon?",
+          "facilitatorNotes": [
+            "Earth laughs: she takes all her dead into herself, and they feed new life (“I feed on whom I fed”). She calls Napoleon’s life “A torrent of ruin” and tells the living millions to shape their own future, weaving the hopes his glory betrayed into his shame.",
+            "Shelley, a republican, had long called Napoleon a tyrant, as in “Feelings of a Republican on the Fall of Bonaparte.” Ask how the poem feels about a great man’s death: grieving, relieved, or indifferent like Earth."
+          ],
+          "evidence": [
+            "And canst thou move, Napoleon being dead?",
+            "My heart grew warm. I feed on whom I fed.",
+            "In terror and blood and gold, A torrent of ruin to death from his birth."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-complete-poetical-works-2-1914-20-q4",
+          "prompt": "“Political Greatness” asks, “What are numbers knit By force or custom?” What does the sonnet say true greatness is? How might it answer the career of Napoleon?",
+          "facilitatorNotes": [
+            "Peoples held together by force or habit have no real greatness; poetry and history do not even record their hearts. A man must “rule the empire of himself,” mastering his own will, hopes and fears.",
+            "Napoleon ruled empires but not himself, in Shelley’s view. Students can test the sonnet’s claim against a leader they know, and ask whether self-rule is enough to make a nation free."
+          ],
+          "evidence": [
+            "What are numbers knit By force or custom?",
+            "Man who man would be, Must rule the empire of himself;",
+            "being himself alone."
+          ]
+        }
+      ]
     }
   ]
 }
