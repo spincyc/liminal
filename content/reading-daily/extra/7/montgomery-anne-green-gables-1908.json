@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "montgomery-anne-green-gables-1908",
+  "readings": [
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-01",
+      "title": "Mrs. Rachel at her window (Anne of Green Gables, chapter i, first part)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 11,
+        "totalMinutes": 22
+      },
+      "challenge": "Read long, winding sentences and enjoy how the narrator teases a character while describing her.",
+      "focus": "The novel opens on a neighbour who notices everything and a mystery she cannot solve.",
+      "context": "L. M. Montgomery’s Anne of Green Gables (1908) is set in Avonlea, an invented farming village on Prince Edward Island in eastern Canada. These first two chapters come before the school-year nights, which begin with Marilla’s surprise in chapter III. Alders and ladies’ eardrops are plants; a buggy is a light carriage and a sorrel mare a reddish-brown horse; Carmody is a nearby village; Lombardies are tall, narrow poplar trees.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Mrs. Rachel Lynde Is Surprised,” from the opening to Mrs. Rachel’s survey of the Green Gables supper table; opens “Mrs. Rachel Lynde lived just where the Avonlea main road dipped down into a little…”; closes “…getting fairly dizzy with this unusual mystery about quiet, unmysterious Green Gables.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-02",
+        "blocks": [
+          5,
+          15
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7cb6ced2a7052cf8900696b90555e93cbfcbe3e1bbfeb70764af4289103f28d1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-01-q1",
+          "prompt": "The first sentence ends with a brook behaving itself as it passes Mrs. Rachel’s door. What does this joke tell you about her before she says a word?",
+          "facilitatorNotes": [
+            "Even the wild brook becomes “quiet, well-conducted” near her house, as if it knows she is watching. The joke shows her as the village’s self-appointed inspector of “decency and decorum.” The next paragraph adds that she is capable and hard-working, so the narrator teases her without making her merely a busybody."
+          ],
+          "evidence": [
+            "not even a brook could run past Mrs. Rachel Lynde’s door without due regard for decency and decorum"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-01-q2",
+          "prompt": "How does Mrs. Rachel reason from what she sees of Matthew? Why can she still not solve the mystery?",
+          "facilitatorNotes": [
+            "White collar and best suit mean he is leaving Avonlea; the buggy and mare mean a long way; slow driving means not a doctor. She reasons like a detective, but Matthew is so shy and so rarely goes anywhere that none of her usual explanations fit. The supper table with three plates and everyday dishes only deepens the puzzle."
+          ],
+          "evidence": [
+            "he wore a white collar and his best suit of clothes, which was plain proof that he was going out of Avonlea",
+            "he wasn’t driving fast enough to be going for a doctor"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-01-q3",
+          "prompt": "What do the Green Gables yard and kitchen suggest about Marilla before we meet her properly? What might the house be missing?",
+          "facilitatorNotes": [
+            "Everything is neat, precise and “painfully clean,” and the kitchen looks like an unused parlour. Marilla distrusts sunshine as “too dancing and irresponsible” for a serious world. The house is orderly but lacks warmth or play; readers can predict what kind of change an unexpected arrival might bring."
+          ],
+          "evidence": [
+            "so painfully clean as to give it something of the appearance of an unused parlour",
+            "always slightly distrustful of sunshine, which seemed to her too dancing and irresponsible a thing for a world which was meant to be taken seriously"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-02",
+      "title": "A boy from the asylum (Anne of Green Gables, chapter i, second part)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Weigh two characters’ arguments and notice what each reveals without meaning to.",
+      "focus": "Marilla explains why she and Matthew are adopting a boy, and Mrs. Rachel predicts disaster.",
+      "context": "Mrs. Rachel Lynde, who watches the road from her kitchen window, has seen shy Matthew Cuthbert drive off in his best suit and has walked up to Green Gables to ask his sister Marilla why. An orphan asylum was an orphanage; Nova Scotia is a province across the water from the Island. Barnardo homes in England sent poor and orphaned children to Canada as farm workers (Marilla spells the name “Barnado”). Job’s comforters, from the Bible, are friends who make a person feel worse while claiming to help. Strychnine is a poison.",
+      "contentNote": "Marilla dismisses “stupid, half-grown little French boys” and “London street Arabs,” prejudices against French-speaking Acadians and poor city children common in her time and place. Mrs. Rachel repeats newspaper stories of adopted children setting fires and poisoning a family.",
+      "excerpt": {
+        "locator": "Chapter I, “Mrs. Rachel Lynde Is Surprised,” from Marilla’s greeting to the end of the chapter; opens ““Good evening, Rachel,” Marilla said briskly. “This is a real fine evening, isn’t it?…”; closes “…station at that very moment her pity would have been still deeper and more profound.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-01",
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-03",
+        "blocks": [
+          16,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c3d2f596136f41be62e7fedb7e80577717aed3d5c4f117b3a45bcce40c52aa13"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-02-q1",
+          "prompt": "The narrator says Marilla has “a saving something about her mouth” that might have been a sense of humour. Where in this conversation do you see it?",
+          "facilitatorNotes": [
+            "Her lips twitch because she expected Mrs. Rachel’s visit. She answers the shocking news “as if getting boys from orphan asylums in Nova Scotia were part of the usual spring work,” and replies to the poisoning story that they are not getting a girl. Readers may decide the humour is dry and hidden, which matters for how she will treat a child."
+          ],
+          "evidence": [
+            "Marilla’s lips twitched understandingly.",
+            "as if poisoning wells were a purely feminine accomplishment"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-02-q2",
+          "prompt": "Why did the Cuthberts decide to take a boy? What practical reasons and what prejudices does Marilla’s explanation contain?",
+          "facilitatorNotes": [
+            "Matthew is sixty with a weak heart, and hired help is scarce, so they want a boy old enough to do chores. She also rejects “French boys” and English street children and wants “a born Canadian,” because he “can’t be much different from ourselves.” Students should name the prejudice plainly while noticing that she also promises “a good home and schooling.”"
+          ],
+          "evidence": [
+            "Matthew is getting up in years, you know—he’s sixty—and he isn’t so spry as he once was.",
+            "Give me a native born at least."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-02-q3",
+          "prompt": "What kind of evidence does Mrs. Rachel offer against adoption, and how does Marilla answer it?",
+          "facilitatorNotes": [
+            "She offers frightening stories from newspapers and hearsay: a fire set on purpose, eggs sucked, a well poisoned. Marilla admits “qualms” but answers that there are risks even in having your own children. A single dramatic story is weak evidence about orphans in general, and Marilla seems to know it."
+          ],
+          "evidence": [
+            "Why, it was only last week I read in the paper",
+            "There’s risks in people’s having children of their own if it comes to that"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-02-q4",
+          "prompt": "At the end Mrs. Rachel pities the orphan. What does she fear for the child, and what does the narrator’s last sentence add?",
+          "facilitatorNotes": [
+            "She thinks the Cuthberts know nothing about children and will expect a child to act like an adult. The narrator then tells us that the child already waiting at the station would make her pity “still deeper,” a hint that the orphan is not what anyone expects. The chapter ends on a surprise held back for the next."
+          ],
+          "evidence": [
+            "they’ll expect him to be wiser and steadier than his own grandfather",
+            "her pity would have been still deeper and more profound"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-03",
+      "title": "The girl on the shingles (Anne of Green Gables, chapter ii, first part)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Compare a narrator’s portrait of a character with what another character can see.",
+      "focus": "Matthew finds a girl instead of a boy at the station and cannot bring himself to tell her.",
+      "context": "Mrs. Rachel has learned that Matthew and Marilla Cuthbert, an elderly brother and sister, are adopting an orphan boy to help on their farm, and that Matthew has driven to the Bright River station to meet him. Shingles are thin wooden roof tiles, here stacked on the platform; wincey is a cheap, rough cloth; a carpet-bag is a travelling bag made of carpet.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Matthew Cuthbert Is Surprised,” from the drive to Bright River through Matthew’s decision to take the child home; opens “Matthew Cuthbert and the sorrel mare jogged comfortably over the eight miles to Bright…”; closes “…was late,” he said shyly. “Come along. The horse is over in the yard. Give me your bag.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-02",
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-04",
+        "blocks": [
+          40,
+          59
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6e1ee19926f59cd2e1a9ce0102655c4ccc7f6ddc15132c252f52dd3e4da110f2"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-03-q1",
+          "prompt": "Before Matthew speaks to the girl, the station-master reports what she said. What does “more scope for imagination” suggest about her?",
+          "facilitatorNotes": [
+            "She would rather sit on a pile of shingles, waiting, than in a closed room, because outside she can imagine more. The phrase sounds like a book, not a child, which amuses the station-master. It prepares us for a character who lives partly in what she imagines."
+          ],
+          "evidence": [
+            "‘There was more scope for imagination,’ she said."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-03-q2",
+          "prompt": "The narrator describes the girl twice, as an “ordinary observer” and an “extraordinary observer” would. What does the second description add, and why does Matthew see neither?",
+          "facilitatorNotes": [
+            "The ordinary observer sees a thin, freckled child in an ugly dress with red braids; the extraordinary one notices spirit in her eyes, an expressive mouth and a strong chin, and concludes that “no commonplace soul” is there. Matthew is too frightened of girls even to look. The double portrait lets the reader know more than Matthew does."
+          ],
+          "evidence": [
+            "an ordinary observer would have seen this",
+            "no commonplace soul inhabited the body of this stray woman-child"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-03-q3",
+          "prompt": "Why does Matthew decide “then and there” to take her home instead of explaining the mistake?",
+          "facilitatorNotes": [
+            "She has been afraid he would not come and had planned to sleep in a wild cherry-tree; her glowing eyes and trust make it impossible for him to say she is not wanted. He also cannot leave a child at the station. Readers may see kindness, cowardice about an awkward talk, or both; he plans to “let Marilla do that.”"
+          ],
+          "evidence": [
+            "He could not tell this child with the glowing eyes that there had been a mistake",
+            "it would be lovely to sleep in a wild cherry-tree all white with bloom in the moonshine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-04",
+      "title": "Talking all the way (Anne of Green Gables, chapter ii, second part)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 9,
+        "totalMinutes": 24
+      },
+      "challenge": "Find the serious facts hidden inside a long, cheerful, rambling speech.",
+      "focus": "On the drive home the girl talks about the orphanage, her imagination and her red hair, and Matthew finds he likes it.",
+      "context": "At the Bright River station Matthew found a red-haired girl of about eleven instead of the boy he expected. Too shy to tell her of the mistake, he is driving her home to Green Gables and will leave the explaining to Marilla. A belted earl is a high-ranking nobleman; Charlottetown is the Island’s capital; alabaster is smooth white stone.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Matthew Cuthbert Is Surprised,” from the carpet-bag to the girl’s sudden cry of “Mr. Cuthbert”; opens ““Oh, I can carry it,” the child responded cheerfully. “It isn’t heavy. I’ve got all my…”; closes “…good. Mrs. Spencer says—oh, Mr. Cuthbert! Oh, Mr. Cuthbert!! Oh, Mr. Cuthbert!!!””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-03",
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-05",
+        "blocks": [
+          60,
+          84
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b5e7835f87197af2a9531c23dc8836fe4b50a5d1db9f338a6622e06bc68f827a"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-04-q1",
+          "prompt": "In the middle of her cheerful talk the girl says, “I’ve never belonged to anybody—not really.” Find another moment that shows what her life has been like. Why does she mention these things so lightly?",
+          "facilitatorNotes": [
+            "She describes the asylum as “worse than anything you could imagine,” the donated wincey that all orphans wore, and the asylum trees that “looked like orphans themselves.” Saying it quickly and cheerfully may be how she copes; the reader notices what she hurries past."
+          ],
+          "evidence": [
+            "I’ve never belonged to anybody—not really.",
+            "They just looked like orphans themselves, those trees did."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-04-q2",
+          "prompt": "How does she use imagination to deal with things she cannot change? What is the one thing she cannot imagine away?",
+          "facilitatorNotes": [
+            "On the train she imagined a pale blue silk dress instead of the wincey; she chooses to believe the merchant gave the cloth from kindness. But red hair defeats her: she always knows it is “just plain red.” Imagination is a tool for survival, and also has limits she admits."
+          ],
+          "evidence": [
+            "because when you _are_ imagining you might as well imagine something worth while",
+            "But I _cannot_ imagine that red hair away."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-04-q3",
+          "prompt": "Matthew answers “Well now, I dunno” again and again. Why does a man who dreads women and girls enjoy this one?",
+          "facilitatorNotes": [
+            "He likes talkative people who do not expect him to talk back, and she is unlike the Avonlea girls who sidle past him timidly. His few words are honest and kind (“you can talk as much as you like”). The chapter suggests an unlikely friendship is beginning."
+          ],
+          "evidence": [
+            "Like most quiet folks he liked talkative people when they were willing to do the talking themselves",
+            "Oh, you can talk as much as you like. I don’t mind."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-05",
+      "title": "The White Way of Delight (Anne of Green Gables, chapter ii, end)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice how descriptions of places carry a character’s feelings, and feel the irony when the reader knows more than she does.",
+      "focus": "The girl names the places she loves and recognises Green Gables as home, while Matthew dreads what must come.",
+      "context": "Driving from the station, the girl has talked almost without stopping: about the orphanage, about imagining a silk dress instead of her ugly one, and about her red hair. Matthew, to his surprise, has enjoyed it. He has still not told her that he and Marilla meant to adopt a boy. A rose window is a round stained-glass window in a church; Diana was a Roman goddess, which is why Matthew thinks the name “heathenish.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Matthew Cuthbert Is Surprised,” from the Avenue to the end of the chapter; opens “That was not what Mrs. Spencer had said; neither had the child tumbled out of the buggy…”; closes “…the carpet-bag which contained “all her worldly goods,” she followed him into the house.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-04",
+        "continuesTo": null,
+        "blocks": [
+          85,
+          118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f738964afd13bb25f7ef2b61cffdaf831b188aafa157e0326c9b7d795e9092b4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-05-q1",
+          "prompt": "The girl can talk without stopping, but the Avenue strikes her silent. Why does she reject the word “pretty” for it?",
+          "facilitatorNotes": [
+            "It is “the first thing I ever saw that couldn’t be improved upon by imagination,” so ordinary words like pretty or beautiful “don’t go far enough.” Her silence lasts three miles, as energetic as her talk. The “queer funny ache” is a feeling of beauty mixed with longing that she will name again when she thinks of home."
+          ],
+          "evidence": [
+            "It’s the first thing I ever saw that couldn’t be improved upon by imagination.",
+            "Oh, _pretty_ doesn’t seem the right word to use."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-05-q2",
+          "prompt": "Why does she rename the Avenue and Barry’s pond? What does Matthew’s “thrill” about cucumber grubs add to the scene?",
+          "facilitatorNotes": [
+            "She renames places whose names have “no meaning” to her, and knows a name is right when it gives her a thrill. Matthew honestly offers the only thrill he knows, at ugly grubs; the contrast is funny and gentle, and she politely doubts it is the same kind. It shows two very different minds getting along."
+          ],
+          "evidence": [
+            "When I hit on a name that suits exactly it gives me a thrill.",
+            "It always kind of gives me a thrill to see them ugly white grubs that spade up in the cucumber beds."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-05-q3",
+          "prompt": "She guesses which house is Green Gables and says she “felt it was home.” Why does this make the chapter’s ending painful, and why does Matthew compare telling her to killing a lamb?",
+          "facilitatorNotes": [
+            "The reader knows she is not wanted there, so her certainty is dramatic irony. Matthew now thinks only of her disappointment, not of the trouble to himself, and feels he will help to murder “something,” her hope. The last image of her clutching “all her worldly goods” keeps her small and unprotected as she walks in."
+          ],
+          "evidence": [
+            "But just as soon as I saw it I felt it was home.",
+            "he had an uncomfortable feeling that he was going to assist at murdering something"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-06",
+      "title": "Plain Marilla (Anne of Green Gables, chapter viii, first part)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a character’s strict words and look for signs of feelings she will not show.",
+      "focus": "Marilla tells Anne she may stay, and the two disagree about names, imagination and prayer.",
+      "context": "Anne Shirley, the orphan sent by mistake to Matthew and Marilla Cuthbert, has spent a day at Green Gables. After some thought Marilla has decided to keep her but has not yet told her. The night before, Anne said her first prayer ever, asking to be allowed to stay. A fortnight is two weeks; a chromo is a cheap colour print; to scald a dish-cloth is to wash it in boiling water.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “Anne’s Bringing-up Is Begun,” from the opening through Anne’s first study of the Lord’s Prayer; opens “For reasons best known to herself, Marilla did not tell Anne that she was to stay at…”; closes “…a soft kiss on a pink-cupped bud, and then studied diligently for some moments longer.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-07",
+        "blocks": [
+          340,
+          373
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8775b5ab4025ec2bab852802eec7a2aaec357b010c300d237d3b2409837fe0b9"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-06-q1",
+          "prompt": "Why does Marilla send Anne back to scald the dish-cloth before answering her? What do the conditions in her answer show?",
+          "facilitatorNotes": [
+            "She will not let feeling interrupt a task, and perhaps she is testing Anne or hiding her own softness; the narrator says only “for reasons best known to herself.” She keeps Anne “if you will try to be a good little girl and show yourself grateful,” a cautious, conditional welcome. Anne answers with tears she cannot explain."
+          ],
+          "evidence": [
+            "“You haven’t scalded the dish-cloth in clean hot water as I told you to do,” said Marilla immovably.",
+            "if you will try to be a good little girl and show yourself grateful"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-06-q2",
+          "prompt": "Anne asks to call her “Aunt Marilla.” What does each of them want, and how do they differ about imagination?",
+          "facilitatorNotes": [
+            "Anne wants to feel she belongs to a family; Marilla refuses to call people “names that don’t belong to them” and believes God does not mean us to imagine our circumstances away. Anne’s “how much you miss!” turns the argument around. Readers may sympathise with either: Marilla’s honesty or Anne’s longing."
+          ],
+          "evidence": [
+            "It would make me feel as if I really belonged to you.",
+            "Oh, Miss—Marilla, how much you miss!"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-06-q3",
+          "prompt": "Why does Anne imagine herself as the girl in the blue dress in the picture? Is Marilla right to call her words irreverent?",
+          "facilitatorNotes": [
+            "The child stands apart “as if she didn’t belong to anybody, like me,” hoping to be noticed, as Anne hoped when she asked to stay. Marilla thinks such familiar talk about Christ is irreverent, yet she wonders why she did not interrupt sooner, a sign she was listening. Anne’s feeling seems sincere; readers can discuss whether reverence depends on manner or on feeling."
+          ],
+          "evidence": [
+            "standing off by herself in the corner as if she didn’t belong to anybody, like me",
+            "wondering why she had not broken into this speech long before"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-07",
+      "title": "Katie Maurice and Violetta (Anne of Green Gables, chapter viii, end)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a happy-sounding memory for what it reveals about a lonely past.",
+      "focus": "Anne hopes for a real friend, remembers two imaginary ones, and decides who she is in front of a mirror.",
+      "context": "Marilla has told Anne she may stay at Green Gables, refused to be called “Aunt Marilla,” and set her to learn the Lord’s Prayer after scolding her for daydreaming before a picture. A bosom friend is a closest friend; a kindred spirit is someone who thinks and feels as you do. The Duchess in Lewis Carroll’s Alice’s Adventures in Wonderland finds a moral in everything. The Snow Queen is Anne’s name for the cherry tree outside her window.",
+      "contentNote": "Anne mentions in passing that the man of a family she lived with smashed a glass door while drunk.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Anne’s Bringing-up Is Begun,” from Anne’s question about a bosom friend to the end of the chapter; opens ““Marilla,” she demanded presently, “do you think that I shall ever have a bosom friend in…”; closes “…and then, with her chin in her hands, drifted luxuriously out on a sea of day-dreams.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-06",
+        "continuesTo": null,
+        "blocks": [
+          374,
+          399
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a875621237ecb691d86516ef5904ad3b9f997d5530da431f0554d7f24f7f906e"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-07-q1",
+          "prompt": "What does Marilla’s remark about Diana show, and how does the narrator’s comparison with the Duchess in Wonderland comment on it?",
+          "facilitatorNotes": [
+            "Marilla adds that being “good and smart” is better than being pretty, because she believes every remark to a child should carry a moral. The comparison with Carroll’s absurd Duchess gently mocks the habit, and Anne simply ignores the moral and seizes on Diana’s prettiness."
+          ],
+          "evidence": [
+            "And she is good and smart, which is better than being pretty.",
+            "Marilla was as fond of morals as the Duchess in Wonderland"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-07-q2",
+          "prompt": "Anne tells the story of Katie Maurice and Violetta happily. What do these imaginary friends reveal about her life before Green Gables?",
+          "facilitatorNotes": [
+            "She had no real friends, moved from one household to another, and talked to her own reflection in a glass door and to an echo. Small details show hardship: the bookcase held no books, a door was smashed by a drunken man, and at the asylum she “hadn’t the heart” even to imagine a friend. The cheerful telling makes the loneliness more touching."
+          ],
+          "evidence": [
+            "Katie was the comfort and consolation of my life.",
+            "I hadn’t the heart to imagine a bosom friend at the asylum"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-07-q3",
+          "prompt": "Alone in her room, why can Anne not believe in the Lady Cordelia Fitzgerald? What does she decide instead?",
+          "facilitatorNotes": [
+            "Every time she imagines the grand lady she sees her own freckled face in the glass. She decides it is “a million times nicer” to be Anne of Green Gables than Anne of nowhere; having a place matters more than an imagined title. Her goodnight to Katie and Violetta shows she will stay loyal to the past even as she hopes for Diana."
+          ],
+          "evidence": [
+            "No, it isn’t—I can’t make _that_ seem real.",
+            "But it’s a million times nicer to be Anne of Green Gables than Anne of nowhere in particular, isn’t it?"
+          ]
+        }
+      ]
+    }
+  ]
+}
