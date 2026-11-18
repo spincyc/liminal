@@ -1,0 +1,772 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "burroughs-wake-robin-1877",
+  "readings": [
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-01",
+      "title": "Wake-Robin — the author’s preface",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 16,
+        "totalMinutes": 22
+      },
+      "challenge": "Find the two promises Burroughs makes about his book, and decide whether they pull against each other.",
+      "focus": "What it means to write truthfully about nature with love.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. Ornithology is the scientific study of birds. The poet’s question, “Hast thou named all the birds without a gun?”, comes from Ralph Waldo Emerson’s poem “Forbearance”; in Burroughs’s day naturalists usually shot birds to identify and study them. A specimen is a preserved example kept for study. The trillium is a woodland wildflower with three petals.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Preface, the whole preface; opens “This is mainly a book about the Birds, or more properly an invitation to the study of…”; closes “…Trillium, which blooms in all our woods, and which marks the arrival of all the birds.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81db71969ec79a8fa72262e0224b9896c9c0919635f60a53369e234c8c3423e3"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-01-q1",
+          "prompt": "Burroughs says he wrote “with the freedom of love and old acquaintance” and also that his book is “true as it stands written, every word of it.” Can a writer do both? What might each promise allow or forbid?",
+          "facilitatorNotes": [
+            "Love allows a personal voice, feelings and comparisons; truth forbids inventing facts or giving “a wrong coloring.” He claims he has kept his imagination from changing the facts. Readers may test that claim as they read his essays, since he often gives birds human motives."
+          ],
+          "evidence": [
+            "Though written less in the spirit of exact science than with the freedom of love and old acquaintance,",
+            "and is true as it stands written, every word of it."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-01-q2",
+          "prompt": "What part of studying birds interests Burroughs most? Why might he compare it to hunting and fishing?",
+          "facilitatorNotes": [
+            "“The pursuit, the chase, the discovery”: the excitement of looking and finding, which he can carry “in my eye and ear.” The comparison shows that he enjoys the sport of observation, and perhaps admits how close bird study then was to hunting."
+          ],
+          "evidence": [
+            "is the pursuit, the chase, the discovery;",
+            "which I could carry with me in my eye and ear, wherever I went."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-01-q3",
+          "prompt": "Why can Burroughs not answer Emerson’s question “with much confidence”? What does he offer instead?",
+          "facilitatorNotes": [
+            "He has not named all the birds without a gun; like other naturalists, he has shot some. Instead he offers “a live bird” with the place and feelings around it, “not merely a stuffed and labeled specimen.” The admission is honest and a little uncomfortable."
+          ],
+          "evidence": [
+            "I cannot answer with much confidence the poet's inquiry,",
+            "and not merely a stuffed and labeled specimen."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-01-q4",
+          "prompt": "Why does he think “Wake-Robin” suits the book, though he wanted a more specific title?",
+          "facilitatorNotes": [
+            "The wake-robin, the white trillium, blooms just when the birds arrive, so the name carries the “atmosphere and spirit” of spring and of the woods. It also sounds like waking the robin. He admits it was a compromise."
+          ],
+          "evidence": [
+            "which I hope I have found in \"Wake-Robin\"",
+            "and which marks the arrival of all the birds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-02",
+      "title": "The Return of the Birds — the wood-thrush and the cat-bird",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how Burroughs judges birds by human manners, and stop where the essay suddenly turns to danger.",
+      "focus": "Portraits of birds as artists, gentlemen and gossips.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. The first word, “He,” is the wood-thrush, a brown, spotted forest bird with a beautiful song, which Burroughs has just compared with the hermit-thrush. A compeer is an equal; the mavis or red-thrush is the brown thrasher; the chewink is the towhee; Paul Pry was a nosy busybody in an old English comedy; a rod is about five meters; “tintinnabulation” is a ringing of bells; in Walden, Henry David Thoreau wrote that a squirrel’s antics seemed to expect an audience; eglantine is wild rose and smilax a thorny vine; “terra firma” is solid ground.",
+      "contentNote": "Burroughs compares a watchful bird to “a Japanese,” an ethnic stereotype of his time, and calls the cat-bird a “coquette” and a “female Paul Pry.” The section ends as a snake swallows a young bird.",
+      "excerpt": {
+        "locator": "The Return of the Birds, from the master wood-thrush to the snake raising its head above the cat-bird’s nest; opens “He is the only songster of my acquaintance, excepting the canary, that displays different…”; closes “…the head and neck of this arch-enemy. It is enough to petrify the blood in their veins.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-burroughs-wake-robin-1877-03",
+        "blocks": [
+          56,
+          63
+        ],
+        "startChar": null,
+        "endChar": 1739,
+        "textHash": "4338730971a23ea666fc7457829f4ed390e19a8d92470df369552f4863fafe28"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-02-q1",
+          "prompt": "What makes the wood-thrush “a poet in very word and deed” for Burroughs? How does he use other birds to make the point?",
+          "facilitatorNotes": [
+            "Its grace, composure and “noble reserve,” and its music. He sets it against birds with “under-bred traits”: the noisy robin, the skulking thrasher, the flirting cat-bird. He is judging birds as if they were people at a party, by class and manners."
+          ],
+          "evidence": [
+            "He is a poet in very word and deed.",
+            "The wood-thrush has none of these under-bred traits."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-02-q2",
+          "prompt": "Why does the lone wood-thrush in October seem to have “a noble pride”? Is Burroughs’s explanation fact or fancy?",
+          "facilitatorNotes": [
+            "The bird stayed behind because some tail-feathers had not grown; Burroughs imagines that “the sylvan prince” would not return to court looking shabby. The missing feathers are observed; the pride is his invention, though a charming one."
+          ],
+          "evidence": [
+            "I perceived that part of his tail-feathers were undeveloped.",
+            "The sylvan prince could not think of returning to court in this plight,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-02-q3",
+          "prompt": "Why is Burroughs “more pleased or annoyed” with the cat-bird? What does he mean by “She is a good versifier, but not a great poet”?",
+          "facilitatorNotes": [
+            "She is loud, everywhere and curious, and her song seems to mimic others “from some outward motive” rather than joy. A versifier is skilled at making verses; a poet has inner feeling. He admits her performance has “air and polish” all the same."
+          ],
+          "evidence": [
+            "She is a good versifier, but not a great poet.",
+            "always implies a spectator."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-02-q4",
+          "prompt": "The night ends inside the cat-bird’s thicket with a black snake at the nest. How does Burroughs make the scene both “loathsome” and “fascinating”?",
+          "facilitatorNotes": [
+            "He describes slowly and exactly, the jaws “compassed” round the young bird, the neck that “writhed and swelled,” and then imagines the horror of the birds. He watches without stopping it. Discuss whether careful observation here is admirable or cold."
+          ],
+          "evidence": [
+            "I found myself the spectator of a loathsome, yet fascinating scene.",
+            "his head flattened, his neck writhed and swelled,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-03",
+      "title": "The Return of the Birds — the snake and the summer hunters",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Compare the three chases in this section and Burroughs’s attitude to each.",
+      "focus": "Predators and prey in the late summer, and how a naturalist takes sides.",
+      "context": "Recap: Burroughs has praised the wood-thrush and teased the cat-bird; then, in a thicket, he watched a black snake swallow a young cat-bird and raise its head over the nest. The Tempter is the serpent of the Garden of Eden story in the Bible, retold in John Milton’s Paradise Lost; a “prerogative” is a special right; moulting is shedding feathers; dog-days are the hottest weeks of summer; “eye in a fine frenzy rolling” comes from Shakespeare’s A Midsummer Night’s Dream; Socialis is the chipping sparrow; a “miller” is a moth; adamant is an unbreakable stone.",
+      "contentNote": "Burroughs kills the snake with a stone, and a hawk chases small birds.",
+      "excerpt": {
+        "locator": "The Return of the Birds, from the snake’s search of the branches to the pigeon-hawk; opens “Not finding the object of his search, he came streaming down from the nest to a lower…”; closes “…as do they, that in the close branches they are as safe as if in a wall of adamant.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-burroughs-wake-robin-1877-02",
+        "continuesTo": null,
+        "blocks": [
+          63,
+          68
+        ],
+        "startChar": 1740,
+        "endChar": null,
+        "textHash": "63e9592a39a5e0793414725a673a50ce6a48d76521773ba32e34f9b4538b49a2"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-03-q1",
+          "prompt": "How do the parent cat-birds fight the snake? Why might Burroughs keep thinking of the Tempter in Eden?",
+          "facilitatorNotes": [
+            "They cry, flutter at him and even seize his tail; the snake turns back on himself to catch the mother. Burroughs sees the snake as the devil of the old story, and when it eyes him he imagines it recognizes “a representative of the ancient parties he once so cunningly ruined”: Adam’s descendants."
+          ],
+          "evidence": [
+            "actually laying hold of his tail with their beaks and claws.",
+            "evidently recognizing in me a representative of the ancient parties he once so cunningly ruined."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-03-q2",
+          "prompt": "“I exercised my prerogative.” What does Burroughs do, and how does he justify it? Do you agree?",
+          "facilitatorNotes": [
+            "He kills the snake with a stone. He presents it as “the old vengeance” of the Eden story and ends with a young bird chirping “in celebration.” Some readers find the rescue natural; others note that the snake was only feeding, and that Burroughs has chosen sides by sympathy and old myth."
+          ],
+          "evidence": [
+            "I exercised my prerogative,",
+            "no doubt in celebration of the victory."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-03-q3",
+          "prompt": "How is the sparrow’s chase of the moth different from the pewee’s hunting? Why does Burroughs call it “serio-comic”?",
+          "facilitatorNotes": [
+            "The pewee takes insects in “one fell swoop”; the sparrow, a seed-eater, tries to copy it and fails comically, while the moth dodges to cover. It is funny to watch, Burroughs admits, though “serious enough to the moth.”"
+          ],
+          "evidence": [
+            "The contest is quite comical, though I dare say it is serious enough to the moth.",
+            "and returns to pursue his more legitimate means of subsistence."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-03-q4",
+          "prompt": "What does the small bird learn from the moth when a pigeon-hawk attacks? How has Burroughs’s tone changed from the sparrow’s chase?",
+          "facilitatorNotes": [
+            "To dive into cover, where its smaller size lets it move faster than the hawk. Now the tone is tense, “every nerve strained,” and Burroughs feels “the deepest concern.” The same tactic is comic in one chase and life-saving in the next."
+          ],
+          "evidence": [
+            "The only salvation for the bird is to adopt the tactics of the moth,",
+            "excite feelings of the deepest concern."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-04",
+      "title": "In the Hemlocks — the red-eye and the snow-bird",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 15,
+        "totalMinutes": 22
+      },
+      "challenge": "Listen for what Burroughs hears in each bird’s song, and check his descriptions against what he sees.",
+      "focus": "Songs with “human significance,” and careful field description.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. A sugar-bush is a grove of sugar maples tapped for syrup; a rod is about five meters. The red-eyed fly-catcher is now called the red-eyed vireo; the slate-colored snow-bird is the dark-eyed junco. Burroughs gives the scientific names used in his day. The Adirondacks (Adirondac) are mountains in northern New York.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "In the Hemlocks, from the approach to the hemlocks to the snow-bird’s nest; opens “I descend a steep hill, and approach the hemlocks through a large sugar-bush. When twenty…”; closes “…imparting to the interior of the nest great symmetry and firmness as well as softness.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          86,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bb52d4a850fe26c31214dda90a10b605dea55eea7a1dfd73897475e4703fa1b1"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-04-q1",
+          "prompt": "What does Burroughs admire in the red-eyed fly-catcher’s song? Why is it “never out of time or place”?",
+          "facilitatorNotes": [
+            "It is cheerful in any weather, at any hour, in any wood, and the bird never stops working to sing: “his lay is that of industry and contentment.” He likes it for its steadiness rather than its beauty."
+          ],
+          "evidence": [
+            "it is never out of time or place for this little minstrel to indulge his cheerful strain.",
+            "his lay is that of industry and contentment."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-04-q2",
+          "prompt": "“The songs of most birds have some human significance.” What does Burroughs hear in each song? Do the meanings come from the birds or from the listener?",
+          "facilitatorNotes": [
+            "Hilarity, faith, love, pride, self-consciousness, serenity, something military. He says this human meaning is the source of our delight. Readers can argue that the meanings are the listener’s own, or that a song’s pace and tone really suggest moods."
+          ],
+          "evidence": [
+            "Indeed, the songs of most birds have some human significance,",
+            "the song-sparrow's, faith; the bluebird's, love;"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-04-q3",
+          "prompt": "How does Burroughs tell the red-eye from the warbling vireo? What does this show about how a naturalist looks?",
+          "facilitatorNotes": [
+            "The red-eye is larger and slimmer, with a bluish crown and a light line over the eye, and it hops and peers under leaves; the warbling vireo sings more continuously. He uses size, markings, movement and song together, and he criticizes “careless observers.”"
+          ],
+          "evidence": [
+            "the two birds are often confounded by careless observers.",
+            "The red-eye is a larger, slimmer bird,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-04-q4",
+          "prompt": "Why does Burroughs say the snow-bird is “not esteemed a snow-bird at all” here? What general point does he draw?",
+          "facilitatorNotes": [
+            "In these woods it breeds in summer and leaves before winter, so local people do not connect it with snow. “So different are the habits of birds in different localities”: a name or rule from one place may be wrong in another."
+          ],
+          "evidence": [
+            "and is not esteemed a snow-bird at all,",
+            "So different are the habits of birds in different localities."
+          ]
+        }
+      ],
+      "months": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-05",
+      "title": "In the Hemlocks — the cow-bird’s foundling",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Decide whether you agree with what Burroughs does at the brook, and notice how he defends it.",
+      "focus": "A naturalist steps into nature and argues with himself about it.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. The cow-bunting or cow-bird lays its eggs in other birds’ nests; the European cuckoo does the same. The speckled Canada is the Canada warbler. A nestling is “pipped” when it has begun to crack its shell; an interloper is an intruder; a foundling is an abandoned child raised by others; “courtesying” is curtsying.",
+      "contentNote": "Burroughs drowns a cow-bird nestling to save the warbler’s young, and describes cow-bird chicks causing the deaths of other nestlings.",
+      "excerpt": {
+        "locator": "In the Hemlocks, from the warbler’s nest by the brook to the nestlings’ escape; opens “In a little opening quite free from brush and trees, I step down to bathe my hands in the…”; closes “…minks and muskrats that abound here, and that have a decided partiality for such tidbits.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          110,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "756197691eaf789f02598393711e3f85acdb8639554050a34c88940bbf3f02d7"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-05-q1",
+          "prompt": "What does Burroughs find in the warbler’s nest, and what does he do? Look at how he describes the moment.",
+          "facilitatorNotes": [
+            "One nestling is much bigger and is crowding out its nest-mate: a cow-bird. He drops it into the brook, “not without a pang,” and watches it float away. He calls the cow-bird’s trick one “with a stinging human significance,” as if it were a moral crime."
+          ],
+          "evidence": [
+            "the old trick of the cow-bunting, with a stinging human significance.",
+            "but not without a pang,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-05-q2",
+          "prompt": "“Cruel? So is Nature cruel. I take one life to save two.” Is his argument convincing? What might someone say against it?",
+          "facilitatorNotes": [
+            "For: the cow-bird chick would certainly have caused the warbler chicks’ deaths, so he chose two lives over one. Against: the cow-bird is also following its nature, and a person who steps in is choosing which bird deserves to live. Readers may also notice that he asks the question himself."
+          ],
+          "evidence": [
+            "Cruel? So is Nature cruel.",
+            "I take one life to save two."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-05-q3",
+          "prompt": "Burroughs says the cow-bird “seems to have no conscience about the matter.” What does the cow-bird actually do, according to his account? Which words judge it as if it were a person?",
+          "facilitatorNotes": [
+            "It lays its egg in a smaller bird’s nest, may throw out a host’s egg, and its chick outgrows and starves the others. Words such as “cunning trick,” “shirk the responsibility,” “stealthy” and “prowling” turn instinct into villainy."
+          ],
+          "evidence": [
+            "and thus shirk the responsibility of rearing its own young.",
+            "The cow-bunting seems to have no conscience about the matter,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-05-q4",
+          "prompt": "Other birds come to look when the warblers cry out. What does Burroughs think this shows, and how careful is he about it?",
+          "facilitatorNotes": [
+            "It looks like sympathy, but he adds that it might be curiosity or a wish to know about a common danger, and notes that they leave “without a word of condolence.” Here he is careful not to claim too much about birds’ feelings."
+          ],
+          "evidence": [
+            "I have often noticed among birds this show of sympathy,",
+            "if indeed it be sympathy, and not merely curiosity,"
+          ]
+        }
+      ],
+      "months": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-06",
+      "title": "Adirondac — lakes, game and a panther story",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Compare what Burroughs says he values most with what he spends the passage doing.",
+      "focus": "Hunting, storytelling and the “wordless intercourse” with nature.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. In 1863 Burroughs and his companions explored the Adirondack Mountains of northern New York, staying near an abandoned mining village. Mount Marcy is the state’s highest peak; Indian Pass is a deep gorge; pickerel are fish; the goosander is a diving duck; the Canada grouse is now called the spruce grouse; the “wild pigeons” were passenger pigeons, then common, which were later hunted to extinction (the last died in 1914). Henry David Thoreau (1817–1862) wrote Walden; “Bruin” is a storybook name for a bear; a panther here is a mountain lion.",
+      "contentNote": "Burroughs shoots eight grouse, kills a wounded one by hand, and shoots a hawk that flies at him.",
+      "excerpt": {
+        "locator": "Adirondac, from Lake Henderson to the end of the essay; opens “About half a mile northeast of the village is Lake Henderson, a very irregular and…”; closes “…health and vigor are in her veins, and how regardless of observation she deports herself.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          185,
+          189
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1eff05a6a0bda08c0b42a3bddebf1703e373ff89b9255d5225e73065a8aae22"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-06-q1",
+          "prompt": "Burroughs shoots eight grouse and kills the last “with smooth pebble stones.” How does he describe it, and what does the plain tone suggest?",
+          "facilitatorNotes": [
+            "He reports it briefly and plainly, like ordinary sport in his time, comparing the wounded bird to “a frightened hen.” There is no pang here. Readers may find the plainness honest or troubling; it shows that a lover of birds could also hunt them."
+          ],
+          "evidence": [
+            "I shot eight of the latter in less than an hour on one occasion;",
+            "The wounded bird ran under a pile of brush, like a frightened hen."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-06-q2",
+          "prompt": "What is strange about the sharp-shinned hawk’s behavior? Is Burroughs’s shot self-defense?",
+          "facilitatorNotes": [
+            "The hawk, hunting the pigeons, flew straight at his face “as if he had sighted my nose.” He fired “almost in self-defense”: the word “almost” admits doubt. Perhaps the hawk was chasing the pigeons past him; the text does not say."
+          ],
+          "evidence": [
+            "came as straight as an arrow toward me.",
+            "Almost in self-defense I let fly one barrel of my gun,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-06-q3",
+          "prompt": "What does Thoreau’s remark about the “howling wilderness” mean? How does the settler’s panther story illustrate it?",
+          "facilitatorNotes": [
+            "Wildernesses are mostly quiet; the howling is in travelers’ imaginations. Burroughs heard no wild beasts, yet the settler tells a thrilling panther tale, and his wife produces a toe-nail “with marked dramatic effect.” The scene is gently comic: is the toe-nail proof, or a prop?"
+          ],
+          "evidence": [
+            "The howling is chiefly done by the imagination of the traveler.",
+            "she produced a toe-nail of the identical animal with marked dramatic effect."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-06-q4",
+          "prompt": "In the last paragraph Burroughs says something is “better than fish or game or grand scenery or any adventure.” What is it, and does the rest of the passage support him?",
+          "facilitatorNotes": [
+            "The “wordless intercourse with rude Nature”: quietly feeling nature’s health and life, which goes on “regardless of observation.” The passage is mostly fishing, hunting and stories, so readers can argue whether the ending sums it up or corrects it."
+          ],
+          "evidence": [
+            "is the wordless intercourse with rude Nature one has on these expeditions.",
+            "and how regardless of observation she deports herself."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-07",
+      "title": "Birds’-Nests — housekeeping and a widowed nest",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what Burroughs observes from what he reads in books, and watch what his own collecting costs.",
+      "focus": "How birds keep a nest clean, and a naturalist’s regret.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. The Beaverkill Mountains are part of the Catskills in New York. Ordure and excrement are droppings; John James Audubon and Alexander Wilson were famous earlier painters and writers on American birds; to “figure” a bird is to draw it; a specimen is a bird killed and kept for study; compunctions are feelings of guilt; the fish-hawk is the osprey.",
+      "contentNote": "Burroughs shoots a woodpecker for a specimen and hears its young and mate afterwards; he retells a story of a man clubbing a bird to death. The passage describes birds carrying away their young’s droppings.",
+      "excerpt": {
+        "locator": "Birds’-Nests, from the yellow-bellied woodpeckers in the Beaverkill Mountains to the osprey’s stepfather; opens “I shall never forget the circumstance of observing a pair of yellow-bellied…”; closes “…parent. When danger was nigh he was seen afar off, sailing around in placid unconcern.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-burroughs-wake-robin-1877-08",
+        "blocks": [
+          197,
+          205
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19ad5ef1a1aa09360629fed0807d44211fc88c2405f87091cf2a63adfcf3670b"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-07-q1",
+          "prompt": "What did Burroughs watch for an hour at the beech tree? Why does he find it worth recording?",
+          "facilitatorNotes": [
+            "The parents brought food in and carried their nestlings’ droppings out, dropping them away from the nest. It is a plain, even funny chore, but it answers a real question: “ornithologists are all silent upon the subject.” He then shows the habit is almost universal among land-birds and explains why it matters."
+          ],
+          "evidence": [
+            "the bird would again emerge, but this time bearing in its beak the ordure of one of the helpless family.",
+            "But ornithologists are all silent upon the subject."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-07-q2",
+          "prompt": "What mistake does Burroughs find in Audubon? What does this suggest about learning from books versus learning outdoors?",
+          "facilitatorNotes": [
+            "Audubon gave the female a red spot on the head; Burroughs has seen several pairs and no red-marked mother. First-hand observation can correct even a famous authority, which supports the claim of his preface that his book is a record of “actual observations.”"
+          ],
+          "evidence": [
+            "I saw that Audubon had made a mistake in figuring or describing the female of this species with the red spot upon the head."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-07-q3",
+          "prompt": "“I reluctantly shot him for a specimen.” How does Burroughs feel afterwards? Does his regret change your view of the action?",
+          "facilitatorNotes": [
+            "He confesses “compunctions” at the young birds’ cries and the widow’s doubled work. Then he quickly reassures himself that females soon find new mates. Some readers credit his honesty; others see the reassurance as a way to stop feeling guilty."
+          ],
+          "evidence": [
+            "I confess it was not without some compunctions",
+            "the female soon procures another mate."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-07-q4",
+          "prompt": "What does the osprey story suggest about the new mate? Is Burroughs’s conclusion fair?",
+          "facilitatorNotes": [
+            "The first male defended the nest fiercely and was killed; the stepfather “showed none of the spirit and pluck” and sailed about “in placid unconcern.” Burroughs says “naturally enough,” as if a stepfather would care less. It is one secondhand story, which he cannot even assign to Audubon or Wilson, so it proves little."
+          ],
+          "evidence": [
+            "Audubon or Wilson, I forget which,",
+            "When danger was nigh he was seen afar off, sailing around in placid unconcern."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-08",
+      "title": "Birds’-Nests — courtship, colors and a mountain nest",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 13,
+        "totalMinutes": 25
+      },
+      "challenge": "Watch how Burroughs describes male and female birds, and ask how much of his picture comes from his own society.",
+      "focus": "Bird partnerships seen through nineteenth-century ideas about men and women.",
+      "context": "Recap: Burroughs watched yellow-bellied woodpeckers feeding their young, corrected a mistake of Audubon’s, and then shot the male for a specimen, leaving the mother to cope. Women’s Rights was the movement, active in Burroughs’s day, for women’s votes and legal equality. A dénouement is the outcome of a story; grosbeaks are finches; picidæ is the scientific name of the woodpecker family; a hatter makes hats from felt. The “[2]” marks Burroughs’s own footnote, printed at the end of the essay and not part of this reading; in it he reports that an English writer argued a different explanation, linking dull-colored females to open nests where they need hiding.",
+      "contentNote": "Burroughs describes bird partnerships in the language of courtship, marriage and “Women’s Rights,” with period jokes about women. He breaks open a nest to see the young.",
+      "excerpt": {
+        "locator": "Birds’-Nests, from the turkey’s seclusion to the young chickadees’ flight; opens “It is generally known that when either the wild turkey or domestic turkey begins to lay,…”; closes “…from a sudden impulse, contemptuously saluted the abandoned nest with its excrement.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-burroughs-wake-robin-1877-07",
+        "continuesTo": null,
+        "blocks": [
+          206,
+          215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63c3af72efceaecbf6ed40a47fb8d31be2a6546915473a94df292d5d51ac2063"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-08-q1",
+          "prompt": "How does Burroughs tell the story of the robin’s courtship? What does his human language add, and what does it assume?",
+          "facilitatorNotes": [
+            "The cock is a suitor with “honorable” intentions; the hen is “in the market for the second time” and “artful.” The language makes a comedy of manners out of birds, and it assumes that birds behave like a Victorian couple. Readers can enjoy the joke and also question it."
+          ],
+          "evidence": [
+            "and I have no doubt that his intentions were honorable.",
+            "The hen, I took it, was in the market for the second time that season;"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-08-q2",
+          "prompt": "What does Burroughs mean by “a system of Women’s Rights prevailing among the birds”? Is the phrase admiring, mocking or both?",
+          "facilitatorNotes": [
+            "Among birds the female chooses the nest site, builds it and guards the young, while her “better-dressed half” sings. He calls this “quite admirable” from the male’s point of view: that is, it suits the male. The phrase mixes real observation with a joke at the expense of the women’s movement."
+          ],
+          "evidence": [
+            "there seems to be a system of Women's Rights prevailing among the birds,",
+            "contemplated from the stand-point of the male, is quite admirable."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-08-q3",
+          "prompt": "Why does Burroughs think female birds are dull-colored? How does he test the usual explanation?",
+          "facilitatorNotes": [
+            "The usual view says dull colors hide the female while she sits; he points out that in some species males take turns on the nest. He prefers to say the female’s life is “far more precious to the species,” so her plain colors protect her at all times. His footnote adds that another writer disagreed, so the question was still open."
+          ],
+          "evidence": [
+            "But this is not satisfactory,",
+            "as her life is far more precious to the species than that of the male."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-08-q4",
+          "prompt": "Describe the scene on the mountain top. What does the first young chickadee seem to do, and how does the passage end?",
+          "facilitatorNotes": [
+            "After Burroughs breaks in the nest, one young bird climbs to the proper door, looks out at the great view “without manifesting any surprise,” takes its bearings and launches. The others follow, each “contemptuously” saluting the old nest. The comic last line deflates the grand scene, and readers may notice that the birds left because Burroughs broke in."
+          ],
+          "evidence": [
+            "he looked around without manifesting any surprise at the grand scene that lay spread out before him.",
+            "contemptuously saluted the abandoned nest with its excrement."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-09",
+      "title": "The Bluebird — the peace-harbinger",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow how Burroughs moves from myth-like praise to field notes and comparisons.",
+      "focus": "Why one small bird can stand for the whole of spring.",
+      "context": "John Burroughs (1837–1921), an American naturalist who grew up on a farm in the Catskill Mountains of New York, published Wake-Robin, his first book of essays on birds, in 1871; this is its corrected and enlarged edition of 1877. To propitiate is to win someone’s favor; a harbinger is a forerunner; a mould-board is the curved blade of a plow; the English robin redbreast is a smaller European bird; Thomas Nuttall was a naturalist of the early nineteenth century; “cerulean” is sky-blue; a stub is a broken-off tree trunk; a dove-cot is a pigeon house; the purple martin is a swallow that nests in birdhouses; a glazier fits glass.",
+      "contentNote": "Burroughs catches a sitting bird in her nest to show how tame she is. He describes the female as tolerating the male “as a necessary evil” and uses the phrase “the Arab fashion” for chasing courtship, a stereotype of his time.",
+      "excerpt": {
+        "locator": "The Bluebird, from the opening to the bobolinks’ courtship; opens “When Nature made the bluebird she wished to propitiate both the sky and the earth, so she…”; closes “…would be hard to believe that the intercourse ever ripened into anything more intimate.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-8-burroughs-wake-robin-1877-10",
+        "blocks": [
+          373,
+          387
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "885f0d0268568cf103e2af71f61ae19e2863fb40597dfd078fb29eed0e5ac7c9"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-09-q1",
+          "prompt": "In the first paragraph, how does Nature “make” the bluebird? What does the bird come to mean?",
+          "facilitatorNotes": [
+            "She gives him the sky’s color on his back and the earth’s on his breast, so his arrival announces that the war between sky and earth, winter and spring, is over. Burroughs writes it like a myth: the bird “means the furrow” and “the warmth.”"
+          ],
+          "evidence": [
+            "so she gave him the color of the one on his back and the hue of the other on his breast,",
+            "He is the peace-harbinger;"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-09-q2",
+          "prompt": "What does the bluebird seem to say on its first March morning? How does Burroughs gently correct his own fancy?",
+          "facilitatorNotes": [
+            "“Bermuda! Bermuda! Bermuda!” as if calling up the warm south. He adds that the bird may only be “repeating the tradition of his race,” having come from no farther than Florida or Virginia. He enjoys the fancy and the fact together."
+          ],
+          "evidence": [
+            "he seems to say, as if both invoking and lamenting,",
+            "himself having come only from Florida, the Carolinas, or even from Virginia,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-09-q3",
+          "prompt": "Compare the American bluebird with the English robin. Which does Burroughs prefer, and is he fair?",
+          "facilitatorNotes": [
+            "The English bird is the better musician, but the bluebird has the softer voice, means spring, and has a finer coat, thanks to “the brighter sun and sky of the New World.” He gives the robin its due but takes pride in the American bird; “there is no blue-bird” in Britain."
+          ],
+          "evidence": [
+            "but the English redbreast is much the most skilled musician.",
+            "has given him a coat that far surpasses that of his transatlantic cousin."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-09-q4",
+          "prompt": "How does Burroughs describe bird “husbands” and “wives” in the last paragraph? What is he really describing, and what does he add?",
+          "facilitatorNotes": [
+            "Among many birds the female builds the nest and raises the young while the male sings and escorts her. He describes it as a marriage and a business firm, with the male “the ornamental partner.” The comparisons are lively but bring human ideas about marriage into bird behavior."
+          ],
+          "evidence": [
+            "If his life is all poetry and romance, hers is all business and prose.",
+            "In most cases the male is the ornamental partner in the firm,"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-8-burroughs-wake-robin-1877-10",
+      "title": "The Bluebird — the war of the wren-house",
+      "sourceId": "burroughs-wake-robin-1877",
+      "genre": "nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 11,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a battle for a birdhouse told like a comedy, and notice where the comedy turns sad.",
+      "focus": "A small drama of eviction, revenge and loss in the garden.",
+      "context": "Recap: Burroughs has praised the bluebird as the gentle herald of spring and described how, among most birds, the female does the serious work of nest and brood while the male sings and escorts her. Cliff swallows build nests of mud under barn eaves; a phoebe is a small flycatcher; “Billingsgate” is coarse, abusive language, after a London fish market famous for it; a sling here is a slingshot; “There is a Jack to every Gill” is a proverb meaning everyone finds a mate; “wren time” is very fast.",
+      "contentNote": "A boy kills the male bluebird with a slingshot, and the wrens throw the bluebirds’ eggs out of the nest.",
+      "excerpt": {
+        "locator": "The Bluebird, from the pair building their nest to the end of the essay; opens “With the bluebirds the male is useful as well as ornamental. He is the gay champion and…”; closes “…gave it up; the pair disappeared, and the box remained deserted the rest of the summer.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-8-burroughs-wake-robin-1877-09",
+        "continuesTo": null,
+        "blocks": [
+          388,
+          398
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8aff50aa664515e847e476353e60b6e422164a53e311a50c78738eb66a9debb6"
+      },
+      "questions": [
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-10-q1",
+          "prompt": "How do the male and female bluebird share the work of building? Why does Burroughs call the male “a very partial” inspector?",
+          "facilitatorNotes": [
+            "She chooses the site and does all the building; he guards, applauds and goes in to inspect each piece, always pronouncing it “Excellent! excellent!” He is partial because he approves of everything. The scene is affectionate comedy."
+          ],
+          "evidence": [
+            "He acts also as inspector of her work, but I fear is a very partial one.",
+            "On coming out he exclaims very plainly,"
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-10-q2",
+          "prompt": "How does Burroughs make the wrens’ eviction funny? Which words are human exaggerations?",
+          "facilitatorNotes": [
+            "The wrens “wrung their hands and tore their hair,” and their scolding would be “the rankest and most voluble Billingsgate ever uttered.” The bluebirds say nothing and the male chases Mr. Wren under the fence. The mock-heroic language treats a birdhouse quarrel like a family feud."
+          ],
+          "evidence": [
+            "they wrung their hands and tore their hair, after the wren fashion,",
+            "the rankest and most voluble Billingsgate ever uttered."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-10-q3",
+          "prompt": "“The outraged wrens were fully avenged.” What happens, and how does the tone change? Why might Burroughs call it revenge?",
+          "facilitatorNotes": [
+            "A boy kills the male bluebird with a slingshot: “There he lay like a bit of sky fallen upon the grass.” The image is quietly sad, and it recalls the sky-colored back of the opening. Burroughs calls it vengeance only from the wrens’ point of view; the boy knew nothing of the quarrel."
+          ],
+          "evidence": [
+            "There he lay like a bit of sky fallen upon the grass.",
+            "The outraged wrens were fully avenged."
+          ]
+        },
+        {
+          "id": "reading-8-burroughs-wake-robin-1877-10-q4",
+          "prompt": "Who wins in the end? Why does the essay finish with an empty box?",
+          "facilitatorNotes": [
+            "Nobody: the wrens give up “dumb with grief,” and the widowed bluebird, with a new mate, refuses the changed nest despite all his coaxing. The box stays empty “the rest of the summer.” The quarrel destroyed what both sides wanted, which readers may see as a fable about fights over property."
+          ],
+          "evidence": [
+            "withdrew from the garden, dumb with grief, and gave up the struggle.",
+            "and the box remained deserted the rest of the summer."
+          ]
+        }
+      ]
+    }
+  ]
+}
