@@ -1068,6 +1068,378 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-15",
+      "title": "The Alarm",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 14,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a soldier’s argument with himself, and decide what you think of the sign that settles it.",
+      "focus": "Love, duty and the wish for a sign from heaven, in a false alarm of war.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. In 1803 Britain expected Napoleon (spelled Buonaparte here) to invade from France; volunteers trained to defend the coast, and beacons on the hills were to be lit if the French landed. Hardy’s novel The Trumpet-Major is set in those years. “Royal George’s town” is Weymouth, the seaside town that King George III often visited; Horatio Nelson was Britain’s great admiral. A croft is a small farm; “broached the spiced and brewed” means opened the drink; to antedate is to come early; a char-wench is a serving girl; the Road is an anchorage off the coast; a firelock is a musket; to palter is to waver or bargain; “childing” means expecting a child; remission is forgiveness; Holy Writ is the Bible; “wist” means knew; Te Deum is a hymn of thanksgiving.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Alarm (1803), the whole poem with its note and dedication; opens “_See_ “_The Trumpet-Major_””; closes “…with wife and friends: “We praise Thee, Lord, discerning That Thou hast helped in this!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          248,
+          273
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3e75b58af1de2538e0e2611fd463bec94ceda6731fa08186a3d821090fb795cd"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-15-q1",
+          "prompt": "What does the Volunteer’s farewell speech show about him? Look at how it ends.",
+          "facilitatorNotes": [
+            "He is practical and caring, arranging food and help for the birth, and he makes light of the danger (“He’s not like to land!”) to calm his wife. The long list of kit ends with the one thing he cannot take: his heart. The joke hides how much the parting costs him."
+          ],
+          "evidence": [
+            "He’s not like to land!",
+            "My heart, Dear; that must stay!"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-15-q2",
+          "prompt": "When he sees the beacon and hears that Napoleon has anchored, what does he consider doing, and how does he argue for it?",
+          "facilitatorNotes": [
+            "He thinks of going back to hide his wife in the woods. He argues that she will think he lied about the danger, and that the sin of deserting to save “a childing wife” would be forgiven by Christ, though not by men. The poem treats his temptation with sympathy."
+          ],
+          "evidence": [
+            "Seek the woods with her till times have altered;",
+            "Such sin, to save a childing wife, would earn it Christ’s remission,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-15-q3",
+          "prompt": "How does the bird decide him? Does the poem present it as a real sign from God, or as what the soldier believes?",
+          "facilitatorNotes": [
+            "He frees a bird tangled in the river weed and asks God to guide its flight; it flies south toward the coast, and he marches on. Hardy keeps a little distance: the bird flies “as if surmising,” it “seemed him” Heaven sent it, and he was prompted, “he wist,” by God. Readers can argue for either view."
+          ],
+          "evidence": [
+            "till it seemed him Heaven had pleased it As guide to send the bird.",
+            "Prompted he wist by Whom."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-15-q4",
+          "prompt": "Napoleon never comes. How do you read the ending: as sincere thanksgiving, as irony, or both?",
+          "facilitatorNotes": [
+            "The Volunteer marched to a battle that never happened and thanks God for the outcome. A reader can see a quiet, sincere family memory (the poem is dedicated to one of Hardy’s family), or irony in a sign that “worked” whatever happened. The modest happy ending lets both stand."
+          ],
+          "evidence": [
+            "But Buonaparte still tarried;",
+            "That Thou hast helped in this!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-16",
+      "title": "A Sign-Seeker",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Divide the poem into what the speaker can see and know and what he longs for and cannot find.",
+      "focus": "A searcher who knows the natural world well and finds no sign beyond it.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. Hardy wrote many poems questioning religious belief. “Liveries” are uniforms, here the seasons’ colors; “subtrude” means creep in; eccentric orbs are comets; to mete is to measure; “moils” are toils and struggles; “fain would wot of” means would gladly know; “vouchsafed” means granted; “unheed” means those who do not seek; “Writ” is the Bible; to “inscroll” is to write in a record; Nescience is not-knowing.",
+      "contentNote": "The speaker longs for signs of life after death and finds none. Discuss this as his view, alongside the believers he describes in the poem.",
+      "excerpt": {
+        "locator": "A Sign-Seeker, the whole poem; opens “I MARK the months in liveries dank and dry, The noontides many-shaped and hued; I see the…”; closes “…To open out my limitings, And Nescience mutely muses: When a man falls he lies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          335,
+          347
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b0372f1a2a8cef1211084583ee86da7f0f8ad756be5ee8e2becee659dffd3dd1"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-16-q1",
+          "prompt": "The first five stanzas list what the speaker has seen and learned. What kinds of knowledge are they?",
+          "facilitatorNotes": [
+            "The weather and seasons, storms, earthquakes and volcanoes, the science of astronomy (predicting eclipses, weighing the sun), and human life with its meetings, sorrows and deaths: everything the senses and science can reach. He is no careless observer."
+          ],
+          "evidence": [
+            "I learn to prophesy the hid eclipse,",
+            "—All the vast various moils that mean a world alive."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-16-q2",
+          "prompt": "What three signs does he long for in stanzas VII to IX?",
+          "facilitatorNotes": [
+            "A dead parent or friend appearing by a grave to say “Not the end!”; some mark proving that the kisses of a dead love in dreams are real; and a heavenly “Recorder” dropping a feather to show that wrongs done to the weak are written down. Each would prove that death or injustice is not final."
+          ],
+          "evidence": [
+            "Wearing his smile, and “Not the end!”",
+            "And drop one plume as pledge that Heaven inscrolls the wrong."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-16-q3",
+          "prompt": "How does the speaker describe people who believe they do see such signs? Is he mocking them, envying them, or both?",
+          "facilitatorNotes": [
+            "They are “rapt to heights of trancéd trust” and read “radiant hints.” The words are not unkind and may be envious: “Such scope is granted not to lives like mine.” Some readers hear a hint of doubt about their trance; others hear simple longing."
+          ],
+          "evidence": [
+            "There are who, rapt to heights of trancéd trust,",
+            "Such scope is granted not to lives like mine . . ."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-16-q4",
+          "prompt": "“When a man falls he lies.” What does the last line mean, and why does Hardy give it to “Nescience”?",
+          "facilitatorNotes": [
+            "A fallen man stays down: death is the end. But the speaker gives the words to Nescience, not-knowing, which “mutely muses,” so the line is less a proof than the silence of an unanswered question. Readers can debate whether the ending is despair or honesty."
+          ],
+          "evidence": [
+            "And Nescience mutely muses: When a man falls he lies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-17",
+      "title": "At an Inn",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Work out what the people at the inn believed, what was true, and what has changed since.",
+      "focus": "A love that came too late, and the gap between seeming and being.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. “Catering care” means service with food and drink; to opine is to suppose; “quicks” means brings to life; “the spheres above” are the heavens; to flush is to light up; a pane-fly is a fly buzzing at a window; “palsied” means numbed; “port” here means bearing or appearance; “after-hours” means later times.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "At an Inn, the whole poem; opens “WHEN we as strangers sought Their catering care, Veiled smiles bespoke their thought Of…”; closes “…O severing sea and land, O laws of men, Ere death, once let us stand As we stood then!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          473,
+          478
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bf4093c68e5c8bd3aacf67591cc36ac600d63cfc313da8d820e4d3b7c013c042"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-17-q1",
+          "prompt": "What did the people at the inn think about the pair, and how did that make them behave?",
+          "facilitatorNotes": [
+            "They guessed the two were lovers who had given up everything for love, and they warmed to them, served them gladly and wished such happiness for themselves. Their kindness rested on a mistake."
+          ],
+          "evidence": [
+            "They warmed as they opined Us more than friends—",
+            "“Ah, God, that bliss like theirs Would flush our day!”"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-17-q2",
+          "prompt": "What actually happened when the two were left alone? Which images show it?",
+          "facilitatorNotes": [
+            "Nothing: “never the love-light shone.” A chill falls on the afternoon and even numbs the buzzing fly. Love was present but “lingered-numb,” held back."
+          ],
+          "evidence": [
+            "Yet never the love-light shone Between us there!",
+            "And palsied unto death The pane-fly’s tune."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-17-q3",
+          "prompt": "Explain the last stanza’s reversal: “As we seemed we were not … And now we seem not what / We aching are.”",
+          "facilitatorNotes": [
+            "Then they looked like lovers and were not; now they are in love and cannot show it. The speaker blames Love for making sport of them, and “severing sea and land” and “laws of men” now keep them apart: perhaps distance, perhaps marriage. The poem leaves the obstacle unexplained."
+          ],
+          "evidence": [
+            "As we seemed we were not That day afar,",
+            "O severing sea and land, O laws of men,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-17-q4",
+          "prompt": "The poem uses very short lines and a regular rhyme. How does the form suit a story of feelings held back?",
+          "facilitatorNotes": [
+            "The clipped lines sound restrained, like people who cannot say what they feel; the final wish (“once let us stand / As we stood then!”) breaks out with more force after so much control. Some readers find the form too neat for such pain; the evidence supports either view."
+          ],
+          "evidence": [
+            "Ere death, once let us stand As we stood then!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-18",
+      "title": "The Fire at Tranter Sweatley’s",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "narrative poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Read the dialect aloud to catch the words, and decide how the poem wants you to feel at each turn.",
+      "focus": "A comic ballad built on a forced marriage and a fatal fire.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. This ballad is written in Dorset dialect; reading it aloud helps. A tranter is a carrier who moves people’s goods; Zundays are Sundays; junketings are merry-makings; a “thirtover” uncle is a stubborn one; a goodman is a husband; a gaffer is an old man; “sommat” is something; reading the names “over pu’pit” is announcing a marriage in church; a linhay is an open shed; vlankers are sparks; a chimley-tun is a chimney top; an orchet is an orchard; lewth is shelter; a codlin-tree is an apple tree; bivering is shivering; a night-rail is a nightgown; totties are feet; gallied means frightened; “en” means him; a weir-hatch holds back water; “mid” means might; “thik husbird” is a coarse insult, roughly “that wretch”; nater is nature; a chiel is a child; mixens are dung heaps; shrammed means numb with cold; clouts are clothes; a tallet is a hayloft; a skimmington-ride was a noisy procession to shame people thought to have broken the rules of marriage; “wold” is old.",
+      "contentNote": "A young woman is forced to marry a drunken older man, who dies in a fire on the wedding night while she escapes in her nightgown. The poem treats this as rough comedy, and ends with a joke about her still being “a maiden.” “Gipsy” is a period word for the Roma people.",
+      "excerpt": {
+        "locator": "The Fire at Tranter Sweatley’s, the whole poem with its dates; opens “THEY had long met o’ Zundays—her true love and she— And at junketings, maypoles, and…”; closes “_Written_ 1866; _printed_ 1875.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          495,
+          515
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "21d6f60519d7cb7b73288a465f01d3beae65069b57d0ed9b994b0a53ae865799"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-18-q1",
+          "prompt": "How does the first stanza set up the story? What do we learn about the uncle and about Tranter Sweatley?",
+          "facilitatorNotes": [
+            "Barbree and her true love have courted for a long time, but her stubborn uncle insists she marry Sweatley, an old man “oft weak at the knee” from drink. The comic rhymes make the injustice sound like a joke, which is the poem’s method throughout."
+          ],
+          "evidence": [
+            "But she bode wi’ a thirtover uncle,",
+            "From taking o’ sommat more cheerful than tea—"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-18-q2",
+          "prompt": "Barbree’s speech piles up her troubles: “And then, upon top o’ that…” Is this moment funny, sad, or both?",
+          "facilitatorNotes": [
+            "Both: her misery is real (“slave to thik husbird for bread”), but the repetition builds like a comic list and ends with being “burnt out o’ bed.” The poem invites laughter without mocking her; she is the one telling the joke."
+          ],
+          "evidence": [
+            "And then, upon top o’ that, burnt out o’ bed,",
+            "Is more than my nater can stand!”"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-18-q3",
+          "prompt": "When the neighbors search the ruins, “all they could find was a bone.” Why do the uncle and Barbree react as they do? How does the poem treat the husband’s death?",
+          "facilitatorNotes": [
+            "The uncle is terrified and begins to repent, since his forcing of the marriage led to this; Barbree stays hidden “till sure she was free.” The death is handled lightly, almost as a convenient accident, which some readers find shocking and others accept as the rough justice of a folk ballad."
+          ],
+          "evidence": [
+            "And all they could find was a bone.",
+            "But before ’twas complete, and till sure she was free,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-18-q4",
+          "prompt": "How does the community respond when it learns where Barbree is hiding? What does the ending suggest about who controls her life?",
+          "facilitatorNotes": [
+            "First a skimmington-ride shames the pair; then “decent people” decide they should marry. Barbree finally speaks up for herself, insisting she stands “as a maiden”: her first marriage never counted. Her uncle and her neighbors have decided her marriages, yet the last word is hers."
+          ],
+          "evidence": [
+            "Saying Tim and his lodger should risk it, and pair:",
+            "I stand as a maiden to-day!”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-8-hardy-wessex-poems-1919-19",
+      "title": "The Two Men",
+      "sourceId": "hardy-wessex-poems-1919",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 15,
+        "totalMinutes": 23
+      },
+      "challenge": "Lay the two lives side by side, stage by stage, and test the moralists’ last line.",
+      "focus": "Ideals, idleness and how the world judges by results.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. Hardy dated this poem 1866, when he was a young architect in London writing poems in his spare time. The Market is the world of business and money-making; “mortal lot” is human life; “meaner mould” means lower purposes; a “plighted one” is a fiancée; “fain” means willing; a mart is a market; a “privy lair” is a hiding place; “descried” means caught sight of; “much corn and wine” is wealth; a pauper is someone too poor to live without charity; “dust to dust” comes from the burial service.",
+      "contentNote": "Both men die in poverty.",
+      "excerpt": {
+        "locator": "The Two Men, the whole poem with its date; opens “THERE were two youths of equal age, Wit, station, strength, and parentage; They studied…”; closes “1866.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          528,
+          550
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "feb0dfa41b2a97b71008220f3a688fa73242ca622488b39944aac81d94f9eb11"
+      },
+      "questions": [
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-19-q1",
+          "prompt": "What does the first young man choose, and what does it cost him?",
+          "facilitatorNotes": [
+            "He rejects the “sordid war” of business to work in secret for Truth and Purity, hoping people will support him. His garden runs wild, he loses hope, and he dies poor and friendless. His powers could have made him rich had he used them on “things of meaner mould.”"
+          ],
+          "evidence": [
+            "To rate the Market’s sordid war As something scarce worth living for.",
+            "And drooped to death in poverty . . ."
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-19-q2",
+          "prompt": "Why does the first man pretend to his love that he is tired of her? Is it noble or mistaken?",
+          "facilitatorNotes": [
+            "He wants her to scorn him and leave quickly, so that she will not suffer in his ruin: angry love dies fast, but starved love lingers. It is self-sacrifice, but it also destroys the hope that kept him alive. Readers may admire it or think he decided for her."
+          ],
+          "evidence": [
+            "I cannot kiss: I tire of thee!",
+            "For incensed love breathes quick and dies,"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-19-q3",
+          "prompt": "How does the second man’s story mirror the first? Find the matching stages.",
+          "facilitatorNotes": [
+            "Both shut themselves away and neglect their dress; both seek support from others; both visit their love by night and give her up; both die paupers without friends. But the second man is lazy and wants to marry money, and his love “read him.” The parallel stanzas make the contrast in motives sharp."
+          ],
+          "evidence": [
+            "How he might live by doing nought.",
+            "But this Fair read him;"
+          ]
+        },
+        {
+          "id": "reading-8-hardy-wessex-poems-1919-19-q4",
+          "prompt": "“These men were like in all they did.” Are the moralists right? What is Hardy’s point?",
+          "facilitatorNotes": [
+            "Judged by outcomes they look alike: two failures in pauper graves. But their reasons and their love were opposite. The irony is that the world, which judges by results, cannot see the difference; readers may also wonder whether Hardy thinks the idealist’s choice was worth it."
+          ],
+          "evidence": [
+            "“These men were like in all they did.”"
+          ]
+        }
+      ]
     }
   ]
 }
