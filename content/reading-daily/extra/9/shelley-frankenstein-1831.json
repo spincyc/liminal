@@ -483,6 +483,417 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-08",
+      "title": "Frankenstein, Chapter XIV: the history of Safie",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Keep the layers of narration straight: Walton writes down Victor’s account, Victor repeats the creature’s story, and the creature summarizes Safie’s letters. Ask what each teller could have known.",
+      "focus": "A story of rescue, love and betrayal that the creature takes as his lesson in human society.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. Recap: on the glacier above Chamounix the creature is telling Victor how he survived. He hid for months in a hovel against the wall of a poor cottage in Germany, watching the De Lacey family, a blind old father, his son Felix and his daughter Agatha, and learned to speak and read by listening as Felix taught Safie, a young Arabian woman who arrived on horseback. Leghorn is the English name for Livorno, an Italian port; Mont Cenis is a pass through the Alps. “Mahometan” is an old European word for a Muslim, and a “haram” (harem) the women’s quarters of a household.",
+      "contentNote": "The chapter describes a Turkish Muslim merchant as treacherous and Islam as confining women, in the European prejudices of Shelley’s time; Safie’s mother was enslaved; there are unjust imprisonments and a death sentence.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XIV, complete; opens “\"Some time elapsed before I learned the history of my friends. It was one which could not…”; closes “…they had lived took care that Safie should arrive in safety at the cottage of her lover.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-09",
+        "blocks": [
+          412,
+          431
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "91b6e5d16f0eba22ed91ec7e9a32945d7219dcb4163ee19bb253cc06aa87b0fe"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-08-q1",
+          "prompt": "How does the creature know Safie’s history, and why does he offer to give Victor the letters?",
+          "facilitatorNotes": [
+            "He learned it from the family and from Safie’s letters to Felix, of which he made copies with writing materials he found. He says they “will prove the truth of my tale”: he expects not to be believed and behaves like a witness gathering documents.",
+            "The layers matter. Each teller (Safie, the creature, Victor, Walton) passes the story on, so readers can ask what might have been lost or shaped along the way, including the prejudices in the account of the Turk."
+          ],
+          "evidence": [
+            "I have copies of these letters",
+            "they will prove the truth of my tale"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-08-q2",
+          "prompt": "Felix vows to free the condemned merchant. What different motives mix in his rescue, and how is Safie treated in the bargain between the two men?",
+          "facilitatorNotes": [
+            "Felix acts first from indignation at an unjust sentence and rejects the offered reward “with contempt,” but on seeing Safie he thinks the captive has “a treasure” worth his risk, and the father offers her hand to secure him. Safie becomes a reward passed between men before she ever acts for herself.",
+            "Some readers see Felix as purely noble, since he is “too delicate” to accept the offer. Others notice that the narration admits he looked forward to it all the same."
+          ],
+          "evidence": [
+            "Felix rejected his offers with contempt",
+            "the captive possessed a treasure which would fully reward his toil and hazard",
+            "Felix was too delicate to accept this offer"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-08-q3",
+          "prompt": "Safie’s mother taught her “an independence of spirit.” How does Safie act on that lesson, and how do the chapter’s judgments about Turks and Islam affect the way her choice is presented?",
+          "facilitatorNotes": [
+            "She defies her father, takes her jewels and money, crosses Europe with one attendant, nurses her through a fatal illness, and reaches Felix among strangers whose language she cannot speak. It is the boldest independent act by any woman in the novel so far.",
+            "The story sets Christian Europe as freedom against Muslim Asia as confinement and calls the merchant “the treacherous Turk.” Yet it also says the French court condemned him for “his religion and wealth,” so prejudice appears on both sides. Students can discuss how far these judgments belong to the creature’s sources, the De Laceys, or Shelley’s own time."
+          ],
+          "evidence": [
+            "taught her to aspire to higher powers of intellect, and an independence of spirit",
+            "she quitted Italy with an attendant",
+            "his religion and wealth, rather than the crime alleged against him, had been the cause of his condemnation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-09",
+      "title": "Frankenstein, Chapter XV: three books and a journal",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 15,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow how each book becomes a mirror for the creature. Then reread the passage about Victor’s journal and notice who is being spoken to.",
+      "focus": "An education in reading turns into an education in being alone, and the creature finds his origin in his maker’s own words.",
+      "context": "Recap: the creature has told how the De Laceys lost their fortune and their country after Felix freed Safie’s father, and how Safie later fled her father to join Felix. A portmanteau is a travelling bag. The three books are Milton’s Paradise Lost (1667), an epic of the creation and fall of Adam and Eve and of Satan’s rebellion against God; Plutarch’s Lives, ancient biographies of Greek and Roman leaders; and Goethe’s The Sorrows of Young Werther (1774, “Werter” in early English translations), a novel in letters about a sensitive young man who takes his own life. Numa, Solon and Lycurgus were famous lawgivers; Romulus and Theseus were founders remembered as warriors.",
+      "contentNote": "The creature reflects on Werther’s suicide.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XV, from the start through the creature’s resolve to wait some months longer; opens “\"Such was the history of my beloved cottagers. It impressed me deeply. I learned, from…”; closes “…to commence this undertaking until a few more months should have added to my sagacity.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-08",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-10",
+        "blocks": [
+          433,
+          441
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ab18baa5b365252b816a3aca274c4eabcfe437de2eca3b8a4fd6ee92cf51d0f0"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-09-q1",
+          "prompt": "The creature says Werter taught him “despondency and gloom” and Plutarch “high thoughts.” What does he suggest about how his first teachers shaped him?",
+          "facilitatorNotes": [
+            "He admires peaceful lawgivers over warriors because the “patriarchal lives” of the cottagers prepared him to, and he imagines that a soldier as his first example would have given him “different sensations.” He sees his mind as formed by what he happened to meet first.",
+            "This is an argument about education and environment that runs through the whole novel. Some readers also see him explaining himself to Victor in advance, before he tells what he later did."
+          ],
+          "evidence": [
+            "I learned from Werter's imaginations despondency and gloom: but Plutarch taught me high thoughts",
+            "perhaps, if my first introduction to humanity had been made by a young soldier, burning for glory and slaughter, I should have been imbued with different sensations"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-09-q2",
+          "prompt": "Reading Paradise Lost “as a true history,” the creature compares himself first to Adam and then to Satan. Why does Adam not fit him, and why does Satan seem a better fit?",
+          "facilitatorNotes": [
+            "Adam came from God “a perfect creature,” cared for and allowed to talk with higher beings; the creature is “wretched, helpless, and alone.” Satan fits because he feels envy when he watches the cottagers’ happiness, as Satan envied Eden.",
+            "The comparison also casts Victor as a god who abandoned his creation. Students may disagree about whether the creature is choosing the role of Satan or simply recognising a feeling he cannot help."
+          ],
+          "evidence": [
+            "Like Adam, I was apparently united by no link to any other being in existence",
+            "Many times I considered Satan as the fitter emblem of my condition"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-09-q3",
+          "prompt": "Why does Victor’s journal hurt the creature more than any book? Look at whom he addresses as he describes it.",
+          "facilitatorNotes": [
+            "It is his maker’s own record of “disgusting circumstances” and his “odious and loathsome person”; Victor’s horror becomes the creature’s permanent image of himself. He turns from telling the story to accusing Victor directly (“You, doubtless, recollect these papers. Here they are.”), handing over the evidence as he offered Safie’s letters.",
+            "His reversal of Genesis, in which God made man “after his own image” but his own form is “a filthy type” of Victor’s, makes the resemblance itself a curse. Readers may notice that he accepts Victor’s judgment of his body completely."
+          ],
+          "evidence": [
+            "You, doubtless, recollect these papers. Here they are.",
+            "in language which painted your own horrors, and rendered mine indelible",
+            "God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-10",
+      "title": "Frankenstein, Chapter XV: the knock at the cottage door",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the conversation with De Lacey slowly: the creature is speaking about the family to the family’s own father without saying so. Notice every word about prejudice.",
+      "focus": "A blind man judges the creature by his words, and the people who can see him judge by his body.",
+      "context": "Recap: the creature has educated himself on Paradise Lost, Plutarch and Werther, and found Victor’s journal describing his creation with disgust. Still, he hopes the cottagers’ goodness will overcome their horror of his looks, and has resolved to introduce himself. The De Laceys’ servants and Safie’s new comfort show that their fortunes have improved a little since her arrival.",
+      "contentNote": "Felix beats the creature with a stick.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XV, from the changes in the cottage to the end of the chapter; opens “\"Several changes, in the mean time, took place in the cottage. The presence of Safie…”; closes “…I quitted the cottage, and in the general tumult escaped unperceived to my hovel.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-09",
+        "continuesTo": null,
+        "blocks": [
+          442,
+          470
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "78f3beef46560c2cae32bf37e173f7c644acb7a8ca2f9618941f2283ddef256a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-10-q1",
+          "prompt": "Why does the creature choose the moment when the blind father is alone? What has he concluded about why others feared him?",
+          "facilitatorNotes": [
+            "He has decided that “the unnatural hideousness of my person” was the chief cause of horror, while his voice “had nothing terrible in it.” A blind listener can judge him by his speech; if he wins the father, the father may win the children.",
+            "The irony is that the only person who can judge him fairly is the one who cannot see. Some readers think the plan is sensible; others notice how much depends on one conversation."
+          ],
+          "evidence": [
+            "that the unnatural hideousness of my person was the chief object of horror with those who had formerly beheld me",
+            "My voice, although harsh, had nothing terrible in it"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-10-q2",
+          "prompt": "Both speakers talk about prejudice. What does De Lacey believe about human hearts, and why might his own history make him sympathetic?",
+          "facilitatorNotes": [
+            "He says that hearts “unprejudiced by any obvious self-interest” are “full of brotherly love and charity,” and that he and his family were “condemned, although innocent.” The creature says a “fatal prejudice” makes his friends see “a detestable monster” instead of a friend.",
+            "De Lacey’s family suffered for helping a man condemned for his religion and wealth, so he knows how unjust judgment can be. Students may notice that his trust in human kindness is about to be tested in his own house."
+          ],
+          "evidence": [
+            "the hearts of men, when unprejudiced by any obvious self-interest, are full of brotherly love and charity",
+            "a fatal prejudice clouds their eyes, and where they ought to see a feeling and kind friend, they behold only a detestable monster",
+            "I and my family have been condemned, although innocent"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-10-q3",
+          "prompt": "When Felix attacks, the creature says he “could have torn him limb from limb” but refrained. How should a reader judge Felix, and what does the creature’s restraint show?",
+          "facilitatorNotes": [
+            "The creature holds back because “my heart sunk within me”: he still loves the family, and the restraint shows the gentleness he claims. Felix sees a gigantic stranger clinging to his blind father’s knees and acts to protect him; from inside the cottage his violence is understandable.",
+            "Both readings can stand together. The tragedy is that each side acts in good faith on what it can see, and the reader is the only one who knows both."
+          ],
+          "evidence": [
+            "I could have torn him limb from limb, as the lion rends the antelope.",
+            "But my heart sunk within me as with bitter sickness, and I refrained."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-11",
+      "title": "Frankenstein, Chapter XVI: the burning of the cottage",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Track the creature’s moods hour by hour, from rage to reflection to hope to despair. Ask which feeling finally decides his course.",
+      "focus": "After rejection, the creature declares war on humankind, then still turns to his maker for justice.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. Recap: on the glacier the creature is telling Victor his story. He had hidden beside a cottage in Germany, learned language and reading from the exiled De Lacey family, and finally spoke to the blind father alone; when Felix, Agatha and Safie came home, Felix beat him and he fled to his hovel. The “arch-fiend” is Satan, whom the creature has read about in Paradise Lost.",
+      "contentNote": "The creature speaks of rage and revenge and sets fire to the empty cottage.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XVI, from the start through the creature’s decision to seek Victor in Geneva; opens “\"Cursed, cursed creator! Why did I live? Why, in that instant, did I not extinguish the…”; closes “…justice which I vainly attempted to gain from any other being that wore the human form.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-12",
+        "blocks": [
+          472,
+          487
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f681621d862ee8f0421de7c3a4f22727e6f5410dfcf44705d5b1f8aebb78752"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-11-q1",
+          "prompt": "On the night after the attack the creature says, “I, like the arch-fiend, bore a hell within me.” How has his use of Paradise Lost changed since he first read it?",
+          "facilitatorNotes": [
+            "Earlier he only “considered Satan as the fitter emblem” of his envy; now he takes the role for himself and declares “everlasting war against the species.” The literary comparison becomes a description of what he decides to do.",
+            "Notice that the declaration does not last: the next morning he reconsiders. Some readers take the war as his true turn; others see it as the first outburst of a mind still hoping."
+          ],
+          "evidence": [
+            "I, like the arch-fiend, bore a hell within me",
+            "from that moment I declared everlasting war against the species"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-11-q2",
+          "prompt": "The next day the creature blames himself for having been “too hasty.” Whose fault does he think the failure was, and what does Felix’s talk with the landlord show from the family’s side?",
+          "facilitatorNotes": [
+            "He decides he acted “imprudently” and should have prepared the family slowly through the old man: he blames his method, not their horror. Felix’s words (“The life of my father is in the greatest danger”; “My wife and my sister will never recover their horror”) show that the family believed they had been attacked.",
+            "The two accounts never meet. The creature’s fairness makes the loss harder: “I never saw any of the family of De Lacey more.” Students may notice that Felix now calls Safie his wife."
+          ],
+          "evidence": [
+            "I could not help believing that I had been too hasty in my conclusions",
+            "The life of my father is in the greatest danger, owing to the dreadful circumstance that I have related.",
+            "I never saw any of the family of De Lacey more."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-11-q3",
+          "prompt": "After burning the cottage, why does the creature decide to go to Victor, though he feels “no sentiment but that of hatred” for him?",
+          "facilitatorNotes": [
+            "Victor’s papers told him “you were my father, my creator,” so Victor is the one being on whom he has a “claim for pity and redress.” He wants justice, not affection, from the person responsible for his existence.",
+            "Students can weigh whether the claim is just. A creator who gave “perceptions and passions” and then abandoned his creation may owe him something; the creature’s hatred and the fire he has just set complicate any sympathy."
+          ],
+          "evidence": [
+            "I learned from your papers that you were my father, my creator",
+            "on you only had I any claim for pity and redress",
+            "Unfeeling, heartless creator!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-12",
+      "title": "Frankenstein, Chapter XVI: the journey to Geneva",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Connect this account with what you already know from Victor’s side of the story: William’s death and Justine’s trial. Notice how the creature explains, and excuses, each act.",
+      "focus": "The creature’s own account of the murder of William and the framing of Justine.",
+      "context": "Recap: driven from the De Laceys’ cottage, the creature burned it and set out for Geneva to demand justice from Victor, guided only by the sun and a map. Readers already know from Victor’s narrative (Chapters VII–VIII) that his young brother William was found strangled near Geneva, and that the family servant Justine Moritz was executed for the murder after the boy’s miniature portrait of his mother was found in her pocket. A Syndic was one of the chief magistrates of Geneva.",
+      "contentNote": "The creature is shot. He strangles a small boy, Victor’s brother William, and plants evidence on a sleeping young woman so that she will be blamed.",
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XVI, from the creature’s travels to the end of the chapter; opens “\"My travels were long, and the sufferings I endured intense. It was late in autumn when I…”; closes “…must be of the same species, and have the same defects. This being you must create.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-11",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-13",
+        "blocks": [
+          488,
+          508
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "076cbbd01a8019e2bfde8d7933f62eaf4a143b308c4f240520d19c04c336a7cb"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-12-q1",
+          "prompt": "On a spring day the creature “dared to be happy” and saves a drowning girl. How does what follows repeat what happened at the cottage?",
+          "facilitatorNotes": [
+            "Kindness is answered with violence: the man who was with the girl tears her away and shoots him. As with Felix, the rescuer is judged by his appearance, and probably the man thought he was saving her from a monster.",
+            "The creature calls the wound “the reward of my benevolence” and vows vengeance on all mankind. Students may ask whether the pattern justifies his conclusion, or whether he generalises from two encounters to the whole species."
+          ],
+          "evidence": [
+            "forgetting my solitude and deformity, dared to be happy",
+            "This was then the reward of my benevolence!"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-12-q2",
+          "prompt": "Why does the creature seize William, and what turns his plan into murder?",
+          "facilitatorNotes": [
+            "He imagines that a small child is “unprejudiced” and could become his companion. But William has already learned fear (“monster! ugly wretch! you wish to eat me”), and when he names his father the creature sees only Victor’s family and “my first victim.”",
+            "The creature grips his throat “to silence him,” and then exults: “I, too, can create desolation.” Some readers see a sudden act made deliberate by his triumph afterwards; few will accept the hope at the start as an excuse for the end."
+          ],
+          "evidence": [
+            "this little creature was unprejudiced, and had lived too short a time to have imbibed a horror of deformity",
+            "monster! ugly wretch! you wish to eat me",
+            "I, too, can create desolation"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-12-q3",
+          "prompt": "How does the creature justify placing the portrait on the sleeping Justine? Is his reasoning persuasive?",
+          "facilitatorNotes": [
+            "He reasons that because women like her will never love him, “The crime had its source in her: be hers the punishment!” He credits “the lessons of Felix and the sanguinary laws of man” with teaching him how to make someone else pay.",
+            "The logic shifts his guilt onto an innocent stranger and onto human law. Students may compare it with Victor, who also let Justine die rather than speak, so that both maker and made share responsibility for her death."
+          ],
+          "evidence": [
+            "The crime had its source in her: be hers the punishment!",
+            "Thanks to the lessons of Felix and the sanguinary laws of man, I had learned now to work mischief."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-13",
+      "title": "Frankenstein, Chapter XVII: the demand for a companion",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Victor changes his answer more than once. Mark each change and the reason he gives for it.",
+      "focus": "Creator and creature argue about what one owes the other, and Victor makes a promise he fears.",
+      "context": "Recap: the creature has finished his story. After the De Laceys drove him away and a man shot him for saving a drowning girl, he strangled William and planted the portrait on Justine. He ends by demanding that Victor make him a female companion. They are still on the sea of ice (the Mer de Glace), the glacier above Chamounix. A “siroc” (sirocco) is a hot wind from the Sahara.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XVII, complete; opens “The being finished speaking, and fixed his looks upon me in expectation of a reply. But I…”; closes “…pass before me like a dream; and that thought only had to me the reality of life.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-12",
+        "continuesTo": null,
+        "blocks": [
+          510,
+          530
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "41212f5a9feb0d76c51642545c23db19d96d5968bb15d1510d84ac9ed5f09c35"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-13-q1",
+          "prompt": "“I am malicious because I am miserable.” What argument does the creature build from this claim, and where does Victor admit there is “some justice” in it?",
+          "facilitatorNotes": [
+            "He argues that hatred has made him cruel and that kindness would make him kind: “for that one creature’s sake, I would make peace with the whole kind!” If he cannot inspire love, he will “cause fear.” Victor is moved when he remembers that as maker he owes the creature what happiness he can give.",
+            "Students can test the claim against what they have just read: does misery explain the murder of William, or only part of it? The argument mixes a reasonable request with a threat."
+          ],
+          "evidence": [
+            "I am malicious because I am miserable.",
+            "if I cannot inspire love, I will cause fear",
+            "I felt that there was some justice in his argument"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-13-q2",
+          "prompt": "The creature describes a peaceful life in South America; Victor answers that he will return and seek human company again. Whose argument do you find stronger?",
+          "facilitatorNotes": [
+            "The creature promises exile, a diet of “acorns and berries,” and a life “harmless” if not happy. Victor argues that a being who longs for human sympathy will not stay away, and that two companions could do twice the harm.",
+            "Both arguments are defensible. Victor’s fear is reasonable after William’s murder, but the creature points out that only “the wantonness of power and cruelty” would refuse a request so small."
+          ],
+          "evidence": [
+            "The picture I present to you is peaceful and human",
+            "You will return, and again seek their kindness, and you will meet with their detestation"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-13-q3",
+          "prompt": "What finally makes Victor consent? Is his decision an act of justice, of fear, or both?",
+          "facilitatorNotes": [
+            "He sees that his compassion fails whenever he looks at “the filthy mass that moved and talked,” as the cottagers’ did. In the end he weighs the creature’s early virtues, his treatment by others and his “power and threats,” and concludes that justice to the creature and to everyone else demands consent.",
+            "Readers may call the promise principled or coerced; the text includes both motives. The scene on the mountain afterwards, where Victor begs the stars to “crush sensation and memory,” shows that he takes on the task with dread."
+          ],
+          "evidence": [
+            "when I saw the filthy mass that moved and talked, my heart sickened",
+            "His power and threats were not omitted in my calculations",
+            "the justice due both to him and my fellow-creatures demanded of me that I should comply with his request"
+          ]
+        }
+      ]
     }
   ]
 }
