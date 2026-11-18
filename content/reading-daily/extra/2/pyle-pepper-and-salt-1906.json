@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 1,
+  "grade": 2,
+  "work": "pyle-pepper-and-salt-1906",
+  "readings": [
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-01",
+      "title": "The Skillful Huntsman, part 1: a bargain with the red stranger",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Watch a clever hero add a condition of his own to someone else’s bargain.",
+      "focus": "Jacob wants to marry the mayor’s daughter, and a stranger with a horse’s hoof offers to make him a perfect shot.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. Herr is German for Mister; a practical huntsman is one who really hunts; pottage is a thick soup; whithersoever means wherever. In old German tales a tall stranger in red with a horse’s hoof is the Devil in disguise.",
+      "contentNote": "Jacob signs a bargain with a stranger who is plainly the Devil of folktales; the story treats it as a contest of wits.",
+      "excerpt": {
+        "locator": "“The Skillful Huntsman,” from the start through Jacob signing the stranger’s paper; opens “Once upon a time there was a lad named Jacob Boehm, who was a practical huntsman.”; closes “…After that Jacob signed the paper, and the stranger went one way and he went home again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-02",
+        "blocks": [
+          11,
+          40
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fce920d8f9ecce8d4469e4fd8f0c406e89442cd4be21f8f6b2a2a34d0f5f94fe"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-01-q1",
+          "prompt": "What must Jacob do before he may marry Gretchen? Why might the Herr Mayor set such a hard task?",
+          "facilitatorNotes": [
+            "Shoot the whiskers off a running hare without touching its skin. It sounds impossible, so perhaps the mayor hopes Jacob will give up; Jacob’s mother expects the same."
+          ],
+          "evidence": [
+            "shoot the whiskers off from a running hare without touching the skin",
+            "many a man wants and wants, and nothing comes of it!"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-01-q2",
+          "prompt": "Jacob keeps saying the same thing. What is it, and what does it tell you about him?",
+          "facilitatorNotes": [
+            "“What one man has done, another man can.” He is stubborn and sure of himself; nothing his mother says will stop him."
+          ],
+          "evidence": [
+            "what one man has done, another man can"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-01-q3",
+          "prompt": "What clues tell Jacob, and you, that the stranger should not be trusted?",
+          "facilitatorNotes": [
+            "He knows Jacob’s name without being told, he has a horse’s hoof instead of a foot, he wants a signature, and he makes a sour face at the word “condition.”"
+          ],
+          "evidence": [
+            "the stranger had a horse's hoof instead of a foot",
+            "as though he had sour beer in his mouth"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-01-q4",
+          "prompt": "What is Jacob’s condition, and how might it save him?",
+          "facilitatorNotes": [
+            "The stranger must be his servant for ten years, and if Jacob asks a question he cannot answer, Jacob goes free. It gives Jacob a way out; children can guess what kind of question might work."
+          ],
+          "evidence": [
+            "if, in all that time, I should chance to ask you a question that you cannot answer, then I am to be my own man again"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-02",
+      "title": "The Skillful Huntsman, part 2: a plough and a purse",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice a pattern repeat, and decide what each new demand shows about the person making it.",
+      "focus": "The mayor keeps changing his demands, and the red servant supplies each wonder.",
+      "context": "Recap: to marry Gretchen, the Herr Mayor’s daughter, Jacob Boehm had to shoot the whiskers off a running hare. A tall stranger in red with a horse’s hoof made him a perfect shot, in return for Jacob’s promise to go with him in ten years, unless Jacob can ask him a question he cannot answer. Until then the stranger must serve Jacob and come when he blows a bone whistle. A magpie is a long-tailed bird; a furrow is a groove cut by a plough.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Skillful Huntsman,” from Jacob’s return to the Herr Mayor through his marriage to Gretchen; opens “Well, Jacob brushed the straws off from his coat, and put a fine shine on his boots, and…”; closes “…his Gretchen, and, between his plough and his purse, he was busy enough, I can tell you.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-01",
+        "continuesTo": "reading-2-pyle-pepper-and-salt-1906-03",
+        "blocks": [
+          41,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "96f779773c07b6d616b53f0c2b7ffe8746233a959475b920b054e31e54361691"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-02-q1",
+          "prompt": "Each time Jacob passes a test, what does the Herr Mayor do?",
+          "facilitatorNotes": [
+            "He hems and haws, scratches his head, and names something new that he has “always said and sworn.” The repeated words suggest he is making it up as he goes."
+          ],
+          "evidence": [
+            "At this the Herr Mayor scratched his head, and hemmed and hawed.",
+            "he had always said and sworn"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-02-q2",
+          "prompt": "Where does Jacob go to call the red one, and how does the red one arrive?",
+          "facilitatorNotes": [
+            "Behind the woodpile. He appears at once, as if he had stepped out of “the door of nowheres,” Pyle’s funny way of saying out of thin air."
+          ],
+          "evidence": [
+            "back of the woodpile",
+            "as though he had just stepped out of the door of nowheres"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-02-q3",
+          "prompt": "Why does the Herr Mayor finally say yes?",
+          "facilitatorNotes": [
+            "Because a son-in-law with a purse that never empties is too good to refuse. Money, not Jacob’s shooting or ploughing, wins him over. Children can say what they think of the mayor."
+          ],
+          "evidence": [
+            "who would not like to have a lad for a son-in-law who always had two pennies more in his purse than he could spend"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-02-q4",
+          "prompt": "The storyteller breaks in: “hui! I would like to have such a purse as that.” Who is talking to us, and why put that in?",
+          "facilitatorNotes": [
+            "The narrator himself, joking with the listeners, as if the tale were being told aloud by the fire. Ask whether the child would want such a purse."
+          ],
+          "evidence": [
+            "hui! I would like to have such a purse as that."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-03",
+      "title": "The Skillful Huntsman, part 3: Gretchen’s riddle",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Work out a trick before the story explains it.",
+      "focus": "Gretchen turns herself into a creature no one can name, and Jacob asks the question the red one cannot answer.",
+      "context": "Recap: the red stranger with a horse’s hoof made Jacob Boehm a perfect shot and, as his servant, gave him a plough that ploughs by itself and a purse that never empties, so that Jacob could marry Gretchen. Now the ten years are over, and Jacob must go with the red one unless he asks a question the red one cannot answer. In a sorry state of dumps means very gloomy; a wren is a tiny bird and a raven a large black one; a scrape is a fix or a trouble.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Skillful Huntsman,” from the end of the ten years to the end of the tale; opens “So the days went on and on and on until the ten years had gone by and the time had come…”; closes “…another man beside Jacob Boehm would find himself in a pretty scrape only for his wife.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-pyle-pepper-and-salt-1906-02",
+        "continuesTo": null,
+        "blocks": [
+          69,
+          99
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "268265ff10e07a1f52f23b1c808bd3d2d6c22e58a945c0c8b9d0bfeedd59434f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-03-q1",
+          "prompt": "How does Gretchen find out what is troubling Jacob?",
+          "facilitatorNotes": [
+            "She can see there is more than he says and keeps teasing until he tells her everything. He tried to hide it; she noticed."
+          ],
+          "evidence": [
+            "she could see that there was more to be told than Jacob had spoken"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-03-q2",
+          "prompt": "Why does Gretchen roll herself in honey and feathers?",
+          "facilitatorNotes": [
+            "So that she looks like a great bird that is no bird anyone knows, and the red one cannot say what it is. Children may guess the plan before the story says it."
+          ],
+          "evidence": [
+            "she looked just like a great bird"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-03-q3",
+          "prompt": "Why won’t Jacob shoot at the wren or the raven?",
+          "facilitatorNotes": [
+            "He makes excuses (too small, too black) because he is waiting for Gretchen. Each refusal makes the red one more impatient."
+          ],
+          "evidence": [
+            "that is too small",
+            "that is too black"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-03-q4",
+          "prompt": "The verse at the end gives the story’s meaning. Who is the real hero, Jacob or Gretchen?",
+          "facilitatorNotes": [
+            "Pyle says many men would be in trouble without their wives. Jacob’s condition made escape possible, but Gretchen thought of how to use it. Children can argue for either, or both."
+          ],
+          "evidence": [
+            "I can help you out of your trouble easily enough",
+            "in a pretty scrape only for his wife."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-04",
+      "title": "Venturesome Boldness",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare a character setting out with the same character coming home.",
+      "focus": "A tailor proud of killing a mouse goes looking for someone as bold as himself, and meets a knight.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. Venturesome means daring; slew means killed; a Jack is a fellow; pardie is an old word meaning “indeed!”; a brand is a sword; awry means crooked; “gone to pie” means fallen to pieces; “of less degree” means of lower rank, or smaller.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Venturesome Boldness,” the whole poem; opens “A tailor came a-walking by, The fire of courage in his eye. \"Where are you going Sir?\"…”; closes “…shall there remain. A little man. Sir, always can Be great with folk of less degree!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          204,
+          207
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d539744ca4832c9a5ec2fded50466aab61d1b114c2852c31b8976db26cf501d9"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-04-q1",
+          "prompt": "What brave deed is the tailor so proud of?",
+          "facilitatorNotes": [
+            "He killed a mouse in the house where the tailors live. The joke is how proud he is of something so small."
+          ],
+          "evidence": [
+            "I slew a mouse"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-04-q2",
+          "prompt": "How has the tailor changed when he comes by the second time?",
+          "facilitatorNotes": [
+            "He limps, his face is woeful, his clothes are crooked and his courage is gone. The first and third verses match: “came a-walking by” becomes “came a-limping by.”"
+          ],
+          "evidence": [
+            "The fire of courage in his eye.",
+            "The tailor came a-limping by"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-04-q3",
+          "prompt": "What happened when the tailor challenged the knight?",
+          "facilitatorNotes": [
+            "The knight did exactly as he was asked, stood and drew his sword, and treated the tailor “outrageously.” The tailor got what he asked for."
+          ],
+          "evidence": [
+            "He straightaway did",
+            "And treated me outrageously."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-04-q4",
+          "prompt": "What lesson does the tailor take home? Is it the right one?",
+          "facilitatorNotes": [
+            "That a little man can always seem great among people smaller than himself, so he will stay home. Children may say he should have learned not to boast; the poem’s joke is that he learned the wrong lesson."
+          ],
+          "evidence": [
+            "So I shall get me home again,",
+            "Be great with folk of less degree!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-05",
+      "title": "A Victim to Science",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice what the characters forget while they argue.",
+      "focus": "Two learned doctors argue over the best cure for a sick crow until it is too late.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. He spells this verse the old-fashioned way: “ye” means “the,” and letters are left out of words such as th’r (their) and h’re (here). Physicians are doctors; Concord is a town in Massachusetts; a tincture and a tonic are liquid medicines; lassitude and languor mean tiredness; incontinently, in old usage, means at once. The moral “is apparent” means it is obvious.",
+      "contentNote": "The sick crow dies while the doctors argue.",
+      "excerpt": {
+        "locator": "“A Victim to Science,” the whole poem with “Ye Moral”; opens “Th're were two wise physicians once, of glory and renown, Who went to take a little walk…”; closes “(_is apparent_.)”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          268,
+          270
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "db05a1cf0eda108009eda60b84073e3c5f02057d2dafeccbc3484ecaf4ba5091"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-05-q1",
+          "prompt": "How does the poem describe the two doctors at the start? Does the ending agree?",
+          "facilitatorNotes": [
+            "“Very, very great and wise and learned.” By the end they have lost their tempers while their patient died, so the praise turns out to be teasing."
+          ],
+          "evidence": [
+            "Oh! very, very great and wise and learned men were they,",
+            "Until they lost their tempers"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-05-q2",
+          "prompt": "What does each doctor want to give the crow, and what does each say against the other’s cure?",
+          "facilitatorNotes": [
+            "One has pills, which the other calls too violent; the other has a tincture or tonic, which the first calls too weak."
+          ],
+          "evidence": [
+            "Your pills, sir, are too violent.",
+            "Your tonic is too weak."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-05-q3",
+          "prompt": "How can you tell from the way the lines are written that the doctors keep interrupting each other?",
+          "facilitatorNotes": [
+            "Their sentences break off with dashes, and the next speaker starts before the last one finishes. Reading it aloud in two voices makes it clear."
+          ],
+          "evidence": [
+            "Now, I have had occasion--",
+            "Permit me, sir, to speak."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-05-q4",
+          "prompt": "Pyle does not write out the moral; he only says it “is apparent.” What is the moral, in your own words?",
+          "facilitatorNotes": [
+            "Perhaps that arguing about the best way to help can stop anyone helping at all, or that wanting to be right can matter more than the patient. Accept any moral that fits what happens to the crow."
+          ],
+          "evidence": [
+            "Ye Crow, not waiting for ye end, incontinently died.",
+            "is apparent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-06",
+      "title": "Play & Earnest",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how a poem’s sound changes when its mood changes.",
+      "focus": "A playful breeze accepts a tree’s invitation and grows into a storm that tears the tree down.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. In earnest means seriously, not in play. A lea is a meadow; a mad-cap is someone wild and reckless; in rout means scattered in confusion; a tempest is a violent storm; rent means tore; asunder means apart.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Play & Earnest,” the whole poem; opens “Over dewy hill and lea Merrily Rushed a mad-cap breeze at play, And the daisies, like the…”; closes “…from its crowns Till, at last, it flung it down, Stripped, and bare, and torn asunder.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          272,
+          274
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8ee9d7ad859b09858b4d2d52af2cc6ea29342cf05d875557bbdac1ed3a307505"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-06-q1",
+          "prompt": "What is the breeze like at the beginning? Which words show it?",
+          "facilitatorNotes": [
+            "Merry and wild, at play; the daisies dance and twinkle like stars as it passes."
+          ],
+          "evidence": [
+            "Rushed a mad-cap breeze at play,",
+            "Danced and twinkled in its way."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-06-q2",
+          "prompt": "Who invites the breeze to play, and how do the leaves greet it?",
+          "facilitatorNotes": [
+            "The tree invites it, and the leaves shiver and quiver with delight. The very short lines tremble like leaves."
+          ],
+          "evidence": [
+            "Will you come and have a play?",
+            "Then the leaves, with sudden shiver,"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-06-q3",
+          "prompt": "How does the last verse sound different from the first two?",
+          "facilitatorNotes": [
+            "Its lines are longer and its words are rough: flung, tossed, roared, groaned, rent. The dancing short lines are gone, just as the play is gone."
+          ],
+          "evidence": [
+            "Till it roared, as though with thunder.",
+            "Stripped, and bare, and torn asunder."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-06-q4",
+          "prompt": "The title is “Play & Earnest.” What do you think Pyle wants us to notice about play?",
+          "facilitatorNotes": [
+            "That play can turn serious or harmful when one player grows too strong or stops caring about the game. Some children will see it simply as a picture of a storm; both readings fit."
+          ],
+          "evidence": [
+            "For it cared to play no longer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-pyle-pepper-and-salt-1906-07",
+      "title": "The Accident of Birth",
+      "sourceId": "pyle-pepper-and-salt-1906",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Explain a joke that turns into a serious question.",
+      "focus": "An absent-minded stork delivers a prince to a cobbler’s house, and no one can tell the difference.",
+      "context": "Howard Pyle, an American writer and artist, wrote and illustrated these tales and verses in the 1880s in the style of old German folktales and ballads; his pictures are not included here. An old story told children that storks brought new babies; here Saint Nicholas sends them. A petition is a request; dinning means noisy repeating; a cobbler mends shoes; half a score is ten; quoth he means he said. Stultzenmannenkim is a made-up, comically long German-sounding name, and Fritz is a nickname for Friedrich.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Accident of Birth,” the whole poem; opens “ _Saint Nicholas_ used to send, so I am told, All new-born babes by storks, in days of…”; closes “…so? Also, perhaps, _I_ should be great, instead Of writing thus, to earn my daily bread.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          276,
+          280
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "833f1345a7678738b80cd2baf9279f17a33ed87bee7fc6bc8e9c1fe89e271586"
+      },
+      "questions": [
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-07-q1",
+          "prompt": "Why does Saint Nicholas finally send King Friedrich Max a baby?",
+          "facilitatorNotes": [
+            "He is tired of hearing the same prayer every day. Even a saint, the poem jokes, grows weary of being asked."
+          ],
+          "evidence": [
+            "For one grows weary when one always hears"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-07-q2",
+          "prompt": "What mistake does Wilhelm Stork make, and why?",
+          "facilitatorNotes": [
+            "He takes the baby to Fritz the cobbler instead of Fritz the king, because he is old and slow-witted and both men are called Fritz. The cobbler already has ten children."
+          ],
+          "evidence": [
+            "So what does he but bear the gift to Fritz",
+            "The cobbler, who had half a score of such."
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-07-q3",
+          "prompt": "The baby goes from being first of all to the last. Was the baby himself any different?",
+          "facilitatorNotes": [
+            "No; only the house he landed in changed. The last verse argues that if an experienced stork cannot tell a new-born prince from a cobbler’s baby, perhaps there is no difference to tell."
+          ],
+          "evidence": [
+            "From new-born cobbler's somewhat hard to know,"
+          ]
+        },
+        {
+          "id": "reading-2-pyle-pepper-and-salt-1906-07-q4",
+          "prompt": "In the last two lines the poet thinks about himself. What is he joking about?",
+          "facilitatorNotes": [
+            "That perhaps he, too, was meant to be great and was delivered to the wrong house, so now he must write for a living. Children may hear only the joke, or the serious idea that being born rich or poor is luck."
+          ],
+          "evidence": [
+            "should be great, instead",
+            "to earn my daily bread."
+          ]
+        }
+      ]
+    }
+  ]
+}
