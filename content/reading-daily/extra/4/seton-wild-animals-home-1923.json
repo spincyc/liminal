@@ -1179,6 +1179,230 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-17",
+      "title": "Wild Animals at Home: the jumping mouse and the calling mouse (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice how a naturalist explains one animal’s strange body and solves the mystery of another he cannot see.",
+      "focus": "Two small mice of the campfire: one that leaps like a tiny kangaroo, and one that squeaks underground.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. A catapult is a slingshot; a counterpart is a matching animal in another place; the jerboa is a jumping desert rodent of Africa and Asia; diminutive means tiny; somnolent means sleepy; nocturnal means active at night; interminable means endless; corroborative means confirming; a specimen is an animal collected for study. Baronett’s Bridge and Yancey’s are places in Yellowstone. The Standing Rock Agency was the government office on the Standing Rock reservation of the Lakota and Dakota peoples. Of the “seven sleepers,” bears, raccoons and skunks really sleep lightly through the winter; the jumping mouse truly hibernates. The grasshopper mouse eats insects, and it really does stand up and give a high call.",
+      "contentNote": "Seton sets traps that kill the mice he wants to identify.",
+      "excerpt": {
+        "locator": "Chapter X, “Ghosts of the Campfire,” the sections “The Jumping Mouse” and “The Calling Mouse,” whole; opens “He glides around the fire much as the others do, but at the approach of danger, he simply…”; closes “…around the campfire--it feeds largely on grasshoppers, and is in mortal terror of ants.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          486,
+          499
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d615370996244bfc5b993bb66b2ddff8d9dc3842cc7accd4b0758ef7580a578b"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-17-q1",
+          "prompt": "How does the jumping mouse escape danger? What animal is it like?",
+          "facilitatorNotes": [
+            "It shoots off in leaps of eight or ten feet, again and again; in build and habits it is like the jerboa, a small jumping animal of Africa."
+          ],
+          "evidence": [
+            "he simply fires himself out of a catapult, afar into the night.",
+            "This is the New World counterpart of the Jerboa"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-17-q2",
+          "prompt": "What is the jumping mouse’s long tail for, and how was this discovered?",
+          "facilitatorNotes": [
+            "It steers and balances the jump, like a kite’s tail or an arrow’s feathers. A naturalist saw a mouse whose tail had been cut off by a mowing machine: it jumped wildly in every direction and even landed back where it started."
+          ],
+          "evidence": [
+            "it is the tail to the kite, the feathering to the arrow;",
+            "one individual that was de-tailed by a mowing machine"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-17-q3",
+          "prompt": "Which of the “seven sleepers” sleeps longest, and how does it prepare?",
+          "facilitatorNotes": [
+            "The jumping mouse: it digs a warm nest deep underground before summer ends and sleeps, curled in its tail, for at least seven months in Yellowstone."
+          ],
+          "evidence": [
+            "the longest, soundest sleeper of the whole somnolent brotherhood is the Jumping Mouse.",
+            "This means at least seven months on the Yellowstone."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-17-q4",
+          "prompt": "How did Seton finally learn what was squeaking under the bank? What does this show about how naturalists work?",
+          "facilitatorNotes": [
+            "He drew the tracks, a friend who had kept one captive identified them, and fifteen years later he heard the same squeak in North Dakota and trapped one. Patient notes, sharing with others and checking by evidence solve mysteries; readers may also discuss whether killing the animal was necessary."
+          ],
+          "evidence": [
+            "Not far away from this I drew some tracks I found in the dust",
+            "So I set a trap and next night had a specimen of the Squeaker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-18",
+      "title": "Wild Animals at Home: misunderstood — the Canada lynx (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 10,
+        "totalMinutes": 16
+      },
+      "challenge": "Weigh three true stories against each other to decide what an animal is really like.",
+      "focus": "Seton remembers three meetings with a lynx from his childhood in Canada, and says people have the lynx wrong.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. The lynx and the bobcat are wild cats, close cousins; coon-hunting is hunting raccoons at night with dogs; dogs “tree” an animal when they chase it up a tree; “guyed” means teased; joining the ministry means becoming a minister; plucky means brave; ferocity is fierceness; embellishment is added decoration. Two Little Savages (1903) is Seton’s novel about boys who play at living in the woods; its title uses an old insulting word for Native peoples.",
+      "contentNote": "A lynx wounds a lamb, which a farm woman sews up.",
+      "excerpt": {
+        "locator": "Chapter XI, “Sneak-cats—Big and Small,” the section “Misunderstood—the Canada Lynx,” whole; opens “The southern part of North America is occupied by Bobcats of various kinds, the northern…”; closes “…embellishment in the early part of \"Two Little Savages,\" so shall not repeat it here.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          508,
+          515
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bd15917a920fd0438de3427f9d2151c494f8433716569243f6e988cecb2100f8"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-18-q1",
+          "prompt": "Tell the three scenes in a sentence each. How is the third different from the first two?",
+          "facilitatorNotes": [
+            "A timid man aims at a lynx but is too frightened to shoot; a hunter begs his friend not to shoot a treed lynx; a farm woman drives a lynx off with a stick. In the first two, men are terrified; in the third, a woman acts boldly and the lynx runs."
+          ],
+          "evidence": [
+            "He had not the nerve to fire and the Lynx walked back to the woods.",
+            "She seized a stick and went for the robber."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-18-q2",
+          "prompt": "What did the woman do after the lynx dropped the lamb?",
+          "facilitatorNotes": [
+            "She carried it home, sewed up the four cuts in its neck, nursed it for a few days and returned it to its mother, fully recovered."
+          ],
+          "evidence": [
+            "at the first blow of the stick he dropped the lamb and ran.",
+            "finding four deep cuts in its neck she sewed them up"
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-18-q3",
+          "prompt": "Seton says the first two stories show “crazy ideas” and the third the “real character” of the lynx. Is one story enough to prove what an animal is like?",
+          "facilitatorNotes": [
+            "One story is not proof, but Seton adds his own many meetings, in which lynxes only watched him with mild curiosity. Readers can decide whether his evidence is enough, and notice that the lynx did attack the lamb."
+          ],
+          "evidence": [
+            "The first two incidents illustrate the crazy ideas that some folks have about the Lynx",
+            "I have once or twice been followed by Lynxes, but I am sure it was merely out of curiosity."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-18-q4",
+          "prompt": "Why do you think Seton called this section “Misunderstood”? How does he want you to feel about the lynx?",
+          "facilitatorNotes": [
+            "People fear it as a savage beast, but he describes its gaze as mild and trusting, so he wants readers to see a shy, curious animal instead of a monster."
+          ],
+          "evidence": [
+            "There was no trace of ferocity in the gaze, but rather of innocent confidence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-seton-wild-animals-home-1923-19",
+      "title": "Wild Animals at Home: the shyest thing in the woods — the cougar (excerpt)",
+      "sourceId": "seton-wild-animals-home-1923",
+      "genre": "historical nature writing",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 10,
+        "totalMinutes": 16
+      },
+      "challenge": "Compare old stories, careful books and an expert’s claim, and test each against the evidence.",
+      "focus": "Seton explains why hardly anyone sees a cougar, and argues that its fearsome reputation is false.",
+      "context": "Ernest Thompson Seton (1860–1946) was a naturalist, artist and storyteller who lived in Canada and the United States. Wild Animals at Home (first published 1913) tells of animals he watched, mostly in the American and Canadian West. The cougar is also called the mountain lion or puma. Elusive means hard to find; adroit means skilful; haunts are favourite places; contraband books are forbidden ones, read surreptitiously, or secretly; invincible prowess means unbeatable strength; to decoy is to lure; a refutation is a proof that something is false; to decamp is to run off. The cougar’s old scientific name hippolestes means horse-thief. Seton was wrong that cougars never attack people: attacks are very rare, but some have happened, so people in cougar country are told to keep children close and never to run from one.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XI, “Sneak-cats—Big and Small,” the section “The Shyest Thing in the Woods,” whole; opens “Reference to the official report shows that there are about one hundred Mountain Lions…”; closes “…by a Cougar\" may manage to persuade himself that he has had a hairbreadth escape.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          517,
+          524
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7bf1d4575df242a7c421c5a8e3f3fba15c13a11fd8739050812726a651fe2af3"
+      },
+      "questions": [
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-19-q1",
+          "prompt": "About as many cougars as black bears lived in Yellowstone. Why had nearly everyone seen bears but almost no one a cougar?",
+          "facilitatorNotes": [
+            "Their habits: bears come near people, but the cougar is the shyest, cleverest hider in the woods. Seton had camped for twenty-five years in cougar country without seeing one."
+          ],
+          "evidence": [
+            "The Cougar is the most elusive, sneaking, adroit hider, and shyest thing in the woods.",
+            "I have camped for twenty-five years in its country and have never yet seen a wild Cougar."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-19-q2",
+          "prompt": "Compare what the old school books said about the cougar with what careful natural histories say.",
+          "facilitatorNotes": [
+            "The old books called it an unbeatable man-eater that lures people with a cry like a woman’s; careful books say it kills deer, sheep and colts but rarely larger prey."
+          ],
+          "evidence": [
+            "he is by choice a man-eater",
+            "rarely kills a larger prey, and never is known to attack man."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-19-q3",
+          "prompt": "How does Seton explain stories of cougars attacking men on horseback?",
+          "facilitatorNotes": [
+            "The cougar was after the horse, which it loves to kill; when it found a man there, it ran off."
+          ],
+          "evidence": [
+            "prove to have been attacks on the horse",
+            "in each case on discovering the man the Cougar had decamped."
+          ]
+        },
+        {
+          "id": "reading-4-seton-wild-animals-home-1923-19-q4",
+          "prompt": "Seton was sure cougars never attack people, but we now know they rarely do. What can a careful reader learn from this?",
+          "facilitatorNotes": [
+            "Even an expert who checks stories carefully can be wrong, so strong claims need evidence. Seton is right that most frightening tales grow in the telling; readers can still respect the cougar’s danger."
+          ],
+          "evidence": [
+            "most of these attacks by Cougars have failed to stand the disintegrating power of a carefully focussed searchlight.",
+            "may manage to persuade himself that he has had a hairbreadth escape."
+          ]
+        }
+      ]
     }
   ]
 }
