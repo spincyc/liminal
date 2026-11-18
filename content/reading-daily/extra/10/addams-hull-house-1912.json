@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "addams-hull-house-1912",
+  "readings": [
+    {
+      "id": "reading-10-addams-hull-house-1912-01",
+      "title": "Twenty Years at Hull-House: confessions and horrid little houses (Chapter I, first part)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the adult Addams explains her childhood feelings without mocking them, and which memories she chooses to begin a life’s work.",
+      "focus": "A memoir that traces a public vocation back to a child’s conscience, fears and love for her father.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. Its first chapters recall her childhood in the Illinois village of Cedarville, where her father, John Addams, owned a flour mill and a sawmill and served in the state senate. Her mother died when she was two, and a childhood illness left her with a curved spine. A newel post stands at the foot of a staircase; the Second Adventists expected the world to end soon; bran and shorts are by-products of milling flour; the mill-race is the channel that brings water to the mill-wheel. Some phrases she quotes come from poems, among them Wordsworth’s ode on childhood (“the fields of sleep”).",
+      "contentNote": "Contains a young child’s terror of death and Hell, and her shame about her looks and her curved spine.",
+      "excerpt": {
+        "locator": "Chapter I, “Earliest Impressions,” from the opening through the mills across the road; opens “ON the theory that our genuine impulses may be connected with our childish experiences,…”; closes “…us wet the edges of the pile with water brought in his sprinkling pot from the mill-race.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          12,
+          19
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f592e6833b81338a2b5efe67c3db364e7dc0770ecb864ea300e746dd97283fd"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-01-q1",
+          "prompt": "Why does the child creep down to her father’s room after telling a lie, and why does his answer comfort her even though he grants no “absolution”?",
+          "facilitatorNotes": [
+            "She fears dying in her sin and fears that her father, standing for the whole adult world she has deceived, might die before she confesses. He neither scolds nor forgives: he says he is glad a little girl who told lies felt too bad to sleep. He approves her conscience rather than judging the lie, and knowing that her wickedness is “shared” lets her sleep."
+          ],
+          "evidence": [
+            "No absolution was asked for or received",
+            "at least that of the comforted"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-01-q2",
+          "prompt": "At about six she declares she will build her house “right in the midst of horrid little houses.” Why might Addams put this memory near the start of her memoir, and how far should a reader trust it?",
+          "facilitatorNotes": [
+            "It points straight at Hull-House, founded among the poor. But the memoir’s first sentence admits a “theory” that childish experiences explain adult impulses, and a writer looking back chooses memories that fit the life she lived. Readers can treat it as evidence of an early calling, or as a memory shaped by what came later; the text supports both."
+          ],
+          "evidence": [
+            "the theory that our genuine impulses may be connected with our childish experiences",
+            "right in the midst of horrid little houses like those"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-01-q3",
+          "prompt": "In the wagon-wheel dream and on the Sunday walks with Uncle James, the child carries burdens nobody asked her to carry. What do the two memories share, and what ends the second one?",
+          "facilitatorNotes": [
+            "Both are secret duties she imagines for herself: to restart the world single-handed, and to protect her handsome father from being linked with his “Ugly Duckling” daughter. Neither is confided to anyone. Her father ends the second without knowing it by bowing to her in the street with his silk hat, a public sign that he is glad to be known as hers."
+          ],
+          "evidence": [
+            "upon me rested the responsibility of making a wagon wheel",
+            "With a playful touch of exaggeration, he lifted his high and shining silk hat and made me an imposing bow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-02",
+      "title": "Twenty Years at Hull-House: a miller’s thumb and a new cloak (Chapter I, second part)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare what her father says in each conversation with what the child hoped he would say.",
+      "focus": "Lessons in equality and honesty, taught more by example and by refusal than by instruction.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. Its first chapters recall her childhood in the Illinois village of Cedarville, where her father, John Addams, owned a flour mill and a sawmill and served in the state senate. Her mother died when she was a baby, and her father remarried when she was eight. To dress millstones is to recut their grinding grooves with a chisel; to bolt flour is to sift it. A self-made man is one who rose from poverty by his own work. Foreordination (predestination) is the doctrine that God has decided in advance who will be saved; the shorter catechism is a book of questions and answers on Christian belief. Hicksite Quakers were the more liberal branch of the Society of Friends after it split in 1827.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Earliest Impressions,” from the mill and her father’s habits through “I am a Hicksite Quaker”; opens “In addition to these fascinations was the association of the mill with my father's…”; closes “…Quaker\"; and not another word on the weighty subject could I induce him to utter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          20,
+          31
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7605ad180f122fa598a6449cd5e5dcc69db0201fe28fc3475ac07cff57efbf2c"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-02-q1",
+          "prompt": "Why did the child want a flattened thumb and spotted hands? What does the adult Addams make of this “tribute of imitation”?",
+          "facilitatorNotes": [
+            "They were the marks of her father’s years as a miller’s apprentice, and she wanted to share the hardships of his early life; she even wakes at three, as he does, and resolves to read his books. The adult calls the imitation genuine affection, but also places it, a little drily, in her generation’s admiration for “the self-made man.”"
+          ],
+          "evidence": [
+            "I believe I have never since wanted anything more desperately than I wanted my right thumb to be flattened",
+            "that stream of admiration which our generation so generously poured forth for the self-made man"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-02-q2",
+          "prompt": "Her father advises her to wear her old cloak. Does she agree? What does his answer about equality claim, and what does it leave unsolved?",
+          "facilitatorNotes": [
+            "She obeys “without inner consent.” He says people may never be equal in clothes but can be equal in what matters more, school and church, so it is foolish to dress in a way that makes even that equality harder. The deeper problem, “the inequalities of the human lot,” is left standing; readers may find his answer wise, practical, or too easy for a wealthy man to give."
+          ],
+          "evidence": [
+            "I complied with the request but I fear without inner consent",
+            "it was very stupid to wear the sort of clothes that made it harder to have equality even there"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-02-q3",
+          "prompt": "Asked about foreordination, her father admits he does not understand it either; asked what he is, he says only “I am a Quaker.” What is he teaching by what he declines to say?",
+          "facilitatorNotes": [
+            "Honesty with oneself: never pretend to understand what you do not, and keep “mental integrity above everything else.” His short answer about his faith, with its one joking addition, values conviction over doctrine and labels. The child is thrilled to be treated as his equal in not understanding; readers may notice that the lesson is taught by example, not by argument."
+          ],
+          "evidence": [
+            "it was very important not to pretend to understand what you didn't understand",
+            "mental integrity above everything else"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-03",
+      "title": "Twenty Years at Hull-House: Polly’s death, and Mazzini’s (Chapter I, end)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow how each memory leads Addams to a general claim, and test each claim against the memory behind it.",
+      "focus": "A country childhood, a first encounter with death, and the discovery that a stranger abroad can be mourned.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. Its first chapters recall her childhood in the Illinois village of Cedarville, where her father, John Addams, owned a flour mill and a sawmill and served in the state senate. Hawthorne’s story “Ethan Brand” is about a lime-burner who seeks the unpardonable sin; a limekiln is a furnace for turning limestone into lime. The Vulgate is the Latin Bible. Giuseppe Mazzini (1805–1872) was an Italian patriot who worked for a free, united Italy, then partly ruled by the Austrian Habsburgs (spelled Hapsburg here). A doublet is a man’s close-fitting jacket; the closing lines are from Elizabeth Barrett Browning’s verse novel Aurora Leigh.",
+      "contentNote": "Contains a death witnessed by a fifteen-year-old, and children killing snakes for a pretend sacrifice.",
+      "excerpt": {
+        "locator": "Chapter I, “Earliest Impressions,” from the scene of rural beauty to the end of the chapter; opens “These early recollections are set in a scene of rural beauty, unusual at least for…”; closes “\"He wrapt me in his large Man's doublet, careless did it fit or no.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          32,
+          41
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5885ddfcacc1879b737749e9ab42daebc33b4dd68313dbbb9c1c6f5025a7314f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-03-q1",
+          "prompt": "Addams contrasts her long country games with the play of city children near Hull-House. What is her argument, and what in her own childhood supports it?",
+          "facilitatorNotes": [
+            "Country children could keep a game going “summer after summer”; city children’s play is constantly broken up by traffic until they give up and stand around. Her altar beside the stream, used for years, shows the continuity she means. Readers may ask whether she romanticises the country, and whether her own unusual freedom was typical."
+          ],
+          "evidence": [
+            "as only free-ranging country children can do",
+            "the constant interruption to their play which is inevitable on the streets"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-03-q2",
+          "prompt": "How does Polly’s death change the way the fifteen-year-old sees the world, and what does Addams conclude about how adults should treat the young?",
+          "facilitatorNotes": [
+            "The dying woman calls her by her mother’s name, and the familiar face becomes “strange, august”; Jane feels “unsheltered” and rides home full of questions about the journey of the dead. She concludes that children should not be shielded from death and sorrow, because they want to share the “common human experiences.” Readers can debate how far her claim holds for every child."
+          ],
+          "evidence": [
+            "of being unsheltered in a wide world of relentless and elemental forces",
+            "They too wish to climb steep stairs and to eat their bread with tears"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-03-q3",
+          "prompt": "The child argues that her father did not even know Mazzini, who “was not an American.” What does she learn, and why might this memory belong in the memoir of someone who worked among immigrants?",
+          "facilitatorNotes": [
+            "That people who share large hopes are truly related, whatever their nation, language or creed, and that her patriotism had been “meager.” At Hull-House she would live among neighbours from many countries; the memory explains the international sympathy she brought there. The closing lines from Aurora Leigh turn the lesson back to her father, who “wrapt” her in ideas too large for her yet."
+          ],
+          "evidence": [
+            "even though they differ in nationality, language, and creed",
+            "I was heartily ashamed of my meager notion of patriotism"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-04",
+      "title": "Twenty Years at Hull-House: flags on the gateposts and Old Abe (Chapter II, first part)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how stories of the war reached the children, and how Addams separates griefs that have causes from griefs that have none.",
+      "focus": "The Civil War as a child knew it: rosters, local heroes, unexplained losses, and a symbol under a dome.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. Its first chapters recall her childhood in the Illinois village of Cedarville, where her father, John Addams, owned a flour mill and a sawmill and served in the state senate. She was four when Abraham Lincoln was assassinated in April 1865. The roster on the family wall lists a local company of Union volunteers, “Addams’ Guard.” Fort Donelson, in Tennessee, was a Union victory in 1862; Andersonville was a Confederate prison camp in Georgia where thousands of Union prisoners died. Old Abe was a bald eagle carried into battle by the 8th Wisconsin Regiment and kept afterwards in the state capitol at Madison. Walter Pater was an English critic; an ensign is a banner.",
+      "contentNote": "Contains soldiers’ deaths from wounds and in prison, a young man killed in a hunting accident, and grieving parents.",
+      "excerpt": {
+        "locator": "Chapter II, “Influence of Lincoln,” from Lincoln’s death through the visit to the war eagle; opens “I SUPPOSE all the children who were born about the time of the Civil War have…”; closes “…as the eagle had been the ensign of courage to the soldiers of the Wisconsin regiment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          44,
+          51
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "27bb7d2047a09ec9d667f4acf562f6babc6e8903a4fb6f9f9688daa3f562801e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-04-q1",
+          "prompt": "How did the war reach the Addams children? Gather the objects and stories, and say what each taught them about heroism.",
+          "facilitatorNotes": [
+            "The flags with black on the gateposts and her father’s first tears; the roster, read by standing on the Bible and the dictionary; the picture of the one-armed colonel; Tommy’s mother and her son’s refusal to be smuggled out of hospital. Heroism came to them as local names, family grief and a soldier’s pride, not as battles."
+          ],
+          "evidence": [
+            "To my amazement I found my father in tears, something that I had never seen before",
+            "No, sir; I will go out of the front door or I'll die here."
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-04-q2",
+          "prompt": "Why do the children fall silent at the old couple’s farmhouse? What difference does Addams draw between that grief and others?",
+          "facilitatorNotes": [
+            "Five sons enlisted, only the youngest came home, and he was killed by accident on the farm that autumn. No one is to blame: it is “the grief of things as they are,” harder to bear than griefs we can trace to wrongdoing. She says she later needed this early sense of “mysterious injustice,” presumably in her work among the poor."
+          ],
+          "evidence": [
+            "that grief of things as they are, so much more mysterious and intolerable than those griefs which we think dimly to trace to man's own wrongdoing",
+            "that mysterious injustice, the burden of which we are all forced to bear"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-04-q3",
+          "prompt": "The trip was made to see the eagle, but the “crowning moment” came under the capitol dome. What did the dome mean to the child, and why does the adult connect it with Lincoln?",
+          "facilitatorNotes": [
+            "The dome enclosed ideas too vast for her (soldiers dying for freedom, pioneers founding a state) in a space “small enough for my child’s mind.” As the eagle had been the soldiers’ ensign of courage, Lincoln became the “standard bearer” of conscience. Addams’s point is that children grasp symbols before they grasp facts; readers may ask what such symbols leave out."
+          ],
+          "evidence": [
+            "children are as quick to catch the meaning of a symbol as they are unaccountably slow to understand the real world about them",
+            "the martyred President as the standard bearer to the conscience of his countrymen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-05",
+      "title": "Twenty Years at Hull-House: Mr. Lincoln’s letters and a refused bribe (Chapter II, middle)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Trace how Addams measures her own conduct against her father’s, and how her idea of a hero changes.",
+      "focus": "Integrity in public life, and a turn from great men to the people themselves.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. Its first chapters recall her childhood in the Illinois village of Cedarville, where her father, John Addams, owned a flour mill and a sawmill and served in the state senate. Her father served in the Illinois state senate from 1854 to 1870 and knew Abraham Lincoln there. In the summer of 1894 a strike against the Pullman railway-car company spread through Chicago, and the President sent federal troops over the protest of the governor of Illinois; Augustus Saint-Gaudens’s statue of Lincoln stands in Chicago’s Lincoln Park. A sweatshop bill was a proposed law regulating crowded workshops; a Te Deum is a hymn of thanksgiving; Thomas Carlyle’s On Heroes and Hero-Worship argued that history is made by great men; Carl Schurz was a German-American statesman who wrote an essay on Lincoln.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter II, “Influence of Lincoln,” from the honorary degree at Wisconsin through Old Settlers’ Day and the copies of Schurz’s Lincoln; opens “Thirty-five years later, as I stood on the hill campus of the University of Wisconsin…”; closes “…boys twenty-five copies of the then new Carl Schurz's \"Appreciation of Abraham Lincoln.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          52,
+          59
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "caeaa747c8301b05abdd1a019917a49af9dbe9ef123d2a4a52d647970d7b9684"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-05-q1",
+          "prompt": "Lincoln’s letter asks which way “Double-D'ed” Addams’s conscience was pointing. What do the letter and the newspaper tribute after his death say about her father’s reputation?",
+          "facilitatorNotes": [
+            "Lincoln trusted him to vote by conscience and only asked which way it pointed. The editor’s tribute goes further: bad men never offered him a bribe because they were afraid of him. His honesty was so plain that it prevented corruption rather than resisting it."
+          ],
+          "evidence": [
+            "My dear Double-D'ed Addams",
+            "had never been offered a bribe because bad men were instinctively afraid of him"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-05-q2",
+          "prompt": "When manufacturers offer fifty thousand dollars to drop the sweatshop bill, why does Addams blame herself as well as them? How does she handle the moment?",
+          "facilitatorNotes": [
+            "Remembering her father, she reasons that no one would have offered her a bribe unless they saw some weakness in her. She refuses gently, with a youthful flourish about singing a Te Deum on the ruins of Hull-House, and the company hurries past the awkwardness. Readers may admire her self-examination or think the self-blame misplaced, since the offer says more about the givers."
+          ],
+          "evidence": [
+            "it could not have occurred unless a weakness in myself had permitted it",
+            "that scurrying away from ugly morality which seems to be an obligation of social intercourse"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-05-q3",
+          "prompt": "Why does Carlyle’s book about heroes stop convincing the young Addams on Old Settlers’ Day? What takes its place?",
+          "facilitatorNotes": [
+            "An old farm woman who had bought railway stock “out of butter and egg money” calls out that she would do it again, and her father presents her gravely as a public-spirited pioneer. Heroism now seems to belong to ordinary people, as Lincoln understood; years later she gives a boys’ club Schurz’s Lincoln instead of Carlyle. Readers can ask whether Lincoln himself is not still a great-man hero in her account."
+          ],
+          "evidence": [
+            "the people themselves were the great resource of the country",
+            "I'm here to-day, Mr. Addams, and I'd do it again if you asked me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-addams-hull-house-1912-06",
+      "title": "Twenty Years at Hull-House: Lincoln at Oxford (Chapter II, end)",
+      "sourceId": "addams-hull-house-1912",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Addams’s unease at Oxford, and notice how one remembered phrase resolves it.",
+      "focus": "Democracy against class: an American settlement worker tests an English idea against her own country.",
+      "context": "Jane Addams (1860–1935) founded Hull-House in 1889 in a crowded immigrant neighbourhood of Chicago. It was a settlement house, where educated residents lived among poor neighbours and offered clubs, classes and help; Twenty Years at Hull-House (1910) is her memoir. The settlement movement began in London, where Toynbee Hall (1884) was founded so that university men could live among the poor of the East End; Arnold Toynbee, T. H. Green, John Ruskin and others inspired it, and Ruskin once set Oxford students to mend a country road. Edward Caird, Master (head) of Balliol College, Oxford, wrote The Evolution of Religion; Benjamin Jowett was an earlier Master. Sangamon County, Illinois, was Lincoln’s home district. “The pit whence they were digged” echoes the Bible (Isaiah 51:1) and means one’s origins. The idea that a country can be “two nations,” rich and poor, comes from a novel by Benjamin Disraeli, later Britain’s prime minister.",
+      "contentNote": "Addams writes as an educated reformer about immigrant families; her assumptions about class and about immigrants’ children are kept as written for critical reading.",
+      "excerpt": {
+        "locator": "Chapter II, “Influence of Lincoln,” from Lincoln at early Hull-House to the end of the chapter; opens “In our early effort at Hull-House to hand on to our neighbors whatever of help we had…”; closes “…remains the most valuable contribution America has made to the moral life of the world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          60,
+          70
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "749f03eb2a9316cd74f773b0204d0f953383d5d8bfe41cc1a2d6a0de925eb06b"
+      },
+      "questions": [
+        {
+          "id": "reading-10-addams-hull-house-1912-06-q1",
+          "prompt": "What does Addams tell immigrant children about Lincoln, and why does she think they need to hear it?",
+          "facilitatorNotes": [
+            "Some children of immigrants are ashamed of their parents’ language and customs and count success as forgetting the past. She holds up Lincoln, who never forgot how the plain people of Sangamon County thought, as proof that keeping one’s past is the root of growth. Readers may weigh whether this respects the children or lectures them."
+          ],
+          "evidence": [
+            "who were ashamed of the pit whence they were digged",
+            "his marvelous power to retain and utilize past experiences"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-06-q2",
+          "prompt": "Why does the English movement seem “involved and roundabout” to her, and why does she feel she is “playing two rôles at once”?",
+          "facilitatorNotes": [
+            "She believes pioneer life in the rural West made social distinctions impossible, so Oxford students mending a road out of principle look odd when American citizens mend their roads every spring, although she remembers, uneasily, being stuck in those roads. Part of her admires English social thought; another part, the “rustic American,” looks on sceptically. Readers can test her claim that her America had no classes."
+          ],
+          "evidence": [
+            "where the early pioneer life had made social distinctions impossible",
+            "that uncomfortable sense of playing two rôles at once"
+          ]
+        },
+        {
+          "id": "reading-10-addams-hull-house-1912-06-q3",
+          "prompt": "Caird’s description of Lincoln as one “content merely to dig the channels” settles her unease. What does the image mean, and how does it connect with her argument about the word “settlement”?",
+          "facilitatorNotes": [
+            "A leader prepares channels through which other people’s moral life can flow; settlement workers likewise “dig channels” so that justice can reach “the barren places of life.” She rejects the English assumption of a superior class with duties to an inferior one and claims democracy, mistakes and all, as America’s gift. Some readers will note the tension between that claim and her own position as a well-off benefactor."
+          ],
+          "evidence": [
+            "who was content merely to dig the channels through which the moral life of his countrymen might flow",
+            "We do not like to acknowledge that Americans are divided into two nations"
+          ]
+        }
+      ]
+    }
+  ]
+}
