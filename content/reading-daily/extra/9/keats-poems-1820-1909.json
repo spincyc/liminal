@@ -5,6 +5,219 @@
   "readings": [
     {
       "id": "reading-9-keats-poems-1820-1909-01",
+      "title": "Isabella, stanzas I–XX: two lovers and two brothers",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the first stanzas aloud for their repetitions. Then notice where the poet stops telling the story to speak in his own voice, and why.",
+      "focus": "A tender love story interrupted by the poet’s anger at the wealth that will destroy it.",
+      "context": "John Keats (1795–1821) published this narrative poem in 1820, in the volume used here. It retells a tale from Boccaccio’s Decameron (about 1353), a collection of Italian prose stories, and is set in Florence. A palmer is a pilgrim; vespers are evening prayers; to “shrive” is to confess. Ariadne (“Theseus’ spouse”) and Dido are heroines of classical legend abandoned by their lovers. Ceylon is Sri Lanka; a “lazar” is a leper or beggar; a ghittern is an old kind of guitar. Each stanza has eight lines rhymed abababcc, an Italian form called ottava rima.",
+      "contentNote": "Stanzas XIV–XVI describe the suffering of miners, divers and whipped labourers who make the brothers rich. Stanza XVII compares the greedy brothers to “two close Hebrews,” an antisemitic stereotype of Keats’s time.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas I–XX; opens “Fair Isabel, poor simple Isabel! Lorenzo, a young palmer in Love's eye! They could not in…”; closes “…To stead thee as a verse in English tongue, An echo of thee in the north-wind sung.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-02",
+        "blocks": [
+          28,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "622128de4fa4c02a8dd7278f13433759c5e400c50939107f96ca74df9c50c72a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q1",
+          "prompt": "The first stanzas repeat “They could not…” and “With every morn… With every eve.” What do the repetitions, and the long delay before anyone speaks, show about the two lovers?",
+          "facilitatorNotes": [
+            "The parallel lines make their love grow evenly and in step, as if neither can move without the other. Yet each vows privately to speak “To-morrow,” and Lorenzo lets “Honeyless days and days” pass, too shy to say anything until Isabella breaks the silence with his name.",
+            "Keats sums up the paradox in “Alas! when passion is both meek and wild!” Students may find the delay touching or slightly comic; the gentle opening makes what follows harsher."
+          ],
+          "evidence": [
+            "They could not in the self-same mansion dwell",
+            "Honeyless days and days did he let pass",
+            "Alas! when passion is both meek and wild!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q2",
+          "prompt": "In stanzas XIV–XVI the poem turns from the lovers to the brothers’ wealth. Whose suffering does Keats list, and what is the effect of asking four times “Why were they proud?”",
+          "facilitatorNotes": [
+            "Miners, factory hands, labourers under the whip, river workers, the Ceylon pearl diver and the hunted seal all labour “for them,” while the brothers turn “an easy wheel” far from the pain they cause. The repeated question demands a reason for their pride and finds none: fountains, orange groves and “red-lin’d accounts” are not worth a beggar’s tears.",
+            "Keats attacks commerce itself, not only two villains. In the next stanza he insults the brothers with an antisemitic comparison; students should notice that the poet who condemns cruelty here borrows a prejudice of his age, and can discuss that without repeating it."
+          ],
+          "evidence": [
+            "And for them many a weary hand did swelt In torched mines and noisy factories",
+            "Half-ignorant, they turn'd an easy wheel, That set sharp racks at work, to pinch and peel.",
+            "Why in the name of Glory were they proud?"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q3",
+          "prompt": "Why does the poet ask Boccaccio’s pardon in stanzas XIX–XX? What has he done that the old tale did not?",
+          "facilitatorNotes": [
+            "He admits that his outburst (“venturing syllables”) does not suit “such a piteous theme,” and promises that the tale “Shall move on soberly.” He has turned a simple story into an attack on greed, and he knows it.",
+            "Some readers find the digressions the most powerful part of the poem; others think they interrupt a story that is already moving. Note that he interrupted once before, at stanza XII (“Were they unhappy then?”)."
+          ],
+          "evidence": [
+            "O eloquent and famed Boccaccio!",
+            "For venturing syllables that ill beseem The quiet glooms of such a piteous theme.",
+            "Shall move on soberly, as it is meet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-02",
+      "title": "Isabella, stanzas XXI–XLI: the forest and the vision",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch for words that tell you what will happen before it happens. Then read the ghost’s speech aloud and listen to how it sounds.",
+      "focus": "A murder told in two stanzas, and a ghost whose grief is more loving than frightening.",
+      "context": "Recap: in Florence, Isabella and Lorenzo, who works for her two rich merchant brothers, have declared their love and meet in secret. Keats has interrupted the story to condemn the brothers’ wealth, built on others’ suffering. The Apennines are the mountains of central Italy, and the Arno the river of Florence; a matin-song is a morning song; freshets are floods; a widow’s weed is mourning dress. The valley of Hinnom, outside Jerusalem, was associated with hell. Whortle-berries are bilberries.",
+      "contentNote": "Lorenzo is murdered and buried in a forest, and his ghost describes his grave.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas XXI–XLI; opens “These brethren having found by many signs What love Lorenzo for their sister had, And how…”; closes “…up and boil: It made sad Isabella's eyelids ache, And in the dawn she started up awake;”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-01",
+        "continuesTo": "reading-9-keats-poems-1820-1909-03",
+        "blocks": [
+          48,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b9527a4b0913299d76e40df22a958047a87d709fab6c6c81740f6dce400be2ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q1",
+          "prompt": "Why do the brothers kill Lorenzo? Find the phrases where Keats names their motive.",
+          "facilitatorNotes": [
+            "Lorenzo is “the servant of their trade designs,” an employee, and they had planned to marry their sister to “some high noble and his olive-trees.” Money and rank, not honour, decide the crime. Keats ends the murder stanza with the bitter irony that each is “richer by his being a murderer.”",
+            "Students may notice that “richer” means wealthier in the brothers’ terms and poorer in every other sense."
+          ],
+          "evidence": [
+            "That he, the servant of their trade designs, Should in their sister's love be blithe and glad",
+            "To some high noble and his olive-trees",
+            "Each richer by his being a murderer."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q2",
+          "prompt": "How does Keats build suspense into Lorenzo’s last morning? Look at the brothers’ invitation, the lovers’ goodbye and the phrase “their murder’d man.”",
+          "facilitatorNotes": [
+            "The brothers’ courteous speech is a “serpents’ whine”; Lorenzo pauses to hear Isabella’s song and promises “I’ll soon be back”; and Keats calls him “their murder’d man” while he is still riding beside them. The reader knows more than either lover, which makes the cheerful goodbye painful.",
+            "Some readers find the early “murder’d” clumsy, giving the plot away; others think it makes the ride feel already doomed."
+          ],
+          "evidence": [
+            "Bow'd a fair greeting to these serpents' whine",
+            "Goodbye! I'll soon be back.",
+            "So the two brothers and their murder'd man"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q3",
+          "prompt": "Lorenzo’s ghost says, “I am a shadow now.” How does Keats make the ghost both frightening and tender?",
+          "facilitatorNotes": [
+            "His voice strains “To speak as when on earth,” his hair is spoiled by earth, and he describes the grave exactly (“Red whortle-berries droop above my head”), which will let Isabella find it. Yet his eyes keep “all phantom fear aloof,” and death has only deepened his love: “Thy beauty grows upon me.”",
+            "The line “thou art distant in Humanity” shows death as a kind of exile from ordinary life. Students may find the vision eerie, consoling, or both."
+          ],
+          "evidence": [
+            "Red whortle-berries droop above my head, And a large flint-stone weighs upon my feet",
+            "And thou art distant in Humanity.",
+            "Thy beauty grows upon me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-03",
+      "title": "Isabella, stanzas XLII–LXIII: the pot of basil",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice where the poet hesitates to describe what Isabella does, and decide whether the hesitation softens the horror or sharpens it.",
+      "focus": "Grief turned into devotion so intense that it becomes strange, and a story that ends as a song.",
+      "context": "Recap: Isabella’s brothers murdered Lorenzo in a forest and told her he had gone abroad on their business. As she wasted away, his ghost appeared in a dream, told her of the murder and described his grave. The “champaign” is open country. Perseus cut off the head of the monster Medusa. Melpomene is the Muse of tragedy; Lethe is the river of forgetting. “Baalites of pelf” means worshippers of money; a guerdon is a reward; the “burthen” of a song is its refrain.",
+      "contentNote": "Isabella digs up her lover’s body, cuts off his head and buries it in a pot of basil.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas XLII–LXIII, to the end of the poem; opens “\"Ha! ha!\" said she, \"I knew not this hard life, I thought the worst was simple misery; I…”; closes “…pass'd: Still is the burthen sung--\"O cruelty, To steal my Basil-pot away from me!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-02",
+        "continuesTo": null,
+        "blocks": [
+          69,
+          90
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "85432e137231ac03567be457d148fe019c2e4d60b3dd6ca7b721f5cc7958bd46"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q1",
+          "prompt": "“Ha! ha!” Isabella cries on waking. What has she learned, and how does it change her?",
+          "facilitatorNotes": [
+            "She thought life offered only happiness or “simple misery”; now she knows there is “crime,” her own brother’s. The dream has “school’d my infancy”: she stops wasting away and makes a plan, setting out with her old nurse and a knife.",
+            "Her laughter can be read as madness, as bitterness, or as the release of finally knowing the truth. The text supports all three."
+          ],
+          "evidence": [
+            "I thought the worst was simple misery",
+            "But there is crime--a brother's bloody knife!",
+            "Sweet Spirit, thou hast school'd my infancy"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q2",
+          "prompt": "“Ah! wherefore all this wormy circumstance?” Why does the poet interrupt here, and does he really avoid the gruesome details?",
+          "facilitatorNotes": [
+            "He wishes for “the gentleness of old Romance” and sends the reader to Boccaccio’s plainer tale, as if ashamed of lingering at the grave. Then he tells the worst anyway, comparing the cutting of the head to Perseus beheading Medusa, except that this head belongs to no monster but a gentle man.",
+            "Some readers find the hesitation sincere; others think it makes the horror stronger by making us wait for it. The reversal of the myth asks who the real monsters are."
+          ],
+          "evidence": [
+            "Ah! wherefore all this wormy circumstance?",
+            "O for the gentleness of old Romance",
+            "With duller steel than the Persean sword They cut away no formless monster's head"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q3",
+          "prompt": "The basil grows “thick, and green, and beautiful.” What does the plant come to mean, and why does losing it kill Isabella?",
+          "facilitatorNotes": [
+            "It is fed by her tears and by “the fast mouldering head,” so beauty grows out of decay and love keeps living on death. It is the last thing she has of Lorenzo. Her brothers, looking at the same pot, see only something “vile” that exposes their guilt, and flee.",
+            "The final stanza turns her story into a folk song sung “From mouth to mouth,” which is also what Keats’s poem is doing. Students may read the basil as devotion, as obsession, or as the poem’s own image of art made from grief."
+          ],
+          "evidence": [
+            "for it drew Nurture besides, and life, from human fears, From the fast mouldering head there shut from view",
+            "The thing was vile with green and livid spot, And yet they knew it was Lorenzo's face",
+            "To steal my Basil-pot away from me!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-04",
       "title": "The Eve of St. Agnes, stanzas I–XIII: a bitter night and a lover’s risk",
       "sourceId": "keats-poems-1820-1909",
       "workTitle": "The Eve of St. Agnes",
@@ -23,7 +236,7 @@
         "locator": "The Eve of St. Agnes, stanzas I–XIII; opens “St. Agnes' Eve--Ah, bitter chill it was! The owl, for all his feathers, was a-cold; The…”; closes “…Which none but secret sisterhood may see, When they St. Agnes' wool are weaving piously.\"”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-9-keats-poems-1820-1909-02",
+        "continuesTo": "reading-9-keats-poems-1820-1909-05",
         "blocks": [
           92,
           104
@@ -34,7 +247,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-keats-poems-1820-1909-01-q1",
+          "id": "reading-9-keats-poems-1820-1909-04-q1",
           "prompt": "The poem opens not with the lovers but with the Beadsman. What do the cold, the carved dead and his penance establish before the music begins?",
           "facilitatorNotes": [
             "Bitter cold reaches even the owl; the Beadsman’s frosted breath seems to rise “for heaven, without a death”; the tomb sculptures freeze behind black rails. Age, death and self-denial frame the young lovers before we meet them, and he turns away from “Music’s golden tongue” to sit in ashes.",
@@ -46,7 +259,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-01-q2",
+          "id": "reading-9-keats-poems-1820-1909-04-q2",
           "prompt": "What must Madeline do to have her vision, and how does Keats show her absorption at the ball? Is the narrator mocking her “whim”?",
           "facilitatorNotes": [
             "She must go to bed without supper, lie on her back and look only upward. At the ball she sees “many a sweeping train” without heeding it, and the cavaliers retreat unnoticed.",
@@ -58,7 +271,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-01-q3",
+          "id": "reading-9-keats-poems-1820-1909-04-q3",
           "prompt": "How dangerous is the castle for Porphyro? Look at the language Angela and the narrator use for Madeline’s kinsmen.",
           "facilitatorNotes": [
             "“Barbarian hordes,” “Hyena foemen,” dogs that would curse his lineage, “the whole blood-thirsty race”: the danger raises the stakes and makes old Angela his only ally.",
@@ -75,7 +288,7 @@
       ]
     },
     {
-      "id": "reading-9-keats-poems-1820-1909-02",
+      "id": "reading-9-keats-poems-1820-1909-05",
       "title": "The Eve of St. Agnes, stanzas XIV–XXVII: the stratagem and the chamber",
       "sourceId": "keats-poems-1820-1909",
       "workTitle": "The Eve of St. Agnes",
@@ -93,8 +306,8 @@
       "excerpt": {
         "locator": "The Eve of St. Agnes, stanzas XIV–XXVII; opens “\"St. Agnes! Ah! it is St. Agnes' Eve-- Yet men will murder upon holy days: Thou must hold…”; closes “…alike from sunshine and from rain, As though a rose should shut, and be a bud again.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-9-keats-poems-1820-1909-01",
-        "continuesTo": "reading-9-keats-poems-1820-1909-03",
+        "continuesFrom": "reading-9-keats-poems-1820-1909-04",
+        "continuesTo": "reading-9-keats-poems-1820-1909-06",
         "blocks": [
           105,
           118
@@ -105,7 +318,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-keats-poems-1820-1909-02-q1",
+          "id": "reading-9-keats-poems-1820-1909-05-q1",
           "prompt": "Angela calls Porphyro “A cruel man and impious.” What is his “stratagem,” and why does she finally agree to it?",
           "facilitatorNotes": [
             "To be hidden in Madeline’s chamber “that he might see her beauty unespied, / And win perhaps that night a peerless bride.” Angela yields after his oath, his threat to rouse his enemies, and a “gentler speech” the poem does not quote; she insists he must marry the lady.",
@@ -117,7 +330,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-02-q2",
+          "id": "reading-9-keats-poems-1820-1909-05-q2",
           "prompt": "The moonlight through the stained-glass window colours Madeline as she kneels. What do the colours and comparisons make her seem, and to whom?",
           "facilitatorNotes": [
             "Warm gules, rose-bloom, amethyst and “a glory, like a saint”: she looks like “a splendid angel, newly drest, / Save wings.” The heraldry of the window adds rank and blood to the picture.",
@@ -129,7 +342,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-02-q3",
+          "id": "reading-9-keats-poems-1820-1909-05-q3",
           "prompt": "The passage ends: “As though a rose should shut, and be a bud again.” What does the simile suggest about Madeline’s sleep, and why might it be unsettling here?",
           "facilitatorNotes": [
             "Sleep encloses her, “Blissfully haven’d both from joy and pain,” clasped like a closed prayer book. A rose cannot become a bud again, so the image of protected innocence is beautiful and impossible.",
@@ -146,7 +359,7 @@
       ]
     },
     {
-      "id": "reading-9-keats-poems-1820-1909-03",
+      "id": "reading-9-keats-poems-1820-1909-06",
       "title": "The Eve of St. Agnes, stanzas XXVIII–XLII: the waking and the flight",
       "sourceId": "keats-poems-1820-1909",
       "workTitle": "The Eve of St. Agnes",
@@ -164,7 +377,7 @@
       "excerpt": {
         "locator": "The Eve of St. Agnes, stanzas XXVIII–XLII, to the end of the poem; opens “Stol'n to this paradise, and so entranced, Porphyro gazed upon her empty dress, And…”; closes “…The Beadsman, after thousand aves told, For aye unsought for slept among his ashes cold.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-9-keats-poems-1820-1909-02",
+        "continuesFrom": "reading-9-keats-poems-1820-1909-05",
         "continuesTo": null,
         "blocks": [
           119,
@@ -176,7 +389,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-keats-poems-1820-1909-03-q1",
+          "id": "reading-9-keats-poems-1820-1909-06-q1",
           "prompt": "Why does Porphyro set out a feast that no one eats? Choose two lines from the list and say what they add.",
           "facilitatorNotes": [
             "Candied fruit, jellies, syrups “tinct with cinnamon,” manna and dates carried from Fez to Lebanon: an extravagant offering of sensation in a cold room, more like a ritual or dream than a meal. The rich sounds slow the poem before the waking.",
@@ -188,7 +401,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-03-q2",
+          "id": "reading-9-keats-poems-1820-1909-06-q2",
           "prompt": "When Madeline wakes, why does she weep? Compare the Porphyro of her dream with the one kneeling before her.",
           "facilitatorNotes": [
             "Her dream gave a voice of sweet vows and eyes “spiritual and clear”; the real man is “pallid, chill, and drear.” When she understands “No dream,” she calls herself “a deceived thing.” Porphyro answers with promises of marriage and a home.",
@@ -200,7 +413,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-03-q3",
+          "id": "reading-9-keats-poems-1820-1909-06-q3",
           "prompt": "The final stanza jumps backward: “ay, ages long ago / These lovers fled away into the storm.” How does this ending change the story you have just read?",
           "facilitatorNotes": [
             "The warm present-tense romance suddenly becomes distant legend; the lovers vanish into the storm, the Baron’s guests have nightmares, Angela dies, and the Beadsman sleeps “among his ashes cold.” The cold of the opening returns.",
@@ -217,7 +430,7 @@
       ]
     },
     {
-      "id": "reading-9-keats-poems-1820-1909-04",
+      "id": "reading-9-keats-poems-1820-1909-07",
       "title": "Robin Hood: To a Friend",
       "sourceId": "keats-poems-1820-1909",
       "workTitle": "Robin Hood",
@@ -247,7 +460,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-keats-poems-1820-1909-04-q1",
+          "id": "reading-9-keats-poems-1820-1909-07-q1",
           "prompt": "The poem begins “No!” What is the speaker contradicting, and what has replaced the world of Robin Hood?",
           "facilitatorNotes": [
             "He answers an unspoken wish that the old days might return. The outlaws’ hours lie buried under the leaves of many years; the land now has rents and leases, its oaks have gone to the dockyards, and honey “Can’t be got without hard money!”",
@@ -259,7 +472,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-04-q2",
+          "id": "reading-9-keats-poems-1820-1909-07-q2",
           "prompt": "How does the poem’s music change from lament to celebration? Use the repeated words.",
           "facilitatorNotes": [
             "The first stanzas pile up negatives (“no more,” “never,” “Gone”) in quick ballad couplets that sound merry even while mourning. The last stanza turns to a toast of “Honour to…” and ends with “Let us two a burden try,” a song for two friends.",
@@ -271,7 +484,7 @@
           ]
         },
         {
-          "id": "reading-9-keats-poems-1820-1909-04-q3",
+          "id": "reading-9-keats-poems-1820-1909-07-q3",
           "prompt": "If Robin and Marian came back, “She would weep, and he would craze.” Is the poem only nostalgic, or also a criticism of its own time?",
           "facilitatorNotes": [
             "Marian’s wild bees charging for honey is a joke, but the felled oaks and the rents point to land turned into property and forests turned into a navy. The outlaws are idealized in order to judge the present.",
