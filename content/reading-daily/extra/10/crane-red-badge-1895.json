@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "crane-red-badge-1895",
+  "readings": [
+    {
+      "id": "reading-10-crane-red-badge-1895-01",
+      "title": "The Red Badge of Courage: the tattered man’s questions (Chapter X)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow how a kind man’s questions become, in Henry’s mind, an attack, and judge what Henry does about them.",
+      "focus": "Shame turns concern into a threat, and Henry abandons a wounded man to keep his secret.",
+      "context": "Stephen Crane’s The Red Badge of Courage (1895) follows Henry Fleming, called “the youth,” a Union volunteer, through two days of a Civil War battle. Recap: in his first fight Henry stood and helped drive back one charge, then ran from the second. Wandering behind the lines, he joined a column of wounded men, where a tattered soldier, hit in the head and the arm, kept asking him where he was hurt; Henry has no wound. Among the wounded he found his friend Jim Conklin, the tall soldier, and watched him die in a field. A “jim-dandy” is a fine fellow; “peek-ed” means pale and sickly; “swad” means a crowd. The dialect spellings are Crane’s.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. This chapter describes the body of a soldier who has just died and a badly wounded man left wandering alone in a field; at its end Henry wishes he were dead, which the novel presents as the unstable reasoning of shame, not as advice.",
+      "excerpt": {
+        "locator": "Chapter X, the whole chapter; opens “The tattered man stood musing.”; closes “…could not defend himself against this agency. It was not within the power of vigilance.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-crane-red-badge-1895-02",
+        "blocks": [
+          457,
+          490
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "12e8231b035515afeef2be9d7ceb0f439e14e2e07d559c88e35058d2ef09af83"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-01-q1",
+          "prompt": "The tattered man tells two stories about wounds: Tom Jamison telling him he was shot, and the man hit in the head who “didn't feel nothin'.” What does he mean the stories to do for Henry, and why do they do the opposite?",
+          "facilitatorNotes": [
+            "He means them kindly: wounds can be worse than they seem, so Henry should “watch out” and take care of his. Both stories are about hurts a man cannot see in himself, which is exactly the subject Henry dreads, because his hurt is shame, not a wound. Each friendly question about where it is “located” presses on the lie."
+          ],
+          "evidence": [
+            "Yeh might have some queer kind 'a hurt yerself.",
+            "Where is your'n located?"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-01-q2",
+          "prompt": "By the end the tattered man calls Henry “Tom Jamison” and begs him not to go “trompin' off—with a bad hurt.” What is happening to him, and what does Henry recognize before he climbs the fence?",
+          "facilitatorNotes": [
+            "His wits are failing; Henry sees that he, “like that other one,” is beginning to act “dumb and animal-like,” as Jim Conklin did before dying. Henry knows the man may be dying and leaves him anyway. The confused plea fits Henry painfully well: he is the one going off with a hurt he will not show. Readers can argue whether the tattered man is simply delirious or still trying to look after someone."
+          ],
+          "evidence": [
+            "like that other one, was beginning to act dumb and animal-like",
+            "Turning at a distance he saw the tattered man wandering about helplessly in the field."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-01-q3",
+          "prompt": "The narrator says the questions “asserted a society that probes pitilessly at secrets until all is apparent.” Is this the narrator’s judgment or Henry’s? Is it fair to the tattered man?",
+          "facilitatorNotes": [
+            "The sentence reports Henry’s feeling in the narrator’s grand vocabulary, and the grandness is ironic: the questions were “simple,” and the man asking them was dying and kind. Still, Henry is not wholly wrong that a community will ask, and that a secret like his cannot be kept by vigilance alone. A strong answer separates the truth in his fear from the unfairness of turning it on this man."
+          ],
+          "evidence": [
+            "The simple questions of the tattered man had been knife thrusts to him.",
+            "They asserted a society that probes pitilessly at secrets until all is apparent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-02",
+      "title": "The Red Badge of Courage: hoping for a defeat (Chapter XI)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 10,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Henry’s argument with himself step by step, and notice where the narrator’s wording undercuts it.",
+      "focus": "Heroic daydreams, practical excuses, and the secret wish that the army will lose so that running will look like good sense.",
+      "context": "Recap: after watching Jim Conklin die, Henry abandoned the tattered soldier, who was himself wounded and confused and kept asking where Henry was hurt. Alone, Henry comes out on the road behind the battle. Teamsters drive the supply wagons; a malediction is a curse; a cowled man wears a monk’s hood; “the colors” are a regiment’s flags; craven means cowardly and a loon here is a fool. Laurels and crowns are traditional honours for the heroic dead.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. Henry again wishes he were dead and imagines corpses on the field; the passage presents this as the unstable reasoning of shame, not as advice.",
+      "excerpt": {
+        "locator": "Chapter XI, the whole chapter; opens “He became aware that the furnace roar of the battle was growing louder. Great brown…”; closes “…remark in a low tone. At it the others all crowed and cackled. He was a slang phrase.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-01",
+        "continuesTo": "reading-10-crane-red-badge-1895-03",
+        "blocks": [
+          492,
+          528
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5b6dd7bac520c1a673882930e9e92e8c02d404a6039ffbe8f5b5cfef2713dadd"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-02-q1",
+          "prompt": "Why does the sight of the fleeing wagons comfort Henry, while the column marching forward makes his “woe” return?",
+          "facilitatorNotes": [
+            "The wagons are “all retreating,” so his own flight looks ordinary; he even magnifies their terror to prove to himself that running was sensible. The column going to the front looks like “a procession of chosen beings,” and he feels he can never be one of them. Each sight matters to him only as a judgment on himself."
+          ],
+          "evidence": [
+            "They were all retreating. Perhaps, then, he was not so bad after all.",
+            "He felt that he was regarding a procession of chosen beings."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-02-q2",
+          "prompt": "Henry pictures himself “getting calmly killed on a high place before the eyes of all.” What stops him from going to the front: the objections, his body, or something in the daydream itself?",
+          "facilitatorNotes": [
+            "All three work together. The objections are practical (no rifle, no regiment) until the real one appears: someone would ask him for “an explanation.” His thirst, aching bones and dizziness finish the plan. But the daydream was always a scene played “before the eyes of all,” and the same fear of being looked at that feeds it also kills it. The narrator’s mock-solemn “very formidable” lets us smile at how easily he gives in."
+          ],
+          "evidence": [
+            "getting calmly killed on a high place before the eyes of all",
+            "he could not but admit that the objections were very formidable"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-02-q3",
+          "prompt": "Henry argues that a defeat would prove he “had fled early because of his superior powers of perception.” How does Crane make this sound clever and absurd at once? Where does Henry see through it, and does that last?",
+          "facilitatorNotes": [
+            "The prophet who climbs a tree before the flood is a neat image, but it turns running into wisdom and treats the general who would be blamed as “of no consequence.” Henry then calls himself the “most unutterably selfish man in existence” and the murderer of the soldiers who would die, yet a few paragraphs later he is inventing “a fine tale” for his regiment. Some readers see a real conscience struggling; others see one more mood in a mind that turns everything toward itself."
+          ],
+          "evidence": [
+            "A serious prophet upon predicting a flood should be the first man to climb a tree.",
+            "He said that he was the most unutterably selfish man in existence."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-02-q4",
+          "prompt": "The chapter ends: “He was a slang phrase.” What does Henry fear most by the end, and what does this reveal about the kind of courage he has been dreaming of?",
+          "facilitatorNotes": [
+            "He fears the regiment’s stares and jokes (“He run, didn't 'e?”) more than wounds or death: to become a joke is to be reduced to a phrase. His idea of courage has been about reputation, how he looks to others, rather than about what he does. Readers may connect this to his earlier wish for a wound to show."
+          ],
+          "evidence": [
+            "Where's Henry Fleming? He run, didn't 'e? Oh, my!",
+            "He was a slang phrase."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-03",
+      "title": "The Red Badge of Courage: the wound (Chapter XII)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 10,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice the irony in how Henry gets his wound, and how little he can see or understand for most of the chapter.",
+      "focus": "The “red badge” arrives by accident from his own side, and a stranger’s kindness brings him home.",
+      "context": "Recap: behind the lines Henry imagined heroic charges, then hoped the army would lose so that his running would look like foresight; deciding that defeat was impossible, he tried and failed to invent a story to take back to his regiment. A plank road was surfaced with wooden planks; a squadron of cavalry is a unit of soldiers on horseback; facings are the coloured trim of a uniform; fishwives sold fish and were known for loud scolding; provost-guards are military police. “Johnnies” is Union slang for Confederate soldiers.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications. This chapter includes a blow to the head, the reported death of a soldier shot in the head, and a mention of amputation.",
+      "excerpt": {
+        "locator": "Chapter XII, the whole chapter; opens “The column that had butted stoutly at the obstacles in the roadway was barely out of the…”; closes “…out of his life, it suddenly occurred to the youth that he had not once seen his face.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-02",
+        "continuesTo": "reading-10-crane-red-badge-1895-04",
+        "blocks": [
+          530,
+          572
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7eb4b803d7c0c181f2d2a255d34b1a0f618c777dd43d437ee63f67584aebe6fb"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-03-q1",
+          "prompt": "How does Henry get his wound? Why is the way it happens ironic in a book called The Red Badge of Courage?",
+          "facilitatorNotes": [
+            "A fleeing Union soldier clubs him with his rifle when Henry clutches his arm to ask what has happened. The wound comes from his own side, in a rout, while he is asking a question, not fighting. Earlier Henry wished for a wound that would certify his courage; now he has a real one that proves nothing of the kind."
+          ],
+          "evidence": [
+            "stammered the youth struggling with his balking tongue",
+            "He adroitly and fiercely swung his rifle. It crushed upon the youth's head."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-03-q2",
+          "prompt": "In Chapter XI Henry hoped for a defeat. When the beaten men come rushing at him, what happens to that hope?",
+          "facilitatorNotes": [
+            "He is “horrorstricken”; he throws aside his “mental pamphlets on the philosophy of the retreated.” The defeat he imagined as a private excuse arrives as terror and chaos, and the grand speech he wants to make shrinks to “what 's th' matter?” Crane shows how thin the earlier reasoning was once the real thing appears."
+          ],
+          "evidence": [
+            "He threw aside his mental pamphlets on the philosophy of the retreated and rules for the guidance of the damned.",
+            "but he could only get his tongue to call into the air"
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-03-q3",
+          "prompt": "The cheery soldier talks for a whole page, finds the way “with a strange fortune,” and leaves before Henry sees his face. Why does Crane make Henry’s rescuer faceless and nameless?",
+          "facilitatorNotes": [
+            "He is the opposite of the tattered man: he asks questions and answers them himself, wanting nothing back. His story of Jack, killed while a stranger kept pestering him for the road, echoes Henry pestering the fleeing soldier. A rescuer without a face does good unseen, unlike the heroism Henry imagines, which needs “the eyes of all.” Some readers find him almost magical (a “wand”); others see the ordinary decency that war also contains."
+          ],
+          "evidence": [
+            "seemed to the youth to possess a wand of a magic kind",
+            "it suddenly occurred to the youth that he had not once seen his face"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-crane-red-badge-1895-04",
+      "title": "The Red Badge of Courage: a story told by the fire (Chapter XIII)",
+      "sourceId": "crane-red-badge-1895",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 11,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the story Henry tells with what you know happened, and watch how others finish the story for him.",
+      "focus": "A wound taken as proof, and a boastful friend who has become a gentle one.",
+      "context": "Recap: as the Union line broke, a fleeing soldier struck Henry on the head with his rifle when Henry seized his arm. Dazed, he was led through the dark woods by a cheerful stranger, who brought him to his regiment’s campfire and left before Henry saw his face. Wilson, “the loud soldier,” was a boastful private in Henry’s company before the battle. A corporal commands a handful of men; a sentinel is a guard on watch; “het up” means heated.",
+      "contentNote": "These war-fiction excerpts contain battlefield violence, death, injury and profanity. The narrative critically examines heroic expectations and a frightened soldier’s self-justifications.",
+      "excerpt": {
+        "locator": "Chapter XIII, the whole chapter; opens “The youth went slowly toward the fire indicated by his departed friend. As he reeled, he…”; closes “…gave a long sigh, snuggled down into his blanket, and in a moment was like his comrades.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-crane-red-badge-1895-03",
+        "continuesTo": null,
+        "blocks": [
+          574,
+          616
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb7f458d32db68e4005b5eba545fe59f278d0966fc1d5122a9906680aaa61fde"
+      },
+      "questions": [
+        {
+          "id": "reading-10-crane-red-badge-1895-04-q1",
+          "prompt": "Compare the tale Henry tells Wilson with what happened. Which words are true, which are false, and which are neither?",
+          "facilitatorNotes": [
+            "He did have “an awful time,” he was separated from the regiment, and he was hurt in the head. “Over on th' right” and “Ter'ble fightin'” are invented, and “I got shot” is false. The narrator has just said he had “no strength to invent a tale,” so the story is half confusion and half calculation; readers can decide how much is lying and how much is exhaustion."
+          ],
+          "evidence": [
+            "Over on th' right, I got shot. In th' head.",
+            "He had no strength to invent a tale; he would be a soft target."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-04-q2",
+          "prompt": "How do Wilson and the corporal complete Henry’s lie for him? Who, in the end, gives it authority?",
+          "facilitatorNotes": [
+            "Wilson cuts in before Henry can say more (“he got shot in th' head”), and the corporal examines the wound and calls it a graze “by a ball.” The community’s own experts certify the story. Yet the corporal’s comparison, a lump “as if some feller had lammed yeh on th' head with a club,” states the truth without knowing it."
+          ],
+          "evidence": [
+            "Yes, an' he got shot in th' head an' he's in a fix",
+            "It's raised a queer lump jest as if some feller had lammed yeh on th' head with a club."
+          ]
+        },
+        {
+          "id": "reading-10-crane-red-badge-1895-04-q3",
+          "prompt": "Wilson was “the loud soldier” before the battle. What has changed in him, and why does Henry try to stop him at the end?",
+          "facilitatorNotes": [
+            "He is now a fussing “amateur nurse” who gives his coffee, his handkerchief and finally his own blanket, and snaps at Henry for objecting. Henry’s “I've got your———” shows he has realized whose blanket it is. The kindness falls on a lie: Henry is cared for as a wounded hero. Readers may ask whether his gratitude includes guilt, and whether Wilson’s change came from what the battle taught him."
+          ],
+          "evidence": [
+            "He had the bustling ways of an amateur nurse.",
+            "I've got your———"
+          ]
+        }
+      ]
+    }
+  ]
+}
