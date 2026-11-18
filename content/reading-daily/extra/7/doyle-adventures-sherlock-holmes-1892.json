@@ -868,6 +868,600 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13",
+      "title": "A telegram and a damning case: part 1 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Sort the evidence against a suspect into what witnesses saw, what they believed, and what is only possible.",
+      "focus": "Holmes calls Watson west to a killing in which every fact seems to point at the dead man’s son.",
+      "context": "“The Boscombe Valley Mystery” is the fourth of the twelve stories in Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892). Dr. John Watson narrates. He is now married (he met his wife during one of Holmes’s earlier cases) and works as a doctor, so his “list” is his list of patients; he once served as an army doctor in Afghanistan. Paddington is the London station for trains to the west of England; Herefordshire is a county on the border of Wales. “The colonies” here means Australia. An inquest is an inquiry, led by a coroner, into a sudden death; its jury may name a cause such as “wilful murder.” The assizes were the courts that tried serious crimes. A game-keeper looks after the birds and animals on an estate; a lodge-keeper lives at its gate.",
+      "contentNote": "A man is found beaten to death, and the injuries are described plainly.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Holmes’s telegram through his summary of the facts given at the inquest; opens “We were seated at breakfast one morning, my wife and I, when the maid brought in a…”; closes “…the main facts of the case as they came out before the coroner and at the police-court.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+        "blocks": [
+          623,
+          642
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "caa977bfcebcfa679e4ba2633fc0cdf214e30b43948f9e039b91ca22316d0f9e"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q1",
+          "prompt": "Holmes says he is glad Watson has come because “Local aid is always either worthless or else biassed.” What does this tell you about how Holmes expects the investigation to go?",
+          "facilitatorNotes": [
+            "He expects the local police and witnesses either to be no help or to have already made up their minds. He wants one companion whose honesty he trusts. Readers can watch whether the story bears this out; it also sets up a contest between Holmes and the official view of the case."
+          ],
+          "evidence": [
+            "It makes a considerable difference to me, having some one with me on whom I can thoroughly rely. Local aid is always either worthless or else biassed."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q2",
+          "prompt": "“One of those simple cases which are so extremely difficult.” Watson calls this “paradoxical.” How does Holmes explain it?",
+          "facilitatorNotes": [
+            "An unusual feature (“singularity”) gives a detective something to follow; a plain, ordinary crime gives nothing that points to one person. A case where the obvious suspect is already chosen may hide the clues that would point elsewhere. Readers can ask whether this case is really simple, or only looks it."
+          ],
+          "evidence": [
+            "Singularity is almost invariably a clew. The more featureless and commonplace a crime is, the more difficult is it to bring it home."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q3",
+          "prompt": "List the facts against James McCarthy in Holmes’s summary. For each, decide whether a witness saw it, believed it, or only thought it possible.",
+          "facilitatorNotes": [
+            "Seen: the game-keeper saw James go the same way with a gun; Patience Moran saw a violent quarrel; people saw blood on his hand and sleeve and found the gun near the body. Believed: the game-keeper thought the father was “actually in sight,” so the son was following him. Only possible: he raised his hand “as if to strike,” and the injuries “might very well” have come from the gun. The case is strong, but much of it is interpretation."
+          ],
+          "evidence": [
+            "To the best of his belief, the father was actually in sight at the time, and the son was following him.",
+            "she saw the latter raise up his hand as if to strike his father",
+            "The injuries were such as might very well have been inflicted by the butt-end of his son’s gun"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-13-q4",
+          "prompt": "Look at how Holmes describes the two old Australians. Which small words show he is not sure about their friendship, and why might it matter?",
+          "facilitatorNotes": [
+            "Turner was “apparently” richer; McCarthy was his tenant “but still remained, it seems, upon terms of perfect equality.” A landlord and tenant on equal terms is odd, and Holmes hedges. Both families also avoided their English neighbours. Readers may predict that the men’s shared past in Australia will matter."
+          ],
+          "evidence": [
+            "Turner was apparently the richer man, so McCarthy became his tenant, but still remained, it seems, upon terms of perfect equality"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+      "title": "Circumstantial evidence and a shaving mirror: part 2 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 13,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow Holmes as he turns each fact Watson finds suspicious into one that may help the accused.",
+      "focus": "Holmes warns that obvious facts deceive, and explains why the son’s remark at his arrest gives him hope.",
+      "context": "Recap: Holmes and Watson are on the train to Herefordshire. Charles McCarthy has been found beaten to death beside Boscombe Pool, and his son James, seen quarrelling with him with a gun in hand and blood on his sleeve, has been arrested; an inquest jury has found wilful murder. Circumstantial evidence is evidence from which a fact is inferred, as opposed to a witness who saw it happen. Lestrade is a Scotland Yard detective who appeared in A Study in Scarlet, the first Holmes story. Métier is French for trade or calling; “his deserts” means what he deserves; filial duty is a child’s duty to a parent.",
+      "contentNote": "Holmes and Watson discuss hanging, then the penalty for murder in England.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Watson’s “I could hardly imagine a more damning case” to Holmes handing him the newspaper; opens ““I could hardly imagine a more damning case,” I remarked. “If ever circumstantial…”; closes “…points in it which are suggestive. You will find it here, and may read it for yourself.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-13",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+        "blocks": [
+          643,
+          658
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84c6fe6f9a7e099df5928da4f286ef020adfb93cb58d44c7ef323013ddf174f8"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q1",
+          "prompt": "Holmes says circumstantial evidence may point “very straight to one thing” until “you shift your own point of view a little.” What does he mean? Give an example from this case.",
+          "facilitatorNotes": [
+            "The same facts can fit more than one story. Blood on James’s hand fits a killer, but it also fits a son who held his dying father; his gun near the body fits a weapon or a gun he dropped in shock. Holmes still admits “it is very possible that he is indeed the culprit”: he is not claiming James is innocent yet."
+          ],
+          "evidence": [
+            "It may seem to point very straight to one thing, but if you shift your own point of view a little, you may find it pointing in an equally uncompromising manner to something entirely different."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q2",
+          "prompt": "How does Holmes know which side of Watson’s bedroom the window is on? Separate what he sees from what he assumes about Watson.",
+          "facilitatorNotes": [
+            "He sees that Watson’s shave gets worse further back on the left side of his face. He assumes that Watson, a neat military man, shaves by sunlight and would not accept a poor shave if both sides were equally lit. The conclusion depends on that assumption about Watson’s habits; Holmes calls it “a trivial example of observation and inference.”"
+          ],
+          "evidence": [
+            "your shaving is less and less complete as we get farther back on the left side",
+            "I could not imagine a man of your habits looking at himself in an equal light, and being satisfied with such a result."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q3",
+          "prompt": "When arrested, James said it was “no more than his deserts.” Watson calls this a confession. Why does Holmes call it “the brightest rift” in the clouds? Is his reasoning convincing?",
+          "facilitatorNotes": [
+            "A scheming murderer would act surprised or indignant, because that seems innocent; James’s frank acceptance is what an innocent man aware of the evidence might say. His remark can be read as guilt at having quarrelled with his father that very day. Holmes admits another reading: a guilty man with great self-restraint. Readers can decide whether the remark proves anything."
+          ],
+          "evidence": [
+            "Had he appeared surprised at his own arrest, or feigned indignation at it, I should have looked upon it as highly suspicious",
+            "The self-reproach and contrition which are displayed in his remark appear to me to be the signs of a healthy mind, rather than of a guilty one."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-14-q4",
+          "prompt": "“Many men have been hanged on far slighter evidence.” “So they have. And many men have been wrongfully hanged.” What does this short exchange add to the story?",
+          "facilitatorNotes": [
+            "It raises the stakes: if the case is mistaken, an innocent young man will die. Watson speaks for common sense, Holmes for doubt. The exchange also shows why Holmes refuses to “take nothing for granted”: the law can be confidently wrong."
+          ],
+          "evidence": [
+            "Many men have been hanged on far slighter evidence",
+            "And many men have been wrongfully hanged."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+      "title": "The son’s statement: part 3 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Read a witness’s testimony closely, noticing what he explains, what he cannot explain and what he refuses to say.",
+      "focus": "James McCarthy’s own account, a cry of “Cooee!”, a dying word about a rat, and a gray shape that vanished.",
+      "context": "Recap: travelling to Herefordshire, Holmes has warned Watson that obvious facts deceive, and argued that James McCarthy’s calm at his arrest is a point in his favour. Now Watson reads James’s evidence at the inquest, printed in the local paper. A trap is a light two-wheeled carriage; a groom looks after horses; a rabbit-warren is a field of rabbit burrows. A plaid is a long woollen shawl or wrap. Outré is French for strange or far-fetched; Petrarch was an Italian poet of the 1300s; Swindon is a railway town on the way west.",
+      "contentNote": "A son describes finding his father dying of head injuries.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, James McCarthy’s evidence at the inquest and Holmes’s comment on it, through “We lunch at Swindon”; opens “He picked out from his bundle a copy of the local Herefordshire paper, and having turned…”; closes “…of action. We lunch at Swindon, and I see that we shall be there in twenty minutes.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-14",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+        "blocks": [
+          659,
+          691
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "11c5232a7af69b90c8b15a451bc342548a93e2423bb351bc6fef2a91608c717c"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q1",
+          "prompt": "Where does James’s account agree with the game-keeper’s, and where does it disagree?",
+          "facilitatorNotes": [
+            "Both say James walked toward the Pool with his gun. James denies that he was following his father: he says he did not know his father was ahead and was going to the rabbit-warren. Ask whether a witness who saw two people on one path could easily assume one was following the other."
+          ],
+          "evidence": [
+            "On my way I saw William Crowder, the game-keeper, as he had stated in his evidence; but he is mistaken in thinking that I was following my father."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q2",
+          "prompt": "Why is the coroner suspicious about the cry of “Cooee!”? Can you think of an explanation that does not make James a liar?",
+          "facilitatorNotes": [
+            "James says “Cooee” was a signal between him and his father, yet his father did not know he was back from Bristol. So who was the call for? James has no answer. A possible explanation is that the father called to someone else he was meeting; remember he had “an appointment of importance” at three."
+          ],
+          "evidence": [
+            "How was it, then, that he uttered it before he saw you, and before he even knew that you had returned from Bristol?",
+            "Witness (with considerable confusion): I do not know."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q3",
+          "prompt": "James refuses to tell the cause of the quarrel, though the coroner warns it will harm him. What reasons might an innocent person have for staying silent?",
+          "facilitatorNotes": [
+            "He says it has “nothing to do with the sad tragedy,” so it may be private, may involve someone else, or may embarrass him. Silence looks guilty to the court, but people protect secrets for many reasons. Readers can keep this question open: the story will answer it."
+          ],
+          "evidence": [
+            "It is really impossible for me to tell you. I can assure you that it has nothing to do with the sad tragedy which followed.",
+            "your refusal to answer will prejudice your case considerably"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-15-q4",
+          "prompt": "Holmes says Watson and the coroner give James credit for “too much imagination and too little.” Explain the argument. Is it fair to start by assuming James tells the truth?",
+          "facilitatorNotes": [
+            "Too little: a clever liar would invent a sympathetic reason for the quarrel. Too much: a dull young man would hardly invent something as odd as a dying word about a rat and a vanishing cloth. So the strange details look like truth. Starting from his story is a working hypothesis, which Holmes will test; some readers may see a risk of bias, since Holmes has a client who wants James cleared."
+          ],
+          "evidence": [
+            "Don’t you see that you alternately give him credit for having too much imagination and too little.",
+            "I shall approach this case from the point of view that what this young man says is true, and we shall see whither that hypothesis will lead us."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+      "title": "Miss Turner’s visit: part 4 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice which of a visitor’s many words Holmes seizes on, and why.",
+      "focus": "Lestrade thinks the case is plain; Alice Turner is sure James is innocent; one word, “Victoria,” catches Holmes’s ear.",
+      "context": "Recap: on the train Watson read James McCarthy’s evidence: a “Cooee!” his father could not have meant for him, a dying word about a rat, a gray shape that disappeared. Holmes decided to begin by assuming James was telling the truth. Ross is a small town in Herefordshire. A dustcoat protects clothes from road dust. “The glass” is a barometer, which measures air pressure; a high reading usually means fine weather. “Plain as a pikestaff” means completely obvious. Victoria is a colony (now a state) in south-eastern Australia, famous for its gold-mines. Hereford is the county town, where James is held in prison.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the arrival at Ross through Holmes’s decision to visit the prisoner that night; opens “It was nearly four o’clock when we at last, after passing through the beautiful Stroud…”; closes “…I fear that you will find it very slow, but I shall only be away a couple of hours.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-15",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+        "blocks": [
+          692,
+          727
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aafe208387abb4598ca6357ecd20b39601476c2191e454bc8116e979f98ee2dd"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q1",
+          "prompt": "Lestrade says Holmes must be eager to see the crime scene, and Holmes answers that it is “entirely a question of barometric pressure.” What does he mean?",
+          "facilitatorNotes": [
+            "The barometer is high and the sky clear, so no rain will wash out the tracks overnight; Holmes can rest and look at the ground tomorrow. He is thinking about the evidence on the ground, which Lestrade has not considered. His joke also teases Lestrade."
+          ],
+          "evidence": [
+            "How is the glass? Twenty-nine, I see. No wind, and not a cloud in the sky."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q2",
+          "prompt": "Compare Watson’s descriptions of Lestrade and of Alice Turner. What do they tell you about the people, and about Watson?",
+          "facilitatorNotes": [
+            "Lestrade is “ferret-like,” “furtive and sly-looking,” in country clothes worn “in deference” to the place; Alice is “lovely,” with shining eyes and a flush of excitement, and Watson credits her with “a woman’s quick intuition.” Watson judges people quickly by their looks and admires her openly. Readers may question both the ferret and the idea that intuition belongs to women."
+          ],
+          "evidence": [
+            "A lean, ferret-like man, furtive and sly-looking",
+            "with a woman’s quick intuition, fastening upon my companion"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q3",
+          "prompt": "What does Alice reveal about the quarrel between James and his father? What did Holmes notice when he asked about her own father’s view?",
+          "facilitatorNotes": [
+            "McCarthy wanted James to marry her; James and she love each other “as brother and sister,” and he did not want to marry yet. Her father opposed the match too. When Holmes asks, “A quick blush passed over her fresh young face,” which may suggest her feelings are more than sisterly. Readers can discuss whether Holmes is reading her or only Watson is."
+          ],
+          "evidence": [
+            "James and his father had many disagreements about me.",
+            "A quick blush passed over her fresh young face as Holmes shot one of his keen, questioning glances at her."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-16-q4",
+          "prompt": "Why might Holmes say “Ha! In Victoria! That is important”? Lestrade calls Holmes “cruel” for giving Alice hope. Who seems right at this point?",
+          "facilitatorNotes": [
+            "McCarthy was the only man who knew Turner “in the old days in Victoria,” at the gold-mines. Holmes is linking the two men’s Australian past to the case, perhaps remembering the “Cooee.” Lestrade thinks false hope is cruel; Holmes says he sees a way to clear James. Readers can say whether Holmes has evidence yet or only a direction."
+          ],
+          "evidence": [
+            "Mr. McCarthy was the only man alive who had known dad in the old days in Victoria.",
+            "I think that I see my way to clearing James McCarthy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+      "title": "Watson thinks it over: part 5 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow Watson’s own reasoning and compare it with what Holmes learns from a different kind of evidence.",
+      "focus": "Watson studies the surgeon’s report; Holmes returns with the secret behind the quarrel and two crucial points.",
+      "context": "Recap: at Ross, Alice Turner told Holmes the McCarthys quarrelled because Charles McCarthy wanted James to marry her, which neither young person nor her father wanted. Her father, John Turner, is ill; he and McCarthy knew each other at the gold-mines of Victoria in Australia. Holmes has gone to the prison at Hereford. A yellow-backed novel was a cheap popular novel; a verbatim account gives every word. The parietal and occipital bones are at the side and the back of the skull. A registry office performs weddings without a church service; the Bermuda Dockyard was a naval base. George Meredith was an English novelist and poet.",
+      "contentNote": "The surgeon’s report on the injuries is summarized. Holmes speaks scornfully of a barmaid, in the class attitudes of his time.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from Watson’s evening alone in Ross through Holmes’s report of his visit to the prisoner; opens “I walked down to the station with them, and then wandered through the streets of the…”; closes “…George Meredith, if you please, and we shall leave all minor matters until to-morrow.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-16",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+        "blocks": [
+          728,
+          738
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "23c4b27a657685901ba29c307a9df406970609c15464c3f59f621345de18042f"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q1",
+          "prompt": "What does Watson work out from the surgeon’s report? How much does he think it proves?",
+          "facilitatorNotes": [
+            "The blow shattered the back of the skull, so it must have been struck from behind, while the girl saw father and son face to face. That favours James a little. But Watson admits the father “might have turned his back,” so it “did not go for very much.” He weighs evidence honestly instead of claiming too much."
+          ],
+          "evidence": [
+            "Clearly such a blow must have been struck from behind.",
+            "Still, it did not go for very much, for the older man might have turned his back before the blow fell."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q2",
+          "prompt": "How does Watson explain the dying word about a rat and the gray cloth? What does he still not see?",
+          "facilitatorNotes": [
+            "He reasons, as a doctor, that a man dying from a sudden blow is not usually delirious, so “rat” was probably an attempt to name or explain his attacker. The cloth would mean the murderer dropped a garment and came back for it within a dozen paces of the son. He calls it “a tissue of mysteries”: he asks the right questions but cannot answer them."
+          ],
+          "evidence": [
+            "No, it was more likely to be an attempt to explain how he met his fate.",
+            "What a tissue of mysteries and improbabilities the whole thing was!"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q3",
+          "prompt": "What is James’s secret, and why could it not be told at the inquest? How does Holmes speak about James and the barmaid? Do you share his judgment?",
+          "facilitatorNotes": [
+            "James secretly married a barmaid in Bristol two years ago, so he could not propose to Alice, whom he loves, and could not tell his father, who would have cut him off. Holmes calls him “the idiot” caught in “the clutches of a barmaid”: he blames the woman and looks down on her work. Readers may find more sympathy for both young people than Holmes does, while still seeing why James stayed silent."
+          ],
+          "evidence": [
+            "what does the idiot do but get into the clutches of a barmaid in Bristol, and marry her at a registry office?",
+            "you can imagine how maddening it must be to him to be upbraided for not doing what he would give his very eyes to do"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-17-q4",
+          "prompt": "Holmes names two “crucial points.” Why do both point away from James and toward someone else?",
+          "facilitatorNotes": [
+            "McCarthy had an appointment at the Pool, and it could not have been with his son, who was away and not expected. He cried “Cooee!” before he knew his son had returned. So the call and the meeting were for another person. Holmes has turned the coroner’s two suspicious points into evidence of a third person."
+          ],
+          "evidence": [
+            "the murdered man had an appointment with some one at the Pool, and that the some one could not have been his son",
+            "the murdered man was heard to cry ‘Cooee!’ before he knew that his son had returned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+      "title": "Tracks by the Pool: part 6 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Picture a scene from a description and track several sets of footprints at once.",
+      "focus": "Holmes questions McCarthy’s strange confidence, then reads the trampled grass like a page.",
+      "context": "Recap: Holmes learned in prison that James McCarthy could not explain his quarrel because he had secretly married a barmaid, who has now left him; and Holmes pointed out that the dead man’s appointment and his cry of “Cooee!” were meant for someone other than his son. Lichen is a crusty growth on stone; a lens is a magnifying glass; a waterproof is a raincoat. Détour is French for a roundabout way. The Hall is Turner’s large house beside the Pool.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the drive to Hatherley Farm through Holmes’s search of the ground at Boscombe Pool; opens “There was no rain, as Holmes had foretold, and the morning broke bright and cloudless. At…”; closes “…a pathway through the wood until he came to the high-road, where all traces were lost.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-17",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+        "blocks": [
+          739,
+          757
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f95307c7f66b034119b96c3efcc3f1638d89f9aaceac7d03b47ab5d13008489b"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q1",
+          "prompt": "Why does Holmes find it “singular” that McCarthy talked of marrying his son to Turner’s daughter? What might he be deducing?",
+          "facilitatorNotes": [
+            "McCarthy lived rent free and depended on Turner’s kindness, yet spoke “in a very cocksure manner” of marrying his son to the heiress, against Turner’s wishes. A dependent man acting as if he could demand anything suggests he had some hold over Turner. Lestrade calls this “theories and fancies”; Holmes replies that Lestrade finds facts hard to “tackle.”"
+          ],
+          "evidence": [
+            "should still talk of marrying his son to Turner’s daughter, who is, presumably, heiress to the estate, and that in such a very cocksure manner",
+            "I find it hard enough to tackle facts, Holmes, without flying away after theories and fancies."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q2",
+          "prompt": "Watson says Holmes was “transformed” on the scent. Which comparisons make him seem like an animal, and what do they show?",
+          "facilitatorNotes": [
+            "His nostrils dilate “with a purely animal lust for the chase”; he runs round “like a dog who is picking up a scent”; he answers questions with a “snarl.” The calm thinker becomes a hunter. The images show total concentration, and perhaps a little that is frightening; Watson admires it."
+          ],
+          "evidence": [
+            "His nostrils seemed to dilate with a purely animal lust for the chase",
+            "He ran round, like a dog who is picking up a scent"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q3",
+          "prompt": "Holmes reads several sets of tracks. Whose are they, and what does each show?",
+          "facilitatorNotes": [
+            "James walked twice and ran once, deep at the toe, which “bears out his story” that he ran back. The father paced up and down; a gun butt shows where James stood listening. Then “tiptoes,” in square, unusual boots, come and go and come again, which Holmes connects with the cloak. Lestrade’s twisting left foot is all over the place, and the lodge-keeper’s party trampled the ground round the body."
+          ],
+          "evidence": [
+            "Twice he was walking, and once he ran swiftly so that the soles are deeply marked, and the heels hardly visible.",
+            "Tiptoes! tiptoes! Square, too, quite unusual boots! They come, they go, they come again—of course that was for the cloak."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-18-q4",
+          "prompt": "“Oh, how simple it would all have been had I been here before they came like a herd of buffalo.” What does Holmes’s complaint say about the way the official investigation was done?",
+          "facilitatorNotes": [
+            "The searchers trampled the evidence; Lestrade raked the Pool for a weapon and left footprints everywhere. They looked for what they expected (a weapon) and destroyed what they did not think to look for (tracks). Readers can compare this with Holmes’s method of looking at everything before deciding."
+          ],
+          "evidence": [
+            "Here is where the party with the lodge-keeper came, and they have covered all tracks for six or eight feet round the body."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+      "title": "Ballarat: part 7 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Check each step of a long chain of reasoning, and decide which steps rest on evidence and which on special knowledge.",
+      "focus": "Holmes describes the murderer exactly, Lestrade laughs, and a map of Australia explains the dying word.",
+      "context": "Recap: at Boscombe Pool, Holmes found James McCarthy’s tracks, which matched his story, and the tiptoe tracks of a stranger in square boots who came back for something; he examined the ground behind a large beech tree and picked up a jagged stone. Nous verrons is French for “We shall see.” A game-leg is a lame leg. Ballarat is a gold-mining town in Victoria, Australia; a colony was a territory ruled by Britain. A monograph is a short scholarly study. A cigar-holder is a short tube for holding a cigar; Rotterdam is a port in the Netherlands.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the stone Holmes carries away through his explanation to Watson, ending “The culprit is—”; opens ““It has been a case of considerable interest,” he remarked, returning to his natural…”; closes “…which was hanging him. I see the direction in which all this points. The culprit is—””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-18",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-20",
+        "blocks": [
+          758,
+          807
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b0b3260c4e8db4336c012aab95307ed90120d33bbd9f29a953593132ee4dd519"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q1",
+          "prompt": "How does Holmes know the stone was the weapon, when it shows no marks?",
+          "facilitatorNotes": [
+            "Grass was growing under it, so it had only lain there a few days; there was no hollow it had been taken from nearby; its shape fits the injuries; no other weapon was found. Each fact is small, and together they make a case. Readers might ask whether “It corresponds with the injuries” is something Holmes could judge so quickly."
+          ],
+          "evidence": [
+            "The grass was growing under it. It had only lain there a few days.",
+            "There is no sign of any other weapon."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q2",
+          "prompt": "Why does Lestrade refuse to look for the man Holmes describes? What does Holmes’s answer, “I have given you the chance,” suggest?",
+          "facilitatorNotes": [
+            "Lestrade calls himself “a practical man” who cannot hunt the country for “a left-handed gentleman with a game-leg”; he fears being laughed at. Holmes has offered him the truth and will now act on his own. The scene shows pride and fear of ridicule blocking an investigation."
+          ],
+          "evidence": [
+            "I really cannot undertake to go about the country looking for a left-handed gentleman with a game-leg. I should become the laughing-stock of Scotland Yard."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q3",
+          "prompt": "Holmes moves from “Cooee” to “ARAT” to “an Australian from Ballarat with a gray cloak.” Which step seems most daring to you, and how does Holmes test it?",
+          "facilitatorNotes": [
+            "“Cooee” as an Australian cry and the father’s Australian past are known facts. Guessing that the son heard only the end of “Ballarat” is the boldest step; Holmes checks it by sending for a map and finding the place-name. Watson calls it “wonderful,” Holmes “obvious”: readers can decide which word fits."
+          ],
+          "evidence": [
+            "That was the word the man uttered, and of which his son only caught the last two syllables.",
+            "We have come now out of mere vagueness to the definite conception of an Australian from Ballarat with a gray cloak."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-19-q4",
+          "prompt": "Explain how Holmes knows the murderer is left-handed and lame. How much of his reasoning comes from Watson’s own observations?",
+          "facilitatorNotes": [
+            "The surgeon’s report, which struck Watson the night before, puts the blow behind and on the left side, which suggests a left-handed man striking from behind. The right footprint was always fainter, so he favoured that leg. Watson had half the evidence but did not take the next step. The cigar details depend on Holmes’s special knowledge of tobacco ash."
+          ],
+          "evidence": [
+            "The blow was struck from immediately behind, and yet was upon the left side. Now, how can that be unless it were by a left-handed man?",
+            "The impression of his right foot was always less distinct than his left."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20",
+      "title": "A confession and a choice: part 8 of 8 (Sherlock Holmes, the Boscombe Valley mystery)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Listen to a murderer’s own account and decide what you believe, what you sympathize with, and what you judge.",
+      "focus": "Old Turner tells of his past as a robber and of twenty years of blackmail; Holmes decides what to do with the truth.",
+      "context": "Recap: Holmes deduced that the murderer was an Australian from Ballarat, tall, left-handed and lame, who smoked Indian cigars and wore a gray cloak; as Watson was about to name him, the waiter showed in a visitor. Diabetes could not be treated effectively at the time. The diggings are gold-fields; to stick up a station is to rob a sheep farm; troopers are mounted police, and “emptied four of their saddles” means shot four of them; the swag is the loot. Regent Street is in London. “There, but for the grace of God, goes …” is an old saying: a person watching a criminal led away admits that he might have done the same.",
+      "contentNote": "Turner confesses to an armed robbery in which men were shot and to beating McCarthy to death. He uses an insulting word for a woman and speaks of McCarthy’s family as bad “stock” and “blood.” Holmes chooses to keep his confession secret.",
+      "excerpt": {
+        "locator": "The Boscombe Valley Mystery, from the arrival of John Turner to the end of the story; opens ““Mr. John Turner,” cried the hotel waiter, opening the door of our sitting-room, and…”; closes “…to live happily together, in ignorance of the black cloud which rests upon their past.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-19",
+        "continuesTo": null,
+        "blocks": [
+          808,
+          837
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8149297d01887111529d98b243ca4ea1557dfb1e1fd3737494a9341cb673a3a6"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q1",
+          "prompt": "Watson is a doctor. What does he notice at a glance about Turner, and how does it fit what Turner says next?",
+          "facilitatorNotes": [
+            "Turner’s slow limp and bowed shoulders contrast with great strength; his face is ashen and his lips and nostrils are blue, signs of serious illness. Turner confirms it: he has had diabetes for years and may not live a month. His illness shapes everything that follows, including Holmes’s decision."
+          ],
+          "evidence": [
+            "his face was of an ashen white, while his lips and the corners of his nostrils were tinged with a shade of blue",
+            "I have had diabetes for years. My doctor says it is a question whether I shall live a month."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q2",
+          "prompt": "What hold did McCarthy have over Turner, and why did it grow worse as Alice grew up?",
+          "facilitatorNotes": [
+            "McCarthy recognized “Black Jack of Ballarat” and threatened to tell the police about the robbery. Turner gave him land, money and houses. As Alice grew up, McCarthy saw that Turner feared her learning the truth more than he feared the police, and at last demanded her for his son, which Turner would not give."
+          ],
+          "evidence": [
+            "he soon saw I was more afraid of her knowing my past than of the police",
+            "until at last he asked a thing which I could not give. He asked for Alice."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q3",
+          "prompt": "Turner says, “I did it, Mr. Holmes. I would do it again,” and calls his life “a life of martyrdom.” Does his story make you sympathize with him, judge him, or both?",
+          "facilitatorNotes": [
+            "He was blackmailed for twenty years, is dying, and acted to protect his daughter. But he was a highway robber whose gang killed men, he chose to kill McCarthy, and he speaks of McCarthy’s “cursed stock” as if wickedness ran in the blood, though he has nothing against James himself. A good answer holds both sides and quotes him."
+          ],
+          "evidence": [
+            "I did it, Mr. Holmes. I would do it again. Deeply as I have sinned, I have led a life of martyrdom to atone for it.",
+            "I would not have his cursed stock mixed with mine"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-20-q4",
+          "prompt": "Holmes says “it is not for me to judge you” and keeps the confession secret unless James is condemned. Was this the right choice? Consider the last paragraph too.",
+          "facilitatorNotes": [
+            "For: Turner is dying, James is acquitted, and Alice is spared; Holmes is “no official agent” and says he might himself have been tempted. Against: a murder goes unpunished, Holmes decides alone, and James and Alice may marry “in ignorance of the black cloud” over their families. Readers can weigh mercy, truth and the law; Holmes’s own words show he felt the weight of it."
+          ],
+          "evidence": [
+            "Well, it is not for me to judge you",
+            "There, but for the grace of God, goes Sherlock Holmes.",
+            "in ignorance of the black cloud which rests upon their past"
+          ]
+        }
+      ]
     }
   ]
 }
