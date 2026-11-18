@@ -1482,6 +1482,756 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-21",
+      "title": "Treasure Island, chapter XXVIII — Jim speaks up",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 11,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh what Silver says against what Jim can see, and decide how much of each speech to believe.",
+      "focus": "Captured, Jim answers Silver’s smooth threats with the whole truth about what he has done, and offers the pirates a bargain.",
+      "context": "Treasure Island (1883) is Robert Louis Stevenson’s novel of a hunt for pirate gold, told by Jim Hawkins, who looks back on adventures from his boyhood. Part VI begins where Part V ended. Jim left his friends in the stockade without permission, cut the pirates’ ship, the Hispaniola, adrift, killed the coxswain Israel Hands in self-defence, and beached the ship in North Inlet. Returning at night to boast of it, he walked into the block-house and was seized: the pirates now hold it. Cognac and brandy are spirits; a link or glim is a torch or light; the dog-watch is an early-evening watch on board ship; a flag of truce is a white flag for talks between enemies; “from cross-trees to kelson” means from top to bottom of a ship; a court for piracy could hang the men found guilty.",
+      "contentNote": "Jim expects to be killed and says so; he tells the pirates he killed the men left on the ship. The pirates have been drinking.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXVIII, “In the Enemy’s Camp,” from the start to Silver’s “I’ll bear it in mind”; opens “The red glare of the torch, lighting up the interior of the block-house, showed me the…”; closes “…whether he were laughing at my request, or had been favourably affected by my courage.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-22",
+        "blocks": [
+          1121,
+          1146
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1289e03623e5a01f1efedcfbb2b745d8f69dafb40755c3a5542cd55577874eb4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-21-q1",
+          "prompt": "What does the torchlight show Jim, and what does he first conclude about his friends? Which words of Silver’s change that conclusion?",
+          "facilitatorNotes": [
+            "He sees the pirates in possession and “not a sign of any prisoner,” so he thinks his friends are dead. Silver’s talk of Captain Smollett and the doctor tells him they are alive, and Jim is “more relieved than distressed” even by the news that they are angry with him."
+          ],
+          "evidence": [
+            "not a sign of any prisoner",
+            "My friends, then, were still alive"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-21-q2",
+          "prompt": "Silver reports Dr. Livesey’s words about Jim: “We’re about sick of him.” Should Jim believe this report? What reasons does Silver have to tell it?",
+          "facilitatorNotes": [
+            "Jim only “partly believed” it. Silver wants Jim to think he has nowhere else to go, so that joining the pirates is his only choice. Readers may think the doctor really was angry, or that Silver has improved the story; the text never lets us hear the doctor say it."
+          ],
+          "evidence": [
+            "We're about sick of him.",
+            "I partly believed the truth of Silver's statement"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-21-q3",
+          "prompt": "Silver says, “I never seen good come out o' threatening,” and offers Jim a free choice. How does Jim know it is not free?",
+          "facilitatorNotes": [
+            "The polite words sit on a threat that everyone in the room understands. Jim feels “the threat of death” beneath the “sneering talk,” and Silver’s jokes (“time goes so pleasant in your company”) make the danger worse, not better."
+          ],
+          "evidence": [
+            "I'm all for argyment; I never seen good come out o' threatening.",
+            "Through all this sneering talk I was made to feel the threat of death that overhung me"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-21-q4",
+          "prompt": "Why does Jim tell the pirates everything he has done to them? Is his speech brave, reckless, or a clever bargain?",
+          "facilitatorNotes": [
+            "It is all three. He boasts (“it was I!”) and says he no more fears them than “a fly,” but he ends with an offer: spare him and he will speak for them in court. Students can argue whether the boast helps or endangers the bargain. Silver’s reply, which Jim cannot read, keeps the question open."
+          ],
+          "evidence": [
+            "Kill another and do yourselves no good, or spare me and keep a witness to save you from the gallows.",
+            "whether he were laughing at my request, or had been favourably affected by my courage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-22",
+      "title": "Treasure Island, chapter XXVIII — Silver’s bargain",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a change of sides that happens in a few lines, and look for the moment it happens.",
+      "focus": "Silver faces down his crew to protect Jim, then admits in a whisper that he needs Jim as much as Jim needs him.",
+      "context": "Recap: captured in the block-house, Jim told the six surviving pirates that he had overheard their plot, cut the ship adrift and killed the men aboard her, and offered to speak for them at their trial if they spared him. Silver answered only “I’ll bear it in mind.” To “split upon” someone is to betray them; to go to the yard-arm is to be hanged from a ship’s spar, and “by the board” is over the side; hazing is bullying; “to cock his hat athwart my hawse” means to defy me; the fo’c’s’le (forecastle) is where the ordinary sailors live, so a “fo’c’s’le council” is a meeting of the crew; blunt is money; a cannikin is a small cup and a caulker a drink.",
+      "contentNote": "Morgan draws a knife on Jim, and Silver threatens to kill any man who challenges him; Silver warns Jim of torture. Silver drinks brandy.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXVIII, “In the Enemy’s Camp,” from Morgan’s charge to the end of the chapter; opens “\"I'll put one to that,\" cried the old mahogany-faced seaman--Morgan by name--whom I had…”; closes “…of the brandy, shaking his great fair head like a man who looks forward to the worst.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-21",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-23",
+        "blocks": [
+          1147,
+          1176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "825bf1570eb988134de6b2ede242901c6c9fd6d43a22dc8772e5755bcb50594b"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-22-q1",
+          "prompt": "When Morgan draws his knife, Silver stops him. Is Silver protecting Jim, or protecting his own place as captain?",
+          "facilitatorNotes": [
+            "His first words are about rank: “Maybe you thought you was cap'n here.” Only later does he praise Jim. Both motives can be true, and Silver has just added a charge against Jim himself, so readers should notice that his defence starts with his authority."
+          ],
+          "evidence": [
+            "Maybe you thought you was cap'n here, perhaps.",
+            "I like that boy, now; I never seen a better boy than that."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-22-q2",
+          "prompt": "The crew leave “According to rules,” each with a salute and an apology. Why do men planning mutiny care about rules and manners?",
+          "facilitatorNotes": [
+            "Their rules give them a right to meet and depose a captain, so the politeness is a weapon: the salutes have an “elaborate,” mocking air. Some readers see real respect for pirate law, others an insult dressed up as courtesy."
+          ],
+          "evidence": [
+            "this crew has its rights like other crews",
+            "And with an elaborate sea-salute"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-22-q3",
+          "prompt": "Alone with Jim, Silver whispers that he “didn't mean to” stand by him “not till you spoke up.” What made him change his mind?",
+          "facilitatorNotes": [
+            "Seeing no schooner in the bay he knew all was lost, and Jim’s speech showed him a witness who could save him from hanging. His plan is an exchange: “tit for tat.” Jim’s courage and Silver’s self-interest meet in one bargain."
+          ],
+          "evidence": [
+            "I didn't mean to; no, not till you spoke up.",
+            "You save your witness, and he'll save your neck!"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-22-q4",
+          "prompt": "Why might Stevenson end the chapter on Silver’s question about the chart, which Jim cannot answer?",
+          "facilitatorNotes": [
+            "It opens a mystery that neither Jim nor the reader can solve yet: the doctor has given away the map that the whole voyage was for. Silver suspects “something under that,” and so should the reader. Students can guess (a trap, a trade, or something the doctor knows) as long as they say it is a guess."
+          ],
+          "evidence": [
+            "why did that doctor give me the chart, Jim?",
+            "something, surely, under that, Jim--bad or good."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-23",
+      "title": "Treasure Island, chapter XXIX — The black spot again",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 8,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow a four-part argument and judge which of Silver’s answers wins the room.",
+      "focus": "Deposed by his crew, Silver answers every charge, produces the treasure map and is made captain again.",
+      "context": "Recap: Silver kept the other pirates from killing Jim and, alone with him, made a bargain: he would save Jim’s life if Jim would save him from hanging. The crew went outside to hold a council. The black spot is a pirate’s written summons ordering a captain to step down (Billy Bones received one at the Admiral Benbow); deposed means removed from command. An emissary or deputation is someone sent with a message; to “play booty” is to lose on purpose and betray one’s own side; a gibbet is a gallows, and pirates were hanged at Execution Dock in London and sometimes left “hanged in chains” as a warning; a consort is a second ship sailing with the first; ague is fever; to “kiss the book” is to swear on the Bible; a crown-piece is a large coin; Revelation is the last book of the Bible.",
+      "contentNote": "Silver describes hanged pirates left in chains; the men swear and drink.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXIX, “The Black Spot Again,” the whole chapter; opens “The council of the buccaneers had lasted some time, when one of them re-entered the…”; closes “…to think on the dark perils that environed, and the shameful gibbet that awaited him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-22",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-24",
+        "blocks": [
+          1178,
+          1220
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad4ce8c4b890163fde5b9d91bb93935612e9caa3f26efd5c87adb9e5e169a3d4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-23-q1",
+          "prompt": "George Merry lists four charges against Silver. Which of them are true, as far as Jim can tell?",
+          "facilitatorNotes": [
+            "The cruise is a failure, Silver did let the enemy go, and he does protect the boy. The deepest charge, that he wants “to play booty,” is the truest: in the chapter’s last paragraph Jim sees him grasping “after every means” to make his own peace."
+          ],
+          "evidence": [
+            "you want to play booty, that's what's wrong with you",
+            "grasping, with the other, after every means, possible and impossible, to make his peace"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-23-q2",
+          "prompt": "How does Silver answer the charges? Which answer turns the crew, and why?",
+          "facilitatorNotes": [
+            "He blames the men who forced his hand, makes them picture themselves hanged, calls Jim a hostage and the doctor useful, then throws down the chart. The map wins: the men leap on it “like cats upon a mouse,” and the argument is over because they want the gold, not because they are convinced."
+          ],
+          "evidence": [
+            "Who tipped me the black spot the day we landed, and began this dance?",
+            "They leaped upon it like cats upon a mouse."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-23-q3",
+          "prompt": "The black spot is cut from a Bible, from a page that says “Without are dogs and murderers.” Why does this upset the pirates, and why does the verse strike Jim?",
+          "facilitatorNotes": [
+            "They are superstitious: spoiling a Bible is bad luck, and Dick worries about the curse. The verse describes the men who hold it, which is why it “struck sharply home” for Jim. Readers may also note Silver’s mocking “Dick can get to prayers.”"
+          ],
+          "evidence": [
+            "What fool's cut a Bible?",
+            "Without are dogs and murderers."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-23-q4",
+          "prompt": "At the end Jim feels his heart “sore” for Silver, “wicked as he was.” Why does Jim pity him, and does the chapter make you feel the same?",
+          "facilitatorNotes": [
+            "Jim has watched Silver juggle two sides to stay alive and knows the gallows waits for him. Jim also lies awake thinking of the man he himself killed that afternoon, so he is less sure of easy judgments. Readers may admire Silver’s nerve or distrust it; both need evidence from the chapter."
+          ],
+          "evidence": [
+            "my heart was sore for him, wicked as he was",
+            "the man whom I had slain that afternoon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-24",
+      "title": "Treasure Island, chapter XXX — The prison doctor",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice how a calm manner can be as powerful as a threat.",
+      "focus": "Dr. Livesey walks unarmed into the pirates’ camp, treats them as patients, and lets them know exactly what he thinks of them.",
+      "context": "Recap: the pirates tried to depose Silver with a black spot cut from a Bible, but he answered every charge, showed them the treasure map the doctor had given him, and was made captain again. Jim, his hostage, spent the night in the block-house. A supercargo is the officer in charge of a ship’s cargo; men “before the mast” are ordinary sailors; malaria is a fever (people then blamed swampy air for it, before mosquitoes were known to spread it); a slough is a bog; a charity school was a free school for poor children; to “slip your cable” is to run away; to “yarn through the spars” is to talk through the fence.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXX, “On Parole,” from the start to the doctor leaving the block-house; opens “I was wakened--indeed, we were all wakened, for I could see even the sentinel shake…”; closes “…the spars. Good-day to you, sir, and all our dooties to the squire and Cap'n Smollett.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-23",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-25",
+        "blocks": [
+          1222,
+          1249
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f726e061482bca8434b87b39ce604da7a7aeba7bef067f1094934cbd5945878a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-24-q1",
+          "prompt": "Jim is glad to hear the doctor, but his gladness is “not without admixture.” What is mixed with it?",
+          "facilitatorNotes": [
+            "Shame. He remembers leaving without permission and sees where it has brought him, so he is “ashamed to look him in the face.” The doctor’s “grim nod” shows he is right to expect disapproval."
+          ],
+          "evidence": [
+            "I felt ashamed to look him in the face",
+            "with one grim nod to me"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-24-q2",
+          "prompt": "The doctor says he will not lose a man “for King George (God bless him!) and the gallows.” What is he really telling his patients?",
+          "facilitatorNotes": [
+            "That he is curing them so they can be tried and hanged. It is a joke with an edge, a “home-thrust,” and the men swallow it in silence. Readers may also see real duty: he treats them carefully whatever they are."
+          ],
+          "evidence": [
+            "I make it a point of honour not to lose a man for King George (God bless him!) and the gallows.",
+            "The rogues looked at each other, but swallowed the home-thrust in silence."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-24-q3",
+          "prompt": "Morgan says Dick’s fever “comed of sp'iling Bibles.” What explanation does the doctor give instead, and which one does the evidence support?",
+          "facilitatorNotes": [
+            "The doctor blames their camp in a swamp: they cannot tell “honest air from poison.” The evidence supports a physical cause, since several men are sick, not only Dick. (Mosquitoes, not air, actually spread malaria, so even the doctor’s explanation is only partly right.)"
+          ],
+          "evidence": [
+            "that comed of sp'iling Bibles",
+            "not having sense enough to know honest air from poison"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-24-q4",
+          "prompt": "Why does Silver ask Jim for his “word of honour” before letting him talk to the doctor?",
+          "facilitatorNotes": [
+            "Silver cannot guard Jim and also seem to trust the doctor, so he makes Jim’s promise the guard. Calling him “a young gentleman ... although poor born” flatters Jim into keeping it. It also shows the crew that Silver has not let the hostage go."
+          ],
+          "evidence": [
+            "your word of honour not to slip your cable?",
+            "for a young gentleman you are, although poor born"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-25",
+      "title": "Treasure Island, chapter XXX — Jim keeps his word",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Decide what a promise is worth when keeping it may cost your life.",
+      "focus": "Given a chance to escape, Jim refuses to break his parole, and the doctor discovers how much the boy has done.",
+      "context": "Recap: Dr. Livesey came to the pirates’ camp to treat their fevers. He asked to talk with Jim, and Silver, against the crew’s protests, allowed it once Jim gave his word of honour not to escape. Parole is a prisoner’s promise not to run away. To gammon is to fool; chuck-farthing is a gambling game of tossing coins; “holus bolus” means all at once; perjury is lying under oath in court; to have one’s “wig sorted” is to be scolded; a squall is a sudden storm.",
+      "contentNote": "Jim says his life is forfeit and that what he fears is torture.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXX, “On Parole,” from the crew’s anger at Silver to the end of the chapter; opens “The explosion of disapproval, which nothing but Silver's black looks had restrained,…”; closes “…me through the stockade, nodded to Silver, and set off at a brisk pace into the wood.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-24",
+        "continuesTo": null,
+        "blocks": [
+          1250,
+          1275
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c89b20192e33b200b9b4868b433185359d3cdfe139d77c6e857c4b0ed92cd3a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-25-q1",
+          "prompt": "The crew accuse Silver “of the identical, exact thing that he was doing.” How does he still win the argument?",
+          "facilitatorNotes": [
+            "By force of personality: he calls them fools, waves the chart, and promises that they will break the treaty themselves “when the time comes.” Jim says they were “silenced by his volubility rather than convinced,” which suggests the victory may not last."
+          ],
+          "evidence": [
+            "it's us must break the treaty when the time comes",
+            "silenced by his volubility rather than convinced"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-25-q2",
+          "prompt": "Out of the crew’s sight, Silver seems “a changed man.” Is his fear real, or another performance?",
+          "facilitatorNotes": [
+            "His face and voice change and he admits “the shakes ... for the gallows.” Jim believes it: “never was a soul more dead in earnest.” Readers may still note that Silver times everything and makes sure the doctor will “put that down” for him; both can be true."
+          ],
+          "evidence": [
+            "never was a soul more dead in earnest",
+            "I've the shakes upon me for the gallows"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-25-q3",
+          "prompt": "The doctor urges Jim to jump the fence and run. Why does Jim refuse, and do you think he is right?",
+          "facilitatorNotes": [
+            "He has given his word, Silver trusted him, and he says none of his friends would break theirs either. Some readers will admire the choice; others will say a promise to a pirate holding him prisoner does not bind him. The doctor himself offers to take the “blame and shame.”"
+          ],
+          "evidence": [
+            "Silver trusted me; I passed my word, and back I go.",
+            "you know right well you wouldn't do the thing yourself"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-25-q4",
+          "prompt": "What does the doctor seem to know that Jim and Silver do not? How does Stevenson let us see that he knows something without telling us what?",
+          "facilitatorNotes": [
+            "He mentions Ben Gunn suddenly, warns Silver not to hurry after the treasure and to “look out for squalls,” and says the secret is not his to tell. The reader, like Silver, gets hints but no answer. Readers can connect this with the chart given away in Chapter XXVIII."
+          ],
+          "evidence": [
+            "don't you be in any great hurry after that treasure",
+            "it's not my secret, you see, Silver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-26",
+      "title": "Treasure Island, chapter XXXI — A foot in either camp",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Compare what Silver tells Jim in private with what he tells the crew in public, and decide which to believe.",
+      "focus": "Setting out on the treasure hunt as Silver’s hostage, Jim sees that the man protecting him may betray him at any moment.",
+      "context": "Treasure Island (1883) is Robert Louis Stevenson’s novel of a hunt for pirate gold, told by Jim Hawkins, who looks back on adventures from his boyhood. Near the end of the book, the pirates hold the stockade and Jim is their prisoner. Long John Silver has saved him from the crew in exchange for Jim’s promise to speak for him if they are tried for piracy. Dr. Livesey, who earlier gave Silver the treasure map for reasons no one understands, visited the camp; he urged Jim to escape, but Jim had given his word and would not. The doctor warned Silver to “look out for squalls” when he found the treasure. Sealed orders are orders not to be opened until a set time; junk is salt meat; windward is the side the wind comes from; a brush is a short fight; gigs are a ship’s small boats, a thwart is a rowing seat, and “unbaled” means not bailed out; burthened means burdened.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXXI, “The Treasure Hunt—Flint’s Pointer,” from the start to the party setting out in the two gigs; opens “\"Jim,\" said Silver, when we were alone, \"if I saved your life, you saved mine; and I'll…”; closes “…so, with our numbers divided between them, we set forth upon the bosom of the anchorage.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-27",
+        "blocks": [
+          1277,
+          1288
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b74789d0ecdd0a6a1d68e4d81889de3ea9545bf6c204baca37af2f41eb4e7772"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-26-q1",
+          "prompt": "What does Jim notice about the way the pirates cook and eat? What does he conclude from it?",
+          "facilitatorNotes": [
+            "They build a huge fire, cook three times what they can eat and throw the rest in the flames. Jim concludes they live “hand to mouth” and could fight a short battle but never a long campaign: an observation used as evidence."
+          ],
+          "evidence": [
+            "I never in my life saw men so careless of the morrow",
+            "their entire unfitness for anything like a prolonged campaign"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-26-q2",
+          "prompt": "Silver promised Jim they would stick “back to back.” What does he tell the crew about Jim at breakfast, and which version does Jim believe?",
+          "facilitatorNotes": [
+            "To the crew Jim is a hostage to be kept “like so much gold” and later talked over. Jim believes Silver would take the pirates’ side if it worked, because wealth and freedom beat “a bare escape from hanging.” Readers may think Silver is only calming the crew; Jim admits he cannot be sure."
+          ],
+          "evidence": [
+            "we'll keep him like so much gold, in case of accidents",
+            "He had still a foot in either camp"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-26-q3",
+          "prompt": "Even if Silver keeps faith with the doctor, Jim sees danger ahead. What is it?",
+          "facilitatorNotes": [
+            "If the crew find out, Silver and Jim must fight five strong men alone: “he, a cripple, and I, a boy.” Jim adds the mystery of his friends’ behaviour, so he sets out with three fears at once."
+          ],
+          "evidence": [
+            "he, a cripple, and I, a boy--against five strong and active seamen!",
+            "how little taste I found in my breakfast"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-26-q4",
+          "prompt": "Jim says he was “led like a dancing bear.” What picture does that give of him and Silver as they set out?",
+          "facilitatorNotes": [
+            "Jim walks on a rope whose end Silver holds, sometimes in his teeth, while the parrot chatters on Silver’s armed shoulder: Jim is a captive on show. The image also makes Silver the showman, which suits a man who performs for every audience."
+          ],
+          "evidence": [
+            "For all the world, I was led like a dancing bear.",
+            "now between his powerful teeth"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-27",
+      "title": "Treasure Island, chapter XXXI — Flint’s pointer",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Use the clues around a skeleton to test the pirates’ explanation of it.",
+      "focus": "The treasure hunters find one of Flint’s victims laid out as a signpost, and fear of the dead captain spreads through the party.",
+      "context": "Recap: the pirates set out to find Flint’s treasure, with Jim tied by a rope to Silver, who may betray either side. Jim suspects Silver will turn on his friends if he can seize both treasure and ship. The note on the back of Flint’s chart gives compass directions (N.N.E. is north-north-east; E.S.E. is east-south-east); a bearing is a direction measured with a compass. Marish means marshy; broom is a flowering shrub; deadlights are eyes; coins were laid on a dead man’s eyes; a sperrit is a spirit or ghost; doubloons are gold coins, a doit is a tiny one, and a baccy-box holds tobacco; “Care killed a cat” means worry does harm; with bated breath means almost whispering. Captain Flint, the pirate who buried the treasure, died at Savannah in Georgia.",
+      "contentNote": "The party finds a skeleton; the pirates say Flint murdered his six shipmates and describe his drunken death.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXXI, “The Treasure Hunt—Flint’s Pointer,” from the discussion of the chart to the end of the chapter; opens “As we pulled over, there was some discussion on the chart. The red cross was, of course,…”; closes “…spoke with bated breath. The terror of the dead buccaneer had fallen on their spirits.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-26",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-28",
+        "blocks": [
+          1289,
+          1316
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3e71b30bc8e6fa2adfa65f8c893a7a01fdf173970de8030bc4eaf41a6b15a929"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-27-q1",
+          "prompt": "Why is the note on the back of the chart hard to follow? What can only be settled on the spot?",
+          "facilitatorNotes": [
+            "The red cross is too big to guide them, and the plateau has several tall trees standing above the rest. Only compass readings taken on the ground can say which one Flint meant; until then, every man picks “a favourite of his own.”"
+          ],
+          "evidence": [
+            "admitted of some ambiguity",
+            "could only be decided on the spot, and by the readings of the compass"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-27-q2",
+          "prompt": "How does Silver work out what the skeleton is for? What does he notice that the others do not?",
+          "facilitatorNotes": [
+            "He sees that the body lies too straight, feet one way and arms over the head “like a diver's,” and checks it with the compass. It points exactly along Flint’s bearing: “a p'inter.” He reasons from an odd detail to a purpose."
+          ],
+          "evidence": [
+            "what sort of a way is that for bones to lie? 'Tain't in natur'.",
+            "this here is a p'inter."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-27-q3",
+          "prompt": "The men notice that the dead man has no knife, no coin, not even a tobacco box. What might explain that, and why do they not follow the clue?",
+          "facilitatorNotes": [
+            "Someone has been there since Flint and taken them. The pirates feel it is not “nat'ral” but quickly turn to talk of ghosts instead of asking who. Readers may remember who else lives on the island and keep the clue for later."
+          ],
+          "evidence": [
+            "why don't we find his'n lying round?",
+            "not a copper doit nor a baccy-box"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-27-q4",
+          "prompt": "How does the mood of the party change between the climb and the end of the chapter?",
+          "facilitatorNotes": [
+            "They begin by spreading out in a fan, shouting and leaping in the fresh air; after the skeleton and the talk of Flint they walk “side by side” and whisper. Silver’s joke that Flint “won't walk by day” shows that even he admits the fear."
+          ],
+          "evidence": [
+            "shouting and leaping to and fro",
+            "kept side by side and spoke with bated breath"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-28",
+      "title": "Treasure Island, chapter XXXII — The voice among the trees",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how one sound can mean different things to different listeners, and look for the explanation behind it.",
+      "focus": "A voice from the woods nearly breaks the pirates; greed drives them on, straight to an empty pit.",
+      "context": "Recap: climbing to the plateau, the treasure hunters found a skeleton laid out by Flint to point towards the treasure, and fell to whispering about Flint’s murders and his death. Jim is still tied to Silver. “Fifteen men on the dead man’s chest” is the pirates’ song, which Billy Bones sang at the inn in Chapter I; skylarking is playing tricks; to “fetch aft” is to bring to the back of the ship; to “show his stern” is to run away; boosy means drunk and a mug is a face; “’Bout ship” means turn the ship around; a cache is a hiding place, and rifled means robbed; “clear to probation” means proved beyond doubt. Ben Gunn, a pirate marooned on the island three years before, once sailed with Flint.",
+      "contentNote": "Silver looks at Jim murderously; Jim imagines Flint killing his six shipmates on the same spot.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXXII, “The Treasure Hunt—The Voice Among the Trees,” the whole chapter; opens “Partly from the damping influence of this alarm, partly to rest Silver and the sick folk,…”; closes “…The _cache_ had been found and rifled: the seven hundred thousand pounds were gone!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-27",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-29",
+        "blocks": [
+          1318,
+          1364
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8ddd73f9ac6d593fde300bda26dc4146bb3708b1ade83e31afde0a32ebf18d55"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-28-q1",
+          "prompt": "The pirates go white at the singing, but Jim thinks it sounded “airily and sweetly.” Why does the same sound affect them so differently?",
+          "facilitatorNotes": [
+            "The pirates knew Flint and his song, and have just been talking of his death; Jim hears only a voice in the sunshine. Fear lives in the listener’s memory as much as in the sound. Jim calls the effect on the men “the stranger” for that reason."
+          ],
+          "evidence": [
+            "I thought it had sounded airily and sweetly; and the effect on my companions was the stranger.",
+            "The colour went from their six faces like enchantment"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-28-q2",
+          "prompt": "Silver argues that a spirit cannot have an echo. Jim calls this “weak enough.” Why does it work anyway, and what clue had Silver already noticed?",
+          "facilitatorNotes": [
+            "Superstitious men need an argument in the language of superstition, and Silver gives them one. The better clue is that no one on the island had ever heard of Darby “but us that's here,” so the voice belongs to someone who sailed with Flint, which leads to Ben Gunn."
+          ],
+          "evidence": [
+            "This argument seemed weak enough to me.",
+            "Nobody in this here island ever heard of Darby"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-28-q3",
+          "prompt": "“Dead or alive, nobody minded Ben Gunn.” Why might the narrator repeat this line? Is it true?",
+          "facilitatorNotes": [
+            "The pirates are relieved because they despise Ben Gunn. Jim repeats it flatly, and a reader who remembers meeting Ben Gunn may hear warning in it: the man nobody minds has been ahead of them all along. Some readers will hear plain description, others irony; the chapter’s last lines favour irony."
+          ],
+          "evidence": [
+            "Why, nobody minds Ben Gunn",
+            "He had said the truth; dead or alive, nobody minded Ben Gunn."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-28-q4",
+          "prompt": "What does Jim “read like print” in Silver’s face as the gold comes near? How certain can he be?",
+          "facilitatorNotes": [
+            "That Silver has forgotten his promise and means to take the treasure and the ship and “cut every honest throat.” Jim reads it from Silver’s tugging at the rope and his deadly looks; it is a strong inference, not proof, and the next moment, at the empty pit, makes it impossible to test."
+          ],
+          "evidence": [
+            "certainly I read them like print",
+            "his promise and the doctor's warning were both things of the past"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-29",
+      "title": "Treasure Island, chapter XXXIII — The fall of a chieftain",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Fit the doctor’s explanation to the mysteries of the last several chapters, one by one.",
+      "focus": "Silver changes sides in a second, the doctor’s ambush ends the mutiny, and the secret of the treasure is told.",
+      "context": "Recap: led on by the treasure map, the pirates reached Flint’s tall tree after a voice that sounded like Flint’s dead self, or like Ben Gunn’s, had nearly sent them running. They found a great hole, broken boards marked with the name of Flint’s ship, the Walrus, and no treasure. A guinea is a gold coin; pig-nuts are edible roots; a teetotum is a spinning top; a maroon is someone left alone on an island; to prosecute is to bring to trial; a millstone round the neck is a heavy burden of guilt (an image from the Bible); dereliction of duty is failing to do it; quadrilaterals are four-sided shapes, here gold bars; to scuttle a ship is to sink it on purpose; obsequious means too eager to please.",
+      "contentNote": "Two pirates are shot dead from ambush; Silver fires his pistol into the wounded George Merry.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXXIII, “The Fall of a Chieftain,” the whole chapter; opens “There never was such an overturn in this world. Each of these six men was as though he…”; closes “…quietly in our laughter--the same bland, polite, obsequious seaman of the voyage out.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-28",
+        "continuesTo": "reading-6-stevenson-treasure-island-1911-30",
+        "blocks": [
+          1366,
+          1409
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65428266b22fe7d8f466351ff5ecfae3d48dfc0ad930de188ab1f7e48652746d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-29-q1",
+          "prompt": "Jim whispers, “So you've changed sides again.” Is he fair to Silver? How does Jim seem to feel about him a moment later?",
+          "facilitatorNotes": [
+            "He is accurate and “revolted.” Yet as Silver stands alone facing five men, Jim admits, “He was brave, and no mistake.” Jim keeps judging Silver and admiring him at once, and the chapter lets both stand."
+          ],
+          "evidence": [
+            "I was so revolted at these constant changes",
+            "He was brave, and no mistake."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-29-q2",
+          "prompt": "Silver shoots the wounded Merry and says, “George, I reckon I settled you.” What does this moment show, just as he joins the honest side?",
+          "facilitatorNotes": [
+            "That he has not changed at all: quick, ruthless and settling an old score. Readers may see it as proof of loyalty to his new side, as revenge on the man who deposed him, or as both. The cold remark makes it hard to like him even as he helps Jim."
+          ],
+          "evidence": [
+            "Long John had fired two barrels of a pistol into the struggling Merry",
+            "I reckon I settled you."
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-29-q3",
+          "prompt": "The doctor’s story explains several mysteries. Which ones, and how?",
+          "facilitatorNotes": [
+            "Ben Gunn had found and moved the treasure, so the chart was “now useless,” which is why the doctor gave it away with the stockade and stores; the warning about squalls meant the empty pit; the voice in the trees was Ben Gunn playing on the pirates’ fears. Ask which explanation readers had guessed."
+          ],
+          "evidence": [
+            "given him the chart, which was now useless",
+            "Then it had occurred to him to work upon the superstitions of his former shipmates"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-29-q4",
+          "prompt": "When Jim at last sees the treasure, he stops to count what it cost. Why does he do this at the moment of success?",
+          "facilitatorNotes": [
+            "The sight makes him think of everything behind it: seventeen men dead on this voyage and countless “brave men walking the plank” before. The treasure becomes a record of crimes, not only a prize. Some readers feel the joy of the supper that follows is shadowed by this paragraph; others feel it earns the rest."
+          ],
+          "evidence": [
+            "that had cost already the lives of seventeen men",
+            "what shame and lies and cruelty, perhaps no man alive could tell"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-stevenson-treasure-island-1911-30",
+      "title": "Treasure Island, chapter XXXIV — And last",
+      "sourceId": "stevenson-treasure-island-1911",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Judge the endings the narrator gives each character, and ask what the final lines leave in the reader’s ear.",
+      "focus": "The treasure is loaded, three mutineers are left behind, Silver slips away, and Jim says what the adventure left him.",
+      "context": "Recap: Ben Gunn had moved Flint’s treasure to his cave long before; the doctor’s ambush killed two of the pirates and scattered three more, and Silver, back on the honest side, was spared prosecution. The friends, with the treasure, are reunited in Ben Gunn’s cave. Georges and Louises are English and French coins named after kings; doubloons, moidores and sequins are Spanish, Portuguese and Venetian gold coins; to ingratiate oneself is to try to win favour; “hand and glove” means close partners; supplication is begging; a man-of-war is a warship; to connive is to secretly help; a bulkhead is a wall inside a ship; to be “smit” is to be struck; a butt is the target of jokes; a wain is a farm wagon.",
+      "contentNote": "Three mutineers are left on the island, begging not to be abandoned, and one fires at the ship. The narrator uses words for Black and mixed-race people that were common in 1880s Britain and are offensive today.",
+      "excerpt": {
+        "locator": "Part VI, “Captain Silver”: Chapter XXXIV, “And Last,” the whole chapter, to the end of the novel; opens “The next morning we fell early to work, for the transportation of this great mass of gold…”; closes “…voice of Captain Flint still ringing in my ears: \"Pieces of eight! pieces of eight!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-stevenson-treasure-island-1911-29",
+        "continuesTo": null,
+        "blocks": [
+          1411,
+          1437
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "790a950d18d3fe2810334f1144b037d8c0bbd7055483d451312e57a4a73dafaf"
+      },
+      "questions": [
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-30-q1",
+          "prompt": "Jim says sorting the coins gave him more pleasure than anything. What does his description of them show about the treasure, and about Jim?",
+          "facilitatorNotes": [
+            "The coins come from every nation and the last hundred years: the treasure is the loot of a century of piracy. Jim enjoys their variety and strangeness, “like autumn leaves,” more than their worth. Ask what else autumn leaves suggest."
+          ],
+          "evidence": [
+            "the pictures of all the kings of Europe for the last hundred years",
+            "they were like autumn leaves"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-30-q2",
+          "prompt": "Was it right to leave the three mutineers on the island? What reasons does Jim give, and what makes the scene hard to read?",
+          "facilitatorNotes": [
+            "They could not risk another mutiny, and taking them home to be hanged would be “a cruel sort of kindness”; stores and medicine were left. But the men kneel and beg “for God's sake,” and one fires a shot. Students may judge it merciful, practical, or cruel."
+          ],
+          "evidence": [
+            "to take them home for the gibbet would have been a cruel sort of kindness",
+            "appeal to us, for God's sake, to be merciful"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-30-q3",
+          "prompt": "Silver escapes with a bag of coin instead of being hanged. How does Jim feel about it, and why might Stevenson end Silver’s story this way?",
+          "facilitatorNotes": [
+            "Jim and his friends are “pleased to be so cheaply quit of him,” and Jim even hopes Silver lives in comfort, though he doubts his soul. Stevenson keeps Silver as he has been all along: impossible to pin down. Some readers want justice; others are glad he is free."
+          ],
+          "evidence": [
+            "I think we were all pleased to be so cheaply quit of him.",
+            "his chances of comfort in another world are very small"
+          ]
+        },
+        {
+          "id": "reading-6-stevenson-treasure-island-1911-30-q4",
+          "prompt": "The novel ends not with riches but with Jim’s bad dreams and the parrot’s cry. What does the adventure seem to have left him?",
+          "facilitatorNotes": [
+            "He would not go back for the rest of the silver for anything; the island is “accursed,” and the parrot’s voice still wakes him. The ending turns a treasure story into a memory of fear and loss. Readers may also hear a storyteller’s pleasure in the last ringing words."
+          ],
+          "evidence": [
+            "Oxen and wain-ropes would not bring me back again to that accursed island",
+            "Pieces of eight! pieces of eight!"
+          ]
+        }
+      ]
     }
   ]
 }
