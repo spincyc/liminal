@@ -178,7 +178,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "8bd0cfdebbf8ae5c85cf3c975eca8f44c441b7fbe31a6bbf411a01bb23d6db4b"
+        "textHash": "11905d33576a22b173016637bd89fe3127117724c697d6079d45aa62c554c56b"
       },
       "questions": [
         {
@@ -254,7 +254,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "020e7be7e6136967b337f6ed9c3af6e8374a4c23cfba01fab58f9fba62fe36e3"
+        "textHash": "87de46b2ce45a26ccd807975db368655c37161466e1ca81241b36416925b895a"
       },
       "questions": [
         {
@@ -404,7 +404,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "d7f81128a7a904d789c6c4c6cbe906b5df206f1dcd11fbec9951937ced3d036d"
+        "textHash": "b62710dc40bec70d92b5a9ef4cfe2ada0324835908de5f3055027bee44f66db2"
       },
       "questions": [
         {
@@ -477,7 +477,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "a9076bd80623b2173387e47909371553ba56eba7195c5dce52d4ffa9f55bc550"
+        "textHash": "18ef3675559ba8c15d4bf3a4fd0034d5c407edcbab01f05411902606c92d6ef1"
       },
       "questions": [
         {
@@ -627,7 +627,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "fe2282e4700567ce2cc6ece7459fd585ab255ef690f80ccd47e987d2cb6db6e8"
+        "textHash": "0215075dcafb9d8d01687998df0f03db54ff67e62bfe5dd73290f51b65948fcc"
       },
       "questions": [
         {
@@ -852,7 +852,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "20f2c320e3b84093a9e1cc967389a4b924e10f5f64aa52b3ff73b0bb1a451cbe"
+        "textHash": "96f5ed2d160f51c0622241b0a8550c140704076181177f314752aeacfc14d453"
       },
       "questions": [
         {
@@ -1356,6 +1356,540 @@
             "the Cotton Seed Oil Trust has forced the price of ginning so low that he says it hardly pays him",
             "but they cheated us out of it",
             "Well, he took it just the same,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-19",
+      "title": "The Souls of Black Folk: the golden fleece (Chapter VIII)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow Du Bois from myth to statistics and ask what each kind of writing does for his argument.",
+      "focus": "Cotton as the modern Golden Fleece, and why the Black Belt deserves honest study.",
+      "context": "W. E. B. Du Bois (1868–1963), historian and sociologist, was teaching at Atlanta University when he gathered these essays on Black American life after Emancipation as The Souls of Black Folk (1903). In Chapter VII Du Bois rode through Dougherty County, a cotton county in the Black Belt of southwest Georgia; Chapter VIII studies its Black farm laborers closely. In Greek myth Jason and his Argonauts sailed to the Black Sea for the Golden Fleece of a winged ram; to win it Jason sowed dragon’s teeth, which sprang up as armed men. The epigraph is from William Vaughn Moody’s poem “The Brute” (1901), in which the Brute stands for the machines of modern industry. The New South was the industrialising South after Reconstruction; a parvenu is an upstart newcomer.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. ",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the epigraph to the cabins of Dougherty County; opens “But the Brute said in his breast, \"Till the mills I grind have ceased, The riches shall…”; closes “…rooms; only fourteen have five rooms or more. The mass live in one- and two-room homes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          233,
+          241
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "447b37ac6793d5a9a8bde6238cd2e4c9b44b3091fb923c1b8af1d22a6c582a77"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-19-q1",
+          "prompt": "What is the “golden fleece” of the title, and where is it now “woven”? What does the comparison with Jason’s quest suggest about the wealth of cotton?",
+          "facilitatorNotes": [
+            "Cotton, now spun in the new mills of the Carolinas and Georgia. The myth includes “witchery and dragon’s teeth, and blood and armed men,” and the mills “sprang from dragons’ teeth”: a hint that this wealth too has a violent history. “That Black and human Sea” turns the Black Sea of the myth into the Black workers of the cotton belt."
+          ],
+          "evidence": [
+            "between the ancient and the modern Quest of the Golden Fleece in the Black Sea",
+            "Perhaps they sprang from dragons' teeth.",
+            "across that Black and human Sea"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-19-q2",
+          "prompt": "Some say the Cotton Kingdom has moved from the Black Belt to the “White Belt.” How does Du Bois answer them?",
+          "facilitatorNotes": [
+            "The crop has more than doubled since slavery, so even if Black farmers raise only half of it, they raise more cotton than the whole kingdom the Confederacy relied on. Their work is still central to “a great world-industry.”"
+          ],
+          "evidence": [
+            "Such men forget that the cotton crop has doubled, and more than doubled, since the era of slavery",
+            "the Negro is still supreme in a Cotton Kingdom larger than that on which the Confederacy builded its hopes"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-19-q3",
+          "prompt": "Why does Du Bois distrust “wholesale arguments,” and what method does he choose instead? What does he admit about readers who have already “reached conclusions”?",
+          "facilitatorNotes": [
+            "Arguments about millions ignore differences of time, place and training. He proposes “intimate contact” and the close study of one county. He admits that readers prefer what they already believe to facts: the chapter is written against that habit."
+          ],
+          "evidence": [
+            "All this we can only learn by intimate contact with the masses, and not by wholesale arguments covering millions separate in time and space",
+            "having already reached conclusions in our own minds, we are loth to have them disturbed by facts"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-19-q4",
+          "prompt": "“The country is rich, yet the people are poor.” How does Du Bois explain the paradox? How does the question that ends paragraph 240 turn the history toward the laborers?",
+          "facilitatorNotes": [
+            "Debt: a heritage of slavery’s wasteful economy, brought to crisis by war and Emancipation and deepened by cotton falling from fourteen cents to four. Having traced the masters’ losses, he asks “how fared it with the man?”, and the next paragraph shows that the laborers’ cabins have not changed since slavery."
+          ],
+          "evidence": [
+            "The keynote of the Black Belt is debt",
+            "And if things went ill with the master, how fared it with the man?",
+            "The form and disposition of the laborers' cabins throughout the Black Belt is to-day the same as in slavery days."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-20",
+      "title": "The Souls of Black Folk: one-room cabins (Chapter VIII)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 9,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how Du Bois uses numbers and comparisons to make readers see what they think they already know.",
+      "focus": "Homes, crowding and the family as evidence of a people’s condition.",
+      "context": "W. E. B. Du Bois (1868–1963), historian and sociologist, was teaching at Atlanta University when he gathered these essays on Black American life after Emancipation as The Souls of Black Folk (1903). Chapter VIII studies the Black farm laborers of Dougherty County, a cotton county in southwest Georgia, where Du Bois has found the land rich, the people poor, and debt “the keynote of the Black Belt.” Some fifteen hundred Black families outside the town of Albany live mostly in one- and two-room cabins, many on the sites of the old slave quarters. A tenement was a crowded city apartment house; a show-bill is a printed poster; ante-bellum means before the Civil War.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. Du Bois discusses marriage, separation and illegitimacy in the moral language of 1903 (“sexual immorality,” “female chastity,” “loose habits”), and recalls how owners broke up enslaved couples.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the Negro homes of Dougherty County to marriage and the family; opens “The size and arrangements of a people's homes are no unfair index of their condition. If,…”; closes “…deep seated, and only a general raising of the standard of living will finally cure it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          242,
+          245
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "444853971790852f69caa29f421124003a89d9bbd5c68d43de3325cb96f89d46"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-20-q1",
+          "prompt": "List the details Du Bois gives of the one-room cabin. Which show poverty, and which show people making what they can of it?",
+          "facilitatorNotes": [
+            "Rough unplastered boards, no glass or porch, a smoky fireplace, a show-bill for decoration. Yet some cabins are “kept scrupulously neat, with merry steaming fireplace and hospitable door.” The exception keeps the description from becoming a caricature, though he judges most of the cabins “anything but homes.”"
+          ],
+          "evidence": [
+            "There is no glass, porch, or ornamentation without.",
+            "Now and then one may find such a cabin kept scrupulously neat, with merry steaming fireplace and hospitable door"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-20-q2",
+          "prompt": "Why compare the cabins with “the worst tenement abominations of New York”? What does the comparison make his Northern readers see?",
+          "facilitatorNotes": [
+            "Readers link crowding with cities only; in fact Dougherty has twenty-five persons to ten rooms against New York’s worst, twenty-two. He is fair about the difference: the city room is worse in some ways and better in others, and the country laborer at least lives in the open fields."
+          ],
+          "evidence": [
+            "We have come to associate crowding with homes in cities almost exclusively.",
+            "The worst tenement abominations of New York do not have above twenty-two persons for every ten rooms."
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-20-q3",
+          "prompt": "Of the “four chief causes” of poor homes, which lie with the landlords, which with the tenants, and which with the system? Does Du Bois blame the tenants?",
+          "facilitatorNotes": [
+            "Custom from slavery; tenants who do not know what better houses mean; landlords who do not see that better homes would pay; and a tenant’s “almost hopeless” outlook. Even the tenants’ part is traced to custom and lack of incentive, so the weight of blame falls on the system and the landlords."
+          ],
+          "evidence": [
+            "long custom born of slavery has assigned such homes to Negroes",
+            "as a tenant-farmer his outlook is almost hopeless"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-20-q4",
+          "prompt": "Du Bois calls “easy marriage and easy separation” “the plain heritage from slavery.” Follow the argument from Sam and Mary to Sam’s grandson. How does the history change the way the present should be judged?",
+          "facilitatorNotes": [
+            "Under slavery a master could break a marriage for work or sale, and new mates served his interest; a custom of two centuries cannot vanish in thirty years. Today’s unions are lived “decently and honestly” and broken mostly by poverty, so the cure is economic. His moral standards are those of 1903, but the argument moves the blame from character to history."
+          ],
+          "evidence": [
+            "It is the plain heritage from slavery.",
+            "This widespread custom of two centuries has not been eradicated in thirty years.",
+            "only a general raising of the standard of living will finally cure it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-21",
+      "title": "The Souls of Black Folk: no leisure class (Chapter VIII, part 1)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh Du Bois’s statistics against his reminder that each unit in the mass is a human soul.",
+      "focus": "Ignorance, unbroken toil, and a freedom that brought “not an inch of land.”",
+      "context": "W. E. B. Du Bois (1868–1963), historian and sociologist, was teaching at Atlanta University when he gathered these essays on Black American life after Emancipation as The Souls of Black Folk (1903). Chapter VIII studies the Black farm laborers of Dougherty County, Georgia, a cotton county where debt is “the keynote” and most families live in one- or two-room cabins on old plantation sites. Crops were “laid by” when the last hoeing was done and the crop was left to ripen. To “furnish” a tenant was to supply him on credit. A metayer is a tenant on shares who pays part of the crop as rent; Du Bois borrows the French word. Victuals are food.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. Du Bois calls part of the population “thoroughly lewd and vicious” and the mass “to a degree shiftless”; the passage describes child labor and the destitution of the freedpeople.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the county’s Black population as a whole to the old man on the Baysan road; opens “Looking now at the county black population as a whole, it is fair to characterize it as…”; closes “…a metayer, or tenant on shares, in name, but a laborer with indeterminate wages in fact.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-dubois-souls-of-black-folk-1903-22",
+        "blocks": [
+          246,
+          250
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d6479fa98cd5237663e53ca52cf73badd33be62c6f4058cde2b9c74968287929"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-21-q1",
+          "prompt": "Nearly two-thirds cannot read or write, but Du Bois says this “but partially expresses the fact.” What else does he count as ignorance? Why did slavery “in self-defence” have to keep it?",
+          "facilitatorNotes": [
+            "Ignorance of the world, of economics, of government, of “individual worth and possibilities.” Slavery could last only if the enslaved did not learn these things; the freedpeople inherit that ignorance. The last sentence measures the nation’s ideal against this county."
+          ],
+          "evidence": [
+            "of nearly all those things which slavery in self-defence had to keep them from learning",
+            "America is not another word for Opportunity to all her sons."
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-21-q2",
+          "prompt": "Reread the long sentence in paragraph 247 that begins “Ignorant it may be.” How does its style answer the statistics around it?",
+          "facilitatorNotes": [
+            "Paired verbs (loves and hates, toils and tires, laughs and weeps) and “all this, even as you and I” insist on a shared humanity before more figures follow. He then rejects the charge of laziness: these laborers work under conditions few others would accept."
+          ],
+          "evidence": [
+            "We often forget that each unit in the mass is a throbbing human soul.",
+            "it loves and hates, it toils and tires, it laughs and weeps its bitter tears",
+            "These black thousands are not in reality lazy"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-21-q3",
+          "prompt": "What does Du Bois mean by “Among this people there is no leisure class”? What does a life without leisure lose?",
+          "facilitatorNotes": [
+            "Ninety-six per cent are working, against about half of all Americans. Leisure here is not idleness but the time that makes a cabin a home, lets the old pass on traditions and lets children be children. Only fresh air is left on the other side of the account."
+          ],
+          "evidence": [
+            "But here ninety-six per cent are toiling",
+            "no old folks to sit beside the fire and hand down traditions of the past"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-21-q4",
+          "prompt": "Why does Du Bois repeat “Free!”? What did freedom mean to the freedman of 1865, and to the old man on the Baysan road?",
+          "facilitatorNotes": [
+            "The word is bitter irony: freedom came without money, land or food, so the freedman returned to the old master’s bacon and meal and became a metayer “in name” but a laborer “in fact.” The old man, once one of thirteen hundred owned by one master, now owes eight hundred pounds of cotton in rent and cannot buy land."
+          ],
+          "evidence": [
+            "the most piteous thing amid all this was the black freedman who threw down his hoe because the world called him free",
+            "Not a cent of money, not an inch of land, not a mouthful of victuals",
+            "a metayer, or tenant on shares, in name, but a laborer with indeterminate wages in fact"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-22",
+      "title": "The Souls of Black Folk: the reign of the merchant (Chapter VIII, part 2)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Trace how one tenant’s year becomes a system, and decide how Du Bois answers his own question about blame.",
+      "focus": "The crop-lien system: credit, mortgage and the “slavery of debt.”",
+      "context": "Recap: Du Bois has described the Black farm laborers of Dougherty County, Georgia: poor, mostly unable to read, toiling without leisure, and freed with “not an inch of land,” so that many became metayers, tenants paying a share of the crop as rent. A chattel mortgage pledges movable property, such as a mule and wagon, as security for a debt; a mortgage on the crop pledges it before it is grown. A homestead exemption protected a family’s home and some goods from creditors. The “Spanish-war interludes and Philippine matinees” are the Spanish-American War of 1898 and the war in the Philippines that followed.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. The merchants’ “true tale of shiftlessness and cheating” is reported, not endorsed; Du Bois notes his driver’s “impudent” manner toward Black travellers.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the reign of the merchant to “Whose is the blame?”; opens “Still the price of cotton fell, and gradually the landlords deserted their plantations,…”; closes “…board and clothes. Such an economic organization is radically wrong. Whose is the blame?”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-dubois-souls-of-black-folk-1903-21",
+        "continuesTo": null,
+        "blocks": [
+          251,
+          261
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "73ca3144c0524b892dfec5f2805b734e5eecd62a9aa2b6a121a067c2cf955df7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-22-q1",
+          "prompt": "Du Bois calls the merchant “part banker, part landlord, part contractor, and part despot.” Follow Sam Scott through a year and find each role.",
+          "facilitatorNotes": [
+            "Banker: he lends against mortgages on the mule and the crop. Contractor and supplier: rations, clothes, orders on the doctor and blacksmith. Landlord: he pays the land-owner the rent out of the crop. Despot: the law puts the crop in his control, and he sells it himself and hands over what is left, if anything."
+          ],
+          "evidence": [
+            "part banker, part landlord, part contractor, and part despot",
+            "When the crop is growing the merchant watches it like a hawk"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-22-q2",
+          "prompt": "Why is the tenant “seldom encouraged to save”? What does the sale of a thousand buggies show?",
+          "facilitatorNotes": [
+            "A tenant who saved could escape credit; one who spends stays in debt. When cotton rose, the merchants took the tenants’ gain in buggies, so even a good year ends in the merchant’s pocket."
+          ],
+          "evidence": [
+            "But he is seldom encouraged to save.",
+            "the shrewd merchants of Dougherty County sold a thousand buggies in one season, mostly to black men"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-22-q3",
+          "prompt": "What does the meeting on the River road prove? Why does Du Bois give it as short lines of dialogue?",
+          "facilitatorNotes": [
+            "Credit prices nearly double the cost: five dollars for goods worth three in cash and one or one and a half to raise. The bare questions and answers let the arithmetic speak, and the man answers with plain dignity while Du Bois marks the driver’s “impudent way.”"
+          ],
+          "evidence": [
+            "Here was a man paying five dollars for goods which he could have bought for three dollars cash",
+            "he has a most impudent way of addressing these people"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-22-q4",
+          "prompt": "“Whose is the blame?” What answer does paragraph 260 give, and why bring in the Spanish war and “Philippine matinees”?",
+          "facilitatorNotes": [
+            "The nation’s: the freedman “started in debt” through no choice of his own. The words “interludes” and “matinees” treat foreign wars as entertainment that distracts a careless nation from its duty at home, “as though God really were dead.” Some readers will note that he asks the question again at the end, leaving room for the merchants and the laws he examines next."
+          ],
+          "evidence": [
+            "The Negro farmer started behind,--started in debt.",
+            "just as though God really were dead",
+            "Such an economic organization is radically wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-23",
+      "title": "The Souls of Black Folk: modern serfdom (Chapter VIII)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 9,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort the obstacles Du Bois describes into written law, unwritten law and lawlessness.",
+      "focus": "Why a free laborer in the rural South of 1900 was often not free to leave.",
+      "context": "W. E. B. Du Bois (1868–1963), historian and sociologist, was teaching at Atlanta University when he gathered these essays on Black American life after Emancipation as The Souls of Black Folk (1903). Chapter VIII studies the Black farm laborers of Dougherty County, Georgia. Du Bois has shown how tenants who began freedom without land fall into debt to merchants who supply them on credit against the crop, so that most end the year “even, or in debt.” Peonage is forced labor to pay off a debt. The Thirteenth Amendment (1865) abolished slavery and involuntary servitude except as punishment for crime. Sam Hose, a Black farm worker, was lynched in Georgia in 1899.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. A Black laborer is quoted using a racial slur; Du Bois says the laborers need “stricter guardianship,” uses the stereotyped name “Sambo,” and refers to a lynching.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the causes of the tenants’ debt to the question why the Negroes do not become land-owners; opens “The underlying causes of this situation are complicated but discernible. And one of the…”; closes “…which has for a generation and more been the dream of philanthropist and statesman?”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          262,
+          266
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2696624acf8c08976354708b4b602c61d349126377b977539e0b214b29d9e7d7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-23-q1",
+          "prompt": "Merchants and employers believe “only by the slavery of debt can the Negro be kept at work.” How much does Du Bois grant this opinion, and where does he turn against it?",
+          "facilitatorNotes": [
+            "He grants that some pressure was needed in 1865 and that laborers need closer guidance, a judgement many readers will question. But the opinion shelters cheating, and slavery would have had the same effect on any people: “John and Hans, of Jacques and Pat.” The comparison makes the problem one of history, not race."
+          ],
+          "evidence": [
+            "Without doubt, some pressure was necessary at the beginning of the free-labor system",
+            "Behind this honest and widespread opinion dishonesty and cheating of the ignorant laborers have a good chance to take refuge",
+            "it has in history been just as true of John and Hans, of Jacques and Pat, of all ground-down peasantries"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-23-q2",
+          "prompt": "Why does Du Bois quote the ragged man whittling a stick, in his own speech? What does the man see that the employers’ opinion leaves out?",
+          "facilitatorNotes": [
+            "He sums up the economics in a sentence: one man works, another sits and “gits all,” and “It's wrong.” The “murmur of many ages” makes him the voice of generations. Some readers find the dialect condescending; others note that the man has the moral last word, and that Du Bois warns such thinking may turn to crime or “socialism.”"
+          ],
+          "evidence": [
+            "He muttered to me with the murmur of many ages",
+            "white man sittin' down gits all. It's wrong."
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-23-q3",
+          "prompt": "List the ways a laborer who wanted to leave could be stopped: by the sheriff, by law and by custom. Which does Du Bois call the worst?",
+          "facilitatorNotes": [
+            "Peonage enforced by sheriffs and false theft charges; migration-agent laws taxing recruiters five hundred dollars a county; the unwritten rule that a white man must vouch for any Black stranger; and lawless violence. Peonage is “the lowest economic depths,” where “the spirit of the Thirteenth Amendment is sadly broken.”"
+          ],
+          "evidence": [
+            "the spirit of the Thirteenth Amendment is sadly broken",
+            "is taxed five hundred dollars for each county",
+            "must be vouched for by some white man"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-23-q4",
+          "prompt": "The Black Belt, Du Bois says, was not “a movement toward fields of labor under more genial climatic conditions.” What was it, and what does Dougherty County show about it?",
+          "facilitatorNotes": [
+            "A “huddling for self-protection”: Black people gathered where their numbers gave some safety. Only a tenth of the adults were born in the county, yet Black residents outnumber white four or five to one. Now even here people drift to town, and his closing question opens the next part of the chapter."
+          ],
+          "evidence": [
+            "it was primarily a huddling for self-protection",
+            "There is undoubtedly a security to the blacks in their very numbers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-24",
+      "title": "The Souls of Black Folk: “Shiftless!” (Chapter VIII, part 3)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Test a common judgement, “shiftless,” against the evidence Du Bois brings.",
+      "focus": "How master and man misread each other, and how rents swallowed the tenant’s gains.",
+      "context": "W. E. B. Du Bois (1868–1963), historian and sociologist, was teaching at Atlanta University when he gathered these essays on Black American life after Emancipation as The Souls of Black Folk (1903). Chapter VIII studies the Black farm laborers of Dougherty County, Georgia, most of them tenants kept in debt by merchants who supply food and tools on credit against the coming cotton crop. A “car-window” sociologist judges the South from a train window. Miss Ophelia, the New England cousin in Harriet Beecher Stowe’s Uncle Tom’s Cabin (1852), is remembered for her word “shiftless.” A cropper works another’s land for a share of the crop; a metayer rents land for a share of the crop. The “submerged tenth” and the “Upper Ten” were phrases of the time for the poorest and the richest; rack-rent is the highest rent that can be squeezed out; “the uttermost farthing” echoes Matthew 5:26.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. A white merchant is quoted using a racial slur; Du Bois calls the field-hands careless and improvident while arguing that their conditions, not their nature, explain it.",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the car-window sociologist to the metayers’ “uttermost farthing”; opens “To the car-window sociologist, to the man who seeks to understand and know the South by…”; closes “…the rule was to extract the uttermost farthing from the mass of the black farm laborers.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-dubois-souls-of-black-folk-1903-25",
+        "blocks": [
+          267,
+          271
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "14350cca1bfb573a98833c6f4b426ad7f67e53cedf4aa84c8654e602dc933bad"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-24-q1",
+          "prompt": "What does the scene of the twenty-six ears of corn seem to prove to the car-window sociologist? How does Du Bois reread it?",
+          "facilitatorNotes": [
+            "It seems to prove “Shiftless!” But the same young men work hard and willingly, scorn money-grubbing and are honest. Their defect is lack of incentive: carefulness does not pay, and they see no reason to fatten another man’s mule. The fault lies in the system."
+          ],
+          "evidence": [
+            "They are careless because they have not found that it pays to be careful",
+            "they cannot see why they should take unusual pains to make the white man's land better"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-24-q2",
+          "prompt": "“Both master and man have just enough argument on their respective sides.” State each side’s case. What does the customer’s reply to the Albany merchant add?",
+          "facilitatorNotes": [
+            "The laborer blames the white man for every ill; the masters cannot see why freedmen are “infected with a silly desire to rise,” Du Bois’s ironic voicing of their view. “And so does yo’ hogs” answers that an easy, fed life is what one gives livestock, not free men."
+          ],
+          "evidence": [
+            "infected with a silly desire to rise in the world",
+            "and so does yo' hogs."
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-24-q3",
+          "prompt": "Du Bois ranks the county’s economic classes from the “submerged tenth” to the “Upper Ten.” Why is the croppers’ arrangement bad for “both hirer and hired”?",
+          "facilitatorNotes": [
+            "The cropper has nothing but his labor; the owner supplies everything and takes back the cost of advances from the cropper’s share. Neither side has capital: the laborer has no wages, and the employer’s capital is the wages he owes. It persists on poor land with hard-pressed owners."
+          ],
+          "evidence": [
+            "Thus we have a laborer without capital and without wages, and an employer whose capital is largely his employees' wages."
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-24-q4",
+          "prompt": "Paragraph 271 is built on pairs: “If cotton rose ... if cotton fell.” What pattern do they show, and why end on “the uttermost farthing”?",
+          "facilitatorNotes": [
+            "Every change works against the tenant: rents rise with prices but do not fall; a good crop raises the rent and a bad one costs him his mule. The balanced sentences expose an unbalanced system. The biblical echo pictures a debt collected to the last coin; Du Bois still allows for “cases of personal kindness.”"
+          ],
+          "evidence": [
+            "If cotton rose in price, the rent rose even higher; if cotton fell, the rent remained or followed reluctantly.",
+            "the rule was to extract the uttermost farthing from the mass of the black farm laborers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-dubois-souls-of-black-folk-1903-25",
+      "title": "The Souls of Black Folk: the long procession (Chapter VIII, end)",
+      "sourceId": "dubois-souls-of-black-folk-1903",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 8,
+        "totalMinutes": 28
+      },
+      "challenge": "Read an argument built on figures and decide what the figures can and cannot show.",
+      "focus": "Wage-laborers, renters and land-owners, and why many who rise go to town.",
+      "context": "Recap: Du Bois has sorted the Black farm population of Dougherty County, Georgia, into economic classes: croppers without capital, and metayers, who rent for a share of the crop and are kept down by rising rents and debt. Above them come wage-laborers, money-renters and a few land-owners. Arthur Young (1741–1820) was an English writer on farming who travelled in France and Italy before the French Revolution. The panic of 1893 began a severe depression. Peasant proprietorship is ownership of land by those who farm it.",
+      "contentNote": "This 1903 text discusses racism and the aftermath of enslavement; its historical racial terminology and generalisations belong to the source, not to the site’s voice. ",
+      "excerpt": {
+        "locator": "Chapter VIII, “Of the Quest of the Golden Fleece,” from the metayers’ rent to the end of the chapter; opens “The average metayer pays from twenty to thirty per cent of his crop in rent. The result…”; closes “…perhaps in many places near and far, look for their final healing without the city walls.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-dubois-souls-of-black-folk-1903-24",
+        "continuesTo": null,
+        "blocks": [
+          272,
+          278
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5c4f04b136a90550769b0f8cb2c0afdb72dba222733e19f26a95d5b5154b40d2"
+      },
+      "questions": [
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-25-q1",
+          "prompt": "Why quote Arthur Young on Italy and France? What does the comparison claim about Dougherty County?",
+          "facilitatorNotes": [
+            "It sets the county in the history of European peasantries: share-tenancy makes a country poor and leaves tenants “removable at pleasure.” Recalling France before the Revolution also hints at what such injustice can lead to. Half of the county’s Black population lives on this plane."
+          ],
+          "evidence": [
+            "He was talking of Italy a century ago; but he might have been talking of Dougherty County to-day.",
+            "The metayers are considered as little better than menial servants, removable at pleasure"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-25-q2",
+          "prompt": "What makes renters “the first of the emerging classes”? Why is their position unstable?",
+          "facilitatorNotes": [
+            "They choose their own crops and handle money, and they tend to be the shrewder farmers who can bargain for better terms. Few stay renters for long: a run of bad years sinks them to metayers, and a run of good ones lets them buy land."
+          ],
+          "evidence": [
+            "The sole advantage of this small class is their freedom to choose their crops",
+            "either they sink to metayers, or with a successful series of harvests rise to be land-owners"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-25-q3",
+          "prompt": "The tax returns, Du Bois warns, “vary strangely from year to year.” How does he use figures he does not fully trust, and what does he still conclude?",
+          "facilitatorNotes": [
+            "He names the problems (the panic, cheap cotton, sworn returns shaped by public opinion) and draws only cautious conclusions: little capital, and land-owners a “transient class.” Even so, fifteen thousand acres saved by poor laborers in a generation is “a creditable showing.”"
+          ],
+          "evidence": [
+            "of uncertain statistical value",
+            "are really a transient class",
+            "And yet these fifteen thousand acres are a creditable showing"
+          ]
+        },
+        {
+          "id": "reading-11-dubois-souls-of-black-folk-1903-25-q4",
+          "prompt": "The chapter ends with “that long procession” to town. What does Du Bois mean by “The sin of the country districts is visited on the town”?",
+          "facilitatorNotes": [
+            "The few who own land often buy small homesteads near town, and tenants and ruined renters follow. The city’s “social sores” grow from rural injustice, so their cure lies “without the city walls,” in the countryside. The Golden Fleece of cotton, it turns out, enriches neither the field nor the town."
+          ],
+          "evidence": [
+            "how many field-hands, how many tenants, how many ruined renters, have joined that long procession?",
+            "The sin of the country districts is visited on the town",
+            "look for their final healing without the city walls"
           ]
         }
       ]
