@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "milton-paradise-lost-1890",
+  "readings": [
+    {
+      "id": "reading-12-milton-paradise-lost-1890-01",
+      "title": "Paradise Lost, II: the throne and the case for war",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow two speeches as arguments: find each speaker’s claim, his reasons, and what he leaves out.",
+      "focus": "A leader who turns defeat into a claim to rule, and a warrior who would rather end than be less.",
+      "context": "Paradise Lost (1667; twelve books from 1674) is John Milton’s epic of the fall of the rebel angels and of Adam and Eve. Book I left Satan and his followers in Hell, where they built the palace of Pandemonium and gathered in council. Line numbers here are the ones this edition prints in its margin. Book II opens with the debate itself. Ormuz (Hormuz) and Ind (India) stand for fabulous wealth; Powers, Dominions and Thrones are orders of angels; the Thunderer is God. Moloch, “sceptred king,” is named for a god of the Hebrew Bible. Sentence means formal opinion; unexpert, inexperienced; opprobrious, shameful; the “forgetful lake” is the burning lake that stunned them in Book I; essential means essence or being. This cheap 1890 printing has misprints of its own, kept as printed: “Angles” for angels and “suphur” for sulphur.",
+      "contentNote": "War, torment and the wish for annihilation are argued from the rebels’ side; the speakers are characters, not the poem’s voice.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 1–105: Satan’s opening speech to the council and Moloch’s reply; opens “High on a throne of royal state—which far Outshone the wealth of Ormuz and of Ind, Or…”; closes “…to alarm, Though inaccessible, his fatal throne; Which, if not victory, is yet revenge.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-milton-paradise-lost-1890-02",
+        "blocks": [
+          29,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a5b8c4f0aad950f2518302971204807aaa7f5f222ad19519a46de8d1459b288"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-01-q1",
+          "prompt": "The narrator says Satan was “by merit raised To that bad eminence.” How can merit raise anyone to a bad height? What does the paradox say about Satan’s throne?",
+          "facilitatorNotes": [
+            "Satan’s gifts are real: he leads because he is the ablest. But the height is “bad” because it is the eminence of Hell, reached by rebellion. The next lines repeat the twist: despair lifts him “beyond hope,” and he still aspires higher. Readers can debate whether the narrator admires or mocks; the syntax does both at once."
+          ],
+          "evidence": [
+            "Satan exalted sat, by merit raised To that bad eminence",
+            "from despair Thus high uplifted beyond hope, aspires Beyond thus high"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-01-q2",
+          "prompt": "How does Satan argue that Hell gives the rebels an advantage Heaven lacked?",
+          "facilitatorNotes": [
+            "In Heaven the happier state invites envy; in Hell the highest place only means the greatest share of pain, so nobody will covet it. Without goods to quarrel over there can be no faction, and so they return to war more united than Heaven ever was. The argument is ingenious and self-serving: it makes his rule look like a burden he carries for them."
+          ],
+          "evidence": [
+            "Will envy whom the highest place exposes Foremost to stand against the Thunderer's aim",
+            "To union and firm faith and firm accord, More than can be in Heaven"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-01-q3",
+          "prompt": "Moloch says that “descent and fall To us is adverse” and the climb back to Heaven is easy. What is persuasive about this, and what does it ignore?",
+          "facilitatorNotes": [
+            "He appeals to the angels’ nature: they rise by their “proper motion,” and the fall was forced on them. He also reminds them how hard the defeat was, which cuts against his own point. He ignores God’s power except to say nothing could be worse than Hell, then imagines being destroyed as no loss. Students can trace how much of the speech is feeling rather than reasoning."
+          ],
+          "evidence": [
+            "That in our proper motion we ascend Up to our native seat; descent and fall To us is adverse.",
+            "What can be worse Than to dwell here, driven out from bliss"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-01-q4",
+          "prompt": "Before Moloch speaks, the narrator says “rather than be less Cared not to be at all.” How does this sentence shape the way you hear his speech? Is he the most honest speaker so far?",
+          "facilitatorNotes": [
+            "It explains the speech’s logic: he will accept annihilation (“happier far Than miserable to have eternal being”) and calls even failed war “revenge.” Some readers find him the most candid of the devils, with no pretence about winning; others find him the most despairing, since his plan has no aim beyond hurting God. Both readings can cite his last line."
+          ],
+          "evidence": [
+            "and rather than be less Cared not to be at all.",
+            "happier far Than miserable to have eternal being!",
+            "Which, if not victory, is yet revenge."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-02",
+      "title": "Paradise Lost, II: Belial counsels endurance",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Hold the narrator’s warning and the speaker’s eloquence side by side, and decide how each affects your judgment.",
+      "focus": "Persuasion that sounds wise: fear of worse pain, love of thought, and the hope of getting used to Hell.",
+      "context": "Recap: In Hell’s council Satan has asked whether to pursue open war or “covert guile.” Moloch, fiercest of the rebel angels, demanded war at once, preferring annihilation to defeat. Line numbers here are the ones this edition prints in its margin. Belial is a Hebrew word for worthlessness that became a devil’s name. Manna is the food God sent the Israelites in the desert; dash means to frustrate; the ethereal mould is Heaven’s pure substance; amain, at full speed; converse, live among. This cheap 1890 printing has misprints of its own, kept as printed, such as “dissude” for dissuade.",
+      "contentNote": "Belial imagines eternal punishment in detail.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 106–225: Belial introduced, and his speech against war; opens “He ended frowning, and his look denounced Desperate revenge, and battle dangerous To less…”; closes “…For happy though but ill, for ill not worst; If we procure not to ourselves more woe.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-01",
+        "continuesTo": "reading-12-milton-paradise-lost-1890-03",
+        "blocks": [
+          33,
+          34
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "781a6bb3e86d9a25fc9aca69a04cbe62800e48f71fe7bb830ca2705b2f1629c4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-02-q1",
+          "prompt": "What does the narrator tell us about Belial before he says a word? Find the phrase that warns us about how he will argue.",
+          "facilitatorNotes": [
+            "He is graceful and handsome, but “false and hollow”; his tongue “Dropt manna” and could make the worse case look the better. That is the classical charge against sophists. The warning puts readers on guard, yet the speech that follows is still moving, which is part of Milton’s point about eloquence."
+          ],
+          "evidence": [
+            "But all was false and hollow",
+            "could make the worse appear The better reason"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-02-q2",
+          "prompt": "Belial asks who would lose “this intellectual being, Those thoughts that wander through eternity.” Is this the speech’s noblest moment, or part of the trick?",
+          "facilitatorNotes": [
+            "Read literally, it values mind above everything, even in pain, and many readers find it the most beautiful line in the council. In context it also answers Moloch: if being matters this much, annihilation is no cure, so do nothing. A defensible reading holds both: a true value used to argue for inaction."
+          ],
+          "evidence": [
+            "Sad cure! for who would lose, Though full of pain, this intellectual being, Those thoughts that wander through eternity?"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-02-q3",
+          "prompt": "Find the passage where Belial imagines what God could still do to them. How does he use those pictures to make his case?",
+          "facilitatorNotes": [
+            "He moves from questions to a vision of sevenfold fire, cataracts of flame and each angel “on his rock transfixed,” ending in a line of three negatives. Having made the worst vivid, he can say of the present: “This would be worse.” Fear does the persuading; the logic is that the present is bearable by comparison."
+          ],
+          "evidence": [
+            "Each on his rock transfixed, the sport and prey Of racking whirlwinds",
+            "Unrespited, unpitied, unreprieved,",
+            "This would be worse."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-02-q4",
+          "prompt": "Belial ends by hoping that “This horror will grow mild, this darkness light.” Is his advice wisdom, cowardice, or something else? Use the speech and the narrator’s introduction.",
+          "facilitatorNotes": [
+            "The narrator calls his thoughts “low” and him “Timorous and slothful.” But the speech has a real argument: their strength to suffer equals their strength to act, and the law that punishes defeat is not unjust. Readers may hear acceptance, even a kind of stoicism; others hear a man who has given up and calls it prudence. The phrase “for ill not worst” shows how low he has set the bar."
+          ],
+          "evidence": [
+            "To suffer, as to do, Our strength is equal",
+            "This horror will grow mild, this darkness light:",
+            "For happy though but ill, for ill not worst;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-03",
+      "title": "Paradise Lost, II: Mammon’s empire and Beelzebub’s plan",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Track how the debate turns: each new speaker answers the last, and the narrator finally reveals who wrote the outcome.",
+      "focus": "Freedom in Hell versus servitude in Heaven, and a revenge aimed at a new and weaker creature.",
+      "context": "Recap: In Hell’s council Moloch has urged open war and Belial has answered that war would only bring worse pain; better to endure and hope that God forgets them. Mammon is the Aramaic word for wealth, made into a devil; in Book I he led the mining of gold for Pandemonium. Halleluiahs are hymns of praise; sovran means sovereign; Michaël is the archangel who led Heaven’s army; Atlantean, like the giant Atlas who holds up the sky; senteries, sentries.",
+      "contentNote": "Beelzebub plans to destroy or corrupt humankind out of revenge.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 226–389: Mammon’s speech, the assembly’s applause, and Beelzebub’s proposal; opens “Thus Belial, with words clothed in reason's garb, Counselled ignoble ease and peaceful…”; closes “…in all their eyes. With full assent They vote; whereat his speech he thus renews:”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-02",
+        "continuesTo": "reading-12-milton-paradise-lost-1890-04",
+        "blocks": [
+          35,
+          38
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "acc8c40db3ba33b00dd2eeef1bdbe27ed376e1a9153c4cad5b942c26213a2a72"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-03-q1",
+          "prompt": "Why does Mammon say that even a pardon would be unbearable? Which words show what he thinks worship is?",
+          "facilitatorNotes": [
+            "Pardon would mean standing humbly before God, singing “Forced Halleluiahs” and offering “servile offerings.” He imagines eternity “so spent” as weariness. His key phrase, “To whom we hate,” shows he cannot imagine praise as anything but servitude."
+          ],
+          "evidence": [
+            "Forced Halleluiahs; while he lordly sits Our envied sovran",
+            "How wearisome Eternity so spent, in worship paid To whom we hate!"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-03-q2",
+          "prompt": "Mammon prefers “Hard Liberty before the easy yoke Of servile pomp.” What does he propose to build in Hell, and where does his independence quietly depend on imitating God?",
+          "facilitatorNotes": [
+            "He wants to make great things of small, work “ease out of pain,” and raise magnificence from Hell’s gems and gold. But he asks, “As he our darkness, cannot we his light Imitate,” so his freedom is a copy of Heaven. Some readers admire the self-reliance; others note that it is the same ambition that built Pandemonium."
+          ],
+          "evidence": [
+            "Hard Liberty before the easy yoke Of servile pomp.",
+            "Thrive under evil, and work ease out of pain,",
+            "As he our darkness, cannot we his light Imitate when we please?"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-03-q3",
+          "prompt": "The assembly’s applause is compared to hollow rocks holding the sound of a storm. What does the simile suggest about why they cheer Mammon?",
+          "facilitatorNotes": [
+            "The sound is what remains after the tempest, and it lulls exhausted sailors in a sheltering bay. The angels cheer from relief: they “dreaded worse than Hell” another battle with Michaël. The simile makes the applause tired and fearful rather than convinced."
+          ],
+          "evidence": [
+            "as when hollow rocks retain The sound of blustering winds",
+            "They dreaded worse than Hell; so much the fear Of thunder and the sword of Michaël"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-03-q4",
+          "prompt": "Beelzebub dismisses both war and peace and proposes “Some easier enterprise.” What is it, and what does the narrator reveal about where the plan came from? How does that change your view of the debate?",
+          "facilitatorNotes": [
+            "He proposes finding the new world and its race called Man, to destroy or seduce them so that God undoes his own work. The narrator then says the plan was “first devised By Satan, and in part proposed.” The council turns out to be staged: the other speeches are allowed to exhaust the alternatives before the leader’s plan arrives. Readers can compare it with real political assemblies; some may argue the speeches were sincere even if the outcome was arranged."
+          ],
+          "evidence": [
+            "What if we find Some easier enterprise!",
+            "Seduce them to our party, that their God May prove their foe",
+            "first devised By Satan, and in part proposed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-04",
+      "title": "Paradise Lost, II: who shall go?",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how silence, a single offer and a hurried exit work as political moves.",
+      "focus": "Courage and calculation in Satan’s offer, and the narrator’s reproach to quarrelling humanity.",
+      "context": "Recap: Mammon urged the fallen angels to build their own empire in Hell, and the assembly applauded. Beelzebub, Satan’s second, then proposed a better revenge: to find the new world God has promised and ruin its new race, Man. The narrator revealed that the plan was Satan’s own. Synod means council; demur, hesitation; the abortive gulf is the formless Chaos outside Hell; intend means attend to; erst, before. This cheap 1890 printing has misprints of its own, kept as printed: the line that reads “lest men should boast” is a syllable short.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 390–505: Beelzebub asks for a volunteer, Satan accepts the voyage, and the council ends; opens “\"Well have ye judged, well ended long debate, Synod of Gods! and, like to what ye are,…”; closes “…Man had not hellish foes enow besides, That day and night for his destruction wait.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-03",
+        "continuesTo": null,
+        "blocks": [
+          39,
+          42
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ff578a1687c9690063e9a01fc308eb6f3a86546b0e00e240450922eb47fac67"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-04-q1",
+          "prompt": "Why does Beelzebub make the voyage sound so dangerous? List the obstacles he names.",
+          "facilitatorNotes": [
+            "The “unbottomed infinite abyss,” the “palpable obscure,” the long flight “Over the vast abrupt,” and the angels’ sentries round the new world. Making the task frightening raises the value of whoever accepts it, and everyone knows who will. The danger is real and also rhetorical."
+          ],
+          "evidence": [
+            "The dark unbottomed infinite abyss, And through the palpable obscure find out His uncouth way",
+            "for on whom we send The weight of all, and our last hope, relies."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-04-q2",
+          "prompt": "How does Satan turn the danger into a reason why he should rule?",
+          "facilitatorNotes": [
+            "He says a king who accepts the honours of the throne must accept “as great a share Of hazard as of honour,” and more. Taking the risk alone proves he deserves to reign. Readers can admire the logic of responsible kingship and also see how it secures his place."
+          ],
+          "evidence": [
+            "Wherefore do I assume These royalties, and not refuse to reign, Refusing to accept as great a share Of hazard as of honour",
+            "This enterprise None shall partake with me."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-04-q3",
+          "prompt": "Why does Satan rise before anyone can answer? What does the narrator’s explanation add to the picture of his courage?",
+          "facilitatorNotes": [
+            "Others might now offer to go, “Certain to be refused,” and win a cheap reputation as his rivals. So he ends the meeting at once. The courage is real (“hazard huge”), but so is the calculation: he will not share the glory. A fair answer keeps both."
+          ],
+          "evidence": [
+            "Prudent, lest from his resolution raised, Others among the chief might offer now",
+            "winning cheap the high repute Which he through hazard huge must earn."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-04-q4",
+          "prompt": "After the sunset simile, the narrator breaks in: “Oh, shame to men!” What is he comparing, and why put it here?",
+          "facilitatorNotes": [
+            "Devils agree among themselves while men, who have the hope of grace and a God “proclaiming peace,” wage cruel wars. The devils’ unity, just shown in the simile of clearing weather, becomes a rebuke to human readers. Some may object that the devils’ concord is also manipulated; the narrator’s point is about men, not about praising Hell."
+          ],
+          "evidence": [
+            "Oh, shame to men! Devil with devil damned Firm concord holds, men only disagree",
+            "Man had not hellish foes enow besides,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-05",
+      "title": "Paradise Lost, II: games, songs and arguments in Hell",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Read a long catalogue for its pattern: what each group does, and how the narrator judges it.",
+      "focus": "The fallen angels repeat human culture, sport, war, poetry, philosophy, exploration, and find no rest in any of it.",
+      "context": "Paradise Lost (1667; twelve books from 1674) is John Milton’s epic of the fall of the rebel angels and of Adam and Eve. Book I left Satan and his followers in Hell, where they built the palace of Pandemonium and gathered in council. Line numbers here are the ones this edition prints in its margin. Here the council in Pandemonium has ended: Satan alone will fly through Chaos to find the new world and the race called Man, and the others wait for his return. Pythian games were held at Delphi; brigads are brigades; Typhœan, like the giant Typhon; Alcides is Hercules, who in agony from a poisoned robe threw his servant Lichas into the sea; Styx, Acheron, Cocytus, Phlegeton and Lethe are the rivers of the classical underworld; frore means frosty; Medusa’s look turned people to stone; Tantalus was punished with water that fled his lips. This cheap 1890 printing has misprints of its own, kept as printed: “Lethear” for Lethean, and “Fixed faith,” where the line before ends on “fate.”",
+      "contentNote": "The punishments of the damned, with images of agony from classical myth.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 506–628: the council dissolved, the fallen angels’ pastimes, and the exploration of Hell; opens “The Stygian council thus dissolved; and forth In order came the grand infernal peers;…”; closes “…Than fables yet have feigned or fear conceived, Gorgons, and Hydras, and Chimæras dire.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-milton-paradise-lost-1890-06",
+        "blocks": [
+          43,
+          44
+        ],
+        "startChar": null,
+        "endChar": 4670,
+        "textHash": "8b33ae2b45ca0b59f324e34b9d0727f27fa46f8eca9bff0a004e0196f94e5554"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-05-q1",
+          "prompt": "Name four ways the fallen angels pass the time. Which human activities do they echo?",
+          "facilitatorNotes": [
+            "Racing and chariot games “As at the Olympian games,” mock battles, uprooting hills in rage, singing their own deeds, philosophical argument, and exploring Hell. These are the arts and sports of human culture, so the passage makes Hell look like a civilisation; the similes keep pointing to Greece."
+          ],
+          "evidence": [
+            "As at the Olympian games or Pythian fields;",
+            "Others more mild, Retreated in a silent valley, sing",
+            "Another part, in squadrons and gross bands, On bold adventure to discover wide"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-05-q2",
+          "prompt": "What does the narrator admire in the angels’ song, and what does he criticise?",
+          "facilitatorNotes": [
+            "The song is “partial,” telling their side and blaming Fate and Chance, but its harmony “Suspended Hell.” He separates content from art: the music is beautiful even when the story is biased. Ask whether the same could be said of Satan’s speeches."
+          ],
+          "evidence": [
+            "Their song was partial, but the harmony",
+            "Suspended Hell, and took with ravishment The thronging audience."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-05-q3",
+          "prompt": "The philosophers argue about “providence, foreknowledge, will, and fate” and are “in wandering mazes lost.” Why might Milton put these questions in Hell, when his own poem argues about them?",
+          "facilitatorNotes": [
+            "The epic sets out to “justify the ways of God to men,” so these are its own questions. In Hell the debate goes round without end because the debaters argue to excuse themselves. The narrator calls it “Vain wisdom” yet grants that it charms pain for a while. Some readers see Milton mocking philosophy; others see a warning about reasoning without faith or honesty."
+          ],
+          "evidence": [
+            "Of providence, foreknowledge, will, and fate;",
+            "And found no end, in wandering mazes lost.",
+            "Vain wisdom all, and false philosophy!"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-05-q4",
+          "prompt": "What makes the torment beside Lethe especially cruel? Look at the phrase “so near the brink.”",
+          "facilitatorNotes": [
+            "The damned are ferried across the river of forgetting, which would end all pain with “one small drop,” but Medusa guards it and the water flees them as it fled Tantalus. Hope is part of the punishment. The paradox “Created evil, for evil only good” sums up a world made only for pain."
+          ],
+          "evidence": [
+            "with one small drop to lose In sweet forgetfulness all pain and woe,",
+            "All in one moment, and so near the brink.",
+            "A universe of death, which God by curse Created evil, for evil only good,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-06",
+      "title": "Paradise Lost, II: the shapes at Hell’s gate",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Picture what Milton describes by saying what it is not, and follow a quarrel in which neither speaker knows who the other is.",
+      "focus": "Satan’s solitary flight, the monstrous guardians of the gate, and a duel interrupted.",
+      "context": "Recap: The council in Hell has dissolved; while the fallen angels sing, argue and explore their prison, Satan sets out alone to find the new world. Bengala is Bengal; Ternate and Tidore are spice islands; the Ethiopian is the sea off Africa. Hell-bounds are Hell’s boundaries; Cerberean, like Cerberus, the many-headed dog of the underworld; Scylla, a sea-monster; Trinacrian, Sicilian; Ophiuchus, a constellation; the Caspian is the inland sea. This cheap 1890 printing has misprints of its own, kept as printed: “the artic sky, und from his horrid hair” (arctic, and).",
+      "contentNote": "A monstrous female figure whose hounds creep back into her womb, and a night-hag “Lured with the smell of infant blood.”",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 629–726: Satan flies to the gates of Hell and meets the two shapes that guard them; opens “Meanwhile the Adversary of God and Man, Satan, with thoughts inflamed of highest design,…”; closes “…Fast by Hell-gate and kept the fatal key, Risen, and with hideous outcry rushed between.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-05",
+        "continuesTo": "reading-12-milton-paradise-lost-1890-07",
+        "blocks": [
+          44,
+          47
+        ],
+        "startChar": 4671,
+        "endChar": null,
+        "textHash": "a0f0873542a63456792e64fae3acf096cb75196e135a80f5846474d90f23650b"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-06-q1",
+          "prompt": "Satan seen from far off is compared to a merchant fleet carrying spices. What does the comparison suggest about his journey?",
+          "facilitatorNotes": [
+            "He looks like ships on a trading voyage “Close sailing from Bengala,” bringing goods home. The picture makes his mission a commercial venture to a rich new world, and anticipates the colonial voyages of Milton’s own century. It also shrinks him to a speck “Hangs in the clouds.”"
+          ],
+          "evidence": [
+            "As when far off at sea a fleet descried Hangs in the clouds",
+            "so seemed Far off the flying Fiend."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-06-q2",
+          "prompt": "How does Milton describe the second shape, which “shape had none”? What do the negatives and contradictions achieve?",
+          "facilitatorNotes": [
+            "He says it cannot be distinguished “in member, joint or limb,” is substance or shadow, “For each seemed either.” Only its blackness, fierceness, dart and crown are clear. Death cannot be pictured, so the language undoes itself; readers feel the horror of a thing without form."
+          ],
+          "evidence": [
+            "If shape it might be called that shape had none",
+            "For each seemed either—black it stood as Night,"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-06-q3",
+          "prompt": "Satan and the guardian insult each other. What does each claim, and what irony does the reader not yet know?",
+          "facilitatorNotes": [
+            "Satan calls him “Hell-born” and threatens to teach him not to contend with Spirits of Heaven; the guardian calls Satan a traitor, “Hell-doomed,” and says “Where I reign king.” Both claim kingship over Hell. The next passage reveals they are father and son, so the quarrel is a family one before anyone knows it."
+          ],
+          "evidence": [
+            "Retire, or taste thy folly, and learn by proof, Hell-born!",
+            "Where I reign king, and, to enrage thee more, Thy king and lord?"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-06-q4",
+          "prompt": "The narrator says neither was “like To meet so great a foe” except once more. What does this glimpse of the future do to the scene?",
+          "facilitatorNotes": [
+            "It hints that a greater enemy will one day defeat both Satan and Death; in Christian terms, Christ. The duel is stopped before it starts, and the narrator’s foreknowledge makes their fury look small. Some readers take it as reassurance; others notice how it builds suspense even while telling the outcome."
+          ],
+          "evidence": [
+            "For never but once more was either like To meet so great a foe.",
+            "Had not the snaky Sorceress, that sat Fast by Hell-gate and kept the fatal key,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-07",
+      "title": "Paradise Lost, II: Sin tells her story",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the episode both as a story and as an allegory, and say what each detail means on both levels.",
+      "focus": "Sin born from Satan’s head, Death born from Sin, and evil that breeds and devours itself.",
+      "context": "Recap: Satan has flown to the gates of Hell and found two guardians: a woman who ends in a serpent, ringed by hounds, and a black, formless shape with a dart and a crown. Satan and the shape were about to fight when the woman rushed between them. The episode builds on a verse in the New Testament letter of James: desire conceives and gives birth to sin, and sin, when it is complete, brings forth death. Interposest means put between; prevented, stopped in advance; portentous, an evil omen; dint, blow. This cheap 1890 printing has misprints of its own, kept as printed: “He spake,” though Sin is the speaker.",
+      "contentNote": "An allegory of incest and rape: Sin is raped by her son Death, and the hounds born of it feed on her body.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 727–814: the portress of Hell-gate stops the fight and tells Satan who she is; opens “\"O father, what intends thy hand, she cried, Against thy only son? What fury, O son,…”; closes “…tempered heavenly; for that mortal dint, Save he who reigns above, none can resist.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-06",
+        "continuesTo": "reading-12-milton-paradise-lost-1890-08",
+        "blocks": [
+          48,
+          51
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b544dad00b792062c5a47302209aa543c450e84255ea71a987dc68a6036386a5"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-07-q1",
+          "prompt": "Sin calls one combatant “father” and the other “son.” How does this one sentence change the meaning of the fight?",
+          "facilitatorNotes": [
+            "The duel becomes a father raising his hand against his “only son,” and both against her. She also tells them God “laughs the while,” which turns their fury into service to their enemy. The family relation is the allegory: Satan, Sin and Death are a parody of a holy family."
+          ],
+          "evidence": [
+            "O father, what intends thy hand, she cried, Against thy only son?",
+            "For him who sits above, and laughs the while At thee ordained his drudge"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-07-q2",
+          "prompt": "Where and when was Sin born, according to her account? What does her birth suggest about the origin of sin?",
+          "facilitatorNotes": [
+            "She sprang from Satan’s head in Heaven, during the assembly where he “combined In bold conspiracy,” as his pain and dizziness reached a crisis. Sin is born of thought and pride, not of the body. The angels recoil and then grow “familiar”: what first horrifies becomes attractive."
+          ],
+          "evidence": [
+            "Out of thy head I sprung.",
+            "and called me Sin, and for a sign Portentous held me; but familiar grown I pleased"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-07-q3",
+          "prompt": "Satan, Sin says, saw in her “thy perfect image” and fell in love. What does this add to the allegory?",
+          "facilitatorNotes": [
+            "He loves himself in her: sin is self-love, and their union is narcissism. Death is born of that love, and Death’s rape of Sin produces the hounds that torment her; the allegory shows evil multiplying and turning on itself. Readers may find the material repellent; the repulsion is part of Milton’s design."
+          ],
+          "evidence": [
+            "Thyself in me thy perfect image viewing Becamest enamoured",
+            "These yelling monsters, that with ceaseless cry Surround me"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-07-q4",
+          "prompt": "Sin speaks of God’s “wrath, which he calls justice.” Whose view is this, and how should a reader weigh it?",
+          "facilitatorNotes": [
+            "It is Sin’s, and Satan’s party’s: the poem as a whole calls God just. Yet Milton gives the accusation a strong voice, as he does Satan’s. Ask students whether her suffering makes the charge more sympathetic, and whether the allegory (sin punished by what it breeds) answers it. Note too that Death cannot kill her without ending himself: “His end with mine involved.”"
+          ],
+          "evidence": [
+            "Whate'er his wrath, which he calls justice, bids;—",
+            "His end with mine involved"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-08",
+      "title": "Paradise Lost, II: the gates opened",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch a speaker change his tone to get what he wants, then read the description of Chaos for its sound and syntax.",
+      "focus": "Satan’s promise, Sin’s disobedience, gates that cannot be shut, and the disorder outside creation.",
+      "context": "Recap: At the gates of Hell, Satan nearly fought the black shape that guards them until the portress, Sin, told her story: she sprang from Satan’s head in Heaven, bore him a son, Death, and keeps the key of Hell. Buxom here means yielding; maw, stomach; Tartarus and Erebus are names for the underworld; embryon, unformed; Barca and Cyrene are in the Libyan desert; frith, firth, a sea channel; Bellona, the goddess of war; vans, wings; Syrtis, a quicksand off Libya; the Arimaspian, a one-eyed people of legend who stole gold from griffins. This cheap 1890 printing has misprints of its own, kept as printed, such as “unforseen.”",
+      "contentNote": "Death delights at the promise of endless prey.",
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 815–950: Satan’s bargain with Sin and Death, the opening of the gates, and his first flight into Chaos; opens “She finished, and the subtle Fiend his lore Soon learned, now milder, and thus answered…”; closes “…wings, or feet, pursues his way, And swims, or sinks, or wades, or creeps, or flies.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-07",
+        "continuesTo": "reading-12-milton-paradise-lost-1890-09",
+        "blocks": [
+          52,
+          57
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7a06788f3b015aa0f44d6f6eb1b9efcb6884506d473bee548a31f6d709ea85a7"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-08-q1",
+          "prompt": "How does Satan’s tone change once he learns who Sin and Death are? What does he promise them?",
+          "facilitatorNotes": [
+            "“Now milder,” he answers “smooth,” calls her “Dear daughter” and recalls their “joys Then sweet.” He presents himself as a liberator and promises a place where they will be “fed and filled Immeasurably.” Death grins “a ghastly smile.” The flattery and the promise of prey show Satan using whatever works."
+          ],
+          "evidence": [
+            "Soon learned, now milder, and thus answered smooth:",
+            "There ye shall be fed and filled Immeasurably; all things shall be your prey.",
+            "Grinned horrible a ghastly smile"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-08-q2",
+          "prompt": "Why does Sin decide to disobey the command to keep the gates shut? Compare her reasoning with Satan’s own rebellion.",
+          "facilitatorNotes": [
+            "She owes nothing to the God who “hates me” and confined her in pain; she owes obedience to her “author,” Satan. Like Satan she treats God’s order as tyranny and chooses her own lord. Some readers find her grievance understandable; the poem shows it repeating the first rebellion in miniature."
+          ],
+          "evidence": [
+            "But what owe I to his commands above, Who hates me",
+            "Thou art my father, thou my author, thou My being gavest me; whom should I obey But thee?"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-08-q3",
+          "prompt": "“She opened, but to shut Excelled her power.” Read the line as allegory. What can be opened that cannot be shut?",
+          "facilitatorNotes": [
+            "The gates stand wide enough for an army with banners and breathe out smoke and flame. Once sin opens the way, it cannot undo it; the consequences pour out beyond her control. The short sentence after the long account of bolts and bars makes the point land."
+          ],
+          "evidence": [
+            "She opened, but to shut Excelled her power;",
+            "So wide they stood, and like a furnace mouth Cast forth redounding smoke and ruddy flame."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-08-q4",
+          "prompt": "What is Chaos like, and what saves Satan when he begins to fall? How does Milton make the verse itself feel like struggling through it?",
+          "facilitatorNotes": [
+            "It is an ocean without bound or dimension where the elements fight and “Chance govern all”; he drops “Ten thousand fathom” until “by ill chance” a cloud blows him up again. The last lines pile up prepositions and verbs, “O'er bog or steep,” “swims, or sinks, or wades, or creeps, or flies,” so the reader labours with him. The phrase “ill chance” is the narrator’s: it was bad luck for us that he survived."
+          ],
+          "evidence": [
+            "The womb of Nature and perhaps her grave,",
+            "had not by ill chance The strong rebuff of some tumultuous cloud",
+            "And swims, or sinks, or wades, or creeps, or flies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-milton-paradise-lost-1890-09",
+      "title": "Paradise Lost, II: Chaos and the hanging world",
+      "sourceId": "milton-paradise-lost-1890",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Compare two speakers who each want something from the other, and notice when the narrator steps outside the story’s time.",
+      "focus": "A bargain with Chaos, a glimpse of the future, and the first sight of the created world.",
+      "context": "Recap: Sin has opened the gates of Hell for Satan, promising herself and Death a new world to feed on. Satan has launched into Chaos, the boundless disorder outside creation, fallen, been blown back up, and struggled on. Orcus and Ades are names of the god of the dead; Demogorgon, a dreaded underworld power; the Anarch is Chaos; incomposed, disordered; Argo was Jason’s ship, which passed between the clashing rocks of the Bosporus; Ulysses steered between Scylla and the whirlpool Charybdis; empyreal Heaven is the highest heaven; pendent, hanging. This cheap 1890 printing has misprints of its own, kept as printed: “Set Sable-vested Night.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Paradise Lost, Book II, lines 951–1055: Satan meets Chaos and Night, wins his way through, and sees the world from afar; opens “At length a universal hubbub wild Of stunning sounds and voices all confused, Borne…”; closes “…Thither, full fraught with mischievous revenge, Accursed, and in a cursed hour, he hies.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-milton-paradise-lost-1890-08",
+        "continuesTo": null,
+        "blocks": [
+          58,
+          62
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "22ad8351c62da4673ffb399afea6aeb73f91ca759d50c6ce1b3a3b22d53ca8d6"
+      },
+      "questions": [
+        {
+          "id": "reading-12-milton-paradise-lost-1890-09-q1",
+          "prompt": "What does Satan tell Chaos and Night about his purpose, and what does he offer them? Is he honest?",
+          "facilitatorNotes": [
+            "He comes “no spy,” only seeking the way to the new world, and offers to return that region to “her original darkness and your sway.” His closing line divides the gain: theirs the advantage, his the revenge. Some of it is true; the offer is a bribe, and nothing suggests he will keep it."
+          ],
+          "evidence": [
+            "I come no spy, With purpose to explore or to disturb The secrets of your realm",
+            "Yours be the advantage all, mine the revenge!"
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-09-q2",
+          "prompt": "What does Chaos complain about, and what does he want? What does his last line reveal?",
+          "facilitatorNotes": [
+            "His realm has been “Encroached on still” first by Hell and now by the new heaven and earth. He gladly points the way because ruin anywhere is his profit: “Havoc, and spoil, and ruin are my gain.” Chaos is not an ally of Satan so much as of disorder itself."
+          ],
+          "evidence": [
+            "That little which is left so to defend, Encroached on still through your intestine broils",
+            "Havoc, and spoil, and ruin are my gain."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-09-q3",
+          "prompt": "In the middle of the voyage the narrator jumps ahead to the time “when Man fell.” What does he tell us, and why break the story to do it?",
+          "facilitatorNotes": [
+            "Sin and Death will follow Satan’s track and pave a bridge from Hell to the world, so that spirits can pass “to and fro” to tempt or punish. The flash-forward turns Satan’s hard, lonely journey into the first step of a road. The aside “Strange alteration!” and the closing exception for those God guards keep the hope of grace in view."
+          ],
+          "evidence": [
+            "But, he once past, soon after when Man fell— Strange alteration!—Sin and Death amain Following his track",
+            "Tamely endured a bridge of wondrous length,",
+            "except whom God and good Angels guard by special grace."
+          ]
+        },
+        {
+          "id": "reading-12-milton-paradise-lost-1890-09-q4",
+          "prompt": "How big does the created world look at the end of Book II, and why end on that image and on the word “hies”?",
+          "facilitatorNotes": [
+            "Beside the wide empyreal Heaven it hangs “in a golden chain,” no bigger than the smallest star beside the moon. The scale makes Satan’s target look tiny and precious. The last line, with its doubled “Accursed... cursed,” sends him on in a hurry: the book ends in motion toward us."
+          ],
+          "evidence": [
+            "This pendent World, in bigness as a star Of smallest magnitude close by the moon.",
+            "Accursed, and in a cursed hour, he hies."
+          ]
+        }
+      ]
+    }
+  ]
+}
