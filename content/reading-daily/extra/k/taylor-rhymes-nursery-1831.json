@@ -133,6 +133,208 @@
     },
     {
       "id": "reading-k-taylor-rhymes-nursery-1831-03",
+      "title": "The Spring Nosegay",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Gather the flowers of one season, one by one.",
+      "focus": "A walk to make a spring posy visits hedge, meadow and garden in turn.",
+      "context": "A nosegay or posy is a small bunch of flowers. “Prickly May” is hawthorn blossom; to blow means to bloom. Primroses, cowslips, snowdrops and crocuses are early spring flowers. If you can, pick or look at a few flowers together after reading.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Spring Nosegay,” the complete poem; opens “Come, my love, ’tis pleasant spring, Let us make a posy gay: Ev’ry pretty flow’r we’ll…”; closes “…the garden walk: All these pretty flow’rs we’ll bring, To make a posy for the spring.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          343,
+          345
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "afa3078053d073d1603367e02df23209f8500d9d7796b564165aed8938d23566"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q1",
+          "prompt": "What does the speaker want to make, and when?",
+          "facilitatorNotes": [
+            "A bright posy, in pleasant spring. The speaker asks “my love,” a child or friend, to help."
+          ],
+          "evidence": [
+            "Come, my love, ’tis pleasant spring,",
+            "Let us make a posy gay:"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q2",
+          "prompt": "Name some flowers that go into the spring posy.",
+          "facilitatorNotes": [
+            "Daisies, May blossom, violets, primroses, cowslips, a buttercup or two, snowdrops and crocuses. Any of these is right."
+          ],
+          "evidence": [
+            "Daisy white, and prickly May;",
+            "Where the purple violets blow."
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q3",
+          "prompt": "Where do they look for the flowers? Where would you look near your home?",
+          "facilitatorNotes": [
+            "Along the hedge, in the meadows and up and down the garden walk. Children can name places near them."
+          ],
+          "evidence": [
+            "Then along the hedge we’ll go,",
+            "Up and down the garden walk:"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-04",
+      "title": "The Autumn Nosegay",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice what autumn takes away and what it still gives.",
+      "focus": "On a foggy autumn morning, a few late flowers still make a posy among the fallen leaves.",
+      "context": "A nosegay or posy is a small bunch of flowers. “Sweet” here is a loving name for the child. The naked bough is a bare branch; darksome means dark. The autumn daisy is a small blue or purple daisy that blooms late; lavender has sweet-smelling purple flowers; golden rod is a tall plant with yellow flowers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Autumn Nosegay,” the complete poem; opens “Now the fog has risen high, Through the chilly morning air; And the blue and cheerful sky…”; closes “…Shooting up his yellow spear; These are all that we can find, In our posy gay to bind.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          351,
+          353
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "db1476df1cfdb2ca74eba757914e9dbf43900a008bfd0c8c94f873f19120da5b"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q1",
+          "prompt": "What is the weather like on this autumn morning?",
+          "facilitatorNotes": [
+            "Foggy and chilly, with blue sky peeping through here and there."
+          ],
+          "evidence": [
+            "Now the fog has risen high,",
+            "Through the chilly morning air;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q2",
+          "prompt": "What has happened to the leaves?",
+          "facilitatorNotes": [
+            "They have turned yellow and fallen from the bare branches all over the garden."
+          ],
+          "evidence": [
+            "Ah! the yellow leaves are now",
+            "Scatter’d from the naked bough"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q3",
+          "prompt": "Which flowers can they still find? Why so few?",
+          "facilitatorNotes": [
+            "Only the autumn daisy, the lavender and the golden rod; most flowers have faded in the cold. Children may say the posy is small but still pretty."
+          ],
+          "evidence": [
+            "Shows its purple blossoms near;",
+            "These are all that we can find,"
+          ]
+        }
+      ],
+      "months": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-05",
+      "title": "The little Ants",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare two neighbours and the lesson the poem draws from them.",
+      "focus": "One ant refuses to help and one helps gladly, and the poem asks children to be like the kind one.",
+      "context": "A grain of wheat is a seed of the plant bread is made from. “Shift for yourself” means look after yourself; “in want” means needing help; good-natured means kind; endeavour means try; to profit by a story is to learn from it. The last two verses speak to children, not to ants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The little Ants,” the complete poem; opens “A little black ant found a large grain of wheat, Too heavy to lift or to roll; So he…”; closes “…That if little insects are kind to each other, Then children most certainly ought.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          397,
+          401
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c112767f1a947fca23564bf03209592aefa53b6386c30a57332fff0af0b1243e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q1",
+          "prompt": "What problem does the first little ant have?",
+          "facilitatorNotes": [
+            "He has found a grain of wheat too heavy to lift or roll into his hole."
+          ],
+          "evidence": [
+            "A little black ant found a large grain of wheat,",
+            "Too heavy to lift or to roll;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q2",
+          "prompt": "What does the neighbour do when asked for help, and what does the brother do?",
+          "facilitatorNotes": [
+            "The neighbour says he has his own work and crawls off, cross, to sleep; the brother comes up and helps carry the load in."
+          ],
+          "evidence": [
+            "You must shift for yourself, if you please;",
+            "Came up and assisted him in with his load;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q3",
+          "prompt": "What lesson do the last two verses give? Do you agree?",
+          "facilitatorNotes": [
+            "If little insects can be kind to each other, children certainly should be; and children are sometimes as cross as the selfish ant. Children may agree, or say that sometimes you really are too busy; ask what the selfish ant could have said instead."
+          ],
+          "evidence": [
+            "As cross as the ant, ev’ry bit.",
+            "Then children most certainly ought."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-06",
       "title": "A Wasp and a Bee",
       "sourceId": "taylor-rhymes-nursery-1831",
       "genre": "poetry",
@@ -161,7 +363,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q1",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q1",
           "prompt": "What is the wasp proud of?",
           "facilitatorNotes": [
             "Its shining gold-yellow back and its elegant shape."
@@ -171,7 +373,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q2",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q2",
           "prompt": "Why does the bee say people do not love the wasp?",
           "facilitatorNotes": [
             "Because of its sting and the mischief it does, not because of its looks."
@@ -181,7 +383,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q3",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q3",
           "prompt": "The last verse turns the story into a lesson for people. What is the lesson?",
           "facilitatorNotes": [
             "Unkind people will not be loved however good-looking they are: kindness matters more than looks. Some children will point out that bees can sting too, a fair point the poem does not answer."
