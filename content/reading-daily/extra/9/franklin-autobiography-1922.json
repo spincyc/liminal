@@ -757,6 +757,154 @@
     },
     {
       "id": "reading-9-franklin-autobiography-1922-11",
+      "title": "Plain Truth and the Association",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "List the steps Franklin takes to defend a colony that has no militia. For each, ask what made it work.",
+      "focus": "A private citizen organizes a volunteer army, a lottery and a borrowed battery, and deals carefully with a pacifist legislature.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the 1740s Britain was at war with Spain and then France, and enemy privateers threatened Philadelphia from the sea. Pennsylvania had no militia, because its Assembly was controlled by Quakers, members of a Christian group whose principles forbid war. The proprietaries were the Penn family, who owned the colony. Franklin had been clerk of the Assembly since 1736. A battery is a set of cannon in a fortification; merlons are the solid parts of its wall between the gun openings; a bumper is a full glass. The Philosophical Society he mentions became the American Philosophical Society.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Defense of the Province, from the plan for an academy to the Quakers’ view of defensive war; opens “I HAD, on the whole, abundant reason to be satisfied with my being established in…”; closes “…Quakers, in favour of defense, which I believe convinc'd most of their younger people.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          310,
+          317
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28e9e5598c355aa51218ed4f504402fe2d6cb61266d39988e7ea6d4f356b076d"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q1",
+          "prompt": "How did Franklin turn his pamphlet Plain Truth into an army? What preparations at the meeting help explain the result?",
+          "facilitatorNotes": [
+            "He promised an association in the pamphlet, then held a meeting with printed copies ready and “pens and ink dispers'd all over the room,” explained it briefly, and let people sign at once. Twelve hundred signed that night and over ten thousand in the end.",
+            "Franklin knew how to make agreement easy. Students can compare this with how petitions and sign-ups work today."
+          ],
+          "evidence": [
+            "I had prepared a number of printed copies, and provided pens and ink dispers'd all over the room.",
+            "the subscribers amounted at length to upward of ten thousand"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q2",
+          "prompt": "Franklin declines to be colonel but takes his turn on guard “as a common soldier.” Why might he describe both choices, and what does the cannon story at Governor Clinton’s dinner add?",
+          "facilitatorNotes": [
+            "He presents himself as an organizer without personal ambition, which fits his rule of keeping out of sight to win cooperation. The Madeira story, six cannon becoming ten and then eighteen as the glasses empty, shows the comic side of getting things done.",
+            "Some readers will see modesty; others will see a carefully managed image. Both are supported by what he chooses to tell."
+          ],
+          "evidence": [
+            "chose me for their colonel; but, conceiving myself unfit, I declin'd that station",
+            "After a few more bumpers he advanc'd to ten; and at length he very good-naturedly conceded eighteen.",
+            "I regularly took my turn of duty there as a common soldier"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q3",
+          "prompt": "Franklin, who seldom went to church, proposes a public fast “Calling in the aid of religion.” What was the fast for? Is this sincere, practical, or both?",
+          "facilitatorNotes": [
+            "He wanted to “implore the blessing of Heaven,” but he also notes the result: the clergy of every sect could urge their congregations to join the association. His New England upbringing supplied the form of the proclamation.",
+            "The phrase “Calling in the aid of religion” makes religion sound like an ally to recruit. Students can weigh it against his stated beliefs about doing good."
+          ],
+          "evidence": [
+            "Calling in the aid of religion, I propos'd to them the proclaiming a fast",
+            "This gave the clergy of the different sects an opportunity of influencing their congregations to join in the association"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q4",
+          "prompt": "Explain Franklin’s rule about offices: “never ask, never refuse, nor ever resign.” What does his last remark about the Quakers suggest about how he reads people?",
+          "facilitatorNotes": [
+            "He would not resign under pressure, because resigning would surrender “my right of some time or other making reprisals.” He judges that the Quakers did not mind defence as long as they did not have to take part: many were against offensive war but not defensive.",
+            "The tone is dry rather than contemptuous. Ask whether he is fair to people trying to keep a religious principle in a dangerous time."
+          ],
+          "evidence": [
+            "I shall never ask, never refuse, nor ever resign an office.",
+            "the defense of the country was not disagreeable to any of them, provided they were not requir'd to assist in it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-12",
+      "title": "The fire company vote and “other grain”",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow the fire-company meeting minute by minute, then collect every way in which Quakers found to support defence without saying so.",
+      "focus": "Franklin’s amused, respectful account of how a pacifist people handled the demands of war.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the late 1740s Franklin organized a volunteer association to defend Philadelphia and proposed a lottery to pay for a battery of cannon. Pennsylvania’s Assembly was controlled by Quakers (who call themselves Friends), whose principles forbid war. The Union Fire Company was a volunteer firefighting club Franklin had founded. William Penn, a Quaker, founded Pennsylvania; James Logan came over as his secretary. Louisburg was a French fortress on Cape Breton Island captured by New England troops in 1745. A fire-engine was a hand pump on wheels; a “great gun” is a cannon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Defense of the Province, from the vote in the fire company to the joke about a fire-engine; opens “A transaction in our fire company gave me some insight into their prevailing sentiments.…”; closes “…Assembly; your equivocal project would be just a match for their wheat or other grain.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          318,
+          323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d34c7d6a35f914b883a4414cdfb42aa6c829bf24f9447a1e94636d83d729802a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q1",
+          "prompt": "How did Franklin win the fire-company vote? Why did he agree to wait “another hour” after “a little seeming hesitation”?",
+          "facilitatorNotes": [
+            "Eight Quaker members waiting at a nearby tavern promised to vote with him if needed but hoped not to be called. Knowing he had a majority, he could appear generous by granting the delay; no opponents came, and the resolution passed eight to one.",
+            "The “seeming hesitation” is a small performance. Franklin then turns the vote into evidence: he estimates that only one Quaker in twenty-one sincerely opposed defence."
+          ],
+          "evidence": [
+            "Being thus secure of a majority, I went up, and after a little seeming hesitation, agreed to a delay of another hour.",
+            "I afterward estimated the proportion of Quakers sincerely against defense as one to twenty-one only"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q2",
+          "prompt": "What does James Logan’s answer to William Penn reveal? Why might Franklin include this story?",
+          "facilitatorNotes": [
+            "Penn rebuked Logan for staying on deck to help fight, but Logan points out that Penn did not order him below while danger seemed real. The retort exposes how a principle can be kept by letting others do the fighting.",
+            "Logan was himself a Quaker who supported defence, so the story supports Franklin’s case from inside the sect. Students may find it unfair to Penn, who did, after all, go below."
+          ],
+          "evidence": [
+            "I being thy servant, why did thee not order me to come down?",
+            "But thee was willing enough that I should stay and help to fight the ship when thee thought there was danger."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q3",
+          "prompt": "Explain “for the king’s use” and “other grain is gunpowder.” Are these evasions hypocrisy, or a reasonable compromise?",
+          "facilitatorNotes": [
+            "The Assembly granted war money without naming its purpose, and voted funds for “bread, flour, wheat or other grain” so the governor could buy gunpowder. They kept their principle in words while meeting the demand in fact.",
+            "Some readers see hypocrisy; others see a practical way to live with both conscience and duty. Franklin’s own joke about buying a “great gun” as a “fire-engine” shows he enjoys the trick, and his friend Syng teases him for learning it from the Assembly."
+          ],
+          "evidence": [
+            "The common mode at last was, to grant money under the phrase of its being \"for the king's use,\" and never to inquire how it was applied.",
+            "I shall take the money, for I understand very well their meaning; other grain is gunpowder",
+            "we will buy a great gun, which is certainly a fire-engine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-13",
       "title": "The Albany Plan and the proprietary governors",
       "sourceId": "franklin-autobiography-1922",
       "genre": "memoir",
@@ -785,7 +933,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-franklin-autobiography-1922-11-q1",
+          "id": "reading-9-franklin-autobiography-1922-13-q1",
           "prompt": "Why did the Albany Plan fail, and why does Franklin treat its double rejection as evidence that it was right?",
           "facilitatorNotes": [
             "The colonial assemblies thought it gave too much power to the crown; in England it seemed “too much of the democratic.” Franklin concludes that opposite objections suggest “the true medium,” and that the plan would have made British troops and taxes unnecessary and so avoided “the bloody contest,” the Revolution.",
@@ -798,7 +946,7 @@
           ]
         },
         {
-          "id": "reading-9-franklin-autobiography-1922-11-q2",
+          "id": "reading-9-franklin-autobiography-1922-13-q2",
           "prompt": "What does Franklin think of “disputing, contradicting, and confuting people”? How does his friendship with Governor Morris complicate the picture?",
           "facilitatorNotes": [
             "Disputers “get victory sometimes, but they never get good will.” Morris loved argument and broke his promise to avoid disputes at once. Yet though their public messages were “indecently abusive,” the two men stayed friends and often dined together.",
@@ -810,7 +958,7 @@
           ]
         },
         {
-          "id": "reading-9-franklin-autobiography-1922-11-q3",
+          "id": "reading-9-franklin-autobiography-1922-13-q3",
           "prompt": "At the governor’s dinner, how do the jokes work, and what do they reveal about the men at the table and their time?",
           "facilitatorNotes": [
             "Morris jokes about Sancho Panza wanting to govern Black people so he could sell them; a guest suggests Franklin “sell” the Quakers. Franklin’s reply turns “blacken” (to smear a reputation) into a political point: the governor’s attacks have only blackened himself.",
@@ -822,7 +970,7 @@
           ]
         },
         {
-          "id": "reading-9-franklin-autobiography-1922-11-q4",
+          "id": "reading-9-franklin-autobiography-1922-13-q4",
           "prompt": "What, according to Franklin, lay “at bottom” of the quarrels? How did he get the aid to New England past the governor?",
           "facilitatorNotes": [
             "The proprietors told their governors to pass no tax for defence “unless their vast estates” were exempted, which Franklin calls “incredible meanness.” He had the Assembly issue interest-bearing orders on the Loan Office, which people bought eagerly and used as money, so the provisions were paid for without the governor’s consent.",
@@ -837,7 +985,7 @@
       ]
     },
     {
-      "id": "reading-9-franklin-autobiography-1922-12",
+      "id": "reading-9-franklin-autobiography-1922-14",
       "title": "Braddock’s confidence and defeat",
       "sourceId": "franklin-autobiography-1922",
       "genre": "memoir",
@@ -866,7 +1014,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-franklin-autobiography-1922-12-q1",
+          "id": "reading-9-franklin-autobiography-1922-14-q1",
           "prompt": "What three faults does Franklin find in Braddock, and how does the general’s treatment of George Croghan’s hundred scouts illustrate them?",
           "facilitatorNotes": [
             "Too much self-confidence, too high an opinion of regular troops, and too low an opinion of Americans and Indians. He “slighted and neglected” the Native scouts who could have guided him, and they left; then the fire from the woods was his “first intelligence” of the enemy.",
@@ -878,7 +1026,7 @@
           ]
         },
         {
-          "id": "reading-9-franklin-autobiography-1922-12-q2",
+          "id": "reading-9-franklin-autobiography-1922-14-q2",
           "prompt": "Look at how Franklin voices his warning. Why does he begin “To be sure, sir,” and why does he stop after Braddock’s reply? Do you trust this account, written more than thirty years later?",
           "facilitatorNotes": [
             "He flatters before cautioning, gives the vivid image of an army “cut like a thread,” then defers to “a military man in matters of his profession.” The scene makes him both prophet and model of tact, much like the humility he describes practising in Chapter IX.",
@@ -890,7 +1038,7 @@
           ]
         },
         {
-          "id": "reading-9-franklin-autobiography-1922-12-q3",
+          "id": "reading-9-franklin-autobiography-1922-14-q3",
           "prompt": "What larger conclusion does Franklin draw from the defeat and the soldiers’ conduct on the march? How does his comparison with “our French friends in 1781” reveal when he was writing?",
           "facilitatorNotes": [
             "The rout gave Americans “the first suspicion” that British regulars were overrated, and their plundering put colonists out of conceit of such defenders. Writing after the Revolution, he sets them beside the French allies who took not “a pig, a chicken, or even an apple.”",
