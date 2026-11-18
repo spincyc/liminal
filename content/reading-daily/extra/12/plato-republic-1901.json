@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "grade": 12,
+  "work": "plato-republic-1901",
+  "readings": [
+    {
+      "id": "reading-12-plato-republic-1901-01",
+      "title": "The Republic, Book II: three kinds of good and a bargain called justice",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Sort goods into Glaucon’s three classes, then reconstruct the argument he says ordinary people make.",
+      "focus": "Whether justice is valued for itself or only as a compromise among the weak.",
+      "context": "Plato’s Republic is narrated by Socrates. In Book I he argued against Thrasymachus, who claimed that justice is merely the interest of the stronger. Glaucon and Adeimantus, Plato’s older brothers, are not satisfied. Gymnastic means physical training; a covenant is an agreement.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from the opening through Glaucon’s account of the origin of justice; opens “With these words I was thinking that I had made an end of the discussion; but the end, in…”; closes “…if he did. Such is the received account, Socrates, of the nature and origin of justice.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-12-plato-republic-1901-02",
+        "blocks": [
+          509,
+          524
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "53be7013b994883742e3daed13612ec972a257fa3cd167e3fcd8f70a11c668d8"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-01-q1",
+          "prompt": "What are Glaucon’s three classes of goods, and where does Socrates place justice?",
+          "facilitatorNotes": [
+            "Goods wanted for themselves (harmless pleasures), for themselves and for their results (knowledge, sight, health), and only for their results (exercise, medical treatment, money-making). Socrates puts justice in the second, highest class; the many put it in the third, “troublesome” class."
+          ],
+          "evidence": [
+            "In the highest class, I replied—among those goods which he who would be happy desires both for their own sake and for the sake of their results.",
+            "they think that justice is to be reckoned in the troublesome class"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-01-q2",
+          "prompt": "Glaucon says he will praise injustice although he does not hold that view. Why does he choose this method?",
+          "facilitatorNotes": [
+            "He has never heard justice praised for itself in a satisfactory way. By stating the case for injustice as strongly as he can, he shows Socrates the kind of praise he wants in return. Reviving an argument is not endorsing it, a distinction worth keeping in any debate."
+          ],
+          "evidence": [
+            "since I myself am not of their opinion",
+            "I want to hear justice praised in respect of itself"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-01-q3",
+          "prompt": "Reconstruct the “received account”: why is justice a compromise, and what follows for anyone strong enough to refuse it?",
+          "facilitatorNotes": [
+            "People find that suffering injustice hurts more than doing it helps, so they agree to laws forbidding both. Justice is the middle point between the best (wronging without punishment) and the worst (being wronged without recourse), accepted as the lesser evil. A person able to resist would be mad to agree. Students can ask whether the account explains why anyone keeps the agreement when unobserved, the question the next passage presses."
+          ],
+          "evidence": [
+            "tolerated not as a good, but as the lesser evil",
+            "For no man who is worthy to be called a man would ever submit to such an agreement if he were able to resist; he would be mad if he did."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-02",
+      "title": "The Republic, Book II: the ring of Gyges and the two lives",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Identify the assumption a thought experiment depends on, and test whether its conclusion follows.",
+      "focus": "Separating being just from seeming just.",
+      "context": "Recap: Glaucon has asked Socrates to show that justice is good in itself, and has restated the common view that justice is only a bargain among people too weak to do wrong safely. Gyges’ descendant Croesus was a famously rich king of Lydia, in Asia Minor; the collet is the setting of a ring. Aeschylus was an Athenian tragic poet. Bracketed numbers mark Jowett’s notes, which the library prints after the end of Book II; they identify quotations and textual readings. ",
+      "contentNote": "The story includes seduction and murder, and the imagined just man is tortured and impaled.",
+      "excerpt": {
+        "locator": "Book II, Glaucon’s story of the ring of Gyges and his portraits of the perfectly unjust and the perfectly just man; opens “Now that those who practise justice do so involuntarily and because they have not the…”; closes “…men are said to unite in making the life of the unjust better than the life of the just.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-01",
+        "continuesTo": "reading-12-plato-republic-1901-03",
+        "blocks": [
+          525,
+          530
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "da62e5fb9682aa00a1a9d69bbfe926586fe57107f60d21ba4adb84dd0c143bf4"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-02-q1",
+          "prompt": "What is the ring story meant to prove, and what assumption about human nature does the proof need?",
+          "facilitatorNotes": [
+            "If anyone could act unseen, just and unjust would follow the same road of self-interest; so people are just only “of necessity.” The proof assumes that no one has an “iron nature” that would stand fast, and that everyone privately believes injustice pays. Readers can test that assumption against their own experience or against counter-examples."
+          ],
+          "evidence": [
+            "wherever anyone thinks that he can safely be unjust, there he is unjust",
+            "no man can be imagined to be of such an iron nature that he would stand fast in justice"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-02-q2",
+          "prompt": "Why must the unjust man seem perfectly just and the just man seem perfectly unjust?",
+          "facilitatorNotes": [
+            "Otherwise the just man might be just for the rewards of reputation, and we could not tell what justice itself is worth. The unjust man’s highest skill is “to be deemed just when you are not.” Stripping away appearances isolates the two lives for judgment."
+          ],
+          "evidence": [
+            "for the highest reach of injustice is, to be deemed just when you are not",
+            "Let him be the best of men, and let him be thought the worst"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-02-q3",
+          "prompt": "How does Glaucon distance himself from the harshest part of the speech, and what does his last claim about the gods imply?",
+          "facilitatorNotes": [
+            "He asks Socrates to imagine that the brutal words are not his but those of injustice’s praisers. They conclude that the unjust man’s wealth lets him sacrifice lavishly, so the gods should favour him more. If religion follows wealth, it offers no independent support for justice, a point Adeimantus will develop."
+          ],
+          "evidence": [
+            "I ask you to suppose, Socrates, that the words which follow are not mine.",
+            "therefore he is likely to be dearer than they are to the gods"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-03",
+      "title": "The Republic, Book II: what parents and poets praise",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an argument that criticizes the defenders of justice rather than its enemies.",
+      "focus": "How praise for the rewards of justice teaches the young to value appearances.",
+      "context": "Recap: Glaucon has argued, through the story of a ring that makes its wearer invisible, that people are just only because they fear being caught, and has asked Socrates to compare a perfectly unjust man who seems just with a perfectly just man who seems unjust. Now his brother Adeimantus adds a further point. Hesiod and Homer were the great early Greek poets; Musaeus and Orpheus were legendary singers to whom religious writings were credited; Pindar was a lyric poet. A meed is a reward. Bracketed numbers mark Jowett’s notes, which the library prints after the end of Book II; they identify quotations and textual readings. ",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from Adeimantus’s interruption through his account of how the poets and priests speak of justice; opens “I was going to say something in answer to Glaucon, when Adeimantus, his brother,…”; closes “…crooked ways of deceit ascend a loftier tower which may be a fortress to me all my days?””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-02",
+        "continuesTo": "reading-12-plato-republic-1901-04",
+        "blocks": [
+          531,
+          546
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28b3fb6f1f0adc40068ee3cdc3d04aa825b2eeeca402e85e46b9890939edbd75"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-03-q1",
+          "prompt": "What is the “strongest point” Adeimantus adds, and how does it differ from Glaucon’s?",
+          "facilitatorNotes": [
+            "Glaucon voiced the critics of justice. Adeimantus shows that its own defenders, parents, tutors and poets, praise justice only for reputation and rewards. If even the praise is about consequences, nobody is teaching that justice is good in itself."
+          ],
+          "evidence": [
+            "not for the sake of justice, but for the sake of character and reputation"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q2",
+          "prompt": "How does Adeimantus make the poets’ promised rewards look absurd?",
+          "facilitatorNotes": [
+            "He reports that the just are rewarded below with an endless feast, “everlastingly drunk,” and concludes that for these poets an immortality of drunkenness is virtue’s highest prize. The satire exposes how material the supposed spiritual rewards are."
+          ],
+          "evidence": [
+            "their idea seems to be that an immortality of drunkenness is the highest meed of virtue"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q3",
+          "prompt": "What does the trade in sacrifices and atonements imply about the gods, according to the views he reports?",
+          "facilitatorNotes": [
+            "If priests can make atonement for a fee and the gods can be turned by sacrifices, then a wrongdoer can buy off punishment. Justice then has no divine support that injustice cannot purchase."
+          ],
+          "evidence": [
+            "The gods, too, may be turned from their purpose",
+            "persuade not only individuals, but whole cities, that expiations and atonements for sin may be made by sacrifices"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-03-q4",
+          "prompt": "Why does Adeimantus worry especially about quick-witted young people?",
+          "facilitatorNotes": [
+            "Like bees lighting on every flower, they gather what they hear and draw conclusions about how to live. The danger is not ignorance but intelligence applied to bad teaching. Pindar’s question about justice or deceit is the one they will ask."
+          ],
+          "evidence": [
+            "like bees on the wing, light on every flower, and from all that they hear are prone to draw conclusions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-12-plato-republic-1901-04",
+      "title": "The Republic, Book II: the demand to praise justice itself",
+      "sourceId": "plato-republic-1901",
+      "genre": "philosophical-dialogue",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Reconstruct a chain of reasoning, then state exactly what the brothers ask Socrates to prove.",
+      "focus": "Appearance, belief about the gods, and justice as a good of the soul.",
+      "context": "Recap: Glaucon and his brother Adeimantus have argued that people praise justice only for its rewards and reputation, and that poets and priests teach that the gods can be bought off with sacrifices. Adeimantus now imagines how a clever young man would reason from what he hears. Archilochus was an early Greek poet; a vestibule is an entrance hall; a panegyrist is one who praises; Ariston was the brothers’ father.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Book II, from the young man’s reasoning about appearances through Socrates’ answer to the brothers; opens “For what men say is that, if I am really just and am not also thought just, profit there…”; closes “…not lifting up a hand in her defence. And therefore I had best give such help as I can.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-12-plato-republic-1901-03",
+        "continuesTo": null,
+        "blocks": [
+          547,
+          552
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b25134f48645219ffadc751eff55ee6d6e54a8234ae1f75773edc09d8783c611"
+      },
+      "questions": [
+        {
+          "id": "reading-12-plato-republic-1901-04-q1",
+          "prompt": "How does the imagined young man reason from the claim that “appearance tyrannizes over truth”?",
+          "facilitatorNotes": [
+            "If reputation brings happiness, he should build a façade of virtue with a crafty fox behind it, and use secret clubs and rhetoric to escape punishment. Each step follows from treating appearance as what matters."
+          ],
+          "evidence": [
+            "I will describe around me a picture and shadow of virtue to be the vestibule and exterior of my house"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q2",
+          "prompt": "How does he turn the poets’ account of the gods against justice?",
+          "facilitatorNotes": [
+            "Either there are no gods, or they do not care, or, if the poets are right, they can be bribed. Since our knowledge of the gods comes from the same poets, he argues, “believe both or neither”: in every case concealment and sacrifice beat honesty."
+          ],
+          "evidence": [
+            "Let us be consistent, then, and believe both or neither."
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q3",
+          "prompt": "What exactly does Adeimantus ask Socrates to prove, and why must reputations be removed?",
+          "facilitatorNotes": [
+            "Show what justice and injustice do to the soul of the one who has them, “whether seen or unseen.” If reputations remain, Socrates would only be praising the appearance of justice. Had this been taught, each person would be “his own watchman.”"
+          ],
+          "evidence": [
+            "everyone would have been his own watchman",
+            "show what they either of them do to the possessor of them, which makes the one to be a good and the other an evil"
+          ]
+        },
+        {
+          "id": "reading-12-plato-republic-1901-04-q4",
+          "prompt": "Why does Socrates trust the brothers despite their speeches, and why does he agree to answer?",
+          "facilitatorNotes": [
+            "He judges from their character that they are not convinced by their own arguments, which he calls something “truly divine.” He doubts his ability, but says it would be impious to stand by while justice is slandered. Readers might discuss whether arguing well for a view one rejects is a virtue."
+          ],
+          "evidence": [
+            "there is something truly divine in being able to argue as you have done for the superiority of injustice, and remaining unconvinced by your own arguments",
+            "I am afraid that there would be an impiety in being present when justice is evil spoken of"
+          ]
+        }
+      ]
+    }
+  ]
+}
