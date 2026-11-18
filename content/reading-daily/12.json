@@ -788,11 +788,11 @@
         "continuesTo": "reading-12-w03-d2",
         "blocks": [
           1,
-          30
+          32
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "4c6c35e12f3e459d3706aed190da89a50207323c841f3053815925fb279a9d40"
+        "textHash": "9d39405640d5ead05316ec7be5380a9586e3a61e9d67fe11c2306285476d2078"
       },
       "questions": [
         {
@@ -850,12 +850,12 @@
         "continuesFrom": "reading-12-w03-d1",
         "continuesTo": null,
         "blocks": [
-          31,
-          74
+          33,
+          77
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "f1790b1675fd07d8ed21864042e46f050fea819b7616dd17e2a78cc5935b2ba0"
+        "textHash": "5a67e587041c3cb361db135e1fa0a61703c52f04614748723418a720db17dec3"
       },
       "questions": [
         {
@@ -913,8 +913,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w03-d4",
         "blocks": [
-          117,
-          128
+          120,
+          131
         ],
         "startChar": null,
         "endChar": null,
@@ -976,8 +976,8 @@
         "continuesFrom": "reading-12-w03-d3",
         "continuesTo": null,
         "blocks": [
-          129,
-          153
+          132,
+          156
         ],
         "startChar": null,
         "endChar": null,
@@ -1039,8 +1039,8 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          155,
-          181
+          158,
+          184
         ],
         "startChar": null,
         "endChar": null,
@@ -1102,8 +1102,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w04-d2",
         "blocks": [
-          545,
-          558
+          550,
+          563
         ],
         "startChar": null,
         "endChar": null,
@@ -1165,8 +1165,8 @@
         "continuesFrom": "reading-12-w04-d1",
         "continuesTo": null,
         "blocks": [
-          559,
-          569
+          564,
+          574
         ],
         "startChar": null,
         "endChar": null,
@@ -1228,8 +1228,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w04-d4",
         "blocks": [
-          571,
-          583
+          576,
+          588
         ],
         "startChar": null,
         "endChar": null,
@@ -1291,8 +1291,8 @@
         "continuesFrom": "reading-12-w04-d3",
         "continuesTo": "reading-12-w04-d5",
         "blocks": [
-          584,
-          601
+          589,
+          606
         ],
         "startChar": null,
         "endChar": null,
@@ -1354,8 +1354,8 @@
         "continuesFrom": "reading-12-w04-d4",
         "continuesTo": null,
         "blocks": [
-          602,
-          608
+          607,
+          613
         ],
         "startChar": null,
         "endChar": null,
@@ -1417,8 +1417,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w05-d2",
         "blocks": [
-          331,
-          369
+          336,
+          374
         ],
         "startChar": null,
         "endChar": null,
@@ -1480,8 +1480,8 @@
         "continuesFrom": "reading-12-w05-d1",
         "continuesTo": "reading-12-w05-d3",
         "blocks": [
-          370,
-          436
+          375,
+          441
         ],
         "startChar": null,
         "endChar": null,
@@ -1543,8 +1543,8 @@
         "continuesFrom": "reading-12-w05-d2",
         "continuesTo": null,
         "blocks": [
-          437,
-          461
+          442,
+          466
         ],
         "startChar": null,
         "endChar": null,
@@ -1606,8 +1606,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w05-d5",
         "blocks": [
-          300,
-          310
+          303,
+          313
         ],
         "startChar": null,
         "endChar": null,
@@ -1669,12 +1669,12 @@
         "continuesFrom": "reading-12-w05-d4",
         "continuesTo": null,
         "blocks": [
-          311,
-          329
+          314,
+          334
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "a580f5aa68dff1e6687bcbab297d20aacca5685a2efae5d1f547200c6351e9ac"
+        "textHash": "5fae1542483daa52734e214f89143f510644434c4c12322eb1f2c17e53b60df6"
       },
       "questions": [
         {
@@ -2992,8 +2992,8 @@
         "continuesFrom": null,
         "continuesTo": "reading-12-w10-d2",
         "blocks": [
-          1214,
-          1242
+          1244,
+          1272
         ],
         "startChar": null,
         "endChar": null,
@@ -3055,8 +3055,8 @@
         "continuesFrom": "reading-12-w10-d1",
         "continuesTo": "reading-12-w10-d3",
         "blocks": [
-          1243,
-          1311
+          1273,
+          1341
         ],
         "startChar": null,
         "endChar": null,
@@ -3118,8 +3118,8 @@
         "continuesFrom": "reading-12-w10-d2",
         "continuesTo": "reading-12-w10-d4",
         "blocks": [
-          1312,
-          1352
+          1342,
+          1382
         ],
         "startChar": null,
         "endChar": null,
@@ -3181,8 +3181,8 @@
         "continuesFrom": "reading-12-w10-d3",
         "continuesTo": "reading-12-w10-d5",
         "blocks": [
-          1353,
-          1409
+          1383,
+          1439
         ],
         "startChar": null,
         "endChar": null,
@@ -3244,8 +3244,8 @@
         "continuesFrom": "reading-12-w10-d4",
         "continuesTo": "reading-12-w11-d1",
         "blocks": [
-          1410,
-          1452
+          1440,
+          1482
         ],
         "startChar": null,
         "endChar": null,
@@ -3307,8 +3307,8 @@
         "continuesFrom": "reading-12-w10-d5",
         "continuesTo": "reading-12-w11-d2",
         "blocks": [
-          1453,
-          1483
+          1483,
+          1513
         ],
         "startChar": null,
         "endChar": null,
@@ -3370,8 +3370,8 @@
         "continuesFrom": "reading-12-w11-d1",
         "continuesTo": "reading-12-w11-d3",
         "blocks": [
-          1484,
-          1530
+          1514,
+          1560
         ],
         "startChar": null,
         "endChar": null,
@@ -3433,8 +3433,8 @@
         "continuesFrom": "reading-12-w11-d2",
         "continuesTo": "reading-12-w11-d4",
         "blocks": [
-          1531,
-          1568
+          1561,
+          1598
         ],
         "startChar": null,
         "endChar": null,
@@ -3496,8 +3496,8 @@
         "continuesFrom": "reading-12-w11-d3",
         "continuesTo": "reading-12-w11-d5",
         "blocks": [
-          1569,
-          1644
+          1599,
+          1674
         ],
         "startChar": null,
         "endChar": null,
@@ -3559,8 +3559,8 @@
         "continuesFrom": "reading-12-w11-d4",
         "continuesTo": null,
         "blocks": [
-          1645,
-          1670
+          1675,
+          1700
         ],
         "startChar": null,
         "endChar": null,
