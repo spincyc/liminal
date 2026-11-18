@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "olson-northmen-columbus-cabot-1906",
+  "author": "Christopher Columbus",
+  "title": "Journal of the First Voyage of Columbus; Letter from Columbus to Luis de Santangel (in The Northmen, Columbus and Cabot, 985–1503)",
+  "translator": "Clements R. Markham (Journal, 1893) and the translation in Quaritch’s The Spanish Letter of Columbus (Letter, 1893), each with slight revisions by Edward Gaylord Bourne",
+  "edition": "The Northmen, Columbus and Cabot, 985–1503, edited by Julius E. Olson and Edward Gaylord Bourne (Original Narratives of Early American History, general editor J. Franklin Jameson), New York: Charles Scribner’s Sons, 1906 (“Published, September, 1906”). Text from Project Gutenberg eBook 18571 (Distributed Proofreaders), which reproduces this edition’s title and copyright pages. The library holds two whole works from the volume, the Journal of the First Voyage of Columbus (Las Casas’s abstract, in Markham’s translation as revised by Bourne) and the Letter from Columbus to Luis de Santangel (with its postscript), each with Bourne’s introduction and the edition’s footnotes. The passages the nightly readings use, the Journal entries for 11 and 12 October 1492 (blocks 101–106) and the whole Letter (block 788), were collated word by word in November 2026 against the OCR text of the Internet Archive scan cu31924028668865 (Cornell University Library copy of the 1906 printing), with each difference checked in a second scan, northmencolumbus00olso: three readings were changed to the print, where both scans agree (“called, in the language of the Indians”, “the fourth. Fair Island”, “these shall be from idolators”). The scans cannot show accents, so the transcription’s Niña, Yañez, Española and Spañola are kept; the print’s spaced semicolons, line-end hyphens, running heads and page numbers are not represented, the transcription’s double hyphens stand for the print’s dashes, and its [page-number] note marks stand for the print’s superscript marks. Outside those passages the text has not been collated and keeps the transcription.",
+  "publicationYear": 1906,
+  "translationYear": 1906,
+  "url": "https://archive.org/details/cu31924028668865",
+  "textUrl": "https://www.gutenberg.org/cache/epub/18571/pg18571.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The scanned title and copyright pages read New York: Charles Scribner’s Sons, 1906, “Copyright, 1906, by Charles Scribner’s Sons” and “Published, September, 1906”. The translations it revises were published in 1893 (Markham, Hakluyt Society; Quaritch). Works published in the United States before 1931 are in the US public domain as of 2026; Bourne’s introductions and notes were first published in this 1906 edition. Project Gutenberg eBook 18571 is labelled public domain in the USA.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/cu31924028668865"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/18571/pg18571.txt",
+    "downloadSha256": "b543b4d9fd9f9e4f0fb40edd45b3ed5c8c0d7aa5738fbd6395f6a9a2ed3bcf77",
+    "method": "Project Gutenberg plain text (eBook 18571, CRLF normalised to LF) from the PG mirror, converted by a scratch Python script from the heading JOURNAL OF THE FIRST VOYAGE OF COLUMBUS to the end of the Santangel letter’s footnotes, before LETTER FROM COLUMBUS TO FERDINAND AND ISABELLA. Each work’s first title is a level-1 heading; INTRODUCTION and the repeated title over the text are level-2 headings; the dated entries of the Journal (one italic line each, some in the editor’s brackets) and the postscript title are level-3 headings, without the italic marks; every other paragraph is a paragraph block with prose wraps joined; the FOOTNOTES: labels stay as paragraphs, and each note becomes [Footnote page-n: text] where the transcription places it (after the introduction and at the end of each work); the [page-n] anchors stay in the text; the two [Illustration: …] captions (a map and a facsimile page) are left out; _underscores_ for italics are kept. Three readings were then changed to the collated print (blocks 105 and 788)."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only the Journal of the First Voyage of Columbus and the Letter from Columbus to Luis de Santangel, each whole with its introduction and notes. The rest of the volume (the Norse sagas and papal letters, the other Columbus documents and the Cabot documents) is not held, because only these two works are read.",
+    "collated": [
+      [
+        101,
+        106
+      ],
+      [
+        788,
+        788
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 825,
+    "sha256": "46dfed7241fe3abf027cd3e159d6804dc95a1baf2626189406b19537f379d45c"
+  }
+}
