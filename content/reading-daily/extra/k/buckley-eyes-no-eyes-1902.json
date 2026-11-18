@@ -135,6 +135,136 @@
     },
     {
       "id": "reading-k-buckley-eyes-no-eyes-1902-03",
+      "title": "The Mouse and the Shrew, part 1: the cat’s mistake",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Mouse and the Shrew",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Sort two animals that look alike by what they eat.",
+      "focus": "A clever cat cannot tell a garden pest from a garden helper, but the children can.",
+      "context": "In this old nature reader three children, Peter, Peggy and Paul, tell what they see near home. A shrew is a tiny animal like a mouse with a long pointed nose. Corn-ricks are stacks of grain; bulbs are the round underground parts of plants such as crocuses; a harvest-mouse is a very small mouse that lives in cornfields.",
+      "contentNote": "Peter’s cat kills mice and shrews, and leaves the shrews lying on the path.",
+      "excerpt": {
+        "locator": "First Book, Lesson VII, “The Mouse and the Shrew,” paragraphs 1–6; opens “Peter has a fine old cat. She is very clever. She rattles the handle of the front door…”; closes “…wee little harvest-mice, with red-brown fur on their backs and white fur underneath.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-04",
+        "blocks": [
+          90,
+          95
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "362a5ab051e1246593fdd8387bb8b1c3b1443f628de3a13ad6289f4ce446248e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q1",
+          "prompt": "What clever things can Peter’s cat do?",
+          "facilitatorNotes": [
+            "She rattles the door handle to come in, and late at night she jumps on a wire that rings a bell so Peter comes down."
+          ],
+          "evidence": [
+            "She rattles the handle of the front door when she wants to come in.",
+            "This rings a bell, and Peter comes down and lets her in."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q2",
+          "prompt": "Why are the children glad when the cat catches mice, but not when she catches shrews?",
+          "facilitatorNotes": [
+            "Mice eat their peas, crocus bulbs and grain; shrews eat insects, worms and slugs that would eat the plants. So the shrew is a helper."
+          ],
+          "evidence": [
+            "For the mice eat our peas and the bulbs of our crocuses.",
+            "But shrews eat insects and worms and slugs, and this is good for us,"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q3",
+          "prompt": "What did the children find in the harvest-mouse’s nest?",
+          "facilitatorNotes": [
+            "Seven tiny harvest-mice with red-brown backs and white fronts, in a round grass nest as big as a swan’s egg. Children can show the size with their hands."
+          ],
+          "evidence": [
+            "It was about as big as a large swan's egg, and the same shape.",
+            "found seven wee little harvest-mice,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-04",
+      "title": "The Mouse and the Shrew, part 2: snouts, teeth and winter",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Mouse and the Shrew",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Find one difference you could see, and one way of life that is different.",
+      "focus": "Snouts and teeth show what each animal eats, and the two spend the winter in different ways.",
+      "context": "Recap: Peter’s clever cat cannot tell a mouse from a shrew, but the children know the shrew helps the garden by eating insects and slugs. A snout is a long nose; to gnaw is to bite again and again; ears of corn are the grain at the top of the stalks; earwigs and caterpillars are small creeping insects. The Barn Owl hunts at night.",
+      "contentNote": "The Barn Owl carries mice and shrews away to feed her young.",
+      "excerpt": {
+        "locator": "First Book, Lesson VII, “The Mouse and the Shrew,” paragraphs 7–12 (end of lesson); opens “The shrew is more of a grey colour. But there is one way by which you can always tell a…”; closes “…again. She brings up a great many families in a year. This is why there are so many mice.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-03",
+        "continuesTo": null,
+        "blocks": [
+          96,
+          101
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e183961408052d4ae098d95b3add2fdc431eb1c579e2811d1a415b35ee91db1a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q1",
+          "prompt": "What is the surest way to tell a mouse from a shrew?",
+          "facilitatorNotes": [
+            "Look at the nose and teeth: the mouse has a short snout and four broad white front teeth; the shrew a long thin snout and tiny pointed teeth."
+          ],
+          "evidence": [
+            "The mouse has a short snout and four broad white teeth in front.",
+            "But the shrew has a long, thin snout,"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q2",
+          "prompt": "Why are their teeth so different?",
+          "facilitatorNotes": [
+            "Each animal’s teeth suit its food: the mouse gnaws roots, bulbs and corn, and the shrew’s small sharp teeth catch insects, worms and snails."
+          ],
+          "evidence": [
+            "It uses these for gnawing roots and bulbs,",
+            "so that it can kill and eat insects, worms, and snails."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q3",
+          "prompt": "How do mice and shrews get ready for winter in different ways?",
+          "facilitatorNotes": [
+            "Mice carry seeds and roots into their holes and wake for a feed now and then; shrews store nothing and sleep all winter. Children can say which they would rather be."
+          ],
+          "evidence": [
+            "Paul says they are carrying seeds and bits of roots into their hole in the bank.",
+            "Shrews do not store up food,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-05",
       "title": "The Humble Bee’s Nest, part 1: a nest in the grass",
       "sourceId": "buckley-eyes-no-eyes-1902",
       "workTitle": "The Humble Bee’s Nest",
@@ -153,7 +283,7 @@
         "locator": "First Book, Lesson IX, “The Humble Bee’s Nest,” paragraphs 1–3; opens “Last March, when the days began to be warm, we saw a big Humble Bee, or Bumble Bee, as…”; closes “…had already been hatched from eggs. These were feeding on the brown balls near them.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-04",
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-06",
         "blocks": [
           114,
           116
@@ -164,7 +294,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q1",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q1",
           "prompt": "Why does Peggy think the big bee is making a nest?",
           "facilitatorNotes": [
             "She is a mother bee who has slept all winter, and now the days are warm. Peter follows her to a grassy bank."
@@ -174,7 +304,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q2",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q2",
           "prompt": "Why did the children wait two weeks before looking in?",
           "facilitatorNotes": [
             "They were afraid she would go away if they disturbed her too soon."
@@ -184,7 +314,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q3",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q3",
           "prompt": "What did they find inside the little wax pockets?",
           "facilitatorNotes": [
             "Seven tiny eggs and little brown balls of honey and pollen; in another pocket, grubs eating the balls. Ask what the balls are for: food for the babies."
@@ -197,7 +327,7 @@
       ]
     },
     {
-      "id": "reading-k-buckley-eyes-no-eyes-1902-04",
+      "id": "reading-k-buckley-eyes-no-eyes-1902-06",
       "title": "The Humble Bee’s Nest, part 2: from June to Christmas",
       "sourceId": "buckley-eyes-no-eyes-1902",
       "workTitle": "The Humble Bee’s Nest",
@@ -215,7 +345,7 @@
       "excerpt": {
         "locator": "First Book, Lesson IX, “The Humble Bee’s Nest,” paragraphs 4–7 (end of lesson); opens “The mother bee was very uneasy while we were looking at her nest. She sat down quite…”; closes “…The roof was broken, and the cells all crushed. There was not one humble bee to be found.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-03",
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-05",
         "continuesTo": null,
         "blocks": [
           117,
@@ -227,7 +357,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q1",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q1",
           "prompt": "How did the mother bee behave while the children looked at her nest?",
           "facilitatorNotes": [
             "She sat close by, uneasy, but did not sting; she was afraid they would hurt her grubs. Paul says humble bees are gentle."
@@ -238,7 +368,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q2",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q2",
           "prompt": "Why did the children go back in June, and how had the nest changed?",
           "facilitatorNotes": [
             "They feared the horses would tread on it when the hay was cut. It had grown big, with a strong moss roof, a tunnel and many cocoons."
@@ -249,7 +379,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q3",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q3",
           "prompt": "What happens to the bumble bees when the cold weather comes?",
           "facilitatorNotes": [
             "Most die; a few mothers creep into holes in trees or warm haystacks and sleep till spring. That is why the lesson began with a mother waking in March: the year comes round again."
@@ -262,7 +392,136 @@
       ]
     },
     {
-      "id": "reading-k-buckley-eyes-no-eyes-1902-05",
+      "id": "reading-k-buckley-eyes-no-eyes-1902-07",
+      "title": "Peter’s Cat, part 1: a hunter in the wood",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "Peter’s Cat",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Find the parts of a cat’s body that make her a good hunter.",
+      "focus": "A pet that purrs at home is a strong, quiet hunter in the wood at night.",
+      "context": "In this old nature reader Peter, Peggy and Paul describe Peter’s cat. Dusk is the time when it is getting dark. Pheasants and partridges are birds that live on the ground. Prey is an animal that is hunted for food; a sheath is a cover, like a case for a knife.",
+      "contentNote": "Peggy’s father shoots cats he finds in the wood, and the lesson describes how the cat kills mice and birds.",
+      "excerpt": {
+        "locator": "First Book, Lesson X, “Peter’s Cat,” paragraphs 1–6; opens “Peter's cat is very fond of going into the wood. We are afraid she will be killed some…”; closes “…her paw, and as she bends her toes, out come the claws and pierce the flesh of her prey.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-08",
+        "blocks": [
+          122,
+          127
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0d94fd1bf57460a822c0ea6b9b4a31dc37a89e6bf961fbad8a593453cab832e9"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-07-q1",
+          "prompt": "Why are the children afraid for Peter’s cat?",
+          "facilitatorNotes": [
+            "Peggy’s father shoots the cats he finds in the wood, because they eat the rabbits and pheasants."
+          ],
+          "evidence": [
+            "We are afraid she will be killed some day.",
+            "because they eat the rabbits and pheasants."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-07-q2",
+          "prompt": "Why does the cat go out at dusk?",
+          "facilitatorNotes": [
+            "That is when the other animals are feeding, so she can catch mice, young rabbits and sleeping birds."
+          ],
+          "evidence": [
+            "She goes in the dusk, because then all the animals are feeding."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-07-q3",
+          "prompt": "How can the same paw be soft for play and sharp for hunting?",
+          "facilitatorNotes": [
+            "Each claw slides back into its own sheath when she plays, and comes out when she bends her toes to strike. If there is a calm cat nearby, look gently at a paw together."
+          ],
+          "evidence": [
+            "she draws each one back into its own sheath.",
+            "as she bends her toes, out come the claws"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-08",
+      "title": "Peter’s Cat, part 2: eyes, whiskers and a tiger’s purr",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "Peter’s Cat",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a small experiment and say what it showed.",
+      "focus": "The cat’s eyes, whiskers, tongue and head all suit a hunter, and her wild cousins are tigers.",
+      "context": "Recap: Peter’s cat slips into the wood at dusk to hunt; her soft pads let her creep quietly, and her claws slide out only when she needs them. The pupil is the black middle of the eye. To rasp is to scrape. A wild beast show was a travelling zoo.",
+      "contentNote": "The children shut the cat in a dark room for a few minutes to watch her eyes change.",
+      "excerpt": {
+        "locator": "First Book, Lesson X, “Peter’s Cat,” paragraphs 7–12 (end of lesson); opens “But how does she see the rats and mice in the night? Paul showed us that she can open the…”; closes “…too. We heard a tiger purr one day in a wild beast show, when she was licking her cub.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-07",
+        "continuesTo": null,
+        "blocks": [
+          128,
+          133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b13962854615a131e30152f4876cdbb268459fe499747d7aa6f90d5792bce5c0"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-08-q1",
+          "prompt": "What happened to the cat’s eyes by the lamp, and then after the dark room?",
+          "facilitatorNotes": [
+            "By the lamp the black middle was a narrow slit; after the dark it had become a big round hole, letting in all the light there is."
+          ],
+          "evidence": [
+            "was only a little narrow slit",
+            "The little slit had become a large round black hole."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-08-q2",
+          "prompt": "How does the cat find her way when it is very dark? Why does Paul say never to cut her whiskers?",
+          "facilitatorNotes": [
+            "She feels her way with her whiskers, so cutting them would be cruel and take away her help in the dark."
+          ],
+          "evidence": [
+            "she feels her way with her whiskers.",
+            "Paul says it is very cruel to cut a cat's whiskers,"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-08-q3",
+          "prompt": "How is a cat like a tiger?",
+          "facilitatorNotes": [
+            "Both are fierce hunters, and both can be loving: the children heard a tiger purr as she licked her cub. Children may say a pet cat does not seem fierce at all; the lesson says she is gentle at home and fierce in the wood."
+          ],
+          "evidence": [
+            "Tigers and cats are very much alike.",
+            "We heard a tiger purr one day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-09",
       "title": "The Greedy Stranger, part 1: an extra egg",
       "sourceId": "buckley-eyes-no-eyes-1902",
       "workTitle": "The Greedy Stranger",
@@ -281,7 +540,7 @@
         "locator": "First Book, Lesson XI, “The Greedy Stranger,” from the beginning through the titlark sitting on her nest (with the author’s footnote); opens “It was the middle of April this year when we first heard the cuckoo. We love to hear it,…”; closes “…She was a pretty little bird, with brown spotted wings and a yellow throat and chin.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-06",
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-10",
         "blocks": [
           135,
           142
@@ -292,7 +551,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q1",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-09-q1",
           "prompt": "What sound tells the children that a mother cuckoo is near?",
           "facilitatorNotes": [
             "A funny cry like “kik-kik-kik,” which Peggy’s father says is the mother cuckoo’s call."
@@ -302,7 +561,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q2",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-09-q2",
           "prompt": "Count the eggs with the children. How many were there each time they looked?",
           "facilitatorNotes": [
             "Two, then three, then four, then five on the same afternoon. Count on fingers together."
@@ -313,7 +572,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q3",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-09-q3",
           "prompt": "Why does Peter think the fifth egg belongs to a cuckoo?",
           "facilitatorNotes": [
             "A titlark cannot lay two eggs in one day, and a cuckoo carries her egg in her beak to another bird’s nest. Praise a child who follows this reasoning from the count."
@@ -326,7 +585,7 @@
       ]
     },
     {
-      "id": "reading-k-buckley-eyes-no-eyes-1902-06",
+      "id": "reading-k-buckley-eyes-no-eyes-1902-10",
       "title": "The Greedy Stranger, part 2: the cuckoo in the nest",
       "sourceId": "buckley-eyes-no-eyes-1902",
       "workTitle": "The Greedy Stranger",
@@ -344,7 +603,7 @@
       "excerpt": {
         "locator": "First Book, Lesson XI, “The Greedy Stranger,” from the hatching to the end of the lesson; opens “At the end of a fortnight two little titlarks came out of their shells, and the next day…”; closes “…we knew the old birds were all gone. We wondered if it was our young \"greedy stranger.\"”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-05",
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-09",
         "continuesTo": null,
         "blocks": [
           143,
@@ -356,7 +615,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q1",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-10-q1",
           "prompt": "How do the children know which chick is the cuckoo?",
           "facilitatorNotes": [
             "By his curved beak and his toes, two in front and two behind; titlarks have straight beaks and three toes in front."
@@ -367,7 +626,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q2",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-10-q2",
           "prompt": "What does the young cuckoo do to the titlark chicks?",
           "facilitatorNotes": [
             "He pushes them out of the nest one by one until he sits alone, and they die on the bank. The children put one back, but by the afternoon it is out again."
@@ -378,7 +637,7 @@
           ]
         },
         {
-          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q3",
+          "id": "reading-k-buckley-eyes-no-eyes-1902-10-q3",
           "prompt": "Why is the cuckoo called a “greedy stranger”? Is the name fair?",
           "facilitatorNotes": [
             "He is not the titlarks’ own chick, and he takes all the room and all the food; the parents go on feeding him after he is bigger than they are. A child who says he cannot help being a cuckoo is giving a thoughtful answer the lesson leaves open."
