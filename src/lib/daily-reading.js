@@ -16,10 +16,12 @@
   function validDay(week, day) { return Number.isInteger(week) && week >= 1 && week <= 36 && Number.isInteger(day) && day >= 1 && day <= 5; }
   function route(grade, week = 1, day = 1) { return validGrade(grade) && validDay(week, day) ? "#" + gradeKey(grade) + "/" + week + "/" + day : ""; }
   function gradeAt(index, grade) { return (index && index.grades || []).find(item => item.grade === grade) || null; }
-  function resolve(index, hash) {
+  // A school-night route. An unknown grade falls back to `fallbackGrade`
+  // (the remembered one) when the index has it, else the first grade.
+  function resolve(index, hash, fallbackGrade = null) {
     const raw = String(hash || "").replace(/^#/, ""), parts = raw.split("/");
     const requested = gradeAt(index, gradeFromKey(parts[0]));
-    const course = requested || (index && index.grades || [])[0] || null;
+    const course = requested || gradeAt(index, fallbackGrade) || (index && index.grades || [])[0] || null;
     const exact = !!requested && parts.length === 3 && /^(?:[1-9]|[12][0-9]|3[0-6])$/.test(parts[1]) && /^[1-5]$/.test(parts[2]);
     return { course, grade: course ? course.grade : null, week: course ? exact ? Number(parts[1]) : 1 : null,
       day: course ? exact ? Number(parts[2]) : 1 : null, invalid: !!raw && !exact };
@@ -124,15 +126,28 @@
   // `options.grade` is the remembered grade for an empty hash; `options.today`
   // is the date a date route without a valid date falls back to.
   const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/, ISO_MONTH = /^\d{4}-(?:0[1-9]|1[0-2])$/;
+  // A real calendar date, years 0001-9999 (the same rule as
+  // reading-calendar's parseDate). setUTCFullYear, because Date.UTC reads
+  // years 0-99 as 1900-1999.
   function validDate(value) {
     if (typeof value !== "string" || !ISO_DATE.test(value)) return false;
-    const [y, m, d] = value.split("-").map(Number), time = Date.UTC(y, m - 1, d), date = new Date(time);
-    return date.getUTCFullYear() === y && date.getUTCMonth() === m - 1 && date.getUTCDate() === d;
+    const [y, m, d] = value.split("-").map(Number), date = new Date(0);
+    date.setUTCFullYear(y, m - 1, d);
+    return y >= 1 && date.getUTCFullYear() === y && date.getUTCMonth() === m - 1 && date.getUTCDate() === d;
+  }
+  // Whether a typed date should open: a complete, valid date that differs
+  // from the one shown, and, while the reader is still typing into the
+  // field, only on an explicit commit (Enter or leaving the field). The
+  // picker's own choice commits at once.
+  function dateCommit({ value, current = null, typing = false, explicit = false } = {}) {
+    if (!validDate(value) || value === current) return null;
+    return typing && !explicit ? null : value;
   }
   function validReadingId(grade, id) { return validGrade(grade) && typeof id === "string" && id.length <= 120 && new RegExp("^reading-" + gradeKey(grade) + "-[a-z0-9]+(?:-[a-z0-9]+)*$").test(id); }
   function view(index, hash, options = {}) {
     const raw = String(hash || "").replace(/^#/, ""), parts = raw.split("/"), grades = index && index.grades || [];
     const fallback = gradeAt(index, options.grade) || grades[0] || null, today = validDate(options.today) ? options.today : null;
+    const anyCalendar = list => list.some(grade => hasCalendar(index, grade));
     const at = course => ({ course, grade: course ? course.grade : null });
     if (!raw) return { view: "browse", ...at(fallback), week: null, home: true, invalid: false };
     if (parts[0] === "browse") {
@@ -147,9 +162,14 @@
       else if (rest[0] === "night") {
         const ok = rest.length >= 3 && validDay(Number(rest[1]), Number(rest[2])) && /^\d+$/.test(rest[1] + rest[2]);
         week = ok ? Number(rest[1]) : 1; day = ok ? Number(rest[2]) : 1; invalid = !ok; rest = rest.slice(3);
-      } else date = today;
+      }
       const keys = rest.length === 1 ? rest[0].split(",") : [], chosen = keys.map(gradeFromKey).filter(grade => gradeAt(index, grade));
       if (rest.length > 1 || keys.length !== chosen.length) invalid = true;
+      // No day given: today's date when a chosen level (or the remembered
+      // one) has a date calendar, otherwise the first school night.
+      if (!date && week === null) {
+        if (anyCalendar(chosen.length ? chosen : fallback ? [fallback.grade] : [])) date = today; else { week = 1; day = 1; }
+      }
       return { view: "print", course: null, grade: null, date, week, day, grades: [...new Set(chosen)].sort((x, y) => x - y), invalid };
     }
     const requested = gradeAt(index, gradeFromKey(parts[0]));
@@ -162,9 +182,16 @@
       return { view: "month", ...at(requested), month, invalid: !ISO_MONTH.test(parts[2]) };
     }
     if (requested && parts[1] === "reading" && parts.length === 3 && validReadingId(requested.grade, parts[2])) {
+      // A school night's id opens the night itself; one naming no real night
+      // (week 37) is an unrecognized link, not a reload.
+      const night = /-w(\d\d)-d(\d)$/.exec(parts[2]);
+      if (night) {
+        const week = Number(night[1]), day = Number(night[2]), ok = validDay(week, day);
+        return { view: "read", ...at(requested), week: ok ? week : 1, day: ok ? day : 1, redirect: ok, invalid: !ok };
+      }
       return { view: "reading", ...at(requested), id: parts[2], invalid: false };
     }
-    return { view: "read", ...resolve(index, hash) };
+    return { view: "read", ...resolve(index, hash, options.grade) };
   }
   function dateRoute(grade, date) { return validGrade(grade) && validDate(date) ? "#" + gradeKey(grade) + "/date/" + date : ""; }
   function monthRoute(grade, month) { return validGrade(grade) && ISO_MONTH.test(String(month)) ? "#" + gradeKey(grade) + "/month/" + month : ""; }
@@ -263,7 +290,9 @@
   const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function longDate(date) {
     if (!validDate(date)) return null;
-    const [year, month, day] = date.split("-").map(Number), weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+    const [year, month, day] = date.split("-").map(Number), at = new Date(0);
+    at.setUTCFullYear(year, month - 1, day);
+    const weekday = at.getUTCDay();
     return WEEKDAY_NAMES[weekday] + " " + day + " " + MONTH_NAMES[month - 1] + " " + year;
   }
   function printMeta(grade, { date = null, week = null, day = null } = {}) {
@@ -384,6 +413,6 @@
     navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
     MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
     readingFile, calendarFile, SPANS_FILE, hasCalendar, nightLabel, documentTitle, beforeYouRead, continuation,
-    STORAGE_KEY, parseRemembered, remember, tonight, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
+    STORAGE_KEY, parseRemembered, remember, tonight, dateCommit, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
     genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };
 });
