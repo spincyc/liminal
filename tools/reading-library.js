@@ -7,6 +7,12 @@
 //   node tools/reading-library.js align <grade-key> [--write] [--source <old-source-id>]
 //   node tools/reading-library.js gutenberg <file.txt> <out.jsonl>   rough prose conversion to refine by hand
 //   node tools/reading-library.js remap <work-id> <map> [--old <text.jsonl>] [--grow] [--write]
+//   node tools/reading-library.js rehash <work-id> [--write]
+//
+// rehash follows a correction made in place (same blocks, changed words): it
+// recomputes the text hash of every school night and calendar reading citing
+// the work and lists those whose text changed, so their context, questions
+// and evidence quotes can be checked against the corrected wording.
 //
 // remap re-cites a work after blocks were removed or split in its text (a
 // collation restores a paragraph break; later apparatus is taken out). <map>
@@ -138,6 +144,28 @@ function gutenberg(input, output) {
   console.log("Wrote " + blocks.length + " blocks to " + output + " (review headings, verse and notes by hand).");
 }
 
+// Every grade file and calendar-reading file that may cite a work: calls
+// visit(file, readings) for each and returns the parsed files by path.
+function citingFiles(id, visit) {
+  const daily = path.join(ROOT, "content/reading-daily"), data = new Map();
+  for (const name of fs.readdirSync(daily)) if (/^(k|\d+|a\d)\.json$/.test(name)) { const file = path.join(daily, name), raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.days || []); }
+  const extra = path.join(daily, "extra");
+  if (fs.existsSync(extra)) for (const key of fs.readdirSync(extra)) { const file = path.join(extra, key, id + ".json"); if (fs.existsSync(file)) { const raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.readings); } }
+  return data;
+}
+function rehash(id, { write = false } = {}) {
+  const blocks = L.parseText(fs.readFileSync(path.join(DIRECTORY, id, "text.jsonl"), "utf8"), id), changed = [], files = new Set();
+  const data = citingFiles(id, (file, list) => {
+    for (const reading of list) {
+      if (reading.sourceId !== id || !reading.excerpt || !Array.isArray(reading.excerpt.blocks)) continue;
+      const hash = textHash({ blocks: L.resolveRange(blocks, reading.excerpt, reading.id) });
+      if (hash !== reading.excerpt.textHash) { reading.excerpt.textHash = hash; changed.push(reading.id); files.add(file); }
+    }
+  });
+  console.log(changed.length ? "CHANGED " + changed.join(" ") + ": check their context, questions and evidence against the corrected text" : "No reading of " + id + " changed.");
+  if (write) for (const file of files) fs.writeFileSync(file, JSON.stringify(data.get(file), null, 2) + "\n");
+  return { changed };
+}
 // Parse a remap description into a function old index -> {new: [first, last]} or null (removed).
 function parseMap(text, oldCount, newCount) {
   const parts = text.split(",").map(part => part.trim()).filter(Boolean), table = new Map(), inserted = new Set();
@@ -194,7 +222,7 @@ function remap(id, mapText, { write = false, old = null, grow = false } = {}) {
     if (joined !== spaced(before[i].text)) throw new Error("remap: old block " + i + " does not match new " + to.first + (to.last > to.first ? ".." + to.last : "") + "; make text changes separately");
   }
   const problems = [], files = [], grown = [];
-  const visit = (file, list) => {
+  const data = citingFiles(id, (file, list) => {
     let touched = false;
     for (const reading of list) {
       if (reading.sourceId !== id || !reading.excerpt || !Array.isArray(reading.excerpt.blocks)) continue;
@@ -207,11 +235,7 @@ function remap(id, mapText, { write = false, old = null, grow = false } = {}) {
       touched = true;
     }
     if (touched) files.push(file);
-  };
-  const daily = path.join(ROOT, "content/reading-daily"), data = new Map();
-  for (const name of fs.readdirSync(daily)) if (/^(k|\d+|a\d)\.json$/.test(name)) { const file = path.join(daily, name), raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.days || []); }
-  const extra = path.join(daily, "extra");
-  if (fs.existsSync(extra)) for (const key of fs.readdirSync(extra)) { const file = path.join(extra, key, id + ".json"); if (fs.existsSync(file)) { const raw = JSON.parse(fs.readFileSync(file, "utf8")); data.set(file, raw); visit(file, raw.readings); } }
+  });
   const workFile = path.join(folder, "work.json"), work = JSON.parse(fs.readFileSync(workFile, "utf8"));
   if (work.scope.collated) {
     const ranges = [];
@@ -248,8 +272,11 @@ if (require.main === module) {
       if (args.length < 2) throw new Error("remap needs <work-id> <map>");
       const { problems } = remap(args[0], args[1], { write: args.includes("--write"), grow: args.includes("--grow"), old: at === -1 ? null : args[at + 1] });
       if (problems.length) process.exitCode = 2;
+    } else if (command === "rehash") {
+      if (args.length < 1) throw new Error("rehash needs <work-id>");
+      rehash(args[0], { write: args.includes("--write") });
     } else if (command === "gutenberg") { if (args.length !== 2) throw new Error("gutenberg needs <file.txt> <out.jsonl>"); gutenberg(args[0], args[1]); }
-    else throw new Error("usage: reading-library.js check | seal <id>... | align <grade-key> [--write] [--source <id>] | remap <work-id> <map> [--old <file>] [--grow] [--write] | gutenberg <in> <out>");
+    else throw new Error("usage: reading-library.js check | seal <id>... | align <grade-key> [--write] [--source <id>] | remap <work-id> <map> [--old <file>] [--grow] [--write] | rehash <work-id> [--write] | gutenberg <in> <out>");
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
-module.exports = { seal, locate, align, gutenberg, parseMap, remapExcerpt, remap };
+module.exports = { seal, locate, align, gutenberg, parseMap, remapExcerpt, remap, rehash };
