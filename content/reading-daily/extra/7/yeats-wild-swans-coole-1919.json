@@ -16,7 +16,7 @@
       },
       "challenge": "Follow an elegy through twelve stanzas of a single evening’s thoughts, and track how a refrain gathers meaning.",
       "focus": "A poet names his dead friends one by one and finds that one death is too much for words.",
-      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Robert Gregory, Lady Gregory’s only son, was a painter, scholar and horseman who joined the Royal Flying Corps and was killed when his plane was shot down over Italy in January 1918; he is the airman of “An Irish Airman Foresees His Death.” Yeats wrote this elegy (a poem of mourning) while making a home in an old stone tower near Coole. Lionel Johnson was a poet; John Synge a playwright who lived among the people of the Aran Islands; George Pollexfen, Yeats’s uncle, studied astrology (“opposition, square and trine” are positions of the stars). Sir Philip Sidney (1554–1586), poet and soldier, died young of a battle wound and was remembered as the perfect gentleman. Turf is peat burned as fuel; fagots are bundles of sticks; a meet is a gathering for a hunt.",
+      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. Robert Gregory, Lady Gregory’s only son, was a painter, scholar and horseman who joined the Royal Flying Corps and was killed when his plane was shot down over Italy in January 1918; he is the airman of “An Irish Airman Foresees His Death.” Yeats wrote this elegy (a poem of mourning) while making a home in an old stone tower near Coole. Lionel Johnson was a poet; John Synge a playwright who lived among the people of the Aran Islands; George Pollexfen, Yeats’s uncle, studied astrology (“opposition, square and trine” are positions of the stars). Sir Philip Sidney (1554–1586), poet and soldier, died young of a battle wound and was remembered as the perfect gentleman. Turf is peat burned as fuel; fagots are bundles of sticks; a meet is a gathering for a hunt. It is read on Memorial Day, the American day for remembering those who died in war.",
       "contentNote": "An elegy for a young pilot killed in the First World War.",
       "excerpt": {
         "locator": "“In Memory of Major Robert Gregory,” the whole poem, stanzas 1–12; opens “Now that we're almost settled in our house I'll name the friends that cannot sup with us…”; closes “…brought A fitter welcome; but a thought Of that late death took all my heart for speech.”.",
@@ -75,7 +75,8 @@
             "Of that late death took all my heart for speech."
           ]
         }
-      ]
+      ],
+      "holiday": "memorial-day"
     },
     {
       "id": "reading-7-yeats-wild-swans-coole-1919-02",
@@ -1258,70 +1259,6 @@
           "evidence": [
             "A visionary white sea-bird\nLamenting that a man should die;",
             "And with that cry I have raised my cry."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-7-yeats-wild-swans-coole-1919-20",
-      "title": "The Saint and the Hunchback",
-      "sourceId": "yeats-wild-swans-coole-1919",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 13,
-        "totalMinutes": 21
-      },
-      "challenge": "Find the joke in a short dialogue between two very different men.",
-      "focus": "A hunchback who feels like a fallen emperor, and a saint who whips the great men of history out of himself.",
-      "context": "W. B. Yeats (1865–1939) was the leading Irish poet of his time and won the Nobel Prize in Literature in 1923. The Wild Swans at Coole (1919) is named for the lake at Coole Park in County Galway, home of his friend the writer Lady Augusta Gregory. A hunchback has a curved spine that makes a hump on his back. Renown is fame. Taws is a Scottish word for a leather strap used for beating. Alexander the Great was the Greek king who conquered an empire reaching to India; Augustus Caesar was the first Roman emperor; Alcibiades was a brilliant, reckless Athenian general and politician who changed sides more than once.",
-      "contentNote": "The saint beats himself with a strap to drive out pride.",
-      "excerpt": {
-        "locator": "“The Saint and the Hunchback,” the whole poem; opens “Hunchback”; closes “…blessed, I give my gratitude, Honoured by all in their degrees, But most to Alcibiades.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          266,
-          272
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "d205101a00e42c95930e618af2a025ee2d245f9c03661cb053518fc33831e502"
-      },
-      "questions": [
-        {
-          "id": "reading-7-yeats-wild-swans-coole-1919-20-q1",
-          "prompt": "What does the hunchback ask for, and what does he believe about himself?",
-          "facilitatorNotes": [
-            "He asks the saint’s blessing because he is bitter about his “lost renown”: inside his bent body, he feels, is a Roman Caesar held down. It may be a past life, a buried ambition or pride. Readers can say how seriously to take him."
-          ],
-          "evidence": [
-            "In thinking of his lost renown.",
-            "A Roman Caesar is held down\nUnder this hump."
-          ]
-        },
-        {
-          "id": "reading-7-yeats-wild-swans-coole-1919-20-q2",
-          "prompt": "“God tries each man / According to a different plan.” What is the saint’s own trial, and why might he whip himself “night and morning”?",
-          "facilitatorNotes": [
-            "He beats out of his flesh Alexander, Augustus and Alcibiades: the conqueror, the emperor and the charming rogue, the pride and appetites of great men. The hunchback carries a lost greatness; the saint carries greatness he wants to be rid of. Readers can compare the two burdens."
-          ],
-          "evidence": [
-            "God tries each man\nAccording to a different plan.",
-            "That night and morning I may thrash\nGreek Alexander from my flesh,"
-          ]
-        },
-        {
-          "id": "reading-7-yeats-wild-swans-coole-1919-20-q3",
-          "prompt": "Why does the hunchback thank Alcibiades most of all? What is funny about the ending?",
-          "facilitatorNotes": [
-            "He thanks the great men who “stood and blessed” in the saint’s flesh, as if they had given the blessing. He picks the “great rogue,” perhaps because a rogue is more fun than a conqueror, or because he likes seeing the saint plagued by him. Readers may find the ending a gentle joke at the saint, or at the hunchback."
-          ],
-          "evidence": [
-            "To all that in your flesh have stood\nAnd blessed, I give my gratitude,",
-            "But most to Alcibiades."
           ]
         }
       ]

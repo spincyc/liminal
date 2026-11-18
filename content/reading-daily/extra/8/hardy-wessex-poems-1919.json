@@ -1529,7 +1529,7 @@
       },
       "challenge": "Watch a survivor’s view of his own success change in eight short stanzas.",
       "focus": "Chance, survival and the glory given to the dead.",
-      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. The heading names a place and year, the Khyber Pass, 1842: in the First Anglo-Afghan War a British army retreating from Kabul was almost wiped out, and other British forces fought through the Khyber Pass between Afghanistan and India. Casterbridge is Hardy’s name for Dorchester, his home town; the subtitle calls the poem a local “tradition” and names the three captains only by initials. “Of yore” means from long ago; laurels are a victor’s wreath; an aisle is part of a church; “untrumped of fame” means not yet famous; pupilage is being a schoolboy; “unweeting” means unaware; “stayed” here means stopped, killed; “sphered” means surrounded; transcendent means rising above the ordinary; an urn holds a dead person’s ashes, here standing for a grave; twain means two.",
+      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. The heading names a place and year, the Khyber Pass, 1842: in the First Anglo-Afghan War a British army retreating from Kabul was almost wiped out, and other British forces fought through the Khyber Pass between Afghanistan and India. Casterbridge is Hardy’s name for Dorchester, his home town; the subtitle calls the poem a local “tradition” and names the three captains only by initials. “Of yore” means from long ago; laurels are a victor’s wreath; an aisle is part of a church; “untrumped of fame” means not yet famous; pupilage is being a schoolboy; “unweeting” means unaware; “stayed” here means stopped, killed; “sphered” means surrounded; transcendent means rising above the ordinary; an urn holds a dead person’s ashes, here standing for a grave; twain means two. It is read on Veterans Day for its picture of a soldier who came home.",
       "contentNote": "Two young officers die in a colonial war; the poem does not describe the fighting.",
       "excerpt": {
         "locator": "The Casterbridge Captains (Khyber Pass, 1842), the whole poem with its subtitle; opens “A TRADITION OF J. B. L—, T. G. B—, AND J. L—.”; closes “…longer lit his brain; Transcendence rayed the distant urn Where slept the fallen twain.”.",
@@ -1589,7 +1589,8 @@
             "Transcendence rayed the distant urn"
           ]
         }
-      ]
+      ],
+      "holiday": "veterans-day"
     },
     {
       "id": "reading-8-hardy-wessex-poems-1919-22",
@@ -1964,81 +1965,6 @@
             "Some rebel churchyard crew updrave",
             "And every current rippled red",
             "My mother saw these things!"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-8-hardy-wessex-poems-1919-27",
-      "title": "To a Lady Offended by a Book of the Writer’s",
-      "sourceId": "hardy-wessex-poems-1919",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 6,
-        "discussionMinutes": 16,
-        "totalMinutes": 22
-      },
-      "challenge": "Hear the sharp edge under polite words, and decide what the writer finally cares about more than the lady’s good opinion.",
-      "focus": "A writer losing a reader over a book he will not take back.",
-      "context": "Thomas Hardy (1840–1928), best known for his novels of rural Wessex, his name for southwest England, published his first book of poems, Wessex Poems, in 1898; it gathers verse written over thirty years, some of it in the 1860s. He published it in 1898, after readers and critics had attacked his novels Tess of the d’Urbervilles (1891) and Jude the Obscure (1895) as immoral; the lady is not named. “Upcloses” means closes; flambeaux are torches; an “insidious heave” is a sly push; surcease means to stop; alway means always.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "To a Lady offended by a Book of the Writer’s, the whole sonnet; opens “NOW that my page upcloses, doomed, maybe, Never to press thy cosy cushions more, Or wake…”; closes “…And then in far and feeble visitings, And then surcease. Truth will be truth alway.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          451,
-          453
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "113a18f53b2983aef261ebd797551a80e816af7f2c36ef68e45888d74c30d859"
-      },
-      "questions": [
-        {
-          "id": "reading-8-hardy-wessex-poems-1919-27-q1",
-          "prompt": "What has happened between the writer and the lady? Which words show what she used to do with his books?",
-          "facilitatorNotes": [
-            "A book has offended her, and she may never read him again: his page will no longer “press thy cosy cushions” or win her “ready Yeas.” Her support was easy and comfortable."
-          ],
-          "evidence": [
-            "Never to press thy cosy cushions more,",
-            "Or wake thy ready Yeas as heretofore,"
-          ]
-        },
-        {
-          "id": "reading-8-hardy-wessex-poems-1919-27-q2",
-          "prompt": "How does he expect her opinion of him to change, and whom does he blame?",
-          "facilitatorNotes": [
-            "His “sombre image” will be pushed out by others “less forthright,” as torches banish the evening. He blames her “natural receptivity” (she is easily influenced) and the sly talk of others. The politeness carries a sharp criticism."
-          ],
-          "evidence": [
-            "Knowing thy natural receptivity,",
-            "Of those less forthright, must lose place in thee."
-          ]
-        },
-        {
-          "id": "reading-8-hardy-wessex-poems-1919-27-q3",
-          "prompt": "“So be it. I have borne such.” What tone do these short sentences set? Is the writer hurt, scornful, or calm?",
-          "facilitatorNotes": [
-            "Resigned and controlled after the long first sentence: he has suffered this before. Words like “smugger things” let scorn show through. Readers can defend any of the three with evidence."
-          ],
-          "evidence": [
-            "I have borne such.",
-            "And yield their space to shine of smugger things;"
-          ]
-        },
-        {
-          "id": "reading-8-hardy-wessex-poems-1919-27-q4",
-          "prompt": "The last lines fade her memory of him step by step. Trace the steps, and explain the effect of the final sentence.",
-          "facilitatorNotes": [
-            "“Fitful gleams,” then “far and feeble visitings,” then nothing, like a light dying. “Truth will be truth alway” is short and firm: whatever she thinks, what he wrote stays true. Some readers find it proud, others dignified."
-          ],
-          "evidence": [
-            "Till I shape to thee but in fitful gleams,",
-            "Truth will be truth alway."
           ]
         }
       ]

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "olson-northmen-columbus-cabot-1906",
+  "readings": [
+    {
+      "id": "reading-7-olson-northmen-columbus-cabot-1906-01",
+      "title": "Columbus announces his discovery: the letter to Santangel, 1493 — excerpt",
+      "sourceId": "olson-northmen-columbus-cabot-1906",
+      "workTitle": "Letter from Columbus to Luis de Santangel",
+      "genre": "documentary prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Read the first published report of Columbus’s voyage as a persuasive document: notice what he wants readers in Spain to believe, and what his own words reveal.",
+      "focus": "Columbus tells the royal official who helped pay for his voyage what he found: rich islands and generous people he means to convert and to use.",
+      "context": "Christopher Columbus (1451–1506), a sailor from Genoa, crossed the Atlantic for King Ferdinand and Queen Isabella of Spain in 1492 and reached the islands of the Caribbean, which he believed lay off the coast of Asia, the Indies. On the voyage home in February 1493 he wrote this letter to Luis de Santangel, the royal treasury official who had helped raise money for the voyage; printed in Barcelona that spring, it gave Europe its first news of the voyage. The people he met were the Taíno; within a generation Spanish rule, forced labor, slavery and new diseases had destroyed most of them. Juana is Cuba; La Spañola or Española is Hispaniola, now Haiti and the Dominican Republic; Cathay is China; a league is about three miles; castellanos and blancas are Spanish coins; the numbers in brackets mark the 1906 editor’s notes. It is read on Columbus Day, the anniversary of his first landing on 12 October 1492.",
+      "contentNote": "Columbus describes the Taíno as naked and timid, compares them to “senseless brutes,” and says he “took some of them by force”; the questions examine these judgments.",
+      "excerpt": {
+        "locator": "Letter from Columbus to Luis de Santangel, from the opening to the welcome the islanders gave “the people from Heaven”; opens “SIR: As I know that you will have pleasure from the great victory which our Lord hath…”; closes “…they all brought something to eat and drink, which they gave with wondrous lovingness.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          788,
+          788
+        ],
+        "startChar": null,
+        "endChar": 8582,
+        "textHash": "8b4534642e161ce204ad31dbf339d841604bee0314a659c43a6a67e780c17a7d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-olson-northmen-columbus-cabot-1906-01-q1",
+          "prompt": "In the opening sentences, what does Columbus claim to have done, and how quickly? Why might he open the letter this way?",
+          "facilitatorNotes": [
+            "He crossed to the Indies in thirty-three days, found countless peopled islands, and took possession of them all for the King and Queen without being “gainsaid,” that is, contradicted. Speed, numbers and an unopposed claim announce a victory and justify the money spent. Some readers point out that the islanders could not understand, let alone contest, a proclamation made in Spanish."
+          ],
+          "evidence": [
+            "in thirty-three days I passed over to the Indies",
+            "and I was not gainsaid."
+          ]
+        },
+        {
+          "id": "reading-7-olson-northmen-columbus-cabot-1906-01-q2",
+          "prompt": "Columbus gives each island a new Spanish name. What does the naming do, and what does he let slip about the first island?",
+          "facilitatorNotes": [
+            "Naming claims the land for Spain and for Christianity (San Salvador honours Christ, Fernandina the king) and replaces the inhabitants’ own names. He admits in passing that the island already had one: “the Indians call it Guanaham.”"
+          ],
+          "evidence": [
+            "To the first which I found, I gave the name Sant Salvador",
+            "the Indians call it Guanaham."
+          ]
+        },
+        {
+          "id": "reading-7-olson-northmen-columbus-cabot-1906-01-q3",
+          "prompt": "Find the description of Española. Which words show that Columbus is selling the island to his readers as well as describing it?",
+          "facilitatorNotes": [
+            "Everything is superlative: “most fertile to an excessive degree,” harbors “incomparable,” rivers so good “it is a marvel,” trees that never lose their leaves. He stresses what the Crown would want, land for planting and cattle and towns, rivers that contain gold, “great mines of gold and other metals,” spices. Some details, like nightingales singing in November, are things he expected to find rather than birds that live there."
+          ],
+          "evidence": [
+            "Española is a marvel;",
+            "In this, there are many spiceries, and great mines of gold and other metals."
+          ]
+        },
+        {
+          "id": "reading-7-olson-northmen-columbus-cabot-1906-01-q4",
+          "prompt": "How does Columbus judge the people? Find two judgments that contradict each other, and decide what his account reveals about his aims.",
+          "facilitatorNotes": [
+            "He calls them “incurably timid” and says they traded “like senseless brutes,” yet also calls them “men of very subtle wit, who navigate all those seas.” He praises their generosity and admits that he “took some of them by force” to make them interpreters. The judgments shift with his purpose: he measures the Taíno by their usefulness to Spain, as converts, guides and servants. Strong answers notice the force sitting beside his claim to give freely so that they “may conceive affection.”"
+          ],
+          "evidence": [
+            "like senseless brutes",
+            "they are men of very subtle wit, who navigate all those seas",
+            "I took some of them by force"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    }
+  ]
+}

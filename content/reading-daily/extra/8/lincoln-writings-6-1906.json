@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "lincoln-writings-6-1906",
+  "readings": [
+    {
+      "id": "reading-8-lincoln-writings-6-1906-01",
+      "title": "Proclamation for Thanksgiving, October 3, 1863",
+      "sourceId": "lincoln-writings-6-1906",
+      "genre": "documentary prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 16,
+        "totalMinutes": 23
+      },
+      "challenge": "Read a wartime proclamation sentence by sentence, and work out how it asks a divided nation to give thanks.",
+      "focus": "In the middle of the Civil War, Lincoln sets the last Thursday of November as a national day of thanksgiving and joins gratitude to penitence and mourning.",
+      "context": "Before 1863 each state set its own Thanksgiving day, and the magazine editor Sarah Josepha Hale had campaigned for years for a single national holiday. Abraham Lincoln (1809–1865) issued this proclamation three months after the Union victories at Gettysburg and Vicksburg; Secretary of State William H. Seward, who signed it with him, is believed to have drafted much of it. Providence is God’s care for the world; the shuttle, a weaver’s tool, stands for industry; augmented means increased; ascriptions are words of praise; perverseness is stubborn wrongdoing; interposition is intervention. It is read on Thanksgiving Day, which presidents have proclaimed every year since.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Proclamation for Thanksgiving, October 3, 1863, the whole proclamation with its signatures; opens “BY THE PRESIDENT OF THE UNITED STATES OF AMERICA:”; closes “WILLIAM H. SEWARD, Secretary of State.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          0,
+          10
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5fa8a696245504affd94d370810dcefdd7dc533d5e115ea238f7ab01206cbf60"
+      },
+      "questions": [
+        {
+          "id": "reading-8-lincoln-writings-6-1906-01-q1",
+          "prompt": "The first paragraph lists the year’s blessings. Sort them: which are gifts of nature, and which are things the nation has kept going in spite of the war?",
+          "facilitatorNotes": [
+            "Nature: fruitful fields and healthful skies. The nation: peace with foreign powers, order and law, the plough, shuttle and ship still at work, settlements spreading, mines yielding more, population growing. The list answers a fear that the war had stopped the country’s life."
+          ],
+          "evidence": [
+            "The year that is drawing towards its close has been filled with the blessings of fruitful fields and healthful skies.",
+            "has not arrested the plough, the shuttle, or the ship."
+          ]
+        },
+        {
+          "id": "reading-8-lincoln-writings-6-1906-01-q2",
+          "prompt": "Why mention the war at all in a call to give thanks? How does the proclamation speak of the war without naming an enemy?",
+          "facilitatorNotes": [
+            "The blessings seem “extraordinary” precisely because the war might have ruined everything. It calls the fighting “the theatre of military conflict” and “the lamentable civil strife in which we are unavoidably engaged,” and never names the Confederacy or blames the South, so the whole nation, divided as it is, can be invited into the day."
+          ],
+          "evidence": [
+            "In the midst of a civil war of unequalled magnitude and severity",
+            "the lamentable civil strife in which we are unavoidably engaged"
+          ]
+        },
+        {
+          "id": "reading-8-lincoln-writings-6-1906-01-q3",
+          "prompt": "Who, according to the second paragraph, deserves the credit for the year’s good fortune? Why might a president at war say so?",
+          "facilitatorNotes": [
+            "Not any “human counsel” or “mortal hand” but “the Most High God,” who has dealt with the nation “in anger for our sins” and yet “remembered mercy.” Giving the credit to God rather than to the government or the army is humble and unifying, and it presents the war as a judgment on the whole nation, North as well as South."
+          ],
+          "evidence": [
+            "No human counsel hath devised, nor hath any mortal hand worked out these great things.",
+            "who, while dealing with us in anger for our sins, hath nevertheless remembered mercy."
+          ]
+        },
+        {
+          "id": "reading-8-lincoln-writings-6-1906-01-q4",
+          "prompt": "Besides giving thanks, what else does the proclamation ask Americans to do on the day? Is it meant to be joyful, solemn, or both?",
+          "facilitatorNotes": [
+            "To confess “national perverseness and disobedience” with humble penitence, to commend widows, orphans, mourners and sufferers to God’s care, and to pray for the nation’s wounds to heal and for “peace, harmony, tranquillity, and union.” The day joins gratitude to mourning and repentance; students may consider how much of that second half today’s holiday keeps."
+          ],
+          "evidence": [
+            "with humble penitence for our national perverseness and disobedience",
+            "all those who have become widows, orphans, mourners, or sufferers"
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
+    }
+  ]
+}

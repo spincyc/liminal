@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "emerson-poems-1911",
+  "author": "Ralph Waldo Emerson",
+  "title": "Poems (Household Edition)",
+  "translator": null,
+  "edition": "Poems, Household Edition, Boston and New York: Houghton Mifflin Company (The Riverside Press, Cambridge), the printing whose copyright notice reads “Copyright, 1867 and 1876, by Ralph Waldo Emerson; Copyright, 1883, 1895, 1904, and 1911, by Edward W. Emerson”. Text from Project Gutenberg eBook 12843 (Poems: Household Edition), which does not name its print exemplar; its copyright lines and contents match the 1911 printing. The library holds Emerson’s poems, sections I–VI (Poems; May-Day and Other Pieces; Elements and Mottoes; Quatrains and Translations; Appendix; Poems of Youth and Early Manhood); Edward W. Emerson’s 1899 preface, the biographical sketch, the contents and the indexes are left out, and the printing’s note references and end notes (Edward W. Emerson’s, from the Centenary Edition) are not in the transcription and are not reproduced. The passages the nightly readings use, “Concord Hymn” (blocks 353–358, printed pages 158–159) and “Ode Sung in the Town Hall, Concord, July 4, 1857” (blocks 423–434, pages 199–200), were collated word by word in November 2026 against the OCR text of the Internet Archive scan poems0009ralp_c2y1 of the 1911 printing: one reading was changed to the print (“For He that worketh high and wise,” on page 200, where the transcription has a full stop); the print’s spaced semicolons, small-capital first words, running heads and page numbers are typographic and not represented, and the transcription’s double hyphens stand for the print’s em dashes. Outside those passages the text has not been collated and keeps the transcription’s words and punctuation.",
+  "publicationYear": 1911,
+  "translationYear": null,
+  "url": "https://archive.org/details/poems0009ralp_c2y1",
+  "textUrl": "https://www.gutenberg.org/cache/epub/12843/pg12843.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The printing’s copyright leaf (Internet Archive scan poems0009ralp_c2y1) gives US copyright dates of 1867 and 1876 for Ralph Waldo Emerson and 1883, 1895, 1904 and 1911 for Edward W. Emerson; nothing reproduced here was first published after 1911. Works published in the United States before 1931 are in the US public domain as of 2026. Project Gutenberg eBook 12843 is labelled public domain in the USA; no translation is involved, and Edward W. Emerson’s preface, sketch and notes are not reproduced.",
+    "verifiedDate": "2026-11-18",
+    "evidenceUrl": "https://archive.org/details/poems0009ralp_c2y1"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-18",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/12843/pg12843.txt",
+    "downloadSha256": "1e56442bf86e6275a04bbda7e5bf83e2248a3dd212f36897a72e1188c9905b95",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 12843, CRLF normalised to LF) from the PG mirror, converted by a scratch Python script from the “I / POEMS” section heading to the last poem before “INDEX OF FIRST LINES”, excluding the PG header and footer, the preface, contents, biographical sketch and indexes. Section numbers and section titles are level-1 headings; poem titles (set off by three blank lines) are level-2 headings; part numerals within a poem are level-3 headings; one-line capitalised subtitles, dedications, datelines and speaker labels are paragraphs; every stanza is a stanza block keeping the transcription’s line breaks and indentation; asterisk separator lines and line-end spaces are removed; the transcription’s _underscores_ for italics are kept. One reading was then changed to the collated print (block 434, “wise.” to “wise,”)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null,
+    "collated": [
+      [
+        353,
+        358
+      ],
+      [
+        423,
+        434
+      ]
+    ]
+  },
+  "text": {
+    "blocks": 1174,
+    "sha256": "9cb2289e1da71572ea12d2277c52227f7ed4f19b9719e2680763ce11f72d7cfe"
+  }
+}

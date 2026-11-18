@@ -445,7 +445,8 @@
             "And I, a pagan, worshiped at its shrine, Yielding my heart unto its perfumed power."
           ]
         }
-      ]
+      ],
+      "holiday": "easter"
     },
     {
       "id": "reading-7-mckay-harlem-shadows-1922-08",
@@ -460,7 +461,7 @@
       },
       "challenge": "Notice how the title and the last stanza change the meaning of a song.",
       "focus": "Waiters getting ready for work, and one who sings.",
-      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. The speaker is one of a group of waiters. A glory-hole is a cramped storeroom or crew space; rakes are pleasure-loving men; falsetto is a high singing voice; alloy is a cheaper metal mixed into gold. “Wherefore” means why; “importunate” means demanding. “Paleface” was a slang term for a white person.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. The speaker is one of a group of waiters. A glory-hole is a cramped storeroom or crew space; rakes are pleasure-loving men; falsetto is a high singing voice; alloy is a cheaper metal mixed into gold. “Wherefore” means why; “importunate” means demanding. “Paleface” was a slang term for a white person. It is read on Labor Day, a holiday for working people.",
       "contentNote": "The speaker calls the white diners “palefaces.”",
       "excerpt": {
         "locator": "“Alfonso, Dressing to Wait at Table,” the whole poem; opens “Alfonso is a handsome bronze-hued lad Of subtly-changing and surprising parts; His moods…”; closes “…ancient places? Soon we shall be beset by clamouring Of hungry and importunate palefaces.”.",
@@ -508,7 +509,8 @@
             "wherefore do you sing Dream-songs of carefree men and ancient places?"
           ]
         }
-      ]
+      ],
+      "holiday": "labor-day"
     },
     {
       "id": "reading-7-mckay-harlem-shadows-1922-09",
@@ -1782,70 +1784,6 @@
           "evidence": [
             "But the rare lonely spirits, even mine,",
             "Will see the glory of your trailing line,"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-7-mckay-harlem-shadows-1922-29",
-      "title": "After the Winter",
-      "sourceId": "mckay-harlem-shadows-1922",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 13,
-        "totalMinutes": 21
-      },
-      "challenge": "Find the words that bring a place to life, and ask what the place stands for.",
-      "focus": "A speaker promises a loved one a home in a warm island, far from winter.",
-      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. Eaves are the overhanging edges of a roof; to spire is to rise in points; a rill is a small stream; a glade is an open space in a wood. The cotton tree is a huge tropical tree.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "“After the Winter,” the whole poem; opens “Some day, when trees have shed their leaves And against the morning’s white The shivering…”; closes “…an open glade, With black-ribbed blue-bells blowing near, And ferns that never fade.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          63,
-          65
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "1a26414fb83bc233c6130d303caa4c3e9ff5e4e93d37a65b6094a73d9ade262e"
-      },
-      "questions": [
-        {
-          "id": "reading-7-mckay-harlem-shadows-1922-29-q1",
-          "prompt": "How does the first stanza picture the north before the speaker turns south? What season is it, and how do the birds feel it?",
-          "facilitatorNotes": [
-            "Trees bare, a white morning sky, birds shivering under the eaves at night: the start of winter. The speaker and his love will turn their faces southward then, so the cold sets off everything that follows."
-          ],
-          "evidence": [
-            "Some day, when trees have shed their leaves",
-            "The shivering birds beneath the eaves"
-          ]
-        },
-        {
-          "id": "reading-7-mckay-harlem-shadows-1922-29-q2",
-          "prompt": "Which words make the island seem alive and welcoming? Find the ones that give plants and water human feelings.",
-          "facilitatorNotes": [
-            "Bamboos “spire” in a grove, orchids are “wide-mouthed” and “smile,” the rill is “laughing,” the bee “works.” The island seems to greet them, the opposite of the shivering north."
-          ],
-          "evidence": [
-            "And wide-mouthed orchids smile.",
-            "And leaps the laughing crystal rill,"
-          ]
-        },
-        {
-          "id": "reading-7-mckay-harlem-shadows-1922-29-q3",
-          "prompt": "The poem ends with “ferns that never fade.” What is the speaker wishing for? Could “the winter” of the title mean more than the weather?",
-          "facilitatorNotes": [
-            "A place without change or loss, where nothing withers; the cottage they will build is a picture of a lasting life together. Winter may also stand for hardship or loneliness in the city. Everything is in the future (“Some day,” “We’ll,” “we will”), so readers can decide whether it is a promise or a dream."
-          ],
-          "evidence": [
-            "And we will build a cottage there",
-            "And ferns that never fade."
           ]
         }
       ]

@@ -1141,7 +1141,7 @@
       },
       "challenge": "See how a nine-line poem turns time into pictures.",
       "focus": "Tomorrow, yesterday and today, each given its own image.",
-      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Hughes often made new compound words by joining two words with a hyphen.",
+      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Hughes often made new compound words by joining two words with a hyphen. It is read on New Year’s Day.",
       "contentNote": null,
       "excerpt": {
         "locator": "“Poem,” the one that begins “We have tomorrow,” the whole poem; opens “We have tomorrow Bright before us Like a flame.”; closes “And dawn-today Broad arch above the road we came.”.",
@@ -1189,7 +1189,8 @@
             "And dawn-today Broad arch above"
           ]
         }
-      ]
+      ],
+      "holiday": "new-year"
     },
     {
       "id": "reading-7-hughes-weary-blues-1926-20",
@@ -1570,70 +1571,6 @@
           "evidence": [
             "Nor ever know, Dark Harlem,",
             "Simple and clean Like the earth, Like the rain,"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-7-hughes-weary-blues-1926-26",
-      "title": "Danse Africaine",
-      "sourceId": "hughes-weary-blues-1926",
-      "genre": "poetry",
-      "readingMode": "independent",
-      "time": {
-        "readingMinutes": 8,
-        "discussionMinutes": 13,
-        "totalMinutes": 21
-      },
-      "challenge": "Hear how sound and repetition make a poem move like a drum.",
-      "focus": "A dance poem whose beat is meant to be felt as much as read.",
-      "context": "Langston Hughes (1902–1967) published The Weary Blues, his first book of poems, in 1926, when he was a young poet of the Harlem Renaissance, the flowering of Black writing, music and art centred in Harlem, New York. Danse africaine is French for “African dance.” Tom-toms are drums beaten with the hands.",
-      "contentNote": null,
-      "excerpt": {
-        "locator": "“Danse Africaine,” the whole poem; opens “The low beating of the tom-toms, The slow beating of the tom-toms. Low ... slow Slow ...…”; closes “…beat, And the tom-toms beat, And the low beating of the tom-toms Stirs your blood.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          234,
-          235
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "b9933422fb0a572066ede394b717e46fc13ffe56aef2001c5a230eb6b3b97e80"
-      },
-      "questions": [
-        {
-          "id": "reading-7-hughes-weary-blues-1926-26-q1",
-          "prompt": "Read the poem aloud. Which words and sounds imitate the drum?",
-          "facilitatorNotes": [
-            "The repeated “low beating” and “slow beating,” the swapped pair “Low ... slow / Slow ... low,” and the doubled line “And the tom-toms beat.” The pauses (...) are like gaps between beats."
-          ],
-          "evidence": [
-            "Low ... slow Slow ... low—",
-            "And the tom-toms beat, And the tom-toms beat,"
-          ]
-        },
-        {
-          "id": "reading-7-hughes-weary-blues-1926-26-q2",
-          "prompt": "Where does the poem speak straight to the reader? What effect do “your blood” and “Dance!” have?",
-          "facilitatorNotes": [
-            "“Stirs your blood” and the one-word command “Dance!” pull the reader in, as if the drum is working on us too. The poem does not just describe a dance; it tries to start one."
-          ],
-          "evidence": [
-            "Stirs your blood.",
-            "Dance!"
-          ]
-        },
-        {
-          "id": "reading-7-hughes-weary-blues-1926-26-q3",
-          "prompt": "How is the dancer described, and why compare her to “a wisp of smoke around the fire”? Look at the poem’s shape too.",
-          "facilitatorNotes": [
-            "A “night-veiled girl” whirls softly into a circle of light; like smoke she is light, curling and hard to hold. The drum lines come at the start and the end, with the dancer in the middle, so the poem itself makes a circle around her. Readers may find other patterns."
-          ],
-          "evidence": [
-            "A night-veiled girl Whirls softly into a Circle of light.",
-            "Like a wisp of smoke around the fire—"
           ]
         }
       ]

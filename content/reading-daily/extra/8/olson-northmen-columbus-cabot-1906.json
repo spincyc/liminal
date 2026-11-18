@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "grade": 8,
+  "work": "olson-northmen-columbus-cabot-1906",
+  "readings": [
+    {
+      "id": "reading-8-olson-northmen-columbus-cabot-1906-01",
+      "title": "Columbus’s journal, 11–12 October 1492: landfall",
+      "sourceId": "olson-northmen-columbus-cabot-1906",
+      "workTitle": "Journal of the First Voyage of Columbus",
+      "genre": "documentary prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 13,
+        "totalMinutes": 24
+      },
+      "challenge": "Read a record written partly about Columbus and partly by him: notice who is speaking, what he observes, and what he plans.",
+      "focus": "The night land is sighted, the ceremony of possession on the beach, and Columbus’s first description of the people of Guanahani.",
+      "context": "Christopher Columbus (1451–1506) sailed west from Spain in August 1492 with three ships, the Santa María, the Pinta and the Niña, looking for a sea route to Asia. His own log is lost; this text is an abstract made decades later by the friar Bartolomé de las Casas, who summarizes most days in the third person and copies some passages in Columbus’s own words. On 12 October the fleet reached an island in the Bahamas that its people, the Lucayan Taíno, called Guanahani; Columbus named it San Salvador. A league is about three miles; to lie by is to stop and wait at sea; the Salve is an evening hymn to the Virgin Mary; a doublet is a close-fitting jacket; maravedis are Spanish coins; the Canarians are the people of the Canary Islands; the numbers in brackets mark the 1906 editor’s notes. It is read on Columbus Day, the anniversary of this landing.",
+      "contentNote": "Columbus describes the islanders as naked, plans to make them “good servants,” and says he will carry six of them off to Spain; he records that they cut themselves on Spanish swords.",
+      "excerpt": {
+        "locator": "Journal of the First Voyage of Columbus, the entries for Thursday 11 and Friday 12 October 1492, complete; opens “The course was W.S.W., and there was more sea than there had been during the whole of the…”; closes “…of any kind except parrots, on this island.\" The above is in the words of the Admiral.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          101,
+          106
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d510845eed958c01bffc719772b9b455b66b732c3a3ae68504cac911ca84c271"
+      },
+      "questions": [
+        {
+          "id": "reading-8-olson-northmen-columbus-cabot-1906-01-q1",
+          "prompt": "Who first saw land, and when? What does the account of the light at ten o’clock add to the story, and how carefully is it told?",
+          "facilitatorNotes": [
+            "Rodrigo de Triana on the Pinta sighted land at two in the morning. The journal adds that the Admiral had seen a light at ten, “so uncertain” that he could not call it land; one witness saw it and the other could not. The story makes Columbus the first discoverer while admitting its doubts. The volume’s editor notes that Columbus later took the promised reward himself, which many writers have judged unfair."
+          ],
+          "evidence": [
+            "The land was first seen by a sailor named Rodrigo de Triana.",
+            "saw a light, though it was so uncertain that he could not affirm it was land."
+          ]
+        },
+        {
+          "id": "reading-8-olson-northmen-columbus-cabot-1906-01-q2",
+          "prompt": "Describe the ceremony on the beach. What do the banners, the witnesses and the “declarations that are required” show about what Columbus believed he was doing?",
+          "facilitatorNotes": [
+            "He lands with the royal standard and banners of the green cross marked F and Y for Fernando and Ysabel, calls the fleet’s secretary and the royal inspector to bear witness, and takes possession of the island for the King and Queen, recorded in writing. It is a legal act under Spanish law, performed in a language the inhabitants could not understand and without asking them."
+          ],
+          "evidence": [
+            "The Admiral took the royal standard",
+            "that he, in presence of all, had taken, as he now took, possession of the said island"
+          ]
+        },
+        {
+          "id": "reading-8-olson-northmen-columbus-cabot-1906-01-q3",
+          "prompt": "Partway through the second entry, the text switches to “the actual words of the Admiral.” What changes when Columbus speaks for himself? Find sentences that reveal his purposes.",
+          "facilitatorNotes": [
+            "The voice becomes “I,” more personal and more revealing. He gives red caps and glass beads “that we might form great friendship,” admires the people’s looks, then states his plans: they “should be good servants,” would “easily be made Christians,” and he will take six of them to Spain. Generosity and admiration sit beside plans for conversion, service and capture."
+          ],
+          "evidence": [
+            "They should be good servants and intelligent",
+            "will take hence, at the time of my departure, six natives for your Highnesses"
+          ]
+        },
+        {
+          "id": "reading-8-olson-northmen-columbus-cabot-1906-01-q4",
+          "prompt": "Columbus notes that the people “took them by the blade and cut themselves through ignorance,” and that “they had no religion.” How is he judging them? What can a modern reader learn from this record that he did not mean to show?",
+          "facilitatorNotes": [
+            "He measures them by what they lack compared with Europeans: iron, weapons, clothes, a religion he would recognize. A modern reader also sees what he reports without valuing it: their generosity and trade, their swimming out to the boats with parrots and cotton, the wounds from raids by other islanders, and his own readiness to see them as servants. Accept answers that separate what the text reports from what Columbus concludes."
+          ],
+          "evidence": [
+            "they took them by the blade and cut themselves through ignorance",
+            "as it appeared to me that they had no religion"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    }
+  ]
+}
