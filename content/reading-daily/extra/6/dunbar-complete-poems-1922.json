@@ -645,7 +645,7 @@
       },
       "challenge": "Follow an argument addressed to “you” through a poem of praise.",
       "focus": "A war song becomes a demand that the nation remember what it owes.",
-      "context": "Paul Laurence Dunbar honours the nearly 200,000 Black soldiers and sailors who fought for the Union in the Civil War. Fort Wagner, Olustee and Fort Pillow were battles of 1863–64; at Fort Pillow, Confederate troops killed many Black soldiers after they had surrendered. “Sons of Ham” is an old biblical name for African peoples, once used to defend slavery, which Dunbar turns into praise.",
+      "context": "Paul Laurence Dunbar honours the nearly 200,000 Black soldiers and sailors who fought for the Union in the Civil War. Fort Wagner, Olustee and Fort Pillow were battles of 1863–64; at Fort Pillow, Confederate troops killed many Black soldiers after they had surrendered. “Sons of Ham” is an old biblical name for African peoples, once used to defend slavery, which Dunbar turns into praise. It is read on Veterans Day, which honours everyone who has served in the armed forces.",
       "contentNote": "War, wounds and death; refers to the massacre at Fort Pillow; uses historical racial terms.",
       "excerpt": {
         "locator": "“The Colored Soldiers,” complete poem; opens “If the muse were mine to tempt it And my feeble voice were strong, If my tongue were…”; closes “…glory To those noble sons of Ham-- The gallant colored soldiers Who fought for Uncle Sam!”.",
@@ -704,7 +704,8 @@
             "And my feeble voice were strong,"
           ]
         }
-      ]
+      ],
+      "holiday": "veterans-day"
     },
     {
       "id": "reading-6-dunbar-complete-poems-1922-11",
@@ -1634,7 +1635,7 @@
       },
       "challenge": "Read the question of a sonnet’s first eight lines and the bitter answer of its last six.",
       "focus": "A tribute to a hero turns into a judgment that his sacrifice seems wasted.",
-      "context": "Robert Gould Shaw, a young white officer from a wealthy Boston family, commanded the 54th Massachusetts, one of the first Black regiments of the Civil War, and died with many of his men at Fort Wagner in 1863. Paul Laurence Dunbar wrote this sonnet about forty years later. Pallas is the Greek goddess of wisdom; a fane is a temple; droves are herds or crowds.",
+      "context": "Robert Gould Shaw, a young white officer from a wealthy Boston family, commanded the 54th Massachusetts, one of the first Black regiments of the Civil War, and died with many of his men at Fort Wagner in 1863. Paul Laurence Dunbar wrote this sonnet about forty years later. Pallas is the Greek goddess of wisdom; a fane is a temple; droves are herds or crowds. It is read on Memorial Day, which began after the Civil War as a day for decorating soldiers’ graves.",
       "contentNote": "Death in battle. The phrase “unlettered and despised droves” echoes how many people regarded the soldiers at the time.",
       "excerpt": {
         "locator": "“Robert Gould Shaw,” complete poem; opens “Why was it that the thunder voice of Fate Should call thee, studious, from the classic…”; closes “…thou and those who with thee died for right Have died, the Present teaches, but in vain!”.",
@@ -1682,7 +1683,8 @@
             "Have died, the Present teaches, but in vain!"
           ]
         }
-      ]
+      ],
+      "holiday": "memorial-day"
     },
     {
       "id": "reading-6-dunbar-complete-poems-1922-25",
@@ -2170,6 +2172,309 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-32",
+      "title": "The King Is Dead",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a speaker who mourns the old year as if it were a king and a friend, while everyone around him cheers the new one.",
+      "focus": "Saying goodbye to a year means weighing what it gave against what it took.",
+      "context": "Paul Laurence Dunbar (1872–1906) wrote poems for many turning points of the calendar. When a king died, heralds cried “The king is dead! long live the king!”, so that mourning the old ruler and greeting the new one happened in the same breath. A bier is the stand on which a coffin rests; manifold means many; fain means glad or willing. It is read on New Year’s Day, when the old year has just ended.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The King Is Dead,” complete poem; opens “Aye, lay him in his grave, the old dead year! His life is lived--fulfilled his destiny.…”; closes “…end; We cry e'en as thy footsteps downward tend: \"The king is dead! long live the king!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          730,
+          734
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "db453c6e3a09f83703350d828138ee7fff16c3dc4c23fdcff4ba76515bd1eb94"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-32-q1",
+          "prompt": "Who is the “king” in the title, and how do you know?",
+          "facilitatorNotes": [
+            "The old year, which has just ended. The first line names him “the old dead year,” and the poem treats him as a person who has lived out his “destiny” and is being buried."
+          ],
+          "evidence": [
+            "Aye, lay him in his grave, the old dead year!"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-32-q2",
+          "prompt": "The second stanza is a string of questions. What answer does the speaker expect, and what does he want his listener to feel?",
+          "facilitatorNotes": [
+            "He expects “yes”: the year was kind and gave enough love, laughter and clear skies. The questions are meant to shame an ungrateful listener into a little gratitude and sorrow, the “tribute of a sigh” the first stanza asks for."
+          ],
+          "evidence": [
+            "Was he not kind to you, this dead old year?",
+            "How, then, of him who dies, could you ask more?"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-32-q3",
+          "prompt": "The speaker admits the year brought him pain and “sorrows manifold.” Why does he still forgive it?",
+          "facilitatorNotes": [
+            "Because the same year that hurt him also healed older hurts: “He brought me new wounds, but he healed the old.” Good answers notice the balance inside that one line. Some readers see the speaker accepting that every year brings both; others see time itself as the healer."
+          ],
+          "evidence": [
+            "It is not well to hate him for the pain",
+            "He brought me new wounds, but he healed the old."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-32-q4",
+          "prompt": "The poem ends with the old cry “The king is dead! long live the king!” Is the ending sad, hopeful, or both?",
+          "facilitatorNotes": [
+            "Both. The speaker gives only “one little sigh” while his companions sing, and admits the old year is “so soon forgotten”; yet the same cry welcomes the new year at once. Accept either emphasis if it rests on the contrast between the single sigh and the singing."
+          ],
+          "evidence": [
+            "One little sigh while my companions sing.",
+            "Thou art so soon forgotten in the end;"
+          ]
+        }
+      ],
+      "holiday": "new-year"
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-33",
+      "title": "Columbian Ode",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Read a celebration poem closely enough to see whose story it tells and whose it leaves out.",
+      "focus": "An ode in praise of Columbus pictures the Americas before 1492 as an empty land waiting to be found.",
+      "context": "Columbus Day marks Christopher Columbus’s landing in the Bahamas on 12 October 1492. In 1892–93 the United States celebrated the four hundredth anniversary, above all at the World’s Columbian Exposition in Chicago, where the young Paul Laurence Dunbar (1872–1906) worked for Frederick Douglass at the Haiti pavilion. Dunbar’s ode, which begins “Four hundred years ago,” belongs to that celebration. Millions of people already lived in the Americas in 1492. An ode is a formal poem of praise. Conned means studied; thriftless means wasteful; the Genoese is Columbus, born in Genoa; a bark is a ship; Bruin is a name for a bear; mien means appearance.",
+      "contentNote": "Calls the Native peoples of North America “men of savage mien” and treats their homelands as wilderness; the last question examines that view.",
+      "excerpt": {
+        "locator": "“Columbian Ode,” complete poem; opens “Four hundred years ago a tangled waste Lay sleeping on the west Atlantic's side; Their…”; closes “…moved the forest-foliage banner green, Now flutters in the breeze the stars and stripes!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          288,
+          294
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "777f5da26bcb0e4906ab5287b741f44834f159b4b9e6746c9e3c6fa88e593c89"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-33-q1",
+          "prompt": "How does the first stanza picture the Americas and Europe four hundred years before the poem? What does each picture suggest?",
+          "facilitatorNotes": [
+            "The Americas are “a tangled waste” lying asleep. Europe is busy, loving, laboring and daring, but content with old charts and ignorant of other lands. The poem makes Europe active yet narrow, and the Americas empty and waiting."
+          ],
+          "evidence": [
+            "Four hundred years ago a tangled waste",
+            "Lay sleeping on the west Atlantic's side;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-33-q2",
+          "prompt": "In the second section, Nature is a mother hiding a child. Who is the child, and why might Dunbar picture the land this way?",
+          "facilitatorNotes": [
+            "The child is the American continent, which grows into “a mighty land.” The image makes the land precious and cared for before Columbus came, and makes its growth seem natural and destined. Some students will notice that a mother and an infant leave no room for the people already living there."
+          ],
+          "evidence": [
+            "Another offspring, fine and fair to view,--",
+            "And changed the infant to a mighty land."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-33-q3",
+          "prompt": "What does the third section praise in Columbus, and how do light and dark help?",
+          "facilitatorNotes": [
+            "Courage against “fears and foes” and against the unknown. He is the “dauntless darer of the rayless dark,” and the whole world sails with him “to eternal light,” so his voyage becomes a victory for all humanity."
+          ],
+          "evidence": [
+            "Who dared to try, in spite of fears and foes,",
+            "O dauntless darer of the rayless dark,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-33-q4",
+          "prompt": "The last lines list what replaced the wilderness. What, and whom, does the poem say was replaced? Is that a fair account of the people who lived there?",
+          "facilitatorNotes": [
+            "Deer-haunts became tilled fields, the bear’s den a schoolhouse, the wigwam a chapel, and “men of savage mien” the “noblest types.” The wigwam shows that people lived there, yet the poem counts them as part of the wilderness to be cleared. A defensible answer finds the account one-sided: it celebrates progress and leaves out the Native nations’ own homes, farms and losses. Some readers add that a young Black poet in 1893 was writing in the public language of the celebration; accept answers that weigh both."
+          ],
+          "evidence": [
+            "And where the wigwam stood the chapel stands;",
+            "The place that nurtured men of savage mien"
+          ]
+        }
+      ],
+      "holiday": "columbus-day"
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-34",
+      "title": "The Boogah Man",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read a spooky night-time song aloud and work out who is singing it, to whom, and why.",
+      "focus": "A grown-up uses a pretend monster to settle a child at bedtime, and the song ends by promising safety.",
+      "context": "Paul Laurence Dunbar wrote many poems in the dialect of Black Southern speech as writers of his time set it down; read them aloud and listen for the rhythm. A boogah man is a bogeyman, an imaginary night creature used to frighten children into behaving. Keerful is careful; des a drappin’ pin is just a dropping pin; peepers are eyes; kivers are covers; a “Lay me” is the bedtime prayer that begins “Now I lay me down to sleep.” It is read at Halloween, the night for frights that are not too serious.",
+      "contentNote": "Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“The Boogah Man,” complete poem; opens “W'en de evenin' shadders Come a-glidin' down, Fallin' black an' heavy Ovah hill an' town,…”; closes “…Den de rain kin pattah Win' blow lak a fan, But you need n' bothah 'Bout de Boogah Man!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1319,
+          1323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1329b7a072eef9b0d4c31ae6930e060047dc9528bb4dce2affa81857818263f7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-34-q1",
+          "prompt": "What sounds and sights does the speaker say come with the Boogah Man? Why might they all be things you could really hear on a dark night?",
+          "facilitatorNotes": [
+            "Falling shadows, a strange sound across the land, the wind shivering down a lane, the patter of rain, an owl hooting. Every sign is an ordinary night noise, so the “monster” is really the dark itself, filled in by a listening child’s imagination."
+          ],
+          "evidence": [
+            "W'en de win 's a-shiverin'",
+            "W'en de owl's a-hootin',"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-34-q2",
+          "prompt": "The italic chorus sounds different from the other stanzas. What is it imitating, and what does it tell the child to do?",
+          "facilitatorNotes": [
+            "It imitates the Boogah Man’s call, “Woo-oo,” and tells the child to hide its eyes and wish for daylight. Read aloud, it turns the poem into a game of fright, like a ghost story told with sound effects. Some readers hear teasing; others hear something really scary for a small child."
+          ],
+          "evidence": [
+            "Hide yo' little peepers 'hind yo' han;",
+            "Callin' of de Boogah Man."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-34-q3",
+          "prompt": "“Don’ you wish, my honey, / Dat you had been good?” Who is “honey,” and how does that word change the threat?",
+          "facilitatorNotes": [
+            "A small child, being put to bed by someone who loves it. The tender word shows that the speaker is not cruel: the fright is part of a bedtime game, and the speaker may be enjoying it as much as the child."
+          ],
+          "evidence": [
+            "Don' you wish, my honey,",
+            "Dat you had been good?"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-34-q4",
+          "prompt": "In the last stanza, what must the child do so that it “need n’ bothah” about the Boogah Man? What does this show about why grown-ups tell such stories?",
+          "facilitatorNotes": [
+            "Love mammy, mind pap, stay in Sukey’s lap, and say the bedtime prayer every night. The scary figure turns out to be a way of getting a child to behave and settle down; once the child is good and tucked in, wind and rain can do no harm. Students may call the poem gentle, because the threat ends in comfort, or a little unfair, because fear is used to make children obey."
+          ],
+          "evidence": [
+            "Ef you loves yo' mammy,",
+            "'Bout de Boogah Man!"
+          ]
+        }
+      ],
+      "holiday": "halloween"
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-35",
+      "title": "A Thanksgiving Poem",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a harvest prayer from thanks for full bins to the admission that the gifts were not earned.",
+      "focus": "A community gives thanks for a good harvest and for safety, and asks what it owes in return.",
+      "context": "Thanksgiving is the American harvest holiday of late November, kept nationally every year since Abraham Lincoln’s proclamation of 1863. Paul Laurence Dunbar writes this poem as a hymn of thanks spoken by a whole community, “we,” to God. Blight is a plant disease; goodly store is a good supply; pestilence is a deadly epidemic; erring means doing wrong; nigh means near; to pall is to grow weak; consecrate means to dedicate to God.",
+      "contentNote": "A Christian prayer of thanks.",
+      "excerpt": {
+        "locator": "“A Thanksgiving Poem,” complete poem; opens “The sun hath shed its kindly light, Our harvesting is gladly o'er Our fields have felt no…”; closes “…pall; Though we should strive years without end, We could not thank thee for them all.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2151,
+          2159
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dae4c28bf80bddebba6955efd7e59037ef6fab598d4dbc8056e1d628bf058ab1"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-35-q1",
+          "prompt": "List what the first two stanzas give thanks for. Which are gifts received, and which are dangers escaped?",
+          "facilitatorNotes": [
+            "Gifts: sunlight, a finished harvest, full bins. Dangers escaped: blight, pestilence, fire, flood and the sword, meaning war. A thankful community remembers both what it has and what did not happen to it."
+          ],
+          "evidence": [
+            "Our bins are filled with goodly store.",
+            "From pestilence, fire, flood, and sword"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-35-q2",
+          "prompt": "In the third and fourth stanzas the speakers say their own merits did not earn these gifts. Why would people giving thanks say this about themselves?",
+          "facilitatorNotes": [
+            "They call themselves “erring children” who hid from God; the blessings came from mercy, not as wages. Humility makes the thanks sincere, because a gift you did not earn calls for more gratitude than pay you are owed. Some students may find the self-blame too harsh; accept that if they ground it in the lines."
+          ],
+          "evidence": [
+            "We feel that had our merits been",
+            "No deed of ours hath brought us grace;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-35-q3",
+          "prompt": "Where is God pictured in the fifth and sixth stanzas, and which image connects him with the farmers of the first stanza?",
+          "facilitatorNotes": [
+            "Above, in the sky, with an open hand and a “watchful eye.” His “storehouse in the sky” echoes the farmers’ full bins, making God the great provider whose harvest fills theirs."
+          ],
+          "evidence": [
+            "And from thy storehouse in the sky",
+            "Hast scattered plenty everywhere."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-35-q4",
+          "prompt": "The last stanza says the speakers “could not thank thee for them all.” How does the poem answer that problem?",
+          "facilitatorNotes": [
+            "Words cannot repay the gifts, so the speakers promise their lives instead: “To thee we consecrate our days,” and each mind is to be God’s temple. Thanks become a way of living, not only a song. Accept other readings grounded in the last two stanzas."
+          ],
+          "evidence": [
+            "To thee we consecrate our days;",
+            "We could not thank thee for them all."
+          ]
+        }
+      ],
+      "holiday": "thanksgiving"
     }
   ]
 }

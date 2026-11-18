@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "emerson-poems-1911",
+  "readings": [
+    {
+      "id": "reading-6-emerson-poems-1911-01",
+      "title": "Concord Hymn",
+      "sourceId": "emerson-poems-1911",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out how a short hymn written for a monument remembers a battle without describing the fighting.",
+      "focus": "Sixty-two years after one of the first battles of the Revolution, a town sets up a stone so that the memory will outlast everyone who was there.",
+      "context": "On 19 April 1775 farmers and militiamen fired on British soldiers at the North Bridge in Concord, Massachusetts, in one of the first battles of the American Revolution. Ralph Waldo Emerson (1803–1882), whose grandfather watched the fight from his house beside the river, wrote this hymn to be sung when a stone monument was finished at the spot, on 4 July 1837. The flood is the river; embattled means drawn up for battle; a votive stone is one set up to honour a memory or keep a promise; sires are fathers or ancestors; the shaft is the monument. It is read on Independence Day, when the nation remembers how it began.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Concord Hymn,” complete poem; opens “SUNG AT THE COMPLETION OF THE BATTLE MONUMENT, JULY 4, 1837”; closes “…children free, Bid Time and Nature gently spare The shaft we raise to them and thee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          353,
+          358
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "186f0a67c820013762e876363d44f35b9e9172f73661257aca2d4a19380a7c7d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-emerson-poems-1911-01-q1",
+          "prompt": "The first stanza is full of action: a flag unfurled, farmers standing, a shot fired. Why does Emerson call it “the shot heard round the world”?",
+          "facilitatorNotes": [
+            "One shot from a few farmers at a small river began a war whose result, an independent republic, mattered far beyond Concord. The line exaggerates on purpose to show how large the effect of a small moment was. “Heard” is figurative: nobody far away heard a sound, but the news and the idea traveled."
+          ],
+          "evidence": [
+            "And fired the shot heard round the world."
+          ]
+        },
+        {
+          "id": "reading-6-emerson-poems-1911-01-q2",
+          "prompt": "In the second stanza, who is sleeping, and what has happened to the old bridge? Why put the enemy and the winners side by side?",
+          "facilitatorNotes": [
+            "Both the British (“the foe”) and the Americans (“the conqueror”) are dead, and time has swept the bridge away. Death treats both sides alike, so the poem honours the farmers without gloating over their enemy; it also shows that without a monument even the place itself could be lost."
+          ],
+          "evidence": [
+            "The foe long since in silence slept;",
+            "Alike the conqueror silent sleeps;"
+          ]
+        },
+        {
+          "id": "reading-6-emerson-poems-1911-01-q3",
+          "prompt": "What is the stone for, according to the third stanza? Explain “That memory may their deed redeem, / When, like our sires, our sons are gone.”",
+          "facilitatorNotes": [
+            "The stone keeps the deed remembered after the singers, and even their sons, have died. To redeem here is to rescue something from being lost or forgotten. Good answers notice that the poem looks forward to future generations as well as back to 1775."
+          ],
+          "evidence": [
+            "We set to-day a votive stone;",
+            "That memory may their deed redeem,"
+          ]
+        },
+        {
+          "id": "reading-6-emerson-poems-1911-01-q4",
+          "prompt": "Whom does the last stanza speak to, and what does it ask? Why does it end “to them and thee”?",
+          "facilitatorNotes": [
+            "It speaks to the “Spirit” that made the farmers willing to die so that their children could be free, and asks Time and Nature to spare the monument. The shaft honours both the men and that spirit of freedom. Some readers take the Spirit to be God, others the spirit of liberty; both readings fit the lines."
+          ],
+          "evidence": [
+            "Spirit, that made those heroes dare",
+            "The shaft we raise to them and thee."
+          ]
+        }
+      ],
+      "holiday": "independence-day"
+    }
+  ]
+}
