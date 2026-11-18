@@ -4,7 +4,7 @@
   "author": "Zitkala-Sa (Gertrude Bonnin)",
   "title": "American Indian Stories",
   "translator": null,
-  "edition": "Washington: Hayworth Publishing House, 1921 (first edition; title page in Internet Archive americanindianst1921zitk), as transcribed in Project Gutenberg 10376. Prose line wrapping and surrounding whitespace normalized; paragraph divisions, spelling, punctuation and underscore emphasis notation retained. Publisher and digitizer matter excluded. One transcription error corrected to the 1921 print: “My fingers grey icy cold” (page 74; the print’s own lower-case “grey,” itself a misprint for “grew,” is kept).",
+  "edition": "Washington: Hayworth Publishing House, 1921 (first edition; title page in Internet Archive americanindianst1921zitk), as transcribed in Project Gutenberg 10376. Prose line wrapping and surrounding whitespace normalized; paragraph divisions, spelling, punctuation and underscore emphasis notation retained. Publisher and digitizer matter excluded. One transcription error corrected to the 1921 print: “My fingers grey icy cold” (page 74; the print’s own lower-case “grey,” itself a misprint for “grew,” is kept). “The Soft-Hearted Sioux,” “The Trial Path” and “A Warrior's Daughter” (pages 109–153) were collated word by word against the same 1921 print on 2026-11-18 (its OCR text, after whitespace normalisation, with every difference decided on the page image), and five more transcription errors corrected: the print’s missing opening quotation mark before “How, Ate?” (page 113), “Heyä! heyä!” for “Heyã! heyã!” (page 129), and full stops for commas in “assented—‘How.’” (page 129), “brother to you.’” (page 134) and “for your wife.’” (page 143); two existing readings (the Grade 7 calendar readings of the first two stories) changed.",
   "publicationYear": 1921,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/10376",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/10376/pg10376.txt",
     "downloadSha256": "b9934b55d2f83876ea24e3c7f1397240b02f1caf63892823bcdbb59954309252",
-    "method": "Project Gutenberg 10376 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, the title-page author description and the contents list; kept the title, the epigraph and all ten pieces in printed order. Lines of each paragraph joined with single spaces. The ten piece titles are level-2 headings; numbered section labels and section titles stay paragraphs, except the unpunctuated IRON ROUTINE and the sub-heads of America's Indian Problem, which are level-3 headings. The transcription's footnote stays where it stands. The one declared emendation (Grey to the printed grey) is applied before conversion."
+    "method": "Project Gutenberg 10376 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, the title-page author description and the contents list; kept the title, the epigraph and all ten pieces in printed order. Lines of each paragraph joined with single spaces. The ten piece titles are level-2 headings; numbered section labels and section titles stay paragraphs, except the unpunctuated IRON ROUTINE and the sub-heads of America's Indian Problem, which are level-3 headings. The transcription's footnote stays where it stands. The one declared emendation (Grey to the printed grey) is applied before conversion. The emendations from the 2026-11-18 collation of pages 109–153 (see edition) are applied to the converted text."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 594,
-    "sha256": "0e5c1b835cc15bd19abf34c86289bd9ddc2253140303d759e47802c01adfce9a"
+    "sha256": "f777b1ec2a6cff52a0ae121f9642372b5a085ea96040f7affc10a970c0a496a7"
   }
 }
