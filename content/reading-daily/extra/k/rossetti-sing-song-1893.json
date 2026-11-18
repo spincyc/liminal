@@ -67,6 +67,75 @@
     },
     {
       "id": "reading-k-rossetti-sing-song-1893-02",
+      "title": "There’s snow on the fields",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare being warm inside with being cold outside.",
+      "focus": "A child snug by the fire thinks of people who have no warm place.",
+      "context": "A cottage is a small house. The chimney nook is the cosy corner beside the fireplace. Pottage is a thick soup or porridge; supping means eating it with a spoon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “There’s snow on the fields,”, complete (two stanzas); opens “There’s snow on the fields, And cold in the cottage, While I sit in the chimney nook…”; closes “…clothes are soft and warm, Fold upon fold, But I’m so sorry for the poor Out in the cold.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          11
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f4be75f988bf37960bde9911f4134bcfe610912adad04192bf209ead3e857bf"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-02-q1",
+          "prompt": "What is it like outside, and where is the child sitting?",
+          "facilitatorNotes": [
+            "Snow on the fields and cold even in the cottage; the child sits in the warm corner by the fire."
+          ],
+          "evidence": [
+            "There’s snow on the fields,",
+            "While I sit in the chimney nook"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-02-q2",
+          "prompt": "What is the child eating and wearing to keep warm?",
+          "facilitatorNotes": [
+            "Hot pottage, and soft warm clothes in many layers."
+          ],
+          "evidence": [
+            "Supping hot pottage.",
+            "My clothes are soft and warm,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-02-q3",
+          "prompt": "Who is the child sorry for, and why?",
+          "facilitatorNotes": [
+            "The poor, who are out in the cold without a warm corner, hot food or soft clothes. Children may want to say how people can help; keep that talk beside the poem, which only says the child is sorry."
+          ],
+          "evidence": [
+            "But I’m so sorry for the poor",
+            "Out in the cold."
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-03",
       "title": "A linnet in a gilded cage",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -95,7 +164,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-02-q1",
+          "id": "reading-k-rossetti-sing-song-1893-03-q1",
           "prompt": "Where is each linnet?",
           "facilitatorNotes": [
             "One is in a golden cage; the other is free on a branch."
@@ -106,7 +175,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-02-q2",
+          "id": "reading-k-rossetti-sing-song-1893-03-q2",
           "prompt": "In frosty winter, why might someone think the caged bird is luckier?",
           "facilitatorNotes": [
             "It is sheltered and fed while the free bird is cold. The poem only says one “might doubt,” so children supply the reason; warmth, food or safety all work."
@@ -117,7 +186,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-02-q3",
+          "id": "reading-k-rossetti-sing-song-1893-03-q3",
           "prompt": "When the trees burst into leaf, which linnet is luckier? Why can no one doubt it?",
           "facilitatorNotes": [
             "The free linnet, which can build a nest on the bough in spring. A child who still prefers the cage for safety can be asked what the caged bird cannot do."
@@ -130,7 +199,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-03",
+      "id": "reading-k-rossetti-sing-song-1893-04",
       "title": "Minnie and Mattie",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -159,7 +228,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-03-q1",
+          "id": "reading-k-rossetti-sing-song-1893-04-q1",
           "prompt": "Which animals do the girls see in the country?",
           "facilitatorNotes": [
             "A piglet, a lamb, and hens with ducklings and chickens. Children can make each animal’s sound."
@@ -170,7 +239,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-03-q2",
+          "id": "reading-k-rossetti-sing-song-1893-04-q2",
           "prompt": "What flowers do the girls carry, and which flowers are not ready yet?",
           "facilitatorNotes": [
             "Violets and primroses; the roses need more time in the sun. The trees are only half in leaf, too, so it is early spring."
@@ -181,7 +250,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-03-q3",
+          "id": "reading-k-rossetti-sing-song-1893-04-q3",
           "prompt": "Why does the poem tell the girls not to wait for roses?",
           "facilitatorNotes": [
             "Waiting would mean losing today, when violets and primroses are already blooming for them. Children may put it as “enjoy what you have now”; ask why May is called “wise.”"
@@ -198,7 +267,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-04",
+      "id": "reading-k-rossetti-sing-song-1893-05",
       "title": "Brown and furry",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -227,7 +296,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-04-q1",
+          "id": "reading-k-rossetti-sing-song-1893-05-q1",
           "prompt": "What does the caterpillar look like, and how is it moving?",
           "facilitatorNotes": [
             "Brown and furry, and in a hurry. Children can wriggle a finger like a hurrying caterpillar."
@@ -238,7 +307,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-04-q2",
+          "id": "reading-k-rossetti-sing-song-1893-05-q2",
           "prompt": "What dangers does the speaker hope the caterpillar will escape?",
           "facilitatorNotes": [
             "A toad and a hovering bird of prey, both of which might eat it."
@@ -249,7 +318,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-04-q3",
+          "id": "reading-k-rossetti-sing-song-1893-05-q3",
           "prompt": "What will happen to the caterpillar in the end?",
           "facilitatorNotes": [
             "It will spin its case and come out a butterfly. The poem calls this dying and living again; the caterpillar does not really die but changes completely, and a child who says it is like being born again has understood."
@@ -262,7 +331,198 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-05",
+      "id": "reading-k-rossetti-sing-song-1893-06",
+      "title": "1 and 1 are 2",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a number pattern and a picture that rhymes with each answer.",
+      "focus": "Doubling numbers from 1 to 12, each answer is fixed in the memory by a rhyming picture.",
+      "context": "Each line adds a number to itself. Barley-sugar sticks are sweets; tumblers here are acrobats; bluff seafaring men are hearty sailors; to delve is to dig; “bent on sporting” means eager for games. Children can count on their fingers for the first few lines.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “1 and 1 are 2”, complete (twelve couplets); opens “1 and 1 are 2 That’s for me and you.”; closes “12 and 12 are 24 Pretty pictures, and no more.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          66,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2dff0da472682d6e484159eae2df1e801fff39169c0688d2abcde83f38319d6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-06-q1",
+          "prompt": "What are 3 and 3, and what sweet thing goes with it?",
+          "facilitatorNotes": [
+            "Six, and barley-sugar sticks. Children can count six fingers."
+          ],
+          "evidence": [
+            "3 and 3 are 6",
+            "Barley-sugar sticks."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-06-q2",
+          "prompt": "Who are the 10 and the 12 in the rhyme?",
+          "facilitatorNotes": [
+            "Ten hearty sailors and twelve garden boys who dig."
+          ],
+          "evidence": [
+            "Bluff seafaring men.",
+            "Garden lads who delve."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-06-q3",
+          "prompt": "Why do you think each sum has a little picture? What does the last line say?",
+          "facilitatorNotes": [
+            "The rhyming picture helps you remember the answer. The last line, “Pretty pictures, and no more,” says the rhyme stops at 24; brother George has harder sums to do. Let the child choose a favourite picture."
+          ],
+          "evidence": [
+            "Sums for brother George to do.",
+            "Pretty pictures, and no more."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-07",
+      "title": "How many seconds in a minute?",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow questions that measure time in bigger and bigger pieces.",
+      "focus": "A question-and-answer rhyme climbs from seconds to years, and ends with a question no one can answer.",
+      "context": "An almanack (almanac) is a calendar book; an age here is a hundred years; a sage is a wise person. “Runn’th” is an old way of saying “runs.” Let the child answer each question before you read the answer line.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “How many seconds in a minute?”, complete (eight couplets); opens “How many seconds in a minute? Sixty, and no more in it.”; closes “How many ages in time? No one knows the rhyme.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          78,
+          85
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8da3d416f58f8310faa06f51ba75df2faae86d3d1c6c87428d3dda213e91336a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-07-q1",
+          "prompt": "How many seconds are in a minute, and how many minutes in an hour?",
+          "facilitatorNotes": [
+            "Sixty and sixty. Count a minute together if there is time."
+          ],
+          "evidence": [
+            "Sixty, and no more in it.",
+            "Sixty for sun and shower."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-07-q2",
+          "prompt": "How many days are in a week? Can you name them?",
+          "facilitatorNotes": [
+            "Seven. Children can say the days of the week."
+          ],
+          "evidence": [
+            "Seven both to hear and speak."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-07-q3",
+          "prompt": "The last answer has no number. Why can’t anyone say how many ages are in time?",
+          "facilitatorNotes": [
+            "Time goes on and on, and no one knows its beginning or end, so the rhyme says no one knows. Children may say time is too big to count."
+          ],
+          "evidence": [
+            "How many ages in time?",
+            "No one knows the rhyme."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-08",
+      "title": "January cold desolate",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear the whole year go by in one short poem.",
+      "focus": "Each month gets a quick picture of its weather, from cold January round to bleak December.",
+      "context": "Desolate means bare and lonely. Ranges means roams about. Scorched means very hot. To disrobe is to take off your clothes. Keen means sharp and cold. In November there are often shooting stars. Read slowly enough for the child to hear each month’s name.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “January cold desolate;”, complete; opens “January cold desolate; February all dripping wet; March wind ranges; April changes; Birds…”; closes “…fall and shoot In keen November; And night is long And cold is strong In bleak December.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          87,
+          87
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d0f8659480d8fd0cbad8c2af4bad86e72dc36c94e5307a5e6a01aaf8d0f94902"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-08-q1",
+          "prompt": "What is the weather like in January, February and March?",
+          "facilitatorNotes": [
+            "January is cold and bare, February dripping wet, and March windy."
+          ],
+          "evidence": [
+            "January cold desolate;",
+            "February all dripping wet;"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-08-q2",
+          "prompt": "What do June, July and August bring?",
+          "facilitatorNotes": [
+            "June the longest day, July thunderstorms with lightning, and August ripe corn."
+          ],
+          "evidence": [
+            "Brings longest day;",
+            "August bears corn,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-08-q3",
+          "prompt": "In October, the poem says Earth “must disrobe her.” What does Earth take off?",
+          "facilitatorNotes": [
+            "Her leaves: the trees drop them as if taking off clothes for winter. Ask what the trees look like near home in October."
+          ],
+          "evidence": [
+            "In rough October",
+            "Earth must disrobe her;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-09",
       "title": "What does the donkey bray about?",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -291,7 +551,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-05-q1",
+          "id": "reading-k-rossetti-sing-song-1893-09-q1",
           "prompt": "What will the child give Nurse for an answer?",
           "facilitatorNotes": [
             "A kiss, if Nurse can explain what the donkey, the pig and the goose mean."
@@ -302,7 +562,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-05-q2",
+          "id": "reading-k-rossetti-sing-song-1893-09-q2",
           "prompt": "Which birds seem to say real words?",
           "facilitatorNotes": [
             "The magpie says “how d’ye do?” and the jackdaw “go away”; the cockatoo and the cuckoo say their own names. Any one is a good answer."
@@ -313,7 +573,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-05-q3",
+          "id": "reading-k-rossetti-sing-song-1893-09-q3",
           "prompt": "What do you think the donkey might be braying about?",
           "facilitatorNotes": [
             "The poem never answers, which is why the child asks. Accept any idea with a reason, such as hunger or calling a friend, and point out that it is our guess, not something the poem says."
@@ -326,7 +586,7 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-06",
+      "id": "reading-k-rossetti-sing-song-1893-10",
       "title": "The horses of the sea",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -355,7 +615,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-06-q1",
+          "id": "reading-k-rossetti-sing-song-1893-10-q1",
           "prompt": "What do the horses of the sea do? What are they really?",
           "facilitatorNotes": [
             "They rear up with foaming tops and toss and turn over: they are waves, whose white foam looks like a mane. Children can show a wave rising and falling with an arm."
@@ -366,7 +626,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-06-q2",
+          "id": "reading-k-rossetti-sing-song-1893-10-q2",
           "prompt": "What do the horses of the land eat?",
           "facilitatorNotes": [
             "Corn and clover."
@@ -376,7 +636,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-06-q3",
+          "id": "reading-k-rossetti-sing-song-1893-10-q3",
           "prompt": "Which horses does the poem say serve us best? Why might that be?",
           "facilitatorNotes": [
             "The horses of the land, which pull and carry for people; waves are splendid but do no work for us. A child who likes the sea-horses better for their wildness is giving a reason worth hearing."
@@ -389,7 +649,69 @@
       ]
     },
     {
-      "id": "reading-k-rossetti-sing-song-1893-07",
+      "id": "reading-k-rossetti-sing-song-1893-11",
+      "title": "What does the bee do?",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a pattern of questions and answers that comes round in a circle.",
+      "focus": "Everyone in a family of long ago has a job, and the rhyme ends where it began, with honey.",
+      "context": "To lay out money is to spend it. This rhyme shows a family of long ago, in which the father went out to earn money and the mother spent it on the household.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “What does the bee do?”, complete; opens “What does the bee do? Bring home honey. And what does Father do? Bring home money. And…”; closes “…And what does Mother do? Lay out the money. And what does baby do? Eat up the honey.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          182,
+          182
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "092cb03e012cb35a700090242d01c43c16cb65bb5898e5e2c00345eeacb88a01"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q1",
+          "prompt": "What does the bee bring home, and what does Father bring home?",
+          "facilitatorNotes": [
+            "The bee brings honey and Father brings money. Notice how the two words rhyme."
+          ],
+          "evidence": [
+            "Bring home honey.",
+            "Bring home money."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q2",
+          "prompt": "What does Mother do with the money?",
+          "facilitatorNotes": [
+            "She lays it out, which means she spends it on what the family needs."
+          ],
+          "evidence": [
+            "Lay out the money."
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-11-q3",
+          "prompt": "What does the baby do? Why is that a funny ending?",
+          "facilitatorNotes": [
+            "The baby eats up the honey. Everyone else works, and the baby just enjoys the end; the rhyme comes back round to the bee’s honey. Children may say the baby is lucky."
+          ],
+          "evidence": [
+            "Eat up the honey."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-12",
       "title": "Is the moon tired?",
       "sourceId": "rossetti-sing-song-1893",
       "genre": "poetry",
@@ -418,7 +740,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-rossetti-sing-song-1893-07-q1",
+          "id": "reading-k-rossetti-sing-song-1893-12-q1",
           "prompt": "Why does the speaker wonder whether the moon is tired?",
           "facilitatorNotes": [
             "Because she looks pale, as tired people sometimes do, and seems half hidden in mist."
@@ -429,7 +751,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-07-q2",
+          "id": "reading-k-rossetti-sing-song-1893-12-q2",
           "prompt": "What does the moon do that might make her tired?",
           "facilitatorNotes": [
             "She climbs the sky from east to west and never rests."
@@ -440,7 +762,7 @@
           ]
         },
         {
-          "id": "reading-k-rossetti-sing-song-1893-07-q3",
+          "id": "reading-k-rossetti-sing-song-1893-12-q3",
           "prompt": "When does the moon look papery white, and when does she fade away?",
           "facilitatorNotes": [
             "Papery white before night comes; she fades before dawn. Ask whether the child has ever seen the moon in daytime; looking for it together is a good follow-up."
@@ -448,6 +770,69 @@
           "evidence": [
             "The moon shows papery white;",
             "She fades away."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-rossetti-sing-song-1893-13",
+      "title": "What do the stars do",
+      "sourceId": "rossetti-sing-song-1893",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a question and its answer about something very far away.",
+      "focus": "The stars are higher than wind or clouds, and each one keeps moving on its own path.",
+      "context": "Glory here means brightness. Circles means moves round and round. Christina Rossetti was a Christian, and “its Maker” is God, who she believed made the stars.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Untitled rhyme “What do the stars do”, complete (two stanzas); opens “What do the stars do Up in the sky, Higher than the wind can blow, Or the clouds can fly?”; closes “…glory Circles, circles still; As it was lit to shine and set, And do its Maker’s will.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          205,
+          206
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f47abf47ce76edb0b213d9a07cb3dccab3ba7ef27b0cddf17edfbc09ef39dbd2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q1",
+          "prompt": "How high are the stars, the poem says?",
+          "facilitatorNotes": [
+            "Higher than the wind can blow or the clouds can fly."
+          ],
+          "evidence": [
+            "Higher than the wind can blow,",
+            "Or the clouds can fly?"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q2",
+          "prompt": "What does each star do?",
+          "facilitatorNotes": [
+            "It shines in its own brightness and circles round and round, rising to shine and then setting."
+          ],
+          "evidence": [
+            "Circles, circles still;",
+            "As it was lit to shine and set,"
+          ]
+        },
+        {
+          "id": "reading-k-rossetti-sing-song-1893-13-q3",
+          "prompt": "Who does the poet believe made the stars? What have you noticed about the stars at night?",
+          "facilitatorNotes": [
+            "God, “its Maker.” Children may also describe stars twinkling or seeming to move across the sky; families can share their own beliefs alongside the poem."
+          ],
+          "evidence": [
+            "And do its Maker’s will."
           ]
         }
       ]
