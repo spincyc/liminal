@@ -139,6 +139,74 @@
     },
     {
       "id": "reading-9-wheatley-memoir-poems-1834-03",
+      "title": "To the University of Cambridge, in New England",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Decide who is speaking to whom, and what each side has that the other lacks. Then reread the line where the speaker names herself.",
+      "focus": "An enslaved teenager advising the students of Harvard on how to use their privileges.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. She wrote this poem in 1767, when she was about fourteen, addressing the students of Harvard College in Cambridge, Massachusetts, which educated young white men. The Muses are goddesses of poetry; “ardor” is passion; “etherial space” is the heavens; to “redeem” each hour is to use it well; “remit your guard” means relax your watch; perdition is damnation. “Ethiop” was a general word for an African.",
+      "contentNote": "The poem calls Africa, the speaker’s homeland, “The land of errors and Egyptian gloom,” echoing the Christian teaching of her time.",
+      "excerpt": {
+        "locator": "To the University of Cambridge, in New England; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “WHILE an intrinsic ardor prompts to write, The Muses promise to assist my pen. 'T was not…”; closes “…Its transient sweetness turns to endless pain, And in immense perdition sinks the soul.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84718826d655f0f0dfb511d7142034dc663927eaf324d6e00539ccfbcc6f0c0b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q1",
+          "prompt": "How does the speaker present herself in the first stanza? What gives her the right to address Harvard students?",
+          "facilitatorNotes": [
+            "She writes from “intrinsic ardor,” inner passion, with the Muses’ help, not from the schooling the students have. She was brought from Africa by God’s “gracious hand,” so she speaks with the authority of experience and faith.",
+            "Her description of Africa as “errors and Egyptian gloom” repeats what she had been taught. Readers differ on how far it is her own view and how far it is what her audience expected; the poem does not settle the question."
+          ],
+          "evidence": [
+            "WHILE an intrinsic ardor prompts to write, The Muses promise to assist my pen.",
+            "The land of errors and Egyptian gloom:"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q2",
+          "prompt": "What privileges do the students enjoy, according to the second stanza, and which does the speaker rank higher?",
+          "facilitatorNotes": [
+            "They study the heavens, the “systems of revolving worlds,” the learning of a college. But “Still more” they receive the Christian message, which she ranks above science.",
+            "She describes Christ as one who “hears revilers, nor resents their scorn.” Some readers hear a personal echo in an enslaved writer choosing that detail; others read it simply as devotion."
+          ],
+          "evidence": [
+            "Students, to you 't is given to scan the heights Above,",
+            "Still more, ye sons of science, ye receive",
+            "He hears revilers, nor resents their scorn."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q3",
+          "prompt": "“An Ethiop tells you.” Why does she name herself at this point, and what is surprising about the situation?",
+          "facilitatorNotes": [
+            "An enslaved African girl, shut out of the education they have, lectures privileged young men on how to spend their time and avoid sin. Naming herself makes the reversal plain: the outsider has become the teacher.",
+            "“Improve your privileges while they stay” reminds them that privilege can be lost or wasted. Readers may hear humility, boldness or quiet irony; ask students to defend their choice from the wording."
+          ],
+          "evidence": [
+            "Improve your privileges while they stay,",
+            "Ye blooming plants of human race divine, An Ethiop tells you, 't is your greatest foe;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-04",
       "title": "On the Death of the Rev. Mr. George Whitefield",
       "sourceId": "wheatley-memoir-poems-1834",
       "genre": "poetry",
@@ -167,7 +235,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-03-q1",
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q1",
           "prompt": "How does the elegy move from mourning to celebration? Find the line where its direction changes.",
           "facilitatorNotes": [
             "It opens with loss: no more “music of thy tongue,” and a setting sun that “shines no more.” Then it turns upward: “Behold the prophet in his towering flight!” The last stanza sets his stilled breath beside a vision of the skies.",
@@ -179,7 +247,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-03-q2",
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q2",
           "prompt": "Wheatley puts words into Whitefield’s mouth. Whom does he invite, and why might “Take him, ye Africans” matter in a poem by an enslaved African woman?",
           "facilitatorNotes": [
             "He invites the wretched, starving sinners, preachers, Americans and Africans alike: an “Impartial Saviour.” Africans stand on the same footing as “my dear Americans” and are promised they shall be “sons, and kings, and priests to God,” titles of dignity for people the law treated as property.",
@@ -191,7 +259,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-03-q3",
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q3",
           "prompt": "The poem says Whitefield “longed to see America excel” and speaks of “we Americans.” What community does the elegy imagine, and where does the speaker place herself in it?",
           "facilitatorNotes": [
             "A shared American and Christian public: New England, its youth, the orphans, the Countess across the ocean. The speaker includes herself in “we Americans,” an identity still new in 1770.",
@@ -205,7 +273,76 @@
       ]
     },
     {
-      "id": "reading-9-wheatley-memoir-poems-1834-04",
+      "id": "reading-9-wheatley-memoir-poems-1834-05",
+      "title": "On Imagination",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the poem’s journey: where does Imagination carry the speaker, and where is she brought back? Mark the stanza where the poem turns.",
+      "focus": "A hymn to the mind’s freedom that ends, surprisingly, with a retreat.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Here Imagination is a queen and Fancy her winged messenger; the two words were near synonyms. Helicon is the mountain of the Muses; “empyreal” means belonging to the highest heaven; “pinions” are wings; Flora is the Roman goddess of flowers and Sylvanus the god of woods; Aurora, the dawn, rises from the bed of her husband Tithonus (“Tithon”). A lay is a song; “unequal” here means not equal to its subject. The poem is written in heroic couplets, rhymed pairs of ten-syllable lines.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "On Imagination; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “THY various works, imperial queen, we see How bright their forms! how decked with pomp by…”; closes “…chill the tides of Fancy's flowing' sea,-- Cease then my song, cease the unequal lay.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          118,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "44e7b9fcb7c2a06aa26aa215001f32524a5e97754c07357ff74a45b3e8849919"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q1",
+          "prompt": "How does the poem show Imagination’s power over space? Find the lines where the mind travels.",
+          "facilitatorNotes": [
+            "On Imagination’s “pinions” the mind can “surpass the wind,” leave “the rolling universe behind,” rove “From star to star” and grasp “the mighty whole” in one view. Nothing limits where thought can go.",
+            "Earlier, Fancy’s pleasures are “silken fetters” and “soft captivity.” Some readers find those images striking from an enslaved poet, and read the freedom of mind against the body’s captivity; others warn against reading every image biographically."
+          ],
+          "evidence": [
+            "We on thy pinions can surpass the wind, And leave the rolling universe behind:",
+            "From star to star the mental optics rove,",
+            "Whose silken fetters all the senses bind, And soft captivity involves the mind."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q2",
+          "prompt": "How does Imagination defeat winter in the fourth stanza? Look closely at the verbs.",
+          "facilitatorNotes": [
+            "Though “Winter frowns,” the fields “may flourish,” frozen rivers “may burst their iron bands,” and Flora and Sylvanus restore flowers and leaves. Every verb is “may”: these are possibilities in the mind, not facts outside the window.",
+            "Students may notice the “iron bands” bursting and ask whether the image suggests release from more than ice."
+          ],
+          "evidence": [
+            "Though Winter frowns to Fancy's raptured eyes, The fields may flourish, and gay scenes arise;",
+            "The frozen deeps may burst their iron bands,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q3",
+          "prompt": "Just as she is about to describe the sunrise, the speaker stops. Why does the poem end by giving up?",
+          "facilitatorNotes": [
+            "She leaves “reluctant” because “Winter austere forbids me to aspire” and northern storms chill her fancy. Imagination, which conquered winter in the fourth stanza, is now conquered by it, and she calls her song “unequal” to its subject.",
+            "It may be a modest convention for ending a poem, a real Boston winter, or a sign that the mind’s freedom has limits in the world. Accept any reading that explains the turn from the text."
+          ],
+          "evidence": [
+            "But I reluctant leave the pleasing views,",
+            "Winter austere forbids me to aspire,",
+            "Cease then my song, cease the unequal lay."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-06",
       "title": "To S. M., a Young African Painter, on Seeing His Works",
       "sourceId": "wheatley-memoir-poems-1834",
       "genre": "poetry",
@@ -234,7 +371,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-04-q1",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q1",
           "prompt": "What does Wheatley praise in S. M.’s work? Which words show her treating painting as a kind of creation?",
           "facilitatorNotes": [
             "He paints “thought in living characters,” and his “breathing figures” live; the effect is “A new creation rushing on my sight!” Bringing figures to life was the highest praise in the art talk of her day.",
@@ -246,7 +383,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-04-q2",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q2",
           "prompt": "Why might it matter that this poem, by an enslaved African poet, addresses a young African painter as an artistic equal?",
           "facilitatorNotes": [
             "It is one artist encouraging another, wishing him “immortal fame” and imagining them together in heaven, where his tongue and her muse both rise. In colonial Boston, few would have granted two enslaved young people such a vocation.",
@@ -258,7 +395,7 @@
           ]
         },
         {
-          "id": "reading-9-wheatley-memoir-poems-1834-04-q3",
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q3",
           "prompt": "Near the end she says that in heaven there will be “No more” of Damon’s sighs or Aurora’s eyes. What is she setting aside, and why does the poem end with night?",
           "facilitatorNotes": [
             "She sets aside the pastoral and classical conventions of earthly verse for “nobler themes” and “purer language.” Night then “seals the fair creation from my sight,” ending where seeing and painting stop, to wait for the day she has imagined.",
