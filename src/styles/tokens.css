@@ -45,23 +45,26 @@
 
   /* Layout */
   --page-max: 1180px;
+  --display-size: clamp(2.15rem, 4vw, 3.25rem);
+  --section-space: clamp(1.5rem, 3.4vw, 2.75rem);
+  --panel-pad: clamp(1rem, 2.4vw, 1.75rem);
   --gutter: 24px;
 }
 
 /* Outer product, light. Screen colors are never needed to interpret print. */
 :root {
   color-scheme: light;
-  --color-page: #f6f3e9;
-  --color-surface: #fffdf7;
-  --color-ink: #173c36;
-  --color-muted: #53665f;
-  --color-line: #d5d9cc;
-  --color-line-strong: #768b80;
-  --color-soft: #eaece1;
+  --color-page: #f7f5ee;
+  --color-surface: #fffefa;
+  --color-ink: #223c32;
+  --color-muted: #58675d;
+  --color-line: #d8d9cb;
+  --color-line-strong: #808878;
+  --color-soft: #eaece2;
   --color-softer: #f1f1e7;
-  --color-accent: #1b6b60;
-  --color-accent-hover: #104f46;
-  --color-accent-soft: #e0ebe1;
+  --color-accent: #295c46;
+  --color-accent-hover: #194b35;
+  --color-accent-soft: #e2ece0;
   --color-on-accent: #fff;
   --color-good: #216239;
   --color-good-soft: #e5eee1;
@@ -75,12 +78,16 @@
   --shadow-bar: none;
   --shadow-card: 0 4px 18px rgba(23, 60, 54, 0.08);
 
-  /* The shared header (brand.css) follows the library palette on every page. */
-  --header-page: #f6f3e9;
-  --header-ink: #173c36;
-  --header-muted: #53665f;
-  --header-line: #d5d9cc;
-  --header-mark: #1b6b60;
+  /* Masthead colors form a single high-contrast surface in both themes. */
+  --header-page: #1b372c;
+  --header-ink: #fffaf0;
+  --header-muted: #d5e1d5;
+  --header-mark: #c2cf9d;
+  --header-active: #345141;
+  --area-courses: #496b48;
+  --area-readings: #9b573b;
+  --area-ap: #565e85;
+  --area-prep: #39717b;
 }
 
 /* Assessment compatibility: these values do not inherit the page theme. */
@@ -149,11 +156,11 @@
     --shadow-bar: none;
     --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.45);
 
-    --header-page: #14201e;
-    --header-ink: #e9ede0;
-    --header-muted: #abbeb2;
-    --header-line: #374a40;
-    --header-mark: #9dcdbb;
+    --header-page: #10231d;
+    --area-courses: #a4c994;
+    --area-readings: #e3a989;
+    --area-ap: #c0b7e1;
+    --area-prep: #9dcdd0;
   }
 }
 

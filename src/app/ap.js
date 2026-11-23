@@ -87,14 +87,14 @@
     const grid = el("div", undefined, "ap-cards");
     A.planCourses(plan).forEach(course => {
       const card = el("section", undefined, "ap-card");
-      const heading = el("h3"); heading.append(link(course.title, A.route(course.id))); card.append(heading, el("p", course.summary));
+      card.append(el("h3", course.shortTitle), el("p", course.summary));
       const links = el("p", undefined, "ap-card-links");
       links.append(link("Course plan", A.route(course.id)));
       const weekly = weeklyHref(course, 1);
-      if (weekly) links.append(document.createTextNode(" · "), link("Weekly work", weekly));
-      if (available(course, "practice-exam")) links.append(document.createTextNode(" · "), link("Practice exam", A.route(course.id, "student", "practice-exam")));
-      if (A.prepOf(course)) links.append(document.createTextNode(" · "), link("Exam prep", A.route(course.id, "prep")));
-      if (referenceEntry(course)) links.append(document.createTextNode(" · "), link("Formula reference", A.route(course.id, "reference")));
+      if (weekly) links.append(link("Weekly work", weekly));
+      if (available(course, "practice-exam")) links.append(link("Practice exam", A.route(course.id, "student", "practice-exam")));
+      if (A.prepOf(course)) links.append(link("Exam prep", A.route(course.id, "prep")));
+      if (referenceEntry(course)) links.append(link("Formula reference", A.route(course.id, "reference")));
       card.append(links); grid.append(card);
     });
     article.append(grid, scoreNote());

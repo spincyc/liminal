@@ -98,6 +98,7 @@
   function button(label, action, className) { const node = R.el("button", label, className); node.type = "button"; node.addEventListener("click", action); return node; }
   function option(label, value) { const node = R.el("option", label); node.value = value; return node; }
   function showOnly(name) {
+    if (!printPanel.hidden && name !== "print") P.cancel();
     document.body.dataset.readingView = name;
     browsePanel.hidden = name !== "browse"; reader.hidden = !["read", "date", "reading"].includes(name);
     monthPanel.hidden = name !== "month"; printPanel.hidden = name !== "print";
@@ -497,9 +498,11 @@
 
   async function printView(selected, focus) {
     ++request;
-    showOnly("print"); crumbs([{ label: "Print readings" }]);
-    announce("Print readings for several levels.");
-    setTitle(["Print readings for several levels"]);
+    const holidays = selected.view === "holidays", heading = holidays ? "Holiday reading weeks" : "Print readings for several levels";
+    showOnly("print"); crumbs([{ label: holidays ? heading : "Print readings" }]);
+    $("dailyPrintHeading").textContent = heading;
+    announce(heading + ".");
+    setTitle([heading]);
     P.show(selected, { index, getJson, today: today(), remembered, announce });
     if (focus) $("dailyPrintHeading").focus();
   }
@@ -507,7 +510,7 @@
   // ---- Routing ----
   function route(focus = false) {
     const selected = D.view(index, window.location.hash, { grade: remembered && remembered.grade, today: today() });
-    if (selected.view === "print") return printView(selected, focus);
+    if (selected.view === "print" || selected.view === "holidays") return printView(selected, focus);
     if (!selected.course) return;
     if (selected.view === "browse") return browse(selected, focus);
     if (selected.view === "date") return dateView(selected, focus);

@@ -3,7 +3,7 @@
    Only the working layout lives here; .lm-shell owns the assessment screen. */
 @media screen {
   [data-area="test-prep"] .prep-bar {
-    background: var(--color-page);
+    background: var(--color-surface);
   }
 
   [data-area="test-prep"] .prep-bar .site-header-inner {
@@ -31,8 +31,10 @@
   }
 
   [data-area="test-prep"] .page-head {
-    margin-bottom: 28px;
+    margin-bottom: 22px;
   }
+
+  [data-area="test-prep"] .page-head h1 { font-size: var(--display-size); }
 
   [data-area="test-prep"] .lede {
     max-width: 66ch;
@@ -106,8 +108,18 @@
   }
 
   .practice-start {
-    margin-bottom: 0;
+    padding-inline: var(--panel-pad);
+    margin-bottom: 18px;
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--area-prep);
+    background: var(--color-surface);
   }
+  .practice-start > summary h2 { font: 400 clamp(1.35rem, 2.5vw, 1.8rem)/1.2 var(--font-serif); }
+  .practice-start .prep-disclosure-body { padding-bottom: 12px; }
+  .practice-start .start-steps { margin-bottom: 0; }
+  .test-switch, .test-switch-option { border-radius: var(--radius-pill); }
+  [data-area="test-prep"] .prep-bar .site-header-inner { width: calc(100% - 2 * var(--lm-side)); min-height: 56px; padding-inline: 0; }
+
 
   .practice-start + .test-area {
     border-top: 0;
@@ -242,7 +254,7 @@
 
   [data-area="test-prep"] .prep-bar .site-nav {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 4.5rem), 1fr));
     gap: 0 8px;
     width: 100%;
   }

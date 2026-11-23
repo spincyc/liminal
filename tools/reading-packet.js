@@ -6,6 +6,7 @@
 // is the specification; test/reading-packet.test.js pins it so the style
 // cannot drift.
 //
+//   node tools/reading-packet.js --holiday thanksgiving --year 2026 --out .scratch/thanksgiving --pdf
 //   node tools/reading-packet.js --dates 2026-10-08,2026-10-09,2026-10-12 --out .scratch/packets --pdf
 //   node tools/reading-packet.js --nights k:w7d4,5:w12d3 --out .scratch/packets --pdf --rotate-backs
 //
@@ -17,6 +18,9 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const D = require("../src/lib/daily-reading");
 const T = require("../src/lib/reading-tex");
+const C = require("../src/lib/reading-calendar");
+const H = require("../src/lib/holiday-weeks");
+const { loadDailyReading, sourcesByGrade } = require("./build-daily-reading");
 
 // The school calendar: five nights a week, Monday to Friday, 36 weeks from the
 // Monday the year starts. Weekends and dates outside the year have no night.
@@ -49,10 +53,19 @@ function rotatedBacksTex(pdfName, pages) {
 }
 
 function parseArgs(argv) {
-  const options = { start: DEFAULT_START, grades: D.GRADES.filter(grade => !D.isAdvanced(grade)).map(D.gradeKey), out: null, pdf: false, rotateBacks: false, dates: [], nights: [] };
+  const options = { holiday: null, year: null, start: DEFAULT_START, grades: D.GRADES.filter(grade => !D.isAdvanced(grade)).map(D.gradeKey), out: null, pdf: false, rotateBacks: false, dates: [], nights: [] };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i], value = () => { if (i + 1 >= argv.length) throw new Error(arg + " needs a value"); return argv[++i]; };
-    if (arg === "--dates") options.dates = value().split(",");
+    if (arg === "--holiday") {
+      options.holiday = value();
+      if (!C.HOLIDAY_KEYS.includes(options.holiday)) throw new Error("choose a holiday: " + C.HOLIDAY_KEYS.join(", "));
+    }
+    else if (arg === "--year") {
+      const raw = value();
+      if (!/^\d{1,4}$/.test(raw) || Number(raw) < 1) throw new Error("--year must be a year from 1 to 9999");
+      options.year = Number(raw);
+    }
+    else if (arg === "--dates") options.dates = value().split(",");
     else if (arg === "--nights") options.nights = value().split(",");
     else if (arg === "--grades") {
       options.grades = value().split(",");
@@ -65,7 +78,13 @@ function parseArgs(argv) {
     else if (arg === "--rotate-backs") options.rotateBacks = true;
     else throw new Error("unknown option " + arg);
   }
-  if (!options.out || (!options.dates.length && !options.nights.length)) throw new Error("usage: reading-packet.js (--dates YYYY-MM-DD,... | --nights k:w7d4,...) --out DIR [--grades k,1,...] [--start YYYY-MM-DD] [--pdf] [--rotate-backs]");
+  if (options.holiday && (options.dates.length || options.nights.length || argv.includes("--start"))) throw new Error("--holiday uses the holiday date; omit --start, --dates and --nights");
+  if (options.year && !options.holiday) throw new Error("--year requires --holiday");
+  if (options.holiday) {
+    options.year ??= new Date().getFullYear();
+    if (options.grades.some(key => D.isAdvanced(D.gradeFromKey(key)))) throw new Error("holiday weeks cover grades K–12");
+  }
+  if (!options.out || (!options.holiday && !options.dates.length && !options.nights.length)) throw new Error("usage: reading-packet.js (--holiday KEY [--year YYYY] | --dates YYYY-MM-DD,... | --nights k:w7d4,...) --out DIR [--grades k,1,...] [--start YYYY-MM-DD] [--pdf] [--rotate-backs]");
   return options;
 }
 function selections(options, load) {
@@ -99,13 +118,25 @@ function typeset(engine, name, out) {
   const problem = /^(! .*|Missing character.*|LaTeX Font Warning: Font shape .* undefined.*)$/m.exec(text);
   if (problem) throw new Error(engine + " could not typeset " + name + " faithfully (" + problem[1] + "); see " + log);
 }
+function holidayLevels({ holiday, year, grades }, loaded) {
+  const dates = H.dates(holiday, year);
+  const sources = sourcesByGrade(loaded.courses, loaded.extras);
+  return [...new Set(grades.map(D.gradeFromKey))].sort((a, b) => a - b).map(grade => {
+    const set = C.setFor(loaded.calendars.get(grade), year);
+    const ids = H.readingIds(holiday, D.gradeKey(grade), set, loaded.holidayWeeks);
+    const days = ids.map(id => loaded.readingsByGrade.get(grade).get(id));
+    return { nights: days.map((day, i) => ({ day, source: sources.get(grade).get(day.sourceId),
+      meta: D.printMeta(grade, { date: dates[i] }), run: T.runOf(days, day) })) };
+  });
+}
+
 function run(argv) {
   const options = parseArgs(argv);
   // Courses as the build resolves them, sources attached.
-  const courses = require("./build-daily-reading").loadDailyReading().courses;
+  const loaded = loadDailyReading(), courses = loaded.courses;
   const load = key => courses.find(item => D.gradeKey(item.grade) === key) || (() => { throw new Error("grade " + key + " is not published"); })();
   const out = path.resolve(options.out); fs.mkdirSync(out, { recursive: true });
-  const { tex, engine } = T.documentTeX(selections(options, load).map(group => ({ nights: entries(group) })));
+  const { tex, engine } = options.holiday ? T.documentTeX(holidayLevels(options, loaded)) : documentTex(selections(options, load));
   fs.writeFileSync(path.join(out, "packet.tex"), tex);
   console.log("Wrote " + path.join(out, "packet.tex") + " (" + engine + ")");
   if (!options.pdf) return;
@@ -119,5 +150,5 @@ function run(argv) {
   typeset("pdflatex", "packet-duplex.tex", out);
   console.log("Wrote " + path.join(out, "packet-duplex.pdf") + " (even pages rotated for duplex printers that flip backs)");
 }
-module.exports = { DEFAULT_START, schoolNight, entries, documentTex, rotatedBacksTex, parseArgs, selections };
+module.exports = { DEFAULT_START, schoolNight, entries, documentTex, rotatedBacksTex, parseArgs, selections, holidayLevels };
 if (require.main === module) { try { run(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }

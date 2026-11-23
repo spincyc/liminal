@@ -108,7 +108,8 @@ that crosses a week boundary keeps it. While it runs, progress shows under the
 toolbar and the menu item becomes **Cancel PDF**; opening another reading
 cancels it. **Print readings for several levels** (`#print/…`) makes one PDF
 with `printTeX` for a range of up to 31 dates or a school night: level by
-level, each level's readings in date order, every reading on an odd page. Without the runtime both buttons are
+level, each level's readings in date order, every reading on an odd page. Holiday weeks use the same TeX style, with each reading starting on a new page
+and each grade starting on an odd page. Without the runtime the PDF controls are
 disabled and say that PDF generation is unavailable; browser print and the
 HTML student download remain.
 

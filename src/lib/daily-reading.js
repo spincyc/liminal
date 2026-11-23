@@ -1,9 +1,9 @@
 /* Pure selection, navigation and student projections for the daily library. */
 (function (root, factory) {
-  const api = factory();
+  const api = factory(root.LiminalReadingCalendar || (typeof require === "function" ? require("./reading-calendar") : null));
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.LiminalDailyReading = api;
-})(typeof window === "object" ? window : globalThis, function () {
+})(typeof window === "object" ? window : globalThis, function (Cal) {
   "use strict";
   // Grades K–12 are 0–12; Advanced 1–4 (reading levels beyond Grade 12, not
   // courses or credits) are 13–16 with keys a1–a4.
@@ -156,6 +156,19 @@
       return { view: "browse", ...at(requested || fallback), week, home: false,
         invalid: parts.length > 3 || parts.length >= 2 && !requested || parts.length === 3 && !week };
     }
+    if (parts[0] === "holidays") {
+      const now = today || Cal.today(), thisYear = Number(now.slice(0, 4));
+      const holidays = Cal.holidays(thisYear);
+      const upcoming = holidays.find(item => item.date >= now) || Cal.holidays(thisYear + 1)[0] || holidays[holidays.length - 1];
+      const holiday = Cal.holidayName(parts[1]) ? parts[1] : upcoming.key;
+      const hasYear = /^\d{4}$/.test(parts[2]) && Number(parts[2]) > 0;
+      const year = hasYear ? Number(parts[2]) : parts[1] ? thisYear : Number(upcoming.date.slice(0, 4));
+      const all = grades.map(course => course.grade).filter(grade => !isAdvanced(grade));
+      const keys = parts[3] === undefined || parts[3] === "none" ? [] : parts[3].split(",");
+      const chosen = keys.map(gradeFromKey).filter(grade => all.includes(grade));
+      return { view: "holidays", holiday, year, grades: (parts[3] === undefined ? all : [...new Set(chosen)]).sort((a, b) => a - b),
+        invalid: parts.length > 4 || (parts[1] !== undefined && !Cal.holidayName(parts[1])) || (parts[2] !== undefined && !hasYear) || chosen.length !== keys.length };
+    }
     if (parts[0] === "print") {
       let date = null, until = null, week = null, day = null, rest = parts.slice(1), invalid = false;
       if (rest[0] === "date") { date = validDate(rest[1]) ? rest[1] : today; invalid = !validDate(rest[1]); rest = rest.slice(2); }
@@ -207,6 +220,12 @@
     const what = validDate(date) && validDate(until) && until !== date ? "/dates/" + date + "/" + until
       : validDate(date) ? "/date/" + date : validDay(week, day) ? "/night/" + week + "/" + day : "";
     return "#print" + what + (keys ? "/" + keys : "");
+  }
+  function holidayRoute({ holiday, year, grades }, index) {
+    if (!Cal.holidayName(holiday) || !Number.isInteger(year) || year < 1 || year > 9999) return "";
+    const all = index.grades.map(course => course.grade).filter(grade => !isAdvanced(grade));
+    const keys = all.filter(grade => grades.includes(grade)).sort((a, b) => a - b).map(gradeKey);
+    return "#holidays/" + holiday + "/" + String(year).padStart(4, "0") + (keys.length === all.length ? "" : "/" + (keys.join(",") || "none"));
   }
   // Built files a view loads. Paths come from validated grades and ids only.
   function readingFile(grade, id) { return validReadingId(grade, id) ? "content/reading-daily/readings/" + gradeKey(grade) + "/" + id + ".json" : ""; }
@@ -351,9 +370,13 @@
     if (until && until < date) return "The last date comes before the first; choose a last date on or after it.";
     return printDates(date, until || date).length ? null : "Choose at most " + MAX_PRINT_DAYS + " days.";
   }
-  function printFilename({ date = null, until = null, week = null, day = null, grades = [] } = {}) {
+  function printFilename({ holiday = null, year = null, date = null, until = null, week = null, day = null, grades = [] } = {}) {
+    const keys = grades.filter(validGrade).map(gradeKey).join("-");
+    if (holiday && Cal.holidayName(holiday) && Number.isInteger(year) && year > 0 && year <= 9999) {
+      return "liminal-" + holiday + "-" + year + "-" + keys + ".pdf";
+    }
     const what = validDate(date) && validDate(until) && until !== date ? date + "-to-" + until : validDate(date) ? date : validDay(week, day) ? "w" + week + "d" + day : "day";
-    return "liminal-readings-" + what + "-" + grades.filter(validGrade).map(gradeKey).join("-") + ".pdf";
+    return "liminal-readings-" + what + "-" + keys + ".pdf";
   }
   // Genre families. The corpus records 50-odd free-text genres; browsing
   // groups them into a few families people recognise. Order matters: the
@@ -452,7 +475,7 @@
   }
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
     navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
-    MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
+    MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute, holidayRoute,
     readingFile, calendarFile, SPANS_FILE, hasCalendar, calendarHas, nightLabel, documentTitle, beforeYouRead, continuation,
     STORAGE_KEY, parseRemembered, remember, tonight, dateCommit, printPlan, printMeta, printFilename, printDates, printRangeProblem, MAX_PRINT_DAYS, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
     genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };

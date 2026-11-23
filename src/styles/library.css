@@ -42,6 +42,13 @@ h2.library-heading { font-size: 1.375rem; font-weight: 400; }
   .library-record dl > div { grid-template-columns: minmax(0, 1fr); }
   .library-record dt { font-weight: 600; color: var(--color-ink); }
 }
+@media screen {
+  .library-index h1 { font-size: var(--display-size); line-height: 1.08; }
+  .library-works { border-bottom: 1px solid var(--color-line); }
+  .library-entry { padding: 12px var(--panel-pad); background: var(--color-surface); }
+  .library-entry h2 { font-size: 1.45rem; }
+}
+
 @media print {
   .library-page :is(.lm-header, .skip-link, .daily-crumbs, .daily-status, .library-toolbar, .library-about, #libraryBottom, .daily-footer) { display: none !important; }
   .library-marked { background: none; text-decoration: underline; }

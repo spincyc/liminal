@@ -10,7 +10,8 @@ The home page and shared navigation offer four entry points: **Courses**,
 weekly work, high-school math, and grade-specific expanded lessons. Readings connects
 daily selections, reading-level checks, and reading instruction. Contextual
 links retain the selected grade or course when moving between plans and work.
-The same compact banner, warm paper, and green controls run throughout.
+The home page’s resource search filters courses, readings, exam preparation,
+and printable packets as you type.
 
 Test practice lives at `practice.html`; earlier `index.html#practice`, Progress,
 Review, and Tips bookmarks still resolve. Short skill drills are immediately
@@ -128,7 +129,11 @@ their own, and the calendar fits any year), and print one day for several
 levels at once. The **Library** (`library.html`) reads every source work whole,
 with each nightly passage marked and linked. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
-Generate PDF typesets the reading on screen, or a range of dates for several levels,
+[Holiday reading weeks](https://spincyc.github.io/liminal/daily-reading.html#holidays)
+offers a seven-day sequence for every grade and each of the ten calendar
+holidays. Choose the year and levels to preview or print a packet. Each
+reading starts on its own page and each grade starts on a fresh sheet.
+Generate PDF typesets a holiday week, the reading on screen, or a range of dates for several levels,
 in the browser, in the
 [printed packet style](docs/reading-packets.md); nothing is uploaded and no PDFs
 are stored ([printing](docs/printing.md)).

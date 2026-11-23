@@ -31,6 +31,14 @@
   .high-school-unit > summary::after { grid-column: 2; grid-row: 1 / 3; }
   .high-school-unit-body { padding-inline: 0; }
 }
+@media screen {
+  .high-school-courses { gap: 6px; }
+  .high-school-courses a { border-color: var(--color-line-strong); background: var(--color-surface); }
+  .high-school-courses a[aria-current="page"] { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+  .high-school-unit[open] { background: var(--color-surface); }
+  .high-school-unit > summary, .high-school-unit-body { padding-inline: 12px; }
+}
+
 @media print {
   .high-school-page :is(.high-school-courses, .high-school-print-tools) { display: none !important; }
   .high-school-page .weekly-intro { display: block !important; }

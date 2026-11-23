@@ -29,11 +29,11 @@ function render(page) {
   const model = navigation.model({ pathname: page });
   const home = model.homeCurrent ? ' aria-current="page"' : "";
   return (
-    '<header class="lm-header"><div class="lm-header-inner">' +
+    '<header class="lm-header"><div class="lm-masthead"><div class="lm-header-inner">' +
     `<a class="lm-brand" href="index.html" aria-label="Liminal home"${home}>${SYMBOL}` +
     '<span class="lm-brand-name">Liminal<span class="wordmark-dot">.</span></span></a>' +
     `<nav class="lm-nav" aria-label="Primary">${model.primary.map(item => link(item, true)).join("")}</nav>` +
-    "</div>" +
+    "</div></div>" +
     `<nav class="lm-subnav" aria-label="${model.secondaryLabel}"${model.secondary.length ? "" : " hidden"}>${model.secondary.map(item => link(item)).join("")}</nav>` +
     "</header>"
   );

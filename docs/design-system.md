@@ -1,10 +1,8 @@
 # Liminal design system
 
-Liminal uses a restrained editorial style: warm paper, green ink, serif reading
-titles, system sans-serif controls, thin rules and generous text spacing. The
-content is the main event. The small shared wordmark is the only screen brand
-header. Aesthetic direction alone is insufficient: the contracts below define
-which controls each page needs, where they belong, and how they behave.
+Liminal uses a forest-green masthead, warm paper backgrounds and ruled reading
+surfaces. Serif titles identify documents and destinations. Sans-serif labels
+identify controls. The four study areas share the same navigation and masthead.
 
 This is a **design system**, with **design tokens**, a **component and pattern
 library**, and **page template contracts**. The terminology follows the
@@ -19,7 +17,9 @@ dependency-free implementation.
   size, focus treatment and print colors. Do not invent section-specific copies.
 - `tools/lib/site-header.js` and `styles/brand.css` own the single compact header.
   Courses, Readings, AP prep and SAT/ACT remain visible at phone width. Contextual
-  links retain the selected grade/course where that destination supports it.
+  links retain the selected grade/course where that destination supports it. Primary
+  links show the active area with an underline and a filled background. Contextual
+  links wrap below the masthead on phones so each destination remains visible.
 - `styles/reader-controls.css` owns compact selectors, sequence controls and
   document actions. Load after section styles. `app/reader-controls.js` renders
   shared navigation and action groups; pure modules supply destinations.
@@ -54,6 +54,21 @@ name any justified exception in its section documentation, and reuse its shared
 parts. A page can have several templates across distinct states.
 
 ## Components and interaction patterns
+
+### Study directory
+
+The home library presents four subject areas with direct links to their tasks.
+Year-plan expansions appear beneath their pathway. At desktop widths the four
+areas sit side by side, at tablet widths they form two columns, and at phone
+widths they stack in reading order. Subject-colored rules supplement the names.
+Keep the local bookplate illustration decorative and out of printed content.
+
+The directory filter reads the visible link labels, their subject and parent
+pathway, and any explicitly named exam scope. For example, “grade 8 math”
+reaches the mathematics expansion, and “printable holiday” reaches the
+holiday-week packet. Matching children keep their parent pathway in view.
+Announce the result count or empty state and return focus to the field on Clear.
+The destination links also work when scripts are disabled.
 
 ### Compact selector row
 

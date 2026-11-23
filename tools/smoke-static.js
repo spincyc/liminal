@@ -403,7 +403,7 @@ if (!legacyLessons.includes('src="app/courses.js"') || !legacyLessons.includes('
 // The library entrance is usable without the test-prep application or its
 // storage. Check its links/assets separately from the practice DOM contract.
 const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
-for (const target of ["curriculum.html", "curriculum.html#common-core-math/k", "lessons.html#common-core-math/8", "high-school.html", "daily-reading.html", "ap.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
+for (const target of ["curriculum.html", "curriculum.html#common-core-math/k", "lessons.html#common-core-math/8", "high-school.html", "daily-reading.html", "daily-reading.html#holidays", "ap.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
   if (!homeHtml.includes(`href="${target}"`)) throw new Error("Home is missing a module link: " + target);
 }
 const homeIds = [...homeHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -414,7 +414,7 @@ for (const match of homeHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   if (!fs.existsSync(path.join(root, target.split(/[?#]/)[0]))) throw new Error("Missing home link/asset: " + target);
 }
 const homeScripts = pageScripts(homeHtml);
-if (!homeScripts.includes("app/home.js") || homeScripts.some(script => script !== "app/home.js")) throw new Error("Home must load only its bookmark compatibility script");
+if (!homeScripts.includes("app/home.js") || homeScripts.some(script => script !== "app/home.js")) throw new Error("Home must load only its study directory script");
 new vm.Script(fs.readFileSync(path.join(root, "app/home.js"), "utf8"), { filename: "app/home.js" });
 
 // Planning data remains separate from ready-to-study courses and saved work.
@@ -529,7 +529,7 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
 const dailyScripts = pageScripts(dailyHtml);
-if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "lib/reading-calendar.js", "lib/reading-library.js", "lib/reading-level.js",
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/reading-calendar.js", "lib/daily-reading.js", "lib/holiday-weeks.js", "content/holiday-weeks.js", "lib/reading-library.js", "lib/reading-level.js",
   "native-tex/config.js", "vendor/colophon/native-tex.js", "lib/reading-tex.js", "app/daily-reading-render.js", "app/reader-controls.js", "app/pdf-action.js",
   "app/daily-reading-browse.js", "app/daily-reading-calendar.js", "app/daily-reading-print.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {

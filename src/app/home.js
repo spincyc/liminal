@@ -23,6 +23,52 @@
     list.hidden = !entries.length;
   });
 
+  const search = window.document?.getElementById("directorySearch");
+  if (search) {
+    const input = document.getElementById("directoryQuery");
+    const clear = document.getElementById("directoryClear");
+    const status = document.getElementById("directoryStatus");
+    const terms = text => text.toLowerCase().match(/[a-z0-9]+/g) || [];
+    const label = anchor => Array.from(anchor.childNodes, node => node.textContent).join(" ");
+    const areas = Array.from(document.querySelectorAll(".study-area"), area => {
+      const heading = area.dataset.searchTerms || area.querySelector("h2").textContent;
+      const links = Array.from(area.querySelectorAll("li > a"), anchor => {
+        const row = anchor.parentElement;
+        const parent = row.parentElement.closest("li");
+        const pathway = parent ? label(parent.querySelector(":scope > a")) : "";
+        const keywords = terms([heading, pathway, label(anchor), anchor.dataset.searchTerms].join(" "));
+        return { row, parent, keywords };
+      });
+      return { area, links };
+    });
+
+    function filterDirectory() {
+      const query = input.value.trim();
+      const words = terms(query);
+      let matches = 0;
+      areas.forEach(({ area, links }) => {
+        let count = 0;
+        links.forEach(({ row, keywords }) => {
+          row.hidden = query !== "" && (!words.length || !words.every(word => keywords.some(term => term.startsWith(word))));
+          if (!row.hidden) count++;
+        });
+        // A matching expansion stays under its original pathway.
+        links.forEach(({ row, parent }) => {
+          if (!row.hidden && parent) parent.hidden = false;
+        });
+        area.hidden = count === 0;
+        matches += count;
+      });
+      clear.hidden = query === "";
+      status.textContent = !query ? "" : matches ? matches + (matches === 1 ? " matching resource" : " matching resources") : "No resources match “" + query + "”. Try a subject, exam, or grade.";
+    }
+    search.hidden = false;
+    input.addEventListener("input", filterDirectory);
+    search.addEventListener("submit", event => { event.preventDefault(); filterDirectory(); });
+    clear.addEventListener("click", () => { input.value = ""; filterDirectory(); input.focus(); });
+    filterDirectory();
+  }
+
   redirectPracticeLink();
   window.addEventListener("hashchange", redirectPracticeLink);
 })();

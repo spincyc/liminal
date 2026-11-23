@@ -6,6 +6,7 @@ const crypto = require("node:crypto");
 const D = require("../src/lib/daily-reading");
 const L = require("../src/lib/reading-library");
 const C = require("../src/lib/reading-calendar");
+const H = require("../src/lib/holiday-weeks");
 const { loadLibrary, sourceRecord, buildLibrary } = require("./build-reading-library");
 const ROOT = path.resolve(__dirname, "..");
 // New continuous runs are at most this many nights; the shared calendar
@@ -299,12 +300,42 @@ function validateCalendar(spans, calendars, readingsByGrade, { complete = false 
   }
 }
 
+// Every holiday week must read cleanly from beginning to end, including
+// in future calendar sets where the final day's selection can change.
+function validateHolidayWeeks(selections, calendars, readingsByGrade) {
+  record(selections, "holiday weeks");
+  assert(Object.keys(selections).sort().join() === [...C.HOLIDAY_KEYS].sort().join(), "holiday weeks must cover every calendar holiday");
+  const grades = [...calendars.keys()].filter(grade => !D.isAdvanced(grade));
+  const gradeKeys = grades.map(D.gradeKey).sort().join();
+  for (const holiday of C.HOLIDAY_KEYS) {
+    record(selections[holiday], holiday);
+    assert(Object.keys(selections[holiday]).sort().join() === gradeKeys, "holiday weeks must cover every K–12 calendar level for " + holiday);
+    for (const grade of grades) for (const set of calendars.get(grade).sets) {
+      const ids = H.readingIds(holiday, D.gradeKey(grade), set, selections);
+      const at = D.gradeLabel(grade) + " " + C.holidayName(holiday);
+      unique(ids, at);
+      ids.forEach((id, index) => {
+        const reading = readingsByGrade.get(grade).get(id);
+        assert(reading, "unknown holiday week reading " + id + " for " + at);
+        assert(index === 6 ? reading.holiday === holiday : !reading.holiday, "misplaced holiday reading " + id + " for " + at);
+        const { continuesFrom, continuesTo } = reading.excerpt;
+        assert((!continuesFrom || continuesFrom === ids[index - 1]) && (!continuesTo || continuesTo === ids[index + 1]),
+          "incomplete continued reading " + id + " for " + at);
+      });
+    }
+  }
+}
+
 function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")); }
 function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily"), libraryDirectory, library: given, complete = false, completeAdvanced = false, completeCalendar = false, checkCalendar = true } = {}) {
   const library = given || loadLibrary(libraryDirectory ? { directory: libraryDirectory } : {});
   const courses = [], extraFiles = [], calendarFiles = [];
-  let spans = null;
+  let spans = null, holidayWeeks = null;
   if (fs.existsSync(directory)) for (const file of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (file.isFile() && file.name === "holiday-weeks.json") {
+      holidayWeeks = readJson(path.join(directory, file.name));
+      continue;
+    }
     if (file.isDirectory() && file.name === "extra") {
       for (const level of fs.readdirSync(path.join(directory, "extra"), { withFileTypes: true })) {
         assert(level.isDirectory() && D.gradeFromKey(level.name) !== null, "unexpected extra entry " + level.name);
@@ -342,10 +373,11 @@ function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily")
   // The spans are shared, so every K–12 level has a calendar or none does.
   const schoolLevels = courses.filter(course => !D.isAdvanced(course.grade));
   if (calendars.size || completeCalendar) assert(schoolLevels.every(course => calendars.has(course.grade)), "the shared calendar needs a calendar file for every grade K–12");
+  if (calendars.size || holidayWeeks) validateHolidayWeeks(holidayWeeks, calendars, readingsByGrade);
   const index = { schemaVersion: 1, grades: courses.map(course => ({ grade: course.grade, title: course.title, nights: course.days.length,
     readings: readingsByGrade.get(course.grade).size, calendar: calendars.has(course.grade),
     file: "content/reading-daily/" + D.gradeKey(course.grade) + ".json" })) };
-  return { index, courses, extras, calendars, spans, library, readingsByGrade };
+  return { index, courses, extras, calendars, spans, library, readingsByGrade, holidayWeeks };
 }
 
 // Where each library work is read: every reading that cites it.
@@ -360,6 +392,15 @@ function libraryUses(courses, extras) {
   }
   return uses;
 }
+function sourcesByGrade(courses, extras) {
+  const byGrade = new Map(courses.map(course => [course.grade, new Map(course.sources.map(source => [source.id, source]))]));
+  for (const extra of extras) for (const source of extra.sources) {
+    const grade = byGrade.get(extra.grade);
+    if (!grade.has(source.id)) grade.set(source.id, source);
+  }
+  return byGrade;
+}
+
 function build(options = {}) {
   // Admission finishes before writing, so malformed content cannot replace a
   // previously valid library. Rights declarations are checked, not proved.
@@ -377,22 +418,22 @@ function build(options = {}) {
   }
   // One file per reading (school night or calendar reading), for the date
   // view and links from the library; and each level's calendar.
-  const sourcesOf = new Map([...courses.map(course => [course.grade, course.sources])]);
-  for (const extra of extras) sourcesOf.set(extra.grade, [...sourcesOf.get(extra.grade), ...extra.sources.filter(source => !sourcesOf.get(extra.grade).some(item => item.id === source.id))]);
+  const sourcesOf = sourcesByGrade(courses, extras);
   for (const [grade, readings] of readingsByGrade) {
     const folder = path.join(directory, "readings", D.gradeKey(grade)); fs.mkdirSync(folder, { recursive: true });
     const course = courses.find(item => item.grade === grade);
     for (const reading of readings.values()) {
-      const source = sourcesOf.get(grade).find(item => item.id === reading.sourceId);
+      const source = sourcesOf.get(grade).get(reading.sourceId);
       fs.writeFileSync(path.join(folder, reading.id + ".json"), JSON.stringify({ schemaVersion: 1, grade, title: course.title, reading, source }) + "\n");
     }
   }
+  fs.writeFileSync(path.join(output, "content/holiday-weeks.js"), "window.LiminalHolidayWeekSelections = " + JSON.stringify(loaded.holidayWeeks || {}) + ";\n");
   if (calendars.size) {
     fs.mkdirSync(path.join(directory, "calendar"), { recursive: true });
     fs.writeFileSync(path.join(directory, "calendar", "spans.json"), JSON.stringify(spans) + "\n");
     for (const [grade, calendar] of calendars) {
       const readings = readingsByGrade.get(grade), sources = sourcesOf.get(grade);
-      const entry = id => { const reading = readings.get(id), source = sources.find(item => item.id === reading.sourceId), credit = D.selectionCredit(reading, source);
+      const entry = id => { const reading = readings.get(id), source = sources.get(reading.sourceId), credit = D.selectionCredit(reading, source);
         return { id, title: reading.title, author: credit.author, work: credit.workTitle || source.title, minutes: reading.time.totalMinutes,
           mode: reading.readingMode, genre: reading.genre, continuesFrom: !!reading.excerpt.continuesFrom, continuesTo: !!reading.excerpt.continuesTo,
           ...(reading.holiday ? { holiday: reading.holiday } : {}),
@@ -409,5 +450,5 @@ function build(options = {}) {
     + extraCount + " calendar readings, " + calendars.size + " date calendars, " + library.size + " library works.");
   return index;
 }
-module.exports = { coveredBlocks, validateGrade, validateReading, validateExtra, validateCorpus, validateCalendar, resolveCourse, resolveReading, chainLengths, loadDailyReading, libraryUses, build, textHash, blockText, normalizedText, MAX_EXTRA_CHAIN };
+module.exports = { validateHolidayWeeks, sourcesByGrade, coveredBlocks, validateGrade, validateReading, validateExtra, validateCorpus, validateCalendar, resolveCourse, resolveReading, chainLengths, loadDailyReading, libraryUses, build, textHash, blockText, normalizedText, MAX_EXTRA_CHAIN };
 if (require.main === module) { try { build({ complete: process.argv.includes("--complete"), completeAdvanced: process.argv.includes("--complete-advanced"), completeCalendar: process.argv.includes("--complete-calendar") }); } catch (error) { console.error(error.message); process.exitCode = 1; } }

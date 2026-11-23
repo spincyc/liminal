@@ -147,7 +147,7 @@
 .ap-guide-table :is(th, td), .ap-guide-table :is(th, td) * { overflow-wrap: break-word; }
 .ap-guide-table-wrap:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
 .high-school-standards li { overflow-wrap: anywhere; }
-.weekly-about p > a[download], .ap-card h3 > a { display: inline-flex; align-items: center; min-height: 44px; }
+.weekly-about p > a[download] { display: inline-flex; align-items: center; min-height: 44px; }
 .ap-guide-table { margin-block: 4px; }
 .ap-guide-table caption { font-weight: 650; }
 .ap-block-label, .ap-check-label, .ap-conditions-label { font-size: .8125rem; font-weight: 650; letter-spacing: .03em; text-transform: uppercase; color: var(--color-muted); }
@@ -183,6 +183,17 @@
   .ap-reference-table td:last-child::before { content: "Units: "; }
   .ap-assessment > .reader-actions { gap: 8px 12px; }
   .ap-bubbles { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
+
+@media screen {
+  .ap-page[data-view="hub"] .ap-courses { display: none; }
+  .ap-page .weekly-intro h1 { font-size: clamp(1.65rem, 3vw, 2rem); }
+  .ap-card { padding: var(--panel-pad); border-top: 3px solid var(--area-ap); }
+  .ap-card h3 { font-size: 1.5rem; }
+  .ap-card-links { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 15px; }
+  .ap-card-links a { font-size: .875rem; }
+  .ap-card-links a:first-child { padding-inline: 12px; border-radius: var(--radius-sm); color: var(--color-on-accent); background: var(--color-accent); font-weight: 600; text-decoration: none; }
+  .ap-card-links a:first-child:hover { background: var(--color-accent-hover); }
 }
 
 @media print {

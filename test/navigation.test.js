@@ -53,6 +53,47 @@ test("legacy practice bookmarks preserve their route and query while home anchor
   assert.equal(target, "practice.html#review");
 });
 
+test("the home directory filters a nested expansion with its pathway and clears an empty result", () => {
+  const source = fs.readFileSync(path.join(__dirname, "../src/app/home.js"), "utf8");
+  const field = () => ({
+    value: "", listeners: {}, addEventListener(type, callback) { this.listeners[type] = callback; },
+    focus() { this.focused = true; },
+  });
+  const fields = { directorySearch: field(), directoryQuery: field(), directoryClear: field(), directoryStatus: field() };
+  function link(name, scope, parent = null) {
+    const anchor = { childNodes: [name, scope].map(textContent => ({ textContent })), dataset: {} };
+    anchor.parentElement = { parentElement: { closest: () => parent }, querySelector: () => anchor };
+    return anchor;
+  }
+  const math = link("Common Core mathematics", "Year plans");
+  const grade = link("Grade 8 expanded lessons", "Fresh practice", math.parentElement);
+  const nights = link("Holiday reading weeks", "Printable seven-day packets");
+  function area(name, links) {
+    return { dataset: {}, querySelector: () => ({ textContent: name }), querySelectorAll: () => links };
+  }
+  const courses = area("Courses", [math, grade]), readings = area("Readings", [nights]);
+  const document = { getElementById: id => fields[id], querySelectorAll: () => [courses, readings] };
+  const window = { document, location: { hash: "" }, addEventListener() {} };
+  vm.runInNewContext(source, { document, window });
+  function search(text) {
+    fields.directoryQuery.value = text;
+    fields.directoryQuery.listeners.input();
+    return fields.directoryStatus.textContent;
+  }
+  assert.equal(search("grade 8 math"), "1 matching resource");
+  assert.equal(math.parentElement.hidden, false);
+  assert.equal(grade.parentElement.hidden, false);
+  assert.equal(readings.hidden, true);
+  assert.equal(search("printable holiday"), "1 matching resource");
+  assert.equal(courses.hidden, true);
+  assert.equal(readings.hidden, false);
+  assert.match(search("missing"), /No resources match/);
+  fields.directoryClear.listeners.click();
+  assert.equal(fields.directoryQuery.focused, true);
+  assert.equal(fields.directoryStatus.textContent, "");
+  assert.ok([math, grade, nights].every(anchor => !anchor.parentElement.hidden));
+});
+
 const navigation = require("../src/lib/navigation");
 const siteHeader = require("../tools/lib/site-header");
 const lessonModules = { version: 1, modules: [{ id: "grade-8-math", trackId: "common-core-math", grade: 8 }] };

@@ -290,6 +290,6 @@
     return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
   }
   return { EPOCH, REGULAR, SET_SIZE, MAX_SPAN, MONTH_DAYS, MONTHS, HOLIDAYS, HOLIDAY_KEYS, BREAKS, isLeap, parseDate, formatDate, addDays, today, longDate, shortDate,
-    easter, holidays, holidayOn, holidayName, setOf, place, dateAt, setCount, readingOn, spanRanges, spanAt, spanDates, checkSpans,
+    easter, holidays, holidayOn, holidayName, setOf, place, dateAt, setFor, setCount, readingOn, spanRanges, spanAt, spanDates, checkSpans,
     runOn, nextDateOf, dayNote, monthNote, monthGrid, monthLabel, addMonths };
 });

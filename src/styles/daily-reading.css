@@ -239,3 +239,37 @@
   .daily-run-start::after { top: 8px !important; border-radius: 3px 3px 0 0 !important; }
   .daily-run-end::after { bottom: 8px !important; border-radius: 0 0 3px 3px !important; }
 }
+@media screen {
+  .daily-main { max-width: 760px; padding-top: clamp(10px, 2vw, 22px); }
+  .daily-main:has(#dailyMonth:not([hidden])) { max-width: 1040px; }
+  .daily-browse h1, .daily-month h1, .daily-print-setup h1 { font-size: var(--display-size); line-height: 1.08; }
+  .daily-browse-summary { margin-top: 8px; font-size: .9375rem; }
+  .daily-tonight { margin-top: 20px; padding: 14px var(--panel-pad) 8px; border-top: 3px solid var(--area-readings); }
+  .daily-tonight h2 { color: var(--color-ink); font: 400 1.55rem/1.25 var(--font-serif); letter-spacing: -.02em; text-transform: none; }
+  .daily-year-heading { font-size: 1.75rem; }
+  .daily-print-form fieldset { min-width: 0; background: var(--color-surface); }
+  #dailyHolidayFields .reader-selectors { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 5.8rem); gap: 8px; margin-bottom: 2px; }
+  #dailyHolidayFields label { display: grid; gap: 4px; }
+  #dailyHolidayFields select, #dailyHolidayYear { width: 100%; max-width: 100%; }
+  #dailyHolidayYear { min-width: 0; min-height: var(--tap); padding: 6px 8px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); color: var(--color-ink); background: var(--color-surface); font: 400 1rem/1.3 var(--font-sans); }
+  #dailyLevelSummary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: var(--tap); padding: 6px 2px; list-style: none; color: var(--color-accent); font-weight: 600; }
+  #dailyLevelSummary::-webkit-details-marker { display: none; }
+  #dailyLevelSummary::after { flex: none; width: 8px; height: 8px; margin-inline-end: 5px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; content: ""; transform: rotate(45deg); }
+  #dailyLevelPicker[open] > #dailyLevelSummary::after { transform: rotate(225deg); }
+  #dailyLevelPicker[open] > #dailyLevelSummary { border-bottom: 1px solid var(--color-line); }
+  .daily-print-levels { grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.3rem), 1fr)); gap: 2px 4px; }
+  .daily-print-levels .daily-choice { gap: 5px; min-width: 0; padding: 2px; border-radius: var(--radius-sm); font-size: var(--text-sm); overflow-wrap: anywhere; cursor: pointer; }
+  .daily-print-levels .daily-choice:has(:checked) { background: var(--color-accent-soft); }
+  .daily-print-levels .daily-choice:hover { background: var(--color-soft); }
+  .daily-print-levels input { width: 18px; height: 18px; }
+  .daily-stage-title { padding-bottom: 8px; border-bottom: 2px solid var(--area-readings); }
+  .daily-page .daily-week > summary:hover { background: var(--color-soft); }
+  #dailyContent > .daily-reading { overflow-wrap: anywhere; padding: var(--panel-pad); background: var(--color-surface); border-top: 3px solid var(--area-readings); }
+}
+
+@media screen and (max-width: 400px) {
+  .daily-toolbar.reader-toolbar .reader-selectors select:not(.daily-wide) {
+    width: var(--tap); padding-inline: 1px; min-width: var(--tap);
+  }
+  .daily-toolbar.reader-toolbar .reader-selectors { column-gap: 2px; }
+}

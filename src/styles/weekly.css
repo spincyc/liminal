@@ -90,6 +90,14 @@
   .weekly-page .page-width { width: calc(100% - 32px); }
   .weekly-main { padding-top: 24px; }
 }
+@media screen {
+  .weekly-main { padding-top: var(--section-space); }
+  .weekly-intro h1 { font-size: var(--display-size); line-height: 1.08; }
+  .weekly-tabs { gap: 4px; padding-top: 6px; }
+  .weekly-tabs [role="tab"] { padding-inline: 14px; }
+  .weekly-tabs [aria-selected="true"] { background: var(--color-accent-soft); box-shadow: inset 0 -3px var(--color-accent); }
+}
+
 @media print {
   .weekly-page { font: 400 var(--worksheet-size)/var(--worksheet-leading) var(--worksheet-serif); background: #fff; color: #000; }
   .weekly-page :focus { outline: none !important; }

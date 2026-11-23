@@ -95,12 +95,20 @@ break protections, without using them to balance the overall document.
 ## Use
 
 ```sh
+# Seven calendar days ending on the holiday, one PDF with grades K–12 in order:
+node tools/reading-packet.js --holiday halloween --year 2026 --out .scratch/packets/halloween-2026 --pdf
+node tools/reading-packet.js --holiday thanksgiving --year 2026 --out .scratch/packets/thanksgiving-2026 --pdf
 # The nights for given school dates, all grades K–12:
 node tools/reading-packet.js --dates 2026-10-08,2026-10-09,2026-10-12 --out .scratch/packets/oct-8 --pdf
 # Specific nights (any published grade or level):
 node tools/reading-packet.js --nights k:w7d4,9:w12d1 --out .scratch/packets/x --pdf
 ```
 
+- **Holiday weeks** use seven consecutive calendar dates and accept any of the ten
+  keys in the [reading calendar](daily-reading.md#date-calendar). Omit
+  `--year` for the current year. `--grades` can limit the packet to selected
+  K–12 levels. In the browser, open **Readings → Holiday reading weeks** to choose
+  the year, preview the selections and generate the same packet.
 - **The school calendar:** five nights a week, Monday to Friday, 36 weeks
   counted from the Monday given by `--start` (default 2026-08-24). Weekends
   and dates outside the year have no night. `--grades k,3,9` limits the

@@ -12,19 +12,30 @@
     <link rel="stylesheet" href="styles/brand.css" />
     <script defer src="app/home.js"></script>
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to main content</a>
     <!-- liminal:site-header -->
 
     <main id="main" class="page-width home-main" tabindex="-1">
       <header class="home-intro">
-        <h1>What would you like to study?</h1>
-        <p>Lessons, reading, and focused practice. Free, with no account needed.</p>
+        <div class="home-welcome">
+          <h1>The study library</h1>
+          <p>Choose a course, find tonight’s reading, or prepare for an exam. Free to use, with no account required.</p>
+          <form id="directorySearch" class="directory-search" role="search" aria-label="Study directory" hidden>
+            <label for="directoryQuery">Find a resource</label>
+            <div class="directory-field">
+              <input id="directoryQuery" type="search" placeholder="Try “calculus” or “holiday”" autocomplete="off" aria-controls="modules" />
+              <button id="directoryClear" type="button" hidden>Clear</button>
+            </div>
+          </form>
+        </div>
+        <img class="home-plate" src="images/study-desk.webp" width="660" height="379" alt="" />
       </header>
+      <p id="directoryStatus" class="directory-status" role="status" aria-live="polite"></p>
       <div id="modules" class="study-directory">
-        <section class="study-area" aria-labelledby="courses-heading">
+        <section class="study-area study-courses" aria-labelledby="courses-heading">
           <h2 id="courses-heading"><a href="curriculum.html">Courses <span aria-hidden="true">→</span></a></h2>
-          <p>Math and reading, from kindergarten through high school.</p>
+          <p>Plan a year of study or open a weekly lesson.</p>
           <ul>
             <li><a href="curriculum.html#common-core-math/k">Common Core mathematics <span>K–12 year plans</span></a>
               <ul class="study-expansions" data-lesson-pathway="common-core-math" aria-label="Common Core mathematics expansions">
@@ -36,33 +47,35 @@
             <li><a href="high-school.html">High school math <span>Algebra to calculus</span></a></li>
           </ul>
         </section>
-        <section class="study-area" aria-labelledby="readings-heading">
+        <section class="study-area study-readings" aria-labelledby="readings-heading">
           <h2 id="readings-heading"><a href="daily-reading.html">Readings <span aria-hidden="true">→</span></a></h2>
-          <p>Literature, short nightly readings, and discussion for every grade.</p>
+          <p>Read a little each night or settle into a whole book.</p>
           <ul>
-            <li><a href="daily-reading.html">Daily reading <span>Browse by grade</span></a></li>
+            <li><a href="daily-reading.html">Nightly readings <span>Passages by grade</span></a></li>
+            <li><a href="daily-reading.html#holidays">Holiday reading weeks <span>Printable seven-day packets</span></a></li>
+            <li><a href="library.html">Browse whole works <span>Public-domain library</span></a></li>
             <li><a href="reading-level.html">Find a reading level <span>Build a reading plan</span></a></li>
             <li><a href="weeks.html#common-core-reading/k/1">Common Core reading <span>Weekly instruction</span></a><ul class="study-expansions" data-lesson-pathway="common-core-reading" aria-label="Common Core reading expansions" hidden></ul></li>
           </ul>
         </section>
-        <section class="study-area" aria-labelledby="ap-heading">
+        <section class="study-area study-ap" aria-labelledby="ap-heading">
           <h2 id="ap-heading"><a href="ap.html">AP® prep <span aria-hidden="true">→</span></a></h2>
-          <p>36-week courses with unit tests and printable practice exams.</p>
+          <p>Work through a course or review for the exam.</p>
           <ul>
-            <li><a href="ap.html#calculus-ab">Calculus AB</a></li>
-            <li><a href="ap.html#calculus-bc">Calculus BC</a></li>
-            <li><a href="ap.html#physics-1">Physics 1</a></li>
-            <li><a href="ap.html#physics-c-mechanics">Physics C: Mechanics</a></li>
+            <li><a href="ap.html#calculus-ab">Calculus AB <span>Differentiation &amp; integration</span></a></li>
+            <li><a href="ap.html#calculus-bc">Calculus BC <span>Calculus, sequences &amp; series</span></a></li>
+            <li><a href="ap.html#physics-1">Physics 1 <span>Algebra-based physics</span></a></li>
+            <li><a href="ap.html#physics-c-mechanics">Physics C: Mechanics <span>Calculus-based physics</span></a></li>
           </ul>
         </section>
-        <section id="test-prep" class="study-area" aria-labelledby="prep-heading">
+        <section id="test-prep" class="study-area study-prep" data-search-terms="test prep exam" aria-labelledby="prep-heading">
           <h2 id="prep-heading"><a href="practice.html">SAT® &amp; ACT® <span aria-hidden="true">→</span></a></h2>
-          <p>Practice a skill, take a timed test, and review your work.</p>
+          <p>Practice a skill, take a timed test, and review mistakes.</p>
           <ul>
             <li><a href="practice.html?test=SAT#practice">SAT practice <span>Reading, writing &amp; math</span></a></li>
             <li><a href="practice.html?test=ACT#practice">ACT practice <span>All five sections</span></a></li>
             <li><a href="learn.html">SAT skill guides <span>Worked examples</span></a></li>
-            <li><a href="print.html">Practice booklets <span>Print &amp; work offline</span></a></li>
+            <li><a href="print.html" data-search-terms="SAT ACT">Practice booklets <span>Print &amp; work offline</span></a></li>
           </ul>
         </section>
       </div>

@@ -266,6 +266,26 @@ test("unrecognized routes fall back to the remembered grade, and school-night id
   }
 });
 
+test("holiday packet links select the next holiday and school levels, independently of the remembered grade", () => {
+  const index = { grades: [0, 5, 12, 13].map(grade => ({ grade })) };
+  const open = (hash, today = "2026-11-23") => D.view(index, hash, { grade: 5, today });
+  const upcoming = open("#holidays");
+  assert.deepEqual(upcoming, { view: "holidays", holiday: "thanksgiving", year: 2026, grades: [0, 5, 12], invalid: false });
+  assert.equal(D.holidayRoute(upcoming, index), "#holidays/thanksgiving/2026");
+  assert.equal(open("#holidays", "2026-11-26").holiday, "thanksgiving");
+  const nextYear = open("#holidays", "2026-12-31");
+  assert.equal(nextYear.year, 2027);
+  assert.equal(nextYear.holiday, "new-year");
+  const subset = open("#holidays/halloween/2027/12,k,12");
+  assert.deepEqual(subset.grades, [0, 12]);
+  assert.equal(D.holidayRoute(subset, index), "#holidays/halloween/2027/k,12");
+  assert.equal(D.printFilename(subset), "liminal-halloween-2027-k-12.pdf");
+  assert.deepEqual(open(D.holidayRoute({ ...subset, grades: [] }, index)).grades, []);
+  for (const hash of ["#holidays/unknown/2026", "#holidays/halloween/0000", "#holidays/halloween/2026/a1", "#holidays/halloween/2026/5/x"]) {
+    assert.equal(open(hash).invalid, true, hash);
+  }
+});
+
 test("a print link without a day opens today's date only when a chosen level has a calendar", () => {
   const opts = { grade: 3, today: "2026-11-17" };
   assert.deepEqual(D.view(index, "#print", opts), { view: "print", course: null, grade: null, date: null, until: null, week: 1, day: 1, grades: [], invalid: false });

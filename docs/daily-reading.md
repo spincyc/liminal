@@ -106,6 +106,20 @@ continued story, the story pauses for the holiday and goes on the next day
 (about one to two pauses a year per level). A holiday's reading and February
 29's stand alone (no `continuesFrom` or `continuesTo`).
 
+**Holiday weeks.** From Readings, open **Holiday reading weeks** and choose a holiday and
+year. Each grade has a curated sequence of six readings leading to the
+seventh day's holiday selection. The week includes weekends and can cross
+New Year's Eve. The same six texts can be read each year. The holiday date
+and final reading come from that year's calendar set. These anthologies are
+available alongside the ordinary date calendar.
+
+`content/reading-daily/holiday-weeks.json` maps each calendar holiday key to
+grade keys (`k`, `1` through `12`). Each grade lists its six lead-in reading
+IDs in teaching order. The build checks the seven selections for every
+calendar set. All must belong to the grade and be distinct. Every continued
+reading must have its preceding and following parts inside the week in order,
+and the final selection must be tagged for the holiday.
+
 A calendar reading may carry `holiday` (one of the keys in `HOLIDAYS`, such
 as `"christmas"`) when it is written for that day; it is then read only on
 that holiday, and a level has at most one per holiday in each set. A holiday
@@ -254,7 +268,7 @@ view's calendar link opens at this month.
 preview lists what each level prints, date by date with holidays named, or why
 it cannot (a level without a date calendar, a last date before the first, a
 range longer than a month). A print link without a day opens today's date when
-a chosen level has a calendar, otherwise a school night. **Make one PDF**
+a chosen level has a calendar, otherwise a school night. **Generate PDF**
 typesets a single document (`LiminalReadingTeX.printTeX`): level by level in
 the order listed, each level's readings in date order, and every reading
 starting on an odd page, with a blank verso inserted where needed, so
